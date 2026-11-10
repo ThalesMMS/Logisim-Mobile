@@ -62,8 +62,9 @@ class AppIdentityTest(unittest.TestCase):
 
     def test_rejects_duplicate_properties_and_platform_invalid_versions(self):
         original = (ROOT / "app.properties").read_text()
-        invalid = [original + "\napp.build=3\n", original.replace("app.build=2", "app.build=0"),
-                   original.replace("app.build=2", "app.build=2147483647"),
+        build_property = f"app.build={read_identity(ROOT / 'app.properties').build}\n"
+        invalid = [original + build_property, original.replace(build_property, "app.build=0\n"),
+                   original.replace(build_property, "app.build=2147483647\n"),
                    original.replace("app.version=0.2.0", "app.version=release-candidate"),
                    original.replace("app.appleId=thalesmms.logisim.mobile", "app.appleId=no spaces")]
         with tempfile.TemporaryDirectory() as temporary:

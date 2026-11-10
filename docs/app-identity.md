@@ -8,7 +8,7 @@ The earlier identifier `dev.logisim.mobile` belongs to the prototype. The new ap
 
 ## Change the version and build number
 
-Edit only `app.properties`. Use a three-part version and a positive, increasing build number. Each published distribution requires a fresh build number. The current version is `0.2.0`, build `2`.
+Edit only `app.properties`. Use a three-part version and a positive, increasing build number. Each published distribution requires a fresh build number. The current version is `0.2.0`, build `3`.
 
 ```sh
 python3 tools/generate_app_identity.py

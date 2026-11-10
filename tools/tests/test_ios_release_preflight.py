@@ -12,6 +12,7 @@ import zipfile
 import hashlib
 from unittest.mock import DEFAULT, patch
 
+from tools.generate_app_identity import read_identity
 from tools.release_common import ReleaseError
 from tools.release_ios import ROOT, main, record_release, signing_inputs, validate_profile, verify_info, verify_ipa, verify_privacy_manifest
 
@@ -57,8 +58,10 @@ class IosReleasePreflightTest(unittest.TestCase):
         self.assertEqual(profile["UUID"], validate_profile(profile, "ABCD123456", "thalesmms.logisim.mobile", self.now))
 
     def test_artifact_cannot_report_a_different_identifier(self):
+        identity = read_identity(ROOT / "app.properties")
         with self.assertRaisesRegex(ReleaseError, "identity"):
-            verify_info({"CFBundleIdentifier": "dev.logisim.mobile", "CFBundleShortVersionString": "0.2.0", "CFBundleVersion": "2"})
+            verify_info({"CFBundleIdentifier": "dev.logisim.mobile",
+                         "CFBundleShortVersionString": identity.version, "CFBundleVersion": str(identity.build)})
 
     def privacy_manifest(self):
         return {"NSPrivacyAccessedAPITypes": [
@@ -88,11 +91,25 @@ class IosReleasePreflightTest(unittest.TestCase):
         with self.assertRaisesRegex(ReleaseError, "invalid API category"):
             verify_privacy_manifest(plistlib.dumps(manifest))
 
-    def make_ipa(self, directory, *, privacy=True, privacy_path="Payload/LogisimMobile.app/PrivacyInfo.xcprivacy", identity="thalesmms.logisim.mobile"):
+    def make_ipa(self, directory, *, privacy=True, privacy_path="Payload/LogisimMobile.app/PrivacyInfo.xcprivacy",
+                 identity="thalesmms.logisim.mobile", ipad_orientation_override=True):
         path = Path(directory) / "test.ipa"
+        release = read_identity(ROOT / "app.properties")
+        ipad_key = "UISupportedInterfaceOrientations~ipad"
+        ipad_orientations = plistlib.loads((ROOT / "iosApp/Info.plist").read_bytes())[ipad_key]
+        info = {
+            "CFBundleIdentifier": identity,
+            "CFBundleShortVersionString": release.version,
+            "CFBundleVersion": str(release.build),
+            "UIDeviceFamily": [1, 2],
+            "UISupportedInterfaceOrientations": [
+                value for value in ipad_orientations if value != "UIInterfaceOrientationPortraitUpsideDown"
+            ],
+        }
+        if ipad_orientation_override:
+            info[ipad_key] = ipad_orientations
         with zipfile.ZipFile(path, "w") as ipa:
-            ipa.writestr("Payload/LogisimMobile.app/Info.plist", plistlib.dumps({
-                "CFBundleIdentifier": identity, "CFBundleShortVersionString": "0.2.0", "CFBundleVersion": "2"}))
+            ipa.writestr("Payload/LogisimMobile.app/Info.plist", plistlib.dumps(info))
             if privacy:
                 ipa.writestr(privacy_path, plistlib.dumps(self.privacy_manifest()))
         return path
@@ -100,6 +117,11 @@ class IosReleasePreflightTest(unittest.TestCase):
     def test_accepts_ipa_with_the_application_identity_and_bundled_manifest(self):
         with tempfile.TemporaryDirectory() as directory:
             verify_ipa(self.make_ipa(directory))
+
+    def test_rejects_ipad_ipa_with_only_three_interface_orientations(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(ReleaseError, "iPad multitasking requires all four interface orientations"):
+                verify_ipa(self.make_ipa(directory, ipad_orientation_override=False))
 
     def test_rejects_ipa_without_application_manifest_even_with_framework_manifest(self):
         with tempfile.TemporaryDirectory() as directory:

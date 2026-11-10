@@ -71,6 +71,15 @@ def verify_info(info: dict) -> None:
     if (info.get("CFBundleIdentifier"), info.get("CFBundleShortVersionString"), info.get("CFBundleVersion")) != (
             identity.apple_id, identity.version, str(identity.build)):
         raise ReleaseError("iOS artifact identity does not match app.properties")
+    if 2 in info.get("UIDeviceFamily", []):
+        orientations = info.get("UISupportedInterfaceOrientations~ipad", info.get("UISupportedInterfaceOrientations", []))
+        if set(orientations) != {
+            "UIInterfaceOrientationPortrait",
+            "UIInterfaceOrientationPortraitUpsideDown",
+            "UIInterfaceOrientationLandscapeLeft",
+            "UIInterfaceOrientationLandscapeRight",
+        }:
+            raise ReleaseError("iPad multitasking requires all four interface orientations")
 
 
 def verify_privacy_manifest(contents: bytes) -> None:
