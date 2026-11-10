@@ -1,0 +1,258 @@
+{
+  "fpga_core_board_information": {
+    "en": "The board must contain exactly one BoardInformation element.",
+    "pt": "A placa precisa de um BoardInformation único."
+  },
+  "fpga_core_fpga_information": {
+    "en": "FPGAInformation is missing or duplicated.",
+    "pt": "FPGAInformation ausente ou duplicado."
+  },
+  "fpga_core_missing_parameter": {
+    "en": "Missing FPGA parameter: {name}.",
+    "pt": "Parâmetro da FPGA ausente: {name}."
+  },
+  "fpga_core_invalid_usbtmc": {
+    "en": "Invalid USBTMC value.",
+    "pt": "USBTMC inválido."
+  },
+  "fpga_core_duplicate_clock": {
+    "en": "ClockInformation is duplicated.",
+    "pt": "ClockInformation duplicado."
+  },
+  "fpga_core_missing_clock_pin": {
+    "en": "The clock pin is missing.",
+    "pt": "Pino do clock ausente."
+  },
+  "fpga_core_invalid_clock_frequency": {
+    "en": "Invalid clock frequency.",
+    "pt": "Frequência de clock inválida."
+  },
+  "fpga_core_clock_frequency_range": {
+    "en": "The clock frequency is outside the supported range.",
+    "pt": "Frequência de clock fora do intervalo permitido."
+  },
+  "fpga_core_duplicate_io": {
+    "en": "The I/O resource list is duplicated.",
+    "pt": "A lista de recursos de I/O está duplicada."
+  },
+  "fpga_core_invalid_pin_list": {
+    "en": "Invalid pin list in {resource}.",
+    "pt": "Lista de pinos inválida em {resource}."
+  },
+  "fpga_core_unrecognized_pinout": {
+    "en": "Cannot import resource {resource}: its pinout is unrecognized.",
+    "pt": "Leitura recusada: recurso {resource} sem pinagem reconhecida."
+  },
+  "fpga_core_resource_without_pins": {
+    "en": "Resource {resource} has no pins available for mapping.",
+    "pt": "O recurso {resource} não tem pinos disponíveis para mapeamento."
+  },
+  "fpga_core_missing_resource_pin": {
+    "en": "Pin {pin} is missing from {resource}.",
+    "pt": "Pino {pin} ausente em {resource}."
+  },
+  "fpga_core_duplicate_unused": {
+    "en": "UnusedPins is duplicated.",
+    "pt": "UnusedPins duplicado."
+  },
+  "fpga_core_unknown_vendor": {
+    "en": "The FPGA vendor is unrecognized; synthesis cannot start.",
+    "pt": "Fornecedor de FPGA não reconhecido; a síntese não será iniciada."
+  },
+  "fpga_core_no_resources": {
+    "en": "The board declares no I/O resources.",
+    "pt": "A placa não declara recursos de I/O."
+  },
+  "fpga_core_unrecognized_io_standard": {
+    "en": "Unrecognized I/O standard: {standard}.",
+    "pt": "Padrão elétrico não reconhecido: {standard}."
+  },
+  "fpga_core_invalid_drive_value": {
+    "en": "Invalid output drive strength: {drive}.",
+    "pt": "Corrente de saída inválida: {drive}."
+  },
+  "fpga_core_invalid_activity": {
+    "en": "Invalid ActivityLevel value.",
+    "pt": "ActivityLevel inválido."
+  },
+  "fpga_core_invalid_pull_value": {
+    "en": "Invalid PullBehavior value: {value}.",
+    "pt": "PullBehavior inválido: {value}."
+  },
+  "fpga_core_invalid_integer": {
+    "en": "Invalid {name} value.",
+    "pt": "{name} inválido."
+  },
+  "fpga_core_invalid_rectangle": {
+    "en": "Invalid resource rectangle.",
+    "pt": "Retângulo de recurso inválido."
+  },
+  "fpga_core_reptar_board": {
+    "en": "Reptar Local Bus requires one LocalBus resource on the REPTAR_SPARTAN_6 board and the ISE flow.",
+    "pt": "O barramento local Reptar exige um recurso LocalBus na placa REPTAR_SPARTAN_6 e o fluxo ISE."
+  },
+  "fpga_core_reptar_pin": {
+    "en": "Use the board-defined Reptar pin {pin} without an electrical override.",
+    "pt": "Use o pino Reptar {pin} definido pela placa, sem alterar a configuração elétrica."
+  },
+  "fpga_core_invalid_top": {
+    "en": "Invalid HDL top-level entity name.",
+    "pt": "Nome da entidade HDL inválido."
+  },
+  "fpga_core_reserved_top": {
+    "en": "The HDL name is reserved for the FPGA wrapper.",
+    "pt": "O nome HDL está reservado ao wrapper da FPGA."
+  },
+  "fpga_core_missing_source": {
+    "en": "The project contains no HDL source files.",
+    "pt": "O projeto não contém arquivos HDL."
+  },
+  "fpga_core_duplicate_source": {
+    "en": "HDL source file names are duplicated.",
+    "pt": "Há nomes duplicados de arquivos HDL."
+  },
+  "fpga_core_unsafe_source_path": {
+    "en": "Invalid HDL source path: {path}.",
+    "pt": "Caminho HDL inválido: {path}."
+  },
+  "fpga_core_reserved_source_name": {
+    "en": "The file name is reserved for the FPGA flow: {path}.",
+    "pt": "O nome do arquivo é reservado ao fluxo FPGA: {path}."
+  },
+  "fpga_core_source_too_large": {
+    "en": "The HDL source file exceeds its size limit: {path}.",
+    "pt": "Arquivo HDL excede o limite: {path}."
+  },
+  "fpga_core_project_too_large": {
+    "en": "The HDL project exceeds the 16 MB limit.",
+    "pt": "O projeto HDL excede o limite de 16 MB."
+  },
+  "fpga_core_missing_ports": {
+    "en": "The project exposes no physical ports.",
+    "pt": "O projeto não expõe portas físicas."
+  },
+  "fpga_core_too_many_ports": {
+    "en": "The project exceeds the limit of 8192 terminals.",
+    "pt": "O projeto excede o limite de 8192 terminais."
+  },
+  "fpga_core_duplicate_port": {
+    "en": "HDL port names are duplicated.",
+    "pt": "Há nomes duplicados de portas HDL."
+  },
+  "fpga_core_invalid_device": {
+    "en": "The device parameters cannot be used to generate tool scripts.",
+    "pt": "Parâmetros de dispositivo inválidos para gerar scripts."
+  },
+  "fpga_core_vendor_flow_mismatch": {
+    "en": "The flow does not match the board vendor.",
+    "pt": "O fluxo não corresponde ao fornecedor da placa."
+  },
+  "fpga_core_unsupported_ecp5": {
+    "en": "The open flow does not support ECP5 device {part}.",
+    "pt": "Dispositivo ECP5 não suportado pelo fluxo aberto: {part}."
+  },
+  "fpga_core_unsupported_ice40": {
+    "en": "Unsupported iCE40 device: {part}.",
+    "pt": "Dispositivo iCE40 não suportado: {part}."
+  },
+  "fpga_core_invalid_port_name": {
+    "en": "Invalid port name: {port}.",
+    "pt": "Nome de porta inválido: {port}."
+  },
+  "fpga_core_invalid_port_width": {
+    "en": "Invalid width for port {port}.",
+    "pt": "Largura inválida da porta {port}."
+  },
+  "fpga_core_invalid_clock_port": {
+    "en": "Clock port {port} must be a single input bit.",
+    "pt": "O clock precisa de uma única entrada: {port}."
+  },
+  "fpga_core_unmapped_port": {
+    "en": "Unmapped terminal: {port}[{bit}].",
+    "pt": "Pino sem mapeamento: {port}[{bit}]."
+  },
+  "fpga_core_open_input": {
+    "en": "An input requires a physical pin or a constant.",
+    "pt": "Uma entrada precisa de pino físico ou constante."
+  },
+  "fpga_core_constant_output": {
+    "en": "A constant can only drive an input.",
+    "pt": "Uma constante só pode alimentar uma entrada."
+  },
+  "fpga_core_invalid_pin": {
+    "en": "Invalid physical pin location.",
+    "pt": "Localização física inválida."
+  },
+  "fpga_core_unknown_pin": {
+    "en": "The board does not declare pin {pin}.",
+    "pt": "O pino não está declarado na placa: {pin}."
+  },
+  "fpga_core_pin_direction": {
+    "en": "The physical pin direction is incompatible.",
+    "pt": "A direção do pino físico é incompatível."
+  },
+  "fpga_core_pin_already_used": {
+    "en": "Pin {pin} is already assigned to {port}[{bit}].",
+    "pt": "O pino {pin} já foi atribuído a {port}[{bit}]."
+  },
+  "fpga_core_invalid_io_standard": {
+    "en": "Invalid I/O standard.",
+    "pt": "Padrão elétrico inválido."
+  },
+  "fpga_core_invalid_drive": {
+    "en": "Invalid output drive strength.",
+    "pt": "Corrente de saída inválida."
+  },
+  "fpga_core_inverted_inout": {
+    "en": "A bidirectional port cannot be inverted.",
+    "pt": "Não é possível inverter uma porta bidirecional."
+  },
+  "fpga_core_io_standard_mismatch": {
+    "en": "The I/O standard does not match the board definition.",
+    "pt": "O padrão elétrico não corresponde à definição da placa."
+  },
+  "fpga_core_clock_pin_mismatch": {
+    "en": "Use the clock pin declared by the board.",
+    "pt": "Use o pino de clock declarado pela placa."
+  },
+  "fpga_core_clock_frequency_mismatch": {
+    "en": "The HDL frequency differs from the board clock. Generate the appropriate divider or PLL first.",
+    "pt": "A frequência HDL difere da frequência da placa; gere primeiro o divisor ou PLL apropriado."
+  },
+  "fpga_core_unknown_signal": {
+    "en": "The mapping references a nonexistent port or bit.",
+    "pt": "O mapa referencia uma porta ou bit inexistente."
+  },
+  "fpga_core_invalid_xml": {
+    "en": "The board XML is invalid or exceeds the supported limits.",
+    "pt": "O XML da placa é inválido ou excede os limites permitidos."
+  },
+  "fpga_core_xml_import_failed": {
+    "en": "Unable to import the FPGA board XML: {reason}",
+    "pt": "Não foi possível importar o XML da placa FPGA: {reason}"
+  },
+  "fpga_core_board_xml_size": {
+    "en": "The board definition exceeds the 2 MB text limit.",
+    "pt": "A definição da placa excede o limite de 2 MB de texto."
+  },
+  "fpga_core_unused_pin_pull_not_applied": {
+    "en": "This open flow does not apply the board's pull setting for unused pins.",
+    "pt": "Este fluxo aberto não aplica a configuração de pull da placa aos pinos não utilizados."
+  },
+  "fpga_core_ice40_pull_down": {
+    "en": "The iCE40 PCF flow cannot preserve a pull-down setting.",
+    "pt": "O fluxo PCF iCE40 não preserva a configuração de pull-down."
+  },
+  "fpga_core_ice40_drive": {
+    "en": "The iCE40 PCF flow requires the default output drive strength.",
+    "pt": "O fluxo PCF iCE40 exige a corrente de saída padrão."
+  },
+  "fpga_core_ice40_io_standard": {
+    "en": "The iCE40 PCF flow supports only the default I/O standard or LVCMOS33.",
+    "pt": "O fluxo PCF iCE40 aceita somente o padrão elétrico padrão ou LVCMOS33."
+  },
+  "fpga_core_quartus_pull_down": {
+    "en": "This Quartus flow cannot preserve a per-pin pull-down setting.",
+    "pt": "Este fluxo Quartus não preserva a configuração de pull-down por pino."
+  }
+}

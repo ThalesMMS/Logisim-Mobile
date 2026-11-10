@@ -1,0 +1,8 @@
+{
+  "file-newi": "mobile-default-simlimit: EditorState.newDocument() without a template stores simlimit=256 (Mobile default, 2cd60d48, #157); Evolution's plain template stores 1000. File > New with the Evolution template is compared by creation-defaults",
+  "project-loadLogisim": "embedded-library: Mobile copies the library's circuits into the project (marked logisim-mobile-library-id) instead of a relative file# reference, so documents stay self-contained on Android and iOS",
+  "project-revertAppearance": "evolution-noop: RevertAppearanceAction in d58a61e0 only records the drawing (setDefaultAppearance is commented out since 6dce9c7f8); Mobile restores the default appearance",
+  "state:sim-log.defaultSignals": "empty-selection: Evolution's Logging window starts with the top-level clock, pins and loggable components; Mobile's trace panel starts empty and offers the same signals",
+  "state:sim-tickFreq.choices": "frequency-menu: Mobile's Simulate menu offers 1-64 Hz; the Simulation options panel accepts any positive frequency",
+  "state:sim-ticksEnabled.period_ms": "timer-resolution: Mobile schedules automatic ticks in whole milliseconds (16 ms at 64 Hz), Evolution in nanoseconds (15.625 ms)"
+}

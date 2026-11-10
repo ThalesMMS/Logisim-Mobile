@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "qualificationScope": "BOOTSTRAP_REGISTER_ONLY",
+  "caseSeconds": 25.384,
+  "exitCode": 0,
+  "counts": {
+    "totalTestCount": 1,
+    "passedTests": 1,
+    "failedTests": 0,
+    "skippedTests": 0
+  },
+  "fixtureSource": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+  "harnessSource": "046ebd30c0f71d7f6bf65ca80ec93b925e772792",
+  "archivalBase": "046ebd30c0f71d7f6bf65ca80ec93b925e772792",
+  "rootReviewSHA256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8",
+  "producerManifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+  "rootAdmissionScope": "LOCAL_SIMULATOR_ONLY / ONE_PREPARE_REGISTER_INSPECT",
+  "developerTeamApproved": false,
+  "releaseApproved": false,
+  "driverSHA256": "8d7245a855031b4a29dce225624360e85e7939647fadd49587e9599f51a71107",
+  "app": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+    "executable_sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+    "bundle_tree_sha256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+    "version": "1.0",
+    "build": "1"
+  },
+  "provider": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+    "executable_sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+    "bundle_tree_sha256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+    "version": "1.0",
+    "build": "1"
+  },
+  "group": {
+    "directoryUUID": "5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4",
+    "metadataUUID": "C4A78BD1-44B3-4590-B045-A3AC1883D566",
+    "backendBytes": 552,
+    "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "generation": 1,
+    "authenticationAllowed": true,
+    "oldEventPrefixCount": 6,
+    "newEvents": [
+      {
+        "sequence": 7,
+        "kind": "prepare"
+      },
+      {
+        "sequence": 8,
+        "kind": "domain.registration.requested"
+      },
+      {
+        "sequence": 9,
+        "kind": "domain.registration.completed"
+      }
+    ],
+    "newCompletedEventHasNSError": false,
+    "matchingFixtureDomainCount": 1
+  },
+  "systemObservations": {
+    "source": "new-discovery-after-install.stdout",
+    "indexBase": 0,
+    "groupResultIndex": 851,
+    "registeredProviderPathIndex": 859,
+    "scope": "Daemon discovery/coordination registration precedes and differs from the later UI domain-add callback.",
+    "processXPC": "Launch/process/XPC activity is observed, including provider-process messages; no functional callbacks or fetch are qualified."
+  },
+  "limits": {
+    "providerFunctionalExecution": "NOT_QUALIFIED",
+    "enumeration": "NOT_QUALIFIED",
+    "fetch": "NOT_QUALIFIED",
+    "Save": "NOT_QUALIFIED",
+    "authenticationDenial": "NOT_QUALIFIED",
+    "securityScopeRevocation": "NOT_QUALIFIED",
+    "issue26": "NOT_QUALIFIED",
+    "earlierFailureCause": "UNDETERMINED",
+    "physicalDevice": false
+  },
+  "producerCaptureStatus": "Unchanged manifest and section-helper NOT_RUN/review-required fields describe static file capture, not this later UI case result.",
+  "priorFailures": {
+    "17.003": "124d5ef4f937780f3d972c390d492e3f2c8b965a",
+    "16.731": "a4ebb123d3076aa8e6bc9aae817294fc4fdd87d4",
+    "statusesRemain": "FAIL"
+  },
+  "archiveWork": "Docs-only reads/copies/deterministic gzip/offline verification. No native, build, signing, install, query, producer/canonical change or retry.",
+  "matchingFixtureDomainCount": 1
+}

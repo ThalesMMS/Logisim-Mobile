@@ -1,0 +1,121 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ENTITY tb IS END ENTITY;
+ARCHITECTURE sim OF tb IS
+  SIGNAL s_a_0 : std_logic := '0';
+  SIGNAL s_b_0 : std_logic := '0';
+  SIGNAL s_c_0 : std_logic := '0';
+  SIGNAL s_d_0 : std_logic := '0';
+  SIGNAL s_w_0 : std_logic := '0';
+  SIGNAL s_y_0 : std_logic := '0';
+  SIGNAL s_z_0 : std_logic := '0';
+BEGIN
+  dut: ENTITY work.logisimTopLevelShell PORT MAP (
+    a_0 => s_a_0,
+    b_0 => s_b_0,
+    c_0 => s_c_0,
+    d_0 => s_d_0,
+    w_0 => s_w_0,
+    y_0 => s_y_0,
+    z_0 => s_z_0
+  );
+  PROCESS BEGIN
+    s_a_0 <= '0';
+    s_b_0 <= '0';
+    s_c_0 <= '0';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0000 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '0';
+    s_b_0 <= '0';
+    s_c_0 <= '0';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0001 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '0';
+    s_b_0 <= '0';
+    s_c_0 <= '1';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0010 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '0';
+    s_b_0 <= '0';
+    s_c_0 <= '1';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0011 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '0';
+    s_b_0 <= '1';
+    s_c_0 <= '0';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0100 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '0';
+    s_b_0 <= '1';
+    s_c_0 <= '0';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0101 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '0';
+    s_b_0 <= '1';
+    s_c_0 <= '1';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0110 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '0';
+    s_b_0 <= '1';
+    s_c_0 <= '1';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0111 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '0';
+    s_c_0 <= '0';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1000 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '0';
+    s_c_0 <= '0';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1001 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '0';
+    s_c_0 <= '1';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1010 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '0';
+    s_c_0 <= '1';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1011 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '1';
+    s_c_0 <= '0';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1100 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '1';
+    s_c_0 <= '0';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1101 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '1';
+    s_c_0 <= '1';
+    s_d_0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1110 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    s_a_0 <= '1';
+    s_b_0 <= '1';
+    s_c_0 <= '1';
+    s_d_0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1111 " & std_logic'image(s_y_0) & "," & std_logic'image(s_z_0) & "," & std_logic'image(s_w_0) SEVERITY NOTE;
+    WAIT;
+  END PROCESS;
+END ARCHITECTURE;

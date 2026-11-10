@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "fixture": "examples/io-showcase.circ",
+  "scope": "native-mounted-editor",
+  "qualification": "Requires native UI execution on Android and iOS. Core replay and selector preflight do not qualify this scenario.",
+  "componentTypes": {
+    "IO_BUTTON": "Button",
+    "IO_DIP": "DipSwitch",
+    "IO_JOYSTICK": "Joystick",
+    "IO_KEYBOARD": "Keyboard",
+    "IO_LED": "LED",
+    "IO_LEDBAR": "LedBar",
+    "IO_RGB": "RGBLED",
+    "IO_SEVEN_SEGMENT": "7-Segment Display",
+    "IO_HEX": "Hex Digit Display",
+    "IO_DOT_MATRIX": "DotMatrix",
+    "IO_TTY": "TTY",
+    "IO_KEYPAD": "MatrixKeypad"
+  },
+  "baselineOutputs": {
+    "OUT_BUTTON": "0",
+    "OUT_DIP0": "0",
+    "OUT_DIP1": "0",
+    "OUT_JOY_X": "1000",
+    "OUT_JOY_Y": "1000",
+    "OUT_RGB_R": "1",
+    "OUT_RGB_G": "1",
+    "OUT_RGB_B": "0",
+    "OUT_BAR_VALUE": "10100101",
+    "OUT_SEGMENTS": "00111111",
+    "OUT_KEYBOARD_DATA": "0000000",
+    "OUT_KEYBOARD_AVAILABLE": "0",
+    "OUT_CLOCK": "0",
+    "OUT_MATRIX_ROW0": "01110",
+    "OUT_KEYPAD_C0": "1",
+    "OUT_KEYPAD_C1": "1",
+    "OUT_KEYPAD_C2": "1",
+    "OUT_KEYPAD_C3": "1",
+    "OUT_LED_LEVEL": "0"
+  },
+  "displayTransitions": [
+    {
+      "source": "IN_LED_LEVEL",
+      "outputs": {
+        "OUT_LED_LEVEL": "1"
+      },
+      "visual": "IO_LED",
+      "expect": "LED on with a stable input, then off after the source is activated again",
+      "id": "led-on"
+    },
+    {
+      "source": "IN_LED_LEVEL",
+      "outputs": {
+        "OUT_LED_LEVEL": "0"
+      },
+      "visual": "IO_LED",
+      "expect": "LED off after releasing the stable source",
+      "id": "led-off"
+    },
+    {
+      "source": "IN_RGB_G",
+      "outputs": {
+        "OUT_RGB_G": "0"
+      },
+      "visual": "IO_RGB",
+      "expect": "red only after disabling the green channel",
+      "id": "rgb-red"
+    },
+    {
+      "source": "IN_RGB_B",
+      "outputs": {
+        "OUT_RGB_B": "1"
+      },
+      "visual": "IO_RGB",
+      "expect": "red and blue, with green off",
+      "id": "rgb-magenta"
+    },
+    {
+      "source": "IN_BAR_VALUE",
+      "outputs": {
+        "OUT_BAR_VALUE": "10100100"
+      },
+      "visual": "IO_LEDBAR",
+      "expect": "8 positions, literal input bits 10100100",
+      "id": "ledbar-a4"
+    },
+    {
+      "source": "IN_SEGMENTS",
+      "outputs": {
+        "OUT_SEGMENTS": "00111110"
+      },
+      "visual": "IO_SEVEN_SEGMENT",
+      "expect": "segments b to f are on; a, g and the decimal point are off",
+      "id": "segments-b-to-f"
+    },
+    {
+      "source": "IN_MATRIX_ROW_0",
+      "outputs": {
+        "OUT_MATRIX_ROW0": "01111"
+      },
+      "visual": "IO_DOT_MATRIX",
+      "expect": "top row changes from 01110 to 01111; remaining rows retain the A pattern",
+      "id": "matrix-row-f"
+    }
+  ],
+  "dip": {
+    "label": "IO_DIP",
+    "switches": [
+      {
+        "number": 1,
+        "before": "off",
+        "after": "on"
+      },
+      {
+        "number": 2,
+        "before": "off",
+        "after": "on"
+      },
+      {
+        "number": 1,
+        "before": "on",
+        "after": "off"
+      }
+    ],
+    "outputs": {
+      "OUT_DIP0": "0",
+      "OUT_DIP1": "1"
+    },
+    "persistedAttributes": {
+      "resetbehavior": "last",
+      "positions": "2"
+    },
+    "dimension": {
+      "name": "number",
+      "invalid": "0",
+      "value": "4",
+      "restore": "8"
+    }
+  },
+  "keyboard": {
+    "label": "IO_KEYBOARD",
+    "tty": "IO_TTY",
+    "text": "AB",
+    "capacity": 16,
+    "halfCyclesPerCharacter": 2,
+    "queued": {
+      "OUT_KEYBOARD_DATA": "1000001",
+      "OUT_KEYBOARD_AVAILABLE": "1"
+    },
+    "afterFirst": {
+      "outputs": {
+        "OUT_KEYBOARD_DATA": "1000010",
+        "OUT_KEYBOARD_AVAILABLE": "1"
+      },
+      "buffer": "B",
+      "ttyRows": [
+        "A",
+        "",
+        ""
+      ]
+    },
+    "afterSecond": {
+      "outputs": {
+        "OUT_KEYBOARD_DATA": "0000000",
+        "OUT_KEYBOARD_AVAILABLE": "0"
+      },
+      "buffer": "",
+      "ttyRows": [
+        "AB",
+        "",
+        ""
+      ]
+    },
+    "backspace": {
+      "controlKey": "io_ascii_backspace",
+      "data": "0001000",
+      "ttyRows": [
+        "A",
+        "",
+        ""
+      ]
+    },
+    "formFeed": {
+      "controlKey": "io_ascii_form_feed",
+      "data": "0001100",
+      "ttyRows": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "capacityEdit": {
+      "name": "buflen",
+      "value": "4",
+      "text": "ABCDE",
+      "expected": "ABCD",
+      "restore": "16"
+    }
+  },
+  "pointer": {
+    "button": {
+      "label": "IO_BUTTON",
+      "probe": "OUT_BUTTON",
+      "held": "1",
+      "released": "0",
+      "holdSeconds": 2.0,
+      "canvasPoint": "button-center"
+    },
+    "joystick": {
+      "label": "IO_JOYSTICK",
+      "right": {
+        "OUT_JOY_X": "1111",
+        "OUT_JOY_Y": "1000"
+      },
+      "centered": {
+        "OUT_JOY_X": "1000",
+        "OUT_JOY_Y": "1000"
+      },
+      "drag": {
+        "x": 0.99,
+        "y": 0.01
+      },
+      "held": {
+        "OUT_JOY_X": "1111",
+        "OUT_JOY_Y": "0001"
+      },
+      "rawHeld": {
+        "x": 14,
+        "y": -14
+      },
+      "canvasStartPoint": "joystick-center",
+      "canvasEndPoint": "joystick-top-right"
+    },
+    "keypad": {
+      "label": "IO_KEYPAD",
+      "key": "3",
+      "probe": "OUT_KEYPAD_C2",
+      "held": "0",
+      "released": "1",
+      "holdSeconds": 2.0,
+      "canvasPoint": "keypad-r0-c2"
+    }
+  },
+  "dimensionEdits": [
+    {
+      "label": "IO_LEDBAR",
+      "name": "height",
+      "value": "4",
+      "restore": "3"
+    },
+    {
+      "label": "IO_TTY",
+      "name": "rows",
+      "value": "4",
+      "restore": "3"
+    },
+    {
+      "label": "IO_TTY",
+      "name": "cols",
+      "value": "8",
+      "restore": "12"
+    },
+    {
+      "label": "IO_DOT_MATRIX",
+      "name": "matrixrows",
+      "value": "8",
+      "restore": "7"
+    },
+    {
+      "label": "IO_KEYPAD",
+      "name": "size",
+      "value": "normal",
+      "restore": "large"
+    }
+  ],
+  "requiredVisualReview": [
+    "Momentary Button and keypad are visibly pressed while held and released after pointer up/cancellation.",
+    "Joystick handle moves during drag and returns to center on release.",
+    "LED, LED bar, RGB, seven segment, hex display and dot matrix match their connected probes and the fixture labels.",
+    "TTY displays A, AB, A after ASCII backspace, and an empty screen after form feed.",
+    "Changed dimensions and font/label geometry remain visible and the selected control stays reachable."
+  ],
+  "evidence": {
+    "keep": [
+      "fixture hash",
+      "APK or app hash and source pin",
+      "native action log",
+      "native trees",
+      "screenshots",
+      "complete XML exports",
+      "during-touch video or sampled native state"
+    ],
+    "missingDuringTouchEvidence": "Do not mark held/cancelled transient states as verified from their released state alone."
+  },
+  "portVariants": [
+    {
+      "label": "IO_DIP",
+      "attributes": {
+        "number": "4"
+      },
+      "ports": [
+        {
+          "name": "switch-0",
+          "at": [
+            120,
+            290
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        },
+        {
+          "name": "switch-1",
+          "at": [
+            120,
+            300
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        },
+        {
+          "name": "switch-2",
+          "at": [
+            120,
+            310
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        },
+        {
+          "name": "switch-3",
+          "at": [
+            120,
+            320
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        }
+      ]
+    },
+    {
+      "label": "IO_DOT_MATRIX",
+      "attributes": {
+        "matrixrows": "8"
+      },
+      "ports": [
+        {
+          "name": "row-0",
+          "at": [
+            940,
+            640
+          ],
+          "direction": "INPUT",
+          "width": 5
+        },
+        {
+          "name": "row-1",
+          "at": [
+            940,
+            650
+          ],
+          "direction": "INPUT",
+          "width": 5
+        },
+        {
+          "name": "row-2",
+          "at": [
+            940,
+            660
+          ],
+          "direction": "INPUT",
+          "width": 5
+        },
+        {
+          "name": "row-3",
+          "at": [
+            940,
+            670
+          ],
+          "direction": "INPUT",
+          "width": 5
+        },
+        {
+          "name": "row-4",
+          "at": [
+            940,
+            680
+          ],
+          "direction": "INPUT",
+          "width": 5
+        },
+        {
+          "name": "row-5",
+          "at": [
+            940,
+            690
+          ],
+          "direction": "INPUT",
+          "width": 5
+        },
+        {
+          "name": "row-6",
+          "at": [
+            940,
+            700
+          ],
+          "direction": "INPUT",
+          "width": 5
+        },
+        {
+          "name": "row-7",
+          "at": [
+            940,
+            710
+          ],
+          "direction": "INPUT",
+          "width": 5
+        }
+      ]
+    },
+    {
+      "label": "IO_KEYPAD",
+      "attributes": {
+        "size": "normal"
+      },
+      "ports": [
+        {
+          "name": "row-0",
+          "at": [
+            280,
+            1030
+          ],
+          "direction": "INPUT",
+          "width": 1
+        },
+        {
+          "name": "row-1",
+          "at": [
+            290,
+            1030
+          ],
+          "direction": "INPUT",
+          "width": 1
+        },
+        {
+          "name": "row-2",
+          "at": [
+            300,
+            1030
+          ],
+          "direction": "INPUT",
+          "width": 1
+        },
+        {
+          "name": "row-3",
+          "at": [
+            310,
+            1030
+          ],
+          "direction": "INPUT",
+          "width": 1
+        },
+        {
+          "name": "column-0",
+          "at": [
+            330,
+            980
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        },
+        {
+          "name": "column-1",
+          "at": [
+            330,
+            990
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        },
+        {
+          "name": "column-2",
+          "at": [
+            330,
+            1000
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        },
+        {
+          "name": "column-3",
+          "at": [
+            330,
+            1010
+          ],
+          "direction": "OUTPUT",
+          "width": 1
+        }
+      ]
+    }
+  ]
+}

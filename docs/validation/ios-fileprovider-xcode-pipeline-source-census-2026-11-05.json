@@ -1,0 +1,194 @@
+{
+  "evidence": {
+    "scope": "Read-only local file inspection and pinned Apple swift-build source downloads. No build, signing, installation, target launch, Simulator API, configuration edit, or test.",
+    "capturedUTC": "2026-11-05T07:50:03.082305+00:00",
+    "xcodeVersion": "27.2",
+    "xcodeBuild": null,
+    "sdkVersion": "27.2",
+    "sdkCanonicalName": "iphonesimulator27.2",
+    "sdkDefaultProperties": {
+      "AD_HOC_CODE_SIGNING_ALLOWED": "YES",
+      "CODE_SIGN_IDENTITY": "-",
+      "CODE_SIGNING_REQUIRED": "YES",
+      "ENTITLEMENTS_DESTINATION": "__entitlements",
+      "ENTITLEMENTS_REQUIRED": "YES",
+      "CODE_SIGN_ENTITLEMENTS": ""
+    },
+    "localInputs": [
+      {
+        "path": "/Applications/Xcode.app/Contents/SharedFrameworks/SwiftBuild.framework/Versions/A/PlugIns/SWBBuildService.bundle/Contents/PlugIns/SWBApplePlatformPlugin.bundle/Contents/Frameworks/SWBApplePlatform.framework/Versions/A/Resources/Embedded-Simulator.xcspec",
+        "file": "local-Embedded-Simulator.xcspec",
+        "bytes": 2336,
+        "sha256": "4e1eabad3ee62995bfbebec304fedec08a7a5e8a46704b253d5db3f9845afdc3"
+      },
+      {
+        "path": "/Applications/Xcode.app/Contents/SharedFrameworks/SwiftBuild.framework/Versions/A/PlugIns/SWBBuildService.bundle/Contents/Frameworks/SWBCore.framework/Versions/A/Resources/CoreBuildSystem.xcspec",
+        "file": "local-CoreBuildSystem.xcspec",
+        "bytes": 199816,
+        "sha256": "81cf0bcf9215a08fad6ef7f2ccd2f6817186012416219c56a35a7ba86f36c196"
+      },
+      {
+        "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/SDKSettings.json",
+        "file": "local-SDKSettings.json",
+        "bytes": 2703,
+        "sha256": "deb9d0f0fcacac1ba3b606f6b2772fa043ef64814b848cb1deb78f7997f96759"
+      },
+      {
+        "path": "/Applications/Xcode.app/Contents/Info.plist",
+        "file": "local-Xcode-Info.plist",
+        "bytes": 34539,
+        "sha256": "f2d3a11a2d6efcd6c5da80214b33fc2d2ce38aa72d4281867f5157a3dbe5cfc6"
+      }
+    ],
+    "upstreamPin": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+    "embeddedSimulatorSpecByteEqualToPinnedUpstream": true,
+    "gatingSourceLines": {
+      "Settings.swift": [
+        [
+          4033,
+          4050
+        ],
+        [
+          4155,
+          4185
+        ],
+        [
+          4201,
+          4227
+        ]
+      ],
+      "SigningSupport.swift": [
+        [
+          94,
+          109
+        ]
+      ],
+      "Embedded-Simulator.xcspec": [
+        [
+          40,
+          66
+        ]
+      ]
+    },
+    "interpretation": "The SDK selects simulated entitlement sections and ad-hoc identity. The pinned upstream implementation exits signing-settings computation when CODE_SIGNING_ALLOWED is false, so its simulator linker section overrides are not produced. This is a source-level explanation consistent with the retained fixture log and missing sections, not proof that an unbuilt replacement registers the provider.",
+    "limits": [
+      "Pinned upstream source is not a binary identity claim for the installed build service.",
+      "No runtime File Provider or Simulator behavior was exercised.",
+      "No Team or profile was selected, and no credential or signing service was accessed.",
+      "Manual identity dash follows local SDK defaults but the proposed builder still requires a new artifact build and section verification."
+    ]
+  },
+  "upstreamInputs": [
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBCore/SpecImplementations/Tools/ProductPackaging.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBCore/SpecImplementations/Tools/ProductPackaging.swift",
+      "file": "ProductPackaging.swift",
+      "status": 200,
+      "bytes": 19243,
+      "sha256": "b0be4244b018e07d81c0b6d17ff70c5ba6af631bedc6597549633c8fcafe5c61"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBTaskExecution/TaskActions/ProcessProductEntitlementsTaskAction.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBTaskExecution/TaskActions/ProcessProductEntitlementsTaskAction.swift",
+      "file": "ProcessProductEntitlementsTaskAction.swift",
+      "status": 200,
+      "bytes": 18790,
+      "sha256": "145067272e78132a9f691244faee21a19edfb75b56fb83edc952beab81fb17dc"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Tests/SWBBuildSystemTests/EntitlementsBuildOperationTests.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Tests/SWBBuildSystemTests/EntitlementsBuildOperationTests.swift",
+      "file": "EntitlementsBuildOperationTests.swift",
+      "status": 200,
+      "bytes": 35351,
+      "sha256": "ee7d8c802b37416653943aa1b3270b77f4e448c854777481a799c2627aeea99a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBTaskConstruction/TaskProducers/OtherTaskProducers/ProductPostprocessingTaskProducer.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBTaskConstruction/TaskProducers/OtherTaskProducers/ProductPostprocessingTaskProducer.swift",
+      "file": "ProductPostprocessingTaskProducer.swift",
+      "status": 200,
+      "bytes": 74054,
+      "sha256": "e7f9f8984f7b40f9faf051ec57996c0616113472286697d6e220c23eafe97d50"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBCore/Settings/Settings.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBCore/Settings/Settings.swift",
+      "file": "Settings.swift",
+      "status": 200,
+      "bytes": 375240,
+      "sha256": "a0fa031202ba964e29cdd8561dbb22d649aaa79a757f09518b61a7818721a1ae"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBCore/SigningSupport.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBCore/SigningSupport.swift",
+      "file": "SigningSupport.swift",
+      "status": 200,
+      "bytes": 4417,
+      "sha256": "8840147456f8489c45acfbbb1027200e7deadd58514ab2ebc65bf5b44c8acc74"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBTaskConstruction/TaskProducers/OtherTaskProducers/ProductStructureTaskProducer.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBTaskConstruction/TaskProducers/OtherTaskProducers/ProductStructureTaskProducer.swift",
+      "file": "ProductStructureTaskProducer.swift",
+      "status": 200,
+      "bytes": 15568,
+      "sha256": "dad259d642132c96e6b76c6ab1debd47df9034148a480712d2a1b76c03ca7819"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBApplePlatform/Specs/Embedded-Simulator.xcspec",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBApplePlatform/Specs/Embedded-Simulator.xcspec",
+      "file": "upstream-Embedded-Simulator.xcspec",
+      "status": 200,
+      "bytes": 2336,
+      "sha256": "4e1eabad3ee62995bfbebec304fedec08a7a5e8a46704b253d5db3f9845afdc3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBCore/Provisioning.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBCore/Provisioning.swift",
+      "file": "Provisioning.swift",
+      "status": 200,
+      "bytes": 3435,
+      "sha256": "514aa281767d7b06e9a9bd08be8c5383a2df363b019277d88ae8047d3ab04b0a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBCore/ProvisioningTaskInputs.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBCore/ProvisioningTaskInputs.swift",
+      "file": "ProvisioningTaskInputs.swift",
+      "status": 200,
+      "bytes": 5928,
+      "sha256": "58af6f0899e518aa96d4f68d2c0094b51f4036cdb62de7351dd9d2558f4a9a0e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SWBBuildService/PlanningOperation.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SWBBuildService/PlanningOperation.swift",
+      "file": "PlanningOperation.swift",
+      "status": 200,
+      "bytes": 27898,
+      "sha256": "d9bccbfb2ac9d87e4e2ae9ff36009c3470937dd1893b62fb086734a7d9afbec8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/swiftlang/swift-build/c9e5ce18b6653517a5179b7ab7e0f07c7cd49233/Sources/SwiftBuild/ConsoleCommands/SWBServiceConsoleBuildCommand.swift",
+      "commit": "c9e5ce18b6653517a5179b7ab7e0f07c7cd49233",
+      "sourcePath": "Sources/SwiftBuild/ConsoleCommands/SWBServiceConsoleBuildCommand.swift",
+      "file": "SWBServiceConsoleBuildCommand.swift",
+      "status": 200,
+      "bytes": 26432,
+      "sha256": "f55d8c4e09363a0653871bddb4dd4f50864eb44346606686293f7d5bdc230e61"
+    }
+  ],
+  "nativeExecution": "NOT_RUN",
+  "newArtifactBuilt": false,
+  "runtimeRegistrationCauseEstablished": false
+}

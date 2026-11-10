@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project source="5.1.0-dev" version="1.0">
+  <lib desc="#Wiring" name="0" />
+  <lib desc="#Gates" name="1" />
+  <lib desc="#Memory" name="2" />
+  <options>
+    <a name="simrand" val="0" />
+  </options>
+  <main name="RamFeedback" />
+  <circuit name="RamFeedback">
+    <comp lib="2" loc="(300,100)" name="RAM">
+      <a name="addrWidth" val="2" />
+      <a name="dataWidth" val="1" />
+      <a name="appearance" val="classic" />
+      <a name="databus" val="bibus" />
+      <a name="enables" val="byte" />
+      <a name="trigger" val="rising" />
+      <a name="asyncread" val="true" />
+      <a name="clearpin" val="true" />
+    </comp>
+    <comp lib="1" loc="(250,170)" name="NOT Gate">
+      <a name="size" val="30" />
+    </comp>
+    <comp lib="1" loc="(640,190)" name="NOT Gate">
+      <a name="size" val="30" />
+    </comp>
+    <comp lib="0" loc="(300,110)" name="Pin">
+      <a name="type" val="input" />
+      <a name="facing" val="east" />
+      <a name="width" val="2" />
+      <a name="label" val="ADDR" />
+    </comp>
+    <comp lib="0" loc="(300,150)" name="Pin">
+      <a name="type" val="input" />
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="label" val="WE" />
+    </comp>
+    <comp lib="0" loc="(300,160)" name="Pin">
+      <a name="type" val="input" />
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="label" val="OE" />
+    </comp>
+    <comp lib="0" loc="(220,170)" name="Pin">
+      <a name="type" val="input" />
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="label" val="CLK" />
+    </comp>
+    <comp lib="0" loc="(340,100)" name="Pin">
+      <a name="type" val="input" />
+      <a name="facing" val="east" />
+      <a name="width" val="1" />
+      <a name="label" val="CLR" />
+    </comp>
+    <wire from="(250,170)" to="(300,170)" />
+    <wire from="(540,190)" to="(610,190)" />
+    <wire from="(640,190)" to="(640,300)" />
+    <wire from="(640,300)" to="(260,300)" />
+    <wire from="(260,300)" to="(260,190)" />
+    <wire from="(260,190)" to="(300,190)" />
+  </circuit>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <provider android:name="dev.logisim.mobile.documents.DocumentFixtureProvider"
+            android:authorities="${applicationId}.documents" android:exported="true"
+            android:grantUriPermissions="true" android:permission="android.permission.MANAGE_DOCUMENTS"
+            android:process=":provider">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+        <receiver android:name="dev.logisim.mobile.documents.DocumentFixtureBootstrapReceiver" android:exported="true" />
+        <activity android:name="dev.logisim.mobile.documents.DocumentFixtureLauncherActivity" android:exported="true" />
+        <activity android:name="dev.logisim.mobile.documents.DocumentClipboardReaderActivity" android:exported="true" />
+        <activity android:name="dev.logisim.mobile.documents.DocumentShareReceiverActivity"
+            android:label="Document test receiver: ${applicationId}" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/x-logisim-circuit" />
+                <data android:mimeType="image/png" />
+                <data android:mimeType="image/svg+xml" />
+                <data android:mimeType="application/pdf" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

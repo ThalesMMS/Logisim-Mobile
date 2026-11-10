@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 1179, in main
+    run_portable(scenarios, mode=args.portable_mode)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 501, in run_portable
+    scenarios.run(f"portable-{selected}-storage-roundtrip", actions[selected])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 487, in folder
+    self.roundtrip("folder", before)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 433, in roundtrip
+    self.open_bundle(restored_filename)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 337, in open_bundle
+    self.s.choose_downloads()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 830, in choose_downloads
+    root = screen()
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 766, in screen
+    root = self.ui.screen(timeout=limit)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_ui.py", line 93, in screen
+    return self._screen_uiautomator(timeout)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_ui.py", line 219, in _screen_uiautomator
+    raise AssertionError(f"No fresh Android UI hierarchy within {timeout}s: {last_error}")
+AssertionError: No fresh Android UI hierarchy within 1.4688992500014137s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-a0fc665e4ca24756ae4636a8e29e7282-99.xml']' timed out after 1.46889087499585 seconds

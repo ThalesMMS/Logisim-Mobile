@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "baseSource": "85db96805e35067aa0e8a3ce1e54fbdbda91261e",
+  "scope": "Offline SDK-helper and client protocol change only. No app/helper APK build, device use or native rerun.",
+  "observations": [
+    {
+      "case": "external61",
+      "sourceDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/external-io-native-ce3/outputs/native61-ce3-5558-001/run",
+      "originalSnapshot": "focus-snapshot-bd5708bd15894ba8aae56d968418523e-47.json",
+      "failureReceipt": "external61/failure.json",
+      "originalState": "ERROR",
+      "rootAttempts": 9,
+      "rootWaitMillis": 1167,
+      "captureElapsedMillis": 1168,
+      "captureOverrunMillis": 168,
+      "pid": "10069",
+      "rootSource": "unavailable",
+      "rootWindowId": -1,
+      "traversalNodes": 0,
+      "collectors": [
+        {
+          "path": "external61/collector-48.json",
+          "status": "complete",
+          "appPidBefore": "10069",
+          "appPidAfter": "10069",
+          "captureState": "COMPLETE",
+          "note": "Failure artifact collector only; not a retry of the failed screen/scenario."
+        },
+        {
+          "path": "external61/collector-49.json",
+          "status": "complete",
+          "appPidBefore": "10069",
+          "appPidAfter": "10069",
+          "captureState": "COMPLETE",
+          "note": "Failure artifact collector only; not a retry of the failed screen/scenario."
+        }
+      ]
+    },
+    {
+      "case": "fpga65",
+      "sourceDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-pairing-scope/outputs/fpga-native-ce3e061d-002",
+      "originalSnapshot": "focus-snapshot-9761b642e046485e920929dfcfd88fe4-1.json",
+      "failureReceipt": "fpga65/failure.json",
+      "originalState": "ERROR",
+      "rootAttempts": 9,
+      "rootWaitMillis": 1003,
+      "captureElapsedMillis": 1003,
+      "captureOverrunMillis": 3,
+      "pid": "21917",
+      "rootSource": "unavailable",
+      "rootWindowId": -1,
+      "traversalNodes": 0,
+      "collectors": [
+        {
+          "path": "fpga65/collector-2.json",
+          "status": "complete",
+          "appPidBefore": "21917",
+          "appPidAfter": "21917",
+          "captureState": "COMPLETE",
+          "note": "Failure artifact collector only; not a retry of the failed screen/scenario."
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "client": {
+      "passed": 33,
+      "log": "client-green.log"
+    },
+    "pureJavaPolicy": {
+      "passed": 11,
+      "log": "policy-green.log"
+    },
+    "baselineDiscriminatingChecks": {
+      "failed": 3,
+      "log": "client-red.log",
+      "initialInvocationError": "client-red-initial-invocation-error.log",
+      "note": "The first baseline invocation used incomplete unittest module names; it did not execute tests and is preserved separately. The corrected baseline execution ran all three selected cases and failed their expected behavioral assertions."
+    }
+  },
+  "limits": [
+    "Original failures remain ERROR/IllegalStateException and are not retroactively accepted by the new client.",
+    "The corrected helper APK is required for ROOT_UNAVAILABLE; it has not been built here.",
+    "The cause of Android/Compose root unavailability is not established.",
+    "The 1000ms helper budget is nominal; binder calls can overrun and diagnostics preserve that overrun.",
+    "Post-failure complete snapshots came from collectors, not a successful same-screen retry.",
+    "Mixed incomplete-tree/root-unavailable helper histories remain terminal in the client.",
+    "Existing COMPLETE-tree node package/window identity limitations are outside this change."
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2974,
+      "sha256": "c0151c9ec31614bcfaeaa80d864c36fc5a71300e5773d19d53d896bc258fb072"
+    },
+    {
+      "path": "client-green.log",
+      "bytes": 5510,
+      "sha256": "7750e1c9a7f71a9be28c7620a6da087522031f015a0da7b52b63cad7f89ad71e"
+    },
+    {
+      "path": "client-red-initial-invocation-error.log",
+      "bytes": 2051,
+      "sha256": "fc4e831fcdbfe115a99494bb941848a3b948b5636e7dfcb7c3c026dd7f56e14e"
+    },
+    {
+      "path": "client-red.log",
+      "bytes": 4164,
+      "sha256": "6c8901d015056a739fe82a9a866d761aae1a8d03d61fac743afd558f877502bd"
+    },
+    {
+      "path": "external61/collector-48.json",
+      "bytes": 19975,
+      "sha256": "bd2fd2f40c6c081146181dd820d8b8af61954c749d8a5c5d8972f8af08275f84"
+    },
+    {
+      "path": "external61/collector-49.json",
+      "bytes": 19975,
+      "sha256": "734d91ffad19877cadb927d6d0101f6ad62d0f423af573df8cdfe2ab97a94d76"
+    },
+    {
+      "path": "external61/failure.json",
+      "bytes": 3031,
+      "sha256": "922b55520c2864d24bd2ee4c88eccf4a1eea8e75c2e7c9197e4da0b79e93b3c9"
+    },
+    {
+      "path": "external61/failure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "external61/failure.stdout.txt",
+      "bytes": 1383,
+      "sha256": "d2539f1925f4465cd589fbbe98759f35d935fc6815c693f1b4a923a2208b3833"
+    },
+    {
+      "path": "fpga65/collector-2.json",
+      "bytes": 19982,
+      "sha256": "21e71e05818df668f904cabb076d821621a8626869222cb9d3e239c49ac062b5"
+    },
+    {
+      "path": "fpga65/failure.json",
+      "bytes": 3025,
+      "sha256": "b7284fe7d74d87548009406406c5d8b872176d5dedead8ffef5220dae4794b37"
+    },
+    {
+      "path": "fpga65/failure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "fpga65/failure.stdout.txt",
+      "bytes": 1381,
+      "sha256": "97d488bd821e620e744b10fcb8f305fccf98472ac46b95bb50b94a19dc633698"
+    },
+    {
+      "path": "policy-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "policy-green.log",
+      "bytes": 61,
+      "sha256": "bcd75a521281fcf4a9db63a4d11022f6c50c54ddac1e498781566f6f95857b58"
+    }
+  ],
+  "independentReview": {
+    "result": "PASS",
+    "reviewer": "protocol_review",
+    "scope": "Verbatim source delta, 15 packet file hashes/sizes and nine original raw/collector copies; no repeated tests, build or device action."
+  },
+  "sourceFiles": [
+    {
+      "path": "androidSnapshot/src/main/java/dev/logisim/mobile/documents/SnapshotCaptureRetry.java",
+      "bytes": 5751,
+      "sha256": "5e4c9f58d4ad10afca3527d107de7b27f5f1983483c365c51f9150eda6b4aae7"
+    },
+    {
+      "path": "androidSnapshot/src/main/java/dev/logisim/mobile/documents/UiSnapshotInstrumentation.java",
+      "bytes": 17747,
+      "sha256": "b99a3b4b87feedc07f434d502d4b08448df940798b6031a6fd03567077c2562c"
+    },
+    {
+      "path": "androidSnapshot/src/test/java/dev/logisim/mobile/documents/SnapshotCaptureRetryTest.java",
+      "bytes": 15731,
+      "sha256": "c5b79ba4e6d650fda634c6b7141e434df8135518ac3e0e9a56f9a4fe65ce0b27"
+    },
+    {
+      "path": "scripts/android_ui.py",
+      "bytes": 45445,
+      "sha256": "8afbbc3514a2dcc33939f4c7a4bc9ec1674b54c2eb4610a5764336238057a634"
+    },
+    {
+      "path": "scripts/test_android_focus_snapshot.py",
+      "bytes": 40683,
+      "sha256": "6ffd32e07777625eca6409324899622df79ce7b53e45ee20c37074396e4628c9"
+    }
+  ]
+}

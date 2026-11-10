@@ -1,0 +1,367 @@
+{
+  "status": "PASS",
+  "qualification": "PARTIAL",
+  "scope": "One mounted Android native focus scenario; no overall issue #27 completion is inferred.",
+  "serial": "emulator-5558",
+  "androidApi": 35,
+  "fingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "appProducer": "85da031e4ed11474c2e763976392729810ef142d",
+  "productionSource": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "testProducer": "f4f72c6de53fbd634703ed23f066af88f58d5485",
+  "testOriginalPatch": "4a1658d753ca124df22a267cd1b1fe987c9bceb9",
+  "caseElapsedMillis": 23281,
+  "wrapperElapsedSeconds": 28.006,
+  "artifacts": {
+    "appSha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+    "testSha256": "04a4fdecd9dfdae6577ce040a7595e8c96bb62ac821080ee6faa0f1de7cde52f"
+  },
+  "installedArtifactsAfter": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~9Sqzr9mtAcveSVavITQCPw==/thalesmms.logisim.mobile.e2e-7CjIyG4Br0wG2Ya8ARvAqA==/base.apk",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~LFm_Oo1ycKzmd6my8TGqrA==/thalesmms.logisim.mobile.e2e.test-yjTgLHbIq2BPUVg3njC7vQ==/base.apk",
+      "sha256": "04a4fdecd9dfdae6577ce040a7595e8c96bb62ac821080ee6faa0f1de7cde52f"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~joKBPD0csRnjSJ8UjqmpqA==/thalesmms.logisim.mobile.snapshot.e2e.test-ZgQ0q2QzBTYADh-BX_MBJw==/base.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "nativeRecords": {
+    "total": 28,
+    "kinds": {
+      "input-session": 1,
+      "foreground-guard": 7,
+      "motion": 4,
+      "key": 16
+    },
+    "injectedEvents": 20,
+    "allInjectedEventsAccepted": true,
+    "foregroundGuards": 7,
+    "allForegroundGuardsAccepted": true
+  },
+  "assertions": {
+    "textFieldShortcutPreservesComponentCount": 3,
+    "labelClearOnlyChangesOriginalLabel": true,
+    "canvasShortcutAddsOnlyClone": {
+      "id": "c1",
+      "loc": "(220,120)"
+    },
+    "originalNot": {
+      "id": "mi-not",
+      "loc": "(200,100)"
+    },
+    "wireCountRemains": 2,
+    "completeXmlCompared": true
+  },
+  "focusViewportProof": {
+    "before": {
+      "frame": {
+        "windowId": 10673,
+        "canvas": {
+          "left": 0,
+          "top": 647,
+          "right": 1080,
+          "bottom": 2119
+        },
+        "inputBounds": {
+          "left": 413,
+          "top": 1258,
+          "right": 539,
+          "bottom": 1384
+        },
+        "input": {
+          "x": 476,
+          "y": 1321
+        },
+        "outputBounds": {
+          "left": 926,
+          "top": 1258,
+          "right": 1052,
+          "bottom": 1384
+        },
+        "output": {
+          "x": 989,
+          "y": 1321
+        }
+      },
+      "targetTag": "canvas-component:mi-not",
+      "targetBounds": {
+        "left": 634,
+        "top": 1258,
+        "right": 760,
+        "bottom": 1384
+      },
+      "targetPoint": {
+        "x": 697,
+        "y": 1321
+      }
+    },
+    "pixelsPerWorld": 2.331818103790283,
+    "worldDelta": {
+      "x": 0,
+      "y": 0
+    },
+    "labelClearVerified": true,
+    "pointKind": "TRANSLATED_BY_COMMON_ANCHORS",
+    "after": {
+      "windowId": 10673,
+      "canvas": {
+        "left": 0,
+        "top": 647,
+        "right": 1080,
+        "bottom": 2119
+      },
+      "inputBounds": {
+        "left": 413,
+        "top": 1231,
+        "right": 539,
+        "bottom": 1357
+      },
+      "input": {
+        "x": 476,
+        "y": 1294
+      },
+      "outputBounds": {
+        "left": 926,
+        "top": 1231,
+        "right": 1052,
+        "bottom": 1357
+      },
+      "output": {
+        "x": 989,
+        "y": 1294
+      }
+    },
+    "lastObservedWindowId": 10673,
+    "complete": true,
+    "validated": true,
+    "anchorDisplacements": {
+      "input": {
+        "x": 0,
+        "y": -27
+      },
+      "output": {
+        "x": 0,
+        "y": -27
+      }
+    },
+    "authorizedPoint": {
+      "x": 697,
+      "y": 1294
+    },
+    "translatedPoint": {
+      "x": 697,
+      "y": 1294
+    }
+  },
+  "lastAnrUnchanged": true,
+  "lastAnrSha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+  "postRunProcess": {
+    "pidQuery": {
+      "returnCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "exitInfoLatest": "USER REQUESTED / FORCE STOP; stop thalesmms.logisim.mobile.e2e due to finished inst; PID 9610",
+    "appNotRelaunched": true
+  },
+  "preflight": {
+    "onlyTestApkInstalled": true,
+    "appNotReinstalledOrCleared": true,
+    "compiledManifestsCheckedBeforeAdb": true,
+    "readOnlyGuardCorrectionPreserved": true,
+    "activityConfirmation": {
+      "retained": "raw/preflight/activity-confirmation.txt",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-native-beta-focus4a-preflight/activity-confirmed-before-test-install.txt",
+      "sha256": "129a1772f9e466b0a711662635aba8b0f9a7d3305952f04684ac84a69d8425ce",
+      "sizeBytes": 38102,
+      "retainedByteIdentical": true
+    }
+  },
+  "concurrency": {
+    "otherSerial": "emulator-5556",
+    "case": "dimensions",
+    "ownerHandle": 93920,
+    "performanceQualification": false
+  },
+  "independentReview": {
+    "agent": "/root/android_files/native_focus_prepare/review_delta",
+    "finding": "No blocking issue in this selected-case PASS",
+    "reviewed": "Complete XMLs, source hashes, identities, input acceptance, frame proof and unchanged ANR"
+  },
+  "limits": [
+    "Emulator API 35 and synthesized input only.",
+    "Only the focus case was requested; other mixed-input cases are outside this receipt.",
+    "The focus-only viewport opt-in did not change CANCEL or mixed guards, product code or the input injector.",
+    "No post-run PID stability is claimed; Android recorded finished inst.",
+    "Concurrent Dimensions execution on another emulator prevents performance qualification."
+  ],
+  "rawSourceDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-native-beta-focus4a-r1",
+  "rawFiles": [
+    {
+      "path": "raw/build/aapt2-manifest.txt",
+      "sha256": "2517d0b7e0fc0e2477b051616a5e0c7cd7b0b4abaeef791bfa6984c4427256a8",
+      "sizeBytes": 5618
+    },
+    {
+      "path": "raw/build/build-receipt.json",
+      "sha256": "1db5a1b31ec623e10a3bf2bc00f5ae5ebba88fd76c9bf2d8e89dd827bdc2ab3a",
+      "sizeBytes": 3616
+    },
+    {
+      "path": "raw/build/canvas-observation-tests.log",
+      "sha256": "27895f3c14ed9c5c756b617c3e32399faebb0b1cde955bc6f3a9cf885478dc3c",
+      "sizeBytes": 3391
+    },
+    {
+      "path": "raw/build/geometry-probe.log",
+      "sha256": "9fbede92d10bc7d2656c01dc6ba0fd8f717a6325512dfebc96a2f35978a00c58",
+      "sizeBytes": 608
+    },
+    {
+      "path": "raw/build/gradle-assembly.log",
+      "sha256": "c5179cb7fdd37397d508f0efff1f1f9ee9e1aa304cf8d8b25d324246e916b48f",
+      "sizeBytes": 8686
+    },
+    {
+      "path": "raw/build/local-checks-receipt.json",
+      "sha256": "f1e4afaf99678a9183e5846d1c3afcd7155ab81e86de0123ddeb332e439043fc",
+      "sizeBytes": 10369
+    },
+    {
+      "path": "raw/preflight/activity-confirmation.txt",
+      "sha256": "129a1772f9e466b0a711662635aba8b0f9a7d3305952f04684ac84a69d8425ce",
+      "sizeBytes": 38102
+    },
+    {
+      "path": "raw/preflight/app-compiled-manifest.txt",
+      "sha256": "b0585ac444a0e85fe5e50e688a2b3cf2099506225bdf4b981e7a87c49029860d",
+      "sizeBytes": 12401
+    },
+    {
+      "path": "raw/preflight/before-test-install.png",
+      "sha256": "06cec0bf0ea24c298c656dee229da4e94f3825cf8bc6c782e764405424087903",
+      "sizeBytes": 190095
+    },
+    {
+      "path": "raw/preflight/preflight.json",
+      "sha256": "0ad89b5cf2e04c7031c3dddb099e678e06b7cc1261b7db39f237dd3d420184fc",
+      "sizeBytes": 3556
+    },
+    {
+      "path": "raw/preflight/snapshot-compiled-manifest.txt",
+      "sha256": "f7364dd411bd7969f4179a48165f990fdfee090e4830bb93e92c1bd8c2d675f4",
+      "sizeBytes": 2055
+    },
+    {
+      "path": "raw/preflight/test-compiled-manifest.txt",
+      "sha256": "2517d0b7e0fc0e2477b051616a5e0c7cd7b0b4abaeef791bfa6984c4427256a8",
+      "sizeBytes": 5618
+    },
+    {
+      "path": "raw/preflight/test-install.txt",
+      "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+      "sizeBytes": 36
+    },
+    {
+      "path": "raw/run/exit-info-after.txt",
+      "sha256": "dde59c1f03004159dec3d5217303d6cc56114c7b2c93df4ea1b4155593eb1f59",
+      "sizeBytes": 6509
+    },
+    {
+      "path": "raw/run/installed-artifacts-after.json",
+      "sha256": "b3cd0275bbff426b21332da22e2921ff196f7ce859e56070e2a59bc00f61d271",
+      "sizeBytes": 1276
+    },
+    {
+      "path": "raw/run/instrumentation.txt",
+      "sha256": "7da54a03e718e7aeee3a5f0b91cba804934f06c1f408deba3efa7f959460aba5",
+      "sizeBytes": 64228
+    },
+    {
+      "path": "raw/run/lastanr-after.txt",
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sizeBytes": 88
+    },
+    {
+      "path": "raw/run/lastanr-before.txt",
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sizeBytes": 88
+    },
+    {
+      "path": "raw/run/manifest.json",
+      "sha256": "b870482e0bcd2bd2c522571a5794c8d5456e96e1a17990b3b8339ec50d8e9cf6",
+      "sizeBytes": 110795
+    },
+    {
+      "path": "raw/run/native/0-fixture.circ",
+      "sha256": "d4bb08cb3017338b192ad499bd32e8844025bb0ba81e29d44ce3049fd84811a2",
+      "sizeBytes": 1185
+    },
+    {
+      "path": "raw/run/native/1-focus-after.circ",
+      "sha256": "258f70427f22379c9ef5acdf23c087a1c4b274005a6136987cd4eeab4e12c64b",
+      "sizeBytes": 1164
+    },
+    {
+      "path": "raw/run/native/2-focus-canvas-duplicate.circ",
+      "sha256": "d99cd1a0959779c2f035f7b4354a6f99f00f9ce0a705f8f147e0a675605e8eff",
+      "sizeBytes": 1412
+    },
+    {
+      "path": "raw/run/native/focus-complete.png",
+      "sha256": "c1e6dbac1da9e36b415c01dbe032b5e6d6f4903e7c9d282971e2d9a7e9bc99e9",
+      "sizeBytes": 185232
+    },
+    {
+      "path": "raw/run/native/focus-text-field.png",
+      "sha256": "ac48f3583aab9c9ccfee3cfbd62463990723e847fd01c63c7446ca8381bd2d9c",
+      "sizeBytes": 144229
+    },
+    {
+      "path": "raw/run/native/result.json",
+      "sha256": "5df290d8e11b004ab5b4b3e5c2421d100d28c872c531d11f73a7f2cbf2b1274b",
+      "sizeBytes": 102990
+    },
+    {
+      "path": "raw/run/producer-provenance.json",
+      "sha256": "2a18af2d00090cc8774a8b2128f5eb7d8cca64883ea474765cf3f69c04a48b1c",
+      "sizeBytes": 724
+    },
+    {
+      "path": "raw/run/source/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeCanvasObservation.java",
+      "sha256": "6f95d44bb690a4b7644e1d749ed5f75ceeb792ce48b5ba3c4ac8557267141c90",
+      "sizeBytes": 7731
+    },
+    {
+      "path": "raw/run/source/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java",
+      "sha256": "9835a5a753ed9e486d7dd3df760d6ffa93f4ec53f8e5201fef61ece595e2544c",
+      "sizeBytes": 17970
+    },
+    {
+      "path": "raw/run/source/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt",
+      "sha256": "ec683d6f27c4e984894083c414da54367372e5fc72fe9b31409a16cd591dc49e",
+      "sizeBytes": 63173
+    },
+    {
+      "path": "raw/run/source/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/NativeTargetGeometry.kt",
+      "sha256": "bb125e48a174c40e5cec26a5ccfbab81dd58df333f8b89fa3e4d8b993cc1e05b",
+      "sizeBytes": 1948
+    },
+    {
+      "path": "raw/run/source/scripts/run-android-mixed-input.py",
+      "sha256": "3f6ac37dc3cc9acb434a1c0c6f867ab12be3c0f4d9d6f8f2fcc3085dd0cb28e8",
+      "sizeBytes": 11213
+    }
+  ],
+  "rawCaptureWhitespace": {
+    "path": "raw/preflight/activity-confirmation.txt",
+    "policy": "Preserve captured bytes; local Git attribute disables whitespace lint for only this raw dump."
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+  "origin": "app-export",
+  "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/folder/documents/portable-folder-evidence/export-before-restart.lsebdl",
+  "mobile": {
+    "circuitIds": {
+      "Top53": "circuit-top53",
+      "Bridge53": "library:19dff572b0b0682f:circuit-bridge53",
+      "Cell53": "library:6105e5af1319e59c:circuit-cell53"
+    },
+    "definitions": 3,
+    "components": 11,
+    "wires": 7,
+    "runtimeInstances": 4,
+    "componentIds": {
+      "Top53": [
+        "instance-first53",
+        "instance-second53",
+        "out-first53",
+        "out-second53",
+        "source-first53",
+        "source-second53"
+      ],
+      "Bridge53": [
+        "bridge-cell53",
+        "bridge-in53",
+        "bridge-out53"
+      ],
+      "Cell53": [
+        "cell-in53",
+        "cell-out53"
+      ]
+    },
+    "topLabels": [
+      "FIRST53",
+      "SECOND53"
+    ],
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    },
+    "sourceMarkers": [
+      "bridge53",
+      "cell53",
+      "main53"
+    ],
+    "sourcePaths": {
+      "main53": "main.circ",
+      "cell53": "library/library_7a302aa2f704da57.circ",
+      "bridge53": "library/library_9169bf9cdc4ad914.circ"
+    },
+    "zipEntries": [
+      "library/library_7a302aa2f704da57.circ",
+      "library/library_9169bf9cdc4ad914.circ",
+      "main.circ",
+      "manifest.xml"
+    ],
+    "opaqueEntries": {},
+    "archiveSha256": "d9ff48bdcb17770ecfc11b37309b92cf0bcb1bb15ed3b24000c78fd0634bbe0e"
+  },
+  "desktop": {
+    "status": "PASSED",
+    "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+    "definitions": [
+      "Top53",
+      "Bridge53",
+      "Cell53"
+    ],
+    "topInstances": 2,
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    }
+  },
+  "recordedAtUtc": "2026-11-05T04:59:32.443316+00:00",
+  "sourceRevision": "2832d29b053da7026540dcc63bd62aed1d040845",
+  "worktreeDirty": false,
+  "oracleSourcesSha256": {
+    "scripts/portable/Portable53Oracle.kt": "ca53e5c8b4207a40887ec6dc8ff87a06c6fd5997c5ee61059498758152f73d8d",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt": "03eab1e7e489cad53d18f26e4e8984eeddecc9fca5ced868446a555461fe9f57",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt": "e09e9fca28c47b36f299e71b708bc3f07d2cbf69f88a2c1087147cdcd6a8ec9b",
+    "scripts/verify-portable53.py": "bd01e28d8b9b42165a67be92255f8d164a858cdd53d58020bfa0d48558a50a2f",
+    "scripts/portable_receipt_contract.py": "46785e0f07abb65c94824f09a544c2b052b6d963b9c9005a9612ab44ac234360"
+  },
+  "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+  "referenceDesktopSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+  "validatedExports": [
+    {
+      "role": "artifact",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/folder/documents/portable-folder-evidence/export-before-restart.lsebdl",
+      "sha256": "d9ff48bdcb17770ecfc11b37309b92cf0bcb1bb15ed3b24000c78fd0634bbe0e",
+      "afterRestart": false,
+      "desktopChecked": true
+    },
+    {
+      "role": "peer",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/folder/documents/portable-folder-evidence/export-after-restart.lsebdl",
+      "sha256": "d9ff48bdcb17770ecfc11b37309b92cf0bcb1bb15ed3b24000c78fd0634bbe0e",
+      "afterRestart": true,
+      "desktopChecked": false
+    }
+  ],
+  "nativeUiReceipt": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/folder/documents/portable-folder-evidence/ui-receipt.json",
+  "nativeUiReceiptSha256": "80f5e8340dd7a354d6597d97b895839eca442abcd857b4c4ead6e63fe73ae5e0"
+}

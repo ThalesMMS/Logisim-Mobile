@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "qualification": "ARCHIVE_REPLAY_ONLY",
+  "originalNativeStatus": "FAIL",
+  "nativeReplay": "NOT_RUN",
+  "originalNativeInvocations": 1,
+  "nativeExitCode": 1,
+  "cases": {
+    "incoming-share-imports-a-copy": "PASS",
+    "saf-local-import-preserves-source": "FAIL",
+    "cancel-open-preserves-project": "NOT_RUN",
+    "cancel-export-preserves-project": "NOT_RUN",
+    "cancel-share-preserves-project": "NOT_RUN",
+    "external-receiver-reads-share-grant": "NOT_RUN",
+    "invalid-and-incompatible-files-preserve-project": "NOT_RUN",
+    "save-as-local-document": "NOT_RUN",
+    "recover-create-document-after-process-death": "NOT_RUN"
+  },
+  "viewInitialPublicCopy": true,
+  "lastPublicCopy": "incoming-share.circ",
+  "sap1Counts": {
+    "incoming-sap1.circ": {
+      "circuitCount": 7,
+      "componentCount": 156,
+      "wireCount": 318
+    },
+    "incoming-share.circ": {
+      "circuitCount": 7,
+      "componentCount": 156,
+      "wireCount": 318
+    },
+    "logisim-e2e-source-android35-files-c3d7-5558-001.circ": {
+      "circuitCount": 7,
+      "componentCount": 156,
+      "wireCount": 318
+    }
+  },
+  "privateSafDocumentObserved": true,
+  "privateIsPublicExport": false,
+  "settingsDifferences": {},
+  "sourcePins": 71,
+  "localArtifactPins": 4,
+  "controllerRequestsOnly": 301,
+  "recovery": "NOT_RUN",
+  "sdkSnapshots": 0,
+  "testPackagePidBeforeOwnedCleanup": "17772",
+  "helperPidBeforeOwnedCleanup": "",
+  "ownedMainPidAfterForceStop": "",
+  "scope": "One Files failure after VIEW and SEND. Seven later cases NOT_RUN; no whole-issue35 completion or callback/IME cause inferred."
+}

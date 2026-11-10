@@ -1,0 +1,831 @@
+{
+  "schema": 1,
+  "issue": 36,
+  "runLabel": "R4",
+  "status": "PASS",
+  "nativeExecutionGate": "NATIVE_PASS",
+  "wrapperQualification": "PARTIAL",
+  "qualification": "Selected Editor case PASS; wrapper PARTIAL; no all-suite or issue-completion claim",
+  "caseSeconds": 629.969,
+  "testCount": 1,
+  "failureCount": 0,
+  "exitCode": 0,
+  "testTimeoutSeconds": 900,
+  "nativeRunCount": 1,
+  "selectedTest": "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+  "harnessSource": "f25facb3f53a166c375cf2379b0e49839ecec022",
+  "appProducerSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "producerManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+  "appArtifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+    "bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/20A4D87D-A2A6-46BD-A889-C4888CE1E152/data",
+    "dataPathSize": 4127330304,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "udid": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "lastUsedAt": "2026-11-05T03:21:51Z",
+    "isAvailable": true,
+    "logPathSize": 614400,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
+    "state": "Booted",
+    "name": "iPhone 17e",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "runId": "0a10c9841e58",
+  "started": "2026-11-05T10:24:48.106829+00:00",
+  "finished": "2026-11-05T10:36:32.971340+00:00",
+  "passedSteps": 62,
+  "exports": [
+    {
+      "exportIndex": 1,
+      "contractStep": 2,
+      "checkpoint": "empty",
+      "attachment": "373F94E4-BF15-4005-A692-15CB2E629E58.xml",
+      "timestamp": 1793874352.015,
+      "bytes": 462,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 2,
+      "contractStep": 7,
+      "checkpoint": "components",
+      "attachment": "AC0CF01C-C887-4FC1-A2A3-1FF427811DCC.xml",
+      "timestamp": 1793874562.902,
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 3,
+      "contractStep": 9,
+      "checkpoint": "north",
+      "attachment": "E55ADD33-A779-4C7E-B197-033606AA2CD7.xml",
+      "timestamp": 1793874591.316,
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 4,
+      "contractStep": 11,
+      "checkpoint": "components",
+      "attachment": "6ECC45EE-E520-4A00-902D-525BFDD60A60.xml",
+      "timestamp": 1793874598.367,
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 5,
+      "contractStep": 13,
+      "checkpoint": "north",
+      "attachment": "68F4E1B0-E4BC-4A46-96D7-03528ED32158.xml",
+      "timestamp": 1793874605.435,
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 6,
+      "contractStep": 15,
+      "checkpoint": "components",
+      "attachment": "AA504525-A761-4A60-9AFB-C4874CDB78AA.xml",
+      "timestamp": 1793874612.501,
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 7,
+      "contractStep": 18,
+      "checkpoint": "wired",
+      "attachment": "3228EDF8-89C5-420C-B76E-FBAC60491672.xml",
+      "timestamp": 1793874718.257,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 8,
+      "contractStep": 25,
+      "checkpoint": "wire-removed",
+      "attachment": "66A0CBE9-6490-45D9-BADF-DC3748899FEE.xml",
+      "timestamp": 1793874775.091,
+      "bytes": 1752,
+      "sha256": "4008e0f30e62cddd078fc049b928f2c16b9f0b1429fb62ac4eb9c8dc79f54dfe",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 9,
+      "contractStep": 27,
+      "checkpoint": "wired",
+      "attachment": "112290C0-BD6A-437F-90F4-76430535892B.xml",
+      "timestamp": 1793874782.122,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 10,
+      "contractStep": 29,
+      "checkpoint": "wire-removed",
+      "attachment": "633CF0BE-CB26-45F2-B39F-0D32601E76A0.xml",
+      "timestamp": 1793874789.575,
+      "bytes": 1752,
+      "sha256": "4008e0f30e62cddd078fc049b928f2c16b9f0b1429fb62ac4eb9c8dc79f54dfe",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 11,
+      "contractStep": 31,
+      "checkpoint": "wired",
+      "attachment": "F6EA98C4-1C48-4AF8-801F-93E74F8A9C14.xml",
+      "timestamp": 1793874796.665,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 12,
+      "contractStep": 35,
+      "checkpoint": "pasted",
+      "attachment": "5D179B32-B240-4137-9660-96D4728FE9F9.xml",
+      "timestamp": 1793874811.294,
+      "bytes": 3065,
+      "sha256": "3a8f05d3e2833e7b736c92262a752a027c7ffc0f951cfed49867584e6aba5779",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 13,
+      "contractStep": 38,
+      "checkpoint": "wired",
+      "attachment": "A3FF4F1F-AEC0-47ED-908C-D57E3131A049.xml",
+      "timestamp": 1793874880.199,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 14,
+      "contractStep": 40,
+      "checkpoint": "pasted",
+      "attachment": "3C1CE30B-68DC-4F80-AC3B-DAAFA27E7168.xml",
+      "timestamp": 1793874887.611,
+      "bytes": 3065,
+      "sha256": "3a8f05d3e2833e7b736c92262a752a027c7ffc0f951cfed49867584e6aba5779",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 15,
+      "contractStep": 42,
+      "checkpoint": "wired",
+      "attachment": "D5A1181C-FA3F-4DDB-B313-7BA40337DB62.xml",
+      "timestamp": 1793874895.138,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 16,
+      "contractStep": 45,
+      "checkpoint": "empty",
+      "attachment": "CF5E4813-D782-4552-B5A6-4690D5686CE1.xml",
+      "timestamp": 1793874906.677,
+      "bytes": 462,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 17,
+      "contractStep": 47,
+      "checkpoint": "wired",
+      "attachment": "0F87B0C5-6A94-4AC1-B801-7DE2005E7E05.xml",
+      "timestamp": 1793874913.705,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 18,
+      "contractStep": 49,
+      "checkpoint": "empty",
+      "attachment": "511C314D-C055-4612-8879-5E74B0DDA6F6.xml",
+      "timestamp": 1793874920.783,
+      "bytes": 462,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 19,
+      "contractStep": 51,
+      "checkpoint": "wired",
+      "attachment": "15DE99F5-E619-49BD-B4B2-1CB5244B75E3.xml",
+      "timestamp": 1793874927.842,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    },
+    {
+      "exportIndex": 20,
+      "contractStep": 62,
+      "checkpoint": "wired",
+      "attachment": "E851C997-1BC9-4BA5-B3E8-FA2CEF76B827.xml",
+      "timestamp": 1793874961.604,
+      "bytes": 1796,
+      "sha256": "2c60986d3c68d32e41c929dc3eaa75390c1c871fd937666a1972e90751dae35b",
+      "oracleStatus": "PASS"
+    }
+  ],
+  "stepNotes": [
+    {
+      "step": 1,
+      "attachment": "533722EC-5BD2-4C84-B16C-12F27EF5C1E3.txt",
+      "timestamp": 1793874347.638
+    },
+    {
+      "step": 2,
+      "attachment": "B08A1BEE-B7FC-45E2-A070-E70F1E3B8958.txt",
+      "timestamp": 1793874353.466
+    },
+    {
+      "step": 3,
+      "attachment": "47588C18-181B-47DF-816B-1AE81A51CD89.txt",
+      "timestamp": 1793874415.047
+    },
+    {
+      "step": 4,
+      "attachment": "A0405930-F0C1-4960-9C18-EBE1879B8BFF.txt",
+      "timestamp": 1793874475.351
+    },
+    {
+      "step": 5,
+      "attachment": "1412B81F-894A-4EDD-9693-EA5C70852264.txt",
+      "timestamp": 1793874535.639
+    },
+    {
+      "step": 6,
+      "attachment": "D4F940E7-0B1B-4C3F-808B-111595E48381.txt",
+      "timestamp": 1793874558.781
+    },
+    {
+      "step": 7,
+      "attachment": "451F11A7-34F5-4698-AD01-58CB9D3890BA.txt",
+      "timestamp": 1793874564.329
+    },
+    {
+      "step": 8,
+      "attachment": "06D6BC7E-25BA-4AE3-AEB8-BBA9122730B9.txt",
+      "timestamp": 1793874587.087
+    },
+    {
+      "step": 9,
+      "attachment": "14422EDA-D57D-4ECE-BF48-1E81D440D130.txt",
+      "timestamp": 1793874592.744
+    },
+    {
+      "step": 10,
+      "attachment": "F2ABBC8C-C767-48C9-AC07-A98691BBE96C.txt",
+      "timestamp": 1793874594.248
+    },
+    {
+      "step": 11,
+      "attachment": "454FEF52-BEA1-4A35-AD02-7D965ABE57A7.txt",
+      "timestamp": 1793874599.805
+    },
+    {
+      "step": 12,
+      "attachment": "AE124894-4718-49B3-B50F-5EFAA7A22578.txt",
+      "timestamp": 1793874601.344
+    },
+    {
+      "step": 13,
+      "attachment": "AA868A1E-ACD1-404A-953F-0ED66D3FBC30.txt",
+      "timestamp": 1793874606.84
+    },
+    {
+      "step": 14,
+      "attachment": "9CB8E3EB-0C14-4B13-9F6F-C82EECC7D992.txt",
+      "timestamp": 1793874608.349
+    },
+    {
+      "step": 15,
+      "attachment": "75F615BD-D145-471D-8E93-BAB7B6FBF643.txt",
+      "timestamp": 1793874613.903
+    },
+    {
+      "step": 16,
+      "attachment": "329B634A-FF0E-4EB4-8BB0-F10B3DD05B90.txt",
+      "timestamp": 1793874662.788
+    },
+    {
+      "step": 17,
+      "attachment": "11500012-BF23-478C-9A90-6B14E7DD935B.txt",
+      "timestamp": 1793874714.242
+    },
+    {
+      "step": 18,
+      "attachment": "CAA0A22A-7094-4E79-8665-F26C83ACA141.txt",
+      "timestamp": 1793874719.645
+    },
+    {
+      "step": 19,
+      "attachment": "2F769CEF-9FC0-4F96-A0E9-B9671D2D0202.txt",
+      "timestamp": 1793874720.796
+    },
+    {
+      "step": 20,
+      "attachment": "DF2119DB-946F-46F5-8648-E04C8ADA0924.txt",
+      "timestamp": 1793874737.099
+    },
+    {
+      "step": 21,
+      "attachment": "160D04B4-95AC-4186-9299-71CFC1AF59E8.txt",
+      "timestamp": 1793874738.23
+    },
+    {
+      "step": 22,
+      "attachment": "F7193EF9-E47C-49B1-9C30-109125DFA75F.txt",
+      "timestamp": 1793874756.03
+    },
+    {
+      "step": 23,
+      "attachment": "E75E3BE1-1130-4764-BBDC-BB3FFCA881F6.txt",
+      "timestamp": 1793874757.17
+    },
+    {
+      "step": 24,
+      "attachment": "6FB7C4F2-E40C-449A-A5A9-7297C30B809B.txt",
+      "timestamp": 1793874770.898
+    },
+    {
+      "step": 25,
+      "attachment": "6AA8BAFB-4534-4668-B0B9-4090D8CAFCB0.txt",
+      "timestamp": 1793874776.484
+    },
+    {
+      "step": 26,
+      "attachment": "197DC6D9-11D6-42A7-9589-292F804724E2.txt",
+      "timestamp": 1793874777.973
+    },
+    {
+      "step": 27,
+      "attachment": "5663A27E-550B-4732-9D39-228916FD6C5A.txt",
+      "timestamp": 1793874783.621
+    },
+    {
+      "step": 28,
+      "attachment": "92689FF2-E64F-4E56-A9B5-2E220E91230D.txt",
+      "timestamp": 1793874785.245
+    },
+    {
+      "step": 29,
+      "attachment": "361E7195-7063-48B0-BFBF-1DECC0942678.txt",
+      "timestamp": 1793874791.023
+    },
+    {
+      "step": 30,
+      "attachment": "ADF363B2-BAB7-4549-9CA9-D5BBBFDF0E75.txt",
+      "timestamp": 1793874792.535
+    },
+    {
+      "step": 31,
+      "attachment": "CA91391D-9A62-4D11-9082-E0AC96A66458.txt",
+      "timestamp": 1793874798.116
+    },
+    {
+      "step": 32,
+      "attachment": "86B89E84-47B7-4DFF-8CB8-0F22BD91355F.txt",
+      "timestamp": 1793874801.068
+    },
+    {
+      "step": 33,
+      "attachment": "64582D8D-A262-4915-8369-A5B596A54E4E.txt",
+      "timestamp": 1793874804.109
+    },
+    {
+      "step": 34,
+      "attachment": "2A599D84-8CDC-4A3B-92FD-92C551A51FCD.txt",
+      "timestamp": 1793874807.139
+    },
+    {
+      "step": 35,
+      "attachment": "2C93D9CD-FDC7-4E12-9D96-4ABDA75FB76C.txt",
+      "timestamp": 1793874812.711
+    },
+    {
+      "step": 36,
+      "attachment": "53C97762-B142-4F52-BBBD-33873DAA18D1.txt",
+      "timestamp": 1793874874.072
+    },
+    {
+      "step": 37,
+      "attachment": "EEA3470B-B029-468B-9F83-AA80820A3F0A.txt",
+      "timestamp": 1793874875.718
+    },
+    {
+      "step": 38,
+      "attachment": "0A9A33A6-E777-4FA9-B2D1-5860CDD40521.txt",
+      "timestamp": 1793874881.768
+    },
+    {
+      "step": 39,
+      "attachment": "8792AA4E-B529-4A74-8E66-79513BF2963E.txt",
+      "timestamp": 1793874883.352
+    },
+    {
+      "step": 40,
+      "attachment": "5124EF49-6302-4139-AD2A-9AB0C234F4A3.txt",
+      "timestamp": 1793874889.03
+    },
+    {
+      "step": 41,
+      "attachment": "66036AF5-074C-499E-8CD8-CC0E5EC0BB21.txt",
+      "timestamp": 1793874890.649
+    },
+    {
+      "step": 42,
+      "attachment": "B844AFAA-A2EB-4A95-8043-7899E310881C.txt",
+      "timestamp": 1793874896.585
+    },
+    {
+      "step": 43,
+      "attachment": "D9D2EB30-94EF-4AB1-AF86-DC19E6421BA1.txt",
+      "timestamp": 1793874899.556
+    },
+    {
+      "step": 44,
+      "attachment": "E7A0602F-4815-4340-896D-47E47C49D66D.txt",
+      "timestamp": 1793874902.554
+    },
+    {
+      "step": 45,
+      "attachment": "523BBCA8-9979-4771-A6E7-BDEE077A284E.txt",
+      "timestamp": 1793874908.103
+    },
+    {
+      "step": 46,
+      "attachment": "50E35D51-6FD9-40DE-A262-CC932ABAB797.txt",
+      "timestamp": 1793874909.587
+    },
+    {
+      "step": 47,
+      "attachment": "693F0DFA-5CFE-4172-B91F-972AB8C1EDD2.txt",
+      "timestamp": 1793874915.136
+    },
+    {
+      "step": 48,
+      "attachment": "597D5755-3D6A-4F64-850C-F21E4E91F1B6.txt",
+      "timestamp": 1793874916.635
+    },
+    {
+      "step": 49,
+      "attachment": "906E4368-3859-4884-8E90-B6B91060E2E1.txt",
+      "timestamp": 1793874922.215
+    },
+    {
+      "step": 50,
+      "attachment": "BA41E5DD-224C-4F8E-9401-5E64CC2231E7.txt",
+      "timestamp": 1793874923.726
+    },
+    {
+      "step": 51,
+      "attachment": "FF976D6E-8216-45C5-9F74-C7F4F32882E0.txt",
+      "timestamp": 1793874929.254
+    },
+    {
+      "step": 52,
+      "attachment": "5203B320-4401-4D31-95C3-5493F2854C4B.txt",
+      "timestamp": 1793874933.606
+    },
+    {
+      "step": 53,
+      "attachment": "F3B1630C-3C72-4816-A403-B168270E0D1A.txt",
+      "timestamp": 1793874933.731
+    },
+    {
+      "step": 54,
+      "attachment": "77F38F3C-29CF-4CAC-8962-F4748AFCFAF8.txt",
+      "timestamp": 1793874935.158
+    },
+    {
+      "step": 55,
+      "attachment": "FDB278C3-6768-4E04-9776-281BE39489D8.txt",
+      "timestamp": 1793874935.289
+    },
+    {
+      "step": 56,
+      "attachment": "E172E4ED-310C-4CB2-AB0C-FC1780C75B3E.txt",
+      "timestamp": 1793874936.749
+    },
+    {
+      "step": 57,
+      "attachment": "59C3A5B5-C20E-42D8-BF14-800D3F601DBF.txt",
+      "timestamp": 1793874936.854
+    },
+    {
+      "step": 58,
+      "attachment": "A2742923-0693-41EA-BCA7-B330D671CFFE.txt",
+      "timestamp": 1793874952.983
+    },
+    {
+      "step": 59,
+      "attachment": "D642F38D-4633-4184-AAF0-29A080C2A477.txt",
+      "timestamp": 1793874955.996
+    },
+    {
+      "step": 60,
+      "attachment": "CE851248-CBA8-412E-A1A8-737C8CF2FC95.txt",
+      "timestamp": 1793874956.108
+    },
+    {
+      "step": 61,
+      "attachment": "AC026E7E-EC75-4292-AA32-60E5C7F55FC3.txt",
+      "timestamp": 1793874957.5
+    },
+    {
+      "step": 62,
+      "attachment": "35D85784-6CE9-424A-AE01-95272C8B9C52.txt",
+      "timestamp": 1793874962.994
+    }
+  ],
+  "attachments": {
+    "nativeTotal": 206,
+    "archivedExcludingVideo": 206,
+    "videoAttachments": 0
+  },
+  "swiftSources": {
+    "compiledCount": 17,
+    "preparedCount": 18,
+    "compiledMapSHA256": "0d1fe96369953969e4e5e974e2719021251dd76d62c4fb4017ff6adb3b0c9339",
+    "preparedMapSHA256": "b0c4e96c2026d6e385281b27593b27f26258ed52a8ea12a9e5483c03879ca366"
+  },
+  "inputSourceMapSHA256": "1e773c4a32481f39a29cbc1b6531e46f3115b94861b6dad7ba8392562822a400",
+  "headerEvidence": {
+    "headerObservationCount": 53,
+    "headerDecisionCounts": {
+      "skip-publicly-selected": 15,
+      "short-backward-scroll": 4
+    },
+    "headerSelectedStates": {
+      "unobserved": 36,
+      "true": 17
+    },
+    "headerHittableStates": {
+      "true": 45,
+      "unqueried": 8
+    }
+  },
+  "scope": "One selected 62-step Editor case on iPhone 17e simulator; frozen producer app3a reused identical.",
+  "deviceLease": "Execution owner returned 17e after postflight PASS; see preserved termination/orientation records.",
+  "priorRuns": "R1/R2/R3 remain separate failure records; no historical failure was overwritten.",
+  "localOnly": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-r4-f25/outputs/ios-editor36-phone-3a-004/last-screen.png",
+      "bytes": 3427206,
+      "sha256": "5609bc01428f235d41716d47dec24acbcbecd49b0020585045f4d3809334df6f"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-r4-f25/outputs/ios-editor36-phone-3a-004/simulator.log",
+      "bytes": 269980012,
+      "sha256": "317c6233d4c9d5de1881f70be28ee6eff53b7da8a8a69f2f5db46cbae9d95c39"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-r4-f25/outputs/ios-editor36-phone-3a-004/editor.xcresult",
+      "fileCount": 340,
+      "bytes": 5173981,
+      "sha256": "948eedb7b19fe511d4e823ea24bf0f605fd5721d62f457620a363ac455e8b7b1",
+      "algorithm": "Sorted pathlib path parts; relative POSIX path + NUL + file SHA256 hex + newline."
+    }
+  ],
+  "notQualified": [
+    "Other XCTest selectors or the entire suite",
+    "SAP-1",
+    "Open With and Files providers",
+    "VoiceOver",
+    "Physical device",
+    "Release or store distribution"
+  ],
+  "privacyScan": {
+    "selectedRawMembers": 336,
+    "secretValueMatches": 0,
+    "scope": "Current credential-like environment values checked against selected public raw bytes without printing values."
+  },
+  "rawArchive": {
+    "path": "raw.tar.gz",
+    "memberCount": 336,
+    "bytes": 7658737,
+    "sha256": "469ce3809a8af218a70c251702f9f16d1f90dc7c4219598edbcb4c23e67059d7"
+  },
+  "publicFiles": {
+    "README.md": {
+      "bytes": 4860,
+      "sha256": "f49a980890383f7faf96b4c39db3b2e072d973cd204962ac052480d8d6284049"
+    },
+    "archive-byte-review.json": {
+      "bytes": 68608,
+      "sha256": "96e0972ff04b56281c3c2d6cf09a5c3120806f27e811b04eec6905edf38790ca"
+    },
+    "header-evidence-review.json": {
+      "bytes": 93431,
+      "sha256": "7d229f1aa49b2a715f8005d44dce628e0510509dd966ce6c23e057d68d270165"
+    },
+    "independent-portable-replay.json": {
+      "bytes": 1467,
+      "sha256": "5b2ffde7ca1819c2d03340f7e4e6e9e6a849ed2f130d4cba8db750f433478349"
+    },
+    "local-reference-review.json": {
+      "bytes": 1077,
+      "sha256": "87d21d643f33240ec8a2e28ac0d4d20c8949a2a90e5508d5390ca01090e41ef4"
+    },
+    "oracle-review.json": {
+      "bytes": 42602,
+      "sha256": "4119a51c2f6dd4abbd9912a53f4bbab471a01931732abc44f328918a7a0e7ee5"
+    },
+    "oracle.py": {
+      "bytes": 5319,
+      "sha256": "b0f10d85305e17070b1a473c96d14d5b68faf0e79022de815a5857e4d174c142"
+    },
+    "original-evidence-review.json": {
+      "bytes": 11098,
+      "sha256": "838eb995ab6b5824679907fefe0a6ec430226eca9b8f3d2c9df514e3b98958db"
+    },
+    "package-review.json": {
+      "bytes": 5417,
+      "sha256": "beae19dff85e3b24cfe1fc78a421eaf331a3fc1c800417cda964e21d830ea6b5"
+    },
+    "raw-members.json": {
+      "bytes": 54129,
+      "sha256": "12ff184d58f868238e5427ed838c4c3b9d7c4214d680b3a6457592d52ac1eb73"
+    },
+    "raw.tar.gz": {
+      "bytes": 7658737,
+      "sha256": "469ce3809a8af218a70c251702f9f16d1f90dc7c4219598edbcb4c23e67059d7"
+    },
+    "test_verify.py": {
+      "bytes": 11373,
+      "sha256": "f71ad69a058ed66680e02f81bbc1ffffe0bae0e8699c3d0c665622da59800246"
+    },
+    "verification.log": {
+      "bytes": 674,
+      "sha256": "359bc2b1d97ed31922cae0450ba93af88b7e03612bf2b2ce4e45b082844a0cb4"
+    },
+    "verify.py": {
+      "bytes": 23374,
+      "sha256": "fa0a8a96e59008c01368d58f1efbb74549b7024d0e2234b20cee0e3bc21d66d7"
+    }
+  },
+  "finalScreenAttachment": "EC3B4E65-E92F-43FA-8C53-0CB820FA3BF9.png",
+  "nativeTreeAttachment": "250F614B-83A4-4C3D-8914-DACBCD49ABAD.txt",
+  "firstClippedSearchRecovery": [
+    {
+      "attachment": "658FB536-7FD5-43F3-A7B6-FBE638D6087A.txt",
+      "timestamp": 1793874635.976,
+      "payload": "invocation=D34D1EE1-2917-43F5-B3D1-740AF5A3A31B; order=0; target=search; phase=inspect; attempt=0; count=1; selected=unobserved; role=52; label=; enabled=true; field=(24.0, 158.0, 342.0, 24.0); viewport=(24.0, 182.0, 342.0, 604.0); window=(0.0, 0.0, 390.0, 844.0); list=(24.0, 182.0, 342.0, 604.0); inputs=; fullyVisible=false; hittable=unqueried",
+      "kind": "observation",
+      "fields": {
+        "invocation": "D34D1EE1-2917-43F5-B3D1-740AF5A3A31B",
+        "order": "0",
+        "target": "search",
+        "phase": "inspect",
+        "attempt": "0",
+        "count": "1",
+        "selected": "unobserved",
+        "role": "52",
+        "label": "",
+        "enabled": "true",
+        "field": "(24.0, 158.0, 342.0, 24.0)",
+        "viewport": "(24.0, 182.0, 342.0, 604.0)",
+        "window": "(0.0, 0.0, 390.0, 844.0)",
+        "list": "(24.0, 182.0, 342.0, 604.0)",
+        "inputs": "",
+        "fullyVisible": "false",
+        "hittable": "unqueried"
+      }
+    },
+    {
+      "attachment": "102E7EF2-BB39-4B1F-A474-A6B479E21A44.txt",
+      "timestamp": 1793874636.161,
+      "payload": "invocation=D34D1EE1-2917-43F5-B3D1-740AF5A3A31B; order=1; target=search; phase=before-backward-scroll; attempt=0; count=1; selected=unobserved; role=52; label=; enabled=true; field=(24.0, 158.0, 342.0, 24.0); viewport=(24.0, 182.0, 342.0, 604.0); window=(0.0, 0.0, 390.0, 844.0); list=(24.0, 182.0, 342.0, 604.0); inputs=; fullyVisible=false; hittable=unqueried",
+      "kind": "observation",
+      "fields": {
+        "invocation": "D34D1EE1-2917-43F5-B3D1-740AF5A3A31B",
+        "order": "1",
+        "target": "search",
+        "phase": "before-backward-scroll",
+        "attempt": "0",
+        "count": "1",
+        "selected": "unobserved",
+        "role": "52",
+        "label": "",
+        "enabled": "true",
+        "field": "(24.0, 158.0, 342.0, 24.0)",
+        "viewport": "(24.0, 182.0, 342.0, 604.0)",
+        "window": "(0.0, 0.0, 390.0, 844.0)",
+        "list": "(24.0, 182.0, 342.0, 604.0)",
+        "inputs": "",
+        "fullyVisible": "false",
+        "hittable": "unqueried"
+      }
+    },
+    {
+      "attachment": "9E851040-351E-4B70-9CB1-25F2B6CCCE08.txt",
+      "timestamp": 1793874636.18,
+      "payload": "invocation=D34D1EE1-2917-43F5-B3D1-740AF5A3A31B; target=search; decision=short-backward-scroll; start=(195.0, 436.0); end=(195.0, 532.0)",
+      "kind": "decision",
+      "fields": {
+        "invocation": "D34D1EE1-2917-43F5-B3D1-740AF5A3A31B",
+        "target": "search",
+        "decision": "short-backward-scroll",
+        "start": "(195.0, 436.0)",
+        "end": "(195.0, 532.0)"
+      }
+    },
+    {
+      "attachment": "F7575FE2-C806-4FA4-8F6F-D5EB93DB587A.txt",
+      "timestamp": 1793874637.242,
+      "payload": "invocation=D34D1EE1-2917-43F5-B3D1-740AF5A3A31B; order=2; target=search; phase=inspect; attempt=1; count=1; selected=unobserved; role=52; label=Find a component, terminal, or identifier; enabled=true; field=(24.0, 204.0, 342.0, 64.0); viewport=(24.0, 182.0, 342.0, 604.0); window=(0.0, 0.0, 390.0, 844.0); list=(24.0, 182.0, 342.0, 604.0); inputs=; fullyVisible=true; hittable=true",
+      "kind": "observation",
+      "fields": {
+        "invocation": "D34D1EE1-2917-43F5-B3D1-740AF5A3A31B",
+        "order": "2",
+        "target": "search",
+        "phase": "inspect",
+        "attempt": "1",
+        "count": "1",
+        "selected": "unobserved",
+        "role": "52",
+        "label": "Find a component, terminal, or identifier",
+        "enabled": "true",
+        "field": "(24.0, 204.0, 342.0, 64.0)",
+        "viewport": "(24.0, 182.0, 342.0, 604.0)",
+        "window": "(0.0, 0.0, 390.0, 844.0)",
+        "list": "(24.0, 182.0, 342.0, 604.0)",
+        "inputs": "",
+        "fullyVisible": "true",
+        "hittable": "true"
+      }
+    },
+    {
+      "attachment": "9C81A823-1C86-4B9C-AB31-37D545D9CC87.txt",
+      "timestamp": 1793874637.417,
+      "payload": "invocation=D34D1EE1-2917-43F5-B3D1-740AF5A3A31B; order=3; target=search; phase=before-action; attempt=1; count=1; selected=unobserved; role=52; label=Find a component, terminal, or identifier; enabled=true; field=(24.0, 204.0, 342.0, 64.0); viewport=(24.0, 182.0, 342.0, 604.0); window=(0.0, 0.0, 390.0, 844.0); list=(24.0, 182.0, 342.0, 604.0); inputs=; fullyVisible=true; hittable=true",
+      "kind": "observation",
+      "fields": {
+        "invocation": "D34D1EE1-2917-43F5-B3D1-740AF5A3A31B",
+        "order": "3",
+        "target": "search",
+        "phase": "before-action",
+        "attempt": "1",
+        "count": "1",
+        "selected": "unobserved",
+        "role": "52",
+        "label": "Find a component, terminal, or identifier",
+        "enabled": "true",
+        "field": "(24.0, 204.0, 342.0, 64.0)",
+        "viewport": "(24.0, 182.0, 342.0, 604.0)",
+        "window": "(0.0, 0.0, 390.0, 844.0)",
+        "list": "(24.0, 182.0, 342.0, 604.0)",
+        "inputs": "",
+        "fullyVisible": "true",
+        "hittable": "true"
+      }
+    }
+  ],
+  "runtimeEvidence": {
+    "zoomPercent": {
+      "53": 172,
+      "55": 215,
+      "57": 172,
+      "60": 400
+    },
+    "outputs": {
+      "19": "1",
+      "21": "0",
+      "23": "1"
+    },
+    "distinctCaptions": {
+      "E2E_IN": {
+        "attachment": "2C15575F-4FC9-41B8-A685-8581E112862B.txt",
+        "payload": "c1: E2E_IN (100, 100), c1\nc4: E2E_IN (120, 120), c4",
+        "timestamp": 1793874831.528
+      },
+      "E2E_NOT": {
+        "attachment": "2FB69838-914B-4023-921B-1C4BEE8F65B5.txt",
+        "payload": "c2: E2E_NOT (200, 100), c2\nc5: E2E_NOT (220, 120), c5",
+        "timestamp": 1793874851.619
+      },
+      "E2E_OUT": {
+        "attachment": "9D54C3B6-8975-43F5-99C8-4959DBC8005C.txt",
+        "payload": "c3: E2E_OUT (300, 100), c3\nc6: E2E_OUT (320, 120), c6",
+        "timestamp": 1793874872.434
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "schema": 1,
+  "status": "FAIL",
+  "source": "2827b19b2041ed98dc5e10f2c9d4a94e07911869",
+  "product_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "serial": "emulator-5558",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "case": "one_paused_independent16_input_idle_20s",
+  "created_utc": "2026-11-05T12:22:15.945555+00:00",
+  "driver_sha256": "12d5c46a6f67483fa96edb7f6d81e4bfe6a0d4aa710bca02c942dd3cde1c239f",
+  "original_inputs_before": {
+    "manifest.json": {
+      "bytes": 82126,
+      "sha256": "295571568422db33a280e9c0a52b322982cfa7f57c10e297fd70a788d7596f58"
+    },
+    "independent-16.circ": {
+      "bytes": 16109,
+      "sha256": "19198a15e4880baccd3d00391f257c766a8be0859daae1ca721d3d8ed7c12a31"
+    },
+    "independent-64.circ": {
+      "bytes": 63917,
+      "sha256": "422e4af2cbe4ad04ec0aa04869166dc6d67fcbcfd4b0cdd8613487068ba383f6"
+    },
+    "independent-256.circ": {
+      "bytes": 255620,
+      "sha256": "6093665f68ac49d62caa26c8432fa70e3b87c050720b6f9af40977d04cb98bcb"
+    },
+    "independent-384.circ": {
+      "bytes": 384036,
+      "sha256": "6b7593a012694a5aa75989516e7d6374b442e6f9fe1b50f95ade667dab1bee67"
+    },
+    "independent-1024.circ": {
+      "bytes": 1027311,
+      "sha256": "4e5cf7e40c9fe44d529d27045a5f24189fb007ff1e8908508d39b823b0e006e1"
+    },
+    "hierarchical-16.circ": {
+      "bytes": 14677,
+      "sha256": "8eb0316fad1634f757f3a31d7a50ac3c082cd9ed81646400686ae93cb31c87f4"
+    },
+    "hierarchical-64.circ": {
+      "bytes": 54037,
+      "sha256": "50a64a7f0a41be04a0e5f6c40d84175d813d5690b3f36a30ab59c43916b91b13"
+    },
+    "hierarchical-256.circ": {
+      "bytes": 211948,
+      "sha256": "4df6ff77dea871e6aa21937394f9a9ed46de5444b0149d3cdcc8d2a5c46407aa"
+    },
+    "hierarchical-384.circ": {
+      "bytes": 317836,
+      "sha256": "07b81291c0ade608a0998a75088b154a36d7378037771238bd1d52050aa6e631"
+    },
+    "hierarchical-1024.circ": {
+      "bytes": 848471,
+      "sha256": "ce41b16c67626d3812586990cccffb5179a1c167f1dd7946202eefc596de7455"
+    }
+  },
+  "expected_apks": {
+    "e2e_apk.apk": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973",
+    "e2e_test_apk.apk": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b",
+    "snapshot_apk.apk": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+  },
+  "sampling_started": false,
+  "native_case_attempts": 1,
+  "installs": 0,
+  "builds": 0,
+  "runtime_scope": "Shared-host emulator process observations only. No benchmark, quiet gate, real-device budget, energy or draw/pan/zoom latency claim.",
+  "installed_before": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~qvJtVoaeM6LOws5SkdNR_A==/thalesmms.logisim.mobile.e2e-9HjpdryI--LgDfyGECZcXQ==/base.apk",
+      "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~3SN-KbelTnkgZKVXYCqW0A==/thalesmms.logisim.mobile.e2e.test-YwcZ7Lugm4TPP8whqDsmMQ==/base.apk",
+      "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~nfS6FdWBDCktJrXPiBqnBw==/thalesmms.logisim.mobile.snapshot.e2e.test-hBscN_a1QkOL4skX7SXKtw==/base.apk",
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    }
+  ],
+  "configuration_before": {
+    "settings": {
+      "system": {
+        "accelerometer_rotation": "0",
+        "user_rotation": "0",
+        "font_scale": "1.0",
+        "system_locales": "null"
+      },
+      "secure": {
+        "accessibility_enabled": "0",
+        "enabled_accessibility_services": "null",
+        "touch_exploration_enabled": "0",
+        "show_ime_with_hard_keyboard": "1"
+      },
+      "global": {
+        "animator_duration_scale": "null",
+        "transition_animation_scale": "1.0",
+        "window_animation_scale": "1.0"
+      }
+    },
+    "wm_size": "Physical size: 1080x2400",
+    "wm_density": "Physical density: 420"
+  },
+  "fresh_launch_basis": "Owned e2e app force-stopped and PID absence observed, then stock launch",
+  "fixture_uri": "content://thalesmms.logisim.mobile.e2e.test.documents/document/e2e-a7d7411b75f443fd84dfd616363c9fe0.circ",
+  "fixture_name": "e2e-a7d7411b75f443fd84dfd616363c9fe0.circ",
+  "provider_source_before_sha256": "19198a15e4880baccd3d00391f257c766a8be0859daae1ca721d3d8ed7c12a31",
+  "failure": "AssertionError('The status_file_opened control did not appear within 30s')",
+  "owned_app_cleanup": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "stopped": true,
+      "pid_after": ""
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "stopped": true,
+      "pid_after": ""
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "stopped": true,
+      "pid_after": ""
+    }
+  ],
+  "configuration_restoration": {
+    "actions": [],
+    "final": {
+      "settings": {
+        "system": {
+          "accelerometer_rotation": "0",
+          "user_rotation": "0",
+          "font_scale": "1.0",
+          "system_locales": "null"
+        },
+        "secure": {
+          "accessibility_enabled": "0",
+          "enabled_accessibility_services": "null",
+          "touch_exploration_enabled": "0",
+          "show_ime_with_hard_keyboard": "1"
+        },
+        "global": {
+          "animator_duration_scale": "null",
+          "transition_animation_scale": "1.0",
+          "window_animation_scale": "1.0"
+        }
+      },
+      "wm_size": "Physical size: 1080x2400",
+      "wm_density": "Physical density: 420"
+    },
+    "matches_before": true
+  },
+  "installed_after": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~qvJtVoaeM6LOws5SkdNR_A==/thalesmms.logisim.mobile.e2e-9HjpdryI--LgDfyGECZcXQ==/base.apk",
+      "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~3SN-KbelTnkgZKVXYCqW0A==/thalesmms.logisim.mobile.e2e.test-YwcZ7Lugm4TPP8whqDsmMQ==/base.apk",
+      "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~nfS6FdWBDCktJrXPiBqnBw==/thalesmms.logisim.mobile.snapshot.e2e.test-hBscN_a1QkOL4skX7SXKtw==/base.apk",
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    }
+  ],
+  "original_inputs_after": {
+    "manifest.json": {
+      "bytes": 82126,
+      "sha256": "295571568422db33a280e9c0a52b322982cfa7f57c10e297fd70a788d7596f58"
+    },
+    "independent-16.circ": {
+      "bytes": 16109,
+      "sha256": "19198a15e4880baccd3d00391f257c766a8be0859daae1ca721d3d8ed7c12a31"
+    },
+    "independent-64.circ": {
+      "bytes": 63917,
+      "sha256": "422e4af2cbe4ad04ec0aa04869166dc6d67fcbcfd4b0cdd8613487068ba383f6"
+    },
+    "independent-256.circ": {
+      "bytes": 255620,
+      "sha256": "6093665f68ac49d62caa26c8432fa70e3b87c050720b6f9af40977d04cb98bcb"
+    },
+    "independent-384.circ": {
+      "bytes": 384036,
+      "sha256": "6b7593a012694a5aa75989516e7d6374b442e6f9fe1b50f95ade667dab1bee67"
+    },
+    "independent-1024.circ": {
+      "bytes": 1027311,
+      "sha256": "4e5cf7e40c9fe44d529d27045a5f24189fb007ff1e8908508d39b823b0e006e1"
+    },
+    "hierarchical-16.circ": {
+      "bytes": 14677,
+      "sha256": "8eb0316fad1634f757f3a31d7a50ac3c082cd9ed81646400686ae93cb31c87f4"
+    },
+    "hierarchical-64.circ": {
+      "bytes": 54037,
+      "sha256": "50a64a7f0a41be04a0e5f6c40d84175d813d5690b3f36a30ab59c43916b91b13"
+    },
+    "hierarchical-256.circ": {
+      "bytes": 211948,
+      "sha256": "4df6ff77dea871e6aa21937394f9a9ed46de5444b0149d3cdcc8d2a5c46407aa"
+    },
+    "hierarchical-384.circ": {
+      "bytes": 317836,
+      "sha256": "07b81291c0ade608a0998a75088b154a36d7378037771238bd1d52050aa6e631"
+    },
+    "hierarchical-1024.circ": {
+      "bytes": 848471,
+      "sha256": "ce41b16c67626d3812586990cccffb5179a1c167f1dd7946202eefc596de7455"
+    }
+  },
+  "original_inputs_unchanged": true,
+  "finished_utc": "2026-11-05T12:23:01.434224+00:00"
+}

@@ -1,0 +1,18 @@
+row: cli/tty
+case: speed
+result: PASS
+detail: speed line format and tick count: evolution=9, mobile=9
+
+=== evolution: logisim-evolution -t halt,speed scripts/oracle/cli/fixtures/memory.circ
+exit: 0
+--- stdout (1 lines, sha256 9a7be37875a3f5117d262a8120160c3a96ea45985ee76ceaabe41c361ffc9b6c)
+2147483647 Hz (9 ticks in 0 milliseconds)
+--- stderr (1 lines, sha256 42caa89a2d5183d363839e6cd6140f3319051a4ef3d04a0d1736cd45d01c4b3f)
+[main] ERROR com.cburch.logisim.gui.start.TtyInterface - halted due to halt pin
+
+=== mobile: HeadlessCircuitCli -t halt,speed scripts/oracle/cli/fixtures/memory.circ
+exit: 0
+--- stdout (1 lines, sha256 19f4bb875b226dea4acb6a7260f652a15ef75292fe89c5db9d8277ec02561f34)
+562 Hz (9 ticks in 16 milliseconds)
+--- stderr (1 lines, sha256 2b006bf6ac1239d171c8e562c7282518a68cf2739c6dd660761790163169e6f1)
+halted due to halt pin

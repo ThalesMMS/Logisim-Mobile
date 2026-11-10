@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "am",
+      "broadcast",
+      "-a",
+      "android.intent.action.MEDIA_SCANNER_SCAN_FILE",
+      "-d",
+      "file:///storage/emulated/0/Download/logisim-portable53-359e9f205bb843e99882e9e90c11a100/portable53.lsebdl"
+    ],
+    "exit": 0,
+    "stdout": "Broadcasting: Intent { act=android.intent.action.MEDIA_SCANNER_SCAN_FILE dat=file:///... flg=0x400000 }\nBroadcast completed: result=0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "content",
+      "query",
+      "--uri",
+      "content://media/external/file",
+      "--projection",
+      "_id:_display_name:mime_type:is_download:is_pending",
+      "--where",
+      "_data='/storage/emulated/0/Download/logisim-portable53-359e9f205bb843e99882e9e90c11a100/portable53.lsebdl'"
+    ],
+    "exit": 0,
+    "stdout": "Row: 0 _id=1000000214, _display_name=portable53.lsebdl, mime_type=application/octet-stream, is_download=1, is_pending=0\n",
+    "stderr": ""
+  }
+]

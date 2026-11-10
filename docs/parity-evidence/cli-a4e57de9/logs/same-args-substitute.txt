@@ -1,0 +1,10 @@
+row: cli/substitute
+case: same-args-substitute
+result: DIFF
+detail: Mobile accepts Evolution's '--substitute'
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table --substitute scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 16813d33433ccaee63d540473e4f0a583fb4c8afb69443c807a134aeb014bd64)
+error=Unknown option '--substitute'.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="4.0.0" version="1.0">
+  <lib desc="#Soc" name="8"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="8" loc="(20,20)" name="SocPio"><a name="label" val="pio_bidir"/><a name="width" val="8"/><a name="direction" val="bidir"/><a name="genirq" val="true"/><a name="inputssynccapt" val="true"/><a name="outputbitsetclear" val="true"/></comp>
+    <comp lib="8" loc="(20,220)" name="SocPio"><a name="label" val="pio_in"/><a name="width" val="4"/><a name="direction" val="inputonly"/><a name="genirq" val="true"/><a name="inputssynccapt" val="true"/><a name="outputbitsetclear" val="true"/></comp>
+    <comp lib="8" loc="(20,420)" name="SocPio"><a name="label" val="pio_out"/><a name="width" val="4"/><a name="direction" val="outputonly"/><a name="outputbitsetclear" val="true"/></comp>
+    <comp lib="8" loc="(20,620)" name="SocPio"><a name="label" val="pio_inout"/><a name="width" val="4"/><a name="direction" val="inout"/><a name="inputssynccapt" val="true"/><a name="outputbitsetclear" val="true"/></comp>
+    <comp lib="8" loc="(20,820)" name="SocPio"><a name="label" val="pio_plain"/><a name="width" val="2"/><a name="direction" val="inputonly"/></comp>
+  </circuit>
+</project>

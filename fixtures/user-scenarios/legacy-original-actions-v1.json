@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "kind": "literal-expectations",
+    "desktopRelease": "2.7.1",
+    "description": "The original Logisim writer saved the fixture. The native runners use the same actions and checkpoints."
+  },
+  "fixture": "examples/compatibility/original-2.7.1/inverter.circ",
+  "circuitName": "LegacyInverter",
+  "coordinateSpace": "circuit-grid",
+  "snapshots": {
+    "opened": {
+      "circuitCount": 1,
+      "components": [
+        {"name": "Pin", "location": [100, 100], "attributes": {"label": "A"}},
+        {"name": "NOT Gate", "location": [200, 100], "attributes": {"label": "LegacyNot"}},
+        {"name": "Pin", "location": [300, 100], "attributes": {"facing": "west", "output": "true", "label": "Y"}}
+      ],
+      "wires": [[[100, 100], [170, 100]], [[200, 100], [300, 100]]]
+    },
+    "edited": {
+      "circuitCount": 1,
+      "components": [
+        {"name": "Pin", "location": [100, 100], "attributes": {"label": "A"}},
+        {"name": "NOT Gate", "location": [200, 100], "attributes": {"label": "EditedNot"}},
+        {"name": "Pin", "location": [300, 100], "attributes": {"facing": "west", "output": "true", "label": "Y"}}
+      ],
+      "wires": [[[100, 100], [170, 100]], [[200, 100], [300, 100]]]
+    }
+  },
+  "scenarios": [
+    {
+      "id": "legacy-original-open-edit-simulate-reopen",
+      "steps": [
+        {"action": "openFixture"},
+        {"action": "assertDocument", "checkpoint": "opened"},
+        {"action": "assertOutput", "label": "Y", "value": "1"},
+        {"action": "setLabel", "label": "LegacyNot", "value": "EditedNot"},
+        {"action": "activateComponent", "label": "A"},
+        {"action": "assertOutput", "label": "Y", "value": "0"},
+        {"action": "activateComponent", "label": "A"},
+        {"action": "assertOutput", "label": "Y", "value": "1"},
+        {"action": "saveExport", "checkpoint": "edited"},
+        {"action": "reopenExport"},
+        {"action": "assertDocument", "checkpoint": "edited"},
+        {"action": "assertOutput", "label": "Y", "value": "1"},
+        {"action": "activateComponent", "label": "A"},
+        {"action": "assertOutput", "label": "Y", "value": "0"}
+      ]
+    }
+  ]
+}

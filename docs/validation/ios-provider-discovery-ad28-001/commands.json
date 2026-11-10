@@ -1,0 +1,300 @@
+[
+  {
+    "name": "simctl-help-get-app-container",
+    "utc": "2026-11-05T07:03:22.432247+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "help",
+      "get_app_container"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 0,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 386,
+    "stderrSHA256": "62b5b30225c28644c70945a598f2385b4414e2f11c75c4ec2d134d6822f0053b"
+  },
+  {
+    "name": "installed-app-container",
+    "utc": "2026-11-05T07:03:22.625845+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture",
+      "app"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 185,
+    "stdoutSHA256": "c4e42e1c2abbd1414fad67f41b365ac3c7dcfc1062ad3a90ee82ee7de57cbd4d",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "simctl-help-appinfo",
+    "startedUTC": "2026-11-05T07:05:16.865227+00:00",
+    "finishedUTC": "2026-11-05T07:05:17.208768+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "help",
+      "appinfo"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 0,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 100,
+    "stderrSHA256": "ff022e47c52b615a8d610a40cab2a5e1e63f9bccdb38ee4feb669a06a4f5408a"
+  },
+  {
+    "name": "simctl-help-spawn",
+    "startedUTC": "2026-11-05T07:05:17.208951+00:00",
+    "finishedUTC": "2026-11-05T07:05:17.306513+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "help",
+      "spawn"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 0,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 1206,
+    "stderrSHA256": "9dd491aae6f4b7f008d8db6d20b751cfea826307e60ed587ebd049b7b285ac34"
+  },
+  {
+    "name": "installed-appinfo",
+    "startedUTC": "2026-11-05T07:05:17.306691+00:00",
+    "finishedUTC": "2026-11-05T07:05:17.403598+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "appinfo",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 1274,
+    "stdoutSHA256": "7b8245023520d9242ffde19d48fb64f1be4af06e3df261c0857683cabcad335d",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "device-pluginkit-help",
+    "startedUTC": "2026-11-05T07:05:17.403755+00:00",
+    "finishedUTC": "2026-11-05T07:05:17.665307+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "spawn",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "pluginkit",
+      "-h"
+    ],
+    "exit_code": 2,
+    "stdoutBytes": 0,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 254,
+    "stderrSHA256": "a8530c6d7ad7e10a5c5112c829f864be4abb37d68adf62894d18d36852fb690b"
+  },
+  {
+    "name": "device-log-show-help",
+    "startedUTC": "2026-11-05T07:05:17.665484+00:00",
+    "finishedUTC": "2026-11-05T07:05:17.917068+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "spawn",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "log",
+      "help",
+      "show"
+    ],
+    "exit_code": 64,
+    "stdoutBytes": 0,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 2791,
+    "stderrSHA256": "328b81bbde1ad956a1d02870a86f9913b10b7fd4447b68a6d6f0ae28f77bc8b6"
+  },
+  {
+    "name": "provider-registry-match-id",
+    "startedUTC": "2026-11-05T07:06:55.921007+00:00",
+    "finishedUTC": "2026-11-05T07:06:56.514206+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "spawn",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "pluginkit",
+      "-m",
+      "-A",
+      "-D",
+      "-v",
+      "-i",
+      "thalesmms.logisim.validation.revocationfixture.provider"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 360,
+    "stdoutSHA256": "9a11d20096defc483eef079ac5eb90a51ca9a6e777afcd524b5ac367080c177c",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "provider-registry-match-id-and-point",
+    "startedUTC": "2026-11-05T07:06:56.514441+00:00",
+    "finishedUTC": "2026-11-05T07:06:56.785389+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "spawn",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "pluginkit",
+      "-m",
+      "-A",
+      "-D",
+      "-v",
+      "-p",
+      "com.apple.fileprovider-nonui",
+      "-i",
+      "thalesmms.logisim.validation.revocationfixture.provider"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 360,
+    "stdoutSHA256": "9a11d20096defc483eef079ac5eb90a51ca9a6e777afcd524b5ac367080c177c",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "installed-app-group-containers",
+    "startedUTC": "2026-11-05T07:06:56.785580+00:00",
+    "finishedUTC": "2026-11-05T07:06:56.898696+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture",
+      "groups"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 0,
+    "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "host-pluginkit-man",
+    "utc": "2026-11-05T07:08:09.996333+00:00",
+    "argv": [
+      "/usr/bin/man",
+      "-P",
+      "cat",
+      "pluginkit"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 5898,
+    "stdoutSHA256": "f18459d302f2282a0fa93804d79398552b156a6515dc8812ea3217831bb42288",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "provider-registry-match-verbose3",
+    "utc": "2026-11-05T07:08:31.013600+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "spawn",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "pluginkit",
+      "-m",
+      "-A",
+      "-D",
+      "-v",
+      "-v",
+      "-v",
+      "-i",
+      "thalesmms.logisim.validation.revocationfixture.provider"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 816,
+    "stdoutSHA256": "042c0823078b053fa8648f2782b71a08d373e116b09c8ce03c9ddade4ca799f3",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "historical-registration-and-lookup-exact-ids",
+    "startedUTC": "2026-11-05T07:09:40.108682+00:00",
+    "finishedUTC": "2026-11-05T07:09:41.742719+00:00",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "spawn",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "log",
+      "show",
+      "--style",
+      "json",
+      "--info",
+      "--debug",
+      "--start",
+      "2026-11-05 06:57:30+0000",
+      "--end",
+      "2026-11-05 06:58:34+0000",
+      "--timezone",
+      "UTC",
+      "--predicate",
+      "eventMessage CONTAINS \"thalesmms.logisim.validation.revocationfixture\" OR eventMessage CONTAINS \"thalesmms.logisim.validation.revocationfixture.provider\""
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 2859605,
+    "stdoutSHA256": "251208aa01519842b005dd2b50b5454427b8e04f70965d9238cc3d7eb3a03596",
+    "stderrBytes": 44,
+    "stderrSHA256": "8b9e4a529f3e367142876bd0ce03ed7c7f10a50657c9a73fda0d6e30867e7523"
+  },
+  {
+    "name": "exact-appgroup-current-metadata",
+    "startedUTC": "2026-11-05T07:17:27.217220+00:00",
+    "finishedUTC": "2026-11-05T07:17:27.258049+00:00",
+    "argv": [
+      "python3",
+      "-c",
+      "from pathlib import Path\nimport datetime,hashlib,json,os,plistlib,stat\nroot=Path('/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4')\ndef stamp(value):return datetime.datetime.fromtimestamp(value,datetime.timezone.utc).isoformat()\ndef attrs(path):\n s=path.lstat();return {'path':str(path),'relative':str(path.relative_to(root)),'mode':oct(stat.S_IMODE(s.st_mode)),'uid':s.st_uid,'gid':s.st_gid,'size':s.st_size,'mtimeUTC':stamp(s.st_mtime),'birthtimeUTC':stamp(s.st_birthtime) if hasattr(s,'st_birthtime') else None,'isSymlink':path.is_symlink(),'isDirectory':stat.S_ISDIR(s.st_mode)}\nresult={'scope':'Current diagnostic metadata only; no containerURL API, no creation or preparation','groupIdentifier':'group.thalesmms.logisim.validation.revocationfixture','root':str(root),'exists':root.exists(),'queriedUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'entries':[]}\nif root.exists():\n assert not root.is_symlink()\n result['rootAttributes']=attrs(root)\n for current,dirs,files in os.walk(root,followlinks=False):\n  current=Path(current)\n  assert current.resolve().is_relative_to(root.resolve())\n  if len(current.relative_to(root).parts)>=5:dirs[:]=[]\n  for name in sorted(dirs+files):\n   path=current/name;item=attrs(path)\n   if not path.is_symlink() and path.is_file():\n    if name=='.com.apple.mobile_container_manager.metadata.plist':\n     data=path.read_bytes();item['sha256']=hashlib.sha256(data).hexdigest();item['metadata']=plistlib.loads(data)\n    elif path.suffix=='.circ' and path.stat().st_size==552:\n     item['sha256']=hashlib.sha256(path.read_bytes()).hexdigest()\n   result['entries'].append(item)\n   assert len(result['entries'])<=100,'Exact group unexpectedly exceeds bounded metadata scope'\nprint(json.dumps(result,indent=2,default=str))\n"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 5309,
+    "stdoutSHA256": "5a5438bf598ef059e2864cbc15825a8d48a88c936dd65b054822c8b8e87fadcd",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "exact-appgroup-existing-fixture-state",
+    "startedUTC": "2026-11-05T07:18:34.716948+00:00",
+    "finishedUTC": "2026-11-05T07:18:34.758060+00:00",
+    "argv": [
+      "python3",
+      "-c",
+      "from pathlib import Path\nimport base64,datetime,hashlib,json\np=Path('/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4/RevocationFixture/fixture-state.json')\nassert p.is_file() and not p.is_symlink()\nb=p.read_bytes();obj=json.loads(b)\nreport={'scope':'Existing exact-group fixture state; diagnostics only, no Prepare or file creation','queriedUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'path':str(p),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'rootKeys':list(obj) if isinstance(obj,dict) else None,'metadataLeaves':[],'decoded552ByteLeaves':[]}\ndef visit(value,path):\n if isinstance(value,dict):\n  for k,v in value.items():visit(v,path+[k])\n elif isinstance(value,list):\n  for i,v in enumerate(value):visit(v,path+[str(i)])\n else:\n  entry={'path':'.'.join(path),'type':type(value).__name__}\n  if isinstance(value,str):\n   entry['length']=len(value)\n   if len(value)<160:entry['value']=value\n   try:\n    data=base64.b64decode(value,validate=True)\n    if len(data)==552:report['decoded552ByteLeaves'].append({'path':'.'.join(path),'encoding':'base64','bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})\n   except (ValueError,TypeError):pass\n  else:entry['value']=value\n  report['metadataLeaves'].append(entry)\nvisit(obj,[])\nprint(json.dumps(report,indent=2))\n"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 4290,
+    "stdoutSHA256": "8cf377c7cfdccf752e05046341829b9e651c558cbddc5a832f8e5ace4401fb06",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "exact-appgroup-unchanged-raw-copy",
+    "startedUTC": "2026-11-05T07:26:06.049888+00:00",
+    "finishedUTC": "2026-11-05T07:26:06.087006+00:00",
+    "argv": [
+      "python3",
+      "-c",
+      "from pathlib import Path\nimport base64,hashlib,json\nroot=Path('/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4')\nexpected={'.com.apple.mobile_container_manager.metadata.plist':'8c201b2817be6f80df980e79e8f90e6e2cd9dd0c22ad25220f9fc4eda5852158','RevocationFixture/fixture-state.json':'5d70dcefd804d8ac2113e532a52c7d7091a0510f318233ec20373d36c56bdf35'}\nresult={}\nfor name,sha in expected.items():\n p=root/name;assert not p.is_symlink();data=p.read_bytes();assert hashlib.sha256(data).hexdigest()==sha\n result[name]={'bytes':len(data),'sha256':sha,'dataBase64':base64.b64encode(data).decode()}\nprint(json.dumps(result,indent=2))\n"
+    ],
+    "exit_code": 0,
+    "stdoutBytes": 4198,
+    "stdoutSHA256": "6c950e904740b8e85453e23e5090f4d3bf08e412a2ff51f34218d6688b074690",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

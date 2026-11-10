@@ -1,2 +1,91 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve the original bytes of the bundled Logisim Evolution board XML.
+composeApp/src/commonMain/composeResources/files/fpga-boards/*.xml -text whitespace=cr-at-eol,-blank-at-eof
+
+# Preserve captured tool-log bytes used by validation receipts.
+docs/validation/artifacts/android-export34-59-001/failure-logcat.txt whitespace=-blank-at-eol
+docs/validation/fpga-ice40-clock-2026-11-05/place-route.stderr.log whitespace=-blank-at-eol
+
+# Keep the upstream license text byte-identical for provenance checks.
+legal/licenses/native/partition_alloc-Apple-APSL-2.0.txt whitespace=-blank-at-eol
+
+# Preserve byte-exact Android diagnostic captures referenced by receipts.
+docs/validation/portable53-android-folder-deadlines/failed-8264/failure-last-anr.txt whitespace=-blank-at-eof
+docs/validation/portable53-android-folder-deadlines/failed-8264/portable-folder-storage-roundtrip-last-anr.txt whitespace=-blank-at-eof
+docs/validation/portable53-android-folder-drawer/failed-14368/census-activity.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-folder-drawer/failed-14368/census-window.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-folder-drawer/failed-14368/failure-logcat.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-folder-drawer/failed-14368/portable-folder-storage-roundtrip-logcat.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-folder-window-order/failed-13849/failure-last-anr.txt whitespace=-blank-at-eof
+docs/validation/portable53-android-folder-window-order/failed-13849/portable-folder-storage-roundtrip-last-anr.txt whitespace=-blank-at-eof
+docs/validation/portable53-android-one-tap-diagnostic/one-tap-diagnostic-retry2/after-activity.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-one-tap-diagnostic/one-tap-diagnostic-retry2/after-window.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-one-tap-diagnostic/one-tap-diagnostic-retry2/before-activity.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-one-tap-diagnostic/one-tap-diagnostic-retry2/before-confirmed-activity.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-one-tap-diagnostic/one-tap-diagnostic-retry2/before-confirmed-window.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-one-tap-diagnostic/one-tap-diagnostic-retry2/before-window.txt whitespace=-blank-at-eol
+docs/validation/portable53-android-one-tap-diagnostic/one-tap-diagnostic/before-activity.txt whitespace=-blank-at-eol
+
+# Preserve the completed iOS build logs referenced by the final native receipts.
+docs/validation/portable53-ios-main6cef-pass/native/bundle/build.log whitespace=-blank-at-eol,-blank-at-eof
+docs/validation/portable53-ios-main6cef-pass/native/folder/build.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Preserve captured export diagnostics and the original Keyboard failing test log.
+docs/validation/artifacts/ios-export34-beta-001/stackshot-excerpts.txt whitespace=-blank-at-eol
+docs/validation/artifacts/ios-export34-beta-001/test.log whitespace=-blank-at-eol
+docs/validation/io44-keyboard-callback-85da/host-red.log whitespace=-blank-at-eof
+# Preserve the complete JUnit output used by accessibility ownership receipts.
+docs/validation/accessibility-context-ownership-bb63d681/red/junit.log whitespace=-blank-at-eof
+docs/validation/accessibility-context-ownership-bb63d681/green/junit.log whitespace=-blank-at-eof
+docs/validation/android-snapshot-root-unavailable/policy-green.log whitespace=-blank-at-eof
+# Preserve byte-exact JVM/JFR startup logs referenced by performance captures.
+docs/performance-evidence/jvm-bb63d681/jvm-quiet-01.log whitespace=-blank-at-eol
+docs/performance-evidence/jvm-bb63d681/jvm-quiet-02.log whitespace=-blank-at-eol
+
+# Preserve the byte-exact startup log of the restricted JFR smoke.
+docs/performance-evidence/jfr-privacy-smoke-001/run.log whitespace=-blank-at-eol
+
+# Preserve the original host probe compiler diagnostic bytes.
+docs/validation/ios-editor36-search-reveal/geometry-probe-initial-error.log whitespace=-blank-at-eol
+docs/validation/ios-editor36-joint-header/initial-setup-diagnostic/typecheck.log whitespace=-blank-at-eol
+docs/validation/ios-io44-window-r2-abort/run/build.log whitespace=-blank-at-eol,-blank-at-eof
+docs/validation/ios-io44-window-r2-abort/run/simulator.log whitespace=-blank-at-eol
+# Preserve the initial layout12 Native precondition-failure captures byte for byte.
+docs/validation/artifacts/layout12-small-phone-font1-5558-001/run/layout12-001-window-before-layout-activity.txt whitespace=-blank-at-eol
+docs/validation/artifacts/layout12-small-phone-font1-5558-001/run/layout12-001-window-before-layout-window.txt whitespace=-blank-at-eol
+# Preserve layout12 R2 verbose state and failure captures byte for byte.
+docs/validation/artifacts/layout12-small-phone-font1-5558-002/run/failure-error.txt whitespace=-blank-at-eof
+docs/validation/artifacts/layout12-small-phone-font1-5558-002/run/layout12-001-window-before-layout-activity.txt whitespace=-blank-at-eol
+docs/validation/artifacts/layout12-small-phone-font1-5558-002/run/layout12-001-window-before-layout-window.txt whitespace=-blank-at-eol
+docs/validation/artifacts/layout12-small-phone-font1-5558-002/run/layout12-small-phone-error.txt whitespace=-blank-at-eof
+docs/validation/artifacts/layout12-small-phone-font1-5558-002/window-verbose-before-ui.txt whitespace=-blank-at-eol
+docs/validation/android-io-dip-3a0a01f1-001/controller/after/accessibility.stdout -whitespace
+docs/validation/android-io-dip-3a0a01f1-001/controller/before/accessibility.stdout -whitespace
+# Preserve layout12 R3 read-only diagnostics without trimming raw captures.
+docs/validation/artifacts/layout12-small-phone-font1-5558-003/run/layout12-001-window-before-layout-activity.txt whitespace=-blank-at-eol
+docs/validation/artifacts/layout12-small-phone-font1-5558-003/run/layout12-001-window-before-layout-window.txt whitespace=-blank-at-eol
+docs/validation/artifacts/layout12-small-phone-font1-5558-003/window-verbose-before-ui.txt whitespace=-blank-at-eol
+docs/validation/android-editing-3a0a01f1-bdc390d1-001/raw/editing-create-properties-logcat.txt -whitespace
+docs/validation/android-editing-3a0a01f1-bdc390d1-001/raw/failure-logcat.txt -whitespace
+docs/validation/android-editing-3a0a01f1-bdc390d1-001/controller/after/accessibility.stdout -whitespace
+docs/validation/android-editing-3a0a01f1-bdc390d1-001/controller/before/accessibility.stdout -whitespace
+docs/validation/android-editing-3a0a01f1-1bb15545-r2-001/raw/editing-wires-truth-table-logcat.txt -whitespace
+docs/validation/android-editing-3a0a01f1-1bb15545-r2-001/raw/failure-logcat.txt -whitespace
+docs/validation/android-editing-3a0a01f1-1bb15545-r2-001/controller/after/accessibility.stdout -whitespace
+docs/validation/android-editing-3a0a01f1-1bb15545-r2-001/controller/before/accessibility.stdout -whitespace
+# Preserve deterministic census CSV bytes, including their declared CRLF records.
+docs/validation/artifacts/layout12-r3-analysis/census/files.csv -text whitespace=cr-at-eol
+docs/validation/artifacts/layout12-r3-analysis/census/roots.csv -text whitespace=cr-at-eol
+docs/validation/artifacts/layout12-r3-analysis/census/query-route.csv -text whitespace=cr-at-eol
+# Preserve the two original accessibility dumps in the Android editing R3 packet.
+docs/validation/android35-editing-3a0a01f1-r3/control/before/accessibility.stdout whitespace=-blank-at-eol
+docs/validation/android35-editing-3a0a01f1-r3/control/after/accessibility.stdout whitespace=-blank-at-eol
+# Preserve the source-derived getevent fixture exactly as captured by the getter.
+docs/validation/accessibility-reader-3a0a01f1/android-console-one-gesture-prepared-001/numeric-capabilities.fixture.txt whitespace=-blank-at-eol
+
+# Preserve the actual reader-on dump bytes used by the stopped-unit replay.
+docs/validation/accessibility-reader-3a0a01f1/android-console-precondition-5556-001/baseline-before-sdk-a11y.txt whitespace=-blank-at-eol
+docs/validation/accessibility-reader-3a0a01f1/android-console-precondition-5556-001/baseline-after-sdk-a11y.txt whitespace=-blank-at-eol
+docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/numeric-capabilities.fixture.txt whitespace=-blank-at-eol

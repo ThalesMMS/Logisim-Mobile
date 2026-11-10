@@ -1,0 +1,43 @@
+{
+  "status": "PLAN_ONLY",
+  "nativeExecution": "NOT_RUN",
+  "sourcePatchProduced": false,
+  "artifactBuilt": false,
+  "proposal": {
+    "preserveDirectKeys": [
+      "NSExtension.NSExtensionFileProviderDocumentGroup",
+      "NSExtension.NSExtensionFileProviderSupportsEnumeration"
+    ],
+    "addOnly": "NSExtension.NSExtensionAttributes.NSExtensionFileProviderDocumentGroup",
+    "addedValue": "Same exact group identifier as the direct key",
+    "doNotMove": "NSExtensionFileProviderSupportsEnumeration",
+    "unchangedInputsToVerify": [
+      "Executable code and build inputs; record full executable/signature fingerprints separately",
+      "Provider class/code",
+      "Bundle IDs",
+      "Signing identity and configuration",
+      "Entitlements",
+      "Group identity/backend data",
+      "Runtime and harness"
+    ]
+  },
+  "packagingLimit": "Changing Info.plist necessarily changes sealed resources/signature bytes and requires a newly fingerprinted fixture artifact; it cannot remain byte-identical to 11fc. Re-signing may also change the embedded Mach-O signature bytes, so an identical whole-executable SHA is not required as proof of unchanged code.",
+  "question": "Whether an identical legacy-path declaration changes discovery/association when the direct current declaration remains present.",
+  "notEstablished": [
+    "Direct key was unread or absent",
+    "Which internal consumer reads each path",
+    "Documented alias precedence or guarantee for duplication",
+    "Signature or Simulator defect",
+    "Product repair or native acceptance"
+  ],
+  "interpretation": {
+    "success": "Supports a compatibility effect of the metadata/installation change; does not by itself identify the internal cause.",
+    "sameFailure": "Does not prove signing, unsupported platform, or that the current documented keypath is invalid.",
+    "noFreshDiscoveryEvidence": "Mechanism remains inconclusive."
+  },
+  "wholeArtifactByteIdentityExpected": false,
+  "signatureResourceBytesChangeExpected": true,
+  "priority": "DEPRIORITIZED",
+  "executionRecommended": false,
+  "compatibilityDemonstrated": false
+}

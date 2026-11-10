@@ -1,0 +1,13 @@
+M	revision	d58a61e0
+F	circuits	1
+G	BusAdder	Pin	100,120	100,120:8:2
+G	BusAdder	Adder	300,160	260,150:8:1;260,170:8:1;280,140:1:1;280,180:1:2;300,160:8:2
+G	BusAdder	Pin	420,160	420,160:8:1
+G	BusAdder	Pin	100,220	100,220:8:2
+G	BusAdder	Pin	420,260	420,260:1:1
+V	zero	Carry	0
+V	zero	S	00000000
+V	carry	Carry	1
+V	carry	S	00000000
+V	high-bit	Carry	0
+V	high-bit	S	10000000

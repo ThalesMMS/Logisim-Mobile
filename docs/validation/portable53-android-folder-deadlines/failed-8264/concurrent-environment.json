@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "recordedAtUtc": "2026-11-05T03:14:08.818807+00:00",
+  "serial": "emulator-5558",
+  "avd": "Logisim-E2E-PT-20261104T204213Z-5c6684",
+  "leaseOwners": [
+    "performance released explicitly",
+    "android_files ceded explicitly",
+    "codec_full running Portable53"
+  ],
+  "concurrentActivity": {
+    "emulator-5556": "android_files validation; untouched by this worker",
+    "iOS EFC": "Beta/SaveAs validation by assigned owner; untouched by this worker",
+    "iOS B25": "Portable53 run by codec_full/library_format; distinct device and exclusive owner"
+  },
+  "scope": "Folder feature/durability qualification only; bundle already qualified separately. Concurrent host/device workload excludes performance48.",
+  "runtimeCommand": "e2e-android.py --serial emulator-5558 --scenario portable --language en --artifacts artifacts-59d5606b --build-receipt app-build-receipt.json",
+  "harnessSource": "707a0ca4c05253ba65d4d7c3b149bad5d4b52b3f"
+}

@@ -1,0 +1,303 @@
+{
+ "ipad-1": {
+  "device": "Logisim iPad 27.0",
+  "udid": "E47EAD1D-B9B8-4C6E-97EB-411A95459114",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_FAIL",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "5cb0c37b3d13f22723e8c76263d45f7ce743e244aed0f47028db8b838d843fe4",
+   "IoEndToEndTests.swift": "d7cfd2d26d011a0b488fbf979024fa84a05c64125f5422ae5561ef7508c456a1",
+   "NativeUIHarness.swift": "bfd520341f1eb060dcf121126c845d1dee38d5ac7f0a0ddb2c0f2677c02009fb"
+  },
+  "tests": {
+   "testProjectMouseMappings()": {
+    "result": "Passed",
+    "duration": "24s",
+    "failure": []
+   },
+   "testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction()": {
+    "result": "Failed",
+    "duration": "1m 42s",
+    "failure": [
+     "failed - One visible software keyboard is required for the single Delete policy."
+    ]
+   },
+   "testNarrowInspectorMovesInlineOnWideTablet()": {
+    "result": "Failed",
+    "duration": "2m 19s",
+    "failure": [
+     "failed - No reachable control for [\"Abrir propriedades da seleção\", \"Open selection properties\"]"
+    ]
+   },
+   "testIoDimensionChangesRemainExportable()": {
+    "result": "Failed",
+    "duration": "8m 27s",
+    "failure": [
+     "failed - No reachable control for [\"Editar propriedade Tamanho da porta\", \"Edit property Gate size\"] in the docked inspector"
+    ]
+   },
+   "testIoDipLastExportAndReopen()": {
+    "result": "Failed",
+    "duration": "1m 21s",
+    "failure": [
+     "XCTAssertEqual failed: (\"Optional(\"0x2\")\") is not equal to (\"Optional(\"2\")\") - Persist IO_DIP.positions"
+    ]
+   },
+   "testIoDisplaySignalsAndNativeDrawing()": {
+    "result": "Passed",
+    "duration": "3m 53s",
+    "failure": []
+   },
+   "testIoKeyboardTtyAndCapacity()": {
+    "result": "Failed",
+    "duration": "2m 28s",
+    "failure": [
+     "failed - No reachable control for [\"ASCII form feed\", \"Limpar tela ASCII\"] in the docked inspector"
+    ]
+   },
+   "testIoMomentaryControlsAndJoystick()": {
+    "result": "Passed",
+    "duration": "1m 58s",
+    "failure": []
+   }
+  },
+  "note": "first round, before the second batch of harness fixes"
+ },
+ "ipad-2": {
+  "device": "Logisim iPad 27.0",
+  "udid": "E47EAD1D-B9B8-4C6E-97EB-411A95459114",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_FAIL",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "ec133169dcf5fdb316a2c107ddefecccb6dd09accd5b7fa358b08648458ccb57",
+   "IoEndToEndTests.swift": "b1f62f21bb4c6b57036a25a0e0eefae071e7113c87e89957d62609f3b3dbedad",
+   "NativeUIHarness.swift": "7515dbb848a4dc5cafabd645cf85fb8b2296349e7f203115a9105dd018db8345"
+  },
+  "tests": {
+   "testProjectMouseMappings()": {
+    "result": "Passed",
+    "duration": "24s",
+    "failure": []
+   },
+   "testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction()": {
+    "result": "Failed",
+    "duration": "1m 39s",
+    "failure": [
+     "failed - One visible software keyboard is required for the single Delete policy."
+    ]
+   },
+   "testNarrowInspectorMovesInlineOnWideTablet()": {
+    "result": "Passed",
+    "duration": "12s",
+    "failure": []
+   },
+   "testIoDimensionChangesRemainExportable()": {
+    "result": "Passed",
+    "duration": "10m",
+    "failure": []
+   },
+   "testIoDipLastExportAndReopen()": {
+    "result": "Passed",
+    "duration": "4m 15s",
+    "failure": []
+   },
+   "testIoDisplaySignalsAndNativeDrawing()": {
+    "result": "Passed",
+    "duration": "3m 53s",
+    "failure": []
+   },
+   "testIoKeyboardTtyAndCapacity()": {
+    "result": "Passed",
+    "duration": "3m 26s",
+    "failure": []
+   },
+   "testIoMomentaryControlsAndJoystick()": {
+    "result": "Passed",
+    "duration": "1m 59s",
+    "failure": []
+   }
+  }
+ },
+ "mini-1": {
+  "device": "iPad mini (A17 Pro)",
+  "udid": "18F1B676-6A4E-4FCF-94EA-0AA3612C53EF",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_PASS",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "ec133169dcf5fdb316a2c107ddefecccb6dd09accd5b7fa358b08648458ccb57",
+   "IoEndToEndTests.swift": "b1f62f21bb4c6b57036a25a0e0eefae071e7113c87e89957d62609f3b3dbedad",
+   "NativeUIHarness.swift": "7515dbb848a4dc5cafabd645cf85fb8b2296349e7f203115a9105dd018db8345"
+  },
+  "tests": {
+   "testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction()": {
+    "result": "Passed",
+    "duration": "2m 26s",
+    "failure": []
+   },
+   "testNarrowInspectorMovesInlineOnWideTablet()": {
+    "result": "Passed",
+    "duration": "13s",
+    "failure": []
+   }
+  }
+ },
+ "a16-1": {
+  "device": "iPad (A16)",
+  "udid": "1159F2FC-E0B5-4559-ADE5-3FD90FA2042C",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_PASS",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "ec133169dcf5fdb316a2c107ddefecccb6dd09accd5b7fa358b08648458ccb57",
+   "IoEndToEndTests.swift": "b1f62f21bb4c6b57036a25a0e0eefae071e7113c87e89957d62609f3b3dbedad",
+   "NativeUIHarness.swift": "7515dbb848a4dc5cafabd645cf85fb8b2296349e7f203115a9105dd018db8345"
+  },
+  "tests": {
+   "testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction()": {
+    "result": "Passed",
+    "duration": "2m 23s",
+    "failure": []
+   }
+  }
+ },
+ "iphone-1": {
+  "device": "Logisim iPhone 27.0",
+  "udid": "3707429D-73D2-49E3-B157-5B116D177810",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_FAIL",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "ec133169dcf5fdb316a2c107ddefecccb6dd09accd5b7fa358b08648458ccb57",
+   "IoEndToEndTests.swift": "b1f62f21bb4c6b57036a25a0e0eefae071e7113c87e89957d62609f3b3dbedad",
+   "NativeUIHarness.swift": "7515dbb848a4dc5cafabd645cf85fb8b2296349e7f203115a9105dd018db8345"
+  },
+  "tests": {
+   "testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction()": {
+    "result": "Passed",
+    "duration": "2m 31s",
+    "failure": []
+   },
+   "testIoDimensionChangesRemainExportable()": {
+    "result": "Failed",
+    "duration": "1m 51s",
+    "failure": [
+     "failed - No reachable control for [\"Fechar\", \"Close\"] after waiting for its native presentation"
+    ]
+   },
+   "testIoDipLastExportAndReopen()": {
+    "result": "Passed",
+    "duration": "4m 45s",
+    "failure": []
+   },
+   "testIoDisplaySignalsAndNativeDrawing()": {
+    "result": "Failed",
+    "duration": "57s",
+    "failure": [
+     "failed - No reachable control for [\"Fechar\", \"Close\"] after waiting for its native presentation"
+    ]
+   },
+   "testIoKeyboardTtyAndCapacity()": {
+    "result": "Failed",
+    "duration": "1m 21s",
+    "failure": [
+     "failed - No reachable control for [\"Close\", \"Fechar\"] after waiting for its native presentation"
+    ]
+   },
+   "testIoMomentaryControlsAndJoystick()": {
+    "result": "Passed",
+    "duration": "2m 21s",
+    "failure": []
+   }
+  },
+  "note": "three Close failures fixed afterwards"
+ },
+ "iphone-2": {
+  "device": "Logisim iPhone 27.0",
+  "udid": "3707429D-73D2-49E3-B157-5B116D177810",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_RUNNING",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "ec133169dcf5fdb316a2c107ddefecccb6dd09accd5b7fa358b08648458ccb57",
+   "IoEndToEndTests.swift": "2e0569d2db187561896bd86040915742d2ddb14acbbe7c94f10d4fb6104c7e09",
+   "NativeUIHarness.swift": "7515dbb848a4dc5cafabd645cf85fb8b2296349e7f203115a9105dd018db8345"
+  },
+  "tests": {
+   "testIoDimensionChangesRemainExportable()": {
+    "result": "Passed",
+    "duration": "14m",
+    "failure": []
+   },
+   "testIoDisplaySignalsAndNativeDrawing()": {
+    "result": "Passed",
+    "duration": "9m 29s",
+    "failure": []
+   },
+   "testIoKeyboardTtyAndCapacity()": {
+    "result": "Failed",
+    "duration": null,
+    "failure": [
+     "Test crashed with signal term."
+    ]
+   }
+  },
+  "note": "ended by the 1800 s host alarm (rc 142) during the Keyboard test; not a test verdict for that case"
+ },
+ "ipad-3": {
+  "device": "Logisim iPad 27.0",
+  "udid": "E47EAD1D-B9B8-4C6E-97EB-411A95459114",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_PASS",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "ec133169dcf5fdb316a2c107ddefecccb6dd09accd5b7fa358b08648458ccb57",
+   "IoEndToEndTests.swift": "2e0569d2db187561896bd86040915742d2ddb14acbbe7c94f10d4fb6104c7e09",
+   "NativeUIHarness.swift": "7515dbb848a4dc5cafabd645cf85fb8b2296349e7f203115a9105dd018db8345"
+  },
+  "tests": {
+   "testIoDisplaySignalsAndNativeDrawing()": {
+    "result": "Passed",
+    "duration": "3m 55s",
+    "failure": []
+   }
+  }
+ },
+ "iphone-3": {
+  "device": "Logisim iPhone 27.0",
+  "udid": "3707429D-73D2-49E3-B157-5B116D177810",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+  "gate": "NATIVE_PASS",
+  "declared_baseline_sha": "8000d09a",
+  "app_bundle_tree_sha256": "9125ce98b7e70b25c478e61b59b5f491c18ab7f9de5db0087cb480f8acf8fa26",
+  "harness_sources": {
+   "EditorEndToEndTests.swift": "cce3fd1bba20cafcd1b2343107a3a41d092011da3ad0fadccc9c20406ca5bd5f",
+   "InspectorEndToEndTests.swift": "ec133169dcf5fdb316a2c107ddefecccb6dd09accd5b7fa358b08648458ccb57",
+   "IoEndToEndTests.swift": "2e0569d2db187561896bd86040915742d2ddb14acbbe7c94f10d4fb6104c7e09",
+   "NativeUIHarness.swift": "7515dbb848a4dc5cafabd645cf85fb8b2296349e7f203115a9105dd018db8345"
+  },
+  "tests": {
+   "testIoKeyboardTtyAndCapacity()": {
+    "result": "Passed",
+    "duration": "6m 59s",
+    "failure": []
+   }
+  }
+ }
+}

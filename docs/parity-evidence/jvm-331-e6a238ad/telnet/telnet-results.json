@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {"case": "raw-read-write", "mobile-companion": "DIFF", "mobile-companion-sampled": "SAME", "mobile-jvm": "DIFF", "mobile-jvm-sampled": "SAME", "steps": 28},
+    {"case": "falling-edge", "mobile-companion": "DIFF", "mobile-companion-sampled": "SAME", "mobile-jvm": "DIFF", "mobile-jvm-sampled": "SAME", "steps": 13},
+    {"case": "telnet-mode", "mobile-companion": "DIFF", "mobile-companion-sampled": "SAME", "mobile-jvm": "DIFF", "mobile-jvm-sampled": "SAME", "steps": 21},
+    {"case": "input-buffer-limit", "mobile-companion": "DIFF", "mobile-companion-sampled": "SAME", "mobile-jvm": "DIFF", "mobile-jvm-sampled": "SAME", "steps": 18},
+    {"case": "write-without-peer", "mobile-companion": "SAME", "mobile-companion-sampled": "SAME", "mobile-jvm": "SAME", "mobile-jvm-sampled": "SAME", "steps": 12},
+    {"case": "second-peer", "mobile-companion": "DIFF", "mobile-companion-sampled": "DIFF", "mobile-jvm": "DIFF", "mobile-jvm-sampled": "DIFF", "steps": 16},
+    {"case": "peer-reset", "mobile-companion": "DIFF", "mobile-companion-sampled": "SAME", "mobile-jvm": "DIFF", "mobile-jvm-sampled": "SAME", "steps": 15},
+    {"case": "reconnect-after-close", "mobile-companion": "DIFF", "mobile-companion-sampled": "SAME", "mobile-jvm": "DIFF", "mobile-jvm-sampled": "SAME", "steps": 15}
+  ],
+  "bindAddress": {"evolution": "0.0.0.0", "mobile-companion": "127.0.0.1"},
+  "same": 2,
+  "different": 14,
+  "sampledSame": 14,
+  "sampledDifferent": 2
+}

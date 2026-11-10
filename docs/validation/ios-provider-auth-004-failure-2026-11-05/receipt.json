@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "archiveID": "ios-provider-auth-ad28-004",
+  "archiveKind": "DOCS_ONLY_FAILED_SELECTED_CASE",
+  "baseCommit": "3f7ba0b4f0a9c48aff144bd578a11bab69f7b908",
+  "runID": "a26a02940004",
+  "recordedUTC": "2026-11-05T12:14:48.000639+00:00",
+  "status": "FAIL",
+  "runnerExitCode": {
+    "value": 1,
+    "evidenceKind": "RUNTIME_COORDINATOR_ATTESTATION",
+    "key": "attestations/runner-terminal.json"
+  },
+  "xctest": {
+    "exitCode": 65,
+    "total": 1,
+    "failed": 1,
+    "passed": 0,
+    "skipped": 0,
+    "methodSeconds": 61.284,
+    "selector": "ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject"
+  },
+  "rawGates": {
+    "status": "FAIL",
+    "native_execution_gate": "NATIVE_INCOMPLETE",
+    "test_execution_gate": "NATIVE_INCOMPLETE",
+    "qualification_gate": "NOT_QUALIFIED"
+  },
+  "harness": {
+    "commit": "3f7ba0b4f0a9c48aff144bd578a11bab69f7b908",
+    "dirty": false,
+    "status": "",
+    "sources": {
+      "scripts/run-ios-provider-auth.py": "3089693e942d62d79cefdc0f368a4559a426a18fb17ca9b730caf3ab4b88fbca",
+      "scripts/run-ios-accessibility.py": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+      "scripts/ios_provider_auth_ui/project.yml": "80acd9197b77f7585f3bb25c871af70b809c7aaf93354d6e4a0606374df545ed",
+      "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "8ee8edab41e1ac89edab90a680cb15280c18f82d37e2b9f8158b7b5c7633dfc1",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "1f398875f7ea235ef0f87be3befeea4baae9b586abeac24a2845466a603f7e2c",
+      "scripts/ios_provider_auth_ui/ProviderFixtureController.swift": "cede3eb37b53aef9525552183ef6946b58a9ba03f2b6732b1392f9242c5058c5",
+      "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift": "57808e8bbd48bec51a8bb9f43c0e6a1e420fe5af931151bd33efa6ffaf43ef66",
+      "scripts/ios_provider_auth_ui/ProvenanceMainArtifact.json": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "scripts/ios_provider_auth_ui/ProvenanceSignedFixture.json": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "scripts/ios_provider_auth_ui/ProvenanceArtifactReview.json": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    }
+  },
+  "artifacts": {
+    "main": {
+      "bundleID": "thalesmms.logisim.mobile",
+      "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "artifactManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+      "executableSHA256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48"
+    },
+    "fixture": {
+      "bundleID": "thalesmms.logisim.validation.revocationfixture",
+      "providerBundleID": "thalesmms.logisim.validation.revocationfixture.provider",
+      "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+      "artifactManifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "appTreeSHA256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+      "providerTreeSHA256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+      "entitlementReviewSHA256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    }
+  },
+  "cohort": "EXISTING_MAIN_PLUS_PROVIDER_REUSED_EXACT",
+  "installationContextChange": {
+    "main": "REUSED_EXACT_INSTALLED_MAIN",
+    "fixture": "REUSED_EXACT_REGISTERED_FIXTURE",
+    "fixtureInstalledOrRefreshed": false,
+    "context": "Main+Provider; this is no longer the previous UIKit-only fixture context."
+  },
+  "buildSerialization": {
+    "wrapper": "/tmp/logisim-gradle-serial.py",
+    "sha256": "61fb2ff0e8e1969b80c2880424683834a5dcd3cdcf79450a40dba15dc4f6471b",
+    "retained": "BuildSerializationWrapper.py",
+    "lock": "/tmp/logisim-gradle.lock",
+    "scope": "BUILD_FOR_TESTING_ONLY",
+    "wrapperProcessCompleted": true,
+    "interruptionDeferred": false,
+    "exitCode": 0
+  },
+  "failure": {
+    "kind": "PREPARATORY_EVICTION_CALLBACK_FAILED_FIXTURE_GUARD",
+    "assertion": "failed - The fixture did not expose its expected successful callback status: Eviction completed. Authentication remains allowed. Native scenario: NOT_RUN.",
+    "tree": "run/attachments/DE75BCF2-4C16-4C9A-998E-5352CA7DDF9E.txt",
+    "screenshot": "run/attachments/E9CB5B3E-A254-4943-96F8-E646FA8969C3.png",
+    "productDefectEstablished": false
+  },
+  "publicBaseline": {
+    "snapshot": "run/attachments/3214AAE6-745D-4F87-8A65-F3E65CCB8B50.json",
+    "publicText": "run/attachments/001B0C42-C42D-46D0-8EBE-C94026E8190F.txt",
+    "scenario": "run/attachments/28184BE4-426E-4890-8033-0FE05B44758E.json",
+    "authenticationAllowed": true,
+    "backendBytes": 552,
+    "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "generation": 1,
+    "lastSequence": 80,
+    "postState": false
+  },
+  "postflight": {
+    "bundleFingerprintsEqual": true,
+    "roles": [
+      "Main",
+      "App",
+      "Provider"
+    ],
+    "providerBackendState": "FAILURE_SNAPSHOT_ONLY",
+    "providerAuthenticationState": "FAILURE_SNAPSHOT_ONLY",
+    "afterFailureSnapshot": "NOT_OBSERVED"
+  },
+  "notReached": [
+    "successful preparatory eviction callback",
+    "Main Files opening for this attempt",
+    "fresh fetch event-pair proof",
+    "opened project XML capture",
+    "editing and successful upload proof",
+    "persisted security-scoped reference verification",
+    "restart with saved external reference",
+    "later eviction and authentication denial",
+    "denied Save and project-preservation comparison",
+    "public Allow cleanup"
+  ],
+  "claims": {
+    "authenticationDenialPassed": false,
+    "securityScopeRevocationProven": false,
+    "issue26Closed": false,
+    "issue36Closed": false,
+    "cloudValidated": false,
+    "physicalDeviceValidated": false,
+    "evictionSucceeded": false,
+    "requestedFieldMaskKnown": false,
+    "globalBackendUnchanged": false
+  },
+  "evidence": {
+    "inventory": "inventory.json",
+    "results": "run/results.json",
+    "commands": "run/commands.json",
+    "preflight": "run/preflight.json",
+    "Run": "run/harness/Run.json",
+    "attachmentsManifest": "run/attachments/manifest.json",
+    "xcresultSummary": "run/015-xcresult-summary.stdout",
+    "testLog": "run/014-auth-test.stdout",
+    "buildLog": "run/013-harness-build.stdout",
+    "runnerTerminal": "attestations/runner-terminal.json"
+  },
+  "retention": {
+    "sourceOutputNotModified": true,
+    "opaqueAttachmentsVideoXcresultDerivedData": "LOCAL_ONLY_NOT_COMMITTED",
+    "archivedEvidenceFiles": 97,
+    "archivedAttachments": 16,
+    "allAttachmentCount": 26
+  },
+  "fixtureSourceHashes": {
+    "fixture-source/scripts/ios_fileprovider_revocation/ControlApp/RevocationFixtureApp.swift": "efc145d0ce3a622afdd4e62998a28decad3fecf96b255d6aaeb8a112a25a854f",
+    "fixture-source/scripts/ios_fileprovider_revocation/Provider/RevocationFileProvider.swift": "1db4774dd8b92b71b7e4242e763b6d6b5145417745eb8e68dbab725e0bee5479",
+    "fixture-source/scripts/ios_fileprovider_revocation/Shared/FixtureStore.swift": "71053b0a6849e9acdbf06fd29881141a6707102b8c22f47ec0ad2e8fc0f6385b",
+    "fixture-source/scripts/ios_fileprovider_revocation/Shared/FixtureErrorDiagnostic.swift": "4260933a1c29a227132e15252f76f64a29446cebfa3e94203d4a8b9503dcb3e4"
+  },
+  "preparation": {
+    "permittedAction": "one public fixture.evict before Main Files",
+    "evictTapCount": 1,
+    "MainTerminatedBeforeEvict": true,
+    "denyAfterCompletion": false,
+    "baselineLastSequence": 80,
+    "requestSequence": 81,
+    "newEventSequences": [
+      81,
+      82,
+      83,
+      84,
+      85
+    ],
+    "modifyStartedSequence": 83,
+    "modifyFailedSequence": 84,
+    "evictionFailedSequence": 85,
+    "itemIdentifier": "revocation-circuit-v1",
+    "requestID": "961C9B1C-1E0E-433B-B27B-275A7ED07291",
+    "providerProcess": "RevocationProvider:8735",
+    "fixtureProcess": "RevocationFixture:32596",
+    "errorDomain": "NSCocoaErrorDomain",
+    "errorCode": 3328,
+    "reportedGuardReason": "The fixture does not commit metadata-only changes.",
+    "requestedChangedFields": "NOT_RECORDED",
+    "newContentsURLPresence": "NOT_RECORDED",
+    "historicalRequestID": "951FCE5C-D7DC-49E5-905F-44DC46562029",
+    "historicalModifySequences": [
+      78,
+      79
+    ]
+  },
+  "publicFailure": {
+    "publicText": "run/attachments/FC8BA1F6-C0BE-483A-8E60-A8D9DAA0FD70.txt",
+    "authenticationAllowed": true,
+    "backendBytes": 552,
+    "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "generation": 1,
+    "lastSequence": 85,
+    "scope": "CAPTURED_AT_CALLBACK_FAILURE_ONLY"
+  }
+}

@@ -1,0 +1,14 @@
+F	circuits	1
+G	DMemory	Pin	100,180	100,180:1:2
+G	DMemory	D Flip-Flop	300,200	260,200:1:1;260,220:1:1;270,230:1:1;290,230:1:1;300,200:1:2;300,220:1:2
+G	DMemory	Pin	420,200	420,200:1:1
+G	DMemory	Pin	100,260	100,260:1:2
+G	DMemory	Pin	100,320	100,320:1:2
+V	before-edge	Q	0
+V	rising-edge	Q	1
+V	hold	Q	1
+V	falling-edge	Q	1
+V	next-rising-edge	Q	0
+V	capture-one	Q	0
+V	capture-one-edge	Q	1
+V	asynchronous-clear	Q	0

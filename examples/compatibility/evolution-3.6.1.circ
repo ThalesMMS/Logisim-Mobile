@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project source="3.6.1" version="1.0">
+  <lib name="w" desc="#Wiring"/><lib name="m" desc="#Memory"/><lib name="p" desc="#Plexers"/>
+  <main name="main" marker="retained"><extra/></main>
+  <circuit name="main" id="main-stable">
+    <comp lib="w" name="Pin" loc="(10,10)"><a name="output" val="false"/><a name="tristate" val="true"/><a name="pull" val="down"/></comp>
+    <comp lib="m" name="Register" loc="(100,100)"/>
+    <comp lib="p" name="Multiplexer" loc="(250,100)"/>
+    <comp lib="p" name="Decoder" loc="(400,100)"/>
+  </circuit>
+</project>

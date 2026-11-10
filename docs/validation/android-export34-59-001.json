@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "issue": 34,
+  "platform": "Android",
+  "status": "FAIL",
+  "scope": "One mounted editor visual-export run; no adapter fixture bypass",
+  "productSource": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "harnessSource": "bc98f9349dd326a4ba34623e3912ac6321ed1a5d",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5556",
+  "device": {
+    "deviceApi": "35",
+    "deviceFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+    "screenSize": "Physical size: 1080x2400",
+    "screenDensity": "Physical density: 420",
+    "systemLocales": "en-US"
+  },
+  "physicalDevice": false,
+  "performanceQualification": false,
+  "concurrency": "Portable-project qualification used emulator-5558 during this run; no performance attribution.",
+  "artifacts": {
+    "appSha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546",
+    "testSha256": "d07155cae8d2d3a13448da8473821fbb547b7947377d862271a1cfbf4f01e11b",
+    "snapshotSha256": "edb8431d3cda26d83529fc5b57553e3551f754cb425216675091ba4a80c523d6"
+  },
+  "fixtureSHA256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "contractSHA256": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "scenarioSHA256": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763",
+  "launchResult": "Status: ok",
+  "resetTaskIdsBefore": [],
+  "resetTaskRemoval": [],
+  "resetEvidenceLimit": "No pre-reset isolated-app task IDs were present, so this run does not exercise the barrier waiting for a nonempty task set.",
+  "observed": {
+    "fixtureImport": {
+      "circuits": 3,
+      "mainComponents": 78,
+      "mainWires": 4
+    },
+    "wholeExportFieldValues": [
+      "export34-b7514741c0ce",
+      "0.25",
+      "10"
+    ],
+    "wholeExportSelectionOnly": false,
+    "wholeExportTransparent": false,
+    "saveAction": "Invoked; first failure screenshot shows renderer progress and disabled fields.",
+    "nativeCreateDocument": "Final failure screenshot and hierarchy show Downloads with export34-b7514741c0ce.png and SAVE. No SAVE commit was performed by the scenario."
+  },
+  "failure": {
+    "stage": "Waiting for DocumentsUI Create Document after mounted Save drawing",
+    "message": "Focus snapshot failed: IllegalStateException: Accessibility child is unavailable at index 7",
+    "classification": "Observer traversal failure; exact stale-child cause not established.",
+    "limits": "No product hang, malformed PNG or renderer failure is established. The final screenshot shows the native picker opened. Full failing instrumentation result was not retained by the existing observer; the literal error and traceback were retained.",
+    "lastSuccessfulFocusedSnapshot": {
+      "nonce": "35110b6fbc414325ba49aa2a50b49c9a",
+      "appPidBefore": "25648",
+      "appPidAfter": "25648",
+      "uptimeMillis": 34607951,
+      "rotation": 0,
+      "target": "thalesmms.logisim.mobile.snapshot.e2e.test/dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+      "xml": "focus-snapshot-3af7d798ce6240f69459a36ca0c9c6a2-10.xml",
+      "snapshotRootAttempts": "2",
+      "snapshotRootWaitMillis": "31",
+      "snapshotRootSource": "active-window",
+      "snapshotRootWindowId": "19398"
+    }
+  },
+  "qualification": {
+    "mountedImport": "PASS",
+    "wholeExportOptions": "PASS",
+    "nativeSavePickerPresentation": "OBSERVED_IN_FAILURE_COLLECTION",
+    "savedPNGBytesAndInkRegions": "NOT_COMPLETED",
+    "selectedPDF": "NOT_RUN",
+    "share": "NOT_RUN",
+    "printPreview": "NOT_RUN",
+    "finalDocumentPreservation": "NOT_COMPLETED"
+  },
+  "files": {
+    "manifest.json": {
+      "bytes": 4203,
+      "sha256": "fb843a04d803ac0f79a659b2694e8acbcd74bdea97e6dec83e264899ee4c0930"
+    },
+    "results.json": {
+      "bytes": 178,
+      "sha256": "0eaa0c771a5953d9f1a50fadabea04b9a77b9343ec2a79041c71dde03e545ec2"
+    },
+    "visual-export34-error.txt": {
+      "bytes": 2222,
+      "sha256": "01a8d23e70d56ce645def3bdf924a536bef1ed4aa00fd074b901ce8eb9070b4a"
+    },
+    "visual-export34.png": {
+      "bytes": 172275,
+      "sha256": "3f3eda7696ee3bd54911889fdd2f61b17770a3f04f968dc9f1f4ce5c2996f151"
+    },
+    "failure.png": {
+      "bytes": 88235,
+      "sha256": "7e0e5994f44d150d15ebfe7ab8d592a2030c9a04436fc5b0a4a4cd3cdfed0733"
+    },
+    "failure-ui.xml": {
+      "bytes": 16504,
+      "sha256": "4db4ce0d394efde1b5894713f64a55dcba9626518a404594b966262f4f16325e"
+    },
+    "failure-logcat.txt": {
+      "bytes": 27574,
+      "sha256": "0806d300b09467bb040ac2f6a738901478bc214e30464521a862157ccfc473f5"
+    },
+    "export34-opened-document.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    },
+    "export34-whole-settings-ui.xml": {
+      "bytes": 23833,
+      "sha256": "43a0638fcfbb6689beda37aac614a42ae04b7c3bd118883f96407cb17fb150e4"
+    },
+    "export34-whole-settings.png": {
+      "bytes": 181914,
+      "sha256": "8cbc1bb5dc7d544d010455fbde9a4db41bc8a60ef50a5c528f71ef0bc15a095c"
+    },
+    "launch-01.txt": {
+      "bytes": 226,
+      "sha256": "e7e48b1da0e8b330f25fd663b40887fa9ec50c60398ff37573991e0366cb71ce"
+    }
+  },
+  "localOriginalOutput": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/android-export34-59-native-001",
+  "deviceLease": "One run only; emulator-5556 explicitly returned to android_files after terminal exit1. No subsequent ADB or gestures by this executor."
+}

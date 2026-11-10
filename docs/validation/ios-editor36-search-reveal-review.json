@@ -1,0 +1,26 @@
+{
+  "status": "APPROVED_NO_BLOCKERS",
+  "scope": "Static review and existing host receipt review only; no build, device, Native run or code edit by reviewer.",
+  "base": "2d4d417f2b170a86f7d3a7b4ab75ad1cd87872c4",
+  "source": "scripts/ios_e2e_ui/EditorEndToEndTests.swift",
+  "sourceSHA256": "6b74d8c4489e4b382af7a35444b4fc54e9f0a820487214566ba8af5a11366fa9",
+  "normalizedOutsidePrivateDelta": "Complete file restored byte-identically to base after removing2helpers/restoring2lines.",
+  "counterexamples": {
+    "invalidInputGeometry": "NaN/Inf rejected; raw origin/size guard rejects negative dimensions instead of relying on CGRect normalized getters.",
+    "zeroAreaInput": "Ignored explicitly as no visible area.",
+    "reviewedProbe": "15passed checks, actual function copied exactly into probe. Negative-size prior behavior has real RED receipt."
+  },
+  "sourceAssessment": [
+    "Unique tagged TextView/TextField plus canonical label; complete finite48point frame in effective viewport before hittability.",
+    "Independent Keyboard/inputView/assistant obstacles, conservative missing/covered container failure.",
+    "Backward-only reveal bounded to12short drags from viewport middle, <=96points/quarterheight.",
+    "No change to default text policy/probes, globalNativeUIHarness, Start/Complete or62contract actions."
+  ],
+  "validationReceipts": {
+    "sdkTypecheck": "Owner receipt records PASS/17sources on final source",
+    "geometry": "PASS15checks; initial host compiler error and later real negative-size RED retained separately",
+    "receiptFiles": "All10entries size/SHA verified"
+  },
+  "nativeStatus": "NOT_RUN",
+  "limit": "Shorter requested drag span is proven by geometry; native overscroll/reveal outcome is not qualified."
+}

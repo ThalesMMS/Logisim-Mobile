@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "case": "cancel",
+  "issueScope": "This case only; issue27 and the remaining native-input cases are not qualified by this receipt.",
+  "appProducerHead": "76ea1ec1282e2a2106fde6792bc9512975cd7125",
+  "testProducerHead": "b3437c979ed05e2c81870624bbed601f009cbd66",
+  "productPatch": "36a54b1c370b638be1afa52d33bef47a02ad73f1",
+  "observationPatch": "76cc265c698b1056e56d52fa21c25dbd283ca622",
+  "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+  "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+  "installedArtifactsAfter": {
+    "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+    "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70"
+  },
+  "lastAnrUnchanged": true,
+  "elapsedSeconds": 17.809,
+  "scope": "Public Android SDK synthesized input on emulator-5556; no physical-device ergonomics or performance claim.",
+  "artifacts": {
+    "manifest.json": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/manifest.json",
+      "sha256": "36ca449e7aafd1934e1defa6ab2141d26ffa75e8671584a59621c04f2acdb241",
+      "bytes": 120999
+    },
+    "result.json": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/result.json",
+      "sha256": "4599f3a4329426a8e00478a77393cbcaeef883d1dc92754e6c0154684463d690",
+      "bytes": 112357
+    },
+    "build-receipt.json": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/build-receipt.json",
+      "sha256": "ced0198aaf276fe5ccccd10da69ff1c4c4a858509103596c0c42c698da289470",
+      "bytes": 1487
+    },
+    "0-fixture.circ": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/0-fixture.circ",
+      "sha256": "651908b34000e73611b0c9627a075c6af93cdca1fe0f4dc136f8de7f8385e545",
+      "bytes": 1191
+    },
+    "1-cancel-before.circ": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/1-cancel-before.circ",
+      "sha256": "651908b34000e73611b0c9627a075c6af93cdca1fe0f4dc136f8de7f8385e545",
+      "bytes": 1191
+    },
+    "2-cancel-after.circ": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/2-cancel-after.circ",
+      "sha256": "651908b34000e73611b0c9627a075c6af93cdca1fe0f4dc136f8de7f8385e545",
+      "bytes": 1191
+    },
+    "3-cancel-valid-move.circ": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/3-cancel-valid-move.circ",
+      "sha256": "527d34b0398cd69e717c4a2b8358c21bfd42ba92f93b433dfe9623e09668e4d8",
+      "bytes": 1279
+    },
+    "4-cancel-one-undo.circ": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/4-cancel-one-undo.circ",
+      "sha256": "651908b34000e73611b0c9627a075c6af93cdca1fe0f4dc136f8de7f8385e545",
+      "bytes": 1191
+    },
+    "cancel-complete.png": {
+      "path": "docs/validation/artifacts/android-native-cancel-76ea1ec1/cancel-complete.png",
+      "sha256": "9bab3891fe5d593e98b116e2d9d0e7ef997d4ab0456947f414820324cfd70ee5",
+      "bytes": 331820
+    }
+  },
+  "cancelMotionCounts": {
+    "ACTION_DOWN": 1,
+    "ACTION_MOVE": 10,
+    "ACTION_CANCEL": 1
+  },
+  "normalReleaseMotionCounts": {
+    "ACTION_DOWN": 1,
+    "ACTION_MOVE": 10,
+    "ACTION_UP": 1
+  },
+  "allMotionEventsAccepted": true,
+  "cancelDocumentUnchanged": true,
+  "oneUndoDocumentRestored": true,
+  "originalXmlSha256": "651908b34000e73611b0c9627a075c6af93cdca1fe0f4dc136f8de7f8385e545",
+  "movedXmlSha256": "527d34b0398cd69e717c4a2b8358c21bfd42ba92f93b433dfe9623e09668e4d8",
+  "normalReleaseNotPosition": "(250,120)",
+  "normalReleaseWires": [
+    [
+      "(100,100)",
+      "(220,100)"
+    ],
+    [
+      "(220,100)",
+      "(220,120)"
+    ],
+    [
+      "(250,120)",
+      "(300,120)"
+    ],
+    [
+      "(300,100)",
+      "(300,120)"
+    ]
+  ],
+  "viewportProof": {
+    "before": {
+      "frame": {
+        "windowId": 19451,
+        "canvas": {
+          "left": 0,
+          "top": 655,
+          "right": 1080,
+          "bottom": 2119
+        },
+        "inputBounds": {
+          "left": 423,
+          "top": 1263,
+          "right": 549,
+          "bottom": 1389
+        },
+        "input": {
+          "x": 486,
+          "y": 1326
+        },
+        "outputBounds": {
+          "left": 927,
+          "top": 1263,
+          "right": 1053,
+          "bottom": 1389
+        },
+        "output": {
+          "x": 990,
+          "y": 1326
+        }
+      },
+      "targetTag": "canvas-component:mi-not",
+      "targetBounds": {
+        "left": 641,
+        "top": 1263,
+        "right": 767,
+        "bottom": 1389
+      },
+      "targetPoint": {
+        "x": 704,
+        "y": 1326
+      }
+    },
+    "after": {
+      "windowId": 19451,
+      "canvas": {
+        "left": 0,
+        "top": 655,
+        "right": 1080,
+        "bottom": 2119
+      },
+      "inputBounds": {
+        "left": 423,
+        "top": 1263,
+        "right": 549,
+        "bottom": 1389
+      },
+      "input": {
+        "x": 486,
+        "y": 1326
+      },
+      "outputBounds": {
+        "left": 927,
+        "top": 1263,
+        "right": 1053,
+        "bottom": 1389
+      },
+      "output": {
+        "x": 990,
+        "y": 1326
+      }
+    },
+    "lastObservedWindowId": 19451,
+    "complete": true,
+    "validated": true,
+    "reusedPoint": {
+      "x": 704,
+      "y": 1326
+    }
+  },
+  "oracles": "Complete XML byte equality after CANCEL; expected position and connectivity after normal UP; one Ctrl+Z restores complete original XML."
+}

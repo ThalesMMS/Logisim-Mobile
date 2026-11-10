@@ -1,0 +1,23 @@
+{
+  "result": "NO_CONCRETE_BLOCKER_AFTER_SCOPE_FIX",
+  "reviewer": "/root/accessibility28/a11y_actions_review/reader_observer_review",
+  "source_sha256": "b91247f094e6d8d8e8ed7a64f6ca655fef2d49f5569e7c325b3988cdc6530fe3",
+  "scope": "Source-only AOSP15 formatter and cross-block review",
+  "finding_corrected": "User state is delimited by scoped Client list / Registered clients grammar, consuming only Java package-array payloads or null before the final suffix. This preserves rejection of early/orphan/truncated state and accepts the real OFF footer with concatenated clients on the closing line.",
+  "red_log": "binding-scope-red.log",
+  "green_tests": 23,
+  "runtime": "NOT_RUN",
+  "limitations": [
+    "AMS published-system-binding state only",
+    "Accessibility Bound component absent; cross-dump correlation only",
+    "No callback completion/current Binder liveness or reader behavior proof"
+  ],
+  "footer_review": {
+    "reviewer": "reader_observer_review",
+    "result": "NO_BLOCKER",
+    "inspection_only": true,
+    "red_log": "binding-footer-red.log",
+    "real_off_format_receipt": "real-off-format-check.json",
+    "real_off_is_not_reader_on_evidence": true
+  }
+}

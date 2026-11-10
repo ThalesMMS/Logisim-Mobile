@@ -1,0 +1,11 @@
+fpga-boards: exit 0 PASS 2518 desktop/mobile board-field comparisons across 2 boards, 130 resources, 180 physical pins, including 2 scanning resources and 0 placeholders
+vectors: exit 0 PASS: 14 combinational and sequential test-vector rows match the desktop
+hdl-import: exit 0 
+verilog-evolution-import: exit 0 PASS: Evolution and Mobile Verilog imports agree on every vector
+hdl-declarations: exit 0 PASS: 18/26 HDL declarations match Evolution, 8 accepted only by Mobile, 0 differ
+blif-cosim: exit 0 PASS: 350 BLIF co-simulation steps compared with Evolution
+fpga-hdl: exit 0 PASS verilog: 16 input combinations, pins ['E19', 'U16', 'U19', 'V16', 'V17', 'W16', 'W17'], clock None, part xc7a35tcpg236-1; Evolution and Mobile top levels both match Evolution -tty table
+soc-drivers: exit 0 RESULT: 3/5 PIO driver register maps match Evolution's exportC
+soc-program-desktop: exit 0 SAME nios2: Evolution rerun equals fixtures/soc/program-nios2-desktop.csv
+tcl-desktop-protocol: exit 0 OK
+evolution-images: exit 0 

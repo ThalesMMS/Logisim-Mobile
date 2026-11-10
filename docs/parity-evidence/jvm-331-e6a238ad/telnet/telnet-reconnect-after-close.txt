@@ -1,0 +1,64 @@
+case: reconnect-after-close telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01100001 av=1
+  read 0 clk=1: out=01100001 av=1
+  read 0 clk=0: out=01100010 av=1
+  read 1 clk=1: out=01100010 av=1
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=82: out=0000000? av=0
+  write 82 clk=1: out=0000000? av=0
+  write 82 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [82]
+
+=== mobile-companion
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01100001 av=1
+! read 0 clk=1: out=01100010 av=1
+  read 0 clk=0: out=01100010 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=82: out=0000000? av=0
+  write 82 clk=1: out=0000000? av=0
+  write 82 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [82]
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=01100001 av=1
+  read 1 sampled out=01100010 av=1
+  read 2 sampled out=11111111 av=0
+  write 82 sampled out=0000000? av=0
+  second client receives: [82]
+
+=== mobile-jvm
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01100001 av=1
+! read 0 clk=1: out=01100010 av=1
+  read 0 clk=0: out=01100010 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=82: out=0000000? av=0
+  write 82 clk=1: out=0000000? av=0
+  write 82 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [82]
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=01100001 av=1
+  read 1 sampled out=01100010 av=1
+  read 2 sampled out=11111111 av=0
+  write 82 sampled out=0000000? av=0
+  second client receives: [82]

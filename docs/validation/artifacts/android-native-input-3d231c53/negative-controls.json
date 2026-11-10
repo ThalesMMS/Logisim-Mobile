@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": 5,
+  "scope": "Offline semantic negative controls. Modified payload hashes were recomputed so rejection is not an integrity-only check. No new runtime execution.",
+  "results": [
+    {
+      "negativeControl": "cancel_commits",
+      "result": "REJECTED",
+      "reason": "ValueError: cancel: 2-cancel-after.circ is not byte-exact"
+    },
+    {
+      "negativeControl": "duplicate_id",
+      "result": "REJECTED",
+      "reason": "ValueError: 2-context-duplicate.circ: duplicate component ID"
+    },
+    {
+      "negativeControl": "stylus_wire_missing",
+      "result": "REJECTED",
+      "reason": "ValueError: 3-mixed-stylus.circ: complete wire topology differs"
+    },
+    {
+      "negativeControl": "input_rejected",
+      "result": "REJECTED",
+      "reason": "ValueError: mixed: input not accepted"
+    },
+    {
+      "negativeControl": "apk_changed",
+      "result": "REJECTED",
+      "reason": "ValueError: cancel: installed APKs differ"
+    }
+  ]
+}

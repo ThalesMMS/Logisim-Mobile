@@ -1,0 +1,106 @@
+{
+  "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+  "origin": "app-export",
+  "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/docs/validation/portable53-android-folder-pass/passed-48824/logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-before-restart.lsebdl",
+  "mobile": {
+    "circuitIds": {
+      "Top53": "circuit-top53",
+      "Bridge53": "library:8117f2919321f255:circuit-bridge53",
+      "Cell53": "library:2666a535c7505b62:circuit-cell53"
+    },
+    "definitions": 3,
+    "components": 11,
+    "wires": 7,
+    "runtimeInstances": 4,
+    "componentIds": {
+      "Top53": [
+        "instance-first53",
+        "instance-second53",
+        "out-first53",
+        "out-second53",
+        "source-first53",
+        "source-second53"
+      ],
+      "Bridge53": [
+        "bridge-cell53",
+        "bridge-in53",
+        "bridge-out53"
+      ],
+      "Cell53": [
+        "cell-in53",
+        "cell-out53"
+      ]
+    },
+    "topLabels": [
+      "FIRST53",
+      "SECOND53"
+    ],
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    },
+    "sourceMarkers": [
+      "bridge53",
+      "cell53",
+      "main53"
+    ],
+    "sourcePaths": {
+      "main53": "main.circ",
+      "cell53": "library/library_88f7a68fac87258c.circ",
+      "bridge53": "library/library_da0719063a5e3e3c.circ"
+    },
+    "zipEntries": [
+      "library/library_88f7a68fac87258c.circ",
+      "library/library_da0719063a5e3e3c.circ",
+      "main.circ",
+      "manifest.xml"
+    ],
+    "opaqueEntries": {},
+    "archiveSha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd"
+  },
+  "desktop": {
+    "status": "PASSED",
+    "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+    "definitions": [
+      "Top53",
+      "Bridge53",
+      "Cell53"
+    ],
+    "topInstances": 2,
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    }
+  },
+  "recordedAtUtc": "2026-11-05T04:24:51.903149+00:00",
+  "sourceRevision": "cfe00b3badf48574e4bcfde7d69d30de8f30447f",
+  "worktreeDirty": true,
+  "oracleSourcesSha256": {
+    "scripts/portable/Portable53Oracle.kt": "ca53e5c8b4207a40887ec6dc8ff87a06c6fd5997c5ee61059498758152f73d8d",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt": "03eab1e7e489cad53d18f26e4e8984eeddecc9fca5ced868446a555461fe9f57",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt": "e09e9fca28c47b36f299e71b708bc3f07d2cbf69f88a2c1087147cdcd6a8ec9b",
+    "scripts/verify-portable53.py": "bd01e28d8b9b42165a67be92255f8d164a858cdd53d58020bfa0d48558a50a2f",
+    "scripts/portable_receipt_contract.py": "46785e0f07abb65c94824f09a544c2b052b6d963b9c9005a9612ab44ac234360"
+  },
+  "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+  "referenceDesktopSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+  "validatedExports": [
+    {
+      "role": "artifact",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/docs/validation/portable53-android-folder-pass/passed-48824/logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-before-restart.lsebdl",
+      "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+      "afterRestart": false,
+      "desktopChecked": true
+    },
+    {
+      "role": "peer",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/docs/validation/portable53-android-folder-pass/passed-48824/logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-after-restart.lsebdl",
+      "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+      "afterRestart": true,
+      "desktopChecked": false
+    }
+  ],
+  "nativeUiReceipt": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/docs/validation/portable53-android-folder-pass/passed-48824/portable-folder-receipt.json",
+  "nativeUiReceiptSha256": "ac99fccb7831d3276446a96e1681db1260bf311dc628aacb6263569589a1ccb3"
+}

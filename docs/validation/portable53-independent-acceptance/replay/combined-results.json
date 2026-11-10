@@ -1,0 +1,265 @@
+{
+  "scope": "Twelve independent offline checks on committed actual native exports and snapshots. The initial nine were not rerun during final packaging. Native UI statuses come from unchanged recorded receipts.",
+  "checks": [
+    {
+      "case": "android-bundle-storage",
+      "exitCode": 0,
+      "elapsedSeconds": 4.627,
+      "report": "/tmp/logisim-portable53-review-replay/android-bundle-storage.json",
+      "log": "/tmp/logisim-portable53-review-replay/android-bundle-storage.log",
+      "status": "STORAGE_SNAPSHOTS_VALIDATED",
+      "nativeUiStatus": "NOT_RUN",
+      "desktop": null,
+      "sha256": "03c91187d0dfe9b490cdba5bec18cdcc4bbc0855da3141fa67d432b50f9b21db",
+      "copiedReport": "replay/android-bundle-storage.json",
+      "copiedLog": "replay/android-bundle-storage.log"
+    },
+    {
+      "case": "android-bundle-desktop-before",
+      "exitCode": 0,
+      "elapsedSeconds": 4.793,
+      "report": "/tmp/logisim-portable53-review-replay/android-bundle-desktop-before.json",
+      "log": "/tmp/logisim-portable53-review-replay/android-bundle-desktop-before.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "8d753ff705d2f2c580a8e82ec67c59fec4cc1b6f71577c9bd72de886954e5670",
+      "copiedReport": "replay/android-bundle-desktop-before.json",
+      "copiedLog": "replay/android-bundle-desktop-before.log"
+    },
+    {
+      "case": "android-bundle-desktop-after",
+      "exitCode": 0,
+      "elapsedSeconds": 4.489,
+      "report": "/tmp/logisim-portable53-review-replay/android-bundle-desktop-after.json",
+      "log": "/tmp/logisim-portable53-review-replay/android-bundle-desktop-after.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "02a6cfb03b64aca2d287b784d22614a7a175ba4be3e6db58c28f23b889d4ad2f",
+      "copiedReport": "replay/android-bundle-desktop-after.json",
+      "copiedLog": "replay/android-bundle-desktop-after.log"
+    },
+    {
+      "case": "ios-bundle-storage",
+      "exitCode": 0,
+      "elapsedSeconds": 4.365,
+      "report": "/tmp/logisim-portable53-review-replay/ios-bundle-storage.json",
+      "log": "/tmp/logisim-portable53-review-replay/ios-bundle-storage.log",
+      "status": "STORAGE_SNAPSHOTS_VALIDATED",
+      "nativeUiStatus": "NOT_RUN",
+      "desktop": null,
+      "sha256": "02376f2f4d57db8876f08a5ae616ae11a9fbf35c71d6b62accf3707f6bc9a144",
+      "copiedReport": "replay/ios-bundle-storage.json",
+      "copiedLog": "replay/ios-bundle-storage.log"
+    },
+    {
+      "case": "ios-bundle-desktop-before",
+      "exitCode": 0,
+      "elapsedSeconds": 4.69,
+      "report": "/tmp/logisim-portable53-review-replay/ios-bundle-desktop-before.json",
+      "log": "/tmp/logisim-portable53-review-replay/ios-bundle-desktop-before.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "4729d7639acd1b15bad726ac726e8920fb8c347461b0683ccc3ced0cf75f41f6",
+      "copiedReport": "replay/ios-bundle-desktop-before.json",
+      "copiedLog": "replay/ios-bundle-desktop-before.log"
+    },
+    {
+      "case": "ios-bundle-desktop-after",
+      "exitCode": 0,
+      "elapsedSeconds": 5.034,
+      "report": "/tmp/logisim-portable53-review-replay/ios-bundle-desktop-after.json",
+      "log": "/tmp/logisim-portable53-review-replay/ios-bundle-desktop-after.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "a1df8285c5e1be2f53c76b1a9f3d45634a78f22726b212b90561447566286680",
+      "copiedReport": "replay/ios-bundle-desktop-after.json",
+      "copiedLog": "replay/ios-bundle-desktop-after.log"
+    },
+    {
+      "case": "ios-folder-storage",
+      "exitCode": 0,
+      "elapsedSeconds": 4.411,
+      "report": "/tmp/logisim-portable53-review-replay/ios-folder-storage.json",
+      "log": "/tmp/logisim-portable53-review-replay/ios-folder-storage.log",
+      "status": "STORAGE_SNAPSHOTS_VALIDATED",
+      "nativeUiStatus": "NOT_RUN",
+      "desktop": null,
+      "sha256": "6be51fc51752c36cc9cdf94726b4131d40c3566f1b67af4b90cb19e4201d9316",
+      "copiedReport": "replay/ios-folder-storage.json",
+      "copiedLog": "replay/ios-folder-storage.log"
+    },
+    {
+      "case": "ios-folder-desktop-before",
+      "exitCode": 0,
+      "elapsedSeconds": 5.061,
+      "report": "/tmp/logisim-portable53-review-replay/ios-folder-desktop-before.json",
+      "log": "/tmp/logisim-portable53-review-replay/ios-folder-desktop-before.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "fdd8d5cd5e4d0007947058dd2cbca072d9477102a463c0337529309b9e47c40f",
+      "copiedReport": "replay/ios-folder-desktop-before.json",
+      "copiedLog": "replay/ios-folder-desktop-before.log"
+    },
+    {
+      "case": "ios-folder-desktop-after",
+      "exitCode": 0,
+      "elapsedSeconds": 5.613,
+      "report": "/tmp/logisim-portable53-review-replay/ios-folder-desktop-after.json",
+      "log": "/tmp/logisim-portable53-review-replay/ios-folder-desktop-after.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "df0af81bc20cb13517c1f489458bb6f4f25dc2b4e99f567eb1875aefabdcd8a1",
+      "copiedReport": "replay/ios-folder-desktop-after.json",
+      "copiedLog": "replay/ios-folder-desktop-after.log"
+    },
+    {
+      "case": "android-folder-storage",
+      "exitCode": 0,
+      "elapsedSeconds": 3.411,
+      "report": "/tmp/logisim-portable53-review-replay/android-folder-storage.json",
+      "log": "/tmp/logisim-portable53-review-replay/android-folder-storage.log",
+      "status": "STORAGE_SNAPSHOTS_VALIDATED",
+      "nativeUiStatus": "NOT_RUN",
+      "desktop": null,
+      "sha256": "8fdf62c635a2a29299319ebe293998dca98ed1ce6765cbaa7295e420683ebbb6",
+      "copiedReport": "replay/android-folder-storage.json",
+      "copiedLog": "replay/android-folder-storage.log"
+    },
+    {
+      "case": "android-folder-desktop-before",
+      "exitCode": 0,
+      "elapsedSeconds": 3.988,
+      "report": "/tmp/logisim-portable53-review-replay/android-folder-desktop-before.json",
+      "log": "/tmp/logisim-portable53-review-replay/android-folder-desktop-before.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "d9d5005d5b79114ee531af1095f8ab366220160260c9e81056da91341342146a",
+      "copiedReport": "replay/android-folder-desktop-before.json",
+      "copiedLog": "replay/android-folder-desktop-before.log"
+    },
+    {
+      "case": "android-folder-desktop-after",
+      "exitCode": 0,
+      "elapsedSeconds": 3.883,
+      "report": "/tmp/logisim-portable53-review-replay/android-folder-desktop-after.json",
+      "log": "/tmp/logisim-portable53-review-replay/android-folder-desktop-after.log",
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "sha256": "57fe2c5c5a12440c9936aae5794d64e533c5f54e3dfa520e340c73c2d9070437",
+      "copiedReport": "replay/android-folder-desktop-after.json",
+      "copiedLog": "replay/android-folder-desktop-after.log"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+> Task :core:kmpPartiallyResolvedDependenciesChecker
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:compileKotlinJvm UP-TO-DATE
+> Task :core:compileJvmMainJava NO-SOURCE
+> Task :core:jvmProcessResources NO-SOURCE
+> Task :core:processJvmMainResources SKIPPED
+> Task :core:jvmMainClasses UP-TO-DATE
+> Task :core:jvmJar UP-TO-DATE
+> Task :composeApp:checkJvmMainComposeLibrariesCompatibility
+> Task :core:jvmTestProcessResources UP-TO-DATE
+> Task :core:processJvmTestResources SKIPPED
+> Task :composeApp:kmpPartiallyResolvedDependenciesChecker
+> Task :composeApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeApp:convertXmlValueResourcesForCommonMain UP-TO-DATE
+> Task :composeApp:copyNonXmlValueResourcesForCommonMain UP-TO-DATE
+> Task :composeApp:prepareComposeResourcesTaskForCommonMain UP-TO-DATE
+> Task :composeApp:generateResourceAccessorsForCommonMain UP-TO-DATE
+> Task :composeApp:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForJvmMain NO-SOURCE
+> Task :composeApp:generateActualResourceCollectorsForJvmMain UP-TO-DATE
+> Task :composeApp:generateComposeResClass UP-TO-DATE
+> Task :composeApp:generateExpectResourceCollectorsForCommonMain UP-TO-DATE
+> Task :composeApp:checkJvmTestComposeLibrariesCompatibility
+> Task :composeApp:convertXmlValueResourcesForCommonTest NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForCommonTest NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForJvmTest NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForJvmTest NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForJvmTest NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForJvmTest NO-SOURCE
+> Task :composeApp:assembleJvmMainResources UP-TO-DATE
+> Task :composeApp:jvmProcessResources UP-TO-DATE
+> Task :composeApp:processJvmMainResources SKIPPED
+> Task :composeApp:assembleJvmTestResources UP-TO-DATE
+> Task :composeApp:jvmTestProcessResources UP-TO-DATE
+> Task :composeApp:processJvmTestResources SKIPPED
+> Task :core:compileTestKotlinJvm
+> Task :core:compileJvmTestJava NO-SOURCE
+> Task :core:jvmTestClasses
+> Task :core:jvmTest
+Failed connection handshake with /127.0.0.1:58531.
+java.io.IOException: Did not receive connection preamble within 10s
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.waitForConnectionPreamble(TcpIncomingConnector.java:164)
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.run(TcpIncomingConnector.java:126)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Failed connection handshake with /127.0.0.1:58545.
+java.io.IOException: Did not receive connection preamble within 10s
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.waitForConnectionPreamble(TcpIncomingConnector.java:164)
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.run(TcpIncomingConnector.java:126)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+> Task :composeApp:compileKotlinJvm
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/AdditionalEditorTools.kt:141:17 Expression is unused.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/AdditionalEditorTools.kt:156:17 Expression is unused.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnalyzePanel.kt:356:37 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CatalogWorkspaceRuntime.kt:497:103 Unnecessary safe call on a non-null receiver of type 'WorkspaceExternalDocument'.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt:639:53 Condition is always 'true'.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt:674:72 Condition is always 'true'.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt:727:60 Condition is always 'true'.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitVisualExportTool.kt:51:30 'constructor(defaultFontFamilyResolver: FontFamily.Resolver, defaultDensity: Density, defaultLayoutDirection: LayoutDirection, cacheSize: Int = ...): TextMeasurer' is deprecated. Replace with overload that takes a default locale list.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CompanionPairingPanel.kt:80:90 'constructor(mask: Char = ...): PasswordVisualTransformation' is deprecated. The TextField flavors that use VisualTransformation are deprecated. Please refer to BasicSecureTextField and other SecureTextField composables for password inputs.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaPanel.kt:385:23 Condition is always 'false'.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaPanel.kt:385:50 Condition is always 'false'.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaPanel.kt:385:74 Condition is always 'false'.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlEditorThemes.kt:94:57 'constructor(text: AnnotatedString, offsetMapping: OffsetMapping): TransformedText' is deprecated. The TextField flavors that use VisualTransformation are deprecated. Please refer to OutputTransformation.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlEditorThemes.kt:94:107 'interface OffsetMapping : Any' is deprecated. The TextField flavors that use VisualTransformation are deprecated. Please refer to OutputTransformation.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlEditorThemes.kt:94:121 'val Identity: OffsetMapping' is deprecated. The TextField flavors that use VisualTransformation are deprecated. Please refer to OutputTransformation.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlExportPanel.kt:73:21 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/PagedCircuitPdf.kt:120:26 'constructor(defaultFontFamilyResolver: FontFamily.Resolver, defaultDensity: Density, defaultLayoutDirection: LayoutDirection, cacheSize: Int = ...): TextMeasurer' is deprecated. Replace with overload that takes a default locale list.
+w: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/composeApp/src/commonMain/kotlin/dev/logisim/mobile/TikzDrawing.kt:545:48 The corresponding parameter in the supertype 'Canvas' is named 'topLeftOffset'. This may cause problems when calling this function with named arguments.
+
+> Task :composeApp:compileJvmMainJava NO-SOURCE
+> Task :composeApp:jvmMainClasses
+> Task :composeApp:jvmJar
+> Task :composeApp:compileTestKotlinJvm
+> Task :composeApp:compileJvmTestJava NO-SOURCE
+> Task :composeApp:jvmTestClasses
+> Task :composeApp:jvmTest
+
+[Incubating] Problems report is available at: file:///Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 23s
+24 actionable tasks: 10 executed, 14 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.6.1/userguide/configuration_cache_enabling.html

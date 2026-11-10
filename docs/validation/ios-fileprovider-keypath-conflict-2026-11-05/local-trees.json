@@ -1,0 +1,85 @@
+{
+  "scope": "Static/local archival reads only. No new query, build, installation, registration or UI. Does not expose internal normalized PlugInKit/FileProvider attributes.",
+  "sources": {
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application Extension/File Provider Extension.xctemplate/TemplateInfo.plist": {
+      "bytes": 6815,
+      "sha256": "c23094695a7352c0a346d0c32bf21012458bd38f11073dc26b71b4630fe9b7d9"
+    },
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/Config/Provider-Info.plist": {
+      "bytes": 1136,
+      "sha256": "a7d0e11d1ccddfe1546982d707c01e9bd3db7bdc05de03d548dcb858afe4bb38"
+    },
+    "/tmp/logisim-provider-discovery-ad28-001/provider-installed-Info.plist": {
+      "bytes": 1109,
+      "sha256": "ddf75da1d5927ab6da8e3fd93e7b9c25e24c1b0625a3ab450c4d5e799526d47e"
+    },
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-existing-group-ad28-002/full-differential-history.stdout": {
+      "bytes": 3563188,
+      "sha256": "f871a1326ccd8a398e2a8b61fde9260b4ea1a9eee8a3bc80a95fefd688e4748a"
+    }
+  },
+  "templateDefinitionPath": [
+    "Definitions",
+    "Info.plist:NSExtension"
+  ],
+  "templateGeneratedTree": {
+    "NSExtension": {
+      "NSExtensionPointIdentifier": "com.apple.fileprovider-nonui",
+      "NSExtensionFileProviderDocumentGroup": "group.___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___",
+      "NSExtensionPrincipalClass": "___VARIABLE_moduleNamePrefixForClasses:XML___FileProviderExtension",
+      "NSExtensionFileProviderSupportsEnumeration": true
+    }
+  },
+  "fixtureSourceTree": {
+    "NSExtensionPointIdentifier": "com.apple.fileprovider-nonui",
+    "NSExtensionPrincipalClass": "$(PRODUCT_MODULE_NAME).RevocationFileProvider",
+    "NSExtensionFileProviderDocumentGroup": "group.thalesmms.logisim.validation.revocationfixture",
+    "NSExtensionFileProviderSupportsEnumeration": true
+  },
+  "installedTree": {
+    "NSExtensionFileProviderDocumentGroup": "group.thalesmms.logisim.validation.revocationfixture",
+    "NSExtensionFileProviderSupportsEnumeration": true,
+    "NSExtensionPointIdentifier": "com.apple.fileprovider-nonui",
+    "NSExtensionPrincipalClass": "RevocationProvider.RevocationFileProvider"
+  },
+  "placeholderEventZeroBasedIndex": 17,
+  "placeholderEvent": {
+    "timezoneName": "",
+    "messageType": "Default",
+    "eventType": "logEvent",
+    "source": null,
+    "launchPersonaName": "",
+    "formatString": "%s: %@: setting placeholder attributes to %@",
+    "userID": 501,
+    "activityIdentifier": 0,
+    "subsystem": "com.apple.installcoordination",
+    "category": "daemon",
+    "personaType": -1,
+    "threadID": 9987478,
+    "launchPersonaType": -1,
+    "senderImageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2",
+    "launchPersonaID": 4294967295,
+    "backtrace": {
+      "frames": [
+        {
+          "imageOffset": 80164,
+          "imageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2"
+        }
+      ]
+    },
+    "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+    "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd",
+    "senderImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd",
+    "personaID": 4294967295,
+    "timestamp": "2026-11-05 07:27:29.533311+0000",
+    "machTimestamp": 6405224051391,
+    "personaName": "",
+    "eventMessage": "-[IXSPlaceholder setAttributes:]: <IXSPlaceholder(0x105508f00) Name:PlugInKit Placeholder: Logisim Revocation Fixture (thalesmms.logisim.validation.revocationfixture.provider) Creator:InstallCoordination Simple SPI UUID:1F434DBF-85C1-40DD-9A95-A58DAA326C6E Location:[system-defined]>: setting placeholder attributes to <IXPlaceholderAttributes<0x1054acdc0> : {\n    CFBundleShortVersionString = \"1.0\";\n    CFBundleSupportedPlatforms =     (\n        iPhoneSimulator\n    );\n    CFBundleVersion = 1;\n    DTPlatformName = iphonesimulator;\n    MinimumOSVersion = \"17.0\";\n    NSExtension =     {\n        NSExtensionFileProviderDocumentGroup = \"group.thalesmms.logisim.validation.revocationfixture\";\n        NSExtensionFileProviderSupportsEnumeration = 1;\n        NSExtensionPointIdentifier = \"com.apple.fileprovider-nonui\";\n        NSExtensionPrincipalClass = \"RevocationProvider.RevocationFileProvider\";\n    };\n    UIDeviceFamily =     (\n        1,\n        2\n    );\n}>",
+    "processImageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2",
+    "traceID": 2515102884560900,
+    "processID": 68775,
+    "senderProgramCounter": 80164,
+    "parentActivityIdentifier": 0
+  },
+  "internalNormalizedAttributesObserved": false
+}

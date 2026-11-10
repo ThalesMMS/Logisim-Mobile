@@ -1,0 +1,35 @@
+{
+  "status": "OFFLINE_TYPECHECK_PASSED",
+  "nativeUiStatus": "NOT_RUN_FOR_DELTA",
+  "target": "arm64-apple-ios17.0-simulator",
+  "sdk": "iPhoneSimulator27.2.sdk",
+  "sources": {
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_native_ui/NativeTextReplacement.swift": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_e2e_ui/ObservedProjectXML.swift": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_e2e_ui/ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5"
+  },
+  "preservedFailure": {
+    "results": "bundle-retry2/results.json",
+    "receipt": "bundle-retry2/documents/portable-bundle-evidence/ui-receipt.json",
+    "status": "FAILED",
+    "tree": "bundle-retry2/attachments/6B738EBC-ABD3-4803-BFFD-F938C45306C0.txt",
+    "sidebarCell": "DOC.sidebar.item.3805017ddee0",
+    "contentCollection": "File View",
+    "contentCell": "3805017ddee0, Folder",
+    "sidebarFrame": "{{16.0, 140.0}, {288.0, 44.0}}",
+    "contentFrame": "{{455.5, 106.0}, {117.5, 190.0}}",
+    "actualExportCount": 1,
+    "firstActualExportSha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113"
+  },
+  "scope": "Separate native Files location rows from directory content across shared reveal, destination, peer and portable source navigation. Multiple observed File View collections fail explicitly. No coordinate, global button fallback, product change or new UI pass.",
+  "wrapperState": "SESSION_92160_TERMINAL_EXIT_65",
+  "deltaCommit": "15763008319d33b277ce83195d4b45e67d7ad962",
+  "canonicalHeadBeforeHandoff": "305d468777cbc205f5c22c7aaf0d2750c99f5dd3",
+  "canonicalCleanBeforeHandoff": true,
+  "review": "Read-only review found no remaining content/sidebar role mixing in the migrated consumers."
+}

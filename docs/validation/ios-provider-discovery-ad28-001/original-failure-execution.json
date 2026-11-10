@@ -1,0 +1,30 @@
+{
+  "command": [
+    "xcodebuild",
+    "-project",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-diagnostic-ad28-001/harness/LogisimFileProviderBootstrap.xcodeproj",
+    "-scheme",
+    "FixtureBootstrap",
+    "-destination",
+    "platform=iOS Simulator,id=AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+    "-derivedDataPath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-diagnostic-ad28-001/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "test-without-building",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-test-timeouts-enabled",
+    "YES",
+    "-default-test-execution-time-allowance",
+    "240",
+    "-resultBundlePath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-diagnostic-ad28-001/bootstrap.xcresult",
+    "-only-testing:FileProviderBootstrapTests/FileProviderBootstrapTests/testPrepareRegisterAndInspectFixtureDomain"
+  ],
+  "started": "2026-11-05T06:58:07.612577+00:00",
+  "scope": "One authorized differential Prepare/Register/Inspect on task-owned AD28; diagnostic error-chain only; no Main, erase, entitlement change or retry.",
+  "exit_code": 65,
+  "finished": "2026-11-05T06:58:32.602096+00:00"
+}

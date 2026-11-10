@@ -1,0 +1,14 @@
+row: cli/new-file-format
+case: convert-bus-adder
+result: PASS
+detail: Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '8f877d0c1d05', 'evolution-n': '8f877d0c1d05', 'mobile-n': '8f877d0c1d05'}
+
+=== evolution: java EvolutionAutomationOracle convert examples/bus-adder.circ $WORK/evolution-bus-adder.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -n examples/bus-adder.circ $WORK/mobile-bus-adder.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

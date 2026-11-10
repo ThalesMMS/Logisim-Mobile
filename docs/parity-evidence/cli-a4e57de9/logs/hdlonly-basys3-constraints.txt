@@ -1,0 +1,38 @@
+row: cli/test-fpga
+case: hdlonly-basys3-constraints
+result: PASS
+detail: Vivado flow on both: (True, True); physical pins, I/O standards and clock period: evolution=([('U16', 'LVCMOS33'), ('V16', 'LVCMOS33'), ('V17', 'LVCMOS33'), ('W5', 'LVCMOS33')], [('W5', 10.0)]), mobile=([('U16', 'LVCMOS33'), ('V16', 'LVCMOS33'), ('V17', 'LVCMOS33'), ('W5', 'LVCMOS33')], [('W5', 10.0)])
+
+=== evolution: logisim-evolution -f core/src/jvmTest/resources/fpga/sr-dedicated.circ main BASYS3 HDLONLY
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (23 lines, sha256 fe16ccb6924e264d4e51374d21d5cb3f4e93e357ae194478048d09087c736377)
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Building netlist for sheet “main”
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Circuit “main” has 6 nets and 0 buses.
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Circuit “main” passed DRC check.
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - The Board BASYS3 has:
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - 51 Pin(s)
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - 21 Button(s)
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - 28 Led(s)
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/memory/S_R_FLIPFLOP_entity.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/memory/S_R_FLIPFLOP_behavior.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/circuit/main_entity.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/circuit/main_behavior.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/base/synthesizedClockGenerator_entity.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/base/synthesizedClockGenerator_behavior.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/base/logisimTickGenerator_entity.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/base/logisimTickGenerator_behavior.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/base/LogisimClockComponent_entity.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/base/LogisimClockComponent_behavior.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/toplevel/logisimTopLevelShell_entity.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating HDL file: $WORK/fpga-workspace/sr-dedicated/main/vhdl/toplevel/logisimTopLevelShell_behavior.vhd
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating script file: $WORK/fpga-workspace/sr-dedicated/main/scripts/vivadoCreateProject.tcl
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating script file: $WORK/fpga-workspace/sr-dedicated/main/xdc/vivadoConstraints.xdc
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating script file: $WORK/fpga-workspace/sr-dedicated/main/scripts/vivadoGenerateBitStream.tcl
+[main] INFO com.cburch.logisim.fpga.gui.Reporter - Creating script file: $WORK/fpga-workspace/sr-dedicated/main/scripts/vivadoLoadBitStream.tcl
+
+=== mobile: HeadlessCircuitCli -f core/src/jvmTest/resources/fpga/sr-dedicated.circ main core/src/jvmTest/resources/fpga/BASYS3.xml HDLONLY --output $WORK/mobile-fpga.zip
+exit: 0
+--- stdout (1 lines, sha256 9132fbb4cdea654e1a0a61f7d40e854e6b2025806f56d9588afefb1fc5d9217f)
+status=fpga-hdl-only flow=vivado files=4
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

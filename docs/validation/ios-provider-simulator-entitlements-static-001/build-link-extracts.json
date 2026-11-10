@@ -1,0 +1,231 @@
+{
+  "source": "11fc44d53b229558fbfc57b66e0b2f2d11a0037b",
+  "retainedBuildLog": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/build.log",
+  "retainedBuildLogBytes": 171154,
+  "retainedBuildLogSHA256": "865a8b0a5811814a24708be550bd380d457b06f98a543213921a9f29df836719",
+  "originalBuildManifestSHA256": "bda24c74410814276f00474a689ae95508deb7330cc0eacae9f55bf54ec7388a",
+  "linkTasks": [
+    {
+      "originalLine": 233,
+      "task": "Ld /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationProvider.appex/__preview.dylib normal (in target 'RevocationProvider' from project 'LogisimRevocationFixture')",
+      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -install_name @rpath/RevocationProvider.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/Objects-normal/arm64/RevocationProvider_dependency_info.dat -o /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationProvider.appex/__preview.dylib"
+    },
+    {
+      "originalLine": 423,
+      "task": "Ld /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationProvider.appex/RevocationProvider.debug.dylib normal (in target 'RevocationProvider' from project 'LogisimRevocationFixture')",
+      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -filelist /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/Objects-normal/arm64/RevocationProvider.LinkFileList -install_name @rpath/RevocationProvider.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/../../Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/Objects-normal/arm64/RevocationProvider_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/Objects-normal/arm64/RevocationProvider_dependency_info.dat -fapplication-extension -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/Objects-normal/arm64/RevocationProvider.swiftmodule -Xlinker -alias -Xlinker _NSExtensionMain -Xlinker ___debug_main_executable_dylib_entry_point -framework FileProvider -o /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationProvider.appex/RevocationProvider.debug.dylib"
+    },
+    {
+      "originalLine": 438,
+      "task": "Ld /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationProvider.appex/RevocationProvider normal (in target 'RevocationProvider' from project 'LogisimRevocationFixture')",
+      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/../../Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/RevocationProvider-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_entry -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/RevocationProvider-DebugEntryPoint-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/RevocationProvider-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/RevocationProvider-ExecutorLinkFileList-normal-arm64.txt /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationProvider.appex/RevocationProvider.debug.dylib -o /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationProvider.appex/RevocationProvider"
+    },
+    {
+      "originalLine": 463,
+      "task": "Ld /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/__preview.dylib normal (in target 'RevocationFixture' from project 'LogisimRevocationFixture')",
+      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -install_name @rpath/RevocationFixture.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/Objects-normal/arm64/RevocationFixture_dependency_info.dat -o /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/__preview.dylib"
+    },
+    {
+      "originalLine": 599,
+      "task": "Ld /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib normal (in target 'RevocationFixture' from project 'LogisimRevocationFixture')",
+      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -filelist /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/Objects-normal/arm64/RevocationFixture.LinkFileList -install_name @rpath/RevocationFixture.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/Objects-normal/arm64/RevocationFixture_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/Objects-normal/arm64/RevocationFixture_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/Objects-normal/arm64/RevocationFixture.swiftmodule -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -framework FileProvider -o /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib"
+    },
+    {
+      "originalLine": 608,
+      "task": "Ld /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture normal (in target 'RevocationFixture' from project 'LogisimRevocationFixture')",
+      "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -F/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/RevocationFixture-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/RevocationFixture-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/RevocationFixture-ExecutorLinkFileList-normal-arm64.txt /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib -o /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture"
+    }
+  ],
+  "processProductPackagingLines": [],
+  "simulatedXcentLines": [],
+  "entitlementsSectionCreateLines": [],
+  "signedBuildCommandRecords": [
+    {
+      "arguments": [
+        "python3",
+        "verify-fixture.py"
+      ],
+      "started": "2026-11-05T06:51:28.167138+00:00",
+      "log": "configuration.log",
+      "finished": "2026-11-05T06:51:28.196335+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "xcodegen",
+        "generate",
+        "--spec",
+        "project.yml"
+      ],
+      "started": "2026-11-05T06:51:28.196660+00:00",
+      "log": "xcodegen.log",
+      "finished": "2026-11-05T06:51:28.226340+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "xcodebuild",
+        "-project",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/Fixture/LogisimRevocationFixture.xcodeproj",
+        "-scheme",
+        "RevocationFixture",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "CODE_SIGN_STYLE=Manual",
+        "DEVELOPMENT_TEAM=",
+        "CODE_SIGN_IDENTITY=",
+        "build"
+      ],
+      "started": "2026-11-05T06:51:28.226746+00:00",
+      "log": "build.log",
+      "finished": "2026-11-05T06:51:35.497480+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider.debug.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.498579+00:00",
+      "log": "sign-dylib-0.log",
+      "finished": "2026-11-05T06:51:35.512461+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/__preview.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.512753+00:00",
+      "log": "sign-dylib-1.log",
+      "finished": "2026-11-05T06:51:35.525201+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.525488+00:00",
+      "log": "sign-dylib-2.log",
+      "finished": "2026-11-05T06:51:35.544871+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/__preview.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.545380+00:00",
+      "log": "sign-dylib-3.log",
+      "finished": "2026-11-05T06:51:35.561616+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "--generate-entitlement-der",
+        "--entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/Fixture/Config/Provider.entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T06:51:35.561924+00:00",
+      "log": "sign-Provider.log",
+      "finished": "2026-11-05T06:51:35.574860+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T06:51:35.582699+00:00",
+      "log": "verify-Provider.log",
+      "finished": "2026-11-05T06:51:35.591077+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--display",
+        "--verbose=4",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T06:51:35.591329+00:00",
+      "log": "signature-Provider.log",
+      "finished": "2026-11-05T06:51:35.598831+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "--generate-entitlement-der",
+        "--entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/Fixture/Config/App.entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T06:51:35.599240+00:00",
+      "log": "sign-App.log",
+      "finished": "2026-11-05T06:51:35.612364+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T06:51:35.620581+00:00",
+      "log": "verify-App.log",
+      "finished": "2026-11-05T06:51:35.628768+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--display",
+        "--verbose=4",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T06:51:35.629192+00:00",
+      "log": "signature-App.log",
+      "finished": "2026-11-05T06:51:35.637146+00:00",
+      "exitCode": 0
+    }
+  ]
+}

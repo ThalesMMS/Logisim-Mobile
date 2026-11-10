@@ -1,0 +1,20 @@
+$ ./gradlew :core:jvmJar :composeApp:jvmTest --rerun --tests '*EvolutionVectorExportHostTest' (and the other filters, which match no jvmTest class)
+$ ANDROID_HOME=~/Library/Android/sdk ./gradlew :composeApp:testAndroidHostTest --tests '*GateTerminalLinesTest' --tests '*RendererIECTest' --tests '*RendererDINTest' --tests '*GateLabelPlacementTest' --tests '*CircuitDrawingTest' --tests '*PrinterViewTest' --tests '*AppearancePreferencesTest' --tests '*DarkCanvasContrastTest' --tests '*DarkThemeTextColorTest' --tests '*VisualExport*' --tests '*Raster*' --tests '*PinLabelPlacementTest' --tests '*TextTool*' --tests '*CircuitLabelViewportTest'
+exit 0 for both
+testsuite name="dev.logisim.mobile.PinLabelPlacementTest" tests="2" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.RendererIECTest" tests="7" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.GateLabelPlacementTest" tests="4" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.DarkThemeTextColorTest" tests="5" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.PrinterViewTest" tests="2" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.CircuitDrawingTest" tests="9" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.EvolutionVisualExportOracleTest" tests="3" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.VisualExportBackgroundTest" tests="1" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.TextToolTest" tests="3" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.GateTerminalLinesTest" tests="4" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.RendererDINTest" tests="6" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.AppearancePreferencesTest" tests="11" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.AdditionalEditorToolsTest" tests="2" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.DarkCanvasContrastTest" tests="4" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.CircuitLabelViewportTest" tests="6" skipped="0" failures="0" errors="0"
+testsuite name="dev.logisim.mobile.VisualExportToolsTest" tests="7" skipped="0" failures="0" errors="0"
+testsuite name="EvolutionVectorExportHostTest[jvm]" tests="4" skipped="0" failures="0" errors="0"

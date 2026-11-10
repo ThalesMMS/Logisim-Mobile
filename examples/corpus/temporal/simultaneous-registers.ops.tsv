@@ -1,0 +1,32 @@
+P	first	200	100	4
+P	second	400	100	4
+I	DATA	0000
+I	CLK	0
+I	EN1	1
+I	EN2	1
+I	RST1	1
+I	RST2	1
+Q
+I	RST1	0
+I	RST2	0
+Q
+A	data
+I	DATA	1010
+D
+A	capture-first
+I	CLK	1
+D
+A	low
+I	CLK	0
+D
+A	simultaneous
+I	DATA	0101
+I	CLK	1
+D
+A	lower
+I	CLK	0
+D
+A	clear
+I	RST1	1
+I	RST2	1
+D

@@ -1,0 +1,658 @@
+Desktop JAR: /Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar
+Mobile JAR: /Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/core/build/libs/core-jvm.jar
+d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038  /Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar
+3121d939a28779c1f82f02303debcc76c8f963e71a34ec63af2a5c53a16ddefc  /Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/core/build/libs/core-jvm.jar
+raw-read-write evolution: discarded 1024 bytes from pre-scenario peers
+raw-read-write mobile-companion: discarded 314 bytes from pre-scenario peers
+raw-read-write mobile-jvm: discarded 1799 bytes from pre-scenario peers
+case: raw-read-write telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  initial: out=0000000? av=0
+  client receives on connect: []
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01000001 av=1
+  read 0 clk=1: out=01000001 av=1
+  read 0 clk=0: out=01000010 av=1
+  read 1 clk=1: out=01000010 av=1
+  read 1 clk=0: out=01000011 av=1
+  read 2 clk=1: out=01000011 av=1
+  read 2 clk=0: out=11111111 av=0
+  read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=72: out=0000000? av=0
+  write 72 clk=1: out=0000000? av=0
+  write 72 clk=0: out=0000000? av=0
+  in=73: out=0000000? av=0
+  write 73 clk=1: out=0000000? av=0
+  write 73 clk=0: out=0000000? av=0
+  in=0: out=0000000? av=0
+  write 0 clk=1: out=0000000? av=0
+  write 0 clk=0: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+
+=== mobile-companion
+  initial: out=0000000? av=0
+  client receives on connect: []
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01000001 av=1
+! read 0 clk=1: out=01000010 av=1
+  read 0 clk=0: out=01000010 av=1
+! read 1 clk=1: out=01000011 av=1
+  read 1 clk=0: out=01000011 av=1
+! read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=72: out=0000000? av=0
+  write 72 clk=1: out=0000000? av=0
+  write 72 clk=0: out=0000000? av=0
+  in=73: out=0000000? av=0
+  write 73 clk=1: out=0000000? av=0
+  write 73 clk=0: out=0000000? av=0
+  in=0: out=0000000? av=0
+  write 0 clk=1: out=0000000? av=0
+  write 0 clk=0: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+--- sampled at rising edges and socket bytes: SAME
+  client receives on connect: []
+  read 0 sampled out=01000001 av=1
+  read 1 sampled out=01000010 av=1
+  read 2 sampled out=01000011 av=1
+  read 3 sampled out=11111111 av=0
+  write 72 sampled out=0000000? av=0
+  write 73 sampled out=0000000? av=0
+  write 0 sampled out=0000000? av=0
+  write 255 sampled out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+
+=== mobile-jvm
+  initial: out=0000000? av=0
+  client receives on connect: []
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01000001 av=1
+! read 0 clk=1: out=01000010 av=1
+  read 0 clk=0: out=01000010 av=1
+! read 1 clk=1: out=01000011 av=1
+  read 1 clk=0: out=01000011 av=1
+! read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=72: out=0000000? av=0
+  write 72 clk=1: out=0000000? av=0
+  write 72 clk=0: out=0000000? av=0
+  in=73: out=0000000? av=0
+  write 73 clk=1: out=0000000? av=0
+  write 73 clk=0: out=0000000? av=0
+  in=0: out=0000000? av=0
+  write 0 clk=1: out=0000000? av=0
+  write 0 clk=0: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+--- sampled at rising edges and socket bytes: SAME
+  client receives on connect: []
+  read 0 sampled out=01000001 av=1
+  read 1 sampled out=01000010 av=1
+  read 2 sampled out=01000011 av=1
+  read 3 sampled out=11111111 av=0
+  write 72 sampled out=0000000? av=0
+  write 73 sampled out=0000000? av=0
+  write 0 sampled out=0000000? av=0
+  write 255 sampled out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+
+falling-edge evolution: discarded 1024 bytes from pre-scenario peers
+falling-edge mobile-companion: discarded 314 bytes from pre-scenario peers
+falling-edge mobile-jvm: discarded 1799 bytes from pre-scenario peers
+case: falling-edge telnetMode=false buflen=1024 trigger=falling
+
+=== evolution
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01111000 av=1
+  read 0 clk=1: out=01111000 av=1
+  read 0 clk=0: out=01111001 av=1
+  read 1 clk=1: out=01111001 av=1
+  read 1 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=81: out=0000000? av=0
+  write 81 clk=1: out=0000000? av=0
+  write 81 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [81]
+
+=== mobile-companion
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01111000 av=1
+  read 0 clk=1: out=01111000 av=1
+  read 0 clk=0: out=01111001 av=1
+  read 1 clk=1: out=01111001 av=1
+  read 1 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=81: out=0000000? av=0
+  write 81 clk=1: out=0000000? av=0
+  write 81 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [81]
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=01111000 av=1
+  read 1 sampled out=01111001 av=1
+  write 81 sampled out=0000000? av=0
+  client receives: [81]
+
+=== mobile-jvm
+! FAILURE java.net.ConnectException: Connection refused
+--- sampled at rising edges and socket bytes: DIFF
+! FAILURE java.net.ConnectException: Connection refused
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+telnet-mode evolution: discarded 1024 bytes from pre-scenario peers
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+telnet-mode mobile-companion: discarded 314 bytes from pre-scenario peers
+telnet-mode mobile-jvm: discarded 1793 bytes from pre-scenario peers
+case: telnet-mode telnetMode=true buflen=1024 trigger=rising
+
+=== evolution
+  client receives on connect: [255, 251, 3, 255, 251, 1]
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01000001 av=1
+  read 0 clk=1: out=01000001 av=1
+  read 0 clk=0: out=01000010 av=1
+  read 1 clk=1: out=01000010 av=1
+  read 1 clk=0: out=01000011 av=1
+  read 2 clk=1: out=01000011 av=1
+  read 2 clk=0: out=01000101 av=1
+  read 3 clk=1: out=01000101 av=1
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  in=122: out=0000000? av=0
+  write 122 clk=1: out=0000000? av=0
+  write 122 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [255, 122]
+
+=== mobile-companion
+  client receives on connect: [255, 251, 3, 255, 251, 1]
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01000001 av=1
+! read 0 clk=1: out=01000010 av=1
+  read 0 clk=0: out=01000010 av=1
+! read 1 clk=1: out=01000011 av=1
+  read 1 clk=0: out=01000011 av=1
+! read 2 clk=1: out=01000101 av=1
+  read 2 clk=0: out=01000101 av=1
+! read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  in=122: out=0000000? av=0
+  write 122 clk=1: out=0000000? av=0
+  write 122 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [255, 122]
+--- sampled at rising edges and socket bytes: SAME
+  client receives on connect: [255, 251, 3, 255, 251, 1]
+  read 0 sampled out=01000001 av=1
+  read 1 sampled out=01000010 av=1
+  read 2 sampled out=01000011 av=1
+  read 3 sampled out=01000101 av=1
+  write 255 sampled out=0000000? av=0
+  write 122 sampled out=0000000? av=0
+  client receives: [255, 122]
+
+=== mobile-jvm
+  client receives on connect: [255, 251, 3, 255, 251, 1]
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01000001 av=1
+! read 0 clk=1: out=01000010 av=1
+  read 0 clk=0: out=01000010 av=1
+! read 1 clk=1: out=01000011 av=1
+  read 1 clk=0: out=01000011 av=1
+! read 2 clk=1: out=01000101 av=1
+  read 2 clk=0: out=01000101 av=1
+! read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  in=122: out=0000000? av=0
+  write 122 clk=1: out=0000000? av=0
+  write 122 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [255, 122]
+--- sampled at rising edges and socket bytes: SAME
+  client receives on connect: [255, 251, 3, 255, 251, 1]
+  read 0 sampled out=01000001 av=1
+  read 1 sampled out=01000010 av=1
+  read 2 sampled out=01000011 av=1
+  read 3 sampled out=01000101 av=1
+  write 255 sampled out=0000000? av=0
+  write 122 sampled out=0000000? av=0
+  client receives: [255, 122]
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+input-buffer-limit evolution: discarded 2 bytes from pre-scenario peers
+input-buffer-limit mobile-companion: discarded 2 bytes from pre-scenario peers
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+input-buffer-limit mobile-jvm: discarded 1799 bytes from pre-scenario peers
+case: input-buffer-limit telnetMode=false buflen=2 trigger=rising
+
+=== evolution
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=00000001 av=1
+  read 0 clk=1: out=00000001 av=1
+  read 0 clk=0: out=00000010 av=1
+  read 1 clk=1: out=00000010 av=1
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  clk=0 after more bytes: out=0000000? av=0
+  rd=1: out=00000101 av=1
+  read 0 clk=1: out=00000101 av=1
+  read 0 clk=0: out=00000110 av=1
+  read 1 clk=1: out=00000110 av=1
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+
+=== mobile-companion
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=00000001 av=1
+! read 0 clk=1: out=00000010 av=1
+  read 0 clk=0: out=00000010 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+! clk=0 after more bytes: out=0000000? av=1
+  rd=1: out=00000101 av=1
+! read 0 clk=1: out=00000110 av=1
+  read 0 clk=0: out=00000110 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=00000001 av=1
+  read 1 sampled out=00000010 av=1
+  read 2 sampled out=11111111 av=0
+  read 0 sampled out=00000101 av=1
+  read 1 sampled out=00000110 av=1
+  read 2 sampled out=11111111 av=0
+
+=== mobile-jvm
+! FAILURE java.net.ConnectException: Connection refused
+--- sampled at rising edges and socket bytes: DIFF
+! FAILURE java.net.ConnectException: Connection refused
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+write-without-peer evolution: discarded 1024 bytes from pre-scenario peers
+java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.ensureOpenAndConnected(NioSocketImpl.java:163)
+	at java.base/sun.nio.ch.NioSocketImpl.beginWrite(NioSocketImpl.java:362)
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:407)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:440)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:819)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1195)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1190)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.send(TelnetServer.java:189)
+	at com.cburch.logisim.std.io.TelnetServer.send(TelnetServer.java:48)
+	at com.cburch.logisim.std.io.Telnet.propagate(Telnet.java:194)
+	at com.cburch.logisim.instance.InstanceComponent.propagate(InstanceComponent.java:450)
+	at com.cburch.logisim.circuit.CircuitState.processDirtyComponents(CircuitState.java:486)
+	at com.cburch.logisim.circuit.Propagator.stepInternal(Propagator.java:329)
+	at com.cburch.logisim.circuit.Propagator.propagate(Propagator.java:201)
+	at com.cburch.logisim.circuit.Propagator.propagate(Propagator.java:178)
+	at com.cburch.logisim.circuit.DesktopCircuit.propagate(DesktopCircuit.java:49)
+	at TelnetOracle$EvolutionSide.set(TelnetOracle.java:130)
+	at TelnetOracle.clockEdge(TelnetOracle.java:420)
+	at TelnetOracle.write(TelnetOracle.java:434)
+	at TelnetOracle.lambda$static$4(TelnetOracle.java:504)
+	at TelnetOracle.main(TelnetOracle.java:627)
+write-without-peer mobile-companion: discarded 314 bytes from pre-scenario peers
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+write-without-peer mobile-jvm: discarded 1799 bytes from pre-scenario peers
+case: write-without-peer telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  wr=1: out=0000000? av=0
+  in=90: out=0000000? av=0
+  write 90 clk=1: out=0000000? av=0
+  write 90 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  late client receives: []
+  wr=1: out=0000000? av=0
+  in=89: out=0000000? av=0
+  write 89 clk=1: out=0000000? av=0
+  write 89 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [89]
+
+=== mobile-companion
+  wr=1: out=0000000? av=0
+  in=90: out=0000000? av=0
+  write 90 clk=1: out=0000000? av=0
+  write 90 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  late client receives: []
+  wr=1: out=0000000? av=0
+  in=89: out=0000000? av=0
+  write 89 clk=1: out=0000000? av=0
+  write 89 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [89]
+--- sampled at rising edges and socket bytes: SAME
+  write 90 sampled out=0000000? av=0
+  late client receives: []
+  write 89 sampled out=0000000? av=0
+  client receives: [89]
+
+=== mobile-jvm
+  wr=1: out=0000000? av=0
+  in=90: out=0000000? av=0
+  write 90 clk=1: out=0000000? av=0
+  write 90 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  late client receives: []
+  wr=1: out=0000000? av=0
+  in=89: out=0000000? av=0
+  write 89 clk=1: out=0000000? av=0
+  write 89 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [89]
+--- sampled at rising edges and socket bytes: SAME
+  write 90 sampled out=0000000? av=0
+  late client receives: []
+  write 89 sampled out=0000000? av=0
+  client receives: [89]
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+second-peer evolution: discarded 1024 bytes from pre-scenario peers
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+second-peer mobile-companion: discarded 314 bytes from pre-scenario peers
+second-peer mobile-jvm: discarded 1799 bytes from pre-scenario peers
+case: second-peer telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  wr=1: out=0000000? av=1
+  in=87: out=0000000? av=1
+  write 87 clk=1: out=0000000? av=1
+  write 87 clk=0: out=0000000? av=1
+  wr=0: out=0000000? av=1
+  first client receives: []
+  second client receives: [87]
+  clk=0 after bytes: out=0000000? av=1
+  rd=1: out=00110001 av=1
+  read 0 clk=1: out=00110001 av=1
+  read 0 clk=0: out=01110000 av=1
+  read 1 clk=1: out=01110000 av=1
+  read 1 clk=0: out=01110001 av=1
+  read 2 clk=1: out=01110001 av=1
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+
+=== mobile-companion
+  wr=1: out=0000000? av=1
+  in=87: out=0000000? av=1
+  write 87 clk=1: out=0000000? av=1
+  write 87 clk=0: out=0000000? av=1
+  wr=0: out=0000000? av=1
+! first client receives: [] EOF
+  second client receives: [87]
+  clk=0 after bytes: out=0000000? av=1
+  rd=1: out=00110001 av=1
+! read 0 clk=1: out=01110001 av=1
+! read 0 clk=0: out=01110001 av=1
+! read 1 clk=1: out=11111111 av=0
+! read 1 clk=0: out=11111111 av=0
+! read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+--- sampled at rising edges and socket bytes: DIFF
+  write 87 sampled out=0000000? av=1
+! first client receives: [] EOF
+  second client receives: [87]
+  read 0 sampled out=00110001 av=1
+! read 1 sampled out=01110001 av=1
+! read 2 sampled out=11111111 av=0
+
+=== mobile-jvm
+! FAILURE java.net.ConnectException: Connection refused
+--- sampled at rising edges and socket bytes: DIFF
+! FAILURE java.net.ConnectException: Connection refused
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+peer-reset evolution: discarded 1024 bytes from pre-scenario peers
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+peer-reset mobile-companion: discarded 314 bytes from pre-scenario peers
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+peer-reset mobile-jvm: discarded 1799 bytes from pre-scenario peers
+case: peer-reset telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01110010 av=1
+  read 0 clk=1: out=01110010 av=1
+  read 0 clk=0: out=01110011 av=1
+  read 1 clk=1: out=01110011 av=1
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=84: out=0000000? av=0
+  write 84 clk=1: out=0000000? av=0
+  write 84 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [84]
+
+=== mobile-companion
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01110010 av=1
+! read 0 clk=1: out=01110011 av=1
+  read 0 clk=0: out=01110011 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=84: out=0000000? av=0
+  write 84 clk=1: out=0000000? av=0
+  write 84 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [84]
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=01110010 av=1
+  read 1 sampled out=01110011 av=1
+  read 2 sampled out=11111111 av=0
+  write 84 sampled out=0000000? av=0
+  second client receives: [84]
+
+=== mobile-jvm
+! second client: connection refused
+--- sampled at rising edges and socket bytes: DIFF
+! second client: connection refused
+
+reconnect-after-close evolution: discarded 1024 bytes from pre-scenario peers
+reconnect-after-close mobile-companion: discarded 314 bytes from pre-scenario peers
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at com.cburch.logisim.std.io.TelnetServer$ClientThread.run(TelnetServer.java:166)
+reconnect-after-close mobile-jvm: discarded 1799 bytes from pre-scenario peers
+case: reconnect-after-close telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01100001 av=1
+  read 0 clk=1: out=01100001 av=1
+  read 0 clk=0: out=01100010 av=1
+  read 1 clk=1: out=01100010 av=1
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=82: out=0000000? av=0
+  write 82 clk=1: out=0000000? av=0
+  write 82 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [82]
+
+=== mobile-companion
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01100001 av=1
+! read 0 clk=1: out=01100010 av=1
+  read 0 clk=0: out=01100010 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=82: out=0000000? av=0
+  write 82 clk=1: out=0000000? av=0
+  write 82 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [82]
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=01100001 av=1
+  read 1 sampled out=01100010 av=1
+  read 2 sampled out=11111111 av=0
+  write 82 sampled out=0000000? av=0
+  second client receives: [82]
+
+=== mobile-jvm
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01100001 av=1
+! read 0 clk=1: out=01100010 av=1
+  read 0 clk=0: out=01100010 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=82: out=0000000? av=0
+  write 82 clk=1: out=0000000? av=0
+  write 82 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  second client receives: [82]
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=01100001 av=1
+  read 1 sampled out=01100010 av=1
+  read 2 sampled out=11111111 av=0
+  write 82 sampled out=0000000? av=0
+  second client receives: [82]
+
+bind address: evolution=0.0.0.0 mobile-companion=127.0.0.1
+Telnet: 2 Mobile traces equal Evolution step by step, 14 differ; sampled at rising edges with socket bytes: 11 equal, 5 differ

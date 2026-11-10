@@ -1,0 +1,35 @@
+{
+  "command": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "./gradlew",
+    ":composeApp:testAndroidHostTest",
+    "--tests",
+    "dev.logisim.mobile.CanvasWindowFocusTest",
+    "--tests",
+    "dev.logisim.mobile.CanvasInteractionTest",
+    "--tests",
+    "dev.logisim.mobile.CanvasWireEditingTest",
+    "--tests",
+    "dev.logisim.mobile.EditorSelectionTest",
+    "--tests",
+    "dev.logisim.mobile.KeyboardShortcutPolicyTest",
+    "--tests",
+    "dev.logisim.mobile.EditorIoInteractionGateTest",
+    "--console=plain",
+    "--stacktrace"
+  ],
+  "environment": {
+    "ANDROID_HOME": "/Users/thales/Library/Android/sdk",
+    "ANDROID_SDK_ROOT": "/Users/thales/Library/Android/sdk",
+    "JAVA_HOME": "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home"
+  },
+  "classes": [
+    "CanvasWindowFocusTest",
+    "CanvasInteractionTest",
+    "CanvasWireEditingTest",
+    "EditorSelectionTest",
+    "KeyboardShortcutPolicyTest",
+    "EditorIoInteractionGateTest"
+  ]
+}

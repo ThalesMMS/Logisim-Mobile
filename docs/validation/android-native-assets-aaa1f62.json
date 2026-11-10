@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "status": "passed at the recorded source pin",
+  "scope": "Android native asset adapter fixture only",
+  "productionPin": "aaa1f62bb3a576d7b45404c111491dd685f33dcb",
+  "harnessHead": "da803ee5f435136497ceb7d5fa40b73cb04380e1",
+  "application": {
+    "package": "thalesmms.logisim.mobile.e2e",
+    "sha256": "39103ec1ab40d88b153442680c30c54ad59dc64e3146529ea666e8435ede9f26"
+  },
+  "testApplication": {
+    "package": "thalesmms.logisim.mobile.e2e.test",
+    "sha256": "140a7579526bde3f6b37231e5b10001b71f5d1e73c395f7b5354b61ba07284ae"
+  },
+  "installedApksVerifiedBeforeAndAfterBothRuns": true,
+  "environment": {
+    "type": "Android emulator",
+    "api": 35,
+    "abi": "arm64-v8a",
+    "fingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+    "fixtureActivity": "dev.logisim.mobile.NativeAssetFixtureActivity"
+  },
+  "fullRun": {
+    "artifactRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-final/outputs/android-assets/temporary-5558-e95fff-sharefix",
+    "runId": "20261104T200307Z-f14bca",
+    "passed": 18,
+    "failed": 0,
+    "results": {
+      "path": "results.json",
+      "sha256": "f7fcdd8aa9e36050b724dbea3c87499a7db5b662584cd2a52e1ccd9944e95555"
+    },
+    "manifest": {
+      "path": "run-manifest.json",
+      "sha256": "52a6e922ecc3847abad34fb127256d7e1f82405c6ba81e4893373cfdeb61e891"
+    },
+    "runnerLog": {
+      "path": "runner.log",
+      "sha256": "289b2681621352bd156dd988621b99cb792bf81a59f03b0b2003147446f9d564"
+    },
+    "buildReceipt": {
+      "path": "apk-build-manifest.json",
+      "sha256": "cccda2e756082db67d2366724d1e0872dc0ebed607b605c16a081f783c0f8bae"
+    },
+    "coverage": {
+      "open": [
+        "PNG from Downloads and external provider",
+        "memory HEX from Downloads and external provider",
+        "memory BIN",
+        "PNG request byte-limit rejection"
+      ],
+      "cancellation": [
+        "open PNG",
+        "create SVG"
+      ],
+      "exactByteSaveAndShare": [
+        "PNG",
+        "SVG",
+        "PDF",
+        "memory HEX"
+      ],
+      "processDeathRecovery": "SVG CreateDocument in a new process",
+      "print": "Three-page PDF preview followed by Back"
+    },
+    "callbacks": {
+      "uniqueEvents": 18,
+      "allOnMainThread": true,
+      "events": {
+        "path": "native-events.json",
+        "sha256": "1b6851e781299bfade84792d2965dc312b1097dfe5e7373e557fc6aa0efb74cb"
+      }
+    },
+    "recoveredCreate": {
+      "previousPid": 9700,
+      "recoveredPid": 12667,
+      "source": "recovered"
+    },
+    "externalTestReceiverShares": [
+      {
+        "format": "png",
+        "bytes": 70,
+        "mimeType": "image/png",
+        "payloadSha256": "ec643b38c8bdaa10d9460deb46d42d0fb815c1852472106cc78ddccadcf94058",
+        "receipt": {
+          "path": "share-png.json",
+          "sha256": "77b8092c5f583cd9b4d5eb961f606a283025676e4d92882a652b1012573044aa"
+        }
+      },
+      {
+        "format": "svg",
+        "bytes": 247,
+        "mimeType": "image/svg+xml",
+        "payloadSha256": "c337590fb8037cdc25519537feae9f5b34ed3e117838a889ed70941c4bcead1a",
+        "receipt": {
+          "path": "share-svg.json",
+          "sha256": "e5c10cd995545e272336b1a0076042adde71137a65ecda440f8ee6ef6389ad3e"
+        }
+      },
+      {
+        "format": "pdf",
+        "bytes": 1348,
+        "mimeType": "application/pdf",
+        "payloadSha256": "47899493183f67de3676646f2a04feea4831104f1dafb3defd4da68d1a334be4",
+        "receipt": {
+          "path": "share-pdf.json",
+          "sha256": "76ad4cc1eecd05ff8ec032b98248f630efc34763574bdd8cc240e70eb9f47280"
+        }
+      },
+      {
+        "format": "memory",
+        "bytes": 21,
+        "mimeType": "text/plain",
+        "payloadSha256": "abb66be0dc0d3e5d0bb4e57320ad25f78335f0335a77ad77eae498bd8f794958",
+        "receipt": {
+          "path": "share-memory.json",
+          "sha256": "7e371f23e58ba0db767487e472ef352e2839b4a776a17395daa7c5b1ee9e0e96"
+        }
+      }
+    ],
+    "printScreenshot": {
+      "path": "native-print-preview.png",
+      "sha256": "69a6890ea20519c1b6cfab1e8b0cd5951d28b5f9559115170d61c8d930fa68dc"
+    },
+    "printPixelCheck": {
+      "path": "native-print-pixels.json",
+      "sha256": "199a6b63e5be26d4a8adf87dec2e1d6eaf658f6e71c2e4ef2be2b302631d9661"
+    }
+  },
+  "positivePrintRecheck": {
+    "artifactRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-final/outputs/android-assets/temporary-5558-e95fff-rendercheck",
+    "runId": "20261104T201022Z-72e3b8",
+    "passed": 1,
+    "failed": 0,
+    "results": {
+      "path": "results.json",
+      "sha256": "8af3d9f7b9df1fa05a43248e277da6b3b0f879f549461f000382ea6781e7a9c0"
+    },
+    "manifest": {
+      "path": "run-manifest.json",
+      "sha256": "6ad40e6df901980c0f612cb37b234ed46aeab47b4192d6f8cf0ef96944b3b3c7"
+    },
+    "runnerLog": {
+      "path": "runner.log",
+      "sha256": "6100748c7706b8a4705bfa10399c3f21bb5d69840cd5f9d42ea4e4279b12fb4c"
+    },
+    "pixelCheck": {
+      "path": "native-print-pixels.json",
+      "sha256": "b5b05d86bced03be6c3d20791323ab2f56173c074db6ec25ff7eb725ce837a77"
+    },
+    "renderedScreenshot": {
+      "path": "native-print-preview-rendered.png",
+      "sha256": "dc4c46223c49fe2c84787afd04b76fd8575cf6e179f36313e726c7abff0ff877"
+    },
+    "pageDescription": "Page 1 of 3",
+    "previewCrop": [
+      84,
+      512,
+      996,
+      1776
+    ],
+    "bluePixels": 378075,
+    "cropPixels": 1152768,
+    "blueRatio": 0.3279714565289807,
+    "minimumRatio": 0.1,
+    "retainedHarness": {
+      "artifactRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-final/outputs/android-assets/temporary-5558-e95fff-sharefix",
+      "path": "verified-test-android-assets.py",
+      "sha256": "59d15f42c8ccba2d1c5b09edc18e018c644163cae5c279f76c2d886d0b4f7e7e"
+    },
+    "sourceAttribution": "The retained harness includes the later positive-render assertion. The full 18-case run preceded that assertion; its screenshot was reviewed and pixel-checked, and this separate one-case run exercised the new assertion."
+  },
+  "pixelHelperChecks": {
+    "passed": 25,
+    "failed": 0,
+    "receipt": {
+      "artifactRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-final/outputs/android-assets/temporary-5558-e95fff-sharefix",
+      "path": "native-print-pixel-checks.json",
+      "sha256": "c8879e3e4fd507908d470205ec52003421d8a7f67a6da0e3a24b5e4c6f104025"
+    }
+  },
+  "temporaryAvd": {
+    "name": "Logisim-Assets-20261104T194115Z-e95fff",
+    "removed": true,
+    "cleanupReceipt": {
+      "artifactRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-final/outputs/android-assets/temporary-5558-e95fff-sharefix",
+      "path": "temporary-avd-cleanup.json",
+      "sha256": "becd487d259fdac2b0c37e8011b8a9748a416c56a5ca8a39a2304e49b2265b96"
+    }
+  },
+  "limits": [
+    "NativeAssetFixtureActivity instantiated the native adapter; the main App, editor, annotation/visual-export tool integration, catalog, SAP-1 and directory-library workflow were not exercised.",
+    "No physical Android device or API26-28 execution.",
+    "No printer was selected and no document was sent to a real printer; print completion means the native preview was presented and cancelled with Back.",
+    "This receipt does not qualify later source pins or reinterpret the failed PT04a0 R2 cold-restore run.",
+    "Large logs, screenshots, APKs and private-file archives remain at the external local artifact paths and are not embedded in this receipt."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+    "schema": 1,
+    "phase": "dry-run",
+    "status": "ADMITTED",
+    "tasks": [
+        ":androidApp:preE2eAndroidTestBuild",
+        ":androidApp:generateE2eAndroidTestResValues",
+        ":androidApp:generateE2eAndroidTestResources",
+        ":androidApp:packageE2eAndroidTestResources",
+        ":androidApp:processE2eAndroidTestNavigationResources",
+        ":androidApp:parseE2eAndroidTestLocalResources",
+        ":androidApp:generateE2eAndroidTestRFile",
+        ":androidApp:compileE2eAndroidTestKotlin",
+        ":androidApp:javaPreCompileE2eAndroidTest",
+        ":androidApp:compileE2eAndroidTestJavaWithJavac",
+        ":androidApp:generateE2eAndroidTestAssets",
+        ":androidApp:mergeE2eAndroidTestAssets",
+        ":androidApp:compressE2eAndroidTestAssets",
+        ":androidApp:generateE2eAndroidTestGlobalSynthetics",
+        ":androidApp:processE2eAndroidTestJavaRes",
+        ":androidApp:mergeE2eAndroidTestJavaResource",
+        ":androidApp:checkE2eAndroidTestDuplicateClasses",
+        ":androidApp:desugarE2eAndroidTestFileDependencies",
+        ":androidApp:mergeExtDexE2eAndroidTest",
+        ":androidApp:mergeLibDexE2eAndroidTest",
+        ":androidApp:checkE2eAndroidTestAarMetadata",
+        ":androidApp:mapE2eAndroidTestSourceSetPaths",
+        ":androidApp:compileE2eAndroidTestNavigationResources",
+        ":androidApp:mergeE2eAndroidTestResources",
+        ":androidApp:mergeE2eAndroidTestManifest",
+        ":androidApp:processE2eAndroidTestManifest",
+        ":androidApp:processE2eAndroidTestResources",
+        ":androidApp:dexBuilderE2eAndroidTest",
+        ":androidApp:mergeProjectDexE2eAndroidTest",
+        ":androidApp:mergeE2eAndroidTestJniLibFolders",
+        ":androidApp:mergeE2eAndroidTestNativeLibs",
+        ":androidApp:stripE2eAndroidTestDebugSymbols",
+        ":androidApp:validateSigningE2eAndroidTest",
+        ":androidApp:writeE2eAndroidTestSigningConfigVersions",
+        ":androidApp:packageE2eAndroidTest",
+        ":androidApp:createE2eAndroidTestApkListingFileRedirect",
+        ":androidApp:assembleE2eAndroidTest"
+    ],
+    "unexpected": [
+        
+    ],
+    "missing": [
+        
+    ],
+    "preflight": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-testapk-e7fb33f8-graph-001/reuse-preflight.json",
+        "bytes": 4249529,
+        "sha256": "feda91c6d2332bb962a5d1226032e08fda241c68168cc86f7fb1167d33420cc9"
+    },
+    "gradleVersion": "9.6.1"
+}

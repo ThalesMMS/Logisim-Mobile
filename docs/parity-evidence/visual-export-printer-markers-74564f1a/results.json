@@ -1,0 +1,909 @@
+{
+ "evolution_jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+ "mobile_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+ "fixtures": {
+  "fixtures/visual-export/qualification.circ": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "fixtures/visual-export/contract.json": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "scripts/oracle/visual-export/svg-gates.circ": "8c4e36e80ec48233ef598594f6d861b84fcf2ebf84007d312446769a0fdd5d77",
+  "scripts/oracle/visual-export/svg-labels.circ": "5856a2965e3d2e6cde77985bfbcd46c0ebceb48273b8c54085a71eb8646b5d78",
+  "scripts/oracle/visual-export/svg-printer.circ": "125bcbe577df1087c0452815a110dcb2e1344af11b97bc0179cda34ad79e86e3"
+ },
+ "results": [
+  {
+   "row": "format/image-gif",
+   "case": "android-whole-gif",
+   "mobile": {
+    "png": "docs/validation/artifacts/android-export34-final-002/whole.png",
+    "sha256": "467feda7339d9a710cb5d70a1c7d6efe74dc8f52a5641f230e06baa118934a4d"
+   },
+   "evolution": {
+    "file": "evolution/qualification-raster/visual_export_qualification.gif",
+    "sha256": "eb75a73a0c71805bd4e333d02c54448aff794549185639fe88c376a9c2bf45f1"
+   },
+   "checks": [
+    {
+     "check": "regions",
+     "name": "contract",
+     "result": "PASS",
+     "detail": "78 regions parsed"
+    },
+    {
+     "check": "size",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "size",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "1503x903"
+    },
+    {
+     "check": "size",
+     "name": "frame",
+     "result": "PASS",
+     "detail": "Evolution width 1503 vs Mobile width minus its extra margin 1503"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "470 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "ink-regions",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 79 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "248 ink px outside the regions (limit 1357); fullest world cells [400,200:40, 5900,3500:39, -100,0:20, -100,3500:20, 0,-100:20]"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-red",
+     "result": "PASS",
+     "detail": "pixel (29,53) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-green",
+     "result": "PASS",
+     "detail": "pixel (52,53) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "gif",
+     "name": "evolution-palette",
+     "result": "PASS",
+     "detail": "Evolution GIF vs the same drawing as PNG: max channel error 1 (ImageIO builds an adaptive palette)"
+    },
+    {
+     "check": "gif",
+     "name": "mobile-size",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 70 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "470 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "gif",
+     "name": "android-export34-final-002:imageio-pixels",
+     "result": "PASS",
+     "detail": "0 of 1369264 decoded pixels differ from ImageIO's GIF of the same pixels; 431 source colours, 256 palette colours used"
+    },
+    {
+     "check": "gif",
+     "name": "android-export34-final-002:max-channel-error",
+     "result": "PASS",
+     "detail": "Mobile GIF 3, ImageIO GIF 3 against the source PNG"
+    }
+   ],
+   "failed": []
+  },
+  {
+   "row": "format/image-gif",
+   "case": "ios-whole-gif",
+   "mobile": {
+    "png": "docs/validation/artifacts/ios-export34-final-6cef-002/whole.png",
+    "sha256": "18912f4fedb71f1d8bea9af6f4bbf0ceef098fdf278ede921280536285145c9a"
+   },
+   "evolution": {
+    "file": "evolution/qualification-raster/visual_export_qualification.gif",
+    "sha256": "eb75a73a0c71805bd4e333d02c54448aff794549185639fe88c376a9c2bf45f1"
+   },
+   "checks": [
+    {
+     "check": "regions",
+     "name": "contract",
+     "result": "PASS",
+     "detail": "78 regions parsed"
+    },
+    {
+     "check": "size",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "size",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "1503x903"
+    },
+    {
+     "check": "size",
+     "name": "frame",
+     "result": "PASS",
+     "detail": "Evolution width 1503 vs Mobile width minus its extra margin 1503"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "469 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "ink-regions",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 79 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "248 ink px outside the regions (limit 1357); fullest world cells [400,200:40, 5900,3500:39, -100,0:20, -100,3500:20, 0,-100:20]"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-red",
+     "result": "PASS",
+     "detail": "pixel (29,53) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-green",
+     "result": "PASS",
+     "detail": "pixel (52,53) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "gif",
+     "name": "evolution-palette",
+     "result": "PASS",
+     "detail": "Evolution GIF vs the same drawing as PNG: max channel error 1 (ImageIO builds an adaptive palette)"
+    },
+    {
+     "check": "gif",
+     "name": "mobile-size",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "469 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "gif",
+     "name": "ios-export34-final-6cef-002:imageio-pixels",
+     "result": "PASS",
+     "detail": "0 of 1369264 decoded pixels differ from ImageIO's GIF of the same pixels; 363 source colours, 256 palette colours used"
+    },
+    {
+     "check": "gif",
+     "name": "ios-export34-final-6cef-002:max-channel-error",
+     "result": "PASS",
+     "detail": "Mobile GIF 2, ImageIO GIF 2 against the source PNG"
+    }
+   ],
+   "failed": []
+  },
+  {
+   "row": "format/image-svg",
+   "case": "qualification",
+   "mobile": {
+    "file": "mobile/visual_export_qualification.svg",
+    "sha256": "957ecb52329c2c488869ff64dc252e89bc69d2dc30995bd1d94c9f9e932e195d"
+   },
+   "evolution": {
+    "file": "evolution/qualification/visual_export_qualification.svg",
+    "sha256": "7d6595e3eb0e6c646cc1ee172a37713396cd31deccd19900b63b7b58cbaad2b4"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "1920 Evolution / 1920 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "150 Evolution / 150 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "75 Evolution / 75 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 2.34 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "0 Evolution / 0 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [(80.0, 200.0, 2, 1)] / Mobile [(80.0, 200.0, 2, 1)]"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (-5.0, -5.0) / Mobile 6020x3620 from -10.0,-10.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 225, 'stroke': 151} / Mobile {'fill': 226, 'stroke': 153} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "qualification",
+   "mobile": {
+    "file": "mobile/visual_export_qualification.tex",
+    "sha256": "bf97129d0d9760b1738c909dd3f0b5a865ce9b12483aa80ac96db5ce298415b9"
+   },
+   "evolution": {
+    "file": "evolution/qualification/visual_export_qualification.tex",
+    "sha256": "dd3b93e0d10f601c296ec7e6ff46e2bbc931dc8e210d784e842c03e516dae0bb"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "1920 Evolution / 1920 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "150 Evolution / 150 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "75 Evolution / 75 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 2.34 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "0 Evolution / 0 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [(80.0, 200.0, 2, 1)] / Mobile [(80.0, 200.0, 2, 1)]"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (-5.0, -5.0) / Mobile 6020x3620 from -10.0,-10.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 225, 'stroke': 151} / Mobile {'fill': 226, 'stroke': 153} (canvas styles differ)"
+    },
+    {
+     "check": "tikz-svg",
+     "result": "PASS",
+     "detail": "SVG {'fill': 226, 'stroke': 153}, 75 texts / TikZ {'fill': 226, 'stroke': 153}, 75 texts"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-svg",
+   "case": "svg-gates-ansi",
+   "mobile": {
+    "file": "mobile/svg-gates.svg",
+    "sha256": "5a4e5e138c5737800563e55b708db615ddf3798bd547dcf9d1a434f7f1de8472"
+   },
+   "evolution": {
+    "file": "evolution/svg-gates-ansi/main.svg",
+    "sha256": "316c269fc4a815ac8b79c55362c28d048e7c5df0782e800850914d22cb50ba92"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "56 Evolution / 56 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "11 Evolution / 11 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "0 Evolution / 0 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 0.00 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "2 Evolution / 2 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (75.0, 120.0) / Mobile 380x214 from 70.0,118.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 12, 'stroke': 16} / Mobile {'fill': 17, 'stroke': 23} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "svg-gates-ansi",
+   "mobile": {
+    "file": "mobile/svg-gates.tex",
+    "sha256": "e66ead8f999c01e82d53db50ad8ccacb3d274f4507e52cbabf5c0f0ab1433755"
+   },
+   "evolution": {
+    "file": "evolution/svg-gates-ansi/main.tex",
+    "sha256": "5160d1bd8e7c9533063da4eb68c1b3cb7b2a654a2b743673f68872ff0e6601e7"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "56 Evolution / 56 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "11 Evolution / 11 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "0 Evolution / 0 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 0.00 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "2 Evolution / 2 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (75.0, 120.0) / Mobile 380x214 from 70.0,118.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 12, 'stroke': 16} / Mobile {'fill': 17, 'stroke': 23} (canvas styles differ)"
+    },
+    {
+     "check": "tikz-svg",
+     "result": "PASS",
+     "detail": "SVG {'fill': 17, 'stroke': 23}, 0 texts / TikZ {'fill': 17, 'stroke': 23}, 0 texts"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "svg-gates-iec",
+   "mobile": {
+    "file": "mobile/svg-gates-iec.tex",
+    "sha256": "14e23de8302cfb0632c528f483b2cd9a685aecf5d029a97fcb1aecdf42ad5c53"
+   },
+   "evolution": {
+    "file": "evolution/svg-gates-iec/main.tex",
+    "sha256": "09a1eab6982ac68282bddd7a5c20f06245f00a6724eabd9962f949a3f301834d"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "56 Evolution / 56 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "11 Evolution / 11 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "4 Evolution / 4 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 2.44 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (75.0, 120.0) / Mobile 380x214 from 70.0,118.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 12, 'stroke': 12} / Mobile {'fill': 17, 'stroke': 27} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-svg",
+   "case": "svg-labels-ansi",
+   "mobile": {
+    "file": "mobile/svg-labels.svg",
+    "sha256": "5821c313987e14d62b94f4dcb5a6be1ce9d7044453ca02ef1a9882d549cc5344"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-ansi/main.svg",
+    "sha256": "1764ebeb42d96fe095613124576df7ea712922f1e1e1f389e6c3a09a752ffeb4"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "8 Evolution / 8 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "97 Evolution / 97 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "45 Evolution / 45 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 3.82 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "164 Evolution / 164 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1400x532 from 100.0,78.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 98, 'stroke': 91} / Mobile {'fill': 153, 'stroke': 116} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "svg-labels-ansi",
+   "mobile": {
+    "file": "mobile/svg-labels.tex",
+    "sha256": "c696b2e18a09fcc4d7c1dc165c0d1d6dd00f4760cc8a7c0d5968ff0450bca073"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-ansi/main.tex",
+    "sha256": "9474f5481c81b2416c0b76e5d6a50e1a8c8edb22d2b274b59f91396d38f110bf"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "8 Evolution / 8 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "97 Evolution / 97 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "45 Evolution / 45 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 3.82 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "164 Evolution / 164 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1400x532 from 100.0,78.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 98, 'stroke': 91} / Mobile {'fill': 153, 'stroke': 116} (canvas styles differ)"
+    },
+    {
+     "check": "tikz-svg",
+     "result": "PASS",
+     "detail": "SVG {'fill': 153, 'stroke': 116}, 45 texts / TikZ {'fill': 153, 'stroke': 116}, 45 texts"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-svg",
+   "case": "svg-labels-iec",
+   "mobile": {
+    "file": "mobile/svg-labels-iec.svg",
+    "sha256": "cbcb3dfd560f26c9940b6fbb3b6163bfd5fdc9cfdbae032217726b598bc157a9"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-iec/main.svg",
+    "sha256": "f92141feb25d1651ee30f7ad5bc9ceeac2e414f30b0c0c69e95e02caea772628"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "4 Evolution / 4 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "97 Evolution / 97 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "69 Evolution / 69 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 3.82 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1400x532 from 100.0,78.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 98, 'stroke': 63} / Mobile {'fill': 153, 'stroke': 144} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "svg-labels-iec",
+   "mobile": {
+    "file": "mobile/svg-labels-iec.tex",
+    "sha256": "24a9ec264678f3739349471ca122bfef85ff5ebac4b4e4a28b0bd4b89972aeeb"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-iec/main.tex",
+    "sha256": "f074e89c3709998fd8ece6dc4f04229e2596f40486ef5dba885609ea23f5458a"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "4 Evolution / 4 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "97 Evolution / 97 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "69 Evolution / 69 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 3.82 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1400x532 from 100.0,78.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 98, 'stroke': 63} / Mobile {'fill': 153, 'stroke': 144} (canvas styles differ)"
+    },
+    {
+     "check": "tikz-svg",
+     "result": "PASS",
+     "detail": "SVG {'fill': 153, 'stroke': 144}, 69 texts / TikZ {'fill': 153, 'stroke': 144}, 69 texts"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-svg",
+   "case": "svg-printer",
+   "mobile": {
+    "file": "mobile/svg-printer.svg",
+    "sha256": "244c40ab7694c8cbfad9cf415baef5f7940ba5d55a11fc17dd3918088d117e9f"
+   },
+   "evolution": {
+    "file": "evolution/svg-printer/main.svg",
+    "sha256": "d73ca487d4f11b9fa4bdf37429663e37ae117f8344ce1d16a1018b7f27f7e583"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "0 Evolution / 0 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "1 Evolution / 1 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "1 Evolution / 1 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 1.53 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "21 Evolution / 21 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (125.0, 35.0) / Mobile 490x340 from 120.0,30.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'stroke': 10, 'fill': 1} / Mobile {'fill': 8, 'stroke': 12} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "svg-printer",
+   "mobile": {
+    "file": "mobile/svg-printer.tex",
+    "sha256": "c377b49179e8cd916e9751b5673636c46bdd4157ae78a2bc8108476c2695aff6"
+   },
+   "evolution": {
+    "file": "evolution/svg-printer/main.tex",
+    "sha256": "869fe4f8d16e398cc480928ee89ace85f7ed0e088c7b7a4e24ecc5ac752ce463"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "0 Evolution / 0 Mobile 10-unit edges; missing [] extra []"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "1 Evolution / 1 Mobile terminal dots"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "1 Evolution / 1 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "PASS",
+     "detail": "largest base-west anchor offset 1.53 units (fonts differ; limit 12)"
+    },
+    {
+     "check": "terminal-strokes",
+     "result": "PASS",
+     "detail": "21 Evolution / 21 Mobile points off the wires; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (125.0, 35.0) / Mobile 490x340 from 120.0,30.0 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'stroke': 10, 'fill': 1} / Mobile {'fill': 8, 'stroke': 12} (canvas styles differ)"
+    },
+    {
+     "check": "tikz-svg",
+     "result": "PASS",
+     "detail": "SVG {'fill': 8, 'stroke': 12}, 1 texts / TikZ {'fill': 8, 'stroke': 12}, 1 texts"
+    }
+   ],
+   "failed": [],
+   "differences": []
+  }
+ ]
+}

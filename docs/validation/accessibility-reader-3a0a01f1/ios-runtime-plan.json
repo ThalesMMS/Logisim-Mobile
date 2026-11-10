@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_ONLY",
+  "runtime_authorized_at_preparation": false,
+  "scope": "One reader-service capability test; no activation/rotor/workflow claim",
+  "simulator_proposed": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+  "product_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "bundle_id": "thalesmms.logisim.mobile",
+  "probe_source_sha256": "b24e559bc17a16b47a9bd73c64c39ceec175191635471e010f8296b44d05fd12",
+  "xctestrun": "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/outputs/voiceover-service-prepared-003/DerivedData/Build/Products/VoiceOverProbe_iphonesimulator27.2-arm64.xctestrun",
+  "xctestrun_sha256": "94242aad6eaf0673f9fb137f7fa6903fdce13d716f7fa8b8671f1a8902a29e27",
+  "runtime_argv": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "xcodebuild",
+    "-xctestrun",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/outputs/voiceover-service-prepared-003/DerivedData/Build/Products/VoiceOverProbe_iphonesimulator27.2-arm64.xctestrun",
+    "-destination",
+    "id=20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "-resultBundlePath",
+    "<NEW_ROOT_APPROVED_OUTPUT>/run.xcresult",
+    "-parallel-testing-enabled",
+    "NO",
+    "-only-testing:VoiceOverServiceProbeUITests/VoiceOverServiceProbeUITests/testReaderNavigationAndSpeechWithRestoration",
+    "test-without-building"
+  ],
+  "preconditions": [
+    "Explicit Root runtime lease for 17e",
+    "Matching immutable 3a app already in the foreground; no app install, launch or build performed by the test method",
+    "Preserve existing data/cohort and the original reader enabled state",
+    "Use only candidate003; candidate002 is superseded"
+  ],
+  "actions": [
+    "Capture one initialAppState and fail unless it is runningForeground",
+    "Read and attach the original isEnabled value",
+    "Enable only if originally disabled",
+    "Call currentSpeech",
+    "Call moveForward",
+    "Call moveBackward",
+    "Restore the original enabled state, including enable if originally true and unexpectedly false",
+    "Attach the final state and preserve both operation and restoration errors"
+  ],
+  "failed_to_stop_policy": [
+    "Keep the raw NSError domain, code and description plus final enabled state",
+    "The test fails even if a later getter matches the original state",
+    "No automatic retry, ordinary tap, rotor action or fallback",
+    "Do not return the lane until Root verifies recovery; a process crash also requires owner restoration"
+  ],
+  "no_runtime_claim": [
+    "No VoiceOver service operation has executed yet",
+    "A build-only probe is not an app workflow, audio or hardware result"
+  ]
+}

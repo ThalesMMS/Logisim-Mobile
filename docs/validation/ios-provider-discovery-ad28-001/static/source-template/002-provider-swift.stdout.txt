@@ -1,0 +1,110 @@
+import CryptoKit
+import FileProvider
+import Foundation
+
+@available(iOS 16.0, *)
+final class RevocationFileProvider: NSObject, NSFileProviderReplicatedExtension {
+    private typealias ItemResult = (NSFileProviderItem?, Error?)
+    private typealias FetchResult = (URL?, NSFileProviderItem?, Error?)
+    private typealias MutationResult = (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?)
+    private let domain: NSFileProviderDomain
+    private let storeResult: Result<FixtureStore, Error>
+    private let manager: NSFileProviderManager?
+    private let queue = DispatchQueue(label: "dev.logisim.validation.revocation-provider", qos: .utility, attributes: .concurrent)
+    private let lock = NSLock()
+    private var invalidated = false
+    private var fileIdentifier: NSFileProviderItemIdentifier {
+        NSFileProviderItemIdentifier(rawValue: FixtureConfiguration.itemIdentifier)
+    }
+
+    required init(domain: NSFileProviderDomain) {
+        self.domain = domain
+        manager = NSFileProviderManager(for: domain)
+        if domain.identifier.rawValue == FixtureConfiguration.domainIdentifier {
+            storeResult = Result { try FixtureStore() }
+        } else {
+            storeResult = .failure(RevocationProviderError.unsupported("The fixture only serves its own registered domain."))
+        }
+        super.init()
+        record("provider.initialized")
+    }
+
+    func invalidate() {
+        lock.lock()
+        invalidated = true
+        lock.unlock()
+        record("provider.invalidated")
+    }
+
+    func enumerator(for containerItemIdentifier: NSFileProviderItemIdentifier,
+                    request: NSFileProviderRequest) throws -> NSFileProviderEnumerator {
+        let store = try activeStore()
+        guard containerItemIdentifier != .trashContainer else {
+            throw RevocationProviderError.unsupported("The fixture does not support trash.")
+        }
+        guard [.rootContainer, .workingSet, fileIdentifier].contains(containerItemIdentifier) else {
+            throw RevocationProviderError.missing(containerItemIdentifier)
+        }
+        try store.record("provider.enumerator.created", itemIdentifier: containerItemIdentifier.rawValue,
+                         details: ["domain": domain.identifier.rawValue])
+        return RevocationProviderEnumerator(store: store, container: containerItemIdentifier,
+                                             domainIdentifier: domain.identifier.rawValue)
+    }
+
+    func item(for identifier: NSFileProviderItemIdentifier, request: NSFileProviderRequest,
+              completionHandler: @escaping (NSFileProviderItem?, Error?) -> Void) -> Progress {
+        perform("provider.item", identifier: identifier, failure: { error -> ItemResult in (nil, error) },
+                completion: { completionHandler($0.0, $0.1) }) { _ in
+            let state = try self.activeStore().snapshot()
+            guard identifier == .rootContainer || identifier == self.fileIdentifier else {
+                throw RevocationProviderError.missing(identifier)
+            }
+            // Authentication changes do not announce a deletion or remove the file's write association.
+            return (RevocationProviderItem(identifier: identifier, state: state), nil)
+        }
+    }
+
+    func fetchContents(for itemIdentifier: NSFileProviderItemIdentifier, version requestedVersion: NSFileProviderItemVersion?,
+                       request: NSFileProviderRequest,
+                       completionHandler: @escaping (URL?, NSFileProviderItem?, Error?) -> Void) -> Progress {
+        perform("provider.fetch", identifier: itemIdentifier, failure: { error -> FetchResult in (nil, nil, error) },
+                completion: { completionHandler($0.0, $0.1, $0.2) }, discard: { result in
+                    if let url = result.0 { try? FileManager.default.removeItem(at: url) }
+                }) { _ in
+            let store = try self.activeStore()
+            guard itemIdentifier == self.fileIdentifier else {
+                throw itemIdentifier == .rootContainer
+                    ? RevocationProviderError.unsupported("The root folder has no downloadable file content.")
+                    : RevocationProviderError.missing(itemIdentifier)
+            }
+            let state = try store.snapshot()
+            guard state.authenticationAllowed else { throw FixtureStore.authenticationError() }
+            let item = RevocationProviderItem(identifier: itemIdentifier, state: state)
+            if let requestedVersion,
+               requestedVersion.contentVersion != item.itemVersion.contentVersion ||
+                requestedVersion.metadataVersion != item.itemVersion.metadataVersion {
+                throw RevocationProviderError.unsupported("The requested fixture version is no longer current.")
+            }
+            guard let manager = self.manager else {
+                throw RevocationProviderError.unsupported("No FileProvider manager is available for the fixture domain.")
+            }
+            // The store rechecks authentication under its cross-process lock before making this copy.
+            let intermediate = try store.temporaryBackendCopy()
+            defer { try? FileManager.default.removeItem(at: intermediate) }
+            let directory = try manager.temporaryDirectoryURL()
+            let destination = directory.appendingPathComponent(UUID().uuidString + ".circ")
+            var handedToSystem = false
+            defer { if !handedToSystem { try? FileManager.default.removeItem(at: destination) } }
+            try FileManager.default.copyItem(at: intermediate, to: destination)
+            let bytes = try Data(contentsOf: destination)
+            let actualSHA = SHA256.hash(data: bytes).map { String(format: "%02x", $0) }.joined()
+            let current = try store.snapshot()
+            guard current.authenticationAllowed else { throw FixtureStore.authenticationError() }
+            guard actualSHA == state.backendSHA256, current.backendSHA256 == state.backendSHA256,
+                  bytes.count == state.backendByteCount else { throw RevocationProviderError.changed() }
+            handedToSystem = true
+            return (destination, item, nil)
+        }
+    }
+
+    func createItem(basedOn itemTemplate: NSFileProviderItem, fields: NSFileProviderItemFields,

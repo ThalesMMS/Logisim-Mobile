@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="1" loc="(200,150)" name="AND Gate"/>
+    <comp lib="1" loc="(200,300)" name="OR Gate"/>
+    <comp lib="1" loc="(320,220)" name="XOR Gate"/>
+    <comp lib="1" loc="(440,220)" name="NOT Gate"/>
+    <wire from="(200,150)" to="(240,150)"/>
+    <wire from="(240,150)" to="(240,200)"/>
+    <wire from="(240,200)" to="(260,200)"/>
+    <wire from="(200,300)" to="(240,300)"/>
+    <wire from="(240,240)" to="(240,300)"/>
+    <wire from="(240,240)" to="(260,240)"/>
+    <wire from="(320,220)" to="(410,220)"/>
+    <wire from="(80,130)" to="(140,130)"/>
+    <wire from="(80,170)" to="(140,170)"/>
+    <wire from="(80,280)" to="(140,280)"/>
+    <wire from="(80,320)" to="(140,320)"/>
+  </circuit>
+</project>

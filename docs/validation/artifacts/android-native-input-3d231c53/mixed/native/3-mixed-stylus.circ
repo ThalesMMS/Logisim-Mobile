@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="mixed_02d7a544"/>
+  <circuit name="mixed_02d7a544" id="mixed_02d7a544">
+    <comp lib="0" loc="(100,100)" name="Pin" logisim-mobile-id="mi-input">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="MI_mixed_02d7a544_IN"/>
+    </comp>
+    <comp lib="1" loc="(260,120)" name="NOT Gate" logisim-mobile-id="mi-not">
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+      <a name="size" val="30"/>
+      <a name="out" val="01"/>
+      <a name="label" val="MI_mixed_02d7a544_NOT"/>
+    </comp>
+    <comp lib="0" loc="(300,100)" name="Pin" logisim-mobile-id="mi-output">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="MI_mixed_02d7a544_OUT"/>
+    </comp>
+    <wire from="(100,100)" to="(230,100)"/>
+    <wire from="(230,100)" to="(230,120)"/>
+    <wire from="(260,120)" to="(300,120)"/>
+    <wire from="(300,100)" to="(300,120)"/>
+  </circuit>
+</project>

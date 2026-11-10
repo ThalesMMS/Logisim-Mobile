@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <lib name="1" desc="#Gates"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <main name="top"/>
+  <circuit name="top">
+    <comp name="leaf" loc="(200,100)"/>
+  </circuit>
+  <circuit name="leaf">
+    <comp lib="0" name="Pin" loc="(100,100)">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="1" name="NOT Gate" loc="(230,100)"/>
+    <wire from="(100,100)" to="(200,100)"/>
+  </circuit>
+  <circuit name="unused">
+    <comp lib="1" name="OR Gate" loc="(200,100)"/>
+  </circuit>
+</project>

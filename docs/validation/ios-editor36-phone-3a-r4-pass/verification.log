@@ -1,0 +1,35 @@
+Offline packet checks. Native selected-case PASS; wrapper PARTIAL. No live operations.
+
+Command: python3 verify.py
+Exit: 0
+{
+  "status": "SELECTED_CASE_PASS",
+  "wrapperQualification": "PARTIAL",
+  "nativeTests": 1,
+  "failures": 0,
+  "completedSteps": 62,
+  "xmlExports": 20,
+  "zoomPercent": {
+    "53": 172,
+    "55": 215,
+    "57": 172,
+    "60": 400
+  },
+  "outputs": [
+    "1",
+    "0",
+    "1"
+  ],
+  "headerObservations": 53,
+  "headerSkips": 15,
+  "headerTapRequests": 0,
+  "headerScrollRequests": 4
+}
+
+Command: python3 test_verify.py
+Exit: 0
+.......................
+----------------------------------------------------------------------
+Ran 23 tests in 3.900s
+
+OK

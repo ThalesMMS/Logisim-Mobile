@@ -1,0 +1,30 @@
+{
+  "source": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-existing-group-ad28-002/new-discovery-after-reinstall.stdout",
+  "sourceBytes": 1737905,
+  "sourceSHA256": "79cf1175f7e00d2d5ab3af55d68abaed7a6558d757094e67a33fc36e8e9cd848",
+  "indexConvention": "Zero-based JSON array indices",
+  "events": [
+    {
+      "sourceArrayIndex": 961,
+      "timestamp": "2026-11-05 07:27:30.129291+0000",
+      "processID": 68875,
+      "threadID": 9903950,
+      "eventMessage": "Query result; index [0] [appGroup:group.thalesmms.logisim.validation.revocationfixture:501::(C4A78BD1-44B3-4590-B045-A3AC1883D566):{501:20:u+rwx,g+rx,o+rx}] /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4"
+    },
+    {
+      "sourceArrayIndex": 962,
+      "timestamp": "2026-11-05 07:27:30.129652+0000",
+      "processID": 68875,
+      "threadID": 9903950,
+      "eventMessage": "[ERROR] Extension { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/ } doesn't have a group container for document group group.thalesmms.logisim.validation.revocationfixture specified via NSExtensionFileProviderDocumentGroup. Ignoring the extension."
+    },
+    {
+      "sourceArrayIndex": 963,
+      "timestamp": "2026-11-05 07:27:30.129717+0000",
+      "processID": 68875,
+      "threadID": 9903950,
+      "eventMessage": "[WARNING] Failed to create descriptor for extension { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/ }"
+    }
+  ],
+  "meaning": "MCM identifier lookup succeeds, then extension document-group association is rejected; this does not establish the cause or normalized internal metadata."
+}

@@ -1,0 +1,119 @@
+package dev.logisim.mobile.core
+
+// Bundled HDL models from Logisim Evolution d58a61e0, resources/logisim/hdl/{vhdl,blif}.templ.
+// Copyright Logisim Evolution developers. Distributed under GNU GPLv3.
+internal object HdlIpTemplates {
+    val VHDL: String = """
+        |--------------------------------------------------------------------------------
+        |-- HEIG-VD, institute REDS, 1400 Yverdon-les-Bains
+        |-- Project :
+        |-- File    :
+        |-- Autor   :
+        |-- Date    :
+        |--
+        |--------------------------------------------------------------------------------
+        |-- Description :
+        |--
+        |--------------------------------------------------------------------------------
+        |
+        |library ieee;
+        |  use ieee.std_logic_1164.all;
+        |  --use ieee.numeric_std.all;
+        |
+        |entity VHDL_Component is
+        |  port(
+        |  ------------------------------------------------------------------------------
+        |  --Insert input ports below
+        |    horloge_i  : in  std_logic;                    -- input bit example
+        |    val_i      : in  std_logic_vector(3 downto 0); -- input vector example
+        |  ------------------------------------------------------------------------------
+        |  --Insert output ports below
+        |    max_o      : out std_logic;                    -- output bit example
+        |    cpt_o      : out std_logic_vector(3 downto 0)  -- output vector example
+        |    );
+        |end VHDL_Component;
+        |
+        |--------------------------------------------------------------------------------
+        |--Complete your VHDL description below
+        |architecture type_architecture of VHDL_Component is
+        |
+        |
+        |begin
+        |
+        |
+        |end type_architecture;
+    """.trimMargin() + "\n"
+
+    val BLIF: String = """
+        |# A subset of BLIF is supported.
+        |# Only one model is defined.
+        |# All lines not beginning with '.' (after trimming) are ignored.
+        |# Custom gates (via truth table) cannot be specified.
+        |# Instead, a set of predefined subcircuits exist for various gates.
+        |
+        |# The value of the .model statement is usually set to the top module name.
+        |# For that reason, it is used to set a visible label.
+        |
+        |.model lightswitch
+        |.inputs button reset
+        |.outputs light_out
+        |
+        |# These three .names statements are the only .names statements permitted.
+        |# They are ignored.
+        |.names ${'$'}false
+        |.names ${'$'}true
+        |1
+        |.names ${'$'}undef
+        |
+        |# gates can be placed with .subckt or .gate.
+        |# An example of a binary gate would be: .subckt OR A=in_a B=in_b Y=output
+        |# Various gates are supported.
+        |# However, the definition of new subcircuits is not supported.
+        |# The expectation is that your BLIF will come from synthesis.
+        |.subckt NOT A=light Y=light_inv
+        |.subckt DFFSR C=button D=light_inv Q=light R=reset S=${'$'}false
+        |
+        |# Buffers may be specified using the BUF gate, similar to NOT above.
+        |# '.conn' has the same effect.
+        |.conn light light_out
+        |
+        |# ignored
+        |.end
+        |
+        |# The goal of this subset is to be sufficiently compatible with Yosys.
+        |# You can find an example of the necessary cell files in the 'examples/cmos' directory of Yosys.
+        |# An example Yosys script:
+        |
+        |# read_verilog example.v
+        |# read_verilog -lib yosys-cmos/cmos_cells.v
+        |# check -assert
+        |# synth -flatten -top example
+        |# dfflibmap -liberty yosys-cmos/cmos_cells.lib
+        |# abc -liberty yosys-cmos/cmos_cells.lib
+        |# opt_clean
+        |# write_blif -icells -conn example.blif
+        |
+        |# The libraries can be expanded somewhat, also.
+        |
+        |# The full list of binary gates:
+        |# BUS, TRIS, TRISI, AND, OR, XOR, NAND, NOR, NXOR, ANDNOT, ORNOT
+        |# BUS is essentially two buffers.
+        |# TRIS is a buffer which only sends A to Y when B is high.
+        |# TRISI is like TRIS but with the B input inverted.
+        |# ANDNOT is A & !B ; ORNOT is A | !B.
+        |# The rest should be self-explanatory.
+        |# The unary gates are NOT and BUF.
+        |# Then there are the special gates:
+        |# MUX A=. B=. S=. Y=. outputs A to Y if S isn't high, outputs B to Y if S is high.
+        |# DFFSR is a D flip-flop with asynchronous set/reset pins.
+        |# DFF is like DFFSR but without the S/R pins. Honestly not that much to say here.
+        |# DLATCH D=. E=. Q. continually sets Q to D while (and only while) E is high.${' '}
+        |# PULLUP/PULLDOWN are very special; they change the default state of a line if nothing else is driving it.
+        |# PULLUP/PULLDOWN do not work with lines directly connected to external inputs (inputs outside of the BLIF).
+        |# They will likely create very hard-to-find internal logic error states if you try.
+        |
+        |# Something worth keeping in mind is that the BLIF simulation processes all combinatorial logic
+        |#  until it settles (or it runs out of time), then flip-flops/'sequential logic', then updates combinatorial logic again.
+        |# This is important for D-flip-flop consistency across registers larger than 1 bit (i.e. for counters).
+    """.trimMargin() + "\n"
+}

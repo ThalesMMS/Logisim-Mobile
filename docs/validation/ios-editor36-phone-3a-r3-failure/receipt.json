@@ -1,0 +1,319 @@
+{
+  "schema": 1,
+  "issue": 36,
+  "runLabel": "R3",
+  "status": "FAIL",
+  "nativeExecutionGate": "NATIVE_FAIL",
+  "qualification": "FAIL; selected case, no issue completion",
+  "caseSeconds": 300.753,
+  "testCount": 1,
+  "failureCount": 1,
+  "exitCode": 65,
+  "testTimeoutSeconds": 900,
+  "nativeRunCount": 1,
+  "selectedTest": "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+  "harnessSource": "91bc58e38e0171777df5951b018a23ac6da8da69",
+  "appProducerSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "producerManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+  "appArtifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+    "bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/20A4D87D-A2A6-46BD-A889-C4888CE1E152/data",
+    "dataPathSize": 4111347712,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "udid": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "lastUsedAt": "2026-11-05T03:21:51Z",
+    "isAvailable": true,
+    "logPathSize": 483328,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
+    "state": "Booted",
+    "name": "iPhone 17e",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "runId": "f2167ca1720d",
+  "started": "2026-11-05T09:57:08.031841+00:00",
+  "finished": "2026-11-05T10:02:42.123829+00:00",
+  "passedSteps": 15,
+  "attemptedFailureStep": 16,
+  "failureAction": "connectPorts",
+  "failure": "EditorEndToEndTests.swift:529 rejected an Explorer Search control with invalid label/state/frame.",
+  "scope": "Start-port c1:out was requested, then destination Search preparation failed before the first CompleteConnection. Zero tap/scroll applies only to the new header helper, not all UI actions.",
+  "exports": [
+    {
+      "exportIndex": 1,
+      "contractStep": 2,
+      "checkpoint": "empty",
+      "attachment": "D65B8CDE-DD80-415B-9D16-74BFF9D5E2C9.xml",
+      "bytes": 462,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    {
+      "exportIndex": 2,
+      "contractStep": 7,
+      "checkpoint": "components",
+      "attachment": "B111D004-C9A9-4BE0-BE7F-A7D92309D64A.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    {
+      "exportIndex": 3,
+      "contractStep": 9,
+      "checkpoint": "north",
+      "attachment": "0277C3E9-F238-4762-9612-AB1091764933.xml",
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    {
+      "exportIndex": 4,
+      "contractStep": 11,
+      "checkpoint": "components",
+      "attachment": "AA1B5870-CA07-4C38-A1E8-BC45D9828426.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    {
+      "exportIndex": 5,
+      "contractStep": 13,
+      "checkpoint": "north",
+      "attachment": "79D80F97-7725-4935-899A-32CE21D3A6D1.xml",
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    {
+      "exportIndex": 6,
+      "contractStep": 15,
+      "checkpoint": "components",
+      "attachment": "644FC806-7B97-478F-B1CB-4AFF388C4CAF.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    }
+  ],
+  "stepNotes": [
+    {
+      "step": 1,
+      "attachment": "F09C7582-B601-4B60-B14F-9DAED9B5658B.txt"
+    },
+    {
+      "step": 2,
+      "attachment": "945B2A6D-7A1F-4121-B22F-73290FB839DD.txt"
+    },
+    {
+      "step": 3,
+      "attachment": "8BDF16FF-9D8E-43FB-B4A6-17911D1DBA00.txt"
+    },
+    {
+      "step": 4,
+      "attachment": "B4AF9318-5939-4A8E-A195-70B3CA735ED5.txt"
+    },
+    {
+      "step": 5,
+      "attachment": "A4D8A0BD-F3AC-40AF-A12D-64E2FE9A9A03.txt"
+    },
+    {
+      "step": 6,
+      "attachment": "81526BBA-264A-4F05-885A-4CEE1B66BBC7.txt"
+    },
+    {
+      "step": 7,
+      "attachment": "D57AA148-7B8F-46F7-8A39-F966A2EA61A2.txt"
+    },
+    {
+      "step": 8,
+      "attachment": "57C73728-7309-4A5F-A1A6-677A6917DBD9.txt"
+    },
+    {
+      "step": 9,
+      "attachment": "62E53D90-2212-4BF2-A62E-1E599CA1A90E.txt"
+    },
+    {
+      "step": 10,
+      "attachment": "33B4FE50-CEB7-44A2-A1A0-0AA1D78F1BD7.txt"
+    },
+    {
+      "step": 11,
+      "attachment": "5EB7660A-70DD-40E7-81FD-EFE7C08B5965.txt"
+    },
+    {
+      "step": 12,
+      "attachment": "C2E4EC1B-97BD-4045-A5B6-E865E9CB5F75.txt"
+    },
+    {
+      "step": 13,
+      "attachment": "98542CE7-4708-4354-BEF4-2BAFB3E29AA5.txt"
+    },
+    {
+      "step": 14,
+      "attachment": "415E07D1-4B11-4956-ACD3-BC018A4A9D38.txt"
+    },
+    {
+      "step": 15,
+      "attachment": "E2BCDC5B-4B33-46E8-9F6E-FAD6E7E413C3.txt"
+    }
+  ],
+  "attachments": {
+    "nativeTotal": 556,
+    "archivedExcludingVideo": 555,
+    "videoRetainedLocally": true
+  },
+  "swiftSources": {
+    "compiledCount": 17,
+    "preparedCount": 18,
+    "compiledMapSHA256": "0937bf9c115ecfe46b8e66a94fd619f7d914a5d2883b3f3a93dc8aef2acd87db",
+    "preparedMapSHA256": "e69a36025c0c7396292d9dfafaa6495f598e41efe1baa77b711a5890419ea2c0"
+  },
+  "headerEvidence": {
+    "observations": 20,
+    "decisions": 7,
+    "skipPubliclySelected": 7,
+    "tapRequests": 0,
+    "shortBackwardScrollRequests": 0,
+    "lastObservation": {
+      "attachment": "A13C9CAD-91DE-4981-A775-A2F5520362C6.txt",
+      "timestamp": 1793872946.584,
+      "payload": "invocation=E60D684A-C654-4DA2-AB5A-6801B544AEEC; order=0; target=search; phase=inspect; attempt=0; count=1; selected=unobserved; role=52; label=; enabled=true; field=(24.0, 158.0, 342.0, 24.0); viewport=(24.0, 182.0, 342.0, 604.0); window=(0.0, 0.0, 390.0, 844.0); list=(24.0, 182.0, 342.0, 604.0); inputs=; fullyVisible=false; hittable=unqueried",
+      "fields": {
+        "invocation": "E60D684A-C654-4DA2-AB5A-6801B544AEEC",
+        "order": "0",
+        "target": "search",
+        "phase": "inspect",
+        "attempt": "0",
+        "count": "1",
+        "selected": "unobserved",
+        "role": "52",
+        "label": "",
+        "enabled": "true",
+        "field": "(24.0, 158.0, 342.0, 24.0)",
+        "viewport": "(24.0, 182.0, 342.0, 604.0)",
+        "window": "(0.0, 0.0, 390.0, 844.0)",
+        "list": "(24.0, 182.0, 342.0, 604.0)",
+        "inputs": "",
+        "fullyVisible": "false",
+        "hittable": "unqueried"
+      }
+    },
+    "scope": "Observed public Components selection and Search snapshots, not callback delivery or universal input absence."
+  },
+  "setupDiagnostics": {
+    "003": {
+      "nativeRunCount": 0,
+      "phase": "preflight-setup",
+      "error": "Manifest reader KeyError app; original record retained."
+    },
+    "003b": {
+      "nativeRunCount": 0,
+      "phase": "preflight-setup",
+      "error": "Catalogue-shape assertion; original traceback retained."
+    }
+  },
+  "nativeTreeAttachment": "8DFCA9E0-85B0-4599-A634-9547582C0767.txt",
+  "headerFailureTreeAttachment": "A69FDF9D-0903-46FC-B367-11B0EE7992F6.txt",
+  "finalScreenAttachment": "27D8E6C2-8147-4B5A-A208-80E5B27C4B35.png",
+  "deviceLease": "Returned by execution owner after pre/postflight PASS. Teardown terminated PID51827 and restored Portrait; explicit terminate exit3 because the app was not running.",
+  "priorRuns": "R1 and R2 remain separate failures. Setup003/003b were not Native attempts.",
+  "localOnly": [
+    {
+      "kind": "file",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/outputs/ios-editor36-phone-3a-003/attachments/8898D2C9-4CA0-4163-AC77-E477E1FE4E68.mp4",
+      "bytes": 101419976,
+      "sha256": "5761c74fa272f2628897430c1b3e1860fec6a8721f2820d4cdf26f8baf993a3d",
+      "reason": "Recording retained locally, excluded from publication."
+    },
+    {
+      "kind": "file",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/outputs/ios-editor36-phone-3a-003/simulator.log",
+      "bytes": 105128127,
+      "sha256": "39b04f30fabcdb1a6e6ba5ce565c91268d39b1c4f475f5fd79b0eb7de1bf4703",
+      "reason": "Large Simulator log retained locally; selected XCTest log is archived in full."
+    },
+    {
+      "kind": "file",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/outputs/ios-editor36-phone-3a-003/last-screen.png",
+      "bytes": 3427217,
+      "sha256": "556925907acef5dc118f6a4231ba07d4d1894b2910c82ff06b54c9a5170f1bd5",
+      "reason": "Post-teardown screenshot retained locally; native product failure screenshots are archived."
+    },
+    {
+      "kind": "directory-tree",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/outputs/ios-editor36-phone-3a-003/editor.xcresult",
+      "bytes": 104241290,
+      "fileCount": 254,
+      "sha256": "94990a2d9a9ccb658799dbf41d982acb72d6ae7c26289998e365e1ba3d903380",
+      "algorithm": "Sorted pathlib paths; relative POSIX path + NUL + file SHA256 hex + newline.",
+      "reason": "Original xcresult remains local; exported records are archived."
+    }
+  ],
+  "notQualified": [
+    "First CompleteConnection and full wired document",
+    "Native input/output inversion",
+    "Copy/paste/delete and remaining history",
+    "Viewport/zoom phases",
+    "Save/restart",
+    "SAP-1",
+    "Rotation/pan/pinch/canvas drag",
+    "VoiceOver",
+    "Physical device"
+  ],
+  "rawArchive": {
+    "path": "raw.tar.gz",
+    "memberCount": 669,
+    "bytes": 7677332,
+    "sha256": "c2f867954f1d9d73846dc7a48c4235428366e7b44cd1c358328cb6eeb5fb46a3"
+  },
+  "privacyScan": {
+    "selectedRawMembers": 669,
+    "secretValueMatches": 0,
+    "scope": "Selected public raw bytes checked against current credential-like environment values without printing values. Local-only files were not published."
+  },
+  "publicFiles": {
+    "README.md": {
+      "bytes": 3984,
+      "sha256": "5a6a77e45a08fcb087f44d4b69a5f4006ee5c1748ba919837d16fab4e916ed0b"
+    },
+    "archive-byte-review.json": {
+      "bytes": 140007,
+      "sha256": "976f6a0fc3d881a07579aff44f5a0b9cd32feae70cf280933e08f091e3fb3d56"
+    },
+    "independent-portable-replay.json": {
+      "bytes": 1123,
+      "sha256": "9d143bcc37593f6a7ab85815a7e747b867373b62dee70f68dcfb1b8645a54a21"
+    },
+    "oracle.py": {
+      "bytes": 5319,
+      "sha256": "b0f10d85305e17070b1a473c96d14d5b68faf0e79022de815a5857e4d174c142"
+    },
+    "original-evidence-review.json": {
+      "bytes": 31379,
+      "sha256": "19a4adac4a42be85f72dae94ad93bb54edc096f30e8440b51c87fd88e8007532"
+    },
+    "package-review.json": {
+      "bytes": 4792,
+      "sha256": "dbf674c712e1f3b26fe796a889d7a2762f40a0d441e68774ae41432ddae59915"
+    },
+    "raw-members.json": {
+      "bytes": 107759,
+      "sha256": "9df2fabf3e01626ecdbe3e151e231a7b8cf67babbfd8fc1f039ed547991ebc58"
+    },
+    "raw.tar.gz": {
+      "bytes": 7677332,
+      "sha256": "c2f867954f1d9d73846dc7a48c4235428366e7b44cd1c358328cb6eeb5fb46a3"
+    },
+    "test_verify.py": {
+      "bytes": 10018,
+      "sha256": "774e81a7c8c02320c40e4f873cf95d916e23f520ddb97178876585401cda8989"
+    },
+    "verification.log": {
+      "bytes": 491,
+      "sha256": "44288cc8de5c8926ee9576c403de12a6bc8a1981ebe14bb74a9d421042a807c8"
+    },
+    "verify.py": {
+      "bytes": 18692,
+      "sha256": "f4fadb64da4ac187261086c0f8d045b8b2d9ca4cb42a6153da19408b73ac1300"
+    }
+  }
+}

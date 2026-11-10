@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "status": "SOURCE_PREPARED",
+  "nativeStatus": "NOT_RUN",
+  "base": "bdc390d1a23f87c9429537db5bca6b2e05f88f1b",
+  "scope": "Observe the applied Inspector before one sheet-dismissal Back request; require existing editor readiness before XML receiver preparation.",
+  "files": {
+    "scripts/android_editing_scenarios.py": {
+      "bytes": 25661,
+      "sha256": "9375a037d622a51707e5852f689e97edd3a2e56881182187faa27544185e0442"
+    },
+    "scripts/test_android_editing_scenarios.py": {
+      "bytes": 25855,
+      "sha256": "6ea5a6f0159308c41ab958b232822ac04597b5f83f776afa5586ec7365cd6ae7"
+    },
+    "scripts/e2e-android.py": {
+      "bytes": 68215,
+      "sha256": "2d5578df30d1e32d0a6e29c2890c78f48f8792cffab84cc76761c2f2db169466"
+    },
+    "scripts/android_ui.py": {
+      "bytes": 45996,
+      "sha256": "24fd80149ebb6c803a474c741065d3db3cc78f54b9fd03bdd3b48b4d28b0ab1e"
+    },
+    "fixtures/user-scenarios/editor-actions-v1.json": {
+      "bytes": 9468,
+      "sha256": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9"
+    },
+    "scripts/user_scenario_contract.py": {
+      "bytes": 7203,
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+    }
+  },
+  "verification": {
+    "selectorChecksPassed": 28,
+    "immediateBackNegative": {
+      "testsRun": 3,
+      "expectedFailures": 3,
+      "unexpectedErrors": 0
+    },
+    "independentReview": "Approved after resolving partially visible Cancel ownership.",
+    "productionChanged": false,
+    "oraclesAndFixturesChanged": false,
+    "injectorAndDeadlinesChanged": false
+  },
+  "limits": [
+    "No device, build or native retry occurred.",
+    "Prior failure remains failed; no Back delivery, callback order or keyboard cause is inferred.",
+    "Native qualification of this preparation remains pending."
+  ]
+}

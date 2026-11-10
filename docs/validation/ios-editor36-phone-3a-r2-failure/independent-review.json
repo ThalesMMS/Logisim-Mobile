@@ -1,0 +1,131 @@
+{
+  "status": "FAIL_PRESERVED",
+  "source": "e8354b17a2d1fcb5b0592c4810cd5a3d95622571",
+  "producer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "durationSeconds": 419.831,
+  "tests": 1,
+  "failures": 1,
+  "exitCode": 65,
+  "completedStepNotesVerified": 16,
+  "attemptedFailureStep": 17,
+  "xmlExportsVerified": [
+    {
+      "step": 2,
+      "checkpoint": "empty",
+      "path": "attachments/296D245E-CF3A-40E6-8A16-BD9C0E234187.xml",
+      "bytes": 462,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    {
+      "step": 7,
+      "checkpoint": "components",
+      "path": "attachments/98AA383E-CF0B-425C-9C81-A5858FAE7AEF.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    {
+      "step": 9,
+      "checkpoint": "north",
+      "path": "attachments/5356DE77-7380-4090-9635-47CC4E1C90A8.xml",
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    {
+      "step": 11,
+      "checkpoint": "components",
+      "path": "attachments/B9480767-7446-4100-9CB4-84CFB22A3A4F.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    {
+      "step": 13,
+      "checkpoint": "north",
+      "path": "attachments/8F29E90E-3BBF-40CF-BC82-9889F0BC0B26.xml",
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    {
+      "step": 15,
+      "checkpoint": "components",
+      "path": "attachments/D3FC5E93-381A-4689-B122-94AEC39D9123.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    }
+  ],
+  "preparedSources": 18,
+  "declaredTargetSources": 17,
+  "facts": [
+    "Step16completed339.29/339.30, with destination port E2E_NOT/in tapped337.52 and tool Close338.97.",
+    "Step17opened fresh Explorer344.48; its search helper found field without scrolling348.66.",
+    "The E2E_NOT terminals expansion button was found/tapped355.95; source Out port was found/tapped362.54.",
+    "The next destination explorerSearch first queried Components at364.01. This query, not Ports/Hide or Search, precedes the failed reveal.",
+    "Global reveal then sent12upward full-height drags and1downward full-height drag412.95; afterward list frame lookup failed at NativeUIHarness.swift118.",
+    "The private Search reveal was never reached after source Out click in step17.",
+    "Final tree/screenshot show normal editor, with first input-to-NOT wire visible and NOT High1, no Explorer sheet.",
+    "No step18fullwired XML or complete second connection was reached; existing six snapshots are all preconnection snapshots."
+  ],
+  "inference": "Same source-supported overscroll/sheet-dismissal hypothesis asR1, now in global Components reveal before private Search helper; callback/consumption remains unmeasured.",
+  "notProven": [
+    "Fulltwo-wire document equality",
+    "Signal inversion",
+    "Copy/paste/delete/laterhistory",
+    "Zoom/pan/pinch/rotation",
+    "Cause attributable solely to helper vsR1; harnessbase changedba9→2d4d"
+  ],
+  "raw": {
+    "test.log": {
+      "bytes": 291137,
+      "sha256": "593540945b3362f889aa2d10e4b793a9a34f18788ef66eccf95c2bd4fc90797e"
+    },
+    "attachments/5BD8707B-B8BA-4884-8C02-20D6D8971206.txt": {
+      "bytes": 7216,
+      "sha256": "81b1d0bdc4667409623162da310f9403c603530f66da7b07fc6af079b16ce519"
+    },
+    "attachments/AE03D255-E734-49D4-81AC-9BE4BCD3F3EC.png": {
+      "bytes": 192665,
+      "sha256": "946051dd620702202ef564adf0edcfdd40622ab5605190aa59a27bfab9fec48f"
+    }
+  },
+  "finalComponentsRevealDrags": [
+    "t =   365.16s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   369.14s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   373.09s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   377.07s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   381.05s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   385.01s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   389.01s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   392.98s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   396.98s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   400.99s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   404.99s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   408.96s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds",
+    "t =   412.95s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds"
+  ],
+  "finalPacketReview": {
+    "status": "APPROVED_NO_BLOCKERS_FOR_FAILURE_ARCHIVE",
+    "receiptSHA256": "f821f8447351e5b19b87d4a1e38b9b2f73f2adb711d52c0e503549aa95912247",
+    "rawArchive": "715members, each directly compared byte-for-byte to original raw/source path; sizes/SHA matched raw-members.",
+    "archivedAttachments": 668,
+    "nativeAttachmentsIncludingLocalVideo": 669,
+    "localOnlyFiles": "All3local hashes checked independently, not required by portable verifier.",
+    "sourceInventories": "18prepared/17EditorTarget;18hashes match e835; comparison8deltas from R1 preserves non-isolated-A/B limitation.",
+    "semanticPrefix": "16passed notes and6full XMLs; stable3component IDs; zero wires in all6preconnection exports.",
+    "readme": "Reviewed and accurate failure/scope/causality/producer limits.",
+    "checker": "Reviewed safe tar, literalstatus and identities, full XML restoration and native ID cross-checks, sourcecomparison constraints.",
+    "portableReplay": "PASS in temporary directory with no Git/repository cwd or local video dependency.",
+    "tests": {
+      "total": 14,
+      "positive": 1,
+      "negative": 13
+    },
+    "publicFileInventory": "8files exact on disk, no missing/unlisted public members excluding receipt itself.",
+    "noReviewerActions": "No source edits, compilation or device/GUI/Native rerun.",
+    "files": {
+      "README.md": "13a30e39dec697f58d3462dc7a35747e1825108586ba523720d973278246c4e0",
+      "verify.py": "aab7bb501c85a096a58a6d170cbc009df4db156fbc710b3e3886b2926cfb7717",
+      "test_verify.py": "27b77874075f97a181899c90d728c97c8811a88ae9d17acfc09aa05a0246bb41",
+      "oracle.py": "b0f10d85305e17070b1a473c96d14d5b68faf0e79022de815a5857e4d174c142",
+      "source-comparison.json": "6aeba0587226cf500dd2b38f1620d48557e24f3b0f4ea85b21408c225de48752"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+scripts/diagnostics/KeyboardInputCallbackRaceTest.kt:55:91: warning: this class is not recommended for use in Kotlin. Use 'kotlin.Function1' instead.
+            it.parameterTypes.contentEquals(arrayOf(kotlin.jvm.functions.Function1::class.java, TextFieldValue::class.java))
+                                                                                          ^^^^
+scripts/diagnostics/KeyboardInputCallbackRaceTest.kt:62:43: warning: only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'ProtectionDomain?'.
+        println("EditProcessor origin=" + EditProcessor::class.java.protectionDomain.codeSource.location)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

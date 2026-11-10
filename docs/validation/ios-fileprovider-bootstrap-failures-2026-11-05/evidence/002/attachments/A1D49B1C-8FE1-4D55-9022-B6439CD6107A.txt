@@ -1,0 +1,80 @@
+Attributes: Application, 0x1091b7d40, pid: 34488, label: 'Logisim Revocation Fixture'
+Element subtree:
+ →Application, 0x1091b7d40, pid: 34488, label: 'Logisim Revocation Fixture'
+    Window (Main), 0x1091b43c0, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x1091b4500, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x1091b4640, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x1091b4b40, {{0.0, 0.0}, {834.0, 1210.0}}
+            NavigationBar, 0x1091b4a00, {{0.0, 32.0}, {834.0, 54.0}}, identifier: 'Logisim Revocation Fixture'
+              StaticText, 0x1091b4c80, {{310.0, 43.5}, {213.5, 21.0}}, label: 'Logisim Revocation Fixture'
+            Other, 0x1091b4dc0, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x1091b4f00, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x1091b6940, {{0.0, 0.0}, {834.0, 1210.0}}
+                  ScrollView, 0x1091b7e80, {{0.0, 86.0}, {834.0, 1104.0}}
+                    Other, 0x1091b6f80, {{16.0, 102.0}, {802.0, 1065.5}}
+                      StaticText, 0x1091b6e40, {{16.0, 102.0}, {802.0, 61.0}}, label: 'Test fixture only. Prepare, register the domain, then select revocation.circ in another app's Files picker. Close that app before eviction. Denial is proven only when a later system-dispatched provider request fails and the editor preserves its project.'
+                      StaticText, 0x1091b6d00, {{16.0, 175.0}, {802.0, 20.5}}, identifier: 'fixture.status', label: 'Prepared backend Native scenario: NOT_RUN.'
+                      Button, 0x1091b6bc0, {{16.0, 207.5}, {802.0, 48.0}}, identifier: 'fixture.prepare', label: 'Prepare backend'
+                        StaticText, 0x1091b6a80, {{16.0, 222.5}, {116.0, 18.0}}, label: 'Prepare backend'
+                      Button, 0x1091b66c0, {{16.0, 267.5}, {802.0, 48.0}}, identifier: 'fixture.domain.add', label: 'Register fixture domain'
+                        StaticText, 0x1091b6800, {{16.0, 282.5}, {159.0, 18.0}}, label: 'Register fixture domain'
+                      Button, 0x1091b6440, {{16.0, 327.5}, {802.0, 48.0}}, identifier: 'fixture.domain.inspect', label: 'Inspect fixture domain'
+                        StaticText, 0x1091b6580, {{16.0, 342.5}, {153.0, 18.0}}, label: 'Inspect fixture domain'
+                      Button, 0x1091b61c0, {{16.0, 387.5}, {802.0, 48.0}}, identifier: 'fixture.auth.allow', label: 'Allow authentication'
+                        StaticText, 0x1091b6300, {{16.0, 402.5}, {139.0, 18.0}}, label: 'Allow authentication'
+                      Button, 0x1091b5f40, {{16.0, 447.5}, {802.0, 48.0}}, identifier: 'fixture.auth.deny', label: 'Deny authentication without eviction'
+                        StaticText, 0x1091b6080, {{16.0, 462.5}, {250.0, 18.0}}, label: 'Deny authentication without eviction'
+                      Button, 0x1091b5cc0, {{16.0, 507.5}, {802.0, 48.0}}, identifier: 'fixture.evict', label: 'Evict item'
+                        StaticText, 0x1091b5e00, {{16.0, 522.5}, {68.0, 18.0}}, label: 'Evict item'
+                      Button, 0x1091b5a40, {{16.0, 567.5}, {802.0, 48.0}}, identifier: 'fixture.evictThenDeny', label: 'Evict, then deny authentication'
+                        StaticText, 0x1091b5b80, {{16.0, 582.5}, {212.0, 18.0}}, label: 'Evict, then deny authentication'
+                      Button, 0x1091b57c0, {{16.0, 627.5}, {802.0, 48.0}}, identifier: 'fixture.evidence.refresh', label: 'Refresh evidence'
+                        StaticText, 0x1091b5900, {{16.0, 642.5}, {119.0, 18.0}}, label: 'Refresh evidence'
+                      Button, 0x1091b5540, {{16.0, 687.5}, {802.0, 48.0}}, identifier: 'fixture.evidence.share', label: 'Share evidence'
+                        StaticText, 0x1091b5680, {{16.0, 702.5}, {106.0, 18.0}}, label: 'Share evidence'
+                      TextView, 0x1091b52c0, {{16.0, 747.5}, {802.0, 420.0}}, identifier: 'fixture.evidence', value: Native scenario: N...
+                        TextView, 0x1091b5400, {{21.0, 755.5}, {178.0, 14.3}}, label: 'Native scenario: NOT_RUN'
+                        TextView, 0x1091b5180, {{21.0, 769.8}, {467.3, 14.3}}, label: 'App Group: group.thalesmms.logisim.validation.revocationfixture'
+                        TextView, 0x1091b5040, {{21.0, 784.1}, {274.5, 14.3}}, label: 'Domain: logisim-revocation-fixture-v1'
+                        TextView, 0x1091b4780, {{21.0, 798.5}, {200.3, 14.3}}, label: 'Item: revocation-circuit-v1'
+                        TextView, 0x1091b48c0, {{21.0, 827.1}, {59.3, 14.3}}, label: 'SNAPSHOT'
+                        TextView, 0x10808e1c0, {{21.0, 841.4}, {7.4, 14.3}}, label: '{'
+                        TextView, 0x10808ee40, {{21.0, 855.7}, {103.9, 14.3}}, label: '  "events" : ['
+                        TextView, 0x10808ef80, {{21.0, 870.1}, {37.1, 14.3}}, label: '    {'
+                        TextView, 0x10808ebc0, {{21.0, 884.4}, {140.9, 14.3}}, label: '      "details" : {'
+                        TextView, 0x10808e940, {{21.0, 913.0}, {59.3, 14.3}}, label: '      },'
+                        TextView, 0x10808e800, {{21.0, 927.3}, {185.4, 14.3}}, label: '      "kind" : "prepare",'
+                        TextView, 0x10808e440, {{21.0, 941.7}, {326.4, 14.3}}, label: '      "process" : "RevocationFixture:34488",'
+                        TextView, 0x10808e580, {{21.0, 956.0}, {155.8, 14.3}}, label: '      "sequence" : 1,'
+                        TextView, 0x10808de00, {{21.0, 970.3}, {341.2, 14.3}}, label: '      "timestamp" : "2026-11-05T06:14:04.903Z"'
+                        TextView, 0x10808ea80, {{21.0, 984.6}, {37.1, 14.3}}, label: '    }'
+                        TextView, 0x10808ed00, {{21.0, 998.9}, {29.7, 14.3}}, label: '  ],'
+                        TextView, 0x10808cc80, {{21.0, 1013.3}, {96.4, 14.3}}, label: '  "state" : {'
+                        TextView, 0x10808c8c0, {{21.0, 1027.6}, {259.6, 14.3}}, label: '    "authenticationAllowed" : true,'
+                        TextView, 0x10808f340, {{21.0, 1041.9}, {215.1, 14.3}}, label: '    "backendByteCount" : 552,'
+                        TextView, 0x10808f480, {{21.0, 1056.2}, {660.2, 14.3}}, label: '    "backendSHA256" : "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",'
+                        TextView, 0x10808df40, {{21.0, 1070.5}, {155.8, 14.3}}, label: '    "generation" : 1,'
+                        TextView, 0x10808dcc0, {{21.0, 1084.9}, {170.6, 14.3}}, label: '    "schemaVersion" : 1'
+                        TextView, 0x10808d540, {{21.0, 1099.2}, {22.3, 14.3}}, label: '  }'
+                        TextView, 0x10808d400, {{21.0, 1113.5}, {7.4, 14.3}}, label: '}'
+                        Other, 0x10808d680, {{785.0, 747.5}, {30.0, 420.0}}, label: 'Vertical scroll bar, 1 page', value: 0%
+                          Other, 0x10808d2c0, {{812.0, 716.5}, {3.0, 28.0}}
+                        Other, 0x10808e6c0, {{16.0, 1134.5}, {802.0, 30.0}}, label: 'Horizontal scroll bar, 1 page', value: 0%
+                          Other, 0x1093cc000, {{-26.0, 1161.5}, {36.0, 3.0}}
+                    Other, 0x1093cc140, {{801.0, 86.0}, {30.0, 1094.0}}, label: 'Vertical scroll bar, 1 page', value: 0%
+                      Other, 0x1093cc280, {{828.0, 95.5}, {3.0, 1081.5}}
+                    Other, 0x1093cc3c0, {{10.0, 1157.0}, {814.0, 30.0}}, label: 'Horizontal scroll bar, 1 page', value: 0%
+                      Other, 0x1093cc500, {{13.0, 1184.0}, {808.0, 3.0}}
+                    Other, 0x1093cc640, {{801.0, 86.0}, {30.0, 1094.0}}, label: 'Vertical scroll bar, 1 page', value: 0%
+                      Other, 0x1093cc780, {{828.0, 95.5}, {3.0, 1081.5}}
+                    Other, 0x1093cc8c0, {{10.0, 1157.0}, {814.0, 30.0}}, label: 'Horizontal scroll bar, 1 page', value: 0%
+                      Other, 0x1093cca00, {{13.0, 1184.0}, {808.0, 3.0}}
+            Toolbar, 0x1093ccb40, {{0.0, 0.0}, {834.0, 1210.0}}, identifier: 'Toolbar', label: 'Toolbar'
+              Other, 0x1093ccc80, {{0.0, 0.0}, {834.0, 1210.0}}
+Path to element:
+ →Application, 0x1091b7d40, pid: 34488, label: 'Logisim Revocation Fixture'
+Query chain:
+ →Find: Application 'thalesmms.logisim.validation.revocationfixture'
+  Output: {
+    Application, 0x1093ccdc0, pid: 34488, label: 'Logisim Revocation Fixture'
+  }

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "status": "FAIL",
+  "scope": "Two isolated FileProvider registration bootstrap attempts; neither qualifies BOOTSTRAP_REGISTER.",
+  "archivalBase": "628562d52e3b0c957be67a43ac2851b7f84c23c5",
+  "device": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+  "platform": "iOS Simulator 27.0 (24A434), arm64; SDK 27.2 build artifacts",
+  "cases": [
+    {
+      "id": "001",
+      "status": "FAIL",
+      "fixtureSource": "ff99aadb4991933774eed684dda70805de9d0055",
+      "testSource": "10099e21e2f46d811effd495c3f28bce34b10172",
+      "seconds": 36.779,
+      "counts": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "skipped": 0
+      },
+      "exitCode": 65,
+      "app": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-revocation-fixture/outputs/ios-fileprovider-fixture-ff99aadb/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+        "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+        "executable_sha256": "c639712acb6523e627a13c321945462a5b235a55706ec5e7684f5753ee783900",
+        "bundle_tree_sha256": "b56a12ba0f9e7c8aaefa36e62a981ea24694c5518697162d2014b0d144cb4974",
+        "version": "1.0",
+        "build": "1"
+      },
+      "provider": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-revocation-fixture/outputs/ios-fileprovider-fixture-ff99aadb/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+        "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+        "executable_sha256": "f1db1724ec332f6ff407acfeb6d8c8edf55d55e49a2ae4652ec87ae1a13de986",
+        "bundle_tree_sha256": "06ea5a3e6a30ed9a20ebc84d40b180682487a5718481069ca44facbf4bf92b81",
+        "version": "1.0",
+        "build": "1"
+      },
+      "summary": "evidence/001/xcresult-summary.json",
+      "testLog": "evidence/001/test.log",
+      "boundary": {
+        "kind": "FIXTURE_LAUNCH_SIGTRAP",
+        "pid": 11986,
+        "incident": "33602B25-5EFA-4793-9A34-B55E46653E99",
+        "firstFrame": "___UIApplicationEvaluateRuntimeIssueForNoSceneLifecycleAdoption_block_invoke",
+        "prepare": "NOT_REACHED",
+        "register": "NOT_REACHED",
+        "appGroupBackendAction": "NOT_TESTED"
+      }
+    },
+    {
+      "id": "002",
+      "status": "FAIL",
+      "fixtureSource": "48412de3dae41e97fba38623f1dc466f41bbe441",
+      "testSource": "628562d52e3b0c957be67a43ac2851b7f84c23c5",
+      "seconds": 16.147,
+      "counts": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "skipped": 0
+      },
+      "exitCode": 65,
+      "app": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+        "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+        "executable_sha256": "f8a1e37a8cde77f49da141e0ac80c5994759dcfd02bbc73891ed0ceaa4cbdf9e",
+        "bundle_tree_sha256": "e4f87964086776be370e8d3471a89a79836206aa22d43abecf3c8bea59df7111",
+        "version": "1.0",
+        "build": "1"
+      },
+      "provider": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+        "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+        "executable_sha256": "569983c6a92ff71538fa0bc3652e97d2adb6d0ba189a0a22c017a9d89f9f9880",
+        "bundle_tree_sha256": "e2307e9a8631a8804ac83ade63691156c178744c59f53da235434b021518fe5b",
+        "version": "1.0",
+        "build": "1"
+      },
+      "summary": "evidence/002/xcresult-summary.json",
+      "testLog": "evidence/002/test.log",
+      "boundary": {
+        "kind": "REGISTRATION_CALLBACK_ERROR",
+        "fixturePID": 34488,
+        "prepare": "OBSERVED",
+        "controlAppAppGroupIO": "OBSERVED_VIA_PUBLIC_UI_AND_BUILT_SOURCE",
+        "publicBackend": {
+          "bytes": 552,
+          "sha256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+          "generation": 1,
+          "authenticationAllowed": true
+        },
+        "events": [
+          "prepare",
+          "domain.registration.requested",
+          "domain.registration.failed"
+        ],
+        "errorDomain": "NSFileProviderErrorDomain",
+        "errorCode": -2001,
+        "localizedDescription": "The application cannot be used right now.",
+        "inspect": "NOT_REACHED",
+        "domainCount": "NOT_OBSERVED",
+        "registrationSucceeded": false,
+        "cause": "UNDETERMINED",
+        "cleanup": "Task-owned fixture terminated, recorded exit0."
+      }
+    }
+  ],
+  "notRun": [
+    "Inspect after registration callback",
+    "Successful domain registration",
+    "Provider extension execution",
+    "Cross-process App Group sharing",
+    "Files location or enumeration",
+    "Provider fetch",
+    "Authentication denial",
+    "Eviction",
+    "Save",
+    "Security-scope revocation",
+    "Physical device"
+  ],
+  "mainApp": {
+    "referenceSource": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "postRunMatchesArchivedReference": true,
+    "evidence": "evidence/002/installed-after.json",
+    "reference": "evidence/main-final-peer-reference.json",
+    "scope": "Post-run fingerprint matches the prior archived FINAL 6cef identity. Bootstrap test code launches only the fixture. No main-app data/state assertion or fresh before-run measurement is inferred."
+  },
+  "archiveScope": "Docs-only copies and local xcresult summary extraction. No device, Simulator, cache, registration, signing or build command ran during archiving. Historical paths in copied records are metadata and are never followed by the verifier.",
+  "limitations": [
+    "The first failure is a fixture-process SIGTRAP before Prepare/Register, separate from the earlier backboardd compositor failures.",
+    "The second is an observed NSFileProviderManager.add callback error. It does not establish unsupported Simulator behavior, a signing fault, or a domain count.",
+    "ControlApp Prepare and its public snapshot demonstrate its own App Group storage path; they do not prove provider-extension execution or cross-process sharing.",
+    "The public backend hash and byte count are UI observations. Backend bytes were not read from a live container during archiving.",
+    "The literal Native scenario: NOT_RUN describes the fixture full-denial scenario; it does not erase the observed Prepare action and failed registration attempt.",
+    "The original xcresults/videos/automation binary snapshots/build products remain in original outputs and are excluded. No original result or source file was modified."
+  ],
+  "staticCensus": {
+    "result": "No demonstrated configuration/API mismatch explaining the observed callback error.",
+    "errorHeaderName": "NSFileProviderErrorProviderNotFound",
+    "errorCode": -2001,
+    "headerMeaning": "Returned by NSFileProviderManager if no provider could be found in the application.",
+    "references": "primary-local-extracts.txt",
+    "limits": "The SDK name describes the error category, not its underlying registration/lookup cause. No installed runtime registry, macro resolution, signing eligibility or Simulator support conclusion is established."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "scope": "first native alpha; not acceptance evidence",
+  "status": "FAIL",
+  "native_execution_gate": "NATIVE_FAIL",
+  "qualification_gate": "NOT_QUALIFIED",
+  "baseline_sha": "9455c044b899e3eed2f4ced7f94b57d43fd2f881",
+  "simulator": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-app-9455c044/outputs/ios-final-app-9455c044/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "cea53aa0691614dd5040a719a6ffa1467f7d7cc25930fc89c9d1c3317e8fd28d",
+    "bundle_tree_sha256": "99db187ac6e42741c88fba1341d19ee2887e6341666b9ca8852bced33ab6e244",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifact_after": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-app-9455c044/outputs/ios-final-app-9455c044/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "cea53aa0691614dd5040a719a6ffa1467f7d7cc25930fc89c9d1c3317e8fd28d",
+    "bundle_tree_sha256": "99db187ac6e42741c88fba1341d19ee2887e6341666b9ca8852bced33ab6e244",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "test_cases": 2,
+  "failed_cases": 2,
+  "companion_operations": 0,
+  "failure": "The harness queried canonical text fields immediately after tapping Companion; the final native tree showed correctly labeled fields after the failed lookup.",
+  "correction": "Wait for one canonical editable field and name the missing key in diagnostics.",
+  "not_inferred": "No HDL job or import was executed; this run does not establish an HDL product failure or the separately reported zero-height dialog bug.",
+  "evidence_root": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-alpha-9455-001",
+  "settings": "No hardware keyboard, content size or contrast setting changed; orientation restored by shared teardown."
+}

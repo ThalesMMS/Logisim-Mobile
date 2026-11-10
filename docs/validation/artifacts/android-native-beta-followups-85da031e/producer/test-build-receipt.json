@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "scope": "Isolated Android test APK assembly and manifest preflight. No app APK is included or qualified. Native focus execution remains NOT_RUN.",
+  "createdAtUtc": "2026-11-05T05:31:00.950779+00:00",
+  "producerRevision": "f4f72c6de53fbd634703ed23f066af88f58d5485",
+  "producerBase": "10651a76e6d768ccde16e567767156ef48caba54",
+  "originalPatch": "4a1658d753ca124df22a267cd1b1fe987c9bceb9",
+  "mirrorPatch": "f4f72c6de53fbd634703ed23f066af88f58d5485",
+  "patchId": "b4d354a1067e21039ac2c612a8b2cff72b250ca3",
+  "testApk": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-artifacts/native-focus4a/androidApp-e2e-androidTest.apk",
+    "sha256": "04a4fdecd9dfdae6577ce040a7595e8c96bb62ac821080ee6faa0f1de7cde52f",
+    "sizeBytes": 140230,
+    "package": "thalesmms.logisim.mobile.e2e.test",
+    "instrumentation": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+    "targetPackage": "thalesmms.logisim.mobile.e2e"
+  },
+  "preflight": {
+    "command": [
+      "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt2",
+      "dump",
+      "xmltree",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-artifacts/native-focus4a/androidApp-e2e-androidTest.apk",
+      "--file",
+      "AndroidManifest.xml"
+    ],
+    "exitCode": 0,
+    "compiledManifest": "aapt2-manifest.txt",
+    "compileSdk": 37,
+    "targetSdk": 36,
+    "minSdk": 26
+  },
+  "localChecks": {
+    "receipt": "local-checks-receipt.json",
+    "javaObservationTests": 17,
+    "realModelProbes": 15,
+    "javaSdk35": "PASS",
+    "k2Sdk35JVM17": "PASS",
+    "independentReview": "No blocker"
+  },
+  "gradleAssembly": {
+    "task": ":androidApp:assembleE2eAndroidTest",
+    "property": "-PandroidTestBuildType=e2e",
+    "status": "BUILD SUCCESSFUL",
+    "duration": "1m 10s",
+    "actionableTasks": 79,
+    "executedTasks": 79,
+    "log": "gradle-assembly.log",
+    "ownerReportedProcessHandle": 35109,
+    "ownerReportedExitCode": 0,
+    "serializedLock": "/tmp/logisim-gradle-serial.py"
+  },
+  "sourceHashes": {
+    "androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt": "ec683d6f27c4e984894083c414da54367372e5fc72fe9b31409a16cd591dc49e",
+    "androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/NativeTargetGeometry.kt": "bb125e48a174c40e5cec26a5ccfbab81dd58df333f8b89fa3e4d8b993cc1e05b",
+    "scripts/probes/NativeTargetGeometryProbe.kt": "ea5cbc82fa40a35ef1e1c5014e310569ea5183da07ab7c2de77f256e5a0107f8",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeActionTargets.java": "50679bd2aa3133106aed5fee69514a848375e38af2cfcfb09af24108b7dff50f",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeCanvasObservation.java": "6f95d44bb690a4b7644e1d749ed5f75ceeb792ce48b5ba3c4ac8557267141c90",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeFixtureReadiness.java": "d7727e903a47fb1b5be2d1bfa74ab383903560f42f06f555732006c77d4d0452",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java": "9835a5a753ed9e486d7dd3df760d6ffa93f4ec53f8e5201fef61ece595e2544c",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeReadinessDiagnostics.java": "73f1ed0ee7aeba9e54fb5118ca9b661f18c87bd10f7245fee4779a10a3a89fb7",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/documents/DocumentFixtureBootstrapReceiver.java": "3f2d761ffc899aad23e9a821a6ea41529aee589b50a762f25fa977eeeaf4c049"
+  },
+  "nativeFocusExecution": "NOT_RUN",
+  "appApkCopied": false,
+  "deviceCommandsExecuted": false
+}

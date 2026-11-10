@@ -1,0 +1,26 @@
+{
+  "status": "APPROVED_FACTUAL_PORTABLE_FAILURE_RECEIPT",
+  "reviewScope": "Read-only local source and evidence review; no ADB, UI, build, toolchain or host operation.",
+  "source": "aea3a63f5c2d90acec8786456c328cb0d2821f9f",
+  "observedManifestSha256": "05f432bd077eaaf5a8f2962db9d03c15ee8b49d65b25985c07fafa5098386b03",
+  "checks": [
+    "Portable verifier passed for 142 listed packet files. The first pass had 141 before an additive receipt file appeared; the final default and original-path passes both verified142.",
+    "Original-path verifier passed for 136 copies totaling 2369131 bytes.",
+    "Independent comparison of all 247 current frozen original files passed against the retained Root5c manifest.",
+    "One invocation selected all three cases and failed after 130.269223625015 seconds; synthesis preparation failed, tool-error and cancel did not run.",
+    "Verified companion card tree retains verified text, fpga-synthesize: available and Disconnect host.",
+    "Staged XML is 536 bytes; staged and uploaded SHA256 match; publication metadata reports text/xml, download1, pending0.",
+    "Failure traceback stops in choose_downloads before choose_native_file; no board selection or import is established.",
+    "Trace first tree has Downloads breadcrumb and file list with no roots; two requested taps follow, then twelve complete drawer trees and one incomplete final query.",
+    "Tap records explicitly lack observed window token and PID; no callback-delivery assertion is made.",
+    "Audit retains zero requests, execution events and jobs, with only fpga-synthesize registered.",
+    "Cleanup receipt records no listener or reverse at55307, exact three APK hashes, matching nine settings/display size/density, unchanged lastANR and retained system picker."
+  ],
+  "qualification": "FAIL_PRESERVED; zero qualified FPGA software cases; issue65 remains open.",
+  "limitations": [
+    "No snapshot-helper, importer, SDK or callback defect is inferred.",
+    "No full device preferences or viewport restoration is asserted.",
+    "No Native retry, device check or execution was performed by this reviewer."
+  ],
+  "blockers": []
+}

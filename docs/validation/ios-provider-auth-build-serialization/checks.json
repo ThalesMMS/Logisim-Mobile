@@ -1,0 +1,51 @@
+{
+  "scope": "Source checks only; no Native test, Simulator build, wrapper execution or lock access",
+  "checks": [
+    {
+      "name": "python-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_ios_provider_auth_runner.py",
+        "-v"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "sdk-typecheck",
+      "command": [
+        "xcrun",
+        "swiftc",
+        "-typecheck",
+        "-swift-version",
+        "5",
+        "-target",
+        "arm64-apple-ios17.0-simulator",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib",
+        "scripts/ios_native_ui/NativeUIHarness.swift",
+        "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift",
+        "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift",
+        "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift",
+        "scripts/ios_provider_auth_ui/ProviderFixtureController.swift",
+        "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "sourceSHA256": {
+    "scripts/run-ios-provider-auth.py": "8f6868d35acc2c77065d4b71bb4cbb9fbd1edf7ca1c6454ae2de4211592badea",
+    "scripts/test_ios_provider_auth_runner.py": "5d9cff7895e47d8967f2d574a9d83f2d5c946669e32ef2434b6ee6f90083af7d",
+    "scripts/ios_provider_auth_ui/README.md": "84c4538fc3f39ca0e1c55de1ae767bd183c9164d1b8762ce7cad24b780de07e6",
+    "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "07309fa9e17ee4cc8f9badf39ba97021d4df96eab6266fb88c2ab38aac385211"
+  }
+}

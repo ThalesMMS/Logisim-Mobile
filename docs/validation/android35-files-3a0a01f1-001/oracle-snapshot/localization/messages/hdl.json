@@ -1,0 +1,166 @@
+{
+  "hdl_binary_domain": {
+    "en": "Defined binary inputs; exports the main circuit hierarchy.",
+    "pt": "Entradas binárias definidas; exporta a hierarquia do circuito principal."
+  },
+  "hdl_top_module": {
+    "en": "Top module: {name}",
+    "pt": "Módulo principal: {name}"
+  },
+  "hdl_save_dependencies": {
+    "en": "Save all files in the same folder, in the displayed order.",
+    "pt": "Salve todos os arquivos na mesma pasta, na ordem mostrada."
+  },
+  "hdl_copy": {
+    "en": "Copy",
+    "pt": "Copiar"
+  },
+  "hdl_source_copied": {
+    "en": "HDL source copied.",
+    "pt": "Código HDL copiado."
+  },
+  "hdl_save_file": {
+    "en": "Save file",
+    "pt": "Salvar arquivo"
+  },
+  "hdl_share_file": {
+    "en": "Share file",
+    "pt": "Compartilhar arquivo"
+  },
+  "hdl_fix_errors": {
+    "en": "Fix the reported errors before exporting.",
+    "pt": "Corrija os erros indicados antes de exportar."
+  },
+  "hdl_diagnostic_missing_circuit": {
+    "en": "The referenced circuit is missing.",
+    "pt": "O circuito referenciado não existe."
+  },
+  "hdl_diagnostic_recursive_circuit": {
+    "en": "Recursive circuit instances cannot be exported.",
+    "pt": "Instâncias recursivas de circuitos não podem ser exportadas."
+  },
+  "hdl_diagnostic_invalid_layout": {
+    "en": "Invalid component geometry or attributes: {reason}",
+    "pt": "Geometria ou atributos inválidos do componente: {reason}"
+  },
+  "hdl_diagnostic_invalid_network": {
+    "en": "The circuit network is invalid: {reason}",
+    "pt": "A rede do circuito é inválida: {reason}"
+  },
+  "hdl_diagnostic_multiple_drivers": {
+    "en": "A signal has multiple output terminals driving it.",
+    "pt": "Uma rede tem vários terminais de saída ativos."
+  },
+  "hdl_diagnostic_nested_stimulus": {
+    "en": "Route clocks and interactive inputs through circuit pins before exporting a child circuit.",
+    "pt": "Conecte clocks e entradas interativas a pinos do circuito antes de exportar um subcircuito."
+  },
+  "hdl_diagnostic_external_stimulus": {
+    "en": "This interactive component becomes a top-level input. Its simulator timing is not generated in RTL.",
+    "pt": "Este componente interativo vira uma entrada do módulo principal. Sua temporização de simulação não é gerada em RTL."
+  },
+  "hdl_diagnostic_tristate_pin": {
+    "en": "Tri-state interactive pins are outside the synthesizable RTL profile.",
+    "pt": "Pinos interativos de três estados estão fora do perfil RTL sintetizável."
+  },
+  "hdl_diagnostic_undriven_output": {
+    "en": "An output pin contains an undriven bit.",
+    "pt": "Um pino de saída contém um bit sem sinal de origem."
+  },
+  "hdl_diagnostic_missing_instance_port": {
+    "en": "A child circuit pin has no matching appearance terminal.",
+    "pt": "Um pino do subcircuito não tem um terminal correspondente na aparência."
+  },
+  "hdl_diagnostic_observer_omitted": {
+    "en": "A display or annotation observes the circuit and does not produce RTL.",
+    "pt": "Um mostrador ou anotação observa o circuito e não produz RTL."
+  },
+  "hdl_diagnostic_no_output_ports": {
+    "en": "The top circuit has no output pins. Synthesis may remove unobserved logic.",
+    "pt": "O circuito principal não tem pinos de saída. A síntese pode remover lógica não observada."
+  },
+  "hdl_diagnostic_tristate_component": {
+    "en": "Tri-state and weak-driver components are outside the synthesizable RTL profile.",
+    "pt": "Componentes de três estados e fontes fracas estão fora do perfil RTL sintetizável."
+  },
+  "hdl_diagnostic_unsupported_component": {
+    "en": "This component has no synthesizable HDL implementation.",
+    "pt": "Este componente não tem implementação HDL sintetizável."
+  },
+  "hdl_diagnostic_unsupported_configuration": {
+    "en": "Unsupported HDL configuration: {reason}",
+    "pt": "Configuração HDL não suportada: {reason}"
+  },
+  "hdl_diagnostic_undriven_input": {
+    "en": "An input bit has no driver.",
+    "pt": "Um bit de entrada não tem sinal de origem."
+  },
+  "hdl_reason_constant_value": {
+    "en": "The constant value is invalid.",
+    "pt": "O valor da constante é inválido."
+  },
+  "hdl_reason_open_collector": {
+    "en": "Open-collector/open-emitter gate outputs cannot be exported.",
+    "pt": "Saídas de coletor ou emissor aberto não podem ser exportadas."
+  },
+  "hdl_reason_undriven_gate": {
+    "en": "A gate has no driven input.",
+    "pt": "Uma porta não tem entrada com sinal de origem."
+  },
+  "hdl_reason_extension_mode": {
+    "en": "Unknown bit-extension mode.",
+    "pt": "Modo de extensão de bits desconhecido."
+  },
+  "hdl_reason_floating_output": {
+    "en": "Floating disabled outputs cannot be exported by the synthesizable RTL profile.",
+    "pt": "Saídas flutuantes desativadas não podem ser exportadas pelo perfil RTL sintetizável."
+  },
+  "hdl_reason_mixed_multiply": {
+    "en": "Mixed signed/unsigned multiplication has no RTL mapping yet.",
+    "pt": "Multiplicação mista com e sem sinal ainda não tem mapeamento RTL."
+  },
+  "hdl_reason_shift_mode": {
+    "en": "Unknown shift mode.",
+    "pt": "Modo de deslocamento desconhecido."
+  },
+  "hdl_reason_clock_trigger": {
+    "en": "Unknown clock trigger.",
+    "pt": "Modo de disparo do clock desconhecido."
+  },
+  "hdl_reason_sr_undefined": {
+    "en": "S-R export requires one input tied low; simultaneous high is undefined.",
+    "pt": "A exportação S-R exige uma entrada desconectada, com valor neutro baixo; duas entradas altas são indefinidas."
+  },
+  "hdl_reason_counter_limit": {
+    "en": "Unknown counter limit mode.",
+    "pt": "Modo de limite do contador desconhecido."
+  },
+  "hdl_reason_rom_data_lines": {
+    "en": "ROM export supports one data line.",
+    "pt": "A exportação ROM suporta uma linha de dados."
+  },
+  "hdl_reason_rom_outputs": {
+    "en": "ROM export supports one data output.",
+    "pt": "A exportação ROM suporta uma saída de dados."
+  },
+  "hdl_reason_rom_address_width": {
+    "en": "ROM addresses wider than 24 bits are not supported.",
+    "pt": "Endereços ROM com mais de 24 bits não são suportados."
+  },
+  "hdl_reason_selector_limit": {
+    "en": "A selector has more than 256 entries.",
+    "pt": "Um seletor tem mais de 256 entradas."
+  },
+  "hdl_reason_missing_output": {
+    "en": "The component output is missing.",
+    "pt": "A saída do componente não existe."
+  },
+  "hdl_reason_control_width": {
+    "en": "A control input is not one bit wide.",
+    "pt": "Uma entrada de controle não tem largura de um bit."
+  },
+  "hdl_diagnostic_instance_port_width": {
+    "en": "The instance terminal width differs from its circuit pin.",
+    "pt": "A largura do terminal da instância difere da largura do pino de seu circuito."
+  }
+}

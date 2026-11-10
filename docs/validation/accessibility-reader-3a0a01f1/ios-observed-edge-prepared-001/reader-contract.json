@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_NOT_BUILT_NOT_AUTHORIZED",
+  "runtime_executed": false,
+  "build_executed": false,
+  "scope": "One observed forward/backward VoiceOver edge with independent visual identity review",
+  "product_source_proposed": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "bundle_id": "thalesmms.logisim.mobile",
+  "runtime_target_proposed": "17e / 20A4D87D-A2A6-46BD-A889-C4888CE1E152, only after a fresh Root lease",
+  "selected_test": "VoiceOverObservedEdgeUITests/testCaptureForwardBackwardEdgeWithRestoration",
+  "source": "VoiceOverObservedEdgeUITests.swift",
+  "new_target_required": true,
+  "reuse_capability_probe_003_binary": false,
+  "public_api_limit": {
+    "VoiceOver_output_properties": [
+      "utterance"
+    ],
+    "focus_identity_returned": false,
+    "XCUIElement_hasFocus_means_only": "UI focus; not treated as VoiceOver focus",
+    "snapshot_child_order_means_only": "Snapshot structure; not interpreted as reader order",
+    "debugDescription_parsed": false,
+    "ring_capture_capability": "UNPROVEN_UNTIL_RUNTIME; missing/ambiguous ring cannot qualify identity"
+  },
+  "preconditions": [
+    "Fresh explicit Root lease and separate approval for build/runtime, with the selected source and header hashes frozen first",
+    "Owner verifies already installed app bytes/source and current foreground paused editor; no install, launch, import, fixture, or production change by this test",
+    "Owner retains initial public reader/appearance/orientation settings and a recovery path if the test process terminates",
+    "Owner reviews one bounded wrapper and exact result path before execution; no runtime command is prepared here",
+    "Portrait, static viewport and stable source cohort; no input synthesizer or other focus-moving actor during the capture"
+  ],
+  "reader_actions": [
+    "Read original isEnabled; enable only if disabled",
+    "S0: currentSpeech then screenshot / immutable public snapshot / screenshot",
+    "S1: moveForward once then screenshot / immutable public snapshot / screenshot",
+    "S2: moveBackward once then screenshot / immutable public snapshot / screenshot",
+    "Restore original isEnabled, including restoration to true; retain operation and restoration errors separately"
+  ],
+  "forbidden_actions": [
+    "XCTest tap/click/swipe/press/typeText",
+    "rotor or activation",
+    "private API/KVC focus queries",
+    "parsing debugDescription",
+    "force focus",
+    "second test/retry/fallback",
+    "new app or fixture"
+  ],
+  "native_test_pass_meaning": "CAPTURE_ONLY; foreground, enabled service, nonempty speech, snapshots/screenshots collected, reader enabled state restored",
+  "independent_review_statuses": [
+    "NOT_REVIEWED",
+    "PASS_OBSERVED_EDGE_ONLY",
+    "FAIL_NOT_QUALIFIED"
+  ],
+  "independent_review": {
+    "required_samples": [
+      "S0-current",
+      "S1-forward",
+      "S2-backward"
+    ],
+    "ring_requirement": "One complete visible VoiceOver focus outline must be distinguishable from component borders in both retained screenshots of every sample; its geometry is stable across the bracket",
+    "geometry_matching_rule": "Convert screenshot pixels to screen points using retained image metadata and app snapshot frame. All four ring-rectangle edges must be within 8 screen points of exactly one positive-area snapshot node frame. Consider all nodes, including empty identifiers and ancestors. Multiple candidates, missing coordinates, unproven scale/orientation, or nonrectangular/unclear outline means FAIL_NOT_QUALIFIED",
+    "identifier_requirement": "The single geometric candidate must have a nonempty identifier occurring exactly once in the full sample tree; record identifier, type, label, value and frame before checking speech. Utterance text must not choose between candidates",
+    "speech_requirement": "The retained actual service utterance at each sample must describe that independently identified item consistently with its label/state/type. Nonempty or phrase matching alone is insufficient. No exact equality between S0 and S2 utterances is assumed",
+    "observed_order_requirement": "S0 and S2 identify the same stable identifier/type/frame, S1 identifies a different element, and screenshots show unchanged circuit viewport. This witnesses only A forward to B and B backward to A in this run",
+    "review_receipt_requirement": "Reviewer records the ring rectangles in original screenshot pixel coordinates, candidate set, coordinate conversion, matched snapshot path/identifier/frame, speech judgement, artifact hashes and rationale for all three states",
+    "no_automatic_identity_assertion": true,
+    "method_pass_is_not_review_pass": true
+  },
+  "failure_policy": [
+    "Any app/service/snapshot/speech error stops further movements and enters restoration",
+    "Native assertion failure, missing evidence, absent or ambiguous ring, inconsistent identity/speech, changed viewport, or missing return edge means FAIL_NOT_QUALIFIED without attribution to app or VoiceOver",
+    "FailedToStop or any restoration error remains a failure even if a later getter matches; no automatic retry, tap, fallback, or extra navigation",
+    "Timeout, process termination or unverified cleanup keeps the lane reserved for owner recovery; the test cannot promise cleanup after process death",
+    "Original focus, opaque reader internals and viewport are not promised restored merely because isEnabled matches"
+  ],
+  "non_claims": [
+    "global or logical traversal order",
+    "expected next element from tree order",
+    "activation/rotor/actions",
+    "creation/wiring/simulation/save/reopen workflow",
+    "physical hardware",
+    "spoken audio quality",
+    "issue #28 closure"
+  ],
+  "local_checks_performed": [
+    "Read-only SDK/header inspection",
+    "Independent source review of API identity limitations",
+    "Prepared source/contract files only; no compilation or runtime"
+  ],
+  "not_performed": [
+    "Xcode invocation",
+    "build or XCTest",
+    "device query or action",
+    "GUI",
+    "Gradle",
+    "production or main edit"
+  ]
+}

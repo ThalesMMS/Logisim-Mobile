@@ -1,0 +1,105 @@
+[
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "cat",
+      "/data/anr/trace_00"
+    ],
+    "beforeMonotonicNs": 174535115125041,
+    "afterMonotonicNs": 174535210326458,
+    "returncode": 1,
+    "stderr": "cat: /data/anr/trace_00: Permission denied\n"
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "root"
+    ],
+    "beforeMonotonicNs": 174535210966166,
+    "afterMonotonicNs": 174536371337375,
+    "returncode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "wait-for-device"
+    ],
+    "beforeMonotonicNs": 174536371367583,
+    "afterMonotonicNs": 174536414614916,
+    "returncode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "cat",
+      "/data/anr/trace_00"
+    ],
+    "beforeMonotonicNs": 174536414624500,
+    "afterMonotonicNs": 174536472301708,
+    "returncode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "unroot"
+    ],
+    "beforeMonotonicNs": 174536472819000,
+    "afterMonotonicNs": 174537611995708,
+    "returncode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "wait-for-device"
+    ],
+    "beforeMonotonicNs": 174537612020875,
+    "afterMonotonicNs": 174537637215541,
+    "returncode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "id"
+    ],
+    "beforeMonotonicNs": 174537638149958,
+    "afterMonotonicNs": 174537683869208,
+    "returncode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "pidof",
+      "thalesmms.logisim.mobile.e2e"
+    ],
+    "beforeMonotonicNs": 174537683897416,
+    "afterMonotonicNs": 174537736627250,
+    "returncode": 0,
+    "stderr": ""
+  }
+]

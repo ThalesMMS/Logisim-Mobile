@@ -1,0 +1,53 @@
+case: write-without-peer telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  wr=1: out=0000000? av=0
+  in=90: out=0000000? av=0
+  write 90 clk=1: out=0000000? av=0
+  write 90 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  late client receives: []
+  wr=1: out=0000000? av=0
+  in=89: out=0000000? av=0
+  write 89 clk=1: out=0000000? av=0
+  write 89 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [89]
+
+=== mobile-companion
+  wr=1: out=0000000? av=0
+  in=90: out=0000000? av=0
+  write 90 clk=1: out=0000000? av=0
+  write 90 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  late client receives: []
+  wr=1: out=0000000? av=0
+  in=89: out=0000000? av=0
+  write 89 clk=1: out=0000000? av=0
+  write 89 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [89]
+--- sampled at rising edges and socket bytes: SAME
+  write 90 sampled out=0000000? av=0
+  late client receives: []
+  write 89 sampled out=0000000? av=0
+  client receives: [89]
+
+=== mobile-jvm
+  wr=1: out=0000000? av=0
+  in=90: out=0000000? av=0
+  write 90 clk=1: out=0000000? av=0
+  write 90 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  late client receives: []
+  wr=1: out=0000000? av=0
+  in=89: out=0000000? av=0
+  write 89 clk=1: out=0000000? av=0
+  write 89 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [89]
+--- sampled at rising edges and socket bytes: SAME
+  write 90 sampled out=0000000? av=0
+  late client receives: []
+  write 89 sampled out=0000000? av=0
+  client receives: [89]

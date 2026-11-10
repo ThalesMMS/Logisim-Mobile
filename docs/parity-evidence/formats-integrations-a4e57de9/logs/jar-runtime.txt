@@ -1,0 +1,27 @@
+test_expired_lease_hides_receipt_before_worker_teardown (companion.tests.test_jar_runtime.JarLiveJobGateTest.test_expired_lease_hides_receipt_before_worker_teardown) ... ok
+test_input_traffic_does_not_renew_the_worker_lease (companion.tests.test_jar_runtime.JarLiveJobGateTest.test_input_traffic_does_not_renew_the_worker_lease) ... ok
+test_only_active_approved_jobs_accept_input_and_cancel_hides_receipts (companion.tests.test_jar_runtime.JarLiveJobGateTest.test_only_active_approved_jobs_accept_input_and_cancel_hides_receipts) ... ok
+test_sequence_conflict_retry_and_revision_receipt (companion.tests.test_jar_runtime.JarLiveProtocolTest.test_sequence_conflict_retry_and_revision_receipt) ... ok
+test_width_and_live_frame_budget_are_enforced_before_enqueue (companion.tests.test_jar_runtime.JarLiveProtocolTest.test_width_and_live_frame_budget_are_enforced_before_enqueue) ... ok
+test_gray_counters_keep_independent_state_and_project_bytes (companion.tests.test_jar_runtime.JarRuntimeIntegrationTest.test_gray_counters_keep_independent_state_and_project_bytes) ... skipped 'Set the pinned Gray library JAR.'
+test_live_driver_trace_separates_contention_release_unknown_and_error (companion.tests.test_jar_runtime.JarRuntimeIntegrationTest.test_live_driver_trace_separates_contention_release_unknown_and_error) ... FAIL
+test_trace_distinguishes_released_driver_and_resolved_signal (companion.tests.test_jar_runtime.JarTraceProtocolTest.test_trace_distinguishes_released_driver_and_resolved_signal) ... ok
+test_trace_preserves_hierarchy_and_terminal_order (companion.tests.test_jar_runtime.JarTraceProtocolTest.test_trace_preserves_hierarchy_and_terminal_order) ... ok
+test_trace_rejects_partial_samples_and_unsolicited_records (companion.tests.test_jar_runtime.JarTraceProtocolTest.test_trace_rejects_partial_samples_and_unsolicited_records) ... ok
+
+======================================================================
+FAIL: test_live_driver_trace_separates_contention_release_unknown_and_error (companion.tests.test_jar_runtime.JarRuntimeIntegrationTest.test_live_driver_trace_separates_contention_release_unknown_and_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/companion/tests/test_jar_runtime.py", line 282, in test_live_driver_trace_separates_contention_release_unknown_and_error
+    wait_live(lambda live: "ports" in live)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/companion/tests/test_jar_runtime.py", line 278, in wait_live
+    self.assertIn(job["state"], {"queued", "running"}, job["error"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'failed' not found in {'running', 'queued'} : {'code': 'incompatible-jar', 'message': 'InvocationTargetException: null', 'details': None}
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.793s
+
+FAILED (failures=1, skipped=1)

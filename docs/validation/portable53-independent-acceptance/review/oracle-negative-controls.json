@@ -1,0 +1,17 @@
+[
+  {
+    "case": "missing-peer",
+    "status": "REJECTED_AS_REQUIRED",
+    "reason": "app-export verification requires --peer from the same native run"
+  },
+  {
+    "case": "aliased-export",
+    "status": "REJECTED_AS_REQUIRED",
+    "reason": "artifact and peer must be distinct export files"
+  },
+  {
+    "case": "failed-partial-native-receipt",
+    "status": "REJECTED_AS_REQUIRED",
+    "reason": "the native receipt does not record a passed Android/iOS UI execution"
+  }
+]

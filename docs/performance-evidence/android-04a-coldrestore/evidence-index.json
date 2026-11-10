@@ -1,0 +1,728 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "04a0b34a38689932a3f3aaed7f4ea5cb6b63c8db",
+  "apkSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+  "rawFiles": [
+    {
+      "path": "am-start.txt",
+      "sha256": "0dc55ce210eb74a7ce4885765fafec44360c40bef683aa3f351836f6189c4852",
+      "bytes": 228,
+      "preserved": true
+    },
+    {
+      "path": "anr-list.txt",
+      "sha256": "3e0c67d6ec780dd6a8764ae16b87c9063be56b5abbe9924442ae909a97d9583f",
+      "bytes": 248,
+      "preserved": true
+    },
+    {
+      "path": "app-logcat.txt",
+      "sha256": "f0282e9c83ece6d43e82253ab5b9b58d31ebeca16e8a8322d94cd922607a0f3f",
+      "bytes": 213354,
+      "preserved": false
+    },
+    {
+      "path": "before-dialog.xml",
+      "sha256": "f63210ac8204fb6a1ecf9651f18d02ea7e7c03a3fb1d6f98f627edc40b387728",
+      "bytes": 9563,
+      "preserved": true
+    },
+    {
+      "path": "canvas.xml",
+      "sha256": "12321712ef399a6c2df263510feb1b1dedbae012f2939737942927ff2160d3f4",
+      "bytes": 74482,
+      "preserved": true
+    },
+    {
+      "path": "capture-coldrestore-once.py",
+      "sha256": "ae0130a4658b88d3a4c71a13f3768b775b9ae7f23539cffd1987d6a3648a9053",
+      "bytes": 5456,
+      "preserved": true
+    },
+    {
+      "path": "device-id.txt",
+      "sha256": "5255619d9d7729bfb9cef904021ce5f0acf9225650b56c711e27ece440351e94",
+      "bytes": 284,
+      "preserved": true
+    },
+    {
+      "path": "environment-post-capture.json",
+      "sha256": "8851c489c1d0135ef6128dd3e8410208744ef445a4461997973edb404f3ac69a",
+      "bytes": 2475,
+      "preserved": true
+    },
+    {
+      "path": "events.json",
+      "sha256": "2870393857a376f36480c7174367919344f6ac8a7f68dfc54ce27e130bbb333a",
+      "bytes": 5643,
+      "preserved": true
+    },
+    {
+      "path": "final-pid.txt",
+      "sha256": "bf600159c2f308d1a2201004533c16855318a78ef0917e1022dc04a5665a9be2",
+      "bytes": 5,
+      "preserved": true
+    },
+    {
+      "path": "final-screen.png",
+      "sha256": "7a5b329aa6b2bfc2f11aefb4a227781ef86d1d6e5ce8de842921394aa9149642",
+      "bytes": 266619,
+      "preserved": false
+    },
+    {
+      "path": "final-top.txt",
+      "sha256": "2c5665b23afdee05dfca52bc081f467b586e256ea2ab0f5e36417a926912f7f4",
+      "bytes": 1445,
+      "preserved": true
+    },
+    {
+      "path": "final-ui.xml",
+      "sha256": "46f2d854efb3dc7ac6c8eaf960b969962c5539ab25f9f34a3518e60f09dd33c7",
+      "bytes": 8861,
+      "preserved": true
+    },
+    {
+      "path": "guest-cpuinfo.txt",
+      "sha256": "84b4e265699afd4b3ee8aab3352bec3ddc6aabc6d4e77e208c3d1b72cc86cb80",
+      "bytes": 888,
+      "preserved": true
+    },
+    {
+      "path": "guest-hz.txt",
+      "sha256": "4ac009a8d4cf915149cf48414b74a051735c24cfb31261e6d2733b6a8140eaf0",
+      "bytes": 12,
+      "preserved": true
+    },
+    {
+      "path": "guest-load.txt",
+      "sha256": "663428422f136e116141b48bcbb09050b8bc8aa1fe20d75aa4b75b85f1d2499b",
+      "bytes": 36,
+      "preserved": true
+    },
+    {
+      "path": "guest-vcpus.txt",
+      "sha256": "71a54fadf174ec95b5cefdd02fada92ddf387439cfd4360188ce196b67eecb3a",
+      "bytes": 10,
+      "preserved": true
+    },
+    {
+      "path": "host-processes.txt",
+      "sha256": "7c8dba513d94447d2d4c4611e55b6a446ff52a970715dd2a6524698b8859dc4e",
+      "bytes": 53568,
+      "preserved": false
+    },
+    {
+      "path": "host-qemu-mapping.txt",
+      "sha256": "75c00940d3e1767b6ad50962b023bd5f652e623e57736eef2098150be5d19175",
+      "bytes": 447,
+      "preserved": true
+    },
+    {
+      "path": "host-sysctl.txt",
+      "sha256": "ab5281da6d07f920a27130aa9386b4efbf96ef3bdae6592f3512a3bf3a9ad532",
+      "bytes": 160,
+      "preserved": true
+    },
+    {
+      "path": "host-uptime.txt",
+      "sha256": "4cb0eb6ad6338d66b10c5081c50e76e29fd7d5325ebc3407bdae13f2687038f4",
+      "bytes": 74,
+      "preserved": true
+    },
+    {
+      "path": "host-vm-stat.txt",
+      "sha256": "1a01cb15619e91c41b18e2fc09d326981b217ab74f37f2cffe9dd4644d10c008",
+      "bytes": 1255,
+      "preserved": true
+    },
+    {
+      "path": "lastanr.txt",
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "bytes": 88,
+      "preserved": true
+    },
+    {
+      "path": "observer-source-at-capture.py",
+      "sha256": "f42ce56ccae63f60b9f6d0c3e42f6933314b954bbb57aab53f38e3ae3886a3f5",
+      "bytes": 5851,
+      "preserved": true
+    },
+    {
+      "path": "passive/receipt.json",
+      "sha256": "345d0df2306ba37df40ab982f0e7b4641728d6f701c4632cfa434071abc7f6e3",
+      "bytes": 16446,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0000.txt",
+      "sha256": "e1502ff8c5a19c1bb60eb202d8cd3676d50736c7aed539ede6dfe5a2e9b5342b",
+      "bytes": 10200,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0001.txt",
+      "sha256": "69d8e6174bc6a43a4170a82357d1790e9072debd01cd2336a0323cd6b361fca6",
+      "bytes": 2922,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0002.txt",
+      "sha256": "5f71be0f77beaa6cec1cd89727f4480385fb4635684fa81acb6a246554341291",
+      "bytes": 6,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0003.txt",
+      "sha256": "9a8d2e6cb8d1f8dad9ec7b3debfbac863d0e7e18432d36cd69eaee609d5315af",
+      "bytes": 4568,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0004.txt",
+      "sha256": "6ff7ad9b94c08ea590506349ff23b2802a6f8ed4c05affe19d77d77d086bc0c7",
+      "bytes": 5632,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0005.txt",
+      "sha256": "c793d565bd9444fab45a9e829beacf02bd7b1ee5b724867a1ba8174adc7a4779",
+      "bytes": 5642,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0006.txt",
+      "sha256": "d75b16fa480c4c2fac7dacf6c4c6acae3378da7dc2df069e5b053b7f55354d05",
+      "bytes": 6654,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0007.txt",
+      "sha256": "01d7f58cac80566b3aef266b4a03fd148d863cde66ad8a82f40939fc7b565691",
+      "bytes": 9411,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0008.txt",
+      "sha256": "8cd28d1f448d99df6758293b9b08263c929cf0bc5f21154a96a67591ec288bcd",
+      "bytes": 9777,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0009.txt",
+      "sha256": "72d65ed167e64af1b49ba786eea558d8f6c3a2669463d4ff59d04e4eca01a573",
+      "bytes": 9797,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0010.txt",
+      "sha256": "6ec610c9b8351f93026dcc8c9ccf6106441187e149dddebef65a102c13b3930d",
+      "bytes": 9420,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0011.txt",
+      "sha256": "3457c131c9406ab83b898a62c1dca2d6217c580f3e34be719919a4c4c3088acf",
+      "bytes": 10125,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0012.txt",
+      "sha256": "555edc48270e790039b8353f154b43a1075768be352c66411f216cd67b2155c8",
+      "bytes": 10162,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0013.txt",
+      "sha256": "e2d34eadce967a70b84d872bc0f064136a1f4e666f60ef482e878b1cf9c4ddef",
+      "bytes": 10162,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0014.txt",
+      "sha256": "580e5131887c7e5444e0bc66e4ed084cc5c7a8c42f0b6f17cf1e6e25d37c34a4",
+      "bytes": 10164,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0015.txt",
+      "sha256": "d9016e48199f2c0eecfdc501f4e2566e97f442bf9b5146d17224c44decc51751",
+      "bytes": 10115,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0016.txt",
+      "sha256": "aa6b49f973a76b1da0ed3bcecbd170409c7f8c7cdf7fd17b83e500e571540d9d",
+      "bytes": 10138,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0017.txt",
+      "sha256": "18bbeee6986ba05730aef625e3bdb10cf30735346d75b593d4ac015cc4a1f16c",
+      "bytes": 10096,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0018.txt",
+      "sha256": "cd13c82b8aa74f9941262f2babe39703dac218f0d718ac43c4b90457da37b698",
+      "bytes": 10069,
+      "preserved": true
+    },
+    {
+      "path": "passive/sample-0019.txt",
+      "sha256": "1e72c2258768b5cc4795a991283fe4f7ce17f4e81384dbbb62a12564d82240a9",
+      "bytes": 9800,
+      "preserved": true
+    },
+    {
+      "path": "passive/samples.json",
+      "sha256": "d159ba4586e88415b1b70d7793742b8588f6ef91c9b84b6039e23857de6c4b0d",
+      "bytes": 3763,
+      "preserved": true
+    },
+    {
+      "path": "passive.log",
+      "sha256": "b5af3ca41567758109b32978c5e8e1209f72e19751397a1ba0894b9fa8d13e22",
+      "bytes": 157,
+      "preserved": true
+    },
+    {
+      "path": "private-file-hashes-after.txt",
+      "sha256": "5470b35b069f389a0f1ac52b906d5cfa847e51b23b8f08b56949455bf90affe4",
+      "bytes": 1430,
+      "preserved": true
+    },
+    {
+      "path": "private-file-hashes-before.txt",
+      "sha256": "9a5547bc303d52e7c05a2619040f03f6e17077b027df8357f7554b2f3bc9863b",
+      "bytes": 1306,
+      "preserved": true
+    },
+    {
+      "path": "private-files-before.txt",
+      "sha256": "9dd9a05be86c4916523957431b3ff9c6d1a19eaa2ad9a1f2de2a0084527ac7e9",
+      "bytes": 1090,
+      "preserved": true
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "3c587db7efc2efe8854e9278f26fa299dc6a6a4a46f8d90406556c1e1b3a8840",
+      "bytes": 676,
+      "preserved": true
+    },
+    {
+      "path": "screen-12s.png",
+      "sha256": "6e326b577cda02629cc5e89d2664647428ca55b38a711176a324ff444b136ab0",
+      "bytes": 30039,
+      "preserved": true
+    },
+    {
+      "path": "screen-30s.png",
+      "sha256": "66cfdfb8d7aacc73423f0638a676700143d28d323a9683094f55b547a7ac9190",
+      "bytes": 30298,
+      "preserved": true
+    },
+    {
+      "path": "setup-commands.json",
+      "sha256": "d00498b6b5d03c5c5ec1692517606221cd9853485e6d0e632a02dc69f1ff4239",
+      "bytes": 1865,
+      "preserved": true
+    },
+    {
+      "path": "shutdown-commands.json",
+      "sha256": "9ef33751f51304d16837318e7dfadc51c5c2617549b12580b9b4a5f0b0cf2210",
+      "bytes": 2128,
+      "preserved": true
+    },
+    {
+      "path": "sigquit-9898-trace.txt",
+      "sha256": "c2b3f3f784502c0670be20933f720dd1bc374342486c42a4236b5490db5ada5a",
+      "bytes": 79003,
+      "preserved": true
+    },
+    {
+      "path": "tombstone-list.txt",
+      "sha256": "c6536ed5ddff191a0e38db80adcc2da2ee739f5769471e9a418281c78908e098",
+      "bytes": 16,
+      "preserved": true
+    },
+    {
+      "path": "trace-extraction-commands.json",
+      "sha256": "5a0a959dfb91ec548d3a9b94fc6258abe6bca17996505c281332bc29eaf4760c",
+      "bytes": 2310,
+      "preserved": true
+    },
+    {
+      "path": "trace-read-shell.txt",
+      "sha256": "afdf3bd633e45b8309ea092f04d09e57b0f999dbbdff6959a8f27850a3826e78",
+      "bytes": 43,
+      "preserved": true
+    },
+    {
+      "path": "ui-0007.xml",
+      "sha256": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+      "bytes": 2409,
+      "preserved": true
+    },
+    {
+      "path": "ui-0011.xml",
+      "sha256": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+      "bytes": 2409,
+      "preserved": true
+    },
+    {
+      "path": "ui-0014.xml",
+      "sha256": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+      "bytes": 2409,
+      "preserved": true
+    }
+  ],
+  "originalObserverSha256": "f42ce56ccae63f60b9f6d0c3e42f6933314b954bbb57aab53f38e3ae3886a3f5",
+  "scope": "One instrumented cold process launch under concurrent host load; original observer source is preserved separately from the improved future observer.",
+  "preservedFiles": [
+    {
+      "path": "README.md",
+      "sha256": "781d12bc191ddc40034073a3db534e881eb03c882a7e9f26dddd69c91dd3f399",
+      "bytes": 7722
+    },
+    {
+      "path": "am-start.txt",
+      "sha256": "0dc55ce210eb74a7ce4885765fafec44360c40bef683aa3f351836f6189c4852",
+      "bytes": 228
+    },
+    {
+      "path": "anr-list.txt",
+      "sha256": "3e0c67d6ec780dd6a8764ae16b87c9063be56b5abbe9924442ae909a97d9583f",
+      "bytes": 248
+    },
+    {
+      "path": "app-logcat-pid9898.txt",
+      "sha256": "6ad3aa30b3bfe8cee697b51fb38d1819da8a0a36aa4d88ef65668a8afda4df61",
+      "bytes": 27128
+    },
+    {
+      "path": "before-dialog.xml",
+      "sha256": "f63210ac8204fb6a1ecf9651f18d02ea7e7c03a3fb1d6f98f627edc40b387728",
+      "bytes": 9563
+    },
+    {
+      "path": "canvas.xml",
+      "sha256": "12321712ef399a6c2df263510feb1b1dedbae012f2939737942927ff2160d3f4",
+      "bytes": 74482
+    },
+    {
+      "path": "capture-coldrestore-once.py",
+      "sha256": "ae0130a4658b88d3a4c71a13f3768b775b9ae7f23539cffd1987d6a3648a9053",
+      "bytes": 5456
+    },
+    {
+      "path": "device-id.txt",
+      "sha256": "5255619d9d7729bfb9cef904021ce5f0acf9225650b56c711e27ece440351e94",
+      "bytes": 284
+    },
+    {
+      "path": "environment-post-capture.json",
+      "sha256": "8851c489c1d0135ef6128dd3e8410208744ef445a4461997973edb404f3ac69a",
+      "bytes": 2475
+    },
+    {
+      "path": "events.json",
+      "sha256": "2870393857a376f36480c7174367919344f6ac8a7f68dfc54ce27e130bbb333a",
+      "bytes": 5643
+    },
+    {
+      "path": "final-pid.txt",
+      "sha256": "bf600159c2f308d1a2201004533c16855318a78ef0917e1022dc04a5665a9be2",
+      "bytes": 5
+    },
+    {
+      "path": "final-top.txt",
+      "sha256": "2c5665b23afdee05dfca52bc081f467b586e256ea2ab0f5e36417a926912f7f4",
+      "bytes": 1445
+    },
+    {
+      "path": "final-ui.xml",
+      "sha256": "46f2d854efb3dc7ac6c8eaf960b969962c5539ab25f9f34a3518e60f09dd33c7",
+      "bytes": 8861
+    },
+    {
+      "path": "guest-cpuinfo.txt",
+      "sha256": "84b4e265699afd4b3ee8aab3352bec3ddc6aabc6d4e77e208c3d1b72cc86cb80",
+      "bytes": 888
+    },
+    {
+      "path": "guest-hz.txt",
+      "sha256": "4ac009a8d4cf915149cf48414b74a051735c24cfb31261e6d2733b6a8140eaf0",
+      "bytes": 12
+    },
+    {
+      "path": "guest-load.txt",
+      "sha256": "663428422f136e116141b48bcbb09050b8bc8aa1fe20d75aa4b75b85f1d2499b",
+      "bytes": 36
+    },
+    {
+      "path": "guest-vcpus.txt",
+      "sha256": "71a54fadf174ec95b5cefdd02fada92ddf387439cfd4360188ce196b67eecb3a",
+      "bytes": 10
+    },
+    {
+      "path": "harness-source-provenance.json",
+      "sha256": "08035829ed86f3d4bd227cb656a0045f2e20bef7b3266afcfce6347b73ba04bb",
+      "bytes": 1202
+    },
+    {
+      "path": "harness-sources/android_editing_scenarios.py",
+      "sha256": "2a6e91143da79df1bc35b009189384d635da520904a3e0615e581c9c655c8871",
+      "bytes": 23494
+    },
+    {
+      "path": "harness-sources/android_ui.py",
+      "sha256": "d3434bd390932f73a87fd6ab13fba3a74bb919406db5691edbcc621d0591f817",
+      "bytes": 25705
+    },
+    {
+      "path": "harness-sources/e2e-android.py",
+      "sha256": "db7bf713641dd736dd93774067af82fc08390702e236a82d292b2f07e480654c",
+      "bytes": 45009
+    },
+    {
+      "path": "harness-sources/user_scenario_contract.py",
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+      "bytes": 7203
+    },
+    {
+      "path": "host-processes-relevant.txt",
+      "sha256": "59d240fd118533e2e331feef5d88d922e5ad15a60c4e5d16eca82d8a018310f7",
+      "bytes": 40
+    },
+    {
+      "path": "host-qemu-mapping.txt",
+      "sha256": "75c00940d3e1767b6ad50962b023bd5f652e623e57736eef2098150be5d19175",
+      "bytes": 447
+    },
+    {
+      "path": "host-sysctl.txt",
+      "sha256": "ab5281da6d07f920a27130aa9386b4efbf96ef3bdae6592f3512a3bf3a9ad532",
+      "bytes": 160
+    },
+    {
+      "path": "host-uptime.txt",
+      "sha256": "4cb0eb6ad6338d66b10c5081c50e76e29fd7d5325ebc3407bdae13f2687038f4",
+      "bytes": 74
+    },
+    {
+      "path": "host-vm-stat.txt",
+      "sha256": "1a01cb15619e91c41b18e2fc09d326981b217ab74f37f2cffe9dd4644d10c008",
+      "bytes": 1255
+    },
+    {
+      "path": "lastanr.txt",
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "bytes": 88
+    },
+    {
+      "path": "observer-source-at-capture.py",
+      "sha256": "f42ce56ccae63f60b9f6d0c3e42f6933314b954bbb57aab53f38e3ae3886a3f5",
+      "bytes": 5851
+    },
+    {
+      "path": "passive/receipt.json",
+      "sha256": "345d0df2306ba37df40ab982f0e7b4641728d6f701c4632cfa434071abc7f6e3",
+      "bytes": 16446
+    },
+    {
+      "path": "passive/sample-0000.txt",
+      "sha256": "e1502ff8c5a19c1bb60eb202d8cd3676d50736c7aed539ede6dfe5a2e9b5342b",
+      "bytes": 10200
+    },
+    {
+      "path": "passive/sample-0001.txt",
+      "sha256": "69d8e6174bc6a43a4170a82357d1790e9072debd01cd2336a0323cd6b361fca6",
+      "bytes": 2922
+    },
+    {
+      "path": "passive/sample-0002.txt",
+      "sha256": "5f71be0f77beaa6cec1cd89727f4480385fb4635684fa81acb6a246554341291",
+      "bytes": 6
+    },
+    {
+      "path": "passive/sample-0003.txt",
+      "sha256": "9a8d2e6cb8d1f8dad9ec7b3debfbac863d0e7e18432d36cd69eaee609d5315af",
+      "bytes": 4568
+    },
+    {
+      "path": "passive/sample-0004.txt",
+      "sha256": "6ff7ad9b94c08ea590506349ff23b2802a6f8ed4c05affe19d77d77d086bc0c7",
+      "bytes": 5632
+    },
+    {
+      "path": "passive/sample-0005.txt",
+      "sha256": "c793d565bd9444fab45a9e829beacf02bd7b1ee5b724867a1ba8174adc7a4779",
+      "bytes": 5642
+    },
+    {
+      "path": "passive/sample-0006.txt",
+      "sha256": "d75b16fa480c4c2fac7dacf6c4c6acae3378da7dc2df069e5b053b7f55354d05",
+      "bytes": 6654
+    },
+    {
+      "path": "passive/sample-0007.txt",
+      "sha256": "01d7f58cac80566b3aef266b4a03fd148d863cde66ad8a82f40939fc7b565691",
+      "bytes": 9411
+    },
+    {
+      "path": "passive/sample-0008.txt",
+      "sha256": "8cd28d1f448d99df6758293b9b08263c929cf0bc5f21154a96a67591ec288bcd",
+      "bytes": 9777
+    },
+    {
+      "path": "passive/sample-0009.txt",
+      "sha256": "72d65ed167e64af1b49ba786eea558d8f6c3a2669463d4ff59d04e4eca01a573",
+      "bytes": 9797
+    },
+    {
+      "path": "passive/sample-0010.txt",
+      "sha256": "6ec610c9b8351f93026dcc8c9ccf6106441187e149dddebef65a102c13b3930d",
+      "bytes": 9420
+    },
+    {
+      "path": "passive/sample-0011.txt",
+      "sha256": "3457c131c9406ab83b898a62c1dca2d6217c580f3e34be719919a4c4c3088acf",
+      "bytes": 10125
+    },
+    {
+      "path": "passive/sample-0012.txt",
+      "sha256": "555edc48270e790039b8353f154b43a1075768be352c66411f216cd67b2155c8",
+      "bytes": 10162
+    },
+    {
+      "path": "passive/sample-0013.txt",
+      "sha256": "e2d34eadce967a70b84d872bc0f064136a1f4e666f60ef482e878b1cf9c4ddef",
+      "bytes": 10162
+    },
+    {
+      "path": "passive/sample-0014.txt",
+      "sha256": "580e5131887c7e5444e0bc66e4ed084cc5c7a8c42f0b6f17cf1e6e25d37c34a4",
+      "bytes": 10164
+    },
+    {
+      "path": "passive/sample-0015.txt",
+      "sha256": "d9016e48199f2c0eecfdc501f4e2566e97f442bf9b5146d17224c44decc51751",
+      "bytes": 10115
+    },
+    {
+      "path": "passive/sample-0016.txt",
+      "sha256": "aa6b49f973a76b1da0ed3bcecbd170409c7f8c7cdf7fd17b83e500e571540d9d",
+      "bytes": 10138
+    },
+    {
+      "path": "passive/sample-0017.txt",
+      "sha256": "18bbeee6986ba05730aef625e3bdb10cf30735346d75b593d4ac015cc4a1f16c",
+      "bytes": 10096
+    },
+    {
+      "path": "passive/sample-0018.txt",
+      "sha256": "cd13c82b8aa74f9941262f2babe39703dac218f0d718ac43c4b90457da37b698",
+      "bytes": 10069
+    },
+    {
+      "path": "passive/sample-0019.txt",
+      "sha256": "1e72c2258768b5cc4795a991283fe4f7ce17f4e81384dbbb62a12564d82240a9",
+      "bytes": 9800
+    },
+    {
+      "path": "passive/samples.json",
+      "sha256": "d159ba4586e88415b1b70d7793742b8588f6ef91c9b84b6039e23857de6c4b0d",
+      "bytes": 3763
+    },
+    {
+      "path": "passive.log",
+      "sha256": "b5af3ca41567758109b32978c5e8e1209f72e19751397a1ba0894b9fa8d13e22",
+      "bytes": 157
+    },
+    {
+      "path": "private-file-hashes-after.txt",
+      "sha256": "5470b35b069f389a0f1ac52b906d5cfa847e51b23b8f08b56949455bf90affe4",
+      "bytes": 1430
+    },
+    {
+      "path": "private-file-hashes-before.txt",
+      "sha256": "9a5547bc303d52e7c05a2619040f03f6e17077b027df8357f7554b2f3bc9863b",
+      "bytes": 1306
+    },
+    {
+      "path": "private-files-before.txt",
+      "sha256": "9dd9a05be86c4916523957431b3ff9c6d1a19eaa2ad9a1f2de2a0084527ac7e9",
+      "bytes": 1090
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "3c587db7efc2efe8854e9278f26fa299dc6a6a4a46f8d90406556c1e1b3a8840",
+      "bytes": 676
+    },
+    {
+      "path": "quantitative-review-original.md",
+      "sha256": "6d2aa5360c36ca0dec5b9aef7a4b533269df85782b3f1bf926b761cf7e61e1e4",
+      "bytes": 6043
+    },
+    {
+      "path": "screen-12s.png",
+      "sha256": "6e326b577cda02629cc5e89d2664647428ca55b38a711176a324ff444b136ab0",
+      "bytes": 30039
+    },
+    {
+      "path": "screen-30s.png",
+      "sha256": "66cfdfb8d7aacc73423f0638a676700143d28d323a9683094f55b547a7ac9190",
+      "bytes": 30298
+    },
+    {
+      "path": "setup-commands.json",
+      "sha256": "d00498b6b5d03c5c5ec1692517606221cd9853485e6d0e632a02dc69f1ff4239",
+      "bytes": 1865
+    },
+    {
+      "path": "shutdown-commands.json",
+      "sha256": "9ef33751f51304d16837318e7dfadc51c5c2617549b12580b9b4a5f0b0cf2210",
+      "bytes": 2128
+    },
+    {
+      "path": "sigquit-9898-trace.txt",
+      "sha256": "c2b3f3f784502c0670be20933f720dd1bc374342486c42a4236b5490db5ada5a",
+      "bytes": 79003
+    },
+    {
+      "path": "summary.json",
+      "sha256": "19398a824f9a605802a5c763f7094dbe5c59af49562bd8b924f57bda7d5d6c7c",
+      "bytes": 97622
+    },
+    {
+      "path": "tombstone-list.txt",
+      "sha256": "c6536ed5ddff191a0e38db80adcc2da2ee739f5769471e9a418281c78908e098",
+      "bytes": 16
+    },
+    {
+      "path": "trace-extraction-commands.json",
+      "sha256": "5a0a959dfb91ec548d3a9b94fc6258abe6bca17996505c281332bc29eaf4760c",
+      "bytes": 2310
+    },
+    {
+      "path": "trace-read-shell.txt",
+      "sha256": "afdf3bd633e45b8309ea092f04d09e57b0f999dbbdff6959a8f27850a3826e78",
+      "bytes": 43
+    },
+    {
+      "path": "ui-0007.xml",
+      "sha256": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+      "bytes": 2409
+    },
+    {
+      "path": "ui-0011.xml",
+      "sha256": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+      "bytes": 2409
+    },
+    {
+      "path": "ui-0014.xml",
+      "sha256": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+      "bytes": 2409
+    }
+  ]
+}

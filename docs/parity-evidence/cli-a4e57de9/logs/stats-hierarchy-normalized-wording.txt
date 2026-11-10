@@ -1,0 +1,24 @@
+row: cli/tty
+case: stats-hierarchy-normalized-wording
+result: PASS
+detail: counts, names and order equal after mapping the two TOTAL captions
+
+=== evolution: logisim-evolution -t stats examples/hierarchy.circ
+exit: 0
+--- stdout (5 lines, sha256 0308e3dea190a40b7fccb8e8fb0095853dd20d6a063ecbdf92960fab5e5696dc)
+1	1	Inversor	hierarchy
+4	4	Pin     	Wiring
+1	1	NOT Gate	Gates
+5	5	TOTAL (without project’s sub circuits)
+6	6	TOTAL (with sub circuits)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -tty stats examples/hierarchy.circ
+exit: 0
+--- stdout (5 lines, sha256 7691be3b00ac83b087710dcd4c107766e63473ae7477065e5e567f23b73bdc9f)
+1	1	Inversor	hierarchy
+4	4	Pin     	Wiring
+1	1	NOT Gate	Gates
+5	5	TOTAL (without project's subcircuits)
+6	6	TOTAL (with subcircuits)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

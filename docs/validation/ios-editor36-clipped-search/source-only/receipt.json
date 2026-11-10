@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "status": "SOURCE_PREPARED",
+  "nativeStatus": "NOT_RUN",
+  "baseOriginal": "91bc58e38e0171777df5951b018a23ac6da8da69",
+  "source": {
+    "path": "scripts/ios_e2e_ui/EditorEndToEndTests.swift",
+    "bytes": 52736,
+    "sha256": "40a53a4ef494688103909044828121126c90db3ce7222867b6033db6250f0b34"
+  },
+  "priorNative": {
+    "runLabel": "R3",
+    "harnessSource": "91bc58e38e0171777df5951b018a23ac6da8da69",
+    "status": "FAIL",
+    "nativeRunCount": 1,
+    "caseSeconds": 300.753,
+    "passedSteps": 15,
+    "failureStep": 16
+  },
+  "rootCause": {
+    "attachmentTree": "A69FDF9D-0903-46FC-B367-11B0EE7992F6.txt",
+    "attachmentObservation": "A13C9CAD-91DE-4981-A775-A2F5520362C6.txt",
+    "candidateCount": 1,
+    "nativeRole": "TextView",
+    "nativeRoleRaw": 52,
+    "enabled": true,
+    "canonical": false,
+    "minimum48Frame": false,
+    "frame": [
+      24,
+      158,
+      342,
+      24
+    ],
+    "viewport": [
+      24,
+      182,
+      342,
+      604
+    ],
+    "observedInputRegions": {},
+    "headerRequestedScrollsAtFailure": 0,
+    "statement": "R3 rejected the above-viewport representation before preparation."
+  },
+  "readinessValidation": {
+    "status": "PASS",
+    "nativeStatus": "NOT_RUN",
+    "baseOriginal": "91bc58e38e0171777df5951b018a23ac6da8da69",
+    "readinessCases": 17,
+    "probeExitCode": 0,
+    "queryAndAmbiguityGuardByteIdentical": true,
+    "duplicateLiteralInventoryCount": 2,
+    "duplicateXCUIQueryExecuted": false,
+    "outsidePrivateHelperBodiesByteIdentical": true,
+    "inputsByteIdenticalBeforeAfter": true,
+    "probeSHA256": "ebb18cb6407295b0af06cb0f708d270b7e473e0fe9af222e2995ee56a4504e53",
+    "inputSHA256": {
+      "scripts/ios_e2e_ui/EditorEndToEndTests.swift": "40a53a4ef494688103909044828121126c90db3ce7222867b6033db6250f0b34",
+      "docs/validation/ios-editor36-clipped-search/source-only/check.py": "ae915551ebee700204f45f52463413b55c104c71c718f969496f2dcaf9d9e8e5",
+      "docs/validation/ios-editor36-clipped-search/source-only/r3-tree.txt": "c2cb79f20864a7dc835a1d7f92dc34d9a7e16037494ce6dc95b573aec10b15aa",
+      "docs/validation/ios-editor36-clipped-search/source-only/r3-observation.txt": "d56c61dc955dcd0a39e4bd21435c5f14a5059170c3bbded6fc5420380b181aa8",
+      "docs/validation/ios-editor36-clipped-search/source-only/canonical-labels.json": "e169da87187f243cc9d20442f3e33b95301aeedaae7da099ff76584f18a813d9"
+    }
+  },
+  "sdkGeometryValidation": {
+    "base": "199fafaecee12bc1112909b392e1633a7eff51be",
+    "status": "PASS",
+    "sourceSHA256": "40a53a4ef494688103909044828121126c90db3ce7222867b6033db6250f0b34",
+    "outsidePrivateDeltaByteIdentical": true,
+    "geometryByteIdenticalToE835": true,
+    "geometryProbeCases": 15,
+    "literalGeometryProbeByteIdentical": true,
+    "inputsByteIdenticalBeforeAfter": true,
+    "geometryProbeExitCode": 0,
+    "sdkSources": 17,
+    "sdkExitCode": 0,
+    "nativeStatus": "NOT_RUN",
+    "otherTargetSourcesByteIdentical": true,
+    "unchangedFiles": {
+      "scripts/ios_native_ui/NativeUIHarness.swift": "eb78306974bbd0832204b459c78f041b8fd106fa378d39a8aeb02e65038f3159",
+      "scripts/ios_native_ui/NativeTextReplacement.swift": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+      "fixtures/user-scenarios/editor-actions-v1.json": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9",
+      "scripts/ios_e2e_ui/project.yml": "9e5df223f55543dfe29e3991b4ea44ed8c2df907ae512b21bf02db1bed42283c"
+    },
+    "sdkSourceSHA256": {
+      "scripts/ios_native_ui/NativeUIHarness.swift": "eb78306974bbd0832204b459c78f041b8fd106fa378d39a8aeb02e65038f3159",
+      "scripts/ios_native_ui/NativeTextReplacement.swift": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+      "scripts/ios_e2e_ui/ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+      "scripts/ios_e2e_ui/EditorEndToEndTests.swift": "40a53a4ef494688103909044828121126c90db3ce7222867b6033db6250f0b34",
+      "scripts/ios_e2e_ui/FilesEndToEndTests.swift": "212e924d95a8898feea0d1dccec45ffafee116e917f9f2212c4d8c0b262d6510",
+      "scripts/ios_e2e_ui/ObservedProjectXML.swift": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+      "scripts/ios_e2e_ui/IoEndToEndTests.swift": "a35eb43f3d5bd46d9ef1edaf1ce9c79a2c9c11a5ab4f14e5a7027e1f3780c535",
+      "scripts/ios_e2e_ui/InspectorEndToEndTests.swift": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+      "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "scripts/ios_e2e_ui/DestinationExportEndToEndTests.swift": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+      "scripts/ios_e2e_ui/VisualExportEndToEndTests.swift": "f5c2fc51f3d8cb9df09520b5f3488f74b6f9ce94367f046f013b906f0e2bff47",
+      "scripts/ios_e2e_ui/XmlDialogEndToEndTests.swift": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346",
+      "scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+      "scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+      "scripts/ios_e2e_ui/ExternalProviderEndToEndTests.swift": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+      "scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+      "scripts/ios_e2e_ui/FocusEndToEndTests.swift": "b18209a41340a5c326f4620c44c00443eb2d7fe54cf067497502ca727e555474"
+    },
+    "inputSHA256": {
+      "docs/validation/ios-editor36-joint-header/check.py": "19c22a900e05f27a31f82e503e14ca7cf69d22daa1223b3bebbe9f4c41a3fc9f",
+      "scripts/ios_e2e_ui/EditorEndToEndTests.swift": "40a53a4ef494688103909044828121126c90db3ce7222867b6033db6250f0b34",
+      "docs/validation/ios-editor36-search-reveal/geometry-probe.swift": "f41c2a6d2ff0cfa3ebffe185079c5c3b49fea7fd89a5f2ed2e09557ceaeffb83",
+      "scripts/ios_native_ui/NativeUIHarness.swift": "eb78306974bbd0832204b459c78f041b8fd106fa378d39a8aeb02e65038f3159",
+      "scripts/ios_native_ui/NativeTextReplacement.swift": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+      "fixtures/user-scenarios/editor-actions-v1.json": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9",
+      "scripts/ios_e2e_ui/project.yml": "9e5df223f55543dfe29e3991b4ea44ed8c2df907ae512b21bf02db1bed42283c",
+      "scripts/ios_e2e_ui/ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+      "scripts/ios_e2e_ui/FilesEndToEndTests.swift": "212e924d95a8898feea0d1dccec45ffafee116e917f9f2212c4d8c0b262d6510",
+      "scripts/ios_e2e_ui/ObservedProjectXML.swift": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+      "scripts/ios_e2e_ui/IoEndToEndTests.swift": "a35eb43f3d5bd46d9ef1edaf1ce9c79a2c9c11a5ab4f14e5a7027e1f3780c535",
+      "scripts/ios_e2e_ui/InspectorEndToEndTests.swift": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+      "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "scripts/ios_e2e_ui/DestinationExportEndToEndTests.swift": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+      "scripts/ios_e2e_ui/VisualExportEndToEndTests.swift": "f5c2fc51f3d8cb9df09520b5f3488f74b6f9ce94367f046f013b906f0e2bff47",
+      "scripts/ios_e2e_ui/XmlDialogEndToEndTests.swift": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346",
+      "scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+      "scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+      "scripts/ios_e2e_ui/ExternalProviderEndToEndTests.swift": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+      "scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+      "scripts/ios_e2e_ui/FocusEndToEndTests.swift": "b18209a41340a5c326f4620c44c00443eb2d7fe54cf067497502ca727e555474"
+    }
+  },
+  "review": "independent-review.json",
+  "readmeSHA256": "2bf6d65f7f3288313d3d143d7fedeb14f686acd4f9752c1447f237115e363c9c",
+  "limits": [
+    "No app rebuild or new native run occurred for this correction.",
+    "The hypothetical revealed canonical 48-point state is a host probe, not a measured native transition.",
+    "Duplicate inventory and byte-identical rejection guard are checked without executing an XCUI query.",
+    "Existing twelve short backward gestures and the below-viewport failure remain unchanged."
+  ],
+  "files": {
+    "canonical-labels.json": {
+      "bytes": 150,
+      "sha256": "e169da87187f243cc9d20442f3e33b95301aeedaae7da099ff76584f18a813d9"
+    },
+    "check.py": {
+      "bytes": 7986,
+      "sha256": "ae915551ebee700204f45f52463413b55c104c71c718f969496f2dcaf9d9e8e5"
+    },
+    "geometry.log": {
+      "bytes": 46,
+      "sha256": "a224fa8353ba8e65bc8561a40551fdccdefce5a9f54181b2dd3b3dcd9b1a75d4"
+    },
+    "independent-review.json": {
+      "bytes": 3495,
+      "sha256": "68234828ade475584dd323cc9036d27941b2a9ad77756ff27a565e6e4ab6e208"
+    },
+    "r3-observation.txt": {
+      "bytes": 346,
+      "sha256": "d56c61dc955dcd0a39e4bd21435c5f14a5059170c3bbded6fc5420380b181aa8"
+    },
+    "r3-tree.txt": {
+      "bytes": 6851,
+      "sha256": "c2cb79f20864a7dc835a1d7f92dc34d9a7e16037494ce6dc95b573aec10b15aa"
+    },
+    "readiness-probe.swift": {
+      "bytes": 3251,
+      "sha256": "ebb18cb6407295b0af06cb0f708d270b7e473e0fe9af222e2995ee56a4504e53"
+    },
+    "readiness-validation.json": {
+      "bytes": 1192,
+      "sha256": "330d4b958ad57159444dde2c39c09d0bc5f25036d9f71ff84224f412e71425d5"
+    },
+    "readiness.log": {
+      "bytes": 47,
+      "sha256": "d50ecc0f38d15b428e3c31f0b5833dab74baf33be6bbe0f1125234337af40cc5"
+    },
+    "typecheck.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validation.json": {
+      "bytes": 5748,
+      "sha256": "de35e4a02cfef3090a76427219b8dec5bd1a5757fd47f0f08efbe8c1564f1a30"
+    }
+  }
+}

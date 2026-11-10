@@ -1,0 +1,81 @@
+{
+  "source_sha": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "source_tree": "48e2e60c41da95d3008ec8eaffccd059a708aa5f",
+  "status": "PASS",
+  "entered_lock_utc": "2026-11-05T04:26:51.368989+00:00",
+  "phases": [
+    {
+      "name": "identity",
+      "command": [
+        "python3",
+        "tools/generate_app_identity.py",
+        "--check"
+      ],
+      "log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/identity.log",
+      "status": "PASS",
+      "started_utc": "2026-11-05T04:26:51.402782+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 0.035,
+      "ended_utc": "2026-11-05T04:26:51.437760+00:00"
+    },
+    {
+      "name": "icons",
+      "command": [
+        "python3",
+        "tools/generate_app_icons.py",
+        "--check"
+      ],
+      "log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/icons.log",
+      "status": "PASS",
+      "started_utc": "2026-11-05T04:26:51.464056+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 4.176,
+      "ended_utc": "2026-11-05T04:26:55.639975+00:00"
+    },
+    {
+      "name": "xcode-project",
+      "command": [
+        "xcodegen",
+        "generate",
+        "--spec",
+        "iosApp/project.yml"
+      ],
+      "log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/project-generation.log",
+      "status": "PASS",
+      "started_utc": "2026-11-05T04:26:55.664704+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 0.024,
+      "ended_utc": "2026-11-05T04:26:55.689239+00:00"
+    },
+    {
+      "name": "ios-app",
+      "command": [
+        "xcodebuild",
+        "-project",
+        "iosApp/LogisimMobile.xcodeproj",
+        "-scheme",
+        "LogisimMobile",
+        "-configuration",
+        "Debug",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "outputs/ios-final-runtime-6cef0542/DerivedData",
+        "-resultBundlePath",
+        "outputs/ios-final-runtime-6cef0542/build.xcresult",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "build"
+      ],
+      "log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/build.log",
+      "status": "PASS",
+      "started_utc": "2026-11-05T04:26:55.714815+00:00",
+      "exit_code": 0,
+      "elapsed_seconds": 69.106,
+      "ended_utc": "2026-11-05T04:28:04.821477+00:00"
+    }
+  ],
+  "ended_utc": "2026-11-05T04:28:04.822018+00:00",
+  "elapsed_seconds": 73.453
+}

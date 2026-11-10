@@ -1,0 +1,41 @@
+{
+  "gitHead": "10651a76e6d768ccde16e567767156ef48caba54",
+  "dirtyBefore": false,
+  "scope": "Test APK assembly only; no product assembly, ADB, installation or UI",
+  "command": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "./gradlew",
+    ":androidApp:assembleE2eAndroidTest",
+    "-PandroidTestBuildType=e2e",
+    "--console=plain"
+  ],
+  "queuedAt": "2026-11-05T04:12:33.707815+00:00",
+  "sources": {
+    "androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt": "72b2aab2eb50e8a4ab2e4c41f29d542923a1bb2c8b16846cffac98a1886327ea",
+    "androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/NativeTargetGeometry.kt": "bb125e48a174c40e5cec26a5ccfbab81dd58df333f8b89fa3e4d8b993cc1e05b",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java": "9835a5a753ed9e486d7dd3df760d6ffa93f4ec53f8e5201fef61ece595e2544c"
+  },
+  "appBeforeSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+  "testBeforeSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+  "exitCode": 0,
+  "finishedAt": "2026-11-05T04:12:52.719272+00:00",
+  "wallSecondsIncludingLock": 19.011,
+  "headAfter": "10651a76e6d768ccde16e567767156ef48caba54",
+  "dirtyAfter": false,
+  "appAfterSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+  "appUnchanged": true,
+  "attempt": 2,
+  "priorAttempt": "build-attempt-1.json",
+  "environment": {
+    "JAVA_HOME": "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home",
+    "ANDROID_HOME": "/Users/thales/Library/Android/sdk"
+  },
+  "testApk": "/Users/thales/GitHub/logisim-mobile-worktrees/android-cancel-candidate/outputs/android-artifacts/native-geometry-439/androidApp-e2e-androidTest.apk",
+  "testApkSha256": "f5bca14d490db09c2045700f525251138568b961d918532ecfa23a20b56db267",
+  "testPackage": "thalesmms.logisim.mobile.e2e.test",
+  "targetPackage": "thalesmms.logisim.mobile.e2e",
+  "buildLogSha256": "c4d12bb50429fc8c0f8c59f248cf15d7290081eaa73290fd52a640cf32a4e0ae",
+  "aaptManifestSha256": "2517d0b7e0fc0e2477b051616a5e0c7cd7b0b4abaeef791bfa6984c4427256a8",
+  "status": "ASSEMBLED_NOT_INSTALLED"
+}

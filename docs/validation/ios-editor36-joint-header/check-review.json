@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "scope": "SOURCE_ONLY_SCRIPT_REVIEW",
+  "status": "APPROVED",
+  "utc": "2026-11-05T09:49:49.805781+00:00",
+  "script": "docs/validation/ios-editor36-joint-header/check.py",
+  "scriptSHA256": "19c22a900e05f27a31f82e503e14ca7cf69d22daa1223b3bebbe9f4c41a3fc9f",
+  "editorSHA256": "36a12b9b83c82fafbdb70744ae13a4eecc74cf67561c3b9241ed02d320c80c6a",
+  "findings": [],
+  "previousFindingsAddressed": [
+    {
+      "issue": "A function substring and exit0 alone could report15cases after probe assertions were removed.",
+      "resolution": "The complete geometry-probe.swift byte sequence must now match the pinned199fafae base, in addition to containing the exact geometry function.",
+      "line": 64
+    },
+    {
+      "issue": "Precheck and postcompile hashes could describe different source versions; text-mode digest was not the raw file digest.",
+      "resolution": "The script snapshots raw bytes of itself, Editor, the target and contract, literal probe and other16Swift sources; it requires all snapshots to equal files after both compilers. Source and target digests use captured bytes.",
+      "line": 98
+    }
+  ],
+  "checks": [
+    {
+      "line": 33,
+      "fact": "A new output directory is required; this replay cannot replace the first diagnostic output."
+    },
+    {
+      "line": 58,
+      "fact": "Normalization replaces only the private helper region and two exact call-site lines, then compares the full remaining Editor source with base199fafae."
+    },
+    {
+      "line": 61,
+      "fact": "The geometry function remains exact; target names are unique and total17, with the other16target files byte-identical to base."
+    },
+    {
+      "line": 90,
+      "fact": "The typecheck includes the platform Swift XCTest overlay directory through -I alongside framework -F and simulator SDK/target."
+    },
+    {
+      "line": 95,
+      "fact": "Both compiler commands go through the supplied serial-lock wrapper. They run a Swift geometry probe and typecheck only; no app build, launch or Native test command exists."
+    },
+    {
+      "line": 103,
+      "fact": "Receipt distinguishes source/SDK checks and explicitly retains nativeStatus=NOT_RUN."
+    }
+  ],
+  "limitations": [
+    "This reviewer read code only; no script, compiler, SDK, app, UI or device was executed.",
+    "The current replay004 result is owned by the parent and is not certified by this source-only review.",
+    "Private resolver behavior approval remains separately pinned to Editor SHA36a12b9b; this script validates normalization, identity, probe and typechecking rather than Native behavior."
+  ]
+}

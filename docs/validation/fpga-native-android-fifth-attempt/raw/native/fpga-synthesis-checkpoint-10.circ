@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0-dev" version="1.0">
+  <lib desc="#Base" name="0" />
+  <lib desc="#Wiring" name="1" />
+  <main name="layout12"/>
+  <circuit name="layout12" id="layout12">
+    <comp lib="0" loc="(100,100)" name="Image" logisim-mobile-id="import-1">
+      <a name="image" val="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGN4oLDgPwAGJAKg3WwsdQAAAABJRU5ErkJggg=="/>
+      <a name="width" val="32"/>
+      <a name="height" val="24"/>
+      <a name="scale" val="stretch"/>
+      <a name="license" val="CC0-1.0"/>
+      <a name="attribution" val="Synthetic single-color pixel for layout qualification"/>
+    </comp>
+    <comp lib="0" loc="(260,180)" name="Image" logisim-mobile-id="import-2">
+      <a name="image" val="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGMQ2HDhPwAE9AKQia+IqAAAAABJRU5ErkJggg=="/>
+      <a name="width" val="40"/>
+      <a name="height" val="32"/>
+      <a name="scale" val="stretch"/>
+      <a name="license" val="CC0-1.0"/>
+      <a name="attribution" val="Synthetic single-color pixel for layout qualification"/>
+    </comp>
+    <comp lib="1" loc="(200,160)" name="Pin" logisim-mobile-id="import-3">
+      <a name="label" val="Reset"/>
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="output" val="false"/>
+      <a name="tristate" val="false"/>
+    </comp>
+  </circuit>
+</project>

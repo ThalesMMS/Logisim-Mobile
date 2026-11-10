@@ -1,0 +1,76 @@
+{
+  "utc": "2026-11-05T01:32:52.520968+00:00",
+  "productSource": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "appProducerHead": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "testProducerHead": "74c6e2248872e1adbbf10cdaeff399aba03f198c",
+  "snapshotProducerHead": "6b6429d22f752098c855d909797b8f6e662c94c8",
+  "harnessHead": "05679f92906ef211d73b8d4c4bb39dc9ee0da688",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "identities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  },
+  "files": {
+    "androidApp-e2e.apk": {
+      "sha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546",
+      "bytes": 15328053
+    },
+    "androidApp-e2e-androidTest.apk": {
+      "sha256": "d07155cae8d2d3a13448da8473821fbb547b7947377d862271a1cfbf4f01e11b",
+      "bytes": 167807
+    },
+    "androidSnapshot-debug.apk": {
+      "sha256": "edb8431d3cda26d83529fc5b57553e3551f754cb425216675091ba4a80c523d6",
+      "bytes": 947062
+    }
+  },
+  "serial": "emulator-5558",
+  "avd": "Logisim-E2E-PT-20261104T204213Z-5c6684",
+  "shellIdentity": "uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0",
+  "actorsBeforeLease": {
+    "editorProcesses": [],
+    "fixtureProcesses": [
+      {
+        "pid": 8500,
+        "parentPid": 346,
+        "name": "thalesmms.logisim.mobile.e2e.test",
+        "args": "thalesmms.logisim.mobile.e2e.test"
+      },
+      {
+        "pid": 9181,
+        "parentPid": 346,
+        "name": "thalesmms.logisim.mobile.e2e.test:provider",
+        "args": "thalesmms.logisim.mobile.e2e.test:provider"
+      }
+    ],
+    "helperProcesses": [],
+    "uiautomatorProcesses": [],
+    "editorPid": null
+  },
+  "scope": "Prepared artifacts and read-only temporary AVD inventory. No install, reset, app launch, gesture or observer connection performed. Concurrent work on5556 excludes performance attribution.",
+  "runtimeQualification": "NOT_RUN"
+}

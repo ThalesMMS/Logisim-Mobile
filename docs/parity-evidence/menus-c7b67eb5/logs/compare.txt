@@ -1,0 +1,59 @@
+SAME                                     edit-addCtrl
+SAME                                     edit-clearHistory
+SAME                                     edit-cut
+SAME                                     edit-dup
+SAME                                     edit-lower
+SAME                                     edit-lowerBottom
+SAME                                     edit-raise
+SAME                                     edit-raiseTop
+SAME                                     edit-redoHistory
+SAME                                     edit-remCtrl
+SAME                                     edit-undoHistory
+SAME                                     file-merge
+DIFF (accepted: mobile-default-simlimit: EditorState.newDocument() without a template stores simlimit=256 (Mobile default, 2cd60d48, #157); Evolution's plain template stores 1000. File > New with the Evolution template is compared by creation-defaults) file-newi
+SAME                                     file-open
+SAME                                     file-save
+SAME                                     file-saveAs
+SAME                                     project-addCircuit
+SAME                                     project-addVhdl
+SAME                                     project-appearance
+SAME                                     project-importVhdl
+SAME                                     project-loadBuiltin
+DIFF (accepted: embedded-library: Mobile copies the library's circuits into the project (marked logisim-mobile-library-id) instead of a relative file# reference, so documents stay self-contained on Android and iOS) project-loadLogisim
+SAME                                     project-moveDown
+SAME                                     project-moveUp
+SAME                                     project-options
+SAME                                     project-remove
+DIFF (accepted: evolution-noop: RevertAppearanceAction in d58a61e0 only records the drawing (setDefaultAppearance is commented out since 6dce9c7f8); Mobile restores the default appearance) project-revertAppearance
+SAME                                     project-setAsMain
+SAME                                     project-unload
+SAME                                     sim-tickFreq
+SAME                                     state:analyze.minimal.C
+SAME                                     state:analyze.minimal.S
+SAME                                     state:analyze.table
+SAME                                     state:analyze.vars
+SAME                                     state:edit-clearHistory.after
+SAME                                     state:edit-dup.offset
+SAME                                     state:edit-redoHistory.after
+SAME                                     state:edit-redoHistory.entries
+SAME                                     state:edit-undoHistory.after
+SAME                                     state:edit-undoHistory.entries
+SAME                                     state:file-extractRunProj
+SAME                                     state:file-openRecent
+SAME                                     state:sim-downState
+SAME                                     state:sim-log.Clock(100,450)
+SAME                                     state:sim-log.D Flip-Flop(300,400)
+DIFF (accepted: empty-selection: Evolution's Logging window starts with the top-level clock, pins and loggable components; Mobile's trace panel starts empty and offers the same signals) state:sim-log.defaultSignals
+SAME                                     state:sim-log.q0
+SAME                                     state:sim-reset
+SAME                                     state:sim-step
+DIFF (accepted: frequency-menu: Mobile's Simulate menu offers 1-64 Hz; the Simulation options panel accepts any positive frequency) state:sim-tickFreq.choices
+SAME                                     state:sim-tickFull
+SAME                                     state:sim-tickHalf
+SAME                                     state:sim-ticksEnabled
+DIFF (accepted: timer-resolution: Mobile schedules automatic ticks in whole milliseconds (16 ms at 64 Hz), Evolution in nanoseconds (15.625 ms)) state:sim-ticksEnabled.period_ms
+SAME                                     state:sim-upState
+SAME                                     state:stats.rows
+SAME                                     state:stats.totals
+SAME                                     state:test.rows
+SAME                                     state:test.totals

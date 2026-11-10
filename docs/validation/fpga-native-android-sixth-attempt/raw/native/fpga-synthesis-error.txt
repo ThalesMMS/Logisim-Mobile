@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_fpga_scenarios.py", line 504, in success
+    before, archive = self.mapping(export=True)
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_fpga_scenarios.py", line 425, in mapping
+    self.validate(valid=False)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_fpga_scenarios.py", line 386, in validate
+    node = self.e.reveal(key)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_editing_scenarios.py", line 192, in reveal
+    assert self.ui.tagged(root, viewport_tag) is not None, f"The active {viewport_tag} viewport disappeared"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: The active editor-tool-sheet viewport disappeared

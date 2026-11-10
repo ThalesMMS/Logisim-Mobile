@@ -1,0 +1,182 @@
+{
+  "status": "PREFLIGHT_PASS_READER_OFF",
+  "utc": "2026-11-05T12:20:27.198066+00:00",
+  "serial": "emulator-5556",
+  "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "controller_commit": "8dcede427cd594f65704a9827276a19506c464ea",
+  "apks": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~6-xzfOYOacMyuvljUXthfA==/thalesmms.logisim.mobile.e2e-pHjIeayT9Xor2RjCMMc8bg==/base.apk",
+      "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~CSdHgQoZgIzadi4KSPiC_A==/thalesmms.logisim.mobile.e2e.test-mvC2I9BuXe6-0l9rbkEzAQ==/base.apk",
+      "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+    },
+    "helper": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~W6NLDDiwhuqP665_oOcVAw==/thalesmms.logisim.mobile.snapshot.e2e.test-Vnkh8F9iA4Tb7TiuXTYuPA==/base.apk",
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    }
+  },
+  "public_settings": {
+    "reader-enabled": "0",
+    "reader-services": "",
+    "font-scale": "1.0",
+    "rotation-auto": "1",
+    "rotation-user": "0",
+    "ime": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420"
+  },
+  "notification_permission": [
+    "android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED]"
+  ],
+  "commands": [
+    {
+      "name": "reader-enabled",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "secure",
+        "accessibility_enabled"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.087558+00:00"
+    },
+    {
+      "name": "reader-services",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "secure",
+        "enabled_accessibility_services"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.116105+00:00"
+    },
+    {
+      "name": "reader-state",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "dumpsys",
+        "accessibility"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.150589+00:00"
+    },
+    {
+      "name": "font-scale",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "system",
+        "font_scale"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.175787+00:00"
+    },
+    {
+      "name": "rotation-auto",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "system",
+        "accelerometer_rotation"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.199315+00:00"
+    },
+    {
+      "name": "rotation-user",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "system",
+        "user_rotation"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.221551+00:00"
+    },
+    {
+      "name": "ime",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "secure",
+        "default_input_method"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.243472+00:00"
+    },
+    {
+      "name": "size",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "wm",
+        "size"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.265553+00:00"
+    },
+    {
+      "name": "density",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "wm",
+        "density"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.285788+00:00"
+    },
+    {
+      "name": "talkback-package",
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.google.android.marvin.talkback"
+      ],
+      "exit": 0,
+      "utc": "2026-11-05T12:20:26.422250+00:00"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+p1	initial=0	poke(bit 0)=1	poke(bit 0)=0	poke(bit 0)=1	poke(bit 0)=0
+t1	initial=U	poke(bit 0)=0	poke(bit 0)=1	poke(bit 0)=U	poke(bit 0)=0
+b4	initial=0000	poke(bit 0)=0001	poke(bit 0)=0000	poke(bit 2)=0100	poke(bit 2)=0000	poke(bit 3)=1000
+h8	initial=00000000	poke(bit 0)=00000001	poke(bit 0)=00000010	poke(bit 4)=00010010	poke(bit 0)=00010011
+t3	initial=UUU	poke(bit 0)=UU0	poke(bit 0)=UU1	poke(bit 0)=UUU	poke(bit 1)=U0U
+component	AND Gate	Rotate Left, Rotate Right, Delete, Show Attributes
+component	Image	Delete, Show Attributes, Reset to Original Size, Optimize Image Size, Make Outer Background Transparent
+component	Nios2	Delete, Show Attributes, |, Open assembler, Read ELF file
+component	PLA	Rotate Left, Rotate Right, Delete, Show Attributes, |, Edit PLA Program…
+component	Pin	Rotate Left, Rotate Right, Delete, Show Attributes
+component	PlaRom	Delete, Show Attributes, |, Edit Contents…, Clear Contents
+component	RAM	Delete, Show Attributes, |, Edit Contents…, Clear Contents, Load Image…, Save Image…
+component	ROM	Delete, Show Attributes, |, Edit Contents…, Clear Contents, Load Image…, Save Image…
+component	Rv32im	Delete, Show Attributes, |, Open assembler, Read ELF file
+component	SocBus	Delete, Show Attributes, |, Show memory map, Insert a bus transaction
+component	SocPio	Delete, Show Attributes, |, Export C-templates
+component	SocVga	Delete, Show Attributes, |, Export C-templates
+component	Socmem	Delete, Show Attributes
+component	Splitter	Rotate Left, Rotate Right, Delete, Show Attributes, |, Distribute Ascending (disabled), Distribute Descending
+component	Text	Delete, Show Attributes
+component	child	Rotate Left, Rotate Right, Delete, Show Attributes, View child
+selection(>1)	-	Delete Selection, Cut Selection, Copy Selection
+empty-canvas	-	(no menu)
+component	Rv32im(loaded)	Delete, Show Attributes, |, Open assembler, Read ELF file, Show loaded program
+component	Nios2(loaded)	Delete, Show Attributes, |, Open assembler, Read ELF file, Show loaded program
+cached	2048x2048	2048x2048
+cached	4096x1000	2048x500
+cached	2100x2100	2048x2048
+cached	100x3000	68x2048
+cached	2049x7	2048x6
+reset	badge	width=48,height=32
+optimize	badge	64x64 fit	already 48x32
+optimize	badge	40x30 fit	resize 48x32->40x26 frame=40x26
+optimize	badge	400x400 fit	already 48x32
+optimize	badge	64x64 stretch	resize 48x32->64x64
+optimize	badge	320x150 stretch	resize 48x32->320x150
+optimize	badge	64x64 cover	resize 48x32->64x64
+optimize	badge	160x100 cover	resize 48x32->160x100
+optimize	badge	30x60 cover	resize 48x32->30x60
+transparent	badge	badge-transparent.png
+reset	photo	width=160,height=100
+optimize	photo	64x64 fit	resize 160x100->64x40 frame=64x40
+optimize	photo	40x30 fit	resize 160x100->40x25 frame=40x25
+optimize	photo	400x400 fit	already 160x100
+optimize	photo	64x64 stretch	resize 160x100->64x64
+optimize	photo	320x150 stretch	resize 160x100->320x150
+optimize	photo	64x64 cover	resize 160x100->64x64
+optimize	photo	160x100 cover	already 160x100
+optimize	photo	30x60 cover	resize 160x100->30x60
+transparent	photo	photo-transparent.png
+badge-optimize-160x100-cover.png	160x100	max channel difference 0 (0 pixels)
+badge-optimize-30x60-cover.png	30x60	max channel difference 0 (0 pixels)
+badge-optimize-320x150-stretch.png	320x150	max channel difference 0 (0 pixels)
+badge-optimize-40x30-fit.png	40x26	max channel difference 0 (0 pixels)
+badge-optimize-64x64-cover.png	64x64	max channel difference 0 (0 pixels)
+badge-optimize-64x64-stretch.png	64x64	max channel difference 0 (0 pixels)
+badge-transparent.png	48x32	max channel difference 0 (0 pixels)
+photo-optimize-30x60-cover.png	30x60	max channel difference 0 (0 pixels)
+photo-optimize-320x150-stretch.png	320x150	max channel difference 0 (0 pixels)
+photo-optimize-40x30-fit.png	40x25	max channel difference 0 (0 pixels)
+photo-optimize-64x64-cover.png	64x64	max channel difference 0 (0 pixels)
+photo-optimize-64x64-fit.png	64x40	max channel difference 0 (0 pixels)
+photo-optimize-64x64-stretch.png	64x64	max channel difference 0 (0 pixels)
+photo-transparent.png	160x100	max channel difference 0 (0 pixels)
+SAME image-menu
+desktop-tool-defaults	color=#000000;font=SansSerif bold 16;halign=center;text=;valign=base
+mobile-tool-prototype	{font=SansSerif bold 16}
+SAME	bounds	(220,160)	desktop=162,128,117x32	mobile=162,128,117x32	mobile-font=SansSerif bold 16
+SAME	bounds	(300,100)	desktop=258,84,85x16	mobile=258,84,85x16	mobile-font=SansSerif bold 16
+SAME	bounds	(300,200)	desktop=300,182,108x18	mobile=300,182,108x18	mobile-font=Serif bold 18
+SAME text-tool (4 components)
+SAME poke
+SAME menu
+SAME image

@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "qualification": "keyboard-tty-case-only",
+  "scope": "native-mounted-editor-keyboard-tty",
+  "scenarioSeconds": 223.79,
+  "producer": {
+    "appSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "productionEquivalentSource": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+    "snapshotHelperSource": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+    "harnessSource": "b56aa75e776477833cc038f8d6cb5ea28d1f598d",
+    "package": "thalesmms.logisim.mobile.e2e",
+    "serial": "emulator-5556",
+    "api": 35,
+    "language": "en",
+    "catalogKeys": 2497
+  },
+  "observations": {
+    "baselineProbeCount": 19,
+    "keyboardField": {
+      "initial": "AB",
+      "initialSdkCaptures": [
+        5,
+        6
+      ],
+      "capacity": 4,
+      "textSentByRetainedRunner": "ABCDE",
+      "observed": "ABCD",
+      "capacitySdkCaptures": [
+        24,
+        25
+      ],
+      "attributeName": "buflen"
+    },
+    "connectedDataSequence": [
+      "0000000",
+      "1000001",
+      "1000010",
+      "0000000",
+      "0001000",
+      "0001100"
+    ],
+    "availableSequence": [
+      "0",
+      "1",
+      "1",
+      "0",
+      "1",
+      "1"
+    ],
+    "controlActions": {
+      "backspaceTap": [
+        656,
+        1184
+      ],
+      "backspaceReveals": 0,
+      "formFeedReveals": 1,
+      "formFeedRevealStart": [
+        851,
+        1184
+      ],
+      "formFeedRevealEnd": [
+        229,
+        1184
+      ],
+      "formFeedTap": [
+        865,
+        1184
+      ],
+      "formFeedAfterLabelBounds": "[735,1158][996,1211]",
+      "actionTrees": [
+        "raw/io-keyboard-io_ascii_backspace-tap.xml",
+        "raw/io-keyboard-io_ascii_form_feed-reveal-horizontal.xml",
+        "raw/io-keyboard-io_ascii_form_feed-tap.xml"
+      ],
+      "commandCompletedMeaning": "The shell command returned, not a MotionEvent receipt. Connected probe assertions establish codes 8/12."
+    },
+    "sdkCaptures": {
+      "complete": 26,
+      "rootUnavailable": 0,
+      "incompleteTree": 0,
+      "observedAppPid": "25265",
+      "scope": "PID 25265 was observed before/after each retained SDK capture and in post-run readback; continuous process lifetime is not claimed."
+    },
+    "documents": {
+      "components": 54,
+      "wireSegments": 64,
+      "baselineSha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "capacityAndLastSha256": "d2f8270b0c2dde6f6aac1841f5b416129237f4bfdadff09dbcc7dbd5abefae3b",
+      "onlyExpectedEdit": "IO_KEYBOARD buflen16→4; all other component attributes, positions and electrical connections remain required by the archived oracle.",
+      "serializationNote": "The export reverses from/to ordering for 18 segments. All 64 undirected segments and connections remain equal; baseline-to-capacity byte equality is not claimed."
+    },
+    "visualReview": [
+      {
+        "artifact": "raw/io-tty-afterFirst.png",
+        "sha256": "ad8d2fc4558d883a6cf3068b89f0e22b1c9cef2f138dd3233cee4bea3b67aa58",
+        "stepsVisible": 2,
+        "observedRows": [
+          "A",
+          "",
+          ""
+        ],
+        "method": "Visual inspection of the unaltered full-resolution PNG; no pixel classifier or image editing."
+      },
+      {
+        "artifact": "raw/io-tty-afterSecond.png",
+        "sha256": "cce1402f0384c5c1a099ffb5fc4ffed60f9974fdc2b90dcb19d146ba4fd76c6a",
+        "stepsVisible": 4,
+        "observedRows": [
+          "AB",
+          "",
+          ""
+        ],
+        "method": "Visual inspection of the unaltered full-resolution PNG; no pixel classifier or image editing."
+      },
+      {
+        "artifact": "raw/io-tty-backspace.png",
+        "sha256": "bd4f086181493b11636be1dbf930de005cc381af12c437653ab5760780e49b20",
+        "stepsVisible": 6,
+        "observedRows": [
+          "A",
+          "",
+          ""
+        ],
+        "method": "Visual inspection of the unaltered full-resolution PNG; no pixel classifier or image editing."
+      },
+      {
+        "artifact": "raw/io-tty-formFeed.png",
+        "sha256": "610cb56f84061c129a34588406dae611f645d3bc6787f6e6384e274c73c8f8fc",
+        "stepsVisible": 8,
+        "observedRows": [
+          "",
+          "",
+          ""
+        ],
+        "method": "Visual inspection of the unaltered full-resolution PNG; no pixel classifier or image editing."
+      }
+    ]
+  },
+  "timingPolicy": {
+    "perControlSeconds": 20,
+    "policySource": "raw/source-android_keyboard_controls.py",
+    "limit": "One absolute deadline per control includes observation, at most one horizontal reveal and tap, with recheck before dispatch. Per-action runtime start/end timestamps were not retained; this receipt does not claim a measured 20-second action latency."
+  },
+  "provenance": {
+    "inventory": "inventory.json",
+    "inventoryFiles": 155,
+    "inventoryBytes": 5509910,
+    "preflight": "raw/preflight-before-ui.json",
+    "rootManifest": "raw/root-artifact-manifest.json",
+    "executionManifest": "raw/manifest.json",
+    "postRun": "raw/post-run-readback-cleanup.json",
+    "oracleSnapshot": "oracle-snapshot/manifest.json",
+    "oracleSnapshotSourcePin": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+    "oracleSnapshotManifestSha256": "6217ae14db5a8fe7d108b150f4b6f97f6dfa9a14ee69f4842b78dee9d39e8c99"
+  },
+  "limits": [
+    "One selected keyboard-tty case on an English-language Android15 API35 emulator; not whole issue44 or the full suite.",
+    "Home/End controls and restoration of capacity 16 are not executed by this case. The final configured buffer capacity is4.",
+    "TTY rows were reviewed visually in original PNGs; no pixel-algorithm qualification is claimed.",
+    "No ROOT_UNAVAILABLE or INCOMPLETE_TREE capture occurred. This case does not qualify recovery of those paths.",
+    "No before-run ANR baseline was retained by this CLI group, so unchanged ANR status is not claimed.",
+    "No continuous PID lifetime, physical input ergonomics, cold document/state persistence or overall performance budget is claimed.",
+    "R1 remains a failure. Its retained-tree selector obstruction does not reconstruct every previous poll or isolate all possible timing causes.",
+    "The isolated app was force-stopped only after result and state preservation; its empty post-cleanup PID is explained by that explicit operation.",
+    "No APK, JAR or TAR is archived. No recipient, physical device programming or external message was involved."
+  ]
+}

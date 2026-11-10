@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "READ_ONLY_OBSERVATIONAL_CENSUS",
+  "product_source_preserved": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "scope": "Five retained Simulator service aborts, four selected PASS controls and one separate functional FAIL; causal trigger unresolved.",
+  "validation": {
+    "command": "python3 scripts/diagnostics/census-ios-metal.py --check",
+    "result": "PASS",
+    "unique_incidents": 5,
+    "verified_evidence_files": 41,
+    "static_peer_review": "PASS; no new live/build/test/device operation by reviewer"
+  },
+  "runtime_constraint": "Installed27.1/24A94401 advertises iPhone Duo only, with two existing AVAILABLE Shutdown devices; no supported-model overlap with installed27.0.",
+  "operations_not_performed": [
+    "product source edit",
+    "app build/test",
+    "device create/boot/reset/launch",
+    "Metal/backend change",
+    "runtime or SDK download",
+    "process-argument/environment capture"
+  ],
+  "files": [
+    {
+      "path": "docs/validation/ios-metal-cohort-census/README.md",
+      "sha256": "ed2a3064edf63424e5e5bf959e293db972772c18dd8ddf2a2210a9625614b50d",
+      "bytes": 9042
+    },
+    {
+      "path": "docs/validation/ios-metal-cohort-census/inputs.json",
+      "sha256": "c258d82d549e72f230d28fe97d4bac34f366e4c7ca894b16dfa131048fdc5ac8",
+      "bytes": 49476
+    },
+    {
+      "path": "docs/validation/ios-metal-cohort-census/census.json",
+      "sha256": "b785dda54851d9bade3052417793b3b9d22824cdaea857f3f35000424466d74b",
+      "bytes": 42351
+    },
+    {
+      "path": "docs/validation/ios-metal-cohort-census/inventory.json",
+      "sha256": "91babb6a9e36bf09fc184c9cf7b4cf9d1f2791932cb99fa106e730ad9f614b3d",
+      "bytes": 4894
+    },
+    {
+      "path": "docs/validation/ios-metal-cohort-census/source-audit.json",
+      "sha256": "c98fb838acbae910b75d75df198e32d52a9db58ad48fb56ed0013dfd9a510f0c",
+      "bytes": 43153
+    },
+    {
+      "path": "docs/validation/ios-metal-cohort-census/primary-sources.json",
+      "sha256": "7941208fa218b798f6d98a1e096ff04e8f67081a575e6ee67a7d92abc44d685a",
+      "bytes": 1219
+    },
+    {
+      "path": "scripts/diagnostics/census-ios-metal.py",
+      "sha256": "fb9ca204e393e16195cec006dd430ec1ac1b2aa05a0c3c8d3aa322fabd31357d",
+      "bytes": 9116
+    }
+  ],
+  "reproduction_limit": "Inputs reference41 retained external corpus files by absolute path/hash; they must remain available for offline verification."
+}

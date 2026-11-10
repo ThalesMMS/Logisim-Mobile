@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 1,
+  "claim": {
+    "nativeMethods": "four-failed",
+    "qualifiedCheckpointPairs": 0,
+    "issue44": "not-qualified",
+    "firstDimensionsCheckpoint": "INCOMPLETE_AFTER_XML_CAPTURE",
+    "firstDimensionsReason": "METADATA_MISSING",
+    "otherDocumentStages": "17-NOT_REACHED",
+    "closeEventDelivery": "not-established",
+    "baselineAcrossEntireTimeout": "not-established",
+    "engineResetInternals": "not-observed"
+  },
+  "originalRun": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001",
+  "producerPin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "auditBasePin": "b128ec224b79de4d96c3ceac86dc668e4fab08d9",
+  "artifacts": {
+    "diagnostics/close/App.kt": {
+      "sha256": "133564a2cb23e5e58068f88e5014761b104d505ac707a0e02c573261375a98d2",
+      "original": "/tmp/logisim-io44-xml-close-review/App.kt"
+    },
+    "diagnostics/close/AppDialogPresentation.ios.kt": {
+      "sha256": "37c5c62505f012222d0b7ecaeefc02b29a4ae84b49d5c139ae75128e03cf560f",
+      "original": "/tmp/logisim-io44-xml-close-review/AppDialogPresentation.ios.kt"
+    },
+    "diagnostics/close/AppDialogPresentation.kt": {
+      "sha256": "9a05ae83c4406561228dd096e5ef293008038539fc88cb171e3daeb2d1cd30e4",
+      "original": "/tmp/logisim-io44-xml-close-review/AppDialogPresentation.kt"
+    },
+    "diagnostics/close/LogisimMobileApp.swift": {
+      "sha256": "f4a50d9deac21090054dbf572393e88ca1670b4add13e854160654cf70b14469",
+      "original": "/tmp/logisim-io44-xml-close-review/LogisimMobileApp.swift"
+    },
+    "diagnostics/close/close-synthesized-event-decoded.json": {
+      "sha256": "73d3659438491a935cc33e894e626f9a2a7720597911a1cf86c3e7182a02e645",
+      "original": "/tmp/logisim-io44-xml-close-review/close-synthesized-event-decoded.json"
+    },
+    "diagnostics/close/dimension-video-metadata.json": {
+      "sha256": "61ee2324d4cd9575823660ebb7904355a84d9487670396773fd57f647b88bd8a",
+      "original": "/tmp/logisim-io44-xml-close-review/dimension-video-metadata.json"
+    },
+    "diagnostics/close/dimensions-pts-38.905000.png": {
+      "sha256": "87280b96792cb5e233e83a76196fabf349e0c3bb7162c783254ad8bb3b63a7bf",
+      "original": "/tmp/logisim-io44-xml-close-review/dimensions-pts-38.905000.png"
+    },
+    "diagnostics/close/dimensions-pts-40.396667.png": {
+      "sha256": "b24d40180b42618a81c98f225d46152f84f55f1e9134eb237278b922e3675813",
+      "original": "/tmp/logisim-io44-xml-close-review/dimensions-pts-40.396667.png"
+    },
+    "diagnostics/close/dimensions-pts-40.701667.png": {
+      "sha256": "779ee6af03e788b69f2dc24a6f57c060d782fcb801d51f9eed11d2f491492730",
+      "original": "/tmp/logisim-io44-xml-close-review/dimensions-pts-40.701667.png"
+    },
+    "diagnostics/close/dimensions-pts-41.063333.png": {
+      "sha256": "7a0fb88e4129b8f47c789616d56f97e6bc8edd0dcc9a5f7ca8b221a84b579164",
+      "original": "/tmp/logisim-io44-xml-close-review/dimensions-pts-41.063333.png"
+    },
+    "diagnostics/close/dimensions-synthesized-events.json": {
+      "sha256": "3b9579fff50659a978ae828dd51d2fa3f5851e922ecbb6d2ac440ac33b117bc9",
+      "original": "/tmp/logisim-io44-xml-close-review/dimensions-synthesized-events.json"
+    },
+    "diagnostics/close/scene-manifest.json": {
+      "sha256": "02cf87fb31c666fefa654a402bc89fb477b2f27113113d478edae60b5bec885a",
+      "original": "/tmp/logisim-io44-xml-close-review/scene-manifest.json"
+    },
+    "diagnostics/close/video-frames.json": {
+      "sha256": "ed153dd6c8ec68f40f6485c3b5a8bd287001942ffa6a25030791867374288e37",
+      "original": "/tmp/logisim-io44-xml-close-review/video-frames.json"
+    },
+    "diagnostics/logisim-ios44-baseline-review.json": {
+      "sha256": "5d8b409012b07bfa754b9c578e9868e675eb6d74f61358d329e174f84912f4d8",
+      "original": "/tmp/logisim-ios44-baseline-review.json"
+    },
+    "diagnostics/logisim-ios44-xml-ax-roots.md": {
+      "sha256": "3293d37eebc04cb5269df4d40bbd54911804ff3149afa9d4fe90988111239924",
+      "original": "/tmp/logisim-ios44-xml-ax-roots.md"
+    },
+    "diagnostics/logisim-ios44-xml-close-review.md": {
+      "sha256": "0513236c2538808896ca8033df3c33247191665da8b0021c6b7e5044b810587d",
+      "original": "/tmp/logisim-ios44-xml-close-review.md"
+    },
+    "oracle/examples/io-showcase.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "git:3a0a01f1af05dd3fea75d5a1499c762d039c478a:examples/io-showcase.circ"
+    },
+    "oracle/examples/io-showcase.targets.json": {
+      "sha256": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15",
+      "original": "git:3a0a01f1af05dd3fea75d5a1499c762d039c478a:examples/io-showcase.targets.json"
+    },
+    "oracle/fixtures/user-scenarios/io-actions-v1.json": {
+      "sha256": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+      "original": "git:3a0a01f1af05dd3fea75d5a1499c762d039c478a:fixtures/user-scenarios/io-actions-v1.json"
+    },
+    "oracle/scripts/io_showcase_contract.py": {
+      "sha256": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7",
+      "original": "git:3a0a01f1af05dd3fea75d5a1499c762d039c478a:scripts/io_showcase_contract.py"
+    },
+    "run/artifact-admission.json": {
+      "sha256": "f451ce15fa68e20bc18606fc31e201e40e4ec6fbf2caebd89976b9dc5a3c2049",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/artifact-admission.json"
+    },
+    "run/attachments.log": {
+      "sha256": "3ae9066ddb6b600132ebe4498480697a5687d91579bc4368f4bc6530aa3d38d4",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments.log"
+    },
+    "run/attachments/03FA67EB-09A4-4335-83C8-6D7DE670268E.png": {
+      "sha256": "7657b153a5368db2df196cece3c59ea1493e0eeb4c16ba19e21fb6ccd6ae4ce7",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/03FA67EB-09A4-4335-83C8-6D7DE670268E.png"
+    },
+    "run/attachments/1109302F-F19F-44E3-A465-49FB8DDA4F7C": {
+      "sha256": "e660f5f9e1cf89dda8f76e4017e955ffab0f858d4003de96252ae5792e21e218",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/1109302F-F19F-44E3-A465-49FB8DDA4F7C"
+    },
+    "run/attachments/15A50BA9-2FFD-4773-9370-A04ECD68AC51": {
+      "sha256": "82425cd48d4fc898a466fa21a1e4d5360017c23a547e352d201b224eee9e6e33",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/15A50BA9-2FFD-4773-9370-A04ECD68AC51"
+    },
+    "run/attachments/2048C28B-FD53-4606-8F4B-4604C69B7C74": {
+      "sha256": "3d315c38b3e8f3f774f53c4d517b044bcb370eb23e5a3fdadf8bb5a4a27f9eef",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/2048C28B-FD53-4606-8F4B-4604C69B7C74"
+    },
+    "run/attachments/2224331D-2612-4D48-98F3-EE100BC67286": {
+      "sha256": "357d1e39654e1e54303f975455719049743e6c14cb732599c8cff58c432e1824",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/2224331D-2612-4D48-98F3-EE100BC67286"
+    },
+    "run/attachments/2451D67E-5E66-4F67-8006-E87F2F35B4E8": {
+      "sha256": "3d315c38b3e8f3f774f53c4d517b044bcb370eb23e5a3fdadf8bb5a4a27f9eef",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/2451D67E-5E66-4F67-8006-E87F2F35B4E8"
+    },
+    "run/attachments/2AC6ABA6-34A5-4302-A5D0-CBF3474D7765.txt": {
+      "sha256": "4fcfce517f931734798c59c3312bf9192ba058dc9512ffd0d1c238d2e17056d5",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/2AC6ABA6-34A5-4302-A5D0-CBF3474D7765.txt"
+    },
+    "run/attachments/341549C6-2D7D-4A80-82B9-5CADB12E3D94.png": {
+      "sha256": "c7a2caeaf66eeb7a0cd34d6bca44b9e31b1274d5818b892f337a01a9a61dc88c",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/341549C6-2D7D-4A80-82B9-5CADB12E3D94.png"
+    },
+    "run/attachments/449C620E-928F-469D-923A-7DC562EA454F.txt": {
+      "sha256": "25a398dd12c9115a4a8b217ef8ce9558178726bb1becdaecc93fe8c3b4a94bc5",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/449C620E-928F-469D-923A-7DC562EA454F.txt"
+    },
+    "run/attachments/4F609B0E-156B-4071-B95F-6DF5536AF64F.txt": {
+      "sha256": "a98e82e8b5fe0009f5eabe7c0418a9119ed0ef7af9c70994426fc5eaceb81e40",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/4F609B0E-156B-4071-B95F-6DF5536AF64F.txt"
+    },
+    "run/attachments/500B3F47-59CE-40F5-9576-1B6E8D0A4E4A.png": {
+      "sha256": "64ce0a79668814f112442d5a7e1776949e804124d993ad930162c6f9dbea383c",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/500B3F47-59CE-40F5-9576-1B6E8D0A4E4A.png"
+    },
+    "run/attachments/5A195C9B-A75E-461B-BEEB-ECB1B5446C57.txt": {
+      "sha256": "37437cba2ab36f844c917b88c60ab994474d9dcc0acb1e9f4d0622983c38d1fb",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/5A195C9B-A75E-461B-BEEB-ECB1B5446C57.txt"
+    },
+    "run/attachments/63CCA850-1928-4D95-A219-0E7A2089CD99.txt": {
+      "sha256": "b20f4b1e75d562413482e4cf88ce634011e315d587d70689c557a4ab47efb867",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/63CCA850-1928-4D95-A219-0E7A2089CD99.txt"
+    },
+    "run/attachments/681974B9-CA53-4872-84B4-BEE0C4FC69B8.txt": {
+      "sha256": "7cfcfbf8e488fdee84bff53384f1b5a744882eb53ba0bd5a322cb0e5e02e189e",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/681974B9-CA53-4872-84B4-BEE0C4FC69B8.txt"
+    },
+    "run/attachments/69F75554-83DC-4EA3-8AB7-7A7D7C6EF799": {
+      "sha256": "c9909b83f148f42f7871d069c10d4f005dc5390325e06af0fce64f22ae68d496",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/69F75554-83DC-4EA3-8AB7-7A7D7C6EF799"
+    },
+    "run/attachments/7FE424D3-DB61-42D5-B74E-BE02C9DC591B.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/7FE424D3-DB61-42D5-B74E-BE02C9DC591B.circ"
+    },
+    "run/attachments/8E6F9875-2B29-423D-86C7-181C4BC4D33D.txt": {
+      "sha256": "67abc99ce683798f8488d6a62de6cad1a7afa1378c32d2385b5a66be6b5f8bbe",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/8E6F9875-2B29-423D-86C7-181C4BC4D33D.txt"
+    },
+    "run/attachments/9A2BEB4D-CA14-45E7-A7CC-BC0A28014F97.png": {
+      "sha256": "4507ed8dbac1555644c03ae43452417bd4253008f7fdc18e0fa112304704afbc",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/9A2BEB4D-CA14-45E7-A7CC-BC0A28014F97.png"
+    },
+    "run/attachments/9DBDBC06-48E6-4A8A-8147-5BF4633EE53E": {
+      "sha256": "357d1e39654e1e54303f975455719049743e6c14cb732599c8cff58c432e1824",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/9DBDBC06-48E6-4A8A-8147-5BF4633EE53E"
+    },
+    "run/attachments/9EB7B618-85C8-4605-B353-BD1F567ED979": {
+      "sha256": "8f3156036e5a2629729418cb5b96b75751b2dec2091eb135d58f888b95fad2af",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/9EB7B618-85C8-4605-B353-BD1F567ED979"
+    },
+    "run/attachments/B6A2DC3B-3C69-47C1-A6F2-94D9B4DA2091.txt": {
+      "sha256": "8bcfbc64e4a146f2f00653f8c2ff3b86c55642d39f0e1ccd462530b2035fb45b",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/B6A2DC3B-3C69-47C1-A6F2-94D9B4DA2091.txt"
+    },
+    "run/attachments/C5B0FAD9-5299-4AE0-BD19-08A6CD1D3DB8": {
+      "sha256": "3c18039d8e58018042e2f6e8abf810acb5be37c7560411d88ee69c99521d7318",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/C5B0FAD9-5299-4AE0-BD19-08A6CD1D3DB8"
+    },
+    "run/attachments/D793E7A3-051A-4579-84CF-DF6F15CBC80C": {
+      "sha256": "e9a9562c114a5ed4d8118c6bc51342a5316cc3a7bb3257f03318a99879c8b52f",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/D793E7A3-051A-4579-84CF-DF6F15CBC80C"
+    },
+    "run/attachments/EA4CC715-4B26-4C5E-AC52-6A2E5F4C7E7E.txt": {
+      "sha256": "9156a5f9180f411b8aebe61a33c099fe679490ebf939ee3a0f3e92feafd496ee",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/EA4CC715-4B26-4C5E-AC52-6A2E5F4C7E7E.txt"
+    },
+    "run/attachments/EB379FD8-8FF7-4584-88DE-E1155FD198B8.xml": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/EB379FD8-8FF7-4584-88DE-E1155FD198B8.xml"
+    },
+    "run/attachments/manifest.json": {
+      "sha256": "d097bea30afe87b9fdcaa1fae620e692e0b021e10a0e6c656bdd3d9466833cd9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/manifest.json"
+    },
+    "run/documents/cold.circ": {
+      "sha256": "6617c15b98ad8c8114ac807a70cf9dbe4ed68d08385f9c32e148e689c59c32ff",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/cold.circ"
+    },
+    "run/documents/external-peer.json": {
+      "sha256": "b509fc629b28f937c715eb559b0bac506e69af18f813eacf454d78548c941bbe",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/external-peer.json"
+    },
+    "run/documents/external.circ": {
+      "sha256": "b3d34caf41996de43596d29b79afaa6b207c9615d834f79018f8dacf3f5c07f3",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/external.circ"
+    },
+    "run/documents/incompatible.circ": {
+      "sha256": "933da12a79169460a188657eb00b4f2d5c413600fd01fa3326a660936edd0e51",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/incompatible.circ"
+    },
+    "run/documents/inspector-width.circ": {
+      "sha256": "f7668133d46145b4ae6fec232c44578f30230cf9509179ac39f60763e6e49d7f",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/inspector-width.circ"
+    },
+    "run/documents/io-held-output.circ": {
+      "sha256": "8460e00348c6b9490a6414580a555759661a44d934ab426ed3e42e59a6b26327",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/io-held-output.circ"
+    },
+    "run/documents/io-held-output.targets.json": {
+      "sha256": "20c87e92362de06350dfd04f27a9eb498711c12e2bad2380e84a69e576587acf",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/io-held-output.targets.json"
+    },
+    "run/documents/io-showcase-0CC34CEE-65CC-4467-8BDC-30F865D372C8.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/io-showcase-0CC34CEE-65CC-4467-8BDC-30F865D372C8.circ"
+    },
+    "run/documents/io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ"
+    },
+    "run/documents/io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ"
+    },
+    "run/documents/io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ"
+    },
+    "run/documents/io-showcase.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/io-showcase.circ"
+    },
+    "run/documents/portable-projects/portable53.lsebdl": {
+      "sha256": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/portable-projects/portable53.lsebdl"
+    },
+    "run/documents/portable-projects/sources/library/bridge.circ": {
+      "sha256": "ac9c21a1028a960c01db44faf34d3d87c6d51cd1bff81c18f6705251ae8741db",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/portable-projects/sources/library/bridge.circ"
+    },
+    "run/documents/portable-projects/sources/library/cell.circ": {
+      "sha256": "54085bbd56727530dae271232600a8b6a4b478e87e011c2f3eb74ee87702a89b",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/portable-projects/sources/library/cell.circ"
+    },
+    "run/documents/portable-projects/sources/main.circ": {
+      "sha256": "0d838bb805d84c21b9f1151bd47966efd97c00e6044fa1b68fa9d05ae8d00253",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/portable-projects/sources/main.circ"
+    },
+    "run/documents/visual-export-e20987fdc1cc.circ": {
+      "sha256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/visual-export-e20987fdc1cc.circ"
+    },
+    "run/documents/warm.circ": {
+      "sha256": "3dfadef7ede02f03fe8774b040bcf4162990c53895e4d8cf6b2baffe0781cc73",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/documents/warm.circ"
+    },
+    "run/execution-plan.json": {
+      "sha256": "32d865f6aa27198502a3615696c57dac3030dbd48dc197ec0a176f6bf974eefb",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/execution-plan.json"
+    },
+    "run/harness/AccessibilityUITests.swift": {
+      "sha256": "ca5d6c441c1270d915cfcce1bb456f200bbbf83e78af18667f5a72359293d150",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/AccessibilityUITests.swift"
+    },
+    "run/harness/Catalog.json": {
+      "sha256": "bd975f80471c29bdd2407bd7231a093f6862842c2437b18a0c4f8c9bdc9305ea",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/Catalog.json"
+    },
+    "run/harness/ClipboardReceiver/ClipboardReceiverApp.swift": {
+      "sha256": "86787dc7cf23c87ad8a41c466c339944a8ea2cc8ee13fc6a8dd4c8f70e955f5d",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/ClipboardReceiver/ClipboardReceiverApp.swift"
+    },
+    "run/harness/ClipboardReceiver/Info.plist": {
+      "sha256": "e8cdeecf54a535acf04d1726b56fdc990e97280e8c46634c01c5c34afb24f1b7",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/ClipboardReceiver/Info.plist"
+    },
+    "run/harness/ClipboardReceiverUI.swift": {
+      "sha256": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/ClipboardReceiverUI.swift"
+    },
+    "run/harness/DestinationExportEndToEndTests.swift": {
+      "sha256": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/DestinationExportEndToEndTests.swift"
+    },
+    "run/harness/EditorEndToEndTests.swift": {
+      "sha256": "df046e24e72b26919e1e2b8ae3d767a2eae3b784f5925a0d946198f11d17ed07",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/EditorEndToEndTests.swift"
+    },
+    "run/harness/ExternalProviderEndToEndTests.swift": {
+      "sha256": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/ExternalProviderEndToEndTests.swift"
+    },
+    "run/harness/FilesEndToEndTests.swift": {
+      "sha256": "b9cec3bf6b3cc840d53471a00872602fcbb6ada22eaa94b08d25844d0ebd9da0",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/FilesEndToEndTests.swift"
+    },
+    "run/harness/InspectorEndToEndTests.swift": {
+      "sha256": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/InspectorEndToEndTests.swift"
+    },
+    "run/harness/IoEndToEndTests.swift": {
+      "sha256": "5efeea47f0e689e23e7051acc602989d369692d8c5f1e0ffaea0bf9d404255de",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/IoEndToEndTests.swift"
+    },
+    "run/harness/LogisimAccessibilityHarness.xcodeproj/project.pbxproj": {
+      "sha256": "89d340f8eabdd7a299db9bf1878c6c839d863943687bc63b890f694c68d48dd6",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/LogisimAccessibilityHarness.xcodeproj/project.pbxproj"
+    },
+    "run/harness/LogisimAccessibilityHarness.xcodeproj/project.xcworkspace/contents.xcworkspacedata": {
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/LogisimAccessibilityHarness.xcodeproj/project.xcworkspace/contents.xcworkspacedata"
+    },
+    "run/harness/LogisimAccessibilityHarness.xcodeproj/xcshareddata/xcschemes/AccessibilityHarness.xcscheme": {
+      "sha256": "483ff9e4c3fb16f9db48aac4c24d88cb9182028fdf3c6291d02383e2cd65379f",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/LogisimAccessibilityHarness.xcodeproj/xcshareddata/xcschemes/AccessibilityHarness.xcscheme"
+    },
+    "run/harness/LogisimEditorHarness.xcodeproj/project.pbxproj": {
+      "sha256": "76418e1e07acb2f4a170c7113d59a7aadf38a45052a9b59fd80fb903667ec6d3",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/LogisimEditorHarness.xcodeproj/project.pbxproj"
+    },
+    "run/harness/LogisimEditorHarness.xcodeproj/project.xcworkspace/contents.xcworkspacedata": {
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/LogisimEditorHarness.xcodeproj/project.xcworkspace/contents.xcworkspacedata"
+    },
+    "run/harness/LogisimEditorHarness.xcodeproj/xcshareddata/xcschemes/ClipboardReceiver.xcscheme": {
+      "sha256": "ec59d6cd3bbba2439866768d403479a341c828b6b8a489479ec7d7200fee5008",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/LogisimEditorHarness.xcodeproj/xcshareddata/xcschemes/ClipboardReceiver.xcscheme"
+    },
+    "run/harness/LogisimEditorHarness.xcodeproj/xcshareddata/xcschemes/EditorHarness.xcscheme": {
+      "sha256": "4ecc04904f81a7e72cc833e974e06f9dab752a3d207c3934a320a46f58a42b84",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/LogisimEditorHarness.xcodeproj/xcshareddata/xcschemes/EditorHarness.xcscheme"
+    },
+    "run/harness/NativeFilesDestinationNavigator.swift": {
+      "sha256": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/NativeFilesDestinationNavigator.swift"
+    },
+    "run/harness/NativeFilesPeerNavigator.swift": {
+      "sha256": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/NativeFilesPeerNavigator.swift"
+    },
+    "run/harness/NativeTextReplacement.swift": {
+      "sha256": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/NativeTextReplacement.swift"
+    },
+    "run/harness/NativeUIHarness.swift": {
+      "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/NativeUIHarness.swift"
+    },
+    "run/harness/ObservedProjectXML.swift": {
+      "sha256": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/ObservedProjectXML.swift"
+    },
+    "run/harness/PortableProjectEndToEndTests.swift": {
+      "sha256": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/PortableProjectEndToEndTests.swift"
+    },
+    "run/harness/PortableWorkspaceEvidence.swift": {
+      "sha256": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/PortableWorkspaceEvidence.swift"
+    },
+    "run/harness/Run.json": {
+      "sha256": "856c754f5cdbfb64e6a995d8b219af9681adaa0d1a6fecfa38a5c947d0561c41",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/Run.json"
+    },
+    "run/harness/TestInfo.plist": {
+      "sha256": "e6cd9afed36cf415a11bf9ebc7d01cbb46455929d10064649df8f7d7f5cbbf57",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/TestInfo.plist"
+    },
+    "run/harness/VisualExportEndToEndTests.swift": {
+      "sha256": "d5203b7ac8938a904d85f9d196549b28a2caddd9244c7d892ba87ea162e16752",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/VisualExportEndToEndTests.swift"
+    },
+    "run/harness/XmlDialogEndToEndTests.swift": {
+      "sha256": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/XmlDialogEndToEndTests.swift"
+    },
+    "run/harness/editor-actions-v1.json": {
+      "sha256": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/editor-actions-v1.json"
+    },
+    "run/harness/io-actions-v1.json": {
+      "sha256": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/io-actions-v1.json"
+    },
+    "run/harness/project.yml": {
+      "sha256": "2c389877b6766d84b8b3215f45abec477115d69b6077217617aae2827211f7cc",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/harness/project.yml"
+    },
+    "run/post-cleanup.json": {
+      "sha256": "c0986b993ee2113ea943899a481fa418c003b7123518aaeaf4348e65f1d36fa7",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/post-cleanup.json"
+    },
+    "run/results.json": {
+      "sha256": "5d8c3e54e2c1708575e93bca5c695b57f501c03b5a1e10730cfc117220e0b9b3",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/results.json"
+    },
+    "run/test.log": {
+      "sha256": "804b0b9a87bafc477c376d977ef1f26faf06e51e88540b843c26651a17735623",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/test.log"
+    },
+    "run/attachments/00146999-D2BE-45D0-8DA2-9FEE34A53BAF.txt": {
+      "sha256": "483195ac078d333416227d9076b9eacd66d769180336b7588829c3415f3bd3b2",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/00146999-D2BE-45D0-8DA2-9FEE34A53BAF.txt"
+    },
+    "run/attachments/0CBEB3B3-269B-42D9-9444-B5E3CAE9EA05.txt": {
+      "sha256": "17b89bfa784420aee11d9de007b9c3e06a908282e8ca1624bb2e9db0a1ae9c5d",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/0CBEB3B3-269B-42D9-9444-B5E3CAE9EA05.txt"
+    },
+    "run/attachments/DDD8CBCA-7049-45C8-8330-3CC732429155.txt": {
+      "sha256": "759a5414011a8bb2bedfe5d519373cc02533ea50d89eeb63e143e65ce1d50fee",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/DDD8CBCA-7049-45C8-8330-3CC732429155.txt"
+    },
+    "run/attachments/984059F0-BCEF-44F4-A6F0-E8DAC1777F0F.txt": {
+      "sha256": "71dd2b2e0b610def7a65bdc16e76ef539fa7737d066fecd73c6a8c9604c1b5de",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/984059F0-BCEF-44F4-A6F0-E8DAC1777F0F.txt"
+    },
+    "run/attachments/4AA26D67-33B9-4C31-9F05-C2E0BCD7B01E.txt": {
+      "sha256": "b3ce3969a5002cd66848ec5679a6ad6a8ccf154f0132802dc97d6324640bdaf4",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/4AA26D67-33B9-4C31-9F05-C2E0BCD7B01E.txt"
+    },
+    "run/attachments/B34CD282-B1A8-4D60-BE3E-E0C8B3C69F6F.txt": {
+      "sha256": "561a8556d6092e09a79bec1294c6d7293483c4c94b5bb486c6caf0e5d37a770a",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/B34CD282-B1A8-4D60-BE3E-E0C8B3C69F6F.txt"
+    },
+    "run/attachments/FA507047-8BBB-4AC1-9620-9595FAC975BF.txt": {
+      "sha256": "a719b3e67a9235929b201b8b44532ba18c2234eeb2b007458654fd4319bace47",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/FA507047-8BBB-4AC1-9620-9595FAC975BF.txt"
+    },
+    "run/attachments/9753EB4B-B885-4942-80B2-7C6C8D1A77EF.txt": {
+      "sha256": "5fe5b88ed3ff0c9be04d7a2966317cc6b4b03c53d435fd624b84ea58e94cc7af",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/9753EB4B-B885-4942-80B2-7C6C8D1A77EF.txt"
+    },
+    "run/attachments/4767281D-A53E-44D0-98CD-AAB9CE071956.txt": {
+      "sha256": "a71faebe1f8e188add6b68238bb97f8d41017946e9fd3e14974ebb3c448617c3",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/4767281D-A53E-44D0-98CD-AAB9CE071956.txt"
+    },
+    "run/attachments/FD3D9346-8F1F-4D35-983D-EA8FD4C0DDB6.txt": {
+      "sha256": "5851a6368277a48e119447e6310b390b431297d79aba219fed7f9bdbd681098f",
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/FD3D9346-8F1F-4D35-983D-EA8FD4C0DDB6.txt"
+    },
+    "source-tree/scripts/run-ios-e2e.py": {
+      "sha256": "90372e223b94910c2a67d83fa1dd24d0e9dfeeaa5d7faf15c98571af8597d174",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/run-ios-e2e.py"
+    },
+    "source-tree/scripts/run-ios-accessibility.py": {
+      "sha256": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/run-ios-accessibility.py"
+    },
+    "source-tree/scripts/ios_e2e_ui/IoEndToEndTests.swift": {
+      "sha256": "5efeea47f0e689e23e7051acc602989d369692d8c5f1e0ffaea0bf9d404255de",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/ios_e2e_ui/IoEndToEndTests.swift"
+    },
+    "source-tree/scripts/ios_native_ui/NativeTextReplacement.swift": {
+      "sha256": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/ios_native_ui/NativeTextReplacement.swift"
+    },
+    "source-tree/scripts/ios_native_ui/NativeUIHarness.swift": {
+      "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/ios_native_ui/NativeUIHarness.swift"
+    },
+    "source-tree/scripts/ios_e2e_ui/ObservedProjectXML.swift": {
+      "sha256": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/ios_e2e_ui/ObservedProjectXML.swift"
+    },
+    "source-tree/scripts/ios_e2e_ui/ClipboardReceiverUI.swift": {
+      "sha256": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/ios_e2e_ui/ClipboardReceiverUI.swift"
+    },
+    "source-tree/scripts/ios_e2e_ui/project.yml": {
+      "sha256": "2c389877b6766d84b8b3215f45abec477115d69b6077217617aae2827211f7cc",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/ios_e2e_ui/project.yml"
+    },
+    "source-tree/scripts/io_showcase_contract.py": {
+      "sha256": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:scripts/io_showcase_contract.py"
+    },
+    "source-tree/fixtures/user-scenarios/io-actions-v1.json": {
+      "sha256": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:fixtures/user-scenarios/io-actions-v1.json"
+    },
+    "source-tree/examples/io-showcase.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:examples/io-showcase.circ"
+    },
+    "source-tree/examples/io-showcase.targets.json": {
+      "sha256": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15",
+      "original": "git:7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5:examples/io-showcase.targets.json"
+    },
+    "postflight/summary.json": {
+      "sha256": "7d784d221591e1e5a514fcae5efa470874ac889af88faa166225729ee3a47681",
+      "original": "offline case-scoped audit of the archived manifest; no new native execution"
+    },
+    "postflight/testIoMomentaryControlsAndJoystick/attachment-manifest.json": {
+      "sha256": "08f7cf7dad7781a53bd52477834437027f68a85a13d706174b40a281bbf62a49",
+      "original": "offline case-scoped audit of the archived manifest; no new native execution"
+    },
+    "postflight/testIoDimensionChangesRemainExportable/attachment-manifest.json": {
+      "sha256": "f83cf812f2e69f883ae5073c688d72a707cc43d95f47a4bd7495893b0676dc6a",
+      "original": "offline case-scoped audit of the archived manifest; no new native execution"
+    },
+    "postflight/testIoKeyboardTtyAndCapacity/attachment-manifest.json": {
+      "sha256": "a6d9fbadf53d17539adbaeccf059cdd2b29d30682e2b1d3e1350e3c5387650c0",
+      "original": "offline case-scoped audit of the archived manifest; no new native execution"
+    },
+    "postflight/testIoDisplaySignalsAndNativeDrawing/attachment-manifest.json": {
+      "sha256": "b12e9605746045693b8ab3077a02896322585bddc3998e2a08876cdf251f6f99",
+      "original": "offline case-scoped audit of the archived manifest; no new native execution"
+    },
+    "independent-review.json": {
+      "sha256": "395c8d27b58ddd938704a4a589668ec68176d14dd7f589cfa9bcb8628f04eded",
+      "original": "/tmp/logisim-io44-portable-independent-review-001/independent-review.json"
+    }
+  },
+  "selectedVideoFrames": [
+    "dimensions-pts-38.905000.png",
+    "dimensions-pts-40.396667.png",
+    "dimensions-pts-40.701667.png",
+    "dimensions-pts-41.063333.png"
+  ],
+  "unarchivedLargeArtifacts": [
+    {
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/attachments/CD9D02E9-74A7-4661-83FF-9F625DCB1809.mp4",
+      "sha256": "090d2fb064a98a4bf10196c5843d6be4d1f46b550fe9c9cf230d9b6ceabb1d5f",
+      "size": 43960866,
+      "reason": "Selected already-extracted frames and source video metadata are archived; full stream remains in original raw. UTC/PTS association and app event delivery are not qualified."
+    },
+    {
+      "original": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-3a0a01f1-io44-b25-001/simulator.log",
+      "size": 138069062,
+      "reason": "Large process log excluded; exact test.log and terminal artifact/admission/cleanup receipts are archived."
+    }
+  ],
+  "limitations": [
+    "An archived XCTest synthesized event is an attempted automation event, not app delivery.",
+    "Three matching final snapshots do not establish values throughout the earlier assertion timeout.",
+    "No metadata was synthesized for the real XML capture.",
+    "No device, build, canonical runner or app was changed by this audit."
+  ],
+  "emptyWaitSnapshots": [
+    "00146999-D2BE-45D0-8DA2-9FEE34A53BAF.txt",
+    "0CBEB3B3-269B-42D9-9444-B5E3CAE9EA05.txt",
+    "DDD8CBCA-7049-45C8-8330-3CC732429155.txt",
+    "984059F0-BCEF-44F4-A6F0-E8DAC1777F0F.txt",
+    "4AA26D67-33B9-4C31-9F05-C2E0BCD7B01E.txt",
+    "B34CD282-B1A8-4D60-BE3E-E0C8B3C69F6F.txt",
+    "FA507047-8BBB-4AC1-9620-9595FAC975BF.txt",
+    "9753EB4B-B885-4942-80B2-7C6C8D1A77EF.txt",
+    "4767281D-A53E-44D0-98CD-AAB9CE071956.txt",
+    "FD3D9346-8F1F-4D35-983D-EA8FD4C0DDB6.txt"
+  ]
+}

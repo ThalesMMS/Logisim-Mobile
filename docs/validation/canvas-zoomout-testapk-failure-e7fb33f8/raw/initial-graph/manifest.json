@@ -1,0 +1,23 @@
+{
+  "status": "DRY_RUN_PASS",
+  "scope": "Task graph only; no task execution or APK assembly",
+  "argv": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "./gradlew",
+    ":androidApp:assembleE2eAndroidTest",
+    "-PandroidTestBuildType=e2e",
+    "-Pkotlin.incremental=false",
+    "--console=plain",
+    "--dry-run"
+  ],
+  "source": "e7fb33f8d76c6ec8bc7a7046e7c252fb9386d630",
+  "startedUtc": "2026-11-05T10:19:17.314361+00:00",
+  "androidHome": "/Users/thales/Library/Android/sdk",
+  "exitCode": 0,
+  "elapsedSeconds": 2.021955625008559,
+  "endedUtc": "2026-11-05T10:19:19.336900+00:00",
+  "sourceAfter": "e7fb33f8d76c6ec8bc7a7046e7c252fb9386d630",
+  "statusAfter": "",
+  "logSha256": "ddf9fa8b82d13fbd5b10294e792150eace53900b5cb4293cafbd664e6e311f97"
+}

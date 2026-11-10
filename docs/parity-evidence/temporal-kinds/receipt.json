@@ -1,0 +1,77 @@
+{
+ "schema_version": 1,
+ "description": "Per-component temporal sweep receipt (scripts/oracle/temporal-kinds/run.sh). Each suite records the Mobile revision and the JAR used for the run.",
+ "evolution": {
+  "revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "jar": "logisim-evolution-5.1.0dev-all.jar",
+  "jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+  "note": "SHA-256 of the JAR in build/libs in the Evolution d58a61e0 checkout, built at 06:09 -0300 on 2026-11-07 using JDK 21.0.13. The receipts were committed at 08:44 -0300. The hash was read from the JAR during receipt conversion on 2026-11-07 because the sweep README omitted it."
+ },
+ "environment": "macOS on Apple silicon, JDK 21.0.13",
+ "suites": [
+  {
+   "id": "default",
+   "artifact": "docs/parity-evidence/temporal-kinds/default.tsv",
+   "artifact_sha256": "db5d78c873f0f3fbb05b6a78b823690a3d19b888eb39b3c1cff8087d5dbe2d94",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "scripts/oracle/temporal-kinds/run.sh EVOLUTION_JAR WORK/default CORE_JAR (python3 scripts/parity_matrix.py reverify temporal-kinds --suites default)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "variants",
+   "artifact": "docs/parity-evidence/temporal-kinds/variants.tsv",
+   "artifact_sha256": "85300e778cad5d82bb06205f001c61bc5d550c8efea35ce0522248e86e883873",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "scripts/oracle/temporal-kinds/run.sh --variants EVOLUTION_JAR WORK/variants CORE_JAR (python3 scripts/parity_matrix.py reverify temporal-kinds --suites variants)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "negative",
+   "artifact": "docs/parity-evidence/temporal-kinds/negative.tsv",
+   "artifact_sha256": "52a71d6aeaedab3bbe086c5daa2e6213bba7e4415d4ebd65c3f49885f1a53b87",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "scripts/oracle/temporal-kinds/run.sh --variants --negative EVOLUTION_JAR WORK/negative CORE_JAR (python3 scripts/parity_matrix.py reverify temporal-kinds --suites negative)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "pairs",
+   "artifact": "docs/parity-evidence/temporal-kinds/pairs.tsv",
+   "artifact_sha256": "e66fa201ac971c5e215a8757f78507d71443bcd451d0056a886a742167a3d5ba",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "scripts/oracle/temporal-kinds/run.sh --pairs 6 EVOLUTION_JAR WORK/pairs CORE_JAR (python3 scripts/parity_matrix.py reverify temporal-kinds --suites pairs)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "roundtrip",
+   "artifact": "docs/parity-evidence/temporal-kinds/roundtrip.tsv",
+   "artifact_sha256": "c905018434e551409dbed4f8ca359d4252922c4f439201be1829e83ecb584241",
+   "modes": [
+    "settle"
+   ],
+   "command": "ResaveDesktop WORK/variants/fixtures, then TemporalCorpusCli settle on each <id>.desktop.circ against the Evolution trace for the original (python3 scripts/parity_matrix.py reverify temporal-kinds --suites roundtrip)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  }
+ ]
+}

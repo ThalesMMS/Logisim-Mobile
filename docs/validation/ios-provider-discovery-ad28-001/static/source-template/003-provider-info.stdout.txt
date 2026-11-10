@@ -1,0 +1,18 @@
+     1	<?xml version="1.0" encoding="UTF-8"?>
+     2	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+     3	<plist version="1.0"><dict>
+     4	    <key>CFBundleDevelopmentRegion</key><string>en</string>
+     5	    <key>CFBundleDisplayName</key><string>Logisim Revocation Fixture</string>
+     6	    <key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string>
+     7	    <key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+     8	    <key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+     9	    <key>CFBundlePackageType</key><string>XPC!</string>
+    10	    <key>CFBundleShortVersionString</key><string>1.0</string>
+    11	    <key>CFBundleVersion</key><string>1</string>
+    12	    <key>NSExtension</key><dict>
+    13	        <key>NSExtensionPointIdentifier</key><string>com.apple.fileprovider-nonui</string>
+    14	        <key>NSExtensionPrincipalClass</key><string>$(PRODUCT_MODULE_NAME).RevocationFileProvider</string>
+    15	        <key>NSExtensionFileProviderDocumentGroup</key><string>group.thalesmms.logisim.validation.revocationfixture</string>
+    16	        <key>NSExtensionFileProviderSupportsEnumeration</key><true/>
+    17	    </dict>
+    18	</dict></plist>

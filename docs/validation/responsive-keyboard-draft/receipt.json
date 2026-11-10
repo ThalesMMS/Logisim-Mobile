@@ -1,0 +1,560 @@
+{
+  "baseCommit": "71999e3fcd358625026e77b3dea994a97f395b5d",
+  "native": "NOT_RUN",
+  "fullCommand": "ANDROID_HOME=/Users/thales/Library/Android/sdk python3 /tmp/logisim-gradle-serial.py ./gradlew :composeApp:testAndroidHostTest -Pkotlin.incremental=false --console=plain",
+  "focusedCommand": "ANDROID_HOME=/Users/thales/Library/Android/sdk python3 /tmp/logisim-gradle-serial.py ./gradlew :composeApp:testAndroidHostTest --tests \"*KeyboardInspector*Test\" --tests \"*KeyboardInputCallbackTest\" --tests \"*PropertyInspector*Test\" --tests \"*KeyboardDraftRuntimeTest\" -Pkotlin.incremental=false --console=plain",
+  "fullOutcome": "FAILED",
+  "hostTests": {
+    "suites": 93,
+    "tests": 552,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0
+  },
+  "scopeTests": {
+    "suites": 6,
+    "tests": 41,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "finalFailures": [
+    "ExternalIoRuntimeBridgeHttpTest.recreatedSessionPreservesTheFirstReceivedBatchAfterLifecycleCleanup: TimeoutException",
+    "ExternalIoRuntimeBridgeHttpTest.editorExchangesBytesAndRemovalReleasesAPausedRealListener: TimeoutException"
+  ],
+  "pause": "No rerun or investigation after the user requested pause.",
+  "firstFocusedTests": {
+    "suites": 5,
+    "tests": 36,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0
+  },
+  "secondFocusedTests": {
+    "suites": 6,
+    "tests": 39,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "intermediateFullCompileFailure": "full-004: source was edited during compilation; newer host tests referenced canRequestLabelFocus before the main artifact included it. full-005 started after source freeze.",
+  "firstFailure": "Test wait observed status0 and the text already echoed before ack. It now waits for the full acknowledged TextFieldValue before asserting cursor and composition.",
+  "firstJunitMembers": [
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardDraftRuntimeTest.xml",
+      "bytes": 1634,
+      "sha256": "7c300f531c3b61b355e6880ac942d6a68d242a2e333957033fdb097f461db2a5"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardInputCallbackTest.xml",
+      "bytes": 1468,
+      "sha256": "48e9cc6d6bc8ee190b4d481b4e2790d7d889f25f62c63c0dc6fbe8cc22428056"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardInspectorRuntimeTest.xml",
+      "bytes": 7955,
+      "sha256": "4e0e62b29c2d1b56f24756641c8bafd8c919efe1d6eb1561837d6cefe09f80fe"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PropertyInspectorRuntimeTest.xml",
+      "bytes": 945,
+      "sha256": "7edd4ec9aea3e48ee4365187a36499240f36ae13764b09739caa33d5fa6bfbf5"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PropertyInspectorSessionTest.xml",
+      "bytes": 2721,
+      "sha256": "8351c55aa6d6b4e5c3a0a550bffbd4a59e243a6fddd42767084efd9506937bd1"
+    }
+  ],
+  "junitMembers": [
+    {
+      "path": "TEST-dev.logisim.mobile.AccessibilityContextOwnershipTest.xml",
+      "bytes": 1653,
+      "sha256": "01422153818f069abdd47182f063f48fbaf5cd8513a7fa66d79fd826d9941f6d"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.AdditionalEditorToolsTest.xml",
+      "bytes": 2305,
+      "sha256": "07d27b64cfa6dfc7f691411f5bfed887c5e26c25254b903515ac3b063d8fd701"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.AndroidAssetFilePolicyTest.xml",
+      "bytes": 1476,
+      "sha256": "ea67c7f522203b5e1ff7d8a36aab73bb1a2724edee2b53d59858af79677060b9"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.AndroidDirectoryTreeTest.xml",
+      "bytes": 3327,
+      "sha256": "b3a2918891866b8970afd8e06eb0ddb0a987a4cea57c44c0cb2a894628cbaa57"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.AndroidDocumentLocalizationTest.xml",
+      "bytes": 804,
+      "sha256": "6e71a618309a54220d4b673c396d0f9e7fea8484762197d53c7a7a2132d05aa9"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.AppearanceHitTestingTest.xml",
+      "bytes": 1216,
+      "sha256": "7aaa50bcfee96b92d4d7b695c80314afbc16d9b3dcc21a7798c4ca0a97f72521"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.BuiltInEditorToolsTest.xml",
+      "bytes": 1509,
+      "sha256": "b1ffb57bf6f197f7439fc8fc431c613050b1402fbc25a4e0964f3ef530061751"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CanvasGridPlanTest.xml",
+      "bytes": 750,
+      "sha256": "7339de5931ad60751b353e16cbf12ab1c498355e44a70fd74785eb1b865adcc1"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CanvasInteractionTest.xml",
+      "bytes": 1657,
+      "sha256": "081859057eca201068ec50b783851a5ca7220b0732aa92e8fd613b0b7d821991"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CanvasWindowFocusTest.xml",
+      "bytes": 902,
+      "sha256": "6bd95a8bc76f4c70575ce0060a9da7c87c04b00d29d6098843318a38771f82b0"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CanvasWireEditingTest.xml",
+      "bytes": 1192,
+      "sha256": "ab4c04a58daa9b3d3044e9351c20b3356efe4f429607af4bd52e1e77fe9fbb00"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CatalogReferenceRestorationTest.xml",
+      "bytes": 818,
+      "sha256": "c713065cd8005628fb39990e4c5a9e154ab16892e3233850beb7112ade8c238c"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CatalogWorkspaceBindingTest.xml",
+      "bytes": 2869,
+      "sha256": "d870dd41ae67715329f1a37a6b00cda78cdcd2c2004a56cb54340894388f2ec9"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CatalogWorkspaceRuntimeTest.xml",
+      "bytes": 1941,
+      "sha256": "a6f8a899ee984d3bb9ec20d71200d51760b4c070cfbee7f80fe328aba7bd437d"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CircuitAccessibilityModelTest.xml",
+      "bytes": 2359,
+      "sha256": "9f14a9f8391c106bc80f2d087692f6757c565cf9ece69b0c446306dd37948f0e"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CircuitAccessibilityViewportTest.xml",
+      "bytes": 953,
+      "sha256": "54a29fb1518db20d2d206e7da90b1367be2a9df66837740d9eb588503472603b"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CircuitDrawingTest.xml",
+      "bytes": 1350,
+      "sha256": "bb5ad4ee8ae879eea2a2eb7a13c675ba7d1c6ffc424c1a88829f9d50a7af4e40"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CircuitLabelViewportTest.xml",
+      "bytes": 1227,
+      "sha256": "048453efd86605af1ce8a059595bdb73a07d7e764004f620aa6206944ab0d63d"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CircuitViewportTest.xml",
+      "bytes": 2232,
+      "sha256": "b36700510a7e095e44a97a64169b83ae4cbe987f42b1499a73faecac1bf12688"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.CompanionPairingLocalizationTest.xml",
+      "bytes": 1137,
+      "sha256": "f56f6cd2b49b552bdf8f75d91c9efe781fd51b133336988971ed1a76434a3e8d"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.DiagnosticLocalizationTest.xml",
+      "bytes": 639,
+      "sha256": "6fdd7b5c6918d634357171ea2a0b380ab052c38e9c7a609418c8ac308ef4ed53"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.DiagnosticNavigationTest.xml",
+      "bytes": 803,
+      "sha256": "524f8fa6932c65909b941513a0ed05de1e9b282dbe122f31eba40c9b8357f98d"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorDipPersistenceTest.xml",
+      "bytes": 1887,
+      "sha256": "8ad019115975a4c28ed44285a583fe148ad34e1fef0a9a0c2c9c23a43934aff4"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorDocumentsTest.xml",
+      "bytes": 1854,
+      "sha256": "33701d2279d857e5b016953f5e3193ce8f6c3ed412d7f589a82a8712b7be745f"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorExampleLoaderTest.xml",
+      "bytes": 771,
+      "sha256": "03d0f3d622225a8e1f840f11fe270df5df3f5421949241a2ef0d8c76d4a3290e"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorExampleLoadingTest.xml",
+      "bytes": 642,
+      "sha256": "0bef258ec57a45d22fcd72fa92532be9075790c23ba26c8a9c7e5e9670ae5298"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorImportLoaderTest.xml",
+      "bytes": 1052,
+      "sha256": "6925517e10601d0016b0d4a0633fcb54ac133969fa8cc2dd9f067a5f2a63d6cb"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorImportReportTest.xml",
+      "bytes": 782,
+      "sha256": "91bbdc1a1d26d7cb2a480f9bb21fdd37cad9d3ff1f6636ab33c5c47c414a2d9a"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorInitializationTest.xml",
+      "bytes": 957,
+      "sha256": "56af9c6f1aedbf2bae4957d84cc0bc3673aacece01585b526831dba73bcb1896"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorInteractionGateTest.xml",
+      "bytes": 637,
+      "sha256": "9746b1d79538efb3ddc16f7a5ea2627e354509025a2f51b0475035060ca9ac42"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorIoInteractionGateTest.xml",
+      "bytes": 800,
+      "sha256": "6d7e6f85223c5e60df974dbf55616c9a67e36db113583cbd44080ae35264e4f5"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorLocalizationTest.xml",
+      "bytes": 935,
+      "sha256": "2b439fd6d7ded5618f4cbff3808c48d93ac81eb92561d21477c8cc7b156e76d8"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorPreferencesTest.xml",
+      "bytes": 1895,
+      "sha256": "ef3570b28adbba490f8ecb7e96e22fcf39ed450c495f33bcd8f4f16e387959dc"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorProjectAccessTest.xml",
+      "bytes": 782,
+      "sha256": "0c3d9dc15fc98dec1fdefbc6eb2a49ee684a4dc896be7f85475a7a3f3acd9e92"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorRegistryIntegrationTest.xml",
+      "bytes": 517,
+      "sha256": "97caa14ca343d5d87ffea40d91f93065d2345dad558424d12df701d180e88d14"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorSearchCommandsTest.xml",
+      "bytes": 658,
+      "sha256": "3b40a51f51e2733bfc21de18d04a1efdbe4de117fc0c368fd257a973e6116708"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorSelectionTest.xml",
+      "bytes": 753,
+      "sha256": "df01fcd4b5a1d83022337d2aa35bed2b274e38ffde7cc77281c3672b1dddc3c0"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorSessionControlTest.xml",
+      "bytes": 922,
+      "sha256": "4363e8343ea2f2fb75096ac8ff44a2879b6f117af5011d59c456f68b7af3e5fc"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorSimulationQueueTest.xml",
+      "bytes": 671,
+      "sha256": "d604e317ec98ccfa62966a19a6ac74feeca14c8285d064347abe1358fd986955"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorStateTest.xml",
+      "bytes": 1009,
+      "sha256": "0a4c191385803c348cf074b22c82ff63d2a17d7b73e7945a4636fbaa2d629cab"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorToolActionsTest.xml",
+      "bytes": 1040,
+      "sha256": "729139183a7e4045bc78df35c53e71488abb21b74a4c3eb1c37436d6af0dd482"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorToolbarLayoutTest.xml",
+      "bytes": 1315,
+      "sha256": "52a060e0aa18764d77f8f1275856b01a8b7a4f2866a28605166f34ca3c5160d1"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorViewportStateTest.xml",
+      "bytes": 801,
+      "sha256": "9d52e04be9c2ec7c36d4dadc52988aa189c55ca351a0f5d88cd54573ac5c166b"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.EditorWireActionsTest.xml",
+      "bytes": 495,
+      "sha256": "2bdea234bedfdf79c1976a02af2b547731e02085c79ceee35977b4478e96e531"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ExampleResetDriverTest.xml",
+      "bytes": 490,
+      "sha256": "99429d523008633129324067ae3b7014f34ecc009430aa23d8e41b24818e37b8"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ExternalIoRendererTest.xml",
+      "bytes": 1178,
+      "sha256": "09f430ad0be2f08f79889261b15641d94d4f2b9ce68f0be7a1a491d4d2de16a1"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ExternalIoRuntimeBridgeHttpTest.xml",
+      "bytes": 11928,
+      "sha256": "df87df26bd49d177490f75af9a4914fa4ebdecca54db9478a68b4c8eb0faf148"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ExternalIoRuntimeBridgeTest.xml",
+      "bytes": 3000,
+      "sha256": "1ae63c3c0f7caaea821d16bedabc18aaf86e7adfce23486e396ce72927ff9526"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ExtraIoAudioSessionTest.xml",
+      "bytes": 1324,
+      "sha256": "b9b4b577d74431e0f4db72fabbe24a2ba834cd81372fe2f42bbd2c4c74a2f08c"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ExtraOscilloscopeRendererTest.xml",
+      "bytes": 1186,
+      "sha256": "e392ea617e2190cbdc2bf10d9903ad09651c40f1827cad9e8f8d06eb91b4255e"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.FpgaClockMappingTest.xml",
+      "bytes": 757,
+      "sha256": "f87a95064ba4d5428b6402d4495016491b83340cd88f2aafd01acc3b78ad1d36"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.FpgaCompanionSessionTest.xml",
+      "bytes": 1053,
+      "sha256": "b3c1c95f6b331dc8a0258e9a866eaab1ad1835cf55d6ef17c25c7d32caf362ef"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.FpgaProgramSessionTest.xml",
+      "bytes": 1428,
+      "sha256": "ca607121ab404f7af1ced23333e9eedf449e475977894c4dcec78a7117f671fb"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.HdlGraphExportBoundaryTest.xml",
+      "bytes": 783,
+      "sha256": "afda2c7854155f9a137dcffd7355532c6ec6d2650140e29ee2994c8f1b3c6475"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.HelpContentTest.xml",
+      "bytes": 1046,
+      "sha256": "7d858e10c15306055a2a03495def3bc487e693062abce4fdb56730cd0d19c7ae"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ImportedSimulationInitializationTest.xml",
+      "bytes": 1172,
+      "sha256": "64f2cca60bb2030e6d76bceb11ff42048ed710aed2643127ab17b12df07d26e6"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.InactiveImportedSimulationTest.xml",
+      "bytes": 2525,
+      "sha256": "7bda376d228e0d824230b4fa7f27f7047a4e43e83ed6a9c2ff07223ace48ce94"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.IoStateDescriptionsTest.xml",
+      "bytes": 2453,
+      "sha256": "4efcd1ccacc99bad9cac429b48fc28308dce006c5ce79ff8b6e78ebb18908487"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardDraftRuntimeTest.xml",
+      "bytes": 1632,
+      "sha256": "8469d708130fc0404c8e8cbdc6c642943f280620e6b5f7057803d579bec42d87"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardInputCallbackTest.xml",
+      "bytes": 1468,
+      "sha256": "f08189c69173a68b2c696f262994d92627f15015da5356bbaf698b1bd97e0240"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardInspectorRuntimeTest.xml",
+      "bytes": 970,
+      "sha256": "f7ee8c2e204583b20b79eb78ed53350da88f141af213f2d3fb9b721fdebd64ed"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardInspectorSessionTest.xml",
+      "bytes": 1142,
+      "sha256": "653770d817662752489f0e720f7b3c10a7521b28210d96a84defe6985a445af8"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.KeyboardShortcutPolicyTest.xml",
+      "bytes": 1175,
+      "sha256": "c28473e75cfd17f3a76029fde8283a221b277849bc17f9b5027182c001f7d9da"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.LegalNoticeContentTest.xml",
+      "bytes": 618,
+      "sha256": "1b1322866b93b96d63de9b139690f47b21c234bc1c20d2eb0cd42fb07f5467d1"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.LegalNoticeLocalizationTest.xml",
+      "bytes": 636,
+      "sha256": "ddba31387af5262bd0840fd732d15a9cc8115835bd5dcc5552a20a00404d5b79"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.MemoryToolLocalizationTest.xml",
+      "bytes": 611,
+      "sha256": "5689ae0f12c60a20afe4e0f9d89f5433ece42fed6dd902caba460125bb853aaa"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.NativeImportLifecycleTest.xml",
+      "bytes": 519,
+      "sha256": "3e3c16f561488395857bea260d6dd04609008544fce501d0fe550a0d53afdbff"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.NativeMemoryImageActionsTest.xml",
+      "bytes": 2220,
+      "sha256": "a396495fec19399a3e1c893cf7323e95402b203291bb24ca7e07dc63f4e30f72"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PortableProjectModelTest.xml",
+      "bytes": 2442,
+      "sha256": "ccf2de91bb792da7dd6c8117d3f4b92a973f10a48b01463fd99e7cd71da6cacc"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PortableProjectWorkspaceBridgeTest.xml",
+      "bytes": 1472,
+      "sha256": "1ba4d338e2b606a0dc824b048d308bf716bd6be3353790e5618e06623b834228"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PreferencesLocalizationTest.xml",
+      "bytes": 803,
+      "sha256": "8236783e086e8b398a8fe60102e4123690567f214e6176c06692b8767fa54ee7"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PreferencesRunIsolationTest.xml",
+      "bytes": 509,
+      "sha256": "e1504676c6b2ca45ef8ec5638e9462c8d5a7ca5ab1887d2d4219dd895762a948"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ProjectEditorStateTest.xml",
+      "bytes": 1287,
+      "sha256": "57c5ba2a56841dee1d9ff64a976851c78a58615e7dcc2dd743dfe6d670eee158"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ProjectGraphExportPolicyTest.xml",
+      "bytes": 928,
+      "sha256": "0b79fc89f2654747af559993f1fb528694859c63ac46b7647b27cb94a1adfa1b"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ProjectManagementTest.xml",
+      "bytes": 761,
+      "sha256": "4bced5b6ad9540d738a6d67587a7fe7e8a918b037b8b06d1e1f4bed6c6014891"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ProjectNavigationTest.xml",
+      "bytes": 757,
+      "sha256": "f4f058f1612c060fc3269a0de0640f2bc715074a726195a0702ca868a42ba1a6"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ProjectSearchTest.xml",
+      "bytes": 1026,
+      "sha256": "778d3b0dc6786252cc5f98efbcf45563b078d5b424b5c0bf2d0306aa096191df"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PropertyEditorModelTest.xml",
+      "bytes": 1582,
+      "sha256": "dbac0f1fb202e184c4169b5a76bb58a20dd436737b4afb914e01356710a5fda7"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PropertyInspectorRuntimeTest.xml",
+      "bytes": 946,
+      "sha256": "719d0b6ba49a2d0c000a4862a5ff7cb50ab95d042fd0b2375eb715b3c9c05426"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PropertyInspectorSessionTest.xml",
+      "bytes": 2717,
+      "sha256": "63f5f9b59f02b030650c334db9edfcc222914aa8a1c4cec729b73473dd025ec2"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.PropertyLocalizationTest.xml",
+      "bytes": 786,
+      "sha256": "72ff98753893b62b4abc7c75860f3603f44ba287787b5446a922ee586804f6af"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.ReferencedCircuitEditingTest.xml",
+      "bytes": 1911,
+      "sha256": "6e8717da006e8c04e57c8732bdb9d6c541a2c108b83093b810c0af0c9d7580a3"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.RejectedInitialDocumentTest.xml",
+      "bytes": 962,
+      "sha256": "7b64a9b6622569ba07c0e5260d3006d2f60c5b43eb34d536511a8cc6e814bdfb"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.RendererIECTest.xml",
+      "bytes": 1134,
+      "sha256": "891595269bb4329100a9314cf5cfd1c2559ce69a6e248223edd06fc200045836"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.RuntimeSimulationRequestTest.xml",
+      "bytes": 1427,
+      "sha256": "78bbb178dba4cd1c8143550d5648a6d19265a8a53bb8d2eec95477aa2127ff7b"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.SimulationEditorDriverTest.xml",
+      "bytes": 1250,
+      "sha256": "d2eef1ec6c784dcbd41b81da6760b849b4b36bbda1a4af54189fe0ded19158ab"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.SimulationRunControllerTest.xml",
+      "bytes": 2391,
+      "sha256": "fdaa316f51212e3125ed4697453bcd5a25936a44bfdd58e2e09f88a0de7c3a43"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.TraceToolEventTest.xml",
+      "bytes": 474,
+      "sha256": "c888294dcbfe40e370061783b6779fa9f6866c2da43deb5326f9d901e8c5f01f"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.TypedAttributeEditingTest.xml",
+      "bytes": 773,
+      "sha256": "f408c7300998e29fad30de83029bb26975b8afbf37fc1f13e5a895ba66603a6c"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.VisualExportBackgroundTest.xml",
+      "bytes": 488,
+      "sha256": "2c5a1d83db6a3e93e40e1c6ceae5e1fe4dbb7f9d3216c34006068f80335c7733"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.VisualExportToolsTest.xml",
+      "bytes": 1022,
+      "sha256": "efbfcc71231067cbf3454fbb6d4ff841e552869d41cfb12eb2077cf411c80fb8"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.WorkspaceDocumentLinksTest.xml",
+      "bytes": 797,
+      "sha256": "25638e008461bbdb558279447f356fe1c6531e135cd8d01213b3e64505dd874a"
+    },
+    {
+      "path": "TEST-dev.logisim.mobile.WorldDrawingTextTest.xml",
+      "bytes": 499,
+      "sha256": "24a4f54231131d0dfd914b2d2ec0814e7ec89070aafc1e201fb953003f85f070"
+    }
+  ],
+  "sourceHashes": {
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt": "d821856d12aa6bf7acd34400ed145b819adbbaffd787c3903cb225020f92dea4",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoInputPanel.kt": "a0fb5549b6854e66db2e84e95c2711c6dbdc17acd11bcf18e803639f7c67f39c",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/KeyboardInspectorSession.kt": "822ac40ecf255278fc8397a4fbde4b17488f183a997ebda80d3216d34487d8a0",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/KeyboardInputDraft.kt": "47c0778e7febd23c7bb43db88f7a0ee1d62d97253f92b8caaba7280eed619d1b",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/InspectorFocusState.kt": "6c058af006340cd350f6f90dd3664afcb4f25b93bbaa559c09696911cd4e6fbf",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PropertyInspectorSession.kt": "2d5f786cdcfff35c761b16c83f2f28bb46dfd2b4aa8fb99c4bb1b04bc2dbac9f",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TypedPropertyInspector.kt": "7326fbde5ceb4fbb1eba8c353ca5cbbb45dc93074c25198a29aeb7c392d7390b",
+    "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/KeyboardInspectorRuntimeTest.kt": "642433a0853a5a67b2e898faa86441f22e67eadbe0ccd22df5e3b0f06bb42a69",
+    "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/KeyboardInputCallbackTest.kt": "cf3d219ca1852388e974bbf25e84f1b73fc4ed15a4cca572d2ba90ab13dcde34",
+    "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/KeyboardDraftRuntimeTest.kt": "7cbe8c97503fee21e71796ce36ebbd7af742f7cdbac1dc29a8199676ce15ef94",
+    "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/PropertyInspectorRuntimeTest.kt": "809c2e9b25fb95cf9d8f598cbbde89c65e9d7372c50ad41dea3f91a2cc95255e",
+    "composeApp/src/commonTest/kotlin/dev/logisim/mobile/KeyboardInspectorSessionTest.kt": "90a67d268e1761706da369ca4e1bb7d69dd485f4f2d0c36d33c4d3765076f79a",
+    "composeApp/src/commonTest/kotlin/dev/logisim/mobile/PropertyInspectorSessionTest.kt": "ad32c3b14250766ccdec66227cf0887edf2de3b303d0f1e96081beb33a8959ac"
+  },
+  "sourceHashTiming": "Post-run only; no pre-run hash snapshot is claimed.",
+  "keyboardInputDraftUnchangedFromBase": true,
+  "sourceReview": "No remaining source blockers. Real Native focus, IME, and visibility are not qualified.",
+  "checks": [
+    "python3 scripts/check-source.py",
+    "python3 scripts/generate-localization.py --check",
+    "python3 scripts/test-localization.py",
+    "git diff --check"
+  ]
+}

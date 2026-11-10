@@ -1,0 +1,199 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "\n📱 List Simulators\n\niOS Simulators:\n\n  iOS 27.0:\n\n    📱 [✗] iPhone 18 Pro (Shutdown)\n      UDID: D695B3C0-B865-4050-A21F-047AFFB2D492\n\n    📱 [✗] iPhone 18 Pro Max (Shutdown)\n      UDID: AE491EF9-2695-48BB-8D43-5AA8770209E6\n\n    📱 [✓] iPhone 17e (Booted)\n      UDID: 20A4D87D-A2A6-46BD-A889-C4888CE1E152\n\n    📱 [✗] iPhone Air (Shutdown)\n      UDID: 21B35CAF-C325-4CE7-8ACA-3613AF7BF18B\n\n    📱 [✗] iPhone 17 (Shutdown)\n      UDID: 36AF1D6B-B559-4C34-872E-307DF8BF2E66\n\n    📱 [✗] iPad Pro 13-inch (M5) (Shutdown)\n      UDID: 43F4C27C-C6F9-46DB-9CCE-2DF513391D32\n\n    📱 [✗] iPad Pro 11-inch (M5) (Shutdown)\n      UDID: EFC1402B-5511-40D9-8A21-359172F886AB\n\n    📱 [✓] Logisim IO44 3a Fresh M5 (Booted)\n      UDID: 52FE332B-03C2-45FC-95A4-D048C9B26BE9\n\n    📱 [✓] Logisim IO44 Dimensions M5 (Booted)\n      UDID: 32AB2376-28FA-4DF3-BA0B-A79A1A71A593\n\n    📱 [✓] Logisim SaveAs Beta iPad 27.0 (Booted)\n      UDID: B25F12A5-62D8-4E9E-964E-96519DB6FB69\n\n    📱 [✓] LogisimUIKitDocumentControl (Booted)\n      UDID: AD28C68F-21D3-4FA6-BCD7-383AE2A1D372\n\n    📱 [✗] iPad mini (A17 Pro) (Shutdown)\n      UDID: 0F84CE20-286D-4250-98A4-B0FCD7454368\n\n    📱 [✗] iPad Air 13-inch (M4) (Shutdown)\n      UDID: AD4BCD96-2838-422B-BBF0-7747436C5F06\n\n    📱 [✗] iPad Air 11-inch (M4) (Shutdown)\n      UDID: 3E546488-93FB-4A25-A1BA-A230FA23BAC0\n\n    📱 [✗] iPad (A16) (Shutdown)\n      UDID: 2F63D01D-EACA-46D1-81C0-4FC8BA18E3FF\n\n  iOS 27.1:\n\n    📱 [✗] iPhone Duo (Shutdown)\n      UDID: E080E673-6049-4238-A73D-7507A40EAE4A\n\n    📱 [✗] iPhone Duo (Shutdown)\n      UDID: AA1E9DE5-C242-4D32-96CB-D4202136430B\n\nvisionOS Simulators:\n\n  xrOS 27.0:\n\n    🥽 [✗] Apple Vision Pro (Shutdown)\n      UDID: 7080141C-4628-4946-B5F6-13191A81BEA4\n\nwatchOS Simulators:\n\n  watchOS 27.0:\n\n    ⌚️ [✗] Apple Watch Series 12 (46mm) (Shutdown)\n      UDID: 2935AE18-BCA2-4C0F-B73B-C424F919CE48\n\n    ⌚️ [✗] Apple Watch Series 12 (42mm) (Shutdown)\n      UDID: 26ABAFE1-7267-40DD-AE80-8C7ED7E555C4\n\n    ⌚️ [✗] Apple Watch Ultra 4 (49mm) (Shutdown)\n      UDID: 51A02D0A-DDD0-438B-8513-596175D5C0DA\n\n    ⌚️ [✗] Apple Watch SE 3 (44mm) (Shutdown)\n      UDID: 73C0BDEC-390D-487E-A288-273130917E37\n\n    ⌚️ [✗] Apple Watch SE 3 (40mm) (Shutdown)\n      UDID: F5BD9B74-C040-474E-A11F-A4FD67CC7F4A\n\ntvOS Simulators:\n\n  tvOS 27.0:\n\n    📺 [✗] Apple TV 4K (3rd generation) (Shutdown)\n      UDID: 2A126C04-17E0-4E75-8C5B-458BDED466E3\n\n    📺 [✗] Apple TV 4K (3rd generation) (at 1080p) (Shutdown)\n      UDID: 17F05CAD-58FD-4D9B-B83C-F040B1351B94\n\n✅ 25 simulators available (17 iOS, 1 visionOS, 5 watchOS, 2 tvOS).\n\nHints\n  Use the simulator ID/UDID from above when required by other tools.\n  Save a default simulator with session-set-defaults { simulatorId: 'SIMULATOR_UDID' }.\n  Before running boot/build/run tools, set the desired simulator identifier in session defaults.\n\nNext steps:\n1. Boot a simulator: boot_sim({ simulatorId: \"UUID_FROM_ABOVE\" })\n2. Open the simulator UI: open_sim()\n3. Build for simulator: build_sim({ scheme: \"YOUR_SCHEME\", simulatorId: \"UUID_FROM_ABOVE\" })\n4. Get app path: get_sim_app_path({ scheme: \"YOUR_SCHEME\", platform: \"iOS Simulator\", simulatorId: \"UUID_FROM_ABOVE\" })\n"
+    }
+  ],
+  "structuredContent": {
+    "schema": "xcodebuildmcp.output.simulator-list",
+    "schemaVersion": "2",
+    "didError": false,
+    "error": null,
+    "data": {
+      "simulators": [
+        {
+          "name": "iPhone 18 Pro",
+          "simulatorId": "D695B3C0-B865-4050-A21F-047AFFB2D492",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPhone 18 Pro Max",
+          "simulatorId": "AE491EF9-2695-48BB-8D43-5AA8770209E6",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPhone 17e",
+          "simulatorId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "state": "Booted",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPhone Air",
+          "simulatorId": "21B35CAF-C325-4CE7-8ACA-3613AF7BF18B",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPhone 17",
+          "simulatorId": "36AF1D6B-B559-4C34-872E-307DF8BF2E66",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPad Pro 13-inch (M5)",
+          "simulatorId": "43F4C27C-C6F9-46DB-9CCE-2DF513391D32",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPad Pro 11-inch (M5)",
+          "simulatorId": "EFC1402B-5511-40D9-8A21-359172F886AB",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "Logisim IO44 3a Fresh M5",
+          "simulatorId": "52FE332B-03C2-45FC-95A4-D048C9B26BE9",
+          "state": "Booted",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "Logisim IO44 Dimensions M5",
+          "simulatorId": "32AB2376-28FA-4DF3-BA0B-A79A1A71A593",
+          "state": "Booted",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "Logisim SaveAs Beta iPad 27.0",
+          "simulatorId": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+          "state": "Booted",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "LogisimUIKitDocumentControl",
+          "simulatorId": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+          "state": "Booted",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPad mini (A17 Pro)",
+          "simulatorId": "0F84CE20-286D-4250-98A4-B0FCD7454368",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPad Air 13-inch (M4)",
+          "simulatorId": "AD4BCD96-2838-422B-BBF0-7747436C5F06",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPad Air 11-inch (M4)",
+          "simulatorId": "3E546488-93FB-4A25-A1BA-A230FA23BAC0",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "iPad (A16)",
+          "simulatorId": "2F63D01D-EACA-46D1-81C0-4FC8BA18E3FF",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.0"
+        },
+        {
+          "name": "Apple TV 4K (3rd generation)",
+          "simulatorId": "2A126C04-17E0-4E75-8C5B-458BDED466E3",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "tvOS 27.0"
+        },
+        {
+          "name": "Apple TV 4K (3rd generation) (at 1080p)",
+          "simulatorId": "17F05CAD-58FD-4D9B-B83C-F040B1351B94",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "tvOS 27.0"
+        },
+        {
+          "name": "Apple Watch Series 12 (46mm)",
+          "simulatorId": "2935AE18-BCA2-4C0F-B73B-C424F919CE48",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "watchOS 27.0"
+        },
+        {
+          "name": "Apple Watch Series 12 (42mm)",
+          "simulatorId": "26ABAFE1-7267-40DD-AE80-8C7ED7E555C4",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "watchOS 27.0"
+        },
+        {
+          "name": "Apple Watch Ultra 4 (49mm)",
+          "simulatorId": "51A02D0A-DDD0-438B-8513-596175D5C0DA",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "watchOS 27.0"
+        },
+        {
+          "name": "Apple Watch SE 3 (44mm)",
+          "simulatorId": "73C0BDEC-390D-487E-A288-273130917E37",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "watchOS 27.0"
+        },
+        {
+          "name": "Apple Watch SE 3 (40mm)",
+          "simulatorId": "F5BD9B74-C040-474E-A11F-A4FD67CC7F4A",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "watchOS 27.0"
+        },
+        {
+          "name": "Apple Vision Pro",
+          "simulatorId": "7080141C-4628-4946-B5F6-13191A81BEA4",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "xrOS 27.0"
+        },
+        {
+          "name": "iPhone Duo",
+          "simulatorId": "E080E673-6049-4238-A73D-7507A40EAE4A",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.1"
+        },
+        {
+          "name": "iPhone Duo",
+          "simulatorId": "AA1E9DE5-C242-4D32-96CB-D4202136430B",
+          "state": "Shutdown",
+          "isAvailable": true,
+          "runtime": "iOS 27.1"
+        }
+      ]
+    },
+    "nextSteps": [
+      "Boot a simulator: boot_sim({ simulatorId: \"UUID_FROM_ABOVE\" })",
+      "Open the simulator UI: open_sim()",
+      "Build for simulator: build_sim({ scheme: \"YOUR_SCHEME\", simulatorId: \"UUID_FROM_ABOVE\" })",
+      "Get app path: get_sim_app_path({ scheme: \"YOUR_SCHEME\", platform: \"iOS Simulator\", simulatorId: \"UUID_FROM_ABOVE\" })"
+    ]
+  }
+}

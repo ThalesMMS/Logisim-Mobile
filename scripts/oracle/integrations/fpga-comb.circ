@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <lib name="1" desc="#Gates"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" loc="(100,100)" name="Pin"><a name="label" val="a"/></comp>
+    <comp lib="0" loc="(100,140)" name="Pin"><a name="label" val="b"/></comp>
+    <comp lib="0" loc="(100,200)" name="Pin"><a name="label" val="c"/></comp>
+    <comp lib="0" loc="(100,240)" name="Pin"><a name="label" val="d"/></comp>
+    <comp lib="1" loc="(250,120)" name="AND Gate"><a name="inputs" val="2"/></comp>
+    <comp lib="1" loc="(250,220)" name="XOR Gate"><a name="inputs" val="2"/></comp>
+    <comp lib="1" loc="(250,320)" name="NOR Gate"><a name="inputs" val="2"/></comp>
+    <comp lib="0" loc="(300,120)" name="Pin"><a name="facing" val="west"/><a name="type" val="output"/><a name="label" val="y"/></comp>
+    <comp lib="0" loc="(300,220)" name="Pin"><a name="facing" val="west"/><a name="type" val="output"/><a name="label" val="z"/></comp>
+    <comp lib="0" loc="(300,320)" name="Pin"><a name="facing" val="west"/><a name="type" val="output"/><a name="label" val="w"/></comp>
+    <wire from="(100,100)" to="(200,100)"/>
+    <wire from="(100,140)" to="(200,140)"/>
+    <wire from="(100,200)" to="(200,200)"/>
+    <wire from="(100,240)" to="(200,240)"/>
+    <wire from="(250,120)" to="(300,120)"/>
+    <wire from="(250,220)" to="(300,220)"/>
+    <wire from="(250,320)" to="(300,320)"/>
+    <wire from="(150,100)" to="(150,300)"/>
+    <wire from="(150,300)" to="(200,300)"/>
+    <wire from="(170,240)" to="(170,340)"/>
+    <wire from="(170,340)" to="(200,340)"/>
+    <boardmap boardname="BASYS3">
+      <mc key="/a" pmap="647_323_0"/>
+      <mc key="/b" pmap="609_323_0"/>
+      <mc key="/c" pmap="571_323_0"/>
+      <mc key="/d" pmap="535_323_0"/>
+      <mc key="/y" pmap="649_295_0"/>
+      <mc key="/z" pmap="612_295_0"/>
+      <mc key="/w" pmap="577_295_0"/>
+    </boardmap>
+  </circuit>
+</project>

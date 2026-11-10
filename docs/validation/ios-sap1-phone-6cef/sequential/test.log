@@ -1,0 +1,1166 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/LogisimEditorHarness.xcodeproj -scheme EditorHarness -destination "platform=iOS Simulator,id=20A4D87D-A2A6-46BD-A889-C4888CE1E152" -derivedDataPath /Users/thales/GitHub/logisim-mobile-worktrees/ios-e2e/outputs/ios-e2e-alpha-002/DerivedData CODE_SIGNING_ALLOWED=NO test-without-building -parallel-testing-enabled NO -collect-test-diagnostics never -test-timeouts-enabled YES -default-test-execution-time-allowance 900 -resultBundlePath /Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/editor.xcresult "-only-testing:EditorEndToEndTests/EditorEndToEndTests/testSap1SequentialExecution" "-skip-testing:EditorEndToEndTests/VisualExportEndToEndTests/testVisualExportFieldCensus"
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/editor.xcresult
+
+2026-11-05 03:02:06.713428-0300 EditorEndToEndTests-Runner[27751:9692459] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-11-05 03:02:09.191.
+Test Suite 'EditorEndToEndTests.xctest' started at 2026-11-05 03:02:09.191.
+Test Suite 'EditorEndToEndTests' started at 2026-11-05 03:02:09.191.
+Test Case '-[EditorEndToEndTests.EditorEndToEndTests testSap1SequentialExecution]' started.
+    t =     0.01s Start Test at 2026-11-05 03:02:09.198
+    t =     0.03s Set Up
+    t =     0.04s     Getting device orientation
+    t =     0.05s     Open thalesmms.logisim.mobile
+    t =     0.05s         Launch thalesmms.logisim.mobile
+    t =     0.07s             Setting up automation session
+objc[27751]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x106268310) and /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x10621c398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     1.92s             Wait for thalesmms.logisim.mobile to idle
+    t =     4.66s     Checking `Expect predicate `BLOCKPREDICATE(0x105aa7450)` for object Application 'thalesmms.logisim.mobile'`
+    t =     4.66s         Checking existence of `"editor-import-report" Any`
+    t =     4.79s         Checking existence of `"editor-project-toolbar" Any`
+    t =     4.80s     Checking existence of `"editor-import-report" Any`
+    t =     4.83s Setting device orientation to Portrait
+    t =     4.83s     Wait for thalesmms.logisim.mobile to idle
+    t =     5.89s Checking `Expect predicate `BLOCKPREDICATE(0x105aa5260)` for object Application 'thalesmms.logisim.mobile'`
+    t =     5.89s     Find the Application 'thalesmms.logisim.mobile'
+    t =     5.92s Find the Application 'thalesmms.logisim.mobile'
+    t =     5.94s Added attachment named 'observed-orientation'
+    t =     5.94s Checking existence of `"editor-import-report" Any`
+    t =     5.96s Find the Application 'thalesmms.logisim.mobile'
+    t =     5.97s Get all elements bound by index for: Elements matching predicate '(label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ") OR (label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ")'
+    t =     5.98s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =     6.00s Find the Application 'thalesmms.logisim.mobile'
+    t =     6.00s Get all elements bound by index for: Elements matching predicate '(label == "Open circuits and library" OR label BEGINSWITH "Open circuits and library, ") OR (label == "Abrir circuitos e biblioteca" OR label BEGINSWITH "Abrir circuitos e biblioteca, ")'
+    t =     6.01s Checking existence of `Any (Element at index 0)`
+    t =     6.02s Find the Any (Element at index 0)
+    t =     6.04s Find the "Open circuits and library, Library" Button
+    t =     7.12s Checking `Expect predicate `enabled == 1` for object "Open circuits and library, Library" Button`
+    t =     7.12s     Find the "Open circuits and library, Library" Button
+    t =     7.13s Tap "Open circuits and library, Library" Button
+    t =     7.13s     Wait for thalesmms.logisim.mobile to idle
+    t =     7.14s     Find the "Open circuits and library, Library" Button
+    t =     7.15s     Check for interrupting elements affecting "Open circuits and library, Library" Button
+    t =     7.16s     Synthesize event
+    t =     7.45s     Wait for thalesmms.logisim.mobile to idle
+    t =     7.45s Find the Application 'thalesmms.logisim.mobile'
+    t =     7.46s Get all elements bound by index for: Elements matching predicate '(label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ") OR (label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ")'
+    t =     8.52s Checking `Expect predicate `BLOCKPREDICATE(0x105aa4db0)` for object Application 'thalesmms.logisim.mobile'`
+    t =     8.52s     Find the Application 'thalesmms.logisim.mobile'
+    t =     8.54s     Get all elements bound by index for: Elements matching predicate '(label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ") OR (label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ")'
+    t =     8.56s     Checking existence of `Any (Element at index 0)`
+    t =     8.57s     Find the Any (Element at index 0)
+    t =     8.58s     Find the "Load SAP-1 example, SAP-1" Button
+    t =     8.60s Find the Application 'thalesmms.logisim.mobile'
+    t =     8.60s Get all elements bound by index for: Elements matching predicate '(label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ") OR (label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ")'
+    t =     8.61s Checking existence of `Any (Element at index 0)`
+    t =     8.62s Find the Any (Element at index 0)
+    t =     8.63s Find the "Load SAP-1 example, SAP-1" Button
+    t =     9.70s Checking `Expect predicate `enabled == 1` for object "Load SAP-1 example, SAP-1" Button`
+    t =     9.70s     Find the "Load SAP-1 example, SAP-1" Button
+    t =     9.71s Tap "Load SAP-1 example, SAP-1" Button
+    t =     9.71s     Wait for thalesmms.logisim.mobile to idle
+    t =     9.71s     Find the "Load SAP-1 example, SAP-1" Button
+    t =     9.72s     Check for interrupting elements affecting "Load SAP-1 example, SAP-1" Button
+    t =     9.73s     Synthesize event
+    t =    10.02s     Wait for thalesmms.logisim.mobile to idle
+    t =    10.02s Checking existence of `"editor-import-report" Any`
+    t =    10.05s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    10.07s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    10.10s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    10.12s Find the Application 'thalesmms.logisim.mobile'
+    t =    10.28s Get all elements bound by index for: Elements matching predicate '(label == "Reset simulation" OR label BEGINSWITH "Reset simulation, ") OR (label == "Reiniciar simulação" OR label BEGINSWITH "Reiniciar simulação, ")'
+    t =    10.40s Checking existence of `"editor-simulation-toolbar-overflow" Any`
+    t =    10.41s Checking existence of `"editor-simulation-toolbar-overflow" Any`
+    t =    10.50s Find the "editor-simulation-toolbar-overflow" Any
+    t =    10.59s Find the Application 'thalesmms.logisim.mobile'
+    t =    10.61s Find the Application 'thalesmms.logisim.mobile'
+    t =    10.62s Added attachment named 'geometry-editor-simulation-toolbar-overflow'
+    t =    10.62s Find the "editor-simulation-toolbar-overflow" Button
+    t =    10.64s Tap "editor-simulation-toolbar-overflow" Button
+    t =    10.64s     Wait for thalesmms.logisim.mobile to idle
+    t =    10.64s     Find the "editor-simulation-toolbar-overflow" Button
+    t =    10.66s     Check for interrupting elements affecting "editor-simulation-toolbar-overflow" Button
+    t =    10.76s     Synthesize event
+    t =    11.05s     Wait for thalesmms.logisim.mobile to idle
+    t =    11.05s Waiting 5.0s for "editor-simulation-toolbar-menu" Any to exist
+    t =    12.10s     Checking `Expect predicate `existsNoRetry == 1` for object "editor-simulation-toolbar-menu" Any`
+    t =    12.10s         Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    12.13s Find the Application 'thalesmms.logisim.mobile'
+    t =    12.14s Find the "editor-simulation-toolbar-menu" Any
+    t =    12.15s Get all elements bound by index for: Elements matching predicate '(label == "Reset simulation" OR label BEGINSWITH "Reset simulation, ") OR (label == "Reiniciar simulação" OR label BEGINSWITH "Reiniciar simulação, ")'
+    t =    12.16s Checking existence of `Any (Element at index 0)`
+    t =    12.17s Find the Any (Element at index 0)
+    t =    12.19s Find the "Reset simulation, Reset" Button
+    t =    13.24s Checking `Expect predicate `enabled == 1` for object "Reset simulation, Reset" Button`
+    t =    13.24s     Find the "Reset simulation, Reset" Button
+    t =    13.27s Tap "Reset simulation, Reset" Button
+    t =    13.27s     Wait for thalesmms.logisim.mobile to idle
+    t =    13.27s     Find the "Reset simulation, Reset" Button
+    t =    13.29s     Check for interrupting elements affecting "Reset simulation, Reset" Button
+    t =    13.30s     Synthesize event
+    t =    13.60s     Wait for thalesmms.logisim.mobile to idle
+    t =    13.76s Checking existence of `"editor-signal-panel-menu" Any`
+    t =    13.83s Find the Application 'thalesmms.logisim.mobile'
+    t =    13.92s Get all elements bound by index for: Elements matching predicate '(label == "Toggle input Reset: 0" OR label BEGINSWITH "Toggle input Reset: 0, ") OR (label == "Alternar entrada Reset: 0" OR label BEGINSWITH "Alternar entrada Reset: 0, ")'
+    t =    13.95s Checking existence of `Any (Element at index 0)`
+    t =    13.99s Find the Any (Element at index 0)
+    t =    14.03s Find the "Toggle input Reset: 0, Reset 0" Button
+    t =    15.14s Checking `Expect predicate `enabled == 1` for object "Toggle input Reset: 0, Reset 0" Button`
+    t =    15.14s     Find the "Toggle input Reset: 0, Reset 0" Button
+    t =    15.20s Tap "Toggle input Reset: 0, Reset 0" Button
+    t =    15.20s     Wait for thalesmms.logisim.mobile to idle
+    t =    15.21s     Find the "Toggle input Reset: 0, Reset 0" Button
+    t =    15.24s     Check for interrupting elements affecting "Toggle input Reset: 0, Reset 0" Button
+    t =    15.26s     Synthesize event
+    t =    15.55s     Wait for thalesmms.logisim.mobile to idle
+    t =    15.57s Checking existence of `"editor-signal-panel-menu" Any`
+    t =    15.65s Find the Application 'thalesmms.logisim.mobile'
+    t =    15.74s Get all elements bound by index for: Elements matching predicate '(label == "Alternar entrada Reset: 1" OR label BEGINSWITH "Alternar entrada Reset: 1, ") OR (label == "Toggle input Reset: 1" OR label BEGINSWITH "Toggle input Reset: 1, ")'
+    t =    15.77s Checking existence of `Any (Element at index 0)`
+    t =    15.81s Find the Any (Element at index 0)
+    t =    15.85s Find the "Toggle input Reset: 1, Reset 1" Button
+    t =    16.94s Checking `Expect predicate `enabled == 1` for object "Toggle input Reset: 1, Reset 1" Button`
+    t =    16.94s     Find the "Toggle input Reset: 1, Reset 1" Button
+    t =    17.01s Tap "Toggle input Reset: 1, Reset 1" Button
+    t =    17.01s     Wait for thalesmms.logisim.mobile to idle
+    t =    17.01s     Find the "Toggle input Reset: 1, Reset 1" Button
+    t =    17.05s     Check for interrupting elements affecting "Toggle input Reset: 1, Reset 1" Button
+    t =    17.07s     Synthesize event
+    t =    17.35s     Wait for thalesmms.logisim.mobile to idle
+    t =    18.45s Checking `Expect predicate `BLOCKPREDICATE(0x105a433f0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    18.45s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    18.52s     Find the StaticText (Element at index 0)
+    t =    18.55s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    18.59s Find the StaticText (Element at index 0)
+    t =    18.62s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    18.68s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    18.75s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    18.76s Find the Application 'thalesmms.logisim.mobile'
+    t =    18.78s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    18.81s Checking existence of `Any (Element at index 0)`
+    t =    18.84s Find the Any (Element at index 0)
+    t =    18.88s Find the "Advance the clock one half-cycle, Step" Button
+    t =    19.98s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    19.98s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    20.02s Tap "Advance the clock one half-cycle, Step" Button
+    t =    20.02s     Wait for thalesmms.logisim.mobile to idle
+    t =    20.02s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    20.06s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    20.08s     Synthesize event
+    t =    20.37s     Wait for thalesmms.logisim.mobile to idle
+    t =    20.37s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    20.44s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    20.59s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    20.60s Find the Application 'thalesmms.logisim.mobile'
+    t =    20.62s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    20.65s Checking existence of `Any (Element at index 0)`
+    t =    20.69s Find the Any (Element at index 0)
+    t =    20.73s Find the "Advance the clock one half-cycle, Step" Button
+    t =    21.83s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    21.83s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    21.87s Tap "Advance the clock one half-cycle, Step" Button
+    t =    21.87s     Wait for thalesmms.logisim.mobile to idle
+    t =    21.87s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    21.91s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    21.93s     Synthesize event
+    t =    22.21s     Wait for thalesmms.logisim.mobile to idle
+    t =    22.24s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    22.31s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    22.46s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    22.47s Find the Application 'thalesmms.logisim.mobile'
+    t =    22.48s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    22.52s Checking existence of `Any (Element at index 0)`
+    t =    22.55s Find the Any (Element at index 0)
+    t =    22.59s Find the "Advance the clock one half-cycle, Step" Button
+    t =    23.69s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    23.69s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    23.76s Tap "Advance the clock one half-cycle, Step" Button
+    t =    23.76s     Wait for thalesmms.logisim.mobile to idle
+    t =    23.76s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    23.80s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    23.82s     Synthesize event
+    t =    24.11s     Wait for thalesmms.logisim.mobile to idle
+    t =    24.14s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    24.21s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    24.35s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    24.36s Find the Application 'thalesmms.logisim.mobile'
+    t =    24.38s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    24.41s Checking existence of `Any (Element at index 0)`
+    t =    24.45s Find the Any (Element at index 0)
+    t =    24.49s Find the "Advance the clock one half-cycle, Step" Button
+    t =    25.59s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    25.59s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    25.66s Tap "Advance the clock one half-cycle, Step" Button
+    t =    25.66s     Wait for thalesmms.logisim.mobile to idle
+    t =    25.66s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    25.70s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    25.72s     Synthesize event
+    t =    26.00s     Wait for thalesmms.logisim.mobile to idle
+    t =    26.03s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    26.10s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    26.24s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    26.25s Find the Application 'thalesmms.logisim.mobile'
+    t =    26.26s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    26.30s Checking existence of `Any (Element at index 0)`
+    t =    26.33s Find the Any (Element at index 0)
+    t =    26.37s Find the "Advance the clock one half-cycle, Step" Button
+    t =    27.47s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    27.47s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    27.54s Tap "Advance the clock one half-cycle, Step" Button
+    t =    27.54s     Wait for thalesmms.logisim.mobile to idle
+    t =    27.54s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    27.58s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    27.60s     Synthesize event
+    t =    27.89s     Wait for thalesmms.logisim.mobile to idle
+    t =    27.89s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    27.96s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    28.10s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    28.11s Find the Application 'thalesmms.logisim.mobile'
+    t =    28.13s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    28.16s Checking existence of `Any (Element at index 0)`
+    t =    28.20s Find the Any (Element at index 0)
+    t =    28.24s Find the "Advance the clock one half-cycle, Step" Button
+    t =    29.34s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    29.34s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    29.39s Tap "Advance the clock one half-cycle, Step" Button
+    t =    29.39s     Wait for thalesmms.logisim.mobile to idle
+    t =    29.39s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    29.43s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    29.45s     Synthesize event
+    t =    29.74s     Wait for thalesmms.logisim.mobile to idle
+    t =    29.76s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    29.83s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    29.98s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    29.99s Find the Application 'thalesmms.logisim.mobile'
+    t =    30.00s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    30.04s Checking existence of `Any (Element at index 0)`
+    t =    30.07s Find the Any (Element at index 0)
+    t =    30.11s Find the "Advance the clock one half-cycle, Step" Button
+    t =    31.21s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    31.21s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    31.28s Tap "Advance the clock one half-cycle, Step" Button
+    t =    31.28s     Wait for thalesmms.logisim.mobile to idle
+    t =    31.28s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    31.32s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    31.34s     Synthesize event
+    t =    31.62s     Wait for thalesmms.logisim.mobile to idle
+    t =    31.74s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    31.81s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    31.88s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    31.89s Find the Application 'thalesmms.logisim.mobile'
+    t =    31.90s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    31.94s Checking existence of `Any (Element at index 0)`
+    t =    31.98s Find the Any (Element at index 0)
+    t =    32.01s Find the "Advance the clock one half-cycle, Step" Button
+    t =    33.24s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    33.24s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    33.31s Tap "Advance the clock one half-cycle, Step" Button
+    t =    33.31s     Wait for thalesmms.logisim.mobile to idle
+    t =    33.31s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    33.35s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    33.37s     Synthesize event
+    t =    33.66s     Wait for thalesmms.logisim.mobile to idle
+    t =    34.75s Checking `Expect predicate `BLOCKPREDICATE(0x105a40ae0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    34.76s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    34.82s     Find the StaticText (Element at index 0)
+    t =    34.86s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    34.89s Find the StaticText (Element at index 0)
+    t =    34.92s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    34.99s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    35.06s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    35.07s Find the Application 'thalesmms.logisim.mobile'
+    t =    35.08s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    35.12s Checking existence of `Any (Element at index 0)`
+    t =    35.15s Find the Any (Element at index 0)
+    t =    35.19s Find the "Advance the clock one half-cycle, Step" Button
+    t =    36.29s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    36.29s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    36.34s Tap "Advance the clock one half-cycle, Step" Button
+    t =    36.34s     Wait for thalesmms.logisim.mobile to idle
+    t =    36.34s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    36.38s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    36.40s     Synthesize event
+    t =    36.69s     Wait for thalesmms.logisim.mobile to idle
+    t =    36.72s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    36.79s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    36.96s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    36.97s Find the Application 'thalesmms.logisim.mobile'
+    t =    36.99s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    37.03s Checking existence of `Any (Element at index 0)`
+    t =    37.07s Find the Any (Element at index 0)
+    t =    37.11s Find the "Advance the clock one half-cycle, Step" Button
+    t =    38.20s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    38.20s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    38.26s Tap "Advance the clock one half-cycle, Step" Button
+    t =    38.26s     Wait for thalesmms.logisim.mobile to idle
+    t =    38.26s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    38.30s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    38.32s     Synthesize event
+    t =    38.61s     Wait for thalesmms.logisim.mobile to idle
+    t =    38.64s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    38.71s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    38.86s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    38.87s Find the Application 'thalesmms.logisim.mobile'
+    t =    38.88s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    38.92s Checking existence of `Any (Element at index 0)`
+    t =    38.95s Find the Any (Element at index 0)
+    t =    38.99s Find the "Advance the clock one half-cycle, Step" Button
+    t =    40.07s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    40.07s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    40.12s Tap "Advance the clock one half-cycle, Step" Button
+    t =    40.12s     Wait for thalesmms.logisim.mobile to idle
+    t =    40.12s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    40.16s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    40.18s     Synthesize event
+    t =    40.46s     Wait for thalesmms.logisim.mobile to idle
+    t =    40.49s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    40.56s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    40.71s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    40.72s Find the Application 'thalesmms.logisim.mobile'
+    t =    40.73s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    40.77s Checking existence of `Any (Element at index 0)`
+    t =    40.80s Find the Any (Element at index 0)
+    t =    40.84s Find the "Advance the clock one half-cycle, Step" Button
+    t =    41.92s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    41.92s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    41.99s Tap "Advance the clock one half-cycle, Step" Button
+    t =    41.99s     Wait for thalesmms.logisim.mobile to idle
+    t =    41.99s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    42.03s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    42.05s     Synthesize event
+    t =    42.34s     Wait for thalesmms.logisim.mobile to idle
+    t =    42.39s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    42.54s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    42.61s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    42.62s Find the Application 'thalesmms.logisim.mobile'
+    t =    42.64s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    42.67s Checking existence of `Any (Element at index 0)`
+    t =    42.71s Find the Any (Element at index 0)
+    t =    42.75s Find the "Advance the clock one half-cycle, Step" Button
+    t =    43.85s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    43.85s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    43.90s Tap "Advance the clock one half-cycle, Step" Button
+    t =    43.90s     Wait for thalesmms.logisim.mobile to idle
+    t =    43.90s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    43.93s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    43.96s     Synthesize event
+    t =    44.24s     Wait for thalesmms.logisim.mobile to idle
+    t =    44.28s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    44.35s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    44.50s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    44.51s Find the Application 'thalesmms.logisim.mobile'
+    t =    44.53s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    44.56s Checking existence of `Any (Element at index 0)`
+    t =    44.60s Find the Any (Element at index 0)
+    t =    44.64s Find the "Advance the clock one half-cycle, Step" Button
+    t =    45.74s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    45.74s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    45.80s Tap "Advance the clock one half-cycle, Step" Button
+    t =    45.81s     Wait for thalesmms.logisim.mobile to idle
+    t =    45.81s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    45.84s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    45.86s     Synthesize event
+    t =    46.15s     Wait for thalesmms.logisim.mobile to idle
+    t =    46.18s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    46.25s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    46.39s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    46.40s Find the Application 'thalesmms.logisim.mobile'
+    t =    46.42s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    46.45s Checking existence of `Any (Element at index 0)`
+    t =    46.49s Find the Any (Element at index 0)
+    t =    46.53s Find the "Advance the clock one half-cycle, Step" Button
+    t =    47.61s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    47.61s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    47.66s Tap "Advance the clock one half-cycle, Step" Button
+    t =    47.66s     Wait for thalesmms.logisim.mobile to idle
+    t =    47.67s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    47.70s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    47.72s     Synthesize event
+    t =    48.00s     Wait for thalesmms.logisim.mobile to idle
+    t =    48.03s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    48.10s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    48.24s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    48.25s Find the Application 'thalesmms.logisim.mobile'
+    t =    48.27s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    48.31s Checking existence of `Any (Element at index 0)`
+    t =    48.34s Find the Any (Element at index 0)
+    t =    48.38s Find the "Advance the clock one half-cycle, Step" Button
+    t =    49.44s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    49.44s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    49.51s Tap "Advance the clock one half-cycle, Step" Button
+    t =    49.51s     Wait for thalesmms.logisim.mobile to idle
+    t =    49.51s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    49.55s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    49.57s     Synthesize event
+    t =    49.86s     Wait for thalesmms.logisim.mobile to idle
+    t =    50.92s Checking `Expect predicate `BLOCKPREDICATE(0x1059b6940)` for object Application 'thalesmms.logisim.mobile'`
+    t =    50.92s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    50.99s     Find the StaticText (Element at index 0)
+    t =    51.02s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    51.06s Find the StaticText (Element at index 0)
+    t =    51.09s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    51.16s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    51.23s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    51.24s Find the Application 'thalesmms.logisim.mobile'
+    t =    51.26s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    51.29s Checking existence of `Any (Element at index 0)`
+    t =    51.33s Find the Any (Element at index 0)
+    t =    51.37s Find the "Advance the clock one half-cycle, Step" Button
+    t =    52.45s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    52.45s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    52.48s Tap "Advance the clock one half-cycle, Step" Button
+    t =    52.48s     Wait for thalesmms.logisim.mobile to idle
+    t =    52.49s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    52.52s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    52.54s     Synthesize event
+    t =    52.83s     Wait for thalesmms.logisim.mobile to idle
+    t =    52.84s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    52.91s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    53.05s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    53.06s Find the Application 'thalesmms.logisim.mobile'
+    t =    53.08s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    53.11s Checking existence of `Any (Element at index 0)`
+    t =    53.15s Find the Any (Element at index 0)
+    t =    53.19s Find the "Advance the clock one half-cycle, Step" Button
+    t =    54.26s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    54.26s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    54.33s Tap "Advance the clock one half-cycle, Step" Button
+    t =    54.33s     Wait for thalesmms.logisim.mobile to idle
+    t =    54.33s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    54.37s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    54.39s     Synthesize event
+    t =    54.68s     Wait for thalesmms.logisim.mobile to idle
+    t =    54.71s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    54.78s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    54.93s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    54.94s Find the Application 'thalesmms.logisim.mobile'
+    t =    54.95s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    54.99s Checking existence of `Any (Element at index 0)`
+    t =    55.02s Find the Any (Element at index 0)
+    t =    55.06s Find the "Advance the clock one half-cycle, Step" Button
+    t =    56.15s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    56.15s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    56.20s Tap "Advance the clock one half-cycle, Step" Button
+    t =    56.20s     Wait for thalesmms.logisim.mobile to idle
+    t =    56.20s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    56.24s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    56.26s     Synthesize event
+    t =    56.54s     Wait for thalesmms.logisim.mobile to idle
+    t =    56.54s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    56.61s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    56.76s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    56.77s Find the Application 'thalesmms.logisim.mobile'
+    t =    56.79s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    56.82s Checking existence of `Any (Element at index 0)`
+    t =    56.86s Find the Any (Element at index 0)
+    t =    56.89s Find the "Advance the clock one half-cycle, Step" Button
+    t =    57.98s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    57.98s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    58.05s Tap "Advance the clock one half-cycle, Step" Button
+    t =    58.05s     Wait for thalesmms.logisim.mobile to idle
+    t =    58.05s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    58.09s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    58.11s     Synthesize event
+    t =    58.40s     Wait for thalesmms.logisim.mobile to idle
+    t =    58.43s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    58.50s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    58.65s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    58.66s Find the Application 'thalesmms.logisim.mobile'
+    t =    58.67s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    58.71s Checking existence of `Any (Element at index 0)`
+    t =    58.75s Find the Any (Element at index 0)
+    t =    58.79s Find the "Advance the clock one half-cycle, Step" Button
+    t =    59.87s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    59.87s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    59.94s Tap "Advance the clock one half-cycle, Step" Button
+    t =    59.94s     Wait for thalesmms.logisim.mobile to idle
+    t =    59.94s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    59.98s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    60.00s     Synthesize event
+    t =    60.29s     Wait for thalesmms.logisim.mobile to idle
+    t =    60.31s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    60.38s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    60.52s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    60.53s Find the Application 'thalesmms.logisim.mobile'
+    t =    60.55s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    60.58s Checking existence of `Any (Element at index 0)`
+    t =    60.62s Find the Any (Element at index 0)
+    t =    60.66s Find the "Advance the clock one half-cycle, Step" Button
+    t =    61.74s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    61.74s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    61.80s Tap "Advance the clock one half-cycle, Step" Button
+    t =    61.80s     Wait for thalesmms.logisim.mobile to idle
+    t =    61.81s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    61.84s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    61.86s     Synthesize event
+    t =    62.15s     Wait for thalesmms.logisim.mobile to idle
+    t =    62.18s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    62.25s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    62.40s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    62.41s Find the Application 'thalesmms.logisim.mobile'
+    t =    62.42s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    62.46s Checking existence of `Any (Element at index 0)`
+    t =    62.49s Find the Any (Element at index 0)
+    t =    62.53s Find the "Advance the clock one half-cycle, Step" Button
+    t =    63.62s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    63.63s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    63.69s Tap "Advance the clock one half-cycle, Step" Button
+    t =    63.69s     Wait for thalesmms.logisim.mobile to idle
+    t =    63.69s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    63.73s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    63.75s     Synthesize event
+    t =    64.03s     Wait for thalesmms.logisim.mobile to idle
+    t =    64.06s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    64.13s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    64.27s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    64.28s Find the Application 'thalesmms.logisim.mobile'
+    t =    64.30s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    64.33s Checking existence of `Any (Element at index 0)`
+    t =    64.37s Find the Any (Element at index 0)
+    t =    64.41s Find the "Advance the clock one half-cycle, Step" Button
+    t =    65.49s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    65.49s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    65.55s Tap "Advance the clock one half-cycle, Step" Button
+    t =    65.55s     Wait for thalesmms.logisim.mobile to idle
+    t =    65.56s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    65.59s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    65.61s     Synthesize event
+    t =    65.90s     Wait for thalesmms.logisim.mobile to idle
+    t =    66.96s Checking `Expect predicate `BLOCKPREDICATE(0x105a0cf30)` for object Application 'thalesmms.logisim.mobile'`
+    t =    66.96s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    67.01s     Find the StaticText (Element at index 0)
+    t =    67.04s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    67.08s Find the StaticText (Element at index 0)
+    t =    67.11s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    67.18s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    67.24s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    67.25s Find the Application 'thalesmms.logisim.mobile'
+    t =    67.27s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    67.30s Checking existence of `Any (Element at index 0)`
+    t =    67.34s Find the Any (Element at index 0)
+    t =    67.38s Find the "Advance the clock one half-cycle, Step" Button
+    t =    68.56s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    68.56s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    68.63s Tap "Advance the clock one half-cycle, Step" Button
+    t =    68.63s     Wait for thalesmms.logisim.mobile to idle
+    t =    68.63s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    68.67s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    68.69s     Synthesize event
+    t =    68.98s     Wait for thalesmms.logisim.mobile to idle
+    t =    68.99s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    69.06s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    69.20s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    69.22s Find the Application 'thalesmms.logisim.mobile'
+    t =    69.23s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    69.27s Checking existence of `Any (Element at index 0)`
+    t =    69.30s Find the Any (Element at index 0)
+    t =    69.34s Find the "Advance the clock one half-cycle, Step" Button
+    t =    70.42s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    70.42s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    70.49s Tap "Advance the clock one half-cycle, Step" Button
+    t =    70.49s     Wait for thalesmms.logisim.mobile to idle
+    t =    70.49s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    70.53s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    70.55s     Synthesize event
+    t =    70.84s     Wait for thalesmms.logisim.mobile to idle
+    t =    70.86s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    70.93s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    71.08s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    71.09s Find the Application 'thalesmms.logisim.mobile'
+    t =    71.10s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    71.14s Checking existence of `Any (Element at index 0)`
+    t =    71.17s Find the Any (Element at index 0)
+    t =    71.21s Find the "Advance the clock one half-cycle, Step" Button
+    t =    72.30s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    72.30s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    72.37s Tap "Advance the clock one half-cycle, Step" Button
+    t =    72.37s     Wait for thalesmms.logisim.mobile to idle
+    t =    72.37s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    72.41s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    72.43s     Synthesize event
+    t =    72.71s     Wait for thalesmms.logisim.mobile to idle
+    t =    72.74s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    72.81s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    72.95s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    72.96s Find the Application 'thalesmms.logisim.mobile'
+    t =    72.98s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    73.01s Checking existence of `Any (Element at index 0)`
+    t =    73.05s Find the Any (Element at index 0)
+    t =    73.09s Find the "Advance the clock one half-cycle, Step" Button
+    t =    74.18s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    74.18s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    74.25s Tap "Advance the clock one half-cycle, Step" Button
+    t =    74.25s     Wait for thalesmms.logisim.mobile to idle
+    t =    74.25s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    74.29s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    74.31s     Synthesize event
+    t =    74.60s     Wait for thalesmms.logisim.mobile to idle
+    t =    74.63s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    74.70s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    74.85s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    74.86s Find the Application 'thalesmms.logisim.mobile'
+    t =    74.87s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    74.91s Checking existence of `Any (Element at index 0)`
+    t =    74.94s Find the Any (Element at index 0)
+    t =    74.98s Find the "Advance the clock one half-cycle, Step" Button
+    t =    76.07s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    76.07s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    76.11s Tap "Advance the clock one half-cycle, Step" Button
+    t =    76.11s     Wait for thalesmms.logisim.mobile to idle
+    t =    76.11s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    76.14s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    76.16s     Synthesize event
+    t =    76.45s     Wait for thalesmms.logisim.mobile to idle
+    t =    76.48s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    76.54s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    76.69s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    76.70s Find the Application 'thalesmms.logisim.mobile'
+    t =    76.72s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    76.75s Checking existence of `Any (Element at index 0)`
+    t =    76.79s Find the Any (Element at index 0)
+    t =    76.83s Find the "Advance the clock one half-cycle, Step" Button
+    t =    77.90s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    77.90s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    77.96s Tap "Advance the clock one half-cycle, Step" Button
+    t =    77.96s     Wait for thalesmms.logisim.mobile to idle
+    t =    77.96s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    78.00s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    78.02s     Synthesize event
+    t =    78.30s     Wait for thalesmms.logisim.mobile to idle
+    t =    78.33s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    78.40s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    78.54s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    78.55s Find the Application 'thalesmms.logisim.mobile'
+    t =    78.57s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    78.60s Checking existence of `Any (Element at index 0)`
+    t =    78.64s Find the Any (Element at index 0)
+    t =    78.68s Find the "Advance the clock one half-cycle, Step" Button
+    t =    79.77s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    79.77s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    79.83s Tap "Advance the clock one half-cycle, Step" Button
+    t =    79.83s     Wait for thalesmms.logisim.mobile to idle
+    t =    79.84s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    79.87s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    79.90s     Synthesize event
+    t =    80.18s     Wait for thalesmms.logisim.mobile to idle
+    t =    80.21s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    80.28s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    80.42s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    80.43s Find the Application 'thalesmms.logisim.mobile'
+    t =    80.45s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    80.48s Checking existence of `Any (Element at index 0)`
+    t =    80.52s Find the Any (Element at index 0)
+    t =    80.56s Find the "Advance the clock one half-cycle, Step" Button
+    t =    81.62s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    81.63s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    81.69s Tap "Advance the clock one half-cycle, Step" Button
+    t =    81.69s     Wait for thalesmms.logisim.mobile to idle
+    t =    81.69s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    81.73s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    81.75s     Synthesize event
+    t =    82.04s     Wait for thalesmms.logisim.mobile to idle
+    t =    83.10s Checking `Expect predicate `BLOCKPREDICATE(0x105ae0720)` for object Application 'thalesmms.logisim.mobile'`
+    t =    83.10s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    83.14s     Find the StaticText (Element at index 0)
+    t =    83.18s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    83.21s Find the StaticText (Element at index 0)
+    t =    83.25s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    83.31s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    83.38s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    83.39s Find the Application 'thalesmms.logisim.mobile'
+    t =    83.40s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =    83.44s Checking existence of `Any (Element at index 0)`
+    t =    83.47s Find the Any (Element at index 0)
+    t =    83.51s Find the "Advance the clock one half-cycle, Step" Button
+    t =    84.59s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    84.59s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    84.66s Tap "Advance the clock one half-cycle, Step" Button
+    t =    84.66s     Wait for thalesmms.logisim.mobile to idle
+    t =    84.66s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    84.70s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    84.72s     Synthesize event
+    t =    85.00s     Wait for thalesmms.logisim.mobile to idle
+    t =    85.03s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    85.10s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    85.24s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    85.26s Find the Application 'thalesmms.logisim.mobile'
+    t =    85.27s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    85.31s Checking existence of `Any (Element at index 0)`
+    t =    85.34s Find the Any (Element at index 0)
+    t =    85.38s Find the "Advance the clock one half-cycle, Step" Button
+    t =    86.47s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    86.47s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    86.54s Tap "Advance the clock one half-cycle, Step" Button
+    t =    86.54s     Wait for thalesmms.logisim.mobile to idle
+    t =    86.54s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    86.58s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    86.60s     Synthesize event
+    t =    86.89s     Wait for thalesmms.logisim.mobile to idle
+    t =    86.93s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    87.00s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    87.14s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    87.15s Find the Application 'thalesmms.logisim.mobile'
+    t =    87.17s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    87.20s Checking existence of `Any (Element at index 0)`
+    t =    87.24s Find the Any (Element at index 0)
+    t =    87.28s Find the "Advance the clock one half-cycle, Step" Button
+    t =    88.35s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    88.36s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    88.42s Tap "Advance the clock one half-cycle, Step" Button
+    t =    88.42s     Wait for thalesmms.logisim.mobile to idle
+    t =    88.42s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    88.46s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    88.48s     Synthesize event
+    t =    88.77s     Wait for thalesmms.logisim.mobile to idle
+    t =    88.79s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    88.86s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    89.00s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    89.02s Find the Application 'thalesmms.logisim.mobile'
+    t =    89.03s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    89.06s Checking existence of `Any (Element at index 0)`
+    t =    89.10s Find the Any (Element at index 0)
+    t =    89.14s Find the "Advance the clock one half-cycle, Step" Button
+    t =    90.21s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    90.21s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    90.26s Tap "Advance the clock one half-cycle, Step" Button
+    t =    90.26s     Wait for thalesmms.logisim.mobile to idle
+    t =    90.26s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    90.30s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    90.32s     Synthesize event
+    t =    90.60s     Wait for thalesmms.logisim.mobile to idle
+    t =    90.68s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    90.83s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    90.90s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    90.91s Find the Application 'thalesmms.logisim.mobile'
+    t =    90.93s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    90.96s Checking existence of `Any (Element at index 0)`
+    t =    91.00s Find the Any (Element at index 0)
+    t =    91.04s Find the "Advance the clock one half-cycle, Step" Button
+    t =    92.12s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    92.12s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    92.18s Tap "Advance the clock one half-cycle, Step" Button
+    t =    92.18s     Wait for thalesmms.logisim.mobile to idle
+    t =    92.18s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    92.22s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    92.24s     Synthesize event
+    t =    92.53s     Wait for thalesmms.logisim.mobile to idle
+    t =    92.54s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    92.61s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    92.76s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    92.77s Find the Application 'thalesmms.logisim.mobile'
+    t =    92.78s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    92.82s Checking existence of `Any (Element at index 0)`
+    t =    92.85s Find the Any (Element at index 0)
+    t =    92.89s Find the "Advance the clock one half-cycle, Step" Button
+    t =    93.97s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    93.97s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    94.04s Tap "Advance the clock one half-cycle, Step" Button
+    t =    94.04s     Wait for thalesmms.logisim.mobile to idle
+    t =    94.04s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    94.08s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    94.10s     Synthesize event
+    t =    94.38s     Wait for thalesmms.logisim.mobile to idle
+    t =    94.43s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    94.50s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    94.66s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    94.67s Find the Application 'thalesmms.logisim.mobile'
+    t =    94.68s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    94.72s Checking existence of `Any (Element at index 0)`
+    t =    94.76s Find the Any (Element at index 0)
+    t =    94.80s Find the "Advance the clock one half-cycle, Step" Button
+    t =    95.89s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    95.89s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    95.94s Tap "Advance the clock one half-cycle, Step" Button
+    t =    95.94s     Wait for thalesmms.logisim.mobile to idle
+    t =    95.94s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    95.99s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    96.01s     Synthesize event
+    t =    96.29s     Wait for thalesmms.logisim.mobile to idle
+    t =    96.33s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    96.39s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    96.54s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    96.55s Find the Application 'thalesmms.logisim.mobile'
+    t =    96.56s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    96.60s Checking existence of `Any (Element at index 0)`
+    t =    96.63s Find the Any (Element at index 0)
+    t =    96.67s Find the "Advance the clock one half-cycle, Step" Button
+    t =    97.74s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =    97.74s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    97.80s Tap "Advance the clock one half-cycle, Step" Button
+    t =    97.80s     Wait for thalesmms.logisim.mobile to idle
+    t =    97.81s     Find the "Advance the clock one half-cycle, Step" Button
+    t =    97.84s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =    97.86s     Synthesize event
+    t =    98.14s     Wait for thalesmms.logisim.mobile to idle
+    t =    99.23s Checking `Expect predicate `BLOCKPREDICATE(0x105ae3690)` for object Application 'thalesmms.logisim.mobile'`
+    t =    99.23s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    99.29s     Find the StaticText (Element at index 0)
+    t =    99.32s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =    99.36s Find the StaticText (Element at index 0)
+    t =    99.39s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    99.45s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    99.51s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    99.52s Find the Application 'thalesmms.logisim.mobile'
+    t =    99.54s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =    99.57s Checking existence of `Any (Element at index 0)`
+    t =    99.61s Find the Any (Element at index 0)
+    t =    99.64s Find the "Advance the clock one half-cycle, Step" Button
+    t =   100.73s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   100.73s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   100.80s Tap "Advance the clock one half-cycle, Step" Button
+    t =   100.80s     Wait for thalesmms.logisim.mobile to idle
+    t =   100.80s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   100.84s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   100.86s     Synthesize event
+    t =   101.15s     Wait for thalesmms.logisim.mobile to idle
+    t =   101.18s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   101.25s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   101.39s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   101.40s Find the Application 'thalesmms.logisim.mobile'
+    t =   101.42s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   101.45s Checking existence of `Any (Element at index 0)`
+    t =   101.49s Find the Any (Element at index 0)
+    t =   101.52s Find the "Advance the clock one half-cycle, Step" Button
+    t =   102.60s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   102.60s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   102.67s Tap "Advance the clock one half-cycle, Step" Button
+    t =   102.67s     Wait for thalesmms.logisim.mobile to idle
+    t =   102.67s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   102.71s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   102.73s     Synthesize event
+    t =   103.01s     Wait for thalesmms.logisim.mobile to idle
+    t =   103.04s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   103.11s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   103.26s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   103.27s Find the Application 'thalesmms.logisim.mobile'
+    t =   103.28s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   103.32s Checking existence of `Any (Element at index 0)`
+    t =   103.35s Find the Any (Element at index 0)
+    t =   103.39s Find the "Advance the clock one half-cycle, Step" Button
+    t =   104.47s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   104.47s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   104.54s Tap "Advance the clock one half-cycle, Step" Button
+    t =   104.54s     Wait for thalesmms.logisim.mobile to idle
+    t =   104.54s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   104.58s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   104.60s     Synthesize event
+    t =   104.89s     Wait for thalesmms.logisim.mobile to idle
+    t =   104.91s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   104.98s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   105.12s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   105.13s Find the Application 'thalesmms.logisim.mobile'
+    t =   105.15s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =   105.18s Checking existence of `Any (Element at index 0)`
+    t =   105.22s Find the Any (Element at index 0)
+    t =   105.26s Find the "Advance the clock one half-cycle, Step" Button
+    t =   106.35s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   106.36s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   106.41s Tap "Advance the clock one half-cycle, Step" Button
+    t =   106.41s     Wait for thalesmms.logisim.mobile to idle
+    t =   106.41s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   106.45s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   106.47s     Synthesize event
+    t =   106.76s     Wait for thalesmms.logisim.mobile to idle
+    t =   106.79s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   106.86s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   107.01s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   107.02s Find the Application 'thalesmms.logisim.mobile'
+    t =   107.03s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =   107.07s Checking existence of `Any (Element at index 0)`
+    t =   107.11s Find the Any (Element at index 0)
+    t =   107.15s Find the "Advance the clock one half-cycle, Step" Button
+    t =   108.23s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   108.23s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   108.27s Tap "Advance the clock one half-cycle, Step" Button
+    t =   108.27s     Wait for thalesmms.logisim.mobile to idle
+    t =   108.27s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   108.30s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   108.32s     Synthesize event
+    t =   108.61s     Wait for thalesmms.logisim.mobile to idle
+    t =   108.65s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   108.71s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   108.86s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   108.87s Find the Application 'thalesmms.logisim.mobile'
+    t =   108.89s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =   108.92s Checking existence of `Any (Element at index 0)`
+    t =   108.96s Find the Any (Element at index 0)
+    t =   109.00s Find the "Advance the clock one half-cycle, Step" Button
+    t =   110.07s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   110.07s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   110.12s Tap "Advance the clock one half-cycle, Step" Button
+    t =   110.12s     Wait for thalesmms.logisim.mobile to idle
+    t =   110.12s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   110.16s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   110.18s     Synthesize event
+    t =   110.47s     Wait for thalesmms.logisim.mobile to idle
+    t =   110.51s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   110.58s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   110.73s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   110.74s Find the Application 'thalesmms.logisim.mobile'
+    t =   110.75s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   110.80s Checking existence of `Any (Element at index 0)`
+    t =   110.84s Find the Any (Element at index 0)
+    t =   110.89s Find the "Advance the clock one half-cycle, Step" Button
+    t =   111.97s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   111.97s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   112.04s Tap "Advance the clock one half-cycle, Step" Button
+    t =   112.04s     Wait for thalesmms.logisim.mobile to idle
+    t =   112.05s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   112.08s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   112.11s     Synthesize event
+    t =   112.40s     Wait for thalesmms.logisim.mobile to idle
+    t =   112.43s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   112.49s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   112.65s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   112.66s Find the Application 'thalesmms.logisim.mobile'
+    t =   112.67s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =   112.71s Checking existence of `Any (Element at index 0)`
+    t =   112.74s Find the Any (Element at index 0)
+    t =   112.78s Find the "Advance the clock one half-cycle, Step" Button
+    t =   113.85s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   113.85s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   113.89s Tap "Advance the clock one half-cycle, Step" Button
+    t =   113.89s     Wait for thalesmms.logisim.mobile to idle
+    t =   113.90s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   113.93s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   113.96s     Synthesize event
+    t =   114.24s     Wait for thalesmms.logisim.mobile to idle
+    t =   115.27s Checking `Expect predicate `BLOCKPREDICATE(0x10fdd1a10)` for object Application 'thalesmms.logisim.mobile'`
+    t =   115.27s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =   115.32s     Find the StaticText (Element at index 0)
+    t =   115.36s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =   115.39s Find the StaticText (Element at index 0)
+    t =   115.42s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   115.49s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   115.56s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   115.57s Find the Application 'thalesmms.logisim.mobile'
+    t =   115.58s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   115.62s Checking existence of `Any (Element at index 0)`
+    t =   115.66s Find the Any (Element at index 0)
+    t =   115.70s Find the "Advance the clock one half-cycle, Step" Button
+    t =   116.77s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   116.77s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   116.84s Tap "Advance the clock one half-cycle, Step" Button
+    t =   116.84s     Wait for thalesmms.logisim.mobile to idle
+    t =   116.84s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   116.88s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   116.90s     Synthesize event
+    t =   117.19s     Wait for thalesmms.logisim.mobile to idle
+    t =   117.21s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   117.28s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   117.43s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   117.44s Find the Application 'thalesmms.logisim.mobile'
+    t =   117.45s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   117.49s Checking existence of `Any (Element at index 0)`
+    t =   117.53s Find the Any (Element at index 0)
+    t =   117.57s Find the "Advance the clock one half-cycle, Step" Button
+    t =   118.64s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   118.64s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   118.68s Tap "Advance the clock one half-cycle, Step" Button
+    t =   118.68s     Wait for thalesmms.logisim.mobile to idle
+    t =   118.69s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   118.72s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   118.74s     Synthesize event
+    t =   119.03s     Wait for thalesmms.logisim.mobile to idle
+    t =   119.06s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   119.13s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   119.28s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   119.29s Find the Application 'thalesmms.logisim.mobile'
+    t =   119.30s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   119.34s Checking existence of `Any (Element at index 0)`
+    t =   119.37s Find the Any (Element at index 0)
+    t =   119.41s Find the "Advance the clock one half-cycle, Step" Button
+    t =   120.50s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   120.50s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   120.56s Tap "Advance the clock one half-cycle, Step" Button
+    t =   120.56s     Wait for thalesmms.logisim.mobile to idle
+    t =   120.57s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   120.60s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   120.62s     Synthesize event
+    t =   120.91s     Wait for thalesmms.logisim.mobile to idle
+    t =   120.94s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   121.01s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   121.16s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   121.17s Find the Application 'thalesmms.logisim.mobile'
+    t =   121.18s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =   121.22s Checking existence of `Any (Element at index 0)`
+    t =   121.26s Find the Any (Element at index 0)
+    t =   121.30s Find the "Advance the clock one half-cycle, Step" Button
+    t =   122.36s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   122.36s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   122.42s Tap "Advance the clock one half-cycle, Step" Button
+    t =   122.42s     Wait for thalesmms.logisim.mobile to idle
+    t =   122.42s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   122.46s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   122.48s     Synthesize event
+    t =   122.77s     Wait for thalesmms.logisim.mobile to idle
+    t =   122.79s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   122.86s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   123.01s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   123.02s Find the Application 'thalesmms.logisim.mobile'
+    t =   123.04s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   123.07s Checking existence of `Any (Element at index 0)`
+    t =   123.11s Find the Any (Element at index 0)
+    t =   123.15s Find the "Advance the clock one half-cycle, Step" Button
+    t =   124.23s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   124.23s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   124.27s Tap "Advance the clock one half-cycle, Step" Button
+    t =   124.27s     Wait for thalesmms.logisim.mobile to idle
+    t =   124.27s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   124.31s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   124.34s     Synthesize event
+    t =   124.62s     Wait for thalesmms.logisim.mobile to idle
+    t =   124.64s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   124.71s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   124.86s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   124.87s Find the Application 'thalesmms.logisim.mobile'
+    t =   124.88s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   124.92s Checking existence of `Any (Element at index 0)`
+    t =   124.95s Find the Any (Element at index 0)
+    t =   124.99s Find the "Advance the clock one half-cycle, Step" Button
+    t =   126.06s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   126.06s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   126.13s Tap "Advance the clock one half-cycle, Step" Button
+    t =   126.13s     Wait for thalesmms.logisim.mobile to idle
+    t =   126.13s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   126.17s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   126.19s     Synthesize event
+    t =   126.47s     Wait for thalesmms.logisim.mobile to idle
+    t =   126.49s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   126.57s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   126.71s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   126.72s Find the Application 'thalesmms.logisim.mobile'
+    t =   126.74s Get all elements bound by index for: Elements matching predicate '(label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ") OR (label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ")'
+    t =   126.77s Checking existence of `Any (Element at index 0)`
+    t =   126.81s Find the Any (Element at index 0)
+    t =   126.84s Find the "Advance the clock one half-cycle, Step" Button
+    t =   127.94s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   127.94s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   128.01s Tap "Advance the clock one half-cycle, Step" Button
+    t =   128.01s     Wait for thalesmms.logisim.mobile to idle
+    t =   128.01s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   128.05s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   128.07s     Synthesize event
+    t =   128.36s     Wait for thalesmms.logisim.mobile to idle
+    t =   128.38s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   128.45s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   128.59s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   128.61s Find the Application 'thalesmms.logisim.mobile'
+    t =   128.62s Get all elements bound by index for: Elements matching predicate '(label == "Advance the clock one half-cycle" OR label BEGINSWITH "Advance the clock one half-cycle, ") OR (label == "Avançar clock um meio-ciclo" OR label BEGINSWITH "Avançar clock um meio-ciclo, ")'
+    t =   128.66s Checking existence of `Any (Element at index 0)`
+    t =   128.70s Find the Any (Element at index 0)
+    t =   128.74s Find the "Advance the clock one half-cycle, Step" Button
+    t =   129.81s Checking `Expect predicate `enabled == 1` for object "Advance the clock one half-cycle, Step" Button`
+    t =   129.81s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   129.88s Tap "Advance the clock one half-cycle, Step" Button
+    t =   129.88s     Wait for thalesmms.logisim.mobile to idle
+    t =   129.88s     Find the "Advance the clock one half-cycle, Step" Button
+    t =   129.92s     Check for interrupting elements affecting "Advance the clock one half-cycle, Step" Button
+    t =   129.94s     Synthesize event
+    t =   130.23s     Wait for thalesmms.logisim.mobile to idle
+    t =   131.29s Checking `Expect predicate `BLOCKPREDICATE(0x1059b55c0)` for object Application 'thalesmms.logisim.mobile'`
+    t =   131.29s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =   131.35s     Find the StaticText (Element at index 0)
+    t =   131.39s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =   131.42s Find the StaticText (Element at index 0)
+    t =   131.46s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =   131.49s Find the StaticText (Element at index 0)
+    t =   131.52s Checking existence of `"editor-canvas" Any`
+    t =   131.53s Get all elements bound by index for: Elements matching predicate 'label BEGINSWITH "Circuit area." OR label BEGINSWITH "Área do circuito."'
+    t =   131.57s Checking existence of `Any (Element at index 0)`
+    t =   131.60s Find the Any (Element at index 0)
+    t =   131.63s Find the "editor-canvas" Any
+    t =   131.65s Find the "Circuit area. ADR_Com: 1110, ADR_Val: ????, Output: ????, RI_data_IN: ????????, Output: ????, T1: 0, Output: 0101, T2: 0, Output: ????????, Comando: ????, T3: 0, Valor: ????????, T4: 0, Output: ????????, Output: ????????, Output: ????????, Output: ????????, T5: 1, T6: 0, Output: 1, Output: 1, Output: 0, Output: 0, Output: 0, Output: 1, Output: 1, Output: 1, Output: 1, Output: 1, Output: 0, Output: 0, Output: 0000, Output: 1000. Use two fingers to zoom and pan." Other
+    t =   131.68s Get all elements bound by index for: Elements matching predicate 'label BEGINSWITH "Display hexadecimal (" OR label BEGINSWITH "Hex digit display ("'
+    t =   131.72s Checking existence of `Button (Element at index 0)`
+    t =   131.75s Find the Button (Element at index 0)
+    t =   131.78s Checking existence of `Button (Element at index 1)`
+    t =   131.82s Find the Button (Element at index 1)
+    t =   131.85s Find the "canvas-component:import-105" Button
+    t =   131.89s Find the "canvas-component:import-104" Button
+    t =   131.93s Find the "canvas-component:import-104" Button
+    t =   131.96s Find the "canvas-component:import-104" Button
+    t =   132.00s Added attachment named 'sap1-display-0'
+    t =   132.00s Find the "canvas-component:import-105" Button
+    t =   132.04s Find the "canvas-component:import-105" Button
+    t =   132.07s Added attachment named 'sap1-display-8'
+    t =   132.17s Added attachment named 'sap1-at-half-cycle-56'
+    t =   132.17s Added attachment named 'sap1-half-cycle-56-canvas'
+    t =   132.17s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   132.24s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   132.30s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   132.31s Find the Application 'thalesmms.logisim.mobile'
+    t =   132.33s Get all elements bound by index for: Elements matching predicate '(label == "Run" OR label BEGINSWITH "Run, ") OR (label == "▶ Run" OR label BEGINSWITH "▶ Run, ") OR (label == "Executar" OR label BEGINSWITH "Executar, ") OR (label == "▶ Executar" OR label BEGINSWITH "▶ Executar, ")'
+    t =   132.36s Checking existence of `Any (Element at index 0)`
+    t =   132.40s Find the Any (Element at index 0)
+    t =   132.44s Find the "▶ Run, ▶ Run" Button
+    t =   132.48s Tap "▶ Run, ▶ Run" Button
+    t =   132.48s     Wait for thalesmms.logisim.mobile to idle
+    t =   132.48s     Find the "▶ Run, ▶ Run" Button
+    t =   132.52s     Check for interrupting elements affecting "▶ Run, ▶ Run" Button
+    t =   132.54s     Synthesize event
+    t =   132.83s     Wait for thalesmms.logisim.mobile to idle
+    t =   132.83s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   132.90s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   132.97s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   132.98s Find the Application 'thalesmms.logisim.mobile'
+    t =   132.99s Get all elements bound by index for: Elements matching predicate '(label == "Pause" OR label BEGINSWITH "Pause, ") OR (label == "Ⅱ Pause" OR label BEGINSWITH "Ⅱ Pause, ") OR (label == "Pausar" OR label BEGINSWITH "Pausar, ") OR (label == "Ⅱ Pausar" OR label BEGINSWITH "Ⅱ Pausar, ")'
+    t =   133.03s Checking existence of `Any (Element at index 0)`
+    t =   133.07s Find the Any (Element at index 0)
+    t =   133.11s Find the "Ⅱ Pause, Ⅱ Pause" Button
+    t =   133.16s Checking existence of `"Ⅱ Pause, Ⅱ Pause" Button`
+    t =   134.69s Tap "Ⅱ Pause, Ⅱ Pause" Button
+    t =   134.69s     Wait for thalesmms.logisim.mobile to idle
+    t =   134.70s     Find the "Ⅱ Pause, Ⅱ Pause" Button
+    t =   134.75s     Check for interrupting elements affecting "Ⅱ Pause, Ⅱ Pause" Button
+    t =   134.77s     Synthesize event
+    t =   135.06s     Wait for thalesmms.logisim.mobile to idle
+    t =   135.06s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   135.13s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   135.19s Checking existence of `"editor-simulation-toolbar" Any`
+    t =   135.20s Find the Application 'thalesmms.logisim.mobile'
+    t =   135.22s Get all elements bound by index for: Elements matching predicate '(label == "Run" OR label BEGINSWITH "Run, ") OR (label == "▶ Run" OR label BEGINSWITH "▶ Run, ") OR (label == "Executar" OR label BEGINSWITH "Executar, ") OR (label == "▶ Executar" OR label BEGINSWITH "▶ Executar, ")'
+    t =   135.28s Checking existence of `Any (Element at index 0)`
+    t =   135.32s Find the Any (Element at index 0)
+    t =   135.37s Find the "▶ Run, ▶ Run" Button
+    t =   135.44s Checking existence of `"▶ Run, ▶ Run" Button`
+    t =   135.49s Checking existence of `Any (First Match)`
+    t =   135.53s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =   135.60s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =   135.67s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =   135.70s Find the StaticText (Element at index 0)
+    t =   138.24s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Passos ([0-9]+)$" OR label MATCHES "^Steps ([0-9]+)$"'
+    t =   138.30s Find the StaticText (Element at index 0)
+    t =   138.34s Added attachment named 'sap1-run-pause-observation'
+    t =   138.41s Added attachment named 'sap1-paused'
+    t =   138.42s Tear Down
+    t =   138.42s     Requesting snapshot of accessibility hierarchy for app with pid 27761
+    t =   138.70s     Requesting snapshot of accessibility hierarchy for app with pid 27761
+    t =   138.80s     Added attachment named 'native-tree'
+    t =   138.86s     Added attachment named 'final-screen'
+    t =   138.86s     Terminate thalesmms.logisim.mobile:27761
+    t =   139.90s     Setting device orientation to Portrait
+    t =   139.92s         Wait for com.apple.springboard to idle
+Test Case '-[EditorEndToEndTests.EditorEndToEndTests testSap1SequentialExecution]' passed (140.001 seconds).
+Test Suite 'EditorEndToEndTests' passed at 2026-11-05 03:04:29.200.
+	 Executed 1 test, with 0 failures (0 unexpected) in 140.001 (140.008) seconds
+Test Suite 'EditorEndToEndTests.xctest' passed at 2026-11-05 03:04:29.200.
+	 Executed 1 test, with 0 failures (0 unexpected) in 140.001 (140.009) seconds
+Test Suite 'Selected tests' passed at 2026-11-05 03:04:29.201.
+	 Executed 1 test, with 0 failures (0 unexpected) in 140.001 (140.011) seconds
+2026-11-05 03:04:29.492 xcodebuild[27746:9692378] [MT] IDETestOperationsObserverDebug: 144.098 elapsed -- Testing started completed.
+2026-11-05 03:04:29.492 xcodebuild[27746:9692378] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-05 03:04:29.492 xcodebuild[27746:9692378] [MT] IDETestOperationsObserverDebug: 144.098 sec, +144.098 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/editor.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

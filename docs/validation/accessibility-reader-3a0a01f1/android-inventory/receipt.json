@@ -1,0 +1,132 @@
+{
+  "created_utc": "2026-11-05T07:22:58.803169+00:00",
+  "serial": "emulator-5556",
+  "scope": "Only authorized read-only transport/API/OS/TalkBack package and service inventory; no UI, enable, install, stop or settings mutation. Dumpsys records are filtered to requested metadata.",
+  "queries": [
+    {
+      "name": "transport",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "get-state"
+      ],
+      "exit_code": 0,
+      "output": "device",
+      "stderr": "",
+      "filtered": false
+    },
+    {
+      "name": "api",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "getprop",
+        "ro.build.version.sdk"
+      ],
+      "exit_code": 0,
+      "output": "35",
+      "stderr": "",
+      "filtered": false
+    },
+    {
+      "name": "os",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "getprop",
+        "ro.build.version.release"
+      ],
+      "exit_code": 0,
+      "output": "15",
+      "stderr": "",
+      "filtered": false
+    },
+    {
+      "name": "talkback-package",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "pm",
+        "list",
+        "packages",
+        "com.google.android.marvin.talkback"
+      ],
+      "exit_code": 0,
+      "output": "package:com.google.android.marvin.talkbackoverlay\npackage:com.google.android.marvin.talkback",
+      "stderr": "",
+      "filtered": false
+    },
+    {
+      "name": "talkback-version",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.google.android.marvin.talkback"
+      ],
+      "exit_code": 0,
+      "output": "versionCode=60138348 minSdk=35 targetSdk=35\n    versionName=15.0.0.639625893\n    lastUpdateTime=2026-08-16 20:03:20\n    installerPackageName=null\n    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION ]\n      firstInstallTime=2026-08-16 20:03:20",
+      "stderr": "",
+      "filtered": true
+    },
+    {
+      "name": "enabled-services",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "secure",
+        "enabled_accessibility_services"
+      ],
+      "exit_code": 0,
+      "output": "null",
+      "stderr": "",
+      "filtered": false
+    },
+    {
+      "name": "accessibility-enabled",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "settings",
+        "get",
+        "secure",
+        "accessibility_enabled"
+      ],
+      "exit_code": 0,
+      "output": "0",
+      "stderr": "",
+      "filtered": false
+    },
+    {
+      "name": "service-runtime",
+      "command": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "shell",
+        "dumpsys",
+        "accessibility"
+      ],
+      "exit_code": 0,
+      "output": "attributes:{id=0, touchExplorationEnabled=false, serviceHandlesDoubleTap=false, requestMultiFingerGestures=false, requestTwoFingerPassthrough=false, sendMotionEventsEnabledfalse, displayMagnificationEnabled=false, autoclickEnabled=false, nonInteractiveUiTimeout=0, interactiveUiTimeout=0, installedServiceCount=3, magnificationModes={0=1}, magnificationCapabilities=3, audioDescriptionByDefaultEnabled=false, magnificationFollowTypingEnabled=true, alwaysOnMagnificationEnabled=true}",
+      "stderr": "",
+      "filtered": true
+    }
+  ]
+}

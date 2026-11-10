@@ -1,0 +1,2171 @@
+{
+  "scope": "offline final-snapshot and source review; no Native rerun, no relaxed selector",
+  "nativeResults": "four FAIL preserved",
+  "expected": {
+    "OUT_BUTTON": "0",
+    "OUT_DIP0": "0",
+    "OUT_DIP1": "0",
+    "OUT_JOY_X": "1000",
+    "OUT_JOY_Y": "1000",
+    "OUT_RGB_R": "1",
+    "OUT_RGB_G": "1",
+    "OUT_RGB_B": "0",
+    "OUT_BAR_VALUE": "10100101",
+    "OUT_SEGMENTS": "00111111",
+    "OUT_KEYBOARD_DATA": "0000000",
+    "OUT_KEYBOARD_AVAILABLE": "0",
+    "OUT_CLOCK": "0",
+    "OUT_MATRIX_ROW0": "01110",
+    "OUT_KEYPAD_C0": "1",
+    "OUT_KEYPAD_C1": "1",
+    "OUT_KEYPAD_C2": "1",
+    "OUT_KEYPAD_C3": "1",
+    "OUT_LED_LEVEL": "0"
+  },
+  "cases": [
+    {
+      "case": "IoEndToEndTests/testIoDimensionChangesRemainExportable()",
+      "terminalStatus": "failed",
+      "appPid": 76677,
+      "treeAttachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "deviceName": "Logisim SaveAs Beta iPad 27.0",
+        "exportedFileName": "5A195C9B-A75E-461B-BEEB-ECB1B5446C57.txt",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "native-tree_0_4020F635-18EE-44AC-AC9C-2F6EDE0F9617.txt",
+        "timestamp": 1793862501.445
+      },
+      "treeSha256": "37437cba2ab36f844c917b88c60ab994474d9dcc0acb1e9f4d0622983c38d1fb",
+      "windows": [
+        {
+          "line": 4,
+          "summary": "Window (Main), 0x113551680, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 69,
+          "summary": "Window, 0x116425040, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 309,
+          "summary": "Window, 0x116437d40, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        }
+      ],
+      "publicContextLabels": [
+        {
+          "line": 307,
+          "summary": "Other, 0x116437ac0, {{8.0, 1161.0}, {671.0, 24.0}}, label: 'Operation cancelled.'",
+          "frame": [
+            8.0,
+            1161.0,
+            671.0,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 69,
+              "summary": "Window, 0x116425040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "Other, 0x116437ac0, {{8.0, 1161.0}, {671.0, 24.0}}, label: 'Operation cancelled.'"
+        },
+        {
+          "line": 308,
+          "summary": "StaticText, 0x116437c00, {{687.0, 1161.0}, {139.0, 24.0}}, label: '78 components \u00b7 4 wires'",
+          "frame": [
+            687.0,
+            1161.0,
+            139.0,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 69,
+              "summary": "Window, 0x116425040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "StaticText, 0x116437c00, {{687.0, 1161.0}, {139.0, 24.0}}, label: '78 components \u00b7 4 wires'"
+        }
+      ],
+      "canvasSummaries": [
+        {
+          "line": 189,
+          "summary": "Other, 0x11642e6c0, {{250.0, 228.0}, {584.0, 927.0}}, label: 'Circuit area. . Use two fingers to zoom and pan.'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            927.0
+          ],
+          "label": "Circuit area. . Use two fingers to zoom and pan.",
+          "all19LiteralOutputsMatch": false,
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x1135521c0, pid: 76677, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 69,
+              "summary": "Window, 0x116425040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 70,
+              "summary": "Other, 0x116425180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 71,
+              "summary": "Other, 0x1164252c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 72,
+              "summary": "Other, 0x116425400, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 73,
+              "summary": "Other, 0x116425540, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 74,
+              "summary": "Other, 0x116425680, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 77,
+              "summary": "ScrollView, 0x116425a40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 78,
+              "summary": "Other, 0x116425b80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 79,
+              "summary": "Other, 0x116425cc0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "canvasMarkers": [
+        {
+          "line": 190,
+          "summary": "Other, 0x11642e800, {{250.0, 228.0}, {584.0, 927.0}}, identifier: 'editor-canvas'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            927.0
+          ],
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x1135521c0, pid: 76677, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 69,
+              "summary": "Window, 0x116425040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 70,
+              "summary": "Other, 0x116425180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 71,
+              "summary": "Other, 0x1164252c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 72,
+              "summary": "Other, 0x116425400, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 73,
+              "summary": "Other, 0x116425540, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 74,
+              "summary": "Other, 0x116425680, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 77,
+              "summary": "ScrollView, 0x116425a40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 78,
+              "summary": "Other, 0x116425b80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 79,
+              "summary": "Other, 0x116425cc0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "summaryCountAtFirstMarkerFrame": 1,
+      "allSummariesAtThatFrameMatch19": false,
+      "nativeIoProbeAttachments": [
+        {
+          "attachment": "4F609B0E-156B-4071-B95F-6DF5536AF64F.txt",
+          "sha256": "a98e82e8b5fe0009f5eabe7c0418a9119ed0ef7af9c70994426fc5eaceb81e40"
+        }
+      ],
+      "nonceSources": [
+        {
+          "attachment": "5A195C9B-A75E-461B-BEEB-ECB1B5446C57.txt",
+          "nonces": []
+        },
+        {
+          "attachment": "EA4CC715-4B26-4C5E-AC52-6A2E5F4C7E7E.txt",
+          "nonces": [
+            "io-showcase-0CC34CEE-65CC-4467-8BDC-30F865D372C8.circ"
+          ]
+        }
+      ],
+      "ownedNonceFixtures": [
+        {
+          "file": "io-showcase-0CC34CEE-65CC-4467-8BDC-30F865D372C8.circ",
+          "exists": true,
+          "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+        }
+      ],
+      "observerResultForThisSnapshot": "exactly1 summary (values evaluated separately)",
+      "interpretation": "Native io-probes attachment proves all19 at the initial assertion; failure is later at XML Close. Final modal snapshot is not a baseline snapshot."
+    },
+    {
+      "case": "IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing()",
+      "terminalStatus": "failed",
+      "appPid": 77115,
+      "treeAttachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "deviceName": "Logisim SaveAs Beta iPad 27.0",
+        "exportedFileName": "8E6F9875-2B29-423D-86C7-181C4BC4D33D.txt",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "native-tree_0_B77BC64B-E53A-4A45-9A89-C33E227E0DB6.txt",
+        "timestamp": 1793862540.595
+      },
+      "treeSha256": "67abc99ce683798f8488d6a62de6cad1a7afa1378c32d2385b5a66be6b5f8bbe",
+      "windows": [
+        {
+          "line": 4,
+          "summary": "Window (Main), 0x11674f480, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 216,
+          "summary": "Window, 0x11353f5c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 428,
+          "summary": "Window, 0x117c93480, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        }
+      ],
+      "publicContextLabels": [
+        {
+          "line": 214,
+          "summary": "Other, 0x11353e1c0, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'File io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ opened.'",
+          "frame": [
+            8.0,
+            1161.0,
+            662.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674f480, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "Other, 0x11353e1c0, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'File io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ opened.'"
+        },
+        {
+          "line": 215,
+          "summary": "StaticText, 0x11353cdc0, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'",
+          "frame": [
+            678.5,
+            1161.0,
+            147.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674f480, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "StaticText, 0x11353cdc0, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'"
+        },
+        {
+          "line": 426,
+          "summary": "Other, 0x117c93200, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'Operation cancelled.'",
+          "frame": [
+            8.0,
+            1161.0,
+            662.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 216,
+              "summary": "Window, 0x11353f5c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "Other, 0x117c93200, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'Operation cancelled.'"
+        },
+        {
+          "line": 427,
+          "summary": "StaticText, 0x117c93340, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'",
+          "frame": [
+            678.5,
+            1161.0,
+            147.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 216,
+              "summary": "Window, 0x11353f5c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "StaticText, 0x117c93340, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'"
+        }
+      ],
+      "canvasSummaries": [
+        {
+          "line": 87,
+          "summary": "Other, 0x10b299040, {{250.0, 228.0}, {584.0, 879.0}}, label: 'Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MAT",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "label": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan.",
+          "all19LiteralOutputsMatch": true,
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c3c0, pid: 77115, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674f480, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 5,
+              "summary": "Other, 0x11674e440, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 6,
+              "summary": "Other, 0x11674d540, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 7,
+              "summary": "Other, 0x11674f980, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 8,
+              "summary": "Other, 0x11674e940, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 9,
+              "summary": "Other, 0x11674ed00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 12,
+              "summary": "ScrollView, 0x11674e580, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 13,
+              "summary": "Other, 0x11674c280, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 14,
+              "summary": "Other, 0x11674c140, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        },
+        {
+          "line": 299,
+          "summary": "Other, 0x117c892c0, {{250.0, 228.0}, {584.0, 879.0}}, label: 'Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MAT",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "label": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan.",
+          "all19LiteralOutputsMatch": true,
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c3c0, pid: 77115, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 216,
+              "summary": "Window, 0x11353f5c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 217,
+              "summary": "Other, 0x11353d040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 218,
+              "summary": "Other, 0x11353d2c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 219,
+              "summary": "Other, 0x11353cc80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 220,
+              "summary": "Other, 0x11353f340, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 221,
+              "summary": "Other, 0x11353f200, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 224,
+              "summary": "ScrollView, 0x11353c000, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 225,
+              "summary": "Other, 0x11353d180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 226,
+              "summary": "Other, 0x11353de00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "canvasMarkers": [
+        {
+          "line": 88,
+          "summary": "Other, 0x10b299540, {{250.0, 228.0}, {584.0, 879.0}}, identifier: 'editor-canvas'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c3c0, pid: 77115, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674f480, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 5,
+              "summary": "Other, 0x11674e440, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 6,
+              "summary": "Other, 0x11674d540, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 7,
+              "summary": "Other, 0x11674f980, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 8,
+              "summary": "Other, 0x11674e940, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 9,
+              "summary": "Other, 0x11674ed00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 12,
+              "summary": "ScrollView, 0x11674e580, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 13,
+              "summary": "Other, 0x11674c280, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 14,
+              "summary": "Other, 0x11674c140, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        },
+        {
+          "line": 300,
+          "summary": "Other, 0x117c89400, {{250.0, 228.0}, {584.0, 879.0}}, identifier: 'editor-canvas'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c3c0, pid: 77115, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 216,
+              "summary": "Window, 0x11353f5c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 217,
+              "summary": "Other, 0x11353d040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 218,
+              "summary": "Other, 0x11353d2c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 219,
+              "summary": "Other, 0x11353cc80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 220,
+              "summary": "Other, 0x11353f340, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 221,
+              "summary": "Other, 0x11353f200, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 224,
+              "summary": "ScrollView, 0x11353c000, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 225,
+              "summary": "Other, 0x11353d180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 226,
+              "summary": "Other, 0x11353de00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "summaryCountAtFirstMarkerFrame": 2,
+      "allSummariesAtThatFrameMatch19": true,
+      "nativeIoProbeAttachments": [],
+      "nonceSources": [
+        {
+          "attachment": "8E6F9875-2B29-423D-86C7-181C4BC4D33D.txt",
+          "nonces": [
+            "io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ"
+          ]
+        },
+        {
+          "attachment": "B6A2DC3B-3C69-47C1-A6F2-94D9B4DA2091.txt",
+          "nonces": [
+            "io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ"
+          ]
+        }
+      ],
+      "ownedNonceFixtures": [
+        {
+          "file": "io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ",
+          "exists": true,
+          "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+        }
+      ],
+      "observerResultForThisSnapshot": "nil: matching summary count is not1",
+      "interpretation": "Final snapshot contains two complete matching19 summaries at the marker frame. The source selector returns nil for that topology. This does not prove values throughout the earlier20-second assertion window or independent engine initialization."
+    },
+    {
+      "case": "IoEndToEndTests/testIoKeyboardTtyAndCapacity()",
+      "terminalStatus": "failed",
+      "appPid": 77507,
+      "treeAttachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "deviceName": "Logisim SaveAs Beta iPad 27.0",
+        "exportedFileName": "681974B9-CA53-4872-84B4-BEE0C4FC69B8.txt",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "native-tree_0_29EE7EF7-7624-4774-A8E5-C88B387F457B.txt",
+        "timestamp": 1793862579.415
+      },
+      "treeSha256": "7cfcfbf8e488fdee84bff53384f1b5a744882eb53ba0bd5a322cb0e5e02e189e",
+      "windows": [
+        {
+          "line": 4,
+          "summary": "Window (Main), 0x11674cc80, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 216,
+          "summary": "Window, 0x117fac500, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 428,
+          "summary": "Window, 0x117fc0f00, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        }
+      ],
+      "publicContextLabels": [
+        {
+          "line": 214,
+          "summary": "Other, 0x117fac280, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'File io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ opened.'",
+          "frame": [
+            8.0,
+            1161.0,
+            662.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674cc80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "Other, 0x117fac280, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'File io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ opened.'"
+        },
+        {
+          "line": 215,
+          "summary": "StaticText, 0x117fac3c0, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'",
+          "frame": [
+            678.5,
+            1161.0,
+            147.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674cc80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "StaticText, 0x117fac3c0, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'"
+        },
+        {
+          "line": 426,
+          "summary": "Other, 0x117fc0c80, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'Operation cancelled.'",
+          "frame": [
+            8.0,
+            1161.0,
+            662.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 216,
+              "summary": "Window, 0x117fac500, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "Other, 0x117fc0c80, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'Operation cancelled.'"
+        },
+        {
+          "line": 427,
+          "summary": "StaticText, 0x117fc0dc0, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'",
+          "frame": [
+            678.5,
+            1161.0,
+            147.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 216,
+              "summary": "Window, 0x117fac500, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "StaticText, 0x117fc0dc0, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'"
+        }
+      ],
+      "canvasSummaries": [
+        {
+          "line": 87,
+          "summary": "Other, 0x117c96940, {{250.0, 228.0}, {584.0, 879.0}}, label: 'Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MAT",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "label": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan.",
+          "all19LiteralOutputsMatch": true,
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c780, pid: 77507, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674cc80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 5,
+              "summary": "Other, 0x11674c640, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 6,
+              "summary": "Other, 0x11674d2c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 7,
+              "summary": "Other, 0x11674d900, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 8,
+              "summary": "Other, 0x11674d400, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 9,
+              "summary": "Other, 0x11674d180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 12,
+              "summary": "ScrollView, 0x11674c500, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 13,
+              "summary": "Other, 0x11674c8c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 14,
+              "summary": "Other, 0x117c93980, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        },
+        {
+          "line": 299,
+          "summary": "Other, 0x117fb6d00, {{250.0, 228.0}, {584.0, 879.0}}, label: 'Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MAT",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "label": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan.",
+          "all19LiteralOutputsMatch": true,
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c780, pid: 77507, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 216,
+              "summary": "Window, 0x117fac500, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 217,
+              "summary": "Other, 0x117fac640, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 218,
+              "summary": "Other, 0x117fac780, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 219,
+              "summary": "Other, 0x117fac8c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 220,
+              "summary": "Other, 0x117faca00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 221,
+              "summary": "Other, 0x117facb40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 224,
+              "summary": "ScrollView, 0x117facf00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 225,
+              "summary": "Other, 0x117fad040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 226,
+              "summary": "Other, 0x117fad180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "canvasMarkers": [
+        {
+          "line": 88,
+          "summary": "Other, 0x117c96a80, {{250.0, 228.0}, {584.0, 879.0}}, identifier: 'editor-canvas'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c780, pid: 77507, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x11674cc80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 5,
+              "summary": "Other, 0x11674c640, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 6,
+              "summary": "Other, 0x11674d2c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 7,
+              "summary": "Other, 0x11674d900, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 8,
+              "summary": "Other, 0x11674d400, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 9,
+              "summary": "Other, 0x11674d180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 12,
+              "summary": "ScrollView, 0x11674c500, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 13,
+              "summary": "Other, 0x11674c8c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 14,
+              "summary": "Other, 0x117c93980, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        },
+        {
+          "line": 300,
+          "summary": "Other, 0x117fb6e40, {{250.0, 228.0}, {584.0, 879.0}}, identifier: 'editor-canvas'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x11674c780, pid: 77507, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 216,
+              "summary": "Window, 0x117fac500, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 217,
+              "summary": "Other, 0x117fac640, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 218,
+              "summary": "Other, 0x117fac780, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 219,
+              "summary": "Other, 0x117fac8c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 220,
+              "summary": "Other, 0x117faca00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 221,
+              "summary": "Other, 0x117facb40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 224,
+              "summary": "ScrollView, 0x117facf00, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 225,
+              "summary": "Other, 0x117fad040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 226,
+              "summary": "Other, 0x117fad180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "summaryCountAtFirstMarkerFrame": 2,
+      "allSummariesAtThatFrameMatch19": true,
+      "nativeIoProbeAttachments": [],
+      "nonceSources": [
+        {
+          "attachment": "681974B9-CA53-4872-84B4-BEE0C4FC69B8.txt",
+          "nonces": [
+            "io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ"
+          ]
+        },
+        {
+          "attachment": "2AC6ABA6-34A5-4302-A5D0-CBF3474D7765.txt",
+          "nonces": [
+            "io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ"
+          ]
+        }
+      ],
+      "ownedNonceFixtures": [
+        {
+          "file": "io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ",
+          "exists": true,
+          "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+        }
+      ],
+      "observerResultForThisSnapshot": "nil: matching summary count is not1",
+      "interpretation": "Final snapshot contains two complete matching19 summaries at the marker frame. The source selector returns nil for that topology. This does not prove values throughout the earlier20-second assertion window or independent engine initialization."
+    },
+    {
+      "case": "IoEndToEndTests/testIoMomentaryControlsAndJoystick()",
+      "terminalStatus": "failed",
+      "appPid": 77724,
+      "treeAttachment": {
+        "configurationName": "Test Scheme Action",
+        "deviceId": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "deviceName": "Logisim SaveAs Beta iPad 27.0",
+        "exportedFileName": "449C620E-928F-469D-923A-7DC562EA454F.txt",
+        "isAssociatedWithFailure": false,
+        "suggestedHumanReadableName": "native-tree_0_C24870DA-349F-4EB0-A29B-D7EF3B772EED.txt",
+        "timestamp": 1793862619.259
+      },
+      "treeSha256": "25a398dd12c9115a4a8b217ef8ce9558178726bb1becdaecc93fe8c3b4a94bc5",
+      "windows": [
+        {
+          "line": 4,
+          "summary": "Window (Main), 0x113545040, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 216,
+          "summary": "Window, 0x1182d5f40, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        },
+        {
+          "line": 428,
+          "summary": "Window, 0x1182f2940, {{0.0, 0.0}, {834.0, 1210.0}}",
+          "frame": [
+            0.0,
+            0.0,
+            834.0,
+            1210.0
+          ]
+        }
+      ],
+      "publicContextLabels": [
+        {
+          "line": 214,
+          "summary": "Other, 0x1182d5cc0, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'File io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ opened.'",
+          "frame": [
+            8.0,
+            1161.0,
+            662.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x113545040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "Other, 0x1182d5cc0, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'File io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ opened.'"
+        },
+        {
+          "line": 215,
+          "summary": "StaticText, 0x1182d5e00, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'",
+          "frame": [
+            678.5,
+            1161.0,
+            147.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x113545040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "StaticText, 0x1182d5e00, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'"
+        },
+        {
+          "line": 426,
+          "summary": "Other, 0x1182f26c0, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'Operation cancelled.'",
+          "frame": [
+            8.0,
+            1161.0,
+            662.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 216,
+              "summary": "Window, 0x1182d5f40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "Other, 0x1182f26c0, {{8.0, 1161.0}, {662.5, 24.0}}, label: 'Operation cancelled.'"
+        },
+        {
+          "line": 427,
+          "summary": "StaticText, 0x1182f2800, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'",
+          "frame": [
+            678.5,
+            1161.0,
+            147.5,
+            24.0
+          ],
+          "window": [
+            {
+              "line": 216,
+              "summary": "Window, 0x1182d5f40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ],
+          "fullLine": "StaticText, 0x1182f2800, {{678.5, 1161.0}, {147.5, 24.0}}, label: '54 components \u00b7 64 wires'"
+        }
+      ],
+      "canvasSummaries": [
+        {
+          "line": 87,
+          "summary": "Other, 0x117fb3200, {{250.0, 228.0}, {584.0, 879.0}}, label: 'Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MAT",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "label": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan.",
+          "all19LiteralOutputsMatch": true,
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x113546580, pid: 77724, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x113545040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 5,
+              "summary": "Other, 0x1135452c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 6,
+              "summary": "Other, 0x113546300, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 7,
+              "summary": "Other, 0x113545180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 8,
+              "summary": "Other, 0x113546800, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 9,
+              "summary": "Other, 0x113546940, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 12,
+              "summary": "ScrollView, 0x113546440, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 13,
+              "summary": "Other, 0x113544c80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 14,
+              "summary": "Other, 0x117fb1180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        },
+        {
+          "line": 299,
+          "summary": "Other, 0x1182e4780, {{250.0, 228.0}, {584.0, 879.0}}, label: 'Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MAT",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "label": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan.",
+          "all19LiteralOutputsMatch": true,
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x113546580, pid: 77724, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 216,
+              "summary": "Window, 0x1182d5f40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 217,
+              "summary": "Other, 0x1182d6080, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 218,
+              "summary": "Other, 0x1182d61c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 219,
+              "summary": "Other, 0x1182d6300, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 220,
+              "summary": "Other, 0x1182d6440, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 221,
+              "summary": "Other, 0x1182d6580, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 224,
+              "summary": "ScrollView, 0x1182d6940, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 225,
+              "summary": "Other, 0x1182d6a80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 226,
+              "summary": "Other, 0x1182d6bc0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "canvasMarkers": [
+        {
+          "line": 88,
+          "summary": "Other, 0x117fb08c0, {{250.0, 228.0}, {584.0, 879.0}}, identifier: 'editor-canvas'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x113546580, pid: 77724, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 4,
+              "summary": "Window (Main), 0x113545040, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 5,
+              "summary": "Other, 0x1135452c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 6,
+              "summary": "Other, 0x113546300, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 7,
+              "summary": "Other, 0x113545180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 8,
+              "summary": "Other, 0x113546800, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 9,
+              "summary": "Other, 0x113546940, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 12,
+              "summary": "ScrollView, 0x113546440, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 13,
+              "summary": "Other, 0x113544c80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 14,
+              "summary": "Other, 0x117fb1180, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        },
+        {
+          "line": 300,
+          "summary": "Other, 0x1182e48c0, {{250.0, 228.0}, {584.0, 879.0}}, identifier: 'editor-canvas'",
+          "frame": [
+            250.0,
+            228.0,
+            584.0,
+            879.0
+          ],
+          "ancestorChain": [
+            {
+              "line": 3,
+              "summary": "\u2192Application, 0x113546580, pid: 77724, label: 'Logisim Mobile'"
+            },
+            {
+              "line": 216,
+              "summary": "Window, 0x1182d5f40, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 217,
+              "summary": "Other, 0x1182d6080, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 218,
+              "summary": "Other, 0x1182d61c0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 219,
+              "summary": "Other, 0x1182d6300, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 220,
+              "summary": "Other, 0x1182d6440, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 221,
+              "summary": "Other, 0x1182d6580, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 224,
+              "summary": "ScrollView, 0x1182d6940, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 225,
+              "summary": "Other, 0x1182d6a80, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            },
+            {
+              "line": 226,
+              "summary": "Other, 0x1182d6bc0, {{0.0, 0.0}, {834.0, 1210.0}}",
+              "frame": [
+                0.0,
+                0.0,
+                834.0,
+                1210.0
+              ]
+            }
+          ]
+        }
+      ],
+      "summaryCountAtFirstMarkerFrame": 2,
+      "allSummariesAtThatFrameMatch19": true,
+      "nativeIoProbeAttachments": [],
+      "nonceSources": [
+        {
+          "attachment": "449C620E-928F-469D-923A-7DC562EA454F.txt",
+          "nonces": [
+            "io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ"
+          ]
+        },
+        {
+          "attachment": "63CCA850-1928-4D95-A219-0E7A2089CD99.txt",
+          "nonces": [
+            "io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ"
+          ]
+        }
+      ],
+      "ownedNonceFixtures": [
+        {
+          "file": "io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ",
+          "exists": true,
+          "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+        }
+      ],
+      "observerResultForThisSnapshot": "nil: matching summary count is not1",
+      "interpretation": "Final snapshot contains two complete matching19 summaries at the marker frame. The source selector returns nil for that topology. This does not prove values throughout the earlier20-second assertion window or independent engine initialization."
+    }
+  ],
+  "sourceSelector": {
+    "path": "scripts/ios_e2e_ui/IoEndToEndTests.swift",
+    "sha256": "5efeea47f0e689e23e7051acc602989d369692d8c5f1e0ffaea0bf9d404255de",
+    "rule": "currentCanvasText returns a label only when summaries.count ==1 after exact frame matching; otherwise nil"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "xcodebuild",
+    "-project",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-scenes/outputs/ios-provider-bootstrap-scenes-b25-002/harness/LogisimFileProviderBootstrap.xcodeproj",
+    "-scheme",
+    "FixtureBootstrap",
+    "-destination",
+    "platform=iOS Simulator,id=B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "-derivedDataPath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-scenes/outputs/ios-provider-bootstrap-scenes-b25-002/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "build-for-testing"
+  ],
+  "started": "2026-11-05T06:08:32.721536+00:00",
+  "queue_note": "Root production2092/ce3+8Boundary owns lock; this compile queues behind it.",
+  "exit_code": 0,
+  "finished": "2026-11-05T06:09:08.530954+00:00"
+}

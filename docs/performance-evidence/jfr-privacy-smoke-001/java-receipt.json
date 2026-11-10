@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "java_version": "21.0.11+10-b1163.116",
+  "recording_closed_before_decode": true,
+  "marker_count": 1,
+  "sentinel_bytes_absent": true,
+  "option_properties_absent": true,
+  "disabled_settings": {
+    "jdk.InitialEnvironmentVariable": true,
+    "jdk.InitialSystemProperty": true,
+    "jdk.JVMInformation": true
+  },
+  "absent_environment": {
+    "AWS_SECRET_ACCESS_KEY": true,
+    "GITHUB_TOKEN": true,
+    "JAVA_TOOL_OPTIONS": true,
+    "JDK_JAVA_OPTIONS": true,
+    "UNEXPECTED_ENVIRONMENT": true,
+    "_JAVA_OPTIONS": true
+  },
+  "forbidden_event_counts": {
+    "jdk.InitialEnvironmentVariable": 0,
+    "jdk.InitialSystemProperty": 0,
+    "jdk.JVMInformation": 0
+  },
+  "event_counts": {
+    "dev.logisim.PrivacySmokeMarker": 1,
+    "jdk.ExecutionSample": 3,
+    "jdk.GCPhasePause": 2,
+    "jdk.GarbageCollection": 2,
+    "jdk.NativeMethodSample": 3,
+    "jdk.ObjectAllocationSample": 88
+  }
+}

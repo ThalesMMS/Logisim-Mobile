@@ -1,0 +1,83 @@
+{
+  "scope": "native-mounted-editor",
+  "fixtureSha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5556",
+  "automatedObservations": [
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_BUTTON": "0",
+        "OUT_DIP0": "0",
+        "OUT_DIP1": "0",
+        "OUT_JOY_X": "1000",
+        "OUT_JOY_Y": "1000",
+        "OUT_RGB_R": "1",
+        "OUT_RGB_G": "1",
+        "OUT_RGB_B": "0",
+        "OUT_BAR_VALUE": "10100101",
+        "OUT_SEGMENTS": "00111111",
+        "OUT_KEYBOARD_DATA": "0000000",
+        "OUT_KEYBOARD_AVAILABLE": "0",
+        "OUT_CLOCK": "0",
+        "OUT_MATRIX_ROW0": "01110",
+        "OUT_KEYPAD_C0": "1",
+        "OUT_KEYPAD_C1": "1",
+        "OUT_KEYPAD_C2": "1",
+        "OUT_KEYPAD_C3": "1",
+        "OUT_LED_LEVEL": "0"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_DIP0": "0",
+        "OUT_DIP1": "1"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 1, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_DIP0": "0",
+        "OUT_DIP1": "1"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 1, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_DIP0": "0",
+        "OUT_DIP1": "1"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 1, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    }
+  ],
+  "selectionScope": "selected-cases",
+  "selectedCases": [
+    "dip-last"
+  ],
+  "notSelectedCases": [
+    "signals",
+    "pointer-controls",
+    "keyboard-tty",
+    "dimensions"
+  ],
+  "caseResults": [
+    {
+      "case": "dip-last",
+      "scenario": "io-showcase-dip-last",
+      "status": "passed"
+    }
+  ],
+  "visualReview": "required",
+  "requiredVisualReview": [
+    "Momentary Button and keypad are visibly pressed while held and released after pointer up/cancellation.",
+    "Joystick handle moves during drag and returns to center on release.",
+    "LED, LED bar, RGB, seven segment, hex display and dot matrix match their connected probes and the fixture labels.",
+    "TTY displays A, AB, A after ASCII backspace, and an empty screen after form feed.",
+    "Changed dimensions and font/label geometry remain visible and the selected control stays reachable."
+  ],
+  "qualification": "No overall #44 completion is inferred from automated probes alone."
+}

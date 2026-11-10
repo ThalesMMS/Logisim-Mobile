@@ -1,0 +1,301 @@
+Optional(Attributes: Application, 0x11c74be80, pid: 40026, label: 'Logisim Mobile'
+Element subtree:
+ →Application, 0x11c74be80, pid: 40026, label: 'Logisim Mobile'
+    Window (Main), 0x11c74bd40, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x11d117480, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x11d1175c0, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x11d10c000, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x11d10c140, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x11d10c280, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x11d10c3c0, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x11d10c500, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x11d10c640, {{0.0, 0.0}, {834.0, 1210.0}}
+                ScrollView, 0x11d10c780, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x11d10c8c0, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x11d10ca00, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x11d10cb40, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x11d10cc80, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x11d10cdc0, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x11d10cf00, {{0.0, 0.0}, {834.0, 1210.0}}
+            ScrollView, 0x11d10d040, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x11d10d180, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x11d10d2c0, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x11d10d400, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x11d10d540, {{0.0, 0.0}, {834.0, 1210.0}}
+                    Other, 0x11d10d680, {{97.0, 0.0}, {640.0, 768.0}}, identifier: 'editor-tool-sheet'
+                    Other, 0x11d10d7c0, {{97.0, 442.0}, {640.0, 748.0}}
+                    Other, 0x11d10d900, {{401.0, 442.0}, {32.0, 48.0}}
+                    Button, 0x11d10da40, {{393.0, 442.0}, {48.0, 48.0}}, label: 'Drag handle'
+                      Other, 0x11d10db80, {{401.0, 464.0}, {32.0, 4.0}}, label: 'Drag handle'
+                    StaticText, 0x11d10dcc0, {{109.0, 514.0}, {553.0, 24.0}}, label: 'Export drawing'
+                    Button, 0x11d10de00, {{662.0, 502.0}, {63.0, 48.0}}, identifier: 'editor-tool-close', label: 'Close'
+                      StaticText, 0x11d10df40, {{674.0, 516.0}, {39.0, 20.0}}, label: 'Close'
+                    Other, 0x11d10e080, {{109.0, 550.0}, {616.0, 628.0}}
+                      StaticText, 0x11d10e1c0, {{121.0, 562.0}, {174.0, 24.0}}, label: 'Export circuit drawing'
+                      StaticText, 0x11d10e300, {{121.0, 594.0}, {592.0, 48.0}}, label: 'Save the complete circuit or the selected objects. Margins use circuit units; scale controls image resolution.'
+                      Button, 0x11d10e440, {{121.0, 650.0}, {62.5, 48.0}}, label: 'PNG', Disabled
+                        StaticText, 0x11d10e580, {{137.0, 664.0}, {30.5, 20.0}}, label: 'PNG'
+                      Button, 0x11d10e6c0, {{191.5, 650.0}, {61.5, 48.0}}, label: 'SVG', Disabled
+                        StaticText, 0x11d10e800, {{207.5, 664.0}, {29.5, 20.0}}, label: 'SVG'
+                      Button, 0x11d10e940, {{261.0, 650.0}, {60.0, 48.0}}, label: 'PDF', Selected, Disabled
+                        StaticText, 0x11d10ea80, {{277.0, 664.0}, {28.0, 20.0}}, label: 'PDF'
+                      StaticText, 0x11d10ebc0, {{121.0, 706.0}, {592.0, 32.0}}, label: 'The drawing is rendered at the chosen scale and fitted to one A4 page. Printing opens the system print interface.'
+                      TextView, 0x11d10ed00, {{121.0, 746.0}, {592.0, 64.0}}, label: 'File name', value: qualification-sele..., Disabled
+                        Other, 0x11d10ee40, {{121.0, 754.0}, {592.0, 56.0}}
+                        StaticText, 0x11d10ef80, {{137.0, 746.0}, {58.0, 16.0}}, label: 'File name'
+                        Other, 0x11d10f0c0, {{137.0, 758.5}, {560.0, 48.0}}
+                      TextView, 0x11d10f200, {{121.0, 818.0}, {292.0, 64.0}}, label: 'Scale', value: 1, Disabled
+                        Other, 0x11d10f340, {{121.0, 826.0}, {292.0, 56.0}}
+                        StaticText, 0x11d10f480, {{137.0, 818.0}, {33.0, 16.0}}, label: 'Scale'
+                        Other, 0x11d10f5c0, {{137.0, 830.5}, {260.0, 48.0}}
+                      TextView, 0x11d10f700, {{421.0, 818.0}, {292.0, 64.0}}, label: 'Margin', value: 10, Disabled
+                        Other, 0x11d10f840, {{421.0, 826.0}, {292.0, 56.0}}
+                        StaticText, 0x11d10f980, {{437.0, 818.0}, {41.5, 16.0}}, label: 'Margin'
+                        Other, 0x11d10fac0, {{437.0, 830.5}, {260.0, 48.0}}
+                      Switch, 0x11d10fc00, {{121.0, 890.0}, {592.0, 48.0}}, label: 'Selected objects only', value: 1, Disabled
+                        StaticText, 0x11d10fd40, {{145.0, 902.0}, {173.0, 24.0}}, label: 'Selected objects only'
+                      Switch, 0x11d10fe80, {{121.0, 946.0}, {592.0, 46.0}}, label: 'Transparent background', value: 0, Disabled
+                        StaticText, 0x11d110000, {{145.0, 958.0}, {195.5, 24.0}}, label: 'Transparent background'
+                      Other, 0x11d110140, {{121.0, 992.0}, {592.0, 22.0}}
+                      Button, 0x11d110280, {{121.0, 1014.0}, {592.0, 48.0}}, label: 'Save drawing', Disabled
+                        StaticText, 0x11d1103c0, {{371.5, 1028.0}, {91.5, 20.0}}, label: 'Save drawing'
+                      Button, 0x11d110500, {{121.0, 1070.0}, {592.0, 48.0}}, label: 'Share drawing', Disabled
+                        StaticText, 0x11d110640, {{368.0, 1084.0}, {98.5, 20.0}}, label: 'Share drawing'
+                      Button, 0x11d110780, {{121.0, 1126.0}, {592.0, 48.0}}, label: 'Print PDF', Disabled
+                        StaticText, 0x11d1108c0, {{385.0, 1140.0}, {64.5, 20.0}}, label: 'Print PDF'
+                    Button, 0x11d110a00, {{0.0, 0.0}, {834.0, 1210.0}}, label: 'Close sheet'
+      Other, 0x11d110b40, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x11d110c80, {{0.0, 0.0}, {834.0, 1210.0}}, identifier: 'PopoverDismissRegion', label: 'dismiss popup'
+        Popover, 0x11d110dc0, {{229.0, 425.0}, {375.0, 359.0}}
+          Other, 0x11d110f00, {{229.0, 425.0}, {375.0, 359.0}}
+            Other, 0x11d111040, {{229.0, 425.0}, {375.0, 359.0}}
+              Other, 0x11d111180, {{229.0, 425.0}, {375.0, 359.0}}
+                Other, 0x11d1112c0, {{229.0, 425.0}, {375.0, 359.0}}
+                  Other, 0x11d111400, {{229.0, 425.0}, {375.0, 359.0}}
+                    Other, 0x11d111540, {{229.0, 425.0}, {0.0, 0.0}}
+                      Other, 0x11d111680, {{229.0, 425.0}, {375.0, 359.0}}
+                        Other, 0x11d1117c0, {{229.0, 425.0}, {375.0, 359.0}}
+                          Other, 0x11d111900, {{229.0, 425.0}, {375.0, 359.0}}
+                            Other, 0x11d111a40, {{229.0, 425.0}, {375.0, 359.0}}
+                              Other, 0x11d111b80, {{229.0, 425.0}, {375.0, 359.0}}, identifier: 'ActivityListView'
+                                Other, 0x11d111cc0, {{229.0, 425.0}, {375.0, 359.0}}, identifier: 'ShareSheet.RemoteContainerView'
+                                  Other, 0x11d111e00, {{229.0, 425.0}, {375.0, 359.0}}
+                                    Other, 0x11d111f40, {{229.0, 425.0}, {375.0, 359.0}}
+                                      Other, 0x11d112080, {{229.0, 425.0}, {375.0, 359.0}}
+                                        Other, 0x11d1121c0, {{229.0, 425.0}, {375.0, 359.0}}
+                                          Other, 0x11d112300, {{229.0, 425.0}, {375.0, 359.0}}
+                                            Other, 0x11d112440, {{229.0, 425.0}, {375.0, 359.0}}
+                                              Other, 0x11d112580, {{229.0, 425.0}, {375.0, 359.0}}
+                                                NavigationBar, 0x11d1126c0, {{229.0, 435.0}, {375.0, 96.5}}, identifier: 'UIActivityContentView'
+                                                  Image, 0x11d112800, {{255.5, 451.5}, {45.0, 64.0}}
+                                                  Other, 0x11d112940, {{315.5, 464.5}, {262.0, 18.0}}, identifier: 'LP.CaptionBar.TopCaption', label: 'qualification-selection'
+                                                  Other, 0x11d112a80, {{315.5, 482.5}, {262.0, 20.0}}, identifier: 'LP.CaptionBar.BottomCaption', label: 'PDF Document · 43 KB'
+                                                Other, 0x11d112bc0, {{229.0, 425.0}, {375.0, 359.0}}
+                                                  Other, 0x11d112d00, {{229.0, 425.0}, {375.0, 359.0}}
+                                                    Other, 0x11d112e40, {{229.0, 425.0}, {375.0, 359.0}}, identifier: 'shareSheet.activity.contentView'
+                                                      CollectionView, 0x11d112f80, {{229.0, 425.0}, {375.0, 359.0}}, identifier: 'activityCollectionView'
+                                                        Other, 0x11d1130c0, {{229.0, 425.0}, {375.0, 359.0}}
+                                                          Other, 0x11d113200, {{229.0, 425.0}, {375.0, 146.5}}
+                                                        Other, 0x11d113340, {{229.0, 425.0}, {375.0, 359.0}}
+                                                        ScrollView, 0x11d113480, {{247.0, 531.5}, {339.0, 118.0}}
+                                                          Cell, 0x11d1135c0, {{247.0, 531.5}, {82.0, 117.5}}, identifier: 'shareCell', label: 'Preview'
+                                                            Other, 0x11d113700, {{247.0, 531.5}, {82.0, 117.5}}
+                                                              Other, 0x11d113840, {{247.0, 618.5}, {82.0, 14.5}}
+                                                                StaticText, 0x11d113980, {{247.0, 618.5}, {82.0, 14.5}}, identifier: 'cellTitleLabel', label: 'Preview'
+                                                                StaticText, 0x11d113ac0, {{247.0, 618.5}, {33.0, 30.5}}, identifier: 'cellTitleLabel', label: 'Apple Inc'
+                                                                Other, 0x11d113c00, {{247.0, 618.5}, {82.0, 14.5}}
+                                                              Image, 0x11d113d40, {{256.5, 547.5}, {63.0, 63.0}}, identifier: 'activityImageView'
+                                                          Cell, 0x11d113e80, {{332.5, 531.5}, {82.0, 117.5}}, identifier: 'shareCell', label: 'More'
+                                                            Other, 0x11d1b8000, {{332.5, 531.5}, {82.0, 117.5}}
+                                                              Other, 0x11d1b8140, {{332.5, 618.5}, {82.0, 14.5}}
+                                                                StaticText, 0x11d1b8280, {{332.5, 618.5}, {82.0, 14.5}}, identifier: 'cellTitleLabel', label: 'More'
+                                                                StaticText, 0x11d1b83c0, {{332.5, 618.5}, {33.0, 30.5}}, identifier: 'cellTitleLabel', label: 'Apple Inc'
+                                                                Other, 0x11d1b8500, {{332.5, 618.5}, {82.0, 14.5}}
+                                                              Image, 0x11d1b8640, {{342.0, 547.5}, {63.0, 63.0}}, identifier: 'activityImageView'
+                                                        ScrollView, 0x11d1b8780, {{247.0, 650.5}, {339.0, 133.5}}
+                                                          Cell, 0x11d1b88c0, {{247.0, 650.5}, {82.0, 133.5}}, identifier: 'actionGroupCell', label: 'Copy'
+                                                            Other, 0x11d1b8a00, {{247.0, 650.5}, {82.0, 133.5}}
+                                                              Other, 0x11d1b8b40, {{247.0, 737.5}, {82.0, 14.5}}
+                                                                StaticText, 0x11d1b8c80, {{247.0, 737.5}, {82.0, 14.5}}, identifier: 'cellTitleLabel', label: 'Copy'
+                                                                StaticText, 0x11d1b8dc0, {{247.0, 737.5}, {33.0, 30.5}}, identifier: 'cellTitleLabel', label: 'Apple Inc'
+                                                                Other, 0x11d1b8f00, {{247.0, 737.5}, {82.0, 14.5}}
+                                                              Other, 0x11d1b9040, {{255.5, 666.5}, {65.0, 65.0}}
+                                                              Image, 0x11d1b9180, {{272.0, 680.5}, {32.0, 37.0}}, identifier: 'activityImageView', label: 'copy'
+                                                          Cell, 0x11d1b92c0, {{332.5, 650.5}, {82.0, 133.5}}, identifier: 'actionGroupCell', label: 'Markup'
+                                                            Other, 0x11d1b9400, {{332.5, 650.5}, {82.0, 133.5}}
+                                                              Other, 0x11d1b9540, {{332.5, 737.5}, {82.0, 14.5}}
+                                                                StaticText, 0x11d1b9680, {{332.5, 737.5}, {82.0, 14.5}}, identifier: 'cellTitleLabel', label: 'Markup'
+                                                                StaticText, 0x11d1b97c0, {{332.5, 737.5}, {33.0, 30.5}}, identifier: 'cellTitleLabel', label: 'Apple Inc'
+                                                                Other, 0x11d1b9900, {{332.5, 737.5}, {82.0, 14.5}}
+                                                              Other, 0x11d1b9a40, {{341.0, 666.5}, {65.0, 65.0}}
+                                                              Image, 0x11d1b9b80, {{357.5, 683.5}, {32.0, 31.0}}, identifier: 'activityImageView', label: 'Markup'
+                                                          Cell, 0x11d1b9cc0, {{418.0, 650.5}, {82.0, 133.5}}, identifier: 'actionGroupCell', label: 'Print'
+                                                            Other, 0x11d1b9e00, {{418.0, 650.5}, {82.0, 133.5}}
+                                                              Other, 0x11d1b9f40, {{418.0, 737.5}, {82.0, 14.5}}
+                                                                StaticText, 0x11d1ba080, {{418.0, 737.5}, {82.0, 14.5}}, identifier: 'cellTitleLabel', label: 'Print'
+                                                                StaticText, 0x11d1ba1c0, {{418.0, 737.5}, {33.0, 30.5}}, identifier: 'cellTitleLabel', label: 'Apple Inc'
+                                                                Other, 0x11d1ba300, {{418.0, 737.5}, {82.0, 14.5}}
+                                                              Other, 0x11d1ba440, {{426.5, 666.5}, {65.0, 65.0}}
+                                                              Image, 0x11d1ba580, {{443.0, 683.0}, {32.0, 32.5}}, identifier: 'activityImageView', label: 'print'
+                                                          Cell, 0x11d1ba6c0, {{503.5, 650.5}, {82.0, 133.5}}, identifier: 'actionGroupCell', label: 'Save to Files'
+                                                            Other, 0x11d1ba800, {{503.5, 650.5}, {82.0, 133.5}}
+                                                              Other, 0x11d1ba940, {{503.5, 737.5}, {82.0, 14.5}}
+                                                                StaticText, 0x11d1baa80, {{503.5, 737.5}, {82.0, 14.5}}, identifier: 'cellTitleLabel', label: 'Save to Files'
+                                                                StaticText, 0x11d1babc0, {{503.5, 737.5}, {33.0, 30.5}}, identifier: 'cellTitleLabel', label: 'Apple Inc'
+                                                                Other, 0x11d1bad00, {{503.5, 737.5}, {82.0, 14.5}}
+                                                              Other, 0x11d1bae40, {{512.0, 666.5}, {65.0, 65.0}}
+                                                              Image, 0x11d1baf80, {{523.0, 677.5}, {43.0, 43.0}}, identifier: 'activityImageView'
+                                                        Other, 0x11d1bb0c0, {{255.5, 649.5}, {322.0, 1.0}}, identifier: 'collectionView.footerView'
+                                                      Other, 0x11d1bb200, {{255.5, 531.5}, {322.0, 1.0}}
+                                                Toolbar, 0x11d1bb340, {{229.0, 425.0}, {375.0, 359.0}}, identifier: 'Toolbar', label: 'Toolbar'
+                                                  Other, 0x11d1bb480, {{229.0, 425.0}, {375.0, 359.0}}
+                                      Other, 0x11d1bb5c0, {{0.0, 0.0}, {0.0, 0.0}}
+    Window, 0x11d1bb700, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x11d1bb840, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x11d1bb980, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x11d1bbac0, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x11d1bbc00, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x11d1bbd40, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x11d1bbe80, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x11d1bc000, {{0.0, 0.0}, {834.0, 1210.0}}
+                ScrollView, 0x11d1bc140, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x11d1bc280, {{0.0, 0.0}, {834.0, 1210.0}}
+                    Other, 0x11d1bc3c0, {{0.0, 0.0}, {834.0, 1210.0}}
+                      Other, 0x11d1bc500, {{0.0, 0.0}, {834.0, 1210.0}}
+                      Button, 0x11d1bc640, {{8.0, 32.0}, {80.5, 48.0}}, label: 'Projects'
+                        StaticText, 0x11d1bc780, {{20.0, 46.0}, {56.5, 20.0}}, label: 'Projects'
+                      StaticText, 0x11d1bc8c0, {{96.5, 44.0}, {587.0, 24.0}}, label: 'Sem título'
+                      Button, 0x11d1bca00, {{691.5, 32.0}, {134.5, 48.0}}, label: 'Saved · revision 44'
+                        StaticText, 0x11d1bcb40, {{703.5, 48.0}, {110.5, 16.0}}, label: 'Saved · revision 44'
+                      Other, 0x11d1bcc80, {{0.0, 81.0}, {834.0, 1109.0}}
+                      Other, 0x11d1bcdc0, {{0.0, 81.0}, {834.0, 48.0}}, identifier: 'editor-project-toolbar'
+                      StaticText, 0x11d1bcf00, {{4.0, 93.0}, {180.0, 24.0}}, label: 'Logisim  Sem título'
+                      Button, 0x11d1bd040, {{186.0, 81.0}, {48.0, 48.0}}, label: 'Undo, ↶', Disabled
+                        StaticText, 0x11d1bd180, {{204.5, 97.0}, {11.0, 16.0}}, label: '↶'
+                      Button, 0x11d1bd2c0, {{236.0, 81.0}, {48.0, 48.0}}, label: 'Redo, ↷', Disabled
+                        StaticText, 0x11d1bd400, {{254.5, 97.0}, {11.0, 16.0}}, label: '↷'
+                      Button, 0x11d1bd540, {{286.0, 81.0}, {48.0, 48.0}}, label: 'Import or export circuit and project, .circ'
+                        StaticText, 0x11d1bd680, {{296.0, 97.0}, {28.0, 16.0}}, label: '.circ'
+                      Button, 0x11d1bd7c0, {{336.0, 81.0}, {48.0, 48.0}}, label: 'Open, save, and share files, File'
+                        StaticText, 0x11d1bd900, {{349.0, 97.0}, {22.5, 16.0}}, label: 'File'
+                      Button, 0x11d1bda40, {{386.0, 81.0}, {53.5, 48.0}}, label: 'Open project tools, Tools'
+                        StaticText, 0x11d1bdb80, {{396.0, 97.0}, {33.5, 16.0}}, label: 'Tools'
+                      Button, 0x11d1bdcc0, {{441.5, 81.0}, {136.5, 48.0}}, label: 'Editor preferences, Editor preferences'
+                        StaticText, 0x11d1bde00, {{451.5, 97.0}, {116.5, 16.0}}, label: 'Editor preferences'
+                      Button, 0x11d1bdf40, {{580.0, 81.0}, {104.0, 48.0}}, label: 'Import report, Import report'
+                        StaticText, 0x11d1be080, {{590.0, 97.0}, {84.0, 16.0}}, label: 'Import report'
+                      Button, 0x11d1be1c0, {{686.0, 81.0}, {48.0, 48.0}}, label: 'Open editor help, ?'
+                        StaticText, 0x11d1be300, {{706.5, 97.0}, {7.0, 16.0}}, label: '?'
+                      Other, 0x11d1be440, {{0.0, 130.0}, {250.0, 725.0}}, label: 'Component and circuit library'
+                      Other, 0x11d1be580, {{0.0, 130.0}, {250.0, 1025.0}}
+                      Other, 0x11d1be6c0, {{0.0, 130.0}, {250.0, 48.0}}
+                        Button, 0x11d1be800, {{0.0, 130.0}, {65.5, 48.0}}, label: 'Show circuit tree, Circuits'
+                          StaticText, 0x11d1be940, {{10.0, 144.0}, {45.5, 20.0}}, label: 'Circuits'
+                        Button, 0x11d1bea80, {{65.5, 130.0}, {62.0, 48.0}}, label: 'Show available components, Library'
+                          StaticText, 0x11d1bebc0, {{75.5, 144.0}, {42.0, 20.0}}, label: 'Library'
+                        Button, 0x11d1bed00, {{127.5, 130.0}, {61.0, 48.0}}, label: 'Search project, library, and commands, Search'
+                          StaticText, 0x11d1bee40, {{137.5, 144.0}, {41.0, 20.0}}, label: 'Search'
+                      Other, 0x11d1bef80, {{250.0, 130.0}, {584.0, 48.0}}, identifier: 'editor-command-toolbar'
+                      Button, 0x11d1bf0c0, {{254.0, 130.0}, {78.5, 48.0}}, label: 'Simulate, Simulate', Selected
+                        StaticText, 0x11d1bf200, {{266.0, 146.0}, {54.5, 16.0}}, label: 'Simulate'
+                      Button, 0x11d1bf340, {{334.5, 130.0}, {64.0, 48.0}}, label: 'Select, Select'
+                        StaticText, 0x11d1bf480, {{346.5, 146.0}, {40.0, 16.0}}, label: 'Select'
+                      Button, 0x11d1bf5c0, {{400.5, 130.0}, {57.5, 48.0}}, label: 'Move, Move'
+                        StaticText, 0x11d1bf700, {{412.5, 146.0}, {33.5, 16.0}}, label: 'Move'
+                      Button, 0x11d1bf840, {{460.0, 130.0}, {53.0, 48.0}}, label: 'Wire, Wire'
+                        StaticText, 0x11d1bf980, {{472.0, 146.0}, {29.0, 16.0}}, label: 'Wire'
+                      Button, 0x11d1bfac0, {{515.0, 130.0}, {48.0, 48.0}}, label: 'Fit the entire circuit, Fit'
+                        StaticText, 0x11d1bfc00, {{531.0, 146.0}, {16.5, 16.0}}, label: 'Fit'
+                      Button, 0x11d1bfd40, {{565.0, 130.0}, {97.5, 48.0}}, label: 'Fit selected components and wires, Fit selection'
+                        StaticText, 0x11d1bfe80, {{575.0, 146.0}, {77.5, 16.0}}, label: 'Fit selection'
+                      Button, 0x11d1c0000, {{664.5, 130.0}, {78.5, 48.0}}, label: 'Select all components and wires, Select all'
+                        StaticText, 0x11d1c0140, {{674.5, 146.0}, {58.5, 16.0}}, label: 'Select all'
+                      Button, 0x11d1c0280, {{745.0, 130.0}, {48.0, 48.0}}, identifier: 'editor-command-toolbar-overflow', label: 'Show more commands: Commands'
+                      StaticText, 0x11d1c03c0, {{12.0, 190.0}, {67.0, 24.0}}, label: 'Circuits'
+                      Button, 0x11d1c0500, {{192.0, 178.0}, {58.0, 48.0}}, label: 'New'
+                        StaticText, 0x11d1c0640, {{206.0, 192.0}, {30.5, 20.0}}, label: 'New'
+                      Other, 0x11d1c0780, {{250.0, 179.0}, {584.0, 48.0}}, identifier: 'editor-simulation-toolbar'
+                      StaticText, 0x11d1c08c0, {{254.0, 191.0}, {47.0, 24.0}}, label: 'Steps 0'
+                      Button, 0x11d1c0a00, {{303.0, 179.0}, {62.0, 48.0}}, label: '▶ Run, ▶ Run', Disabled
+                        StaticText, 0x11d1c0b40, {{315.0, 195.0}, {38.0, 16.0}}, label: '▶ Run'
+                      Button, 0x11d1c0c80, {{367.0, 179.0}, {49.0, 48.0}}, label: 'Advance the clock one half-cycle, Step', Disabled
+                        StaticText, 0x11d1c0dc0, {{377.0, 195.0}, {29.0, 16.0}}, label: 'Step'
+                      Button, 0x11d1c0f00, {{418.0, 179.0}, {55.0, 48.0}}, label: 'Advance one propagation event, Event', Disabled
+                        StaticText, 0x11d1c1040, {{428.0, 195.0}, {35.0, 16.0}}, label: 'Event'
+                      Button, 0x11d1c1180, {{475.0, 179.0}, {137.0, 48.0}}, label: 'Simulation options, Simulation options'
+                        StaticText, 0x11d1c12c0, {{485.0, 195.0}, {117.0, 16.0}}, label: 'Simulation options'
+                      Button, 0x11d1c1400, {{614.0, 179.0}, {55.5, 48.0}}, label: 'Reset simulation, Reset', Disabled
+                        StaticText, 0x11d1c1540, {{624.0, 195.0}, {35.5, 16.0}}, label: 'Reset'
+                      Button, 0x11d1c1680, {{671.5, 179.0}, {61.0, 48.0}}, label: 'Change step frequency, 4.0 Hz'
+                        StaticText, 0x11d1c17c0, {{681.5, 195.0}, {41.0, 16.0}}, label: '4.0 Hz'
+                      Other, 0x11d1c1900, {{0.0, 226.0}, {250.0, 580.0}}
+                        Button, 0x11d1c1a40, {{0.0, 226.0}, {250.0, 48.0}}, label: 'Open definition Sem título, ★ , Sem título'
+                          StaticText, 0x11d1c1b80, {{12.0, 239.0}, {22.0, 24.0}}, label: '★ '
+                          StaticText, 0x11d1c1cc0, {{34.0, 236.0}, {72.0, 24.0}}, label: 'Sem título'
+                        Button, 0x11d1c1e00, {{192.0, 226.0}, {58.0, 48.0}}, label: 'Manage circuit Sem título, ⋮'
+                          StaticText, 0x11d1c1f40, {{218.0, 239.0}, {6.0, 22.0}}, label: '⋮'
+                      Other, 0x11d1c2080, {{250.0, 228.0}, {584.0, 879.0}}, label: 'Circuit area. E2E_OUT: 1. Use two fingers to zoom and pan.'
+                      Other, 0x11d1c21c0, {{250.0, 228.0}, {584.0, 879.0}}, identifier: 'editor-canvas'
+                      Other, 0x11d1c2300, {{250.0, 228.0}, {584.0, 879.0}}
+                        Button, 0x11d1c2440, {{379.5, 597.0}, {48.0, 48.0}}, identifier: 'canvas-component:c1', label: 'E2E_IN', value: Input. Low, 0.
+                        Button, 0x11d1c2580, {{568.0, 597.0}, {4.5, 48.0}}, identifier: 'canvas-component:c2', label: 'E2E_NOT', value: Selected. NOT. Hig..., Selected
+                        Button, 0x11d1c26c0, {{572.5, 597.0}, {48.0, 48.0}}, identifier: 'canvas-port:2:c2:out', label: 'Output out, 1 bit. High, 1.', value: Start a connection...
+                        Button, 0x11d1c2800, {{520.0, 597.0}, {48.0, 48.0}}, identifier: 'canvas-port:2:c2:in', label: 'Input in, 1 bit. Low, 0.', value: Start a connection...
+                        Button, 0x11d1c2940, {{765.0, 597.0}, {48.0, 48.0}}, identifier: 'canvas-component:c3', label: 'E2E_OUT', value: Output. High, 1.
+                      Other, 0x11d1c2a80, {{0.0, 807.0}, {250.0, 48.0}}
+                        Button, 0x11d1c2bc0, {{0.0, 807.0}, {58.0, 48.0}}, label: 'Load SAP-1 example, SAP-1'
+                          StaticText, 0x11d1c2d00, {{11.0, 821.0}, {36.0, 20.0}}, label: 'SAP-1'
+                        Button, 0x11d1c2e40, {{58.0, 807.0}, {58.0, 48.0}}, label: 'Load AND example, AND'
+                          StaticText, 0x11d1c2f80, {{74.0, 821.0}, {26.5, 20.0}}, label: 'AND'
+                        Button, 0x11d1c30c0, {{116.0, 807.0}, {58.0, 48.0}}, label: 'Create an empty circuit, New'
+                          StaticText, 0x11d1c3200, {{132.0, 821.0}, {26.0, 20.0}}, label: 'New'
+                      Other, 0x11d1c3340, {{0.0, 855.0}, {250.0, 300.0}}
+                      Other, 0x11d1c3480, {{0.0, 855.0}, {250.0, 300.0}}
+                        StaticText, 0x11d1c35c0, {{12.0, 867.0}, {37.0, 24.0}}, label: 'NOT'
+                        TextView, 0x11d1c3700, {{8.0, 903.0}, {234.0, 64.0}}, label: 'Label', value: E2E_NOT
+                          Other, 0x11d1c3840, {{8.0, 911.0}, {234.0, 56.0}}
+                          StaticText, 0x11d1c3980, {{24.0, 903.0}, {33.0, 16.0}}, label: 'Label'
+                          Other, 0x11d1c3ac0, {{24.0, 915.5}, {150.5, 48.0}}
+                        Button, 0x11d1c3c00, {{178.5, 915.0}, {63.5, 48.0}}, label: 'Apply'
+                          StaticText, 0x11d1c3d40, {{190.5, 929.0}, {39.5, 20.0}}, label: 'Apply'
+                        Button, 0x11d1c3e80, {{0.0, 967.0}, {250.0, 48.0}}, label: 'Edit property Facing, Facing, East'
+                          StaticText, 0x11d1c4000, {{12.0, 979.0}, {107.0, 24.0}}, label: 'Facing'
+                          StaticText, 0x11d1c4140, {{131.0, 979.0}, {107.0, 24.0}}, label: 'East'
+                        Button, 0x11d1c4280, {{0.0, 1016.0}, {250.0, 48.0}}, label: 'Edit property Data bits, Data bits, 1'
+                          StaticText, 0x11d1c43c0, {{12.0, 1028.0}, {107.0, 24.0}}, label: 'Data bits'
+                          StaticText, 0x11d1c4500, {{131.0, 1028.0}, {107.0, 24.0}}, label: '1'
+                        Button, 0x11d1c4640, {{0.0, 1065.0}, {250.0, 64.0}}, label: 'Edit property Label font, Label font, SansSerif plain 12'
+                          StaticText, 0x11d1c4780, {{12.0, 1085.0}, {107.0, 24.0}}, label: 'Label font'
+                          StaticText, 0x11d1c48c0, {{131.0, 1073.0}, {107.0, 48.0}}, label: 'SansSerif plain 12'
+                        Button, 0x11d1c4a00, {{0.0, 1130.0}, {250.0, 48.0}}, label: 'Edit property Gate size, Gate size, 30'
+                          StaticText, 0x11d1c4b40, {{12.0, 1142.0}, {107.0, 13.0}}, label: 'Gate size'
+                          StaticText, 0x11d1c4c80, {{131.0, 1142.0}, {107.0, 13.0}}, label: '30'
+                        Button, 0x11d1c4dc0, {{0.0, 1179.0}, {250.0, 48.0}}, label: 'Edit property Output'
+                      Button, 0x11d1c4f00, {{642.0, 1047.0}, {48.0, 48.0}}, label: 'Decrease zoom, −'
+                        StaticText, 0x11d1c5040, {{662.0, 1061.0}, {8.0, 20.0}}, label: '−'
+                      Button, 0x11d1c5180, {{696.0, 1047.0}, {72.0, 48.0}}, label: 'Fit circuit, 350%'
+                        StaticText, 0x11d1c52c0, {{714.5, 1061.0}, {35.5, 20.0}}, label: '350%'
+                      Button, 0x11d1c5400, {{774.0, 1047.0}, {48.0, 48.0}}, label: 'Increase zoom, +'
+                        StaticText, 0x11d1c5540, {{794.0, 1061.0}, {8.0, 20.0}}, label: '+'
+                      Other, 0x11d1c5680, {{250.0, 1107.0}, {584.0, 48.0}}, identifier: 'editor-signal-panel'
+                        StaticText, 0x11d1c57c0, {{256.0, 1119.0}, {41.0, 24.0}}, label: 'Signals'
+                        Button, 0x11d1c5900, {{303.0, 1107.0}, {73.5, 48.0}}, label: 'Toggle input E2E_IN: 0, E2E_IN 0'
+                          StaticText, 0x11d1c5a40, {{313.0, 1121.0}, {53.5, 20.0}}, label: 'E2E_IN 0'
+                        StaticText, 0x11d1c5b80, {{392.5, 1119.0}, {82.0, 24.0}}, label: 'Signal E2E_OUT: 1'
+                      Other, 0x11d1c5cc0, {{8.0, 1149.0}, {818.0, 48.0}}
+                      Other, 0x11d1c5e00, {{8.0, 1161.0}, {678.0, 24.0}}, label: 'Operation cancelled.'
+                      StaticText, 0x11d1c5f40, {{694.0, 1161.0}, {132.0, 24.0}}, label: '3 components · 2 wires'
+    Window, 0x11d1c6080, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x11d1c61c0, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x11d1c6300, {{0.0, 0.0}, {834.0, 1210.0}}
+    Window, 0x11d1c6440, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x11d1c6580, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x11d1c66c0, {{0.0, 0.0}, {834.0, 1210.0}}
+Path to element:
+ →Application, 0x11c74be80, pid: 40026, label: 'Logisim Mobile'
+Query chain:
+ →Find: Application 'thalesmms.logisim.mobile'
+  Output: {
+    Application, 0x11d1c6800, pid: 40026, label: 'Logisim Mobile'
+  }
+)

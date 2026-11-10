@@ -1,0 +1,27 @@
+row: cli/test-vector
+case: vectors-flip-exit
+result: PASS
+detail: exit evolution=0 (Startup.run exits 0 after -w), mobile=0
+
+=== evolution: java EvolutionAutomationOracle vector $WORK/vectors/flip.circ Flip scripts/oracle/vectors/flip.txt
+exit: 0
+--- stdout (9 lines, sha256 fdb422a15b26a6b5d3199389471423c70e0842c22a0edb19f57e2646abfcb10b)
+Loading test vector “scripts/oracle/vectors/flip.txt”…
+Running 6 vectors…
+1 2 3 4 5 6 
+Passed: 6, Failed: 0
+--- stderr (1 lines, sha256 06f919f0260b72a33326b82e4d2f3ed297dd890989ee43aea3f3dc6dc5f0ce99)
+failed=0
+
+=== mobile: HeadlessCircuitCli -w Flip scripts/oracle/vectors/flip.txt $WORK/vectors/flip.circ
+exit: 0
+--- stdout (7 lines, sha256 686a4500746227e3f58b7fe3d56b34f8aea0f0ce262742bd7b46357c8dcbd7f9)
+circuit,row,line,set,seq,result,"D[1] expected","D[1] observed","Clk[1] expected","Clk[1] observed","Q[1] expected","Q[1] observed",differences
+"Flip",1,2,1,1,PASS,"1",1,"0",0,"0",0,""
+"Flip",2,3,1,2,PASS,"0",0,"1",1,"1",1,""
+"Flip",3,4,1,3,PASS,"1",1,"0",0,"1",1,""
+"Flip",4,5,1,4,PASS,"0",0,"1",1,"1",1,""
+"Flip",5,6,2,1,PASS,"0",0,"0",0,"0",0,""
+"Flip",6,7,2,2,PASS,"0",0,"1",1,"0",0,""
+--- stderr (1 lines, sha256 031ea261bd3d14ba217684b7ad6d3101372b0ce394d427beb5ea222fa32fa670)
+status=test-vector passed=6 failed=0

@@ -1,0 +1,383 @@
+{
+  "source": "new-discovery-after-reinstall.stdout",
+  "sourceRecords": 976,
+  "indexBase": 0,
+  "events": [
+    {
+      "index": 631,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[u %{public}@] [%@(%@)] plugin INSTALLED; bundleID: [%@], path: [%@], contained in [%@]",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.PlugInKit",
+        "category": "ls",
+        "personaType": -1,
+        "threadID": 9987522,
+        "launchPersonaType": -1,
+        "senderImageUUID": "27C85488-8836-3155-816A-25420092C787",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 13692,
+              "imageUUID": "27C85488-8836-3155-816A-25420092C787"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/pkd",
+        "senderImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/PlugInKitDaemon.framework/PlugInKitDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 07:27:29.784735+0000",
+        "machTimestamp": 6405230085564,
+        "personaName": "",
+        "eventMessage": "[u F8E78B69-61F8-495B-A993-E0BB85E025F4] [thalesmms.logisim.validation.revocationfixture.provider(1.0)] plugin INSTALLED; bundleID: [thalesmms.logisim.validation.revocationfixture.provider], path: [/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex], contained in [thalesmms.logisim.validation.revocationfixture]",
+        "processImageUUID": "81EA3F0B-AAAF-3B0A-BF79-D8BEEB135B2F",
+        "traceID": 496919177068548,
+        "processID": 68822,
+        "senderProgramCounter": 13692,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 958,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Query; personaid = %u, type = %{public}s, name = %{public}s, origin [pid = %d, personaid = %u], proximate [pid = %d, personaid = %u], euid = %u, uid = %u, class = %llu%s, identifier = [%s](%zu), gidentifier = [%s](%zu), flags = %llx",
+        "userID": 501,
+        "activityIdentifier": 40244092,
+        "subsystem": "com.apple.containermanager",
+        "category": "query",
+        "personaType": -1,
+        "threadID": 9903950,
+        "launchPersonaType": -1,
+        "senderImageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 103772,
+              "imageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/usr/lib/system/libsystem_containermanager.dylib",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 07:27:30.127311+0000",
+        "machTimestamp": 6405238307402,
+        "personaName": "",
+        "eventMessage": "Query; personaid = 4294967295, type = NOPERSONA, name = <unknown>, origin [pid = 0, personaid = 0], proximate [pid = 0, personaid = 0], euid = 501, uid = 501, class = 7, identifier = [(null)](0), gidentifier = [group.thalesmms.logisim.validation.revocationfixture](1), flags = 900000002",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5884045199239610372,
+        "processID": 68875,
+        "senderProgramCounter": 103772,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 960,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Issuing token to pid %s for identifier = [%s](%s, path = [%s] (extension class: %s)",
+        "userID": 501,
+        "activityIdentifier": 40244092,
+        "subsystem": "com.apple.containermanager",
+        "category": "sandbox",
+        "personaType": -1,
+        "threadID": 9481958,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D0AF3D71-67BB-31CC-A153-24AD6480F21A",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 822064,
+              "imageUUID": "D0AF3D71-67BB-31CC-A153-24AD6480F21A"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/containermanagerd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/ContainerManagerCommon.framework/ContainerManagerCommon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 07:27:30.128916+0000",
+        "machTimestamp": 6405238345907,
+        "personaName": "",
+        "eventMessage": "Issuing token to pid 68875 for identifier = [group.thalesmms.logisim.validation.revocationfixture](container_class_t(rawValue: 7), path = [/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4] (extension class: com.apple.sandbox.application-group)",
+        "processImageUUID": "C127B8CE-A5FC-3EDB-9647-6E7327E601A6",
+        "traceID": 5882511934569644036,
+        "processID": 83490,
+        "senderProgramCounter": 822064,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 961,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Info",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Query result; index [%zu] %s %s",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.containermanager",
+        "category": "query",
+        "personaType": -1,
+        "threadID": 9903950,
+        "launchPersonaType": -1,
+        "senderImageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 106852,
+              "imageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/usr/lib/system/libsystem_containermanager.dylib",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 07:27:30.129291+0000",
+        "machTimestamp": 6405238354909,
+        "personaName": "",
+        "eventMessage": "Query result; index [0] [appGroup:group.thalesmms.logisim.validation.revocationfixture:501::(C4A78BD1-44B3-4590-B045-A3AC1883D566):{501:20:u+rwx,g+rx,o+rx}] /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5884043953631920388,
+        "processID": 68875,
+        "senderProgramCounter": 106852,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 962,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Error",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[ERROR] Extension %@ doesn't have a group container for document group %{public}@ specified via %{public}@. Ignoring the extension.",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "default",
+        "personaType": -1,
+        "threadID": 9903950,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 9135024,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 07:27:30.129652+0000",
+        "machTimestamp": 6405238363573,
+        "personaName": "",
+        "eventMessage": "[ERROR] Extension { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/ } doesn't have a group container for document group group.thalesmms.logisim.validation.revocationfixture specified via NSExtensionFileProviderDocumentGroup. Ignoring the extension.",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027077804878204932,
+        "processID": 68875,
+        "senderProgramCounter": 9135024,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 963,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[WARNING] Failed to create descriptor for extension %@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "default",
+        "personaType": -1,
+        "threadID": 9903950,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 20908,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 07:27:30.129717+0000",
+        "machTimestamp": 6405238365129,
+        "personaName": "",
+        "eventMessage": "[WARNING] Failed to create descriptor for extension { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/ }",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027049866115940356,
+        "processID": 68875,
+        "senderProgramCounter": 20908,
+        "parentActivityIdentifier": 0
+      }
+    }
+  ],
+  "installationStructure": {
+    "source": "full-differential-history.stdout",
+    "sourceRecords": 2005,
+    "indexBase": 0,
+    "events": [
+      {
+        "index": 2,
+        "record": {
+          "timezoneName": "",
+          "messageType": "Default",
+          "eventType": "logEvent",
+          "source": null,
+          "launchPersonaName": "",
+          "formatString": "%s: Executable for %@ at %@ had no entitlements",
+          "userID": 501,
+          "activityIdentifier": 0,
+          "subsystem": "com.apple.installcoordination",
+          "category": "framework",
+          "personaType": -1,
+          "threadID": 9987403,
+          "launchPersonaType": -1,
+          "senderImageUUID": "94D8B721-68E0-369B-9280-ADC7012BB652",
+          "launchPersonaID": 4294967295,
+          "backtrace": {
+            "frames": [
+              {
+                "imageOffset": 211696,
+                "imageUUID": "94D8B721-68E0-369B-9280-ADC7012BB652"
+              }
+            ]
+          },
+          "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+          "processImagePath": "/Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/Resources/Platforms/iphoneos/usr/libexec/CoreSimulatorBridge",
+          "senderImagePath": "/System/Library/PrivateFrameworks/InstallCoordination.framework/InstallCoordination",
+          "personaID": 4294967295,
+          "timestamp": "2026-11-05 07:27:29.525259+0000",
+          "machTimestamp": 6405223858157,
+          "personaName": "",
+          "eventMessage": "+[IXPlaceholder _setEntitlementsFromBundleExecutableURL:withBundleID:client:onPlaceholder:location:error:]: Executable for thalesmms.logisim.validation.revocationfixture at RevocationFixture -- file:///Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/ had no entitlements",
+          "processImageUUID": "8307B763-C1D7-3DCF-927D-DC6E1F919113",
+          "traceID": 3887955879936655364,
+          "processID": 83458,
+          "senderProgramCounter": 211696,
+          "parentActivityIdentifier": 0
+        }
+      },
+      {
+        "index": 17,
+        "record": {
+          "timezoneName": "",
+          "messageType": "Default",
+          "eventType": "logEvent",
+          "source": null,
+          "launchPersonaName": "",
+          "formatString": "%s: %@: setting placeholder attributes to %@",
+          "userID": 501,
+          "activityIdentifier": 0,
+          "subsystem": "com.apple.installcoordination",
+          "category": "daemon",
+          "personaType": -1,
+          "threadID": 9987478,
+          "launchPersonaType": -1,
+          "senderImageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2",
+          "launchPersonaID": 4294967295,
+          "backtrace": {
+            "frames": [
+              {
+                "imageOffset": 80164,
+                "imageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2"
+              }
+            ]
+          },
+          "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+          "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd",
+          "senderImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd",
+          "personaID": 4294967295,
+          "timestamp": "2026-11-05 07:27:29.533311+0000",
+          "machTimestamp": 6405224051391,
+          "personaName": "",
+          "eventMessage": "-[IXSPlaceholder setAttributes:]: <IXSPlaceholder(0x105508f00) Name:PlugInKit Placeholder: Logisim Revocation Fixture (thalesmms.logisim.validation.revocationfixture.provider) Creator:InstallCoordination Simple SPI UUID:1F434DBF-85C1-40DD-9A95-A58DAA326C6E Location:[system-defined]>: setting placeholder attributes to <IXPlaceholderAttributes<0x1054acdc0> : {\n    CFBundleShortVersionString = \"1.0\";\n    CFBundleSupportedPlatforms =     (\n        iPhoneSimulator\n    );\n    CFBundleVersion = 1;\n    DTPlatformName = iphonesimulator;\n    MinimumOSVersion = \"17.0\";\n    NSExtension =     {\n        NSExtensionFileProviderDocumentGroup = \"group.thalesmms.logisim.validation.revocationfixture\";\n        NSExtensionFileProviderSupportsEnumeration = 1;\n        NSExtensionPointIdentifier = \"com.apple.fileprovider-nonui\";\n        NSExtensionPrincipalClass = \"RevocationProvider.RevocationFileProvider\";\n    };\n    UIDeviceFamily =     (\n        1,\n        2\n    );\n}>",
+          "processImageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2",
+          "traceID": 2515102884560900,
+          "processID": 68775,
+          "senderProgramCounter": 80164,
+          "parentActivityIdentifier": 0
+        }
+      },
+      {
+        "index": 18,
+        "record": {
+          "timezoneName": "",
+          "messageType": "Default",
+          "eventType": "logEvent",
+          "source": null,
+          "launchPersonaName": "",
+          "formatString": "%s: Executable for %@ at %@ had no entitlements",
+          "userID": 501,
+          "activityIdentifier": 0,
+          "subsystem": "com.apple.installcoordination",
+          "category": "framework",
+          "personaType": -1,
+          "threadID": 9987403,
+          "launchPersonaType": -1,
+          "senderImageUUID": "94D8B721-68E0-369B-9280-ADC7012BB652",
+          "launchPersonaID": 4294967295,
+          "backtrace": {
+            "frames": [
+              {
+                "imageOffset": 211696,
+                "imageUUID": "94D8B721-68E0-369B-9280-ADC7012BB652"
+              }
+            ]
+          },
+          "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+          "processImagePath": "/Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/Resources/Platforms/iphoneos/usr/libexec/CoreSimulatorBridge",
+          "senderImagePath": "/System/Library/PrivateFrameworks/InstallCoordination.framework/InstallCoordination",
+          "personaID": 4294967295,
+          "timestamp": "2026-11-05 07:27:29.533746+0000",
+          "machTimestamp": 6405224061832,
+          "personaName": "",
+          "eventMessage": "+[IXPlaceholder _setEntitlementsFromBundleExecutableURL:withBundleID:client:onPlaceholder:location:error:]: Executable for thalesmms.logisim.validation.revocationfixture.provider at RevocationProvider -- file:///Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/ had no entitlements",
+          "processImageUUID": "8307B763-C1D7-3DCF-927D-DC6E1F919113",
+          "traceID": 3887955879936655364,
+          "processID": 83458,
+          "senderProgramCounter": 211696,
+          "parentActivityIdentifier": 0
+        }
+      }
+    ]
+  }
+}

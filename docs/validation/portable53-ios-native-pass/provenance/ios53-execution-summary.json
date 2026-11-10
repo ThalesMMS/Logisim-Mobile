@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "scope": "Issue 53 iOS Simulator native UI, copied workspace snapshots, paired actual app exports and offline mobile/desktop oracles. These selected tests do not qualify the complete general iOS E2E suite or Android.",
+  "recordedAtUtc": "2026-11-05T03:02:36.847533+00:00",
+  "canonicalRunnerRevision": "89c944468b03f24187acb3658d496b340028b557",
+  "canonicalRunnerSha256": "950a1200e156a37e2c8c459a7e3c35069a39c8972e9abbcdcc8aa6c77b22d168",
+  "appSourceRevision": "b9bd71ae49e562661ee114b248e342a02ed29508",
+  "appTreeSha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+  "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+  "physicalDevice": false,
+  "deviceExecutionComplete": true,
+  "noFurtherDeviceCommandsAuthorized": true,
+  "attempts": [
+    {
+      "attempt": "bundle",
+      "mode": "bundle",
+      "runnerStatus": "FAIL",
+      "nativeExecutionGate": "NATIVE_FAIL",
+      "runnerQualificationGate": "FAIL",
+      "runnerResults": "bundle/results.json",
+      "runnerResultsSha256": "528aed917c45c6b55fe6f0a21aeaf1e757330481abe9fbadf6cac900e1ee8b21",
+      "nativeReceipt": "bundle/documents/portable-bundle-evidence/ui-receipt.json",
+      "nativeReceiptSha256": "d41061fe92bfffc07911c4e26db4dd0beb1e67b87ae338bcd7b285ccb1aa38d6",
+      "nativeReceiptStatus": "FAILED",
+      "exports": [],
+      "workspaceSnapshots": {
+        "before": "snapshots/before/workspace"
+      }
+    },
+    {
+      "attempt": "bundle-retry2",
+      "mode": "bundle",
+      "runnerStatus": "FAIL",
+      "nativeExecutionGate": "NATIVE_FAIL",
+      "runnerQualificationGate": "FAIL",
+      "runnerResults": "bundle-retry2/results.json",
+      "runnerResultsSha256": "6db55c48a48b66c16c96b70a7fc6b670971c8b157f880f239dde3656e82614f3",
+      "nativeReceipt": "bundle-retry2/documents/portable-bundle-evidence/ui-receipt.json",
+      "nativeReceiptSha256": "c55f6c0e39094eb301ec6519e98810f7f4de5797258a435ba2f55b3dd07a255f",
+      "nativeReceiptStatus": "FAILED",
+      "exports": [
+        {
+          "afterRestart": false,
+          "bytes": 5395,
+          "nativeDestination": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/3805017ddee0/Top53.lsebdl",
+          "path": "export-before-restart.lsebdl",
+          "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113"
+        }
+      ],
+      "workspaceSnapshots": {
+        "before": "snapshots/before/workspace",
+        "imported": "snapshots/imported/workspace",
+        "restarted": "snapshots/restarted/workspace"
+      }
+    },
+    {
+      "attempt": "bundle-retry3",
+      "mode": "bundle",
+      "runnerStatus": "PASS",
+      "nativeExecutionGate": "NATIVE_PASS",
+      "runnerQualificationGate": "PARTIAL",
+      "runnerResults": "bundle-retry3/results.json",
+      "runnerResultsSha256": "34fbcd4ab03636f52b32b8320221933e580cb139db4778e3838c95a9d8f581a0",
+      "nativeReceipt": "bundle-retry3/documents/portable-bundle-evidence/ui-receipt.json",
+      "nativeReceiptSha256": "c8728185e5910e3a118d785cba6997120ab38309b75a2cc91d5f8f5ca734b069",
+      "nativeReceiptStatus": "PASSED",
+      "exports": [
+        {
+          "afterRestart": false,
+          "bytes": 5395,
+          "nativeDestination": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/e8ca11b14cbc/Top53.lsebdl",
+          "path": "export-before-restart.lsebdl",
+          "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113"
+        },
+        {
+          "afterRestart": true,
+          "bytes": 5395,
+          "nativeDestination": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/e8ca11b14cbc/Top53.lsebdl",
+          "path": "export-after-restart.lsebdl",
+          "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113"
+        }
+      ],
+      "workspaceSnapshots": {
+        "before": "snapshots/before/workspace",
+        "imported": "snapshots/imported/workspace",
+        "reopened": "snapshots/reopened/workspace",
+        "restarted": "snapshots/restarted/workspace"
+      },
+      "offlineProofs": {
+        "storage-proof.json": {
+          "status": "STORAGE_SNAPSHOTS_VALIDATED",
+          "sha256": "02477f2878f4eb1eb0276e61ecdcb488c1611fb120767f1ce49fc4cd0e6cb055"
+        },
+        "desktop-before-proof.json": {
+          "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+          "sha256": "4dab62c5ff8903468290768d597b93f86339cd243e043415bc21dbaf13c3b504"
+        },
+        "desktop-after-proof.json": {
+          "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+          "sha256": "e2306ba76b6644e86f0bcdaa35846a102fc2bb5325e66ce4c82b50aa03287113"
+        }
+      },
+      "importedProjectId": "df082f0c0f31ed285059d617b7c67816",
+      "restartedProjectId": "df082f0c0f31ed285059d617b7c67816",
+      "reopenedProjectId": "22535617f4e9efd12296430a8fa1a5d0",
+      "package": {
+        "path": "packages/ios53-bundle-passed-evidence.tar.gz",
+        "bytes": 9288578,
+        "sha256": "e1a6105b6b4b2ca847ce0d5a994f6925c18b30070a3f1a6c8dca19bb820b581c",
+        "files": 211
+      }
+    },
+    {
+      "attempt": "folder",
+      "mode": "folder",
+      "runnerStatus": "PASS",
+      "nativeExecutionGate": "NATIVE_PASS",
+      "runnerQualificationGate": "PARTIAL",
+      "runnerResults": "folder/results.json",
+      "runnerResultsSha256": "68cd05963504fe42eda8b8326d9b42ae3396aef5b721a2895052575cab44ea82",
+      "nativeReceipt": "folder/documents/portable-folder-evidence/ui-receipt.json",
+      "nativeReceiptSha256": "ffc9daddb2d319ca35dd3f4085d9445dd70b77ebe90390008df8ed52f4724da7",
+      "nativeReceiptStatus": "PASSED",
+      "exports": [
+        {
+          "afterRestart": false,
+          "bytes": 4905,
+          "nativeDestination": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/1a53767a311e/Top53.lsebdl",
+          "path": "export-before-restart.lsebdl",
+          "sha256": "3ffe3b61443a982cf54788b18cc65da954e01684f6ae9bcf123c1d297e2fc26b"
+        },
+        {
+          "afterRestart": true,
+          "bytes": 4905,
+          "nativeDestination": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/1a53767a311e/Top53.lsebdl",
+          "path": "export-after-restart.lsebdl",
+          "sha256": "3ffe3b61443a982cf54788b18cc65da954e01684f6ae9bcf123c1d297e2fc26b"
+        }
+      ],
+      "workspaceSnapshots": {
+        "before": "snapshots/before/workspace",
+        "imported": "snapshots/imported/workspace",
+        "reopened": "snapshots/reopened/workspace",
+        "restarted": "snapshots/restarted/workspace"
+      },
+      "offlineProofs": {
+        "storage-proof.json": {
+          "status": "STORAGE_SNAPSHOTS_VALIDATED",
+          "sha256": "c6c6cef4c624116261de405b945066fe7eee2a8455193dd940d69617f5822187"
+        },
+        "desktop-before-proof.json": {
+          "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+          "sha256": "c05c8eaaa2f06ec6f665064bf11b3c3936e36e5ddbc0e43030b6955062c96f37"
+        },
+        "desktop-after-proof.json": {
+          "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+          "sha256": "f2f26e1ebbd670fa31809e88c0e4ca46a9fa9ba41cfa0981fedfa7bf8ef0d4d4"
+        }
+      },
+      "importedProjectId": "ad07837495503960a177e42b4a4e1b59",
+      "restartedProjectId": "ad07837495503960a177e42b4a4e1b59",
+      "reopenedProjectId": "7873408d19a1b28cc8258bacd72ca955",
+      "package": {
+        "path": "packages/ios53-folder-passed-evidence.tar.gz",
+        "bytes": 9323935,
+        "sha256": "a5ad1a5b390b3c44bd2e4442b75d22aa3afb94299bf791df84ad5c66a5d58b44",
+        "files": 236
+      }
+    }
+  ]
+}

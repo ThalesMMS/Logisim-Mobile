@@ -1,0 +1,46 @@
+{
+  "scope": "Prepared, NOT executed by this worker. Run bundle first, then folder after admission. Existing outputs must remain empty/new.",
+  "executor": "Parent/root",
+  "commands": {
+    "bundle": [
+      "python3",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-final6cef-177/scripts/run-ios-e2e.py",
+      "--simulator",
+      "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+      "--baseline-sha",
+      "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+      "--catalog-root",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542",
+      "--app",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+      "--derived-data",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-derived",
+      "--test-timeout",
+      "900",
+      "--only-testing",
+      "EditorEndToEndTests/PortableProjectEndToEndTests/testBundleImportExportsAndRestoresItsSourceArchive",
+      "--output",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle"
+    ],
+    "folder": [
+      "python3",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-final6cef-177/scripts/run-ios-e2e.py",
+      "--simulator",
+      "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+      "--baseline-sha",
+      "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+      "--catalog-root",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542",
+      "--app",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+      "--derived-data",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-derived",
+      "--test-timeout",
+      "900",
+      "--only-testing",
+      "EditorEndToEndTests/PortableProjectEndToEndTests/testFolderImportExportsAndRestoresItsSourceArchive",
+      "--output",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/folder"
+    ]
+  }
+}

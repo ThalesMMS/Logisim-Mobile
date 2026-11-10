@@ -1,0 +1,23 @@
+{
+  "startedUtc": "2026-11-05T12:54:34.373Z",
+  "elapsedSeconds": 0.031,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "\n⚙️ Error\n\n❌ Missing required session defaults: Provide simulatorId or simulatorName\nSet with: session-set-defaults { \"simulatorId\": \"...\" } OR session-set-defaults { \"simulatorName\": \"...\" }\n  ├ Category: validation\n  └ Code: MISSING_REQUIRED_PARAMETERS\n"
+      }
+    ],
+    "structuredContent": {
+      "schema": "xcodebuildmcp.output.error",
+      "schemaVersion": "1",
+      "didError": true,
+      "error": "Missing required session defaults: Provide simulatorId or simulatorName\nSet with: session-set-defaults { \"simulatorId\": \"...\" } OR session-set-defaults { \"simulatorName\": \"...\" }",
+      "data": {
+        "category": "validation",
+        "code": "MISSING_REQUIRED_PARAMETERS"
+      }
+    },
+    "isError": true
+  }
+}

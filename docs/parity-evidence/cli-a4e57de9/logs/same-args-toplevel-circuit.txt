@@ -1,0 +1,10 @@
+row: cli/toplevel-circuit
+case: same-args-toplevel-circuit
+result: DIFF
+detail: Mobile accepts Evolution's '--toplevel-circuit'
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit top scripts/oracle/cli/fixtures/sub/main.circ
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 50b2d89cc1c46c9724e3aba4c7024045a5db6e595d53465849cd829fe9158500)
+error=Unknown option '--toplevel-circuit'.

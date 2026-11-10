@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0dev" version="1.0">
+  <lib name="0" desc="#Wiring" />
+  <lib name="1" desc="#Arithmetic" />
+  <main name="Adder" />
+  <circuit name="Adder">
+    <comp lib="1" name="Adder" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="a" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="b" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(180,80)">
+      <a name="width" val="1" />
+      <a name="value" val="0x1" />
+      <a name="label" val="carryIn" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="result" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="1" />
+      <a name="label" val="carryOut" />
+    </comp>
+  </circuit>
+  <circuit name="Subtractor">
+    <comp lib="1" name="Subtractor" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="a" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="b" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(180,80)">
+      <a name="width" val="1" />
+      <a name="value" val="0x1" />
+      <a name="label" val="borrowIn" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="result" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="1" />
+      <a name="label" val="borrowOut" />
+    </comp>
+  </circuit>
+  <circuit name="Multiplier">
+    <comp lib="1" name="Multiplier" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="a" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="b" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(180,80)">
+      <a name="width" val="8" />
+      <a name="value" val="0x1" />
+      <a name="label" val="carryIn" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="low" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="high" />
+    </comp>
+  </circuit>
+  <circuit name="Divider">
+    <comp lib="1" name="Divider" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="a" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="b" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(180,80)">
+      <a name="width" val="8" />
+      <a name="value" val="0x1" />
+      <a name="label" val="upper" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="quotient" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="remainder" />
+    </comp>
+  </circuit>
+  <circuit name="Negator">
+    <comp lib="1" name="Negator" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,100)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="data" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="result" />
+    </comp>
+  </circuit>
+  <circuit name="Exponentiator">
+    <comp lib="1" name="Exponentiator" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="base" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="exponent" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="low" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="high" />
+    </comp>
+  </circuit>
+  <circuit name="SquareRoot">
+    <comp lib="1" name="SquareRoot" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,100)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="data" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(180,80)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="upper" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="root" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="remainder" />
+    </comp>
+  </circuit>
+  <circuit name="Absolute">
+    <comp lib="1" name="Absolute" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,100)">
+      <a name="width" val="8" />
+      <a name="value" val="0xfd" />
+      <a name="label" val="data" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="result" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="1" />
+      <a name="label" val="overflow" />
+    </comp>
+  </circuit>
+  <circuit name="Comparator">
+    <comp lib="1" name="Comparator" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="a" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="b" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,90)">
+      <a name="type" val="output" />
+      <a name="width" val="1" />
+      <a name="label" val="greater" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="1" />
+      <a name="label" val="equal" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,110)">
+      <a name="type" val="output" />
+      <a name="width" val="1" />
+      <a name="label" val="less" />
+    </comp>
+  </circuit>
+  <circuit name="MinMax">
+    <comp lib="1" name="MinMax" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="a" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="b" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,90)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="minimum" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,110)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="maximum" />
+    </comp>
+  </circuit>
+  <circuit name="Shifter">
+    <comp lib="1" name="Shifter" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="data" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="3" />
+      <a name="value" val="0x2" />
+      <a name="label" val="distance" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="8" />
+      <a name="label" val="result" />
+    </comp>
+  </circuit>
+  <circuit name="BitAdder">
+    <comp lib="1" name="BitAdder" loc="(200,100)">
+      <a name="width" val="8" />
+      <a name="inputs" val="2" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,90)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="data0" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,110)">
+      <a name="width" val="8" />
+      <a name="value" val="0x2" />
+      <a name="label" val="data1" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="5" />
+      <a name="label" val="count" />
+    </comp>
+  </circuit>
+  <circuit name="BitFinder">
+    <comp lib="1" name="BitFinder" loc="(200,100)">
+      <a name="width" val="8" />
+    </comp>
+    <comp lib="0" name="Constant" loc="(160,100)">
+      <a name="width" val="8" />
+      <a name="value" val="0x3" />
+      <a name="label" val="data" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(180,120)">
+      <a name="type" val="output" />
+      <a name="width" val="1" />
+      <a name="label" val="present" />
+    </comp>
+    <comp lib="0" name="Pin" loc="(200,100)">
+      <a name="type" val="output" />
+      <a name="width" val="3" />
+      <a name="label" val="index" />
+    </comp>
+  </circuit>
+</project>

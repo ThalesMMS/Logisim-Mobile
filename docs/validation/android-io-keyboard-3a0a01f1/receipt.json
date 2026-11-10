@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "status": "FAILED",
+  "qualification": "PARTIAL_PROGRESS_ONLY",
+  "issue": 44,
+  "scope": "single selected Android keyboard-tty case; no overall issue completion",
+  "producer": {
+    "appSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "productionEquivalentSource": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+    "helperSource": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+    "harnessSource": "bbbf1e9e1caa38bc8608c994e050aba171879899",
+    "package": "thalesmms.logisim.mobile.e2e",
+    "serial": "emulator-5556",
+    "language": "en",
+    "deviceApi": "35",
+    "catalogCountReportedByProducer": 2497
+  },
+  "expectedArtifacts": {
+    "appSha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973",
+    "testSha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b",
+    "snapshotSha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+  },
+  "case": {
+    "name": "keyboard-tty",
+    "selectedCases": [
+      "keyboard-tty"
+    ],
+    "status": "failed",
+    "baselineProbeCount": 19,
+    "retainedTypedText": "AB",
+    "keyboardDataSequence": [
+      "1000001",
+      "1000010",
+      "0000000"
+    ],
+    "availableSequence": [
+      "1",
+      "1",
+      "0"
+    ],
+    "completed": [
+      "fixture baseline and nineteen literal probes",
+      "AB retained in focused Keyboard editor",
+      "A queued",
+      "two half-cycles consume A",
+      "two more half-cycles consume B"
+    ],
+    "notRun": [
+      "ASCII backspace click",
+      "ASCII form feed",
+      "capacity change/truncation",
+      "Home",
+      "End"
+    ]
+  },
+  "manualVisualReview": {
+    "reviewer": "/root/android_files/keyboard3a_review",
+    "method": "view_image on original full PNGs; no crop, edit or automated pixel oracle",
+    "afterFirst": {
+      "screenshot": "raw/io-tty-afterFirst.png",
+      "expectedSteps": 2,
+      "observedFirstTtyRow": "A"
+    },
+    "afterSecond": {
+      "screenshot": "raw/io-tty-afterSecond.png",
+      "expectedSteps": 4,
+      "observedFirstTtyRow": "AB"
+    }
+  },
+  "snapshotSummary": {
+    "completeCaptures": 10,
+    "typedRootUnavailable": 0,
+    "typedIncompleteTree": 0,
+    "pidBeforeAfterAllCaptures": "23045",
+    "sameScreenRetryClaimed": false
+  },
+  "selectorFinding": {
+    "scope": "deterministic replay on both retained final hierarchies only",
+    "label": "ASCII backspace",
+    "labelBounds": [
+      518,
+      1158,
+      795,
+      1211
+    ],
+    "clickableAncestorBounds": [
+      455,
+      1122,
+      858,
+      1248
+    ],
+    "scrollBounds": [
+      21,
+      1121,
+      1059,
+      1247
+    ],
+    "originalNodesMatches": 0,
+    "offlineOnlyScrollBottomPlusOneMatches": 1,
+    "runtimeBackspaceClickClaimed": false,
+    "limit": "These trees do not establish the complete twenty-second polling chronology. The final CLI timeout is a later symptom, not by itself the lookup explanation."
+  },
+  "cleanup": {
+    "operation": "am force-stop only the isolated app after preserving failure state",
+    "package": "thalesmms.logisim.mobile.e2e",
+    "stdout": ""
+  },
+  "limits": [
+    "Single English API35 emulator attempt; not physical hardware.",
+    "Native case remains FAILED despite AB and initial character progress.",
+    "TTY rows are a manual visual review of retained images, not a pixel-oracle assertion.",
+    "Backspace, form feed, capacity, Home and End were not reached.",
+    "No typed ROOT_UNAVAILABLE or INCOMPLETE_TREE occurred in the ten retained SDK captures; no helper recovery is qualified.",
+    "No continuous PID claim outside the retained SDK captures and pre-cleanup readback.",
+    "No APK/JAR included; no device action was performed to create this archival package.",
+    "No pre-group ANR baseline was retained; no ANR-unchanged claim is made. The archived ANR dump is post-failure only.",
+    "Earlier attempt85649 is preserved separately as failed AB retention; this run is a different producer."
+  ],
+  "files": {
+    "raw/build-receipt.json": {
+      "bytes": 630,
+      "sha256": "e3e70e4c479d82fb8e6eb369100e297a2e8e9bea82d8710233db93b15e55e775"
+    },
+    "raw/failure-error.txt": {
+      "bytes": 2398,
+      "sha256": "7837414654d729e83feb370e6c7509c0c853c9ac90a138a02de41e95a2941f4b"
+    },
+    "raw/failure-last-anr.txt": {
+      "bytes": 54,
+      "sha256": "ccc29cf320c8019493ca17683e4cbceaa9aeed5d07d45067badb4ab13282519e"
+    },
+    "raw/failure-logcat.txt": {
+      "bytes": 26919,
+      "sha256": "b52391317d7e822702fe7476fa0071ac82389bdcad0e10455f7f34bff1f9d457"
+    },
+    "raw/failure-ui.xml": {
+      "bytes": 21459,
+      "sha256": "e27947f68c2cf7647ce940418834915b19c80d24f8bb8ab8f13b900a9254040e"
+    },
+    "raw/failure.png": {
+      "bytes": 147354,
+      "sha256": "8e93a344dad0e52d0d92e95e82e9b0565f770eb86abebc027f53fe2fd90ee558"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-1.json": {
+      "bytes": 26103,
+      "sha256": "26137c941be99a37b57e3bb2fccd7f3d50271c9a2bed9904e1c61530be2304fe"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-1.stdout.txt": {
+      "bytes": 24854,
+      "sha256": "1301076d91eed391c5af2ab683453569fb25e419506da07f3f00fcd33a135359"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-1.xml": {
+      "bytes": 17808,
+      "sha256": "ac336f72a0520b76268ca26e4620f86bd1c7225c0aa4e9f1de16ad324404a36f"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-10.json": {
+      "bytes": 37794,
+      "sha256": "e2e8e2f8fd094e6b80212cae7e827c90a2e827f25328068ffebe82725a82d4d5"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-10.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-10.stdout.txt": {
+      "bytes": 36558,
+      "sha256": "0eca5b9d7e0a8080fae9d38ceb5090cbb47b5d69d565bc4a68ee519daa7cdb94"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-10.xml": {
+      "bytes": 26585,
+      "sha256": "cfdd722defd058dccfc5b91c9fc820f2af2c646718663547d767eccf58540135"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-2.json": {
+      "bytes": 33771,
+      "sha256": "63d484bcbdb61e21e4d15fcf7c15ded060af23a50b0ba4d508412b9eb74bf347"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-2.stdout.txt": {
+      "bytes": 32544,
+      "sha256": "7d71fe4888b689bb5bd6dba363e9a921b0cb7210ee96143055d2b28607542068"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-2.xml": {
+      "bytes": 23581,
+      "sha256": "459bac950fa140c31a541a128ba3b9443359243b744f0971a1f24aa6b7ef0c8c"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-3.json": {
+      "bytes": 37791,
+      "sha256": "ef6872f6adfa4fd6e2976ef64f25afd5c54f17d3210ab929443d4ad8db231ae6"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-3.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-3.stdout.txt": {
+      "bytes": 36558,
+      "sha256": "29b05e7e33501e4fe10b30f928c629b383ff51439e2167a38dcc412f617de764"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-3.xml": {
+      "bytes": 26585,
+      "sha256": "720ff9218aff8d7d0870643d8346d736d6d29bcfafb5fc823f7bb0e3120a2f20"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-4.json": {
+      "bytes": 35015,
+      "sha256": "48ce8386c13ee8b7b829d942a7d88ad73572d0dd712b0ade6922d0ca350121f4"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-4.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-4.stdout.txt": {
+      "bytes": 33766,
+      "sha256": "ee8f8628b4d390a5aeacf8e59aa07de14071c97025bbcc3440d1162efb95a5bd"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-4.xml": {
+      "bytes": 24492,
+      "sha256": "fa47903efaa11c0edf1b5c87e22ff4afb8b9d143448a25ebb643019a45e01848"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-5.json": {
+      "bytes": 37779,
+      "sha256": "6aac1220b43839cb17625ae88b22f24d0d660e37e7373495831f53c1cc5256b6"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-5.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-5.stdout.txt": {
+      "bytes": 36552,
+      "sha256": "af042a6b97dd0901fb0032bb71136b941cb00dce7fc249e147601e9ef3e8b8d8"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-5.xml": {
+      "bytes": 26586,
+      "sha256": "c1a405305508a5a3e9ee83856595b58ac4b9f132d4afd47324f4dafa13ef24dd"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-6.json": {
+      "bytes": 37779,
+      "sha256": "70f1077df2386e4359ea5b8bd2d61f45861bdc67aef46f6e72d3ebf894e57d6d"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-6.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-6.stdout.txt": {
+      "bytes": 36552,
+      "sha256": "173975df3807c1c5489c050ab6ed9caa2d6a7d0919df2d9417c9b72ca481475e"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-6.xml": {
+      "bytes": 26586,
+      "sha256": "235e69b6d3ebbe29d2622e65e451b26da6d2d9616cba4bda5aaec3548c82b2ce"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-7.json": {
+      "bytes": 96923,
+      "sha256": "2aa8432383fac8cd5706ec562e9ac495574cc62f3aa6da2849e48843efbb1154"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-7.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-7.stdout.txt": {
+      "bytes": 95690,
+      "sha256": "bdc50d588627aee2872ec688349c2368a8f5abcc6dfd747fb878f99cf0c759e2"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-7.xml": {
+      "bytes": 70935,
+      "sha256": "528f7c7dadb10ba2d4bf614054ba254c7eb73cf732965969024fff13ef219960"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-8.json": {
+      "bytes": 26104,
+      "sha256": "38e67ce76daf89cd2d5eba75b014cd2d3628a8b0205de5c2a6d05113968667b8"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-8.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-8.stdout.txt": {
+      "bytes": 24854,
+      "sha256": "3e9f08e179756e8b98a947571d447dd7d3ab7e9e61c44d6f944a5905670df9f1"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-8.xml": {
+      "bytes": 17808,
+      "sha256": "93e901fcc9db51502141adc7a84085244b2a1d8ddf6730a51d342a7cf9359541"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-9.json": {
+      "bytes": 33795,
+      "sha256": "878869f7257d1a109794d5143be1b0be284ea9543d5c79eda7e32614a75d6846"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-9.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-9.stdout.txt": {
+      "bytes": 32562,
+      "sha256": "355bfdbdd4e213af2a4e29360a9280b36e92caaa126942f11fbd09d8fcbb84a9"
+    },
+    "raw/focus-snapshot-7522cda8289d46f0998b87dd69f9af7e-9.xml": {
+      "bytes": 23590,
+      "sha256": "4740e55b2e869c7a0ea61507cc18bbc56d630cb53e6851fa89b388d74dde4137"
+    },
+    "raw/incoming-launch-1.txt": {
+      "bytes": 320,
+      "sha256": "71bd99b530ab46b50bf7ff9b0e135a1e876f11c88731f632a045f43753567260"
+    },
+    "raw/incoming-open-1.json": {
+      "bytes": 303,
+      "sha256": "83cd4cdd2c6d34d695f0831607a5320428042d2a3cbd8456f1ae6edec1a17031"
+    },
+    "raw/io-baseline.circ": {
+      "bytes": 21971,
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+    },
+    "raw/io-showcase-keyboard-tty-error.txt": {
+      "bytes": 1876,
+      "sha256": "55d05740aa27db5cef66d5890c3132072c3f425ab5081afb7290aa2dc5b38931"
+    },
+    "raw/io-showcase-keyboard-tty-ui.xml": {
+      "bytes": 21459,
+      "sha256": "e27947f68c2cf7647ce940418834915b19c80d24f8bb8ab8f13b900a9254040e"
+    },
+    "raw/io-showcase-keyboard-tty.png": {
+      "bytes": 147354,
+      "sha256": "8e93a344dad0e52d0d92e95e82e9b0565f770eb86abebc027f53fe2fd90ee558"
+    },
+    "raw/io-showcase-observations.json": {
+      "bytes": 4438,
+      "sha256": "af0b5a8e270a3f4353edab287965c746b913a63af9d2f83698ed6d28d77b3c38"
+    },
+    "raw/io-tty-afterFirst-ui.xml": {
+      "bytes": 57412,
+      "sha256": "dbd41ae3cef7308bacbd8d08778e53ebf989a262c468752419965701e5f8e9c9"
+    },
+    "raw/io-tty-afterFirst.png": {
+      "bytes": 255613,
+      "sha256": "b0f80b70168f083bec7c6ecefad77bd70d5ce087b46593eb2d550392ee4cc535"
+    },
+    "raw/io-tty-afterSecond-ui.xml": {
+      "bytes": 57411,
+      "sha256": "9804de6e23c875dc46da22c3402cd4f05bdc2d58ed25b98ce225e0735bf25590"
+    },
+    "raw/io-tty-afterSecond.png": {
+      "bytes": 255505,
+      "sha256": "1ea3d6ad6e9650d43a5b14e243bd145dfa60fedd534179b3fb77a6b960b3331a"
+    },
+    "raw/last-document.circ": {
+      "bytes": 21971,
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+    },
+    "raw/launch-01.txt": {
+      "bytes": 226,
+      "sha256": "e0bbb57e85acad3fca85b1f3e72eadc120896a65b4207fed0073fbadbc25be88"
+    },
+    "raw/manifest.json": {
+      "bytes": 4555,
+      "sha256": "b4695b6bef2add18cc16955f5fe815a08b691f6c84217181b8c647f9e399264f"
+    },
+    "raw/post-run-readback-cleanup.json": {
+      "bytes": 1242,
+      "sha256": "30e16364d4775e654faf7183ec9eb8e25bc8e49ae097b65ffccd67496e1358bf"
+    },
+    "raw/post-run-summary.json": {
+      "bytes": 1597,
+      "sha256": "9deba30aa652daf533a86dfdba1e2b8065d8d1a4b19e76d855638f5a2f42eab9"
+    },
+    "raw/preflight-before-adb.json": {
+      "bytes": 1610,
+      "sha256": "46cffb556efaa98eab77b76d092b259c47114bc8ba8436b92bc0fc2f3ad82b19"
+    },
+    "raw/results.json": {
+      "bytes": 399,
+      "sha256": "3a5b07ec75b07880728c263ede202296a4f13378956708b62b6eb6fd87906f26"
+    },
+    "raw/root-manifest.json": {
+      "bytes": 54825,
+      "sha256": "1684bbbe5623d4d4807d2d7dea9b34025985f10269644ba5e5c829f7f2b7fc8e"
+    },
+    "raw/source-android_editing_scenarios.py": {
+      "bytes": 23853,
+      "sha256": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673"
+    },
+    "raw/source-android_inspector_scenarios.py": {
+      "bytes": 8646,
+      "sha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c"
+    },
+    "raw/source-android_io_showcase_scenarios.py": {
+      "bytes": 17418,
+      "sha256": "4aa42d7f7d3bd95922cef3cf9609db9dc1d57d77a701619a5e90c71a59c983e8"
+    },
+    "raw/source-android_portable_scenarios.py": {
+      "bytes": 28753,
+      "sha256": "6e5888e73ddb558d038f22c45b517e182a46a991f43d878427a65f724ee5c7b4"
+    },
+    "raw/source-android_ui.py": {
+      "bytes": 45445,
+      "sha256": "8afbbc3514a2dcc33939f4c7a4bc9ec1674b54c2eb4610a5764336238057a634"
+    },
+    "raw/source-android_visual_export34_scenarios.py": {
+      "bytes": 18149,
+      "sha256": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763"
+    },
+    "raw/source-e2e-android.py": {
+      "bytes": 68183,
+      "sha256": "d28e2473df36c503a0963c6b6720623a83c9e82bbd809d85df4decc4326fc27b"
+    },
+    "raw/source-user_scenario_contract.py": {
+      "bytes": 7203,
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+    },
+    "inputs/io-actions-v1.json": {
+      "bytes": 10589,
+      "sha256": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb"
+    },
+    "inputs/io-control-messages.json": {
+      "bytes": 14171,
+      "sha256": "6d1d002ff1190d4f73739dc045be00a2bfa1b2dc28f4d75b26f69e65ce4fe946"
+    },
+    "inputs/io-showcase.circ": {
+      "bytes": 21971,
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+    },
+    "inputs/io-showcase.targets.json": {
+      "bytes": 17651,
+      "sha256": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15"
+    },
+    "analysis/selector-census.json": {
+      "bytes": 3832,
+      "sha256": "a92b49b943f2e26f6213a1fbcbe4da580bf29131a95782c108b71c647d2f3699"
+    }
+  }
+}

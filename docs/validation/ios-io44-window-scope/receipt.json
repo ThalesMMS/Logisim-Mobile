@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "scope": "source-only iOS IO44 public document-window query isolation",
+  "nativeExecution": "NOT_RUN",
+  "productChanged": false,
+  "sourceBase": "7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5",
+  "foundationModelCommit": "afb04b1555b63b55f44a761f8f9e1c0b57ec6979",
+  "preparedStatus": "PREPARED",
+  "selectedTests": [
+    "EditorEndToEndTests/IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDimensionChangesRemainExportable",
+    "EditorEndToEndTests/IoEndToEndTests/testIoMomentaryControlsAndJoystick",
+    "EditorEndToEndTests/IoEndToEndTests/testIoKeyboardTtyAndCapacity"
+  ],
+  "catalogCount": 2497,
+  "catalogSHA256": "bd975f80471c29bdd2407bd7231a093f6862842c2437b18a0c4f8c9bdc9305ea",
+  "defaultXMLBody": {
+    "comparison": "Byte-identical first statement through closing function brace after renaming function only.",
+    "bytes": 3426,
+    "sha256": "acc4c9b28f5946e7c928a2938bf043ff923eddd1378a0ea572b15d83e6e6d834"
+  },
+  "checks": {
+    "foundation": {
+      "passed": 107,
+      "total": 107,
+      "log": "foundation.log"
+    },
+    "runnerAndSelectors": {
+      "passed": 20,
+      "log": "runner-and-selectors.log",
+      "catalogRoot": "mobile-final-keyboard-ownership-3a0a01f1"
+    },
+    "swiftTypecheck": {
+      "scope": "Swift source typecheck only; no app build or UI",
+      "command": [
+        "xcrun",
+        "swiftc",
+        "-typecheck",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+        "-target",
+        "arm64-apple-ios17.0-simulator",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib",
+        "-module-cache-path",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/ModuleCache",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/AccessibilityUITests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/ClipboardReceiverUI.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/DestinationExportEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/DocumentWindowRules.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/DocumentWindowScope.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/EditorEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/ExternalProviderEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/FilesEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/InspectorEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/IoEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/NativeFilesDestinationNavigator.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/NativeFilesPeerNavigator.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/NativeTextReplacement.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/NativeUIHarness.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/ObservedProjectXML.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/PortableProjectEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/PortableWorkspaceEvidence.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/VisualExportEndToEndTests.swift",
+        "/tmp/logisim-ios-io-window-scope-prepared-005/harness/XmlDialogEndToEndTests.swift"
+      ],
+      "sourceHashes": {
+        "AccessibilityUITests.swift": "ca5d6c441c1270d915cfcce1bb456f200bbbf83e78af18667f5a72359293d150",
+        "ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+        "DestinationExportEndToEndTests.swift": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+        "DocumentWindowRules.swift": "a1f3dc1672e11394fbf3b654bd47cb7c9d2421b34fe5af193965b71779c6432c",
+        "DocumentWindowScope.swift": "a7714f97d6decfe3893c3eb9c93229cd7a69d0e5bbae4fffe32f85bc25da6d80",
+        "EditorEndToEndTests.swift": "df046e24e72b26919e1e2b8ae3d767a2eae3b784f5925a0d946198f11d17ed07",
+        "ExternalProviderEndToEndTests.swift": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+        "FilesEndToEndTests.swift": "b9cec3bf6b3cc840d53471a00872602fcbb6ada22eaa94b08d25844d0ebd9da0",
+        "InspectorEndToEndTests.swift": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+        "IoEndToEndTests.swift": "d6df71d27310657830a036902acb289f227f555a03b53742fd6b77f8775febd2",
+        "NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+        "NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+        "NativeTextReplacement.swift": "3bd31ec0424e639e3b1e9f746ce0c95b634de9ef98f4dfba38c23147f4c8a44c",
+        "NativeUIHarness.swift": "4d23b09ac805b77eba83d95abfedfa68e1a1249174d1f9939bd55fefe1672bd1",
+        "ObservedProjectXML.swift": "272571f609cc37fd225d785346d82e6f0314753dada5eb3ed21c150d36aaefd3",
+        "PortableProjectEndToEndTests.swift": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+        "PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+        "VisualExportEndToEndTests.swift": "d5203b7ac8938a904d85f9d196549b28a2caddd9244c7d892ba87ea162e16752",
+        "XmlDialogEndToEndTests.swift": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346"
+      },
+      "exit": 0,
+      "log": "typecheck.log"
+    },
+    "unverifiedOriginNegative": {
+      "exit": 1,
+      "passed": 106,
+      "total": 107,
+      "expectedFailure": "unverified origin cannot complete return: live editor after modal closes",
+      "log": "unverified-origin-negative.log"
+    }
+  },
+  "stagedSwiftSources": {
+    "AccessibilityUITests.swift": "ca5d6c441c1270d915cfcce1bb456f200bbbf83e78af18667f5a72359293d150",
+    "ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+    "DestinationExportEndToEndTests.swift": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+    "DocumentWindowRules.swift": "a1f3dc1672e11394fbf3b654bd47cb7c9d2421b34fe5af193965b71779c6432c",
+    "DocumentWindowScope.swift": "a7714f97d6decfe3893c3eb9c93229cd7a69d0e5bbae4fffe32f85bc25da6d80",
+    "EditorEndToEndTests.swift": "df046e24e72b26919e1e2b8ae3d767a2eae3b784f5925a0d946198f11d17ed07",
+    "ExternalProviderEndToEndTests.swift": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+    "FilesEndToEndTests.swift": "b9cec3bf6b3cc840d53471a00872602fcbb6ada22eaa94b08d25844d0ebd9da0",
+    "InspectorEndToEndTests.swift": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+    "IoEndToEndTests.swift": "d6df71d27310657830a036902acb289f227f555a03b53742fd6b77f8775febd2",
+    "NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+    "NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+    "NativeTextReplacement.swift": "3bd31ec0424e639e3b1e9f746ce0c95b634de9ef98f4dfba38c23147f4c8a44c",
+    "NativeUIHarness.swift": "4d23b09ac805b77eba83d95abfedfa68e1a1249174d1f9939bd55fefe1672bd1",
+    "ObservedProjectXML.swift": "272571f609cc37fd225d785346d82e6f0314753dada5eb3ed21c150d36aaefd3",
+    "PortableProjectEndToEndTests.swift": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+    "PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+    "VisualExportEndToEndTests.swift": "d5203b7ac8938a904d85f9d196549b28a2caddd9244c7d892ba87ea162e16752",
+    "XmlDialogEndToEndTests.swift": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346"
+  },
+  "extraSourceHashes": {
+    "scripts/run-ios-e2e.py": "9d4646ff1f9900db2225ec3c98b0d2b418bc88c8e593cb3ec697a05a6f632775",
+    "scripts/ios_e2e_ui/project.yml": "1e98d4ab186ec01e1f58e3fdde92bbac23dcb1c386fb5c3641fa47063bd86232",
+    "scripts/test_ios_document_window_rules.py": "8554110553d6252af4444127e5d1eaef636bc3fb36ba1e24184a9fb950f00838",
+    "fixtures/user-scenarios/io-actions-v1.json": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+    "examples/io-showcase.circ": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+  },
+  "limits": [
+    "Foundation checks do not execute XCUI or prove window continuity at runtime.",
+    "Before XML Close, a hidden filename is handled only by the retained public AX window reference.",
+    "The exact persistent origin is read after clipboard return, immediately before the report Close. It is not reread after that report is closed.",
+    "The recorded control center is a candidate, not the emitted tap point or delivery receipt.",
+    "The original four native failures remain failures."
+  ],
+  "supersedesTransientStatusGateIn": "7238f577339ef4e4fe95b53aca5f0a5227328bd7",
+  "sourceReview": "status-origin-source-review.json",
+  "scopedXmlReturnGate": [
+    "Same retained public Window with a positive editor and no XML modal after the same XML Close.",
+    "Fixed action opens the existing import report in that Window.",
+    "Exactly one canonical current filename origin is read inside exactly one report.",
+    "The report origin and the same reachable Close frame are rechecked before one tap.",
+    "The same live Window has a positive editor, with XML and import report absent before checkpoint metadata."
+  ]
+}

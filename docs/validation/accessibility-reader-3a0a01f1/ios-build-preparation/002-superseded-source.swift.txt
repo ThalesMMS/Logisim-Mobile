@@ -1,0 +1,88 @@
+import XCTest
+
+/// Prepared capability probe. It does not test activation, rotor actions or a complete workflow.
+@available(iOS 27.0, *)
+@MainActor
+final class VoiceOverServiceProbeUITests: XCTestCase {
+    func testReaderNavigationAndSpeechWithRestoration() throws {
+        continueAfterFailure = true
+        let app = XCUIApplication(bundleIdentifier: "thalesmms.logisim.mobile")
+        XCTAssertEqual(app.state, .runningForeground, "The owner must prepare the pinned app before this probe")
+        guard app.state == .runningForeground else { return }
+        let service = XCUIDevice.shared.voiceOverService
+        let originallyEnabled = service.isEnabled
+        attach("original-state", data: [
+            "originallyEnabled": originallyEnabled,
+            "serviceDebugDescription": service.debugDescription,
+            "testProcessUptimeSeconds": ProcessInfo.processInfo.systemUptime,
+        ])
+        var operationError: Error?
+        var restorationError: Error?
+        do {
+            if !originallyEnabled { try service.enable() }
+            XCTAssertTrue(service.isEnabled)
+            let initial = try service.currentSpeech()
+            record("initial", output: initial, service: service)
+            let forward = try service.moveForward()
+            record("forward", output: forward, service: service)
+            let backward = try service.moveBackward()
+            record("backward", output: backward, service: service)
+            XCTAssertFalse(initial.utterance.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            XCTAssertFalse(forward.utterance.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            XCTAssertFalse(backward.utterance.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+        } catch {
+            operationError = error
+            recordError("operation-error", error: error, service: service)
+        }
+        do {
+            if service.isEnabled != originallyEnabled {
+                if originallyEnabled { try service.enable() }
+                else { try service.disable() }
+            }
+        } catch {
+            restorationError = error
+            recordError("restoration-error", error: error, service: service)
+        }
+        attach("restoration-state", data: [
+            "originallyEnabled": originallyEnabled,
+            "finallyEnabled": service.isEnabled,
+            "operationFailed": operationError != nil,
+            "restorationFailed": restorationError != nil,
+            "serviceDebugDescription": service.debugDescription,
+            "testProcessUptimeSeconds": ProcessInfo.processInfo.systemUptime,
+        ])
+        XCTAssertEqual(service.isEnabled, originallyEnabled, "Restore the original reader setting")
+        if let operationError { throw operationError }
+        if let restorationError { throw restorationError }
+    }
+
+    private func record(_ name: String, output: XCUIVoiceOverService.Output, service: XCUIVoiceOverService) {
+        let data: [String: Any] = [
+            "step": name,
+            "utterance": output.utterance,
+            "serviceEnabled": service.isEnabled,
+            "serviceDebugDescription": service.debugDescription,
+            "testProcessUptimeSeconds": ProcessInfo.processInfo.systemUptime,
+        ]
+        attach(name, data: data)
+    }
+
+    private func recordError(_ name: String, error: Error, service: XCUIVoiceOverService) {
+        let native = error as NSError
+        attach(name, data: [
+            "step": name, "domain": native.domain, "code": native.code,
+            "description": native.localizedDescription, "serviceEnabled": service.isEnabled,
+            "serviceDebugDescription": service.debugDescription,
+            "testProcessUptimeSeconds": ProcessInfo.processInfo.systemUptime,
+        ])
+    }
+
+    private func attach(_ name: String, data: [String: Any]) {
+        let serialized = try? JSONSerialization.data(withJSONObject: data, options: [.prettyPrinted, .sortedKeys])
+        let text = serialized.flatMap { String(data: $0, encoding: .utf8) } ?? String(describing: data)
+        let attachment = XCTAttachment(string: text)
+        attachment.name = "voiceover-service-\(name).json"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+}

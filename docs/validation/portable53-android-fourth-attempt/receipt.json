@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "status": "IMPORTED_BUT_FAILED_BEFORE_FIRST_EXPORT",
+  "nativeUiStatus": "FAILED",
+  "serial": "emulator-5558",
+  "productSource": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "harnessSource": "98c6428c631a3cb3c292b9545c1dc6573422654a",
+  "appSha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546",
+  "observations": [
+    "MediaStore publication succeeded before opening the native picker.",
+    "The actual native selection imported Portable53 as a fresh workspace with a portable-source attachment.",
+    "The canvas exposed the independent expected 00001000 and 00000011 outputs.",
+    "During first export, the helper required Show roots before CREATE_DOCUMENT finished presenting; a later native capture shows that control and the expected Top53.lsebdl filename/SAVE action."
+  ],
+  "snapshotsCaptured": [
+    "before",
+    "imported"
+  ],
+  "snapshotsMissing": [
+    "restarted",
+    "reopened"
+  ],
+  "qualifiedExports": [],
+  "failureLayer": "Native picker presentation readiness in the existing harness",
+  "correction": "Wait for an observed native roots list or its Show roots action before navigation. Preserve package/uniqueness and bounded waiting.",
+  "checks": {
+    "navigation": 9,
+    "portablePreparation": 9,
+    "artifactPreflight": 11
+  },
+  "files": {
+    "portable-bundle-imported-workspace.tar": "dff06c39b4a84dbb34ed537bff0af6b974fbf73c99394570c3a750758012ea38",
+    "export-picker-after-failure.png": "c35bacdb98b522206335afa5b9baffd2e4e3352a40749bb747e469cd403af514",
+    "export-picker-after-failure.xml": "ac0907bdefbc480d2adb5ae09323e64af7312985defafbb542d0ec42a1b3857b",
+    "results.json": "f6c34653ab4744d1bcd49927e32f4b56acbd600bd6a19c01efc98ae8870741fa",
+    "portable-bundle-imported.circ": "ce2cd8f45fdaf9e5ac6ea3a9a8c9d479692faf310b35a14f99983c06002b06c7",
+    "portable-002-bundle-imported-canvas-ui.xml": "8e6f06304c36409a177375a2539dba6885af06e96754c3f03395d01cdefbd377",
+    "portable-bundle-imported-source.lsebdl": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc",
+    "portable-bundle-source-publication.json": "a35911431cb2c2020e0e9a2e0179ff3c3ccd79a6a05c7c3745e285d2f4a8fcc6",
+    "concurrent-environment.json": "65d96551c23da13a0f79c7d9fb454ce325e638584796a7825209743fcf3a9677",
+    "portable-bundle-imported-workspace.json": "975794fc71df73afe0cdb56081f5c54a644180e8c0214dd85736cc0c3718fa5d",
+    "portable-bundle-before-workspace.json": "42c8495367b3dbe4651e8a99b63e85d25f7722856be514c20ecf4f3ab30d3281",
+    "portable-bundle-before-workspace.tar": "5a7238b42656b8bf1b91abd7d315ecd01c2e93c403c5bda73a120dcf5f710d4d",
+    "run-manifest.json": "f887536ecf0db8842216fc8668cca3f848a7b83c0eb54cb2ab3c604b3f121896",
+    "error.txt": "6ab72613730911c5e7399970f414becc90ddbdfe2e6a407d8d2703d1b7b942f8",
+    "portable-bundle-before.circ": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481",
+    "portable-002-bundle-imported-canvas.png": "2b7a95e289c2126a29b76c31da321800a0ff6550219359c57ccaa24ee1810e6f"
+  }
+}

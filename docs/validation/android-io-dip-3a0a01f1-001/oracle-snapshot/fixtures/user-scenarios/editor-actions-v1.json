@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "sourceCommit": "04a0b34a38689932a3f3aaed7f4ea5cb6b63c8db",
+    "desktopCommit": "fbb1eca6ff72cb634b8dd1d72dc232b9838c9e01",
+    "pinDefaultsSource": "WiringLibrary.pinDefinition; desktop PinAttributes, ProbeAttributes and StdAttr",
+    "outputFacingPolicy": "The scenario explicitly sets OUTPUT west after insertion; the factory default is east",
+    "kind": "literal-expectations",
+    "description": "Shared Android and iOS user actions. Fixtures and expected values are not evidence that an application executed them."
+  },
+  "fixture": "editing-not.circ",
+  "coordinateSpace": "circuit-grid",
+  "snapGrid": 10,
+  "pasteOffset": [20, 20],
+  "snapshots": {
+    "empty": {"circuitCount": 1, "components": [], "wires": []},
+    "components": {
+      "circuitCount": 1,
+      "components": [
+        {"name": "Pin", "location": [100, 100], "attributes": {"facing": "east", "type": "input", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_IN"}},
+        {"name": "NOT Gate", "location": [200, 100], "attributes": {"facing": "east", "width": "1", "size": "30", "out": "01", "label": "E2E_NOT"}},
+        {"name": "Pin", "location": [300, 100], "attributes": {"facing": "west", "type": "output", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_OUT"}}
+      ],
+      "wires": []
+    },
+    "north": {
+      "circuitCount": 1,
+      "components": [
+        {"name": "Pin", "location": [100, 100], "attributes": {"facing": "east", "type": "input", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_IN"}},
+        {"name": "NOT Gate", "location": [200, 100], "attributes": {"facing": "north", "width": "1", "size": "30", "out": "01", "label": "E2E_NOT"}},
+        {"name": "Pin", "location": [300, 100], "attributes": {"facing": "west", "type": "output", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_OUT"}}
+      ],
+      "wires": []
+    },
+    "wired": {
+      "circuitCount": 1,
+      "components": [
+        {"name": "Pin", "location": [100, 100], "attributes": {"facing": "east", "type": "input", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_IN"}},
+        {"name": "NOT Gate", "location": [200, 100], "attributes": {"facing": "east", "width": "1", "size": "30", "out": "01", "label": "E2E_NOT"}},
+        {"name": "Pin", "location": [300, 100], "attributes": {"facing": "west", "type": "output", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_OUT"}}
+      ],
+      "wires": [[[100, 100], [170, 100]], [[200, 100], [300, 100]]]
+    },
+    "wire-removed": {
+      "circuitCount": 1,
+      "components": [
+        {"name": "Pin", "location": [100, 100], "attributes": {"facing": "east", "type": "input", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_IN"}},
+        {"name": "NOT Gate", "location": [200, 100], "attributes": {"facing": "east", "width": "1", "size": "30", "out": "01", "label": "E2E_NOT"}},
+        {"name": "Pin", "location": [300, 100], "attributes": {"facing": "west", "type": "output", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_OUT"}}
+      ],
+      "wires": [[[200, 100], [300, 100]]]
+    },
+    "pasted": {
+      "circuitCount": 1,
+      "components": [
+        {"name": "Pin", "location": [100, 100], "attributes": {"facing": "east", "type": "input", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_IN"}},
+        {"name": "NOT Gate", "location": [200, 100], "attributes": {"facing": "east", "width": "1", "size": "30", "out": "01", "label": "E2E_NOT"}},
+        {"name": "Pin", "location": [300, 100], "attributes": {"facing": "west", "type": "output", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_OUT"}},
+        {"name": "Pin", "location": [120, 120], "attributes": {"facing": "east", "type": "input", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_IN"}},
+        {"name": "NOT Gate", "location": [220, 120], "attributes": {"facing": "east", "width": "1", "size": "30", "out": "01", "label": "E2E_NOT"}},
+        {"name": "Pin", "location": [320, 120], "attributes": {"facing": "west", "type": "output", "width": "1", "appearance": "classic", "behavior": "simple", "initial": "0x0", "labelfont": "SansSerif bold 16", "labelloc": "west", "radix": "2", "label": "E2E_OUT"}}
+      ],
+      "wires": [[[100, 100], [170, 100]], [[200, 100], [300, 100]], [[120, 120], [190, 120]], [[220, 120], [320, 120]]]
+    }
+  },
+  "scenarios": [
+    {
+      "id": "editing-connections-history-viewport",
+      "steps": [
+        {"action": "newProject"},
+        {"action": "assertDocument", "checkpoint": "empty"},
+        {"action": "insertComponent", "kind": "input", "x": 100, "y": 100, "label": "E2E_IN"},
+        {"action": "insertComponent", "kind": "not", "x": 200, "y": 100, "label": "E2E_NOT"},
+        {"action": "insertComponent", "kind": "output", "x": 300, "y": 100, "label": "E2E_OUT"},
+        {"action": "setFacing", "label": "E2E_OUT", "direction": "west"},
+        {"action": "assertDocument", "checkpoint": "components"},
+        {"action": "setFacing", "label": "E2E_NOT", "direction": "north"},
+        {"action": "assertDocument", "checkpoint": "north"},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "components"},
+        {"action": "redo"},
+        {"action": "assertDocument", "checkpoint": "north"},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "components"},
+        {"action": "connectPorts", "source": "E2E_IN", "sourcePort": "out", "destination": "E2E_NOT", "destinationPort": "in"},
+        {"action": "connectPorts", "source": "E2E_NOT", "sourcePort": "out", "destination": "E2E_OUT", "destinationPort": "in"},
+        {"action": "assertDocument", "checkpoint": "wired"},
+        {"action": "assertOutput", "label": "E2E_OUT", "value": "1"},
+        {"action": "activateComponent", "label": "E2E_IN"},
+        {"action": "assertOutput", "label": "E2E_OUT", "value": "0"},
+        {"action": "activateComponent", "label": "E2E_IN"},
+        {"action": "assertOutput", "label": "E2E_OUT", "value": "1"},
+        {"action": "removeWire", "index": 1, "from": [100, 100], "to": [170, 100]},
+        {"action": "assertDocument", "checkpoint": "wire-removed"},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "wired"},
+        {"action": "redo"},
+        {"action": "assertDocument", "checkpoint": "wire-removed"},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "wired"},
+        {"action": "selectAll"},
+        {"action": "copySelection"},
+        {"action": "pasteSelection"},
+        {"action": "assertDocument", "checkpoint": "pasted"},
+        {"action": "assertDistinctCopies", "labels": ["E2E_IN", "E2E_NOT", "E2E_OUT"], "count": 2},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "wired"},
+        {"action": "redo"},
+        {"action": "assertDocument", "checkpoint": "pasted"},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "wired"},
+        {"action": "selectAll"},
+        {"action": "deleteSelection"},
+        {"action": "assertDocument", "checkpoint": "empty"},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "wired"},
+        {"action": "redo"},
+        {"action": "assertDocument", "checkpoint": "empty"},
+        {"action": "undo"},
+        {"action": "assertDocument", "checkpoint": "wired"},
+        {"action": "zoomOut", "count": 3},
+        {"action": "captureZoom", "name": "before"},
+        {"action": "zoomIn"},
+        {"action": "assertZoomGreater", "reference": "before"},
+        {"action": "zoomOut"},
+        {"action": "assertZoomEqual", "reference": "before", "tolerancePercent": 1},
+        {"action": "selectComponent", "label": "E2E_NOT"},
+        {"action": "fitSelection"},
+        {"action": "assertZoomGreater", "reference": "before"},
+        {"action": "fitCircuit"},
+        {"action": "assertDocument", "checkpoint": "wired"}
+      ]
+    }
+  ],
+  "sap1": {
+    "source": "builtin-sap1",
+    "circuitCount": 7,
+    "componentCount": 156,
+    "wireCount": 318,
+    "resetInput": "Reset",
+    "manualHalfCycles": 56,
+    "assertCounterEvery": 8,
+    "displayNibbles": ["0000", "1000"],
+    "runMilliseconds": 1500,
+    "pauseObservationMilliseconds": 2500
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "candidate_source": "f739a5c697a601c7647bee75f7b8f2abb8775618",
+  "scope": "Directed native dependency notice delta for Compose beta02; no build, UI, installation, final app linkage attribution or license-compatibility conclusion.",
+  "skiko": {
+    "old_version": "0.150.2",
+    "new_version": "0.156.1",
+    "commit": "16bca5bed16bb926b6ae62c0a3fd937a7a159690",
+    "source": "https://github.com/JetBrains/skiko/tree/16bca5bed16bb926b6ae62c0a3fd937a7a159690",
+    "selection_file": "skiko/gradle.properties",
+    "selection_file_sha256": "576ec04a82a952d481a2b29111f0bc0a59d7ea1e4dbdcd8b1799679823cb4b20"
+  },
+  "skia": {
+    "old_tag": "m150-a3f509bf52",
+    "new_tag": "m156-6416302ae5",
+    "commit": "6416302ae5e66d164eb51100efb06c9eee332b99",
+    "source": "https://github.com/JetBrains/skia/tree/6416302ae5e66d164eb51100efb06c9eee332b99",
+    "deps_sha256": "a7ca94644758bb8d32e269d99a0432bd5e332bb2acbfc1ffdde3811e5ef631d9"
+  },
+  "unchanged_root_licenses": [
+    {
+      "file": "legal/licenses/Skiko-NOTICE.txt",
+      "sha256": "35dd077c24768b53625101cfcc0ad853ae7e2abc08bd2a111a0267760d1406d8",
+      "comparison": "Byte-identical to the new official pinned source"
+    },
+    {
+      "file": "legal/licenses/Apache-2.0.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "comparison": "Byte-identical to the new official pinned source"
+    },
+    {
+      "file": "legal/licenses/Skia-BSD-3-Clause.txt",
+      "sha256": "5f787c1dee3c56547f09ccc2906ab5f5293c4d8dd6c8654e573216c38e908dbd",
+      "comparison": "Byte-identical to the new official pinned source"
+    }
+  ],
+  "existing_native_records": [
+    {
+      "name": "dng_sdk",
+      "old_commit": "dbe0a676450d9b8c71bf00688bb306409b779e90",
+      "new_commit": "dbe0a676450d9b8c71bf00688bb306409b779e90",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "012e875468ac2f9a2070ee25a950588afa2735b4b2d961f491e3d72c8f572306"
+    },
+    {
+      "name": "expat",
+      "old_commit": "6154446fccefbf3ca644894f598969113b0c7bcd",
+      "new_commit": "6154446fccefbf3ca644894f598969113b0c7bcd",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87"
+    },
+    {
+      "name": "harfbuzz",
+      "old_commit": "9cb1fee51069b206effb4736e443b038d230789d",
+      "new_commit": "9cb1fee51069b206effb4736e443b038d230789d",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
+    },
+    {
+      "name": "icu",
+      "old_commit": "364118a1d9da24bb5b770ac3d762ac144d6da5a4",
+      "new_commit": "d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738",
+      "commit_changed": true,
+      "local_hash_verified": true,
+      "new_sha256": "e55522d81edc687a341a4411e0776e54ca654e90147f354a90458aaced4116af"
+    },
+    {
+      "name": "libjpeg-turbo",
+      "old_commit": "e14cbfaa85529d47f9f55b0f104a579c1061f9ad",
+      "new_commit": "e14cbfaa85529d47f9f55b0f104a579c1061f9ad",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "96f5b328adbb78eeaaec6980d73fd558cb1e4d62560ed615646bc3cf5e532430"
+    },
+    {
+      "name": "libpng",
+      "old_commit": "d5515b5b8be3901aac04e5bd8bd5c89f287bcd33",
+      "new_commit": "d5515b5b8be3901aac04e5bd8bd5c89f287bcd33",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526"
+    },
+    {
+      "name": "libwebp",
+      "old_commit": "845d5476a866141ba35ac133f856fa62f0b7445f",
+      "new_commit": "845d5476a866141ba35ac133f856fa62f0b7445f",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+    },
+    {
+      "name": "piex",
+      "old_commit": "bb217acdca1cc0c16b704669dd6f91a1b509c406",
+      "new_commit": "bb217acdca1cc0c16b704669dd6f91a1b509c406",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "name": "wuffs",
+      "old_commit": "e3f919ccfe3ef542cfc983a82146070258fb57f8",
+      "new_commit": "e3f919ccfe3ef542cfc983a82146070258fb57f8",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "name": "zlib",
+      "old_commit": "646b7f569718921d7d4b5b8e22572ff6c76f2596",
+      "new_commit": "646b7f569718921d7d4b5b8e22572ff6c76f2596",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "e1cfcc55c325b3f78cf55df9664abaa066e2271dffe8213347d9fccdfbac8f2c"
+    },
+    {
+      "name": "libjpeg-turbo-ijg",
+      "old_commit": "e14cbfaa85529d47f9f55b0f104a579c1061f9ad",
+      "new_commit": "e14cbfaa85529d47f9f55b0f104a579c1061f9ad",
+      "commit_changed": false,
+      "local_hash_verified": true,
+      "new_sha256": "75815e3bf6484201a3c3d17a1bbf10f2e8e3237f84df10a2357ea896db2a81d6"
+    }
+  ],
+  "release_archive_delta": {
+    "schema_version": 1,
+    "old": {
+      "source_url": "https://github.com/JetBrains/skia/releases/download/m150-a3f509bf52/Skia-m150-a3f509bf52-ios-Release-arm64.zip",
+      "path": "/tmp/logisim-skiko-01561-metadata/Skia-m150-a3f509bf52-ios-Release-arm64.zip",
+      "archive_sha256": "91707cc747d53f1a5814a976303c549c813784d1f422fb383dfcd26a1a4be224",
+      "archive_bytes": 65128957,
+      "official_digest_verified": true,
+      "static_library_names": [
+        "out/Release-ios-arm64/libskresources.a",
+        "out/Release-ios-arm64/libskparagraph.a",
+        "out/Release-ios-arm64/libskia.a",
+        "out/Release-ios-arm64/libicu.a",
+        "out/Release-ios-arm64/libskottie.a",
+        "out/Release-ios-arm64/libjsonreader.a",
+        "out/Release-ios-arm64/libskia_ganesh_ext.a",
+        "out/Release-ios-arm64/libsvg.a",
+        "out/Release-ios-arm64/libpng.a",
+        "out/Release-ios-arm64/libwebp_sse41.a",
+        "out/Release-ios-arm64/libsksg.a",
+        "out/Release-ios-arm64/libjpeg16.a",
+        "out/Release-ios-arm64/libjpeg12.a",
+        "out/Release-ios-arm64/libwebp.a",
+        "out/Release-ios-arm64/libdng_sdk.a",
+        "out/Release-ios-arm64/libbentleyottmann.a",
+        "out/Release-ios-arm64/libpiex.a",
+        "out/Release-ios-arm64/libharfbuzz.a",
+        "out/Release-ios-arm64/libexpat.a",
+        "out/Release-ios-arm64/libzlib.a",
+        "out/Release-ios-arm64/libwuffs.a",
+        "out/Release-ios-arm64/libskia_graphite_ext.a",
+        "out/Release-ios-arm64/libskcms.a",
+        "out/Release-ios-arm64/libjpeg.a",
+        "out/Release-ios-arm64/libskshaper.a",
+        "out/Release-ios-arm64/libskunicode_icu.a",
+        "out/Release-ios-arm64/libskunicode_core.a"
+      ],
+      "scope": "Archive member inventory only; no extraction, build, linking, installation, or claim of final app object inclusion."
+    },
+    "new": {
+      "source_url": "https://github.com/JetBrains/skia/releases/download/m156-6416302ae5/Skia-m156-6416302ae5-ios-Release-arm64.zip",
+      "path": "/tmp/logisim-skiko-01561-metadata/Skia-m156-6416302ae5-ios-Release-arm64.zip",
+      "archive_sha256": "ab0c30ccdeff09b0a508ae274c2e4c99cdd7d1ee48b50472c69b9973907962da",
+      "archive_bytes": 54200125,
+      "official_digest_verified": true,
+      "static_library_names": [
+        "out/Release-ios-arm64/libskresources.a",
+        "out/Release-ios-arm64/libskparagraph.a",
+        "out/Release-ios-arm64/libskia.a",
+        "out/Release-ios-arm64/libicu.a",
+        "out/Release-ios-arm64/libskottie.a",
+        "out/Release-ios-arm64/libjsonreader.a",
+        "out/Release-ios-arm64/liballocator_core.a",
+        "out/Release-ios-arm64/libskia_ganesh_ext.a",
+        "out/Release-ios-arm64/libsvg.a",
+        "out/Release-ios-arm64/libpng.a",
+        "out/Release-ios-arm64/libwebp_sse41.a",
+        "out/Release-ios-arm64/libsksg.a",
+        "out/Release-ios-arm64/libraw_ptr.a",
+        "out/Release-ios-arm64/libjpeg16.a",
+        "out/Release-ios-arm64/libjpeg12.a",
+        "out/Release-ios-arm64/libwebp.a",
+        "out/Release-ios-arm64/libdng_sdk.a",
+        "out/Release-ios-arm64/libbentleyottmann.a",
+        "out/Release-ios-arm64/libpiex.a",
+        "out/Release-ios-arm64/libharfbuzz.a",
+        "out/Release-ios-arm64/liballocator_shim.a",
+        "out/Release-ios-arm64/liballocator_base.a",
+        "out/Release-ios-arm64/libexpat.a",
+        "out/Release-ios-arm64/libzlib.a",
+        "out/Release-ios-arm64/libwuffs.a",
+        "out/Release-ios-arm64/libskia_graphite_ext.a",
+        "out/Release-ios-arm64/libskcms.a",
+        "out/Release-ios-arm64/libjpeg.a",
+        "out/Release-ios-arm64/libskshaper.a",
+        "out/Release-ios-arm64/libskunicode_icu.a",
+        "out/Release-ios-arm64/libskunicode_core.a"
+      ],
+      "scope": "Archive member inventory only; no extraction, build, linking, installation, or claim of final app object inclusion."
+    },
+    "normalization": "POSIX archive path basename; compare exact .a filenames",
+    "old_count": 27,
+    "new_count": 31,
+    "added_names": [
+      "liballocator_base.a",
+      "liballocator_core.a",
+      "liballocator_shim.a",
+      "libraw_ptr.a"
+    ],
+    "removed_names": [],
+    "unchanged_names": [
+      "libbentleyottmann.a",
+      "libdng_sdk.a",
+      "libexpat.a",
+      "libharfbuzz.a",
+      "libicu.a",
+      "libjpeg.a",
+      "libjpeg12.a",
+      "libjpeg16.a",
+      "libjsonreader.a",
+      "libpiex.a",
+      "libpng.a",
+      "libskcms.a",
+      "libskia.a",
+      "libskia_ganesh_ext.a",
+      "libskia_graphite_ext.a",
+      "libskottie.a",
+      "libskparagraph.a",
+      "libskresources.a",
+      "libsksg.a",
+      "libskshaper.a",
+      "libskunicode_core.a",
+      "libskunicode_icu.a",
+      "libsvg.a",
+      "libwebp.a",
+      "libwebp_sse41.a",
+      "libwuffs.a",
+      "libzlib.a"
+    ],
+    "scope": "Archive member names only; does not classify licenses, semantic identity, linked objects or final app inclusion."
+  },
+  "partition_alloc": {
+    "source_commit": "03cc513177b4340bee3dbfd46f6dd5fdded43b79",
+    "chromium_origin_commit": "684217bd0672571af585e80822a44b860f06a65c",
+    "build_source": "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator/+/03cc513177b4340bee3dbfd46f6dd5fdded43b79/src/partition_alloc/BUILD.gn",
+    "build_source_sha256": "aaadb66de203f6ed73c7a26e3082732635b0a03cd7668909a0dc33b1265de262",
+    "component_targets": {
+      "raw_ptr": 234,
+      "allocator_core": 431,
+      "allocator_base": 659,
+      "allocator_shim": 886
+    },
+    "apple_source_condition": "Apple shim sources exist in the is_apple branch, but are added only when use_allocator_shim is true. Otherwise the target compiles shim/empty.cc.",
+    "observed_release_shim": "Both arm64 and arm64e slices contain only the symbol index and liballocator_shim.empty.o. No Apple shim helper object was found in that archive.",
+    "upstream_apple_metadata": "README.chromium records Darwin libmalloc 409.40.6 and CF-635 declarations under APSL-2.0 and Shipped yes. Optional upstream source presence does not establish incorporation into the app.",
+    "apple_header_comments": [
+      {
+        "header": "malloc.h",
+        "comment_blocks": 1,
+        "comments_path": "/tmp/logisim-skiko-01561-metadata/partition/apple_apsl__malloc.h.notice-comments.txt",
+        "comments_sha256": "a1d1d68d3e845db1068f590842d450ceaba26e0ffe4b06ac321caa24e6b192bb",
+        "source_sha256": "23352e9078d3ff739f6d6e0a2ba0f4874a50458d429bcbfadd3aa9fe9412f115"
+      },
+      {
+        "header": "CFRuntime.h",
+        "comment_blocks": 2,
+        "comments_path": "/tmp/logisim-skiko-01561-metadata/partition/apple_apsl__CFRuntime.h.notice-comments.txt",
+        "comments_sha256": "daab24442540aac31f12d3b91b17c4cdacc0254466713376440326440282aff2",
+        "source_sha256": "f823d6354d12e788265e737f56b7d0fad7ed999fe1b5d809332202ec20a8ebcd"
+      },
+      {
+        "header": "CFBase.h",
+        "comment_blocks": 2,
+        "comments_path": "/tmp/logisim-skiko-01561-metadata/partition/apple_apsl__CFBase.h.notice-comments.txt",
+        "comments_sha256": "70a6f823f6dd26f24f70164e86acf49814dec844b5a80ec1b76f54c852dea10c",
+        "source_sha256": "6587f3b0e1eb19b55a969203467525203aba0476118e73485a8bf096082c4894"
+      }
+    ]
+  },
+  "copied_or_updated_files": [
+    {
+      "file": "legal/licenses/native/icu-LICENSE.txt",
+      "sha256": "e55522d81edc687a341a4411e0776e54ca654e90147f354a90458aaced4116af"
+    },
+    {
+      "file": "legal/licenses/native/partition_alloc-LICENSE.txt",
+      "sha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b"
+    },
+    {
+      "file": "legal/licenses/native/partition_alloc-Apple-APSL-2.0.txt",
+      "sha256": "b23e682fda7310afe43505ed6041919ccff8f9e0c6799ebd7542cbcef11102e3"
+    },
+    {
+      "file": "legal/licenses/native/partition_alloc-Apple-NOTICE.txt",
+      "sha256": "4d8390826fecdda7cf8bbb030cda80c232937565f5c676abf4393ea03db74179"
+    }
+  ],
+  "checks": {
+    "native_copied_license_record_hashes": "PASS for all 13 updated records",
+    "root_notice_comparison": "PASS: byte-identical",
+    "release_archive_hashes": "PASS: both match official GitHub release digests",
+    "archive_added_names": "PASS: 4 additions and no removals",
+    "generated_notices": "NOT_RUN here; parent merges the Maven inventory and runs the existing generator once",
+    "final_binary_object_attribution": "NOT_RUN",
+    "debug_archive_inspection": "NOT_RUN",
+    "license_compatibility": "NOT_ASSERTED",
+    "release_or_distribution_readiness": "NOT_ASSERTED"
+  }
+}

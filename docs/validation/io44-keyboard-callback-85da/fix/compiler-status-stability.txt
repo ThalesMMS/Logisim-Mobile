@@ -1,0 +1,10 @@
+stable class dev.logisim.mobile.SimulationRunStatus {
+  stable val phase: SimulationRunPhase
+  stable val frequencyHz: Double
+  stable val completedSteps: Long
+  stable val lastStep: SimulationStep?
+  stable val failure: String?
+  stable val pendingSteps: Int
+  stable val latestManualRequest: Long
+  <runtime stability> = Stable
+}

@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "scope": "Local compilation and model probes only; no Gradle, APK or device execution",
+  "sourceRevision": "f4f72c6de53fbd634703ed23f066af88f58d5485",
+  "originalPatch": "4a1658d753ca124df22a267cd1b1fe987c9bceb9",
+  "compiler": "Kotlin 2.4.21",
+  "target": "JVM17",
+  "androidSdk": 35,
+  "coreJar": {
+    "originalPath": "/tmp/logisim-mixed-observation-kotlin/core-jvm.jar",
+    "sha256": "df747a3af3026baf6a68aab3224487827015c529e5a59d32dd9031a6f682f914"
+  },
+  "sources": {
+    "androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt": "ec683d6f27c4e984894083c414da54367372e5fc72fe9b31409a16cd591dc49e",
+    "androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/NativeTargetGeometry.kt": "bb125e48a174c40e5cec26a5ccfbab81dd58df333f8b89fa3e4d8b993cc1e05b",
+    "scripts/probes/NativeTargetGeometryProbe.kt": "ea5cbc82fa40a35ef1e1c5014e310569ea5183da07ab7c2de77f256e5a0107f8",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeActionTargets.java": "50679bd2aa3133106aed5fee69514a848375e38af2cfcfb09af24108b7dff50f",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeCanvasObservation.java": "6f95d44bb690a4b7644e1d749ed5f75ceeb792ce48b5ba3c4ac8557267141c90",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeFixtureReadiness.java": "d7727e903a47fb1b5be2d1bfa74ab383903560f42f06f555732006c77d4d0452",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java": "9835a5a753ed9e486d7dd3df760d6ffa93f4ec53f8e5201fef61ece595e2544c",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeReadinessDiagnostics.java": "73f1ed0ee7aeba9e54fb5118ca9b661f18c87bd10f7245fee4779a10a3a89fb7",
+    "androidApp/src/androidTest/java/dev/logisim/mobile/documents/DocumentFixtureBootstrapReceiver.java": "3f2d761ffc899aad23e9a821a6ea41529aee589b50a762f25fa977eeeaf4c049"
+  },
+  "probeInputs": {
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-mixed-r2/native/1-mixed-before.circ": "9e82d28e9ab6be825aeb77b8cc573289b60bea8486407daec288df94e0c5c748",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-mixed-r2/native/2-mixed-keyboard.circ": "4bc8a81227ab107323d8db1003bda71713968d60514654e34c734903557d7a1d"
+  },
+  "commands": [
+    {
+      "label": "java-sdk35",
+      "command": [
+        "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home/bin/javac",
+        "--release",
+        "8",
+        "-cp",
+        "/Users/thales/Library/Android/sdk/platforms/android-35/android.jar",
+        "-d",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/java-classes",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeActionTargets.java",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeCanvasObservation.java",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeFixtureReadiness.java",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeReadinessDiagnostics.java",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/java/dev/logisim/mobile/documents/DocumentFixtureBootstrapReceiver.java"
+      ],
+      "exitCode": 0
+    },
+    {
+      "label": "k2-sdk35",
+      "command": [
+        "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home/bin/java",
+        "-Xmx512m",
+        "-XX:ActiveProcessorCount=2",
+        "-cp",
+        "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/2.4.21/3cd9c37c505fb9879e03ebeaf91d9c9500ab6eca/kotlin-compiler-embeddable-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.4.21/abc7ff9f7e229cb6bdfadad81e93c871e6cdde41/kotlin-script-runtime-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.6.10/1cbe9c92c12a94eea200d23c2bbaedaf3daf5132/kotlin-reflect-1.6.10.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/2.4.21/5d9b0394b3ff65cd3dd33c6c31a2956b1d59885a/kotlin-daemon-embeddable-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.0/ac1dc37a30a93150b704022f8d895ee1bd3a36b3/kotlinx-coroutines-core-jvm-1.8.0.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/24.0.1/13c5c75c4206580aa4d683bffee658caae6c9f43/annotations-24.0.1.jar",
+        "org.jetbrains.kotlin.cli.jvm.K2JVMCompiler",
+        "-no-stdlib",
+        "-no-reflect",
+        "-jvm-target",
+        "17",
+        "-classpath",
+        "/Users/thales/Library/Android/sdk/platforms/android-35/android.jar:/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/java-classes:/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/24.0.1/13c5c75c4206580aa4d683bffee658caae6c9f43/annotations-24.0.1.jar",
+        "-d",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/kotlin-classes",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/NativeTargetGeometry.kt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "label": "geometry-probe-compile",
+      "command": [
+        "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home/bin/java",
+        "-Xmx512m",
+        "-XX:ActiveProcessorCount=2",
+        "-cp",
+        "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/2.4.21/3cd9c37c505fb9879e03ebeaf91d9c9500ab6eca/kotlin-compiler-embeddable-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.4.21/abc7ff9f7e229cb6bdfadad81e93c871e6cdde41/kotlin-script-runtime-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.6.10/1cbe9c92c12a94eea200d23c2bbaedaf3daf5132/kotlin-reflect-1.6.10.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/2.4.21/5d9b0394b3ff65cd3dd33c6c31a2956b1d59885a/kotlin-daemon-embeddable-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.0/ac1dc37a30a93150b704022f8d895ee1bd3a36b3/kotlinx-coroutines-core-jvm-1.8.0.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/24.0.1/13c5c75c4206580aa4d683bffee658caae6c9f43/annotations-24.0.1.jar",
+        "org.jetbrains.kotlin.cli.jvm.K2JVMCompiler",
+        "-no-stdlib",
+        "-no-reflect",
+        "-jvm-target",
+        "17",
+        "-classpath",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/24.0.1/13c5c75c4206580aa4d683bffee658caae6c9f43/annotations-24.0.1.jar",
+        "-d",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/probe-classes",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/NativeTargetGeometry.kt",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/scripts/probes/NativeTargetGeometryProbe.kt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "label": "geometry-probe",
+      "command": [
+        "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/probe-classes:/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-focus4a-local-checks/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "dev.logisim.mobile.input.NativeTargetGeometryProbeKt",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-mixed-r2/native/1-mixed-before.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-mixed-r2/native/2-mixed-keyboard.circ"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "modelCases": 15,
+  "nativeFocusExecution": "NOT_RUN",
+  "javaObservationTests": {
+    "count": 17,
+    "exitCode": 0,
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "scripts.tests.test_native_canvas_observation",
+      "-v"
+    ]
+  },
+  "localReview": {
+    "finding": "No blocker",
+    "scope": "Focus opt-in only; CANCEL/mixed guards and injector/product unchanged"
+  }
+}

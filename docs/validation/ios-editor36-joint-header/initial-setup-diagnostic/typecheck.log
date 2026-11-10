@@ -1,0 +1,377 @@
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:13:30: error: cannot find 'XCTUnwrap' in scope
+ 11 |         continueAfterFailure = false
+ 12 |         let bundle = Bundle(for: Self.self)
+ 13 |         let identifier = try XCTUnwrap(bundle.object(forInfoDictionaryKey: "TargetAppBundleIdentifier") as? String)
+    |                              `- error: cannot find 'XCTUnwrap' in scope
+ 14 |         XCTAssertFalse(identifier.isEmpty, "Supply the bundle identifier of the installed artifact")
+ 15 |         let url = try XCTUnwrap(bundle.url(forResource: "Catalog", withExtension: "json"))
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:14:9: error: cannot find 'XCTAssertFalse' in scope
+ 12 |         let bundle = Bundle(for: Self.self)
+ 13 |         let identifier = try XCTUnwrap(bundle.object(forInfoDictionaryKey: "TargetAppBundleIdentifier") as? String)
+ 14 |         XCTAssertFalse(identifier.isEmpty, "Supply the bundle identifier of the installed artifact")
+    |         `- error: cannot find 'XCTAssertFalse' in scope
+ 15 |         let url = try XCTUnwrap(bundle.url(forResource: "Catalog", withExtension: "json"))
+ 16 |         catalog = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: [String: Any]])
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:90:9: note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 88 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 89 | */
+ 90 | #define XCTAssertFalse(expression, ...) \
+    |         `- note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 91 |     _XCTPrimitiveAssertFalse(nil, expression, @#expression, __VA_ARGS__)
+ 92 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:15:23: error: cannot find 'XCTUnwrap' in scope
+ 13 |         let identifier = try XCTUnwrap(bundle.object(forInfoDictionaryKey: "TargetAppBundleIdentifier") as? String)
+ 14 |         XCTAssertFalse(identifier.isEmpty, "Supply the bundle identifier of the installed artifact")
+ 15 |         let url = try XCTUnwrap(bundle.url(forResource: "Catalog", withExtension: "json"))
+    |                       `- error: cannot find 'XCTUnwrap' in scope
+ 16 |         catalog = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: [String: Any]])
+ 17 |         originalOrientation = XCUIDevice.shared.orientation
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:16:23: error: cannot find 'XCTUnwrap' in scope
+ 14 |         XCTAssertFalse(identifier.isEmpty, "Supply the bundle identifier of the installed artifact")
+ 15 |         let url = try XCTUnwrap(bundle.url(forResource: "Catalog", withExtension: "json"))
+ 16 |         catalog = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: [String: Any]])
+    |                       `- error: cannot find 'XCTUnwrap' in scope
+ 17 |         originalOrientation = XCUIDevice.shared.orientation
+ 18 |         app = XCUIApplication(bundleIdentifier: identifier)
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:28:9: error: cannot find 'XCTAssertEqual' in scope
+ 26 |                 self.identified("editor-command-toolbar").exists
+ 27 |         }, object: app)
+ 28 |         XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 20), .completed, "The editor must finish its startup load")
+    |         `- error: cannot find 'XCTAssertEqual' in scope
+ 29 |         try closeImportReportIfPresented()
+ 30 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:42:25: error: cannot find 'XCTUnwrap' in scope
+ 40 | 
+ 41 |     func values(_ key: String) throws -> [String] {
+ 42 |         let entry = try XCTUnwrap(catalog[key], "Missing canonical localization key: \(key)")
+    |                         `- error: cannot find 'XCTUnwrap' in scope
+ 43 |         let values = entry.values.compactMap { $0 as? String }
+ 44 |         XCTAssertFalse(values.isEmpty, "Expected a nonplural control label: \(key)")
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:44:9: error: cannot find 'XCTAssertFalse' in scope
+ 42 |         let entry = try XCTUnwrap(catalog[key], "Missing canonical localization key: \(key)")
+ 43 |         let values = entry.values.compactMap { $0 as? String }
+ 44 |         XCTAssertFalse(values.isEmpty, "Expected a nonplural control label: \(key)")
+    |         `- error: cannot find 'XCTAssertFalse' in scope
+ 45 |         return values
+ 46 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:90:9: note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 88 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 89 | */
+ 90 | #define XCTAssertFalse(expression, ...) \
+    |         `- note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 91 |     _XCTPrimitiveAssertFalse(nil, expression, @#expression, __VA_ARGS__)
+ 92 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:58:9: error: cannot find 'XCTAssertEqual' in scope
+ 56 |         try tapKey("action_close")
+ 57 |         let closed = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in !report.exists }, object: app)
+ 58 |         XCTAssertEqual(XCTWaiter.wait(for: [closed], timeout: 10), .completed,
+    |         `- error: cannot find 'XCTAssertEqual' in scope
+ 59 |                        "Close must dismiss the specific import report without converting or editing the project")
+ 60 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:151:13: error: cannot find 'XCTAssertTrue' in scope
+149 |         let searchRegion = verticalRegion.map { identified($0) }
+150 |         if let searchRegion {
+151 |             XCTAssertTrue(searchRegion.waitForExistence(timeout: 5), "The requested menu or scroll region must be presented")
+    |             `- error: cannot find 'XCTAssertTrue' in scope
+152 |         }
+153 |         func reachable() -> XCUIElement? {
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:81:9: note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 79 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 80 | */
+ 81 | #define XCTAssertTrue(expression, ...) \
+    |         `- note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 82 |     _XCTPrimitiveAssertTrue(nil, expression, @#expression, __VA_ARGS__)
+ 83 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:161:17: error: cannot find 'XCTAssertTrue' in scope
+159 |             if overflow.exists {
+160 |                 checkFrame(overflow, name: "\(toolbarRegion)-overflow")
+161 |                 XCTAssertTrue(overflow.isHittable, "The toolbar menu must be reachable")
+    |                 `- error: cannot find 'XCTAssertTrue' in scope
+162 |                 overflow.tap()
+163 |                 return try reveal(labels, verticalRegion: "\(toolbarRegion)-menu", prefix: prefix)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:81:9: note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 79 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 80 | */
+ 81 | #define XCTAssertTrue(expression, ...) \
+    |         `- note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 82 |     _XCTPrimitiveAssertTrue(nil, expression, @#expression, __VA_ARGS__)
+ 83 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:173:13: error: cannot find 'XCTFail' in scope
+171 |             if XCTWaiter.wait(for: [appeared], timeout: 5) == .completed,
+172 |                let found = visibleMatch(labels, prefix: prefix) { return found }
+173 |             XCTFail("No reachable control for \(labels) after waiting for its native presentation")
+    |             `- error: cannot find 'XCTFail' in scope
+174 |             throw HarnessFailure.missingControl
+175 |         }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:45:9: note: macro 'XCTFail' unavailable: function like macros not supported
+ 43 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 44 | */
+ 45 | #define XCTFail(...) \
+    |         `- note: macro 'XCTFail' unavailable: function like macros not supported
+ 46 |     _XCTPrimitiveFail(nil, __VA_ARGS__)
+ 47 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:181:17: error: cannot find 'XCTAssertTrue' in scope
+179 |                 guard let regionId = toolbarRegion ?? verticalRegion else { break }
+180 |                 let region = identified(regionId)
+181 |                 XCTAssertTrue(region.waitForExistence(timeout: 5), "Container \(regionId) must be identified for safe scrolling")
+    |                 `- error: cannot find 'XCTAssertTrue' in scope
+182 |                 try scroll(region, horizontal: toolbarRegion != nil, forward: direction)
+183 |             }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:81:9: note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 79 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 80 | */
+ 81 | #define XCTAssertTrue(expression, ...) \
+    |         `- note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 82 |     _XCTPrimitiveAssertTrue(nil, expression, @#expression, __VA_ARGS__)
+ 83 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:185:9: error: cannot find 'XCTFail' in scope
+183 |             }
+184 |         }
+185 |         XCTFail("No reachable control for \(labels)")
+    |         `- error: cannot find 'XCTFail' in scope
+186 |         throw HarnessFailure.missingControl
+187 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:45:9: note: macro 'XCTFail' unavailable: function like macros not supported
+ 43 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 44 | */
+ 45 | #define XCTFail(...) \
+    |         `- note: macro 'XCTFail' unavailable: function like macros not supported
+ 46 |     _XCTPrimitiveFail(nil, __VA_ARGS__)
+ 47 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:218:9: error: cannot find 'XCTAssertFalse' in scope
+216 |             }
+217 |         }
+218 |         XCTAssertFalse(visible.isNull, "The identified scroll area is covered")
+    |         `- error: cannot find 'XCTAssertFalse' in scope
+219 |         XCTAssertGreaterThan(horizontal ? visible.width : visible.height, 24)
+220 |         let inset: CGFloat = 8
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:90:9: note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 88 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 89 | */
+ 90 | #define XCTAssertFalse(expression, ...) \
+    |         `- note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 91 |     _XCTPrimitiveAssertFalse(nil, expression, @#expression, __VA_ARGS__)
+ 92 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:219:9: error: cannot find 'XCTAssertGreaterThan' in scope
+217 |         }
+218 |         XCTAssertFalse(visible.isNull, "The identified scroll area is covered")
+219 |         XCTAssertGreaterThan(horizontal ? visible.width : visible.height, 24)
+    |         `- error: cannot find 'XCTAssertGreaterThan' in scope
+220 |         let inset: CGFloat = 8
+221 |         let start = horizontal ? CGPoint(x: visible.maxX - inset, y: visible.midY) : CGPoint(x: visible.midX, y: visible.maxY - inset)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:182:9: note: macro 'XCTAssertGreaterThan' unavailable: function like macros not supported
+180 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+181 | */
+182 | #define XCTAssertGreaterThan(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertGreaterThan' unavailable: function like macros not supported
+183 |     _XCTPrimitiveAssertGreaterThan(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+184 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:238:9: error: cannot find 'XCTAssertEqual' in scope
+236 |             return frame.width > 0 && frame.height > 0 && (landscape ? frame.width > frame.height : frame.height > frame.width)
+237 |         }, object: app)
+238 |         XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 10), .completed,
+    |         `- error: cannot find 'XCTAssertEqual' in scope
+239 |                        "Requested orientation was not observed in the actual application window")
+240 |         attach("requested=\(orientation.rawValue), actual app frame=\(app.frame)", name: "observed-orientation")
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:251:20: error: cannot find 'XCTUnwrap' in scope
+249 |         if tagged.exists { return tagged }
+250 |         let prefixes = try values("a11y_canvas").map { $0.components(separatedBy: "{outputs}")[0].trimmingCharacters(in: .whitespaces) }
+251 |         return try XCTUnwrap(visibleMatch(prefixes, prefix: true), "The visible circuit canvas must be exposed")
+    |                    `- error: cannot find 'XCTUnwrap' in scope
+252 |     }
+253 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:262:9: error: cannot find 'XCTAssertEqual' in scope
+260 |             $0.exists && $0.frame == target.frame
+261 |         }
+262 |         XCTAssertEqual(summaries.count, 1, "The canvas must expose one matching circuit description")
+    |         `- error: cannot find 'XCTAssertEqual' in scope
+263 |         return try XCTUnwrap(summaries.first).label
+264 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:263:20: error: cannot find 'XCTUnwrap' in scope
+261 |         }
+262 |         XCTAssertEqual(summaries.count, 1, "The canvas must expose one matching circuit description")
+263 |         return try XCTUnwrap(summaries.first).label
+    |                    `- error: cannot find 'XCTUnwrap' in scope
+264 |     }
+265 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:263:16: warning: no calls to throwing functions occur within 'try' expression [#UnnecessaryEffectMarker]
+261 |         }
+262 |         XCTAssertEqual(summaries.count, 1, "The canvas must expose one matching circuit description")
+263 |         return try XCTUnwrap(summaries.first).label
+    |                `- warning: no calls to throwing functions occur within 'try' expression [#UnnecessaryEffectMarker]
+264 |     }
+265 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:267:9: error: cannot find 'XCTAssertTrue' in scope
+265 | 
+266 |     func checkFrame(_ element: XCUIElement, name: String, minimum: CGSize = CGSize(width: 44, height: 44), avoidingKeyboard: Bool = false) {
+267 |         XCTAssertTrue(element.exists, "Missing \(name)")
+    |         `- error: cannot find 'XCTAssertTrue' in scope
+268 |         let frame = element.frame
+269 |         let clipped = frame.intersection(app.frame)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:81:9: note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 79 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 80 | */
+ 81 | #define XCTAssertTrue(expression, ...) \
+    |         `- note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 82 |     _XCTPrimitiveAssertTrue(nil, expression, @#expression, __VA_ARGS__)
+ 83 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:272:9: error: cannot find 'XCTAssertFalse' in scope
+270 |         let inputFrames = avoidingKeyboard ? softwareInputFrames() : [:]
+271 |         attach("\(name): frame=\(frame), visible=\(clipped), input surfaces=\(inputFrames), app=\(app.frame)", name: "geometry-\(name)")
+272 |         XCTAssertFalse(clipped.isNull, "\(name) is outside the application")
+    |         `- error: cannot find 'XCTAssertFalse' in scope
+273 |         XCTAssertGreaterThanOrEqual(clipped.width, minimum.width, "\(name) is clipped horizontally")
+274 |         XCTAssertGreaterThanOrEqual(clipped.height, minimum.height, "\(name) is clipped vertically")
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:90:9: note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 88 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 89 | */
+ 90 | #define XCTAssertFalse(expression, ...) \
+    |         `- note: macro 'XCTAssertFalse' unavailable: function like macros not supported
+ 91 |     _XCTPrimitiveAssertFalse(nil, expression, @#expression, __VA_ARGS__)
+ 92 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:273:9: error: cannot find 'XCTAssertGreaterThanOrEqual' in scope
+271 |         attach("\(name): frame=\(frame), visible=\(clipped), input surfaces=\(inputFrames), app=\(app.frame)", name: "geometry-\(name)")
+272 |         XCTAssertFalse(clipped.isNull, "\(name) is outside the application")
+273 |         XCTAssertGreaterThanOrEqual(clipped.width, minimum.width, "\(name) is clipped horizontally")
+    |         `- error: cannot find 'XCTAssertGreaterThanOrEqual' in scope
+274 |         XCTAssertGreaterThanOrEqual(clipped.height, minimum.height, "\(name) is clipped vertically")
+275 |         if avoidingKeyboard {
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:192:9: note: macro 'XCTAssertGreaterThanOrEqual' unavailable: function like macros not supported
+190 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+191 | */
+192 | #define XCTAssertGreaterThanOrEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertGreaterThanOrEqual' unavailable: function like macros not supported
+193 |     _XCTPrimitiveAssertGreaterThanOrEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+194 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:274:9: error: cannot find 'XCTAssertGreaterThanOrEqual' in scope
+272 |         XCTAssertFalse(clipped.isNull, "\(name) is outside the application")
+273 |         XCTAssertGreaterThanOrEqual(clipped.width, minimum.width, "\(name) is clipped horizontally")
+274 |         XCTAssertGreaterThanOrEqual(clipped.height, minimum.height, "\(name) is clipped vertically")
+    |         `- error: cannot find 'XCTAssertGreaterThanOrEqual' in scope
+275 |         if avoidingKeyboard {
+276 |             XCTAssertEqual(clipped.width, frame.width, accuracy: 1, "The entire focused \(name) must stay on screen")
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:192:9: note: macro 'XCTAssertGreaterThanOrEqual' unavailable: function like macros not supported
+190 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+191 | */
+192 | #define XCTAssertGreaterThanOrEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertGreaterThanOrEqual' unavailable: function like macros not supported
+193 |     _XCTPrimitiveAssertGreaterThanOrEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+194 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:276:13: error: cannot find 'XCTAssertEqual' in scope
+274 |         XCTAssertGreaterThanOrEqual(clipped.height, minimum.height, "\(name) is clipped vertically")
+275 |         if avoidingKeyboard {
+276 |             XCTAssertEqual(clipped.width, frame.width, accuracy: 1, "The entire focused \(name) must stay on screen")
+    |             `- error: cannot find 'XCTAssertEqual' in scope
+277 |             XCTAssertEqual(clipped.height, frame.height, accuracy: 1, "The entire focused \(name) must stay on screen")
+278 |             for (surface, inputFrame) in inputFrames {
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:277:13: error: cannot find 'XCTAssertEqual' in scope
+275 |         if avoidingKeyboard {
+276 |             XCTAssertEqual(clipped.width, frame.width, accuracy: 1, "The entire focused \(name) must stay on screen")
+277 |             XCTAssertEqual(clipped.height, frame.height, accuracy: 1, "The entire focused \(name) must stay on screen")
+    |             `- error: cannot find 'XCTAssertEqual' in scope
+278 |             for (surface, inputFrame) in inputFrames {
+279 |                 let covered = frame.intersection(inputFrame)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/scripts/ios_native_ui/NativeUIHarness.swift:280:17: error: cannot find 'XCTAssertTrue' in scope
+278 |             for (surface, inputFrame) in inputFrames {
+279 |                 let covered = frame.intersection(inputFrame)
+280 |                 XCTAssertTrue(covered.isNull || covered.width <= 1 || covered.height <= 1,
+    |                 `- error: cannot find 'XCTAssertTrue' in scope
+281 |                               "The focused \(name) overlaps the visible \(surface): \(covered)")
+282 |             }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:81:9: note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 79 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 80 | */
+ 81 | #define XCTAssertTrue(expression, ...) \
+    |         `- note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 82 |     _XCTPrimitiveAssertTrue(nil, expression, @#expression, __VA_ARGS__)
+ 83 | 
+
+[#UnnecessaryEffectMarker]: <https://docs.swift.org/compiler/documentation/diagnostics/unnecessary-effect-marker>

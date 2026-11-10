@@ -1,0 +1,33 @@
+% Important: If latex complains about unicode characters,
+% please use "\usepackage[utf8x]{inputenc}" in your preamble
+% You can change the size of the picture by putting it into the construct:
+% 1) \resizebox{10cm}{!}{"below picture"} to scale horizontally to 10 cm
+% 2) \resizebox{!}{15cm}{"below picture"} to scale vertically to 15 cm
+% 3) \resizebox{10cm}{15cm}{"below picture"} a combination of above two
+% It is not recomended to use the scale option of the tikzpicture environment.
+\begin{tikzpicture}[x=1pt,y=-1pt,line cap=rect]
+\def\logisimfontA#1{\texttt{#1}}
+\definecolor{custcol_FFFFFF}{HTML}{FFFFFF}
+\definecolor{custcol_000000}{HTML}{000000}
+\fill [line width=1pt, custcol_FFFFFF] (0,0) rectangle (490,340);
+\draw [line width=2pt, custcol_000000, line cap=round] (10,10) -- (10,50);
+\draw [line width=2pt, custcol_000000, line cap=round] (150,290) -- (150,330);
+\fill [line width=1pt, custcol_FFFFFF] (10,35) .. controls (45,35) and (72,43.75) .. (80,70) .. controls (72,96.25) and (45,105) .. (10,105) .. controls (19.3333,81.6667) and (19.3333,58.3333) .. (10,35) -- cycle;
+\draw [line width=1.7pt, custcol_000000, line cap=butt] (10,35) .. controls (45,35) and (72,43.75) .. (80,70) .. controls (72,96.25) and (45,105) .. (10,105) .. controls (19.3333,81.6667) and (19.3333,58.3333) .. (10,35) -- cycle;
+\draw [line width=3pt, custcol_000000] (10,50) -- (15,50);
+\fill [line width=1pt, custcol_FFFFFF] (200,35) .. controls (245,35) and (272,43.75) .. (280,70) .. controls (272,96.25) and (245,105) .. (200,105) .. controls (209.3333,81.6667) and (209.3333,58.3333) .. (200,35) -- cycle;
+\draw [line width=1.7pt, custcol_000000, line cap=butt] (200,35) .. controls (245,35) and (272,43.75) .. (280,70) .. controls (272,96.25) and (245,105) .. (200,105) .. controls (209.3333,81.6667) and (209.3333,58.3333) .. (200,35) -- cycle;
+\draw [line width=1.4pt, custcol_000000, line cap=butt] (194,35) .. controls (203.3333,58.3333) and (203.3333,81.6667) .. (194,105);
+\draw [line width=3pt, custcol_000000] (200,90) -- (205,90);
+\fill [line width=1pt, custcol_FFFFFF] (180,80) rectangle (200,100);
+\draw [line width=1.5pt, custcol_000000, line cap=butt] (180,80) rectangle (200,100);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (182.582,94.4688) {x1};}
+\fill [line width=1pt, custcol_000000] (200,90) circle (2);
+\fill [line width=1pt, custcol_FFFFFF] (420,45) .. controls (445,45) and (462,51.25) .. (470,70) .. controls (462,88.75) and (445,95) .. (420,95) .. controls (429.3333,78.3333) and (429.3333,61.6667) .. (420,45) -- cycle;
+\draw [line width=1.7pt, custcol_000000, line cap=butt] (420,45) .. controls (445,45) and (462,51.25) .. (470,70) .. controls (462,88.75) and (445,95) .. (420,95) .. controls (429.3333,78.3333) and (429.3333,61.6667) .. (420,45) -- cycle;
+\fill [line width=1pt, custcol_FFFFFF] (475,70) circle (5);
+\draw [line width=1.5pt, custcol_000000, line cap=butt] (475,70) circle (5);
+\fill [line width=1pt, custcol_FFFFFF] (150,305) .. controls (115,305) and (88,296.25) .. (80,270) .. controls (88,243.75) and (115,235) .. (150,235) .. controls (140.6667,258.3333) and (140.6667,281.6667) .. (150,305) -- cycle;
+\draw [line width=1.7pt, custcol_000000, line cap=butt] (150,305) .. controls (115,305) and (88,296.25) .. (80,270) .. controls (88,243.75) and (115,235) .. (150,235) .. controls (140.6667,258.3333) and (140.6667,281.6667) .. (150,305) -- cycle;
+\draw [line width=3pt, custcol_000000] (150,290) -- (140,290);
+\end{tikzpicture}

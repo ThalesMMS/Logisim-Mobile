@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/scripts/run-ios-provider-auth.py", line 507, in main
+    execute(args, output, project, bindings, report, commands)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/scripts/run-ios-provider-auth.py", line 380, in execute
+    execute_test(args, output, project, report, commands)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/scripts/run-ios-provider-auth.py", line 436, in execute_test
+    require(outcome.returncode == 0 and summary.get("totalTestCount") == 1 and summary.get("passedTests") == 1 and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            summary.get("failedTests") == 0 and summary.get("skippedTests") == 0, "Exactly one passing auth case is required")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/scripts/run-ios-provider-auth.py", line 52, in require
+    raise ValueError(message)
+ValueError: Exactly one passing auth case is required

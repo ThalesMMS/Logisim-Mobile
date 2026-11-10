@@ -1,0 +1,18 @@
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderError.h
+Whole-source SHA-256: fee0ea8b3b3ac08bfb1f34a7fc9622077391077ed85d5510483e51797b342ecd
+62:     /**
+63:      Returned by NSFileProviderManager if no provider could be found in the application
+64:      */
+65:     NSFileProviderErrorProviderNotFound FILEPROVIDER_API_AVAILABILITY_V3_IOS = -2001,
+181:     /*
+182:      Returned by the system to indicate that the system does not have any launchable
+183:      `com.apple.fileprovider-nonui` application extension for this domain's app bundle.
+184:      */
+185:     NSFileProviderErrorApplicationExtensionNotFound FILEPROVIDER_API_AVAILABILITY_V6_0_IOS = -2014,
+
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderDefines.h
+Whole-source SHA-256: 1c9898b293b92b4f22a793d8b6bacdb31fd0e0fa1f8c4b2295f76f9653498ba3
+37: #define FILEPROVIDER_API_AVAILABILITY_V5_1 API_AVAILABLE(macos(13.4)) API_UNAVAILABLE(ios, watchos, tvos) API_UNAVAILABLE(macCatalyst)
+38: 
+39: #define FILEPROVIDER_API_AVAILABILITY_V6_0_IOS API_AVAILABLE(macos(14.1), ios(17.1)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macCatalyst)
+

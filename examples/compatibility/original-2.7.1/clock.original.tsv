@@ -1,0 +1,16 @@
+A	LegacyClock	Clock	100,100	facing	east
+A	LegacyClock	Clock	100,100	highDuration	2
+A	LegacyClock	Clock	100,100	lowDuration	2
+A	LegacyClock	Pin	300,100	facing	west
+A	LegacyClock	Pin	300,100	label	Y
+F	circuits	1
+F	main	LegacyClock
+G	LegacyClock	Clock	100,100	100,100:1:2
+G	LegacyClock	Pin	300,100	300,100:1:1
+M	revision	2.7.1
+V	initial	Y	0
+V	tick-1	Y	0
+V	tick-2	Y	1
+V	tick-3	Y	1
+V	tick-4	Y	0
+W	LegacyClock	100,100	300,100	1

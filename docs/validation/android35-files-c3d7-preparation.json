@@ -1,0 +1,428 @@
+{
+  "schema": 1,
+  "status": "SOURCE_PREPARED",
+  "nativeStatus": "NOT_RUN",
+  "harnessSource": "e7933b187d886bf29764b565c0a4a030e520d999",
+  "selection": "--scenario files",
+  "outerScenario": "native-file-workflow",
+  "initialViewImport": "fresh token, complete XML, original bytes preserved",
+  "requiredOrderedCases": [
+    "incoming-share-imports-a-copy",
+    "saf-local-import-preserves-source",
+    "cancel-open-preserves-project",
+    "cancel-export-preserves-project",
+    "cancel-share-preserves-project",
+    "external-receiver-reads-share-grant",
+    "invalid-and-incompatible-files-preserve-project",
+    "save-as-local-document",
+    "recover-create-document-after-process-death"
+  ],
+  "rejectedInputs": [
+    "invalid-xml",
+    "unavailable-library",
+    "incompatible-encoding"
+  ],
+  "sourceFiles": {
+    "scripts/e2e-android.py": {
+      "bytes": 73999,
+      "sha256": "1ffc4dd3d7ccefc7bfc661127d82d3222b082a0ee4a1889b3c842c81d231118e"
+    },
+    "scripts/android_ui.py": {
+      "bytes": 46022,
+      "sha256": "83ea79b8774e5a7ddb1d912421b24fbb868c2462ae77d94c2297d2b5d0cfb391"
+    },
+    "scripts/android_editing_scenarios.py": {
+      "bytes": 28229,
+      "sha256": "2fdfec7f08893b8db60c91be4ed830faddbb273aa369ee0fd5bec7b0f5e7d044"
+    },
+    "scripts/user_scenario_contract.py": {
+      "bytes": 7203,
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+    },
+    "fixtures/user-scenarios/editor-actions-v1.json": {
+      "bytes": 9468,
+      "sha256": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9"
+    },
+    "examples/sap1.circ": {
+      "bytes": 47528,
+      "sha256": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac"
+    },
+    "app.properties": {
+      "bytes": 357,
+      "sha256": "6ad9fff84f0cd1045c69ae96a7d9968da042f50f8c9d7000a9f78b8c6838b3f2"
+    },
+    "localization/messages/accessibility.json": {
+      "bytes": 8367,
+      "sha256": "76ab0890b172c919e8aa99880a197af0024588278eaed8187aec0b6866c61a3d"
+    },
+    "localization/messages/additional_editor_tools.json": {
+      "bytes": 1960,
+      "sha256": "78122f3b0ecb6bc3f7d75818461d2d9c84fa36d87a914d81a92e21933ab8b14c"
+    },
+    "localization/messages/analysis.json": {
+      "bytes": 9228,
+      "sha256": "121c51adc64cff4af90e89b8bd5cda32ccabcecee6a05ba2092a5e82dbdd04bf"
+    },
+    "localization/messages/android_assets.json": {
+      "bytes": 3838,
+      "sha256": "ad93169e7c0422e011272649c068cb945eec449ae79f4dce03522210af636964"
+    },
+    "localization/messages/android_directory.json": {
+      "bytes": 4103,
+      "sha256": "868f0ec8c38fba20471a7046148206153c9c2975d778fc1c3b7993fca32dedfc"
+    },
+    "localization/messages/android_files.json": {
+      "bytes": 4524,
+      "sha256": "117de0f2e4c41055813dc6f169921c8efbaaae03140c4d3dedccabbf202ce0dd"
+    },
+    "localization/messages/android_preferences.json": {
+      "bytes": 189,
+      "sha256": "65457a88cfcef533a19d06609112c2cd970332958daacf1653410831a0ae2002"
+    },
+    "localization/messages/android_workspace.json": {
+      "bytes": 282,
+      "sha256": "dcfdbdb6a4fd532725e2109cabbc5fb89568579ebf782ca94d6a1863f2e1bd34"
+    },
+    "localization/messages/annotations.json": {
+      "bytes": 14110,
+      "sha256": "8e20f64ca67eefa47a03fe0427492b58a716e890a8cfcb91b04b932bf3c797ec"
+    },
+    "localization/messages/codec.json": {
+      "bytes": 21803,
+      "sha256": "534e7617bc2f9d347d36c3dff231b9ee0082848f95ad231ceb38bd556222d70f"
+    },
+    "localization/messages/companion_ui.json": {
+      "bytes": 3449,
+      "sha256": "a25685558b14c5d4d7d554773de84db9bb0d9bde6b1f450f96dcdfee403d1815"
+    },
+    "localization/messages/component_identity.json": {
+      "bytes": 242,
+      "sha256": "d5abacc04b1dd086b2ba42e7d9e8a59e3c7c7934a1b804dabe2a6d35bc0b16d4"
+    },
+    "localization/messages/components.json": {
+      "bytes": 11372,
+      "sha256": "20e725d93631e3c99b8627100488a44b9f534c4d8bb928305d13b3b5b4ee75d9"
+    },
+    "localization/messages/components_extended.json": {
+      "bytes": 887,
+      "sha256": "e10b60b50f8841d91d2e30e372a91ccb30f3fafa6534b33d52b2f900f5921feb"
+    },
+    "localization/messages/core.json": {
+      "bytes": 369,
+      "sha256": "1087a4466d6023987d2b52601512380f6f984b83658c9b54e909c35d51abd0b3"
+    },
+    "localization/messages/diagnostics.json": {
+      "bytes": 5466,
+      "sha256": "481f3aeca7313e2a6ab0bc06167cc0e33778d6f5683fe766f5e3f74aa5360ec2"
+    },
+    "localization/messages/editor.json": {
+      "bytes": 27586,
+      "sha256": "e5fd3aa8d37bb190a726d3a5dde9a3de5db149fb5c0d2505dbcace26a3487b2d"
+    },
+    "localization/messages/editor_initialization.json": {
+      "bytes": 1071,
+      "sha256": "212fba0afb1556974a84e14effce91793930e4e039669abebc3822befdedd143"
+    },
+    "localization/messages/editor_integration.json": {
+      "bytes": 3074,
+      "sha256": "5c78dec69b7911da14786e72b84f3e5a4ed5d2e51b8c2e540590e55a193197dc"
+    },
+    "localization/messages/extensions.json": {
+      "bytes": 4593,
+      "sha256": "a4b4c80c476853c5cdfcf9f030269fe29861aed16a075943c174f2a336bdf8a3"
+    },
+    "localization/messages/external_io.json": {
+      "bytes": 8708,
+      "sha256": "dd427d0008d00b91b127ff04f9c74b67568506dc6121ef602007a53820045d94"
+    },
+    "localization/messages/extra_io.json": {
+      "bytes": 5409,
+      "sha256": "b79446f51556f9b087dac5930c2df4850f6ee77b2d3d8a618184ea8d9d5a287f"
+    },
+    "localization/messages/fpga-adapter.json": {
+      "bytes": 414,
+      "sha256": "fc1fc86e14f27283cc1b9d920a15930c58500e96b42eeb08f1d8a3055703d213"
+    },
+    "localization/messages/fpga-archive.json": {
+      "bytes": 499,
+      "sha256": "712a63722e9a30c1090e1db391400aa374e7f24507def90bab87669663105697"
+    },
+    "localization/messages/fpga-clock.json": {
+      "bytes": 850,
+      "sha256": "213c8058c62329eb3a3ac56240ac37fa52c659a39d6dbb3f7eb331621a2407a3"
+    },
+    "localization/messages/fpga-companion-ui.json": {
+      "bytes": 5462,
+      "sha256": "541d9498c54b888ff6b96810e65a124d5b3c71d756c59ed2df85ff98002f704e"
+    },
+    "localization/messages/fpga-companion.json": {
+      "bytes": 838,
+      "sha256": "2ae0adfd76eef6ef25c83235a1513b00067536c1c44333a4bc71c60ee82b5a94"
+    },
+    "localization/messages/fpga-core.json": {
+      "bytes": 9264,
+      "sha256": "4f841de54a3e992b5d2481546fdc7fe4dd6a37954a0910f76b7bc917f20e220a"
+    },
+    "localization/messages/fpga-program.json": {
+      "bytes": 1634,
+      "sha256": "e09e7caab25877679440947b080294c8fdedebc1405cc436ed7937827a64430a"
+    },
+    "localization/messages/fpga.json": {
+      "bytes": 5255,
+      "sha256": "2b8be5c6eb4104f7141cbe3b27b88e1210409ad34a469e40a16f527c9032ff5e"
+    },
+    "localization/messages/hdl.json": {
+      "bytes": 6748,
+      "sha256": "2d1387f3e2ec4c7e3b2cd273a20c027c3360fb6bc2626cff82899e81bd55e51e"
+    },
+    "localization/messages/hdl_import.json": {
+      "bytes": 10123,
+      "sha256": "46f26ee7b0287456bab61f62a626ecb08b06fbcf59906d7ecf816492d7a8ed6b"
+    },
+    "localization/messages/hdl_ip.json": {
+      "bytes": 7639,
+      "sha256": "b076cadbb3bfb4f77cd891ef450ad7c435e9c1be747e2a7e0282a5a4a9adccf9"
+    },
+    "localization/messages/hdl_simulation_tool.json": {
+      "bytes": 10693,
+      "sha256": "f9f75a96a1a92316143093a370873d3543b13a53b62f98b6f6afa3c162722943"
+    },
+    "localization/messages/hdl_tools.json": {
+      "bytes": 4808,
+      "sha256": "8d8a027a89f3a6502f2364bd5d16bb17ea4c372e9258cd98dcc0e74a03eb9f48"
+    },
+    "localization/messages/help.json": {
+      "bytes": 22266,
+      "sha256": "f77693065d5a42d1d764ace3715a6ed04ce78b0c1b93c3ca34ebc773ccd7eb68"
+    },
+    "localization/messages/inspector.json": {
+      "bytes": 11465,
+      "sha256": "61533ebcf6cecf080ccb0dccf314fa35ae4a4d12b1a4cfb6d343d5f15d50c033"
+    },
+    "localization/messages/io_state_accessibility.json": {
+      "bytes": 5047,
+      "sha256": "60ab66a56f3f4513391de75bb9cd83e2e0c58589b4d055f0b70b0d227848572e"
+    },
+    "localization/messages/ios_assets.json": {
+      "bytes": 1913,
+      "sha256": "c2f0d9a26794cdfed02a3650b32c29bbbcbcfa7f99fb1861c9a0c58beef66a1f"
+    },
+    "localization/messages/ios_directory_assets.json": {
+      "bytes": 1751,
+      "sha256": "1cbe808aca69de16effc2968eca8f4a35909166f457ffd4b1e4d53a4232fb76e"
+    },
+    "localization/messages/ios_document_error_context.json": {
+      "bytes": 145,
+      "sha256": "31f2fd496cf384053e4ef15f385ff2f749e0b597e09976ee0dc69922b21e0e0d"
+    },
+    "localization/messages/ios_document_missing.json": {
+      "bytes": 233,
+      "sha256": "d1e97fcf11ebab5d1119b7e6a30b17123b09ee6d4bd429474cc33d2df551bd43"
+    },
+    "localization/messages/ios_files.json": {
+      "bytes": 4456,
+      "sha256": "97100f15cf4cf66d7c716eec1d064675c1a984fa8301c3ff7955a1e870bc32da"
+    },
+    "localization/messages/legal.json": {
+      "bytes": 779,
+      "sha256": "a29dc24cb5f1dfb98ad7fc10b0250b56274495b3c6ef449a1e35de8ee42b5604"
+    },
+    "localization/messages/memory_tool.json": {
+      "bytes": 1516,
+      "sha256": "d6ac8877253a80242a1fa57ba31aff219d56fb20d60fbef8dc62bdd6c6220750"
+    },
+    "localization/messages/native_memory_files.json": {
+      "bytes": 488,
+      "sha256": "a08f13a7e546803d5489138c6dfbd2d32ff8fe1bd0ff634f2e39720317b9b39d"
+    },
+    "localization/messages/navigation.json": {
+      "bytes": 6814,
+      "sha256": "28ca37ef087ac49bf84ae2908f58b9608bd353b8827a4cdc005e1791085c34bf"
+    },
+    "localization/messages/portable_projects.json": {
+      "bytes": 4352,
+      "sha256": "f601626160dda68a4e6b009e9cd0d13ee26eb394e4c80461fbdd419a39788710"
+    },
+    "localization/messages/preferences.json": {
+      "bytes": 4229,
+      "sha256": "63f4a4c3300b6691f77df2f65c76b4636ff544841eb526123c2e6ae4f1178f09"
+    },
+    "localization/messages/project_access.json": {
+      "bytes": 645,
+      "sha256": "8b04a51fffbf4e5c121268db969558169f13c13168af3c16e045723f98a96791"
+    },
+    "localization/messages/registry_errors.json": {
+      "bytes": 1128,
+      "sha256": "154c13f0ef2517b73d28b3b4b0e015b0b341d7e280c2ec4fff934ea6bee5a59b"
+    },
+    "localization/messages/runtime.json": {
+      "bytes": 1897,
+      "sha256": "937548ca706d086499d267d4c25c6680facd18d71871d0af22855ad2092e5dc5"
+    },
+    "localization/messages/simulation_options.json": {
+      "bytes": 2097,
+      "sha256": "0e9cf4ef99a34bfe7d40c4b5d9efc0b55effa7a5fa16bdf6c75f15bdd49acec5"
+    },
+    "localization/messages/simulation_options_errors.json": {
+      "bytes": 1085,
+      "sha256": "26caa1a4f82c2c3f56b64ea90877127c25502ab51e00e9ab551d9cda41ea27c4"
+    },
+    "localization/messages/soc.json": {
+      "bytes": 10842,
+      "sha256": "71c34907873718cc6ef0a6973093d1fa29ce01ac2323efbc833d39a321871670"
+    },
+    "localization/messages/tcl.json": {
+      "bytes": 5990,
+      "sha256": "b2aeeb719844f2c87827e12c1daa4e66a45e8f2f26ea328b9b2c6a7eda1139fb"
+    },
+    "localization/messages/tcl_client_errors.json": {
+      "bytes": 3856,
+      "sha256": "5a402d6f00ef42dc9060fc37fdee7a0d5987fe03e78f5cd4d452fd1b33219a55"
+    },
+    "localization/messages/tool_sheet.json": {
+      "bytes": 91,
+      "sha256": "40992b24ac0703a2feb3996293b09f084c5982a355fbcbaae00f94e4d1e43df7"
+    },
+    "localization/messages/tools.json": {
+      "bytes": 14171,
+      "sha256": "6d1d002ff1190d4f73739dc045be00a2bfa1b2dc28f4d75b26f69e65ce4fe946"
+    },
+    "localization/messages/trace_vectors.json": {
+      "bytes": 12596,
+      "sha256": "c806322935847e0c3d801017f4a21658dada3d1501816020ee0d64bfe161b321"
+    },
+    "localization/messages/visual_export.json": {
+      "bytes": 3617,
+      "sha256": "e18f9b55b0bdd0ff68c3808afcae1e7c9dd7d8025b24a544f43e566a9470f2fe"
+    },
+    "localization/messages/workspace.json": {
+      "bytes": 5594,
+      "sha256": "655ce083d2948be6f6717e1416226b76bc7acfca554693824f178e9f53ecc4ff"
+    },
+    "localization/messages/workspace_attachments.json": {
+      "bytes": 974,
+      "sha256": "2e3d54345f84ce8c7b161d4b1db8d0c469d0a62cc1da4c870422242da3819ea0"
+    },
+    "localization/messages/workspace_host.json": {
+      "bytes": 2392,
+      "sha256": "92d81ebe1ef191ba1279db7d21fbd081b9fa8eb5ca230979680a7cd6ec0293bf"
+    }
+  },
+  "localArtifacts": {
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/androidApp-e2e.apk": {
+      "bytes": 16298862,
+      "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+    },
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/androidApp-e2e-androidTest.apk": {
+      "bytes": 221322,
+      "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+    },
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/androidSnapshot-debug.apk": {
+      "bytes": 965334,
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    }
+  },
+  "appBuildReceipt": {
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/app-build-receipt.json": {
+      "bytes": 630,
+      "sha256": "e3e70e4c479d82fb8e6eb369100e297a2e8e9bea82d8710233db93b15e55e775"
+    }
+  },
+  "localApkManifestIdentities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  },
+  "aapt2": "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt2",
+  "preparationDiagnostic": "The first read-only runpy setup omitted scripts from sys.path and stopped at ModuleNotFoundError before any subprocess/device operation. The import path was corrected; no source or artifact changed. The first controller text substitution inserted two tuple lookups into assert_reader_off; review caught them before execution. Both were corrected. A real call of that function now accepts readerOFF and rejects four enabled states offline.",
+  "limits": [
+    "Preparation only: no ADB or AndroidUi instance was created.",
+    "No app, test or helper APK was built or changed.",
+    "Earlier #25 evidence and the failed Files workflow retain their original producers.",
+    "The next native call requires the root lease after the performance owner returns 5558."
+  ],
+  "controller": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/outputs/android35-files-c3d7-5558-001-control/driver.py",
+    "nativeStatus": "NOT_RUN",
+    "sha256BeforeHeadFreeze": "bef6e9760717b6973e29a947dddecb53d5be3fd77bb88299a4c5fcd449ce6ac8",
+    "changesFromR3Controller": [
+      "Select only the existing complete files scenario.",
+      "Use fresh Files output and control directories.",
+      "Pin current source bytes and ordered Files cases.",
+      "Retain input method, activity/window dumps and all three package PIDs.",
+      "Record locale in settings equality; record last-ANR equality.",
+      "Keep owned-app cleanup independent from readback errors.",
+      "Compare installed hashes to fixed prepared hashes and recheck all four local APK/receipt files after the unit."
+    ],
+    "expectedHeadPolicy": "The local controller will pin the clean documentation preparation commit after source review, before its only execution."
+  },
+  "preparationChecks": {
+    "downloadsNavigation": {
+      "command": "python3 scripts/test_android_downloads_navigation.py",
+      "tests": 35,
+      "status": "PASS"
+    },
+    "controllerSyntax": "PASS",
+    "localApkManifests": "PASS",
+    "artifactAndReceiptHashes": "PASS",
+    "nativeCalls": 0,
+    "adbCalls": 0,
+    "controllerReaderOffChecks": {
+      "readerOff": "PASS",
+      "readerEnabled": "REJECTED",
+      "serviceEnabled": "REJECTED",
+      "touchExplorationEnabled": "REJECTED",
+      "boundService": "REJECTED"
+    },
+    "offlineControllerReview": {
+      "script": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/outputs/android35-files-c3d7-5558-001-control/offline_controller_review.py",
+      "sha256": "a436546bfd992ba976c0c0916eec6a327453f117b5512b4e2f257903affc481c",
+      "result": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/outputs/android35-files-c3d7-5558-001-control/checks.log",
+      "reader": "Actual R2 API35 dump accepted; three active mutations rejected.",
+      "cleanup": "Readback failure and source failure still stop only the owned app; a residual PID fails cleanup; cleanup error preserves the original failure.",
+      "status": "PASS",
+      "realAdbCalls": 0
+    },
+    "filesPresentation": {
+      "command": "python3 scripts/test_android_files_presentation.py",
+      "tests": 9,
+      "status": "PASS",
+      "actualOldCasesNegativeControl": "Four behavior checks fail against the original Files case bodies; zero errors."
+    }
+  },
+  "baseSource": "c3d7e000289115582ce901702e32268fce439bb2",
+  "readinessOriginalCommit": "a39f7e140ffb136d91b98868ffb4b2ca61d86da7",
+  "readinessPreparation": {
+    "path": "docs/validation/android35-files-native-presentation.json",
+    "bytes": 3486,
+    "sha256": "861fa9a1619a3410639e983eab40a51445c2cfbb08a5de68514c90c735c85681",
+    "checksPassed": 9,
+    "oldCasesExpectedFailures": 4,
+    "oldCasesUnexpectedErrors": 0,
+    "unchangedMethods": 34,
+    "nativeStatus": "NOT_RUN"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "status": "FAIL",
+  "classification": "NATIVE_CANCEL_COMMITS_COMPONENT_MOVE",
+  "productPin": "df276e39e2af27fdbe26d220913657b43ee717a9",
+  "appProducerHead": "40dd9172e5775bb65232dafac3a401ee59ebf9e4",
+  "testProducerHead": "05679f92906ef211d73b8d4c4bb39dc9ee0da688",
+  "appSha256": "600f656ac6cbb4661bbff880995b77a1fc240bb0607671bb96d0a010b234a834",
+  "testSha256": "c3ec3a2f00c1473fc9a9474ed485b32458534b8e422b06a509c16a21c31bdcd1",
+  "installedArtifactsAfter": {
+    "appSha256": "600f656ac6cbb4661bbff880995b77a1fc240bb0607671bb96d0a010b234a834",
+    "testSha256": "c3ec3a2f00c1473fc9a9474ed485b32458534b8e422b06a509c16a21c31bdcd1"
+  },
+  "lastAnrUnchanged": true,
+  "elapsedSeconds": 21.404,
+  "caseElapsedMillis": 15911,
+  "confirmedMode": {
+    "key": "action_select",
+    "selection": "ACTIVE",
+    "clickTarget": {
+      "resource-id": null,
+      "class": "android.view.View",
+      "package": "thalesmms.logisim.mobile.e2e",
+      "text": null,
+      "content-desc": null,
+      "bounds": "[376,395][535,521]",
+      "windowId": 18676,
+      "childCount": 3,
+      "selected": false,
+      "checked": true,
+      "checkable": true,
+      "enabled": true,
+      "clickable": true,
+      "visible": true,
+      "focused": false,
+      "stateDescription": "Selected",
+      "actionIds": [
+        64,
+        1,
+        16,
+        131072,
+        256,
+        512
+      ]
+    },
+    "semanticNodes": [
+      {
+        "resource-id": null,
+        "class": "android.view.View",
+        "package": "thalesmms.logisim.mobile.e2e",
+        "text": null,
+        "content-desc": null,
+        "bounds": "[376,395][535,521]",
+        "windowId": 18676,
+        "childCount": 3,
+        "selected": false,
+        "checked": true,
+        "checkable": true,
+        "enabled": true,
+        "clickable": true,
+        "visible": true,
+        "focused": false,
+        "stateDescription": "Selected",
+        "actionIds": [
+          64,
+          1,
+          16,
+          131072,
+          256,
+          512
+        ]
+      }
+    ]
+  },
+  "motionActionCounts": {
+    "ACTION_DOWN": 1,
+    "ACTION_MOVE": 10,
+    "ACTION_CANCEL": 1
+  },
+  "motionSource": 4098,
+  "tool": "TOUCH",
+  "allMotionEventsAccepted": true,
+  "constantDownTimeMillis": 30209577,
+  "pointerIds": [
+    0
+  ],
+  "before": {
+    "componentLocations": {
+      "mi-input": "(100,100)",
+      "mi-not": "(200,100)",
+      "mi-output": "(300,100)"
+    },
+    "wires": [
+      {
+        "from": "(100,100)",
+        "to": "(170,100)"
+      },
+      {
+        "from": "(200,100)",
+        "to": "(300,100)"
+      }
+    ]
+  },
+  "after": {
+    "componentLocations": {
+      "mi-input": "(100,100)",
+      "mi-not": "(250,120)",
+      "mi-output": "(300,100)"
+    },
+    "wires": [
+      {
+        "from": "(100,100)",
+        "to": "(220,100)"
+      },
+      {
+        "from": "(220,100)",
+        "to": "(220,120)"
+      },
+      {
+        "from": "(250,120)",
+        "to": "(300,120)"
+      },
+      {
+        "from": "(300,100)",
+        "to": "(300,120)"
+      }
+    ]
+  },
+  "expected": "ACTION_CANCEL preserves the complete exported document, including the NOT location and wires.",
+  "observed": "The NOT moved from (200,100) to (250,120), and its two wires became four routed segments.",
+  "limits": [
+    "Synthesized Android system input; physical-device ergonomics are not qualified.",
+    "The case failed at cancellation, so its later normal-release and Undo controls were not reached.",
+    "Concurrent portable work on emulator-5558 excludes performance attribution.",
+    "No result on newer app59 or on the pointer-cancel fix is claimed."
+  ],
+  "rawArtifacts": {
+    "manifest.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r5-single-snapshot/manifest.json",
+      "sha256": "5e381a04001f1bf17209b73d2e90e150f7ff4c47d814142c9266211211b46c1b"
+    },
+    "native/result.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r5-single-snapshot/native/result.json",
+      "sha256": "4b7f6c3fe7e2f636f185103d10c3a329832463b77355413ae20403091cc12ae7"
+    },
+    "native/1-cancel-before.circ": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r5-single-snapshot/native/1-cancel-before.circ",
+      "sha256": "9b0e31116c2884277bb46edbffefe4c520ed1a5e0efd38d6e05070eb7d4ae9e4"
+    },
+    "native/2-cancel-after.circ": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r5-single-snapshot/native/2-cancel-after.circ",
+      "sha256": "642fc7e2a824b8364f61b42eb05ea189b3dc84c44e499a7add89243993643894"
+    },
+    "native/cancel-failure.png": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r5-single-snapshot/native/cancel-failure.png",
+      "sha256": "c2d22123b2ba2c7e2be11e90af4d2b300f35d4571df178b76f65fe0e3d72049c"
+    },
+    "source-receipt.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r5-single-snapshot/source-receipt.json",
+      "sha256": "c28e43bb7a821299b3cba06c8da96db1d76d0714a65c0613cf99caad554e5ef4"
+    }
+  }
+}

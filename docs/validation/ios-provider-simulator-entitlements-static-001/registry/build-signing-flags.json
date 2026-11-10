@@ -1,0 +1,258 @@
+{
+  "scope": "Retained build/source plus exact-ID read-only registry queries. No build, signing, mutation, target launch or native test.",
+  "source": "11fc44d53b229558fbfc57b66e0b2f2d11a0037b",
+  "commands": [
+    {
+      "arguments": [
+        "python3",
+        "verify-fixture.py"
+      ],
+      "started": "2026-11-05T06:51:28.167138+00:00",
+      "log": "configuration.log",
+      "finished": "2026-11-05T06:51:28.196335+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "xcodegen",
+        "generate",
+        "--spec",
+        "project.yml"
+      ],
+      "started": "2026-11-05T06:51:28.196660+00:00",
+      "log": "xcodegen.log",
+      "finished": "2026-11-05T06:51:28.226340+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "xcodebuild",
+        "-project",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/Fixture/LogisimRevocationFixture.xcodeproj",
+        "-scheme",
+        "RevocationFixture",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "CODE_SIGN_STYLE=Manual",
+        "DEVELOPMENT_TEAM=",
+        "CODE_SIGN_IDENTITY=",
+        "build"
+      ],
+      "started": "2026-11-05T06:51:28.226746+00:00",
+      "log": "build.log",
+      "finished": "2026-11-05T06:51:35.497480+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider.debug.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.498579+00:00",
+      "log": "sign-dylib-0.log",
+      "finished": "2026-11-05T06:51:35.512461+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/__preview.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.512753+00:00",
+      "log": "sign-dylib-1.log",
+      "finished": "2026-11-05T06:51:35.525201+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.525488+00:00",
+      "log": "sign-dylib-2.log",
+      "finished": "2026-11-05T06:51:35.544871+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/__preview.dylib"
+      ],
+      "started": "2026-11-05T06:51:35.545380+00:00",
+      "log": "sign-dylib-3.log",
+      "finished": "2026-11-05T06:51:35.561616+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "--generate-entitlement-der",
+        "--entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/Fixture/Config/Provider.entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T06:51:35.561924+00:00",
+      "log": "sign-Provider.log",
+      "finished": "2026-11-05T06:51:35.574860+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T06:51:35.582699+00:00",
+      "log": "verify-Provider.log",
+      "finished": "2026-11-05T06:51:35.591077+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--display",
+        "--verbose=4",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T06:51:35.591329+00:00",
+      "log": "signature-Provider.log",
+      "finished": "2026-11-05T06:51:35.598831+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--force",
+        "--sign",
+        "-",
+        "--generate-entitlement-der",
+        "--entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/Fixture/Config/App.entitlements",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T06:51:35.599240+00:00",
+      "log": "sign-App.log",
+      "finished": "2026-11-05T06:51:35.612364+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T06:51:35.620581+00:00",
+      "log": "verify-App.log",
+      "finished": "2026-11-05T06:51:35.628768+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--display",
+        "--verbose=4",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T06:51:35.629192+00:00",
+      "log": "signature-App.log",
+      "finished": "2026-11-05T06:51:35.637146+00:00",
+      "exitCode": 0
+    }
+  ],
+  "sourceCodeSigningArgumentLines": [
+    {
+      "line": 127,
+      "text": "                 \"ARCHS=arm64\", \"ONLY_ACTIVE_ARCH=YES\", \"CODE_SIGNING_ALLOWED=NO\", \"CODE_SIGNING_REQUIRED=NO\","
+    },
+    {
+      "line": 128,
+      "text": "                 \"CODE_SIGN_STYLE=Manual\", \"DEVELOPMENT_TEAM=\", \"CODE_SIGN_IDENTITY=\", \"build\"], \"build.log\")"
+    },
+    {
+      "line": 134,
+      "text": "                run([\"codesign\", \"--force\", \"--sign\", \"-\", str(dylib)], f\"sign-dylib-{index}.log\")"
+    },
+    {
+      "line": 136,
+      "text": "                run([\"codesign\", \"--force\", \"--sign\", \"-\", \"--generate-entitlement-der\", \"--entitlements\","
+    },
+    {
+      "line": 138,
+      "text": "                actual = subprocess.run([\"codesign\", \"--display\", \"--entitlements\", \":-\", str(bundle)],"
+    }
+  ],
+  "actualBuildLogOccurrences": [
+    {
+      "line": 2,
+      "text": "    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/Fixture/LogisimRevocationFixture.xcodeproj -scheme RevocationFixture -configuration Debug -sdk iphonesimulator -destination \"generic/platform=iOS Simulator\" -derivedDataPath /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData ARCHS=arm64 ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY= build"
+    },
+    {
+      "line": 6,
+      "text": "    CODE_SIGN_IDENTITY = "
+    },
+    {
+      "line": 7,
+      "text": "    CODE_SIGN_STYLE = Manual"
+    },
+    {
+      "line": 8,
+      "text": "    CODE_SIGNING_ALLOWED = NO"
+    },
+    {
+      "line": 9,
+      "text": "    CODE_SIGNING_REQUIRED = NO"
+    },
+    {
+      "line": 10,
+      "text": "    DEVELOPMENT_TEAM = "
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/artifact.json",
+      "bytes": 11104,
+      "sha256": "bda24c74410814276f00474a689ae95508deb7330cc0eacae9f55bf54ec7388a"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/build-simulator-fixture.py",
+      "bytes": 8943,
+      "sha256": "e44222c9b33fe41b6d969c64747fe966da2182c8d5359eba3c30db07172e1255"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/build.log",
+      "bytes": 171154,
+      "sha256": "865a8b0a5811814a24708be550bd380d457b06f98a543213921a9f29df836719"
+    }
+  ]
+}

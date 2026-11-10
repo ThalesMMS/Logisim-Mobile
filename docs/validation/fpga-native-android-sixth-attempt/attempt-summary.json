@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "FAIL_PRESERVED",
+  "issue": 65,
+  "attempt": 6,
+  "serial": "emulator-5558",
+  "source": "515983508151c2adc52e443655c584ad7057855e",
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "snapshotProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "caseInvocations": 1,
+  "exitCode": 1,
+  "elapsedSeconds": 112.84384241700172,
+  "selectedCases": [
+    "synthesis",
+    "tool-error",
+    "cancel"
+  ],
+  "caseResults": {
+    "synthesis": "FAIL_BEFORE_PIN_MAPPING",
+    "tool-error": "NOT_RUN",
+    "cancel": "NOT_RUN"
+  },
+  "qualifiedCases": 0,
+  "pairingStatus": "PUBLIC_VERIFIED_CARD_OBSERVED",
+  "boardImport": {
+    "status": "PASS",
+    "identity": "FPGA_E2E_HX1K_29ae52c5",
+    "bytes": 536,
+    "sha256": "194fe479b0b55a4e006ef8d27a232cd5f8f535a40da498adb3ab2a5d06318eca",
+    "uploadedSha256": "194fe479b0b55a4e006ef8d27a232cd5f8f535a40da498adb3ab2a5d06318eca",
+    "sourceAfterSha256": "194fe479b0b55a4e006ef8d27a232cd5f8f535a40da498adb3ab2a5d06318eca"
+  },
+  "downloadsNavigation": {
+    "status": "PASS",
+    "requestedActions": 0,
+    "observedAlreadyAtDownloads": true
+  },
+  "failureBoundary": "FpgaScenarios.validate(valid=False) control-visibility search, before map_pin",
+  "finalError": {
+    "type": "AssertionError",
+    "message": "The active editor-tool-sheet viewport disappeared"
+  },
+  "nativeHierarchyFacts": {
+    "imported": "One editor-tool-sheet marker and one scrollable content node.",
+    "final": "No editor-tool-sheet marker; the editor contains Operation cancelled.",
+    "lastSuccessfulImportedSheetBounds": "[0,0][1080,2028]",
+    "lastSuccessfulImportedScrollableBounds": "[74,699][1006,2263]",
+    "intermediateGesturesAndTargetKey": "NOT_RETAINED",
+    "validationCallbackDelivery": "NOT_OBSERVED"
+  },
+  "hostRequests": 0,
+  "hostJobs": 0,
+  "cleanupVerified": true,
+  "settingsClaim": "Nine recorded settings and wm size/density are equal before and after. No full device-preference identity is inferred.",
+  "foregroundAfterCleanup": "com.google.android.documentsui/com.android.documentsui.picker.PickActivity",
+  "ownedBoardFileDeleted": false,
+  "anrLastUnchanged": true,
+  "limits": [
+    "The validation click request returned before the later reveal failure; its callback was not observed.",
+    "The failing export or prepare key and the exact swipe that preceded panel loss were not retained.",
+    "The source and final tree do not establish which gesture dismissed the panel.",
+    "Pin mapping, ZIP export, synthesis, real tool failure, cancellation, bitstream generation, iOS execution, and physical programming are not qualified.",
+    "No retry or additional native execution followed this result."
+  ],
+  "hostRequestScope": "Audited plans, submissions, and cancellations. Capability queries are outside this request audit."
+}

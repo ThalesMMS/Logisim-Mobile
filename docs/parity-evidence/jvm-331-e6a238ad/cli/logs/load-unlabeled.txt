@@ -1,0 +1,28 @@
+row: cli/load
+case: load-unlabeled
+result: PASS
+detail: same arguments: an unlabeled image loads every RAM and ROM in both programs
+
+=== evolution: logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex
+exit: 0
+--- stdout (6 lines, sha256 62a9c1beef7eba0a3180a3a458bc73d8148e3cf7e3e23123c434027f3ac40ff1)
+UUUU UUUU	0001 0001
+UUUU UUUU	0010 0010
+UUUU UUUU	0011 0011
+UUUU UUUU	0100 0100
+UUUU UUUU	0101 0101
+UUUU UUUU	0110 0110
+--- stderr (1 lines, sha256 42caa89a2d5183d363839e6cd6140f3319051a4ef3d04a0d1736cd45d01c4b3f)
+[main] ERROR com.cburch.logisim.gui.start.TtyInterface - halted due to halt pin
+
+=== mobile: HeadlessCircuitCli -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex
+exit: 0
+--- stdout (6 lines, sha256 62a9c1beef7eba0a3180a3a458bc73d8148e3cf7e3e23123c434027f3ac40ff1)
+UUUU UUUU	0001 0001
+UUUU UUUU	0010 0010
+UUUU UUUU	0011 0011
+UUUU UUUU	0100 0100
+UUUU UUUU	0101 0101
+UUUU UUUU	0110 0110
+--- stderr (1 lines, sha256 2b006bf6ac1239d171c8e562c7282518a68cf2739c6dd660761790163169e6f1)
+halted due to halt pin

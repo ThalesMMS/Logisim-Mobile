@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="2.7.1" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Memory" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <wire from="(140,260)" to="(210,260)"/>
+    <wire from="(260,300)" to="(260,340)"/>
+    <wire from="(350,260)" to="(420,260)"/>
+    <comp lib="0" loc="(140,260)" name="Constant"><a name="width" val="8"/><a name="value" val="0x0"/></comp>
+    <comp lib="0" loc="(260,340)" name="Pin"><a name="label" val="SEL"/><a name="facing" val="north"/></comp>
+    <comp lib="1" loc="(350,260)" name="ROM"><a name="contents">addr/data: 8 8
+ a5
+</a></comp>
+    <comp lib="0" loc="(420,260)" name="Pin"><a name="label" val="Y"/><a name="facing" val="west"/><a name="output" val="true"/><a name="width" val="8"/></comp>
+  </circuit>
+</project>

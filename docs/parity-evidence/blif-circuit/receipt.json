@@ -1,0 +1,102 @@
+{
+ "schema_version": 1,
+ "description": "BLIF receipt (#335) for temporal sweep suites rerun on the blif_circuit fixtures (FIXTURES) and the scripts/oracle/blif-circuit corpus. Both were compared against Evolution.",
+ "fixtures": "blif_circuit(__.*)?",
+ "evolution": {
+  "revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "jar": "logisim-evolution-5.1.0dev-all.jar",
+  "jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038"
+ },
+ "environment": "macOS on Apple silicon, JDK 21.0.13 (Homebrew openjdk@21)",
+ "suites": [
+  {
+   "id": "default",
+   "artifact": "docs/parity-evidence/blif-circuit/default.tsv",
+   "artifact_sha256": "37f654a9bf1984dd702c8e50b4eeea9b240427a0b11929f1a3357b61620da2d9",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh EVOLUTION_JAR WORK/default CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites default)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "variants",
+   "artifact": "docs/parity-evidence/blif-circuit/variants.tsv",
+   "artifact_sha256": "37f654a9bf1984dd702c8e50b4eeea9b240427a0b11929f1a3357b61620da2d9",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh --variants EVOLUTION_JAR WORK/variants CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites variants)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "negative",
+   "artifact": "docs/parity-evidence/blif-circuit/negative.tsv",
+   "artifact_sha256": "37f654a9bf1984dd702c8e50b4eeea9b240427a0b11929f1a3357b61620da2d9",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh --variants --negative EVOLUTION_JAR WORK/negative CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites negative)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "pairs",
+   "artifact": "docs/parity-evidence/blif-circuit/pairs.tsv",
+   "artifact_sha256": "37f654a9bf1984dd702c8e50b4eeea9b240427a0b11929f1a3357b61620da2d9",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "FIXTURES='blif_circuit(__.*)?' scripts/oracle/temporal-kinds/run.sh --pairs 6 EVOLUTION_JAR WORK/pairs CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites pairs)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "roundtrip",
+   "artifact": "docs/parity-evidence/blif-circuit/roundtrip.tsv",
+   "artifact_sha256": "cd1975444d4db0cbf7a47a736fd27b89572cb1c5cdd82f500596a7497904a026",
+   "modes": [
+    "roundtrip"
+   ],
+   "command": "ResaveDesktop WORK/variants/fixtures, then TemporalCorpusCli settle on each <id>.desktop.circ against the Evolution trace for the original (python3 scripts/parity_matrix.py reverify blif-circuit --suites roundtrip)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "corpus",
+   "artifact": "docs/parity-evidence/blif-circuit/corpus.tsv",
+   "artifact_sha256": "42a1d9e67cf7cef6d4554d6166a49f67310afb5aca9f52a2e925fb1a117c8c0d",
+   "modes": [
+    "settle",
+    "step"
+   ],
+   "command": "scripts/oracle/blif-circuit/run.sh EVOLUTION_JAR WORK/corpus CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites corpus)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  },
+  {
+   "id": "corpus-roundtrip",
+   "artifact": "docs/parity-evidence/blif-circuit/corpus-roundtrip.tsv",
+   "artifact_sha256": "dabdf20aa0e75a75ef0f8db1b839eb1b923f2b0ca78770180772d104b1bcf064",
+   "modes": [
+    "roundtrip"
+   ],
+   "command": "scripts/oracle/blif-circuit/run.sh EVOLUTION_JAR WORK/corpus CORE_JAR (python3 scripts/parity_matrix.py reverify blif-circuit --suites corpus-roundtrip)",
+   "mobile_revision": "2653be42eac04211ba478e981850d8cf7de191d0",
+   "core_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+   "recorded": "2026-11-08"
+  }
+ ]
+}

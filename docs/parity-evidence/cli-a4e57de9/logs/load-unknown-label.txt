@@ -1,0 +1,16 @@
+row: cli/load
+case: load-unknown-label
+result: PASS
+detail: both fail for an absent label (exit 255/2)
+
+=== evolution: logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex nolabel
+exit: 255
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 f41787bc41fa2910b8034a7a5f80183ad2d8c3f2c3ed684e9837bdc07ca21347)
+[main] ERROR com.cburch.logisim.gui.start.TtyInterface - No RAM/ROM was found for the “--load” labels: [nolabel]
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table,halt scripts/oracle/cli/fixtures/memory.circ --load scripts/oracle/cli/fixtures/mem.hex nolabel
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 15a73d78455c38dad4758734a6f1d4b4ac812c4bd4827cc51c27bee789e64ac4)
+error=No RAM or ROM labeled 'nolabel' for --load.

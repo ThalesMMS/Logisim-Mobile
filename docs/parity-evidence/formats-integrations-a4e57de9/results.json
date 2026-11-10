@@ -1,0 +1,85 @@
+{
+  "campaign": "https://github.com/ThalesMMS/logisim-mobile-dev/issues/331",
+  "mobile_revision": "a4e57de9eb3555fb5e6eed78ab6d5470e43ee229",
+  "mobile_dirty": false,
+  "core_jar_sha256": "0e596cb9d1a760eeb30d3f871adf5d009b3305f67f2cb5d3f82bef1205a500b9",
+  "evolution_revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "evolution_jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+  "environment": {
+    "os": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "java": "openjdk version \"21.0.13.0.3\" 2026-10-24",
+    "python": "3.15.2",
+    "yosys": "Yosys 0.70+post (git sha1 0c11ea098be065e585a90a06e7b7da49936cf231, Release, AppleClang clang++ 21.0.0.21000334)",
+    "iverilog": "Icarus Verilog version 13.0 (stable) (v13_0)",
+    "nvc": "nvc 1.23.1 (Using LLVM 23.1.4)"
+  },
+  "date": "2026-11-08T02:00:32+00:00",
+  "suites": {
+    "fpga-boards": {
+      "exit": 0,
+      "summary": "PASS 2518 desktop/mobile board-field comparisons across 2 boards, 130 resources, 180 physical pins, including 2 scanning resources and 0 placeholders",
+      "log": "logs/fpga-boards.txt",
+      "seconds": 0.7
+    },
+    "vectors": {
+      "exit": 0,
+      "summary": "PASS: 14 combinational and sequential test-vector rows match the desktop",
+      "log": "logs/vectors.txt",
+      "seconds": 2.4
+    },
+    "hdl-import": {
+      "exit": 0,
+      "summary": "",
+      "log": "logs/hdl-import.txt",
+      "seconds": 8.2
+    },
+    "verilog-evolution-import": {
+      "exit": 0,
+      "summary": "PASS: Evolution and Mobile Verilog imports agree on every vector",
+      "log": "logs/verilog-evolution-import.txt",
+      "seconds": 3.2
+    },
+    "hdl-declarations": {
+      "exit": 1,
+      "summary": "FAIL: 13/26 HDL declarations match Evolution, 11 accepted only by Mobile, 2 differ",
+      "log": "logs/hdl-declarations.txt",
+      "seconds": 0.5
+    },
+    "blif-cosim": {
+      "exit": 0,
+      "summary": "PASS: 350 BLIF co-simulation steps compared with Evolution",
+      "log": "logs/blif-cosim.txt",
+      "seconds": 18.1
+    },
+    "fpga-hdl": {
+      "exit": 0,
+      "summary": "PASS verilog: 16 input combinations, pins ['E19', 'U16', 'U19', 'V16', 'V17', 'W16', 'W17'], clock None, part xc7a35tcpg236-1; Evolution and Mobile top levels both match Evolution -tty table",
+      "log": "logs/fpga-hdl.txt",
+      "seconds": 3.2
+    },
+    "soc-drivers": {
+      "exit": 0,
+      "summary": "RESULT: 3/5 PIO driver register maps match Evolution's exportC",
+      "log": "logs/soc-drivers.txt",
+      "seconds": 1.0
+    },
+    "soc-program-desktop": {
+      "exit": 0,
+      "summary": "SAME nios2: Evolution rerun equals fixtures/soc/program-nios2-desktop.csv",
+      "log": "logs/soc-program-desktop.txt",
+      "seconds": 2.0
+    },
+    "tcl-desktop-protocol": {
+      "exit": 0,
+      "summary": "OK",
+      "log": "logs/tcl-desktop-protocol.txt",
+      "seconds": 0.4
+    },
+    "evolution-images": {
+      "exit": 0,
+      "summary": "",
+      "log": "logs/evolution-images.txt",
+      "seconds": 1.4
+    }
+  }
+}

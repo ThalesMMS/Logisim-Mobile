@@ -1,0 +1,185 @@
+{
+  "scope": "Existing exact-group fixture state; diagnostics only, no Prepare or file creation",
+  "queriedUTC": "2026-11-05T07:18:34.755015+00:00",
+  "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4/RevocationFixture/fixture-state.json",
+  "bytes": 2221,
+  "sha256": "5d70dcefd804d8ac2113e532a52c7d7091a0510f318233ec20373d36c56bdf35",
+  "rootKeys": [
+    "contents",
+    "events",
+    "nextSequence",
+    "state"
+  ],
+  "metadataLeaves": [
+    {
+      "path": "contents",
+      "type": "str",
+      "length": 736
+    },
+    {
+      "path": "events.0.kind",
+      "type": "str",
+      "length": 7,
+      "value": "prepare"
+    },
+    {
+      "path": "events.0.process",
+      "type": "str",
+      "length": 23,
+      "value": "RevocationFixture:69225"
+    },
+    {
+      "path": "events.0.sequence",
+      "type": "int",
+      "value": 1
+    },
+    {
+      "path": "events.0.timestamp",
+      "type": "str",
+      "length": 24,
+      "value": "2026-11-05T06:58:24.548Z"
+    },
+    {
+      "path": "events.1.details.domain",
+      "type": "str",
+      "length": 29,
+      "value": "logisim-revocation-fixture-v1"
+    },
+    {
+      "path": "events.1.kind",
+      "type": "str",
+      "length": 29,
+      "value": "domain.registration.requested"
+    },
+    {
+      "path": "events.1.process",
+      "type": "str",
+      "length": 23,
+      "value": "RevocationFixture:69225"
+    },
+    {
+      "path": "events.1.sequence",
+      "type": "int",
+      "value": 2
+    },
+    {
+      "path": "events.1.timestamp",
+      "type": "str",
+      "length": 24,
+      "value": "2026-11-05T06:58:29.879Z"
+    },
+    {
+      "path": "events.2.errorCode",
+      "type": "int",
+      "value": -2001
+    },
+    {
+      "path": "events.2.errorDiagnostic.chain.0.code",
+      "type": "int",
+      "value": -2001
+    },
+    {
+      "path": "events.2.errorDiagnostic.chain.0.domain",
+      "type": "str",
+      "length": 25,
+      "value": "NSFileProviderErrorDomain"
+    },
+    {
+      "path": "events.2.errorDiagnostic.chain.0.reason",
+      "type": "str",
+      "length": 41,
+      "value": "The application cannot be used right now."
+    },
+    {
+      "path": "events.2.errorDiagnostic.chain.1.code",
+      "type": "int",
+      "value": -2014
+    },
+    {
+      "path": "events.2.errorDiagnostic.chain.1.domain",
+      "type": "str",
+      "length": 25,
+      "value": "NSFileProviderErrorDomain"
+    },
+    {
+      "path": "events.2.errorDiagnostic.chain.1.reason",
+      "type": "str",
+      "length": 77,
+      "value": "The operation couldn\u2019t be completed. (NSFileProviderErrorDomain error -2014.)"
+    },
+    {
+      "path": "events.2.errorDiagnostic.termination",
+      "type": "str",
+      "length": 8,
+      "value": "complete"
+    },
+    {
+      "path": "events.2.errorDomain",
+      "type": "str",
+      "length": 25,
+      "value": "NSFileProviderErrorDomain"
+    },
+    {
+      "path": "events.2.kind",
+      "type": "str",
+      "length": 26,
+      "value": "domain.registration.failed"
+    },
+    {
+      "path": "events.2.process",
+      "type": "str",
+      "length": 23,
+      "value": "RevocationFixture:69225"
+    },
+    {
+      "path": "events.2.sequence",
+      "type": "int",
+      "value": 3
+    },
+    {
+      "path": "events.2.timestamp",
+      "type": "str",
+      "length": 24,
+      "value": "2026-11-05T06:58:29.901Z"
+    },
+    {
+      "path": "nextSequence",
+      "type": "int",
+      "value": 4
+    },
+    {
+      "path": "state.authenticationAllowed",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "path": "state.backendByteCount",
+      "type": "int",
+      "value": 552
+    },
+    {
+      "path": "state.backendSHA256",
+      "type": "str",
+      "length": 64,
+      "value": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88"
+    },
+    {
+      "path": "state.generation",
+      "type": "int",
+      "value": 1
+    },
+    {
+      "path": "state.schemaVersion",
+      "type": "int",
+      "value": 1
+    }
+  ],
+  "decoded552ByteLeaves": [
+    {
+      "path": "contents",
+      "encoding": "base64",
+      "bytes": 552,
+      "sha256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88"
+    }
+  ]
+}

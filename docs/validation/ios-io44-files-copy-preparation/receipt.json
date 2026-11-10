@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "scope": "Source-only alternative IO44 setup through explicit Files Import Copy. No native execution or product build.",
+  "nativeExecution": "NOT_RUN",
+  "productSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "sourceBase": "0732f74f1483bdccdc6c40abd9670bf00d45822a",
+  "pythonStagingCommit": "b8a666aa921837b9a7404f0bc7cec6ab41134867",
+  "catalogCount": 2497,
+  "checks": {
+    "filesSource": {
+      "passed": 35,
+      "total": 35,
+      "log": "files-source.log"
+    },
+    "windowRules": {
+      "passed": 111,
+      "total": 111,
+      "log": "window-rules.log"
+    },
+    "python": {
+      "passed": 32,
+      "log": "python-tests.log"
+    },
+    "swiftTypecheck": {
+      "scope": "Source-only Files Copy preparation and iOS Simulator-target typecheck; no app build or runtime",
+      "command": [
+        "xcrun",
+        "swiftc",
+        "-typecheck",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+        "-target",
+        "arm64-apple-ios17.0-simulator",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib",
+        "-module-cache-path",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/ModuleCache",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/AccessibilityUITests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/ClipboardReceiverUI.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/DestinationExportEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/DocumentWindowRules.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/DocumentWindowScope.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/EditorEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/ExternalProviderEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/FilesCopySource.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/FilesEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/InspectorEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/IoEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/NativeFilesCopySetup.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/NativeFilesDestinationNavigator.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/NativeFilesPeerNavigator.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/NativeTextReplacement.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/NativeUIHarness.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/ObservedProjectXML.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/PortableProjectEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/PortableWorkspaceEvidence.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/VisualExportEndToEndTests.swift",
+        "/tmp/logisim-ios-io-import-copy-prepared-001/harness/XmlDialogEndToEndTests.swift"
+      ],
+      "sourceHashes": {
+        "AccessibilityUITests.swift": "ca5d6c441c1270d915cfcce1bb456f200bbbf83e78af18667f5a72359293d150",
+        "ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+        "DestinationExportEndToEndTests.swift": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+        "DocumentWindowRules.swift": "f458c6449f91177cb41d8143900ebb20e6cb343a812f2e04da2f14337e9fcdf6",
+        "DocumentWindowScope.swift": "153e086dd2d2a6c25fb032e819b3718fdd1076bbea9abd0913ced478ea0fae6f",
+        "EditorEndToEndTests.swift": "df046e24e72b26919e1e2b8ae3d767a2eae3b784f5925a0d946198f11d17ed07",
+        "ExternalProviderEndToEndTests.swift": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+        "FilesCopySource.swift": "4f72ee6deb311871723fa30cbe82b56ce021ad95ca4200f3c933a6288b90171c",
+        "FilesEndToEndTests.swift": "b9cec3bf6b3cc840d53471a00872602fcbb6ada22eaa94b08d25844d0ebd9da0",
+        "InspectorEndToEndTests.swift": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+        "IoEndToEndTests.swift": "9c900ee9014c04cc8c9b84e6a17adadc549336e79c4ae806e403de93df9340be",
+        "NativeFilesCopySetup.swift": "6c554e071737d0b1cd22134513439f664cca5bc48f84f4b207b5e0afc105a183",
+        "NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+        "NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+        "NativeTextReplacement.swift": "3bd31ec0424e639e3b1e9f746ce0c95b634de9ef98f4dfba38c23147f4c8a44c",
+        "NativeUIHarness.swift": "4d23b09ac805b77eba83d95abfedfa68e1a1249174d1f9939bd55fefe1672bd1",
+        "ObservedProjectXML.swift": "272571f609cc37fd225d785346d82e6f0314753dada5eb3ed21c150d36aaefd3",
+        "PortableProjectEndToEndTests.swift": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+        "PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+        "VisualExportEndToEndTests.swift": "d5203b7ac8938a904d85f9d196549b28a2caddd9244c7d892ba87ea162e16752",
+        "XmlDialogEndToEndTests.swift": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346"
+      },
+      "exit": 0,
+      "log": "typecheck.log"
+    }
+  },
+  "preparedStatus": "PREPARED",
+  "preparedNativeGate": "NATIVE_NOT_RUN",
+  "preparedIOSetup": {
+    "route": "files-copy",
+    "peerDisplayName": "Clipboard Receiver",
+    "runID": "9b4f492a28c5",
+    "documents": "/private/tmp/logisim-ios-io-import-copy-prepared-001/prepare-only-receiver/Documents/LogisimE2E/9b4f492a28c5",
+    "fixture": "/private/tmp/logisim-ios-io-import-copy-prepared-001/prepare-only-receiver/Documents/LogisimE2E/9b4f492a28c5/io-showcase-source.circ",
+    "fixtureSHA256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+  },
+  "selectedTests": [
+    "EditorEndToEndTests/IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDimensionChangesRemainExportable",
+    "EditorEndToEndTests/IoEndToEndTests/testIoMomentaryControlsAndJoystick",
+    "EditorEndToEndTests/IoEndToEndTests/testIoKeyboardTtyAndCapacity"
+  ],
+  "unchangedSources": {
+    "scripts/ios_native_ui/NativeUIHarness.swift": "4d23b09ac805b77eba83d95abfedfa68e1a1249174d1f9939bd55fefe1672bd1",
+    "scripts/ios_native_ui/NativeTextReplacement.swift": "3bd31ec0424e639e3b1e9f746ce0c95b634de9ef98f4dfba38c23147f4c8a44c",
+    "scripts/ios_e2e_ui/ObservedProjectXML.swift": "272571f609cc37fd225d785346d82e6f0314753dada5eb3ed21c150d36aaefd3",
+    "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+    "scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+    "fixtures/user-scenarios/io-actions-v1.json": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+    "examples/io-showcase.circ": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+    "examples/io-showcase.targets.json": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15",
+    "scripts/io_showcase_contract.py": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7"
+  },
+  "unchangedCaseBodies": {
+    "testIoDisplaySignalsAndNativeDrawing": "54fd4b6a547cb459b56968c89d3383415cb3d37afc977e9014ec5e34bad10ada",
+    "testIoDimensionChangesRemainExportable": "15fe7199ad4a8c6baf5e10d3753b8c1fc2d20cbb8269e8b40c16bb89dc63ce60",
+    "testIoMomentaryControlsAndJoystick": "619eb28f31952b82a465a3dd4a5a5ff22ef6a7fc9dc52267d875b96b354eb4eb",
+    "testIoKeyboardTtyAndCapacity": "c5db5ce8f2e054d68ab39bbbda34bfcd11e3974153fd8ea9dd5ba1ed8f425b5d"
+  },
+  "stageExternalPeerFunctionSHA256": "1f33f22fdc7cecc0091609f77ffa2a3243a35416bdc6db51783bb539cd7e7dcb",
+  "extraInputs": {
+    "scripts/run-ios-e2e.py": "9b2d7bab129b37de4d7db292429a8228e2d9421e86ed2adf5818a82733b54eea",
+    "scripts/ios_e2e_ui/project.yml": "172933a4316637dfa0ed1ca9f5a18cc4182c8e08cba09b2543fd9d1a5d32e7af",
+    "scripts/test_ios_io_copy_staging.py": "69e2b671de50ea5033f1275b68307ba7f6d39779c7cb3b10ac74c99c2a9a990e",
+    "scripts/test_ios_files_copy_source.py": "5bbeeab52e3201beb892899d7d609d13aa24dc591d0ad7af699e553a73eccd59",
+    "scripts/test_ios_document_window_rules.py": "bd0fdacbcced730f1b03f9b05b8664869b836ff8d2aa1418680416549c859429"
+  },
+  "limits": [
+    "The receiver payload is newly staged for this route. Prior Inspector/provider passes do not qualify IO44 in app3a.",
+    "Bootstrap is only a unique public editor Window reference. It has no current fixture identity or proven key/hit ownership.",
+    "Native Files queries remain app-wide by design; editor queries remain scoped.",
+    "The first post-picker admission requires the exact source origin and still rejects any second Window matching that filename status or origin.",
+    "After XML export, the persistent origin report is reread and closed exactly once as in0732.",
+    "The symlink RED source was reconstructed by removing the two post-init guards. It is a documented derived control, not a retained original production source.",
+    "Original R1 failures and R2 system abort remain separate and are not promoted."
+  ]
+}

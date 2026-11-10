@@ -1,0 +1,47 @@
+[
+  {
+    "name": "portable",
+    "arguments": [
+      "python3",
+      "-B",
+      "verify.py"
+    ],
+    "environmentOverrides": {},
+    "started": "2026-11-05T12:42:57.204808+00:00",
+    "finished": "2026-11-05T12:42:57.267241+00:00",
+    "exitCode": 0,
+    "log": "portable.log"
+  },
+  {
+    "name": "negative-and-relocated-host",
+    "arguments": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_verify.py"
+    ],
+    "environmentOverrides": {
+      "VERIFY_HOST_REPLAY": "1"
+    },
+    "started": "2026-11-05T12:42:57.267328+00:00",
+    "finished": "2026-11-05T12:42:58.697510+00:00",
+    "exitCode": 0,
+    "log": "negative-and-relocated-host.log"
+  },
+  {
+    "name": "host-replay",
+    "arguments": [
+      "python3",
+      "-B",
+      "verify.py",
+      "--host-replay"
+    ],
+    "environmentOverrides": {},
+    "started": "2026-11-05T12:42:58.697630+00:00",
+    "finished": "2026-11-05T12:42:59.205248+00:00",
+    "exitCode": 0,
+    "log": "host-replay.log"
+  }
+]

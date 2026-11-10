@@ -1,0 +1,40 @@
+{
+  "checks": [
+    "public XCTest diagnostic PID parsing accepts repeated target rows and rejects absent or ambiguous IDs",
+    "v4 UTF16 catalog/payload/link and exact portable source bytes",
+    "locked copy with per-file hash manifest and no source mutation",
+    "existing and in-source destinations rejected",
+    "shared capture waits for exclusive production-style commit lock and fails on deadline",
+    "corrupt source attachment rejected",
+    "missing descriptor-referenced blob rejected",
+    "invalid attachment metadata rejected even before requiring portable source",
+    "inherited native editable association rejected",
+    "duplicate catalog identities rejected",
+    "corrupted envelope checksum rejected",
+    "window content must match the production filename and catalog identity",
+    "symlink workspace entries rejected before reading",
+    "observer refuses missing source lock without creating one"
+  ],
+  "count": 14,
+  "nativeUiStatus": "NOT_RUN",
+  "schema": 1,
+  "scope": "macOS Foundation/CryptoKit execution of isolated UI-test collector; no app, native picker, process restart or iOS execution",
+  "status": "OFFLINE_EVIDENCE_COLLECTOR_CHECKS_PASSED",
+  "typecheck": {
+    "status": "PASSED",
+    "target": "arm64-apple-ios17.0-simulator",
+    "sdk": "iPhoneSimulator27.2.sdk"
+  },
+  "swift": "Apple Swift version 6.4.2 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)\nTarget: arm64-apple-macosx27.2.0",
+  "harnessSourcePin": "b869dcc561a49dcdf7f0f0013fdb3796344ddadb",
+  "sources": {
+    "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+    "scripts/ios_e2e_ui/ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+    "scripts/ios_e2e_ui/ObservedProjectXML.swift": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+    "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "e5a98b9ccebe1c37888835314854336b554a7fea406b1cb54c1fd481ae8752f3",
+    "scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+    "scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift": "cc0892dd9f9895cf02e750f270c979c2e1f92b5d7c268cddee56dace1dcc2e0c",
+    "scripts/portable/PortableWorkspaceEvidenceChecks.swift": "7e3caf9fd88f6dbeff745370ce375d3486c5f310589f089c51de434e06488c6f"
+  },
+  "productionChanges": false
+}

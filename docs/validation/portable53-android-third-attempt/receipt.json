@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "status": "FAILED_BEFORE_IMPORT",
+  "nativeUiStatus": "FAILED",
+  "serial": "emulator-5558",
+  "productSource": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "harnessSource": "a2619a89bddee4b39a1dc2520ae554534cbede38",
+  "appSha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546",
+  "qualifiedExports": [],
+  "failureLayer": "Fixture staging/publication, followed by an empty-grid navigation gesture",
+  "observations": [
+    "The native picker reached the staged Downloads folder but showed No items.",
+    "The file existed with exact fixture SHA74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc.",
+    "MediaStore.Files reported is_pending=1/is_download=0; MediaStore.Downloads did not list the file.",
+    "The product59 source and effective Intent already used wildcard MIME; no MIME source drift was found.",
+    "A fixture-scoped MEDIA_SCANNER_SCAN_FILE broadcast changed the same row to is_pending=0/is_download=1 without changing bytes.",
+    "The generic search gesture on a non-scrollable empty grid ended on the launcher; the editor process remained alive."
+  ],
+  "correction": [
+    "Publish every staged bundle/transitive source file and verify its MediaStore row before opening the production picker.",
+    "Do not swipe a non-scrollable empty list; search gestures stay within the central grid region."
+  ],
+  "checks": {
+    "navigation": 7,
+    "portablePreparation": 9,
+    "artifactPreflight": 11
+  },
+  "scope": "The corrected publication mechanism was exercised only on the old owned fixture. Portable import/export/restart/reopen still requires a new native run.",
+  "files": {
+    "staged-file-index.json": "da3f11c819570079bbe03cb69d55a06dea9561c481f070b7b696ef89a4ac5292",
+    "media-scanner-publication.json": "a675a6304d050a75b816c27c8ef47483694cb09cbb10ca527f591419ae5f6787",
+    "results.json": "a09cb9e0d5d20b0e9318feb02039faf512284967c0abb054638d954886d19cfa",
+    "empty-folder-tree.xml": "5c650ee4b76444e277e56139459da175b4fc764cf1e824815cc11efb69165fa0",
+    "concurrent-environment.json": "b3f274865d7e043005b1b952e21f1e57518e51f80c9acf9fe6a50d0a167e7c88",
+    "empty-folder.png": "8fc913fda2558a612602bd19f0fa1e762da9cf215d13cf8c89c8c0c247480249",
+    "terminal-tree.xml": "b80bf390fe8b21a55cbe566a56f7bedf573ecc54275d82994ddc99cf250002b9",
+    "run-manifest.json": "34fe5cdef12a6371f675abd55e82bf726003831a29f63d27acf8c733e1b54e02",
+    "error.txt": "c01ad7a3c45b15004dca86f7072f2645dfb9f4d3737c77514024b3f4030e678c"
+  }
+}

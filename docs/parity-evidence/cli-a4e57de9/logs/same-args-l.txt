@@ -1,0 +1,10 @@
+row: cli/load
+case: same-args-l
+result: DIFF
+detail: Mobile accepts Evolution's '-l'
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 2ae369c0e813a75ff2a826c175d6e1236c69b1c751846bddb8ef77c9c3797df7)
+error=Unknown option '-l'.

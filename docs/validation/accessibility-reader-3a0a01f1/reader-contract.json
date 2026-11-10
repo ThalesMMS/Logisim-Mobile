@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "scenario": "android-talkback-handoff-action-v1",
+  "status": "PREPARED_ONLY",
+  "issue": 28,
+  "product_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "execution_authorized_now": false,
+  "lane": "One explicitly returned Android lane; none selected by this contract",
+  "reader": "Actual installed TalkBack service",
+  "preconditions": [
+    "Explicit lane lease",
+    "Pinned isolated e2e app and matching observer hashes",
+    "Workspace preserved",
+    "TalkBack running and producing speech",
+    "Installed gesture mapping recorded",
+    "SDK observer uses FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES",
+    "Complete non-suppressing observation before and after a reader gesture"
+  ],
+  "observer_policy": {
+    "app_tree": "SDK non-suppressing capture only",
+    "fallback_to_uiautomator_dump": false,
+    "focused_attribute": "accessibility-focused",
+    "input_focused_is_reader_focus": false,
+    "system_reader_menu": "Retain screenshots and reader speech; do not claim an app-only tree covers a system overlay",
+    "deadlines": "Existing SDK and client absolute deadlines remain unchanged",
+    "prepared_client_commit": "96a59ba4b1dcf37ceb97ccabd6f5a34d9d759994",
+    "opt_in": "AndroidUi(..., preserve_accessibility_services=True)",
+    "offline_boundary_tests": {
+      "new": 13,
+      "existing": 67,
+      "failures": 0
+    }
+  },
+  "required_step_evidence": [
+    "Unique step ID",
+    "Host action timestamps and device snapshot uptime kept as distinct clocks",
+    "Raw gesture request and transport result",
+    "Observed accessibility-focused identity when in app",
+    "TalkBack-produced speech display video or actual spoken-output artifact",
+    "Complete app snapshot with nonce/package/PID metadata when applicable",
+    "Screenshot containing current reader context",
+    "Expected and observed state after activation"
+  ],
+  "steps": [
+    {
+      "id": "environment",
+      "action": "Record original settings and artifact/reader identities",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "reader-enabled",
+      "action": "Enable TalkBack and its speech display through Settings",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "next-one",
+      "action": "Reader next gesture produces a different focus and matching phrase",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "next-two",
+      "action": "Second reader next gesture produces another focus and phrase",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "explorer",
+      "action": "Reach Project tools and Circuit explorer by reader navigation and activation",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "input-before",
+      "action": "Focus known toggle Reset and record its identity/value",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "activate",
+      "action": "Select named Activate through actual TalkBack Actions and hear changed value",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "restore-input",
+      "action": "Activate again through TalkBack and hear original value",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "restore-environment",
+      "action": "Restore original reader/font/IME/rotation/developer settings and return lane",
+      "status": "NOT_RUN"
+    }
+  ],
+  "fail_stop": [
+    "Wrong producer or changed installed bytes",
+    "Reader not processing gestures",
+    "Ambiguous or unchanged focus",
+    "Missing actual TalkBack speech evidence",
+    "Input transport silently replaced by direct semantic action",
+    "CLI dump or suppressing instrumentation used during reader phase",
+    "Incomplete or unauthenticated tree treated as complete",
+    "Required toggle precondition missing",
+    "Action changes unexpected component or value",
+    "Restoration incomplete"
+  ],
+  "pass_scope": [
+    "One reader handoff and input action on the recorded Android artifact"
+  ],
+  "not_qualified": [
+    "Full create/connect/edit/remove/save/reopen workflow",
+    "VoiceOver service behavior on the local iOS27 Simulator before its explicit probe runs",
+    "Physical iPhone/iPad reader behavior",
+    "All dense canvas hit areas",
+    "Speech audio quality when only captions are retained",
+    "Complete issue28 acceptance"
+  ],
+  "physical_voiceover": "Scheduled last; Xcode27 reader-service capability on Simulator is a separate NOT_RUN probe",
+  "read_only_inventory": {
+    "serial": "emulator-5556",
+    "api": "35",
+    "os": "15",
+    "package": "com.google.android.marvin.talkback",
+    "version_name": "15.0.0.639625893",
+    "version_code": "60138348",
+    "enabled_accessibility_services": null,
+    "accessibility_enabled": false,
+    "touch_exploration_enabled": false,
+    "reader_runtime_status": "NOT_RUN"
+  }
+}

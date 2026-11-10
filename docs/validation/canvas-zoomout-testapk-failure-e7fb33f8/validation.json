@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "status": "ARCHIVE_VERIFIED",
+  "buildStatus": "FAILED_BUILD",
+  "nativeStatus": "NOT_RUN",
+  "inputs": 18,
+  "rawBytes": 16571413,
+  "archiveBytes": 1932706,
+  "offlineTests": {
+    "passed": 5,
+    "cases": [
+      "portable verification without original paths",
+      "raw tamper rejected",
+      "rehashed false success rejected",
+      "rehashed incomplete graph rejected",
+      "rehashed nonzero gzip mtime rejected"
+    ]
+  },
+  "independentReview": {
+    "reviewer": "/root/merge_backlog_catalog/zoom_capture_review/failed_build_packet_review",
+    "decision": "APPROVED",
+    "scope": "Read-only raw/origin, metadata, verifier and documentation review; archive verification and five pure tests",
+    "indexSha256": "862d02cbe3f0112607f4fe312b211fa075186e6044b4efd280fa7cab834d4221",
+    "verifierSha256": "557964a7afcb851bb05c8b8bd59fb855df61353990bcd9d2bea11479a52fa68e",
+    "initialReadmeSha256": "b33be7761367ae8fad7367d90e9b6f393dc4355294df1a1066431868490afbe3",
+    "finalReadmeSha256": "ea496359b2c56663f6c0a96ee49909e1d535b6176ca85d9cd738192a291671b7",
+    "subsequentEditorialChange": "Removed inference about compiler task body; states only that the build failed during property evaluation."
+  },
+  "limits": [
+    "Archive integrity does not qualify a successful build or Native execution.",
+    "Copied scripts and Gradle files were not executed.",
+    "No working build or producer checkout was changed by this archive task."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "transitionLimitSeconds": 30,
+  "totalLimitSeconds": 90,
+  "maximumActions": 3,
+  "events": [
+    {
+      "seconds": 0.0,
+      "phase": "presentation",
+      "kind": "start"
+    },
+    {
+      "seconds": 3.457,
+      "phase": "presentation",
+      "kind": "screen",
+      "querySeconds": 3.4569,
+      "timeoutSeconds": 30.0
+    },
+    {
+      "seconds": 3.457,
+      "phase": "roots-open",
+      "kind": "tap",
+      "action": 1,
+      "text": "",
+      "description": "Show roots",
+      "resourceId": ""
+    },
+    {
+      "seconds": 3.5528,
+      "phase": "roots-open",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0958
+    },
+    {
+      "seconds": 6.3986,
+      "phase": "roots-open",
+      "kind": "screen",
+      "querySeconds": 2.8458,
+      "timeoutSeconds": 29.9042
+    },
+    {
+      "seconds": 6.4222,
+      "phase": "roots-open",
+      "kind": "device-model",
+      "querySeconds": 0.0234
+    },
+    {
+      "seconds": 6.4222,
+      "phase": "location-content",
+      "kind": "tap",
+      "action": 2,
+      "text": "sdk_gphone64_arm64",
+      "description": "",
+      "resourceId": "android:id/title"
+    },
+    {
+      "seconds": 6.4739,
+      "phase": "location-content",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0517
+    },
+    {
+      "seconds": 10.2484,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 3.7745,
+      "timeoutSeconds": 29.9483
+    },
+    {
+      "seconds": 10.2485,
+      "phase": "download-content",
+      "kind": "tap",
+      "action": 3,
+      "text": "Download",
+      "description": "",
+      "resourceId": "android:id/title"
+    },
+    {
+      "seconds": 10.306,
+      "phase": "download-content",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0575
+    },
+    {
+      "seconds": 12.7105,
+      "phase": "download-content",
+      "kind": "screen",
+      "querySeconds": 2.4045,
+      "timeoutSeconds": 29.9425
+    },
+    {
+      "seconds": 12.7106,
+      "phase": "download-content",
+      "kind": "finish",
+      "actions": 3
+    }
+  ],
+  "status": "PASSED"
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0" version="1.0" qualification="portable53-v1" qualification-source="main53">
+  <lib name="w" desc="#Wiring"/>
+  <lib name="bridge" desc="file#./library/bridge.circ" qualification-library="bridge53"/>
+  <main name="Top53" marker="main53"/>
+  <circuit name="Top53" id="circuit-top53">
+    <comp lib="w" name="Constant" loc="(100,100)" logisim-mobile-id="source-first53"><a name="width" val="8"/><a name="value" val="0x08"/><a name="label" val="SOURCE_FIRST53"/></comp>
+    <comp lib="bridge" name="Bridge53" loc="(200,100)" logisim-mobile-id="instance-first53"><a name="label" val="FIRST53"/></comp>
+    <comp lib="w" name="Pin" loc="(300,100)" logisim-mobile-id="out-first53"><a name="type" val="output"/><a name="facing" val="west"/><a name="width" val="8"/><a name="label" val="OUT_FIRST53"/><a name="radix" val="2"/></comp>
+    <comp lib="w" name="Constant" loc="(100,300)" logisim-mobile-id="source-second53"><a name="width" val="8"/><a name="value" val="0x03"/><a name="label" val="SOURCE_SECOND53"/></comp>
+    <comp lib="bridge" name="Bridge53" loc="(200,300)" logisim-mobile-id="instance-second53"><a name="label" val="SECOND53"/></comp>
+    <comp lib="w" name="Pin" loc="(300,300)" logisim-mobile-id="out-second53"><a name="type" val="output"/><a name="facing" val="west"/><a name="width" val="8"/><a name="label" val="OUT_SECOND53"/><a name="radix" val="2"/></comp>
+    <wire from="(100,100)" to="(160,100)"/><wire from="(240,100)" to="(300,100)"/>
+    <wire from="(100,300)" to="(160,300)"/><wire from="(240,300)" to="(300,300)"/>
+  </circuit>
+</project>

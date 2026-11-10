@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "status": "ARCHIVE_VERIFIED",
+  "buildStatus": "TEST_APK_BUILD_PASS",
+  "nativeStatus": "NOT_RUN",
+  "qualification": "BUILD_ONLY_FROZEN_PRODUCTION_INPUTS",
+  "inputs": 21,
+  "rawBytes": 12083906,
+  "archiveBytes": 1500596,
+  "localArtifactChecks": 4,
+  "offlineTests": {
+    "passed": 5,
+    "cases": [
+      "portable verification without origin or local artifact paths",
+      "raw log tamper rejected",
+      "rehashed marker work rejected across matching receipts",
+      "rehashed Native success rejected",
+      "rehashed wrong Compose UI version rejected"
+    ]
+  },
+  "independentReview": {
+    "reviewer": "/root/merge_backlog_catalog/test_apk_dependency_audit",
+    "decision": "APPROVED_FOR_DOCS_COMMIT",
+    "scope": "Read-only comparison of all 21 raw inputs with OUT002, task graph/marker, README, portable and local artifact verification, and five pure tests",
+    "indexSha256": "e9c7aaec61bb90007dc1c606e4244bd6758878cffd0c858575b2c6513aa60ed7",
+    "readmeSha256": "0d6354868a30959c37e34269b67aabe3713ba26fce9d078b1ae9e74f38e3f54f",
+    "verifierSha256": "6e22a48e2eed05cd35efe7e073c619ebd1aa7bc4b32fbd54c6ec69c3a4f0bd99"
+  },
+  "limits": [
+    "Native execution is not qualified by this build archive.",
+    "Copied build scripts and Gradle guard were not executed by the archive task.",
+    "The earlier failed build archive remains unchanged."
+  ]
+}

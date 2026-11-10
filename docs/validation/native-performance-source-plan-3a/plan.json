@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "status": "SOURCE_PLAN_ONLY_NOT_RUN",
+  "source_audit_pin": "be821079d1582ad13b6e1efdba3f721800ab198c",
+  "product_pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "product_files_changed_from_artifact_to_audit": [],
+  "scope": "Artifact filesystem checks and source/plan only. No device inventory, app launch, process sampling, Native, benchmark, JFR, build, hardware or quiet-window reservation.",
+  "android": {
+    "manifest": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/5c2abc60/manifest.json",
+    "manifest_sha256": "1684bbbe5623d4d4807d2d7dea9b34025985f10269644ba5e5c829f7f2b7fc8e",
+    "helper_source": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+    "app_producer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "files_verified": [
+      {
+        "path": "e2e_apk.apk",
+        "bytes": 16298862,
+        "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+      },
+      {
+        "path": "e2e_test_apk.apk",
+        "bytes": 221322,
+        "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+      },
+      {
+        "path": "snapshot_apk.apk",
+        "bytes": 965334,
+        "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+      }
+    ],
+    "collector_app_sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+  },
+  "ios": {
+    "manifest": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/artifact.json",
+    "manifest_sha256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+    "app": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "harness_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+    "harness_tree_algorithm": "Iterate sorted pathlib.Path objects by components; serialize each relative POSIX path+NUL+file SHA256 hex+newline, matching runner artifact().",
+    "collector_bundle_sha256": "38373c28ccd9316e57cb45536bfe9195b65261d53a3b22cc18ba371fa06613c7",
+    "collector_bundle_algorithm": "SHA256 of canonical JSON entries sorted by relative path, with file hashes and resolved internal symlinks; profile-ios-simulator.bundle_fingerprint",
+    "executable_sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+    "debug_dylib_sha256": "84c64e315e959842ae92b0891c6895e40aa2f70496eaf6c1a228a2140ed202fb",
+    "bundle_files": 12,
+    "fresh_launch_required": true,
+    "dynamic_loaded_image_census": "Not implemented by the existing sampler; disk bundle hashes and main executable loaded UUID are checked.",
+    "filesystem_hash_algorithm_unchanged_by_host_fix": true
+  },
+  "corpus": {
+    "manifest_sha256": "295571568422db33a280e9c0a52b322982cfa7f57c10e297fd70a788d7596f58",
+    "cases": [
+      {
+        "file": "independent-16.circ",
+        "bytes": 16109,
+        "sha256": "19198a15e4880baccd3d00391f257c766a8be0859daae1ca721d3d8ed7c12a31",
+        "banks": 16,
+        "main_components": 64,
+        "main_wires": 16,
+        "import_status": "accepted"
+      },
+      {
+        "file": "independent-384.circ",
+        "bytes": 384036,
+        "sha256": "6b7593a012694a5aa75989516e7d6374b442e6f9fe1b50f95ade667dab1bee67",
+        "banks": 384,
+        "main_components": 1536,
+        "main_wires": 384,
+        "import_status": "accepted"
+      }
+    ],
+    "rejected_1024": "Not a drawable/performance load; preserve historical parser rejections.",
+    "first_case": "independent-16.circ",
+    "growth_case_after_pilot": "independent-384.circ"
+  },
+  "minimum_next_unit": {
+    "id": "android-input-idle-independent16",
+    "runtime_status": "NOT_RUN",
+    "requested_seconds": 20,
+    "requested_interval_seconds": 1,
+    "new_app_or_test_apk_build_required": false,
+    "new_product_instrumentation_required": false,
+    "setup": "Owner uses frozen e2e artifacts and existing Scenarios.fixture exact bytes, incoming VIEW Import copy, generic canonical XML export, Fit and unique paused Canvas evidence. No UI setup or snapshot calls during the sample window.",
+    "driver_during_window": "No input; Run must be available and Pause absent. This means input-idle, not proof of worker, GC or renderer inactivity.",
+    "completion": "Canonical project XML unchanged before/after; artifact and PID/start identity maintained; raw collector data retained. Partial or missing sensors remain partial, not performance PASS.",
+    "not_qualified": [
+      "isolated codec/draw time",
+      "pointer or keyboard delivery latency/ACK",
+      "recomposition or invalidation count",
+      "motor cancellation latency",
+      "retained-memory/leak claims",
+      "physical-device CPU/frame/energy budgets"
+    ]
+  },
+  "android_readiness_qualifier": {
+    "status": "SOURCE_ONLY_OFFLINE_CHECKS",
+    "source_base": "c6edd6b1a38466fc8ee9a936313f7f18ee56682b",
+    "implementation": "scripts/android_performance_readiness.py",
+    "tests": "scripts/tests/test_android_performance_readiness.py",
+    "offline_tests_passed": 9,
+    "archive_bytes_unchanged": true,
+    "native_execution_performed": false,
+    "recorded_attempt": {
+      "receipt": "docs/performance-evidence/android-3a-input-idle16-001",
+      "status": "FAIL",
+      "sampling_started": false,
+      "canonical_xml_exported": false,
+      "failure": "Scenarios.incoming waited for the mutable status_file_opened control; the archived report and final editor do not supply that status."
+    },
+    "offline_fixtures": {
+      "archive": "docs/performance-evidence/android-3a-input-idle16-001/raw-attempt.zip",
+      "archive_sha256": "d26cba82aed3662406ec760c32f0e146424550a43ceb5428b82ef568e7796c23",
+      "report_tree": "import-report-1-ui.xml",
+      "editor_tree": "adb/0077-stdout",
+      "model": "source-independent-16.circ is historical input XML, not a Native canonical export."
+    },
+    "report_contract": "Exact provider fixture UUID filename, one locale's report title, source 3.8.0/one circuit, the #321 rename notice \"gates-16\" -> gates_16_0da774a5 (Evolution generateValidVHDLLabel, Mobile stable suffix), a gates_16_0da774a5 summary and Close; reject visible errors or another fixture UUID.",
+    "editor_contract": "Unique visible Canvas by localized description, unique Run via content-desc, no Pause and exactly Steps 0. No mutable status requirement.",
+    "model_contract": "One gates_16_0da774a5 circuit (gates-16 renamed on open, #321), 48 unique labelled 8-bit pins (a-N, b-N, out-N renamed the same way) and 16 east-facing AND gates, historical locations and all 16 wire endpoints. Resolve library descriptors, normalize coordinate spaces and compare multisets with undirected wires; allow added default attributes.",
+    "driver_integration": "NOT_IMPLEMENTED; Scenarios.incoming and the archived driver are unchanged.",
+    "native_readiness": "NOT_VALIDATED",
+    "limits": "Pure checks qualify supplied snapshots only. They do not establish live fixture/editor/export/PID correlation, complete default or metadata equivalence, XML equivalence, or a Native performance observation. The next driver must obtain and validate the actual exported Native document. The prior JVM replay is separate functional evidence."
+  },
+  "following_units": [
+    "Repeat the same observed input-idle unit on independent-384 after pilot channel is qualified; report descriptive per-corpus values without claiming paired causal scaling.",
+    "Keyboard viewport pilot only after proving Canvas focus, no selection, one-way pan/zoom effect and XML invariance outside the timed window. Existing mixed-input cases replace their fixture and cannot be used unchanged.",
+    "SAP continuous then background process windows with logical state and frequency recorded; no claim of exact job stop latency.",
+    "Physical phone/tablet and energy budgets last, as requested."
+  ],
+  "source_sha256": {
+    "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDocumentActions.kt": "99c6a020a69c23d0265cb182887115452c40700f88c7a2c9d5bb95b1a1200c71",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnnotationImageDecoder.kt": "4f214c68ee5192eb55319f2e96a7752895672482f1bd3b355a1c15b1e8580531",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt": "133564a2cb23e5e58068f88e5014761b104d505ac707a0e02c573261375a98d2",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt": "faf7125a49b0d8651359d4ff7ff26c0034e8cf80db6b4facf2f45e64fe63b6bf",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitDrawing.kt": "2bee5088b249fa1d45d78b9f031d1b610dab590d5c1186071ca85a3e811cc6f2",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorState.kt": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SimulationRunController.kt": "f57d04ed6b92fac33bfd720bbb153538cfa0299f0812dfb4f229b014008aefd5",
+    "composeApp/src/commonTest/kotlin/dev/logisim/mobile/CircuitDrawingTest.kt": "8d69bffb465de9f7a0e5968e02245ca2ca3ddbe933520a5282684d12148f7ae7",
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitSimulator.kt": "973ecad7d3895f0317fab6611640a67703ef77972e59ad7d2e541f4fe02209e8",
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/ComponentAttributes.kt": "da8b12e35e5d4653e2c265a79533c3b5188fcd81572a251518748298dcabb376",
+    "core/src/commonTest/kotlin/dev/logisim/mobile/core/SpatialIndexTest.kt": "4312062150b1f528e8cbbbfede158d0a8fbdd1cf01fa627f7848b48c95450c77",
+    "scripts/e2e-android.py": "75e7780afe74a0e5e8389019eb7cb1a1a52ebe944008a3cb3677d0b45c1b1c9c",
+    "scripts/profile-android-circuit.py": "8536f6c20055957d1d016d6f0d6e0df4ffe15a5572124a3bf81fc6083d287f50",
+    "scripts/profile-ios-simulator.py": "56149c5705df7a5a9b206ba761d2493b691b325f958c58ef28c6549831d5bbb5"
+  },
+  "source_hash_snapshot_revision": "597432f9ce83d5300a670133c4e406bda8a81e15",
+  "host_sampler_required_commit": "597432f9ce83d5300a670133c4e406bda8a81e15",
+  "host_sampler_fix": "Remove process-argument query; retain executable identity and arguments_collected=false. Sixteen synthetic-fixture tests pass; no runtime sample.",
+  "historical_receipt_dependency": {
+    "original_commit": "fd52c5ef0961b4e33ccefb62c28697560218b93b",
+    "path_after_root_integration": "docs/performance-evidence/historical-replay-29942df3/historical-inputs.zip",
+    "available_retained_path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-historical-replay-receipt/docs/performance-evidence/historical-replay-29942df3/historical-inputs.zip",
+    "scope": "The source-audit base does not contain this receipt. Integrate it or its Root cherry-pick before using the repository-relative reproduction path."
+  }
+}

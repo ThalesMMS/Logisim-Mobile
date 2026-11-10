@@ -1,0 +1,115 @@
+{
+ "schema": 1,
+ "issue": 314,
+ "related": [
+  324,
+  236
+ ],
+ "evolution_revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+ "mobile_revision": "1295aeadcb8b594f77e95d58d54a673159276832",
+ "tested_tree": "origin/main 1295aead; only scripts/ios_fpga_ui/ShortcutRemapEndToEndTests.swift (test harness, not in the app) changed for the new toolbar numbering.",
+ "reason": "Re-run after 4a3b2ae1/fb180b4b (#324): new projects take Evolution's default.templ toolbar (Poke, Edit, Wiring, Text, Image | Pin in, Pin out | NOT, AND, OR, XOR, NAND, NOR | D Flip-Flop, Register), so Ctrl+5 is Image, Ctrl+8 NOT, Ctrl+9 AND and tool 11 XOR, as in Evolution's KeyboardToolSelection (nth selectable toolbar item). Supersedes the tool numbering of receipt.json (494bf291), which stays as history.",
+ "android": {
+  "status": "PASS",
+  "platform": "emulator",
+  "avd": "t324hk (API 35 google_apis arm64, pixel_tablet 2560x1600, hw.keyboard=yes, -gpu host)",
+  "serial": "emulator-5564",
+  "apk": "androidApp-debug.apk, ./gradlew :androidApp:assembleDebug at 1295aead",
+  "injection": "adb shell input keyboard keycombination / input keyevent; observation by uiautomator dump",
+  "project": "built-in example Minha_primeira_porta_AND (no own toolbar, so Evolution's default toolbar) plus a new empty circuit hk",
+  "steps": [
+   [
+    "Ctrl+1 … Ctrl+0",
+    "status per tool: 1 Poke ('Tap an input to toggle'), 2 Edit, 3 Wiring, 4 Text tool, 5 'Tap the grid to insert Image.', 6 Input, 7 Output, 8 NOT, 9 AND, 0 OR"
+   ],
+   [
+    "Ctrl+9, W, =, R, tap (circuit hk)",
+    "placed AND: Facing South, Gate size 70, Number of inputs 3"
+   ],
+   [
+    "M, - on the selection",
+    "Gate size 50, Number of inputs 2; zoom unchanged (399%)"
+   ],
+   [
+    "Insert, tap destination",
+    "'Now tap the destination.', then '1 component pasted.' (2 components)"
+   ],
+   [
+    "- with nothing selected",
+    "zoom 399% -> 319%"
+   ],
+   [
+    "Shift, Shift",
+    "Find Action opened (Commands heading)"
+   ],
+   [
+    "Ctrl+Shift+E",
+    "Export circuit drawing panel opened (PNG/PDF)"
+   ],
+   [
+    "Ctrl+P",
+    "Export circuit drawing panel opened (Print PDF)"
+   ],
+   [
+    "Ctrl+Shift+U then Ctrl+Shift+D (circuit hk)",
+    "'Circuit order updated.': hk moved above Minha_primeira_porta_AND, then back"
+   ],
+   [
+    "Preferences: double Shift off; Tool 11 row '—'; Ctrl+S in its field",
+    "'Already assigned to Save.'"
+   ],
+   [
+    "Ctrl+J, Apply, Ctrl+J in editor",
+    "row 'Ctrl+J'; 'Tap the grid to insert XOR.' (toolbar tool 11); Shift, Shift does not open Find Action"
+   ],
+   [
+    "force-stop and relaunch",
+    "Ctrl+J still selects XOR; double Shift still off"
+   ],
+   [
+    "Restore shortcut defaults",
+    "restore disabled, Tool 11 row '—', double Shift on, Ctrl+J inert, Shift, Shift opens Find Action"
+   ],
+   [
+    "LED tool: H, L (Auto Label 'l1'), place; V; T",
+    "Show label Disabled at placement with label l1; V -> Enabled; T -> Disabled"
+   ],
+   [
+    "Ctrl+Shift+W",
+    "workspace project list with Close session"
+   ]
+  ]
+ },
+ "ios": {
+  "status": "PASS",
+  "device": "t324 iPad (iPad Pro 11-inch (M5))",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-2",
+  "physical_device": false,
+  "command": "python3 scripts/run-ios-fpga-tick.py --simulator <udid> --baseline-sha 1295aead… --app iosApp/Build/Products/Debug-iphonesimulator/LogisimMobile.app --output <new dir> --only-testing ShortcutRemapEndToEndTests/testEvolutionHotkeysWithHardwareKeys",
+  "artifact": {
+   "bundle_id": "thalesmms.logisim.mobile",
+   "executable_sha256": "300cf7cd2ac626426d18f93fb1c37eec94102d92537d092ab3f5a77f08d8184a",
+   "bundle_tree_sha256": "ddc1c9716d6517372cd538d41c4f3b0cefb1916ec80fbe8cfa5f167b6c64bfe4",
+   "version": "0.2.0",
+   "build": "2"
+  },
+  "test_summary": {
+   "result": "Passed",
+   "totalTestCount": 1,
+   "passedTests": 1,
+   "failedTests": 0
+  },
+  "observations": {
+   "314-double-shift": "double-shift first=578ms opened=false; first=274ms opened=true",
+   "314-2-export": "314-2-export opened=true",
+   "314-3-print": "314-3-print opened=true",
+   "314-tool-numbers": "⌘5=Image:true ⌘8=NOT:true ⌘9=AND:true",
+   "314-placed-inspector": "Facing=South Gate size=70 Number of inputs=3",
+   "314-edited-inspector": "Facing=South Gate size=50 Number of inputs=2",
+   "314-applied-row": "Select toolbar tool 11, ⌘+J | Select toolbar tool 11 | ⌘+J",
+   "314-remapped-tool": "⌘J selects XOR=true",
+   "314-close": "close opened projects=true"
+  },
+  "double_shift": "Proven on the second attempt (presses 274 ms apart); the first pair (578 ms) fell outside Evolution's 300 ms window, as the test allows."
+ }
+}

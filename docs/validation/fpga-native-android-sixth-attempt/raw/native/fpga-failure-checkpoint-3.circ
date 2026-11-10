@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="Minha primeira porta AND"/>
+  <circuit name="Minha primeira porta AND" id="Minha primeira porta AND">
+    <comp loc="(100,100)" logisim-mobile-id="a" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp loc="(100,200)" logisim-mobile-id="b" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp loc="(300,150)" logisim-mobile-id="and" name="AND Gate" lib="1">
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+      <a name="size" val="50"/>
+      <a name="inputs" val="2"/>
+      <a name="out" val="01"/>
+      <a name="label" val="AND"/>
+    </comp>
+    <comp loc="(420,150)" logisim-mobile-id="out" name="Pin" lib="0">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="Saída"/>
+    </comp>
+    <wire from="(100,100)" to="(200,100)"/>
+    <wire from="(200,100)" to="(200,130)"/>
+    <wire from="(200,130)" to="(250,130)"/>
+    <wire from="(100,200)" to="(220,200)"/>
+    <wire from="(220,200)" to="(220,170)"/>
+    <wire from="(220,170)" to="(250,170)"/>
+    <wire from="(300,150)" to="(420,150)"/>
+  </circuit>
+</project>

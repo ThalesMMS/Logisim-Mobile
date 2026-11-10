@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "scope": "SOURCE_PREPARATION_ONLY",
+  "sourceCommit": "da35a428b24ca7a5d8678558a6679963fb501319",
+  "initialScenarioCommit": "0294ef605e5b78fa441461e978071cf0cee74b07",
+  "initialEvidenceCommit": "ac9fffe07549ffe0192e526befc47b9cfb193ada",
+  "recordedUTC": "2026-11-05T10:28:26.221697+00:00",
+  "scopeGates": {
+    "nativeAuthentication": "NOT_RUN",
+    "newProviderLocationSelectors": "PENDING_RUNTIME",
+    "runtimeLease": null,
+    "issue26": "OPEN"
+  },
+  "checks": {
+    "pythonPassed": 30,
+    "sdkTypecheckExitCode": 0,
+    "sdkSourceSHA256": {
+      "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "7d4867f8f90e5a9f305c10cb070ef4792e480fd0070b989b344d8fb1912dade2",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "07309fa9e17ee4cc8f9badf39ba97021d4df96eab6266fb88c2ab38aac385211",
+      "scripts/ios_provider_auth_ui/ProviderFixtureController.swift": "093f3267b29fe8e75fa12d21e50f906d5f6492b8bdd1d888cb422fd2f55504a2",
+      "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift": "c1456b52f89dffe9e0692a4956d36aadb565d4c5754b8cda9b068ed3f17f2225"
+    },
+    "pureOracle": "36/36 initial checks; same unchanged Oracle7d4867f8 hash",
+    "prepare": "PREPARED; Native/test NOT_RUN; no Simulator UUID or root lease",
+    "peerReview": "PASS"
+  },
+  "buildSerialization": {
+    "wrapper": "/tmp/logisim-gradle-serial.py",
+    "wrapperSHA256": "61fb2ff0e8e1969b80c2880424683834a5dcd3cdcf79450a40dba15dc4f6471b",
+    "scope": "BUILD_FOR_TESTING_ONLY",
+    "wrapperExecutedDuringChecks": false,
+    "realLockAccessedDuringChecks": false,
+    "supervisor": "Popen start_new_session=True, no outer timeout; defer interrupt until natural completion; no XCTest after interrupt/nonzero",
+    "testExecution": "Direct xcodebuild, outside shared build wrapper",
+    "caseAllowanceSeconds": 1200,
+    "deviceLease": "Separate ROOT authorization required"
+  },
+  "limits": [
+    "No Native build/test, Simulator query/install/launch, registration or provider authentication operation occurred.",
+    "Only read-only artifact inspection, XcodeGen, Python mocks and SDK typechecking were performed.",
+    "The native provider location has not been observed; no acceptance status was promoted."
+  ]
+}

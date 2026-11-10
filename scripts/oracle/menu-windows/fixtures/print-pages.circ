@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" loc="(100,100)" name="Pin"><a name="label" val="a"/></comp>
+    <comp lib="0" loc="(100,140)" name="Pin"><a name="label" val="b"/></comp>
+    <comp lib="1" loc="(200,120)" name="AND Gate"><a name="inputs" val="2"/></comp>
+    <comp lib="0" loc="(250,120)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="label" val="y"/></comp>
+    <wire from="(100,100)" to="(150,100)"/>
+    <wire from="(100,140)" to="(150,140)"/>
+    <wire from="(200,120)" to="(250,120)"/>
+  </circuit>
+  <circuit name="empty">
+    
+  </circuit>
+  <circuit name="wide">
+    <wire from="(40,100)" to="(1640,100)"/>
+    <wire from="(1640,100)" to="(1640,120)"/>
+  </circuit>
+  <circuit name="tall">
+    <wire from="(100,40)" to="(100,1640)"/>
+    <wire from="(100,1640)" to="(130,1640)"/>
+  </circuit>
+  <circuit name="huge">
+    <wire from="(20,20)" to="(2020,20)"/>
+    <wire from="(2020,20)" to="(2020,2020)"/>
+    <wire from="(20,20)" to="(20,2020)"/>
+  </circuit>
+  <circuit name="tiny">
+    <wire from="(60,60)" to="(80,60)"/>
+  </circuit>
+  <circuit name="rotate_edge">
+    <wire from="(20,50)" to="(540,50)"/>
+    <wire from="(540,50)" to="(540,100)"/>
+  </circuit>
+  <circuit name="keep_edge">
+    <wire from="(20,50)" to="(500,50)"/>
+    <wire from="(500,50)" to="(500,60)"/>
+  </circuit>
+  <circuit name="Circuito_longo">
+    <wire from="(30,30)" to="(300,30)"/>
+    <wire from="(300,30)" to="(300,400)"/>
+  </circuit>
+</project>

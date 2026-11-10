@@ -1,0 +1,70 @@
+{
+  "transitionLimitSeconds": 30,
+  "totalLimitSeconds": 90,
+  "maximumActions": 3,
+  "events": [
+    {
+      "seconds": 0.0,
+      "phase": "presentation",
+      "kind": "start"
+    },
+    {
+      "seconds": 5.216,
+      "phase": "presentation",
+      "kind": "screen",
+      "querySeconds": 5.2159,
+      "timeoutSeconds": 30.0
+    },
+    {
+      "seconds": 5.216,
+      "phase": "roots-open",
+      "kind": "tap",
+      "action": 1,
+      "text": "",
+      "description": "Show roots",
+      "resourceId": ""
+    },
+    {
+      "seconds": 5.2446,
+      "phase": "roots-open",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0286
+    },
+    {
+      "seconds": 8.1112,
+      "phase": "roots-open",
+      "kind": "screen",
+      "querySeconds": 2.8665,
+      "timeoutSeconds": 29.9714
+    },
+    {
+      "seconds": 8.1113,
+      "phase": "location-content",
+      "kind": "tap",
+      "action": 2,
+      "text": "Downloads",
+      "description": "",
+      "resourceId": "android:id/title"
+    },
+    {
+      "seconds": 8.2092,
+      "phase": "location-content",
+      "kind": "tap-finished",
+      "actionSeconds": 0.098
+    },
+    {
+      "seconds": 10.6522,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.4429,
+      "timeoutSeconds": 29.902
+    },
+    {
+      "seconds": 10.6523,
+      "phase": "location-content",
+      "kind": "finish",
+      "actions": 2
+    }
+  ],
+  "status": "PASSED"
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0-dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="main"/>
+  <circuit name="main" id="fpga-native-main">
+    <comp lib="0" loc="(100,80)" logisim-mobile-id="fpga-a" name="Pin">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelloc" val="west"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <comp lib="0" loc="(100,120)" logisim-mobile-id="fpga-b" name="Pin">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelloc" val="west"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <comp lib="1" loc="(200,100)" logisim-mobile-id="fpga-and" name="AND Gate">
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+      <a name="size" val="50"/>
+      <a name="inputs" val="2"/>
+      <a name="out" val="01"/>
+      <a name="label" val="AND"/>
+    </comp>
+    <comp lib="0" loc="(300,100)" logisim-mobile-id="fpga-y" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="y"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelloc" val="west"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <wire from="(100,80)" to="(150,80)"/>
+    <wire from="(100,120)" to="(150,120)"/>
+    <wire from="(200,100)" to="(300,100)"/>
+  </circuit>
+</project>

@@ -1,0 +1,83 @@
+{
+  "scope": "single approved iOS I/O call plus passive recording; no input from recorder",
+  "startedUTC": "2026-11-05T09:33:35.732100+00:00",
+  "hostMonotonicBeforeRecording": 217093.918009916,
+  "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+  "argv": [
+    "python3",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/scripts/run-ios-e2e.py",
+    "--simulator",
+    "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "--bundle-id",
+    "thalesmms.logisim.mobile",
+    "--baseline-sha",
+    "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "--catalog-root",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1",
+    "--app",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "--output",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001",
+    "--derived-data",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/DerivedData",
+    "--test-timeout",
+    "600",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDimensionChangesRemainExportable",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoMomentaryControlsAndJoystick",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoKeyboardTtyAndCapacity"
+  ],
+  "videoArgv": [
+    "xcrun",
+    "simctl",
+    "io",
+    "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "recordVideo",
+    "--codec=h264",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001-video/screen.mp4"
+  ],
+  "sourceHead": "0732f74f1483bdccdc6c40abd9670bf00d45822a",
+  "selectedTests": [
+    "EditorEndToEndTests/IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDimensionChangesRemainExportable",
+    "EditorEndToEndTests/IoEndToEndTests/testIoMomentaryControlsAndJoystick",
+    "EditorEndToEndTests/IoEndToEndTests/testIoKeyboardTtyAndCapacity"
+  ],
+  "caseEvents": [
+    {
+      "observedHostUTC": "2026-11-05T09:33:57.722251+00:00",
+      "source": "test.log",
+      "line": "Test Case '-[EditorEndToEndTests.IoEndToEndTests testIoDimensionChangesRemainExportable]' started."
+    },
+    {
+      "observedHostUTC": "2026-11-05T09:34:17.843889+00:00",
+      "source": "test.log",
+      "line": "Test Case '-[EditorEndToEndTests.IoEndToEndTests testIoDisplaySignalsAndNativeDrawing]' started."
+    }
+  ],
+  "infraAbort": {
+    "observedHostUTC": "2026-11-05T09:34:17.843534+00:00",
+    "source": "test.log",
+    "line": "Restarting after unexpected exit, crash, or test timeout; summary will include totals from previous launches."
+  },
+  "clockAssociation": "NOT_QUALIFIED",
+  "functionalHeldQualification": "NOT_INFERRED",
+  "videoPid": 34668,
+  "videoStartRequestedUTC": "2026-11-05T09:33:35.734022+00:00",
+  "runnerPid": 34686,
+  "runnerStartedUTC": "2026-11-05T09:33:36.558071+00:00",
+  "runnerExit": 130,
+  "runnerTerminalUTC": "2026-11-05T09:34:20.142166+00:00",
+  "videoStopRequestedUTC": "2026-11-05T09:34:20.142420+00:00",
+  "videoExit": 0,
+  "finishedUTC": "2026-11-05T09:34:20.203208+00:00",
+  "videoFile": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001-video/screen.mp4",
+    "bytes": 31070896,
+    "sha256": "6fade7ed8e82acca693a948feb7730dbed5fe5dd8aca59065159e31a8ee827f9"
+  }
+}

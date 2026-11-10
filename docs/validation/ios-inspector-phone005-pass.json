@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "scope": "One selected Inspector case on Phone21 iPhone Simulator only",
+  "nativeExecutionGate": "NATIVE_PASS",
+  "wholeSuiteQualification": "PARTIAL",
+  "test": "EditorEndToEndTests/InspectorEndToEndTests/testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction",
+  "durationSeconds": 173.818,
+  "selectedTests": 1,
+  "failedTests": 0,
+  "wrapperSession": 50019,
+  "wrapperExitCode": 0,
+  "runID": "0f173a9f1502",
+  "device": {
+    "leaseAlias": "Phone21",
+    "name": "iPhone 17e",
+    "udid": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+    "physicalDevice": false
+  },
+  "sourceAppCommit": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "validationCommit": "85da031e4ed11474c2e763976392729810ef142d",
+  "sourceHarnessCommit": "1b5f5e424a4dd7c28fbdfbc37567d7d3b952c11c",
+  "appArtifactManifestSHA256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+  "appBundleTreeSHA256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+  "appExecutableSHA256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+  "inspectorHarnessSHA256": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+  "evidenceDirectory": "artifacts/ios-inspector-phone005-pass",
+  "evidenceManifestSHA256": "46637fbe90165cb1131837428438cc4c1294c89ceb82ebcb49030fcf35459c49",
+  "xml": {
+    "before": {
+      "file": "before.circ",
+      "bytes": 481,
+      "sha256": "2d0c873e42b8a636a73aec2859a069a036983ae33420de501f36cb82b4b1bc71"
+    },
+    "invalid": {
+      "file": "after-invalid.circ",
+      "bytes": 481,
+      "sha256": "2d0c873e42b8a636a73aec2859a069a036983ae33420de501f36cb82b4b1bc71"
+    },
+    "width4": {
+      "file": "width4.circ",
+      "bytes": 481,
+      "sha256": "047088d76cb36f19f98ebc8d277f25e3b0cc6046021603f33ad57454ac44cfcb"
+    },
+    "undo": {
+      "file": "after-one-undo.circ",
+      "bytes": 481,
+      "sha256": "2d0c873e42b8a636a73aec2859a069a036983ae33420de501f36cb82b4b1bc71"
+    }
+  },
+  "observedTransitions": [
+    {
+      "typed": "0",
+      "rootValues": [
+        "1",
+        null,
+        "0"
+      ],
+      "emptyValueAttribute": "omitted in root diagnostic; exact empty String asserted by runtime test"
+    },
+    {
+      "typed": "4",
+      "rootValues": [
+        "1",
+        null,
+        "4"
+      ],
+      "emptyValueAttribute": "omitted in root diagnostic; exact empty String asserted by runtime test"
+    }
+  ],
+  "applyGeometry": {
+    "invalidFrame": [
+      267.3333435058594,
+      482.3333435058594,
+      63.666656494140625,
+      48.000030517578125
+    ],
+    "validFrame": [
+      267.3333435058594,
+      468.3333435058594,
+      63.666656494140625,
+      48.000030517578125
+    ],
+    "inputViewTop": 542.0,
+    "invalidGapPoints": 11.6666259765625,
+    "validGapPoints": 25.6666259765625
+  },
+  "limits": [
+    "Selected iPhone Simulator case only; whole-suite qualification remains PARTIAL",
+    "No Select All, Cmd+A, multiselection, physical-device, or global issue-closure claim",
+    "Root Attributes focus text is a version-dependent diagnostic, not a supported keyboard-focus API",
+    "Raw geometry does not by itself prove enabled state or hittability",
+    "App identity comparison is preserved from the independent postflight; this packaging does not rehash live app binaries",
+    "Four earlier failed attempts remain separate evidence and are not superseded"
+  ]
+}

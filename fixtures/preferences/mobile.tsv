@@ -1,0 +1,422 @@
+pref	GATE_SHAPE	default	shaped
+pref	GATE_SHAPE	options	shaped,rectangular,din40700
+locale-default	ru	GATE_SHAPE	rectangular
+locale-default	pt	GATE_SHAPE	shaped
+template	TEMPLATE_TYPE	default	plain
+template	TEMPLATE_TYPE	options	empty,plain,custom
+pref	LOCALE	default	
+pref	LOCALE	options	pt,en,de,el,es,fr,it,ja,nl,pl,ru,tr,zh
+pref	HdlType	default	VHDL
+pref	HdlType	options	VHDL,Verilog,None
+pref	SuppressGatedClockWarnings	default	false
+pref	SuppressOpenPinWarnings	default	false
+pref	VhdlKeywordsUpperCase	default	true
+pref	SHOW_TICK_RATE	default	false
+pref	TOOLBAR_PLACEMENT	default	north
+pref	TOOLBAR_PLACEMENT	options	north,south,west,east,downMiddle,hidden
+pref	USE_HEADER_BAR	default	true
+pref	FollowSystemTheme	default	true
+pref	LIGHT_EDITOR_THEME	default	default
+pref	LIGHT_EDITOR_THEME	options	default,dark,monokai,eclipse,idea,vs,druid
+pref	DARK_EDITOR_THEME	default	dark
+pref	DARK_EDITOR_THEME	options	default,dark,monokai,eclipse,idea,vs,druid
+pref	ATTRIBUTE_HALO	default	true
+pref	COMPONENT_TIPS	default	true
+pref	MOVE_KEEP_CONNECT	default	true
+pref	ADD_SHOW_GHOSTS	default	true
+pref	KMAP_LINED_STYLE	default	false
+pref	ADD_AFTER	default	edit
+pref	ADD_AFTER	options	edit,unchanged
+pref	PinAppearance	default	dot-small
+pref	PinAppearance	options	dot-small,dot-medium,dot-big,dot-bigger
+pref	POKE_WIRE_RADIX1	default	2
+pref	POKE_WIRE_RADIX1	options	2,8,10signed,10unsigned,16,float
+pref	POKE_WIRE_RADIX2	default	10signed
+pref	POKE_WIRE_RADIX2	options	2,8,10signed,10unsigned,16,float,none
+pref	Memory_Startup_Unknown	default	false
+pref	TICK_FREQUENCY	default	1.0
+pref	LAYOUT_SHOW_GRID	default	true
+pref	APPEARANCE_SHOW_GRID	default	true
+pref	SEARCH_DOUBLE_SHIFT	default	true
+pref	DefaultAppearance	default	logisim_evolution
+pref	DefaultAppearance	options	classic,evolution,logisim_evolution
+pref	NEW_INPUT_OUTPUT_SHAPES	default	true
+pref	NAMED_CIRCUIT_BOXES_FIXED_SIZE	default	true
+pref	REMOVE_UNUSED_LIBRARIES	default	false
+pref	TRUE_CHAR	default	1
+pref	TRUE_CHAR	options	1T
+char	TRUE_CHAR	1	1010 UUUU EEEE -
+char	TRUE_CHAR	T	T0T0 UUUU EEEE -
+pref	FALSE_CHAR	default	0
+pref	FALSE_CHAR	options	0F
+char	FALSE_CHAR	0	1010 UUUU EEEE -
+char	FALSE_CHAR	F	1F1F UUUU EEEE -
+pref	UNKNOWN_CHAR	default	U
+pref	UNKNOWN_CHAR	options	U?Z
+char	UNKNOWN_CHAR	U	1010 UUUU EEEE -
+char	UNKNOWN_CHAR	?	1010 ???? EEEE -
+char	UNKNOWN_CHAR	Z	1010 ZZZZ EEEE -
+pref	ERROR_CHAR	default	E
+pref	ERROR_CHAR	options	E!X
+char	ERROR_CHAR	E	1010 UUUU EEEE -
+char	ERROR_CHAR	!	1010 UUUU !!!! -
+char	ERROR_CHAR	X	1010 UUUU XXXX -
+pref	DONTCARE_CHAR	default	-
+pref	DONTCARE_CHAR	options	-X
+char	DONTCARE_CHAR	-	1010 UUUU EEEE -
+char	DONTCARE_CHAR	X	1010 UUUU EEEE X
+pref	CANVAS_BG_COLOR	default	FFFFFF
+pref	CANVAS_BG_COLOR	dark	2B2B2B
+pref	GRID_BG_COLOR	default	FFFFFF
+pref	GRID_BG_COLOR	dark	2B2B2B
+pref	GRID_DOT_COLOR	default	777777
+pref	GRID_DOT_COLOR	dark	AAAAAA
+pref	GRID_ZOOMED_DOT_COLOR	default	CCCCCC
+pref	GRID_ZOOMED_DOT_COLOR	dark	666666
+pref	COMPONENT_COLOR	default	000000
+pref	COMPONENT_COLOR	dark	FFFFFF
+pref	COMPONENT_SECONDARY_COLOR	default	999999
+pref	COMPONENT_SECONDARY_COLOR	dark	AAAAAA
+pref	COMPONENT_GHOST_COLOR	default	999999
+pref	COMPONENT_GHOST_COLOR	dark	777777
+pref	COMPONENT_ICON_COLOR	default	000000
+pref	COMPONENT_ICON_COLOR	dark	FFFFFF
+pref	TRUE_COLOR	default	00D200
+pref	TRUE_COLOR	dark	00FF00
+pref	FALSE_COLOR	default	006400
+pref	FALSE_COLOR	dark	339933
+pref	UNKNOWN_COLOR	default	2828FF
+pref	UNKNOWN_COLOR	dark	3399FF
+pref	ERROR_COLOR	default	C00000
+pref	ERROR_COLOR	dark	FF4444
+pref	NIL_COLOR	default	808080
+pref	NIL_COLOR	dark	BBBBBB
+pref	BUS_COLOR	default	000000
+pref	BUS_COLOR	dark	FFFFFF
+pref	STROKE_COLOR	default	FF00FF
+pref	STROKE_COLOR	dark	FF88FF
+pref	WIDTH_ERROR_COLOR	default	FF7B00
+pref	WIDTH_ERROR_COLOR	dark	FF7B00
+pref	WIDTH_ERROR_CAPTION_COLOR	default	550000
+pref	WIDTH_ERROR_CAPTION_COLOR	dark	550000
+pref	WIDTH_ERROR_HIGHLIGHT_COLOR	default	FFFF00
+pref	WIDTH_ERROR_HIGHLIGHT_COLOR	dark	FFFF00
+pref	WIDTH_ERROR_BACKGROUND_COLOR	default	FFE6D2
+pref	WIDTH_ERROR_BACKGROUND_COLOR	dark	FFE6D2
+pref	CLOCK_FREQUENCY_COLOR	default	FF00B4
+pref	CLOCK_FREQUENCY_COLOR	dark	FF00B4
+pref	KMAP_CELL_TEXT_COLOR	default	0000FF
+pref	KMAP_CELL_TEXT_COLOR	dark	FFFFFF
+pref	TABLE_CURSOR_COLOR	default	FFFFFF
+pref	TABLE_CURSOR_COLOR	dark	666666
+pref	TABLE_HIGHLIGHT_COLOR	default	FFFFC0
+pref	TABLE_HIGHLIGHT_COLOR	dark	7A6A00
+pref	TABLE_SELECTION_COLOR	default	C0C0FF
+pref	TABLE_SELECTION_COLOR	dark	323C78
+pref	FPGA_DEFINE_COLOR	default	FF0000
+pref	FPGA_DEFINE_COLOR	dark	FF0000
+pref	FPGA_DEFINE_HIGHLIGHT_COLOR	default	00FF00
+pref	FPGA_DEFINE_HIGHLIGHT_COLOR	dark	00FF00
+pref	FPGA_DEFINE_RESIZE_COLOR	default	00FFFF
+pref	FPGA_DEFINE_RESIZE_COLOR	dark	00FFFF
+pref	FPGA_DEFINE_MOVE_COLOR	default	FF00FF
+pref	FPGA_DEFINE_MOVE_COLOR	dark	FF00FF
+pref	FPGA_MAPPED_COLOR	default	005000
+pref	FPGA_MAPPED_COLOR	dark	005000
+pref	FPGA_SELECTED_MAPPED_COLOR	default	FF0000
+pref	FPGA_SELECTED_MAPPED_COLOR	dark	FF0000
+pref	FPGA_SELECTABLE_MAPPED_COLOR	default	00A000
+pref	FPGA_SELECTABLE_MAPPED_COLOR	dark	00A000
+pref	FPGA_SELECT_COLOR	default	0000FF
+pref	FPGA_SELECT_COLOR	dark	0000FF
+pref	KMAP1_COLOR	default	800000
+pref	KMAP1_COLOR	dark	800000
+pref	KMAP2_COLOR	default	E6194B
+pref	KMAP2_COLOR	dark	E6194B
+pref	KMAP3_COLOR	default	FABEBE
+pref	KMAP3_COLOR	dark	FABEBE
+pref	KMAP4_COLOR	default	AA6E28
+pref	KMAP4_COLOR	dark	AA6E28
+pref	KMAP5_COLOR	default	F58230
+pref	KMAP5_COLOR	dark	F58230
+pref	KMAP6_COLOR	default	FFD7B4
+pref	KMAP6_COLOR	dark	FFD7B4
+pref	KMAP7_COLOR	default	808000
+pref	KMAP7_COLOR	dark	808000
+pref	KMAP8_COLOR	default	FFFF19
+pref	KMAP8_COLOR	dark	FFFF19
+pref	KMAP9_COLOR	default	D2F53C
+pref	KMAP9_COLOR	dark	D2F53C
+pref	KMAP10_COLOR	default	000080
+pref	KMAP10_COLOR	dark	000080
+pref	KMAP11_COLOR	default	911EB4
+pref	KMAP11_COLOR	dark	911EB4
+pref	KMAP12_COLOR	default	3CB4AF
+pref	KMAP12_COLOR	dark	3CB4AF
+pref	KMAP13_COLOR	default	0082CB
+pref	KMAP13_COLOR	dark	0082CB
+pref	KMAP14_COLOR	default	E6BEFF
+pref	KMAP14_COLOR	dark	E6BEFF
+pref	KMAP15_COLOR	default	AAFFC3
+pref	KMAP15_COLOR	dark	AAFFC3
+pref	KMAP16_COLOR	default	F032E6
+pref	KMAP16_COLOR	dark	F032E6
+pref	TEXT_TOOL_COLOR	default	000000
+pref	HOTKEY_SIM_AUTO_PROPAGATE	default	menu+E
+pref	HOTKEY_SIM_RESET	default	menu+R
+pref	HOTKEY_SIM_STEP	default	menu+I
+pref	HOTKEY_SIM_TICK_HALF	default	menu+T
+pref	HOTKEY_SIM_TICK_FULL	default	menu+F9
+pref	HOTKEY_SIM_TICK_ENABLED	default	menu+K
+pref	HOTKEY_EDIT_UNDO	default	menu+Z
+pref	HOTKEY_EDIT_REDO	default	menu+shift+Z | menu+Y | menu+shift+Y
+pref	HOTKEY_WINDOW_CLOSE	default	menu+shift+W
+pref	HOTKEY_FILE_EXPORT	default	menu+shift+E
+pref	HOTKEY_FILE_PRINT	default	menu+P
+pref	HOTKEY_SEARCH	default	menu+shift+A
+pref	HOTKEY_DIR_NORTH	default	UP
+pref	HOTKEY_DIR_SOUTH	default	DOWN
+pref	HOTKEY_DIR_EAST	default	RIGHT
+pref	HOTKEY_DIR_WEST	default	LEFT
+pref	HOTKEY_EDIT_MENU_DUPLICATE	default	menu+D
+pref	HOTKEY_EDIT_TOOL_DUPLICATE	default	INSERT
+pref	HOTKEY_PROJ_MOVE_UP	default	menu+shift+U
+pref	HOTKEY_PROJ_MOVE_DOWN	default	menu+shift+D
+pref	HOTKEY_AUTO_LABEL_OPEN	default	L
+pref	HOTKEY_AUTO_LABEL_TOGGLE	default	T
+pref	HOTKEY_AUTO_LABEL_VIEW	default	V
+pref	HOTKEY_AUTO_LABEL_HIDE	default	H
+pref	HOTKEY_AUTO_LABEL_SELF_NUMBERED_STOP	default	A
+pref	HOTKEY_ADD_TOOL_ROTATE	default	R
+pref	HOTKEY_GATE_MODIFIER_SIZE_SMALL	default	S | N
+pref	HOTKEY_GATE_MODIFIER_SIZE_MEDIUM	default	M
+pref	HOTKEY_GATE_MODIFIER_SIZE_WIDE	default	W
+pref	HOTKEY_GATE_MODIFIER_INPUT_ADD	default	EQUALS | PLUS | ADD
+pref	HOTKEY_GATE_MODIFIER_INPUT_SUB	default	MINUS | SUBTRACT
+pref	HOTKEY_TOOL_SELECT_1	default	menu+1
+pref	HOTKEY_TOOL_SELECT_2	default	menu+2
+pref	HOTKEY_TOOL_SELECT_3	default	menu+3
+pref	HOTKEY_TOOL_SELECT_4	default	menu+4
+pref	HOTKEY_TOOL_SELECT_5	default	menu+5
+pref	HOTKEY_TOOL_SELECT_6	default	menu+6
+pref	HOTKEY_TOOL_SELECT_7	default	menu+7
+pref	HOTKEY_TOOL_SELECT_8	default	menu+8
+pref	HOTKEY_TOOL_SELECT_9	default	menu+9
+pref	HOTKEY_TOOL_SELECT_10	default	menu+0
+pref	HOTKEY_TOOL_SELECT_11	default	none
+pref	HOTKEY_TOOL_SELECT_12	default	none
+pref	HOTKEY_TOOL_SELECT_13	default	none
+pref	HOTKEY_TOOL_SELECT_14	default	none
+poke	POKE_WIRE_RADIX1=2	w1=1	1
+poke	POKE_WIRE_RADIX2=2	w1=1	1
+poke	POKE_WIRE_RADIX1=2	w8=A5	1010 0101 / -91 / -0.203125
+poke	POKE_WIRE_RADIX2=2	w8=A5	1010 0101 / 1010 0101 / -0.203125
+poke	POKE_WIRE_RADIX1=2	w8=05	0000 0101 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX2=2	w8=05	0000 0101 / 0000 0101 / 0.009765625
+poke	POKE_WIRE_RADIX1=2	w12=F80	1111 1000 0000 / -128
+poke	POKE_WIRE_RADIX2=2	w12=F80	1111 1000 0000 / 1111 1000 0000
+poke	POKE_WIRE_RADIX1=2	w32=3FC00000	0011 1111 1100 0000 0000 0000 0000 0000 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX2=2	w32=3FC00000	0011 1111 1100 0000 0000 0000 0000 0000 / 0011 1111 1100 0000 0000 0000 0000 0000 / 1.5
+poke	POKE_WIRE_RADIX1=2	w64=C000000000000000	1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / -4611686018427387904 / -2.0
+poke	POKE_WIRE_RADIX2=2	w64=C000000000000000	1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / 1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / -2.0
+poke	POKE_WIRE_RADIX1=2	w4=1x0x	1U0U / U
+poke	POKE_WIRE_RADIX2=2	w4=1x0x	1U0U / 1U0U
+poke	POKE_WIRE_RADIX1=2	w4=error	EEEE / E
+poke	POKE_WIRE_RADIX2=2	w4=error	EEEE / EEEE
+poke	POKE_WIRE_RADIX1=8	w1=1	1
+poke	POKE_WIRE_RADIX2=8	w1=1	1
+poke	POKE_WIRE_RADIX1=8	w8=A5	245 / -91 / -0.203125
+poke	POKE_WIRE_RADIX2=8	w8=A5	1010 0101 / 245 / -0.203125
+poke	POKE_WIRE_RADIX1=8	w8=05	005 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX2=8	w8=05	0000 0101 / 005 / 0.009765625
+poke	POKE_WIRE_RADIX1=8	w12=F80	7600 / -128
+poke	POKE_WIRE_RADIX2=8	w12=F80	1111 1000 0000 / 7600
+poke	POKE_WIRE_RADIX1=8	w32=3FC00000	07760000000 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX2=8	w32=3FC00000	0011 1111 1100 0000 0000 0000 0000 0000 / 07760000000 / 1.5
+poke	POKE_WIRE_RADIX1=8	w64=C000000000000000	1400000000000000000000 / -4611686018427387904 / -2.0
+poke	POKE_WIRE_RADIX2=8	w64=C000000000000000	1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / 1400000000000000000000 / -2.0
+poke	POKE_WIRE_RADIX1=8	w4=1x0x	1U / U
+poke	POKE_WIRE_RADIX2=8	w4=1x0x	1U0U / 1U
+poke	POKE_WIRE_RADIX1=8	w4=error	EE / E
+poke	POKE_WIRE_RADIX2=8	w4=error	EEEE / EE
+poke	POKE_WIRE_RADIX1=10signed	w1=1	-1
+poke	POKE_WIRE_RADIX2=10signed	w1=1	1
+poke	POKE_WIRE_RADIX1=10signed	w8=A5	-91 / -91 / -0.203125
+poke	POKE_WIRE_RADIX2=10signed	w8=A5	1010 0101 / -91 / -0.203125
+poke	POKE_WIRE_RADIX1=10signed	w8=05	5 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX2=10signed	w8=05	0000 0101 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX1=10signed	w12=F80	-128 / -128
+poke	POKE_WIRE_RADIX2=10signed	w12=F80	1111 1000 0000 / -128
+poke	POKE_WIRE_RADIX1=10signed	w32=3FC00000	1069547520 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX2=10signed	w32=3FC00000	0011 1111 1100 0000 0000 0000 0000 0000 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX1=10signed	w64=C000000000000000	-4611686018427387904 / -4611686018427387904 / -2.0
+poke	POKE_WIRE_RADIX2=10signed	w64=C000000000000000	1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / -4611686018427387904 / -2.0
+poke	POKE_WIRE_RADIX1=10signed	w4=1x0x	U / U
+poke	POKE_WIRE_RADIX2=10signed	w4=1x0x	1U0U / U
+poke	POKE_WIRE_RADIX1=10signed	w4=error	E / E
+poke	POKE_WIRE_RADIX2=10signed	w4=error	EEEE / E
+poke	POKE_WIRE_RADIX1=10unsigned	w1=1	1
+poke	POKE_WIRE_RADIX2=10unsigned	w1=1	1
+poke	POKE_WIRE_RADIX1=10unsigned	w8=A5	165 / -91 / -0.203125
+poke	POKE_WIRE_RADIX2=10unsigned	w8=A5	1010 0101 / 165 / -0.203125
+poke	POKE_WIRE_RADIX1=10unsigned	w8=05	5 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX2=10unsigned	w8=05	0000 0101 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX1=10unsigned	w12=F80	3968 / -128
+poke	POKE_WIRE_RADIX2=10unsigned	w12=F80	1111 1000 0000 / 3968
+poke	POKE_WIRE_RADIX1=10unsigned	w32=3FC00000	1069547520 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX2=10unsigned	w32=3FC00000	0011 1111 1100 0000 0000 0000 0000 0000 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX1=10unsigned	w64=C000000000000000	13835058055282163712 / -4611686018427387904 / -2.0
+poke	POKE_WIRE_RADIX2=10unsigned	w64=C000000000000000	1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / 13835058055282163712 / -2.0
+poke	POKE_WIRE_RADIX1=10unsigned	w4=1x0x	U / U
+poke	POKE_WIRE_RADIX2=10unsigned	w4=1x0x	1U0U / U
+poke	POKE_WIRE_RADIX1=10unsigned	w4=error	E / E
+poke	POKE_WIRE_RADIX2=10unsigned	w4=error	EEEE / E
+poke	POKE_WIRE_RADIX1=16	w1=1	1
+poke	POKE_WIRE_RADIX2=16	w1=1	1
+poke	POKE_WIRE_RADIX1=16	w8=A5	a5 / -91 / -0.203125
+poke	POKE_WIRE_RADIX2=16	w8=A5	1010 0101 / a5 / -0.203125
+poke	POKE_WIRE_RADIX1=16	w8=05	05 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX2=16	w8=05	0000 0101 / 05 / 0.009765625
+poke	POKE_WIRE_RADIX1=16	w12=F80	f80 / -128
+poke	POKE_WIRE_RADIX2=16	w12=F80	1111 1000 0000 / f80
+poke	POKE_WIRE_RADIX1=16	w32=3FC00000	3fc00000 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX2=16	w32=3FC00000	0011 1111 1100 0000 0000 0000 0000 0000 / 3fc00000 / 1.5
+poke	POKE_WIRE_RADIX1=16	w64=C000000000000000	c000000000000000 / -4611686018427387904 / -2.0
+poke	POKE_WIRE_RADIX2=16	w64=C000000000000000	1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / c000000000000000 / -2.0
+poke	POKE_WIRE_RADIX1=16	w4=1x0x	U / U
+poke	POKE_WIRE_RADIX2=16	w4=1x0x	1U0U / U
+poke	POKE_WIRE_RADIX1=16	w4=error	E / E
+poke	POKE_WIRE_RADIX2=16	w4=error	EEEE / E
+poke	POKE_WIRE_RADIX1=float	w1=1	NaN
+poke	POKE_WIRE_RADIX2=float	w1=1	1
+poke	POKE_WIRE_RADIX1=float	w8=A5	-0.203125 / -91 / -0.203125
+poke	POKE_WIRE_RADIX2=float	w8=A5	1010 0101 / -0.203125 / -0.203125
+poke	POKE_WIRE_RADIX1=float	w8=05	0.009765625 / 5 / 0.009765625
+poke	POKE_WIRE_RADIX2=float	w8=05	0000 0101 / 0.009765625 / 0.009765625
+poke	POKE_WIRE_RADIX1=float	w12=F80	NaN / -128
+poke	POKE_WIRE_RADIX2=float	w12=F80	1111 1000 0000 / NaN
+poke	POKE_WIRE_RADIX1=float	w32=3FC00000	1.5 / 1069547520 / 1.5
+poke	POKE_WIRE_RADIX2=float	w32=3FC00000	0011 1111 1100 0000 0000 0000 0000 0000 / 1.5 / 1.5
+poke	POKE_WIRE_RADIX1=float	w64=C000000000000000	-2.0 / -4611686018427387904 / -2.0
+poke	POKE_WIRE_RADIX2=float	w64=C000000000000000	1100 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 / -2.0 / -2.0
+poke	POKE_WIRE_RADIX1=float	w4=1x0x	NaN / U
+poke	POKE_WIRE_RADIX2=float	w4=1x0x	1U0U / NaN
+poke	POKE_WIRE_RADIX1=float	w4=error	NaN / E
+poke	POKE_WIRE_RADIX2=float	w4=error	EEEE / NaN
+vhdl	abs	upper lower	ABS abs
+vhdl	access	upper lower	ACCESS access
+vhdl	after	upper lower	AFTER after
+vhdl	alias	upper lower	ALIAS alias
+vhdl	all	upper lower	ALL all
+vhdl	and	upper lower	AND and
+vhdl	architecture	upper lower	ARCHITECTURE architecture
+vhdl	array	upper lower	ARRAY array
+vhdl	assert	upper lower	ASSERT assert
+vhdl	attribute	upper lower	ATTRIBUTE attribute
+vhdl	begin	upper lower	BEGIN begin
+vhdl	block	upper lower	BLOCK block
+vhdl	body	upper lower	BODY body
+vhdl	buffer	upper lower	BUFFER buffer
+vhdl	bus	upper lower	BUS bus
+vhdl	case	upper lower	CASE case
+vhdl	component	upper lower	COMPONENT component
+vhdl	configuration	upper lower	CONFIGURATION configuration
+vhdl	constant	upper lower	CONSTANT constant
+vhdl	disconnect	upper lower	DISCONNECT disconnect
+vhdl	downto	upper lower	DOWNTO downto
+vhdl	else	upper lower	ELSE else
+vhdl	elsif	upper lower	ELSIF elsif
+vhdl	end	upper lower	END end
+vhdl	endcase	upper lower	ENDCASE endcase
+vhdl	endgenerate	upper lower	ENDGENERATE endgenerate
+vhdl	endif	upper lower	ENDIF endif
+vhdl	endprocess	upper lower	ENDPROCESS endprocess
+vhdl	entity	upper lower	ENTITY entity
+vhdl	exit	upper lower	EXIT exit
+vhdl	file	upper lower	FILE file
+vhdl	for	upper lower	FOR for
+vhdl	function	upper lower	FUNCTION function
+vhdl	generate	upper lower	GENERATE generate
+vhdl	generic	upper lower	GENERIC generic
+vhdl	group	upper lower	GROUP group
+vhdl	guarded	upper lower	GUARDED guarded
+vhdl	if	upper lower	IF if
+vhdl	impure	upper lower	IMPURE impure
+vhdl	in	upper lower	IN in
+vhdl	inertial	upper lower	INERTIAL inertial
+vhdl	inout	upper lower	INOUT inout
+vhdl	integer	upper lower	INTEGER integer
+vhdl	is	upper lower	IS is
+vhdl	label	upper lower	LABEL label
+vhdl	library	upper lower	LIBRARY library
+vhdl	linkage	upper lower	LINKAGE linkage
+vhdl	literal	upper lower	LITERAL literal
+vhdl	loop	upper lower	LOOP loop
+vhdl	map	upper lower	MAP map
+vhdl	mod	upper lower	MOD mod
+vhdl	nand	upper lower	NAND nand
+vhdl	new	upper lower	NEW new
+vhdl	next	upper lower	NEXT next
+vhdl	nor	upper lower	NOR nor
+vhdl	not	upper lower	NOT not
+vhdl	null	upper lower	NULL null
+vhdl	of	upper lower	OF of
+vhdl	on	upper lower	ON on
+vhdl	open	upper lower	OPEN open
+vhdl	or	upper lower	OR or
+vhdl	others	upper lower	OTHERS others
+vhdl	out	upper lower	OUT out
+vhdl	package	upper lower	PACKAGE package
+vhdl	port	upper lower	PORT port
+vhdl	postponed	upper lower	POSTPONED postponed
+vhdl	procedure	upper lower	PROCEDURE procedure
+vhdl	process	upper lower	PROCESS process
+vhdl	pure	upper lower	PURE pure
+vhdl	range	upper lower	RANGE range
+vhdl	record	upper lower	RECORD record
+vhdl	register	upper lower	REGISTER register
+vhdl	reject	upper lower	REJECT reject
+vhdl	rem	upper lower	REM rem
+vhdl	report	upper lower	REPORT report
+vhdl	return	upper lower	RETURN return
+vhdl	rol	upper lower	ROL rol
+vhdl	ror	upper lower	ROR ror
+vhdl	select	upper lower	SELECT select
+vhdl	severity	upper lower	SEVERITY severity
+vhdl	shared	upper lower	SHARED shared
+vhdl	signal	upper lower	SIGNAL signal
+vhdl	sla	upper lower	SLA sla
+vhdl	sll	upper lower	SLL sll
+vhdl	sra	upper lower	SRA sra
+vhdl	srl	upper lower	SRL srl
+vhdl	subtype	upper lower	SUBTYPE subtype
+vhdl	then	upper lower	THEN then
+vhdl	to	upper lower	TO to
+vhdl	transport	upper lower	TRANSPORT transport
+vhdl	type	upper lower	TYPE type
+vhdl	unaffected	upper lower	UNAFFECTED unaffected
+vhdl	units	upper lower	UNITS units
+vhdl	until	upper lower	UNTIL until
+vhdl	use	upper lower	USE use
+vhdl	variable	upper lower	VARIABLE variable
+vhdl	wait	upper lower	WAIT wait
+vhdl	when	upper lower	WHEN when
+vhdl	while	upper lower	WHILE while
+vhdl	with	upper lower	WITH with
+vhdl	xnor	upper lower	XNOR xnor
+vhdl	xor	upper lower	XOR xor
+pin	dot-small	diameter offset	4 2
+pin	dot-medium	diameter offset	6 3
+pin	dot-big	diameter offset	8 4
+pin	dot-bigger	diameter offset	10 5
+pref	SelectedBoard	default	ALCHITRY_AU_IO
+board	SelectedBoard	after-start	ALCHITRY_AU_IO
+board	SelectedBoard	built-in	ALCHITRY_AU_IO,ARROW_SOCKIT,BASYS2,BASYS3,BEMICRO_SDK,CYCLOARDUINO,CYCLONE_V_GX_STARTER,DE0_CV,DIGILENT_CMOD_A7_15T,DIGILENT_SPARTAN_3E_STARTER,EPM2525_CONSOLE,EPM2525_FULL,FPGA4U,GECKO4LED,GECKO4_EDUCATION,GECKO4_EDUCATION_EPFL_EDITION,GECKO5_EDUCATION,LEGUAN,MAX1000-8k-BOARD,MAX_V_80P_25P,MAX_V_CONSOLE,MICROLABTLE,REPTAR_SPARTAN_6,ROBOTCYCLONEFPGA,SLO_MAX7000S,TERASIC_DE0,TERASIC_DE0_NANO,TERASIC_DE10_LITE,TERASIC_DE10_NANO,TERASIC_DE1_SOC,ZYBO
+drc	drc-gated.circ	gated=false,open=false	{fpga_core_clock_gated=1, fpga_core_terminal_open=3}
+drc	drc-gated.circ	gated=false,open=true	{fpga_core_clock_gated=1}
+drc	drc-gated.circ	gated=true,open=false	{fpga_core_terminal_open=3}
+drc	drc-gated.circ	gated=true,open=true	{}
+drc	drc-pin-clock.circ	gated=false,open=false	{fpga_core_clock_external=1, fpga_core_terminal_open=2}
+drc	drc-pin-clock.circ	gated=false,open=true	{fpga_core_clock_external=1}
+drc	drc-pin-clock.circ	gated=true,open=false	{fpga_core_terminal_open=2}
+drc	drc-pin-clock.circ	gated=true,open=true	{}

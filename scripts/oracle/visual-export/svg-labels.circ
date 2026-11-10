@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="1" loc="(160,120)" name="AND Gate"><a name="label" val="ande"/><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(320,120)" name="NAND Gate"><a name="label" val="nande"/><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(480,120)" name="XOR Gate"><a name="label" val="xore"/><a name="facing" val="east"/><a name="size" val="30"/></comp>
+    <comp lib="1" loc="(640,120)" name="OR Gate"><a name="label" val="ore"/><a name="facing" val="east"/><a name="size" val="70"/></comp>
+    <comp lib="1" loc="(760,120)" name="NOT Gate"><a name="label" val="note"/><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(860,120)" name="Buffer"><a name="label" val="bufe"/><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(960,120)" name="Controlled Buffer"><a name="label" val="cbre"/><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(1060,120)" name="Controlled Inverter"><a name="label" val="cile"/><a name="facing" val="east"/><a name="control" val="left"/></comp>
+    <comp lib="0" loc="(1180,120)" name="Tunnel"><a name="label" val="tunnele"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(1300,120)" name="Tunnel"><a name="label" val="T"/><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(160,280)" name="AND Gate"><a name="label" val="andw"/><a name="facing" val="west"/></comp>
+    <comp lib="1" loc="(320,280)" name="NAND Gate"><a name="label" val="nandw"/><a name="facing" val="west"/></comp>
+    <comp lib="1" loc="(480,280)" name="XOR Gate"><a name="label" val="xorw"/><a name="facing" val="west"/><a name="size" val="30"/></comp>
+    <comp lib="1" loc="(640,280)" name="OR Gate"><a name="label" val="orw"/><a name="facing" val="west"/><a name="size" val="70"/></comp>
+    <comp lib="1" loc="(760,280)" name="NOT Gate"><a name="label" val="notw"/><a name="facing" val="west"/></comp>
+    <comp lib="1" loc="(860,280)" name="Buffer"><a name="label" val="bufw"/><a name="facing" val="west"/></comp>
+    <comp lib="1" loc="(960,280)" name="Controlled Buffer"><a name="label" val="cbrw"/><a name="facing" val="west"/></comp>
+    <comp lib="1" loc="(1060,280)" name="Controlled Inverter"><a name="label" val="cilw"/><a name="facing" val="west"/><a name="control" val="left"/></comp>
+    <comp lib="0" loc="(1180,280)" name="Tunnel"><a name="label" val="tunnelw"/><a name="facing" val="west"/></comp>
+    <comp lib="0" loc="(1300,280)" name="Tunnel"><a name="label" val="T"/><a name="facing" val="west"/></comp>
+    <comp lib="1" loc="(160,440)" name="AND Gate"><a name="label" val="andn"/><a name="facing" val="north"/></comp>
+    <comp lib="1" loc="(320,440)" name="NAND Gate"><a name="label" val="nandn"/><a name="facing" val="north"/></comp>
+    <comp lib="1" loc="(480,440)" name="XOR Gate"><a name="label" val="xorn"/><a name="facing" val="north"/><a name="size" val="30"/></comp>
+    <comp lib="1" loc="(640,440)" name="OR Gate"><a name="label" val="orn"/><a name="facing" val="north"/><a name="size" val="70"/></comp>
+    <comp lib="1" loc="(760,440)" name="NOT Gate"><a name="label" val="notn"/><a name="facing" val="north"/></comp>
+    <comp lib="1" loc="(860,440)" name="Buffer"><a name="label" val="bufn"/><a name="facing" val="north"/></comp>
+    <comp lib="1" loc="(960,440)" name="Controlled Buffer"><a name="label" val="cbrn"/><a name="facing" val="north"/></comp>
+    <comp lib="1" loc="(1060,440)" name="Controlled Inverter"><a name="label" val="ciln"/><a name="facing" val="north"/><a name="control" val="left"/></comp>
+    <comp lib="0" loc="(1180,440)" name="Tunnel"><a name="label" val="tunneln"/><a name="facing" val="north"/></comp>
+    <comp lib="0" loc="(1300,440)" name="Tunnel"><a name="label" val="T"/><a name="facing" val="north"/></comp>
+    <comp lib="1" loc="(160,600)" name="AND Gate"><a name="label" val="ands"/><a name="facing" val="south"/></comp>
+    <comp lib="1" loc="(320,600)" name="NAND Gate"><a name="label" val="nands"/><a name="facing" val="south"/></comp>
+    <comp lib="1" loc="(480,600)" name="XOR Gate"><a name="label" val="xors"/><a name="facing" val="south"/><a name="size" val="30"/></comp>
+    <comp lib="1" loc="(640,600)" name="OR Gate"><a name="label" val="ors"/><a name="facing" val="south"/><a name="size" val="70"/></comp>
+    <comp lib="1" loc="(760,600)" name="NOT Gate"><a name="label" val="nots"/><a name="facing" val="south"/></comp>
+    <comp lib="1" loc="(860,600)" name="Buffer"><a name="label" val="bufs"/><a name="facing" val="south"/></comp>
+    <comp lib="1" loc="(960,600)" name="Controlled Buffer"><a name="label" val="cbrs"/><a name="facing" val="south"/></comp>
+    <comp lib="1" loc="(1060,600)" name="Controlled Inverter"><a name="label" val="cils"/><a name="facing" val="south"/><a name="control" val="left"/></comp>
+    <comp lib="0" loc="(1180,600)" name="Tunnel"><a name="label" val="tunnels"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(1300,600)" name="Tunnel"><a name="label" val="T"/><a name="facing" val="south"/></comp>
+    <comp lib="1" loc="(1440,120)" name="Odd Parity"><a name="label" val="odde"/><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(1440,280)" name="Even Parity"><a name="label" val="evenw"/><a name="facing" val="west"/></comp>
+    <comp lib="1" loc="(1440,440)" name="Odd Parity"><a name="facing" val="north"/></comp>
+  </circuit>
+</project>

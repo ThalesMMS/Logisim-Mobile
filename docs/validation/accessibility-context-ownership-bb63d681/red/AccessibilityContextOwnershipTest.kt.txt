@@ -1,0 +1,50 @@
+package dev.logisim.mobile
+
+import dev.logisim.mobile.core.*
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNotEquals
+import kotlin.test.assertTrue
+
+class AccessibilityContextOwnershipTest {
+    private fun circuit(name: String, x: Int) = CircuitDocument(name = name, id = name,
+        components = listOf(
+            CircuitComponent("source", ComponentKind.INPUT, GridPoint(x, 20), "A"),
+            CircuitComponent("sink", ComponentKind.OUTPUT, GridPoint(x + 120, 20), "Y"),
+        ))
+
+    private fun actions(state: EditorState) = editorCircuitAccessibilityActions(EditorToolContext(
+        project = state.project, document = state.document, simulation = state.simulation,
+        selectedComponents = emptyList(), applyProject = state::applyProject, applyDocument = state::applyDocument,
+        selectCircuit = state::selectCircuit, selectComponent = state::selectComponent, showStatus = state::reportStatus,
+        documentIdentity = state.documentIdentity, connect = state::connectTerminals,
+        removeComponent = state::removeComponent,
+    ))
+
+    @Test
+    fun retainedRemoveCannotMutateAnotherCircuitWithTheSameComponentId() {
+        val project = CircuitProject(listOf(circuit("main", 0), circuit("other", 300)))
+        val state = EditorState(CircCodec.writeProject(project))
+        val retained = actions(state)
+        state.selectCircuit("other")
+        val before = state.exportXml()
+        assertFalse(retained.removeComponent("source"), "The retained main action must reject the other circuit")
+        assertEquals(before, state.exportXml())
+    }
+
+    @Test
+    fun pendingConnectionCannotCrossProjectReplacementWithTheSameIds() {
+        val state = EditorState(CircCodec.writeProject(CircuitProject(listOf(circuit("main", 0)))))
+        val graph = CircuitAccessibilityGraph(state.document, state.componentRegistry)
+        val session = AccessibleConnectionSession().choose(graph, AccessiblePortId("source", "out"), actions(state).connect).session
+        val identity = state.documentIdentity
+        assertTrue(state.importXml(CircCodec.writeProject(CircuitProject(listOf(circuit("main", 300))))))
+        assertNotEquals(identity, state.documentIdentity)
+        val replacementGraph = CircuitAccessibilityGraph(state.document, state.componentRegistry)
+        val before = state.exportXml()
+        val result = session.choose(replacementGraph, AccessiblePortId("sink", "in"), actions(state).connect)
+        assertFalse(result.connected, "A connection started in the previous project must not edit its replacement")
+        assertEquals(before, state.exportXml())
+    }
+}

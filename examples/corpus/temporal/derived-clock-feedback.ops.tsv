@@ -1,0 +1,27 @@
+P	derived	160	100	1
+P	q	200	100	1
+P	feedback	160	120	1
+I	CLK	1
+I	RST	1
+I	SET	0
+Q
+I	RST	0
+Q
+A	first-edge
+I	CLK	0
+D
+A	fall
+I	CLK	1
+D
+A	second-edge
+I	CLK	0
+D
+A	fall-again
+I	CLK	1
+D
+A	third-edge
+I	CLK	0
+D
+A	reset
+I	RST	1
+D

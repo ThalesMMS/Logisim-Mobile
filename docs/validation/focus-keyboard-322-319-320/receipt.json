@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "issues": [322, 319, 320],
+  "evolution_revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "commits": {"319": "04d65ccc", "322": "21da372c", "320": "f4524b3b"},
+  "tested_trees": "Pre-rebase WIP commits on 9ef2232e. Android APK of d8a0ad79 and iOS app of 982cf3db have the same composeApp and harness content as the commits above; the rebase onto 96042d87 brought only scripts/android_ui.py, scripts/e2e-android.py, scripts/test_android_toolbar.py, scripts/ios_e2e_ui and parity evidence. Focused tests EditorLayoutWidthTest (2) and EditorKeyboardShortcutsTest (8) passed again on the rebased tree.",
+  "kotlin_tests": {"command": "./gradlew :composeApp:testAndroidHostTest --tests dev.logisim.mobile.EditorLayoutWidthTest", "result": "2 tests, 0 failures"},
+  "322_talkback": {
+    "status": "PASS",
+    "avd": "logisim35play (android-35 google_apis_playstore arm64, Pixel 6, 1080x2400), -port 5620 -grpc 8620 -gpu host -cores 4",
+    "talkback": "15.0.0.639625893",
+    "app": "androidApp-debug.apk of d8a0ad79, SHA-256 5cd66ecaaed3f34eebf9c68ae4e6f026f16c3e058ccc599413ec41cdd921d0e9, app and system en-US",
+    "input": "gRPC sendTouch: touch to place TalkBack focus, then double tap to activate",
+    "steps": [
+      ["Project > Circuit explorer, Insert component, dialog Close", "TalkBack focus on Insert component 1 s and 5 s after the dialog closed (before: drag handle)"],
+      ["Insert component, X 1500, Y 400, Adder", "'Adder inserted at 1500, 400.', 5 components, TalkBack focus on Insert component after 5 s"],
+      ["Open circuits and library, Open definition Minha primeira porta AND", "sheet closed, TalkBack focus on Open circuits and library after 5 s"],
+      ["Open selection properties (Adder selected), Close sheet", "TalkBack focus on Open selection properties after 5 s"]
+    ],
+    "not_exercised": "Signals sheet (compact height only) uses the same hook; instance rows in Open circuits and library use the same onChoose dismissal as Open definition.",
+    "diagnosis": "Diagnostic APK (not integrated) logged one ACTION_ACCESSIBILITY_FOCUS request for tool-library that held for 1.5 s. The explorer effect never ran past its first suspension because it cleared its own key first; the commit clears it last.",
+    "baseline_restored": "enabled_accessibility_services=null accessibility_enabled=0 touch_exploration_enabled=0; debug package uninstalled; emulator stopped"
+  },
+  "319_tablet": {
+    "status": "PASS",
+    "avd": "t3tab620 (copy of logisim35tab config: android-35 google_apis arm64, pixel_tablet 2560x1600 landscape, Gboard), -port 5620 -gpu host; deleted afterwards",
+    "app": "androidApp-debug.apk of 7d36ef3f, SHA-256 21a6d3657efcd325de596b09facd29e8a07d0f7aca7357811165df7a38b83f18",
+    "steps": [
+      ["AND example, Circuits + New", "New circuit dialog over the side explorer"],
+      ["tap Name", "mInputShown=true; dialog and side explorer stay"],
+      ["adb shell input text Teilnetz, Save", "field shows Teilnetz; 'Circuit Teilnetz created.'; Teilnetz listed in Circuits"]
+    ]
+  },
+  "320_ipad": {
+    "status": "PASS",
+    "device": "t3-4ca iPad (iPad Pro 11-inch (M5), iOS 27.2 24B8117), deleted afterwards",
+    "command": "python3 scripts/run-ios-fpga-tick.py --only-testing ShortcutRemapEndToEndTests/testEvolutionHotkeysWithHardwareKeys",
+    "artifact": {"bundle_id": "thalesmms.logisim.mobile", "bundle_tree_sha256": "49965a5df31edad76c33dc695945bb4bf5ade13dca0e2bdf5f6fd27b5df3010b"},
+    "result": "1 passed, 0 failed",
+    "observations": {
+      "314-double-shift": "double-shift first=311ms opened=false; first=290ms opened=false; first=289ms opened=true",
+      "314-2-export": "opened=true", "314-3-print": "opened=true", "314-close": "close opened projects=true"
+    },
+    "diagnosis": "Temporary build (not integrated) logged every key event in the editor's onPreviewKeyEvent. typeKey('a'): KeyDown/KeyUp code 4. typeKey(.shift, []): no key event. XCUIElement.perform(withKeyModifiers: .shift): Key 225 press and release, about 10.4 s per call. typeKey(.shift, .shift): Key 225 press and release, KeyUp to KeyUp 284 ms, Find Action opened. typeKey(.rightShift, []): no key event."
+  }
+}

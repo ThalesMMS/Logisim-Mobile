@@ -1,0 +1,48 @@
+{
+  "scope": "One source-launcher JVM, data-free marker and local post-stop RecordingFile decoding; no core benchmark",
+  "argv": [
+    "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home/bin/java",
+    "--add-modules",
+    "jdk.jfr",
+    "-XX:StartFlightRecording=name=logisim-privacy-smoke,settings=/Users/thales/GitHub/logisim-mobile-worktrees/performance48-profile-smoke/outputs/performance/profile-privacy-smoke-001/benchmark-profile.jfc,dumponexit=false",
+    "--source",
+    "21",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-profile-smoke/outputs/performance/profile-privacy-smoke-001/JfrPrivacySmoke.java",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-profile-smoke/outputs/performance/profile-privacy-smoke-001/recording.jfr",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-profile-smoke/outputs/performance/profile-privacy-smoke-001/java-receipt.json"
+  ],
+  "source_identity": {
+    "scripts/benchmark-circuits.py": "e90b5f16b58279881579331f0f855925d5c839d34506c4db73f929f040c6a206",
+    "scripts/performance/benchmark-profile.jfc": "2d18378c38bf06208e9c0f2efec7d844ec4b99ba05b1f0119da1a03eb95c46df",
+    "scripts/performance/JfrPrivacySmoke.java": "83d0f77c9afeee9c8792072105c966e9389e77c9c9a39ba851e2bae4dafdbc25",
+    "scripts/performance/smoke-jfr-privacy.py": "61cf5288b227c457c9a7c44eb3393d09930d45208a175ca1a12a910d81b206f3",
+    "java_launcher": "4ddcf3ee5d518bd98d55f00da6747d20dddf2c4d7e555fddb9d26db6362424ce"
+  },
+  "expected_source": "8c79c7eb6ee2921aac383031426f18d3a302503c",
+  "parent_environment_keys": [
+    "AWS_SECRET_ACCESS_KEY",
+    "GITHUB_TOKEN",
+    "JAVA_HOME",
+    "JAVA_TOOL_OPTIONS",
+    "JDK_JAVA_OPTIONS",
+    "LANG",
+    "LC_ALL",
+    "LC_CTYPE",
+    "PATH",
+    "TMPDIR",
+    "TZ",
+    "UNEXPECTED_ENVIRONMENT",
+    "_JAVA_OPTIONS"
+  ],
+  "java_environment_keys": [
+    "JAVA_HOME",
+    "LANG",
+    "LC_ALL",
+    "LC_CTYPE",
+    "PATH",
+    "TMPDIR",
+    "TZ"
+  ],
+  "execute": true,
+  "timeout_seconds": 30
+}

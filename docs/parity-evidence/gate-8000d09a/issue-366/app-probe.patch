@@ -1,0 +1,63 @@
+diff --git a/iosApp/LogisimMobileApp.swift b/iosApp/LogisimMobileApp.swift
+index 8cb261a9..4ac81f38 100644
+--- a/iosApp/LogisimMobileApp.swift
++++ b/iosApp/LogisimMobileApp.swift
+@@ -5,7 +5,7 @@ import ComposeApp
+ struct LogisimMobileApp: App {
+     var body: some Scene {
+         WindowGroup {
+-            DocumentWindow()
++            if ProcessInfo.processInfo.environment["PROBE366"] == "1" { Probe366Root() } else if ProcessInfo.processInfo.environment["PROBE366"] == "multi" { Probe366Multi() } else { DocumentWindow() }
+         }
+     }
+ }
+@@ -53,3 +53,49 @@ private struct CircuitView: UIViewControllerRepresentable {
+         context.coordinator.session.openURL(url: request.url)
+     }
+ }
++
++
++private struct Probe366Root: View {
++    var body: some View {
++        VStack(spacing: 6) {
++            Button("native-reset") { UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil) }
++                .accessibilityIdentifier("native-reset")
++            ProbeUITextField().frame(height: 44).padding(.horizontal, 8)
++            ProbeUITextView().frame(height: 110).padding(.horizontal, 8)
++            ProbeCompose(multiOnly: false)
++        }
++    }
++}
++private struct Probe366Multi: View {
++    var body: some View {
++        GeometryReader { geo in
++            let content = Group {
++                Button("native-reset") { UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil) }
++                    .accessibilityIdentifier("native-reset")
++                ProbeUITextView().frame(height: 150)
++                ProbeCompose(multiOnly: true).frame(height: 160)
++            }
++            if geo.size.width > geo.size.height { HStack(alignment: .top, spacing: 4) { content } } else { VStack(spacing: 4) { content } }
++        }
++    }
++}
++private struct ProbeUITextField: UIViewRepresentable {
++    func makeUIView(context: Context) -> UITextField {
++        let f = UITextField(); f.borderStyle = .roundedRect; f.text = "visual_export_qualification"
++        f.font = .systemFont(ofSize: 16); f.autocorrectionType = .no; f.accessibilityIdentifier = "native-field"; return f
++    }
++    func updateUIView(_ uiView: UITextField, context: Context) {}
++}
++private struct ProbeUITextView: UIViewRepresentable {
++    func makeUIView(context: Context) -> UITextView {
++        let f = UITextView(); f.text = "module probe(input a);\n  wire b;\n  assign b = a;\nendmodule\n// end"
++        f.font = .monospacedSystemFont(ofSize: 14, weight: .regular); f.autocorrectionType = .no
++        f.layer.borderWidth = 1; f.accessibilityIdentifier = "native-multiline"; return f
++    }
++    func updateUIView(_ uiView: UITextView, context: Context) {}
++}
++private struct ProbeCompose: UIViewControllerRepresentable {
++    var multiOnly: Bool
++    func makeUIViewController(context: Context) -> UIViewController { Probe366Kt.probe366ViewController(multiOnly: multiOnly) }
++    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
++}

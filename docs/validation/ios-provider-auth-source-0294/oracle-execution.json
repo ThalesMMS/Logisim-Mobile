@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "7d4867f8f90e5a9f305c10cb070ef4792e480fd0070b989b344d8fb1912dade2",
+    "scripts/ios_provider_auth_ui/tests/ProviderAuthenticationOracleChecks.swift": "a7bf1172defe01206354363a4e6f387d13bd879b5ab1b90ad669beafc101aac6"
+  },
+  "compileCommand": [
+    "swiftc",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/scripts/ios_provider_auth_ui/tests/ProviderAuthenticationOracleChecks.swift",
+    "-o",
+    "/tmp/logisim-provider-auth-final-checks-ocja6mv1/oracle-checks"
+  ],
+  "compileExitCode": 0,
+  "checksExitCode": 0,
+  "stdout": "{\n  \"failedCount\" : 0,\n  \"failures\" : [\n\n  ],\n  \"passed\" : [\n    \"literal_fixture_552_and_SHA\",\n    \"bootstrap_completed_has_no_domain_detail_in_real_terminal\",\n    \"fetch_real_pair_preserves_backend\",\n    \"fetch_cannot_reuse_baseline\",\n    \"fetch_metadata_only_is_insufficient\",\n    \"fetch_wrong_item_is_rejected\",\n    \"fetch_wrong_domain_is_rejected\",\n    \"fetch_wrong_process_is_rejected\",\n    \"fetch_mismatched_requestID_is_rejected\",\n    \"fetch_contradictory_terminal_is_rejected\",\n    \"upload_real_commit_matches_complete_XML\",\n    \"upload_wrong_XML_is_rejected\",\n    \"upload_missing_backend_commit_is_rejected\",\n    \"upload_wrong_commit_process_is_rejected\",\n    \"upload_unchanged_generation_is_rejected\",\n    \"eviction_completed_then_denial_preserves_backend\",\n    \"eviction_without_completion_is_rejected\",\n    \"failed_eviction_is_rejected\",\n    \"denied_fetch_real_pair_in_Save_window\",\n    \"denied_modify_real_pair_in_Save_window\",\n    \"denial_before_Save_window_is_rejected\",\n    \"denial_after_error_window_is_rejected\",\n    \"denial_invalid_timestamp_is_rejected\",\n    \"denial_reversed_timestamps_are_rejected\",\n    \"denial_metadata_only_is_insufficient\",\n    \"denial_conflict_is_not_authentication\",\n    \"new_denial_requires_NSError_chain\",\n    \"new_denial_chain_root_must_match\",\n    \"old_prefix_error_without_chain_remains_decodable\",\n    \"denial_cannot_change_backend\",\n    \"changed_earlier_event_is_rejected\",\n    \"truncated_or_reordered_sequence_is_rejected\",\n    \"XML_fixture_structure_and_enum_change\",\n    \"XML_extra_wire_is_rejected\",\n    \"XML_extra_circuit_attribute_is_not_only_facing\",\n    \"XML_project_attribute_change_is_not_only_facing\"\n  ],\n  \"passedCount\" : 36,\n  \"scope\" : \"Pure macOS oracle checks; no Native\\/UI\\/FileProvider execution\"\n}\n"
+}

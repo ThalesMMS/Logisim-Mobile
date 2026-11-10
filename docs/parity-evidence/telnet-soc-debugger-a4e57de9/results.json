@@ -1,0 +1,23 @@
+{
+  "campaign": 331,
+  "mobile_revision": "a4e57de9eb3555fb5e6eed78ab6d5470e43ee229",
+  "mobile_core_jar_sha256": "3121d939a28779c1f82f02303debcc76c8f963e71a34ec63af2a5c53a16ddefc",
+  "mobile_core_jar_note": "built from a4e57de9 plus the uncommitted #331 CLI edits (HeadlessCircuitCli.kt, HeadlessLegacyTty.kt), which no Telnet or SoC path uses",
+  "evolution_revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "evolution_jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+  "environment": "macOS (Apple silicon), Homebrew OpenJDK 21, python3 -I; JVM/host only",
+  "rows": {
+    "integration/telnet": {
+      "verdict": "divergente",
+      "command": "scripts/oracle/telnet/run.sh EVOLUTION_JAR docs/parity-evidence/telnet-soc-debugger-a4e57de9/logs",
+      "summary": "8 scenarios x 2 Mobile paths. Sampled at the read/write clock edges with socket bytes: companion path 7/8 equal (second-peer differs), JVM transport 5/8 (peer-reset, and the two scenarios a probe reset). Step by step: 2/16 equal (edge timing).",
+      "results": "logs/telnet-results.json"
+    },
+    "integration/soc-debugger": {
+      "verdict": "divergente",
+      "command": "scripts/oracle/soc-debugger/run.sh EVOLUTION_JAR docs/parity-evidence/telnet-soc-debugger-a4e57de9/logs",
+      "summary": "15/19 comparisons equal: ELF load, register view and unknown marks, trace pc/word, breakpoints with two resumes (RV32 and Nios II), Nios II trace text, 67 RV32 statements encoded identically. Differ: RV32 trace text (mnemonic only), accepted assembler syntax, pseudo-instructions and data directives.",
+      "results": "logs/soc-debugger-results.json"
+    }
+  }
+}

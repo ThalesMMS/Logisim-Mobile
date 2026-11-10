@@ -1,0 +1,60 @@
+{
+  "status": "PREPARATION_REVIEW_CHECKS_PASSED",
+  "nativeUiStatus": "NOT_RUN",
+  "baseRevision": "6c49c2e8",
+  "offlineTests": {
+    "count": 6,
+    "failures": 0,
+    "runner": "python3 scripts/test-portable53-preparation.py"
+  },
+  "negativeExportCases": [
+    "peer absent from native receipt",
+    "peer hash mismatch",
+    "same before/after restart stage",
+    "duplicate receipt entry",
+    "same export path",
+    "aliased physical file",
+    "checked-in fixture as peer"
+  ],
+  "negativeIdentityCases": [
+    "new active ID reuses any nonactive earlier workspace",
+    "fresh active ID drops an earlier catalog entry",
+    "reopening reuses an old portable workspace with the same graph"
+  ],
+  "syntheticWorkspaceChecker": {
+    "scope": "Checker self-test only, not native UI or process restart",
+    "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+    "beforeProjectId": "p2",
+    "earlierNonactivePortableId": "p1",
+    "importedProjectId": "p3",
+    "freshReopenedProjectId": "p4",
+    "catalogProjectIds": {
+      "before": [
+        "p1",
+        "p2"
+      ],
+      "imported": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "restarted": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "reopened": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ]
+    },
+    "goodCase": "Accepted p4 absent from all earlier catalogs",
+    "badCase": "Rejected p1 with Reopening reused an existing workspace identity"
+  },
+  "preparationFixture": {
+    "status": "PREPARATION_ARTIFACT_VALIDATED",
+    "nativeUiStatus": "NOT_RUN"
+  }
+}

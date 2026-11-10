@@ -1,0 +1,1041 @@
+{
+  "premise": "A generic forward-then-backward reveal can reach navigation controls earlier in the same LazyColumn.",
+  "scope": "Retained evidence of connection preparation from contract step16 onward; absent measurements stay unknown.",
+  "sourcePositions": {
+    "Search": {
+      "relationship": "LazyColumn item 2, before commands",
+      "line": 179,
+      "file": "source/AccessibleCircuitExplorer.kt",
+      "pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a"
+    },
+    "Components": {
+      "relationship": "commands item 3; selected semantics = !showWires",
+      "line": 186,
+      "file": "source/AccessibleCircuitExplorer.kt",
+      "pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a"
+    },
+    "Ports": {
+      "relationship": "inside a filtered component card, after header items",
+      "line": 286,
+      "file": "source/AccessibleCircuitExplorer.kt",
+      "pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a"
+    },
+    "Start": {
+      "relationship": "expanded component terminal, after header items",
+      "line": 322,
+      "file": "source/AccessibleCircuitExplorer.kt",
+      "pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a"
+    },
+    "Complete": {
+      "relationship": "same terminal action switches with pending start",
+      "line": 322,
+      "file": "source/AccessibleCircuitExplorer.kt",
+      "pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a"
+    }
+  },
+  "sourceDependencies": {
+    "modalSheet": {
+      "file": "source/App.kt",
+      "line": 613,
+      "context": "            ModalBottomSheet(onDismissRequest = { activeTool = null }, modifier = sheetModifier.exportEditorTestTags().testTag(\"editor-tool-sheet\"),\n                dragHandle = if (keyboardVisible) null else { { BottomSheetDefaults.DragHandle() } },\n                sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {\n                val focusManager = LocalFocusManager.current\n                val keyboardController = LocalSoftwareKeyboardController.current\n                Column(Modifier.fillMaxWidth().heightIn(max = 700.dp).padding(12.dp)) {\n                    Row(Modifier.fillMaxWidth().zIndex(1f), verticalAlignment = Alignment.CenterVertically) {\n                        Text(strings(tool.titleText), modifier = Modifier.weight(1f), fontWeight = FontWeight.Bold,\n                            maxLines = 1, overflow = TextOverflow.Ellipsis)\n                        TextButton(modifier = Modifier.heightIn(min = 48.dp)\n                            .testTag(if (keyboardVisible) \"editor-tool-hide-keyboard\" else \"editor-tool-close\"), onClick = {\n                            if (keyboardVisible) {\n                                focusManager.clearFocus(force = true)\n                                keyboardController?.hide()\n                            } else activeTool = null\n                        }) { Text(strings(if (keyboardVisible) Messages.ActionHideKeyboard else Messages.ActionClose)) }\n                    }\n                    if (tool.requiresProjectGraph) key(tool.id, toolContext.documentIdentity) {"
+    },
+    "searchShortcut": {
+      "file": "source/AccessibleCircuitExplorer.kt",
+      "line": 159,
+      "text": "                        listState.scrollToItem(2)"
+    }
+  },
+  "runs": [
+    {
+      "run": "R1",
+      "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "preparedSwiftCount": 17,
+      "fromContractStep": 16,
+      "status": "FAIL",
+      "actors": {
+        "Components": {
+          "queries": [
+            {
+              "seconds": 300.86,
+              "step": 16,
+              "request": "t =   300.86s     Get all elements bound by index for: Elements matching predicate '(label == \"Components\" OR label BEGINSWITH \"Components, \") OR (label == \"Componentes\" OR label BEGINSWITH \"Componentes, \")'"
+            },
+            {
+              "seconds": 318.95,
+              "step": 16,
+              "request": "t =   318.95s     Get all elements bound by index for: Elements matching predicate '(label == \"Components\" OR label BEGINSWITH \"Components, \") OR (label == \"Componentes\" OR label BEGINSWITH \"Componentes, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 302.01,
+              "step": 16,
+              "target": "Components"
+            },
+            {
+              "seconds": 320.08,
+              "step": 16,
+              "target": "Components"
+            }
+          ],
+          "drags": [],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Search": {
+          "queries": [
+            {
+              "seconds": 303.38,
+              "step": 16,
+              "request": "t =   303.38s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 321.48,
+              "step": 16,
+              "request": "t =   321.48s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 325.45,
+              "step": 16,
+              "request": "t =   325.45s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 329.41,
+              "step": 16,
+              "request": "t =   329.41s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 333.37,
+              "step": 16,
+              "request": "t =   333.37s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 337.33,
+              "step": 16,
+              "request": "t =   337.33s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 341.3,
+              "step": 16,
+              "request": "t =   341.30s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 345.29,
+              "step": 16,
+              "request": "t =   345.29s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 349.28,
+              "step": 16,
+              "request": "t =   349.28s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 353.27,
+              "step": 16,
+              "request": "t =   353.27s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 357.26,
+              "step": 16,
+              "request": "t =   357.26s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 361.27,
+              "step": 16,
+              "request": "t =   361.27s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 365.26,
+              "step": 16,
+              "request": "t =   365.26s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            },
+            {
+              "seconds": 369.29,
+              "step": 16,
+              "request": "t =   369.29s     Get all elements bound by index for: Elements matching predicate '(label == \"Find a component, terminal, or identifier\" OR label BEGINSWITH \"Find a component, terminal, or identifier, \") OR (label == \"Buscar componente, terminal ou identifica\u00e7\u00e3o\" OR label BEGINSWITH \"Buscar componente, terminal ou identifica\u00e7\u00e3o, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 304.65,
+              "step": 16,
+              "target": "a11y-circuit-search"
+            }
+          ],
+          "drags": [
+            {
+              "seconds": 322.61,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 326.57,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 330.52,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 334.5,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 338.47,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 342.44,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 346.43,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 350.43,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 354.43,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 358.43,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 362.43,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 366.43,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 370.45,
+              "step": 16,
+              "start": [
+                195.0,
+                190.0
+              ],
+              "end": [
+                195.0,
+                778.0
+              ],
+              "direction": "down"
+            }
+          ],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Ports": {
+          "queries": [
+            {
+              "seconds": 309.76,
+              "step": 16,
+              "request": "t =   309.76s     Get all elements bound by index for: Elements matching predicate '(label == \"Terminals of E2E_IN\" OR label BEGINSWITH \"Terminals of E2E_IN, \") OR (label == \"Terminais de E2E_IN\" OR label BEGINSWITH \"Terminais de E2E_IN, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 310.9,
+              "step": 16,
+              "target": "Terminals of E2E_IN"
+            }
+          ],
+          "drags": [],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Start": {
+          "queries": [
+            {
+              "seconds": 312.34,
+              "step": 16,
+              "request": "t =   312.34s     Get all elements bound by index for: Elements matching predicate '(label == \"Iniciar liga\u00e7\u00e3o em E2E_IN, out\" OR label BEGINSWITH \"Iniciar liga\u00e7\u00e3o em E2E_IN, out, \") OR (label == \"Start a connection at E2E_IN, out\" OR label BEGINSWITH \"Start a connection at E2E_IN, out, \")'"
+            },
+            {
+              "seconds": 316.36,
+              "step": 16,
+              "request": "t =   316.36s     Get all elements bound by index for: Elements matching predicate '(label == \"Iniciar liga\u00e7\u00e3o em E2E_IN, out\" OR label BEGINSWITH \"Iniciar liga\u00e7\u00e3o em E2E_IN, out, \") OR (label == \"Start a connection at E2E_IN, out\" OR label BEGINSWITH \"Start a connection at E2E_IN, out, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 317.51,
+              "step": 16,
+              "target": "port:2:c1:out"
+            }
+          ],
+          "drags": [
+            {
+              "seconds": 313.51,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            }
+          ],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Complete": {
+          "queries": [],
+          "taps": [],
+          "drags": [],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        }
+      },
+      "failure": {
+        "step": 16,
+        "actorBeingQueried": "Search",
+        "message": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-3a/outputs/ios-editor36-phone-3a-001/harness/NativeUIHarness.swift:82: error: -[EditorEndToEndTests.EditorEndToEndTests testEditingConnectionsHistoryAndViewport] : Failed to get matching snapshot: No matches found for first query match sequence: `Descendants matching type Any` -> `Elements matching predicate '\"a11y-circuit-list\" IN identifiers'`, given input App element pid: 76016"
+      },
+      "keyboardReturnRequests": [
+        {
+          "seconds": 308.12,
+          "step": 16
+        }
+      ],
+      "missingGeometryAttachments": [],
+      "finalTreeRetained": true,
+      "sheetPresentInFinalTree": false,
+      "listPresentInFinalTree": false,
+      "editorSearchSource": "private func explorerSearch(_ query: String) throws {\n        try openExplorer()\n        try click(\"a11y_explorer_components\", region: \"a11y-circuit-list\")\n        _ = try reveal(try values(\"a11y_explorer_search\"), verticalRegion: \"a11y-circuit-list\")\n        try replacePresentedText(identified(\"a11y-circuit-search\"), with: query)\n        finishKeyboardEntry()\n    }",
+      "connectSource": "private func connect(source: String, sourcePort: String, destination: String, destinationPort: String) throws {\n        try explorerSearch(source)\n        try click(\"a11y_explorer_ports\", arguments: [\"name\": source], region: \"a11y-circuit-list\")\n        try click(\"a11y_explorer_start_connection\", arguments: [\"name\": \"\\(source), \\(sourcePort)\"], region: \"a11y-circuit-list\")\n        try explorerSearch(destination)\n        try click(\"a11y_explorer_ports\", arguments: [\"name\": destination], region: \"a11y-circuit-list\")\n        try click(\"a11y_explorer_complete_connection\", arguments: [\"name\": \"\\(destination), \\(destinationPort)\"], region: \"a11y-circuit-list\")\n        try closeExplorer()\n    }"
+    },
+    {
+      "run": "R2",
+      "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "preparedSwiftCount": 18,
+      "fromContractStep": 16,
+      "status": "FAIL",
+      "actors": {
+        "Components": {
+          "queries": [
+            {
+              "seconds": 294.43,
+              "step": 16,
+              "request": "t =   294.43s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 311.4,
+              "step": 16,
+              "request": "t =   311.40s     Get all elements bound by index for: Elements matching predicate '(label == \"Components\" OR label BEGINSWITH \"Components, \") OR (label == \"Componentes\" OR label BEGINSWITH \"Componentes, \")'"
+            },
+            {
+              "seconds": 346.95,
+              "step": 17,
+              "request": "t =   346.95s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 364.01,
+              "step": 17,
+              "request": "t =   364.01s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 368.0,
+              "step": 17,
+              "request": "t =   368.00s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 371.98,
+              "step": 17,
+              "request": "t =   371.98s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 375.93,
+              "step": 17,
+              "request": "t =   375.93s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 379.89,
+              "step": 17,
+              "request": "t =   379.89s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 383.87,
+              "step": 17,
+              "request": "t =   383.87s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 387.86,
+              "step": 17,
+              "request": "t =   387.86s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 391.84,
+              "step": 17,
+              "request": "t =   391.84s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 395.81,
+              "step": 17,
+              "request": "t =   395.81s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 399.83,
+              "step": 17,
+              "request": "t =   399.83s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 403.84,
+              "step": 17,
+              "request": "t =   403.84s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 407.81,
+              "step": 17,
+              "request": "t =   407.81s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            },
+            {
+              "seconds": 411.79,
+              "step": 17,
+              "request": "t =   411.79s     Get all elements bound by index for: Elements matching predicate '(label == \"Componentes\" OR label BEGINSWITH \"Componentes, \") OR (label == \"Components\" OR label BEGINSWITH \"Components, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 295.56,
+              "step": 16,
+              "target": "Components"
+            },
+            {
+              "seconds": 312.5,
+              "step": 16,
+              "target": "Components"
+            },
+            {
+              "seconds": 348.09,
+              "step": 17,
+              "target": "Components"
+            }
+          ],
+          "drags": [
+            {
+              "seconds": 365.16,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 369.14,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 373.09,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 377.07,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 381.05,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 385.01,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 389.01,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 392.98,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 396.98,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 400.99,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 404.99,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 408.96,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 412.95,
+              "step": 17,
+              "start": [
+                195.0,
+                190.0
+              ],
+              "end": [
+                195.0,
+                778.0
+              ],
+              "direction": "down"
+            }
+          ],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Search": {
+          "queries": [
+            {
+              "seconds": 295.98,
+              "step": 16,
+              "request": "t =   295.98s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            },
+            {
+              "seconds": 295.99,
+              "step": 16,
+              "request": "t =   295.99s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            },
+            {
+              "seconds": 312.93,
+              "step": 16,
+              "request": "t =   312.93s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            },
+            {
+              "seconds": 312.94,
+              "step": 16,
+              "request": "t =   312.94s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            },
+            {
+              "seconds": 313.93,
+              "step": 16,
+              "request": "t =   313.93s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            },
+            {
+              "seconds": 313.94,
+              "step": 16,
+              "request": "t =   313.94s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            },
+            {
+              "seconds": 348.52,
+              "step": 17,
+              "request": "t =   348.52s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            },
+            {
+              "seconds": 348.54,
+              "step": 17,
+              "request": "t =   348.54s     Get all elements bound by index for: Elements matching predicate '\"a11y-circuit-search\" IN identifiers'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 297.3,
+              "step": 16,
+              "target": "a11y-circuit-search"
+            },
+            {
+              "seconds": 315.21,
+              "step": 16,
+              "target": "a11y-circuit-search"
+            },
+            {
+              "seconds": 349.84,
+              "step": 17,
+              "target": "a11y-circuit-search"
+            }
+          ],
+          "drags": [
+            {
+              "seconds": 312.99,
+              "step": 16,
+              "start": [
+                195.0,
+                436.0
+              ],
+              "end": [
+                195.0,
+                532.0
+              ],
+              "direction": "down"
+            }
+          ],
+          "visibility": "SEARCH_FRAME_RECORDED_BEFORE_ENTRY; see each measurement, not continuous visibility",
+          "viewport": [
+            {
+              "file": "5EDA097A-8E70-485C-8105-6A32F138C5FB.txt",
+              "name": "editor-search-before-text-entry_0_FE75D9BA-A404-4DB2-9BD5-238F57BB1741.txt",
+              "step": 16,
+              "seconds": 296.1,
+              "raw": "attempt=0; field=(24.0, 262.0, 342.0, 88.0); viewport=(24.0, 182.0, 342.0, 604.0)",
+              "fullFieldInsideRecordedViewport": true
+            },
+            {
+              "file": "CA8B410C-F678-4A87-84FD-B1E749B31613.txt",
+              "name": "editor-search-before-backward-scroll_0_BCB8AA7C-17B7-4056-B6AD-650A24ABB9FA.txt",
+              "step": 16,
+              "seconds": 312.98,
+              "raw": "attempt=0; viewport=(24.0, 182.0, 342.0, 604.0); start=(195.0, 436.0); end=(195.0, 532.0)",
+              "fullFieldInsideRecordedViewport": null
+            },
+            {
+              "file": "E1776D1A-7BAF-459F-8E29-9DDD480B87C0.txt",
+              "name": "editor-search-before-text-entry_0_AAB8F731-10E8-40AB-8B5A-247163B0051D.txt",
+              "step": 16,
+              "seconds": 314.03,
+              "raw": "attempt=1; field=(24.0, 204.0, 342.0, 64.0); viewport=(24.0, 182.0, 342.0, 604.0)",
+              "fullFieldInsideRecordedViewport": true
+            },
+            {
+              "file": "FC283453-67CD-42FA-B9A7-D802CBEE8A6B.txt",
+              "name": "editor-search-before-text-entry_0_4DDF0BE8-6B4F-4EC0-9961-1E074A9E71CB.txt",
+              "step": 17,
+              "seconds": 348.66,
+              "raw": "attempt=0; field=(24.0, 262.0, 342.0, 88.0); viewport=(24.0, 182.0, 342.0, 604.0)",
+              "fullFieldInsideRecordedViewport": true
+            }
+          ],
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Ports": {
+          "queries": [
+            {
+              "seconds": 302.27,
+              "step": 16,
+              "request": "t =   302.27s     Get all elements bound by index for: Elements matching predicate '(label == \"Terminals of E2E_IN\" OR label BEGINSWITH \"Terminals of E2E_IN, \") OR (label == \"Terminais de E2E_IN\" OR label BEGINSWITH \"Terminais de E2E_IN, \")'"
+            },
+            {
+              "seconds": 325.81,
+              "step": 16,
+              "request": "t =   325.81s     Get all elements bound by index for: Elements matching predicate '(label == \"Terminais de E2E_NOT\" OR label BEGINSWITH \"Terminais de E2E_NOT, \") OR (label == \"Terminals of E2E_NOT\" OR label BEGINSWITH \"Terminals of E2E_NOT, \")'"
+            },
+            {
+              "seconds": 329.79,
+              "step": 16,
+              "request": "t =   329.79s     Get all elements bound by index for: Elements matching predicate '(label == \"Terminais de E2E_NOT\" OR label BEGINSWITH \"Terminais de E2E_NOT, \") OR (label == \"Terminals of E2E_NOT\" OR label BEGINSWITH \"Terminals of E2E_NOT, \")'"
+            },
+            {
+              "seconds": 354.78,
+              "step": 17,
+              "request": "t =   354.78s     Get all elements bound by index for: Elements matching predicate '(label == \"Terminais de E2E_NOT\" OR label BEGINSWITH \"Terminais de E2E_NOT, \") OR (label == \"Terminals of E2E_NOT\" OR label BEGINSWITH \"Terminals of E2E_NOT, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 303.43,
+              "step": 16,
+              "target": "Terminals of E2E_IN"
+            },
+            {
+              "seconds": 330.93,
+              "step": 16,
+              "target": "Terminals of E2E_NOT"
+            },
+            {
+              "seconds": 355.95,
+              "step": 17,
+              "target": "Terminals of E2E_NOT"
+            }
+          ],
+          "drags": [
+            {
+              "seconds": 326.95,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            }
+          ],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Start": {
+          "queries": [
+            {
+              "seconds": 304.85,
+              "step": 16,
+              "request": "t =   304.85s     Get all elements bound by index for: Elements matching predicate '(label == \"Iniciar liga\u00e7\u00e3o em E2E_IN, out\" OR label BEGINSWITH \"Iniciar liga\u00e7\u00e3o em E2E_IN, out, \") OR (label == \"Start a connection at E2E_IN, out\" OR label BEGINSWITH \"Start a connection at E2E_IN, out, \")'"
+            },
+            {
+              "seconds": 308.82,
+              "step": 16,
+              "request": "t =   308.82s     Get all elements bound by index for: Elements matching predicate '(label == \"Iniciar liga\u00e7\u00e3o em E2E_IN, out\" OR label BEGINSWITH \"Iniciar liga\u00e7\u00e3o em E2E_IN, out, \") OR (label == \"Start a connection at E2E_IN, out\" OR label BEGINSWITH \"Start a connection at E2E_IN, out, \")'"
+            },
+            {
+              "seconds": 357.37,
+              "step": 17,
+              "request": "t =   357.37s     Get all elements bound by index for: Elements matching predicate '(label == \"Start a connection at E2E_NOT, out\" OR label BEGINSWITH \"Start a connection at E2E_NOT, out, \") OR (label == \"Iniciar liga\u00e7\u00e3o em E2E_NOT, out\" OR label BEGINSWITH \"Iniciar liga\u00e7\u00e3o em E2E_NOT, out, \")'"
+            },
+            {
+              "seconds": 361.36,
+              "step": 17,
+              "request": "t =   361.36s     Get all elements bound by index for: Elements matching predicate '(label == \"Start a connection at E2E_NOT, out\" OR label BEGINSWITH \"Start a connection at E2E_NOT, out, \") OR (label == \"Iniciar liga\u00e7\u00e3o em E2E_NOT, out\" OR label BEGINSWITH \"Iniciar liga\u00e7\u00e3o em E2E_NOT, out, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 309.96,
+              "step": 16,
+              "target": "port:2:c1:out"
+            },
+            {
+              "seconds": 362.54,
+              "step": 17,
+              "target": "port:2:c2:out"
+            }
+          ],
+          "drags": [
+            {
+              "seconds": 305.99,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            },
+            {
+              "seconds": 358.52,
+              "step": 17,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            }
+          ],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        },
+        "Complete": {
+          "queries": [
+            {
+              "seconds": 332.37,
+              "step": 16,
+              "request": "t =   332.37s     Get all elements bound by index for: Elements matching predicate '(label == \"Conectar a E2E_NOT, in\" OR label BEGINSWITH \"Conectar a E2E_NOT, in, \") OR (label == \"Connect to E2E_NOT, in\" OR label BEGINSWITH \"Connect to E2E_NOT, in, \")'"
+            },
+            {
+              "seconds": 336.37,
+              "step": 16,
+              "request": "t =   336.37s     Get all elements bound by index for: Elements matching predicate '(label == \"Conectar a E2E_NOT, in\" OR label BEGINSWITH \"Conectar a E2E_NOT, in, \") OR (label == \"Connect to E2E_NOT, in\" OR label BEGINSWITH \"Connect to E2E_NOT, in, \")'"
+            }
+          ],
+          "taps": [
+            {
+              "seconds": 337.52,
+              "step": 16,
+              "target": "port:2:c2:in"
+            }
+          ],
+          "drags": [
+            {
+              "seconds": 333.53,
+              "step": 16,
+              "start": [
+                195.0,
+                778.0
+              ],
+              "end": [
+                195.0,
+                190.0
+              ],
+              "direction": "up"
+            }
+          ],
+          "visibility": "NOT_MEASURED_BY_RETAINED_FRAME",
+          "viewport": "NOT_RETAINED_FOR_THIS_ACTOR",
+          "keyboard": "No per-action input-frame census; Return requests do not prove subsequent keyboard absence",
+          "selectedState": "NOT_RECORDED",
+          "tapMeaning": "XCTest tap request only; no application receive/consume receipt"
+        }
+      },
+      "failure": {
+        "step": 17,
+        "actorBeingQueried": "Components",
+        "message": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/outputs/ios-editor36-phone-3a-002/harness/NativeUIHarness.swift:118: error: -[EditorEndToEndTests.EditorEndToEndTests testEditingConnectionsHistoryAndViewport] : Failed to get matching snapshot: No matches found for first query match sequence: `Descendants matching type Any` -> `Elements matching predicate '\"a11y-circuit-list\" IN identifiers'`, given input App element pid: 4675"
+      },
+      "keyboardReturnRequests": [
+        {
+          "seconds": 300.65,
+          "step": 16
+        },
+        {
+          "seconds": 324.02,
+          "step": 16
+        },
+        {
+          "seconds": 353.16,
+          "step": 17
+        }
+      ],
+      "missingGeometryAttachments": [],
+      "finalTreeRetained": true,
+      "sheetPresentInFinalTree": false,
+      "listPresentInFinalTree": false,
+      "editorSearchSource": "private func explorerSearch(_ query: String) throws {\n        try openExplorer()\n        try click(\"a11y_explorer_components\", region: \"a11y-circuit-list\")\n        let search = try revealExplorerSearch()\n        try replaceEditorText(search, with: query)\n        finishKeyboardEntry()\n    }\n\n    private func explorerSearchGeometry(region: CGRect, window: CGRect, inputFrames: [CGRect])\n        -> (viewport: CGRect, start: CGPoint, end: CGPoint)? {\n        func finite(_ frame: CGRect) -> Bool {\n            [frame.origin.x, frame.origin.y, frame.size.width, frame.size.height].allSatisfy { $0.isFinite } &&\n                frame.size.width > 0 && frame.size.height > 0\n        }\n        guard finite(region), finite(window) else { return nil }\n        var viewport = region.intersection(window)\n        for input in inputFrames {\n            guard [input.origin.x, input.origin.y, input.size.width, input.size.height].allSatisfy({ $0.isFinite }),\n                  input.size.width >= 0 && input.size.height >= 0 else { return nil }\n            if input.size.width == 0 || input.size.height == 0 { continue }\n            let obstacle = input.intersection(window)\n            if !obstacle.isNull && obstacle.intersects(viewport) {\n                viewport = viewport.intersection(CGRect(x: window.minX, y: window.minY,\n                    width: window.width, height: max(0, obstacle.minY - window.minY)))\n            }\n        }\n        guard finite(viewport), viewport.width >= 48, viewport.height >= 48 else { return nil }\n        let distance = min(CGFloat(96), viewport.height / 4)\n        return (viewport, CGPoint(x: viewport.midX, y: viewport.midY - distance / 2),\n                CGPoint(x: viewport.midX, y: viewport.midY + distance / 2))\n    }\n\n    private func revealExplorerSearch() throws -> XCUIElement {\n        let names = try values(\"a11y_explorer_search\")\n        for attempt in 0...12 {\n            let sheet = identified(\"editor-tool-sheet\")\n            let list = identified(\"a11y-circuit-list\")\n            guard sheet.exists && list.exists else {\n                attach(app.debugDescription, name: \"editor-search-missing-container\")\n                screenshot(\"editor-search-missing-container\")\n                XCTFail(\"The Explorer sheet and list must remain present while revealing Search\")\n                throw HarnessFailure.missingControl\n            }\n            var inputFrames = app.keyboards.allElementsBoundByIndex.filter { $0.exists }.map(\\.frame)\n            for identifier in [\"inputView\", \"SystemInputAssistantView\"] {\n                let input = identified(identifier)\n                if input.exists { inputFrames.append(input.frame) }\n            }\n            guard let geometry = explorerSearchGeometry(region: list.frame, window: app.frame,\n                                                        inputFrames: inputFrames) else {\n                attach(app.debugDescription, name: \"editor-search-covered-viewport\")\n                screenshot(\"editor-search-covered-viewport\")\n                XCTFail(\"The Explorer Search needs an observed usable viewport outside native input surfaces\")\n                throw HarnessFailure.missingControl\n            }\n            let fields = (app.textViews.matching(identifier: \"a11y-circuit-search\").allElementsBoundByIndex +\n                          app.textFields.matching(identifier: \"a11y-circuit-search\").allElementsBoundByIndex)\n                .filter { $0.exists }\n            guard fields.count <= 1 else {\n                XCTFail(\"The tagged Explorer Search must identify one native text control\")\n                throw HarnessFailure.missingControl\n            }\n            if let field = fields.first {\n                let frame = field.frame\n                if [frame.origin.x, frame.origin.y, frame.size.width, frame.size.height].allSatisfy({ $0.isFinite }),\n                   frame.size.width >= 48, frame.size.height >= 48, geometry.viewport.contains(frame),\n                   names.contains(where: { nativeLabel(field.label, matches: $0) }),\n                   field.isEnabled && field.isHittable {\n                    checkFrame(field, name: \"editor-explorer-search\")\n                    attach(\"attempt=\\(attempt); field=\\(frame); viewport=\\(geometry.viewport)\",\n                           name: \"editor-search-before-text-entry\")\n                    return field\n                }\n            }\n            guard attempt < 12 else { break }\n            attach(\"attempt=\\(attempt); viewport=\\(geometry.viewport); start=\\(geometry.start); end=\\(geometry.end)\",\n                   name: \"editor-search-before-backward-scroll\")\n            let origin = app.coordinate(withNormalizedOffset: .zero)\n            let window = app.frame\n            origin.withOffset(CGVector(dx: geometry.start.x - window.minX, dy: geometry.start.y - window.minY))\n                .press(forDuration: 0.05,\n                       thenDragTo: origin.withOffset(CGVector(dx: geometry.end.x - window.minX, dy: geometry.end.y - window.minY)),\n                       withVelocity: .slow, thenHoldForDuration: 0.1)\n        }\n        attach(app.debugDescription, name: \"editor-search-not-reachable\")\n        screenshot(\"editor-search-not-reachable\")\n        XCTFail(\"The Explorer Search did not become fully visible within twelve short backward scrolls\")\n        throw HarnessFailure.missingControl\n    }",
+      "connectSource": "private func connect(source: String, sourcePort: String, destination: String, destinationPort: String) throws {\n        try explorerSearch(source)\n        try click(\"a11y_explorer_ports\", arguments: [\"name\": source], region: \"a11y-circuit-list\")\n        try click(\"a11y_explorer_start_connection\", arguments: [\"name\": \"\\(source), \\(sourcePort)\"], region: \"a11y-circuit-list\")\n        try explorerSearch(destination)\n        try click(\"a11y_explorer_ports\", arguments: [\"name\": destination], region: \"a11y-circuit-list\")\n        try click(\"a11y_explorer_complete_connection\", arguments: [\"name\": \"\\(destination), \\(destinationPort)\"], region: \"a11y-circuit-list\")\n        try closeExplorer()\n    }"
+    }
+  ],
+  "limits": [
+    "No intermediate full AX tree was retained for these header transitions.",
+    "Selected state was not read back; source semantics are eligibility for a future check, not observed runtime state.",
+    "Drag/tap records show requested input, not delivery or nested-scroll consumption.",
+    "Final-tree absence is not a timestamped dismissal callback.",
+    "R1ba9 and R2e835/Root2d4d differ in more than the private helper; no isolated causal A/B claim."
+  ]
+}

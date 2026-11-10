@@ -1,0 +1,97 @@
+{
+ "schema": "logisim-mobile.validation-receipt.v1",
+ "issues": [
+  266,
+  312,
+  241
+ ],
+ "evolution_revision": "d58a61e0",
+ "tested_tree": "1295aeadcb8b594f77e95d58d54a673159276832",
+ "tested_tree_note": "App sources at 1295aead; harness changes (proof script AND-gate lookup, iOS explorer test) are in the commits that add this receipt.",
+ "artifacts": {
+  "app_e2e_apk_sha256": "82ab774ea863ad32131a6d4fa8b9accbec12614aed6808ef2fb27c7fc5cc5aba",
+  "android_test_apk_sha256": "c82dfd3b28f77be3dc57d54b6c40992a34d0163d1261356d88747bf62caf31e1",
+  "talkback_apk": {
+   "source": "github.com/google/talkback dcddeddc (TfPu_release_14_1)",
+   "sha256": "1c467d9ec2d4c8a6a70252d00f1b67bd45c603e8906edcf152d05d14f428a0cd",
+   "toolchain": "Homebrew openjdk@11 11.0.33, Gradle 7.3.3 (sha256 b586e04868a22fd817c8971330fec37e298f3242eb85c374181b12d637f80302), NDK 27.2.12479018",
+   "local_build_changes": [
+    "ndkVersion '27.2.12479018' in braille/brltty and braille/translate",
+    "APP_STL c++_static in braille/translate (c++_shared left libc++_shared.so out of the APK; first install crashed with UnsatisfiedLinkError in LouisTranslation.<clinit>)"
+   ]
+  }
+ },
+ "266_talkback_api31": {
+  "status": "PASS",
+  "device": "emulator-5562, AVD logisim31play, android-31 google_apis_playstore arm64-v8a, 1080x2400, system en-US (am get-config en-rUS v31), app Deutsch",
+  "talkback": "com.android.talkback TfPu_release_14_1, minSdk 26, touch exploration on, Display speech output on; gestures via emulator gRPC sendTouch 127.0.0.1:8562 with token",
+  "scenarios": [
+   {
+    "name": "Preferences opened through Menü öffnen > Datei > Einstellungen",
+    "result": "PASS",
+    "observed": "focus on handle, caption 'Ziehpunkt, Button', hint 'Double-tap to Panel schließen'"
+   },
+   {
+    "name": "swipe right then left",
+    "result": "PASS",
+    "observed": "'Editor-Einstellungen' then 'Ziehpunkt, Button'"
+   },
+   {
+    "name": "double tap on the handle",
+    "result": "PASS",
+    "observed": "sheet closed, focus on 'Menü öffnen' at 1 s and 5 s"
+   },
+   {
+    "name": "circuits/library sheet closed by double tap outside",
+    "result": "PASS",
+    "observed": "'Panel schließen, Button'; focus back on 'Schaltungen und Bibliothek öffnen, Button'"
+   },
+   {
+    "name": "Preferences closed by Back",
+    "result": "PASS",
+    "observed": "focus on 'Menü öffnen'"
+   },
+   {
+    "name": "Sprache > 日本語 with the sheet open",
+    "result": "PASS",
+    "observed": "sheet stayed open, header '保存済み · リビジョン 2'; handle 'ドラッグ ハンドル, Button'; outside 'パネルを閉じる, Button'"
+   },
+   {
+    "name": "Japanese: close outside, close by handle",
+    "result": "PASS",
+    "observed": "focus on the menu button both times"
+   },
+   {
+    "name": "back to Deutsch; two-finger drag down",
+    "result": "PASS",
+    "observed": "labels German again; drag passed through TalkBack and closed the sheet; focus on 'Menü öffnen'"
+   }
+  ],
+  "observation": "First close of the session, activated by a double tap away from the handle right after TalkBack started, left focus on 'Schaltungen und Bibliothek öffnen' (18-*.png). The repeat (19-*.png) and every other close returned focus to the opener.",
+  "revision": "project revision 2 throughout",
+  "restoration": "enabled_accessibility_services=null, accessibility_enabled=0, touch_exploration_enabled=0; TalkBack uninstalled; AVD stopped; TalkBack build tree, NDK 27.2, build-tools 29.0.0, platforms/android-33 and openjdk@11 removed"
+ },
+ "312_long_press_tip": {
+  "status": "PASS",
+  "device": "emulator-5556, AVD logisim35play, Android 15 API 35 Play arm64, en-US",
+  "command": "python3 scripts/android_display_preferences_proof.py --serial emulator-5556 --output /tmp/t312-proof --only 312 (after File > Open example: AND)",
+  "result": "02-312-long-press-menu longPressTipShown true; popup lists AND first, then Show Attributes, Copy, Cut, Paste, Duplicate, Delete, Select all, Fit selection",
+  "runner_change": "the AND gate is found by accessible description; the bundled example's imported ID is import-3"
+ },
+ "241_ios_accessibility_tree": {
+  "status": "PASS",
+  "test": "EditorEndToEndTests/EditorEndToEndTests/testAccessibleAndGateExplorerFlowSaveAndReopen",
+  "command": "python3 scripts/run-ios-e2e.py --simulator 67EB8F00-C084-4073-8742-2DADC0C2AA68 --app LogisimMobile.app --baseline-sha 1295aead --output … --build-lock /tmp/logisim-build.lock --test-timeout 3000 --only-testing EditorEndToEndTests/EditorEndToEndTests/testAccessibleAndGateExplorerFlowSaveAndReopen",
+  "device": "own Simulator 't241 iPhone 27.0' (iPhone 17, iOS 27.0 24A434), en-US",
+  "app": "LogisimMobile.app Debug built from 1295aead, bundle tree SHA-256 d4695b3aaf840d8b663a3075c184f03560d690b19cd261d92d8e00cc7372a8c0, executable 300cf7cd…184a",
+  "result": "NATIVE_PASS, 1 test, 0 failures, 863.7 s (run 5faf5701d52e)",
+  "observed": {
+   "rows": "Select A/B/G/Y buttons with identifiers component:c1..c4 and values '{kind}. {signal}' (e.g. 'Input. Low, 0.'); 'Selected.' prefix and the selected trait after selecting Y",
+   "terminal": "button port:…:in, label 'Start a connection at Y, in, Start a connection at Y, in' (duplicated by Compose iOS, #328), value 'Input in, 1 bit. Low, 0.'; Connections of Y, in lists 'Select G, out'",
+   "truth_table": "Y after Refresh values: 00 Low, 01 Low, 10 Low, 11 High; same after relaunch (workspace restore, identical XML) and after reopening the saved file; canvas description agrees",
+   "save_reopen": "Save as through the native Files picker into Documents/LogisimE2E/<run>/main.circ; file bytes equal to the exported XML (SHA-256 b2dc3a2c889f2f4a27fbcef7c97d553864e1a348a85de6ad9c77aa04da866d13), labels A/B/G/Y and AND Gate; after New, terminate and relaunch, system open showed 'File main.circ opened.' and the editor XML equalled the saved bytes"
+  },
+  "attempts_on_ios_27_2": "Runs 1-11 on an iOS 27.2 Simulator: harness assertions corrected in runs 1-4; runs 5-10 stopped in the 27.2 Files picker (the app's run folders were not listed, folder taps did not navigate), a limitation already recorded by #240. Run 11 on 27.2 passed every step up to Files, including relaunch restore and the truth table after relaunch.",
+  "files": "ios-241/"
+ }
+}

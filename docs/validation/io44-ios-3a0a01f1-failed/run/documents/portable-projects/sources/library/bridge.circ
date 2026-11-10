@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0" version="1.0" qualification-source="bridge53">
+  <lib name="w" desc="#Wiring"/>
+  <lib name="cell" desc="file#./cell.circ" qualification-library="cell53"/>
+  <main name="Bridge53" marker="bridge-main53"/>
+  <circuit name="Bridge53" id="circuit-bridge53">
+    <a name="appearance" val="custom"/>
+    <appear><rect x="60" y="80" width="80" height="40"/><circ-anchor facing="east" x="100" y="100"/><circ-port dir="in" pin="0,100" x="60" y="100"/><circ-port dir="out" pin="200,100" x="140" y="100"/></appear>
+    <comp lib="w" name="Pin" loc="(0,100)" logisim-mobile-id="bridge-in53"><a name="width" val="8"/><a name="label" val="BRIDGE_IN53"/></comp>
+    <comp lib="cell" name="Cell53" loc="(100,100)" logisim-mobile-id="bridge-cell53"><a name="label" val="TRANSITIVE53"/></comp>
+    <comp lib="w" name="Pin" loc="(200,100)" logisim-mobile-id="bridge-out53"><a name="type" val="output"/><a name="facing" val="west"/><a name="width" val="8"/><a name="label" val="BRIDGE_OUT53"/></comp>
+    <wire from="(0,100)" to="(60,100)"/><wire from="(140,100)" to="(200,100)"/>
+  </circuit>
+</project>

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/tmp/logisim-native48-idle-driver.py", line 122, in main
+    s.incoming(uri);before,project=s.export_xml('before-idle');manifest['model_before']=shape(project);manifest['canonical_before_sha256']=sha(before.encode())
+    ~~~~~~~~~~^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-native-source-plan/scripts/e2e-android.py", line 704, in incoming
+    opened = self.wait_key("status_file_opened", name=name)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-native-source-plan/scripts/e2e-android.py", line 220, in wait_key
+    raise AssertionError(f"The {key} control did not appear within {timeout}s")
+AssertionError: The status_file_opened control did not appear within 30s

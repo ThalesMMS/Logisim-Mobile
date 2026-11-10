@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "draft",
+  "identity": {
+    "application": "Logisim Mobile",
+    "packageName": "thalesmms.logisim.mobile",
+    "version": "0.2.0",
+    "build": 2
+  },
+  "defaultLanguageCandidate": "en-US",
+  "categoryCandidate": "EDUCATION",
+  "listings": {
+    "en-US": {
+      "title": "Logisim Mobile",
+      "shortDescription": "Design and simulate digital circuits on phones and tablets.",
+      "fullDescription": "Build digital logic circuits, inspect signals, and run simulations. Open and export supported .circ projects, edit properties, and explore included examples such as SAP-1. Optional desktop companion operations require pairing and a user action. This independent port has a documented compatibility scope and is not affiliated with upstream Logisim Evolution.",
+      "releaseNotesFile": "docs/releases/0.2.0.md"
+    },
+    "pt-BR": {
+      "title": "Logisim Mobile",
+      "shortDescription": "Crie e simule circuitos digitais no celular e no tablet.",
+      "fullDescription": "Monte circuitos lógicos digitais, inspecione sinais e execute simulações. Abra e exporte projetos .circ compatíveis, edite propriedades e explore exemplos incluídos, como o SAP-1. As operações opcionais no companion desktop exigem pareamento e uma ação do usuário. Este port independente tem um escopo de compatibilidade documentado e não é afiliado ao projeto upstream Logisim Evolution.",
+      "releaseNotesFile": "docs/releases/0.2.0.md"
+    }
+  },
+  "ownerDecisions": {
+    "channel": null,
+    "developerAccount": null,
+    "supportEmail": null,
+    "privacyPolicyUrl": null,
+    "targetAudience": null,
+    "pricing": null,
+    "contentRating": null,
+    "dataSafetyDeclaration": null
+  },
+  "materials": {
+    "icon": "artwork/app-icon.svg",
+    "phoneScreenshots": [],
+    "tabletScreenshots": [],
+    "featureGraphic": null
+  },
+  "privacyReview": {
+    "status": "pending",
+    "source": "docs/interop-policy.md",
+    "knownFlows": [
+      "Circuit editing and ordinary simulation run locally; workspace and preferences are stored in app-private storage.",
+      "Users choose documents and assets through system pickers. Export/share actions send selected content to the destination chosen in the system interface.",
+      "Optional companion requests send selected circuit/source/tool inputs to a paired host after a user action. The host may run local tools or access a network endpoint explicitly enabled for that operation.",
+      "Pairing sends a token to the chosen endpoint and retrieves capabilities. Local editing does not require pairing.",
+      "No hosted service, cloud account, automatic LAN discovery, or telemetry endpoint is configured by the interop policy. This is source evidence, not a final Google Play Data safety declaration."
+    ]
+  },
+  "licenseReview": {
+    "status": "pending",
+    "audit": "docs/distribution-license-audit.md",
+    "sourceReleaseScript": "scripts/prepare-source-release.py",
+    "sourceRepository": "https://github.com/ThalesMMS/logisim-mobile-dev"
+  },
+  "promotion": {
+    "requiredClosedIssues": [
+      13,
+      16,
+      17,
+      35,
+      56,
+      48,
+      12,
+      28
+    ],
+    "signedArtifactMetadata": null,
+    "physicalInstallUpdateEvidence": null,
+    "ownerReview": null
+  },
+  "policySources": [
+    "https://support.google.com/googleplay/android-developer/answer/9859152?hl=en",
+    "https://support.google.com/googleplay/android-developer/answer/9859348?hl=en",
+    "https://support.google.com/googleplay/android-developer/answer/10787469?hl=en"
+  ]
+}

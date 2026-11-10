@@ -1,0 +1,41 @@
+{
+  "app": {
+    "originalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/Info.plist",
+    "originalBytes": 1527,
+    "originalSHA256": "15a5f3485b7cbc3b2d6d4d33895b6b8b1ee65749c35510175f411c5250b5fcef",
+    "values": {
+      "CFBundleIdentifier": "thalesmms.logisim.validation.revocationfixture",
+      "CFBundleExecutable": "RevocationFixture",
+      "CFBundlePackageType": "APPL",
+      "MinimumOSVersion": "17.0",
+      "UIApplicationSceneManifest": {
+        "UIApplicationSupportsMultipleScenes": false,
+        "UISceneConfigurations": {
+          "UIWindowSceneSessionRoleApplication": [
+            {
+              "UISceneConfigurationName": "Fixture",
+              "UISceneDelegateClassName": "RevocationFixture.FixtureSceneDelegate"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "provider": {
+    "originalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/Info.plist",
+    "originalBytes": 1109,
+    "originalSHA256": "ddf75da1d5927ab6da8e3fd93e7b9c25e24c1b0625a3ab450c4d5e799526d47e",
+    "values": {
+      "CFBundleIdentifier": "thalesmms.logisim.validation.revocationfixture.provider",
+      "CFBundleExecutable": "RevocationProvider",
+      "CFBundlePackageType": "XPC!",
+      "MinimumOSVersion": "17.0",
+      "NSExtension": {
+        "NSExtensionFileProviderDocumentGroup": "group.thalesmms.logisim.validation.revocationfixture",
+        "NSExtensionFileProviderSupportsEnumeration": true,
+        "NSExtensionPointIdentifier": "com.apple.fileprovider-nonui",
+        "NSExtensionPrincipalClass": "RevocationProvider.RevocationFileProvider"
+      }
+    }
+  }
+}

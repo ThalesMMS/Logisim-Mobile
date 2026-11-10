@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "issue": 21,
+  "case": "inspector-invalid-value-focus-and-undo",
+  "qualification": "ANDROID_API35_EMULATOR_INSPECTOR_PASS",
+  "attempts": 1,
+  "runExitCode": 0,
+  "appProducerHead": "85da031e4ed11474c2e763976392729810ef142d",
+  "productionSourceIdenticalTo": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "harnessProducerHead": "5cb2fead2743cbba84f0efbad51e8bca822c7f05",
+  "inspectorSourceSha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+  "appSha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+  "testSha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882",
+  "snapshotSha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387",
+  "runtime": {
+    "serial": "emulator-5558",
+    "api": 35,
+    "language": "en",
+    "fingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+    "utc": "20261105T043756Z"
+  },
+  "nativeResults": [
+    {
+      "scenario": "inspector-invalid-value-focus-and-undo",
+      "status": "passed",
+      "seconds": 226.75
+    }
+  ],
+  "observations": {
+    "numericFieldFocused": true,
+    "softwareKeyboardShown": true,
+    "invalidWidth": 0,
+    "invalidApplyEnabled": false,
+    "invalidExportUnchanged": true,
+    "validExportWidth": 4,
+    "singleUndoExportWidth": 1
+  },
+  "xmlSha256": {
+    "inspector-before": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+    "inspector-invalid-unchanged": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+    "inspector-valid-width4": "7ec125e62cad73963d6dc9aceb205d1c88d372024b5306a9c6271779f1912538",
+    "inspector-width-undo": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480"
+  },
+  "invalidAndUndoBytesEqualBaseline": true,
+  "validChange": "The only serialized change is width from 1 to 4 on the known input Pin.",
+  "validWidth4Dialog": {
+    "xml": "docs/validation/artifacts/android-inspector-beta-85da031e/focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.xml",
+    "metadata": "docs/validation/artifacts/android-inspector-beta-85da031e/focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.json",
+    "nonce": "56f722b00de0422ca8c6b6ea7ea93b62",
+    "fieldValue": "4",
+    "fieldFocused": true,
+    "applyEnabled": true
+  },
+  "installedArtifactsBefore": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~BM1chV6Q21HIZ05D8vKiSA==/thalesmms.logisim.mobile.e2e-cSsnyC9Qxjnv8JI1A3Nqkg==/base.apk",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~VwUWwsKT_SakrN-92qdOtA==/thalesmms.logisim.mobile.e2e.test-sKdL71E_HcfhnWPPksIypA==/base.apk",
+      "sha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~pRp7uXg_PxbSnKO_3wgwQQ==/thalesmms.logisim.mobile.snapshot.e2e.test-htIWaNZbWP5bKkUtMqgriA==/base.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "installedArtifactsAfter": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~BM1chV6Q21HIZ05D8vKiSA==/thalesmms.logisim.mobile.e2e-cSsnyC9Qxjnv8JI1A3Nqkg==/base.apk",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~VwUWwsKT_SakrN-92qdOtA==/thalesmms.logisim.mobile.e2e.test-sKdL71E_HcfhnWPPksIypA==/base.apk",
+      "sha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~pRp7uXg_PxbSnKO_3wgwQQ==/thalesmms.logisim.mobile.snapshot.e2e.test-htIWaNZbWP5bKkUtMqgriA==/base.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "frozenSources": {
+    "e2e-android.py": "5072fab9bab1e6a8ddcaf6939029d23187f2c958ff5dd9a1d5213e5ace7e2c82",
+    "android_ui.py": "5a0fe68103eea25ecdf5111107035389af3a1a139b49acb02cdb7b11fb6a5e86",
+    "android_editing_scenarios.py": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673",
+    "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+    "android_inspector_scenarios.py": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+    "android_io_showcase_scenarios.py": "1490f9c19e44ad4b76cab0fba222be61566940a305a17c4644894347cf464272",
+    "android_portable_scenarios.py": "6e5888e73ddb558d038f22c45b517e182a46a991f43d878427a65f724ee5c7b4",
+    "android_visual_export34_scenarios.py": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763"
+  },
+  "scenarioContractSha256": "4475d0c71c04e5d53f1eb9165ff2fc7382655a66b47c4419beae4ccef59dc0f4",
+  "scope": "One English Inspector UI round on Android API35 emulator-5558 using this exact APK triplet. Device returned after terminal PASS.",
+  "limits": [
+    "No physical-device qualification.",
+    "No execution on later main builds is inferred.",
+    "No multiselection, other-case, or performance qualification."
+  ],
+  "receiptPreparation": "Only existing files were copied and checked locally. No new ADB, GUI, build, source change, or retry.",
+  "artifacts": {
+    "app-build-receipt.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/app-build-receipt.json",
+      "sha256": "8d46429d74b25c7d1bcfa856b052e717f1cac1812acc0f2672f8c407aeeaba70",
+      "bytes": 632
+    },
+    "build-receipt.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/build-receipt.json",
+      "sha256": "8d46429d74b25c7d1bcfa856b052e717f1cac1812acc0f2672f8c407aeeaba70",
+      "bytes": 632
+    },
+    "focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.json",
+      "sha256": "7256f723e9febe5913c367991f4ef85534a9bfb910c86dcca1a18b6481bb3961",
+      "bytes": 12715
+    },
+    "focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.stderr.txt": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.stdout.txt": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.stdout.txt",
+      "sha256": "22ab145fe139d518b74022337f6fa75917012f201744bb11ac15c446e5cffd5c",
+      "bytes": 11548
+    },
+    "focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.xml": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/focus-snapshot-34d6ffb3e13d482cab496c5a387c3124-25.xml",
+      "sha256": "67c7bffed4da1492cf09c7cc9c480a23fbee4b5a143a35602b860d95d1b4142f",
+      "bytes": 7829
+    },
+    "inspector-85da031e-en-r1.console.log": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-85da031e-en-r1.console.log",
+      "sha256": "e889453a2d532d202063d27021e87726adb4441c3b5d8ad698d8f86fb6a25fa4",
+      "bytes": 104
+    },
+    "inspector-before.circ": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-before.circ",
+      "sha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+      "bytes": 964
+    },
+    "inspector-invalid-focused-ui.xml": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-invalid-focused-ui.xml",
+      "sha256": "80fbb27aa897c8c17511e6f080bab137d365c81479f9683d74137350102d8509",
+      "bytes": 8248
+    },
+    "inspector-invalid-focused.png": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-invalid-focused.png",
+      "sha256": "92d8aff8204b9727b7f9c91525e6479ae353b7c4e4f1693b51e8890edb1bd819",
+      "bytes": 126859
+    },
+    "inspector-invalid-rejected-ui.xml": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-invalid-rejected-ui.xml",
+      "sha256": "1eade6fb4b52541e31099ed177e42d4180f3abec7b9012568b57953c125260f8",
+      "bytes": 8259
+    },
+    "inspector-invalid-rejected.png": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-invalid-rejected.png",
+      "sha256": "bce2a66f2544bc75e8332daab7fe7832aa2378a54ac9fc75c1afd6fdc5b4e174",
+      "bytes": 123750
+    },
+    "inspector-invalid-unchanged.circ": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-invalid-unchanged.circ",
+      "sha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+      "bytes": 964
+    },
+    "inspector-invalid-value-focus-and-undo-ui.xml": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-invalid-value-focus-and-undo-ui.xml",
+      "sha256": "116b82d687e7ee56ab74f1a4d3e41b2788b67fa81c6ecc1eca534242991ca354",
+      "bytes": 31700
+    },
+    "inspector-invalid-value-focus-and-undo.png": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-invalid-value-focus-and-undo.png",
+      "sha256": "717eb4694111bee71eb2821d4be29023e405147985d6773a2c4c96921e6036d4",
+      "bytes": 114673
+    },
+    "inspector-observations.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-observations.json",
+      "sha256": "826c7faa03a0e6d07d3428d8058352dadde9136132d4b58ec61a8e164b61b742",
+      "bytes": 209
+    },
+    "inspector-valid-width4.circ": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-valid-width4.circ",
+      "sha256": "7ec125e62cad73963d6dc9aceb205d1c88d372024b5306a9c6271779f1912538",
+      "bytes": 964
+    },
+    "inspector-width-undo.circ": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/inspector-width-undo.circ",
+      "sha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+      "bytes": 964
+    },
+    "manifest.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/manifest.json",
+      "sha256": "7e28ac437e4c4de3e57d76f66f700b5c75dfac208c4ca1d1cde43f7a87e90446",
+      "bytes": 5206
+    },
+    "preflight-before-adb.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/preflight-before-adb.json",
+      "sha256": "5abdb3c7f767c13f7ee229b5f226b1d43056c96921ff589537c06d67a6ffd1e6",
+      "bytes": 1560
+    },
+    "producer-manifest.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/producer-manifest.json",
+      "sha256": "39352b05a197173d49b703b373239207acf1d933380234681bc994506765c36e",
+      "bytes": 48521
+    },
+    "results.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/results.json",
+      "sha256": "9e44f2cc3efa3d8efb42b6a4379f7e68748b2d81afe620e2c0e2bd36fbbac48d",
+      "bytes": 116
+    },
+    "source-android_editing_scenarios.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-android_editing_scenarios.py",
+      "sha256": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673",
+      "bytes": 23853
+    },
+    "source-android_inspector_scenarios.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-android_inspector_scenarios.py",
+      "sha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+      "bytes": 8646
+    },
+    "source-android_io_showcase_scenarios.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-android_io_showcase_scenarios.py",
+      "sha256": "1490f9c19e44ad4b76cab0fba222be61566940a305a17c4644894347cf464272",
+      "bytes": 15901
+    },
+    "source-android_portable_scenarios.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-android_portable_scenarios.py",
+      "sha256": "6e5888e73ddb558d038f22c45b517e182a46a991f43d878427a65f724ee5c7b4",
+      "bytes": 28753
+    },
+    "source-android_ui.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-android_ui.py",
+      "sha256": "5a0fe68103eea25ecdf5111107035389af3a1a139b49acb02cdb7b11fb6a5e86",
+      "bytes": 33261
+    },
+    "source-android_visual_export34_scenarios.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-android_visual_export34_scenarios.py",
+      "sha256": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763",
+      "bytes": 18149
+    },
+    "source-e2e-android.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-e2e-android.py",
+      "sha256": "5072fab9bab1e6a8ddcaf6939029d23187f2c958ff5dd9a1d5213e5ace7e2c82",
+      "bytes": 66849
+    },
+    "source-editor-actions-v1.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-editor-actions-v1.json",
+      "sha256": "4475d0c71c04e5d53f1eb9165ff2fc7382655a66b47c4419beae4ccef59dc0f4",
+      "bytes": 9467
+    },
+    "source-user_scenario_contract.py": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/source-user_scenario_contract.py",
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+      "bytes": 7203
+    },
+    "verification.json": {
+      "path": "docs/validation/artifacts/android-inspector-beta-85da031e/verification.json",
+      "sha256": "84112882e0567a060bfe1b6453bfa2732d64720c9f33760cc580ad1017e49893",
+      "bytes": 3147
+    }
+  }
+}

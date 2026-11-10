@@ -1,0 +1,505 @@
+[
+  {
+    "arguments": [
+      "codesign",
+      "--verify",
+      "--deep",
+      "--strict",
+      "--verbose=2",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.214643+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "000-app-cs-verify.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "file": "000-app-cs-verify.stderr",
+      "bytes": 443,
+      "sha256": "868095718d602ad4f63102cca611b79921ae73fb4c9784e57eb7e5d0e59123fe"
+    }
+  },
+  {
+    "arguments": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      ":-",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.224817+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "001-app-cs-entitlements.stdout",
+      "bytes": 184,
+      "sha256": "00491886daae07a5296c8bad50f116bf006b0004d7bf7338ad46669fbd903a4a"
+    },
+    "stderr": {
+      "file": "001-app-cs-entitlements.stderr",
+      "bytes": 312,
+      "sha256": "dbac82067156d1ba92a737cbe8ffd078e0c224aeaa7ff0339e2d42f90ec603e9"
+    }
+  },
+  {
+    "arguments": [
+      "codesign",
+      "--verify",
+      "--deep",
+      "--strict",
+      "--verbose=2",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.234354+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "002-provider-cs-verify.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "file": "002-provider-cs-verify.stderr",
+      "bytes": 509,
+      "sha256": "5683dadefb0eb04e16363d838a0b9deceb9d5462ad6266d1f346b60706a37b01"
+    }
+  },
+  {
+    "arguments": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      ":-",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.243632+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "003-provider-cs-entitlements.stdout",
+      "bytes": 184,
+      "sha256": "00491886daae07a5296c8bad50f116bf006b0004d7bf7338ad46669fbd903a4a"
+    },
+    "stderr": {
+      "file": "003-provider-cs-entitlements.stderr",
+      "bytes": 346,
+      "sha256": "ecb85db88a12253e2eee24c0067c81c777f125c9885cd6ce9fa1eab6de1fabbf"
+    }
+  },
+  {
+    "arguments": [
+      "codesign",
+      "--verify",
+      "--deep",
+      "--strict",
+      "--verbose=2",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.296649+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "004-main-cs-verify.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "file": "004-main-cs-verify.stderr",
+      "bytes": 459,
+      "sha256": "56487a33bee755460108229f595d26343c8d338c454f75d93b889229d6f17caf"
+    }
+  },
+  {
+    "arguments": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      ":-",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.337898+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "005-main-cs-entitlements.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "file": "005-main-cs-entitlements.stderr",
+      "bytes": 316,
+      "sha256": "ce4e273144ba88e132447db44657b19dd8b65014403f9e66f9fb0e096101e634"
+    }
+  },
+  {
+    "arguments": [
+      "xcodegen",
+      "generate",
+      "--spec",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/harness/project.yml"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.406724+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "006-xcodegen.stdout",
+      "bytes": 266,
+      "sha256": "521c777069b18db62568893a4c228b2b153998eb9d79787bae703b8c0b98c4e7"
+    },
+    "stderr": {
+      "file": "006-xcodegen.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "available",
+      "-j"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.460405+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "007-devices.stdout",
+      "bytes": 14104,
+      "sha256": "8b7eee76b0c257d0e8f01889635cc2a1a871b53c7d54f81fb9ed06c02e0ddf7a"
+    },
+    "stderr": {
+      "file": "007-devices.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "listapps",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.778596+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "008-installed-applications.stdout",
+      "bytes": 58955,
+      "sha256": "3c665ecc5253c87abfd631dd5483c12b1333dcea042771221c9b8d07ceb9f3d5"
+    },
+    "stderr": {
+      "file": "008-installed-applications.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "plutil",
+      "-convert",
+      "json",
+      "-o",
+      "-",
+      "-"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.896197+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "009-installed-applications-json.stdout",
+      "bytes": 52989,
+      "sha256": "d9d54acf89e08d91c67f739efaf687637d85b8dac27722661235a56a8048e83d"
+    },
+    "stderr": {
+      "file": "009-installed-applications-json.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdin": {
+      "file": "009-installed-applications-json.stdin",
+      "bytes": 58955,
+      "sha256": "3c665ecc5253c87abfd631dd5483c12b1333dcea042771221c9b8d07ceb9f3d5"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture",
+      "app"
+    ],
+    "startedUTC": "2026-11-05T10:47:27.901673+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "010-installed-fixture.stdout",
+      "bytes": 185,
+      "sha256": "2cf1461efa8ab95655ba35276f6dc9634d5722f6d70fb82bb5e248d840a3eff2"
+    },
+    "stderr": {
+      "file": "010-installed-fixture.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "install",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app"
+    ],
+    "startedUTC": "2026-11-05T10:47:28.016234+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "011-install-main.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "file": "011-install-main.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.mobile",
+      "app"
+    ],
+    "startedUTC": "2026-11-05T10:47:32.872646+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "012-installed-main.stdout",
+      "bytes": 181,
+      "sha256": "eea6f517fdb7bb5f2fd6211416168c21d9342be6ad54331a1d7e32f36c99c818"
+    },
+    "stderr": {
+      "file": "012-installed-main.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture",
+      "app"
+    ],
+    "startedUTC": "2026-11-05T10:47:33.086596+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "013-installed-fixture.stdout",
+      "bytes": 185,
+      "sha256": "2cf1461efa8ab95655ba35276f6dc9634d5722f6d70fb82bb5e248d840a3eff2"
+    },
+    "stderr": {
+      "file": "013-installed-fixture.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "/opt/homebrew/opt/python@3.15/bin/python3.15",
+      "/tmp/logisim-gradle-serial.py",
+      "xcodebuild",
+      "-project",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/harness/LogisimProviderAuthenticationHarness.xcodeproj",
+      "-scheme",
+      "ProviderAuthenticationHarness",
+      "-destination",
+      "platform=iOS Simulator,id=AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "-derivedDataPath",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/DerivedData",
+      "CODE_SIGNING_ALLOWED=NO",
+      "build-for-testing"
+    ],
+    "startedUTC": "2026-11-05T10:47:33.353015+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": null,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "014-harness-build.stdout",
+      "bytes": 102321,
+      "sha256": "a2d3d39a4efbbf8cbd2445a55c28eac1e56e79703aaf3b213abe4e7cc3a8064c"
+    },
+    "stderr": {
+      "file": "014-harness-build.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcodebuild",
+      "-project",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/harness/LogisimProviderAuthenticationHarness.xcodeproj",
+      "-scheme",
+      "ProviderAuthenticationHarness",
+      "-destination",
+      "platform=iOS Simulator,id=AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "-derivedDataPath",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/DerivedData",
+      "CODE_SIGNING_ALLOWED=NO",
+      "test-without-building",
+      "-parallel-testing-enabled",
+      "NO",
+      "-collect-test-diagnostics",
+      "never",
+      "-test-timeouts-enabled",
+      "YES",
+      "-default-test-execution-time-allowance",
+      "1200",
+      "-resultBundlePath",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/auth.xcresult",
+      "-only-testing:ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject"
+    ],
+    "startedUTC": "2026-11-05T10:47:44.017226+00:00",
+    "exitCode": 65,
+    "timeoutSeconds": 1380,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "015-auth-test.stdout",
+      "bytes": 67163,
+      "sha256": "8f45629bfaa93bf8e44d41edb221fc4c9c50d426a254ea77353135fc4ebe0311"
+    },
+    "stderr": {
+      "file": "015-auth-test.stderr",
+      "bytes": 504,
+      "sha256": "7c282246f3d08fcb30dc3884de5f9e53d15d14be910c86429591350d9c9c2fb6"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "xcresulttool",
+      "get",
+      "test-results",
+      "summary",
+      "--path",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/auth.xcresult"
+    ],
+    "startedUTC": "2026-11-05T10:49:12.676052+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "016-xcresult-summary.stdout",
+      "bytes": 1667,
+      "sha256": "9361f066f0dadc256ba6fa86938619bcf39ddfb287b0f86161f4a6beba5d06ae"
+    },
+    "stderr": {
+      "file": "016-xcresult-summary.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "xcresulttool",
+      "export",
+      "attachments",
+      "--path",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/auth.xcresult",
+      "--output-path",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-002/attachments"
+    ],
+    "startedUTC": "2026-11-05T10:49:12.853144+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "017-attachments.stdout",
+      "bytes": 10545,
+      "sha256": "cc750759d078b2e0ce6f04e8da30debbae0c67b09578e572d1feb19043a7afba"
+    },
+    "stderr": {
+      "file": "017-attachments.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.mobile",
+      "app"
+    ],
+    "startedUTC": "2026-11-05T10:49:12.930879+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "018-installed-main.stdout",
+      "bytes": 181,
+      "sha256": "eea6f517fdb7bb5f2fd6211416168c21d9342be6ad54331a1d7e32f36c99c818"
+    },
+    "stderr": {
+      "file": "018-installed-main.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "arguments": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture",
+      "app"
+    ],
+    "startedUTC": "2026-11-05T10:49:13.305001+00:00",
+    "exitCode": 0,
+    "timeoutSeconds": 60,
+    "interruptionDeferred": false,
+    "stdout": {
+      "file": "019-installed-fixture.stdout",
+      "bytes": 185,
+      "sha256": "2cf1461efa8ab95655ba35276f6dc9634d5722f6d70fb82bb5e248d840a3eff2"
+    },
+    "stderr": {
+      "file": "019-installed-fixture.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

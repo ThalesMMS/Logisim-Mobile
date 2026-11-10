@@ -1,0 +1,206 @@
+{
+  "hdl_ip_invalid_source": {
+    "en": "The {backend} source exceeds the limit or contains NUL.",
+    "pt": "A fonte {backend} excede o limite ou contém NUL."
+  },
+  "hdl_ip_missing_entity": {
+    "en": "The source does not declare a basic VHDL entity.",
+    "pt": "A fonte não declara uma entidade VHDL básica."
+  },
+  "hdl_ip_missing_entity_end": {
+    "en": "The end of the VHDL entity was not found.",
+    "pt": "O fim da entidade VHDL não foi encontrado."
+  },
+  "hdl_ip_generic_case_duplicate": {
+    "en": "Duplicate parameters differ only in case.",
+    "pt": "Parâmetros repetidos diferem apenas por maiúsculas."
+  },
+  "hdl_ip_unsupported_generic_declaration": {
+    "en": "Unsupported generic declaration: {declaration}.",
+    "pt": "Declaração de parâmetro não suportada: {declaration}."
+  },
+  "hdl_ip_duplicate_generic": {
+    "en": "Duplicate generic: {name}.",
+    "pt": "Parâmetro repetido: {name}."
+  },
+  "hdl_ip_missing_generic": {
+    "en": "Generic {name} needs a value.",
+    "pt": "O parâmetro {name} precisa de um valor."
+  },
+  "hdl_ip_invalid_generic": {
+    "en": "Invalid value for {name}.",
+    "pt": "Valor inválido para {name}."
+  },
+  "hdl_ip_unsupported_generic_value": {
+    "en": "The value of {name} is not a supported literal.",
+    "pt": "O valor de {name} não é um literal suportado."
+  },
+  "hdl_ip_unknown_generic": {
+    "en": "Undeclared generic: {name}.",
+    "pt": "Parâmetro não declarado: {name}."
+  },
+  "hdl_ip_missing_entity_ports": {
+    "en": "The entity must declare its ports.",
+    "pt": "A entidade precisa declarar suas portas."
+  },
+  "hdl_ip_unsupported_port_declaration": {
+    "en": "Unsupported port declaration: {declaration}.",
+    "pt": "Declaração de porta não suportada: {declaration}."
+  },
+  "hdl_ip_unsupported_inout": {
+    "en": "Co-simulation has no driver-resolution protocol for inout ports.",
+    "pt": "Co-simulação de portas inout não tem protocolo de resolução de drivers."
+  },
+  "hdl_ip_unsupported_width": {
+    "en": "The port width must resolve to 1 to 64 bits: {declaration}.",
+    "pt": "A largura da porta precisa resolver para 1 a 64 bits: {declaration}."
+  },
+  "hdl_ip_duplicate_port": {
+    "en": "Duplicate port: {name}.",
+    "pt": "Porta repetida: {name}."
+  },
+  "hdl_ip_port_limit": {
+    "en": "The companion accepts at most 128 ports.",
+    "pt": "O companion aceita no máximo 128 portas."
+  },
+  "hdl_ip_blif_no_generics": {
+    "en": "BLIF has no generic parameters.",
+    "pt": "BLIF não declara parâmetros genéricos."
+  },
+  "hdl_ip_blif_basic_model": {
+    "en": "The BLIF component needs one model with a basic identifier.",
+    "pt": "O componente BLIF precisa de um modelo com identificador básico."
+  },
+  "hdl_ip_blif_bit_index": {
+    "en": "The BLIF bit index must be between 0 and 63: {signal}.",
+    "pt": "O índice BLIF precisa estar entre 0 e 63: {signal}."
+  },
+  "hdl_ip_blif_missing_ports": {
+    "en": "The BLIF model must declare ports.",
+    "pt": "O modelo BLIF precisa declarar portas."
+  },
+  "hdl_ip_blif_port_names": {
+    "en": "The current companion requires basic BLIF port identifiers.",
+    "pt": "O companion atual exige identificadores básicos de portas BLIF."
+  },
+  "hdl_ip_blif_duplicate_ports": {
+    "en": "Repeated input and output ports need inout resolution.",
+    "pt": "Portas de entrada e saída repetidas precisam de resolução inout."
+  },
+  "hdl_ip_blif_unsupported_directive": {
+    "en": "Unsupported BLIF directive: {directive}.",
+    "pt": "Diretiva BLIF não suportada: {directive}."
+  },
+  "hdl_ip_blif_drive_resolution": {
+    "en": "Desktop BUS/TRIS driver resolution has not been verified in the BLIF backend.",
+    "pt": "A resolução de drivers BUS/TRIS do desktop ainda não foi comprovada no backend BLIF."
+  },
+  "hdl_ip_unterminated_declaration": {
+    "en": "The {name} declaration is unterminated.",
+    "pt": "A declaração {name} não termina."
+  },
+  "component_vhdl_entity": {
+    "en": "VHDL entity",
+    "pt": "Entidade VHDL"
+  },
+  "component_blif_circuit": {
+    "en": "BLIF circuit",
+    "pt": "Circuito BLIF"
+  },
+  "hdl_ip_conflicting_generic": {
+    "en": "Conflicting generic attributes for {name}.",
+    "pt": "Atributos genéricos conflitantes para {name}."
+  },
+  "hdl_ip_invalid_component": {
+    "en": "The component does not belong to the HDL-IP library.",
+    "pt": "O componente não pertence à biblioteca HDL-IP."
+  },
+  "hdl_ip_invalid_port": {
+    "en": "An HDL port needs a name and a width from 1 to 64 bits.",
+    "pt": "Uma porta HDL precisa de nome e largura de 1 a 64 bits."
+  },
+  "hdl_ip_invalid_start": {
+    "en": "The co-simulation start needs a session and a positive epoch.",
+    "pt": "O início da co-simulação precisa de uma sessão e uma época positiva."
+  },
+  "hdl_ip_diagnostic": {
+    "en": "{code}: {detail}",
+    "pt": "{code}: {detail}"
+  },
+  "hdl_ip_unexecutable": {
+    "en": "The HDL-IP declaration cannot be executed.",
+    "pt": "A declaração HDL-IP não pode ser executada."
+  },
+  "hdl_ip_incompatible_reply": {
+    "en": "The companion returned incompatible ports or widths.",
+    "pt": "O companion retornou portas ou larguras incompatíveis."
+  },
+  "hdl_ip_failed": {
+    "en": "Co-simulation failed.",
+    "pt": "A co-simulação falhou."
+  },
+  "hdl_ip_unavailable": {
+    "en": "The HDL-IP companion is unavailable.",
+    "pt": "O companion HDL-IP não está disponível."
+  },
+  "hdl_ip_disconnected": {
+    "en": "The HDL-IP companion is disconnected. Start co-simulation explicitly.",
+    "pt": "O companion HDL-IP está desconectado. Inicie a co-simulação explicitamente."
+  },
+  "hdl_ip_pending": {
+    "en": "Co-simulation is waiting for the current signals and time.",
+    "pt": "A co-simulação aguarda os sinais e o tempo atuais."
+  },
+  "hdl_ip_resolve_diagnostics": {
+    "en": "Resolve the HDL declaration diagnostics before execution.",
+    "pt": "Resolva os diagnósticos da declaração HDL antes da execução."
+  },
+  "hdl_ip_invalid_session": {
+    "en": "Invalid co-simulation session.",
+    "pt": "Sessão de co-simulação inválida."
+  },
+  "hdl_ip_step_range": {
+    "en": "The co-simulation step must be between 1 ns and 1 ms.",
+    "pt": "O passo da co-simulação deve estar entre 1 ns e 1 ms."
+  },
+  "hdl_ip_job_incomplete": {
+    "en": "The co-simulation job did not complete.",
+    "pt": "O trabalho de co-simulação não foi concluído."
+  },
+  "hdl_ip_job_failure_reason": {
+    "en": "Co-simulation failed: {reason}",
+    "pt": "A co-simulação falhou: {reason}"
+  },
+  "hdl_ip_expected_result": {
+    "en": "Expected an HDL result object.",
+    "pt": "Era esperado um resultado HDL em objeto."
+  },
+  "hdl_ip_unexpected_session": {
+    "en": "Unexpected HDL session.",
+    "pt": "Sessão HDL inesperada."
+  },
+  "hdl_ip_invalid_time": {
+    "en": "Invalid HDL time.",
+    "pt": "Tempo HDL inválido."
+  },
+  "hdl_ip_invalid_digest": {
+    "en": "Invalid HDL source digest.",
+    "pt": "Hash da fonte HDL inválido."
+  },
+  "hdl_ip_output_names": {
+    "en": "HDL output names differ from the declared interface.",
+    "pt": "Os nomes das saídas HDL diferem da interface declarada."
+  },
+  "hdl_ip_output_width_range": {
+    "en": "An HDL output width must be between 1 and 64 bits.",
+    "pt": "A largura de uma saída HDL deve estar entre 1 e 64 bits."
+  },
+  "hdl_ip_invalid_output": {
+    "en": "Invalid HDL output {name}.",
+    "pt": "Saída HDL {name} inválida."
+  },
+  "hdl_ip_invalid_output_logic": {
+    "en": "Invalid output width or logic for {name}.",
+    "pt": "Largura ou lógica inválida na saída {name}."
+  }
+}

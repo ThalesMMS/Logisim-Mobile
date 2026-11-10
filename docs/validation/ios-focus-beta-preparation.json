@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED",
+  "baseline": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "candidate": "52c7ce8f60e2e3d14a866123cb29afc02d3d54b0",
+  "changed_files": [
+    "build.gradle.kts",
+    "composeApp/build.gradle.kts"
+  ],
+  "compile_status": "NOT_RUN",
+  "app_build_status": "NOT_RUN",
+  "native_runtime_status": "NOT_RUN",
+  "scope": "Only explicit Compose plugin and runtime dependencies differ; product sources and resources are unchanged.",
+  "metadata_source": "https://repo.maven.apache.org/maven2/",
+  "metadata_files": [
+    {
+      "file": "components-resources-1.13.0-beta02.pom",
+      "sha256": "a84c2c68405f1704f00873e0e17a1076f324fd0be69fabf490ff098a6e914a6b",
+      "bytes": 2781
+    },
+    {
+      "file": "compose-gradle-plugin-1.13.0-beta02.pom",
+      "sha256": "7cebae264e39b6ab220252e0178ec292585008fbc6016802afb021aba8455ecb",
+      "bytes": 2181
+    },
+    {
+      "file": "foundation-1.13.0-beta02.pom",
+      "sha256": "665ceb00bddbc9978cbdf2a9e15d936718e7672e1a19a7223f2a7fa8d9425b6e",
+      "bytes": 5029
+    },
+    {
+      "file": "foundation-iossimulatorarm64-1.13.0-beta02.module",
+      "sha256": "1b15f5b597371e7d7cead9c10e85e2b7321ffe42edc877fe9cbfca87cf2881af",
+      "bytes": 8478
+    },
+    {
+      "file": "material3-1.9.0.pom",
+      "sha256": "9728f08703824e04fac8f84e66e1e7f286ee430890f327ff8b1e75431ddf1ada",
+      "bytes": 5463
+    },
+    {
+      "file": "ui-1.13.0-beta02-sources.jar",
+      "sha256": "79ca3a1f2a0eda1acdd250e50b4998db2dca9e95a6e07cf0967e8a9c9e482071",
+      "bytes": 1271989
+    },
+    {
+      "file": "ui-1.13.0-beta02.pom",
+      "sha256": "cbc966e5443c210262ed4d564c5733c4e8b5d403fa968cb684fbe9ead7dcf08e",
+      "bytes": 10334
+    },
+    {
+      "file": "ui-iossimulatorarm64-1.13.0-beta02.module",
+      "sha256": "046d9141fb5d52165839bcdad79bf3614f24869eff19a9053dbf1ef85f7764b9",
+      "bytes": 20387
+    },
+    {
+      "file": "ui-uikit-1.13.0-beta02-sources.jar",
+      "sha256": "c2c4299d1fe0730942ad0fa780a596ec8aaaf327fcb184cbb225647006e2ff40",
+      "bytes": 1632
+    }
+  ],
+  "proven_source_mechanism": "Beta02 ContextMenu publishes to manager.state.holder; TextInputService resolves connections by request.editorToken. No runtime attribution or fix claim."
+}

@@ -1,0 +1,1216 @@
+{
+  "startedAt": "2026-11-08T02:32:21.231791+00:00",
+  "mode": "existing-production-jars-no-gradle",
+  "sourceHead": "a6c86b177a089b22c780d9984d6c163ccdea8aca",
+  "coreProductionTrees": {
+    "core/src/commonMain": "9b924ee77e3ae3bd1acc11256f0575d7e450dd11",
+    "core/src/jvmMain": "03f9de7fe36dae5b156de0d62a8a3187f5bb10fd"
+  },
+  "artifactsBefore": {
+    "mobile": {
+      "path": "MOBILE/core/build/libs/core-jvm.jar",
+      "sha256": "5e3cac10aef425115d114322ff878a32e233416e4bf0a81df9767b6adf661a4c",
+      "size": 5504061
+    },
+    "desktop": {
+      "path": "EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+      "sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+      "size": 54876859
+    },
+    "stdlib": {
+      "path": "GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+      "sha256": "bd8250210584cb659847dce9cda660f8e9906e5def7fbebcea93dc6dcb6a88a3",
+      "size": 1853315
+    }
+  },
+  "commands": [
+    {
+      "name": "version-java",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-version"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-javac",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/javac",
+        "-version"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-yosys",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-V"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-iverilog",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-V"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-vvp",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "-V"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "compile-mobile",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/javac",
+        "-cp",
+        "MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "-d",
+        "MOBILE/outputs/menu-actions/hdl-import/classes",
+        "MOBILE/scripts/oracle/hdl-import/HdlImportMobileOracle.java"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "compile-desktop",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/javac",
+        "-cp",
+        "EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "-d",
+        "MOBILE/outputs/menu-actions/hdl-import/classes",
+        "MOBILE/scripts/oracle/hdl-import/HdlImportDesktopOracle.java"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-request",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "VERILOG",
+        "hierarchy",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/uploads",
+        "",
+        "hierarchy.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/job/outputs/netlist.json",
+        "hierarchy",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/uploads",
+        "hierarchy.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-repeat-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/job/outputs/netlist.json",
+        "hierarchy",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/repeated.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/uploads",
+        "hierarchy.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-roundtrip",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/uploads",
+        "-o",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/reference.vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/uploads/hierarchy.v",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-mobile",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/imported.circ",
+        "hdl_hierarchy",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-desktop",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/imported.circ",
+        "hdl_hierarchy",
+        "MOBILE/outputs/menu-actions/hdl-import/hierarchy/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-request",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "VERILOG",
+        "gates",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/uploads",
+        "",
+        "gates.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/job/outputs/netlist.json",
+        "gates",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/uploads",
+        "gates.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-repeat-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/job/outputs/netlist.json",
+        "gates",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/repeated.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/uploads",
+        "gates.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-roundtrip",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/uploads",
+        "-o",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/reference.vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/uploads/gates.v",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-mobile",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/imported.circ",
+        "hdl_gates",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-desktop",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/imported.circ",
+        "hdl_gates",
+        "MOBILE/outputs/menu-actions/hdl-import/gates/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-request",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "VERILOG",
+        "macros",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/uploads",
+        "MASK=2",
+        "macros.v",
+        "constants.vh"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/job/outputs/netlist.json",
+        "macros",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/uploads",
+        "macros.v",
+        "constants.vh"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-repeat-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/job/outputs/netlist.json",
+        "macros",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/repeated.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/uploads",
+        "macros.v",
+        "constants.vh"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-roundtrip",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/uploads",
+        "-DMASK=2",
+        "-o",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/reference.vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/uploads/macros.v",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-mobile",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/imported.circ",
+        "hdl_macros",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-desktop",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/imported.circ",
+        "hdl_macros",
+        "MOBILE/outputs/menu-actions/hdl-import/macros/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-request",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "BLIF",
+        "and_gate",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/uploads",
+        "",
+        "and_gate.blif"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/job/outputs/netlist.json",
+        "and_gate",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/uploads",
+        "and_gate.blif"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-repeat-import",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/job/outputs/netlist.json",
+        "and_gate",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/repeated.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/uploads",
+        "and_gate.blif"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-roundtrip",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/imported.circ",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-blif-reference",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-Q",
+        "-T",
+        "-s",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/reference.ys"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/uploads",
+        "-o",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/reference.vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/original-blif.v",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-mobile",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:MOBILE/core/build/libs/core-jvm.jar:GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/imported.circ",
+        "hdl_and_gate",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-desktop",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/imported.circ",
+        "hdl_and_gate",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "negative-mutated-nand-desktop",
+      "argv": [
+        "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "MOBILE/outputs/menu-actions/hdl-import/classes:EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/mutated-nand.circ",
+        "hdl_and_gate",
+        "MOBILE/outputs/menu-actions/hdl-import/blif-and/vectors.txt"
+      ],
+      "returncode": 0
+    }
+  ],
+  "cases": [
+    {
+      "name": "hierarchy",
+      "format": "verilog",
+      "parameters": {
+        "defines": [],
+        "format": "verilog",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "native",
+        "sourceNames": [
+          "hierarchy.v"
+        ],
+        "top": "hierarchy",
+        "undefined": "error",
+        "wordCells": true
+      },
+      "moduleMap": {
+        "hierarchy": "hdl_hierarchy",
+        "leaf": "hdl_leaf"
+      },
+      "rows": 4,
+      "structure": [
+        "C\thdl_hierarchy",
+        "C\thdl_leaf",
+        "G\thdl_leaf\tXOR Gate\t1500\t100\t1\t2\t50\teast",
+        "H\thdl_hierarchy\thdl_leaf\t1500\t100",
+        "P\thdl_hierarchy\ta\tINPUT\t1\t40\t80\teast",
+        "P\thdl_hierarchy\tb\tINPUT\t1\t40\t190\teast",
+        "P\thdl_hierarchy\ty\tOUTPUT\t1\t1100\t80\twest",
+        "P\thdl_leaf\ta\tINPUT\t1\t40\t80\teast",
+        "P\thdl_leaf\tb\tINPUT\t1\t40\t190\teast",
+        "P\thdl_leaf\ty\tOUTPUT\t1\t1100\t80\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t0\t0\t0",
+        "V\t1\tPASS\t0\t1\t1",
+        "V\t2\tPASS\t1\t0\t1",
+        "V\t3\tPASS\t1\t1\t0"
+      ],
+      "inputs": [
+        {
+          "path": "hierarchy/uploads/hierarchy.v",
+          "sha256": "b16a8ef5d070b30ea92e364fbffab7588420c5720358f6c7a53d3fd90940db85",
+          "size": 152
+        }
+      ],
+      "netlist": {
+        "path": "hierarchy/job/outputs/netlist.json",
+        "sha256": "e0bc3909229fe3e6b3b2e498f250b008fea0ff665d73745a630d7a1c58c32d98",
+        "size": 2894
+      },
+      "circuit": {
+        "path": "hierarchy/imported.circ",
+        "sha256": "ea7b382d18305137617dba77824c206537dfb06cbdf269ade094bbda915c9408",
+        "size": 6265
+      },
+      "vectors": {
+        "path": "hierarchy/vectors.txt",
+        "sha256": "1b5e36e7a3c65ad3bd65b5222efdb12def49bc925c337cf995206754413ce30d",
+        "size": 30
+      },
+      "desktop": {
+        "path": "hierarchy-desktop.stdout",
+        "sha256": "23bec4b8820c9d78a5c85960e191e77ac6cc0ff5ca2ead8fabf84e3fe6af4a20",
+        "size": 377
+      },
+      "mobile": {
+        "path": "hierarchy-mobile.stdout",
+        "sha256": "4579352e0172720686a4dcd0bb5c4167251ac779c44d872e11bc1315bdb97695",
+        "size": 377
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "MOBILE/outputs/menu-actions/hdl-import/hierarchy/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "MOBILE/outputs/menu-actions/hdl-import/hierarchy/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "hierarchy/job/mobile_import.ys",
+        "sha256": "868f8fbaefef9ebaa543a75b0fc4589a2c478be6e8750ebff1b3bed815aeac4c",
+        "size": 762
+      },
+      "synthesisLogs": [
+        {
+          "path": "hierarchy/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "hierarchy/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "hierarchy/job/command-1.stdout",
+          "sha256": "4249ee4bc7dc55e1ea0035c6e66fe16d3cb5fb0cb75cd18d43ad5bb619f95bbb",
+          "size": 7783
+        },
+        {
+          "path": "hierarchy/job/command-2.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "hierarchy/job/command-2.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "hierarchy/job/command-2.stdout",
+          "sha256": "d5d07ce45672a6f0f0c839f4e8b48ae0cb62954099b2eec894343b83d7e5b15d",
+          "size": 8200
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true
+    },
+    {
+      "name": "gates",
+      "format": "verilog",
+      "parameters": {
+        "defines": [],
+        "format": "verilog",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "native",
+        "sourceNames": [
+          "gates.v"
+        ],
+        "top": "gates",
+        "undefined": "error",
+        "wordCells": true
+      },
+      "moduleMap": {
+        "gates": "hdl_gates"
+      },
+      "rows": 32,
+      "structure": [
+        "C\thdl_gates",
+        "G\thdl_gates\tAND Gate\t1500\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tAND Gate\t2340\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tXOR Gate\t1920\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tXOR Gate\t2760\t100\t1\t2\t50\teast",
+        "P\thdl_gates\ta\tINPUT\t2\t40\t80\teast",
+        "P\thdl_gates\tand_y\tOUTPUT\t2\t1100\t80\twest",
+        "P\thdl_gates\tb\tINPUT\t2\t40\t200\teast",
+        "P\thdl_gates\tmux_y\tOUTPUT\t2\t1100\t320\twest",
+        "P\thdl_gates\tselect\tINPUT\t1\t40\t320\teast",
+        "P\thdl_gates\txor_y\tOUTPUT\t2\t1100\t200\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t00\t00\t0\t00\t00\t00",
+        "V\t1\tPASS\t00\t00\t1\t00\t00\t00",
+        "V\t2\tPASS\t00\t01\t0\t00\t01\t00",
+        "V\t3\tPASS\t00\t01\t1\t00\t01\t01",
+        "V\t4\tPASS\t00\t10\t0\t00\t10\t00",
+        "V\t5\tPASS\t00\t10\t1\t00\t10\t10",
+        "V\t6\tPASS\t00\t11\t0\t00\t11\t00",
+        "V\t7\tPASS\t00\t11\t1\t00\t11\t11",
+        "V\t8\tPASS\t01\t00\t0\t00\t01\t01",
+        "V\t9\tPASS\t01\t00\t1\t00\t01\t00",
+        "V\t10\tPASS\t01\t01\t0\t01\t00\t01",
+        "V\t11\tPASS\t01\t01\t1\t01\t00\t01",
+        "V\t12\tPASS\t01\t10\t0\t00\t11\t01",
+        "V\t13\tPASS\t01\t10\t1\t00\t11\t10",
+        "V\t14\tPASS\t01\t11\t0\t01\t10\t01",
+        "V\t15\tPASS\t01\t11\t1\t01\t10\t11",
+        "V\t16\tPASS\t10\t00\t0\t00\t10\t10",
+        "V\t17\tPASS\t10\t00\t1\t00\t10\t00",
+        "V\t18\tPASS\t10\t01\t0\t00\t11\t10",
+        "V\t19\tPASS\t10\t01\t1\t00\t11\t01",
+        "V\t20\tPASS\t10\t10\t0\t10\t00\t10",
+        "V\t21\tPASS\t10\t10\t1\t10\t00\t10",
+        "V\t22\tPASS\t10\t11\t0\t10\t01\t10",
+        "V\t23\tPASS\t10\t11\t1\t10\t01\t11",
+        "V\t24\tPASS\t11\t00\t0\t00\t11\t11",
+        "V\t25\tPASS\t11\t00\t1\t00\t11\t00",
+        "V\t26\tPASS\t11\t01\t0\t01\t10\t11",
+        "V\t27\tPASS\t11\t01\t1\t01\t10\t01",
+        "V\t28\tPASS\t11\t10\t0\t10\t01\t11",
+        "V\t29\tPASS\t11\t10\t1\t10\t01\t10",
+        "V\t30\tPASS\t11\t11\t0\t11\t00\t11",
+        "V\t31\tPASS\t11\t11\t1\t11\t00\t11"
+      ],
+      "inputs": [
+        {
+          "path": "gates/uploads/gates.v",
+          "sha256": "6427354d182a89b8a3e665c96fb4ac62d9bda506adcdf4b5b7309160fc748ff8",
+          "size": 184
+        }
+      ],
+      "netlist": {
+        "path": "gates/job/outputs/netlist.json",
+        "sha256": "e0567e42d38b194de3e1e2af1d46add5809b003e178a2b05f2dc0925463a2723",
+        "size": 4043
+      },
+      "circuit": {
+        "path": "gates/imported.circ",
+        "sha256": "6ed9322c1bd7bfa67aa70abf163e5bd853702791e16e1cde32b83ce23aee3feb",
+        "size": 15516
+      },
+      "vectors": {
+        "path": "gates/vectors.txt",
+        "sha256": "bd22e186f51c8a2a5d84ac8f85e07d33f0d1120f7ab9bf5346e619cf17442448",
+        "size": 588
+      },
+      "desktop": {
+        "path": "gates-desktop.stdout",
+        "sha256": "1f1067b68eb4012dc77076e4f94bd123fcdbd5367dd56dac6a6a11c7204949b5",
+        "size": 1262
+      },
+      "mobile": {
+        "path": "gates-mobile.stdout",
+        "sha256": "dd8aaf0ea75bacdd865efb40ea21095c3710949da0112761015a36f660f2d2da",
+        "size": 1262
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "MOBILE/outputs/menu-actions/hdl-import/gates/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "MOBILE/outputs/menu-actions/hdl-import/gates/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "gates/job/mobile_import.ys",
+        "sha256": "868f8fbaefef9ebaa543a75b0fc4589a2c478be6e8750ebff1b3bed815aeac4c",
+        "size": 762
+      },
+      "synthesisLogs": [
+        {
+          "path": "gates/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "gates/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "gates/job/command-1.stdout",
+          "sha256": "fdc19124abfafd79e10bc22150a9aa3ef86f1f2b71416b0e25acdf228bf21e3c",
+          "size": 6311
+        },
+        {
+          "path": "gates/job/command-2.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "gates/job/command-2.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "gates/job/command-2.stdout",
+          "sha256": "440401f06b71efe666be2d4b1adfe5b68b5311ceaa96fd63b9906f72fb30284e",
+          "size": 6795
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true
+    },
+    {
+      "name": "macros",
+      "format": "verilog",
+      "parameters": {
+        "defines": [
+          "MASK=2"
+        ],
+        "format": "verilog",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "native",
+        "sourceNames": [
+          "macros.v"
+        ],
+        "top": "macros",
+        "undefined": "error",
+        "wordCells": true
+      },
+      "moduleMap": {
+        "macros": "hdl_macros"
+      },
+      "rows": 4,
+      "structure": [
+        "C\thdl_macros",
+        "G\thdl_macros\tNOT Gate\t1500\t100\t1\t-\t30\teast",
+        "P\thdl_macros\ta\tINPUT\t2\t40\t80\teast",
+        "P\thdl_macros\ty\tOUTPUT\t2\t1100\t80\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t00\t10",
+        "V\t1\tPASS\t01\t11",
+        "V\t2\tPASS\t10\t00",
+        "V\t3\tPASS\t11\t01"
+      ],
+      "inputs": [
+        {
+          "path": "macros/uploads/macros.v",
+          "sha256": "0b5cb0fbd5425fc0cb71ab8fb39a503bdadbfbf96b585a53419b1fca7e456624",
+          "size": 118
+        },
+        {
+          "path": "macros/uploads/constants.vh",
+          "sha256": "16ac11b952e609380ac98e301f4ca2543d8cdcc8d746285648438f67839bcf01",
+          "size": 37
+        }
+      ],
+      "netlist": {
+        "path": "macros/job/outputs/netlist.json",
+        "sha256": "f78c9c070844946ded97af8f067432178fd99fc7f241620f7b355df1c36d4369",
+        "size": 1211
+      },
+      "circuit": {
+        "path": "macros/imported.circ",
+        "sha256": "9f97b8421ac2c273713a54b4161f52b2008df303287cb591fc1216979ed0c1bc",
+        "size": 3830
+      },
+      "vectors": {
+        "path": "macros/vectors.txt",
+        "sha256": "6e2f5a330df4508aaa2c176331e31107b2313c3ebd96aa6f65eeb666450fea91",
+        "size": 34
+      },
+      "desktop": {
+        "path": "macros-desktop.stdout",
+        "sha256": "9c7a614797a13e571af943d63ed2fd6e50cf54abd72565784c6690052ef8cb35",
+        "size": 187
+      },
+      "mobile": {
+        "path": "macros-mobile.stdout",
+        "sha256": "0a167f279379261b110aecbb147be73cd5ac87682dbb60cce418a3ea42558bc5",
+        "size": 187
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "MOBILE/outputs/menu-actions/hdl-import/macros/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        },
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "MOBILE/outputs/menu-actions/hdl-import/macros/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "macros/job/mobile_import.ys",
+        "sha256": "868f8fbaefef9ebaa543a75b0fc4589a2c478be6e8750ebff1b3bed815aeac4c",
+        "size": 762
+      },
+      "synthesisLogs": [
+        {
+          "path": "macros/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "macros/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "macros/job/command-1.stdout",
+          "sha256": "f09dd210b2ce7480cf36035841f2a00cc89ae21cb572b8edae4a131881076889",
+          "size": 6137
+        },
+        {
+          "path": "macros/job/command-2.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "macros/job/command-2.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "macros/job/command-2.stdout",
+          "sha256": "1ac5b6fd4c53f49c1bd341bec4aa0095aee3549850220d8caa1136388432fbfb",
+          "size": 6564
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true
+    },
+    {
+      "name": "blif-and",
+      "format": "blif",
+      "parameters": {
+        "defines": [],
+        "format": "blif",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "logic",
+        "sourceNames": [
+          "and_gate.blif"
+        ],
+        "top": "and_gate",
+        "undefined": "error",
+        "wordCells": false
+      },
+      "moduleMap": {
+        "and_gate": "hdl_and_gate"
+      },
+      "rows": 4,
+      "structure": [
+        "C\thdl_and_gate",
+        "G\thdl_and_gate\tAND Gate\t1500\t100\t1\t2\t50\teast",
+        "P\thdl_and_gate\ta\tINPUT\t1\t40\t80\teast",
+        "P\thdl_and_gate\tb\tINPUT\t1\t40\t190\teast",
+        "P\thdl_and_gate\ty\tOUTPUT\t1\t1100\t80\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t0\t0\t0",
+        "V\t1\tPASS\t0\t1\t0",
+        "V\t2\tPASS\t1\t0\t0",
+        "V\t3\tPASS\t1\t1\t1"
+      ],
+      "inputs": [
+        {
+          "path": "blif-and/uploads/and_gate.blif",
+          "sha256": "04fccdd504e76cfe2dc5e922bd68e55cdb4de338ce9d7dc23a6476802437c724",
+          "size": 62
+        }
+      ],
+      "netlist": {
+        "path": "blif-and/job/outputs/netlist.json",
+        "sha256": "2184546b5bd25c90eeaeb45173a65e08079200772843891919b64add0744e06f",
+        "size": 1334
+      },
+      "circuit": {
+        "path": "blif-and/imported.circ",
+        "sha256": "3414e74d1556653c184ff840ac9d9d0453f69901fda6e2174c7798c3677fede5",
+        "size": 3315
+      },
+      "vectors": {
+        "path": "blif-and/vectors.txt",
+        "sha256": "131e8515e5cf6d8ea2e2453eaf27aca6cdf32dce22312ae9ea2e19ce24828e66",
+        "size": 30
+      },
+      "desktop": {
+        "path": "blif-and-desktop.stdout",
+        "sha256": "02b58e58c297f92fc587d1d3ce1f1c65e2bfd8d83464fcdec41acc071fa18a34",
+        "size": 232
+      },
+      "mobile": {
+        "path": "blif-and-mobile.stdout",
+        "sha256": "0d28f33357e0ef9bc02ed8b750fba0cba1c507ca8e5835b2a446a162bfbce87b",
+        "size": 232
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "MOBILE/outputs/menu-actions/hdl-import/blif-and/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "blif-and/job/mobile_import.ys",
+        "sha256": "f4c8c8aa1a3845e9023fd0ecb53219ed3f38aef5f6031d32bf6a958959ad09c4",
+        "size": 247
+      },
+      "synthesisLogs": [
+        {
+          "path": "blif-and/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "blif-and/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "blif-and/job/command-1.stdout",
+          "sha256": "1f67e7eedcbd31d3b762b466b6a7b14ccfe4f27147d2e754b8b2da595c5e418d",
+          "size": 13109
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true
+    }
+  ],
+  "tools": {
+    "java": {
+      "path": "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/java",
+      "sha256": "483e00831538bfa5e160140d4cf5aae591faad6d012d0aa0d04a6e1d56b671d3",
+      "version": "openjdk version \"21.0.13.0.3\" 2026-10-24\nOpenJDK Runtime Environment Homebrew (build 21.0.13.0.3)\nOpenJDK 64-Bit Server VM Homebrew (build 21.0.13.0.3, mixed mode, sharing)"
+    },
+    "javac": {
+      "path": "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/bin/javac",
+      "sha256": "7f2afc2b947c3b2288706a5df3c365a92de9bef78b9aacccc0820c19165e4ba8",
+      "version": "javac 21.0.13.0.3"
+    },
+    "yosys": {
+      "path": "/opt/homebrew/bin/yosys",
+      "sha256": "435b1d43de6985eeaad8330b0636d0f7bb1143311fd27382bf258d04fb2873c4",
+      "version": "Yosys 0.70+post (git sha1 0c11ea098be065e585a90a06e7b7da49936cf231, Release, AppleClang clang++ 21.0.0.21000334)"
+    },
+    "iverilog": {
+      "path": "/opt/homebrew/bin/iverilog",
+      "sha256": "f096dc24502eee84794f504c0d9f138e8a0af66bed6224648fdac18f92998714",
+      "version": "Icarus Verilog version 13.0 (stable) (v13_0)\n\nCopyright (c) 2000-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 13.0 (stable) (v13_0)\n\nCopyright (c) 1999-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 13.0 (stable) (v13_0)\n\nCopyright (c) 1998-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 13.0 (stable) (v13_0)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+    },
+    "vvp": {
+      "path": "/opt/homebrew/bin/vvp",
+      "sha256": "8f78af004c84b691f62f8675f986eac8d4e36d69c1c04a2252938c5710b56b97",
+      "version": "Icarus Verilog runtime version 13.0 (stable) (v13_0)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+    }
+  },
+  "sourceFiles": [
+    {
+      "path": "MOBILE/scripts/oracle/hdl-import/run.py",
+      "sha256": "1a62c8b1dc923e0bbcb6421f4e67898a27103acee47fb84fad99471f4c529879",
+      "size": 18160
+    },
+    {
+      "path": "MOBILE/scripts/oracle/hdl-import/HdlImportMobileOracle.java",
+      "sha256": "aaf3a9577b1ff45f48ed5b17ef474637824de9560167a054d7ed2648841e9fef",
+      "size": 6389
+    },
+    {
+      "path": "MOBILE/scripts/oracle/hdl-import/HdlImportDesktopOracle.java",
+      "sha256": "475fff0769967a6c2eb48ad9ef23aac1fb974a1e0cdb7b1a8d1bbc34e115b08e",
+      "size": 6772
+    },
+    {
+      "path": "MOBILE/companion/hdl_import.py",
+      "sha256": "d2b84bf2d2ec2765579b2eb8ba013b6c9f8a8b3cdc4992abc2d110d46124bf1e",
+      "size": 16807
+    },
+    {
+      "path": "MOBILE/companion/hdl_import_cells.v",
+      "sha256": "26204296f2c82126f8ad908163ed67e17992d5ea1c22938382f69d9f20c26e7c",
+      "size": 1377
+    }
+  ],
+  "falseControls": [
+    {
+      "name": "changed-hierarchy",
+      "rejected": true,
+      "reason": "Circuit, pin attributes, gates or hierarchy differ"
+    },
+    {
+      "name": "changed-pin-width",
+      "rejected": true,
+      "reason": "Circuit, pin attributes, gates or hierarchy differ"
+    },
+    {
+      "name": "missing-source-archive",
+      "rejected": true,
+      "reason": "Source archive file inventory differs from explicit inputs"
+    },
+    {
+      "name": "actual-desktop-nand-mutation",
+      "rejected": true,
+      "reason": "Circuit, pin attributes, gates or hierarchy differ",
+      "observedFailedRows": 4,
+      "output": {
+        "path": "negative-mutated-nand-desktop.stdout",
+        "sha256": "99f42b2f6aa6e7ae569cfee3d2dfea94dc4a25508621cbb1859fa91f832be666",
+        "size": 233
+      }
+    },
+    {
+      "name": "actual-desktop-nand-truth-table",
+      "rejected": true,
+      "reason": "Observed truth tables differ or omit rows"
+    }
+  ],
+  "status": "PASS",
+  "rowsCompared": 44,
+  "artifactsAfter": {
+    "mobile": {
+      "path": "MOBILE/core/build/libs/core-jvm.jar",
+      "sha256": "5e3cac10aef425115d114322ff878a32e233416e4bf0a81df9767b6adf661a4c",
+      "size": 5504061
+    },
+    "desktop": {
+      "path": "EVOLUTION/build/libs/logisim-evolution-5.1.0dev-all.jar",
+      "sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+      "size": 54876859
+    },
+    "stdlib": {
+      "path": "GRADLE_HOME/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+      "sha256": "bd8250210584cb659847dce9cda660f8e9906e5def7fbebcea93dc6dcb6a88a3",
+      "size": 1853315
+    }
+  },
+  "artifactsUnchanged": true,
+  "finishedAt": "2026-11-08T02:32:28.934688+00:00"
+}

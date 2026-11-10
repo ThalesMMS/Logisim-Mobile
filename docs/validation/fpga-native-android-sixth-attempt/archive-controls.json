@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "deviceOrAppOperations": 0,
+  "scope": "One relocated verifier pass and four rehashed semantic negative controls in temporary copies. Originals are unchanged.",
+  "results": [
+    {
+      "case": "relocated-portable-packet",
+      "expected": "PASS",
+      "exitCode": 0,
+      "controlPassed": true
+    },
+    {
+      "case": "reject-rehashed-false-qualification",
+      "expected": "REJECT",
+      "exitCode": 1,
+      "controlPassed": true
+    },
+    {
+      "case": "reject-rehashed-invented-job-count",
+      "expected": "REJECT",
+      "exitCode": 1,
+      "controlPassed": true
+    },
+    {
+      "case": "reject-rehashed-false-board-outcome",
+      "expected": "REJECT",
+      "exitCode": 1,
+      "controlPassed": true
+    },
+    {
+      "case": "reject-rehashed-false-navigation-outcome",
+      "expected": "REJECT",
+      "exitCode": 1,
+      "controlPassed": true
+    }
+  ]
+}

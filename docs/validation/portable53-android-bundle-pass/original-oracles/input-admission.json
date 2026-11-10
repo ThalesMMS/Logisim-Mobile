@@ -1,0 +1,264 @@
+{
+  "schema": 1,
+  "status": "OFFLINE_INPUTS_VALIDATED",
+  "origin": "actual Android bundle scenario",
+  "nativeUiReceipt": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-receipt.json",
+  "nativeUiReceiptSha256": "68d6c8ea3e55c05cc1ac865d9de834a298a9c6874c068d57b2bf5b5f6be05e7a",
+  "nativeUiStatus": "PASSED",
+  "scope": "Bundle scenario only. The native outer run failed later in the independent folder scenario; no folder qualification is claimed.",
+  "outerRunResults": [
+    {
+      "scenario": "portable-bundle-storage-roundtrip",
+      "status": "passed",
+      "seconds": 204.06
+    },
+    {
+      "scenario": "portable-folder-storage-roundtrip",
+      "status": "failed",
+      "error": "Visible control missing: {'text': 'Downloads', 'description': None, 'resource_id': None, 'prefix': False}"
+    }
+  ],
+  "exports": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-before-restart.lsebdl",
+      "bytes": 5395,
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+      "afterRestart": false,
+      "zipCrc": "PASSED"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-after-restart.lsebdl",
+      "bytes": 5395,
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+      "afterRestart": true,
+      "zipCrc": "PASSED"
+    }
+  ],
+  "snapshots": {
+    "before": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-before-workspace.tar",
+      "archiveSha256": "22bb701705694c76173b0ce30505e6a03e9b95aca3cd278565b99c8b450d12da",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/before/workspace",
+      "files": {
+        "catalog.lock": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "catalog.previous": {
+          "bytes": 293,
+          "sha256": "4289259839c2857becc2a2307482963cc352736558bfb0f346cf94b1846892af"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+          "bytes": 1834,
+          "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+        },
+        "catalog.workspace": {
+          "bytes": 296,
+          "sha256": "47596e7945e68ee138f549ae9b3d12f4bff6fe4251c5f0d4fd16c22a93a86751"
+        },
+        "window-36-cbe1c41a5821c8b3.workspace-link": {
+          "bytes": 110,
+          "sha256": "3248ad6c91a935e9e37fc1b1bf3320dcfb9fb4c5dd7d3c44bbb258ec9a830405"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+          "bytes": 1934,
+          "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+          "bytes": 624,
+          "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+          "bytes": 646,
+          "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+          "bytes": 683,
+          "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+        }
+      }
+    },
+    "imported": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-imported-workspace.tar",
+      "archiveSha256": "b42bc1f0ddcd48530a9e0998b7f2ae531f5b510c4b70a9cab631c6554c38681b",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/imported/workspace",
+      "files": {
+        "catalog.lock": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "catalog.previous": {
+          "bytes": 296,
+          "sha256": "47596e7945e68ee138f549ae9b3d12f4bff6fe4251c5f0d4fd16c22a93a86751"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+          "bytes": 1834,
+          "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+        },
+        "catalog.workspace": {
+          "bytes": 399,
+          "sha256": "1afb1c10b4d3694b218bb203b108da6343c6327bae15da02b6ac2f90f483be8d"
+        },
+        "window-36-cbe1c41a5821c8b3.workspace-link": {
+          "bytes": 110,
+          "sha256": "372fb9525f08043f5f4f1d2763933aea4e9b70e4bc4c3adb465fc99dbbaf504b"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+          "bytes": 1934,
+          "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+          "bytes": 624,
+          "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+          "bytes": 646,
+          "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+          "bytes": 683,
+          "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+        },
+        "project-f50f2c7e98770d5a23d939fbff31d2e7-1.workspace": {
+          "bytes": 4202,
+          "sha256": "214370d0b0e87ce517c739b8ff2d4a6ad79981ea090e0075e23c546d8e016d1d"
+        },
+        "attachment-74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc.workspace": {
+          "bytes": 6383,
+          "sha256": "ec71f32c4888dba54421258c05ebded0934afeaba14e40db5a0764e29c05d82e"
+        }
+      }
+    },
+    "restarted": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-restored-workspace.tar",
+      "archiveSha256": "2cffa2f177182f69010cbbf071735d04c5203ea96fe0308e5d69304406b6e926",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/restarted/workspace",
+      "files": {
+        "catalog.lock": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "catalog.previous": {
+          "bytes": 399,
+          "sha256": "1afb1c10b4d3694b218bb203b108da6343c6327bae15da02b6ac2f90f483be8d"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+          "bytes": 1834,
+          "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+        },
+        "catalog.workspace": {
+          "bytes": 402,
+          "sha256": "26d21f2d805bbfe142773fc4cf20fea53be4b6c4f2898e2f78ccce5ec09c4e25"
+        },
+        "window-36-cbe1c41a5821c8b3.workspace-link": {
+          "bytes": 110,
+          "sha256": "372fb9525f08043f5f4f1d2763933aea4e9b70e4bc4c3adb465fc99dbbaf504b"
+        },
+        "window-36-f47799d22e98fb0c.workspace-link": {
+          "bytes": 110,
+          "sha256": "978809785622af6abb2c51badff1025156d6406f5a0f384ff22d2fdd5593a0c5"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+          "bytes": 1934,
+          "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+          "bytes": 624,
+          "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+          "bytes": 646,
+          "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+          "bytes": 683,
+          "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+        },
+        "project-f50f2c7e98770d5a23d939fbff31d2e7-1.workspace": {
+          "bytes": 4202,
+          "sha256": "214370d0b0e87ce517c739b8ff2d4a6ad79981ea090e0075e23c546d8e016d1d"
+        },
+        "attachment-74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc.workspace": {
+          "bytes": 6383,
+          "sha256": "ec71f32c4888dba54421258c05ebded0934afeaba14e40db5a0764e29c05d82e"
+        },
+        "project-f50f2c7e98770d5a23d939fbff31d2e7-2.workspace": {
+          "bytes": 4279,
+          "sha256": "93a94bd20e6acf582cce30de5b0a2fa4072323dd888beb8726cbff6b8c73e1d8"
+        }
+      }
+    },
+    "reopened": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-reopened-workspace.tar",
+      "archiveSha256": "23fbd900d884629ccfe1a1cc55b11e5f9dde70725dfbac97bceb9bb3f75f1999",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/reopened/workspace",
+      "files": {
+        "catalog.lock": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "catalog.previous": {
+          "bytes": 402,
+          "sha256": "26d21f2d805bbfe142773fc4cf20fea53be4b6c4f2898e2f78ccce5ec09c4e25"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+          "bytes": 1834,
+          "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+        },
+        "catalog.workspace": {
+          "bytes": 567,
+          "sha256": "d83e3d84a909f64280ffb7763789e8d6926b733b94a2f1c52aaeac095c436c14"
+        },
+        "window-36-cbe1c41a5821c8b3.workspace-link": {
+          "bytes": 110,
+          "sha256": "372fb9525f08043f5f4f1d2763933aea4e9b70e4bc4c3adb465fc99dbbaf504b"
+        },
+        "window-36-f47799d22e98fb0c.workspace-link": {
+          "bytes": 110,
+          "sha256": "be5d4e676adfdb2ebdd2c4d14486dacb00f8c284441bce0e9f842032845c5779"
+        },
+        "project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+          "bytes": 1934,
+          "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+          "bytes": 624,
+          "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+          "bytes": 646,
+          "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+        },
+        "project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+          "bytes": 683,
+          "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+        },
+        "project-f50f2c7e98770d5a23d939fbff31d2e7-1.workspace": {
+          "bytes": 4202,
+          "sha256": "214370d0b0e87ce517c739b8ff2d4a6ad79981ea090e0075e23c546d8e016d1d"
+        },
+        "attachment-74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc.workspace": {
+          "bytes": 6383,
+          "sha256": "ec71f32c4888dba54421258c05ebded0934afeaba14e40db5a0764e29c05d82e"
+        },
+        "project-f50f2c7e98770d5a23d939fbff31d2e7-2.workspace": {
+          "bytes": 4279,
+          "sha256": "93a94bd20e6acf582cce30de5b0a2fa4072323dd888beb8726cbff6b8c73e1d8"
+        },
+        "attachment-930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113.workspace": {
+          "bytes": 7227,
+          "sha256": "d38664012f5d96a83dede111008ce214a01595ea325674b8a95dff4d050ad2b6"
+        },
+        "project-dd3f317c1a1470a930e0735d67fba6a1-1.workspace": {
+          "bytes": 4422,
+          "sha256": "0412d1841bb8611dea7f9200aedc2f65c75187ac5d362b04bd3830f02798190e"
+        }
+      }
+    }
+  },
+  "references": {
+    "core-jvm.jar": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+    "desktop.jar": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01"
+  },
+  "recordedAtUtc": "2026-11-05T02:54:34.436187+00:00"
+}

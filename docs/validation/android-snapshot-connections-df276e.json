@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "utc": "2026-11-05T00:05:00.251340+00:00",
+  "productPin": "df276e39e2af27fdbe26d220913657b43ee717a9",
+  "appProducerHead": "40dd9172e5775bb65232dafac3a401ee59ebf9e4",
+  "harnessHead": "54fb076f0c9e5cb8b53c8efdb9fd9a9acdd8517e",
+  "helperSourceHead": "6b6429d22f752098c855d909797b8f6e662c94c8",
+  "serial": "emulator-5556",
+  "editorPidBeforeAfter": 20683,
+  "installedArtifactsAfter": {
+    "thalesmms.logisim.mobile.e2e": "600f656ac6cbb4661bbff880995b77a1fc240bb0607671bb96d0a010b234a834",
+    "thalesmms.logisim.mobile.e2e.test": "9ce4fc8339818d6cfa56dc590aba9b66b26cf161842b81ce8422247768d03c3a",
+    "thalesmms.logisim.mobile.snapshot.e2e.test": "edb8431d3cda26d83529fc5b57553e3551f754cb425216675091ba4a80c523d6"
+  },
+  "status": "OBSERVATION_COMPLETE",
+  "workflowQualification": "NOT_QUALIFIED",
+  "rootFailureReproduced": false,
+  "snapshotBudgetMilliseconds": 1000,
+  "clientDeadlineSeconds": 8,
+  "method": "Same bounded series entrypoint and acquisition method. Four invocations of one query, followed by one invocation of four queries. No gestures, app restart, data reset, rendering/backend change or extra diagnostic window read between shared queries.",
+  "measurements": {
+    "reconnected": {
+      "censusPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-4x1-7e0ffd94/census.json",
+      "censusSha256": "8156c3ef6b8926352cf2de29eeef29ca27245b3289c0918b4a6ec0d9590639aa",
+      "status": "passed",
+      "queries": [
+        {
+          "probe": 0,
+          "query": 0,
+          "helperPid": 22010,
+          "rootWindowId": 18569,
+          "rootSource": "active-window",
+          "rootWaitMillis": 80,
+          "nodeCount": 45,
+          "semanticTreeSha256": "48d429b74d49cabfcf72a2254cde422588cd3babdcf4aea775073f2a0f98cf50",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-4x1-7e0ffd94/probe-0-query-0.xml",
+          "xmlSha256": "f44e64be59b0e9a2fe27ff1ebfa7ff490f58cd479a1ed0b40c50afc5c42a19b2"
+        },
+        {
+          "probe": 1,
+          "query": 0,
+          "helperPid": 22067,
+          "rootWindowId": 18579,
+          "rootSource": "active-window",
+          "rootWaitMillis": 9,
+          "nodeCount": 45,
+          "semanticTreeSha256": "48d429b74d49cabfcf72a2254cde422588cd3babdcf4aea775073f2a0f98cf50",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-4x1-7e0ffd94/probe-1-query-0.xml",
+          "xmlSha256": "712a4c5ff3894ca9fdcfa5241f16f6f78ab65252ad7d9040ee42089ef1ef901b"
+        },
+        {
+          "probe": 2,
+          "query": 0,
+          "helperPid": 22123,
+          "rootWindowId": 18592,
+          "rootSource": "active-window",
+          "rootWaitMillis": 86,
+          "nodeCount": 45,
+          "semanticTreeSha256": "48d429b74d49cabfcf72a2254cde422588cd3babdcf4aea775073f2a0f98cf50",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-4x1-7e0ffd94/probe-2-query-0.xml",
+          "xmlSha256": "4fc9c3e88ec69903e285f09d3b6eaa05e605b2a786d86e6f9eac081c3d0ab515"
+        },
+        {
+          "probe": 3,
+          "query": 0,
+          "helperPid": 22176,
+          "rootWindowId": 18605,
+          "rootSource": "active-window",
+          "rootWaitMillis": 53,
+          "nodeCount": 45,
+          "semanticTreeSha256": "48d429b74d49cabfcf72a2254cde422588cd3babdcf4aea775073f2a0f98cf50",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-4x1-7e0ffd94/probe-3-query-0.xml",
+          "xmlSha256": "bcb450c7da223b2a8fb14bcbfe310be525add8d72fb4f3f0afe37dec83f01a3b"
+        }
+      ]
+    },
+    "shared": {
+      "censusPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-1x4-7e0ffd94/census.json",
+      "censusSha256": "6e9e6aaa509497c06c0c8fb6ebf54727a753942d54ba9cfb7fc08028ee6d9600",
+      "status": "passed",
+      "queries": [
+        {
+          "probe": 0,
+          "query": 0,
+          "helperPid": 22233,
+          "rootWindowId": 18615,
+          "rootSource": "active-window",
+          "rootWaitMillis": 97,
+          "nodeCount": 45,
+          "semanticTreeSha256": "1f40ef9ff09dc4b5ff63e431a14b294e7beef13ae94c695e58725bab7de39ed9",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-1x4-7e0ffd94/probe-0-query-0.xml",
+          "xmlSha256": "bfc3599902cd434645a15a1ed949fd4d5feaeb742ff56ec6e452affc40c3cbf4"
+        },
+        {
+          "probe": 0,
+          "query": 1,
+          "helperPid": 22233,
+          "rootWindowId": 18615,
+          "rootSource": "active-window",
+          "rootWaitMillis": 2,
+          "nodeCount": 45,
+          "semanticTreeSha256": "48d429b74d49cabfcf72a2254cde422588cd3babdcf4aea775073f2a0f98cf50",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-1x4-7e0ffd94/probe-0-query-1.xml",
+          "xmlSha256": "5b231b687df769c819f0b98abad9ce8bdc43753d03ee0cb70b2c0359e17c76b6"
+        },
+        {
+          "probe": 0,
+          "query": 2,
+          "helperPid": 22233,
+          "rootWindowId": 18615,
+          "rootSource": "active-window",
+          "rootWaitMillis": 3,
+          "nodeCount": 45,
+          "semanticTreeSha256": "48d429b74d49cabfcf72a2254cde422588cd3babdcf4aea775073f2a0f98cf50",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-1x4-7e0ffd94/probe-0-query-2.xml",
+          "xmlSha256": "1a9676f0ea3424be5ed3edf2a5f4ea71eb6814bd61a2ddab0e2f716c6193a807"
+        },
+        {
+          "probe": 0,
+          "query": 3,
+          "helperPid": 22233,
+          "rootWindowId": 18615,
+          "rootSource": "active-window",
+          "rootWaitMillis": 5,
+          "nodeCount": 45,
+          "semanticTreeSha256": "48d429b74d49cabfcf72a2254cde422588cd3babdcf4aea775073f2a0f98cf50",
+          "xmlPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/snapshot-series-1x4-7e0ffd94/probe-0-query-3.xml",
+          "xmlSha256": "3141655d312185fe1002c24ef7cf4401b44adb42f99c819af49f544c11d3abd2"
+        }
+      ]
+    }
+  },
+  "hierarchyDifferences": [
+    {
+      "group": "shared",
+      "probe": 0,
+      "query": 0,
+      "nodes": [
+        {
+          "nodeIndex": 37,
+          "text": "Comparator",
+          "class": "android.widget.TextView",
+          "bounds": "[443,1539][637,1592]",
+          "changes": {
+            "visible-to-user": {
+              "reference": "false",
+              "observed": "true"
+            }
+          }
+        },
+        {
+          "nodeIndex": 39,
+          "text": "",
+          "class": "android.view.View",
+          "bounds": "[183,1628][897,1754]",
+          "changes": {
+            "visible-to-user": {
+              "reference": "false",
+              "observed": "true"
+            }
+          }
+        },
+        {
+          "nodeIndex": 42,
+          "text": "",
+          "class": "android.view.View",
+          "bounds": "[739,1745][897,1871]",
+          "changes": {
+            "visible-to-user": {
+              "reference": "false",
+              "observed": "true"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "observations": [
+    "All eight captures returned 45 nodes with the same text, geometry and keyboard focus.",
+    "Separate observer connections returned four different accessibility window IDs.",
+    "The shared connection returned one stable accessibility window ID for all four captures.",
+    "The first shared query marked three nodes visible-to-user=true; all other captures marked those nodes false. Raw XML and these differences are retained.",
+    "The earlier missing-root failure did not reproduce in this static control. It does not establish the failure cause or qualify the editing workflow."
+  ],
+  "inference": "Observer lifecycle explains window-registration churn in this scene. A causal relation to the earlier missing-root failures remains unproven."
+}

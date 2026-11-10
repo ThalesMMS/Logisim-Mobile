@@ -1,0 +1,91 @@
+{
+  "scope": "selected co-simulation alpha on combined tool-sheet candidate",
+  "status": "FAIL",
+  "native_execution_gate": "NATIVE_FAIL",
+  "qualification_gate": "NOT_QUALIFIED",
+  "source_sha": "e7ebaf0b60e98f2dd2d6d9568d084e1e0b8ee583",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-tools-handle-candidate/outputs/ios-tools-handle-e7ebaf0b/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "b6e31513c0cd104ad6908c23117263ec219a77fe5109a53ae3be69f7316bc36a",
+    "bundle_tree_sha256": "974f10a831573a42957d605e3a330d93efa0610b141c1fe61584608840bbdee2",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifact_after": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-tools-handle-candidate/outputs/ios-tools-handle-e7ebaf0b/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "b6e31513c0cd104ad6908c23117263ec219a77fe5109a53ae3be69f7316bc36a",
+    "bundle_tree_sha256": "974f10a831573a42957d605e3a330d93efa0610b141c1fe61584608840bbdee2",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "simulator": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+  "portrait": {
+    "hide_actions_passed": 2,
+    "control_minimum_points": [
+      48,
+      48
+    ],
+    "keyboard_hidden": true,
+    "address_preserved_exactly": true,
+    "token_preserved_through_successful_authentication": true
+  },
+  "landscape": {
+    "native_assertion_failure": "The native Select All context-menu item was absent before source replacement.",
+    "independently_observed_failure": "The Hide keyboard action and title are above the application viewport after focusing the source.",
+    "frames": {
+      "editor-tool-hide-keyboard": [
+        606.7,
+        -48,
+        123.3,
+        48
+      ],
+      "title": [
+        114,
+        -36,
+        492.7,
+        24
+      ],
+      "hdl-sim-scroll": [
+        114,
+        0,
+        616,
+        46
+      ],
+      "hdl-sim-source": [
+        114,
+        0,
+        616,
+        46
+      ],
+      "inputView": [
+        75,
+        166,
+        694,
+        224
+      ]
+    }
+  },
+  "companion_operations": 0,
+  "not_inferred": "No HDL compiler, sample, reset or imported circuit was exercised. Portrait progress cannot qualify the complete tool workflow.",
+  "next_preflight": "Validate the 48-point Hide control immediately after focus and again after entry. Standard editing selection must not hide the software keyboard. No guard or timeout was reduced.",
+  "evidence": {
+    "screenshot": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/attachments/7D099D25-42FA-4A05-8305-C72EF9F6651D.png",
+      "sha256": "a939c76fa85ba52d90f011e88b1e305cbeca262dbab0d1264856b2958e958805"
+    },
+    "native_tree": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/attachments/E0CC53FC-ED6B-484E-A7B6-3071B3A3F73F.txt",
+      "sha256": "e8b83a49a53ae2d718eddf63565401726536e9ed3de37fa1eeca278dd48eed94"
+    },
+    "test_log": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/test.log",
+      "sha256": "2fcf4444a289b0826bbe0071a11d6a2af4914bacbda59a4a6e6459e379672b12"
+    },
+    "companion_audit": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/companion-audit.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+row: cli/new-file-format
+case: convert-hierarchy
+result: PASS
+detail: Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '0ee7ccccf019', 'evolution-n': '0ee7ccccf019', 'mobile-n': '0ee7ccccf019'}
+
+=== evolution: java EvolutionAutomationOracle convert examples/hierarchy.circ $WORK/evolution-hierarchy.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -n examples/hierarchy.circ $WORK/mobile-hierarchy.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

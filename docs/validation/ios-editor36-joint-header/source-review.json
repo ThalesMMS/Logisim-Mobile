@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "review": "SOURCE_ONLY",
+  "result": "APPROVED_WITH_NATIVE_VALIDATION_PENDING",
+  "utc": "2026-11-05T09:41:29.538306+00:00",
+  "base": "199fafaecee12bc1112909b392e1633a7eff51be",
+  "workingFile": "scripts/ios_e2e_ui/EditorEndToEndTests.swift",
+  "workingSHA256": "36a12b9b83c82fafbdb70744ae13a4eecc74cf67561c3b9241ed02d320c80c6a",
+  "findings": [],
+  "evidence": [
+    {
+      "line": 378,
+      "fact": "Typed Components/Search resolver confines changes to private preparation."
+    },
+    {
+      "line": 437,
+      "fact": "All matching input candidates are counted; ambiguity throws and absence remains nil. A control is indexed only when count is exactly one."
+    },
+    {
+      "line": 457,
+      "fact": "Any present control must have a canonical label, enabled state and finite target frame of at least48points before any selected skip can return."
+    },
+    {
+      "line": 467,
+      "fact": "Components skip requires public selected==true from the unique observed Button. It makes no touch and intentionally does not claim full visibility or hittability."
+    },
+    {
+      "line": 473,
+      "fact": "The unselected action path reacquires observation, requires whole safe viewport inclusion and native hittability, and issues one tap only."
+    },
+    {
+      "line": 490,
+      "fact": "Posttap polling queries a fresh unique Components observation and returns only a newly confirmed selected control. Failure or timeout throws; no retap exists."
+    },
+    {
+      "line": 413,
+      "fact": "Keyboard regions are all collected; inputView and assistant identifiers also collect all existing matches independently of a Keyboard node."
+    },
+    {
+      "line": 506,
+      "fact": "Each bounded backward gesture has a new observation and derived safe start/end. A control observed below the viewport cannot trigger an opposite-direction sweep."
+    },
+    {
+      "line": 505,
+      "fact": "The existing bound remains at most twelve short backward scrolls. Missing or ambiguous state is not replaced by .first."
+    }
+  ],
+  "geometry": {
+    "byteIdenticalToBase": true,
+    "functionSHA256": "70f2c90f6f2d39de13dc3ecf4125c3ed92bdc03b4921034babb53264b8997c34"
+  },
+  "invariantReview": {
+    "path": "/tmp/logisim-editor36-header-invariants-review.json",
+    "sha256": "d41121e9ff53dadee8a62ababc38ad2b133fd1f422eb7a903ebb6e2e09e9e316"
+  },
+  "limitations": [
+    "No SDK build or test execution was performed by this reviewer.",
+    "No device, UI, Native retry, app source change or file edit was performed.",
+    "This source approval does not establish actual native selected-state delivery, gesture consumption or an Editor62 pass."
+  ]
+}

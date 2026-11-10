@@ -1,0 +1,15 @@
+# Independent offline getter review
+
+Result: `PASS_PREPARATION_ONLY_WITH_RUNTIME_LIMITS`. I reviewed the prepared helper and tests, ran its eleven offline tests, and exercised the default transport function with a fully fake HTTP/2 connection. No discovery command, socket, RPC, device, credential read or live reader operation was executed.
+
+Two defects were reproduced before correction. Clearing `process.env.NODE_DEBUG` after startup left `debuglog('http2').enabled` true; a synthetic marker still reached stderr and Node emitted its sensitive-header warning. The initially exported raw HTTP/2 helper also reached a fake connection with an unattributed host. The revised code rejects enabled HTTP/2 debug before loading a credential and keeps the raw transport private. Its startup-debug child test has zero loader calls and empty stderr. These fixes address both findings.
+
+The descriptor SHA is checked before invoking protoc. The frozen descriptor decoded both the literal suite payload and an independently encoded synthetic status exactly. The source proto and descriptor are distinct files with distinct pinned SHA values, as recorded in `review.json`. No response from an emulator was decoded.
+
+The revised eleven-test suite passed with zero failures and skips. Additional fake-connection cases exercised the default transport function for a successful unary result, gRPC error16 and deadline. Each destroyed its request and connection and cleared its timer once. The request path stayed the hardcoded getStatus method. Those event-level tests do not prove a real HTTP/2 handshake, server authentication, network cancellation or live gRPC behavior.
+
+The public getter gates reject missing, wrong-host, wrong-PID, wrong-serial, stale, invalid-port and mismatched-proto records before the credential loader. It rechecks freshness after loading. CLI execution without the exact discovery-only flag remains prepared and never loads a credential. The current coordinator-reported console result is KO/no active service, so the unrelated listening ports remain unattributed and no auth/RPC step is justified.
+
+One runtime prerequisite remains. `await loadCredential()` has no helper-level timeout; the five-second timer belongs to HTTP/2 and starts later. A loader returning a never-resolving promise remains pending. This does not block committing an unexecuted preparation with no default credential reader, but a future concrete reader or outer driver needs a bounded lifecycle before it is approved to access a secret. Setting a JavaScript variable to undefined also does not guarantee erasure of immutable strings; the current code correctly avoids making that claim.
+
+The proof record is trusted in-process metadata rather than an unforgeable attestation. A future driver must call fresh discovery and retain the actual coordinator/lease identity. The synthetic test proof containing port60097 is not evidence that this VM has a gRPC endpoint there. This review approves preparation and the stated offline evidence only. It does not approve credential loading, a live RPC, a hardware gesture or issue28 closure.

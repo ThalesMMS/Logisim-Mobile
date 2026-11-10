@@ -1,0 +1,32 @@
+row: cli/tty
+case: table-d-flip-flop
+result: PASS
+detail: stdout and exit class equal
+
+=== evolution: logisim-evolution -t table examples/d-flip-flop.circ
+exit: 0
+--- stdout (9 lines, sha256 37f8320956632126f51f2c1c9b60916fa6b88e544fdf16d225abc681619937ba)
+D CLK CLR Q
+0   0   0 0
+0   0   1 0
+0   1   0 0
+0   1   1 0
+1   0   0 0
+1   0   1 0
+1   1   0 0
+1   1   1 0
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table examples/d-flip-flop.circ
+exit: 0
+--- stdout (9 lines, sha256 37f8320956632126f51f2c1c9b60916fa6b88e544fdf16d225abc681619937ba)
+D CLK CLR Q
+0   0   0 0
+0   0   1 0
+0   1   0 0
+0   1   1 0
+1   0   0 0
+1   0   1 0
+1   1   0 0
+1   1   1 0
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

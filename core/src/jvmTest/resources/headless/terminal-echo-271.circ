@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="2.7.1" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#I/O" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" loc="(60,100)" name="Clock"/>
+    <comp lib="1" loc="(100,100)" name="Keyboard">
+      <a name="trigger" val="falling"/>
+      <a name="buflen" val="2"/>
+    </comp>
+    <comp lib="1" loc="(400,150)" name="TTY">
+      <a name="trigger" val="falling"/>
+      <a name="cols" val="2"/>
+    </comp>
+    <wire from="(60,100)" to="(100,100)"/>
+    <wire from="(60,100)" to="(60,150)"/>
+    <wire from="(60,150)" to="(400,150)"/>
+    <wire from="(240,110)" to="(390,110)"/>
+    <wire from="(390,110)" to="(390,140)"/>
+    <wire from="(390,140)" to="(400,140)"/>
+    <wire from="(110,110)" to="(110,130)"/>
+    <wire from="(110,130)" to="(230,130)"/>
+    <wire from="(230,110)" to="(230,130)"/>
+    <wire from="(230,130)" to="(230,200)"/>
+    <wire from="(230,200)" to="(410,200)"/>
+    <wire from="(410,160)" to="(410,200)"/>
+  </circuit>
+</project>

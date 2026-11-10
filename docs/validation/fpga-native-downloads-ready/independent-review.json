@@ -1,0 +1,30 @@
+{
+  "status": "APPROVED_SOURCE_ONLY",
+  "reviewScope": "Read-only source and local fake-process tests; no ADB, device, Native, build, toolchain, network or host activity.",
+  "base": "8e8f593dec84bc980a8d67886a3bf34fda56691a",
+  "files": {
+    "scripts/e2e-android.py": "81a8461fbbd4f030c3b737577f3d0c85132345fdf4c4a7b4840e2c398222673f",
+    "scripts/test_android_downloads_navigation.py": "d4594810bc2ca4aac03bbf2200179def895e9ba346e9455cf44fa3a630c17bcc",
+    "fixtures/native-documentsui/downloads-content-google-api35.xml": "a04f0c7e77e4f50bd52fb1f5416f30a6684392954d353871b5b9a40c5d544181"
+  },
+  "checks": [
+    "Only choose_downloads changed in e2e-android.py; bytes before and after that method match HEAD.",
+    "Early admission is evaluated only while no native roots list is present.",
+    "Admission requires exactly one native file list and exactly one breadcrumb named Downloads or Download, both from the same native package.",
+    "Heading/title-only, foreign-package and mixed-native-package evidence cannot satisfy admission.",
+    "Multiple breadcrumbs or file lists cannot satisfy admission; visible subfolder breadcrumbs are rejected.",
+    "Any roots drawer retains the existing navigation path, and ambiguous drawers still fail before tapping.",
+    "The branch calls remaining() and does not change phase or total deadlines, action counts or later file selection.",
+    "Already-at-Downloads trace retains the exact source hierarchy and breadcrumb attributes; no tap is requested.",
+    "Fixture is 20824 bytes and SHA256 a04f0c7e77e4f50bd52fb1f5416f30a6684392954d353871b5b9a40c5d544181.",
+    "All 35 DownloadsNavigationTests passed with subprocess APIs guarded against real process execution.",
+    "Tests include delayed picker mounting, late ready hierarchies, phase/total deadlines and unchanged legacy routes."
+  ],
+  "limits": [
+    "This branch recognizes the observed native location presentation; it is not independent filesystem or provider identity attestation.",
+    "The subfolder negative demonstrates rejection when multiple breadcrumbs are exposed. It does not prove every possible native breadcrumb truncation or provider presentation.",
+    "The existing nonce filename selection, complete imported board identity, source bytes and later artifact checks remain necessary.",
+    "No Native006 behavior is qualified by this review."
+  ],
+  "blockers": []
+}

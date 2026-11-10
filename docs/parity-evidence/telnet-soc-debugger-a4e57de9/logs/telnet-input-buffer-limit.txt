@@ -1,0 +1,53 @@
+case: input-buffer-limit telnetMode=false buflen=2 trigger=rising
+
+=== evolution
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=00000001 av=1
+  read 0 clk=1: out=00000001 av=1
+  read 0 clk=0: out=00000010 av=1
+  read 1 clk=1: out=00000010 av=1
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  clk=0 after more bytes: out=0000000? av=0
+  rd=1: out=00000101 av=1
+  read 0 clk=1: out=00000101 av=1
+  read 0 clk=0: out=00000110 av=1
+  read 1 clk=1: out=00000110 av=1
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+
+=== mobile-companion
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=00000001 av=1
+! read 0 clk=1: out=00000010 av=1
+  read 0 clk=0: out=00000010 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+! clk=0 after more bytes: out=0000000? av=1
+  rd=1: out=00000101 av=1
+! read 0 clk=1: out=00000110 av=1
+  read 0 clk=0: out=00000110 av=1
+! read 1 clk=1: out=11111111 av=0
+  read 1 clk=0: out=11111111 av=0
+  read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=00000001 av=1
+  read 1 sampled out=00000010 av=1
+  read 2 sampled out=11111111 av=0
+  read 0 sampled out=00000101 av=1
+  read 1 sampled out=00000110 av=1
+  read 2 sampled out=11111111 av=0
+
+=== mobile-jvm
+! FAILURE java.net.ConnectException: Connection refused
+--- sampled at rising edges and socket bytes: DIFF
+! FAILURE java.net.ConnectException: Connection refused

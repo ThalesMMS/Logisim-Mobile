@@ -1,0 +1,22 @@
+row: cli/locale
+case: profile-persisted-after-locale
+result: PASS
+detail: evolution={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}
+
+=== evolution: java EvolutionStartupOracle
+exit: 0
+--- stdout (5 lines, sha256 9b4f9c8eb1773dc7938929fc3cfb4d8863738fcb1471ab03cf45e34e86f6ede5)
+parse=ok
+splash=true
+gates=ansi
+locale=pt session=pt
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 28b16a71dac4b56561f1d33c6d3226f0adf35275d1a5c7f2b740995b1700f376)
+gates=ansi
+locale=pt
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

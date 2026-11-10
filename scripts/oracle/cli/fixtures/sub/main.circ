@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="file#lib-not.circ" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" loc="(100,100)" name="Pin"><a name="type" val="input"/><a name="label" val="A"/></comp>
+    <comp lib="1" loc="(200,100)" name="cell"/>
+    <comp lib="0" loc="(300,100)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="label" val="Y"/></comp>
+    <wire from="(100,100)" to="(170,100)"/>
+    <wire from="(200,100)" to="(300,100)"/>
+  </circuit>
+  <circuit name="top">
+    <comp lib="0" loc="(100,100)" name="Pin"><a name="type" val="input"/><a name="label" val="B"/></comp>
+    <comp lib="0" loc="(300,100)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="label" val="Z"/></comp>
+    <wire from="(100,100)" to="(300,100)"/>
+  </circuit>
+</project>

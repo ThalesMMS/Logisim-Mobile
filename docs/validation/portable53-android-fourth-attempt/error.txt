@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 641, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 457, in bundle
+    self.roundtrip("bundle", before)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 401, in roundtrip
+    filename, exported = self.export(mode + "-before-restart")
+                         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 376, in export
+    self.s.choose_downloads()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 730, in choose_downloads
+    opener = self.ui.find(root, description="Show roots")
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_ui.py", line 196, in find
+    raise UiNodeNotFound(f"Visible control missing: {selector}")
+android_ui.UiNodeNotFound: Visible control missing: {'text': None, 'description': 'Show roots', 'resource_id': None, 'prefix': False}

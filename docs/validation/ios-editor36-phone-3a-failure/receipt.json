@@ -1,0 +1,263 @@
+{
+  "schema": 1,
+  "issue": 36,
+  "status": "FAIL",
+  "nativeExecutionGate": "NATIVE_FAIL",
+  "qualification": "FAIL; selected case, no issue completion",
+  "caseSeconds": 377.055,
+  "testCount": 1,
+  "failureCount": 1,
+  "exitCode": 65,
+  "testTimeoutSeconds": 900,
+  "nativeRunCount": 1,
+  "selectedTest": "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+  "harnessSource": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+  "appProducerSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "producerManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+  "appArtifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+    "bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/20A4D87D-A2A6-46BD-A889-C4888CE1E152/data",
+    "dataPathSize": 4024004608,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "udid": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "lastUsedAt": "2026-11-05T03:21:51Z",
+    "isAvailable": true,
+    "logPathSize": 352256,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
+    "state": "Booted",
+    "name": "iPhone 17e",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "runId": "28938ad53f31",
+  "started": "2026-11-05T07:05:59.099184+00:00",
+  "finished": "2026-11-05T07:12:52.351660+00:00",
+  "passedSteps": 15,
+  "attemptedFailureStep": 16,
+  "failureAction": "connectPorts",
+  "failure": "NativeUIHarness.swift:82 failed to get matching snapshot for a11y-circuit-list.",
+  "scope": "Source-port StartConnection was tapped, then destination search could not be revealed. CompleteConnection was not reached. No internal gesture-consumption or dismissal callback was recorded.",
+  "exports": [
+    {
+      "exportIndex": 1,
+      "contractStep": 2,
+      "checkpoint": "empty",
+      "attachment": "A5E5E757-064C-4F32-8A9F-C6846B7CCD23.xml",
+      "bytes": 462,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    {
+      "exportIndex": 2,
+      "contractStep": 7,
+      "checkpoint": "components",
+      "attachment": "2BB570A0-0F5B-411A-902E-6A4C69C4029A.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    {
+      "exportIndex": 3,
+      "contractStep": 9,
+      "checkpoint": "north",
+      "attachment": "59F9B851-2E17-4DB0-AF15-F4195E82E88E.xml",
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    {
+      "exportIndex": 4,
+      "contractStep": 11,
+      "checkpoint": "components",
+      "attachment": "0BDD1C2E-7C41-49D9-A1E5-08FD75DD3EBA.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    {
+      "exportIndex": 5,
+      "contractStep": 13,
+      "checkpoint": "north",
+      "attachment": "9B67EF91-C86F-4F2D-940E-626D846ACE18.xml",
+      "bytes": 1709,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    {
+      "exportIndex": 6,
+      "contractStep": 15,
+      "checkpoint": "components",
+      "attachment": "57A69675-DBD6-47EC-A908-B250A14DDEF7.xml",
+      "bytes": 1708,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    }
+  ],
+  "stepNotes": [
+    {
+      "step": 1,
+      "attachment": "43232256-A365-4E22-AD15-73D5CC8A32B8.txt"
+    },
+    {
+      "step": 2,
+      "attachment": "C59443F3-3B85-40DD-8153-5C7C1D669458.txt"
+    },
+    {
+      "step": 3,
+      "attachment": "8F0CAB82-4BA9-46DF-8284-DF192E45DEF8.txt"
+    },
+    {
+      "step": 4,
+      "attachment": "F136A354-D9DB-4D9C-908D-9908C0C86C01.txt"
+    },
+    {
+      "step": 5,
+      "attachment": "E7C9E3AD-983E-4C7D-8CFB-54250E552F57.txt"
+    },
+    {
+      "step": 6,
+      "attachment": "C336BFE6-879C-40CA-8B00-EBD387816E91.txt"
+    },
+    {
+      "step": 7,
+      "attachment": "15E9E91A-DA4E-4149-871A-83944F10C1B1.txt"
+    },
+    {
+      "step": 8,
+      "attachment": "8E4D73D5-7FAE-48BE-B395-6B022F94D9A8.txt"
+    },
+    {
+      "step": 9,
+      "attachment": "ADA53751-9A25-4E63-94E4-CB43D0BF4EDB.txt"
+    },
+    {
+      "step": 10,
+      "attachment": "56DD3FC5-B16E-4948-851D-36AD0E690425.txt"
+    },
+    {
+      "step": 11,
+      "attachment": "C8A89A6D-ED86-45AF-B930-DB0402D67FBD.txt"
+    },
+    {
+      "step": 12,
+      "attachment": "F42B4008-2266-4D37-903C-8FD3B2722D84.txt"
+    },
+    {
+      "step": 13,
+      "attachment": "7B61C885-D200-4E8F-90F7-A5F4B0F2A2FF.txt"
+    },
+    {
+      "step": 14,
+      "attachment": "588D680C-8C4E-472D-A565-B57C8C02F2CD.txt"
+    },
+    {
+      "step": 15,
+      "attachment": "3CCAFF03-6AED-474A-A5C4-12919A2038EB.txt"
+    }
+  ],
+  "attachments": {
+    "nativeTotal": 578,
+    "archivedExcludingVideo": 577,
+    "videoRetainedLocally": true
+  },
+  "deviceLease": "Returned to root after installed and producer12-file postflight; teardown terminated PID76016 and restored Portrait; explicit terminate exit3 because app was not running.",
+  "localOnly": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-3a/outputs/ios-editor36-phone-3a-001/attachments/2F17BD1D-208B-4F43-BB09-20421A128443.mp4",
+      "bytes": 126831107,
+      "sha256": "b43a40fcb3a295e328b4658812ee6fbb16d9b941b1d305d9259241828a963cf5",
+      "reason": "Automatic screen recording exceeds GitHub100MB file limit; original retained locally, sampled frames archived separately."
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-3a/outputs/ios-editor36-phone-3a-001/simulator.log",
+      "bytes": 150434838,
+      "sha256": "76204220a37d2fc79bc296a833720084c11e61389dac66ff178d1f80a83e23eb",
+      "reason": "Large host simulator log is retained locally; selected app XCTest log is archived in full."
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-3a/outputs/ios-editor36-phone-3a-001/last-screen.png",
+      "bytes": 3453343,
+      "sha256": "43b32ee9150ceb467226d8871922f0bcbf016cfcdefebd1b55a61b03c14a2b96",
+      "reason": "Runner screenshot after teardown; product final-screen attachment is archived instead."
+    }
+  ],
+  "notQualified": [
+    "Complete connection and resulting wires",
+    "Native input/output inversion",
+    "Copy/paste/delete and remaining history",
+    "Viewport/zoom phases",
+    "Save/restart",
+    "SAP-1",
+    "Rotation/pan/pinch/canvas drag",
+    "VoiceOver",
+    "Physical device"
+  ],
+  "rawArchive": {
+    "path": "raw.tar.gz",
+    "memberCount": 624,
+    "bytes": 571167,
+    "sha256": "c98b8c57bc6ab385c078ce0d5c557b65b1a08457c429b6782157e68929fdd28a"
+  },
+  "publicFiles": {
+    "README.md": {
+      "bytes": 4934,
+      "sha256": "569291b9ae8a1b1819ec095a615308c8ce65c8a1b32356c56a0cf8f6dd7b5085"
+    },
+    "analysis/video-319s.png": {
+      "bytes": 338563,
+      "sha256": "903912ef37148bbc1c5b43e17aee5b3074cb7c19db3b565320d9136152579c56"
+    },
+    "analysis/video-321s.png": {
+      "bytes": 341153,
+      "sha256": "53193a57e0483eeabfd79902d73f12b46f6c7419e52f7dd6ed923916613962eb"
+    },
+    "analysis/video-369s.png": {
+      "bytes": 193434,
+      "sha256": "3dfaa3677e5e31cac051825103647646dafa286b4ce74570b46751f585b4448a"
+    },
+    "analysis/video-372s.png": {
+      "bytes": 399361,
+      "sha256": "d9e78a68b73db5a565a8aae2aac047778890ef12373d0960d6783975921582f6"
+    },
+    "analysis/video-frames.json": {
+      "bytes": 1035,
+      "sha256": "03de2eddf5d7d48b5b309701af10051892edaeb4d1c7b7991419efeae85c6c7f"
+    },
+    "analysis/video-probe.json": {
+      "bytes": 344,
+      "sha256": "2851cfa138745d1cfdaf268d759ed20fec15f3a90c0ce8bac075945e3d35a9c5"
+    },
+    "independent-artifact-review.json": {
+      "bytes": 427,
+      "sha256": "e2b418cc81efb13cc35f34ab0db783be009f35bb9ea51fd8bf21d3411d460348"
+    },
+    "independent-package-review.json": {
+      "bytes": 7050,
+      "sha256": "4e7ae7e4d0a64c01da84276dc9bd1512b70af2057736d14a3e2d6c5d9a9dfbe6"
+    },
+    "independent-review.json": {
+      "bytes": 6008,
+      "sha256": "979eeb71a4de5b7fe5373132d34223b30a23e8abfd23e5413627039c49fba4ef"
+    },
+    "oracle.py": {
+      "bytes": 5319,
+      "sha256": "b0f10d85305e17070b1a473c96d14d5b68faf0e79022de815a5857e4d174c142"
+    },
+    "raw-members.json": {
+      "bytes": 100057,
+      "sha256": "d29b6239869afc4e6a9c9f4642c71bf8c921888d13637867ba39a3c7230769d2"
+    },
+    "raw.tar.gz": {
+      "bytes": 571167,
+      "sha256": "c98b8c57bc6ab385c078ce0d5c557b65b1a08457c429b6782157e68929fdd28a"
+    },
+    "test_verify.py": {
+      "bytes": 7014,
+      "sha256": "ca0c04435a83cdfb5a9055602c09345b8ea3d47a839e5e185729bbbe4fc03980"
+    },
+    "verify.py": {
+      "bytes": 12313,
+      "sha256": "7984cb623d65c8a1e92ad11d1c86125c074365a164081bcf14ece1aea36f9348"
+    }
+  }
+}

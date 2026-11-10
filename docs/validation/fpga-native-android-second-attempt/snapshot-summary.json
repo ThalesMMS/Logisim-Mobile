@@ -1,0 +1,58 @@
+{
+  "sdkCaptureBudgetMillis": 1000,
+  "nativeRunStatus": "FAIL",
+  "snapshots": [
+    {
+      "source": "focus-snapshot-9761b642e046485e920929dfcfd88fe4-1.json",
+      "sourceSha256": "b7284fe7d74d87548009406406c5d8b872176d5dedead8ffef5220dae4794b37",
+      "purpose": "scenario focus verification",
+      "status": "rejected",
+      "appPidBefore": "21917",
+      "appPidAfter": "21917",
+      "metadata": {
+        "snapshotCaptureAttemptRecordsBase64": "W3siYXR0ZW1wdCI6MSwic3RhcnRlZFVwdGltZU1pbGxpcyI6NDc0NDM1NTgsImVsYXBzZWRNaWxsaXMiOjEwMDMsInN0YXRlIjoiRVJST1IiLCJlcnJvciI6IklsbGVnYWxTdGF0ZUV4Y2VwdGlvbjogVWlBdXRvbWF0aW9uIHJldHVybmVkIG5vIGFjdGl2ZSByb290IG9yIGFjdGl2ZVwvZm9jdXNlZCBhcHBsaWNhdGlvbiB3aW5kb3cgcm9vdCBmb3IgdGhhbGVzbW1zLmxvZ2lzaW0ubW9iaWxlLmUyZSBiZWZvcmUgdGhlIGNhcHR1cmUgcmV0cnkgZGVhZGxpbmUifV0=",
+        "snapshotCaptureAttemptRecordsDropped": "0",
+        "snapshotCaptureAttempts": "1",
+        "snapshotCaptureElapsedMillis": "1003",
+        "snapshotCaptureOverrunMillis": "3",
+        "snapshotCaptureState": "ERROR",
+        "snapshotError": "IllegalStateException: UiAutomation returned no active root or active/focused application window root for thalesmms.logisim.mobile.e2e before the capture retry deadline",
+        "snapshotExpectedPackage": "thalesmms.logisim.mobile.e2e",
+        "snapshotIncompleteTreeAttempts": "0",
+        "snapshotNonce": "06554fab50b542a39c65beeb7d12c3a6",
+        "snapshotRootAttempts": "9",
+        "snapshotRootSource": "unavailable",
+        "snapshotRootWaitMillis": "1003",
+        "snapshotRootWindowId": "-1",
+        "snapshotTraversalNodeCount": "0"
+      }
+    },
+    {
+      "source": "focus-snapshot-9761b642e046485e920929dfcfd88fe4-2.json",
+      "sourceSha256": "21e71e05818df668f904cabb076d821621a8626869222cb9d3e239c49ac062b5",
+      "purpose": "failure artifact collection only",
+      "status": "complete",
+      "appPidBefore": "21917",
+      "appPidAfter": "21917",
+      "metadata": {
+        "snapshotCaptureAttemptRecordsBase64": "W3siYXR0ZW1wdCI6MSwic3RhcnRlZFVwdGltZU1pbGxpcyI6NDc0NDc2ODUsImVsYXBzZWRNaWxsaXMiOjIwMzYsInN0YXRlIjoiQ09NUExFVEUifV0=",
+        "snapshotCaptureAttemptRecordsDropped": "0",
+        "snapshotCaptureAttempts": "1",
+        "snapshotCaptureElapsedMillis": "2036",
+        "snapshotCaptureOverrunMillis": "1036",
+        "snapshotCaptureState": "COMPLETE",
+        "snapshotExpectedPackage": "thalesmms.logisim.mobile.e2e",
+        "snapshotIncompleteTreeAttempts": "0",
+        "snapshotNonce": "f038f0a02df8469083f017761f6750f7",
+        "snapshotRootAttempts": "7",
+        "snapshotRootSource": "active-window",
+        "snapshotRootWaitMillis": "1312",
+        "snapshotRootWindowId": "28854",
+        "snapshotRotation": "0",
+        "snapshotTraversalNodeCount": "32",
+        "snapshotUptimeMillis": "47448997"
+      }
+    }
+  ],
+  "budgetQualification": "No snapshot from the aborted scenario qualified; the later collector completion exceeded the SDK capture budget."
+}

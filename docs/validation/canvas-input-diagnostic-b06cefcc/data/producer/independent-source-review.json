@@ -1,0 +1,35 @@
+{
+  "source_sha": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+  "source_tree": "e24981d26d6d293763966caa9961657a94ce27f6",
+  "base": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "result": "PASS",
+  "reviewer": "/root/coordination_review/integrated_merge_review",
+  "scenario_suffix_sha256": "03dd04e5058ea757c134dec083bea82c4102c2e8c41d42f013d54364540c8284",
+  "injector_path": "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java",
+  "injector_sha256": "9835a5a753ed9e486d7dd3df760d6ffa93f4ec53f8e5201fef61ece595e2544c",
+  "findings": [
+    "Scenario bodies/helpers from cancelledDrag to EOF and NativeMixedInput match base3a byte for byte.",
+    "No added pointer modifier, consume, move, finish or cancel action; extracted transform calculations retain one evaluation and viewport argument.",
+    "Synchronized buffer bounds: input64records/64KiB; state192records/128KiB;8KiB/record; first+tail retention with explicit losses.",
+    "Collector copies transient input into scalar JSON immediately; no input/editor/Compose state retained.",
+    "Sink opt-in canvasInputTrace=1 only after existing .e2e/full-source-format/APK hash guards; UI-thread detach before persist in finally.",
+    "No manifest/permission/receiver changes. Seven source hashes match the retained direct-check receipt."
+  ],
+  "limits": [
+    "Static review only; no build/test/device execution by reviewer.",
+    "sourceRevision is a declaration; immutable source-to-APK manifest is required.",
+    "Trace COLLECTION_ERROR/drops do not change original oracle results and must be evaluated before interpreting missing observations.",
+    "No runtime/performance qualification."
+  ],
+  "parent_diagnostic_source": "ea756002d71c0fa06eeb10de6b542e5e8dba335b",
+  "test_only_dependency_review": {
+    "result": "PASS",
+    "changed_files": [
+      "androidApp/build.gradle.kts"
+    ],
+    "line_added": "androidTestImplementation(\"androidx.compose.ui:ui:1.13.0-beta02\")",
+    "product_runtime_graph": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/prior-ea-failure/product-runtime-ui-insight.log",
+    "source_unchanged": "All common hooks, collector, scenarios, injector and oracles byte-identical to ea.",
+    "limit": "Actual compilation still decides visibility; stop rather than suppress any internal API."
+  }
+}

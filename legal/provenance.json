@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "title": "Logisim Mobile",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/ThalesMMS/Logisim-Mobile",
+      "notice": "Copyright (c) 2026 ThalesMMS and contributors. Modifications for this independent Kotlin Multiplatform port began on 2026-11-04 and include changes to the simulator, document codec and user interface. This port is distributed under GNU GPL version 3 without warranty.",
+      "licenseFiles": [
+        "legal/licenses/GPL-3.0-only.md"
+      ]
+    },
+    {
+      "title": "App icon",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/ThalesMMS/Logisim-Mobile",
+      "notice": "Original geometric artwork created for Logisim Mobile by this project. The vector master is artwork/app-icon.svg; tools/generate_app_icons.py creates the Android and Apple icon variants. No upstream Logisim artwork, external image, or font was used. The artwork and generator are covered by the project GPL-3.0-only license.",
+      "licenseFiles": [],
+      "files": [
+        {
+          "path": "androidApp/src/main/res/drawable/app_icon_foreground.xml",
+          "sha256": "d539b0163fdac5d579c07b5da1e1de1321e7950c2924b1507dea56dc0e45c63f"
+        },
+        {
+          "path": "androidApp/src/main/res/drawable/app_icon_monochrome.xml",
+          "sha256": "61d1b72018617711fa84031572691e0c9e8fd4ff5fc0c3a36ab911ea07a8a951"
+        },
+        {
+          "path": "androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+          "sha256": "f46bba1af7aedaa53d9047a9875542b7da4aec1bc07c7fd50dc8cfc8ef2a3e6e"
+        },
+        {
+          "path": "androidApp/src/main/res/mipmap-anydpi-v33/ic_launcher.xml",
+          "sha256": "7e2a62c9755ff38d2e1e09ce84bd2b91156d60c512bdeaaabd491b6ee95631bb"
+        },
+        {
+          "path": "androidApp/src/main/res/mipmap-hdpi/ic_launcher.png",
+          "sha256": "7e658e286c0df1eef5b2856775f1bf6a0c5d0ac2e2c41bf70b273353cdede48f"
+        },
+        {
+          "path": "androidApp/src/main/res/mipmap-mdpi/ic_launcher.png",
+          "sha256": "620680dbb227bbecfb8174521279b3e1094f6428cd331f6d4146729819aa4f99"
+        },
+        {
+          "path": "androidApp/src/main/res/mipmap-xhdpi/ic_launcher.png",
+          "sha256": "68b296057e23471236689da44c1b2a50f703321f805eb7f4bc9cdcb624bf845a"
+        },
+        {
+          "path": "androidApp/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+          "sha256": "818abe979d1a00fa982de4537ec1606b227b2ad792095b4acf7b6f886beaebfd"
+        },
+        {
+          "path": "androidApp/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+          "sha256": "05960ce36779d67f238746ee6cb753f3fb9cd3d7c9395aa854864efb19afa99b"
+        },
+        {
+          "path": "androidApp/src/main/res/values/app_icon_colors.xml",
+          "sha256": "c117a109ca35e31a97b44c82fae22d55eaf97c7e8df55f833d75113af0dfd724"
+        },
+        {
+          "path": "artwork/app-icon.svg",
+          "sha256": "b9c7358090271a3c96a71eb65e1d88922dbd4c4f4bf9dc19ec543b46d4e12b00"
+        },
+        {
+          "path": "iosApp/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+          "sha256": "1ab70029ef1a47dbe0f3b404ff04f3f38d0e28d38086aee5f1a9048f09986e13"
+        },
+        {
+          "path": "iosApp/Assets.xcassets/AppIcon.appiconset/Contents.json",
+          "sha256": "852920cb36e95beb53771138a4b8195a16fcce1cc31250632f246081cc638f9a"
+        },
+        {
+          "path": "tools/generate_app_icons.py",
+          "sha256": "f3918f1f6dfd37eb0d497ac31a2a6b981c35cd60feb71978485b4be0b6483bdd"
+        }
+      ]
+    },
+    {
+      "title": "Logisim Evolution",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/logisim-evolution/logisim-evolution/tree/fbb1eca6ff72cb634b8dd1d72dc232b9838c9e01",
+      "notice": "Copyright by the Logisim-evolution developers. The independent mobile port adapts component behavior, geometry, logical values and the .circ file format under GNU GPL version 3.",
+      "licenseFiles": []
+    },
+    {
+      "title": "Logisim Evolution contributor credits",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/logisim-evolution/logisim-evolution/blob/d58a61e0c290361722b43df5b1a6b86c1f7c7f0d/docs/credits.md",
+      "notice": "Carl Burch created the original Logisim. The upstream credits list the contributors who continued its development in Logisim Evolution.",
+      "licenseFiles": []
+    },
+    {
+      "title": "Logisim Evolution board catalog",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/logisim-evolution/logisim-evolution/tree/d58a61e0c290361722b43df5b1a6b86c1f7c7f0d/src/main/resources/resources/logisim/boards",
+      "notice": "Copyright by the Logisim-evolution developers. The 31 FPGA board definitions and their embedded images are copied unchanged from the pinned Logisim Evolution board catalog.",
+      "licenseFiles": []
+    },
+    {
+      "title": "Logisim Evolution HDL templates",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/logisim-evolution/logisim-evolution/tree/d58a61e0c290361722b43df5b1a6b86c1f7c7f0d/src/main/resources/resources/logisim/hdl",
+      "notice": "Copyright by the Logisim-evolution developers. The port bundles the upstream VHDL and BLIF templates in HdlIpTemplates.kt, including the HEIG-VD institute REDS attribution in the VHDL template.",
+      "licenseFiles": []
+    },
+    {
+      "title": "Logisim Evolution video palettes",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/logisim-evolution/logisim-evolution/blob/d58a61e0c290361722b43df5b1a6b86c1f7c7f0d/src/main/java/com/cburch/logisim/std/io/Video.java",
+      "notice": "Copyright by the Logisim-evolution developers. VideoPalettes.kt incorporates palette data from the upstream Video component.",
+      "licenseFiles": []
+    },
+    {
+      "title": "SAP-1 example",
+      "license": "MIT",
+      "source": "https://github.com/ThalesMMS/SAP-1-Logisim/tree/ddb9dd86d601ac217157beedeb88464ee0128c87",
+      "notice": "Copyright (c) 2024 Thales. The original circuit is copied unchanged as examples/sap1.circ and embedded for the in-app example.",
+      "licenseFiles": [
+        "legal/licenses/SAP-1-MIT.txt"
+      ]
+    },
+    {
+      "title": "Skiko",
+      "license": "Apache-2.0",
+      "source": "https://github.com/JetBrains/skiko/tree/16bca5bed16bb926b6ae62c0a3fd937a7a159690",
+      "notice": "Skiko 0.156.1, JetBrains Kotlin bindings for Skia. Its upstream NOTICE identifies code adapted from the Android Open Source Project.",
+      "licenseFiles": [
+        "legal/licenses/Skiko-NOTICE.txt",
+        "legal/licenses/Apache-2.0.txt"
+      ]
+    },
+    {
+      "title": "Skia and native dependencies",
+      "license": "BSD-3-Clause AND additional licenses listed below",
+      "source": "https://github.com/JetBrains/skia/tree/6416302ae5e66d164eb51100efb06c9eee332b99",
+      "notice": "Skia m156-6416302ae5 is the native dependency selected by Skiko 0.156.1. The iOS release archive contains ICU, HarfBuzz, libpng, libjpeg-turbo, libwebp, Expat, zlib, Wuffs, PIEX and Adobe DNG libraries. This software is based in part on the work of the Independent JPEG Group. This product includes DNG technology under license by Adobe Systems Incorporated. These notices conservatively cover the native dependency archive; their inclusion is not a claim that every archive object survives final linking.",
+      "licenseFiles": [
+        "legal/licenses/Skia-BSD-3-Clause.txt",
+        "legal/licenses/native/dng_sdk-LICENSE.txt",
+        "legal/licenses/native/expat-LICENSE.txt",
+        "legal/licenses/native/harfbuzz-LICENSE.txt",
+        "legal/licenses/native/icu-LICENSE.txt",
+        "legal/licenses/native/libjpeg-turbo-LICENSE.txt",
+        "legal/licenses/native/libpng-LICENSE.txt",
+        "legal/licenses/native/libwebp-LICENSE.txt",
+        "legal/licenses/native/piex-LICENSE.txt",
+        "legal/licenses/native/wuffs-LICENSE.txt",
+        "legal/licenses/native/zlib-LICENSE.txt",
+        "legal/licenses/native/libjpeg-turbo-README.ijg"
+      ]
+    },
+    {
+      "title": "Chromium PartitionAlloc",
+      "license": "BSD-3-Clause",
+      "source": "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator/+/03cc513177b4340bee3dbfd46f6dd5fdded43b79/",
+      "notice": "The Skia m156-6416302ae5 iOS release archive adds liballocator_base.a, liballocator_core.a, liballocator_shim.a and libraw_ptr.a from Chromium PartitionAlloc revision 03cc513177b4340bee3dbfd46f6dd5fdded43b79, whose GitOrigin-RevId is Chromium revision 684217bd0672571af585e80822a44b860f06a65c. The upstream Chromium BSD notice is retained. Archive contents do not establish which objects are retained in the final application.",
+      "licenseFiles": [
+        "legal/licenses/native/partition_alloc-LICENSE.txt"
+      ]
+    },
+    {
+      "title": "Apple-derived declarations in PartitionAlloc",
+      "license": "APSL-2.0",
+      "source": "https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator/+/03cc513177b4340bee3dbfd46f6dd5fdded43b79/src/partition_alloc/third_party/apple_apsl/",
+      "notice": "The pinned upstream PartitionAlloc source records modified declarations from Apple Darwin libmalloc 409.40.6 and CF-635 under APSL-2.0. Their metadata, original copyright and license comments, and complete license are retained conservatively. The inspected iOS release liballocator_shim.a contains only its empty shim object; the presence of optional source declarations does not establish their incorporation into the final app. These notices do not assert license compatibility or distribution readiness.",
+      "licenseFiles": [
+        "legal/licenses/native/partition_alloc-Apple-NOTICE.txt",
+        "legal/licenses/native/partition_alloc-Apple-APSL-2.0.txt"
+      ]
+    }
+  ],
+  "nativeDependencyTag": "m156-6416302ae5",
+  "nativeDependencyArchive": "https://github.com/JetBrains/skia/releases/download/m156-6416302ae5/Skia-m156-6416302ae5-ios-Release-arm64.zip"
+}

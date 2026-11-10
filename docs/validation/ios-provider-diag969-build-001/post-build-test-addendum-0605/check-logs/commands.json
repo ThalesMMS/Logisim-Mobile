@@ -1,0 +1,24 @@
+[
+  {
+    "arguments": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/ios_fileprovider_revocation",
+      "-p",
+      "test_*.py"
+    ],
+    "exitCode": 0,
+    "log": "00-checks.log"
+  },
+  {
+    "arguments": [
+      "python3",
+      "scripts/ios_fileprovider_revocation/run-modify-diagnostic-checks.py"
+    ],
+    "exitCode": 0,
+    "log": "01-checks.log"
+  }
+]

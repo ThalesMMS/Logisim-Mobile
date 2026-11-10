@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <lib name="1" desc="#Gates"/>
+  <lib name="2" desc="#Plexers"/>
+  <lib name="3" desc="#Arithmetic"/>
+  <lib name="4" desc="#Memory"/>
+  <lib name="5" desc="#I/O"/>
+  <lib name="6" desc="#Base"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" name="Pin" loc="(100,140)">
+      <a name="label" val="A"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="0" name="Pin" loc="(100,180)">
+      <a name="label" val="B"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp name="half" loc="(300,160)"/>
+    <comp lib="1" name="AND Gate" loc="(250,300)"/>
+    <comp lib="1" name="NOT Gate" loc="(400,300)"/>
+    <comp lib="0" name="Pin" loc="(460,140)">
+      <a name="label" val="S"/>
+      <a name="type" val="output"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="6" name="Text" loc="(200,60)">
+      <a name="text" val="menus"/>
+    </comp>
+    <wire from="(100,140)" to="(260,140)"/>
+    <wire from="(100,180)" to="(260,180)"/>
+    <wire from="(300,140)" to="(460,140)"/>
+    <wire from="(250,300)" to="(370,300)"/>
+  </circuit>
+  <circuit name="half">
+    <a name="appearance" val="custom"/>
+    <appear><rect x="50" y="50" width="40" height="40" fill="none" stroke="#000000" stroke-width="2"/><polygon points="55,55 85,55 85,85 55,85" fill="#c0c0c0" stroke="#000000"/><ellipse cx="70" cy="70" rx="8" ry="8" fill="none" stroke="#000000"/><text x="70" y="75" font-size="12">H</text><circ-port dir="in" pin="100,100" x="50" y="60"/><circ-port dir="in" pin="100,140" x="50" y="80"/><circ-port dir="out" pin="300,100" x="90" y="60"/><circ-port dir="out" pin="300,140" x="90" y="80"/><circ-anchor facing="east" x="90" y="60"/></appear>
+    <comp lib="0" name="Pin" loc="(100,100)">
+      <a name="label" val="A"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="0" name="Pin" loc="(100,140)">
+      <a name="label" val="B"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="1" name="XOR Gate" loc="(230,100)"/>
+    <comp lib="1" name="AND Gate" loc="(230,200)"/>
+    <comp lib="0" name="Pin" loc="(300,100)">
+      <a name="label" val="S"/>
+      <a name="type" val="output"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="0" name="Pin" loc="(300,140)">
+      <a name="label" val="C"/>
+      <a name="type" val="output"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <wire from="(100,100)" to="(140,100)"/>
+    <wire from="(140,80)" to="(140,100)"/>
+    <wire from="(140,100)" to="(140,180)"/>
+    <wire from="(140,80)" to="(170,80)"/>
+    <wire from="(140,180)" to="(180,180)"/>
+    <wire from="(100,140)" to="(120,140)"/>
+    <wire from="(120,120)" to="(120,140)"/>
+    <wire from="(120,140)" to="(120,220)"/>
+    <wire from="(120,120)" to="(170,120)"/>
+    <wire from="(120,220)" to="(180,220)"/>
+    <wire from="(230,100)" to="(300,100)"/>
+    <wire from="(230,200)" to="(260,200)"/>
+    <wire from="(260,140)" to="(260,200)"/>
+    <wire from="(260,140)" to="(300,140)"/>
+  </circuit>
+  <circuit name="spare">
+    <comp lib="1" name="OR Gate" loc="(200,100)"/>
+  </circuit>
+</project>

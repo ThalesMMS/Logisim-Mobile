@@ -1,0 +1,9 @@
+composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/KeyboardInputCallbackTest.kt:67:55: warning: this class is not recommended for use in Kotlin. Use 'kotlin.Function1' instead.
+                kotlin.jvm.functions.Function1::class.java -> send
+                                                      ^^^^
+composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/KeyboardInputCallbackTest.kt:74:43: warning: only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'ProtectionDomain?'.
+        println("EditProcessor origin=" + EditProcessor::class.java.protectionDomain.codeSource.location)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+composeApp/src/commonMain/kotlin/dev/logisim/mobile/CatalogWorkspaceRuntime.kt:379:103: warning: unnecessary safe call on a non-null receiver of type 'WorkspaceExternalDocument'.
+                        reply.link?.let { it.reference == work.externalReference } == true) reply.link?.workspaceStamp else null)
+                                                                                                      ^^

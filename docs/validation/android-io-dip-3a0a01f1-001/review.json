@@ -1,0 +1,40 @@
+{
+  "status": "APPROVED",
+  "scope": "Offline review of the retained Android dip-last case only",
+  "reviewer": "/root/android_acceptance35_resume/issue35_existing_proof/dip_archive_review",
+  "findings": [],
+  "checks": {
+    "rawProducerEquality": {
+      "rawFiles": 131,
+      "controllerFiles": 75,
+      "result": "Byte-identical to the original producer outputs"
+    },
+    "verifier": {
+      "status": "PASS",
+      "inventoryEntries": 218,
+      "sdkCompleteCaptures": 22,
+      "probeRecords": 4,
+      "completeExports": 6
+    },
+    "negativeControlsAndRelocation": {
+      "testsRun": 5,
+      "failures": 0,
+      "errors": 0,
+      "independentlyExecuted": true
+    },
+    "documentation": "README, receipt and verification distinguish scenario284.82s from wrapper299.343s, preserve historical SOURCE_PREPARED/NOT_RUN, and limit qualification to one selected DIP case.",
+    "getterReadback": "Before/after values are checked against their retained stdout.strip() and empty stderr.",
+    "invalidDimension": "Captures14/15 retain focused0, its validation error, enabled Apply text leaf and disabled clickable owner.",
+    "historicalOracle": "Manifest and all five input hashes are checked before executing the frozen oracle.",
+    "documentEquality": [
+      "io-dip-four.circ == io-dip-invalid-preserved.circ",
+      "io-dip-export.circ == io-dip-reopened.circ == last-document.circ"
+    ],
+    "identitiesAndRestoration": "Producer3a/helper5c, source pre/post hashes, installed APK identities, unchanged recorded settings/ANR and owned-app cleanup are consistent."
+  },
+  "limits": [
+    "No device or build operation was performed by this review.",
+    "ADB command requests are not represented as completion or delivery.",
+    "The archive does not qualify SDK recovery, continuous PID stability, physical touch ergonomics, other I/O cases or overall issue44 completion."
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "archiveID": "ios-provider-auth-ad28-003",
+  "archiveKind": "DOCS_ONLY_FAILED_SELECTED_CASE",
+  "baseCommit": "ed594596d7d1db2985194c02cad75fea090370bd",
+  "runID": "a26a02940003",
+  "recordedUTC": "2026-11-05T11:26:15.305141+00:00",
+  "status": "FAIL",
+  "runnerExitCode": {
+    "value": 1,
+    "evidenceKind": "RUNTIME_COORDINATOR_ATTESTATION",
+    "key": "attestations/runner-terminal.json"
+  },
+  "xctest": {
+    "exitCode": 65,
+    "total": 1,
+    "failed": 1,
+    "passed": 0,
+    "skipped": 0,
+    "methodSeconds": 164.013,
+    "selector": "ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject"
+  },
+  "rawGates": {
+    "status": "FAIL",
+    "native_execution_gate": "NATIVE_INCOMPLETE",
+    "test_execution_gate": "NATIVE_INCOMPLETE",
+    "qualification_gate": "NOT_QUALIFIED"
+  },
+  "harness": {
+    "commit": "ed594596d7d1db2985194c02cad75fea090370bd",
+    "dirty": false,
+    "status": "",
+    "sources": {
+      "scripts/run-ios-provider-auth.py": "3089693e942d62d79cefdc0f368a4559a426a18fb17ca9b730caf3ab4b88fbca",
+      "scripts/run-ios-accessibility.py": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+      "scripts/ios_provider_auth_ui/project.yml": "80acd9197b77f7585f3bb25c871af70b809c7aaf93354d6e4a0606374df545ed",
+      "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "07309fa9e17ee4cc8f9badf39ba97021d4df96eab6266fb88c2ab38aac385211",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "03dbb7c49cbd152696695af9230b241ed20e5223afda0e92578a9bb854eecfdd",
+      "scripts/ios_provider_auth_ui/ProviderFixtureController.swift": "093f3267b29fe8e75fa12d21e50f906d5f6492b8bdd1d888cb422fd2f55504a2",
+      "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift": "43089a5048743718dbee58d5baecfef9fe7659949f0b1eb73a131663839b211f",
+      "scripts/ios_provider_auth_ui/ProvenanceMainArtifact.json": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "scripts/ios_provider_auth_ui/ProvenanceSignedFixture.json": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "scripts/ios_provider_auth_ui/ProvenanceArtifactReview.json": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    }
+  },
+  "artifacts": {
+    "main": {
+      "bundleID": "thalesmms.logisim.mobile",
+      "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "artifactManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+      "executableSHA256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48"
+    },
+    "fixture": {
+      "bundleID": "thalesmms.logisim.validation.revocationfixture",
+      "providerBundleID": "thalesmms.logisim.validation.revocationfixture.provider",
+      "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+      "artifactManifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "appTreeSHA256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+      "providerTreeSHA256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+      "entitlementReviewSHA256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    }
+  },
+  "cohort": "EXISTING_MAIN_PLUS_PROVIDER_REUSED_EXACT",
+  "installationContextChange": {
+    "main": "REUSED_EXACT_INSTALLED_MAIN",
+    "fixture": "REUSED_EXACT_REGISTERED_FIXTURE",
+    "fixtureInstalledOrRefreshed": false,
+    "context": "Main+Provider; this is no longer the previous UIKit-only fixture context."
+  },
+  "buildSerialization": {
+    "wrapper": "/tmp/logisim-gradle-serial.py",
+    "sha256": "61fb2ff0e8e1969b80c2880424683834a5dcd3cdcf79450a40dba15dc4f6471b",
+    "retained": "BuildSerializationWrapper.py",
+    "lock": "/tmp/logisim-gradle.lock",
+    "scope": "BUILD_FOR_TESTING_ONLY",
+    "wrapperProcessCompleted": true,
+    "interruptionDeferred": false,
+    "exitCode": 0
+  },
+  "failure": {
+    "kind": "PICKER_TRANSITION_NAVIGATIONBAR_FRAME_LOOKUP",
+    "assertion": "Failed to get matching snapshot: No matches found for Descendants matching type NavigationBar from input {(\n    Application, pid: 7707, label: 'Logisim Mobile'\n)}",
+    "tree": "run/attachments/AE7D6F38-CABC-4CF1-9D1C-CF57DE0954A7.txt",
+    "screenshot": "run/attachments/9B7B32E8-B0B0-4EDF-BF61-B4097F601EF8.png",
+    "productDefectEstablished": false
+  },
+  "observedProgress": {
+    "turnOnTapped": true,
+    "turnOnTapCount": 1,
+    "turnOnTapSeconds": 65.87,
+    "providerHeadingAndFileView": true,
+    "documentRowBytes": 552,
+    "documentTapSeconds": 157.94,
+    "transitionCaptureSeconds": 158.45,
+    "documentControl": "run/attachments/7274593E-62AC-4390-8ED2-32B27CBF934E.txt",
+    "readyDocumentTree": "run/attachments/73E9617E-9F0F-441C-B925-D72716D64AB2.txt",
+    "activationTree": "run/attachments/D8EC9E79-0E1A-411F-A40B-5D0ED09C5B1A.txt",
+    "activationScreenshot": "run/attachments/9B723D99-7CE4-4198-A006-E58627CB54A4.png",
+    "transitionTree": "run/attachments/3D91203A-34E9-4B98-9006-A0E7ECB52F01.txt",
+    "importReport": {
+      "sourceVersion": "5.1.0-dev",
+      "circuits": 1,
+      "document": "revocation.circ",
+      "circuit": "provider_revocation"
+    },
+    "persistedExternalReference": "NOT_VERIFIED",
+    "fetchEventPair": "NOT_OBSERVED"
+  },
+  "publicBaseline": {
+    "snapshot": "run/attachments/C31E44BA-D284-4526-8FE0-31DD1C305986.json",
+    "publicText": "run/attachments/2E56E59C-502D-4BB8-A04B-F12FCD77FD68.txt",
+    "scenario": "run/attachments/20753FDF-C8C4-48B4-8D4C-4AEBE73CE1F4.json",
+    "authenticationAllowed": true,
+    "backendBytes": 552,
+    "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "generation": 1,
+    "lastSequence": 9,
+    "postState": false
+  },
+  "postflight": {
+    "bundleFingerprintsEqual": true,
+    "roles": [
+      "Main",
+      "App",
+      "Provider"
+    ],
+    "providerBackendState": "NOT_OBSERVED_AFTER_BASELINE",
+    "providerAuthenticationState": "NOT_OBSERVED_AFTER_BASELINE"
+  },
+  "notReached": [
+    "opened project XML capture",
+    "fetch event-pair proof",
+    "editing and successful upload proof",
+    "persisted security-scoped reference verification",
+    "evict and authentication deny",
+    "restart with saved external reference",
+    "denied Save and project-preservation comparison",
+    "public Allow cleanup"
+  ],
+  "claims": {
+    "authenticationDenialPassed": false,
+    "securityScopeRevocationProven": false,
+    "issue26Closed": false,
+    "issue36Closed": false,
+    "cloudValidated": false,
+    "physicalDeviceValidated": false
+  },
+  "evidence": {
+    "inventory": "inventory.json",
+    "results": "run/results.json",
+    "commands": "run/commands.json",
+    "preflight": "run/preflight.json",
+    "Run": "run/harness/Run.json",
+    "attachmentsManifest": "run/attachments/manifest.json",
+    "xcresultSummary": "run/015-xcresult-summary.stdout",
+    "testLog": "run/014-auth-test.stdout",
+    "buildLog": "run/013-harness-build.stdout",
+    "runnerTerminal": "attestations/runner-terminal.json"
+  },
+  "retention": {
+    "sourceOutputNotModified": true,
+    "opaqueAttachmentsVideoXcresultDerivedData": "LOCAL_ONLY_NOT_COMMITTED",
+    "archivedEvidenceFiles": 127,
+    "archivedAttachments": 50,
+    "allAttachmentCount": 82
+  }
+}

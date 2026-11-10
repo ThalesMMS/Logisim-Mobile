@@ -1,0 +1,82 @@
+--------- beginning of main
+11-05 06:54:50.116 23833 23833 I isim.mobile.e2e: Late-enabling -Xcheck:jni
+11-05 06:54:50.152 23833 23833 I isim.mobile.e2e: Using CollectorTypeCMC GC.
+11-05 06:54:50.237 23833 23833 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-05 06:54:50.427 23833 23833 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-05 06:54:50.429 23833 23833 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+11-05 06:54:50.429 23833 23833 W ziparchive: Unable to open '/data/app/~~NWhpwNAfC9FxAD-x0mJZuQ==/thalesmms.logisim.mobile.e2e-h0qjOmTLPNoILEdj_etN6A==/base.dm': No such file or directory
+11-05 06:54:50.430 23833 23833 W ziparchive: Unable to open '/data/app/~~NWhpwNAfC9FxAD-x0mJZuQ==/thalesmms.logisim.mobile.e2e-h0qjOmTLPNoILEdj_etN6A==/base.dm': No such file or directory
+11-05 06:54:50.941 23833 23833 D nativeloader: Configuring clns-7 for other apk /data/app/~~NWhpwNAfC9FxAD-x0mJZuQ==/thalesmms.logisim.mobile.e2e-h0qjOmTLPNoILEdj_etN6A==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~NWhpwNAfC9FxAD-x0mJZuQ==/thalesmms.logisim.mobile.e2e-h0qjOmTLPNoILEdj_etN6A==/lib/arm64:/data/app/~~NWhpwNAfC9FxAD-x0mJZuQ==/thalesmms.logisim.mobile.e2e-h0qjOmTLPNoILEdj_etN6A==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/thalesmms.logisim.mobile.e2e
+11-05 06:54:50.946 23833 23833 V GraphicsEnvironment: Currently set values for:
+11-05 06:54:50.946 23833 23833 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-05 06:54:50.946 23833 23833 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-05 06:54:50.946 23833 23833 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+11-05 06:54:50.946 23833 23833 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-05 06:54:51.009 23833 23833 W HWUI    : Unknown dataspace 0
+11-05 06:54:51.232 23833 23856 I isim.mobile.e2e: Compiler allocated 5250KB to compile void android.view.ViewRootImpl.performTraversals()
+11-05 06:54:51.255 23833 23915 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-05 06:54:51.255 23833 23915 I EGL_emulation: Opening libGLESv2_emulation.so
+11-05 06:54:51.268 23833 23915 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-05 06:54:51.268 23833 23915 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-05 06:54:51.287 23833 23915 I Gralloc4: mapper 4.x is not supported
+11-05 06:54:51.336 23833 23833 W isim.mobile.e2e: Accessing hidden method Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V (unsupported, reflection, allowed)
+11-05 06:54:52.067 23833 23833 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 06:54:52.067 23833 23833 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 06:54:52.738 23833 23915 D EGL_emulation: app_time_stats: avg=89.02ms min=0.50ms max=393.48ms count=15
+11-05 06:54:53.809 23833 23915 D EGL_emulation: app_time_stats: avg=507.42ms min=225.27ms max=1046.90ms count=3
+11-05 06:54:56.168 23833 23970 D ProfileInstaller: Installing profile for thalesmms.logisim.mobile.e2e
+11-05 06:54:56.872 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@4a8e6ab
+11-05 06:54:56.992 23833 23856 I isim.mobile.e2e: JIT allocated 57KB for stack maps of kotlin.Unit dev.logisim.mobile.AppKt.EditorApp$lambda$95$1$0(dev.logisim.mobile.localization.Localizer, dev.logisim.mobile.EditorState, dev.logisim.mobile.SimulationRunController, dev.logisim.mobile.EditorDocuments, java.util.List, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, dev.logisim.mobile.EditorExampleLoader, androidx.compose.runtime.State, dev.logisim.mobile.EditorPreferences, dev.logisim.mobile.core.ComponentRegistry, kotlin.jvm.functions.Function2, dev.logisim.mobile.CircuitAccessibilityActions, dev.logisim.mobile.CircuitAccessibilityContext, boolean, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, double, androidx.compose.foundation.layout.BoxWithConstraintsScope, androidx.compose.runtime.Composer, int)
+11-05 06:54:56.992 23833 23856 I isim.mobile.e2e: Compiler allocated 17MB to compile kotlin.Unit dev.logisim.mobile.AppKt.EditorApp$lambda$95$1$0(dev.logisim.mobile.localization.Localizer, dev.logisim.mobile.EditorState, dev.logisim.mobile.SimulationRunController, dev.logisim.mobile.EditorDocuments, java.util.List, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, dev.logisim.mobile.EditorExampleLoader, androidx.compose.runtime.State, dev.logisim.mobile.EditorPreferences, dev.logisim.mobile.core.ComponentRegistry, kotlin.jvm.functions.Function2, dev.logisim.mobile.CircuitAccessibilityActions, dev.logisim.mobile.CircuitAccessibilityContext, boolean, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, double, androidx.compose.foundation.layout.BoxWithConstraintsScope, androidx.compose.runtime.Composer, int)
+11-05 06:54:57.038 23833 23856 I isim.mobile.e2e: Compiler allocated 10099KB to compile void dev.logisim.mobile.CircuitCanvasKt.CircuitCanvas(dev.logisim.mobile.core.CircuitDocument, dev.logisim.mobile.core.SimulationState, java.lang.String, dev.logisim.mobile.core.GridPoint, dev.logisim.mobile.EditorMode, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function1, int, java.util.Set, java.util.Set, dev.logisim.mobile.CanvasViewportState, kotlin.jvm.functions.Function1, boolean, kotlin.jvm.functions.Function3, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, boolean, dev.logisim.mobile.core.ComponentRegistry, boolean, boolean, boolean, java.lang.String, kotlin.jvm.functions.Function2, dev.logisim.mobile.CircuitAccessibilityActions, dev.logisim.mobile.CircuitAccessibilityContext, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2, dev.logisim.mobile.EditorGateShape, dev.logisim.mobile.EditorShortcutScheme, kotlin.jvm.functions.Function1, androidx.compose.runtime.Composer, int, int, int, int, int, int)
+11-05 06:54:58.061 23833 23915 D EGL_emulation: app_time_stats: avg=1051.54ms min=16.67ms max=5124.30ms count=5
+11-05 06:55:03.675 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@173b12c
+11-05 06:55:03.772 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@6d8f34f
+11-05 06:55:04.117 23833 23833 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 06:55:04.117 23833 23833 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 06:55:04.283 23833 23856 I isim.mobile.e2e: Compiler allocated 11MB to compile void dev.logisim.mobile.AppKt.EditorApp(java.lang.String, kotlin.jvm.functions.Function1, dev.logisim.mobile.DocumentActions, java.util.List, dev.logisim.mobile.core.ComponentRegistry, dev.logisim.mobile.EditorSessionControl, kotlin.jvm.functions.Function1, dev.logisim.mobile.MemoryEditorFileActions, dev.logisim.mobile.DocumentAssetActions, dev.logisim.mobile.EditorImportReport, boolean, dev.logisim.mobile.PortableProjectWorkspaceAccess, dev.logisim.mobile.DirectoryAssetActions, dev.logisim.mobile.EditorPreferences, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, dev.logisim.mobile.core.localization.LocalizedText, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int)
+11-05 06:55:04.898 23833 23857 W isim.mobile.e2e: Suspending all threads took: 12.599ms
+11-05 06:55:04.917 23833 23857 W isim.mobile.e2e: Cleared Reference was only reachable from finalizer (only reported once)
+11-05 06:55:04.947 23833 23915 D EGL_emulation: app_time_stats: avg=94.33ms min=6.94ms max=242.93ms count=11
+11-05 06:55:04.961 23833 23857 I isim.mobile.e2e: Background concurrent mark compact GC freed 6218KB AllocSpace bytes, 1(20KB) LOS objects, 49% free, 8294KB/16MB, paused 13.095ms,13.938ms total 135.181ms
+11-05 06:55:06.107 23833 23915 D EGL_emulation: app_time_stats: avg=450.67ms min=95.01ms max=1280.56ms count=4
+11-05 06:55:09.040 23833 23833 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-05 06:55:09.059 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1943805
+11-05 06:55:10.225 23833 23915 D EGL_emulation: app_time_stats: avg=1318.49ms min=24.31ms max=4783.09ms count=4
+11-05 06:55:13.294 23833 23833 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 06:55:13.294 23833 23833 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 06:55:13.318 23833 23915 D EGL_emulation: app_time_stats: avg=3092.90ms min=3092.90ms max=3092.90ms count=1
+11-05 06:55:14.523 23833 23915 D EGL_emulation: app_time_stats: avg=587.97ms min=5.97ms max=1169.96ms count=2
+11-05 06:55:15.428 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@9ad8673
+11-05 06:55:15.438 23833 23915 D EGL_emulation: app_time_stats: avg=48.01ms min=0.52ms max=1264.72ms count=40
+11-05 06:55:16.038 23833 23833 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 06:55:18.103 23833 23833 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 06:55:18.103 23833 23833 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 06:55:19.645 23833 23915 D EGL_emulation: app_time_stats: avg=626.89ms min=252.46ms max=1001.32ms count=2
+11-05 06:55:22.634 23833 23833 D AutofillManager: Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+11-05 06:55:22.643 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@11ab311
+11-05 06:55:23.810 23833 23915 D EGL_emulation: app_time_stats: avg=363.88ms min=4.99ms max=4934.61ms count=16
+11-05 06:55:26.801 23833 23915 D EGL_emulation: app_time_stats: avg=2990.75ms min=2990.75ms max=2990.75ms count=1
+11-05 06:55:27.491 23833 23833 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 06:55:33.614 23833 23833 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 06:55:33.614 23833 23833 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 06:55:34.990 23833 23915 D EGL_emulation: app_time_stats: avg=621.28ms min=86.68ms max=1155.89ms count=2
+11-05 06:55:35.876 23833 23833 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 06:55:35.876 23833 23833 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 06:55:35.879 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1c629f5
+11-05 06:55:37.078 23833 23915 D EGL_emulation: app_time_stats: avg=570.11ms min=21.39ms max=1118.83ms count=2
+11-05 06:55:38.083 23833 23915 D EGL_emulation: app_time_stats: avg=502.33ms min=96.25ms max=908.40ms count=2
+11-05 06:55:40.452 23833 23915 D EGL_emulation: app_time_stats: avg=363.79ms min=1.21ms max=5924.50ms count=30
+11-05 06:55:40.484 23833 23915 D EGL_emulation: app_time_stats: avg=79.37ms min=15.56ms max=1558.93ms count=26
+11-05 06:55:41.212 23833 23833 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 06:55:41.234 23833 23833 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 06:55:42.920 23833 23833 D VRI[MainActivity]: visibilityChanged oldVisibility=false newVisibility=true
+11-05 06:56:12.894 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@a155b2f
+11-05 06:56:12.912 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@c1919d
+11-05 06:56:13.067 23833 23833 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@7acaf7f
+11-05 06:56:13.253 23833 23833 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 06:56:13.253 23833 23833 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 06:56:14.205 23833 23915 D EGL_emulation: app_time_stats: avg=108.84ms min=18.94ms max=243.54ms count=10
+11-05 06:56:15.044 23833 23857 I isim.mobile.e2e: Background concurrent mark compact GC freed 8623KB AllocSpace bytes, 1(20KB) LOS objects, 49% free, 10MB/20MB, paused 208us,3.135ms total 306.707ms
+11-05 06:56:15.461 23833 23915 D EGL_emulation: app_time_stats: avg=96.26ms min=25.26ms max=318.99ms count=11
+11-05 06:56:16.273 23833 23915 D EGL_emulation: app_time_stats: avg=692.64ms min=107.94ms max=1718.70ms count=4

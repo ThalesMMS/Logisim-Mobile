@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Memory" name="1"/>
+  <main name="main"/>
+  <circuit name="main" id="main">
+    <comp loc="(200,200)" logisim-mobile-id="a" name="mem">
+    </comp>
+    <comp loc="(200,200)" logisim-mobile-id="a_q0" name="Pin" lib="0">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a_q0"/>
+    </comp>
+    <comp loc="(200,210)" logisim-mobile-id="a_q1" name="Pin" lib="0">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a_q1"/>
+    </comp>
+    <comp loc="(170,180)" logisim-mobile-id="a_addr0" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a_addr0"/>
+    </comp>
+    <comp loc="(170,190)" logisim-mobile-id="a_addr1" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a_addr1"/>
+    </comp>
+    <comp loc="(170,200)" logisim-mobile-id="a_we" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a_we"/>
+    </comp>
+    <comp loc="(170,210)" logisim-mobile-id="a_clock" name="Clock" lib="0">
+      <a name="facing" val="east"/>
+      <a name="highDuration" val="2"/>
+      <a name="lowDuration" val="3"/>
+      <a name="phaseOffset" val="0"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp loc="(170,220)" logisim-mobile-id="a_din0" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a_din0"/>
+    </comp>
+    <comp loc="(170,230)" logisim-mobile-id="a_din1" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="a_din1"/>
+    </comp>
+    <comp loc="(200,500)" logisim-mobile-id="b" name="mem">
+    </comp>
+    <comp loc="(200,500)" logisim-mobile-id="b_q0" name="Pin" lib="0">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_q0"/>
+    </comp>
+    <comp loc="(200,510)" logisim-mobile-id="b_q1" name="Pin" lib="0">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_q1"/>
+    </comp>
+    <comp loc="(170,480)" logisim-mobile-id="b_addr0" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_addr0"/>
+    </comp>
+    <comp loc="(170,490)" logisim-mobile-id="b_addr1" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_addr1"/>
+    </comp>
+    <comp loc="(170,500)" logisim-mobile-id="b_we" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_we"/>
+    </comp>
+    <comp loc="(170,510)" logisim-mobile-id="b_clk" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_clk"/>
+    </comp>
+    <comp loc="(170,520)" logisim-mobile-id="b_din0" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_din0"/>
+    </comp>
+    <comp loc="(170,530)" logisim-mobile-id="b_din1" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="b_din1"/>
+    </comp>
+      <boardmap boardname="BASYS3">
+      <mc key="/a_addr0" pmap="647_323_0"/>
+      <mc key="/a_addr1" pmap="609_323_0"/>
+      <mc key="/a_we" pmap="571_323_0"/>
+      <mc key="/a_din0" pmap="535_323_0"/>
+      <mc key="/a_din1" pmap="497_323_0"/>
+      <mc key="/b_addr0" pmap="456_323_0"/>
+      <mc key="/b_addr1" pmap="417_323_0"/>
+      <mc key="/b_we" pmap="382_323_0"/>
+      <mc key="/b_clk" pmap="341_323_0"/>
+      <mc key="/b_din0" pmap="305_323_0"/>
+      <mc key="/b_din1" pmap="268_323_0"/>
+      <mc key="/a_q0" pmap="649_295_0"/>
+      <mc key="/a_q1" pmap="612_295_0"/>
+      <mc key="/b_q0" pmap="577_295_0"/>
+      <mc key="/b_q1" pmap="538_295_0"/>
+    </boardmap>
+  </circuit>
+  <circuit name="mem" id="mem">
+    <comp loc="(400,300)" logisim-mobile-id="ram" name="RAM" lib="1">
+      <a name="addrWidth" val="2"/>
+      <a name="dataWidth" val="2"/>
+      <a name="enables" val="byte"/>
+      <a name="databus" val="bibus"/>
+      <a name="trigger" val="rising"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp loc="(400,310)" logisim-mobile-id="sa" name="Splitter" lib="0">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="2"/>
+      <a name="incoming" val="2"/>
+    </comp>
+    <comp loc="(400,390)" logisim-mobile-id="sd" name="Splitter" lib="0">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="2"/>
+      <a name="incoming" val="2"/>
+    </comp>
+    <comp loc="(640,390)" logisim-mobile-id="sq" name="Splitter" lib="0">
+      <a name="facing" val="east"/>
+      <a name="fanout" val="2"/>
+      <a name="incoming" val="2"/>
+    </comp>
+    <comp loc="(380,320)" logisim-mobile-id="addr0" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="addr0"/>
+    </comp>
+    <comp loc="(380,330)" logisim-mobile-id="addr1" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="addr1"/>
+    </comp>
+    <comp loc="(380,400)" logisim-mobile-id="din0" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="din0"/>
+    </comp>
+    <comp loc="(380,410)" logisim-mobile-id="din1" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="din1"/>
+    </comp>
+    <comp loc="(660,370)" logisim-mobile-id="q0" name="Pin" lib="0">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="q0"/>
+    </comp>
+    <comp loc="(660,380)" logisim-mobile-id="q1" name="Pin" lib="0">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="q1"/>
+    </comp>
+    <comp loc="(400,350)" logisim-mobile-id="we" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="we"/>
+    </comp>
+    <comp loc="(400,370)" logisim-mobile-id="clk" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="clk"/>
+    </comp>
+  </circuit>
+</project>

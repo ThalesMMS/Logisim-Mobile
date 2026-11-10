@@ -1,0 +1,246 @@
+{
+  "tcl_title": {
+    "en": "Tcl",
+    "pt": "Tcl"
+  },
+  "tcl_host": {
+    "en": "Companion: {host}",
+    "pt": "Companion: {host}"
+  },
+  "tcl_no_companion": {
+    "en": "not selected",
+    "pt": "não selecionado"
+  },
+  "tcl_limits": {
+    "en": "Sources are sent when you run the console or approve a component. Safe Tcl: no exec, files, network, Tk or timers; up to 256 KiB per source, up to 1,024 frames depending on the interface, and 30 seconds per job.",
+    "pt": "As fontes são enviadas ao executar o console ou aprovar um componente. Tcl seguro: sem exec, arquivos, rede, Tk ou temporizadores; até 256 KiB por fonte, até 1.024 quadros conforme a interface e 30 s por execução."
+  },
+  "tcl_source_name": {
+    "en": "Submitted source name",
+    "pt": "Nome da fonte enviada"
+  },
+  "tcl_source_label": {
+    "en": "Tcl source (filePath is not read automatically)",
+    "pt": "Fonte Tcl (filePath não é lido automaticamente)"
+  },
+  "tcl_console_heading": {
+    "en": "Command console",
+    "pt": "Console de comandos"
+  },
+  "tcl_console_explanation": {
+    "en": "The console evaluates an independent source. TclConsoleReds is a circuit component with simulation callbacks.",
+    "pt": "O console avalia uma fonte independente. TclConsoleReds é um componente do circuito e usa callbacks de simulação."
+  },
+  "tcl_console_run": {
+    "en": "Run console on the Mac",
+    "pt": "Executar console no Mac"
+  },
+  "tcl_timed_title": {
+    "en": "Run console with timers…",
+    "pt": "Executar console com temporizadores…"
+  },
+  "tcl_timed_consent": {
+    "en": "Send {file} to {host} and allow Tcl timers for up to 5 seconds in the macOS sandbox. Files, network access, subprocesses and Tk stay disabled.",
+    "pt": "Enviar {file} a {host} e permitir temporizadores Tcl por até 5 segundos no sandbox do macOS. Arquivos, rede, subprocessos e Tk ficam desativados."
+  },
+  "tcl_timed_run": {
+    "en": "Approve and run",
+    "pt": "Aprovar e executar"
+  },
+  "tcl_isolated_sandbox_required": {
+    "en": "This Tcl action requires a confirmed plan with its matching sandbox.",
+    "pt": "Esta ação Tcl exige um plano confirmado com o sandbox correspondente."
+  },
+  "tcl_tk_preview_title": {
+    "en": "Run Tk and capture preview…",
+    "pt": "Executar Tk e capturar prévia…"
+  },
+  "tcl_tk_preview_consent": {
+    "en": "Send {file} to {host}. Tcl runs for up to 5 seconds on a private Linux display and returns a still image of that display. It cannot access the host screen, files or network.",
+    "pt": "Enviar {file} a {host}. O Tcl roda por até 5 segundos em uma tela privada no Linux e devolve uma imagem estática dessa tela. Ele não tem acesso à tela, aos arquivos ou à rede do host."
+  },
+  "tcl_tk_preview_description": {
+    "en": "Still image of the private Tk display",
+    "pt": "Imagem estática da tela privada do Tk"
+  },
+  "tcl_tk_preview_invalid": {
+    "en": "The companion returned an invalid Tk preview.",
+    "pt": "O companion devolveu uma prévia Tk inválida."
+  },
+  "tcl_tk_live_title": {
+    "en": "Interact with private Tk…",
+    "pt": "Interagir com Tk privado…"
+  },
+  "tcl_tk_live_consent": {
+    "en": "Send {file} to {host}. The private Linux display accepts up to eight taps or key presses for up to 20 seconds. Taps and keys affect only this display.",
+    "pt": "Enviar {file} a {host}. A tela privada no Linux aceita até oito toques ou teclas por até 20 segundos. Os toques e as teclas afetam apenas essa tela."
+  },
+  "tcl_tk_input_unavailable": {
+    "en": "The private Tk input is unavailable.",
+    "pt": "A entrada do Tk privado está indisponível."
+  },
+  "tcl_tk_key": {
+    "en": "Letter, digit or space",
+    "pt": "Letra, dígito ou espaço"
+  },
+  "tcl_tk_send_key": {
+    "en": "Send key",
+    "pt": "Enviar tecla"
+  },
+  "tcl_tk_send_return": {
+    "en": "Send Enter",
+    "pt": "Enviar Enter"
+  },
+  "tcl_console_result": {
+    "en": "Result: {result}",
+    "pt": "Resultado: {result}"
+  },
+  "tcl_cancel": {
+    "en": "Cancel",
+    "pt": "Cancelar"
+  },
+  "tcl_error_cancel": {
+    "en": "Could not cancel the companion job.",
+    "pt": "Falha ao cancelar no companion."
+  },
+  "tcl_error_source": {
+    "en": "Invalid Tcl source.",
+    "pt": "Fonte Tcl inválida."
+  },
+  "tcl_error_source_reply": {
+    "en": "The companion returned a result for another source.",
+    "pt": "O companion respondeu para outra fonte."
+  },
+  "tcl_error_execution": {
+    "en": "Tcl execution failed.",
+    "pt": "Falha na execução Tcl."
+  },
+  "tcl_component_heading": {
+    "en": "Circuit component",
+    "pt": "Componente do circuito"
+  },
+  "tcl_select_component": {
+    "en": "Select TclConsoleReds or TclGeneric to connect its signals.",
+    "pt": "Selecione TclConsoleReds ou TclGeneric para conectar seus sinais."
+  },
+  "tcl_component_path": {
+    "en": "{id} • preserved filePath: {path}",
+    "pt": "{id} • filePath preservado: {path}"
+  },
+  "tcl_component_state": {
+    "en": "State: {phase} • {frames} frames",
+    "pt": "Estado: {phase} • {frames} quadros"
+  },
+  "tcl_phase_stopped": {
+    "en": "stopped",
+    "pt": "parado"
+  },
+  "tcl_phase_waiting": {
+    "en": "waiting for execution",
+    "pt": "aguardando execução"
+  },
+  "tcl_phase_ready": {
+    "en": "ready",
+    "pt": "pronto"
+  },
+  "tcl_phase_failed": {
+    "en": "failed",
+    "pt": "falha"
+  },
+  "tcl_phase_history_limit": {
+    "en": "history limit reached",
+    "pt": "limite de histórico atingido"
+  },
+  "tcl_no_events": {
+    "en": "This editor session does not provide Tcl component events.",
+    "pt": "O editor desta sessão não fornece eventos Tcl."
+  },
+  "tcl_error_clock": {
+    "en": "The interface needs the one-bit input sysclk_i. Correct horloge_i explicitly in Properties.",
+    "pt": "A interface precisa da entrada de um bit sysclk_i. Corrija horloge_i explicitamente nas propriedades."
+  },
+  "tcl_error_instance_changed": {
+    "en": "The selected instance changed. Select it again.",
+    "pt": "A instância selecionada mudou. Selecione-a novamente."
+  },
+  "tcl_source_approved": {
+    "en": "Sources approved for this instance. New frames run automatically.",
+    "pt": "Fontes aprovadas para esta instância. Novos quadros são executados automaticamente."
+  },
+  "tcl_error_start": {
+    "en": "Could not start the component.",
+    "pt": "Não foi possível iniciar o componente."
+  },
+  "tcl_attachment_add": {
+    "en": "Attach Tcl source file",
+    "pt": "Anexar arquivo-fonte Tcl"
+  },
+  "tcl_attachment_remove": {
+    "en": "Remove attachment: {name}",
+    "pt": "Remover anexo: {name}"
+  },
+  "tcl_attachment_utf8": {
+    "en": "Tcl attachments must contain UTF-8 text.",
+    "pt": "Os anexos Tcl devem conter texto UTF-8."
+  },
+  "tcl_component_start": {
+    "en": "Approve sources and start component",
+    "pt": "Aprovar fontes e iniciar componente"
+  },
+  "tcl_source_changed": {
+    "en": "The sources changed or need approval. Approve them before execution.",
+    "pt": "As fontes mudaram ou precisam de aprovação. Aprove-as antes de executar."
+  },
+  "tcl_component_stop": {
+    "en": "Stop component",
+    "pt": "Parar componente"
+  },
+  "tcl_apply_tick": {
+    "en": "Apply requested Tcl tick ({count} pending)",
+    "pt": "Aplicar tick solicitado pelo Tcl ({count} pendentes)"
+  },
+  "tcl_auto_ticks_on_start": {
+    "en": "Allow up to {count} automatic ticks when starting this Tcl session.",
+    "pt": "Permitir até {count} ticks automáticos ao iniciar esta sessão Tcl."
+  },
+  "tcl_auto_ticks_cancel": {
+    "en": "Stop applying ticks automatically",
+    "pt": "Parar de aplicar ticks automaticamente"
+  },
+  "tcl_stdout": {
+    "en": "Standard output",
+    "pt": "Saída padrão"
+  },
+  "tcl_stderr": {
+    "en": "Standard error",
+    "pt": "Saída de erro"
+  },
+  "tcl_runtime_interface": {
+    "en": "Invalid Tcl interface: {details}",
+    "pt": "Interface Tcl inválida: {details}"
+  },
+  "tcl_runtime_response": {
+    "en": "The Tcl response does not match the component interface or replay history.",
+    "pt": "A resposta Tcl não corresponde à interface do componente ou ao histórico de execução."
+  },
+  "tcl_runtime_clock": {
+    "en": "Tcl components require the one-bit input sysclk_i. The desktop Generic template uses horloge_i and must be corrected explicitly.",
+    "pt": "Componentes Tcl exigem a entrada de um bit sysclk_i. O modelo Generic do desktop usa horloge_i e precisa ser corrigido explicitamente."
+  },
+  "tcl_runtime_history": {
+    "en": "The safe Tcl replay limit of {limit} frames was reached. Reset and restart the component explicitly.",
+    "pt": "O limite de {limit} quadros do replay Tcl seguro foi atingido. Reinicie o componente explicitamente."
+  },
+  "tcl_runtime_stopped": {
+    "en": "Tcl is preserved but stopped. Select a companion and start this component explicitly.",
+    "pt": "Tcl foi preservado, mas está parado. Selecione um companion e inicie este componente explicitamente."
+  },
+  "component_tcl_console_reds": {
+    "en": "Tcl console (Reds)",
+    "pt": "Console Tcl (Reds)"
+  },
+  "component_tcl_generic": {
+    "en": "Tcl generic component",
+    "pt": "Componente Tcl genérico"
+  }
+}

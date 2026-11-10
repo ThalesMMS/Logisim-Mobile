@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "status": "FAILED_BEFORE_IMPORT",
+  "nativeUiStatus": "FAILED",
+  "origin": "actual Android portable scenario",
+  "productSource": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "harnessSource": "05679f92906ef211d73b8d4c4bb39dc9ee0da688",
+  "appSha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546",
+  "serial": "emulator-5558",
+  "failure": "The chooser initially exposes roots_list and Downloads. choose_downloads acted only when Show roots was present, so it returned without selecting a location. choose_native_file then failed because the roots drawer has no dir_list.",
+  "failureLayer": "Harness native navigation before selecting any bundle",
+  "qualifiedExports": [],
+  "nativeTree": "fixtures/native-documentsui/roots-open-google-api35.xml",
+  "nativeTreeSha256": "123b8851380ad5f7a42001cb5004dd2a1a94687f1aa516a9cff7646eff2823fe",
+  "correction": "Select Downloads from an already open native roots list, or open that list first; wait for the native file list after selection. Keep uniqueness, package and isolated-app guards.",
+  "offlineChecks": {
+    "downloadsNavigation": 5,
+    "artifactPreflight": 11,
+    "AndroidProcessesDuringChecks": false
+  },
+  "files": {
+    "results.json": "a09cb9e0d5d20b0e9318feb02039faf512284967c0abb054638d954886d19cfa",
+    "concurrent-environment.json": "e22fa30ea6fd266b819a2bbf9b9f477b1db32fd7ffea2d05c6000b49d50432c6",
+    "screen.png": "fc1866e0229e2944e8fb2dfaed890c8a828ff54a24f42b5aecd85237706dd348",
+    "run-manifest.json": "bc84ef9b6efd2665a3fc83bfdb84bd17e9750272071959cc1de7124918a1a29d",
+    "error.txt": "7e7b5c4ddb2bfaf24e6b9a05f4cf4fbeaaa674d9f978d3d7940da727c5cb5121"
+  }
+}

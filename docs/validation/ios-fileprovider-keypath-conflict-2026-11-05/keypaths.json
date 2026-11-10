@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "keys": [
+    "NSExtensionFileProviderDocumentGroup",
+    "NSExtensionFileProviderSupportsEnumeration"
+  ],
+  "sources": [
+    {
+      "id": "archive-reference-2018",
+      "rawFile": "archive-app-extension-keys.html",
+      "updated": "2018-06-04",
+      "keypaths": {
+        "NSExtensionFileProviderDocumentGroup": [
+          "NSExtension",
+          "NSExtensionAttributes",
+          "NSExtensionFileProviderDocumentGroup"
+        ],
+        "NSExtensionFileProviderSupportsEnumeration": [
+          "NSExtension",
+          "NSExtensionAttributes",
+          "NSExtensionFileProviderSupportsEnumeration"
+        ]
+      },
+      "platforms": {
+        "NSExtensionFileProviderDocumentGroup": [
+          "iOS 8+"
+        ],
+        "NSExtensionFileProviderSupportsEnumeration": [
+          "iOS 11+"
+        ]
+      },
+      "evidenceKind": "Explicit section-wide placement prose in archived reference"
+    },
+    {
+      "id": "archive-guide-2017",
+      "rawFile": "archive-document-provider.html",
+      "updated": "2017-10-19",
+      "keypaths": {
+        "NSExtensionFileProviderDocumentGroup": [
+          "NSExtension",
+          "NSExtensionFileProviderDocumentGroup"
+        ]
+      },
+      "platforms": {
+        "NSExtensionFileProviderDocumentGroup": [
+          "Legacy iOS Document Picker / NSFileProviderExtension guide"
+        ]
+      },
+      "evidenceKind": "Parsed concrete property-list declaration; enumeration key not declared by this example"
+    },
+    {
+      "id": "current-docc",
+      "rawFile": "current-nsextension.md",
+      "updated": null,
+      "checked": "2026-11-05",
+      "keypaths": {
+        "NSExtensionFileProviderDocumentGroup": [
+          "NSExtension",
+          "NSExtensionFileProviderDocumentGroup"
+        ],
+        "NSExtensionFileProviderSupportsEnumeration": [
+          "NSExtension",
+          "NSExtensionFileProviderSupportsEnumeration"
+        ]
+      },
+      "evidenceKind": "Leaf externalID and hierarchy.paths, plus parent topic references; distinct from generated see-also links"
+    }
+  ],
+  "documentedConflict": true,
+  "runtimeResolutionEstablished": false
+}

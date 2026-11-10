@@ -1,0 +1,41 @@
+% Important: If latex complains about unicode characters,
+% please use "\usepackage[utf8x]{inputenc}" in your preamble
+% You can change the size of the picture by putting it into the construct:
+% 1) \resizebox{10cm}{!}{"below picture"} to scale horizontally to 10 cm
+% 2) \resizebox{!}{15cm}{"below picture"} to scale vertically to 15 cm
+% 3) \resizebox{10cm}{15cm}{"below picture"} a combination of above two
+% It is not recomended to use the scale option of the tikzpicture environment.
+\begin{tikzpicture}[x=1pt,y=-1pt,line cap=rect]
+\def\logisimfontA#1{\textsf{#1}}
+\definecolor{custcol_FFFFFF}{HTML}{FFFFFF}
+\definecolor{custcol_000000}{HTML}{000000}
+\definecolor{custcol_808080}{HTML}{808080}
+\fill [line width=1pt, custcol_FFFFFF] (0,0) rectangle (370,210);
+\draw [line width=3pt, custcol_808080] (125,30) -| (165,80) -- (185,80);
+\draw [line width=3pt, custcol_808080] (245,100) -- (335,100);
+\draw [line width=3pt, custcol_808080] (5,10) -- (65,10);
+\draw [line width=3pt, custcol_808080] (5,50) -- (65,50);
+\draw [line width=3pt, custcol_808080] (5,160) -- (65,160);
+\draw [line width=3pt, custcol_808080] (5,200) -- (65,200);
+\draw [line width=3pt, custcol_808080] (125,180) -| (165,120) -- (185,120);
+\draw [line width=2pt, custcol_000000] (100,55) arc (90:-90:25 and 25 );
+\draw [line width=2pt, custcol_000000] (100,5) -| (76,55) -- (100,55);
+\fill [line width=2pt, custcol_808080] (125,30) circle (2);
+\fill [line width=2pt, custcol_808080] (75,10) circle (2);
+\fill [line width=2pt, custcol_808080] (75,50) circle (2);
+\draw [line width=3pt, custcol_808080] (75,160) -- (75,160);
+\draw [line width=3pt, custcol_808080] (75,200) -- (75,200);
+\draw [line width=2pt, custcol_000000] (125,180) .. controls (111.6667,163.3333) and (95,155) .. (75,155) .. controls (83.6667,171.6667) and (83.6667,188.3333) .. (75,205) .. controls (95,205) and (111.6667,196.6667) .. (125,180) -- cycle;
+\fill [line width=2pt, custcol_808080] (125,180) circle (2);
+\fill [line width=2pt, custcol_808080] (75,160) circle (2);
+\fill [line width=2pt, custcol_808080] (75,200) circle (2);
+\draw [line width=2pt, custcol_000000] (245,100) .. controls (231.6667,83.3333) and (215,75) .. (195,75) .. controls (203.6667,91.6667) and (203.6667,108.3333) .. (195,125) .. controls (215,125) and (231.6667,116.6667) .. (245,100) -- cycle;
+\draw [line width=2pt, custcol_000000] (185,75) .. controls (193.6667,91.6667) and (193.6667,108.3333) .. (185,125);
+\fill [line width=2pt, custcol_808080] (245,100) circle (2);
+\fill [line width=2pt, custcol_808080] (185,80) circle (2);
+\fill [line width=2pt, custcol_808080] (185,120) circle (2);
+\draw [line width=2pt, custcol_000000] (355,100) -- (336,93) -- (336,107) -- (355,100);
+\draw [line width=2pt, custcol_000000] (360,100) circle (4.5);
+\fill [line width=2pt, custcol_808080] (365,100) circle (2);
+\fill [line width=2pt, custcol_808080] (335,100) circle (2);
+\end{tikzpicture}

@@ -1,0 +1,41 @@
+% Important: If latex complains about unicode characters,
+% please use "\usepackage[utf8x]{inputenc}" in your preamble
+% You can change the size of the picture by putting it into the construct:
+% 1) \resizebox{10cm}{!}{"below picture"} to scale horizontally to 10 cm
+% 2) \resizebox{!}{15cm}{"below picture"} to scale vertically to 15 cm
+% 3) \resizebox{10cm}{15cm}{"below picture"} a combination of above two
+% It is not recomended to use the scale option of the tikzpicture environment.
+\begin{tikzpicture}[x=1pt,y=-1pt,line cap=rect]
+\def\logisimfontA#1{\textsf{#1}}
+\definecolor{custcol_FFFFFF}{HTML}{FFFFFF}
+\definecolor{custcol_000000}{HTML}{000000}
+\definecolor{custcol_808080}{HTML}{808080}
+\fill [line width=1pt, custcol_FFFFFF] (0,0) rectangle (370,210);
+\draw [line width=3pt, custcol_808080] (125,30) -| (165,80) -- (185,80);
+\draw [line width=3pt, custcol_808080] (245,100) -- (335,100);
+\draw [line width=3pt, custcol_808080] (5,10) -- (65,10);
+\draw [line width=3pt, custcol_808080] (5,50) -- (65,50);
+\draw [line width=3pt, custcol_808080] (5,160) -- (65,160);
+\draw [line width=3pt, custcol_808080] (5,200) -- (65,200);
+\draw [line width=3pt, custcol_808080] (125,180) -| (165,120) -- (185,120);
+\draw [line width=2pt, custcol_000000] (75,5) rectangle (125,55);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (96,19) {\&};}
+\fill [line width=2pt, custcol_808080] (125,30) circle (2);
+\fill [line width=2pt, custcol_808080] (75,10) circle (2);
+\fill [line width=2pt, custcol_808080] (75,50) circle (2);
+\draw [line width=2pt, custcol_000000] (75,155) rectangle (125,205);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (91,169) {≥1};}
+\fill [line width=2pt, custcol_808080] (125,180) circle (2);
+\fill [line width=2pt, custcol_808080] (75,160) circle (2);
+\fill [line width=2pt, custcol_808080] (75,200) circle (2);
+\draw [line width=2pt, custcol_000000] (185,75) rectangle (245,125);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (206,89) {=1};}
+\fill [line width=2pt, custcol_808080] (245,100) circle (2);
+\fill [line width=2pt, custcol_808080] (185,80) circle (2);
+\fill [line width=2pt, custcol_808080] (185,120) circle (2);
+\draw [line width=2pt, custcol_000000] (335,91) rectangle (355,109);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (341,106) {1};}
+\draw [line width=2pt, custcol_000000] (359,99) circle (4.5);
+\fill [line width=1pt, custcol_808080] (365,100) circle (2);
+\fill [line width=1pt, custcol_808080] (335,100) circle (2);
+\end{tikzpicture}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/><lib name="1" desc="#Memory"/>
+  <main name="DMemory"/>
+  <circuit name="DMemory">
+    <comp lib="0" name="Pin" loc="(100,180)"><a name="label" val="D"/><a name="appearance" val="classic"/></comp>
+    <comp lib="0" name="Pin" loc="(100,260)"><a name="label" val="CLK"/><a name="appearance" val="classic"/></comp>
+    <comp lib="0" name="Pin" loc="(100,320)"><a name="label" val="CLR"/><a name="appearance" val="classic"/></comp>
+    <comp lib="1" name="D Flip-Flop" loc="(300,200)"><a name="appearance" val="classic"/><a name="trigger" val="rising"/></comp>
+    <comp lib="0" name="Pin" loc="(420,200)"><a name="label" val="Q"/><a name="type" val="output"/><a name="appearance" val="classic"/></comp>
+    <wire from="(100,180)" to="(220,180)"/><wire from="(220,180)" to="(220,220)"/><wire from="(220,220)" to="(260,220)"/>
+    <wire from="(100,260)" to="(240,260)"/><wire from="(240,260)" to="(240,200)"/><wire from="(240,200)" to="(260,200)"/>
+    <wire from="(100,320)" to="(290,320)"/><wire from="(290,320)" to="(290,230)"/>
+    <wire from="(300,200)" to="(420,200)"/>
+  </circuit>
+</project>

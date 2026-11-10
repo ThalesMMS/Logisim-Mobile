@@ -1,0 +1,132 @@
+{
+  "status": "PARTIAL_REAL_APP_EXPORT_DESKTOP_VALIDATED",
+  "origin": "partial-app-export",
+  "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/outputs/partial-android-folder13849/actual-export-before-restart.lsebdl",
+  "mobile": {
+    "circuitIds": {
+      "Top53": "circuit-top53",
+      "Bridge53": "library:10e9ec73e8bbe2d5:circuit-bridge53",
+      "Cell53": "library:77f7502e5cfd57e2:circuit-cell53"
+    },
+    "definitions": 3,
+    "components": 11,
+    "wires": 7,
+    "runtimeInstances": 4,
+    "componentIds": {
+      "Top53": [
+        "instance-first53",
+        "instance-second53",
+        "out-first53",
+        "out-second53",
+        "source-first53",
+        "source-second53"
+      ],
+      "Bridge53": [
+        "bridge-cell53",
+        "bridge-in53",
+        "bridge-out53"
+      ],
+      "Cell53": [
+        "cell-in53",
+        "cell-out53"
+      ]
+    },
+    "topLabels": [
+      "FIRST53",
+      "SECOND53"
+    ],
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    },
+    "sourceMarkers": [
+      "bridge53",
+      "cell53",
+      "main53"
+    ],
+    "sourcePaths": {
+      "main53": "main.circ",
+      "cell53": "library/library_4bb1b5b23966bea2.circ",
+      "bridge53": "library/library_48811827991dbd5e.circ"
+    },
+    "zipEntries": [
+      "library/library_48811827991dbd5e.circ",
+      "library/library_4bb1b5b23966bea2.circ",
+      "main.circ",
+      "manifest.xml"
+    ],
+    "opaqueEntries": {},
+    "archiveSha256": "0bc5e1a2a7cbf699324d692964d8c7a1eb24038b31a271072cdb1201267da689"
+  },
+  "desktop": {
+    "status": "PASSED",
+    "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+    "definitions": [
+      "Top53",
+      "Bridge53",
+      "Cell53"
+    ],
+    "topInstances": 2,
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    }
+  },
+  "qualificationGate": "INCOMPLETE_EXPORT1_ONLY",
+  "scope": "Actual first Android folder native export only. The native scenario FAILED at its export-session/workspace guard after the first save. No peer, restart/reopened snapshots, or complete flow is qualified.",
+  "nativeUiStatus": "FAILED",
+  "nativeExecutionGate": "NATIVE_FAIL",
+  "artifactBytes": 4905,
+  "artifactSha256": "0bc5e1a2a7cbf699324d692964d8c7a1eb24038b31a271072cdb1201267da689",
+  "originalArtifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-folder-5558-en-1d146f33/logisim-portable53-0762ff4fc06d4897b6ff6561caeb0f1c-folder-before-restart.lsebdl",
+  "originalArtifactSha256": "0bc5e1a2a7cbf699324d692964d8c7a1eb24038b31a271072cdb1201267da689",
+  "zipSignature": "PK0304; all entry CRCs passed",
+  "zipEntries": [
+    "main.circ",
+    "library/library_4bb1b5b23966bea2.circ",
+    "library/library_48811827991dbd5e.circ",
+    "manifest.xml"
+  ],
+  "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+  "referenceDesktopSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "oracleSourcesSha256": {
+    "scripts/portable/Portable53Oracle.kt": "ca53e5c8b4207a40887ec6dc8ff87a06c6fd5997c5ee61059498758152f73d8d",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt": "03eab1e7e489cad53d18f26e4e8984eeddecc9fca5ced868446a555461fe9f57",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt": "e09e9fca28c47b36f299e71b708bc3f07d2cbf69f88a2c1087147cdcd6a8ec9b"
+  },
+  "recordedAtUtc": "2026-11-05T03:49:43.622181+00:00",
+  "missingEvidence": [
+    "second actual export after restart",
+    "completed restart/sourceArchive restoration proof",
+    "fresh reopened workspace snapshot",
+    "complete native folder roundtrip"
+  ],
+  "nativeFailure": {
+    "resultsPath": "native-observation/results.json",
+    "resultsSha256": "9634d7304babd9a612ef6582c2a86eeb48cb82c0b2bec379a09b1b10f6f1484d",
+    "literalResults": [
+      {
+        "scenario": "portable-folder-storage-roundtrip",
+        "status": "failed",
+        "error": "The actual export session is not linked to the imported workspace"
+      }
+    ],
+    "guardError": "The actual export session is not linked to the imported workspace"
+  },
+  "nativeAppManifest": {
+    "path": "native-observation/manifest.json",
+    "sha256": "d52bbdd6569ffd28e2440ff752b91aa1a67e151768b4bfa9a5e0ddbce48d3dc0",
+    "appSha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546"
+  },
+  "nativeCreateOperation": {
+    "path": "native-observation/portable-folder-before-restart-create-operation.json",
+    "sha256": "71273df30d70056bdb7a8adb19c20a2e22f7b9ffe9ed9a99c0ed88783af0d5d6"
+  },
+  "oracleInvocation": "commands.json",
+  "strictCompleteFlowValidator": "Unchanged and not invoked; requires peer and PASSED native receipt",
+  "guardObservation": {
+    "path": "guard-observation.json",
+    "sha256": "6d5cde609351251665f86aeb9286f6f6edcc46aaff011d26550ef9ab083c97ef",
+    "scope": "Read-only contrast of an earlier imported-workspace observation and later failure TAR. This does not prove restart, another export or completed native flow."
+  }
+}

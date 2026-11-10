@@ -1,0 +1,230 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/harness/LogisimEditorHarness.xcodeproj -scheme EditorHarness -destination "platform=iOS Simulator,id=20A4D87D-A2A6-46BD-A889-C4888CE1E152" -derivedDataPath /Users/thales/GitHub/logisim-mobile-worktrees/ios-e2e/outputs/ios-e2e-alpha-002/DerivedData CODE_SIGNING_ALLOWED=NO test-without-building -parallel-testing-enabled NO -collect-test-diagnostics never -test-timeouts-enabled YES -default-test-execution-time-allowance 900 -resultBundlePath /Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/editor.xcresult "-only-testing:EditorEndToEndTests/EditorEndToEndTests/testSap1AutomaticRunPause" "-skip-testing:EditorEndToEndTests/VisualExportEndToEndTests/testVisualExportFieldCensus"
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/editor.xcresult
+
+2026-11-05 03:09:22.595296-0300 EditorEndToEndTests-Runner[31662:9714051] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-11-05 03:09:25.653.
+Test Suite 'EditorEndToEndTests.xctest' started at 2026-11-05 03:09:25.654.
+Test Suite 'EditorEndToEndTests' started at 2026-11-05 03:09:25.654.
+Test Case '-[EditorEndToEndTests.EditorEndToEndTests testSap1AutomaticRunPause]' started.
+    t =     0.01s Start Test at 2026-11-05 03:09:25.663
+    t =     0.03s Set Up
+    t =     0.04s     Getting device orientation
+    t =     0.04s     Open thalesmms.logisim.mobile
+    t =     0.05s         Launch thalesmms.logisim.mobile
+    t =     0.08s             Wait for accessibility to load
+    t =     0.08s             Setting up automation session
+objc[31662]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x10814c310) and /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x107e48398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     2.12s             Wait for thalesmms.logisim.mobile to idle
+    t =     4.84s     Checking `Expect predicate `BLOCKPREDICATE(0x107a5f7e0)` for object Application 'thalesmms.logisim.mobile'`
+    t =     4.85s         Checking existence of `"editor-import-report" Any`
+    t =     4.94s     Checking existence of `"editor-import-report" Any`
+    t =     5.03s     Added attachment named 'import-report-before-close'
+    t =     5.03s     Requesting snapshot of accessibility hierarchy for app with pid 31691
+    t =     5.12s     Requesting snapshot of accessibility hierarchy for app with pid 31691
+    t =     5.14s     Added attachment named 'import-report-before-close-tree'
+    t =     5.14s     Checking existence of `"editor-import-report" Any`
+    t =     5.15s     Find the Application 'thalesmms.logisim.mobile'
+    t =     5.15s     Get all elements bound by index for: Elements matching predicate '(label == "Close" OR label BEGINSWITH "Close, ") OR (label == "Fechar" OR label BEGINSWITH "Fechar, ")'
+    t =     5.16s     Checking existence of `Any (Element at index 0)`
+    t =     5.17s     Find the Any (Element at index 0)
+    t =     5.18s     Find the "Close" Button
+    t =     5.20s     Tap "Close" Button
+    t =     5.20s         Wait for thalesmms.logisim.mobile to idle
+    t =     5.20s         Find the "Close" Button
+    t =     5.21s         Check for interrupting elements affecting "Close" Button
+    t =     5.22s         Synthesize event
+    t =     5.52s         Wait for thalesmms.logisim.mobile to idle
+    t =     6.58s     Checking `Expect predicate `BLOCKPREDICATE(0x107a5e2b0)` for object Application 'thalesmms.logisim.mobile'`
+    t =     6.58s         Checking existence of `"editor-import-report" Any`
+    t =     6.68s Setting device orientation to Portrait
+    t =     6.68s     Wait for thalesmms.logisim.mobile to idle
+    t =     7.73s Checking `Expect predicate `BLOCKPREDICATE(0x107a5e040)` for object Application 'thalesmms.logisim.mobile'`
+    t =     7.73s     Find the Application 'thalesmms.logisim.mobile'
+    t =     7.77s Find the Application 'thalesmms.logisim.mobile'
+    t =     7.81s Added attachment named 'observed-orientation'
+    t =     7.81s Checking existence of `"editor-import-report" Any`
+    t =     7.88s Find the Application 'thalesmms.logisim.mobile'
+    t =     7.89s Get all elements bound by index for: Elements matching predicate '(label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ") OR (label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ")'
+    t =     7.93s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =     8.00s Find the Application 'thalesmms.logisim.mobile'
+    t =     8.01s Get all elements bound by index for: Elements matching predicate '(label == "Abrir circuitos e biblioteca" OR label BEGINSWITH "Abrir circuitos e biblioteca, ") OR (label == "Open circuits and library" OR label BEGINSWITH "Open circuits and library, ")'
+    t =     8.05s Checking existence of `Any (Element at index 0)`
+    t =     8.08s Find the Any (Element at index 0)
+    t =     8.12s Find the "Open circuits and library, Library" Button
+    t =     9.23s Checking `Expect predicate `enabled == 1` for object "Open circuits and library, Library" Button`
+    t =     9.23s     Find the "Open circuits and library, Library" Button
+    t =     9.30s Tap "Open circuits and library, Library" Button
+    t =     9.30s     Wait for thalesmms.logisim.mobile to idle
+    t =     9.30s     Find the "Open circuits and library, Library" Button
+    t =     9.33s     Check for interrupting elements affecting "Open circuits and library, Library" Button
+    t =     9.36s     Synthesize event
+    t =     9.64s     Wait for thalesmms.logisim.mobile to idle
+    t =     9.65s Find the Application 'thalesmms.logisim.mobile'
+    t =     9.65s Get all elements bound by index for: Elements matching predicate '(label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ") OR (label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ")'
+    t =    10.73s Checking `Expect predicate `BLOCKPREDICATE(0x107a5d5c0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    10.73s     Find the Application 'thalesmms.logisim.mobile'
+    t =    10.75s     Get all elements bound by index for: Elements matching predicate '(label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ") OR (label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ")'
+    t =    10.77s     Checking existence of `Any (Element at index 0)`
+    t =    10.78s     Find the Any (Element at index 0)
+    t =    10.80s     Find the "Load SAP-1 example, SAP-1" Button
+    t =    10.82s Find the Application 'thalesmms.logisim.mobile'
+    t =    10.83s Get all elements bound by index for: Elements matching predicate '(label == "Load SAP-1 example" OR label BEGINSWITH "Load SAP-1 example, ") OR (label == "Carregar exemplo SAP-1" OR label BEGINSWITH "Carregar exemplo SAP-1, ")'
+    t =    10.84s Checking existence of `Any (Element at index 0)`
+    t =    10.86s Find the Any (Element at index 0)
+    t =    10.87s Find the "Load SAP-1 example, SAP-1" Button
+    t =    11.96s Checking `Expect predicate `enabled == 1` for object "Load SAP-1 example, SAP-1" Button`
+    t =    11.96s     Find the "Load SAP-1 example, SAP-1" Button
+    t =    11.99s Tap "Load SAP-1 example, SAP-1" Button
+    t =    11.99s     Wait for thalesmms.logisim.mobile to idle
+    t =    12.00s     Find the "Load SAP-1 example, SAP-1" Button
+    t =    12.02s     Check for interrupting elements affecting "Load SAP-1 example, SAP-1" Button
+    t =    12.03s     Synthesize event
+    t =    12.32s     Wait for thalesmms.logisim.mobile to idle
+    t =    12.39s Checking existence of `"editor-import-report" Any`
+    t =    12.46s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    12.54s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    12.70s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    12.83s Find the Application 'thalesmms.logisim.mobile'
+    t =    12.93s Get all elements bound by index for: Elements matching predicate '(label == "Reset simulation" OR label BEGINSWITH "Reset simulation, ") OR (label == "Reiniciar simulação" OR label BEGINSWITH "Reiniciar simulação, ")'
+    t =    13.03s Checking existence of `"editor-simulation-toolbar-overflow" Any`
+    t =    13.04s Checking existence of `"editor-simulation-toolbar-overflow" Any`
+    t =    13.13s Find the "editor-simulation-toolbar-overflow" Any
+    t =    13.14s Find the Application 'thalesmms.logisim.mobile'
+    t =    13.16s Find the Application 'thalesmms.logisim.mobile'
+    t =    13.17s Added attachment named 'geometry-editor-simulation-toolbar-overflow'
+    t =    13.17s Find the "editor-simulation-toolbar-overflow" Button
+    t =    13.19s Tap "editor-simulation-toolbar-overflow" Button
+    t =    13.19s     Wait for thalesmms.logisim.mobile to idle
+    t =    13.19s     Find the "editor-simulation-toolbar-overflow" Button
+    t =    13.20s     Check for interrupting elements affecting "editor-simulation-toolbar-overflow" Button
+    t =    13.23s     Synthesize event
+    t =    13.51s     Wait for thalesmms.logisim.mobile to idle
+    t =    13.51s Waiting 5.0s for "editor-simulation-toolbar-menu" Any to exist
+    t =    14.56s     Checking `Expect predicate `existsNoRetry == 1` for object "editor-simulation-toolbar-menu" Any`
+    t =    14.56s         Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    14.59s Find the Application 'thalesmms.logisim.mobile'
+    t =    14.60s Find the "editor-simulation-toolbar-menu" Any
+    t =    14.61s Get all elements bound by index for: Elements matching predicate '(label == "Reset simulation" OR label BEGINSWITH "Reset simulation, ") OR (label == "Reiniciar simulação" OR label BEGINSWITH "Reiniciar simulação, ")'
+    t =    14.62s Checking existence of `Any (Element at index 0)`
+    t =    14.63s Find the Any (Element at index 0)
+    t =    14.64s Find the "Reset simulation, Reset" Button
+    t =    15.71s Checking `Expect predicate `enabled == 1` for object "Reset simulation, Reset" Button`
+    t =    15.71s     Find the "Reset simulation, Reset" Button
+    t =    15.74s Tap "Reset simulation, Reset" Button
+    t =    15.74s     Wait for thalesmms.logisim.mobile to idle
+    t =    15.74s     Find the "Reset simulation, Reset" Button
+    t =    15.76s     Check for interrupting elements affecting "Reset simulation, Reset" Button
+    t =    15.77s     Synthesize event
+    t =    16.06s     Wait for thalesmms.logisim.mobile to idle
+    t =    16.21s Checking existence of `"editor-signal-panel-menu" Any`
+    t =    16.28s Find the Application 'thalesmms.logisim.mobile'
+    t =    16.38s Get all elements bound by index for: Elements matching predicate '(label == "Alternar entrada Reset: 0" OR label BEGINSWITH "Alternar entrada Reset: 0, ") OR (label == "Toggle input Reset: 0" OR label BEGINSWITH "Toggle input Reset: 0, ")'
+    t =    16.41s Checking existence of `Any (Element at index 0)`
+    t =    16.45s Find the Any (Element at index 0)
+    t =    16.49s Find the "Toggle input Reset: 0, Reset 0" Button
+    t =    17.58s Checking `Expect predicate `enabled == 1` for object "Toggle input Reset: 0, Reset 0" Button`
+    t =    17.58s     Find the "Toggle input Reset: 0, Reset 0" Button
+    t =    17.64s Tap "Toggle input Reset: 0, Reset 0" Button
+    t =    17.64s     Wait for thalesmms.logisim.mobile to idle
+    t =    17.64s     Find the "Toggle input Reset: 0, Reset 0" Button
+    t =    17.68s     Check for interrupting elements affecting "Toggle input Reset: 0, Reset 0" Button
+    t =    17.71s     Synthesize event
+    t =    17.99s     Wait for thalesmms.logisim.mobile to idle
+    t =    18.01s Checking existence of `"editor-signal-panel-menu" Any`
+    t =    18.08s Find the Application 'thalesmms.logisim.mobile'
+    t =    18.18s Get all elements bound by index for: Elements matching predicate '(label == "Alternar entrada Reset: 1" OR label BEGINSWITH "Alternar entrada Reset: 1, ") OR (label == "Toggle input Reset: 1" OR label BEGINSWITH "Toggle input Reset: 1, ")'
+    t =    18.21s Checking existence of `Any (Element at index 0)`
+    t =    18.25s Find the Any (Element at index 0)
+    t =    18.29s Find the "Toggle input Reset: 1, Reset 1" Button
+    t =    19.38s Checking `Expect predicate `enabled == 1` for object "Toggle input Reset: 1, Reset 1" Button`
+    t =    19.38s     Find the "Toggle input Reset: 1, Reset 1" Button
+    t =    19.44s Tap "Toggle input Reset: 1, Reset 1" Button
+    t =    19.44s     Wait for thalesmms.logisim.mobile to idle
+    t =    19.44s     Find the "Toggle input Reset: 1, Reset 1" Button
+    t =    19.48s     Check for interrupting elements affecting "Toggle input Reset: 1, Reset 1" Button
+    t =    19.50s     Synthesize event
+    t =    19.80s     Wait for thalesmms.logisim.mobile to idle
+    t =    20.86s Checking `Expect predicate `BLOCKPREDICATE(0x1079a7330)` for object Application 'thalesmms.logisim.mobile'`
+    t =    20.86s     Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Steps ([0-9]+)$" OR label MATCHES "^Passos ([0-9]+)$"'
+    t =    20.93s     Find the StaticText (Element at index 0)
+    t =    20.96s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Steps ([0-9]+)$" OR label MATCHES "^Passos ([0-9]+)$"'
+    t =    21.00s Find the StaticText (Element at index 0)
+    t =    21.04s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    21.10s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    21.17s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    21.18s Find the Application 'thalesmms.logisim.mobile'
+    t =    21.20s Get all elements bound by index for: Elements matching predicate '(label == "Executar" OR label BEGINSWITH "Executar, ") OR (label == "▶ Executar" OR label BEGINSWITH "▶ Executar, ") OR (label == "Run" OR label BEGINSWITH "Run, ") OR (label == "▶ Run" OR label BEGINSWITH "▶ Run, ")'
+    t =    21.23s Checking existence of `Any (Element at index 0)`
+    t =    21.27s Find the Any (Element at index 0)
+    t =    21.31s Find the "▶ Run, ▶ Run" Button
+    t =    21.35s Tap "▶ Run, ▶ Run" Button
+    t =    21.35s     Wait for thalesmms.logisim.mobile to idle
+    t =    21.35s     Find the "▶ Run, ▶ Run" Button
+    t =    21.39s     Check for interrupting elements affecting "▶ Run, ▶ Run" Button
+    t =    21.41s     Synthesize event
+    t =    21.70s     Wait for thalesmms.logisim.mobile to idle
+    t =    21.70s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    21.77s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    21.85s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    21.86s Find the Application 'thalesmms.logisim.mobile'
+    t =    21.87s Get all elements bound by index for: Elements matching predicate '(label == "Pause" OR label BEGINSWITH "Pause, ") OR (label == "Ⅱ Pause" OR label BEGINSWITH "Ⅱ Pause, ") OR (label == "Pausar" OR label BEGINSWITH "Pausar, ") OR (label == "Ⅱ Pausar" OR label BEGINSWITH "Ⅱ Pausar, ")'
+    t =    21.91s Checking existence of `Any (Element at index 0)`
+    t =    21.95s Find the Any (Element at index 0)
+    t =    21.99s Find the "Ⅱ Pause, Ⅱ Pause" Button
+    t =    22.03s Checking existence of `"Ⅱ Pause, Ⅱ Pause" Button`
+    t =    23.58s Tap "Ⅱ Pause, Ⅱ Pause" Button
+    t =    23.58s     Wait for thalesmms.logisim.mobile to idle
+    t =    23.58s     Find the "Ⅱ Pause, Ⅱ Pause" Button
+    t =    23.65s     Check for interrupting elements affecting "Ⅱ Pause, Ⅱ Pause" Button
+    t =    23.67s     Synthesize event
+    t =    23.96s     Wait for thalesmms.logisim.mobile to idle
+    t =    23.96s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    24.03s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    24.10s Checking existence of `"editor-simulation-toolbar" Any`
+    t =    24.11s Find the Application 'thalesmms.logisim.mobile'
+    t =    24.13s Get all elements bound by index for: Elements matching predicate '(label == "Executar" OR label BEGINSWITH "Executar, ") OR (label == "▶ Executar" OR label BEGINSWITH "▶ Executar, ") OR (label == "Run" OR label BEGINSWITH "Run, ") OR (label == "▶ Run" OR label BEGINSWITH "▶ Run, ")'
+    t =    24.17s Checking existence of `Any (Element at index 0)`
+    t =    24.21s Find the Any (Element at index 0)
+    t =    24.25s Find the "▶ Run, ▶ Run" Button
+    t =    24.29s Checking existence of `"▶ Run, ▶ Run" Button`
+    t =    24.33s Checking existence of `Any (First Match)`
+    t =    24.36s Checking existence of `"editor-simulation-toolbar-menu" Any`
+    t =    24.43s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    24.50s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Steps ([0-9]+)$" OR label MATCHES "^Passos ([0-9]+)$"'
+    t =    24.53s Find the StaticText (Element at index 0)
+    t =    27.07s Get all elements bound by index for: Elements matching predicate 'label MATCHES "^Steps ([0-9]+)$" OR label MATCHES "^Passos ([0-9]+)$"'
+    t =    27.13s Find the StaticText (Element at index 0)
+    t =    27.17s Added attachment named 'sap1-run-pause-observation'
+    t =    27.24s Added attachment named 'sap1-paused'
+    t =    27.25s Tear Down
+    t =    27.25s     Requesting snapshot of accessibility hierarchy for app with pid 31691
+    t =    27.51s     Requesting snapshot of accessibility hierarchy for app with pid 31691
+    t =    27.61s     Added attachment named 'native-tree'
+    t =    27.68s     Added attachment named 'final-screen'
+    t =    27.68s     Terminate thalesmms.logisim.mobile:31691
+    t =    28.76s     Setting device orientation to Portrait
+    t =    28.78s         Wait for com.apple.springboard to idle
+Test Case '-[EditorEndToEndTests.EditorEndToEndTests testSap1AutomaticRunPause]' passed (28.827 seconds).
+Test Suite 'EditorEndToEndTests' passed at 2026-11-05 03:09:54.491.
+	 Executed 1 test, with 0 failures (0 unexpected) in 28.827 (28.837) seconds
+Test Suite 'EditorEndToEndTests.xctest' passed at 2026-11-05 03:09:54.491.
+	 Executed 1 test, with 0 failures (0 unexpected) in 28.827 (28.838) seconds
+Test Suite 'Selected tests' passed at 2026-11-05 03:09:54.492.
+	 Executed 1 test, with 0 failures (0 unexpected) in 28.827 (28.839) seconds
+2026-11-05 03:09:54.786 xcodebuild[31657:9713983] [MT] IDETestOperationsObserverDebug: 33.550 elapsed -- Testing started completed.
+2026-11-05 03:09:54.786 xcodebuild[31657:9713983] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-05 03:09:54.786 xcodebuild[31657:9713983] [MT] IDETestOperationsObserverDebug: 33.550 sec, +33.550 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/editor.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

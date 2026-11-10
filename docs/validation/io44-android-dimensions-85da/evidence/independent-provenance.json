@@ -1,0 +1,127 @@
+{
+  "auditScope": "Independent retained-artifact and local APK audit; no device interaction or full issue qualification",
+  "raw": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/85da031e-io-dimensions-a32d3302",
+  "sourcePins": {
+    "producer": "85da031e4ed11474c2e763976392729810ef142d",
+    "productionSourceIdenticalTo": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "executor": "a32d33020f1508276ebe9ed6fa83f0dfc4d50d4d",
+    "documentationBase": "5cb2fead2743cbba84f0efbad51e8bca822c7f05"
+  },
+  "manifestSha256": "bc4a8ed8f0269cd9afd492eb7f69486926b7948d5dc64758b323e5fd19c8c348",
+  "buildReceiptSha256": "268a6cbe5ca1890a7ac5bbbea6643529139dc671b4ec8c4a31da9a04d852ae49",
+  "artifacts": {
+    "app": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-85da031e-5556/androidApp-e2e.apk",
+      "package": "thalesmms.logisim.mobile.e2e",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+      "localBytesMatch": true,
+      "installedBeforeMatches": true,
+      "installedAfterMatches": true,
+      "manifestIdentityConfirmedByLocalAapt2": true
+    },
+    "test": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-85da031e-5556/androidApp-e2e-androidTest.apk",
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "sha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882",
+      "localBytesMatch": true,
+      "installedBeforeMatches": true,
+      "installedAfterMatches": true,
+      "manifestIdentityConfirmedByLocalAapt2": true
+    },
+    "snapshot": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-85da031e-5556/androidSnapshot-debug.apk",
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387",
+      "localBytesMatch": true,
+      "installedBeforeMatches": true,
+      "installedAfterMatches": true,
+      "manifestIdentityConfirmedByLocalAapt2": true
+    }
+  },
+  "frozenSources": {
+    "e2e-android.py": {
+      "sha256": "3b3774877f1dd6e7c64170befd248b753fbe61f4b2692d54f328e60fab077ae2",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    },
+    "android_ui.py": {
+      "sha256": "5a0fe68103eea25ecdf5111107035389af3a1a139b49acb02cdb7b11fb6a5e86",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    },
+    "android_editing_scenarios.py": {
+      "sha256": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    },
+    "user_scenario_contract.py": {
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    },
+    "android_inspector_scenarios.py": {
+      "sha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    },
+    "android_io_showcase_scenarios.py": {
+      "sha256": "4aa42d7f7d3bd95922cef3cf9609db9dc1d57d77a701619a5e90c71a59c983e8",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    },
+    "android_portable_scenarios.py": {
+      "sha256": "6e5888e73ddb558d038f22c45b517e182a46a991f43d878427a65f724ee5c7b4",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    },
+    "android_visual_export34_scenarios.py": {
+      "sha256": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763",
+      "retainedMatchesManifest": true,
+      "retainedMatchesExecutorCommit": true
+    }
+  },
+  "sharedIoInputs": {
+    "examples/io-showcase.circ": {
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+      "sameAtAllThreePins": true
+    },
+    "examples/io-showcase.targets.json": {
+      "sha256": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15",
+      "sameAtAllThreePins": true
+    },
+    "fixtures/user-scenarios/io-actions-v1.json": {
+      "sha256": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+      "sameAtAllThreePins": true
+    },
+    "scripts/io_showcase_contract.py": {
+      "sha256": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7",
+      "sameAtAllThreePins": true
+    }
+  },
+  "observations": {
+    "file": "io-showcase-observations.json",
+    "sha256": "05dbbd63ac34c9a3d7014f9528119e6fcc318cded4137395668461b3fb188527",
+    "literalBaselineProbeCount": 19,
+    "validatedRecords": 6,
+    "validator": "Existing assert_probe_description from scripts/io_showcase_contract.py",
+    "scope": "native-mounted-editor",
+    "selection": {
+      "selectionScope": "selected-cases",
+      "selectedCases": [
+        "dimensions"
+      ],
+      "notSelectedCases": [
+        "signals",
+        "dip-last",
+        "pointer-controls",
+        "keyboard-tty"
+      ]
+    }
+  },
+  "limits": [
+    "Manifest scenarioContractSha256 hashes editor-actions-v1.json, not the I/O contract. Its 4475d0c7 hash matches executor a32/base5cb; the producer85da editor contract differs. I/O inputs themselves are identical across all three pins.",
+    "Before/after installed hashes are retained execution receipts. This audit recomputed the local APK bytes; it did not requery any emulator.",
+    "Status passed is corroborated here only for byte provenance and six literal baseline readings; XML/topology audit is a separate owner task.",
+    "No overall #44 completion, pointer hold, keyboard case, iOS behavior, or physical-device result is inferred."
+  ]
+}

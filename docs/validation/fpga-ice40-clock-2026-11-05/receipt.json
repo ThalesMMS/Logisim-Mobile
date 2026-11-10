@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "recorded_utc": "2026-11-05T03:34:53.411948+00:00",
+  "base_source": "50668f45230ada6f49b10c1e05fe983b8ea183c4",
+  "delta": "FpgaProject iCE40 constraints emit set_frequency from validated clockFrequencyHz",
+  "tests": [
+    {
+      "name": "FpgaArchiveTest[jvm]",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "FpgaBoardFixtureTest[jvm]",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "FpgaClockDesignRulesTest[jvm]",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "FpgaCompanionTest[jvm]",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "FpgaHdlAdapterTest[jvm]",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "FpgaLegacyPinDirectionTest[jvm]",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "FpgaLocalizationTest[jvm]",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "FpgaProjectTest[jvm]",
+      "tests": "13",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "totals": {
+    "tests": 37,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native": "Yosys, nextpnr-ice40, icepack; no UI or physical hardware",
+  "tool_sha256": {
+    "/opt/homebrew/bin/yosys": "435b1d43de6985eeaad8330b0636d0f7bb1143311fd27382bf258d04fb2873c4",
+    "/opt/homebrew/bin/nextpnr-ice40": "26e1963d2242ae49cc859275aff91e2df05acbf1541c1da3c1e3df2d37b55ccd",
+    "/opt/homebrew/bin/icepack": "0f85ee7f182b0305eb5091b2829b56ddd53dfe478790be518713e4fb8efbe112"
+  },
+  "source_sha256": {
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/FpgaProject.kt": "5990338f025109aa8dec677130471346a983c39f8e1844b5ac8d6a3b67253dd3",
+    "core/src/commonTest/kotlin/dev/logisim/mobile/core/FpgaProjectTest.kt": "c7e6a986caa3bffbc09d207117dd376056af178d92c19b88d708b8d46e88cfd7"
+  }
+}

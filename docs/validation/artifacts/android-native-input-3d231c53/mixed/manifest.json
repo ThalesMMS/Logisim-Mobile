@@ -1,0 +1,3822 @@
+{
+  "status": "PASS",
+  "qualification": "PARTIAL",
+  "declaredSourceRevision": "3d231c537ac25de240889e327f3fd27a3b1e0902",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5556",
+  "requestedCases": "mixed",
+  "scope": "Synthesized Android system input, not physical-device ergonomics.",
+  "artifacts": {
+    "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+    "testSha256": "f5bca14d490db09c2045700f525251138568b961d918532ecfa23a20b56db267"
+  },
+  "androidFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "native": {
+    "status": "PASS",
+    "declaredSourceRevision": "3d231c537ac25de240889e327f3fd27a3b1e0902",
+    "packageName": "thalesmms.logisim.mobile.e2e",
+    "cases": [
+      {
+        "case": "mixed",
+        "status": "PASS",
+        "startedAtElapsedMillis": 40616224,
+        "mode": {
+          "key": "action_select",
+          "selection": "ACTIVE",
+          "clickTarget": {
+            "resource-id": null,
+            "class": "android.view.View",
+            "package": "thalesmms.logisim.mobile.e2e",
+            "text": null,
+            "content-desc": null,
+            "bounds": "[376,395][535,521]",
+            "windowId": 23225,
+            "childCount": 3,
+            "selected": false,
+            "checked": true,
+            "checkable": true,
+            "enabled": true,
+            "clickable": true,
+            "visible": true,
+            "focused": false,
+            "stateDescription": "Selected",
+            "actionIds": [
+              64,
+              1,
+              16,
+              131072,
+              256,
+              512
+            ]
+          },
+          "semanticNodes": [
+            {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[376,395][535,521]",
+              "windowId": 23225,
+              "childCount": 3,
+              "selected": false,
+              "checked": true,
+              "checkable": true,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": "Selected",
+              "actionIds": [
+                64,
+                1,
+                16,
+                131072,
+                256,
+                512
+              ]
+            }
+          ]
+        },
+        "mixedViewportProof": {
+          "before": {
+            "frame": {
+              "windowId": 23225,
+              "canvas": {
+                "left": 0,
+                "top": 655,
+                "right": 1080,
+                "bottom": 2119
+              },
+              "inputBounds": {
+                "left": 427,
+                "top": 1264,
+                "right": 553,
+                "bottom": 1390
+              },
+              "input": {
+                "x": 490,
+                "y": 1327
+              },
+              "outputBounds": {
+                "left": 927,
+                "top": 1264,
+                "right": 1053,
+                "bottom": 1390
+              },
+              "output": {
+                "x": 990,
+                "y": 1327
+              }
+            },
+            "targetTag": "canvas-component:mi-not",
+            "targetBounds": {
+              "left": 643,
+              "top": 1264,
+              "right": 769,
+              "bottom": 1390
+            },
+            "targetPoint": {
+              "x": 706,
+              "y": 1327
+            }
+          },
+          "worldDelta": {
+            "x": 10,
+            "y": 0
+          },
+          "pixelsPerWorld": 2.2727272510528564,
+          "pointKind": "TRANSLATED_FROM_XML",
+          "after": {
+            "windowId": 23225,
+            "canvas": {
+              "left": 0,
+              "top": 655,
+              "right": 1080,
+              "bottom": 2119
+            },
+            "inputBounds": {
+              "left": 427,
+              "top": 1264,
+              "right": 553,
+              "bottom": 1390
+            },
+            "input": {
+              "x": 490,
+              "y": 1327
+            },
+            "outputBounds": {
+              "left": 927,
+              "top": 1264,
+              "right": 1053,
+              "bottom": 1390
+            },
+            "output": {
+              "x": 990,
+              "y": 1327
+            }
+          },
+          "lastObservedWindowId": 23225,
+          "complete": true,
+          "validated": true,
+          "authorizedPoint": {
+            "x": 728.7272725105286,
+            "y": 1327
+          },
+          "translatedPoint": {
+            "x": 728.7272725105286,
+            "y": 1327
+          }
+        },
+        "elapsedMillis": 9296,
+        "finishedAtElapsedMillis": 40625520
+      }
+    ],
+    "events": [
+      {
+        "kind": "input-session",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "apiLevel": 35,
+        "syntheticEvents": true
+      },
+      {
+        "kind": "foreground-guard",
+        "operation": "tap",
+        "operationId": 1,
+        "phase": "before",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "activePackage": "thalesmms.logisim.mobile.e2e",
+        "focusedPackage": null,
+        "accepted": true
+      },
+      {
+        "kind": "motion",
+        "operation": "tap",
+        "operationId": 1,
+        "tool": "TOUCH",
+        "source": 4098,
+        "action": "ACTION_DOWN",
+        "actionMasked": 0,
+        "actionIndex": 0,
+        "downTimeMs": 40620588,
+        "eventTimeMs": 40620589,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 1,
+            "x": 706,
+            "y": 1327,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "tap",
+        "operationId": 1,
+        "tool": "TOUCH",
+        "source": 4098,
+        "action": "ACTION_UP",
+        "actionMasked": 1,
+        "actionIndex": 0,
+        "downTimeMs": 40620588,
+        "eventTimeMs": 40620726,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 1,
+            "x": 706,
+            "y": 1327,
+            "pressure": 0,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "foreground-guard",
+        "operation": "key",
+        "operationId": 2,
+        "phase": "before",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "activePackage": "thalesmms.logisim.mobile.e2e",
+        "focusedPackage": null,
+        "accepted": true
+      },
+      {
+        "kind": "key",
+        "operation": "key",
+        "operationId": 2,
+        "source": 257,
+        "action": "ACTION_DOWN",
+        "keyCode": 22,
+        "key": "KEYCODE_DPAD_RIGHT",
+        "downTimeMs": 40620879,
+        "eventTimeMs": 40620882,
+        "metaState": 0,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "key",
+        "operation": "key",
+        "operationId": 2,
+        "source": 257,
+        "action": "ACTION_UP",
+        "keyCode": 22,
+        "key": "KEYCODE_DPAD_RIGHT",
+        "downTimeMs": 40620879,
+        "eventTimeMs": 40620999,
+        "metaState": 0,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "foreground-guard",
+        "operation": "drag",
+        "operationId": 3,
+        "phase": "before",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "activePackage": "thalesmms.logisim.mobile.e2e",
+        "focusedPackage": null,
+        "accepted": true
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_DOWN",
+        "actionMasked": 0,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40621948,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 728.72754,
+            "y": 1327,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40621993,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 740.0908,
+            "y": 1331.5459,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622016,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 751.4551,
+            "y": 1336.0908,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622041,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 762.81836,
+            "y": 1340.6367,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622062,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 774.18164,
+            "y": 1345.1816,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622081,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 785.5459,
+            "y": 1349.7275,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622102,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 796.9092,
+            "y": 1354.2725,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622141,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 808.27246,
+            "y": 1358.8184,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622163,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 819.6367,
+            "y": 1363.3633,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622198,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 831,
+            "y": 1367.9092,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_MOVE",
+        "actionMasked": 2,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622241,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 842.3633,
+            "y": 1372.4551,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "drag",
+        "operationId": 3,
+        "tool": "STYLUS",
+        "source": 16386,
+        "action": "ACTION_UP",
+        "actionMasked": 1,
+        "actionIndex": 0,
+        "downTimeMs": 40621947,
+        "eventTimeMs": 40622293,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 2,
+            "x": 842.3633,
+            "y": 1372.4551,
+            "pressure": 0,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "foreground-guard",
+        "operation": "tap",
+        "operationId": 4,
+        "phase": "before",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "activePackage": "thalesmms.logisim.mobile.e2e",
+        "focusedPackage": null,
+        "accepted": true
+      },
+      {
+        "kind": "motion",
+        "operation": "tap",
+        "operationId": 4,
+        "tool": "MOUSE",
+        "source": 8194,
+        "action": "ACTION_DOWN",
+        "actionMasked": 0,
+        "actionIndex": 0,
+        "downTimeMs": 40623039,
+        "eventTimeMs": 40623043,
+        "buttons": 1,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 3,
+            "x": 490,
+            "y": 1327,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "tap",
+        "operationId": 4,
+        "tool": "MOUSE",
+        "source": 8194,
+        "action": "ACTION_UP",
+        "actionMasked": 1,
+        "actionIndex": 0,
+        "downTimeMs": 40623039,
+        "eventTimeMs": 40623102,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 3,
+            "x": 490,
+            "y": 1327,
+            "pressure": 0,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "foreground-guard",
+        "operation": "ctrl-chord",
+        "operationId": 5,
+        "phase": "before",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "activePackage": "thalesmms.logisim.mobile.e2e",
+        "focusedPackage": null,
+        "accepted": true
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 5,
+        "source": 257,
+        "action": "ACTION_DOWN",
+        "keyCode": 113,
+        "key": "KEYCODE_CTRL_LEFT",
+        "downTimeMs": 40623204,
+        "eventTimeMs": 40623205,
+        "metaState": 12288,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 5,
+        "source": 257,
+        "action": "ACTION_DOWN",
+        "keyCode": 54,
+        "key": "KEYCODE_Z",
+        "downTimeMs": 40623297,
+        "eventTimeMs": 40623298,
+        "metaState": 12288,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 5,
+        "source": 257,
+        "action": "ACTION_UP",
+        "keyCode": 54,
+        "key": "KEYCODE_Z",
+        "downTimeMs": 40623297,
+        "eventTimeMs": 40623317,
+        "metaState": 12288,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 5,
+        "source": 257,
+        "action": "ACTION_UP",
+        "keyCode": 113,
+        "key": "KEYCODE_CTRL_LEFT",
+        "downTimeMs": 40623204,
+        "eventTimeMs": 40623344,
+        "metaState": 0,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "foreground-guard",
+        "operation": "tap",
+        "operationId": 6,
+        "phase": "before",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "activePackage": "thalesmms.logisim.mobile.e2e",
+        "focusedPackage": null,
+        "accepted": true
+      },
+      {
+        "kind": "motion",
+        "operation": "tap",
+        "operationId": 6,
+        "tool": "MOUSE",
+        "source": 8194,
+        "action": "ACTION_DOWN",
+        "actionMasked": 0,
+        "actionIndex": 0,
+        "downTimeMs": 40624145,
+        "eventTimeMs": 40624146,
+        "buttons": 1,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 3,
+            "x": 490,
+            "y": 1327,
+            "pressure": 1,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "motion",
+        "operation": "tap",
+        "operationId": 6,
+        "tool": "MOUSE",
+        "source": 8194,
+        "action": "ACTION_UP",
+        "actionMasked": 1,
+        "actionIndex": 0,
+        "downTimeMs": 40624145,
+        "eventTimeMs": 40624223,
+        "buttons": 0,
+        "metaState": 0,
+        "pointers": [
+          {
+            "id": 0,
+            "toolType": 3,
+            "x": 490,
+            "y": 1327,
+            "pressure": 0,
+            "horizontalScroll": 0,
+            "verticalScroll": 0
+          }
+        ],
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "foreground-guard",
+        "operation": "ctrl-chord",
+        "operationId": 7,
+        "phase": "before",
+        "targetPackage": "thalesmms.logisim.mobile.e2e",
+        "activePackage": "thalesmms.logisim.mobile.e2e",
+        "focusedPackage": null,
+        "accepted": true
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 7,
+        "source": 257,
+        "action": "ACTION_DOWN",
+        "keyCode": 113,
+        "key": "KEYCODE_CTRL_LEFT",
+        "downTimeMs": 40624280,
+        "eventTimeMs": 40624284,
+        "metaState": 12288,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 7,
+        "source": 257,
+        "action": "ACTION_DOWN",
+        "keyCode": 54,
+        "key": "KEYCODE_Z",
+        "downTimeMs": 40624333,
+        "eventTimeMs": 40624335,
+        "metaState": 12288,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 7,
+        "source": 257,
+        "action": "ACTION_UP",
+        "keyCode": 54,
+        "key": "KEYCODE_Z",
+        "downTimeMs": 40624333,
+        "eventTimeMs": 40624371,
+        "metaState": 12288,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      },
+      {
+        "kind": "key",
+        "operation": "ctrl-chord",
+        "operationId": 7,
+        "source": 257,
+        "action": "ACTION_UP",
+        "keyCode": 113,
+        "key": "KEYCODE_CTRL_LEFT",
+        "downTimeMs": 40624280,
+        "eventTimeMs": 40624411,
+        "metaState": 0,
+        "accepted": true,
+        "status": "accepted",
+        "cleanup": false
+      }
+    ],
+    "scope": "Synthesized Android system input. Physical mouse, trackpad and pen ergonomics are not qualified.",
+    "artifact": {
+      "apkPath": "/data/app/~~TNOSQnhwPWCGvwd9q5FBfA==/thalesmms.logisim.mobile.e2e-FznV86Gq1eCP0xdA_J8ivQ==/base.apk",
+      "sha256Before": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+      "sha256After": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556"
+    },
+    "evidenceDirectory": "/data/user/0/thalesmms.logisim.mobile.e2e/files/mixed-input/17dce16d-e03a-4a45-9cb7-deb2b9cb8d72",
+    "readinessDiagnostics": {
+      "capacity": 128,
+      "totalRecords": 294,
+      "droppedRecords": 192,
+      "capacityDroppedRecords": 166,
+      "sizeDroppedRecords": 26,
+      "characterBudget": 49152,
+      "estimatedCharacters": 49054,
+      "firstSequence": 193,
+      "lastSequence": 294,
+      "records": [
+        {
+          "sequence": 193,
+          "record": {
+            "callsite": "findTag:editor-project-toolbar",
+            "rootReadSequenceAtCall": 45,
+            "windowId": 23225,
+            "nodeCount": 99,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622486,
+            "elapsedMillis": 95,
+            "kind": "tree-read",
+            "atElapsedMillis": 40622581,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 194,
+          "record": {
+            "callsite": "resolveAction:Import or export circuit and project|Importar ou exportar circuito e projeto",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 45,
+            "nodeCount": 15,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622581,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40622581,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 195,
+          "record": {
+            "labels": "Import or export circuit and project|Importar ou exportar circuito e projeto",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 45,
+            "nodeCount": 15,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40622581,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40622581,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 196,
+          "record": {
+            "clickId": 14,
+            "callsite": "toolbar:editor-project-toolbar:a11y_import_export_project",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 45,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[751,265][877,391]",
+              "windowId": 23225,
+              "childCount": 3,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16,
+                131072,
+                256,
+                512
+              ]
+            },
+            "startedAtMillis": 40622581,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40622581,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 197,
+          "record": {
+            "clickId": 14,
+            "callsite": "toolbar:editor-project-toolbar:a11y_import_export_project",
+            "rootReadSequenceAtCall": 45,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40622581,
+            "elapsedMillis": 3,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40622584,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 198,
+          "record": {
+            "readId": 46,
+            "callsite": "export:XML-dialog",
+            "startedAtMillis": 40622584,
+            "elapsedMillis": 1,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 1,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40622585,
+            "waitId": 24,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 199,
+          "record": {
+            "callsite": "nodes",
+            "rootReadSequenceAtCall": 46,
+            "windowId": 23225,
+            "nodeCount": 99,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622585,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40622585,
+            "waitId": 24,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 200,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "RETURNED_FALSE",
+            "lastOutcomeAtMillis": 40622591,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40622591,
+            "waitId": 24,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 201,
+          "record": {
+            "readId": 47,
+            "callsite": "export:XML-dialog",
+            "startedAtMillis": 40622644,
+            "elapsedMillis": 61,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23234,
+              "elapsedMillis": 61,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23234,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40622705,
+            "waitId": 24,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 202,
+          "record": {
+            "callsite": "nodes",
+            "rootReadSequenceAtCall": 47,
+            "windowId": 23234,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622705,
+            "elapsedMillis": 36,
+            "kind": "tree-read",
+            "atElapsedMillis": 40622741,
+            "waitId": 24,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 203,
+          "record": {
+            "attempts": 2,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40622743,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40622743,
+            "waitId": 24,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 204,
+          "record": {
+            "readId": 48,
+            "callsite": "findAction:Copy|Copiar",
+            "startedAtMillis": 40622746,
+            "elapsedMillis": 3,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23234,
+              "elapsedMillis": 3,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23234,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40622749,
+            "waitId": 25,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 205,
+          "record": {
+            "callsite": "resolveAction:Copy|Copiar",
+            "windowId": 23234,
+            "rootReadSequenceAtCall": 48,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622749,
+            "elapsedMillis": 22,
+            "kind": "tree-read",
+            "atElapsedMillis": 40622771,
+            "waitId": 25,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 206,
+          "record": {
+            "labels": "Copy|Copiar",
+            "windowId": 23234,
+            "rootReadSequenceAtCall": 48,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40622771,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40622771,
+            "waitId": 25,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 207,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40622771,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40622771,
+            "waitId": 25,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 208,
+          "record": {
+            "clickId": 15,
+            "callsite": "clickAction:Copy|Copiar",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 48,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[183,1558][393,1684]",
+              "windowId": 23234,
+              "childCount": 2,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16
+              ]
+            },
+            "startedAtMillis": 40622771,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40622771,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 209,
+          "record": {
+            "clickId": 15,
+            "callsite": "clickAction:Copy|Copiar",
+            "rootReadSequenceAtCall": 48,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40622771,
+            "elapsedMillis": 5,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40622776,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 210,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40622800,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40622800,
+            "waitId": 26,
+            "waitAttempt": 1,
+            "waitDescription": "new complete XML clipboard"
+          }
+        },
+        {
+          "sequence": 211,
+          "record": {
+            "readId": 49,
+            "callsite": "findAction:Close|Fechar",
+            "startedAtMillis": 40622801,
+            "elapsedMillis": 2,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23234,
+              "elapsedMillis": 2,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23234,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40622803,
+            "waitId": 27,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 212,
+          "record": {
+            "callsite": "resolveAction:Close|Fechar",
+            "windowId": 23234,
+            "rootReadSequenceAtCall": 49,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622803,
+            "elapsedMillis": 4,
+            "kind": "tree-read",
+            "atElapsedMillis": 40622807,
+            "waitId": 27,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 213,
+          "record": {
+            "labels": "Close|Fechar",
+            "windowId": 23234,
+            "rootReadSequenceAtCall": 49,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40622807,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40622807,
+            "waitId": 27,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 214,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40622807,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40622807,
+            "waitId": 27,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 215,
+          "record": {
+            "clickId": 16,
+            "callsite": "clickAction:Close|Fechar",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 49,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[399,1747][557,1873]",
+              "windowId": 23234,
+              "childCount": 2,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16
+              ]
+            },
+            "startedAtMillis": 40622807,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40622807,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 216,
+          "record": {
+            "clickId": 16,
+            "callsite": "clickAction:Close|Fechar",
+            "rootReadSequenceAtCall": 49,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40622807,
+            "elapsedMillis": 2,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40622809,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 217,
+          "record": {
+            "readId": 50,
+            "callsite": "findTag:editor-canvas",
+            "startedAtMillis": 40622809,
+            "elapsedMillis": 29,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23234,
+              "elapsedMillis": 29,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23234,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40622838,
+            "waitId": 28,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 218,
+          "record": {
+            "callsite": "findTag:editor-canvas",
+            "rootReadSequenceAtCall": 50,
+            "windowId": 23234,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622838,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40622838,
+            "waitId": 28,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 219,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "RETURNED_FALSE",
+            "lastOutcomeAtMillis": 40622838,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40622838,
+            "waitId": 28,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 220,
+          "record": {
+            "readId": 51,
+            "callsite": "findTag:editor-canvas",
+            "startedAtMillis": 40622896,
+            "elapsedMillis": 9,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 9,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40622905,
+            "waitId": 28,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 221,
+          "record": {
+            "callsite": "findTag:editor-canvas",
+            "rootReadSequenceAtCall": 51,
+            "windowId": 23225,
+            "nodeCount": 99,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40622906,
+            "elapsedMillis": 130,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623036,
+            "waitId": 28,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 222,
+          "record": {
+            "attempts": 2,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40623036,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623036,
+            "waitId": 28,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 223,
+          "record": {
+            "readId": 52,
+            "callsite": "undo:select-anchor",
+            "startedAtMillis": 40623037,
+            "elapsedMillis": 0,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 0,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40623037,
+            "waitId": 29,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 224,
+          "record": {
+            "callsite": "undo:select-anchor",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 52,
+            "nodeCount": 99,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623037,
+            "elapsedMillis": 1,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623038,
+            "waitId": 29,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 225,
+          "record": {
+            "labels": "Select|Selecionar",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 52,
+            "nodeCount": 99,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40623038,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40623038,
+            "waitId": 29,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 226,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40623039,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623039,
+            "waitId": 29,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 227,
+          "record": {
+            "windowId": 23225,
+            "selectActive": true,
+            "point": {
+              "x": 490,
+              "y": 1327
+            },
+            "kind": "undo-focus-anchor",
+            "atElapsedMillis": 40623039,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 228,
+          "record": {
+            "readId": 53,
+            "callsite": "findTag:editor-project-toolbar",
+            "startedAtMillis": 40623513,
+            "elapsedMillis": 93,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 93,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40623606,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 229,
+          "record": {
+            "callsite": "findTag:editor-project-toolbar",
+            "rootReadSequenceAtCall": 53,
+            "windowId": 23225,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623606,
+            "elapsedMillis": 46,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623652,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 230,
+          "record": {
+            "callsite": "resolveAction:Import or export circuit and project|Importar ou exportar circuito e projeto",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 53,
+            "nodeCount": 15,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623652,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623652,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 231,
+          "record": {
+            "labels": "Import or export circuit and project|Importar ou exportar circuito e projeto",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 53,
+            "nodeCount": 15,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40623652,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40623652,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 232,
+          "record": {
+            "clickId": 17,
+            "callsite": "toolbar:editor-project-toolbar:a11y_import_export_project",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 53,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[751,265][877,391]",
+              "windowId": 23225,
+              "childCount": 3,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16,
+                131072,
+                256,
+                512
+              ]
+            },
+            "startedAtMillis": 40623652,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40623652,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 233,
+          "record": {
+            "clickId": 17,
+            "callsite": "toolbar:editor-project-toolbar:a11y_import_export_project",
+            "rootReadSequenceAtCall": 53,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40623652,
+            "elapsedMillis": 1,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40623653,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 234,
+          "record": {
+            "readId": 54,
+            "callsite": "export:XML-dialog",
+            "startedAtMillis": 40623653,
+            "elapsedMillis": 1,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 1,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40623654,
+            "waitId": 30,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 235,
+          "record": {
+            "callsite": "nodes",
+            "rootReadSequenceAtCall": 54,
+            "windowId": 23225,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623654,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623654,
+            "waitId": 30,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 236,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "RETURNED_FALSE",
+            "lastOutcomeAtMillis": 40623657,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623657,
+            "waitId": 30,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 237,
+          "record": {
+            "readId": 55,
+            "callsite": "export:XML-dialog",
+            "startedAtMillis": 40623708,
+            "elapsedMillis": 37,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23236,
+              "elapsedMillis": 37,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23236,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40623745,
+            "waitId": 30,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 238,
+          "record": {
+            "callsite": "nodes",
+            "rootReadSequenceAtCall": 55,
+            "windowId": 23236,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623745,
+            "elapsedMillis": 184,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623929,
+            "waitId": 30,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 239,
+          "record": {
+            "attempts": 2,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40623930,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623930,
+            "waitId": 30,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 240,
+          "record": {
+            "readId": 56,
+            "callsite": "findAction:Copy|Copiar",
+            "startedAtMillis": 40623930,
+            "elapsedMillis": 7,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23236,
+              "elapsedMillis": 7,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23236,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40623937,
+            "waitId": 31,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 241,
+          "record": {
+            "callsite": "resolveAction:Copy|Copiar",
+            "windowId": 23236,
+            "rootReadSequenceAtCall": 56,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623937,
+            "elapsedMillis": 1,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623938,
+            "waitId": 31,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 242,
+          "record": {
+            "labels": "Copy|Copiar",
+            "windowId": 23236,
+            "rootReadSequenceAtCall": 56,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40623938,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40623938,
+            "waitId": 31,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 243,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40623938,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623938,
+            "waitId": 31,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 244,
+          "record": {
+            "clickId": 18,
+            "callsite": "clickAction:Copy|Copiar",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 56,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[183,1522][393,1648]",
+              "windowId": 23236,
+              "childCount": 2,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16
+              ]
+            },
+            "startedAtMillis": 40623938,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40623938,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 245,
+          "record": {
+            "clickId": 18,
+            "callsite": "clickAction:Copy|Copiar",
+            "rootReadSequenceAtCall": 56,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40623938,
+            "elapsedMillis": 7,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40623945,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 246,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40623948,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623948,
+            "waitId": 32,
+            "waitAttempt": 1,
+            "waitDescription": "new complete XML clipboard"
+          }
+        },
+        {
+          "sequence": 247,
+          "record": {
+            "readId": 57,
+            "callsite": "findAction:Close|Fechar",
+            "startedAtMillis": 40623950,
+            "elapsedMillis": 2,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23236,
+              "elapsedMillis": 2,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23236,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40623952,
+            "waitId": 33,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 248,
+          "record": {
+            "callsite": "resolveAction:Close|Fechar",
+            "windowId": 23236,
+            "rootReadSequenceAtCall": 57,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623952,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623952,
+            "waitId": 33,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 249,
+          "record": {
+            "labels": "Close|Fechar",
+            "windowId": 23236,
+            "rootReadSequenceAtCall": 57,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40623952,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40623952,
+            "waitId": 33,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 250,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40623952,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623952,
+            "waitId": 33,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 251,
+          "record": {
+            "clickId": 19,
+            "callsite": "clickAction:Close|Fechar",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 57,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[399,1711][557,1837]",
+              "windowId": 23236,
+              "childCount": 2,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16
+              ]
+            },
+            "startedAtMillis": 40623952,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40623952,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 252,
+          "record": {
+            "clickId": 19,
+            "callsite": "clickAction:Close|Fechar",
+            "rootReadSequenceAtCall": 57,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40623952,
+            "elapsedMillis": 3,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40623955,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 253,
+          "record": {
+            "readId": 58,
+            "callsite": "findTag:editor-canvas",
+            "startedAtMillis": 40623955,
+            "elapsedMillis": 3,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23236,
+              "elapsedMillis": 3,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23236,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40623959,
+            "waitId": 34,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 254,
+          "record": {
+            "callsite": "findTag:editor-canvas",
+            "rootReadSequenceAtCall": 58,
+            "windowId": 23236,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40623959,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40623959,
+            "waitId": 34,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 255,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "RETURNED_FALSE",
+            "lastOutcomeAtMillis": 40623959,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40623959,
+            "waitId": 34,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 256,
+          "record": {
+            "readId": 59,
+            "callsite": "findTag:editor-canvas",
+            "startedAtMillis": 40624009,
+            "elapsedMillis": 4,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 4,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40624013,
+            "waitId": 34,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 257,
+          "record": {
+            "callsite": "findTag:editor-canvas",
+            "rootReadSequenceAtCall": 59,
+            "windowId": 23225,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40624013,
+            "elapsedMillis": 108,
+            "kind": "tree-read",
+            "atElapsedMillis": 40624121,
+            "waitId": 34,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 258,
+          "record": {
+            "attempts": 2,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40624121,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40624121,
+            "waitId": 34,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 259,
+          "record": {
+            "readId": 60,
+            "callsite": "undo:select-anchor",
+            "startedAtMillis": 40624122,
+            "elapsedMillis": 0,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 0,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40624122,
+            "waitId": 35,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 260,
+          "record": {
+            "callsite": "undo:select-anchor",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 60,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40624122,
+            "elapsedMillis": 22,
+            "kind": "tree-read",
+            "atElapsedMillis": 40624144,
+            "waitId": 35,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 261,
+          "record": {
+            "labels": "Select|Selecionar",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 60,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40624144,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40624144,
+            "waitId": 35,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 262,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40624144,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40624144,
+            "waitId": 35,
+            "waitAttempt": 1,
+            "waitDescription": "Select mode and visible anchor before Undo"
+          }
+        },
+        {
+          "sequence": 263,
+          "record": {
+            "windowId": 23225,
+            "selectActive": true,
+            "point": {
+              "x": 490,
+              "y": 1327
+            },
+            "kind": "undo-focus-anchor",
+            "atElapsedMillis": 40624144,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 264,
+          "record": {
+            "readId": 61,
+            "callsite": "findTag:editor-project-toolbar",
+            "startedAtMillis": 40624545,
+            "elapsedMillis": 1,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 1,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40624546,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 265,
+          "record": {
+            "callsite": "findTag:editor-project-toolbar",
+            "rootReadSequenceAtCall": 61,
+            "windowId": 23225,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40624546,
+            "elapsedMillis": 49,
+            "kind": "tree-read",
+            "atElapsedMillis": 40624595,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 266,
+          "record": {
+            "callsite": "resolveAction:Import or export circuit and project|Importar ou exportar circuito e projeto",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 61,
+            "nodeCount": 15,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40624595,
+            "elapsedMillis": 5,
+            "kind": "tree-read",
+            "atElapsedMillis": 40624600,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 267,
+          "record": {
+            "labels": "Import or export circuit and project|Importar ou exportar circuito e projeto",
+            "windowId": 23225,
+            "rootReadSequenceAtCall": 61,
+            "nodeCount": 15,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40624600,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40624600,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 268,
+          "record": {
+            "clickId": 20,
+            "callsite": "toolbar:editor-project-toolbar:a11y_import_export_project",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 61,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[751,265][877,391]",
+              "windowId": 23225,
+              "childCount": 3,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16,
+                131072,
+                256,
+                512
+              ]
+            },
+            "startedAtMillis": 40624600,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40624600,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 269,
+          "record": {
+            "clickId": 20,
+            "callsite": "toolbar:editor-project-toolbar:a11y_import_export_project",
+            "rootReadSequenceAtCall": 61,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40624600,
+            "elapsedMillis": 1,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40624601,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 270,
+          "record": {
+            "readId": 62,
+            "callsite": "export:XML-dialog",
+            "startedAtMillis": 40624601,
+            "elapsedMillis": 1,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 1,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40624602,
+            "waitId": 36,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 271,
+          "record": {
+            "callsite": "nodes",
+            "rootReadSequenceAtCall": 62,
+            "windowId": 23225,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40624602,
+            "elapsedMillis": 143,
+            "kind": "tree-read",
+            "atElapsedMillis": 40624745,
+            "waitId": 36,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 272,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "RETURNED_FALSE",
+            "lastOutcomeAtMillis": 40624759,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40624759,
+            "waitId": 36,
+            "waitAttempt": 1,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 273,
+          "record": {
+            "readId": 63,
+            "callsite": "export:XML-dialog",
+            "startedAtMillis": 40624810,
+            "elapsedMillis": 3,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23237,
+              "elapsedMillis": 3,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23237,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40624813,
+            "waitId": 36,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 274,
+          "record": {
+            "callsite": "nodes",
+            "rootReadSequenceAtCall": 63,
+            "windowId": 23237,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40624813,
+            "elapsedMillis": 194,
+            "kind": "tree-read",
+            "atElapsedMillis": 40625007,
+            "waitId": 36,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 275,
+          "record": {
+            "attempts": 2,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40625007,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40625007,
+            "waitId": 36,
+            "waitAttempt": 2,
+            "waitDescription": "XML dialog"
+          }
+        },
+        {
+          "sequence": 276,
+          "record": {
+            "readId": 64,
+            "callsite": "findAction:Copy|Copiar",
+            "startedAtMillis": 40625008,
+            "elapsedMillis": 4,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23237,
+              "elapsedMillis": 4,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23237,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40625012,
+            "waitId": 37,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 277,
+          "record": {
+            "callsite": "resolveAction:Copy|Copiar",
+            "windowId": 23237,
+            "rootReadSequenceAtCall": 64,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40625012,
+            "elapsedMillis": 1,
+            "kind": "tree-read",
+            "atElapsedMillis": 40625013,
+            "waitId": 37,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 278,
+          "record": {
+            "labels": "Copy|Copiar",
+            "windowId": 23237,
+            "rootReadSequenceAtCall": 64,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40625013,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40625013,
+            "waitId": 37,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 279,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40625013,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40625013,
+            "waitId": 37,
+            "waitAttempt": 1,
+            "waitDescription": "action [Copy, Copiar]"
+          }
+        },
+        {
+          "sequence": 280,
+          "record": {
+            "clickId": 21,
+            "callsite": "clickAction:Copy|Copiar",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 64,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[183,1511][393,1637]",
+              "windowId": 23237,
+              "childCount": 2,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16
+              ]
+            },
+            "startedAtMillis": 40625013,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40625013,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 281,
+          "record": {
+            "clickId": 21,
+            "callsite": "clickAction:Copy|Copiar",
+            "rootReadSequenceAtCall": 64,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40625013,
+            "elapsedMillis": 3,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40625016,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 282,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40625017,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40625017,
+            "waitId": 38,
+            "waitAttempt": 1,
+            "waitDescription": "new complete XML clipboard"
+          }
+        },
+        {
+          "sequence": 283,
+          "record": {
+            "readId": 65,
+            "callsite": "findAction:Close|Fechar",
+            "startedAtMillis": 40625019,
+            "elapsedMillis": 1,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23237,
+              "elapsedMillis": 1,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23237,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40625020,
+            "waitId": 39,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 284,
+          "record": {
+            "callsite": "resolveAction:Close|Fechar",
+            "windowId": 23237,
+            "rootReadSequenceAtCall": 65,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40625020,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40625020,
+            "waitId": 39,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 285,
+          "record": {
+            "labels": "Close|Fechar",
+            "windowId": 23237,
+            "rootReadSequenceAtCall": 65,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "nodeLimitReached": false,
+            "complete": true,
+            "reusedTree": true,
+            "outcome": "RESOLVED",
+            "startedAtMillis": 40625020,
+            "elapsedMillis": 0,
+            "kind": "action-resolution",
+            "atElapsedMillis": 40625020,
+            "waitId": 39,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 286,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40625020,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40625020,
+            "waitId": 39,
+            "waitAttempt": 1,
+            "waitDescription": "action [Close, Fechar]"
+          }
+        },
+        {
+          "sequence": 287,
+          "record": {
+            "clickId": 22,
+            "callsite": "clickAction:Close|Fechar",
+            "phase": "BEFORE_CALL",
+            "actionId": 16,
+            "rootReadSequenceAtCall": 65,
+            "node": {
+              "resource-id": null,
+              "class": "android.view.View",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "text": null,
+              "content-desc": null,
+              "bounds": "[399,1700][557,1826]",
+              "windowId": 23237,
+              "childCount": 2,
+              "selected": false,
+              "checked": false,
+              "checkable": false,
+              "enabled": true,
+              "clickable": true,
+              "visible": true,
+              "focused": false,
+              "stateDescription": null,
+              "actionIds": [
+                64,
+                1,
+                16
+              ]
+            },
+            "startedAtMillis": 40625020,
+            "kind": "action-click-call",
+            "atElapsedMillis": 40625020,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 288,
+          "record": {
+            "clickId": 22,
+            "callsite": "clickAction:Close|Fechar",
+            "rootReadSequenceAtCall": 65,
+            "emitted": true,
+            "accepted": true,
+            "emissionBlocked": false,
+            "error": null,
+            "startedAtMillis": 40625020,
+            "elapsedMillis": 2,
+            "kind": "action-click-result",
+            "atElapsedMillis": 40625022,
+            "waitId": null,
+            "waitAttempt": null,
+            "waitDescription": null
+          }
+        },
+        {
+          "sequence": 289,
+          "record": {
+            "readId": 66,
+            "callsite": "findTag:editor-canvas",
+            "startedAtMillis": 40625022,
+            "elapsedMillis": 1,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23237,
+              "elapsedMillis": 1,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23237,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40625023,
+            "waitId": 40,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 290,
+          "record": {
+            "callsite": "findTag:editor-canvas",
+            "rootReadSequenceAtCall": 66,
+            "windowId": 23237,
+            "nodeCount": 28,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40625023,
+            "elapsedMillis": 0,
+            "kind": "tree-read",
+            "atElapsedMillis": 40625023,
+            "waitId": 40,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 291,
+          "record": {
+            "attempts": 1,
+            "lastOutcome": "RETURNED_FALSE",
+            "lastOutcomeAtMillis": 40625023,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40625023,
+            "waitId": 40,
+            "waitAttempt": 1,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 292,
+          "record": {
+            "readId": 67,
+            "callsite": "findTag:editor-canvas",
+            "startedAtMillis": 40625075,
+            "elapsedMillis": 4,
+            "outcome": "ACCEPTED_ACTIVE_ROOT",
+            "failurePhase": null,
+            "error": null,
+            "activeRoot": {
+              "outcome": "ACCEPTED",
+              "package": "thalesmms.logisim.mobile.e2e",
+              "windowId": 23225,
+              "elapsedMillis": 4,
+              "windowMetadata": "NOT_QUERIED_FROM_NODE"
+            },
+            "windowsEnumeration": "NOT_REQUESTED",
+            "windowsQueryStartedAtMillis": null,
+            "windowsQueryElapsedMillis": null,
+            "windowsListed": null,
+            "windowsInspected": 0,
+            "inspectionComplete": false,
+            "windowRecordsOmitted": 0,
+            "acceptedWindowId": 23225,
+            "windows": [],
+            "kind": "root-read",
+            "atElapsedMillis": 40625079,
+            "waitId": 40,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 293,
+          "record": {
+            "callsite": "findTag:editor-canvas",
+            "rootReadSequenceAtCall": 67,
+            "windowId": 23225,
+            "nodeCount": 98,
+            "missingChildren": 0,
+            "complete": true,
+            "traversalFinished": true,
+            "startedAtMillis": 40625079,
+            "elapsedMillis": 45,
+            "kind": "tree-read",
+            "atElapsedMillis": 40625124,
+            "waitId": 40,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        },
+        {
+          "sequence": 294,
+          "record": {
+            "attempts": 2,
+            "lastOutcome": "READY",
+            "lastOutcomeAtMillis": 40625124,
+            "historicalException": null,
+            "historicalExceptionAttempt": 0,
+            "historicalExceptionAtMillis": 0,
+            "kind": "wait-attempt",
+            "atElapsedMillis": 40625124,
+            "waitId": 40,
+            "waitAttempt": 2,
+            "waitDescription": "editor returned from XML"
+          }
+        }
+      ],
+      "loggingErrors": 0,
+      "waitSummaries": {
+        "capacity": 32,
+        "totalRecords": 40,
+        "droppedRecords": 8,
+        "capacityDroppedRecords": 8,
+        "sizeDroppedRecords": 0,
+        "characterBudget": 16384,
+        "estimatedCharacters": 10210,
+        "firstSequence": 9,
+        "lastSequence": 40,
+        "records": [
+          {
+            "sequence": 9,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620004,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 9,
+              "description": "command toolbar",
+              "startedAtMillis": 40620004,
+              "elapsedMillis": 0
+            }
+          },
+          {
+            "sequence": 10,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620174,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 10,
+              "description": "selected interaction mode",
+              "startedAtMillis": 40620005,
+              "elapsedMillis": 169
+            }
+          },
+          {
+            "sequence": 11,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620175,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 11,
+              "description": "canvas after selecting mode",
+              "startedAtMillis": 40620174,
+              "elapsedMillis": 1
+            }
+          },
+          {
+            "sequence": 12,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620397,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 12,
+              "description": "XML dialog",
+              "startedAtMillis": 40620195,
+              "elapsedMillis": 202
+            }
+          },
+          {
+            "sequence": 13,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620399,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 13,
+              "description": "action [Copy, Copiar]",
+              "startedAtMillis": 40620397,
+              "elapsedMillis": 2
+            }
+          },
+          {
+            "sequence": 14,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620404,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 14,
+              "description": "new complete XML clipboard",
+              "startedAtMillis": 40620401,
+              "elapsedMillis": 3
+            }
+          },
+          {
+            "sequence": 15,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620407,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 15,
+              "description": "action [Close, Fechar]",
+              "startedAtMillis": 40620406,
+              "elapsedMillis": 1
+            }
+          },
+          {
+            "sequence": 16,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620518,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 16,
+              "description": "editor returned from XML",
+              "startedAtMillis": 40620419,
+              "elapsedMillis": 99
+            }
+          },
+          {
+            "sequence": 17,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40620586,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 17,
+              "description": "observed mixed target and viewport anchors",
+              "startedAtMillis": 40620518,
+              "elapsedMillis": 68
+            }
+          },
+          {
+            "sequence": 18,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40621562,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 18,
+              "description": "XML dialog",
+              "startedAtMillis": 40621340,
+              "elapsedMillis": 222
+            }
+          },
+          {
+            "sequence": 19,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40621590,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 19,
+              "description": "action [Copy, Copiar]",
+              "startedAtMillis": 40621563,
+              "elapsedMillis": 27
+            }
+          },
+          {
+            "sequence": 20,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40621598,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 20,
+              "description": "new complete XML clipboard",
+              "startedAtMillis": 40621597,
+              "elapsedMillis": 1
+            }
+          },
+          {
+            "sequence": 21,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40621611,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 21,
+              "description": "action [Close, Fechar]",
+              "startedAtMillis": 40621599,
+              "elapsedMillis": 12
+            }
+          },
+          {
+            "sequence": 22,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40621903,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 22,
+              "description": "editor returned from XML",
+              "startedAtMillis": 40621613,
+              "elapsedMillis": 290
+            }
+          },
+          {
+            "sequence": 23,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40621946,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 23,
+              "description": "unchanged viewport for mixed target",
+              "startedAtMillis": 40621904,
+              "elapsedMillis": 42
+            }
+          },
+          {
+            "sequence": 24,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40622743,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 24,
+              "description": "XML dialog",
+              "startedAtMillis": 40622584,
+              "elapsedMillis": 159
+            }
+          },
+          {
+            "sequence": 25,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40622771,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 25,
+              "description": "action [Copy, Copiar]",
+              "startedAtMillis": 40622746,
+              "elapsedMillis": 25
+            }
+          },
+          {
+            "sequence": 26,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40622800,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 26,
+              "description": "new complete XML clipboard",
+              "startedAtMillis": 40622776,
+              "elapsedMillis": 24
+            }
+          },
+          {
+            "sequence": 27,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40622807,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 27,
+              "description": "action [Close, Fechar]",
+              "startedAtMillis": 40622801,
+              "elapsedMillis": 6
+            }
+          },
+          {
+            "sequence": 28,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40623036,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 28,
+              "description": "editor returned from XML",
+              "startedAtMillis": 40622809,
+              "elapsedMillis": 227
+            }
+          },
+          {
+            "sequence": 29,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40623039,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 29,
+              "description": "Select mode and visible anchor before Undo",
+              "startedAtMillis": 40623037,
+              "elapsedMillis": 2
+            }
+          },
+          {
+            "sequence": 30,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40623930,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 30,
+              "description": "XML dialog",
+              "startedAtMillis": 40623653,
+              "elapsedMillis": 277
+            }
+          },
+          {
+            "sequence": 31,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40623938,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 31,
+              "description": "action [Copy, Copiar]",
+              "startedAtMillis": 40623930,
+              "elapsedMillis": 8
+            }
+          },
+          {
+            "sequence": 32,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40623948,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 32,
+              "description": "new complete XML clipboard",
+              "startedAtMillis": 40623945,
+              "elapsedMillis": 3
+            }
+          },
+          {
+            "sequence": 33,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40623952,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 33,
+              "description": "action [Close, Fechar]",
+              "startedAtMillis": 40623950,
+              "elapsedMillis": 2
+            }
+          },
+          {
+            "sequence": 34,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40624121,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 34,
+              "description": "editor returned from XML",
+              "startedAtMillis": 40623955,
+              "elapsedMillis": 166
+            }
+          },
+          {
+            "sequence": 35,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40624144,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 35,
+              "description": "Select mode and visible anchor before Undo",
+              "startedAtMillis": 40624122,
+              "elapsedMillis": 22
+            }
+          },
+          {
+            "sequence": 36,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40625007,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 36,
+              "description": "XML dialog",
+              "startedAtMillis": 40624601,
+              "elapsedMillis": 406
+            }
+          },
+          {
+            "sequence": 37,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40625013,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 37,
+              "description": "action [Copy, Copiar]",
+              "startedAtMillis": 40625008,
+              "elapsedMillis": 5
+            }
+          },
+          {
+            "sequence": 38,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40625017,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 38,
+              "description": "new complete XML clipboard",
+              "startedAtMillis": 40625016,
+              "elapsedMillis": 1
+            }
+          },
+          {
+            "sequence": 39,
+            "record": {
+              "attempts": 1,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40625020,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 39,
+              "description": "action [Close, Fechar]",
+              "startedAtMillis": 40625019,
+              "elapsedMillis": 1
+            }
+          },
+          {
+            "sequence": 40,
+            "record": {
+              "attempts": 2,
+              "lastOutcome": "READY",
+              "lastOutcomeAtMillis": 40625124,
+              "historicalException": null,
+              "historicalExceptionAttempt": 0,
+              "historicalExceptionAtMillis": 0,
+              "waitId": 40,
+              "description": "editor returned from XML",
+              "startedAtMillis": 40625022,
+              "elapsedMillis": 102
+            }
+          }
+        ]
+      }
+    },
+    "qualification": "PARTIAL"
+  },
+  "installedArtifactsAfter": {
+    "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+    "testSha256": "f5bca14d490db09c2045700f525251138568b961d918532ecfa23a20b56db267"
+  },
+  "lastAnrUnchanged": true,
+  "elapsedSeconds": 13.347
+}

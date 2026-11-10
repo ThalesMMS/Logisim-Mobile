@@ -1,0 +1,21 @@
+{"comparisons": [
+  {"comparison": "rv32 elf-load", "result": "SAME", "detail": "Evolution loaded=true; registers after load: evolution pc=00000000 , mobile pc=00000000 "},
+  {"comparison": "rv32 register-view-after-load", "result": "SAME", "detail": "pc and 32 registers, unknown registers as ????????"},
+  {"comparison": "rv32 register-view-per-step", "result": "SAME", "detail": "0 of 22 steps differ (pc, x0..x31, unknown marks)"},
+  {"comparison": "rv32 trace-pc-and-word", "result": "SAME", "detail": "0 of 22 trace rows differ in pc or instruction word"},
+  {"comparison": "rv32 trace-assembly-text", "result": "DIFF", "detail": "22 of 22 rows differ after normalizing spaces and case (22 differ byte for byte); e.g. 'li        ra,0' vs 'addi'; 'li        sp,1' vs 'addi'; 'li        gp,6' vs 'addi'; 'add       ra,ra,sp' vs 'add'"},
+  {"comparison": "rv32 breakpoint-run", "result": "SAME", "detail": "halts evolution [tick 6 pc=00000014 1=00000001, tick 4 pc=00000014 1=00000003, tick 4 pc=00000014 1=00000006] mobile [tick 6 pc=00000014 1=00000001, tick 4 pc=00000014 1=00000003, tick 4 pc=00000014 1=00000006]"},
+  {"comparison": "nios2 elf-load", "result": "SAME", "detail": "Evolution loaded=true; registers after load: evolution pc=00000000 , mobile pc=00000000 "},
+  {"comparison": "nios2 register-view-after-load", "result": "SAME", "detail": "pc and 32 registers, unknown registers as ????????"},
+  {"comparison": "nios2 register-view-per-step", "result": "SAME", "detail": "0 of 22 steps differ (pc, x0..x31, unknown marks)"},
+  {"comparison": "nios2 trace-pc-and-word", "result": "SAME", "detail": "0 of 22 trace rows differ in pc or instruction word"},
+  {"comparison": "nios2 trace-assembly-text", "result": "SAME", "detail": "0 of 22 rows differ after normalizing spaces and case (0 differ byte for byte)"},
+  {"comparison": "nios2 breakpoint-run", "result": "SAME", "detail": "halts evolution [tick 6 pc=00000014 1=????????, tick 4 pc=00000014 1=????????, tick 4 pc=00000014 1=????????] mobile [tick 6 pc=00000014 1=????????, tick 4 pc=00000014 1=????????, tick 4 pc=00000014 1=????????]"},
+  {"comparison": "asm statements encoded identically", "result": "SAME", "detail": "67 same, 0 different []"},
+  {"comparison": "asm statements accepted by both", "result": "DIFF", "detail": "5 rejected by both; Evolution only [jalr x0, x1, 0, jalr x1, x2, 8, not x7, x6, jr x1, seqz x1, x2, snez x1, x2]; Mobile only [jalr x0, 0(x1), fence, addi fp, tp, 2, addi x1, x0, 0b101, ADDI X1, X0, 1]"},
+  {"comparison": "asm sum-program", "result": "SAME", "detail": "same words: 00000000:00000093 00000004:00100113 00000008:00600193 0000000c:002080b3 00000010:00110113 00000014:fe314ce3 00000018:00001237 0000001c:00122023 00000020:10102023 00000024:10002283"},
+  {"comparison": "asm pseudo-instructions", "result": "DIFF", "detail": "evolution 00000000:00000013 00000004:02a00293 00000008:00028313 0000000c:fff34393 00000010:0040006f 00000014:00008067 | mobile rejected [line 4: soc_asm_instruction]"},
+  {"comparison": "asm data-directives", "result": "DIFF", "detail": "evolution 00000000:00100093 00000004:12345678 | mobile rejected [line 3: soc_asm_instruction]"},
+  {"comparison": "asm invalid-operand", "result": "SAME", "detail": "both reject"},
+  {"comparison": "asm unknown-mnemonic", "result": "SAME", "detail": "both reject"}
+]}

@@ -1,0 +1,19 @@
+row: cli/version
+case: version__version
+result: DIFF
+detail: evolution ['Logisim-evolution v5.1.0dev'] (4 lines), mobile ['Logisim Mobile 0.2.0']; exit 0/0
+
+=== evolution: logisim-evolution --version
+exit: 0
+--- stdout (4 lines, sha256 1b0e63c800c587a1054808bd2a398b99d7b623d7d4f0a85ecc689a0d4e2c6b14)
+Logisim-evolution v5.1.0dev
+https://github.com/logisim-evolution/
+main/d58a61e0 (2026-11-07T06:09:26-0300)
+OpenJDK 64-Bit Server VM v21.0.13.0.3 (Homebrew)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --version
+exit: 0
+--- stdout (1 lines, sha256 32015f725893f7bf943f5b041afdcbac0c77e799c016e5d893560bca4dc8d368)
+Logisim Mobile 0.2.0
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

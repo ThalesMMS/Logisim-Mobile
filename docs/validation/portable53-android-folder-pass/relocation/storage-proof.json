@@ -1,0 +1,154 @@
+{
+  "status": "STORAGE_SNAPSHOTS_VALIDATED",
+  "beforeProjectId": "e82901203c4c2b1cf9f3421e18307a18",
+  "importedProjectId": "13dc653f7acf119c9f70fe84ad1aa6a1",
+  "restartedProjectId": "13dc653f7acf119c9f70fe84ad1aa6a1",
+  "reopenedProjectId": "ef5cd59f81bd8ad0e9d2a63a43b78854",
+  "catalogProjectIds": {
+    "before": [
+      "e82901203c4c2b1cf9f3421e18307a18",
+      "ede34b642fb2b954e33e01b51781636c"
+    ],
+    "imported": [
+      "13dc653f7acf119c9f70fe84ad1aa6a1",
+      "e82901203c4c2b1cf9f3421e18307a18",
+      "ede34b642fb2b954e33e01b51781636c"
+    ],
+    "restarted": [
+      "13dc653f7acf119c9f70fe84ad1aa6a1",
+      "e82901203c4c2b1cf9f3421e18307a18",
+      "ede34b642fb2b954e33e01b51781636c"
+    ],
+    "reopened": [
+      "13dc653f7acf119c9f70fe84ad1aa6a1",
+      "e82901203c4c2b1cf9f3421e18307a18",
+      "ede34b642fb2b954e33e01b51781636c",
+      "ef5cd59f81bd8ad0e9d2a63a43b78854"
+    ]
+  },
+  "freshWorkspace": true,
+  "freshReopenedWorkspace": true,
+  "nativeReferenceAbsent": true,
+  "sourceArchiveSha256": "047641db570a704a85c63cb826676116c33018bbb5084e34a78d15e1fdca5e4c",
+  "sourceArchiveBytes": 4900,
+  "reopenedSourceArchiveSha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+  "importedWindows": {
+    "ccac6d9b-65ce-4334-a813-4936ab87d0bf": "13dc653f7acf119c9f70fe84ad1aa6a1"
+  },
+  "restartedWindows": {
+    "ccac6d9b-65ce-4334-a813-4936ab87d0bf": "13dc653f7acf119c9f70fe84ad1aa6a1",
+    "93bce598-2c45-4670-a6a7-10b0ec62a86a": "13dc653f7acf119c9f70fe84ad1aa6a1"
+  },
+  "reopenedWindows": {
+    "ccac6d9b-65ce-4334-a813-4936ab87d0bf": "13dc653f7acf119c9f70fe84ad1aa6a1",
+    "93bce598-2c45-4670-a6a7-10b0ec62a86a": "ef5cd59f81bd8ad0e9d2a63a43b78854"
+  },
+  "project": {
+    "circuitIds": {
+      "Top53": "circuit-top53",
+      "Bridge53": "library:8117f2919321f255:circuit-bridge53",
+      "Cell53": "library:2666a535c7505b62:circuit-cell53"
+    },
+    "definitions": 3,
+    "components": 11,
+    "wires": 7,
+    "runtimeInstances": 4,
+    "componentIds": {
+      "Top53": [
+        "instance-first53",
+        "instance-second53",
+        "out-first53",
+        "out-second53",
+        "source-first53",
+        "source-second53"
+      ],
+      "Bridge53": [
+        "bridge-cell53",
+        "bridge-in53",
+        "bridge-out53"
+      ],
+      "Cell53": [
+        "cell-in53",
+        "cell-out53"
+      ]
+    },
+    "topLabels": [
+      "FIRST53",
+      "SECOND53"
+    ],
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    }
+  },
+  "sourceArchive": {
+    "circuitIds": {
+      "Top53": "circuit-top53",
+      "Bridge53": "library:8117f2919321f255:circuit-bridge53",
+      "Cell53": "library:2666a535c7505b62:circuit-cell53"
+    },
+    "definitions": 3,
+    "components": 11,
+    "wires": 7,
+    "runtimeInstances": 4,
+    "componentIds": {
+      "Top53": [
+        "instance-first53",
+        "instance-second53",
+        "out-first53",
+        "out-second53",
+        "source-first53",
+        "source-second53"
+      ],
+      "Bridge53": [
+        "bridge-cell53",
+        "bridge-in53",
+        "bridge-out53"
+      ],
+      "Cell53": [
+        "cell-in53",
+        "cell-out53"
+      ]
+    },
+    "topLabels": [
+      "FIRST53",
+      "SECOND53"
+    ],
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    },
+    "sourceMarkers": [
+      "bridge53",
+      "cell53",
+      "main53"
+    ],
+    "sourcePaths": {
+      "main53": "main.circ",
+      "cell53": "library/library_2666a535c7505b62.circ",
+      "bridge53": "library/library_8117f2919321f255.circ"
+    },
+    "zipEntries": [
+      "library/library_2666a535c7505b62.circ",
+      "library/library_8117f2919321f255.circ",
+      "main.circ",
+      "manifest.xml"
+    ],
+    "opaqueEntries": {},
+    "archiveSha256": "047641db570a704a85c63cb826676116c33018bbb5084e34a78d15e1fdca5e4c"
+  },
+  "scope": "Catalog/attachment snapshots only; native UI execution and process restart must be recorded separately",
+  "recordedAtUtc": "2026-11-05T04:24:51.185818+00:00",
+  "sourceRevision": "cfe00b3badf48574e4bcfde7d69d30de8f30447f",
+  "worktreeDirty": true,
+  "oracleSourcesSha256": {
+    "scripts/portable/Portable53Oracle.kt": "ca53e5c8b4207a40887ec6dc8ff87a06c6fd5997c5ee61059498758152f73d8d",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt": "03eab1e7e489cad53d18f26e4e8984eeddecc9fca5ced868446a555461fe9f57",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt": "e09e9fca28c47b36f299e71b708bc3f07d2cbf69f88a2c1087147cdcd6a8ec9b",
+    "scripts/verify-portable53.py": "bd01e28d8b9b42165a67be92255f8d164a858cdd53d58020bfa0d48558a50a2f",
+    "scripts/portable_receipt_contract.py": "46785e0f07abb65c94824f09a544c2b052b6d963b9c9005a9612ab44ac234360"
+  },
+  "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+  "referenceDesktopSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "nativeUiStatus": "NOT_RUN"
+}

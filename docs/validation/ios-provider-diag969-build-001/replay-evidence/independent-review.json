@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "/root/ios_files/provider_entitlement_blobs/review_diag969_archive",
+  "method": "Independent read-only source and retained-evidence review, communicated to archive owner",
+  "result": "CLEAR",
+  "sourceHashes": {
+    "README.md": "33d10de18baded6996568dbe92769e433925a5a99b1d4bfb80683a8679bec26c",
+    "verify.py": "67c71146581a210f9db315a1702ba638ffe9d11528e430f57e752f88b86da1a6",
+    "test_verify.py": "ba96ccc19f4e0eee89142ae4442fc1f50aaf0bddd3d48d2b7c81a6e2d2201f6d"
+  },
+  "scope": [
+    "README and payload source hashes and counts",
+    "main/debug declared image scope versus complete preview inventory",
+    "test-only addendum0605 separated from runtime969",
+    "default portable verification and optional Foundation-only host replay",
+    "negative tests and byte-preserving source proof"
+  ],
+  "limitations": [
+    "Reviewer did not duplicate owner replay gates",
+    "No SDK, Xcode, signing, installation, domain registration, or Native execution"
+  ],
+  "ownerGateResults": {
+    "portableCLI": "PASS",
+    "pythonTests": 23,
+    "pythonFailures": 0,
+    "hostLiteralChecks": 79,
+    "relocatedHostReplay": "PASS",
+    "nativeExecution": "NOT_RUN"
+  }
+}

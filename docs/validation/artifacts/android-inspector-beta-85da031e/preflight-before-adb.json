@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "deviceAccessStarted": false,
+  "producer": "85da031e4ed11474c2e763976392729810ef142d",
+  "productionSourceIdenticalTo": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "harnessGitHead": "5cb2fead2743cbba84f0efbad51e8bca822c7f05",
+  "aapt2": "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt2",
+  "hashes": {
+    "e2e_apk": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+    "e2e_test_apk": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882",
+    "snapshot_apk": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+  },
+  "identities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  },
+  "inspectorSourceSha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c"
+}

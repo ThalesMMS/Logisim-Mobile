@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "serial": "emulator-5558",
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "harness": "68a3138307638dad928b184a0d3ec30c8eb30ead",
+  "helperSource": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "catalogMessages": 2497,
+  "apks": {
+    "app": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973",
+    "test": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b",
+    "snapshot": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+  },
+  "identities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  },
+  "aapt2": "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt2",
+  "scope": "Local preflight only. No device command or UI has run."
+}

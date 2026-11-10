@@ -1,0 +1,30 @@
+P	derived	300	170	1
+P	memory	540	190	1
+P	feedback	300	190	1
+I	ADDR	00
+I	WE	0
+I	OE	1
+I	CLK	1
+I	CLR	1
+Q
+I	CLR	0
+I	WE	1
+Q
+A	write-one
+I	CLK	0
+D
+A	fall
+I	CLK	1
+D
+A	write-zero
+I	CLK	0
+D
+A	fall-again
+I	CLK	1
+D
+A	write-one-again
+I	CLK	0
+D
+A	clear
+I	CLR	1
+D

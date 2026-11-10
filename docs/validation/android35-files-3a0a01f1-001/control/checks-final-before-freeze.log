@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "qualification": "OFFLINE_CONTROLLER_REVIEW_ONLY",
+  "realAdbCalls": 0,
+  "controllerWholeExecuted": false,
+  "inputHashesBefore": {
+    "driver": "bef6e9760717b6973e29a947dddecb53d5be3fd77bb88299a4c5fcd449ce6ac8",
+    "preparation": "5c4118838c80e493b2a079d673d68856a53e9b2e1ae43d9a7af3a5e2609ff46c"
+  },
+  "inputHashesAfter": {
+    "driver": "bef6e9760717b6973e29a947dddecb53d5be3fd77bb88299a4c5fcd449ce6ac8",
+    "preparation": "5c4118838c80e493b2a079d673d68856a53e9b2e1ae43d9a7af3a5e2609ff46c"
+  },
+  "driverMatchesPreparationBeforeHeadFreeze": true,
+  "checkedSourceAndArtifactEntries": 75,
+  "nativeArgvScenario": "files",
+  "nativeArgvAssignments": 1,
+  "orderedNineCasesMatch": true,
+  "orderedCases": [
+    "incoming-share-imports-a-copy",
+    "saf-local-import-preserves-source",
+    "cancel-open-preserves-project",
+    "cancel-export-preserves-project",
+    "cancel-share-preserves-project",
+    "external-receiver-reads-share-grant",
+    "invalid-and-incompatible-files-preserve-project",
+    "save-as-local-document",
+    "recover-create-document-after-process-death"
+  ],
+  "historicalReaderFixture": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/outputs/android-editing-3a0a01f1-1bb15545-5558-r2-001-control/before",
+  "historicalReaderHashes": {
+    "accessibility-enabled": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "enabled-services": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+    "accessibility": "0842831f4fe1f480a4e63e0afef4f6f322e42c446853db52fe3250046f5fb8c0",
+    "sdk": "90d7ec0f0acef104d8b6252794295f661a0149634868d02a1ae0c358099638f5"
+  },
+  "readerOffActualR2Dump": "PASS",
+  "readerRejectsMutations": [
+    "accessibility-enabled",
+    "enabled-services",
+    "accessibility"
+  ],
+  "cleanupOfflineBranches": [
+    {
+      "mode": "readback-fail",
+      "status": "READBACK_FAIL",
+      "mockAdbCalls": 2
+    },
+    {
+      "mode": "source-readback-fail",
+      "status": "SOURCE_READBACK_FAIL",
+      "mockAdbCalls": 2
+    },
+    {
+      "mode": "cleanup-pid-fail",
+      "status": "CLEANUP_FAIL",
+      "mockAdbCalls": 2
+    },
+    {
+      "mode": "original-fail-cleanup-error",
+      "status": "FAIL",
+      "mockAdbCalls": 1
+    }
+  ]
+}

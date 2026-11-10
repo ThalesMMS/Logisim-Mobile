@@ -1,0 +1,46 @@
+Desktop JAR: EVOLUTION/logisim-evolution-5.1.0dev-all.jar
+Mobile JAR: MOBILE/core/build/libs/core-jvm.jar
+d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038  EVOLUTION/logisim-evolution-5.1.0dev-all.jar
+5376545481b40008dd7b889cfb5af9cedba241845a68d7b3416b9a1558e4d898  MOBILE/core/build/libs/core-jvm.jar
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+java.lang.ArrayIndexOutOfBoundsException: arraycopy: length -8 is negative
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at com.cburch.logisim.std.io.extra.Buzzer$Data.threadFunc(Buzzer.java:376)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+PASS Buzzer: 20000 random input states (160000 field comparisons) and 238 sound-thread runs (19243278 comparisons, Noise excluded from PCM); 9 clips where Evolution's smoothing throws and the desktop stays silent while Mobile plays
+PASS DigitalOscilloscope: 36000 steps (5954890 comparisons of trace length, every captured cell and the clock counter)
+PASS RGB Video: 80 circuits, 12800 input steps (2369920 pixel and cursor comparisons; the blinking cursor follows the wall clock and is not compared)
+PASS RealTimeClock: 400 paired readings in both time types (802 comparisons; each value lies in the same wall-clock window and Mobile never reads earlier than Evolution)
+PASS SocVga: 78131 bus transactions and 23 display checkpoints (902423 comparisons of mode, size and every displayed pixel)
+PASS 28631313 output-device desktop/mobile comparisons, seed 317072026

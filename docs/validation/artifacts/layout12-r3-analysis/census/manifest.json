@@ -1,0 +1,47 @@
+{
+  "bundleStatus": "FINAL",
+  "scope": "Read-only census artifacts. No device, subprocess, build, network access or raw producer edits.",
+  "timestampLimit": "Time columns were read from the original local producer filesystem metadata. Copies may have different mtimes; these times are not device-event timestamps and are not asserted portable.",
+  "nativeFileCountIncludingFrozenApks": 83,
+  "currentProducerFilesystemFiles": 83,
+  "currentAnalysisFilesExcluded": 0,
+  "files": [
+    {
+      "name": "census.py",
+      "bytes": 19181,
+      "sha256": "3c3b9b8443e910388ccebdb15fead74b834323b77546a3edc6f9a803eba4fbcc"
+    },
+    {
+      "name": "census.json",
+      "bytes": 33633,
+      "sha256": "fd0f5e90d8c735b07c19d4e91aa4b719a6329afd32dc7cefea8c3c445b6d95d6"
+    },
+    {
+      "name": "files.csv",
+      "bytes": 11403,
+      "sha256": "ebf12c7ff47ed581766ba267c7cdec01ea73a73f98f78ec801afcb6685884d6e"
+    },
+    {
+      "name": "roots.csv",
+      "bytes": 2097,
+      "sha256": "31b7821ecd7ff0bbb4dc8521606cd61f5b5196e6b9e5f43c3352bf938244058f"
+    },
+    {
+      "name": "query-route.csv",
+      "bytes": 1957,
+      "sha256": "1c47a3253264e9f23d8097e874c22dd5c44f01e2959f0b615b3fe8599ab55756"
+    },
+    {
+      "name": "visual-notes.json",
+      "bytes": 1101,
+      "sha256": "cb19f9015ddb9062910e397eaed64a219b06aae0380f0e29e602b05806987d6d"
+    },
+    {
+      "name": "analysis-exclusions.json",
+      "bytes": 897,
+      "sha256": "0df4cbc932a4f019d456230b7d50edcbb25892dad77c468d8763010aa94f632b"
+    }
+  ],
+  "deterministicReplayOnOriginalLocalProducer": true,
+  "reproductionLimit": "Original local producer contains 80 raw files plus 3 frozen APKs. Raw-only archives omit APK bytes and may not preserve host mtimes, so rerunning against those copies need not reproduce the original inventory or time columns."
+}

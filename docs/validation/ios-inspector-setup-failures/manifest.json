@@ -1,0 +1,1242 @@
+{
+  "schema_version": 1,
+  "scope": "Archived terminal Inspector setup receipts; integrity verification does not execute the app.",
+  "archive_base": "b308ff1ba5055df4f0ad3ea81275dda1c2074f75",
+  "numeric_stage_definition": "NUMERIC_NOT_RUN means no numeric Delete, no entry of 0/4, and no invalid/valid/Undo numeric oracles. Phone004 entered the policy prechecks and observed width 1.",
+  "related_commits": {
+    "90d17025": "90d1702551b88fff9e421a7c96e1fe0769efe091",
+    "2a4f9634": "2a4f9634c43c4d282deb950517abd19857e0b6b7",
+    "94d36310": "94d3631042ac2039efac28a69762db7215f528d3",
+    "98eca248": "98eca248150a852c6b45edab196085e83a9f8195"
+  },
+  "cases": [
+    {
+      "id": "phone001",
+      "original_run": "ios-a-4ab8-inspector-phone-001",
+      "result": "FAIL",
+      "stage": "NUMERIC_NOT_RUN",
+      "last_observed_stage": "SETUP_XML_SELECTION_MENU",
+      "width_policy_prechecks_entered": false,
+      "numeric_actions": {
+        "delete_taps": 0,
+        "typed_values": []
+      },
+      "observation": "The setup XML selection menu did not expose the required action.",
+      "results": "phone001/results.original.json",
+      "run_configuration": "phone001/Run.original.json",
+      "run_id": "cf462618201f",
+      "app": {
+        "declared_source_pin": "4ab8aa93ac28e273cfe3193838cc97ea2098e218",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "executable_sha256": "986c4f08286e5bc3997be5999d84e6a6af6af0736800515f9da4cb75561d5653",
+        "bundle_tree_sha256": "d39e8d7b8f02dc114a0f83c3c491d9d7aaa114dc43e38d15efcb373d81129cb4"
+      },
+      "harness_sources": {
+        "InspectorEndToEndTests.swift": {
+          "path": "phone001/InspectorEndToEndTests.swift",
+          "sha256": "f530d26b26f43f602d9fa91f0256f1a81efba06ebe693d63581d319284dac353"
+        },
+        "NativeTextReplacement.swift": {
+          "path": "shared/c40931258138-NativeTextReplacement.swift",
+          "sha256": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b"
+        },
+        "NativeUIHarness.swift": {
+          "path": "shared/a76b9aa970da-NativeUIHarness.swift",
+          "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379"
+        }
+      },
+      "identical_inspector_file_at_commits": [
+        "245ef8e7bb64f3d47d632b3281726192a9fea205"
+      ],
+      "attachments": [
+        {
+          "path": "phone001/native-tree.txt",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "F7CEBDC3-3ADD-4673-B421-9F4C489FBF74.txt",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "native-tree_0_D76071D1-D2F5-4324-A39C-71CA7BDE2756.txt",
+          "timestamp": 1793851008.222
+        },
+        {
+          "path": "phone001/final-screen.png",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "0558FB90-7F20-4361-92D0-0AB64FC937E8.png",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "final-screen_0_4573EE32-7CBB-4C42-860E-35361BFAE213.png",
+          "timestamp": 1793851008.293
+        }
+      ],
+      "duration_seconds": "29.364",
+      "test_log": {
+        "original_sha256": "cbbc5e8a2dd9e38034404bf9aca9b79868ffb860ac0e18687c753ff65640ff6b",
+        "original_bytes": 24122,
+        "excerpt": "phone001/test-log-excerpt.txt",
+        "ranges": [
+          {
+            "start_line": 13,
+            "end_line": 18,
+            "sha256": "a74b26dcd5d0d7abb345cc137e6a387d64a94ca34d5c0317727ec39265fcddb9"
+          },
+          {
+            "start_line": 31,
+            "end_line": 36,
+            "sha256": "e305436bd1e2a634bfb0c5d08e25ade0ae5b4dc5340a219e0d4350e9acfc6c58"
+          },
+          {
+            "start_line": 40,
+            "end_line": 45,
+            "sha256": "9e57ff190df57e3f486bc5a2c85be269292e415935d3df4cf09ef378a0fed138"
+          },
+          {
+            "start_line": 59,
+            "end_line": 64,
+            "sha256": "f5ad356127cb885b09c5a98a3efaa483713943bed9934d7e56a666940d606d40"
+          },
+          {
+            "start_line": 73,
+            "end_line": 78,
+            "sha256": "e6ab84905967edcfd306ed5f553022acb8d3fcfd1173517fd8a0f2ef2c32245c"
+          },
+          {
+            "start_line": 84,
+            "end_line": 89,
+            "sha256": "17ab654f037779a7a1e52a8be1a9458c3db3fb3abee1bbf3239c1fb2f39dd0d1"
+          },
+          {
+            "start_line": 115,
+            "end_line": 120,
+            "sha256": "97517b954df1a0ad1d044d557adc7656a0bcca2c50842df633abf554e7a76bb9"
+          },
+          {
+            "start_line": 125,
+            "end_line": 130,
+            "sha256": "c385649c5896fc834cb7f002e3dd0759a0fe6fd0a2e83fc3e44e05f7dabc41e5"
+          },
+          {
+            "start_line": 251,
+            "end_line": 256,
+            "sha256": "dbc76f2e1468dadb698ac4ff0322f2a23b6e9febc3291600e5917eeadf8f365a"
+          },
+          {
+            "start_line": 261,
+            "end_line": 279,
+            "sha256": "9aee678cb47e4539af529445c2b36236c76976d448239b6a7d2bb282294f7f90"
+          }
+        ],
+        "range_numbering": "1-based, inclusive"
+      },
+      "fixture": {
+        "kind": "TEMPLATE_ONLY",
+        "path": "phone001/fixture.template.xml",
+        "runtime_input_sha256": null,
+        "runtime_label": "UNOBSERVED_UUID",
+        "source_path": "phone001/InspectorEndToEndTests.swift",
+        "source_line_start": 58,
+        "source_line_end": 61,
+        "note": "Exact lexical Swift multiline template; runtime interpolation and bytes were not captured, and no Inspector file was staged or imported."
+      }
+    },
+    {
+      "id": "phone002",
+      "original_run": "ios-a-4ab8-inspector-phone-002",
+      "result": "FAIL",
+      "stage": "NUMERIC_NOT_RUN",
+      "last_observed_stage": "IMPORTED_FILE_STATUS_QUERY",
+      "width_policy_prechecks_entered": false,
+      "numeric_actions": {
+        "delete_taps": 0,
+        "typed_values": []
+      },
+      "observation": "The exact opened-file status was present as Other; the query requested StaticText.",
+      "results": "phone002/results.original.json",
+      "run_configuration": "phone002/Run.original.json",
+      "run_id": "dbcb8502d157",
+      "app": {
+        "declared_source_pin": "4ab8aa93ac28e273cfe3193838cc97ea2098e218",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "executable_sha256": "986c4f08286e5bc3997be5999d84e6a6af6af0736800515f9da4cb75561d5653",
+        "bundle_tree_sha256": "d39e8d7b8f02dc114a0f83c3c491d9d7aaa114dc43e38d15efcb373d81129cb4"
+      },
+      "harness_sources": {
+        "InspectorEndToEndTests.swift": {
+          "path": "phone002/InspectorEndToEndTests.swift",
+          "sha256": "23b26eaba12d5608fae8bb0dd29161c1fb881da1b8108b9a4bcc566895192951"
+        },
+        "NativeTextReplacement.swift": {
+          "path": "shared/c40931258138-NativeTextReplacement.swift",
+          "sha256": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b"
+        },
+        "NativeUIHarness.swift": {
+          "path": "shared/a76b9aa970da-NativeUIHarness.swift",
+          "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379"
+        }
+      },
+      "identical_inspector_file_at_commits": [
+        "2a4f9634c43c4d282deb950517abd19857e0b6b7"
+      ],
+      "attachments": [
+        {
+          "path": "phone002/native-tree.txt",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "DE397D14-C7C2-4E16-8383-48806A9894A5.txt",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "native-tree_0_C419740A-73B5-41F6-A147-A63D12388E0A.txt",
+          "timestamp": 1793853197.15
+        },
+        {
+          "path": "phone002/final-screen.png",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "1458F78E-01F6-46BA-8CA4-1AAFAE4C1CC2.png",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "final-screen_0_3EB3846A-396B-451E-800A-C15586A652B0.png",
+          "timestamp": 1793853197.214
+        }
+      ],
+      "duration_seconds": "64.391",
+      "test_log": {
+        "original_sha256": "705fdc1af87d049bef0044ceb0fee2647d47ab40f3b784d0b903ebcef820e626",
+        "original_bytes": 48652,
+        "excerpt": "phone002/test-log-excerpt.txt",
+        "ranges": [
+          {
+            "start_line": 13,
+            "end_line": 18,
+            "sha256": "6e5dfe62ee6bed2fe4a62713d3aad0038e28c4d717d79d42bda2673722cd76a2"
+          },
+          {
+            "start_line": 31,
+            "end_line": 36,
+            "sha256": "28cc01caf3d18c53539f0013ae037751dc4d2442d72ce05fa5c5cca3c030377c"
+          },
+          {
+            "start_line": 42,
+            "end_line": 49,
+            "sha256": "4b33fd3faa64723bc95501dded1cce43c89cddb531d525daab32ae27ce6bd623"
+          },
+          {
+            "start_line": 59,
+            "end_line": 64,
+            "sha256": "a840f4ceb1f6c2fd0b6cf36e8bd1707d8556df365ec0f4eeca671b3e84606eb8"
+          },
+          {
+            "start_line": 73,
+            "end_line": 78,
+            "sha256": "7409e61dd1382465321e2a6f4876ff16c06fc6a1be687a93b7dfe6171ff2ea54"
+          },
+          {
+            "start_line": 80,
+            "end_line": 88,
+            "sha256": "7c1f769e2ecd453d43b69ffeb96ed481310c8e0d3e4aafc50a0e5eec79716720"
+          },
+          {
+            "start_line": 96,
+            "end_line": 104,
+            "sha256": "de7e1ae8c233b856e7b705becdfc0b12a83612bcf61085569671e3cf5fa48a4d"
+          },
+          {
+            "start_line": 121,
+            "end_line": 130,
+            "sha256": "6e6eabda4e151420fd3dcf1199306fea2b719b00f0089e3c5b5f24d14fb1b2c0"
+          },
+          {
+            "start_line": 146,
+            "end_line": 154,
+            "sha256": "8e2fbe2943ae2871206f81845fe298788b2811b77246538d72e12cbc59a06751"
+          },
+          {
+            "start_line": 165,
+            "end_line": 173,
+            "sha256": "846a2c9df63430d3280c88d94581c05267182448be3d422cddede53448afa0cb"
+          },
+          {
+            "start_line": 196,
+            "end_line": 215,
+            "sha256": "c152a6f830dd500afe6ff5bfbb2b336b529033e98643637e2f528fb0a186d6dd"
+          },
+          {
+            "start_line": 228,
+            "end_line": 236,
+            "sha256": "a068ba214cccab049ddc2f662789f2445cd2a571c2cfac245323219e1236512b"
+          },
+          {
+            "start_line": 259,
+            "end_line": 278,
+            "sha256": "61a68603c7e1e842dbccf6662f3d2c2738d38f1297757b8781dbceb0b1cd58b9"
+          },
+          {
+            "start_line": 291,
+            "end_line": 299,
+            "sha256": "a5ed4ca2dbc949a6ccbfbd343a42977671c476dc8677dc9d26739dbdd1d75462"
+          },
+          {
+            "start_line": 322,
+            "end_line": 341,
+            "sha256": "f40f93e83a5adb41b67b08769496444afac07691836a40fc151f13ee26be865c"
+          },
+          {
+            "start_line": 354,
+            "end_line": 363,
+            "sha256": "54b0f8b1b73008cadd32e5f11ee80f341c9865b007e8a243433ca690aa71ceba"
+          },
+          {
+            "start_line": 386,
+            "end_line": 405,
+            "sha256": "048f5bcd7315cc7ea7c0954dad6d05590b0f146bb5a5b39e40293bf2460863d7"
+          },
+          {
+            "start_line": 409,
+            "end_line": 426,
+            "sha256": "b11e26fd0a9116a20455b9922cb018558d2f78bcba6f248c91439d2b7eab0f59"
+          },
+          {
+            "start_line": 429,
+            "end_line": 434,
+            "sha256": "0b776018193779c50c0994d96db6fa55f1ba0592cede1851a048f59b9c75c110"
+          },
+          {
+            "start_line": 522,
+            "end_line": 540,
+            "sha256": "d5a032b45899ecd6f164d55457abc6cc78ab801b01fd63e3dec265085fb7282e"
+          }
+        ],
+        "range_numbering": "1-based, inclusive"
+      },
+      "fixture": {
+        "kind": "STAGED_INPUT",
+        "path": "phone002/input.circ",
+        "sha256": "f392e47e222ce62343c20086b74152cf19832c484eb8d43bddd53fe5f81f9995",
+        "circuit": "IOS-E2E-dbcb8502d157-inspector",
+        "label": "INSPECTOR_dbcb8502d157"
+      }
+    },
+    {
+      "id": "phone003",
+      "original_run": "ios-final-6cef-inspector-phone-003",
+      "result": "FAIL",
+      "stage": "NUMERIC_NOT_RUN",
+      "last_observed_stage": "EXPLORER_HEADER_CLOSE_QUERY",
+      "width_policy_prechecks_entered": false,
+      "numeric_actions": {
+        "delete_taps": 0,
+        "typed_values": []
+      },
+      "observation": "The Explorer header offered Hide keyboard while the setup requested Close.",
+      "results": "phone003/results.original.json",
+      "run_configuration": "phone003/Run.original.json",
+      "run_id": "748a23798c88",
+      "app": {
+        "declared_source_pin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+        "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080"
+      },
+      "harness_sources": {
+        "InspectorEndToEndTests.swift": {
+          "path": "phone003/InspectorEndToEndTests.swift",
+          "sha256": "b8e84e9c776c12d1164fc317fb2c9089f04425d23414d669654a7dcad26b7aa2"
+        },
+        "NativeTextReplacement.swift": {
+          "path": "shared/c40931258138-NativeTextReplacement.swift",
+          "sha256": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b"
+        },
+        "NativeUIHarness.swift": {
+          "path": "shared/a76b9aa970da-NativeUIHarness.swift",
+          "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379"
+        }
+      },
+      "identical_inspector_file_at_commits": [
+        "94d3631042ac2039efac28a69762db7215f528d3"
+      ],
+      "attachments": [
+        {
+          "path": "phone003/native-tree.txt",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "3672CF81-C5BA-4022-8508-F312BFD5D063.txt",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "native-tree_0_0216E95E-783E-44A9-B3F6-6FCB08EF0925.txt",
+          "timestamp": 1793854147.486
+        },
+        {
+          "path": "phone003/final-screen.png",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "38F2C077-0874-4D86-98CC-CD7817CE324D.png",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "final-screen_0_47DE1C62-AD64-4CE8-B3A7-B34DA395AD8E.png",
+          "timestamp": 1793854147.559
+        }
+      ],
+      "duration_seconds": "116.174",
+      "test_log": {
+        "original_sha256": "40abbfe76c7aa4db26f3e733c4c4244d312e0a2bf9f586c07f940bc519feb2b5",
+        "original_bytes": 62462,
+        "excerpt": "phone003/test-log-excerpt.txt",
+        "ranges": [
+          {
+            "start_line": 13,
+            "end_line": 18,
+            "sha256": "3b92877d69c6b311b1b6974eede2f5cd1d8073b3205503ba78981f614208c1dd"
+          },
+          {
+            "start_line": 25,
+            "end_line": 33,
+            "sha256": "04685011a3a01a5c71eb4ef05a58137977b7df2e5fcd9e3c188a9b095f33596c"
+          },
+          {
+            "start_line": 35,
+            "end_line": 40,
+            "sha256": "7ca07f8e6c9ef8ce99cd3753aeda7e2505ce35604e64c323f02562b45fb4a4ea"
+          },
+          {
+            "start_line": 48,
+            "end_line": 53,
+            "sha256": "5d1aea30367fe0deea712d85c39d189ae82913ef600a835e46e1d6aa308b75aa"
+          },
+          {
+            "start_line": 59,
+            "end_line": 66,
+            "sha256": "108faf13031f11813895f450ce0fe78e53f3b592368c538b51c9ca308279abe1"
+          },
+          {
+            "start_line": 76,
+            "end_line": 81,
+            "sha256": "5ada6f724c2c4d003573707f68db8706332fe73d31e36a8a18b0cc0827919c2e"
+          },
+          {
+            "start_line": 90,
+            "end_line": 95,
+            "sha256": "12c544f69e7100dadf356ed5dc16f403b774e27a2b81d7f058b11a7b3817ef5d"
+          },
+          {
+            "start_line": 97,
+            "end_line": 105,
+            "sha256": "b03bebe935567f3b11945609bd43a5713b36ce8d605b024d8d1e50ee6f72226d"
+          },
+          {
+            "start_line": 119,
+            "end_line": 127,
+            "sha256": "2fe045cd928022f6c7dfc4c9fcaf4bb8a9851e51a5ce12071e510c774ef5cfea"
+          },
+          {
+            "start_line": 144,
+            "end_line": 153,
+            "sha256": "85f638f6e718d36a7f04b46e257388b65ec90e07e39e7e8a5c7c072a7111328a"
+          },
+          {
+            "start_line": 170,
+            "end_line": 178,
+            "sha256": "0e22928e915d69099eeff74417f29c1e4ff576294b7e9237edb8635122f6a366"
+          },
+          {
+            "start_line": 194,
+            "end_line": 213,
+            "sha256": "5dc6a60051cd91ee8942fba9eee8b5ca27c0b7bc808a93cc3b5e1fd03150a5f2"
+          },
+          {
+            "start_line": 224,
+            "end_line": 232,
+            "sha256": "3ee4801c37f742c24bd447ffaa068ec22e1be36fdf95190bec9d1c75c3b2a975"
+          },
+          {
+            "start_line": 255,
+            "end_line": 274,
+            "sha256": "7f3d603fabdfd7520449775e6c7bd9aae44bfea5c8945da9048977eaf5f44170"
+          },
+          {
+            "start_line": 287,
+            "end_line": 295,
+            "sha256": "59ba3a3f6ee22d9eaaec6d5844c66f73c41a9c674c417871b5282e92df9a6a00"
+          },
+          {
+            "start_line": 318,
+            "end_line": 337,
+            "sha256": "4fbd654220de94f0464619976662c3d18282733e71396648852e1b53e2d7891c"
+          },
+          {
+            "start_line": 350,
+            "end_line": 358,
+            "sha256": "0c2b1b0c001e949e23c756eca6ae1aa6dbf595f4fc0adeea05dcf9846cc5b1ea"
+          },
+          {
+            "start_line": 381,
+            "end_line": 400,
+            "sha256": "2cfc73fe5e4c899180b204f1cf4569ee2ac8192e7dd964fc10450ef4b4497155"
+          },
+          {
+            "start_line": 413,
+            "end_line": 422,
+            "sha256": "8d02d0c3bcad49553bcb75b7e41cbd33a761b2f17a62372c9835269c4f28cdea"
+          },
+          {
+            "start_line": 445,
+            "end_line": 464,
+            "sha256": "33f73312650ef277132e81ffec4ddd4fb9f4f98068a007c53aeddb9b63881074"
+          },
+          {
+            "start_line": 468,
+            "end_line": 485,
+            "sha256": "163ef8fd152799da4e1baf949f4d28a8a53739a46f8057cf5b83046253ad44e5"
+          },
+          {
+            "start_line": 488,
+            "end_line": 493,
+            "sha256": "78247bb5fbf8c88564c919e439592a9255376411fd80ca63aab4d6e86aa9891e"
+          },
+          {
+            "start_line": 514,
+            "end_line": 521,
+            "sha256": "30382a75e8aaa74d32f2474b4f94d7baa130d7c91f1bf5e0932d9ca2c5fefb4b"
+          },
+          {
+            "start_line": 531,
+            "end_line": 536,
+            "sha256": "0802bf09d694062fd2718ea53ed158073ebaf2e7c0a9f1d780fe6ccffddff5e8"
+          },
+          {
+            "start_line": 546,
+            "end_line": 551,
+            "sha256": "6e38009341c3caa54df178ea098824549b03525cfe081cf5c35a81952d9063dc"
+          },
+          {
+            "start_line": 561,
+            "end_line": 566,
+            "sha256": "a5f3e8c73beb0aee9e807779168ca7d23486c605d2ac0bb36138e7b6dcb69ec3"
+          },
+          {
+            "start_line": 584,
+            "end_line": 589,
+            "sha256": "b5077e015cf14fe2f79c0ed2478776e7c7df1edf5c60ed06ad245686d17fd120"
+          },
+          {
+            "start_line": 597,
+            "end_line": 602,
+            "sha256": "e20a1aff06c6b05bca365903afcfe0e68521b21a459770906e9274b5943df670"
+          },
+          {
+            "start_line": 648,
+            "end_line": 653,
+            "sha256": "65363d4a811c7f20b45e7c502dd986196670bda2a07b74560acf6824f49c123c"
+          },
+          {
+            "start_line": 670,
+            "end_line": 675,
+            "sha256": "954bbd1c8c2151e25e6a5f737c99b6e383dbe26c997be2307338f4e86a0ea08e"
+          },
+          {
+            "start_line": 698,
+            "end_line": 712,
+            "sha256": "56e4a01a9eb47f3fcc8f51aeb64b2c73c2b6b4c9e9d6796a2aa608565d321f73"
+          }
+        ],
+        "range_numbering": "1-based, inclusive"
+      },
+      "fixture": {
+        "kind": "STAGED_INPUT",
+        "path": "phone003/input.circ",
+        "sha256": "cb4346400b4f20175f853a1a259f636343b01a55b10d791ba4ecccf7ae5d3ff0",
+        "circuit": "IOS-E2E-748a23798c88-inspector",
+        "label": "INSPECTOR_748a23798c88"
+      }
+    },
+    {
+      "id": "phone004",
+      "original_run": "ios-final-6cef-inspector-phone-004",
+      "result": "FAIL",
+      "stage": "NUMERIC_NOT_RUN",
+      "last_observed_stage": "WIDTH_FIELD_FOCUSED_BEFORE_FIRST_DELETE",
+      "width_policy_prechecks_entered": true,
+      "numeric_actions": {
+        "delete_taps": 0,
+        "typed_values": []
+      },
+      "observation": "The observed software key was Delete; the exact query requested delete.",
+      "results": "phone004/results.original.json",
+      "run_configuration": "phone004/Run.original.json",
+      "run_id": "99f10521024f",
+      "app": {
+        "declared_source_pin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+        "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080"
+      },
+      "harness_sources": {
+        "InspectorEndToEndTests.swift": {
+          "path": "phone004/InspectorEndToEndTests.swift",
+          "sha256": "bbfbe4173334bf703a43085a4500bffd52deab06260eb6ce4ecde4e4732fab34"
+        },
+        "NativeTextReplacement.swift": {
+          "path": "shared/3ab488daa2f4-NativeTextReplacement.swift",
+          "sha256": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3"
+        },
+        "NativeUIHarness.swift": {
+          "path": "shared/a76b9aa970da-NativeUIHarness.swift",
+          "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379"
+        }
+      },
+      "identical_inspector_file_at_commits": [
+        "98eca248150a852c6b45edab196085e83a9f8195",
+        "b308ff1ba5055df4f0ad3ea81275dda1c2074f75"
+      ],
+      "attachments": [
+        {
+          "path": "phone004/native-tree.txt",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "B3D4917C-BED1-4C98-8301-9B9D91A5E654.txt",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "native-tree_0_9DF739C1-D196-46E7-9ABE-0B070EBAB92F.txt",
+          "timestamp": 1793854855.244
+        },
+        {
+          "path": "phone004/final-screen.png",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "79BD3668-E9A9-4A3D-AEB0-F7178A7B2672.png",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "final-screen_0_10B9739A-36E3-4A17-B918-BF14E33D2DA1.png",
+          "timestamp": 1793854855.39
+        },
+        {
+          "path": "phone004/failure-tree.txt",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "D97F41AC-0CC5-47E5-9316-0D17AF857BF0.txt",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "inspector-single-digit-failure-tree_0_5F3FA607-D224-4D62-A5ED-8DF7FD290830.txt",
+          "timestamp": 1793854854.827
+        },
+        {
+          "path": "phone004/failure-screen.png",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "EE3712D7-9233-4EE3-A242-D70AB3249E2F.png",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "inspector-single-digit-failure_0_E4D95738-65C7-4BD6-9821-059469B56DF3.png",
+          "timestamp": 1793854854.4
+        },
+        {
+          "path": "phone004/width-root-attributes.txt",
+          "configurationName": "Test Scheme Action",
+          "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+          "deviceName": "iPhone 17e",
+          "exportedFileName": "31820051-26CB-4D7B-9829-6B65DBFB95F1.txt",
+          "isAssociatedWithFailure": false,
+          "suggestedHumanReadableName": "inspector-width-0-before-delete-root-attributes_0_FCC49120-684C-4A2C-80D5-9C70D6F8FF45.txt",
+          "timestamp": 1793854854.179
+        }
+      ],
+      "duration_seconds": "122.972",
+      "test_log": {
+        "original_sha256": "2277efd790010cb8836810ae234f2cf42303305bfe4050d2e807c3b5e891e76a",
+        "original_bytes": 88599,
+        "excerpt": "phone004/test-log-excerpt.txt",
+        "ranges": [
+          {
+            "start_line": 13,
+            "end_line": 18,
+            "sha256": "dc499988e959552c21674283932386290281433dbd6054a2a2aa6a1f72a6a82e"
+          },
+          {
+            "start_line": 25,
+            "end_line": 33,
+            "sha256": "159510f84a982d9ccd03bda4eb7ba9b72f29b96af9f44eb8a4966b8c0dd0bcdd"
+          },
+          {
+            "start_line": 35,
+            "end_line": 40,
+            "sha256": "182e1e9a45908ded28dbc0bbd6fc100189f02a3d83ec0043241c53c5d9a5ef6c"
+          },
+          {
+            "start_line": 48,
+            "end_line": 53,
+            "sha256": "117707091ad9c28c7f9553ceb8d9e59eae56693e041f03192e452fe384b50c5f"
+          },
+          {
+            "start_line": 59,
+            "end_line": 66,
+            "sha256": "59a3a6dafa5be548e59bc981542b9d100ba8123ae1a3ae929e36040aad436c99"
+          },
+          {
+            "start_line": 76,
+            "end_line": 81,
+            "sha256": "4f24bc5582ffbeb249636e656a128ba412a8a0cc079069642dc80a8519cb832a"
+          },
+          {
+            "start_line": 90,
+            "end_line": 95,
+            "sha256": "a7f600a1377b9d2c9eb7c353c811a879f2ebdaa1a859150b4c2edc673c0ee4c3"
+          },
+          {
+            "start_line": 97,
+            "end_line": 105,
+            "sha256": "63badb1520371c1315c14d91edc35cd1d488f4d74f644a73326ff36bd2b8fbe6"
+          },
+          {
+            "start_line": 110,
+            "end_line": 118,
+            "sha256": "e09ab32fbf829cfe065555518f61334f787f2f24959f756a1cecb0ee355be3fb"
+          },
+          {
+            "start_line": 135,
+            "end_line": 144,
+            "sha256": "90f9d4d636f11141a7628f17a5e53e1a129e16237c31feacbb2f8052bc40b852"
+          },
+          {
+            "start_line": 161,
+            "end_line": 169,
+            "sha256": "33d13cdbe887a91b52d3df9e25c588490f52f6a4a3906fb8dbdf67804771169e"
+          },
+          {
+            "start_line": 185,
+            "end_line": 204,
+            "sha256": "820628c32a77cdada8ce74f20d0cd4b27bc9127a7d64a3e8cb234e3761fb7172"
+          },
+          {
+            "start_line": 215,
+            "end_line": 223,
+            "sha256": "33f429a96ae6f861b7e61dd8ec5ab9fcec4ebe579c355edb1f25e097f299c82a"
+          },
+          {
+            "start_line": 246,
+            "end_line": 265,
+            "sha256": "57b6f19353c0c8481e29451368ae5d19e4a2bb4d4bb253b3b3f8b75155122151"
+          },
+          {
+            "start_line": 278,
+            "end_line": 286,
+            "sha256": "fce02ca7aa8bcaaa14c3aeb3f786eeac8ed35a3344221b8cd469aaf4e34683ed"
+          },
+          {
+            "start_line": 309,
+            "end_line": 328,
+            "sha256": "910fda2014a52e9a7965f86a04597de76ee6135e642adb82296a3913ee06700e"
+          },
+          {
+            "start_line": 341,
+            "end_line": 349,
+            "sha256": "b590c878dc6a2932fee7a6bb6e6fdd810d812b23a8908e5fd8e0cba6e65f78ed"
+          },
+          {
+            "start_line": 372,
+            "end_line": 391,
+            "sha256": "91e9c4f0938c3f6fb29e7d2e40133fdfac3b4ea0116be79720f63773eb4fc2b4"
+          },
+          {
+            "start_line": 404,
+            "end_line": 413,
+            "sha256": "92a5a44595b2fed5c0b6dcdd976bfda88a1266a70ba786f6599f382b1b54eabd"
+          },
+          {
+            "start_line": 436,
+            "end_line": 455,
+            "sha256": "5885a82d9141bb9066eb0778051cd4bdae565979fff0aa402662d771407e0ec2"
+          },
+          {
+            "start_line": 459,
+            "end_line": 476,
+            "sha256": "2151e11bd7d652c10f7010aa750ace353d01103e4e20f27aff51ae9a91346023"
+          },
+          {
+            "start_line": 479,
+            "end_line": 484,
+            "sha256": "f2cf8f5e69f6fada81414e95183e8b181357988b1cb201ad6ca32c79eff0c1af"
+          },
+          {
+            "start_line": 505,
+            "end_line": 512,
+            "sha256": "3e08a5b970ed1e30a5d02f1de672111ffe63777ae2b8075944df42cd78b9d5a5"
+          },
+          {
+            "start_line": 522,
+            "end_line": 527,
+            "sha256": "43f1aca160ee284c10fd9160b1dec21957e6cd1f7b19951d19bf7434fbe2d4ee"
+          },
+          {
+            "start_line": 537,
+            "end_line": 542,
+            "sha256": "85b586a389c58c9adc2c09f9f505dccc3dffc3221c974cb1283cfc170422ac98"
+          },
+          {
+            "start_line": 552,
+            "end_line": 557,
+            "sha256": "7677f5520a8292c1e1120148915e54e8588a9dd00202aee4cde85c333f03fddd"
+          },
+          {
+            "start_line": 579,
+            "end_line": 584,
+            "sha256": "487c42fa8b999cd967d58f2b84685443298958dfe1282b21d039bfcd861d6ff2"
+          },
+          {
+            "start_line": 592,
+            "end_line": 597,
+            "sha256": "bd6c4f243efacb7a11290852dabbf9e035952af62ba8158d6f4a7f242e2eb8b4"
+          },
+          {
+            "start_line": 643,
+            "end_line": 648,
+            "sha256": "f62880e78a933a594d5053ec9f036f49778c132963f8e90582cd7d701a2df666"
+          },
+          {
+            "start_line": 665,
+            "end_line": 670,
+            "sha256": "dc71603b00f47fd4005e9257a5e8e994cad4c88eb9f983e6004b3883384e68e8"
+          },
+          {
+            "start_line": 688,
+            "end_line": 693,
+            "sha256": "57f01b9eb0f426f93fb6f05343381c0c56178bafaccffc3c712c2fd769509799"
+          },
+          {
+            "start_line": 698,
+            "end_line": 704,
+            "sha256": "ef79aebd2e056c9df23f6258a35e204ac915abb4bb0afb8806a1b5b901a39584"
+          },
+          {
+            "start_line": 713,
+            "end_line": 718,
+            "sha256": "aad83921bdfccf53e60c650248f01b054205167ee01a0ede88c3de17a9e3e8bd"
+          },
+          {
+            "start_line": 722,
+            "end_line": 728,
+            "sha256": "cbfe4cddf09008db14c1cffa1a3cce8fdcb43ced03d9d662895f62c9cd19971d"
+          },
+          {
+            "start_line": 740,
+            "end_line": 745,
+            "sha256": "8624201d0af565bf6ac503ae4d1531f15e89bf07d3b86bf5b2ea95ef7d107a6e"
+          },
+          {
+            "start_line": 761,
+            "end_line": 766,
+            "sha256": "2edd9a18b7dfd4834befc65894a4f86849c5b9d46b2ef454bc7df59d49a01a76"
+          },
+          {
+            "start_line": 777,
+            "end_line": 788,
+            "sha256": "7446d6b2250628a3b8481ecd5c955145442471a1bdfcc8569fea22a58fc2b992"
+          },
+          {
+            "start_line": 791,
+            "end_line": 796,
+            "sha256": "9a3c6da2c59cad07b7f65cc0b3fa2b02c4e3dba060839c71e70cc766434990c2"
+          },
+          {
+            "start_line": 802,
+            "end_line": 809,
+            "sha256": "888aaff7b158914d73a640b2c005909be0cafb0fcb0808faf7103b87269cba12"
+          },
+          {
+            "start_line": 819,
+            "end_line": 824,
+            "sha256": "5f983cf58f7ddd40ef895055e3c9117e72106e38d327a8fc2f1d0d869f33e2b2"
+          },
+          {
+            "start_line": 834,
+            "end_line": 839,
+            "sha256": "d6e6c572f41e187b855a355b5c36e6c1aec6338e106bc6f30a6f43d435e4f8d2"
+          },
+          {
+            "start_line": 849,
+            "end_line": 854,
+            "sha256": "e705bab2e7e37ff6f141f6646ce2b18096f27897556139728d00d0e6ce34686a"
+          },
+          {
+            "start_line": 876,
+            "end_line": 881,
+            "sha256": "b533ee644dd67aeae046f41c9e869991e251aae5393eac32dc4eeec681aa57f2"
+          },
+          {
+            "start_line": 889,
+            "end_line": 894,
+            "sha256": "a87312361ac12df0cb22c70dcd430d844ebb44d8935700913528e051765d7fa0"
+          },
+          {
+            "start_line": 940,
+            "end_line": 945,
+            "sha256": "56856cb7260ecb8d394386d600801ce1ed825ca583226483fd1af8b86c1dbba8"
+          },
+          {
+            "start_line": 957,
+            "end_line": 962,
+            "sha256": "ff61233ddf671ec61877a402ec09ca65ee56a0bd4cd54425f0cbd23d23a0186b"
+          },
+          {
+            "start_line": 971,
+            "end_line": 976,
+            "sha256": "c25ef9e460685a45fa38964f92044020dc19b6d4f048178b819efc5a398e32f3"
+          },
+          {
+            "start_line": 1006,
+            "end_line": 1011,
+            "sha256": "c49e43e2f2e2c37be379f290c7745763ac379d84509419ac4820ab3715582099"
+          },
+          {
+            "start_line": 1031,
+            "end_line": 1036,
+            "sha256": "18378802c82cbab133a36ebdc988166792fb207973d5cca3c75f6453865de3d3"
+          },
+          {
+            "start_line": 1041,
+            "end_line": 1053,
+            "sha256": "a5e05d97bbbd66b6eee18318cba4885022d3819e6fb27d0ffc48f11de6e10347"
+          },
+          {
+            "start_line": 1058,
+            "end_line": 1076,
+            "sha256": "a09bf782883cd9bff79b4bc3b84cc47f47d742321525d0c5f0eae478bc96b6b3"
+          }
+        ],
+        "range_numbering": "1-based, inclusive"
+      },
+      "fixture": {
+        "kind": "STAGED_INPUT",
+        "path": "phone004/input.circ",
+        "sha256": "80bbaa5708567a88000f37dbb919aa443c4fb1d3ab9df4809ecc020480b8193f",
+        "circuit": "IOS-E2E-99f10521024f-inspector",
+        "label": "INSPECTOR_99f10521024f"
+      }
+    }
+  ],
+  "files": {
+    ".gitattributes": {
+      "sha256": "dc4ebd02f38526757e53cbd7975873209c453d2a614a1d29c3954c45fd347721",
+      "bytes": 48
+    },
+    "README.md": {
+      "sha256": "a80e2b4b07edefb445b826e42780a700e92968657e8454d38ae001be0f09a972",
+      "bytes": 3314
+    },
+    "phone001/InspectorEndToEndTests.swift": {
+      "sha256": "f530d26b26f43f602d9fa91f0256f1a81efba06ebe693d63581d319284dac353",
+      "bytes": 12216
+    },
+    "phone001/Run.original.json": {
+      "sha256": "ed01bf99eb14922ac406c20ae33d287a23eec6ae49cae6f7242a226880dc32c3",
+      "bytes": 20017
+    },
+    "phone001/final-screen.png": {
+      "sha256": "67479fddb93136c1da11e9eb5033f5e663a5d4e38bc52b1e7ca297e9cb7abee2",
+      "bytes": 284781
+    },
+    "phone001/fixture.template.xml": {
+      "sha256": "b98b837fe285ef5703b6d74c2eb2d41fa6e520cae31a5f076ed2d8fe2ae3cfed",
+      "bytes": 315
+    },
+    "phone001/native-tree.txt": {
+      "sha256": "beff6b641741d60ae008d28e84167b24941eeb8268e6197b0e2e68b8d426511c",
+      "bytes": 8986
+    },
+    "phone001/results.original.json": {
+      "sha256": "5e09dc90dd6d05b93d90e0696b4d1997c67a8a700702a0772bc53f72fb5e9872",
+      "bytes": 26898
+    },
+    "phone001/test-log-excerpt.txt": {
+      "sha256": "80b656971b95e79c92fee125707c218cc2df6865c599f38ef99072c0899cdf45",
+      "bytes": 5937
+    },
+    "phone002/InspectorEndToEndTests.swift": {
+      "sha256": "23b26eaba12d5608fae8bb0dd29161c1fb881da1b8108b9a4bcc566895192951",
+      "bytes": 20957
+    },
+    "phone002/Run.original.json": {
+      "sha256": "19dc0e5fe375f7c8fe96531535839a6712dca8c61bab5fb17e01fa5ac1e45eca",
+      "bytes": 20453
+    },
+    "phone002/final-screen.png": {
+      "sha256": "f3f0740cc2a6f7d44cefc09b84c1f80679cc78660798f686d678bece13eed441",
+      "bytes": 202152
+    },
+    "phone002/input.circ": {
+      "sha256": "f392e47e222ce62343c20086b74152cf19832c484eb8d43bddd53fe5f81f9995",
+      "bytes": 419
+    },
+    "phone002/native-tree.txt": {
+      "sha256": "21cb93082162c8bdeab0a0a3c81b507adb7edf2cdf4d5a84f674a4a1a2ac474f",
+      "bytes": 6917
+    },
+    "phone002/results.original.json": {
+      "sha256": "9c447cae33e9d5866e8e06cf9f54cf15f7f9b21bd787090a2eb7e36eaf6476f8",
+      "bytes": 27346
+    },
+    "phone002/test-log-excerpt.txt": {
+      "sha256": "f6e5a670a4ee39f506fb74cf83fabb0d13fe5ee53fc6e8fd60f9688df10b5b3a",
+      "bytes": 19585
+    },
+    "phone003/InspectorEndToEndTests.swift": {
+      "sha256": "b8e84e9c776c12d1164fc317fb2c9089f04425d23414d669654a7dcad26b7aa2",
+      "bytes": 20973
+    },
+    "phone003/Run.original.json": {
+      "sha256": "21992496aa436d80b18b85b6e6818cd293eb35215c64ad6a31176773365c94ae",
+      "bytes": 20453
+    },
+    "phone003/final-screen.png": {
+      "sha256": "bd46abfd29917ec325b702440dbb4758df442334184b6be520235adf88189a39",
+      "bytes": 230574
+    },
+    "phone003/input.circ": {
+      "sha256": "cb4346400b4f20175f853a1a259f636343b01a55b10d791ba4ecccf7ae5d3ff0",
+      "bytes": 419
+    },
+    "phone003/native-tree.txt": {
+      "sha256": "b4fecc4b622e7d066b4eb1f724246acfca4315a1219250f6a2185eef6c507f30",
+      "bytes": 10557
+    },
+    "phone003/results.original.json": {
+      "sha256": "6301e3611112d0457e622de068abf62f2fbe85789d50bd584ca97e128cc0d4eb",
+      "bytes": 27344
+    },
+    "phone003/test-log-excerpt.txt": {
+      "sha256": "c77d78c91d7c01c146a3c0716726271a92407a5b676217b96db7371bb6d29f1e",
+      "bytes": 26459
+    },
+    "phone004/InspectorEndToEndTests.swift": {
+      "sha256": "bbfbe4173334bf703a43085a4500bffd52deab06260eb6ce4ecde4e4732fab34",
+      "bytes": 24972
+    },
+    "phone004/Run.original.json": {
+      "sha256": "55b4e7d268335614c7a8bac20be6a804bf9e1628012eb64229854a04f44e676b",
+      "bytes": 20453
+    },
+    "phone004/failure-screen.png": {
+      "sha256": "5356c653769513bd94c3fb3671f985cf4f21bd0d16e2443818cde8f7e7147784",
+      "bytes": 151384
+    },
+    "phone004/failure-tree.txt": {
+      "sha256": "30d772b4e8b3c512ce34784cb6a8555d5a32435e13f8565fda4ebb6a0ceb88e9",
+      "bytes": 4903
+    },
+    "phone004/final-screen.png": {
+      "sha256": "d011bc01e98501cfcd45269cc549ffe19acdee9fce06d1afa255bb41e999e653",
+      "bytes": 151419
+    },
+    "phone004/input.circ": {
+      "sha256": "80bbaa5708567a88000f37dbb919aa443c4fb1d3ab9df4809ecc020480b8193f",
+      "bytes": 419
+    },
+    "phone004/native-tree.txt": {
+      "sha256": "d33ec9ac1950f348230bd3f814a8153b48b6b1c42d06a9cfb4e4d641e12e683c",
+      "bytes": 4893
+    },
+    "phone004/results.original.json": {
+      "sha256": "bcc280063d86b6778c87b30376d3ae61339e961d6d0e5428b71de8d8279ac640",
+      "bytes": 27342
+    },
+    "phone004/test-log-excerpt.txt": {
+      "sha256": "7c3006a5f757e123a092db45ff3e70cdcc081437b1c428d18cb7be04863791e2",
+      "bytes": 37114
+    },
+    "phone004/width-root-attributes.txt": {
+      "sha256": "e1cb8b8cacb9ec9d14080a6811527eae4e4f3dca3fc33b7f04e9363d7fcfc519",
+      "bytes": 93
+    },
+    "shared/3ab488daa2f4-NativeTextReplacement.swift": {
+      "sha256": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3",
+      "bytes": 10663
+    },
+    "shared/a76b9aa970da-NativeUIHarness.swift": {
+      "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "bytes": 14507
+    },
+    "shared/c40931258138-NativeTextReplacement.swift": {
+      "sha256": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+      "bytes": 7714
+    },
+    "verify_archive.py": {
+      "sha256": "ee28c85a3f3f017247a8004c2372cae1d91c95283302b5aee5e02c35b817f8c3",
+      "bytes": 7307
+    }
+  },
+  "originals": {
+    "phone001/results.original.json": {
+      "run": "ios-a-4ab8-inspector-phone-001",
+      "path": "results.json",
+      "sha256": "5e09dc90dd6d05b93d90e0696b4d1997c67a8a700702a0772bc53f72fb5e9872",
+      "bytes": 26898
+    },
+    "phone001/Run.original.json": {
+      "run": "ios-a-4ab8-inspector-phone-001",
+      "path": "harness/Run.json",
+      "sha256": "ed01bf99eb14922ac406c20ae33d287a23eec6ae49cae6f7242a226880dc32c3",
+      "bytes": 20017
+    },
+    "phone001/InspectorEndToEndTests.swift": {
+      "run": "ios-a-4ab8-inspector-phone-001",
+      "path": "harness/InspectorEndToEndTests.swift",
+      "sha256": "f530d26b26f43f602d9fa91f0256f1a81efba06ebe693d63581d319284dac353",
+      "bytes": 12216
+    },
+    "shared/c40931258138-NativeTextReplacement.swift": {
+      "run": "ios-final-6cef-inspector-phone-003",
+      "path": "harness/NativeTextReplacement.swift",
+      "sha256": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+      "bytes": 7714
+    },
+    "shared/a76b9aa970da-NativeUIHarness.swift": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "harness/NativeUIHarness.swift",
+      "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "bytes": 14507
+    },
+    "phone001/native-tree.txt": {
+      "run": "ios-a-4ab8-inspector-phone-001",
+      "path": "attachments/F7CEBDC3-3ADD-4673-B421-9F4C489FBF74.txt",
+      "sha256": "beff6b641741d60ae008d28e84167b24941eeb8268e6197b0e2e68b8d426511c",
+      "bytes": 8986
+    },
+    "phone001/final-screen.png": {
+      "run": "ios-a-4ab8-inspector-phone-001",
+      "path": "attachments/0558FB90-7F20-4361-92D0-0AB64FC937E8.png",
+      "sha256": "67479fddb93136c1da11e9eb5033f5e663a5d4e38bc52b1e7ca297e9cb7abee2",
+      "bytes": 284781
+    },
+    "phone002/results.original.json": {
+      "run": "ios-a-4ab8-inspector-phone-002",
+      "path": "results.json",
+      "sha256": "9c447cae33e9d5866e8e06cf9f54cf15f7f9b21bd787090a2eb7e36eaf6476f8",
+      "bytes": 27346
+    },
+    "phone002/Run.original.json": {
+      "run": "ios-a-4ab8-inspector-phone-002",
+      "path": "harness/Run.json",
+      "sha256": "19dc0e5fe375f7c8fe96531535839a6712dca8c61bab5fb17e01fa5ac1e45eca",
+      "bytes": 20453
+    },
+    "phone002/InspectorEndToEndTests.swift": {
+      "run": "ios-a-4ab8-inspector-phone-002",
+      "path": "harness/InspectorEndToEndTests.swift",
+      "sha256": "23b26eaba12d5608fae8bb0dd29161c1fb881da1b8108b9a4bcc566895192951",
+      "bytes": 20957
+    },
+    "phone002/native-tree.txt": {
+      "run": "ios-a-4ab8-inspector-phone-002",
+      "path": "attachments/DE397D14-C7C2-4E16-8383-48806A9894A5.txt",
+      "sha256": "21cb93082162c8bdeab0a0a3c81b507adb7edf2cdf4d5a84f674a4a1a2ac474f",
+      "bytes": 6917
+    },
+    "phone002/final-screen.png": {
+      "run": "ios-a-4ab8-inspector-phone-002",
+      "path": "attachments/1458F78E-01F6-46BA-8CA4-1AAFAE4C1CC2.png",
+      "sha256": "f3f0740cc2a6f7d44cefc09b84c1f80679cc78660798f686d678bece13eed441",
+      "bytes": 202152
+    },
+    "phone002/input.circ": {
+      "run": "ios-a-4ab8-inspector-phone-002",
+      "path": "documents/inspector-width.circ",
+      "sha256": "f392e47e222ce62343c20086b74152cf19832c484eb8d43bddd53fe5f81f9995",
+      "bytes": 419
+    },
+    "phone003/results.original.json": {
+      "run": "ios-final-6cef-inspector-phone-003",
+      "path": "results.json",
+      "sha256": "6301e3611112d0457e622de068abf62f2fbe85789d50bd584ca97e128cc0d4eb",
+      "bytes": 27344
+    },
+    "phone003/Run.original.json": {
+      "run": "ios-final-6cef-inspector-phone-003",
+      "path": "harness/Run.json",
+      "sha256": "21992496aa436d80b18b85b6e6818cd293eb35215c64ad6a31176773365c94ae",
+      "bytes": 20453
+    },
+    "phone003/InspectorEndToEndTests.swift": {
+      "run": "ios-final-6cef-inspector-phone-003",
+      "path": "harness/InspectorEndToEndTests.swift",
+      "sha256": "b8e84e9c776c12d1164fc317fb2c9089f04425d23414d669654a7dcad26b7aa2",
+      "bytes": 20973
+    },
+    "phone003/native-tree.txt": {
+      "run": "ios-final-6cef-inspector-phone-003",
+      "path": "attachments/3672CF81-C5BA-4022-8508-F312BFD5D063.txt",
+      "sha256": "b4fecc4b622e7d066b4eb1f724246acfca4315a1219250f6a2185eef6c507f30",
+      "bytes": 10557
+    },
+    "phone003/final-screen.png": {
+      "run": "ios-final-6cef-inspector-phone-003",
+      "path": "attachments/38F2C077-0874-4D86-98CC-CD7817CE324D.png",
+      "sha256": "bd46abfd29917ec325b702440dbb4758df442334184b6be520235adf88189a39",
+      "bytes": 230574
+    },
+    "phone003/input.circ": {
+      "run": "ios-final-6cef-inspector-phone-003",
+      "path": "documents/inspector-width.circ",
+      "sha256": "cb4346400b4f20175f853a1a259f636343b01a55b10d791ba4ecccf7ae5d3ff0",
+      "bytes": 419
+    },
+    "phone004/results.original.json": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "results.json",
+      "sha256": "bcc280063d86b6778c87b30376d3ae61339e961d6d0e5428b71de8d8279ac640",
+      "bytes": 27342
+    },
+    "phone004/Run.original.json": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "harness/Run.json",
+      "sha256": "55b4e7d268335614c7a8bac20be6a804bf9e1628012eb64229854a04f44e676b",
+      "bytes": 20453
+    },
+    "phone004/InspectorEndToEndTests.swift": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "harness/InspectorEndToEndTests.swift",
+      "sha256": "bbfbe4173334bf703a43085a4500bffd52deab06260eb6ce4ecde4e4732fab34",
+      "bytes": 24972
+    },
+    "shared/3ab488daa2f4-NativeTextReplacement.swift": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "harness/NativeTextReplacement.swift",
+      "sha256": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3",
+      "bytes": 10663
+    },
+    "phone004/native-tree.txt": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "attachments/B3D4917C-BED1-4C98-8301-9B9D91A5E654.txt",
+      "sha256": "d33ec9ac1950f348230bd3f814a8153b48b6b1c42d06a9cfb4e4d641e12e683c",
+      "bytes": 4893
+    },
+    "phone004/final-screen.png": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "attachments/79BD3668-E9A9-4A3D-AEB0-F7178A7B2672.png",
+      "sha256": "d011bc01e98501cfcd45269cc549ffe19acdee9fce06d1afa255bb41e999e653",
+      "bytes": 151419
+    },
+    "phone004/failure-tree.txt": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "attachments/D97F41AC-0CC5-47E5-9316-0D17AF857BF0.txt",
+      "sha256": "30d772b4e8b3c512ce34784cb6a8555d5a32435e13f8565fda4ebb6a0ceb88e9",
+      "bytes": 4903
+    },
+    "phone004/failure-screen.png": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "attachments/EE3712D7-9233-4EE3-A242-D70AB3249E2F.png",
+      "sha256": "5356c653769513bd94c3fb3671f985cf4f21bd0d16e2443818cde8f7e7147784",
+      "bytes": 151384
+    },
+    "phone004/width-root-attributes.txt": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "attachments/31820051-26CB-4D7B-9829-6B65DBFB95F1.txt",
+      "sha256": "e1cb8b8cacb9ec9d14080a6811527eae4e4f3dca3fc33b7f04e9363d7fcfc519",
+      "bytes": 93
+    },
+    "phone004/input.circ": {
+      "run": "ios-final-6cef-inspector-phone-004",
+      "path": "documents/inspector-width.circ",
+      "sha256": "80bbaa5708567a88000f37dbb919aa443c4fb1d3ab9df4809ecc020480b8193f",
+      "bytes": 419
+    }
+  }
+}

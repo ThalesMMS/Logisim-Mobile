@@ -1,0 +1,21 @@
+JUnit version 4.13.2
+.Pending substitution before=SimulationRunStatus(phase=STEPPING, frequencyHz=4.0, completedSteps=0, lastStep=null, failure=null, pendingSteps=1, latestManualRequest=0) after=SimulationRunStatus(phase=STEPPING, frequencyHz=4.0, completedSteps=0, lastStep=null, failure=null, pendingSteps=1, latestManualRequest=0)
+E
+Time: 5.309
+There was 1 failure:
+1) cancelledDraftIsInvalidatedWhenAReplacementKeepsTheQueueCountEqual(dev.logisim.mobile.KeyboardDraftStrongSkippingTest)
+kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 5000 ms
+	at _COROUTINE._BOUNDARY._(CoroutineDebugging.kt:42)
+	at dev.logisim.mobile.KeyboardDraftRuntimeTest$strongSkippingReevaluatesCancelledDraftWhenThePendingCountStaysOne$1$1.invokeSuspend(KeyboardDraftRuntimeTest.kt:205)
+	at dev.logisim.mobile.KeyboardDraftRuntimeTest$mounted$2.invokeSuspend(KeyboardDraftRuntimeTest.kt:257)
+	at dev.logisim.mobile.KeyboardDraftRuntimeTest$strongSkippingReevaluatesCancelledDraftWhenThePendingCountStaysOne$1.invokeSuspend(KeyboardDraftRuntimeTest.kt:169)
+Caused by: kotlinx.coroutines.TimeoutCancellationException: Timed out waiting for 5000 ms
+	at kotlinx.coroutines.TimeoutKt.TimeoutCancellationException(Timeout.kt:281)
+	at kotlinx.coroutines.TimeoutCoroutine.run(Timeout.kt:243)
+	at kotlinx.coroutines.EventLoopImplBase$DelayedRunnableTask.run(EventLoop.common.kt:498)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)
+	at kotlinx.coroutines.DefaultExecutor.run(DefaultExecutor.kt:105)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1

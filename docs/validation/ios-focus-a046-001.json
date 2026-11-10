@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "status": "DIAGNOSTIC_PASS_NOT_REPRODUCED",
+  "qualification": "ALPHA_ONLY",
+  "issuesResolved": [],
+  "productSourceBefore": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "productSourceAfter": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "harnessSource": "d6dfc281c5bcd20be51eabc7d92e9ac283a7a6e2",
+  "harnessFocusSourceSHA256": "54e9d8323cb7e662fe01dc359053eea894a0e9be82ab1473c7350abffc2cf2bd",
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/EFC1402B-5511-40D9-8A21-359172F886AB/data",
+    "dataPathSize": 8407318528,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/EFC1402B-5511-40D9-8A21-359172F886AB",
+    "udid": "EFC1402B-5511-40D9-8A21-359172F886AB",
+    "lastUsedAt": "2026-11-04T23:06:28Z",
+    "isAvailable": true,
+    "logPathSize": 618496,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "state": "Booted",
+    "name": "iPad Pro 11-inch (M5)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "physicalDevice": false,
+  "artifactBefore": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifactAfter": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifactUnchanged": true,
+  "nativeExecution": {
+    "status": "PASS",
+    "exit_code": 0,
+    "xcresult": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/editor.xcresult",
+    "selection": [
+      "EditorEndToEndTests/FocusEndToEndTests"
+    ]
+  },
+  "results": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/results.json",
+  "testLog": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/test.log",
+  "cases": [
+    {
+      "test": "FocusEndToEndTests/testApplicationCommandAAfterReopeningInsert()",
+      "status": "PASS",
+      "phases": {
+        "after-tap": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/F935E12D-64E8-49B0-B17E-E1FE4DEC2752.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-command-a": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/3D6D9C0B-6709-4A48-9EAE-F29A790568A3.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-delete": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/F1B4ECEB-AD0E-4741-86CD-81B200AA09E1.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-replacement-R": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/2BA52776-4E66-4A64-A8A9-B01FB898F8B3.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        }
+      }
+    },
+    {
+      "test": "FocusEndToEndTests/testApplicationCommandAAfterReopeningInsertWithTypedSentinel()",
+      "status": "PASS",
+      "phases": {
+        "after-tap": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/E44F940F-5648-4FB8-9D28-B8298752FEEA.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-typed-Q": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/3AC4138D-D688-4A1C-ACDF-571F035106D5.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-command-a": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/4775E53F-6B37-4055-8634-4CF35ACDE3CD.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-delete": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/E2A7D40D-F969-4ED0-8565-E037D8AC311D.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-replacement-R": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/F9B385D9-40B1-49AD-9EFB-12BA3FCF4440.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        }
+      }
+    },
+    {
+      "test": "FocusEndToEndTests/testFieldCommandAAfterReopeningInsert()",
+      "status": "PASS",
+      "phases": {
+        "after-tap": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/97831A2D-CABF-47BD-B83E-7FFE9E9A30B7.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-command-a": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/142C7404-42DE-44D0-950E-5A2FAB0A6866.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-delete": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/7768D037-9002-4AE2-B053-4003D95EFD77.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-replacement-R": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/E0ABF819-C45A-48BF-AD8F-5F85A208C2DC.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        }
+      }
+    },
+    {
+      "test": "FocusEndToEndTests/testFieldCommandAAfterReopeningInsertWithTypedSentinel()",
+      "status": "PASS",
+      "phases": {
+        "after-tap": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/B8DD027C-3881-44A1-8A50-7C35C6DB1C5C.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-typed-Q": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/18ECE952-D907-4798-A536-C2037DDEC0F8.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-command-a": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/523AFD5A-E3A9-4BB1-81F7-65886FB6D714.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-delete": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/49AB1D2E-A214-4ECF-B48A-C40ECD973C28.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "after-replacement-R": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-a046-001/attachments/1FBD87D5-4DED-4D06-B601-D5ABD203E8D7.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        }
+      }
+    }
+  ],
+  "observations": [
+    "All four probes kept Find keyboard-focused after Command-A.",
+    "Q was written to Find before the command in both sentinel cases.",
+    "Find ended as R and X/Y remained 100 in every case.",
+    "Public hasFocus was false for all three controls even while debugDescription reported Find as Keyboard Focused."
+  ],
+  "limits": [
+    "The first insertion visits X/Y without replacing or selecting their 100 values.",
+    "The original failing E2E also searches the inserted component, opens Inspector, edits Label, hides the keyboard, applies, and dismisses the inspector by drag before reopening Insert. That roundtrip is absent here.",
+    "Empty Find cannot establish Select All behavior.",
+    "The one-character Q sentinel distinguishes the text destination but cannot distinguish Select All from a single Backspace.",
+    "These alpha probes do not resolve issue27 or refute the original a046 full-flow failure."
+  ],
+  "originalFailure": {
+    "root": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-all-dialog-a046-e2e-002",
+    "before": "attachments/133F0614-F8D7-404B-927E-A42926F4B928.txt",
+    "after": "attachments/D13563F4-22D8-45DC-8655-3059BBA0E072.txt",
+    "observation": "The XCUI target remains Find while keyboard focus changes from Find to Y during field.typeKey(Command-A)."
+  },
+  "sourceAnalysis": "ios-compose-command-a-source.md"
+}

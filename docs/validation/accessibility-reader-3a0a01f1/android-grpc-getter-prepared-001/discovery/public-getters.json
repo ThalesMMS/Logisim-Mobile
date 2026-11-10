@@ -1,0 +1,56 @@
+[
+  {
+    "name": "pid-binary",
+    "argv": [
+      "/bin/ps",
+      "-p",
+      "28678",
+      "-o",
+      "pid=,comm="
+    ],
+    "exit_code": 0,
+    "captured_utc": "2026-11-05T10:09:54.829223+00:00",
+    "stdout_bytes": 98,
+    "stderr_bytes": 0
+  },
+  {
+    "name": "pid-listeners",
+    "argv": [
+      "/usr/sbin/lsof",
+      "-nP",
+      "-a",
+      "-p",
+      "28678",
+      "-iTCP",
+      "-sTCP:LISTEN",
+      "-Fpcn"
+    ],
+    "exit_code": 0,
+    "captured_utc": "2026-11-05T10:09:54.862671+00:00",
+    "stdout_bytes": 180,
+    "stderr_bytes": 0
+  },
+  {
+    "name": "installed-protoc-version",
+    "argv": [
+      "/opt/homebrew/bin/protoc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "captured_utc": "2026-11-05T10:09:54.952389+00:00",
+    "stdout_bytes": 15,
+    "stderr_bytes": 0
+  },
+  {
+    "name": "node-discovery-only",
+    "argv": [
+      "/Users/thales/.local/bin/node",
+      "docs/validation/accessibility-reader-3a0a01f1/android-grpc-getter-prepared-001/getter-status.mjs",
+      "--discover-only"
+    ],
+    "exit_code": 0,
+    "captured_utc": "2026-11-05T10:09:55.014559+00:00",
+    "stdout_bytes": 112,
+    "stderr_bytes": 0
+  }
+]

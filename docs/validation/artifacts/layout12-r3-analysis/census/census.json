@@ -1,0 +1,959 @@
+{
+  "producerDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/outputs/layout12-small-phone-font1-5558-003",
+  "scope": "Read-only census of retained R3 files. No subprocess, Android/device, network, build or source modification.",
+  "manifest": {
+    "utc": "20261105T095449Z",
+    "gitHead": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "harnessGitHead": "68a3138307638dad928b184a0d3ec30c8eb30ead",
+    "sourceChanges": [],
+    "serial": "emulator-5558",
+    "deviceApi": "35",
+    "layout12Unit": "small-phone",
+    "layout12Font": "1"
+  },
+  "sources": [
+    {
+      "source": "e2e-android.py",
+      "snapshot": "source-e2e-android.py",
+      "sha256": "5ea6b01e3b3036cadbb40cbb5d033d4cd623fdb524751275da8ffd7ff8f86328"
+    },
+    {
+      "source": "android_ui.py",
+      "snapshot": "source-android_ui.py",
+      "sha256": "8afbbc3514a2dcc33939f4c7a4bc9ec1674b54c2eb4610a5764336238057a634"
+    },
+    {
+      "source": "android_editing_scenarios.py",
+      "snapshot": "source-android_editing_scenarios.py",
+      "sha256": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673"
+    },
+    {
+      "source": "user_scenario_contract.py",
+      "snapshot": "source-user_scenario_contract.py",
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+    },
+    {
+      "source": "android_inspector_scenarios.py",
+      "snapshot": "source-android_inspector_scenarios.py",
+      "sha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c"
+    },
+    {
+      "source": "android_io_showcase_scenarios.py",
+      "snapshot": "source-android_io_showcase_scenarios.py",
+      "sha256": "1490f9c19e44ad4b76cab0fba222be61566940a305a17c4644894347cf464272"
+    },
+    {
+      "source": "android_portable_scenarios.py",
+      "snapshot": "source-android_portable_scenarios.py",
+      "sha256": "6e5888e73ddb558d038f22c45b517e182a46a991f43d878427a65f724ee5c7b4"
+    },
+    {
+      "source": "android_visual_export34_scenarios.py",
+      "snapshot": "source-android_visual_export34_scenarios.py",
+      "sha256": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763"
+    },
+    {
+      "source": "android_layout12_scenarios.py",
+      "snapshot": "source-android_layout12_scenarios.py",
+      "sha256": "a1fd260caa418d29cc96444b84b5cb6a8271300f6b79ceb917dd16da3426e287"
+    },
+    {
+      "source": "android_layout12_geometry.py",
+      "snapshot": "source-android_layout12_geometry.py",
+      "sha256": "db74c19a7f311f3dcf17216395becdda3056aad6d9320dfb1540153166f58cdf"
+    },
+    {
+      "source": "android_layout12_window.py",
+      "snapshot": "source-android_layout12_window.py",
+      "sha256": "8ec4686fac79bc02bcc690fd983bcd93a9c3db1773a6ce2b7e4538b926ab73f1"
+    },
+    {
+      "source": "android_accessibility_layout.py",
+      "snapshot": "source-android_accessibility_layout.py",
+      "sha256": "22977eea62e07c70f4e60b4370b231eaf98f1704f64f6c4c7afe744b1fba1d88"
+    },
+    {
+      "source": "test-android-assets.py",
+      "snapshot": "source-test-android-assets.py",
+      "sha256": "59d15f42c8ccba2d1c5b09edc18e018c644163cae5c279f76c2d886d0b4f7e7e"
+    },
+    {
+      "source": "fixtures/user-scenarios/layout12/layout12.circ",
+      "snapshot": "source-layout12-layout12.circ",
+      "sha256": "b6e68a8d6f2060ef1baa3436f8f8e7becbb5c3b9926b732bda939207f1e63893"
+    },
+    {
+      "source": "fixtures/user-scenarios/layout12/contract.json",
+      "snapshot": "source-layout12-contract.json",
+      "sha256": "229111341d786ccc1c84e2a81c6b3d4517fcaf7c8a8c7460c559af95d9fede0e"
+    }
+  ],
+  "fileInventory": {
+    "nativeFilesIncludingFrozenApks": 83,
+    "currentFilesystemTotal": 83,
+    "analysisFilesExcluded": [],
+    "policy": "Host __pycache__ and .pyc/.pyo analysis products are identified separately and never counted as Native evidence.",
+    "previousCensusCorrection": {
+      "scope": "Correction to the previous local census total. The extra bytecode cache has a post-run host mtime and is not a Native capture. Its originating process/import is not identified by the retained evidence. This record preserves its path/hash/time; no captured raw payload was modified.",
+      "previousLocalCensusTotal": 84,
+      "previousAnalyticalRows": [
+        {
+          "path": "run/__pycache__/source-e2e-android.cpython-315.pyc",
+          "bytes": "108940",
+          "sha256": "326fd231f6c2cca9dac41422c19c62ac58db4af6b8d4ed5014e6a5170f59524f",
+          "hostWriteCompletionUTC": "2026-11-05T10:11:44.696427+00:00"
+        }
+      ],
+      "expectedNativeFiles": 83,
+      "expectedRawArchivedFiles": 80,
+      "localFrozenApks": 3,
+      "originEvidence": "Originating import/process not identified. A local analyst removed only this post-run cache after recording its hash/time; the Native captures remained unchanged."
+    }
+  },
+  "nativeResult": [
+    {
+      "scenario": "layout12-small-phone",
+      "status": "failed",
+      "error": "No fresh Android UI hierarchy within 1.147873832989717s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-941114e76141456380c1d2b78b1a73e1-36.xml']' timed out after 1.1478658750129398 seconds"
+    }
+  ],
+  "cleanup": {
+    "unitAttempts": 1,
+    "nativeExitCode": 1,
+    "nativeStatus": "FAIL",
+    "restorationStatus": "PASS",
+    "elapsedSeconds": 92.16,
+    "finalDifferences": {}
+  },
+  "recordOrder": [
+    {
+      "name": "initial-configuration",
+      "status": null
+    },
+    {
+      "name": "window-before-layout",
+      "status": "CAPTURED"
+    },
+    {
+      "name": "applied-configuration",
+      "status": null
+    },
+    {
+      "name": "scenario-failure",
+      "status": null
+    },
+    {
+      "name": "restoration",
+      "status": "PASS"
+    }
+  ],
+  "primaryFailure": {
+    "name": "scenario-failure",
+    "errorType": "AssertionError",
+    "error": "No fresh Android UI hierarchy within 1.147873832989717s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-941114e76141456380c1d2b78b1a73e1-36.xml']' timed out after 1.1478658750129398 seconds"
+  },
+  "primaryBoundary": {
+    "function": "Scenarios.export_xml -> wait_editor after Read copied XML tap",
+    "sourceReferences": [
+      {
+        "line": 470,
+        "text": "self.ui.click(text=\"Read copied XML\")"
+      },
+      {
+        "line": 222,
+        "text": "def wait_editor(self, *, timeout=30):"
+      }
+    ],
+    "traceArtifact": "run/failure-error.txt",
+    "readinessGateReached": "line471 post-Read wait_editor, before receiver payload file read",
+    "wholeWaitBudgetSecondsByFrozenSource": 30,
+    "lastDumpRemainingSecondsLiteral": [
+      "1.147873832989717"
+    ],
+    "exactFailureWallClockTime": "NOT_RETAINED. The error-file mtime is after inner restoration.",
+    "observedInTrace": true
+  },
+  "retainedRoots": [
+    {
+      "path": "run/import-report-1-ui.xml",
+      "bytes": 6057,
+      "sha256": "a777efa8bf259378c9f11ecf2f08c2a9a8620c2deaa13f55acea1e7dac84fa6c",
+      "hostWriteCompletionUTC": "2026-11-05T09:54:55.189559+00:00",
+      "rootAttributes": {
+        "rotation": "0"
+      },
+      "nodeCount": 17,
+      "packageCounts": {
+        "thalesmms.logisim.mobile.e2e": 17
+      },
+      "topLevelWindows": [
+        {
+          "index": "0",
+          "text": "",
+          "resource-id": "",
+          "class": "android.widget.FrameLayout",
+          "package": "thalesmms.logisim.mobile.e2e",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[120,734][960,1730]"
+        }
+      ],
+      "tags": [
+        "editor-import-report"
+      ],
+      "editableNodes": [],
+      "focusedNodes": [],
+      "canvasNodes": [],
+      "text": [
+        "Import report",
+        "Source version: 3.8.0. Circuits: 1.",
+        "Rule: version-defaults",
+        "Circuit: Minha primeira porta AND",
+        "Components: a, b, out",
+        "Pin: effective attributes behavior, initial, labelfont, labelloc, radix follow source version 3.8.0; the original XML is preserved.",
+        "Applied 3 times.",
+        "Close"
+      ],
+      "stage": "Retained startup report before the selected layout unit configured its display.",
+      "observer": "CLI capture under the frozen pre-input execution path; no SDK request artifacts exist.",
+      "limit": "This file is a retained capture, not a log of every root returned by screen()."
+    },
+    {
+      "path": "run/layout12-001-window-before-layout-ui.xml",
+      "bytes": 34468,
+      "sha256": "e0b55ba2f60a6974b6ae9743676a17ad57e04d077a50c5f0d548ebc60a74007c",
+      "hostWriteCompletionUTC": "2026-11-05T09:55:03.888170+00:00",
+      "rootAttributes": {
+        "rotation": "0"
+      },
+      "nodeCount": 101,
+      "packageCounts": {
+        "thalesmms.logisim.mobile.e2e": 101
+      },
+      "topLevelWindows": [
+        {
+          "index": "0",
+          "text": "",
+          "resource-id": "",
+          "class": "android.widget.FrameLayout",
+          "package": "thalesmms.logisim.mobile.e2e",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,0][1080,2400]"
+        }
+      ],
+      "tags": [
+        "editor-project-toolbar",
+        "editor-project-toolbar-overflow",
+        "editor-command-toolbar",
+        "editor-command-toolbar-overflow",
+        "editor-simulation-toolbar",
+        "editor-simulation-toolbar-overflow",
+        "editor-canvas",
+        "canvas-component:a",
+        "canvas-component:and",
+        "canvas-component:out",
+        "canvas-component:b",
+        "editor-signal-panel"
+      ],
+      "editableNodes": [],
+      "focusedNodes": [],
+      "canvasNodes": [
+        {
+          "index": "3",
+          "text": "",
+          "resource-id": "editor-canvas",
+          "class": "android.view.View",
+          "package": "thalesmms.logisim.mobile.e2e",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,647][1080,2119]"
+        }
+      ],
+      "text": [
+        "Projects",
+        "Minha primeira porta AND",
+        "Saved \u00b7 revision 2",
+        "Logisim  Minha primeira porta AND",
+        "\u21b6",
+        "\u21b7",
+        ".circ",
+        "Library",
+        "Simulate",
+        "Select",
+        "Move",
+        "Wire",
+        "Steps 0",
+        "\u25b6 Run",
+        "Step",
+        "Event",
+        "Simulation options",
+        "\u2212",
+        "252%",
+        "+",
+        "Signals",
+        "A 0",
+        "B 0",
+        "Sa\u00edda = 0",
+        "Operation cancelled."
+      ],
+      "stage": "Retained editor before cell configuration; the default AND document is visible, not the layout fixture.",
+      "observer": "CLI capture under the frozen pre-input execution path; no SDK request artifacts exist.",
+      "limit": "This file is a retained capture, not a log of every root returned by screen()."
+    },
+    {
+      "path": "run/import-report-2-ui.xml",
+      "bytes": 6008,
+      "sha256": "87677f1201065404925156f1d80825c07851130841c3bbe051418d5201a2593a",
+      "hostWriteCompletionUTC": "2026-11-05T09:55:07.404711+00:00",
+      "rootAttributes": {
+        "rotation": "0"
+      },
+      "nodeCount": 17,
+      "packageCounts": {
+        "thalesmms.logisim.mobile.e2e": 17
+      },
+      "topLevelWindows": [
+        {
+          "index": "0",
+          "text": "",
+          "resource-id": "",
+          "class": "android.widget.FrameLayout",
+          "package": "thalesmms.logisim.mobile.e2e",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,98][320,475]"
+        }
+      ],
+      "tags": [
+        "editor-import-report"
+      ],
+      "editableNodes": [],
+      "focusedNodes": [],
+      "canvasNodes": [],
+      "text": [
+        "Import report",
+        "Source version: 3.8.0. Circuits: 1.",
+        "Rule: version-defaults",
+        "Circuit: Minha primeira porta AND",
+        "Components: a, b, out",
+        "Pin: effective attributes behavior, initial, labelfont, labelloc, radix follow source version 3.8.0; the original XML is preserved.",
+        "Applied 3 times.",
+        "Close"
+      ],
+      "stage": "Retained default-document report at the simulated display size, before the incoming layout fixture.",
+      "observer": "CLI capture under the frozen pre-input execution path; no SDK request artifacts exist.",
+      "limit": "This file is a retained capture, not a log of every root returned by screen()."
+    },
+    {
+      "path": "run/import-report-3-ui.xml",
+      "bytes": 6040,
+      "sha256": "c1201449602e9f3addfe293d288d00be8e1df57044bd4f600bd021dd196edba5",
+      "hostWriteCompletionUTC": "2026-11-05T09:55:20.970542+00:00",
+      "rootAttributes": {
+        "rotation": "0"
+      },
+      "nodeCount": 17,
+      "packageCounts": {
+        "thalesmms.logisim.mobile.e2e": 17
+      },
+      "topLevelWindows": [
+        {
+          "index": "0",
+          "text": "",
+          "resource-id": "",
+          "class": "android.widget.FrameLayout",
+          "package": "thalesmms.logisim.mobile.e2e",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[0,78][320,495]"
+        }
+      ],
+      "tags": [
+        "editor-import-report"
+      ],
+      "editableNodes": [],
+      "focusedNodes": [],
+      "canvasNodes": [],
+      "text": [
+        "Import report",
+        "Source version: 5.1.0-dev. Circuits: 1.",
+        "Document: e2e-4c7c764d5bfb4d9e973a0a8569692b29.circ",
+        "Rule: version-defaults",
+        "Circuit: layout12",
+        "Components: import-3",
+        "Pin: effective attributes behavior, initial, labelfont, labelloc, radix, type follow source version 5.1.0-dev; the original XML is preserved.",
+        "Close"
+      ],
+      "stage": "Retained incoming layout-fixture report before baseline export.",
+      "observer": "CLI capture under the frozen pre-input execution path; no SDK request artifacts exist.",
+      "limit": "This file is a retained capture, not a log of every root returned by screen()."
+    },
+    {
+      "path": "run/layout12-small-phone-ui.xml",
+      "bytes": 5704,
+      "sha256": "c5b8117f581a6005a1ddad7c32dfa6f6848aebd25db71a1274e8f89ceb8d2b8a",
+      "hostWriteCompletionUTC": "2026-11-05T09:56:17.500346+00:00",
+      "rootAttributes": {
+        "rotation": "0"
+      },
+      "nodeCount": 16,
+      "packageCounts": {
+        "thalesmms.logisim.mobile.e2e": 16
+      },
+      "topLevelWindows": [
+        {
+          "index": "0",
+          "text": "",
+          "resource-id": "",
+          "class": "android.widget.FrameLayout",
+          "package": "thalesmms.logisim.mobile.e2e",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[120,761][960,1704]"
+        }
+      ],
+      "tags": [
+        "editor-import-report"
+      ],
+      "editableNodes": [],
+      "focusedNodes": [],
+      "canvasNodes": [],
+      "text": [
+        "Import report",
+        "Source version: 5.1.0-dev. Circuits: 1.",
+        "Rule: version-defaults",
+        "Circuit: layout12",
+        "Components: import-3",
+        "Pin: effective attributes behavior, initial, labelfont, labelloc, radix, type follow source version 5.1.0-dev; the original XML is preserved.",
+        "Close"
+      ],
+      "stage": "Post-failure collector, after the inner restoration routine.",
+      "observer": "CLI capture under the frozen pre-input execution path; no SDK request artifacts exist.",
+      "limit": "This file is a retained capture, not a log of every root returned by screen()."
+    },
+    {
+      "path": "run/failure-ui.xml",
+      "bytes": 5704,
+      "sha256": "c5b8117f581a6005a1ddad7c32dfa6f6848aebd25db71a1274e8f89ceb8d2b8a",
+      "hostWriteCompletionUTC": "2026-11-05T09:56:19.735157+00:00",
+      "rootAttributes": {
+        "rotation": "0"
+      },
+      "nodeCount": 16,
+      "packageCounts": {
+        "thalesmms.logisim.mobile.e2e": 16
+      },
+      "topLevelWindows": [
+        {
+          "index": "0",
+          "text": "",
+          "resource-id": "",
+          "class": "android.widget.FrameLayout",
+          "package": "thalesmms.logisim.mobile.e2e",
+          "content-desc": "",
+          "checkable": "false",
+          "checked": "false",
+          "clickable": "false",
+          "enabled": "true",
+          "focusable": "false",
+          "focused": "false",
+          "scrollable": "false",
+          "long-clickable": "false",
+          "password": "false",
+          "selected": "false",
+          "bounds": "[120,761][960,1704]"
+        }
+      ],
+      "tags": [
+        "editor-import-report"
+      ],
+      "editableNodes": [],
+      "focusedNodes": [],
+      "canvasNodes": [],
+      "text": [
+        "Import report",
+        "Source version: 5.1.0-dev. Circuits: 1.",
+        "Rule: version-defaults",
+        "Circuit: layout12",
+        "Components: import-3",
+        "Pin: effective attributes behavior, initial, labelfont, labelloc, radix, type follow source version 5.1.0-dev; the original XML is preserved.",
+        "Close"
+      ],
+      "stage": "Later post-failure collector, after the inner restoration routine.",
+      "observer": "CLI capture under the frozen pre-input execution path; no SDK request artifacts exist.",
+      "limit": "This file is a retained capture, not a log of every root returned by screen()."
+    }
+  ],
+  "retainedRootCounts": {
+    "captures": 6,
+    "distinctXmlHashes": 5
+  },
+  "sdk": {
+    "artifactFiles": [],
+    "completeResponsesRecorded": 0,
+    "typedRootErrorsRecorded": 0,
+    "lastSuccess": null,
+    "sourceActivationSites": [
+      {
+        "line": 653,
+        "text": "self._focused_snapshot_active = True"
+      }
+    ],
+    "sourceInitialFalse": [
+      {
+        "line": 52,
+        "text": "self._focused_snapshot_active = False"
+      }
+    ],
+    "inference": "The frozen path activates SDK polling only through input_text. R3 failed before either layout text-input case. No SDK request was reached by that path or retained.",
+    "limit": "NOT_INVOKED is not an SDK availability or ROOT-state success verdict."
+  },
+  "cli": {
+    "primaryLastRemoteSequences": [
+      36
+    ],
+    "retainedXmlCaptures": 6,
+    "perQueryReturnedRoots": "NOT_RETAINED",
+    "allAttemptOutcomeCounts": "NOT_RETAINED",
+    "sequenceLimit": "The counter increments per CLI dump attempt in one driver instance. Sequence36 identifies that primary failing attempt; it is not 36 successful roots or the final total after failure collectors.",
+    "lastSavedRootBeforePrimaryFailure": "run/import-report-3-ui.xml",
+    "knownLaterSuccessfulLookup": "Source/trace show Read copied XML lookup returned and its tap was sent before the failing wait_editor. That returned root, package, coordinates, activity and exact time were not retained.",
+    "lastRootDuringFailingWait": "NOT_RETAINED"
+  },
+  "sourceRouteCensus": [
+    {
+      "stage": "Launch and initial wait_editor",
+      "retainedEvidence": [
+        "run/import-report-1-ui.xml",
+        "run/layout12-001-window-before-layout-ui.xml"
+      ],
+      "limit": "Other query returns are not retained."
+    },
+    {
+      "stage": "Configure simulated display and wait_editor",
+      "retainedEvidence": [
+        "applied-configuration record",
+        "run/import-report-2-ui.xml"
+      ],
+      "limit": "wait_display samples PNG/settings, not an SDK root."
+    },
+    {
+      "stage": "Public incoming fixture launcher and editor import acknowledgement",
+      "retainedEvidence": [
+        "run/incoming-launch-1.txt",
+        "run/incoming-open-1.json",
+        "run/import-report-3-ui.xml"
+      ],
+      "limit": "The launcher button query root is not retained."
+    },
+    {
+      "stage": "ClipboardReader Prepare XML copy lookup/tap; return wait_editor; XML/Copy/Close lookup/taps",
+      "retainedEvidence": [
+        "source-e2e-android.py control path and final trace"
+      ],
+      "limit": "Those individual returned query roots, actions and foreground/activity metadata are not retained."
+    },
+    {
+      "stage": "ClipboardReader Read copied XML lookup/tap",
+      "retainedEvidence": [
+        "source-e2e-android.py control path reached by final trace"
+      ],
+      "limit": "Lookup/tap completion is source inference; callback payload and foreground return are not established."
+    },
+    {
+      "stage": "Post-Read wait_editor",
+      "retainedEvidence": [
+        "run/failure-error.txt",
+        "scenario-failure record",
+        "run/results.json"
+      ],
+      "limit": "The last failed CLI attempt is sequence36. Intermediate returned roots and actual activity/PID are not retained."
+    },
+    {
+      "stage": "Inner settings restoration and failure collectors",
+      "retainedEvidence": [
+        "restoration record",
+        "run/layout12-small-phone-ui.xml",
+        "run/failure-ui.xml"
+      ],
+      "limit": "Import report roots in this stage cannot be assigned to the earlier failing wait."
+    }
+  ],
+  "foregroundAndPid": {
+    "initialParsedWindow": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "windowToken": "be2e682",
+      "displayId": 0,
+      "appFrame": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "displayFrame": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "windowingMode": "fullscreen",
+      "insetsStatus": "AVAILABLE",
+      "insetsReason": null,
+      "insetsSource": "window",
+      "occlusions": [
+        {
+          "type": "statusBars",
+          "frame": [
+            0,
+            0,
+            1080,
+            128
+          ],
+          "sourceId": "d43b0000"
+        },
+        {
+          "type": "navigationBars",
+          "frame": [
+            0,
+            2337,
+            1080,
+            2400
+          ],
+          "sourceId": "d7680001"
+        },
+        {
+          "type": "displayCutout",
+          "frame": [
+            0,
+            0,
+            1080,
+            128
+          ],
+          "sourceId": "27"
+        }
+      ]
+    },
+    "initialPidFiles": [
+      {
+        "path": "run/layout12-001-window-before-layout-pid-after.txt",
+        "literal": "23833"
+      },
+      {
+        "path": "run/layout12-001-window-before-layout-pid-before.txt",
+        "literal": "23833"
+      }
+    ],
+    "failureLogcatPids": [
+      "23833"
+    ],
+    "inventories": {
+      "inventory-before-ui.json": {
+        "publicSettings": {
+          "wm_size": {
+            "physical": "1080x2400",
+            "override": null
+          },
+          "wm_density": {
+            "physical": "420",
+            "override": null
+          },
+          "system": {
+            "font_scale": "1.0",
+            "accelerometer_rotation": "0",
+            "user_rotation": "0"
+          },
+          "services": {
+            "enabled_accessibility_services": "null",
+            "accessibility_enabled": "0",
+            "touch_exploration_enabled": "0"
+          }
+        },
+        "windowManagerCurrentFocus": [
+          "44a0675 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity"
+        ],
+        "capturedAt": "2026-11-05T09:54:48.925360+00:00"
+      },
+      "inventory-after-run.json": {
+        "publicSettings": {
+          "wm_size": {
+            "physical": "1080x2400",
+            "override": null
+          },
+          "wm_density": {
+            "physical": "420",
+            "override": null
+          },
+          "system": {
+            "font_scale": "1.0",
+            "accelerometer_rotation": "0",
+            "user_rotation": "0"
+          },
+          "services": {
+            "enabled_accessibility_services": "null",
+            "accessibility_enabled": "0",
+            "touch_exploration_enabled": "0"
+          }
+        },
+        "windowManagerCurrentFocus": [
+          "6e392f u0 thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity"
+        ],
+        "capturedAt": "2026-11-05T09:56:20.054552+00:00"
+      },
+      "inventory-final.json": {
+        "publicSettings": {
+          "wm_size": {
+            "physical": "1080x2400",
+            "override": null
+          },
+          "wm_density": {
+            "physical": "420",
+            "override": null
+          },
+          "system": {
+            "font_scale": "1.0",
+            "accelerometer_rotation": "0",
+            "user_rotation": "0"
+          },
+          "services": {
+            "enabled_accessibility_services": "null",
+            "accessibility_enabled": "0",
+            "touch_exploration_enabled": "0"
+          }
+        },
+        "windowManagerCurrentFocus": [
+          "a96580 u0 com.android.intentresolver/com.android.intentresolver.ChooserActivityLauncher"
+        ],
+        "capturedAt": "2026-11-05T09:56:20.574991+00:00"
+      }
+    },
+    "expectedReceiverActivity": "thalesmms.logisim.mobile.e2e.test/dev.logisim.mobile.documents.DocumentClipboardReaderActivity",
+    "observedActivityAfterReadDuringFailingWait": "NOT_RETAINED",
+    "receiverPid": "NOT_RETAINED",
+    "limit": "CLI screen() has no per-query foreground/PID assertion. Initial WM/PID and post-restoration inventories cannot be relabeled as observations during the failing wait."
+  },
+  "screenshots": [
+    {
+      "path": "run/import-report-1.png",
+      "bytes": 199274,
+      "sha256": "d18c479d73757f6f7bd1a2131028086c51db037d57534283d9ee8094ec366f16",
+      "hostWriteCompletionUTC": "2026-11-05T09:54:55.189173+00:00",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "correspondingXml": "import-report-1-ui.xml"
+    },
+    {
+      "path": "run/layout12-001-window-before-layout.png",
+      "bytes": 200773,
+      "sha256": "f7f69f320abbcb52881c6e8f263bedcfd9787c1ced144d1d4f3bdd6fcfab1622",
+      "hostWriteCompletionUTC": "2026-11-05T09:55:03.887110+00:00",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "correspondingXml": "layout12-001-window-before-layout-ui.xml"
+    },
+    {
+      "path": "run/import-report-2.png",
+      "bytes": 35048,
+      "sha256": "1e7dcc01a3a807f7b1cf701db0f9f84c80c73d9fd2d5dc3eca89716631daf336",
+      "hostWriteCompletionUTC": "2026-11-05T09:55:07.404354+00:00",
+      "pixels": [
+        320,
+        568
+      ],
+      "correspondingXml": "import-report-2-ui.xml"
+    },
+    {
+      "path": "run/import-report-3.png",
+      "bytes": 36136,
+      "sha256": "8b1b1200fdf4f1fcc42c6ad2590f0febd4e8b3c2199cb912a46acd7694d21de7",
+      "hostWriteCompletionUTC": "2026-11-05T09:55:20.970224+00:00",
+      "pixels": [
+        320,
+        568
+      ],
+      "correspondingXml": "import-report-3-ui.xml"
+    },
+    {
+      "path": "run/layout12-small-phone.png",
+      "bytes": 203443,
+      "sha256": "85a57018fadd0dde2dadd1db46c7b31c961544f47ee0330ebaa547b458bcde5a",
+      "hostWriteCompletionUTC": "2026-11-05T09:56:15.521469+00:00",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "correspondingXml": "layout12-small-phone-ui.xml"
+    },
+    {
+      "path": "run/failure.png",
+      "bytes": 202864,
+      "sha256": "e77b34fcab53bc3f37a18a6a8f7225a2f706edb5fd7f5972556ec0ce4d09f1a7",
+      "hostWriteCompletionUTC": "2026-11-05T09:56:17.756433+00:00",
+      "pixels": [
+        1080,
+        2400
+      ],
+      "correspondingXml": "failure-ui.xml"
+    }
+  ],
+  "configuration": {
+    "applied": [
+      {
+        "name": "applied-configuration",
+        "logicalOrientation": "portrait",
+        "userRotation": 0,
+        "expectedDisplayDp": [
+          320,
+          568
+        ],
+        "fontScale": 1.0,
+        "observedDisplay": {
+          "display_px": [
+            320,
+            568
+          ],
+          "display_dp": [
+            320.0,
+            568.0
+          ],
+          "density": 160,
+          "font_scale": 1.0
+        },
+        "displayMode": "simulated-small-phone"
+      }
+    ],
+    "postRestorationSettingsEqualOriginal": true
+  },
+  "viewport": {
+    "retainedCanvasFrames": [
+      {
+        "path": "run/layout12-001-window-before-layout-ui.xml",
+        "canvasNodes": [
+          {
+            "index": "3",
+            "text": "",
+            "resource-id": "editor-canvas",
+            "class": "android.view.View",
+            "package": "thalesmms.logisim.mobile.e2e",
+            "content-desc": "",
+            "checkable": "false",
+            "checked": "false",
+            "clickable": "false",
+            "enabled": "true",
+            "focusable": "false",
+            "focused": "false",
+            "scrollable": "false",
+            "long-clickable": "false",
+            "password": "false",
+            "selected": "false",
+            "bounds": "[0,647][1080,2119]"
+          }
+        ],
+        "stage": "Retained editor before cell configuration; the default AND document is visible, not the layout fixture."
+      }
+    ],
+    "fixturePaintedViewportRecords": [],
+    "limit": "The only retained canvas belongs to the pre-cell default AND document. No fixture viewport transform, selected-ID or focus scenario was reached."
+  },
+  "clipboard": {
+    "baselineFiles": [],
+    "privateArchives": [
+      {
+        "path": "run/failure-private-files.tar",
+        "package": "thalesmms.logisim.mobile.e2e",
+        "clipboardPayloadMembers": [],
+        "limit": "The archive was collected with run-as of the editor package. It does not sample the separate .test receiver files."
+      },
+      {
+        "path": "run/layout12-small-phone-private-files.tar",
+        "package": "thalesmms.logisim.mobile.e2e",
+        "clipboardPayloadMembers": [],
+        "limit": "The archive was collected with run-as of the editor package. It does not sample the separate .test receiver files."
+      }
+    ],
+    "payloadResult": "NOT_SAMPLED. The .test receiver payload read in export_xml follows the failing wait_editor, so it was never copied to the run directory.",
+    "limit": "Reaching the Read copied XML tap does not prove its callback wrote the expected payload or that MainActivity resumed."
+  },
+  "capturedLogcat": {
+    "artifact": "run/failure-logcat.txt",
+    "lineCountIncludingHeader": 82,
+    "threadtimeLineCount": 81,
+    "pids": [
+      "23833"
+    ],
+    "firstDeviceLocalTimestamp": "11-05 06:54:50.116",
+    "lastDeviceLocalTimestamp": "11-05 06:56:16.273",
+    "fatalOrAnrLines": [],
+    "limit": "The collector filters app PID logs. It is not a system activity-transition trace, a receiver PID trace, or proof of the foreground during every CLI query. Device-local timestamps are not converted to host UTC."
+  },
+  "chronologyLimits": [
+    "File mtimes are host write-completion metadata, not device event timestamps or an atomic XML/WM/PNG capture.",
+    "The two failure screenshots and roots were collected after the inner configuration restoration. Their Import report modal does not establish the modal during the failing wait.",
+    "The wait had a 30-second deadline. Its final reported acquisition failed with 1.148 s remaining; intermediate returned roots were not retained. No claim is made that the entire 30-second interval lacked fresh roots.",
+    "No SDK-vs-CLI causal or product/environment verdict is inferred from a backend that was not invoked."
+  ],
+  "nextPlan": [
+    "Preserve the archived failure and immutable producer identities; no immediate retry, adapter or timeout change.",
+    "If Root authorizes a later diagnostic, retain each existing CLI command result, budget/elapsed time and every returned root around receiver Prepare and Read transitions without changing the acceptance gate.",
+    "Record the receiver payload and actual foreground/activity at the blocked boundary only under that separate authorization. Keep unknown activity/PID/roots as unknown until observed.",
+    "Compare with the separate keyboard run only as a different executed backend/input path. It cannot fill R3 missing observations."
+  ]
+}

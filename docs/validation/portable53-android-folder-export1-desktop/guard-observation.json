@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "scope": "Read-only contrast of an earlier imported-workspace observation and later failure TAR. This does not prove restart, another export or completed native flow.",
+  "nativeStatus": "failed",
+  "guardError": "The actual export session is not linked to the imported workspace",
+  "exportSession": "36d6551b-a976-41f1-95e3-1a0dabfb9124",
+  "importedProjectId": "72be893d7f51138afdb9f99380ea7957",
+  "earlierImportedWindowTarget": "f33b7bd5cea6be9a6459411a64b31c74",
+  "laterFailureWindowTarget": "72be893d7f51138afdb9f99380ea7957",
+  "differentWindowTargetsObserved": true,
+  "laterFailureTar": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-folder-5558-en-1d146f33/portable-folder-storage-roundtrip-private-files.tar",
+    "sha256": "1166f43f5df82196311784745060006ed606554e4eb839a90eb04b37ea05d852",
+    "member": "files/workspace/window-36-e5d60eac501b9b5b.workspace-link",
+    "memberBytes": 110,
+    "memberSha256": "d7bb95a300498173a2c1ba88d413eb665bea85e20583fb719721d8c5e06ca123",
+    "encoding": "UTF-8; no final newline; length-prefixed UUID/project tokens"
+  },
+  "frozenDriverGuard": "source-android_portable_scenarios.py:403, before force-stop at line406",
+  "interpretation": "The failed guard compared the export session with an earlier snapshot whose window target had not yet changed. The later TAR already maps the same window to the imported project. The original native failure is preserved."
+}

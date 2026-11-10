@@ -1,0 +1,88 @@
+{
+  "status": "FAIL",
+  "nativeSaveAs": "NOT_QUALIFIED",
+  "deviceBaseline": {
+    "created": "2026-11-05T02:07:06.314378+00:00",
+    "device": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "name": "Logisim SaveAs Beta iPad 27.0",
+    "ownership": "Logisim mobile ios_files task only; temporary SaveAs baseline",
+    "command": [
+      "xcrun",
+      "simctl",
+      "create",
+      "Logisim SaveAs Beta iPad 27.0",
+      "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+      "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+    ],
+    "sourcePin": "b9bd71ae49e562661ee114b248e342a02ed29508",
+    "bundleTreeSHA256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+    "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+    "runtimeBuild": "24A434",
+    "freshData": true,
+    "originatingLayerOfPriorMetalCrashes": "UNIDENTIFIED",
+    "causalOperatingSystemClaim": false,
+    "oldDevicePreserved": "EFC1402B-5511-40D9-8A21-359172F886AB"
+  },
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "0f0c7eb6784f4b77f3ebe9778fa4a7bf8a236a87731a05733bb97130f50b7867",
+    "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "installation": {
+    "status": "INSTALLED_VERIFIED",
+    "before_error": {
+      "type": "CalledProcessError",
+      "message": "Command ['xcrun', 'simctl', 'get_app_container', 'B25F12A5-62D8-4E9E-964E-96519DB6FB69', 'thalesmms.logisim.mobile', 'app'] returned non-zero exit status 2."
+    },
+    "installed": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/192AD52B-5A62-4917-8EA2-062DFF68D4A7/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "0f0c7eb6784f4b77f3ebe9778fa4a7bf8a236a87731a05733bb97130f50b7867",
+      "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+      "version": "0.2.0",
+      "build": "2"
+    }
+  },
+  "configuration": {
+    "runID": "cc6733449950",
+    "workspace": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Library/Application Support/LogisimMobile/workspace",
+    "documents": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/cc6733449950"
+  },
+  "failure": "Native Files directory-heading selector ignored a decorated StaticText title; remote query was interrupted when the directory waiter expired.",
+  "observedHeading": {
+    "type": "StaticText",
+    "label": "On My iPad, Actions Menu",
+    "frame": [
+      438,
+      53.5,
+      90,
+      21
+    ],
+    "scopeIdentifier": "FullDocumentManagerViewControllerNavigationBar",
+    "treeLine": 265
+  },
+  "minimalCorrection": "Use the same exact-or-canonical-prefix predicate for StaticText and Button headings. Preserve navbar scope, geometry, button identifier filter and unique-match requirement.",
+  "checks": {
+    "sdkTypecheck": "PASS",
+    "independentReview": "Six archived trees: one canonical heading, zero collisions; no device use.",
+    "nativeCorrectedSelector": "NOT_RUN"
+  },
+  "evidence": {
+    "results.json": "c905abfa971e81355e7d3aa03426dbb17e8626299257560a659d7a6881694733",
+    "xcresult-summary.json": "3f51a472ca76680d440decae558ad084ad24fe0283201865fcae174e3881d7b5",
+    "attachments/01BE8F68-8BAC-4203-BC15-556ADCD83CB8.txt": "087052fd534b1df5005c4a265c1c22697152d9dc7661ed10ab17d79a2aff58c7",
+    "attachments/44DC202F-376D-4CA7-BE29-3785FF2F7505.txt": "69f3ff83dc0c728976c1b460d402afb29822f922732e17a3544e9c3cabf2ebd3",
+    "picker-census.json": "4476a89e86f260029a139ecb811981af053fbe8b912b36ea88bc04a339f71c67",
+    "heading-typecheck.log": "ca78b936cec38f8d02b436f50a6fca3d55943746cfb9fc8bf9160fa8553351ba"
+  },
+  "limits": [
+    "Fresh device and data are a separate baseline.",
+    "No operating-system causal claim.",
+    "No destination bytes were written in this attempt.",
+    "The corrected selector has not completed a native run."
+  ]
+}

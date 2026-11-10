@@ -1,0 +1,62 @@
+% Important: If latex complains about unicode characters,
+% please use "\usepackage[utf8x]{inputenc}" in your preamble
+% You can change the size of the picture by putting it into the construct:
+% 1) \resizebox{10cm}{!}{"below picture"} to scale horizontally to 10 cm
+% 2) \resizebox{!}{15cm}{"below picture"} to scale vertically to 15 cm
+% 3) \resizebox{10cm}{15cm}{"below picture"} a combination of above two
+% It is not recomended to use the scale option of the tikzpicture environment.
+\begin{tikzpicture}[x=1pt,y=-1pt,line cap=rect]
+\def\logisimfontA#1{\textsf{#1}}
+\definecolor{custcol_FFFFFF}{HTML}{FFFFFF}
+\definecolor{custcol_2828FF}{HTML}{2828FF}
+\definecolor{custcol_808080}{HTML}{808080}
+\definecolor{custcol_000000}{HTML}{000000}
+\fill [line width=1pt, custcol_FFFFFF] (0,0) rectangle (380,214);
+\draw [line width=2pt, custcol_2828FF, line cap=round] (130,32) -- (170,32);
+\draw [line width=2pt, custcol_2828FF, line cap=round] (170,32) -- (170,82);
+\draw [line width=2pt, custcol_2828FF, line cap=round] (170,82) -- (190,82);
+\draw [line width=2pt, custcol_2828FF, line cap=round] (130,182) -- (170,182);
+\draw [line width=2pt, custcol_2828FF, line cap=round] (170,122) -- (170,182);
+\draw [line width=2pt, custcol_2828FF, line cap=round] (170,122) -- (190,122);
+\draw [line width=2pt, custcol_2828FF, line cap=round] (250,102) -- (340,102);
+\draw [line width=2pt, custcol_808080, line cap=round] (10,12) -- (70,12);
+\draw [line width=2pt, custcol_808080, line cap=round] (10,52) -- (70,52);
+\draw [line width=2pt, custcol_808080, line cap=round] (10,162) -- (70,162);
+\draw [line width=2pt, custcol_808080, line cap=round] (10,202) -- (70,202);
+\fill [line width=1pt, custcol_FFFFFF] (80,7) rectangle (130,57);
+\draw [line width=1.7pt, custcol_000000, line cap=round, line join=round] (80,7) rectangle (130,57);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (100.7314,21) {\&};}
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (80,12) -- (80,12);
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (80,52) -- (80,52);
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (130,32) -- (130,32);
+\fill [line width=1pt, custcol_2828FF] (80,12) circle (2);
+\fill [line width=1pt, custcol_2828FF] (80,52) circle (2);
+\fill [line width=1pt, custcol_2828FF] (130,32) circle (2);
+\fill [line width=1pt, custcol_FFFFFF] (80,157) rectangle (130,207);
+\draw [line width=1.7pt, custcol_000000, line cap=round, line join=round] (80,157) rectangle (130,207);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (98.4375,171) {≥1};}
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (80,162) -- (80,162);
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (80,202) -- (80,202);
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (130,182) -- (130,182);
+\fill [line width=1pt, custcol_2828FF] (80,162) circle (2);
+\fill [line width=1pt, custcol_2828FF] (80,202) circle (2);
+\fill [line width=1pt, custcol_2828FF] (130,182) circle (2);
+\fill [line width=1pt, custcol_FFFFFF] (190,77) rectangle (250,127);
+\draw [line width=1.7pt, custcol_000000, line cap=round, line join=round] (190,77) rectangle (250,127);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (213.4375,91) {=1};}
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (190,82) -- (190,82);
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (190,122) -- (190,122);
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (250,102) -- (250,102);
+\fill [line width=1pt, custcol_2828FF] (190,82) circle (2);
+\fill [line width=1pt, custcol_2828FF] (190,122) circle (2);
+\fill [line width=1pt, custcol_2828FF] (250,102) circle (2);
+\fill [line width=1pt, custcol_FFFFFF] (340,93) rectangle (360,111);
+\draw [line width=1.7pt, custcol_000000, line cap=round, line join=round] (340,93) rectangle (360,111);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (347.2168,108) {1};}
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (340,102) -- (340,102);
+\draw [line width=1.4pt, custcol_000000, line cap=round, line join=round] (360,102) -- (370,102);
+\fill [line width=1pt, custcol_FFFFFF] (365,102) circle (5);
+\draw [line width=1.7pt, custcol_000000, line cap=round, line join=round] (365,102) circle (5);
+\fill [line width=1pt, custcol_2828FF] (340,102) circle (2);
+\fill [line width=1pt, custcol_2828FF] (370,102) circle (2);
+\end{tikzpicture}

@@ -1,0 +1,318 @@
+Attributes: Application, 0x1135521c0, pid: 76677, label: 'Logisim Mobile'
+Element subtree:
+ →Application, 0x1135521c0, pid: 76677, label: 'Logisim Mobile'
+    Window (Main), 0x113551680, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x113551b80, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x113550dc0, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x113551540, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x113551f40, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x113552300, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x113550f00, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x113552080, {{0.0, 0.0}, {834.0, 1210.0}}
+                ScrollView, 0x10b299e00, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x10b299180, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x10b2992c0, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x11353fe80, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x11353e800, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x11353c8c0, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x11353fc00, {{0.0, 0.0}, {834.0, 1210.0}}
+            ScrollView, 0x11353d680, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x11353d540, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x11353fd40, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x11353d900, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x11353cb40, {{137.0, 387.0}, {560.0, 448.0}}
+                  Other, 0x11353fac0, {{137.0, 387.0}, {560.0, 448.0}}
+                  StaticText, 0x11353ca00, {{161.0, 411.0}, {135.5, 32.0}}, label: 'Project .circ'
+                  Other, 0x116424000, {{161.0, 459.0}, {512.0, 280.0}}, identifier: 'editor-xml-body'
+                    StaticText, 0x116424140, {{161.0, 459.0}, {451.0, 16.0}}, label: 'Copy the XML to save the project, or paste a .circ file to import all circuits.'
+                    StaticText, 0x116424280, {{161.0, 485.0}, {401.5, 16.0}}, label: 'Complete XML: 21971 characters. The preview below is shortened.'
+                    StaticText, 0x1164243c0, {{161.0, 511.0}, {505.0, 128.0}}, label: '<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#I/O" name="0"/>
+  <lib desc="#Wiring" name="1"/>
+  <main name="IO_Showcase"/>
+  <circuit name="IO_Showcase" id="IO_Showcase">
+    <comp loc="(180,120)" logisim-mobile-id="io_button" name="Button" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="press" val="active"/>
+      <a name="label" val="IO_BUTTON"/>
+    </comp>
+    <comp loc="(320,120)" logisim-mobile-id="io_led_button" name="LED" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="active" val="true"/>
+      <a name="label" val="IO_LED_BUTTON"/>
+    </comp>
+    <comp loc="(440,120)" logisim-mobile-id="out_button" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_BUTTON"/>
+    </comp>
+    <comp loc="(580,120)" logisim-mobile-id="io_led" name="LED" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="active" val="true"/>
+      <a name="label" val="IO_LED"/>
+    </comp>
+    <co'
+                    StaticText, 0x116424500, {{161.0, 649.0}, {512.0, 32.0}}, label: 'Copy exports the complete project. Paste replaces the complete import text; large projects can also be edited through the native file actions.'
+                    Button, 0x116424640, {{161.0, 691.0}, {83.5, 48.0}}, label: 'Copy'
+                      StaticText, 0x116424780, {{185.0, 705.0}, {35.5, 20.0}}, label: 'Copy'
+                    Button, 0x1164248c0, {{252.5, 691.0}, {86.5, 48.0}}, label: 'Paste'
+                      StaticText, 0x116424a00, {{276.5, 705.0}, {38.5, 20.0}}, label: 'Paste'
+                  Button, 0x116424b40, {{474.0, 763.0}, {63.0, 48.0}}, label: 'Close'
+                    StaticText, 0x116424c80, {{486.0, 777.0}, {39.0, 20.0}}, label: 'Close'
+                  Button, 0x116424dc0, {{545.0, 763.0}, {128.0, 48.0}}, label: 'Import XML'
+                    StaticText, 0x116424f00, {{569.0, 777.0}, {80.0, 20.0}}, label: 'Import XML'
+    Window, 0x116425040, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x116425180, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x1164252c0, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x116425400, {{0.0, 0.0}, {834.0, 1210.0}}
+            Other, 0x116425540, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x116425680, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x1164257c0, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x116425900, {{0.0, 0.0}, {834.0, 1210.0}}
+                ScrollView, 0x116425a40, {{0.0, 0.0}, {834.0, 1210.0}}
+                  Other, 0x116425b80, {{0.0, 0.0}, {834.0, 1210.0}}
+                    Other, 0x116425cc0, {{0.0, 0.0}, {834.0, 1210.0}}
+                      Other, 0x116425e00, {{0.0, 0.0}, {834.0, 1210.0}}
+                      Button, 0x116425f40, {{8.0, 32.0}, {80.5, 48.0}}, label: 'Projects'
+                        StaticText, 0x116426080, {{20.0, 46.0}, {56.5, 20.0}}, label: 'Projects'
+                      StaticText, 0x1164261c0, {{96.5, 44.0}, {594.5, 24.0}}, label: 'visual_export_qualification'
+                      Button, 0x116426300, {{699.0, 32.0}, {127.0, 48.0}}, label: 'Saved · revision 4'
+                        StaticText, 0x116426440, {{711.0, 48.0}, {103.0, 16.0}}, label: 'Saved · revision 4'
+                      Other, 0x116426580, {{0.0, 81.0}, {834.0, 1109.0}}
+                      Other, 0x1164266c0, {{0.0, 81.0}, {834.0, 48.0}}, identifier: 'editor-project-toolbar'
+                      StaticText, 0x116426800, {{4.0, 93.0}, {180.0, 24.0}}, label: 'Logisim  visual_export_qualification'
+                      Button, 0x116426940, {{186.0, 81.0}, {48.0, 48.0}}, label: 'Undo, ↶', Disabled
+                        StaticText, 0x116426a80, {{204.5, 97.0}, {11.0, 16.0}}, label: '↶'
+                      Button, 0x116426bc0, {{236.0, 81.0}, {48.0, 48.0}}, label: 'Redo, ↷', Disabled
+                        StaticText, 0x116426d00, {{254.5, 97.0}, {11.0, 16.0}}, label: '↷'
+                      Button, 0x116426e40, {{286.0, 81.0}, {48.0, 48.0}}, label: 'Import or export circuit and project, .circ'
+                        StaticText, 0x116426f80, {{296.0, 97.0}, {28.0, 16.0}}, label: '.circ'
+                      Button, 0x1164270c0, {{336.0, 81.0}, {48.0, 48.0}}, label: 'Open, save, and share files, File'
+                        StaticText, 0x116427200, {{349.0, 97.0}, {22.5, 16.0}}, label: 'File'
+                      Button, 0x116427340, {{386.0, 81.0}, {53.5, 48.0}}, label: 'Open project tools, Tools'
+                        StaticText, 0x116427480, {{396.0, 97.0}, {33.5, 16.0}}, label: 'Tools'
+                      Button, 0x1164275c0, {{441.5, 81.0}, {136.5, 48.0}}, label: 'Editor preferences, Editor preferences'
+                        StaticText, 0x116427700, {{451.5, 97.0}, {116.5, 16.0}}, label: 'Editor preferences'
+                      Button, 0x116427840, {{580.0, 81.0}, {104.0, 48.0}}, label: 'Import report, Import report'
+                        StaticText, 0x116427980, {{590.0, 97.0}, {84.0, 16.0}}, label: 'Import report'
+                      Button, 0x116427ac0, {{686.0, 81.0}, {48.0, 48.0}}, label: 'Open editor help, ?'
+                        StaticText, 0x116427c00, {{706.5, 97.0}, {7.0, 16.0}}, label: '?'
+                      Other, 0x116427d40, {{0.0, 130.0}, {250.0, 725.0}}, label: 'Component and circuit library'
+                      Other, 0x116427e80, {{0.0, 130.0}, {250.0, 1025.0}}
+                      Other, 0x116428000, {{0.0, 130.0}, {250.0, 48.0}}
+                        Button, 0x116428140, {{0.0, 130.0}, {65.5, 48.0}}, label: 'Show circuit tree, Circuits'
+                          StaticText, 0x116428280, {{10.0, 144.0}, {45.5, 20.0}}, label: 'Circuits'
+                        Button, 0x1164283c0, {{65.5, 130.0}, {62.0, 48.0}}, label: 'Show available components, Library'
+                          StaticText, 0x116428500, {{75.5, 144.0}, {42.0, 20.0}}, label: 'Library'
+                        Button, 0x116428640, {{127.5, 130.0}, {61.0, 48.0}}, label: 'Search project, library, and commands, Search'
+                          StaticText, 0x116428780, {{137.5, 144.0}, {41.0, 20.0}}, label: 'Search'
+                      Other, 0x1164288c0, {{250.0, 130.0}, {584.0, 48.0}}, identifier: 'editor-command-toolbar'
+                      Button, 0x116428a00, {{254.0, 130.0}, {78.5, 48.0}}, label: 'Simulate, Simulate', Selected
+                        StaticText, 0x116428b40, {{266.0, 146.0}, {54.5, 16.0}}, label: 'Simulate'
+                      Button, 0x116428c80, {{334.5, 130.0}, {64.0, 48.0}}, label: 'Select, Select'
+                        StaticText, 0x116428dc0, {{346.5, 146.0}, {40.0, 16.0}}, label: 'Select'
+                      Button, 0x116428f00, {{400.5, 130.0}, {57.5, 48.0}}, label: 'Move, Move'
+                        StaticText, 0x116429040, {{412.5, 146.0}, {33.5, 16.0}}, label: 'Move'
+                      Button, 0x116429180, {{460.0, 130.0}, {53.0, 48.0}}, label: 'Wire, Wire'
+                        StaticText, 0x1164292c0, {{472.0, 146.0}, {29.0, 16.0}}, label: 'Wire'
+                      Button, 0x116429400, {{515.0, 130.0}, {48.0, 48.0}}, label: 'Fit the entire circuit, Fit'
+                        StaticText, 0x116429540, {{531.0, 146.0}, {16.5, 16.0}}, label: 'Fit'
+                      Button, 0x116429680, {{565.0, 130.0}, {97.5, 48.0}}, label: 'Fit selected components and wires, Fit selection'
+                        StaticText, 0x1164297c0, {{575.0, 146.0}, {77.5, 16.0}}, label: 'Fit selection'
+                      Button, 0x116429900, {{664.5, 130.0}, {78.5, 48.0}}, label: 'Select all components and wires, Select all'
+                        StaticText, 0x116429a40, {{674.5, 146.0}, {58.5, 16.0}}, label: 'Select all'
+                      Button, 0x116429b80, {{745.0, 130.0}, {48.0, 48.0}}, identifier: 'editor-command-toolbar-overflow', label: 'Show more commands: Commands'
+                      StaticText, 0x116429cc0, {{12.0, 190.0}, {67.0, 24.0}}, label: 'Circuits'
+                      Button, 0x116429e00, {{192.0, 178.0}, {58.0, 48.0}}, label: 'New'
+                        StaticText, 0x116429f40, {{206.0, 192.0}, {30.5, 20.0}}, label: 'New'
+                      Other, 0x11642a080, {{250.0, 179.0}, {584.0, 48.0}}, identifier: 'editor-simulation-toolbar'
+                      StaticText, 0x11642a1c0, {{254.0, 191.0}, {47.0, 24.0}}, label: 'Steps 0'
+                      Button, 0x11642a300, {{303.0, 179.0}, {62.0, 48.0}}, label: '▶ Run, ▶ Run', Disabled
+                        StaticText, 0x11642a440, {{315.0, 195.0}, {38.0, 16.0}}, label: '▶ Run'
+                      Button, 0x11642a580, {{367.0, 179.0}, {49.0, 48.0}}, label: 'Advance the clock one half-cycle, Step', Disabled
+                        StaticText, 0x11642a6c0, {{377.0, 195.0}, {29.0, 16.0}}, label: 'Step'
+                      Button, 0x11642a800, {{418.0, 179.0}, {55.0, 48.0}}, label: 'Advance one propagation event, Event', Disabled
+                        StaticText, 0x11642a940, {{428.0, 195.0}, {35.0, 16.0}}, label: 'Event'
+                      Button, 0x11642aa80, {{475.0, 179.0}, {137.0, 48.0}}, label: 'Simulation options, Simulation options'
+                        StaticText, 0x11642abc0, {{485.0, 195.0}, {117.0, 16.0}}, label: 'Simulation options'
+                      Button, 0x11642ad00, {{614.0, 179.0}, {55.5, 48.0}}, label: 'Reset simulation, Reset', Disabled
+                        StaticText, 0x11642ae40, {{624.0, 195.0}, {35.5, 16.0}}, label: 'Reset'
+                      Button, 0x11642af80, {{671.5, 179.0}, {61.0, 48.0}}, label: 'Change step frequency, 4.0 Hz'
+                        StaticText, 0x11642b0c0, {{681.5, 195.0}, {41.0, 16.0}}, label: '4.0 Hz'
+                      Other, 0x11642b200, {{0.0, 226.0}, {250.0, 580.0}}
+                        Button, 0x11642b340, {{0.0, 226.0}, {250.0, 68.0}}, label: 'Open definition visual_export_qualification, ★ , visual_export_qualification'
+                          StaticText, 0x11642b480, {{12.0, 239.0}, {22.0, 24.0}}, label: '★ '
+                          StaticText, 0x11642b5c0, {{34.0, 236.0}, {158.0, 48.0}}, label: 'visual_export_qualification'
+                        Button, 0x11642b700, {{192.0, 226.0}, {58.0, 48.0}}, label: 'Manage circuit visual_export_qualification, ⋮'
+                          StaticText, 0x11642b840, {{218.0, 239.0}, {6.0, 22.0}}, label: '⋮'
+                        Button, 0x11642b980, {{0.0, 294.0}, {250.0, 48.0}}, label: 'Open instance child, path visual_export_qualification / child, ↳ , child'
+                          StaticText, 0x11642bac0, {{26.0, 307.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642bc00, {{45.5, 304.0}, {32.0, 24.0}}, label: 'child'
+                        Button, 0x11642bd40, {{0.0, 342.0}, {250.0, 48.0}}, label: 'Open instance child, path visual_export_qualification / child, ↳ , child'
+                          StaticText, 0x11642be80, {{26.0, 355.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642c000, {{45.5, 352.0}, {32.0, 24.0}}, label: 'child'
+                        Button, 0x11642c140, {{0.0, 390.0}, {250.0, 48.0}}, label: 'Open instance classicChild, path visual_export_qualification / classicChild, ↳ , classicChild'
+                          StaticText, 0x11642c280, {{26.0, 403.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642c3c0, {{45.5, 400.0}, {79.5, 24.0}}, label: 'classicChild'
+                        Button, 0x11642c500, {{0.0, 438.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_000, path visual_export_qualification / EXPORT34_CELL_000, ↳ , EXPORT34_CELL_000'
+                          StaticText, 0x11642c640, {{26.0, 451.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642c780, {{45.5, 448.0}, {147.0, 24.0}}, label: 'EXPORT34_CELL_000'
+                        Button, 0x11642c8c0, {{0.0, 486.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_001, path visual_export_qualification / EXPORT34_CELL_001, ↳ , EXPORT34_CELL_001'
+                          StaticText, 0x11642ca00, {{26.0, 499.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642cb40, {{45.5, 496.0}, {145.0, 24.0}}, label: 'EXPORT34_CELL_001'
+                        Button, 0x11642cc80, {{0.0, 534.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_002, path visual_export_qualification / EXPORT34_CELL_002, ↳ , EXPORT34_CELL_002'
+                          StaticText, 0x11642cdc0, {{26.0, 547.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642cf00, {{45.5, 544.0}, {146.5, 24.0}}, label: 'EXPORT34_CELL_002'
+                        Button, 0x11642d040, {{0.0, 582.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_003, path visual_export_qualification / EXPORT34_CELL_003, ↳ , EXPORT34_CELL_003'
+                          StaticText, 0x11642d180, {{26.0, 595.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642d2c0, {{45.5, 592.0}, {147.0, 24.0}}, label: 'EXPORT34_CELL_003'
+                        Button, 0x11642d400, {{0.0, 630.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_004, path visual_export_qualification / EXPORT34_CELL_004, ↳ , EXPORT34_CELL_004'
+                          StaticText, 0x11642d540, {{26.0, 643.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642d680, {{45.5, 640.0}, {147.0, 24.0}}, label: 'EXPORT34_CELL_004'
+                        Button, 0x11642d7c0, {{0.0, 678.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_005, path visual_export_qualification / EXPORT34_CELL_005, ↳ , EXPORT34_CELL_005'
+                          StaticText, 0x11642d900, {{26.0, 691.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642da40, {{45.5, 688.0}, {147.0, 24.0}}, label: 'EXPORT34_CELL_005'
+                        Button, 0x11642db80, {{0.0, 726.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_006, path visual_export_qualification / EXPORT34_CELL_006, ↳ , EXPORT34_CELL_006'
+                          StaticText, 0x11642dcc0, {{26.0, 739.0}, {19.5, 24.0}}, label: '↳ '
+                          StaticText, 0x11642de00, {{45.5, 736.0}, {147.0, 24.0}}, label: 'EXPORT34_CELL_006'
+                        Button, 0x11642df40, {{0.0, 774.0}, {250.0, 33.0}}, label: 'Open instance EXPORT34_CELL_007, path visual_export_qualification / EXPORT34_CELL_007, ↳ , EXPORT34_CELL_007'
+                          StaticText, 0x11642e080, {{26.0, 787.0}, {19.5, 19.0}}, label: '↳ '
+                          StaticText, 0x11642e1c0, {{45.5, 784.0}, {146.0, 22.0}}, label: 'EXPORT34_CELL_007'
+                        Button, 0x11642e300, {{0.0, 822.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_008, path visual_export_qualification / EXPORT34_CELL_008'
+                        Button, 0x11642e440, {{0.0, 870.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_009, path visual_export_qualification / EXPORT34_CELL_009'
+                        Button, 0x11642e580, {{0.0, 918.0}, {250.0, 48.0}}, label: 'Open instance EXPORT34_CELL_010, path visual_export_qualification / EXPORT34_CELL_010'
+                      Other, 0x11642e6c0, {{250.0, 228.0}, {584.0, 927.0}}, label: 'Circuit area. . Use two fingers to zoom and pan.'
+                      Other, 0x11642e800, {{250.0, 228.0}, {584.0, 927.0}}, identifier: 'editor-canvas'
+                      Other, 0x11642e940, {{250.0, 228.0}, {584.0, 927.0}}
+                        Button, 0x11642ea80, {{263.0, 517.5}, {13.0, 48.0}}, identifier: 'canvas-component:import-1', label: 'EXPORT34_TEXT', value: Text. 1 undefined ...
+                        Button, 0x11642ebc0, {{276.0, 517.0}, {48.0, 11.5}}, identifier: 'canvas-component:import-3', label: 'Subcircuit (300, 100), import-3', value: Subcircuit. 8 unde...
+                        Button, 0x11642ed00, {{264.5, 528.5}, {23.0, 48.0}}, identifier: 'canvas-component:import-2', label: 'EXPORT34_IMAGE', value: Selected. Image. 1..., Selected
+                        Button, 0x11642ee40, {{287.5, 526.0}, {48.0, 27.0}}, identifier: 'canvas-component:import-4', label: 'Subcircuit (400, 200), import-4', value: Subcircuit. 8 unde...
+                        Button, 0x11642ef80, {{293.5, 533.5}, {48.0, 19.5}}, identifier: 'canvas-component:import-5', label: 'Subcircuit (500, 300), import-5', value: Subcircuit. 8 unde...
+                        Button, 0x11642f0c0, {{285.0, 553.0}, {42.5, 48.0}}, identifier: 'canvas-component:import-7', label: 'EXPORT34_CELL_000', value: Subcircuit. 8 unde...
+                        Button, 0x11642f200, {{327.5, 553.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-8', label: 'EXPORT34_CELL_001', value: Subcircuit. 8 unde...
+                        Button, 0x11642f340, {{365.0, 553.0}, {43.0, 40.0}}, identifier: 'canvas-component:import-9', label: 'EXPORT34_CELL_002', value: Subcircuit. 8 unde...
+                        Button, 0x11642f480, {{408.0, 553.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-10', label: 'EXPORT34_CELL_003', value: Subcircuit. 8 unde...
+                        Button, 0x11642f5c0, {{445.5, 553.0}, {42.5, 40.0}}, identifier: 'canvas-component:import-11', label: 'EXPORT34_CELL_004', value: Subcircuit. 8 unde...
+                        Button, 0x11642f700, {{488.0, 553.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-12', label: 'EXPORT34_CELL_005', value: Subcircuit. 8 unde...
+                        Button, 0x11642f840, {{525.5, 553.0}, {43.0, 40.0}}, identifier: 'canvas-component:import-13', label: 'EXPORT34_CELL_006', value: Subcircuit. 8 unde...
+                        Button, 0x11642f980, {{568.5, 553.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-14', label: 'EXPORT34_CELL_007', value: Subcircuit. 8 unde...
+                        Button, 0x11642fac0, {{606.0, 553.0}, {42.5, 40.0}}, identifier: 'canvas-component:import-15', label: 'EXPORT34_CELL_008', value: Subcircuit. 8 unde...
+                        Button, 0x11642fc00, {{648.5, 553.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-16', label: 'EXPORT34_CELL_009', value: Subcircuit. 8 unde...
+                        Button, 0x11642fd40, {{686.0, 553.0}, {43.0, 40.0}}, identifier: 'canvas-component:import-17', label: 'EXPORT34_CELL_010', value: Subcircuit. 8 unde...
+                        Button, 0x11642fe80, {{729.0, 553.0}, {48.0, 48.0}}, identifier: 'canvas-component:import-18', label: 'EXPORT34_CELL_011', value: Subcircuit. 8 unde...
+                        Button, 0x116430000, {{287.5, 593.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-19', label: 'EXPORT34_CELL_012', value: Subcircuit. 8 unde...
+                        Button, 0x116430140, {{325.0, 593.0}, {42.5, 40.0}}, identifier: 'canvas-component:import-20', label: 'EXPORT34_CELL_013', value: Subcircuit. 8 unde...
+                        Button, 0x116430280, {{367.5, 593.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-21', label: 'EXPORT34_CELL_014', value: Subcircuit. 8 unde...
+                        Button, 0x1164303c0, {{405.0, 593.0}, {43.0, 40.0}}, identifier: 'canvas-component:import-22', label: 'EXPORT34_CELL_015', value: Subcircuit. 8 unde...
+                        Button, 0x116430500, {{448.0, 593.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-23', label: 'EXPORT34_CELL_016', value: Subcircuit. 8 unde...
+                        Button, 0x116430640, {{485.5, 593.0}, {43.0, 40.0}}, identifier: 'canvas-component:import-24', label: 'EXPORT34_CELL_017', value: Subcircuit. 8 unde...
+                        Button, 0x116430780, {{528.5, 593.0}, {37.0, 40.0}}, identifier: 'canvas-component:import-25', label: 'EXPORT34_CELL_018', value: Subcircuit. 8 unde...
+                        Button, 0x1164308c0, {{565.5, 593.0}, {43.0, 40.0}}, identifier: 'canvas-component:import-26', label: 'EXPORT34_CELL_019', value: Subcircuit. 8 unde...
+                        Button, 0x116430a00, {{608.5, 593.0}, {37.5, 40.0}}, identifier: 'canvas-component:import-27', label: 'EXPORT34_CELL_020', value: Subcircuit. 8 unde...
+                        Button, 0x116430b40, {{646.0, 593.0}, {43.0, 40.0}}, identifier: 'canvas-component:import-28', label: 'EXPORT34_CELL_021', value: Subcircuit. 8 unde...
+                        Button, 0x116430c80, {{689.0, 593.0}, {37.0, 40.0}}, identifier: 'canvas-component:import-29', label: 'EXPORT34_CELL_022', value: Subcircuit. 8 unde...
+                        Button, 0x116430dc0, {{726.0, 593.0}, {48.0, 40.0}}, identifier: 'canvas-component:import-30', label: 'EXPORT34_CELL_023', value: Subcircuit. 8 unde...
+                        Button, 0x116430f00, {{285.0, 633.0}, {42.5, 48.0}}, identifier: 'canvas-component:import-31', label: 'EXPORT34_CELL_024', value: Subcircuit. 8 unde...
+                        Button, 0x116431040, {{327.5, 633.0}, {37.5, 40.5}}, identifier: 'canvas-component:import-32', label: 'EXPORT34_CELL_025', value: Subcircuit. 8 unde...
+                        Button, 0x116431180, {{365.0, 633.0}, {43.0, 40.5}}, identifier: 'canvas-component:import-33', label: 'EXPORT34_CELL_026', value: Subcircuit. 8 unde...
+                        Button, 0x1164312c0, {{408.0, 633.0}, {37.5, 40.5}}, identifier: 'canvas-component:import-34', label: 'EXPORT34_CELL_027', value: Subcircuit. 8 unde...
+                        Button, 0x116431400, {{445.5, 633.0}, {42.5, 40.5}}, identifier: 'canvas-component:import-35', label: 'EXPORT34_CELL_028', value: Subcircuit. 8 unde...
+                        Button, 0x116431540, {{488.0, 633.0}, {37.5, 40.5}}, identifier: 'canvas-component:import-36', label: 'EXPORT34_CELL_029', value: Subcircuit. 8 unde...
+                        Button, 0x116431680, {{525.5, 633.0}, {43.0, 40.5}}, identifier: 'canvas-component:import-37', label: 'EXPORT34_CELL_030', value: Subcircuit. 8 unde...
+                        Button, 0x1164317c0, {{568.5, 633.0}, {37.5, 40.5}}, identifier: 'canvas-component:import-38', label: 'EXPORT34_CELL_031', value: Subcircuit. 8 unde...
+                        Button, 0x116431900, {{606.0, 633.0}, {42.5, 40.5}}, identifier: 'canvas-component:import-39', label: 'EXPORT34_CELL_032', value: Subcircuit. 8 unde...
+                        Button, 0x116431a40, {{648.5, 633.0}, {37.5, 40.5}}, identifier: 'canvas-component:import-40', label: 'EXPORT34_CELL_033', value: Subcircuit. 8 unde...
+                        Button, 0x116431b80, {{686.0, 633.0}, {43.0, 40.5}}, identifier: 'canvas-component:import-41', label: 'EXPORT34_CELL_034', value: Subcircuit. 8 unde...
+                        Button, 0x116431cc0, {{729.0, 633.0}, {48.0, 48.0}}, identifier: 'canvas-component:import-42', label: 'EXPORT34_CELL_035', value: Subcircuit. 8 unde...
+                        Button, 0x116431e00, {{287.5, 673.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-43', label: 'EXPORT34_CELL_036', value: Subcircuit. 8 unde...
+                        Button, 0x116431f40, {{325.0, 673.5}, {42.5, 40.0}}, identifier: 'canvas-component:import-44', label: 'EXPORT34_CELL_037', value: Subcircuit. 8 unde...
+                        Button, 0x116432080, {{367.5, 673.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-45', label: 'EXPORT34_CELL_038', value: Subcircuit. 8 unde...
+                        Button, 0x1164321c0, {{405.0, 673.5}, {43.0, 40.0}}, identifier: 'canvas-component:import-46', label: 'EXPORT34_CELL_039', value: Subcircuit. 8 unde...
+                        Button, 0x116432300, {{448.0, 673.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-47', label: 'EXPORT34_CELL_040', value: Subcircuit. 8 unde...
+                        Button, 0x116432440, {{485.5, 673.5}, {43.0, 40.0}}, identifier: 'canvas-component:import-48', label: 'EXPORT34_CELL_041', value: Subcircuit. 8 unde...
+                        Button, 0x116432580, {{528.5, 673.5}, {37.0, 40.0}}, identifier: 'canvas-component:import-49', label: 'EXPORT34_CELL_042', value: Subcircuit. 8 unde...
+                        Button, 0x1164326c0, {{565.5, 673.5}, {43.0, 40.0}}, identifier: 'canvas-component:import-50', label: 'EXPORT34_CELL_043', value: Subcircuit. 8 unde...
+                        Button, 0x116432800, {{608.5, 673.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-51', label: 'EXPORT34_CELL_044', value: Subcircuit. 8 unde...
+                        Button, 0x116432940, {{646.0, 673.5}, {43.0, 40.0}}, identifier: 'canvas-component:import-52', label: 'EXPORT34_CELL_045', value: Subcircuit. 8 unde...
+                        Button, 0x116432a80, {{689.0, 673.5}, {37.0, 40.0}}, identifier: 'canvas-component:import-53', label: 'EXPORT34_CELL_046', value: Subcircuit. 8 unde...
+                        Button, 0x116432bc0, {{726.0, 673.5}, {48.0, 40.0}}, identifier: 'canvas-component:import-54', label: 'EXPORT34_CELL_047', value: Subcircuit. 8 unde...
+                        Button, 0x116432d00, {{285.0, 713.5}, {42.5, 48.0}}, identifier: 'canvas-component:import-55', label: 'EXPORT34_CELL_048', value: Subcircuit. 8 unde...
+                        Button, 0x116432e40, {{327.5, 713.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-56', label: 'EXPORT34_CELL_049', value: Subcircuit. 8 unde...
+                        Button, 0x116432f80, {{365.0, 713.5}, {43.0, 40.0}}, identifier: 'canvas-component:import-57', label: 'EXPORT34_CELL_050', value: Subcircuit. 8 unde...
+                        Button, 0x1164330c0, {{408.0, 713.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-58', label: 'EXPORT34_CELL_051', value: Subcircuit. 8 unde...
+                        Button, 0x116433200, {{445.5, 713.5}, {42.5, 40.0}}, identifier: 'canvas-component:import-59', label: 'EXPORT34_CELL_052', value: Subcircuit. 8 unde...
+                        Button, 0x116433340, {{488.0, 713.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-60', label: 'EXPORT34_CELL_053', value: Subcircuit. 8 unde...
+                        Button, 0x116433480, {{525.5, 713.5}, {43.0, 40.0}}, identifier: 'canvas-component:import-61', label: 'EXPORT34_CELL_054', value: Subcircuit. 8 unde...
+                        Button, 0x1164335c0, {{568.5, 713.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-62', label: 'EXPORT34_CELL_055', value: Subcircuit. 8 unde...
+                        Button, 0x116433700, {{606.0, 713.5}, {42.5, 40.0}}, identifier: 'canvas-component:import-63', label: 'EXPORT34_CELL_056', value: Subcircuit. 8 unde...
+                        Button, 0x116433840, {{648.5, 713.5}, {37.5, 40.0}}, identifier: 'canvas-component:import-64', label: 'EXPORT34_CELL_057', value: Subcircuit. 8 unde...
+                        Button, 0x116433980, {{686.0, 713.5}, {43.0, 40.0}}, identifier: 'canvas-component:import-65', label: 'EXPORT34_CELL_058', value: Subcircuit. 8 unde...
+                        Button, 0x116433ac0, {{729.0, 713.5}, {48.0, 48.0}}, identifier: 'canvas-component:import-66', label: 'EXPORT34_CELL_059', value: Subcircuit. 8 unde...
+                        Button, 0x116433c00, {{287.5, 753.5}, {37.5, 48.0}}, identifier: 'canvas-component:import-67', label: 'EXPORT34_CELL_060', value: Subcircuit. 8 unde...
+                        Button, 0x116433d40, {{325.0, 753.5}, {42.5, 48.0}}, identifier: 'canvas-component:import-68', label: 'EXPORT34_CELL_061', value: Subcircuit. 8 unde...
+                        Button, 0x116433e80, {{367.5, 753.5}, {37.5, 48.0}}, identifier: 'canvas-component:import-69', label: 'EXPORT34_CELL_062', value: Subcircuit. 8 unde...
+                        Button, 0x116434000, {{405.0, 753.5}, {43.0, 48.0}}, identifier: 'canvas-component:import-70', label: 'EXPORT34_CELL_063', value: Subcircuit. 8 unde...
+                        Button, 0x116434140, {{448.0, 753.5}, {37.5, 48.0}}, identifier: 'canvas-component:import-71', label: 'EXPORT34_CELL_064', value: Subcircuit. 8 unde...
+                        Button, 0x116434280, {{485.5, 753.5}, {43.0, 48.0}}, identifier: 'canvas-component:import-72', label: 'EXPORT34_CELL_065', value: Subcircuit. 8 unde...
+                        Button, 0x1164343c0, {{528.5, 753.5}, {37.0, 48.0}}, identifier: 'canvas-component:import-73', label: 'EXPORT34_CELL_066', value: Subcircuit. 8 unde...
+                        Button, 0x116434500, {{565.5, 753.5}, {43.0, 48.0}}, identifier: 'canvas-component:import-74', label: 'EXPORT34_CELL_067', value: Subcircuit. 8 unde...
+                        Button, 0x116434640, {{608.5, 753.5}, {37.5, 48.0}}, identifier: 'canvas-component:import-75', label: 'EXPORT34_CELL_068', value: Subcircuit. 8 unde...
+                        Button, 0x116434780, {{646.0, 753.5}, {43.0, 48.0}}, identifier: 'canvas-component:import-76', label: 'EXPORT34_CELL_069', value: Subcircuit. 8 unde...
+                        Button, 0x1164348c0, {{689.0, 753.5}, {37.0, 48.0}}, identifier: 'canvas-component:import-77', label: 'EXPORT34_CELL_070', value: Subcircuit. 8 unde...
+                        Button, 0x116434a00, {{726.0, 753.5}, {48.0, 48.0}}, identifier: 'canvas-component:import-78', label: 'EXPORT34_CELL_071', value: Subcircuit. 8 unde...
+                        Button, 0x116434b40, {{765.0, 802.0}, {48.0, 48.0}}, identifier: 'canvas-component:import-6', label: 'EXPORT34_FAR', value: Text. 1 undefined ...
+                      Other, 0x116434c80, {{0.0, 807.0}, {250.0, 48.0}}
+                        Button, 0x116434dc0, {{0.0, 807.0}, {58.0, 48.0}}, label: 'Load SAP-1 example, SAP-1'
+                          StaticText, 0x116434f00, {{11.0, 821.0}, {36.0, 20.0}}, label: 'SAP-1'
+                        Button, 0x116435040, {{58.0, 807.0}, {58.0, 48.0}}, label: 'Load AND example, AND'
+                          StaticText, 0x116435180, {{74.0, 821.0}, {26.5, 20.0}}, label: 'AND'
+                        Button, 0x1164352c0, {{116.0, 807.0}, {58.0, 48.0}}, label: 'Create an empty circuit, New'
+                          StaticText, 0x116435400, {{132.0, 821.0}, {26.0, 20.0}}, label: 'New'
+                      Other, 0x116435540, {{0.0, 855.0}, {250.0, 300.0}}
+                      Other, 0x116435680, {{0.0, 855.0}, {250.0, 300.0}}
+                        StaticText, 0x1164357c0, {{12.0, 867.0}, {52.0, 24.0}}, label: 'Image'
+                        TextView, 0x116435900, {{8.0, 903.0}, {234.0, 64.0}}, label: 'Label', value: EXPORT34_IMAGE
+                          Other, 0x116435a40, {{8.0, 911.0}, {234.0, 56.0}}
+                          StaticText, 0x116435b80, {{24.0, 903.0}, {33.0, 16.0}}, label: 'Label'
+                          Other, 0x116435cc0, {{24.0, 915.5}, {150.5, 48.0}}
+                        Button, 0x116435e00, {{178.5, 915.0}, {63.5, 48.0}}, label: 'Apply'
+                          StaticText, 0x116435f40, {{190.5, 929.0}, {39.5, 20.0}}, label: 'Apply'
+                        Button, 0x116436080, {{0.0, 967.0}, {250.0, 64.0}}, label: 'Edit property image, image, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAD0lEQVR4nGP4z8DwHwgbABB5A359Y87XAAAAAElFTkSuQmCC'
+                          StaticText, 0x1164361c0, {{12.0, 987.0}, {107.0, 24.0}}, label: 'image'
+                          StaticText, 0x116436300, {{131.0, 975.0}, {107.0, 48.0}}, label: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAD0lEQVR4nGP4z8DwHwgbABB5A359Y87XAAAAAElFTkSuQmCC'
+                        Button, 0x116436440, {{0.0, 1032.0}, {250.0, 48.0}}, label: 'Edit property Data bits, Data bits, 120'
+                          StaticText, 0x116436580, {{12.0, 1044.0}, {107.0, 24.0}}, label: 'Data bits'
+                          StaticText, 0x1164366c0, {{131.0, 1044.0}, {107.0, 24.0}}, label: '120'
+                        Button, 0x116436800, {{0.0, 1081.0}, {250.0, 48.0}}, label: 'Edit property Height, Height, 80'
+                          StaticText, 0x116436940, {{12.0, 1093.0}, {107.0, 24.0}}, label: 'Height'
+                          StaticText, 0x116436a80, {{131.0, 1093.0}, {107.0, 24.0}}, label: '80'
+                        Button, 0x116436bc0, {{0.0, 1130.0}, {250.0, 48.0}}, label: 'Edit property scale, scale, cover'
+                          StaticText, 0x116436d00, {{12.0, 1142.0}, {107.0, 13.0}}, label: 'scale'
+                          StaticText, 0x116436e40, {{131.0, 1142.0}, {107.0, 13.0}}, label: 'cover'
+                        Button, 0x116436f80, {{0.0, 1179.0}, {250.0, 48.0}}, label: 'Edit property license'
+                        Button, 0x1164370c0, {{0.0, 1228.0}, {250.0, 48.0}}, label: 'Edit property attribution'
+                      Button, 0x116437200, {{642.0, 1095.0}, {48.0, 48.0}}, label: 'Decrease zoom, −'
+                        StaticText, 0x116437340, {{662.0, 1109.0}, {8.0, 20.0}}, label: '−'
+                      Button, 0x116437480, {{696.0, 1095.0}, {72.0, 48.0}}, label: 'Fit circuit, 18%'
+                        StaticText, 0x1164375c0, {{719.0, 1109.0}, {26.0, 20.0}}, label: '18%'
+                      Button, 0x116437700, {{774.0, 1095.0}, {48.0, 48.0}}, label: 'Increase zoom, +'
+                        StaticText, 0x116437840, {{794.0, 1109.0}, {8.0, 20.0}}, label: '+'
+                      Other, 0x116437980, {{8.0, 1149.0}, {818.0, 48.0}}
+                      Other, 0x116437ac0, {{8.0, 1161.0}, {671.0, 24.0}}, label: 'Operation cancelled.'
+                      StaticText, 0x116437c00, {{687.0, 1161.0}, {139.0, 24.0}}, label: '78 components · 4 wires'
+    Window, 0x116437d40, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x116437e80, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x11674c000, {{0.0, 0.0}, {834.0, 1210.0}}
+Path to element:
+ →Application, 0x1135521c0, pid: 76677, label: 'Logisim Mobile'
+Query chain:
+ →Find: Application 'thalesmms.logisim.mobile'
+  Output: {
+    Application, 0x11674c140, pid: 76677, label: 'Logisim Mobile'
+  }

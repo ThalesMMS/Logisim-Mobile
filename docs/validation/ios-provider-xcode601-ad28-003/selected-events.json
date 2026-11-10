@@ -1,0 +1,786 @@
+{
+  "source": "new-discovery-after-install.stdout",
+  "indexBase": 0,
+  "sourceRecords": 956,
+  "events": [
+    {
+      "index": 23,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "%s: %@: setting placeholder attributes to %@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.installcoordination",
+        "category": "daemon",
+        "personaType": -1,
+        "threadID": 10181198,
+        "launchPersonaType": -1,
+        "senderImageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 80164,
+              "imageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd",
+        "senderImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:50:59.574898+0000",
+        "machTimestamp": 6525464263879,
+        "personaName": "",
+        "eventMessage": "-[IXSPlaceholder setAttributes:]: <IXSPlaceholder(0x10110c780) Name:PlugInKit Placeholder: Logisim Revocation Fixture (thalesmms.logisim.validation.revocationfixture.provider) Creator:InstallCoordination Simple SPI UUID:292C0B85-1A12-48B4-9B74-56D411C1C93B Location:[system-defined]>: setting placeholder attributes to <IXPlaceholderAttributes<0x1010ac960> : {\n    CFBundleShortVersionString = \"1.0\";\n    CFBundleSupportedPlatforms =     (\n        iPhoneSimulator\n    );\n    CFBundleVersion = 1;\n    DTPlatformName = iphonesimulator;\n    MinimumOSVersion = \"17.0\";\n    NSExtension =     {\n        NSExtensionFileProviderDocumentGroup = \"group.thalesmms.logisim.validation.revocationfixture\";\n        NSExtensionFileProviderSupportsEnumeration = 1;\n        NSExtensionPointIdentifier = \"com.apple.fileprovider-nonui\";\n        NSExtensionPrincipalClass = \"RevocationProvider.RevocationFileProvider\";\n    };\n    UIDeviceFamily =     (\n        1,\n        2\n    );\n}>",
+        "processImageUUID": "7E2B39C0-678F-3DF8-8D2E-FD74F166B7F2",
+        "traceID": 2515102884560900,
+        "processID": 23503,
+        "senderProgramCounter": 80164,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 848,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Query; personaid = %u, type = %{public}s, name = %{public}s, origin [pid = %d, personaid = %u], proximate [pid = %d, personaid = %u], euid = %u, uid = %u, class = %llu%s, identifier = [%s](%zu), gidentifier = [%s](%zu), flags = %llx",
+        "userID": 501,
+        "activityIdentifier": 41559458,
+        "subsystem": "com.apple.containermanager",
+        "category": "query",
+        "personaType": -1,
+        "threadID": 10182062,
+        "launchPersonaType": -1,
+        "senderImageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 103772,
+              "imageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/usr/lib/system/libsystem_containermanager.dylib",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.608832+0000",
+        "machTimestamp": 6525705078301,
+        "personaName": "",
+        "eventMessage": "Query; personaid = 4294967295, type = NOPERSONA, name = <unknown>, origin [pid = 0, personaid = 0], proximate [pid = 0, personaid = 0], euid = 501, uid = 501, class = 7, identifier = [(null)](0), gidentifier = [group.thalesmms.logisim.validation.revocationfixture](1), flags = 900000002",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5884045199239610372,
+        "processID": 23580,
+        "senderProgramCounter": 103772,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 851,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Info",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Query result; index [%zu] %s %s",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.containermanager",
+        "category": "query",
+        "personaType": -1,
+        "threadID": 10182062,
+        "launchPersonaType": -1,
+        "senderImageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 106852,
+              "imageUUID": "061AE9E3-059B-3341-80AE-3B9076733C6C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/usr/lib/system/libsystem_containermanager.dylib",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.623686+0000",
+        "machTimestamp": 6525705434804,
+        "personaName": "",
+        "eventMessage": "Query result; index [0] [appGroup:group.thalesmms.logisim.validation.revocationfixture:501::(C4A78BD1-44B3-4590-B045-A3AC1883D566):{501:20:u+rwx,g+rx,o+rx}] /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5884043953631920388,
+        "processID": 23580,
+        "senderProgramCounter": 106852,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 852,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[NOTICE] \u250f%llx writing domain properties for %{public}@ onto %{public}@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "default",
+        "personaType": -1,
+        "threadID": 10182062,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 308924,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.665815+0000",
+        "machTimestamp": 6525706445882,
+        "personaName": "",
+        "eventMessage": "[NOTICE] \u250f7 writing domain properties for thalesmms.logisim.validation.revocationfixture.provider onto <FPDVolume:0x106043660 role:home dev:16777232 uuid:FC...59 '/S{4}m/V{5}s/D{2}a'>",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027172448777535492,
+        "processID": 23580,
+        "senderProgramCounter": 308924,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 853,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Info",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[INFO] Updating plist for %@ on %@ (%@)",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "default",
+        "personaType": -1,
+        "threadID": 10182062,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 310076,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.666028+0000",
+        "machTimestamp": 6525706451011,
+        "personaName": "",
+        "eventMessage": "[INFO] Updating plist for thalesmms.logisim.validation.revocationfixture.provider on <FPDVolume:0x106043660 role:home dev:16777232 uuid:FC...59 '/S{4}m/V{5}s/D{2}a'> (file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Library/Application%20Support/FileProvider/)",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027173286312935684,
+        "processID": 23580,
+        "senderProgramCounter": 310076,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 854,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[NOTICE] %{public}@ -> {unregistering: %{public}@, registering: %{public}@}",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "default",
+        "personaType": -1,
+        "threadID": 10182062,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 692264,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.679908+0000",
+        "machTimestamp": 6525706784119,
+        "personaName": "",
+        "eventMessage": "[NOTICE] (\n    \"<FPDCloudDocsExtension:0x1060bd380 \\\"com.apple.CloudDocs.iCloudDriveFileProvider\\\" uuid:\\\"90F19229-D66E-401B-B117-14155C5542E3\\\" persona:\\\"(null)\\\">\",\n    \"<FPDExtension:0x1060bf180 \\\"thalesmms.logisim.validation.revocationfixture.provider\\\" uuid:\\\"EE01632E-C8E9-4DE7-9982-4B355E84C2F4\\\" persona:\\\"(null)\\\">\",\n    \"<FPDExtension:0x1060bfc00 \\\"com.apple.mobileslideshow.PhotosFileProvider\\\" uuid:\\\"BB7CF609-CADA-4C8F-8BBF-5FC74976451F\\\" persona:\\\"(null)\\\">\"\n) -> {unregistering: (\n), registering: (\n    \"<FPDExtension:0x1060bfc00 \\\"com.apple.mobileslideshow.PhotosFileProvider\\\" uuid:\\\"BB7CF609-CADA-4C8F-8BBF-5FC74976451F\\\" persona:\\\"(null)\\\">\",\n    \"<FPDCloudDocsExtension:0x1060bd380 \\\"com.apple.CloudDocs.iCloudDriveFileProvider\\\" uuid:\\\"90F19229-D66E-401B-B117-14155C5542E3\\\" persona:\\\"(null)\\\">\",\n    \"<FPDExtension:0x1060bf180 \\\"thalesmms.logisim.validation.revocationfixture.provider\\\" uuid:\\\"EE01632E-C8E9-4DE7-9982-4B355E84C2F4\\\" persona:\\\"(null)\\\">\"\n)}",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027266886518439940,
+        "processID": 23580,
+        "senderProgramCounter": 692264,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 855,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[NOTICE] \u250f%llx Starting domains for %{public}@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "default",
+        "personaType": -1,
+        "threadID": 10182062,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 295388,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.715563+0000",
+        "machTimestamp": 6525707639833,
+        "personaName": "",
+        "eventMessage": "[NOTICE] \u250f12 Starting domains for thalesmms.logisim.validation.revocationfixture.provider",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027167857457496068,
+        "processID": 23580,
+        "senderProgramCounter": 295388,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 856,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[NOTICE] [%{public}@] starting extension request %{public}@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "thalesmms.logisim.validation.revocationfixture.provider/N{35}r",
+        "personaType": -1,
+        "threadID": 10182086,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 835512,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.716042+0000",
+        "machTimestamp": 6525707651335,
+        "personaName": "",
+        "eventMessage": "[NOTICE] [<FPDExtensionSession(thalesmms.logisim.validation.revocationfixture.provider/N{35}r): 0x1060cd5e0 requests(0){}, extenders(0){}>] starting extension request thalesmms.logisim.validation.revocationfixture.provider",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027308809694216196,
+        "processID": 23580,
+        "senderProgramCounter": 835512,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 857,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Adding provider %{public}@ for URL: %{private}@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.foundation.filecoordination",
+        "category": "provider",
+        "personaType": -1,
+        "threadID": 10182087,
+        "launchPersonaType": -1,
+        "senderImageUUID": "49FCDA5F-A93E-3259-857C-FC75AC2C7B03",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 1852532,
+              "imageUUID": "49FCDA5F-A93E-3259-857C-FC75AC2C7B03"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.717909+0000",
+        "machTimestamp": 6525707696151,
+        "personaName": "",
+        "eventMessage": "Adding provider thalesmms.logisim.validation.revocationfixture.provider for URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4/File%20Provider%20Storage/",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 92817352873476100,
+        "processID": 23580,
+        "senderProgramCounter": 1852532,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 859,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Info",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[INFO] \ud83c\udd7f\ufe0f Registered file provider extension %@ (%@) for path %@: %@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "thalesmms.logisim.validation.revocationfixture.provider/N{35}r",
+        "personaType": -1,
+        "threadID": 10182087,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 259792,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.718285+0000",
+        "machTimestamp": 6525707705164,
+        "personaName": "",
+        "eventMessage": "[INFO] \ud83c\udd7f\ufe0f Registered file provider extension thalesmms.logisim.validation.revocationfixture.provider/N{35}r (thalesmms.logisim.validation.revocationfixture.provider) for path <GroupContainers>/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4/F{19}e: <FPDFileCoordinationProvider: 0x1062fc0f0>",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027151283195478276,
+        "processID": 23580,
+        "senderProgramCounter": 259792,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 862,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Launching process with config: %{public}s",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.extensionkit",
+        "category": "launch",
+        "personaType": -1,
+        "threadID": 10182063,
+        "launchPersonaType": -1,
+        "senderImageUUID": "B6E36884-66E0-3F8F-8D98-C4DB4CE8DC2B",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 384916,
+              "imageUUID": "B6E36884-66E0-3F8F-8D98-C4DB4CE8DC2B"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/Frameworks/ExtensionFoundation.framework/ExtensionFoundation",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.872561+0000",
+        "machTimestamp": 6525711407799,
+        "personaName": "",
+        "eventMessage": "Launching process with config: identity: RecordIdentity(record: ExtensionFoundation.Database._ExtensionRecord(lsRecord: <LSApplicationExtensionRecord 0x106041c20> { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/, super: <LSApplicationExtensionRecord 0x106041c20> { table: 20, unit: 7e4, attached: yes } })) instance: _InstanceIdentifier(_id: Optional(5A150949-2FED-41C2-8442-7B629AC413F6))",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 465176088113577988,
+        "processID": 23580,
+        "senderProgramCounter": 384916,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 863,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Info",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Sending launch request: %{public}@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.runningboard",
+        "category": "general",
+        "personaType": -1,
+        "threadID": 10182063,
+        "launchPersonaType": -1,
+        "senderImageUUID": "B08D2CFC-3162-39AC-92AB-0FD4D965F599",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 97516,
+              "imageUUID": "B08D2CFC-3162-39AC-92AB-0FD4D965F599"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/RunningBoardServices.framework/RunningBoardServices",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.872939+0000",
+        "machTimestamp": 6525711416877,
+        "personaName": "",
+        "eventMessage": "Sending launch request: <RBSLaunchRequest| extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]; \"(null)\">",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 787254367085658372,
+        "processID": 23580,
+        "senderProgramCounter": 97516,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 872,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Full encoding handle %@, with data %llx, and pid %d",
+        "userID": 501,
+        "activityIdentifier": 41559570,
+        "subsystem": "com.apple.runningboard",
+        "category": "general",
+        "personaType": -1,
+        "threadID": 10177730,
+        "launchPersonaType": -1,
+        "senderImageUUID": "B08D2CFC-3162-39AC-92AB-0FD4D965F599",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 244560,
+              "imageUUID": "B08D2CFC-3162-39AC-92AB-0FD4D965F599"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/runningboardd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/RunningBoardServices.framework/RunningBoardServices",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.910753+0000",
+        "machTimestamp": 6525712324408,
+        "personaName": "",
+        "eventMessage": "Full encoding handle [extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]:23598], with data e634cd4d00005c2e, and pid 23598",
+        "processImageUUID": "1BE5E06E-D24E-328D-BBDB-3DEDA0DACF7B",
+        "traceID": 787276997268406276,
+        "processID": 83430,
+        "senderProgramCounter": 244560,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 880,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Calculated state for %{public}@: %{public}@ (role: %{public}@) (endowments: %@) ",
+        "userID": 501,
+        "activityIdentifier": 41559570,
+        "subsystem": "com.apple.runningboard",
+        "category": "monitor",
+        "personaType": -1,
+        "threadID": 10181265,
+        "launchPersonaType": -1,
+        "senderImageUUID": "A122C260-EBAE-3CB5-803B-511A21F17C0F",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 407460,
+              "imageUUID": "A122C260-EBAE-3CB5-803B-511A21F17C0F"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/runningboardd",
+        "senderImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/RunningBoard.framework/RunningBoard",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.911196+0000",
+        "machTimestamp": 6525712335047,
+        "personaName": "",
+        "eventMessage": "Calculated state for extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]: running-active (role: UserInteractiveNonFocal) (endowments: (null))",
+        "processImageUUID": "1BE5E06E-D24E-328D-BBDB-3DEDA0DACF7B",
+        "traceID": 2316705393606660,
+        "processID": 83430,
+        "senderProgramCounter": 407460,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 892,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "Starting death monitoring for handle %@",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.runningboard",
+        "category": "process",
+        "personaType": -1,
+        "threadID": 10182063,
+        "launchPersonaType": -1,
+        "senderImageUUID": "B08D2CFC-3162-39AC-92AB-0FD4D965F599",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 188604,
+              "imageUUID": "B08D2CFC-3162-39AC-92AB-0FD4D965F599"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/RunningBoardServices.framework/RunningBoardServices",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.912409+0000",
+        "machTimestamp": 6525712364146,
+        "personaName": "",
+        "eventMessage": "Starting death monitoring for handle [extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]:23598]",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 787274871259529220,
+        "processID": 23580,
+        "senderProgramCounter": 188604,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 897,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Info",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[INFO] [helena] Creating new XPC connection for extension %@, instance %{public}@ at QoS %d",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.FileProvider",
+        "category": "thalesmms.logisim.validation.revocationfixture.provider/N{35}r",
+        "personaType": -1,
+        "threadID": 10182063,
+        "launchPersonaType": -1,
+        "senderImageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 826432,
+              "imageUUID": "D6F621D8-73B2-3A36-957D-4DD6AC340B7C"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd",
+        "senderImagePath": "/System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:09.912979+0000",
+        "machTimestamp": 6525712377823,
+        "personaName": "",
+        "eventMessage": "[INFO] [helena] Creating new XPC connection for extension <FPDExtension:0x1060bf180 \"thalesmms.logisim.validation.revocationfixture.provider\" uuid:\"EE01632E-C8E9-4DE7-9982-4B355E84C2F4\" persona:\"(null)\">, instance [_EXExtensionInstanceIdentifier: 5A150949-2FED-41C2-8442-7B629AC413F6] at QoS 17",
+        "processImageUUID": "0F1C5B2B-0DB7-350D-A387-B4008A174051",
+        "traceID": 5027303505409605892,
+        "processID": 23580,
+        "senderProgramCounter": 826432,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 920,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[%p] %{public}s connection: mach=%{bool}d listener=%{bool}d peer=%{bool}d name=%{public}s",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.xpc",
+        "category": "connection",
+        "personaType": -1,
+        "threadID": 10182110,
+        "launchPersonaType": -1,
+        "senderImageUUID": "9D3F74E7-3220-393A-9A25-1988DE69945E",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 61256,
+              "imageUUID": "9D3F74E7-3220-393A-9A25-1988DE69945E"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider",
+        "senderImagePath": "/usr/lib/system/libxpc.dylib",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:10.138188+0000",
+        "machTimestamp": 6525717782844,
+        "personaName": "",
+        "eventMessage": "[0x105914000] readying connection: mach=false listener=true peer=false name=thalesmms.logisim.validation.revocationfixture.provider",
+        "processImageUUID": "549BEF8F-3473-3797-8C03-87DC2FF1D946",
+        "traceID": 5709742442020868,
+        "processID": 23598,
+        "senderProgramCounter": 61256,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 921,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[%p] %{public}s connection: mach=%{bool}d listener=%{bool}d peer=%{bool}d name=%{public}s",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.xpc",
+        "category": "connection",
+        "personaType": -1,
+        "threadID": 10182110,
+        "launchPersonaType": -1,
+        "senderImageUUID": "9D3F74E7-3220-393A-9A25-1988DE69945E",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 61256,
+              "imageUUID": "9D3F74E7-3220-393A-9A25-1988DE69945E"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider",
+        "senderImagePath": "/usr/lib/system/libxpc.dylib",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:10.140477+0000",
+        "machTimestamp": 6525717837785,
+        "personaName": "",
+        "eventMessage": "[0x105914000] activating connection: mach=false listener=true peer=false name=thalesmms.logisim.validation.revocationfixture.provider",
+        "processImageUUID": "549BEF8F-3473-3797-8C03-87DC2FF1D946",
+        "traceID": 5709742442020868,
+        "processID": 23598,
+        "senderProgramCounter": 61256,
+        "parentActivityIdentifier": 0
+      }
+    },
+    {
+      "index": 922,
+      "record": {
+        "timezoneName": "",
+        "messageType": "Default",
+        "eventType": "logEvent",
+        "source": null,
+        "launchPersonaName": "",
+        "formatString": "[%p] %{public}s connection: mach=%{bool}d listener=%{bool}d peer=%{bool}d name=%{public}s",
+        "userID": 501,
+        "activityIdentifier": 0,
+        "subsystem": "com.apple.xpc",
+        "category": "connection",
+        "personaType": -1,
+        "threadID": 10182115,
+        "launchPersonaType": -1,
+        "senderImageUUID": "9D3F74E7-3220-393A-9A25-1988DE69945E",
+        "launchPersonaID": 4294967295,
+        "backtrace": {
+          "frames": [
+            {
+              "imageOffset": 61256,
+              "imageUUID": "9D3F74E7-3220-393A-9A25-1988DE69945E"
+            }
+          ]
+        },
+        "bootUUID": "D6C6B661-71FD-432F-9F10-DE0487A8D54A",
+        "processImagePath": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider",
+        "senderImagePath": "/usr/lib/system/libxpc.dylib",
+        "personaID": 4294967295,
+        "timestamp": "2026-11-05 08:51:10.140675+0000",
+        "machTimestamp": 6525717842533,
+        "personaName": "",
+        "eventMessage": "[0x105914280] activating connection: mach=false listener=false peer=true name=thalesmms.logisim.validation.revocationfixture.provider.peer[23580].0x105914280",
+        "processImageUUID": "549BEF8F-3473-3797-8C03-87DC2FF1D946",
+        "traceID": 5709742442020868,
+        "processID": 23598,
+        "senderProgramCounter": 61256,
+        "parentActivityIdentifier": 0
+      }
+    }
+  ]
+}

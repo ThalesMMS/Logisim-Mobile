@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "desktopRevision": "fbb1eca6ff72cb634b8dd1d72dc232b9838c9e01",
+  "examples": [
+    {
+      "id": "and", "title": "Porta AND", "category": "Combinacional", "path": "examples/and.circ",
+      "probes": [{"id": "Y", "x": 420, "y": 190, "width": 1}],
+      "actions": [
+        {"name": "00", "inputs": {"A": "0", "B": "0"}, "expected": {"Y": "0"}},
+        {"name": "01", "inputs": {"B": "1"}, "expected": {"Y": "0"}},
+        {"name": "11", "inputs": {"A": "1"}, "expected": {"Y": "1"}},
+        {"name": "10", "inputs": {"B": "0"}, "expected": {"Y": "0"}},
+        {"name": "unknown-controlled-low", "inputs": {"A": "?"}, "expected": {"Y": "0"}},
+        {"name": "unknown-uncontrolled", "inputs": {"B": "1"}, "expected": {"Y": "E"}}
+      ]
+    },
+    {
+      "id": "d-flip-flop", "title": "Memória com flip-flop D", "category": "Sequencial", "path": "examples/d-flip-flop.circ",
+      "probes": [{"id": "Q", "x": 420, "y": 200, "width": 1}],
+      "actions": [
+        {"name": "before-edge", "inputs": {"D": "1", "CLK": "0", "CLR": "0"}, "expected": {"Q": "0"}},
+        {"name": "rising-edge", "inputs": {"CLK": "1"}, "expected": {"Q": "1"}},
+        {"name": "hold", "inputs": {"D": "0"}, "expected": {"Q": "1"}},
+        {"name": "falling-edge", "inputs": {"CLK": "0"}, "expected": {"Q": "1"}},
+        {"name": "next-rising-edge", "inputs": {"CLK": "1"}, "expected": {"Q": "0"}},
+        {"name": "capture-one", "inputs": {"D": "1", "CLK": "0"}, "expected": {"Q": "0"}},
+        {"name": "capture-one-edge", "inputs": {"CLK": "1"}, "expected": {"Q": "1"}},
+        {"name": "asynchronous-clear", "inputs": {"CLR": "1"}, "expected": {"Q": "0"}}
+      ]
+    },
+    {
+      "id": "bus-adder", "title": "Soma de oito bits", "category": "Barramentos", "path": "examples/bus-adder.circ",
+      "probes": [{"id": "S", "x": 420, "y": 160, "width": 8}, {"id": "Carry", "x": 420, "y": 260, "width": 1}],
+      "actions": [
+        {"name": "zero", "inputs": {"A": "00000000", "B": "00000000"}, "expected": {"S": "00000000", "Carry": "0"}},
+        {"name": "carry", "inputs": {"A": "11111111", "B": "00000001"}, "expected": {"S": "00000000", "Carry": "1"}},
+        {"name": "high-bit", "inputs": {"A": "01111111"}, "expected": {"S": "10000000", "Carry": "0"}}
+      ]
+    },
+    {
+      "id": "hierarchy", "title": "Subcircuito inversor", "category": "Hierarquia", "path": "examples/hierarchy.circ",
+      "probes": [{"id": "Y", "x": 420, "y": 140, "width": 1}],
+      "actions": [
+        {"name": "zero", "inputs": {"A": "0"}, "expected": {"Y": "1"}},
+        {"name": "one", "inputs": {"A": "1"}, "expected": {"Y": "0"}}
+      ]
+    },
+    {
+      "id": "rom", "title": "Tabela ROM", "category": "Memória", "path": "examples/rom.circ",
+      "probes": [{"id": "Dados", "x": 520, "y": 200, "width": 8}],
+      "actions": [
+        {"name": "address-0", "inputs": {"ADDR": "00"}, "expected": {"Dados": "00010010"}},
+        {"name": "address-1", "inputs": {"ADDR": "01"}, "expected": {"Dados": "00110100"}},
+        {"name": "address-2", "inputs": {"ADDR": "10"}, "expected": {"Dados": "01010110"}},
+        {"name": "address-3", "inputs": {"ADDR": "11"}, "expected": {"Dados": "01111000"}}
+      ]
+    },
+    {
+      "id": "sap1", "title": "Computador SAP-1", "category": "Processador", "path": "examples/sap1.circ",
+      "probes": [{"id": "Display", "x": 600, "y": 340, "width": 8}],
+      "startup": [{"name": "reset-high", "inputs": {"Reset": "1"}}, {"name": "reset-low", "inputs": {"Reset": "0"}}],
+      "actions": [
+        {"name": "initial", "expected": {"Display": "00000000"}},
+        {"name": "program-complete", "ticks": 56, "expected": {"Display": "00001000"}},
+        {"name": "stable-output", "ticks": 104, "expected": {"Display": "00001000"}}
+      ]
+    },
+    {
+      "id": "bus-conflict", "title": "Diagnóstico de conflito", "category": "Diagnóstico", "path": "examples/corpus/bus-conflict.circ",
+      "probes": [{"id": "Y", "x": 300, "y": 100, "width": 4}],
+      "actions": [
+        {"name": "agree", "inputs": {"A": "0000", "B": "0000"}, "expected": {"Y": "0000"}},
+        {"name": "all-conflict", "inputs": {"A": "1010", "B": "0101"}, "expected": {"Y": "EEEE"}},
+        {"name": "partial-conflict", "inputs": {"B": "1110"}, "expected": {"Y": "1E10"}},
+        {"name": "floating-driver", "inputs": {"A": "????", "B": "0011"}, "expected": {"Y": "0011"}}
+      ]
+    }
+  ]
+}

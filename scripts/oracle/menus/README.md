@@ -1,0 +1,10 @@
+# Menu actions against Evolution
+
+`run.sh EVOLUTION_JAR [OUT] [--no-build]` compares the menu actions of Logisim Evolution `d58a61e0` with Mobile (#332).
+
+1. `MenuActionsParityExportTest` (composeApp host test) opens the fixtures in `EditorState`, applies each action through the same calls the Mobile menus make, and writes the document Mobile would save (`<case>.circ`) and the observed state (`state-*.json`) to `composeApp/build/menu-parity/mobile`.
+2. `MenuActionsOracle evolution` applies the same actions with Evolution's own classes and no window: `LogisimFileActions`, `ProjectCircuitActions`, `SelectionActions` on the canvas selection, `ModelReorderAction`, `ModelInsertHandleAction`/`ModelDeleteHandleAction`, `RevertAppearanceAction`, `OptionsActions`, `VhdlContent`, `Project.undoUpTo`/`redoUpTo`/`discardAllEdits`, `Simulator.tick`/`step`/`reset`/`setAutoTicking`/`setTickFrequency`, `SubcircuitFactory.getSubstate`, the Logging `Model`, `Analyze`, `FileStatistics`, `TestVectorEvaluator`, `RecentProjects` and the bundle manifest reader.
+3. `MenuActionsOracle canon` reopens every Mobile document with Evolution's `Loader` and writes it with Evolution's writer, so both sides pass through the same normalization. `compare.py` sorts components and wires, keeps the order of the drawn appearance shapes, compares appearance objects relative to the anchor, and lists every difference. `expect.json` holds the accepted differences with their reason; any other difference fails the run.
+4. `BoardEditorOracle` writes the same boards with `BoardWriterClass` and `FpgaBoardWriter` and reads both back with `BoardReaderClass`. `VerilogImportOracle` runs Evolution's `VerilogImporter` (Yosys) on the sources that `scripts/oracle/hdl-import/run.py` imports through the Mobile companion path, and evaluates both results against the Icarus vectors.
+
+Evolution's preferences stay in memory (`MemoryPreferencesFactory`), so a desktop installation does not change the result. The fixtures are written in Evolution's format; `half.txt` has one wrong row on purpose.

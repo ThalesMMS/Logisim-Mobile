@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0" external-io61-native-run="1148d3a9ee0b4b96a4d81c857a4230d7">
+  <lib desc="#I/O" name="0" />
+  <lib desc="#Wiring" name="1" />
+  <main name="External_IO61"/>
+  <circuit name="External_IO61" id="External_IO61">
+    <comp loc="(180,140)" logisim-mobile-id="ext61_port_io" name="PortIO" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_PORT_IO"/>
+      <a name="number" val="4"/>
+      <a name="direction" val="onlyinput"/>
+      <a name="facing" val="east"/>
+      <a name="label" val="EXT61_PORT_IO"/>
+    </comp>
+    <comp loc="(400,140)" logisim-mobile-id="ext61_out_port_io" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="4"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_OUT_PORT_IO"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="EXT61_OUT_PORT_IO"/>
+    </comp>
+    <comp loc="(500,140)" logisim-mobile-id="ext61_rtc" name="RealTimeClock" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_RTC"/>
+      <a name="timeType" val="2"/>
+      <a name="porsize" val="1"/>
+      <a name="facing" val="east"/>
+      <a name="label" val="EXT61_RTC"/>
+    </comp>
+    <comp loc="(650,140)" logisim-mobile-id="ext61_out_rtc" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="64"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_OUT_RTC"/>
+      <a name="radix" val="16"/>
+      <a name="label" val="EXT61_OUT_RTC"/>
+    </comp>
+    <comp loc="(900,300)" logisim-mobile-id="ext61_video" name="RGB Video" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_VIDEO"/>
+      <a name="width" val="4"/>
+      <a name="height" val="3"/>
+      <a name="scale" val="8"/>
+      <a name="color" val="888 RGB (24 bit)"/>
+      <a name="reset" val="Asynchronous"/>
+      <a name="cursor" val="No Cursor"/>
+      <a name="label" val="EXT61_VIDEO"/>
+    </comp>
+    <comp loc="(900,360)" logisim-mobile-id="ext61_in_video_reset" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_VIDEO_RESET"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="EXT61_IN_VIDEO_RESET"/>
+    </comp>
+    <comp loc="(910,420)" logisim-mobile-id="ext61_in_video_clock" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_VIDEO_CLOCK"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="EXT61_IN_VIDEO_CLOCK"/>
+    </comp>
+    <comp loc="(920,480)" logisim-mobile-id="ext61_in_video_write" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_VIDEO_WRITE"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="EXT61_IN_VIDEO_WRITE"/>
+    </comp>
+    <comp loc="(940,540)" logisim-mobile-id="ext61_in_video_x" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="2"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_VIDEO_X"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="EXT61_IN_VIDEO_X"/>
+    </comp>
+    <comp loc="(950,600)" logisim-mobile-id="ext61_in_video_y" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="2"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_VIDEO_Y"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="EXT61_IN_VIDEO_Y"/>
+    </comp>
+    <comp loc="(960,660)" logisim-mobile-id="ext61_in_video_data" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="24"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_VIDEO_DATA"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1223629"/>
+      <a name="label" val="EXT61_IN_VIDEO_DATA"/>
+    </comp>
+    <comp loc="(800,420)" logisim-mobile-id="ext61_out_video_clock" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_OUT_VIDEO_CLOCK"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="EXT61_OUT_VIDEO_CLOCK"/>
+    </comp>
+    <comp loc="(1200,660)" logisim-mobile-id="ext61_out_video_data" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="24"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_OUT_VIDEO_DATA"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="EXT61_OUT_VIDEO_DATA"/>
+    </comp>
+    <comp loc="(400,450)" logisim-mobile-id="ext61_telnet" name="Telnet" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_TELNET"/>
+      <a name="port" val="8000"/>
+      <a name="buflen" val="8"/>
+      <a name="trigger" val="rising"/>
+      <a name="telnetMode" val="false"/>
+      <a name="label" val="EXT61_TELNET"/>
+    </comp>
+    <comp loc="(150,460)" logisim-mobile-id="ext61_in_telnet_data" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_TELNET_DATA"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="65"/>
+      <a name="label" val="EXT61_IN_TELNET_DATA"/>
+    </comp>
+    <comp loc="(220,470)" logisim-mobile-id="ext61_in_telnet_clock" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_TELNET_CLOCK"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="EXT61_IN_TELNET_CLOCK"/>
+    </comp>
+    <comp loc="(290,480)" logisim-mobile-id="ext61_in_telnet_write" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_TELNET_WRITE"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="EXT61_IN_TELNET_WRITE"/>
+    </comp>
+    <comp loc="(650,540)" logisim-mobile-id="ext61_in_telnet_read" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_IN_TELNET_READ"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="EXT61_IN_TELNET_READ"/>
+    </comp>
+    <comp loc="(650,460)" logisim-mobile-id="ext61_out_telnet_data" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_OUT_TELNET_DATA"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="EXT61_OUT_TELNET_DATA"/>
+    </comp>
+    <comp loc="(650,500)" logisim-mobile-id="ext61_out_telnet_available" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_OUT_TELNET_AVAILABLE"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="EXT61_OUT_TELNET_AVAILABLE"/>
+    </comp>
+    <comp loc="(300,850)" logisim-mobile-id="ext61_reptar" name="ReptarLB" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="mapinfo" val="native61-preserve:EXT61_REPTAR"/>
+      <a name="label" val="EXT61_REPTAR"/>
+    </comp>
+    <wire from="(190,140)" to="(400,140)"/>
+    <wire from="(500,140)" to="(650,140)"/>
+    <wire from="(900,360)" to="(900,300)"/>
+    <wire from="(910,420)" to="(910,300)"/>
+    <wire from="(920,480)" to="(920,300)"/>
+    <wire from="(940,540)" to="(940,300)"/>
+    <wire from="(950,600)" to="(950,300)"/>
+    <wire from="(960,660)" to="(960,300)"/>
+    <wire from="(910,420)" to="(800,420)"/>
+    <wire from="(960,660)" to="(1200,660)"/>
+    <wire from="(150,460)" to="(370,460)"/>
+    <wire from="(220,470)" to="(370,470)"/>
+    <wire from="(290,480)" to="(370,480)"/>
+    <wire from="(650,540)" to="(430,540)"/>
+    <wire from="(430,540)" to="(430,480)"/>
+    <wire from="(430,480)" to="(410,480)"/>
+    <wire from="(410,460)" to="(650,460)"/>
+    <wire from="(410,470)" to="(450,470)"/>
+    <wire from="(450,470)" to="(450,500)"/>
+    <wire from="(450,500)" to="(650,500)"/>
+  </circuit>
+</project>

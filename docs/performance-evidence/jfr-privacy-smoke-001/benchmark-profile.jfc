@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration version="2.0" label="Logisim core benchmark" description="Sampled CPU, allocation and GC without inherited environment or JVM properties" provider="Logisim Mobile">
+  <event name="jdk.ExecutionSample">
+    <setting name="enabled">true</setting>
+    <setting name="period">10 ms</setting>
+  </event>
+  <event name="jdk.NativeMethodSample">
+    <setting name="enabled">true</setting>
+    <setting name="period">20 ms</setting>
+  </event>
+  <event name="jdk.ObjectAllocationSample">
+    <setting name="enabled">true</setting>
+    <setting name="throttle">300/s</setting>
+    <setting name="stackTrace">true</setting>
+  </event>
+  <event name="jdk.GarbageCollection">
+    <setting name="enabled">true</setting>
+    <setting name="threshold">0 ms</setting>
+  </event>
+  <event name="jdk.GCPhasePause">
+    <setting name="enabled">true</setting>
+    <setting name="threshold">0 ms</setting>
+  </event>
+  <event name="jdk.CPULoad">
+    <setting name="enabled">true</setting>
+    <setting name="period">1000 ms</setting>
+  </event>
+  <event name="jdk.InitialEnvironmentVariable">
+    <setting name="enabled">false</setting>
+  </event>
+  <event name="jdk.InitialSystemProperty">
+    <setting name="enabled">false</setting>
+  </event>
+  <event name="jdk.JVMInformation">
+    <setting name="enabled">false</setting>
+  </event>
+</configuration>

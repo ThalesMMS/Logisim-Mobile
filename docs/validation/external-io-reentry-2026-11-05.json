@@ -1,0 +1,124 @@
+{
+  "recordedAtUtc": "2026-11-05T03:59:26.330729+00:00",
+  "issue": 61,
+  "baseSource": "50668f45230ada6f49b10c1e05fe983b8ea183c4",
+  "dependencyOriginal": "2aa2a989786ba33ebd4357d63a3877a82d8491cd",
+  "dependencyLocalMirror": "c19a37e2",
+  "status": "DIRECT_SOFTWARE_PASS_NATIVE_UI_NOT_RUN",
+  "compiler": "Kotlin and Compose compiler 2.4.21",
+  "referenceClassFiles": 1838,
+  "referenceClassManifestSha256": "f5b02b9643a9769be61952381a131dd06bf22812fca7e1d3ddc8b4e20221b63d",
+  "runs": [
+    {
+      "stage": "before-001",
+      "compileExit": 0,
+      "junitExit": 1,
+      "tests": 18,
+      "failures": 2,
+      "seconds": 6.991,
+      "sourceSha256": {
+        "composeApp/src/commonTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeTest.kt": "4f835a9fb31bb10ec64d733945fb16c1bb779211bc72ca1c3fafb26e9791caca",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt": "d38a936c3b6825897c115f0d0e88ee1719fe2128c19a539102cf95c9d68ecca1",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoTools.kt": "bb8288fbe46982adff7ecb030c95dcf07eabb709bebe4e40385d78cdca4f17e3",
+        "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeHttpTest.kt": "86e4bc8b02f7efeb59816dd32c92b12846577c3eb2b7e6f8d957914d33a0c6cb"
+      },
+      "junitLog": "outputs/external-io-reentry/before-001/junit.log",
+      "junitLogSha256": "19f850a0172e6852334b4ecae0fd2f1eb6f0818db4dacc132f42e94e120929bf"
+    },
+    {
+      "stage": "before-002",
+      "compileExit": 0,
+      "junitExit": 1,
+      "tests": 18,
+      "failures": 2,
+      "seconds": 7.481,
+      "sourceSha256": {
+        "composeApp/src/commonTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeTest.kt": "4f835a9fb31bb10ec64d733945fb16c1bb779211bc72ca1c3fafb26e9791caca",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt": "d38a936c3b6825897c115f0d0e88ee1719fe2128c19a539102cf95c9d68ecca1",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoTools.kt": "bb8288fbe46982adff7ecb030c95dcf07eabb709bebe4e40385d78cdca4f17e3",
+        "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeHttpTest.kt": "50f66d1c3ee17e41257943b9b475411c8b16479ce735b27970e2a8aa919f2b93"
+      },
+      "junitLog": "outputs/external-io-reentry/before-002/junit.log",
+      "junitLogSha256": "16a4a2d9e601ab190fa49abf87b8d234b41af8a788de8fdd2cb6d86ab0a3d4ab"
+    },
+    {
+      "stage": "after-isolated",
+      "compileExit": 0,
+      "junitExit": 0,
+      "tests": 18,
+      "failures": 0,
+      "seconds": 7.188,
+      "sourceSha256": {
+        "composeApp/src/commonTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeTest.kt": "4f835a9fb31bb10ec64d733945fb16c1bb779211bc72ca1c3fafb26e9791caca",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt": "2aae8b634737ff65da2846603fe6d53f6c8815bae95d6d9263af752733031a26",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoTools.kt": "bb8288fbe46982adff7ecb030c95dcf07eabb709bebe4e40385d78cdca4f17e3",
+        "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeHttpTest.kt": "50f66d1c3ee17e41257943b9b475411c8b16479ce735b27970e2a8aa919f2b93"
+      },
+      "junitLog": "outputs/external-io-reentry/after-isolated/junit.log",
+      "junitLogSha256": "bae65dce7f765c6b55368a268f8e21ca35d380d2971f968c82b99d658a8b4c12"
+    },
+    {
+      "stage": "before-highwater",
+      "compileExit": 0,
+      "junitExit": 1,
+      "tests": 19,
+      "failures": 1,
+      "seconds": 7.282,
+      "sourceSha256": {
+        "composeApp/src/commonTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeTest.kt": "39e4b441bad7909cd4f0a17c38b858e7fec64b6e394cf7aa3b50a2d2bd681042",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt": "2aae8b634737ff65da2846603fe6d53f6c8815bae95d6d9263af752733031a26",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoTools.kt": "bb8288fbe46982adff7ecb030c95dcf07eabb709bebe4e40385d78cdca4f17e3",
+        "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeHttpTest.kt": "50f66d1c3ee17e41257943b9b475411c8b16479ce735b27970e2a8aa919f2b93"
+      },
+      "junitLog": "outputs/external-io-reentry/before-highwater/junit.log",
+      "junitLogSha256": "e49addd68c04bbad90f8f8860ab069a809c46586353429dacf32791ed9dd3a42"
+    },
+    {
+      "stage": "after-full",
+      "compileExit": 0,
+      "junitExit": 0,
+      "tests": 20,
+      "failures": 0,
+      "seconds": 9.235,
+      "sourceSha256": {
+        "composeApp/src/commonTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeTest.kt": "49000dbbcc4f34f5c433fa9dcf8ce7bf839a1a7f690d7cc8f0b6e6f013d920c1",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt": "627ef1709ab350c56bdea06d9cae860729541a62c2b645dea9dfbc73a1bde795",
+        "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoTools.kt": "bb8288fbe46982adff7ecb030c95dcf07eabb709bebe4e40385d78cdca4f17e3",
+        "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeHttpTest.kt": "a4a0ea09aad418676f4bae35b5cfb0146c56668e3d47055fa608440e171743b6"
+      },
+      "junitLog": "outputs/external-io-reentry/after-full/junit.log",
+      "junitLogSha256": "c6ca26a1f6752aa4a042c7beea94b32f5e5e30284a4a33cc2c58dba67be7ebed"
+    }
+  ],
+  "compositionLookupProbes": [
+    {
+      "variant": "before-001",
+      "sourceSha256": "89ecdb6db79e820b28f55c3e40acc7a1c71b310cc5baddd2e2921585e047518a",
+      "temporaryTraceShimSha256": "63e0aa0a0cadb26db46f157b293740bf2a9f3b1905340c0658893f931207a2db",
+      "productionHelperClassSha256": "1555aa5c7a19df363f9f16583d1f9cac853c5b2d5effeaa016e249de4b6e8ff6",
+      "receiptPath": "/tmp/logisim-external61-compose-actual/before-001/receipt.json",
+      "receiptSha256": "f234d92d690f7b8625c13950fec4576b905bbbcce0f458aef2c1640197322d40",
+      "logPath": "/tmp/logisim-external61-compose-actual/before-001/run.log",
+      "logSha256": "b409b3be6f3a3f8e4f081558f3ca2523811facfc60f8d9ba1c56f2db48ff74ee",
+      "observed": "actualProductionHelper=true sameAsRemoved=true registered=false entries=0 issuedSequence=0"
+    },
+    {
+      "variant": "after-full",
+      "sourceSha256": "89ecdb6db79e820b28f55c3e40acc7a1c71b310cc5baddd2e2921585e047518a",
+      "temporaryTraceShimSha256": "63e0aa0a0cadb26db46f157b293740bf2a9f3b1905340c0658893f931207a2db",
+      "productionHelperClassSha256": "52a48f3b7c29ac609503a48bbc15d6ad376460c51a7644760306d90009aec061",
+      "receiptPath": "/tmp/logisim-external61-compose-actual/after-full/receipt.json",
+      "receiptSha256": "4e3a8d30d2ef14e2e6a1fbee8bb2f1eab3a5d7f788452fbbcc60fffe2f8f9274",
+      "logPath": "/tmp/logisim-external61-compose-actual/after-full/run.log",
+      "logSha256": "d057517090e6b0fdc5c92420724668c756472cda16a63a0d3a56248b88e3f30a",
+      "observed": "actualProductionHelper=true sameAsRemoved=false registered=true entries=1 issuedSequence=3"
+    }
+  ],
+  "limits": [
+    "The before stages include a behavior-preserving extraction of the panel entry lookup and required state argument, without initialization or cache corrections.",
+    "The direct compiler rebuilt four changed production/test sources against frozen editor/core Android reference classes. No new Gradle build was run.",
+    "The production lookup composition probe uses a temporary tracing adapter in the host test process. No adapter is part of the repository or application.",
+    "The queued-sender case proves the accepted-before-applied callback contract against the actual evaluator. It does not reproduce a mounted application race.",
+    "Runtime lifecycle effects, Android/iOS controls, background transitions and touchscreen behavior were not executed."
+  ]
+}

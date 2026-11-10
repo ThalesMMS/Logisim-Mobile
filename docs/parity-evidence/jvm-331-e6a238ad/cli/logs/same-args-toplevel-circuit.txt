@@ -1,0 +1,12 @@
+row: cli/toplevel-circuit
+case: same-args-toplevel-circuit
+result: PASS
+detail: Mobile accepts Evolution's '--toplevel-circuit'
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit top scripts/oracle/cli/fixtures/sub/main.circ
+exit: 0
+--- stdout (3 lines, sha256 209aecef9577bc177d1bed4b002346b8d1644091cf46e3cd4c681f9de24b1a94)
+B Z
+0 0
+1 1
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

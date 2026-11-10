@@ -1,0 +1,157 @@
+{
+  "status": "PARTIAL_PASS_FAILURE_PRESERVED",
+  "inventoryEntries": 417,
+  "sdkCompleteCaptures": 50,
+  "completedGroup": "editing-create-properties",
+  "completedGroupSeconds": 249.87,
+  "failedGroup": "editing-wires-truth-table",
+  "documentChecks": {
+    "editing-empty.circ": {
+      "checkpoint": "empty",
+      "componentCount": 0,
+      "wireCount": 0,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    "editing-components.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "editing-property-north.circ": {
+      "checkpoint": "north",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    "editing-property-undo.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "editing-property-redo.circ": {
+      "checkpoint": "north",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    "editing-property-restored.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "failure-checkpoint-44.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "9de83c3f648582feb80fec8cd27c425daf7b09871b63a2af264fdc86662ae0b2"
+    }
+  },
+  "searchObservations": [
+    {
+      "capture": 49,
+      "viewportBounds": [
+        64,
+        689,
+        1016,
+        2273
+      ],
+      "searchBounds": [
+        64,
+        643,
+        1016,
+        811
+      ]
+    },
+    {
+      "capture": 50,
+      "viewportBounds": [
+        64,
+        689,
+        1016,
+        2273
+      ],
+      "searchBounds": null
+    }
+  ],
+  "swipeRequestsOnly": [
+    {
+      "utc": "2026-11-05T10:45:08.121420+00:00",
+      "elapsedSeconds": 276.3553028339811,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "2035",
+        "540",
+        "1085",
+        "250"
+      ],
+      "cwd": null
+    },
+    {
+      "utc": "2026-11-05T10:45:10.331275+00:00",
+      "elapsedSeconds": 278.5651532500051,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "2035",
+        "540",
+        "1085",
+        "250"
+      ],
+      "cwd": null
+    },
+    {
+      "utc": "2026-11-05T10:45:11.480674+00:00",
+      "elapsedSeconds": 279.7145492499985,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "2035",
+        "540",
+        "1085",
+        "250"
+      ],
+      "cwd": null
+    },
+    {
+      "utc": "2026-11-05T10:45:16.209507+00:00",
+      "elapsedSeconds": 284.4433692919847,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "1085",
+        "540",
+        "2035",
+        "250"
+      ],
+      "cwd": null
+    }
+  ],
+  "notRun": [
+    "editing-selection-history",
+    "editing-viewport-touch-parity"
+  ]
+}

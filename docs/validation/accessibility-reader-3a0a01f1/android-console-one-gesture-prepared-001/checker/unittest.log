@@ -1,0 +1,36 @@
+test_axis_range (test_check_typeb_trace.TraceTests.test_axis_range) ... ok
+test_duration_lower_bound_inclusive (test_check_typeb_trace.TraceTests.test_duration_lower_bound_inclusive) ... ok
+test_duration_upper_bound_inclusive (test_check_typeb_trace.TraceTests.test_duration_upper_bound_inclusive) ... ok
+test_explicit_slot_zero_and_redundant_axes (test_check_typeb_trace.TraceTests.test_explicit_slot_zero_and_redundant_axes) ... ok
+test_extra_frame_or_second_contact (test_check_typeb_trace.TraceTests.test_extra_frame_or_second_contact) ... ok
+test_first_axes_can_only_come_from_explicit_independent_initial_values (test_check_typeb_trace.TraceTests.test_first_axes_can_only_come_from_explicit_independent_initial_values) ... ok
+test_foreign_device_header_or_event_prefix (test_check_typeb_trace.TraceTests.test_foreign_device_header_or_event_prefix) ... ok
+test_initial_global_contact_absence_is_not_a_claim (test_check_typeb_trace.TraceTests.test_initial_global_contact_absence_is_not_a_claim) ... ok
+test_invalid_initial_axis (test_check_typeb_trace.TraceTests.test_invalid_initial_axis) ... ok
+test_literal_complete_sequence_and_measured_timing (test_check_typeb_trace.TraceTests.test_literal_complete_sequence_and_measured_timing) ... ok
+test_literal_non_finger_tool_type_is_rejected (test_check_typeb_trace.TraceTests.test_literal_non_finger_tool_type_is_rejected) ... ok
+test_literal_tool_type_finger_zero_is_allowed (test_check_typeb_trace.TraceTests.test_literal_tool_type_finger_zero_is_allowed) ... ok
+test_mid_contact_tracking_change (test_check_typeb_trace.TraceTests.test_mid_contact_tracking_change) ... ok
+test_missing_down_tracking_is_not_inferred_from_expected_path (test_check_typeb_trace.TraceTests.test_missing_down_tracking_is_not_inferred_from_expected_path) ... ok
+test_missing_move_syn_or_repeated_position (test_check_typeb_trace.TraceTests.test_missing_move_syn_or_repeated_position) ... ok
+test_missing_readiness_and_empty_trace (test_check_typeb_trace.TraceTests.test_missing_readiness_and_empty_trace) ... ok
+test_missing_release_pressure_tracking_or_syn (test_check_typeb_trace.TraceTests.test_missing_release_pressure_tracking_or_syn) ... ok
+test_other_slot_even_without_observed_other_contact (test_check_typeb_trace.TraceTests.test_other_slot_even_without_observed_other_contact) ... ok
+test_position_y_or_pressure_changed (test_check_typeb_trace.TraceTests.test_position_y_or_pressure_changed) ... ok
+test_release_without_start_or_too_early (test_check_typeb_trace.TraceTests.test_release_without_start_or_too_early) ... ok
+test_stale_initial_axes_cannot_override_observed_wrong_position (test_check_typeb_trace.TraceTests.test_stale_initial_axes_cannot_override_observed_wrong_position) ... ok
+test_syn_dropped (test_check_typeb_trace.TraceTests.test_syn_dropped) ... ok
+test_timestamp_regression_and_equal_syn (test_check_typeb_trace.TraceTests.test_timestamp_regression_and_equal_syn) ... ok
+test_truncated_nonnumeric_or_stderr_text_never_ignored (test_check_typeb_trace.TraceTests.test_truncated_nonnumeric_or_stderr_text_never_ignored) ... ok
+test_type_a_syn_or_nonzero_syn (test_check_typeb_trace.TraceTests.test_type_a_syn_or_nonzero_syn) ... ok
+test_unexpected_legacy_axis_or_key (test_check_typeb_trace.TraceTests.test_unexpected_legacy_axis_or_key) ... ok
+test_unexpected_or_late_readiness_headers (test_check_typeb_trace.TraceTests.test_unexpected_or_late_readiness_headers) ... ok
+test_unknown_first_x_y_pressure_independently (test_check_typeb_trace.TraceTests.test_unknown_first_x_y_pressure_independently) ... ok
+test_unknown_or_wrong_initial_slot_is_never_defaulted (test_check_typeb_trace.TraceTests.test_unknown_or_wrong_initial_slot_is_never_defaulted) ... ok
+test_wrong_raw_tracking_id_including_logical_grpc_id (test_check_typeb_trace.TraceTests.test_wrong_raw_tracking_id_including_logical_grpc_id) ... ok
+test_wrong_release_position (test_check_typeb_trace.TraceTests.test_wrong_release_position) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.002s
+
+OK

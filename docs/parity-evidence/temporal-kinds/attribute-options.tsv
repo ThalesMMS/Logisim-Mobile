@@ -1,0 +1,631 @@
+#Base	Image	scale	fit|stretch|cover
+#Base	Image	license	Unspecified|Public Domain / CC0|CC BY (Attribution)|CC BY-SA (Attribution-ShareAlike)|CC BY-NC (NonCommercial)|CC BY-ND (NoDerivatives)|Fair Use / Educational|Proprietary / Copyrighted|Other
+#Gates	NOT Gate	facing	north|south|east|west
+#Gates	NOT Gate	width	1|2|3|8|16|31|32|64
+#Gates	NOT Gate	size	20|30
+#Gates	NOT Gate	out	01|0Z|Z1
+#Gates	Buffer	facing	north|south|east|west
+#Gates	Buffer	width	1|2|3|8|16|31|32|64
+#Gates	Buffer	out	01|0Z|Z1
+#Gates	AND Gate	facing	north|south|east|west
+#Gates	AND Gate	width	1|2|3|8|16|31|32|64
+#Gates	AND Gate	size	30|50|70
+#Gates	AND Gate	inputs	2|3|33|64
+#Gates	AND Gate	out	01|0Z|Z1
+#Gates	OR Gate	facing	north|south|east|west
+#Gates	OR Gate	width	1|2|3|8|16|31|32|64
+#Gates	OR Gate	size	30|50|70
+#Gates	OR Gate	inputs	2|3|33|64
+#Gates	OR Gate	out	01|0Z|Z1
+#Gates	NAND Gate	facing	north|south|east|west
+#Gates	NAND Gate	width	1|2|3|8|16|31|32|64
+#Gates	NAND Gate	size	30|50|70
+#Gates	NAND Gate	inputs	2|3|33|64
+#Gates	NAND Gate	out	01|0Z|Z1
+#Gates	NOR Gate	facing	north|south|east|west
+#Gates	NOR Gate	width	1|2|3|8|16|31|32|64
+#Gates	NOR Gate	size	30|50|70
+#Gates	NOR Gate	inputs	2|3|33|64
+#Gates	NOR Gate	out	01|0Z|Z1
+#Gates	XOR Gate	facing	north|south|east|west
+#Gates	XOR Gate	width	1|2|3|8|16|31|32|64
+#Gates	XOR Gate	size	30|50|70
+#Gates	XOR Gate	inputs	2|3|33|64
+#Gates	XOR Gate	out	01|0Z|Z1
+#Gates	XOR Gate	xor	1|odd
+#Gates	XNOR Gate	facing	north|south|east|west
+#Gates	XNOR Gate	width	1|2|3|8|16|31|32|64
+#Gates	XNOR Gate	size	30|50|70
+#Gates	XNOR Gate	inputs	2|3|33|64
+#Gates	XNOR Gate	out	01|0Z|Z1
+#Gates	XNOR Gate	xor	1|odd
+#Gates	Odd Parity	facing	north|south|east|west
+#Gates	Odd Parity	width	1|2|3|8|16|31|32|64
+#Gates	Odd Parity	size	30|50|70
+#Gates	Odd Parity	inputs	2|3|33|64
+#Gates	Odd Parity	out	01|0Z|Z1
+#Gates	Even Parity	facing	north|south|east|west
+#Gates	Even Parity	width	1|2|3|8|16|31|32|64
+#Gates	Even Parity	size	30|50|70
+#Gates	Even Parity	inputs	2|3|33|64
+#Gates	Even Parity	out	01|0Z|Z1
+#Gates	Controlled Buffer	facing	north|south|east|west
+#Gates	Controlled Buffer	width	1|2|3|8|16|31|32|64
+#Gates	Controlled Buffer	control	right|left
+#Gates	Controlled Inverter	facing	north|south|east|west
+#Gates	Controlled Inverter	width	1|2|3|8|16|31|32|64
+#Gates	Controlled Inverter	size	20|30
+#Gates	Controlled Inverter	control	right|left
+#Gates	PLA	facing	north|south|east|west
+#Gates	PLA	in_width	1|2|3|8|16|31|32|64
+#Gates	PLA	out_width	1|2|3|8|16|31|32|64
+#Gates	PLA	labelloc	center|north|south|east|west
+#Wiring	Splitter	facing	north|south|east|west
+#Wiring	Splitter	fanout	1|2|32|64
+#Wiring	Splitter	incoming	1|2|3|8|16|31|32|64
+#Wiring	Splitter	appear	left|right|center|legacy
+#Wiring	Splitter	spacing	1|2|5|9
+#Wiring	Pin	facing	north|south|east|west
+#Wiring	Pin	type	input|output
+#Wiring	Pin	width	1|2|3|8|16|31|32|64
+#Wiring	Pin	behavior	simple|tristate|pulldown|pullup
+#Wiring	Pin	labelloc	center|north|south|east|west
+#Wiring	Pin	radix	2|8|10signed|10unsigned|16|float
+#Wiring	Pin	appearance	classic|NewPins
+#Wiring	Probe	facing	north|south|east|west
+#Wiring	Probe	radix	2|8|10signed|10unsigned|16|float
+#Wiring	Probe	labelloc	center|north|south|east|west
+#Wiring	Probe	appearance	classic|NewPins
+#Wiring	Tunnel	facing	north|south|east|west
+#Wiring	Tunnel	width	1|2|3|8|16|31|32|64
+#Wiring	Pull Resistor	facing	north|south|east|west
+#Wiring	Pull Resistor	pull	0|1|X
+#Wiring	Clock	facing	north|south|east|west
+#Wiring	Clock	labelloc	center|north|south|east|west
+#Wiring	Clock	appearance	classic|NewPins
+#Wiring	POR	facing	north|south|east|west
+#Wiring	POR	porsize	3|1|2
+#Wiring	POR	porTransition	1|2
+#Wiring	Constant	facing	north|south|east|west
+#Wiring	Constant	width	1|2|3|8|16|31|32|64
+#Wiring	Power	facing	north|south|east|west
+#Wiring	Power	width	1|2|3|8|16|31|32|64
+#Wiring	Ground	facing	north|south|east|west
+#Wiring	Ground	width	1|2|3|8|16|31|32|64
+#Wiring	NoConnect	width	1|2|3|8|16|31|32|64
+#Wiring	Transistor	type	p|n
+#Wiring	Transistor	facing	north|south|east|west
+#Wiring	Transistor	selloc	bl|tr
+#Wiring	Transistor	width	1|2|3|8|16|31|32|64
+#Wiring	Transmission Gate	facing	north|south|east|west
+#Wiring	Transmission Gate	selloc	bl|tr
+#Wiring	Transmission Gate	width	1|2|3|8|16|31|32|64
+#Wiring	Bit Extender	in_width	1|2|3|8|16|31|32|64
+#Wiring	Bit Extender	out_width	1|2|3|8|16|31|32|64
+#Wiring	Bit Extender	type	zero|one|sign|input
+#Plexers	Multiplexer	facing	north|south|east|west
+#Plexers	Multiplexer	size	20|40
+#Plexers	Multiplexer	selloc	bl|tr
+#Plexers	Multiplexer	select	1|2|3|8
+#Plexers	Multiplexer	width	1|2|3|8|16|31|32|64
+#Plexers	Multiplexer	disabled	Z|0
+#Plexers	Multiplexer	enable	true|false
+#Plexers	Demultiplexer	facing	north|south|east|west
+#Plexers	Demultiplexer	selloc	bl|tr
+#Plexers	Demultiplexer	select	1|2|3|8
+#Plexers	Demultiplexer	width	1|2|3|8|16|31|32|64
+#Plexers	Demultiplexer	tristate	true|false
+#Plexers	Demultiplexer	disabled	Z|0
+#Plexers	Demultiplexer	enable	true|false
+#Plexers	Decoder	facing	north|south|east|west
+#Plexers	Decoder	selloc	bl|tr
+#Plexers	Decoder	select	1|2|3|8
+#Plexers	Decoder	tristate	true|false
+#Plexers	Decoder	disabled	Z|0
+#Plexers	Decoder	enable	true|false
+#Plexers	Priority Encoder	facing	north|south|east|west
+#Plexers	Priority Encoder	select	1|2|3|8
+#Plexers	Priority Encoder	disabled	Z|0
+#Plexers	BitSelector	facing	north|south|east|west
+#Plexers	BitSelector	selloc	bl|tr
+#Plexers	BitSelector	width	1|2|3|8|16|31|32|64
+#Plexers	BitSelector	group	1|2|3|8|16|31|32|64
+#Arithmetic	Adder	width	1|2|3|8|16|31|32|64
+#Arithmetic	Subtractor	width	1|2|3|8|16|31|32|64
+#Arithmetic	Multiplier	width	1|2|3|8|16|31|32|64
+#Arithmetic	Multiplier	mode	twosComplement|signedUnsigned|unsigned
+#Arithmetic	Divider	width	1|2|3|8|16|31|32|64
+#Arithmetic	Divider	mode	twosComplement|unsigned
+#Arithmetic	Negator	width	1|2|3|8|16|31|32|64
+#Arithmetic	Exponentiator	width	1|2|3|8|16|31|32|64
+#Arithmetic	Exponentiator	mode	twosComplement|unsigned
+#Arithmetic	SquareRoot	width	1|2|3|8|16|31|32|64
+#Arithmetic	Absolute	width	1|2|3|8|16|31|32|64
+#Arithmetic	Comparator	width	1|2|3|8|16|31|32|64
+#Arithmetic	Comparator	mode	twosComplement|unsigned
+#Arithmetic	MinMax	width	1|2|3|8|16|31|32|64
+#Arithmetic	MinMax	mode	twosComplement|unsigned
+#Arithmetic	Shifter	width	1|2|3|8|16|31|32|64
+#Arithmetic	Shifter	shift	ll|lr|ar|rl|rr
+#Arithmetic	BitAdder	width	1|2|3|8|16|31|32|64
+#Arithmetic	BitAdder	inputs	1|2|32|64
+#Arithmetic	BitFinder	width	1|2|3|8|16|31|32|64
+#Arithmetic	BitFinder	type	low1|high1|low0|high0
+#FPArithmetic	FPConstant	fpwidth	8|16|32|64
+#FPArithmetic	FPAdder	fpwidth	8|16|32|64
+#FPArithmetic	FPSubtractor	fpwidth	8|16|32|64
+#FPArithmetic	FPMultiplier	fpwidth	8|16|32|64
+#FPArithmetic	FPMultiplier	multiplyMode	multiply|fusedMultiplyAdd
+#FPArithmetic	FPDivider	fpwidth	8|16|32|64
+#FPArithmetic	FPNegator	fpwidth	8|16|32|64
+#FPArithmetic	FPExponentiator	fpwidth	8|16|32|64
+#FPArithmetic	FPExponentiator	mode	arb|exp|expm1
+#FPArithmetic	FPLogarithm	fpwidth	8|16|32|64
+#FPArithmetic	FPLogarithm	mode	logxy|log|log10|log1p
+#FPArithmetic	FPSquareRoot	fpwidth	8|16|32|64
+#FPArithmetic	FPAbsolute	fpwidth	8|16|32|64
+#FPArithmetic	FPComparator	fpwidth	8|16|32|64
+#FPArithmetic	FPMinMax	fpwidth	8|16|32|64
+#FPArithmetic	FPRound	fpwidth	8|16|32|64
+#FPArithmetic	FPRound	mode	ceil|floor|round|rint|truncate
+#FPArithmetic	FPTrigonometry	fpwidth	8|16|32|64
+#FPArithmetic	FPTrigonometry	type	trig|arc|hyp
+#FPArithmetic	FPClassificator	fpwidth	8|16|32|64
+#FPArithmetic	FPToFP	fpwidthin	8|16|32|64
+#FPArithmetic	FPToFP	fpwidthout	8|16|32|64
+#FPArithmetic	FPToInt	width	1|2|3|8|16|31|32|64
+#FPArithmetic	FPToInt	fpwidth	8|16|32|64
+#FPArithmetic	FPToInt	mode	ceil|floor|round|rint|truncate
+#FPArithmetic	IntToFP	width	1|2|3|8|16|31|32|64
+#FPArithmetic	IntToFP	fpwidth	8|16|32|64
+#FPArithmetic	IntToFP	mode	twosComplement|unsigned
+#Memory	D Flip-Flop	trigger	rising|falling|high|low
+#Memory	D Flip-Flop	appearance	classic|evolution|logisim_evolution
+#Memory	T Flip-Flop	trigger	rising|falling
+#Memory	T Flip-Flop	appearance	classic|evolution|logisim_evolution
+#Memory	J-K Flip-Flop	trigger	rising|falling
+#Memory	J-K Flip-Flop	appearance	classic|evolution|logisim_evolution
+#Memory	S-R Flip-Flop	trigger	rising|falling|high|low
+#Memory	S-R Flip-Flop	appearance	classic|evolution|logisim_evolution
+#Memory	Register	width	1|2|3|8|16|31|32|64
+#Memory	Register	trigger	rising|falling|high|low
+#Memory	Register	labelloc	center|north|south|east|west
+#Memory	Register	showInTab	true|false
+#Memory	Register	appearance	classic|evolution|logisim_evolution
+#Memory	Counter	width	1|2|3|8|16|31|32|64
+#Memory	Counter	ongoal	wrap|stay|continue|load
+#Memory	Counter	trigger	rising|falling
+#Memory	Counter	labelloc	center|north|south|east|west
+#Memory	Counter	showInTab	true|false
+#Memory	Counter	appearance	classic|evolution|logisim_evolution
+#Memory	Shift Register	width	1|2|3|8|16|31|32|64
+#Memory	Shift Register	length	1|2|32|64
+#Memory	Shift Register	parallel	true|false
+#Memory	Shift Register	trigger	rising|falling
+#Memory	Shift Register	appearance	classic|evolution|logisim_evolution
+#Memory	Random	width	1|2|3|8|16|31|32|64
+#Memory	Random	trigger	rising|falling
+#Memory	Random	appearance	classic|evolution|logisim_evolution
+#Memory	RAM	addrWidth	2|3|8|16
+#Memory	RAM	dataWidth	1|2|3|8|16|31|32|64
+#Memory	RAM	enables	byte|line
+#Memory	RAM	type	volatile|nonvolatile
+#Memory	RAM	clearpin	true|false
+#Memory	RAM	trigger	rising|falling|high|low
+#Memory	RAM	asyncread	true|false
+#Memory	RAM	readbehav	war|raw
+#Memory	RAM	databus	bidir|bibus|bibusControlled
+#Memory	RAM	labelvisible	true|false
+#Memory	RAM	appearance	classic|evolution|logisim_evolution
+#Memory	ROM	addrWidth	2|3|8|16
+#Memory	ROM	dataWidth	1|2|3|8|16|31|32|64
+#Memory	ROM	line	single|dual|quad|octo
+#Memory	ROM	misaligned	true|false
+#Memory	ROM	labelvisible	true|false
+#Memory	ROM	appearance	classic|evolution|logisim_evolution
+#Memory	DualRAM	addrWidth	2|3|8|16
+#Memory	DualRAM	dataWidth	1|2|3|8|16|31|32|64
+#Memory	DualRAM	enables	byte|line
+#Memory	DualRAM	type	volatile|nonvolatile
+#Memory	DualRAM	clearpin	true|false
+#Memory	DualRAM	trigger	rising|falling|high|low
+#Memory	DualRAM	asyncread	true|false
+#Memory	DualRAM	readbehav	war|raw
+#Memory	DualRAM	databus	bidir|bibus|bibusControlled
+#Memory	DualRAM	labelvisible	true|false
+#Memory	DualRAM	appearance	classic|evolution|logisim_evolution
+#I/O	Button	facing	north|south|east|west
+#I/O	Button	press	active|passive
+#I/O	Button	labelloc	center|north|south|east|west
+#I/O	Button	labelvisible	true|false
+#I/O	DipSwitch	facing	north|south|east|west
+#I/O	DipSwitch	labelloc	center|north|south|east|west
+#I/O	DipSwitch	labelvisible	true|false
+#I/O	DipSwitch	number	1|2|3|8|16|31|32
+#I/O	DipSwitch	resetbehavior	open|closed|last
+#I/O	Joystick	facing	north|south|east|west
+#I/O	Joystick	bits	2|3
+#I/O	Keyboard	buflen	1|2|128|256
+#I/O	Keyboard	trigger	rising|falling
+#I/O	LED	facing	north|south|east|west
+#I/O	LED	active	true|false
+#I/O	LED	labelloc	center|north|south|east|west
+#I/O	LED	labelvisible	true|false
+#I/O	LedBar	inputtype	column|row
+#I/O	LedBar	facing	north|south|east|west
+#I/O	LedBar	height	1|2|4|8
+#I/O	LedBar	matrixcols	1|2|3|8|16|31|32|64
+#I/O	LedBar	matrixrows	1|2|3|8|16|31|32|64
+#I/O	LedBar	selloc	bl|tr
+#I/O	LedBar	dotshape	clusterSegment
+#I/O	LedBar	labelloc	center|north|south|east|west
+#I/O	LedBar	labelvisible	true|false
+#I/O	RGBLED	facing	north|south|east|west
+#I/O	RGBLED	active	true|false
+#I/O	RGBLED	labelloc	center|north|south|east|west
+#I/O	RGBLED	labelvisible	true|false
+#I/O	7-Segment Display	active	true|false
+#I/O	7-Segment Display	decimalPoint	true|false
+#I/O	7-Segment Display	inputmode	separate|bus
+#I/O	7-Segment Display	busside	north|south|east|west
+#I/O	7-Segment Display	labelloc	center|north|south|east|west
+#I/O	7-Segment Display	labelvisible	true|false
+#I/O	Hex Digit Display	decimalPoint	true|false
+#I/O	Hex Digit Display	labelloc	center|north|south|east|west
+#I/O	Hex Digit Display	labelvisible	true|false
+#I/O	DotMatrix	inputtype	column|row|select
+#I/O	DotMatrix	matrixcols	1|2|3|8|16|31|32|64
+#I/O	DotMatrix	matrixrows	1|2|3|8|16|31|32|64
+#I/O	DotMatrix	selloc	bl|tr
+#I/O	DotMatrix	dotshape	circle|square|clusterSegment
+#I/O	DotMatrix	labelloc	center|north|south|east|west
+#I/O	DotMatrix	labelvisible	true|false
+#I/O	TTY	rows	1|2|24|48
+#I/O	TTY	cols	1|2|60|120
+#I/O	TTY	trigger	rising|falling
+#I/O	PortIO	facing	north|south|east|west
+#I/O	PortIO	labelloc	center|north|south|east|west
+#I/O	PortIO	labelvisible	true|false
+#I/O	PortIO	number	1|2|3|8|16|31|32|64
+#I/O	PortIO	direction	onlyinput|onlyOutput|IOSingleEnable|IOMultiEnable
+#I/O	Telnet	telnetMode	true|false
+#I/O	Telnet	port	1|2|32768|65535
+#I/O	Telnet	buflen	1|2|8388608|16777216
+#I/O	Telnet	trigger	rising|falling
+#I/O	Telnet	labelloc	center|north|south|east|west
+#I/O	RealTimeClock	facing	north|south|east|west
+#I/O	RealTimeClock	timeType	1|2
+#I/O	RealTimeClock	porsize	1|2
+#I/O	MatrixKeypad	labelloc	center|north|south|east|west
+#I/O	MatrixKeypad	labelvisible	true|false
+#I/O	MatrixKeypad	mode	raw|pmod_kypd
+#I/O	MatrixKeypad	size	normal|large
+#I/O	RGB Video	cursor	Blinking Dot|No Cursor
+#I/O	RGB Video	reset	Asynchronous|Synchronous
+#I/O	RGB Video	color	888 RGB (24 bit)|555 RGB (15 bit)|565 RGB (16 bit)|444 RGB (12 bit)|8-Color RGB (3 bit)|Atari 2600 (7 bit)|XTerm16 (4 bit)|XTerm256 (8 bit)|Grayscale (4 bit)|VGA256 (8 bit)
+#I/O	RGB Video	resolution	128x128|256x256|320x240|640x480|960x540|1024x768|1280x720|1920x1080|Custom
+#I/O	RGB Video	width	2|3|2049|4096
+#I/O	RGB Video	height	2|3|2049|4096
+#I/O	RGB Video	scale	1|2|4|8
+#TTL	7400	facing	north|south|east|west
+#TTL	7400	VccGndPorts	true|false
+#TTL	7400	ShowInternalStructure	true|false
+#TTL	7402	facing	north|south|east|west
+#TTL	7402	VccGndPorts	true|false
+#TTL	7402	ShowInternalStructure	true|false
+#TTL	7404	facing	north|south|east|west
+#TTL	7404	VccGndPorts	true|false
+#TTL	7404	ShowInternalStructure	true|false
+#TTL	7405	facing	north|south|east|west
+#TTL	7405	VccGndPorts	true|false
+#TTL	7405	ShowInternalStructure	true|false
+#TTL	7408	facing	north|south|east|west
+#TTL	7408	VccGndPorts	true|false
+#TTL	7408	ShowInternalStructure	true|false
+#TTL	7410	facing	north|south|east|west
+#TTL	7410	VccGndPorts	true|false
+#TTL	7410	ShowInternalStructure	true|false
+#TTL	7411	facing	north|south|east|west
+#TTL	7411	VccGndPorts	true|false
+#TTL	7411	ShowInternalStructure	true|false
+#TTL	7413	facing	north|south|east|west
+#TTL	7413	VccGndPorts	true|false
+#TTL	7413	ShowInternalStructure	true|false
+#TTL	7414	facing	north|south|east|west
+#TTL	7414	VccGndPorts	true|false
+#TTL	7414	ShowInternalStructure	true|false
+#TTL	7418	facing	north|south|east|west
+#TTL	7418	VccGndPorts	true|false
+#TTL	7418	ShowInternalStructure	true|false
+#TTL	7419	facing	north|south|east|west
+#TTL	7419	VccGndPorts	true|false
+#TTL	7419	ShowInternalStructure	true|false
+#TTL	7420	facing	north|south|east|west
+#TTL	7420	VccGndPorts	true|false
+#TTL	7420	ShowInternalStructure	true|false
+#TTL	7421	facing	north|south|east|west
+#TTL	7421	VccGndPorts	true|false
+#TTL	7421	ShowInternalStructure	true|false
+#TTL	7424	facing	north|south|east|west
+#TTL	7424	VccGndPorts	true|false
+#TTL	7424	ShowInternalStructure	true|false
+#TTL	7427	facing	north|south|east|west
+#TTL	7427	VccGndPorts	true|false
+#TTL	7427	ShowInternalStructure	true|false
+#TTL	7430	facing	north|south|east|west
+#TTL	7430	VccGndPorts	true|false
+#TTL	7430	ShowInternalStructure	true|false
+#TTL	7432	facing	north|south|east|west
+#TTL	7432	VccGndPorts	true|false
+#TTL	7432	ShowInternalStructure	true|false
+#TTL	7434	facing	north|south|east|west
+#TTL	7434	VccGndPorts	true|false
+#TTL	7434	ShowInternalStructure	true|false
+#TTL	7436	facing	north|south|east|west
+#TTL	7436	VccGndPorts	true|false
+#TTL	7436	ShowInternalStructure	true|false
+#TTL	7438	facing	north|south|east|west
+#TTL	7438	VccGndPorts	true|false
+#TTL	7438	ShowInternalStructure	true|false
+#TTL	7442	facing	north|south|east|west
+#TTL	7442	VccGndPorts	true|false
+#TTL	7442	ShowInternalStructure	true|false
+#TTL	7443	facing	north|south|east|west
+#TTL	7443	VccGndPorts	true|false
+#TTL	7443	ShowInternalStructure	true|false
+#TTL	7444	facing	north|south|east|west
+#TTL	7444	VccGndPorts	true|false
+#TTL	7444	ShowInternalStructure	true|false
+#TTL	7447	facing	north|south|east|west
+#TTL	7447	VccGndPorts	true|false
+#TTL	7447	ShowInternalStructure	true|false
+#TTL	7451	facing	north|south|east|west
+#TTL	7451	VccGndPorts	true|false
+#TTL	7451	ShowInternalStructure	true|false
+#TTL	7454	facing	north|south|east|west
+#TTL	7454	VccGndPorts	true|false
+#TTL	7454	ShowInternalStructure	true|false
+#TTL	7458	facing	north|south|east|west
+#TTL	7458	VccGndPorts	true|false
+#TTL	7458	ShowInternalStructure	true|false
+#TTL	7464	facing	north|south|east|west
+#TTL	7464	VccGndPorts	true|false
+#TTL	7464	ShowInternalStructure	true|false
+#TTL	7474	facing	north|south|east|west
+#TTL	7474	VccGndPorts	true|false
+#TTL	7474	ShowInternalStructure	true|false
+#TTL	7476	facing	north|south|east|west
+#TTL	7476	VccGndPorts	true|false
+#TTL	7476	ShowInternalStructure	true|false
+#TTL	7485	facing	north|south|east|west
+#TTL	7485	VccGndPorts	true|false
+#TTL	7485	ShowInternalStructure	true|false
+#TTL	7486	facing	north|south|east|west
+#TTL	7486	VccGndPorts	true|false
+#TTL	7486	ShowInternalStructure	true|false
+#TTL	7487	facing	north|south|east|west
+#TTL	7487	VccGndPorts	true|false
+#TTL	7487	ShowInternalStructure	true|false
+#TTL	7493	facing	north|south|east|west
+#TTL	7493	VccGndPorts	true|false
+#TTL	7493	ShowInternalStructure	true|false
+#TTL	74107	facing	north|south|east|west
+#TTL	74107	VccGndPorts	true|false
+#TTL	74107	ShowInternalStructure	true|false
+#TTL	74123	facing	north|south|east|west
+#TTL	74123	VccGndPorts	true|false
+#TTL	74123	ShowInternalStructure	true|false
+#TTL	74125	facing	north|south|east|west
+#TTL	74125	VccGndPorts	true|false
+#TTL	74125	ShowInternalStructure	true|false
+#TTL	74132	facing	north|south|east|west
+#TTL	74132	VccGndPorts	true|false
+#TTL	74132	ShowInternalStructure	true|false
+#TTL	74138	facing	north|south|east|west
+#TTL	74138	VccGndPorts	true|false
+#TTL	74138	ShowInternalStructure	true|false
+#TTL	74139	facing	north|south|east|west
+#TTL	74139	VccGndPorts	true|false
+#TTL	74139	ShowInternalStructure	true|false
+#TTL	74148	facing	north|south|east|west
+#TTL	74148	VccGndPorts	true|false
+#TTL	74148	ShowInternalStructure	true|false
+#TTL	74151	facing	north|south|east|west
+#TTL	74151	VccGndPorts	true|false
+#TTL	74151	ShowInternalStructure	true|false
+#TTL	74153	facing	north|south|east|west
+#TTL	74153	VccGndPorts	true|false
+#TTL	74153	ShowInternalStructure	true|false
+#TTL	74157	facing	north|south|east|west
+#TTL	74157	VccGndPorts	true|false
+#TTL	74157	ShowInternalStructure	true|false
+#TTL	74158	facing	north|south|east|west
+#TTL	74158	VccGndPorts	true|false
+#TTL	74158	ShowInternalStructure	true|false
+#TTL	74161	facing	north|south|east|west
+#TTL	74161	VccGndPorts	true|false
+#TTL	74161	ShowInternalStructure	true|false
+#TTL	74163	facing	north|south|east|west
+#TTL	74163	VccGndPorts	true|false
+#TTL	74163	ShowInternalStructure	true|false
+#TTL	74164	facing	north|south|east|west
+#TTL	74164	VccGndPorts	true|false
+#TTL	74164	ShowInternalStructure	true|false
+#TTL	74165	facing	north|south|east|west
+#TTL	74165	VccGndPorts	true|false
+#TTL	74165	ShowInternalStructure	true|false
+#TTL	74166	facing	north|south|east|west
+#TTL	74166	VccGndPorts	true|false
+#TTL	74166	ShowInternalStructure	true|false
+#TTL	74173	facing	north|south|east|west
+#TTL	74173	VccGndPorts	true|false
+#TTL	74173	ShowInternalStructure	true|false
+#TTL	74175	facing	north|south|east|west
+#TTL	74175	VccGndPorts	true|false
+#TTL	74175	ShowInternalStructure	true|false
+#TTL	74181	facing	north|south|east|west
+#TTL	74181	VccGndPorts	true|false
+#TTL	74181	ShowInternalStructure	true|false
+#TTL	74182	facing	north|south|east|west
+#TTL	74182	VccGndPorts	true|false
+#TTL	74182	ShowInternalStructure	true|false
+#TTL	74190	facing	north|south|east|west
+#TTL	74190	VccGndPorts	true|false
+#TTL	74190	ShowInternalStructure	true|false
+#TTL	74192	facing	north|south|east|west
+#TTL	74192	VccGndPorts	true|false
+#TTL	74192	ShowInternalStructure	true|false
+#TTL	74193	facing	north|south|east|west
+#TTL	74193	VccGndPorts	true|false
+#TTL	74193	ShowInternalStructure	true|false
+#TTL	74194	facing	north|south|east|west
+#TTL	74194	VccGndPorts	true|false
+#TTL	74194	ShowInternalStructure	true|false
+#TTL	74240	facing	north|south|east|west
+#TTL	74240	VccGndPorts	true|false
+#TTL	74240	ShowInternalStructure	true|false
+#TTL	74241	facing	north|south|east|west
+#TTL	74241	VccGndPorts	true|false
+#TTL	74241	ShowInternalStructure	true|false
+#TTL	74244	facing	north|south|east|west
+#TTL	74244	VccGndPorts	true|false
+#TTL	74244	ShowInternalStructure	true|false
+#TTL	74245	facing	north|south|east|west
+#TTL	74245	VccGndPorts	true|false
+#TTL	74245	ShowInternalStructure	true|false
+#TTL	74257	facing	north|south|east|west
+#TTL	74257	VccGndPorts	true|false
+#TTL	74257	ShowInternalStructure	true|false
+#TTL	74259	facing	north|south|east|west
+#TTL	74259	VccGndPorts	true|false
+#TTL	74259	ShowInternalStructure	true|false
+#TTL	74266	facing	north|south|east|west
+#TTL	74266	VccGndPorts	true|false
+#TTL	74266	ShowInternalStructure	true|false
+#TTL	74273	facing	north|south|east|west
+#TTL	74273	VccGndPorts	true|false
+#TTL	74273	ShowInternalStructure	true|false
+#TTL	74283	facing	north|south|east|west
+#TTL	74283	VccGndPorts	true|false
+#TTL	74283	ShowInternalStructure	true|false
+#TTL	74299	facing	north|south|east|west
+#TTL	74299	VccGndPorts	true|false
+#TTL	74299	ShowInternalStructure	true|false
+#TTL	74374	facing	north|south|east|west
+#TTL	74374	VccGndPorts	true|false
+#TTL	74374	ShowInternalStructure	true|false
+#TTL	74365	facing	north|south|east|west
+#TTL	74365	VccGndPorts	true|false
+#TTL	74365	ShowInternalStructure	true|false
+#TTL	74377	facing	north|south|east|west
+#TTL	74377	VccGndPorts	true|false
+#TTL	74377	ShowInternalStructure	true|false
+#TTL	74381	facing	north|south|east|west
+#TTL	74381	VccGndPorts	true|false
+#TTL	74381	ShowInternalStructure	true|false
+#TTL	74393	facing	north|south|east|west
+#TTL	74393	VccGndPorts	true|false
+#TTL	74393	ShowInternalStructure	true|false
+#TTL	74390	facing	north|south|east|west
+#TTL	74390	VccGndPorts	true|false
+#TTL	74390	ShowInternalStructure	true|false
+#TTL	74541	facing	north|south|east|west
+#TTL	74541	VccGndPorts	true|false
+#TTL	74541	ShowInternalStructure	true|false
+#TTL	74594	facing	north|south|east|west
+#TTL	74594	VccGndPorts	true|false
+#TTL	74594	ShowInternalStructure	true|false
+#TTL	74595	facing	north|south|east|west
+#TTL	74595	VccGndPorts	true|false
+#TTL	74595	ShowInternalStructure	true|false
+#TTL	74640	facing	north|south|east|west
+#TTL	74640	VccGndPorts	true|false
+#TTL	74640	ShowInternalStructure	true|false
+#TTL	74670	facing	north|south|east|west
+#TTL	74670	VccGndPorts	true|false
+#TTL	74670	ShowInternalStructure	true|false
+#TTL	74688	facing	north|south|east|west
+#TTL	74688	VccGndPorts	true|false
+#TTL	74688	ShowInternalStructure	true|false
+#TTL	744017	facing	north|south|east|west
+#TTL	744017	VccGndPorts	true|false
+#TTL	744017	ShowInternalStructure	true|false
+#TTL	744060	facing	north|south|east|west
+#TTL	744060	VccGndPorts	true|false
+#TTL	744060	ShowInternalStructure	true|false
+#TTL	744094	facing	north|south|east|west
+#TTL	744094	VccGndPorts	true|false
+#TTL	744094	ShowInternalStructure	true|false
+#TTL	744075	facing	north|south|east|west
+#TTL	744075	VccGndPorts	true|false
+#TTL	744075	ShowInternalStructure	true|false
+#TTL	747266	facing	north|south|east|west
+#TTL	747266	VccGndPorts	true|false
+#TTL	747266	ShowInternalStructure	true|false
+#HDL-IP	VHDL Entity	labelvisible	true|false
+#HDL-IP	BLIFCircuit	labelvisible	true|false
+#BFH-Praktika	Binary_to_BCD_converter	binvalue	8
+#Input/Output-Extra	Switch	facing	north|south|east|west
+#Input/Output-Extra	Switch	width	1|2|3|8|16|31|32|64
+#Input/Output-Extra	Switch	labelloc	center|north|south|east|west
+#Input/Output-Extra	Buzzer	facing	north|south|east|west
+#Input/Output-Extra	Buzzer	selloc	bl|tr
+#Input/Output-Extra	Buzzer	freq_measure	Hz|dHz
+#Input/Output-Extra	Buzzer	vol_width	1|2|3|8|16|31|32|64
+#Input/Output-Extra	Buzzer	waveform	Sine|Square|Triangle|Sawtooth|Noise
+#Input/Output-Extra	Buzzer	channel	3|1|2
+#Input/Output-Extra	Buzzer	smooth_level	0|1|5|10
+#Input/Output-Extra	Buzzer	smooth_width	1|2|5|10
+#Input/Output-Extra	Slider	facing	north|south|east|west
+#Input/Output-Extra	Slider	width	1|2|3|8
+#Input/Output-Extra	Slider	radix	2|8|10signed|10unsigned|16|float
+#Input/Output-Extra	Slider	labelvisible	true|false
+#Input/Output-Extra	Slider	Direction	right_to_left|left_to_right
+#Input/Output-Extra	Digital Oscilloscope	inputs	1|2|16|32
+#Input/Output-Extra	Digital Oscilloscope	nState	4|5|19|35
+#Input/Output-Extra	Digital Oscilloscope	frontlines	no|rising|falling|both
+#Input/Output-Extra	Digital Oscilloscope	showclock	true|false
+#Input/Output-Extra	Digital Oscilloscope	labelloc	center|north|south|east|west
+#Input/Output-Extra	PlaRom	inputs	1|2|16|32
+#Input/Output-Extra	PlaRom	and	1|2|16|32
+#Input/Output-Extra	PlaRom	outputs	1|2|16|32
+#Input/Output-Extra	PlaRom	labelvisible	true|false
+#Input/Output-Extra	PlaRom	Select	high|low
+#Input/Output-Extra	TwoWaySwitch	mode	1in2out|2in1out
+#Input/Output-Extra	TwoWaySwitch	facing	north|south|east|west
+#Input/Output-Extra	TwoWaySwitch	width	1|2|3|8|16|31|32|64
+#Input/Output-Extra	TwoWaySwitch	labelloc	center|north|south|east|west
+#Input/Output-Extra	TWOPINLED	facing	north|south|east|west
+#Input/Output-Extra	TWOPINLED	bipolar	true|false
+#Input/Output-Extra	TWOPINLED	labelloc	center|north|south|east|west
+#Input/Output-Extra	TWOPINLED	labelvisible	true|false
+#Input/Output-Extra	NE555	labelloc	center|north|south|east|west
+#Input/Output-Extra	NE555	labelvisible	true|false
+#Input/Output-Extra	NE555	mode	astable|monostable
+#Soc	Rv32im	irqWidth	1|2|3|8|16|31|32
+#Soc	Rv32im	stateVisible	true|false
+#Soc	Rv32im	labelvisible	true|false
+#Soc	Nios2	irqWidth	1|2|3|8|16|31|32
+#Soc	Nios2	stateVisible	true|false
+#Soc	Nios2	labelvisible	true|false
+#Soc	SocBus	TraceSize	1|2|3|8|16|31|32|64
+#Soc	SocBus	TraceVisible	true|false
+#Soc	SocBus	labelvisible	true|false
+#Soc	Socmem	MemSize	16
+#Soc	Socmem	labelvisible	true|false
+#Soc	SocPio	width	1|2|3|8|16|31|32|64
+#Soc	SocPio	direction	bidir|inputonly|outputonly|inout
+#Soc	SocPio	inputssynccapt	true|false
+#Soc	SocPio	genirq	true|false
+#Soc	SocPio	labelvisible	true|false
+#Soc	SocVga	DisplayMode	160x120|320x240|640x480|800x600|1024x768
+#Soc	SocVga	soft160x120	true|false
+#Soc	SocVga	soft320x240	true|false
+#Soc	SocVga	soft640x480	true|false
+#Soc	SocVga	soft800x600	true|false
+#Soc	SocVga	soft1024x768	true|false
+#Soc	SocVga	labelvisible	true|false
+#Soc	SocDma	labelvisible	true|false
+#Soc	SocJtagUart	WriteFifoSize	8|16|32|64|128|256|512|1024|2048|4096|8192|16384|32768
+#Soc	SocJtagUart	ReadFifoSize	8|16|32|64|128|256|512|1024|2048|4096|8192|16384|32768
+#Soc	SocJtagUart	labelvisible	true|false

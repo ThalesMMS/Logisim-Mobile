@@ -1,0 +1,77 @@
+{
+  "scope": "mounted editor share to external test receiver",
+  "result": "PASS",
+  "expectedBytes": 52746,
+  "expectedSha256": "259d61bc36d2ad2b837df948eefca5f55adca2b7b3f0fc31fd41bbd88a16e298",
+  "received": {
+    "uri": "content://thalesmms.logisim.mobile.e2e.files/circuits/4cfa54c6-89bc-4989-9e7e-159a2c18ce00/main.circ",
+    "displayName": "main.circ",
+    "circuits": 7,
+    "bytes": 52746,
+    "mimeType": "application/x-logisim-circuit",
+    "providerMimeType": "application/octet-stream",
+    "prefixBase64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVQ=",
+    "sha256": "259d61bc36d2ad2b837df948eefca5f55adca2b7b3f0fc31fd41bbd88a16e298",
+    "readable": true
+  },
+  "documentBefore": "delivery-before.circ",
+  "documentAfter": "delivery-after.circ",
+  "qualification": {
+    "scope": "mounted editor share delivery only",
+    "result": "PASS",
+    "productionPin": "df276e39",
+    "installedBefore": [
+      {
+        "package": "thalesmms.logisim.mobile.e2e",
+        "path": "/data/app/~~j7FTnbY2gZQn2MFT9Na4Sg==/thalesmms.logisim.mobile.e2e-IPj_03KD6OBC8RkvVP1yAA==/base.apk",
+        "sha256": "600f656ac6cbb4661bbff880995b77a1fc240bb0607671bb96d0a010b234a834"
+      },
+      {
+        "package": "thalesmms.logisim.mobile.e2e.test",
+        "path": "/data/app/~~haMkSOh_mo5Pbq9LO6Awjg==/thalesmms.logisim.mobile.e2e.test-ESslJGTJVf9QRJ-hLSDYdw==/base.apk",
+        "sha256": "9ce4fc8339818d6cfa56dc590aba9b66b26cf161842b81ce8422247768d03c3a"
+      },
+      {
+        "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+        "path": "/data/app/~~uCsx_D8nADsSGoTABkhchQ==/thalesmms.logisim.mobile.snapshot.e2e.test-MVcCL3Kx6VX2O4fM6m-hgQ==/base.apk",
+        "sha256": "f41fe9877c941379805fc0b33adca5e5df0f2fdca8b03bc7cbba9eb34407be66"
+      }
+    ],
+    "installedAfter": [
+      {
+        "package": "thalesmms.logisim.mobile.e2e",
+        "path": "/data/app/~~j7FTnbY2gZQn2MFT9Na4Sg==/thalesmms.logisim.mobile.e2e-IPj_03KD6OBC8RkvVP1yAA==/base.apk",
+        "sha256": "600f656ac6cbb4661bbff880995b77a1fc240bb0607671bb96d0a010b234a834"
+      },
+      {
+        "package": "thalesmms.logisim.mobile.e2e.test",
+        "path": "/data/app/~~haMkSOh_mo5Pbq9LO6Awjg==/thalesmms.logisim.mobile.e2e.test-ESslJGTJVf9QRJ-hLSDYdw==/base.apk",
+        "sha256": "9ce4fc8339818d6cfa56dc590aba9b66b26cf161842b81ce8422247768d03c3a"
+      },
+      {
+        "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+        "path": "/data/app/~~uCsx_D8nADsSGoTABkhchQ==/thalesmms.logisim.mobile.snapshot.e2e.test-MVcCL3Kx6VX2O4fM6m-hgQ==/base.apk",
+        "sha256": "f41fe9877c941379805fc0b33adca5e5df0f2fdca8b03bc7cbba9eb34407be66"
+      }
+    ]
+  },
+  "productionPin": "df276e39e2af27fdbe26d220913657b43ee717a9",
+  "rawArtifactWorktree": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e",
+  "rawArtifactDirectory": "outputs/android-e2e/df276e-share-delivery-en",
+  "sourceHashes": {
+    "source-e2e-android.py": "02a61f4b9483d764209c8a3fe12644b64fb331094e312fcfdbb44a3ac0ff1cfd",
+    "source-android_ui.py": "43fdcaea349f1ac711914f5d1fa385d724ed86ec2f14ec0074ddc401319a3d59",
+    "source-android_share_delivery_scenario.py": "e55663c74f358eb6cbb2c626f81864c7264ff46167d05969a2c8cc94b7a92026"
+  },
+  "caseResults": [
+    {
+      "scenario": "share-external-receiver-current-editor",
+      "status": "passed",
+      "seconds": 160.15
+    }
+  ],
+  "limits": [
+    "This targeted delivery pass does not reclassify the earlier full files run that failed with an HWUI ANR.",
+    "No cloud or messaging recipient was selected; the external receiver belongs to the test APK."
+  ]
+}

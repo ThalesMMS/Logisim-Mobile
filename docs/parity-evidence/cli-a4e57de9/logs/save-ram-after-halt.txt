@@ -1,0 +1,28 @@
+row: cli/save
+case: save-ram-after-halt
+result: PASS
+detail: saved images byte-equal: True (['11 22 33 44 55 66 77 88'])
+
+=== evolution: logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem -l scripts/oracle/cli/fixtures/code.hex code --save $WORK/evolution-save.hex
+exit: 0
+--- stdout (6 lines, sha256 bec97d93a2a9495543516b553d3285ffdb9df8f07d833f85e8af925bf30eaae7)
+UUUU UUUU	1010 0001
+UUUU UUUU	1011 0010
+UUUU UUUU	1100 0011
+UUUU UUUU	1101 0100
+UUUU UUUU	1110 0101
+UUUU UUUU	1111 0110
+--- stderr (1 lines, sha256 42caa89a2d5183d363839e6cd6140f3319051a4ef3d04a0d1736cd45d01c4b3f)
+[main] ERROR com.cburch.logisim.gui.start.TtyInterface - halted due to halt pin
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table,halt scripts/oracle/cli/fixtures/memory.circ --load scripts/oracle/cli/fixtures/mem.hex mem --load scripts/oracle/cli/fixtures/code.hex code --save $WORK/mobile-save.hex
+exit: 0
+--- stdout (7 lines, sha256 50f635e39fa0fe5707d62c21811d6cfd639986a61ed93824a5b07f6c00dc74ef)
+xxxx xxxx	1010 0001
+xxxx xxxx	1011 0010
+xxxx xxxx	1100 0011
+xxxx xxxx	1101 0100
+xxxx xxxx	1110 0101
+xxxx xxxx	1111 0110
+halted due to halt pin
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

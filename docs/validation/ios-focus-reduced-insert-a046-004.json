@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "PREPARATION_TIMEOUT",
+  "qualification": "ALPHA_ONLY",
+  "preservesFindToYFailure": false,
+  "issuesResolved": [],
+  "productSource": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "productSourceAfter": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "harnessSource": "910e45112c728163f88a9d39e0b85cf118290676",
+  "focusSourceCodeCommit": "0d8db9d98093c46a8ea0916f16e00ce29b850aee",
+  "artifactBefore": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifactAfter": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifactUnchanged": true,
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/EFC1402B-5511-40D9-8A21-359172F886AB/data",
+    "dataPathSize": 8456237056,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/EFC1402B-5511-40D9-8A21-359172F886AB",
+    "udid": "EFC1402B-5511-40D9-8A21-359172F886AB",
+    "lastUsedAt": "2026-11-04T23:06:28Z",
+    "isAvailable": true,
+    "logPathSize": 380928,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "state": "Booted",
+    "name": "iPad Pro 11-inch (M5)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "physicalDevice": false,
+  "nativeExecution": {
+    "status": "FAIL",
+    "exit_code": 65,
+    "xcresult": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/editor.xcresult",
+    "selection": [
+      "EditorEndToEndTests/FocusEndToEndTests/testCommandAAfterCoordinateReplacementWithoutInspector"
+    ]
+  },
+  "results": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/results.json",
+  "testLog": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/test.log",
+  "test": "FocusEndToEndTests/testCommandAAfterCoordinateReplacementWithoutInspector()",
+  "attachments": [
+    {
+      "name": "editing-focus-original-replace-after-select-all_0_2393BD8C-1CE5-4F93-B3AC-0B1227CDBE9F.txt",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/attachments/0708DD85-DAE6-4389-B635-AD4C788D84F4.txt"
+    },
+    {
+      "name": "editing-focus-original-replace-after-tap_0_7174F849-CCEC-4364-BC46-85A86BCDA255.txt",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/attachments/D35A360A-022C-4CB3-BAB8-3E4703628FF0.txt"
+    },
+    {
+      "name": "editing-focus-original-replace-after-select-all_0_9436B7E9-4747-4B7E-AAB0-1462D189E13A.txt",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/attachments/074BF8A2-D04C-4FF0-AA9C-DF7E67E2D947.txt"
+    },
+    {
+      "name": "editing-focus-original-replace-after-tap_0_39EBD5D8-567F-4832-93B1-B618372227F7.txt",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/attachments/4EA483F4-C7A8-4C95-AB93-F8D17E8BE797.txt"
+    }
+  ],
+  "intendedSequence": [
+    "New project",
+    "Tools then Explorer then Insert",
+    "original keyboard replacement of Find=INPUT, X=100, Y=100",
+    "insert INPUT, reopen Insert, probe Find without XML or Inspector"
+  ],
+  "observedSequence": [
+    "Find=INPUT replacement completed",
+    "X was keyboard-focused after its tap and Command-A",
+    "X Delete waited 60 seconds before synthesis, then another idle wait exceeded the 180-second case allowance",
+    "Y replacement, component insertion, second Insert, and QFOCUS were not reached"
+  ],
+  "findProbeReached": false,
+  "qfocusReached": false,
+  "lastScreenshot": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-reduced-insert-a046-004/last-screen.png",
+  "handoffState": "Portrait; application remains open on the first Insert dialog; Find=INPUT, X empty and focused, Y=100, software keyboard visible. No test or wrapper process remains.",
+  "limits": [
+    "This is an incomplete reduction, not evidence that removing XML or Inspector prevents the focus jump.",
+    "No increased wait, focus repair, product update, physical hardware, or 17e execution occurred."
+  ]
+}

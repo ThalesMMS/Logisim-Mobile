@@ -1,0 +1,361 @@
+{
+  "schema": 1,
+  "scope": "OFFLINE_SOURCE_AND_PURE_FUNCTION_ANALYSIS",
+  "producer": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+  "instrumentationSource": "e7fb33f8d76c6ec8bc7a7046e7c252fb9386d630",
+  "nativeOutcomeUnchanged": "FAIL_NOT_QUALIFIED",
+  "officialSourcesJar": {
+    "path": "/tmp/logisim-e7-offline-compose-source/ui-android-1.13.0-beta02-sources.jar",
+    "bytes": 1060587,
+    "sha256": "dc792b09830252c0c9f285933172ed63a1e7c67c4ec7e1588a962e04c525241e",
+    "url": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.13.0-beta02/ui-android-1.13.0-beta02-sources.jar",
+    "archivePolicy": "REFERENCE_ONLY_DO_NOT_COPY_JAR"
+  },
+  "officialSourceFiles": [
+    {
+      "path": "/tmp/logisim-e7-offline-compose-source/SemanticsOwner.kt",
+      "bytes": 17427,
+      "sha256": "b933652a2279086533f739fc2cef11b6fa5cc193f91e5e06bcf4d0395e912ac0",
+      "jarPath": "commonMain/androidx/compose/ui/semantics/SemanticsOwner.kt",
+      "relevantMethods": [
+        {
+          "lines": "137-144",
+          "method": "SemanticsNode.isImportantForAccessibility"
+        },
+        {
+          "lines": "162-175",
+          "method": "AdjustedSemanticsNode and SemanticsOwner.getAllUncoveredSemanticsNodesToIntObjectMap"
+        },
+        {
+          "lines": "270-297",
+          "method": "findAllSemanticNodesRecursive: touch bounds and uncovered-region intersection"
+        },
+        {
+          "lines": "329-343",
+          "method": "Reverse child traversal and subtraction of important-node bounds"
+        }
+      ]
+    },
+    {
+      "path": "/tmp/logisim-e7-offline-compose-source/AndroidComposeViewAccessibilityDelegateCompat.android.kt",
+      "bytes": 181204,
+      "sha256": "517780fbd9c8c55a8072aa6ca62dd8968bf0587c75bbc096b0b30fb11cd487bf",
+      "jarPath": "androidMain/androidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat.android.kt",
+      "relevantMethods": [
+        {
+          "lines": "379-390",
+          "method": "currentSemanticsNodes: obtains the uncovered-node map"
+        },
+        {
+          "lines": "579",
+          "method": "createNodeInfo: sets Android node bounds from adjusted semantics bounds"
+        },
+        {
+          "lines": "604-629",
+          "method": "boundsInScreen and toBoundsInScreen"
+        }
+      ]
+    }
+  ],
+  "resolvedRuntimeUi": [
+    {
+      "configuration": "e2eAndroidTestCompileClasspath",
+      "componentIdentifier": "androidx.compose.ui:ui-android:1.13.0-beta02",
+      "files": [
+        {
+          "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/androidx.compose.ui/ui-android/1.13.0-beta02/8742216d4fb67a88999a5de8e5033cd314a21a84/ui.aar",
+          "bytes": 4152483,
+          "sha256": "98c7b5bfae2fa50fb17aa77322d8c3470d79421f261b503972c23be94793715f"
+        }
+      ]
+    },
+    {
+      "configuration": "e2eAndroidTestRuntimeClasspath",
+      "componentIdentifier": "androidx.compose.ui:ui-android:1.13.0-beta02",
+      "files": [
+        {
+          "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/androidx.compose.ui/ui-android/1.13.0-beta02/8742216d4fb67a88999a5de8e5033cd314a21a84/ui.aar",
+          "bytes": 4152483,
+          "sha256": "98c7b5bfae2fa50fb17aa77322d8c3470d79421f261b503972c23be94793715f"
+        }
+      ]
+    },
+    {
+      "configuration": "e2eRuntimeClasspath",
+      "componentIdentifier": "androidx.compose.ui:ui-android:1.13.0-beta02",
+      "files": [
+        {
+          "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/androidx.compose.ui/ui-android/1.13.0-beta02/8742216d4fb67a88999a5de8e5033cd314a21a84/ui.aar",
+          "bytes": 4152483,
+          "sha256": "98c7b5bfae2fa50fb17aa77322d8c3470d79421f261b503972c23be94793715f"
+        }
+      ]
+    }
+  ],
+  "resolvedArtifactRecord": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-testapk-e7fb33f8-002/guard-build-resolved-artifacts.json",
+    "bytes": 216471,
+    "sha256": "9848cdea00d1a0bd0a930bfde81f8944f31810b8ecad217fa4a732378e42d13e"
+  },
+  "appSourceFilesRead": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitSemanticOverlay.kt",
+      "bytes": 14026,
+      "sha256": "ccb3a54da6b7a9bc12515010410534a76932958b1bf33341ec9afa4aa75ceecb"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt",
+      "bytes": 64575,
+      "sha256": "5f861a87cd8d818b5d5eccd36b65eb93ca0d0fd5e77982cc671bdff768dc3c7b"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt",
+      "bytes": 67174,
+      "sha256": "9afb40aa63fd461e1a9a9444981a361ea415a8ea293a0a18d156c0b382e99bba"
+    }
+  ],
+  "nativeFilesRead": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-zoomout-e7fb33f8-native-5558-002/pinch-once/native/0-fixture.circ",
+      "bytes": 1185,
+      "sha256": "68b287988d46cca9c404b3de6ac05dc059ed7d8d0ad9507295299fd65450f9e0"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-zoomout-e7fb33f8-native-5558-002/pinch-once/native/1-pinch-before.circ",
+      "bytes": 1185,
+      "sha256": "68b287988d46cca9c404b3de6ac05dc059ed7d8d0ad9507295299fd65450f9e0"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-zoomout-e7fb33f8-native-5558-002/pinch-once/native/canvas-input-trace.json",
+      "bytes": 255535,
+      "sha256": "46f20f4aaec827ce8911cad6a66bb56f9832e7fb8b35313456b427d9a59a4b6c"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-zoomout-e7fb33f8-native-5558-002/pinch-once/native/zoom-out-observations.jsonl",
+      "bytes": 28619,
+      "sha256": "9a1bc485fc4cf72b4aeba76804541f57642aea1b7e4ef060dfab445b2c3901dc"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-zoomout-e7fb33f8-native-5558-002/pinch-once/native/pinch-failure-tree.txt",
+      "bytes": 39506,
+      "sha256": "6f03956adc7f92c995aae75d0f7e25dc566d8d686bf00ff47ab59c2b2b70c02d"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/outputs/android-zoomout-e7fb33f8-native-5558-002/pinch-once/native/result.json",
+      "bytes": 104703,
+      "sha256": "8acc614604147ded4cdd81fc59e0ced39902f527a4722a5653551d59a1eaf91a"
+    }
+  ],
+  "selectedTraceFrames": {
+    "63": {
+      "stage": "composed",
+      "after": {
+        "scale": 0.94844276,
+        "panX": 429.98065,
+        "panY": 616.022,
+        "width": 1080,
+        "height": 1472,
+        "initialized": true,
+        "fitted": false
+      },
+      "fields": {
+        "canvasWidth": "1080",
+        "canvasHeight": "1472",
+        "density": "2.625",
+        "windowFocused": "true",
+        "mode": "SELECT"
+      },
+      "atElapsedMillis": 52455199
+    },
+    "220": {
+      "stage": "composed",
+      "after": {
+        "scale": 1.896886,
+        "panX": 258.4614,
+        "panY": 521.0438,
+        "width": 1080,
+        "height": 1472,
+        "initialized": true,
+        "fitted": false
+      },
+      "fields": {
+        "canvasWidth": "1080",
+        "canvasHeight": "1472",
+        "density": "2.625",
+        "windowFocused": "true",
+        "mode": "SELECT"
+      },
+      "atElapsedMillis": 52461879
+    }
+  },
+  "geometry": {
+    "density": 2.625,
+    "minimumTargetPixels": 126,
+    "canvasScreenBounds": [
+      0,
+      647,
+      1080,
+      2119
+    ],
+    "worldBounds": {
+      "mi-input": [
+        80,
+        90,
+        100,
+        110
+      ],
+      "mi-not": [
+        170,
+        91,
+        200,
+        109
+      ],
+      "mi-output": [
+        300,
+        90,
+        320,
+        110
+      ]
+    },
+    "beforeRoundedTargetsFromCompiledB06": {
+      "mi-input": [
+        452,
+        1295,
+        578,
+        1421
+      ],
+      "mi-not": [
+        542,
+        1295,
+        668,
+        1421
+      ],
+      "mi-output": [
+        661,
+        1295,
+        787,
+        1421
+      ]
+    },
+    "beforeSiblingAdjustedModel": {
+      "mi-input": [
+        452,
+        1295,
+        542,
+        1421
+      ],
+      "mi-not": [
+        542,
+        1295,
+        661,
+        1421
+      ],
+      "mi-output": [
+        661,
+        1295,
+        787,
+        1421
+      ]
+    },
+    "afterRoundedTargetsAndFailureTree": {
+      "mi-input": [
+        366,
+        1295,
+        492,
+        1421
+      ],
+      "mi-not": [
+        546,
+        1295,
+        672,
+        1421
+      ],
+      "mi-output": [
+        783,
+        1295,
+        909,
+        1421
+      ]
+    },
+    "siblingModelOrderTopFirst": [
+      "mi-output",
+      "mi-not",
+      "mi-input"
+    ],
+    "lastZoomPollObservedInput": [
+      452,
+      1295,
+      542,
+      1421
+    ],
+    "lastZoomPollObservedOutput": [
+      661,
+      1295,
+      787,
+      1421
+    ],
+    "beforeNotAdjustedRectangleStatus": "MODEL_NOT_DIRECTLY_RETAINED_AS_A_RECTANGLE",
+    "beforeNotCentreFromModel": [
+      601.5,
+      1358.0
+    ],
+    "injectedTwoPointerCentroids": [
+      [
+        601.5,
+        1358.0
+      ]
+    ],
+    "beforeNotGeometricCentreXFromCompiledB06": 605.442565918,
+    "afterNotObservedCentre": [
+      609.0,
+      1358.0
+    ],
+    "afterNotGeometricCentreXFromCompiledB06": 609.385314941,
+    "hypotheticalAnchorDisplacementPixels": 7.5,
+    "originalAnchorTolerancePixels": 4.0,
+    "anchorAssertionStatus": "NOT_EXECUTED_AFTER_RATIO_FAILURE",
+    "endpointAxSpans": [
+      227.0,
+      417.0
+    ],
+    "endpointAxRatio": 1.8370044052863437,
+    "unclippedRoundedTargetSpans": [
+      209.0,
+      417.0
+    ],
+    "viewportRatioFloat32": 2.000000502757973,
+    "literalRatioAssertionScalarsStatus": "NOT_SERIALIZED",
+    "ratioScope": "227 is the final ZoomOut poll;417 is the later failure tree. These are not guaranteed to be the literal locals used by the failed ratio assertion."
+  },
+  "traceLimits": {
+    "input": {
+      "maxCount": 64,
+      "maxBytes": 65536,
+      "count": 34,
+      "bytes": 42807,
+      "total": 34,
+      "dropped": 0,
+      "oversized": 0
+    },
+    "state": {
+      "maxCount": 192,
+      "maxBytes": 131072,
+      "count": 192,
+      "bytes": 87826,
+      "total": 198,
+      "dropped": 6,
+      "oversized": 0
+    },
+    "loggingErrors": 0,
+    "hookCallbackFailures": 0
+  },
+  "limits": [
+    "The region subtraction is an offline model of the pinned Compose source, not a captured invocation of the accessibility delegate.",
+    "The compiled b06 pure functions reproduce the target rectangles before region subtraction. No Compose or Android runtime was executed.",
+    "The before NOT cropped rectangle is modeled. Its 601.5 px centre is corroborated by the native two-pointer centroid and the unchanged case source.",
+    "A separate AX freshness delay remains observed before the fourth ZoomOut completes. Its cache/provider cause is not established.",
+    "The exact beforeDistance and ratio-assertion span were local variables and were not serialized. Endpoint agreement does not exclude a temporal contribution to the original failure.",
+    "The anchor and post-pinch XML assertions were not reached. Their outcomes must not be claimed.",
+    "No Native run, device query, cache call, Gradle/app build, or oracle/product edit is part of this analysis."
+  ]
+}

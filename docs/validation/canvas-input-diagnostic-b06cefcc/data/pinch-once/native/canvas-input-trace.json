@@ -1,0 +1,2492 @@
+{
+  "schema": "canvas-input-trace-v1",
+  "captureId": "251a7dc1-f750-4ecd-889f-203937b36100",
+  "scope": "Synchronous observations from existing handlers; synthesized input; no physical-device qualification",
+  "clocks": {
+    "eventTime\/downTime\/changeUptime\/receiverUptimeMillis": "UPTIME_MILLIS",
+    "receiverElapsedMillis": "ELAPSED_REALTIME_MILLIS"
+  },
+  "pointerLimit": 4,
+  "fieldLimit": 24,
+  "maxRecordBytes": 8192,
+  "loggingErrors": 0,
+  "hookCallbackFailures": 0,
+  "duplicateCompositionsOmitted": 2,
+  "lastSequence": 73,
+  "input": {
+    "maxCount": 64,
+    "maxBytes": 65536,
+    "count": 0,
+    "bytes": 0,
+    "total": 0,
+    "dropped": 0,
+    "oversized": 0,
+    "entries": []
+  },
+  "state": {
+    "maxCount": 192,
+    "maxBytes": 131072,
+    "count": 73,
+    "bytes": 34810,
+    "total": 73,
+    "dropped": 0,
+    "oversized": 0,
+    "entries": [
+      {
+        "sequence": 1,
+        "utf8Bytes": 453,
+        "record": {
+          "stage": "viewport-map-import",
+          "receiverUptimeMillis": 40209569,
+          "receiverElapsedMillis": 40209569,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 2,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40209617,
+          "receiverElapsedMillis": 40209617,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "0",
+            "canvasHeight": "0",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 3,
+        "utf8Bytes": 523,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40209787,
+          "receiverElapsedMillis": 40209787,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 4,
+        "utf8Bytes": 547,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40209787,
+          "receiverElapsedMillis": 40209787,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 5,
+        "utf8Bytes": 455,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40209794,
+          "receiverElapsedMillis": 40209794,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 6,
+        "utf8Bytes": 460,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40209794,
+          "receiverElapsedMillis": 40209794,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 7,
+        "utf8Bytes": 496,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40209838,
+          "receiverElapsedMillis": 40209838,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 8,
+        "utf8Bytes": 529,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40210002,
+          "receiverElapsedMillis": 40210002,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 9,
+        "utf8Bytes": 553,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40210002,
+          "receiverElapsedMillis": 40210002,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 10,
+        "utf8Bytes": 455,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40210002,
+          "receiverElapsedMillis": 40210002,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 11,
+        "utf8Bytes": 466,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40210002,
+          "receiverElapsedMillis": 40210002,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 12,
+        "utf8Bytes": 339,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40210002,
+          "receiverElapsedMillis": 40210002,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 13,
+        "utf8Bytes": 497,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40210052,
+          "receiverElapsedMillis": 40210052,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 14,
+        "utf8Bytes": 412,
+        "record": {
+          "stage": "viewport-map-clear",
+          "receiverUptimeMillis": 40210101,
+          "receiverElapsedMillis": 40210101,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 15,
+        "utf8Bytes": 467,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40210229,
+          "receiverElapsedMillis": 40210229,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 16,
+        "utf8Bytes": 487,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40210351,
+          "receiverElapsedMillis": 40210351,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 17,
+        "utf8Bytes": 510,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40210351,
+          "receiverElapsedMillis": 40210351,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 18,
+        "utf8Bytes": 441,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40210351,
+          "receiverElapsedMillis": 40210351,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 19,
+        "utf8Bytes": 436,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40210351,
+          "receiverElapsedMillis": 40210351,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 20,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40210417,
+          "receiverElapsedMillis": 40210417,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1409",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 21,
+        "utf8Bytes": 504,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40210507,
+          "receiverElapsedMillis": 40210507,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 22,
+        "utf8Bytes": 527,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40210507,
+          "receiverElapsedMillis": 40210507,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 23,
+        "utf8Bytes": 441,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40210507,
+          "receiverElapsedMillis": 40210507,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 24,
+        "utf8Bytes": 453,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40210507,
+          "receiverElapsedMillis": 40210507,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 25,
+        "utf8Bytes": 501,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40210509,
+          "receiverElapsedMillis": 40210509,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 26,
+        "utf8Bytes": 527,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40210510,
+          "receiverElapsedMillis": 40210510,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 27,
+        "utf8Bytes": 441,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40210510,
+          "receiverElapsedMillis": 40210510,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 28,
+        "utf8Bytes": 450,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40210510,
+          "receiverElapsedMillis": 40210510,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 29,
+        "utf8Bytes": 483,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40210842,
+          "receiverElapsedMillis": 40210842,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1409",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 30,
+        "utf8Bytes": 338,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40211105,
+          "receiverElapsedMillis": 40211105,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 31,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40211111,
+          "receiverElapsedMillis": 40211111,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1409",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 32,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40211185,
+          "receiverElapsedMillis": 40211185,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 33,
+        "utf8Bytes": 506,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40211191,
+          "receiverElapsedMillis": 40211191,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 34,
+        "utf8Bytes": 529,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40211191,
+          "receiverElapsedMillis": 40211191,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 35,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40211197,
+          "receiverElapsedMillis": 40211197,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 36,
+        "utf8Bytes": 453,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40211197,
+          "receiverElapsedMillis": 40211197,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 37,
+        "utf8Bytes": 486,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40211213,
+          "receiverElapsedMillis": 40211213,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 38,
+        "utf8Bytes": 508,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40211252,
+          "receiverElapsedMillis": 40211252,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 39,
+        "utf8Bytes": 531,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40211252,
+          "receiverElapsedMillis": 40211252,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 40,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40211252,
+          "receiverElapsedMillis": 40211252,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 41,
+        "utf8Bytes": 455,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40211252,
+          "receiverElapsedMillis": 40211252,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 42,
+        "utf8Bytes": 505,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40211347,
+          "receiverElapsedMillis": 40211347,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 43,
+        "utf8Bytes": 531,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40211347,
+          "receiverElapsedMillis": 40211347,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 44,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40211347,
+          "receiverElapsedMillis": 40211347,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 45,
+        "utf8Bytes": 452,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40211347,
+          "receiverElapsedMillis": 40211347,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 46,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40211400,
+          "receiverElapsedMillis": 40211400,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 47,
+        "utf8Bytes": 338,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40211616,
+          "receiverElapsedMillis": 40211616,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 48,
+        "utf8Bytes": 486,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40211619,
+          "receiverElapsedMillis": 40211619,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 49,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40211971,
+          "receiverElapsedMillis": 40211971,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 50,
+        "utf8Bytes": 483,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40212064,
+          "receiverElapsedMillis": 40212064,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 51,
+        "utf8Bytes": 338,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40212441,
+          "receiverElapsedMillis": 40212441,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 52,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40212472,
+          "receiverElapsedMillis": 40212472,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 53,
+        "utf8Bytes": 483,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40212657,
+          "receiverElapsedMillis": 40212657,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 54,
+        "utf8Bytes": 507,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40212697,
+          "receiverElapsedMillis": 40212697,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 55,
+        "utf8Bytes": 532,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40212697,
+          "receiverElapsedMillis": 40212697,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 56,
+        "utf8Bytes": 444,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40212697,
+          "receiverElapsedMillis": 40212697,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 57,
+        "utf8Bytes": 453,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40212697,
+          "receiverElapsedMillis": 40212697,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 58,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40212728,
+          "receiverElapsedMillis": 40212728,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 59,
+        "utf8Bytes": 511,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40218887,
+          "receiverElapsedMillis": 40218887,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 60,
+        "utf8Bytes": 536,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40218887,
+          "receiverElapsedMillis": 40218887,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 61,
+        "utf8Bytes": 447,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40218888,
+          "receiverElapsedMillis": 40218888,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 62,
+        "utf8Bytes": 454,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40218888,
+          "receiverElapsedMillis": 40218888,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 63,
+        "utf8Bytes": 487,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40218950,
+          "receiverElapsedMillis": 40218950,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 64,
+        "utf8Bytes": 521,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40219033,
+          "receiverElapsedMillis": 40219033,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.1798261,
+            "panX": 404.31998,
+            "panY": 586.75195,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 65,
+        "utf8Bytes": 546,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40219033,
+          "receiverElapsedMillis": 40219033,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.1798261,
+            "panX": 404.31998,
+            "panY": 586.75195,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 66,
+        "utf8Bytes": 454,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40219033,
+          "receiverElapsedMillis": 40219033,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.1798261,
+            "panX": 404.31998,
+            "panY": 586.75195,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 67,
+        "utf8Bytes": 457,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40219033,
+          "receiverElapsedMillis": 40219033,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 68,
+        "utf8Bytes": 494,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40219043,
+          "receiverElapsedMillis": 40219043,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.1798261,
+            "panX": 404.31998,
+            "panY": 586.75195,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 69,
+        "utf8Bytes": 527,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40219122,
+          "receiverElapsedMillis": 40219122,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1.1798261,
+            "panX": 404.31998,
+            "panY": 586.75195,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 0.94386095,
+            "panX": 431.456,
+            "panY": 616.60156,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 70,
+        "utf8Bytes": 552,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40219122,
+          "receiverElapsedMillis": 40219122,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": {
+            "scale": 1.1798261,
+            "panX": 404.31998,
+            "panY": 586.75195,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 0.94386095,
+            "panX": 431.456,
+            "panY": 616.60156,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 71,
+        "utf8Bytes": 453,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40219122,
+          "receiverElapsedMillis": 40219122,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 0.94386095,
+            "panX": 431.456,
+            "panY": 616.60156,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "14:pinch_80ac7783",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 72,
+        "utf8Bytes": 464,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40219122,
+          "receiverElapsedMillis": 40219122,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 1.1798261,
+            "panX": 404.31998,
+            "panY": 586.75195,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 73,
+        "utf8Bytes": 493,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40219142,
+          "receiverElapsedMillis": 40219142,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "pinch_80ac7783",
+          "before": null,
+          "after": {
+            "scale": 0.94386095,
+            "panX": 431.456,
+            "panY": 616.60156,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      }
+    ]
+  }
+}

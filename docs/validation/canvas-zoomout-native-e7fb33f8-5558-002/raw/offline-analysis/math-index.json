@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "status": "PASS_OFFLINE_REPLAY_ONLY",
+  "nativeResultPreserved": "FAIL",
+  "scope": "Actual existing b06 pure functions plus a separately identified integer-region model",
+  "inputFiles": 1867,
+  "inputBytesUnchanged": true,
+  "reportRawBytes": 1144066,
+  "reportRawSha256": "29cca4e5bd3d69a56577c88b420a074e4e4854975a8a0bc8853d1fc7e7b14449",
+  "files": {
+    "BoundsReplay.java": {
+      "bytes": 1818,
+      "sha256": "23495e50ebdaf9a6bb716f395d3d6522e362e307977d5a5f6afac2c7b6049965"
+    },
+    "run.py": {
+      "bytes": 10599,
+      "sha256": "2b76f01a65c9af061def60f0227ef17b537526d0b4873b14d03bfac015fe4e7b"
+    },
+    "math-readme.md": {
+      "bytes": 3822,
+      "sha256": "977b97b88be8b5683ecd792bba55fbde207dab8188bc42a374ac0923b1d8a3c2"
+    },
+    "math-summary.json": {
+      "bytes": 7903,
+      "sha256": "6a14b206e31d7770ef33b4fc1391ca9ea5dcc34051c6aa1406ea380ef5902eac"
+    },
+    "replay-report.json.gz": {
+      "bytes": 202036,
+      "sha256": "dfcc908c69898dcb599ff79b93ce3a071d4cca5f0e9d6970c565edb665986597"
+    },
+    "replay-compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "replay-stdout.log": {
+      "bytes": 2139,
+      "sha256": "dcd42f5c72bdbc64d895dbb686a2598b9b5d6bd5547fe6bc59348175de8a4b3f"
+    }
+  },
+  "excludedLocalArtifacts": [
+    "BoundsProbe.class",
+    "BoundsProbe.java",
+    "command-1.log",
+    "command-2.log",
+    "report.json"
+  ],
+  "limits": [
+    "The full classpath is represented by identities, not copied binaries.",
+    "The exact ratio assertion operands were not retained. The 227 and 417 pixel spans come from observed endpoint captures and the model.",
+    "The next anchor check was not executed; its actual source tolerance is 4 pixels.",
+    "The region algorithm is modeled offline, not executed through Android runtime.",
+    "No Native/device/Gradle/app build/cache operation or acceptance promotion occurred."
+  ]
+}

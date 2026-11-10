@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "scope": "Two archived diagnostics after failed attempt 14368. This is not a roundtrip retry or native scenario qualification.",
+  "originalAttempt": {
+    "wrapperSession": 14368,
+    "status": "FAILED_AFTER_EXPORTS_BEFORE_REOPEN",
+    "evidencePackage": "../portable53-android-folder-drawer"
+  },
+  "diagnostics": [
+    {
+      "receipt": "one-tap-diagnostic/receipt.json",
+      "status": "ABSTAINED",
+      "tapCount": 0,
+      "observedGuardFailure": "The expected native picker is not uniquely focused",
+      "queryLimitation": "The dumpsys window windows output did not include mCurrentFocus."
+    },
+    {
+      "receipt": "one-tap-diagnostic-retry2/receipt.json",
+      "status": "OBSERVED_ONE_CANONICAL_TAP",
+      "tapCount": 1,
+      "nativePidBeforeAndAfter": "12229",
+      "focusBeforeAndAfter": "Window{3c52626 u0 com.google.android.documentsui/com.android.documentsui.picker.PickActivity}",
+      "canonicalTarget": "Downloads inside com.google.android.documentsui:id/roots_list",
+      "targetBoundsBefore": "[168,617][714,668]",
+      "confirmedTargetBoundsBefore": "[168,617][714,668]",
+      "beforeRootsCount": 1,
+      "beforeDirectoryListCount": 0,
+      "afterRootsCount": 0,
+      "afterDirectoryListCount": 1,
+      "bothPriorAppExportsListedAfter": true
+    }
+  ],
+  "totalDiagnosticTaps": 1,
+  "earlierTapCause": "Undetermined; its bounds and coordinates were not recorded.",
+  "nativeScenarioQualification": "NOT_RUN",
+  "productChange": false,
+  "newWrapperRun": false
+}

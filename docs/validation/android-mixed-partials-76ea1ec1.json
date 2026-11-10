@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "appProducerHead": "76ea1ec1282e2a2106fde6792bc9512975cd7125",
+  "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+  "testSha256": "2706fd5ec065a9e8bfb63b4f4597d972edc91006ef147dd2d02f20840f4350e2",
+  "status": "FAIL",
+  "qualification": "NOT_QUALIFIED",
+  "scope": "Synthesized Android SDK input; these incomplete cases do not qualify issue27.",
+  "limits": [
+    "Portable execution on5558 ran concurrently; no performance attribution.",
+    "No timeouts, event magnitudes or document oracles were relaxed."
+  ],
+  "cases": {
+    "context": {
+      "status": "FAIL",
+      "error": "java.lang.IllegalStateException: Toolbar action is unavailable: a11y_import_export_project\n\tat dev.logisim.mobile.input.MixedInputScenarios.toolbar(MixedInputScenarios.kt:511)\n\tat dev.logisim.mobile.input.MixedInputScenarios.export(MixedInputScenarios.kt:441)\n\tat dev.logisim.mobile.input.MixedInputScenarios.mouseContextMenu(MixedInputScenarios.kt:199)\n\tat dev.logisim.mobile.input.MixedInputScenarios.access$mouseContextMenu(MixedInputScenarios.kt:37)\n\tat dev.logisim.mobile.input.MixedInputScenarios$run$cases$3.invoke(MixedInputScenarios.kt:84)\n\tat dev.logisim.mobile.input.MixedInputScenarios$run$cases$3.invoke(MixedInputScenarios.kt:84)\n\tat dev.logisim.mobile.input.MixedInputScenarios.run(MixedInputScenarios.kt:103)\n\tat dev.logisim.mobile.documents.DocumentIntegrationInstrumentation.onStart(DocumentIntegrationInstrumentation.kt:31)\n\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)\n",
+      "elapsedSeconds": 7.544,
+      "installedArtifactsAfter": {
+        "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+        "testSha256": "2706fd5ec065a9e8bfb63b4f4597d972edc91006ef147dd2d02f20840f4350e2"
+      },
+      "lastAnrUnchanged": true,
+      "motionActionCounts": {
+        "ACTION_DOWN": 1,
+        "ACTION_UP": 1
+      },
+      "allMotionEventsAccepted": true,
+      "rawArtifacts": {
+        "outputs/android-e2e/df276e-native-context-r1/manifest.json": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-context-r1/manifest.json",
+          "sha256": "2f2496090facfa768dfce93116995dfd97b4a1f5bb9288b86254e695bbd0da98"
+        },
+        "outputs/android-e2e/df276e-native-context-r1/native/result.json": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-context-r1/native/result.json",
+          "sha256": "77ccc9ae8c20f79eb9822dc2c09f28ba02fc488d8d7021ded8cd0b05fbb5e688"
+        },
+        "outputs/android-e2e/df276e-native-context-r1/native/context-failure-tree.txt": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-context-r1/native/context-failure-tree.txt",
+          "sha256": "c63f35b47491ff0b34365526670e7a6488a85b1f3d1fcedf51a4b6dd626937b9"
+        },
+        "outputs/android-e2e/df276e-native-context-r1/native/context-failure.png": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-context-r1/native/context-failure.png",
+          "sha256": "ee835234100b637becdb5d7a338cc3202caf158df0817eb80c575f37fce82ab4"
+        }
+      },
+      "editorWindowId": 18986,
+      "contextPopupWindowId": 18992,
+      "observed": "Secondary mouse click opened a separate native popup; Duplicate ACTION_CLICK returned true. The full post-Duplicate export and Undo were not reached.",
+      "failureBoundary": "Immediate toolbar queries still observed the popup,2\u20133ms after accepted Duplicate. The later failure tree contains the editor toolbar. No product failure is assigned from this transition."
+    },
+    "scroll": {
+      "status": "FAIL",
+      "error": "java.lang.IllegalStateException: Timed out waiting for unmodified scroll pans. Last outcome: RETURNED_FALSE. Historical exception at attempt 0: null\n\tat dev.logisim.mobile.input.MixedInputScenarios.waitFor(MixedInputScenarios.kt:861)\n\tat dev.logisim.mobile.input.MixedInputScenarios.scrollPanAndAnchoredZoom(MixedInputScenarios.kt:260)\n\tat dev.logisim.mobile.input.MixedInputScenarios.access$scrollPanAndAnchoredZoom(MixedInputScenarios.kt:37)\n\tat dev.logisim.mobile.input.MixedInputScenarios$run$cases$5.invoke(MixedInputScenarios.kt:86)\n\tat dev.logisim.mobile.input.MixedInputScenarios$run$cases$5.invoke(MixedInputScenarios.kt:86)\n\tat dev.logisim.mobile.input.MixedInputScenarios.run(MixedInputScenarios.kt:103)\n\tat dev.logisim.mobile.documents.DocumentIntegrationInstrumentation.onStart(DocumentIntegrationInstrumentation.kt:31)\n\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)\n",
+      "elapsedSeconds": 27.636,
+      "installedArtifactsAfter": {
+        "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+        "testSha256": "2706fd5ec065a9e8bfb63b4f4597d972edc91006ef147dd2d02f20840f4350e2"
+      },
+      "lastAnrUnchanged": true,
+      "motionActionCounts": {
+        "ACTION_SCROLL": 2
+      },
+      "allMotionEventsAccepted": true,
+      "rawArtifacts": {
+        "outputs/android-e2e/df276e-native-scroll-r1/manifest.json": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-scroll-r1/manifest.json",
+          "sha256": "7a37bc57ea1055a8f1c7f3bbe4cfcc77c092851cece11fe4d6e00ed1acda2210"
+        },
+        "outputs/android-e2e/df276e-native-scroll-r1/native/result.json": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-scroll-r1/native/result.json",
+          "sha256": "3f1fbcb804557dc257532fafa53a0696f72a7ad012e3521a695047bd5a37f89e"
+        },
+        "outputs/android-e2e/df276e-native-scroll-r1/native/scroll-failure-tree.txt": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-scroll-r1/native/scroll-failure-tree.txt",
+          "sha256": "55627f0c200a19f236cb33b59f8a3c66d7175e4d73d25f832416a1f5686290f5"
+        },
+        "outputs/android-e2e/df276e-native-scroll-r1/native/scroll-failure.png": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-scroll-r1/native/scroll-failure.png",
+          "sha256": "fffcc959653e86e975872656bcfd394510b96309c5535fcce7d951a87b61283d"
+        }
+      },
+      "observed": "Ctrl-scroll zoom-in and anchor assertions passed. Unmodified scroll then failed its displacement assertion.",
+      "failureBoundary": "Pending source/event diagnosis. Neither the expected pan distance nor the15-second deadline is changed."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "status": "MAIN6CEF_IOS_FOLDER_THREE_STRICT_ORACLES_PASSED",
+  "sourcePin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "installedAfter": {
+    "status": "INSTALLED_AFTER_NATIVE_PASS_VERIFIED",
+    "nativeCase": "folder",
+    "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "producer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "testValidation": "85da031e4ed11474c2e763976392729810ef142d",
+    "observed": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/CEE032F0-DB8E-45F1-B272-991B329B6B78/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "sourceArtifactAfter": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "debugDylibSha256": "db2c909500c95f345362fdf06f5fd17c3647af9800863fc53d0b6a9bf31647cf",
+    "scope": "Read-only fingerprint after second terminal native case; no launch, UI, reinstall or other device touched. Device lease ends after this record."
+  },
+  "oracles": {
+    "storage": {
+      "status": "STORAGE_SNAPSHOTS_VALIDATED",
+      "importedProjectId": "28edb25a840b9557ca04f35cdc4b63b1",
+      "restartedProjectId": "28edb25a840b9557ca04f35cdc4b63b1",
+      "reopenedProjectId": "86faeb465532963c228972ddafbe0952",
+      "sourceArchiveSha256": "fe61e5023f46aae244262cbb043296dedeea6b9291f0e2d0c65c22ba56b79bd6",
+      "reopenedSourceArchiveSha256": "d9ff48bdcb17770ecfc11b37309b92cf0bcb1bb15ed3b24000c78fd0634bbe0e",
+      "reportSha256": "e85f6f2439e5a31123e19f56a73d6409a36c1c79685bb9c43977ca746276388c",
+      "logSha256": "d6ebabf6a3495075bd721408f249041d0cfbebd98c06eeb7a4e8b31246f9126d",
+      "exitCode": 0
+    },
+    "desktop-before": {
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/folder/documents/portable-folder-evidence/export-before-restart.lsebdl",
+      "nativeUiReceiptSha256": "80f5e8340dd7a354d6597d97b895839eca442abcd857b4c4ead6e63fe73ae5e0",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "reportSha256": "dbbda1e662e0ab086ff9c2417812529c959788a03d6cd8b6434cf1bce5e04bbf",
+      "logSha256": "5daa6312b0da5613a0aaf5ee46c53b0003630d1774440023ea695a123ea80f67",
+      "exitCode": 0
+    },
+    "desktop-after": {
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/folder/documents/portable-folder-evidence/export-after-restart.lsebdl",
+      "nativeUiReceiptSha256": "80f5e8340dd7a354d6597d97b895839eca442abcd857b4c4ead6e63fe73ae5e0",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "reportSha256": "fedf84d368fc1b232afda1587b810e7b832547cef471a52a66374b027586d8f5",
+      "logSha256": "2f35cf301b35dc7909d7dae91095a6c8e986c336548d9b6c3c08e645e2a867a5",
+      "exitCode": 0
+    }
+  },
+  "scope": "New iOS main6cef folder only, allow-no-opaque for the directory inputs. No old Beta/Android report reuse."
+}

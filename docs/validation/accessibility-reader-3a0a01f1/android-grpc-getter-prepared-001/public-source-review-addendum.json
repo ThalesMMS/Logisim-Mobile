@@ -1,0 +1,84 @@
+{
+  "reviewer": "/root/accessibility28/grpc_discovery_sources/touch_identifier_review",
+  "reviewed_utc": "2026-11-05T10:21:44.789935+00:00",
+  "result": "PASS_SOURCE_REVIEW_ADDENDUM_ONLY",
+  "scope": "Independent offline review of the current report against the already copied public sources. No network, emulator/device/console/RPC operation, credential read, process-argument or environment inspection.",
+  "current_report": {
+    "path": "/tmp/logisim-grpc-discovery-public-sources/report.md",
+    "bytes": 10261,
+    "sha256": "3d048fce0d4c9bfbcbedb2e3a5d35d202b7efa46eef129e1e77b8f2a8a4975fe",
+    "matches_parent_frozen_sha256": true
+  },
+  "prior_receipt_preserved": {
+    "path": "/tmp/logisim-grpc-discovery-public-sources/independent-review.json",
+    "bytes": 825,
+    "sha256": "bc218ef21b90477560662f2458e53aaebd475d549af2c9c68e7a4fb4bfa4553b",
+    "historical_report_sha256": "6c7fd6bc2ac29055c1b6b4437578ddeae78b35a7e786b8af421acf7e22411f48",
+    "modified": false
+  },
+  "source_integrity": {
+    "manifest_path": "/tmp/logisim-grpc-discovery-public-sources/source-manifest.json",
+    "manifest_sha256": "fda19f9ad3269b96b8625ee70fb0e05f1aff749c425d1c8adbbe6890d367c55d",
+    "files_verified": 20,
+    "all_sizes_and_sha256_match": true,
+    "source_commit": "686efa16baf59d776cadc3f975d12570fe44bbb9"
+  },
+  "checks": [
+    {
+      "claim": "avd grpc is a getter; active_port reaches qemu_grpc_port and does not start the service",
+      "result": "CONFIRMED",
+      "sources": [
+        "console.cpp2698-2706",
+        "qemu-grpc-agent-impl.cpp23-25",
+        "qemu-setup.cpp304-309"
+      ]
+    },
+    {
+      "claim": "avd grpc is actually connected to the preauth command table",
+      "result": "CONFIRMED",
+      "sources": [
+        "console.cpp4532-4538",
+        "console.cpp4546-4553"
+      ]
+    },
+    {
+      "claim": "top-level grpc invokes start and must not replace the getter",
+      "result": "CONFIRMED",
+      "sources": [
+        "console.cpp4126-4152",
+        "console.cpp4381-4383"
+      ]
+    },
+    {
+      "claim": "the official discovery parser reads every INI value and has a separate citation from channel defaults/mode selection",
+      "result": "CONFIRMED_CORRECTION_PRESENT",
+      "sources": [
+        "emulator_discovery.py53-63",
+        "emulator_description.py40-85"
+      ]
+    },
+    {
+      "claim": "the JWT channel helper generates a signer and writes a public JWK before an RPC; it is not read-only",
+      "result": "CONFIRMED",
+      "sources": [
+        "header_manipulator_client_interceptor.py66-84",
+        "jwt_keygen.py78-92",
+        "jwt_keygen.py116-144"
+      ]
+    },
+    {
+      "claim": "the current wording limits the no-secret-read claim to our discovery reader and explicitly leaves adb internal console authentication unaudited",
+      "result": "CONFIRMED_ACCEPTED_PRECISION",
+      "report_text": "This source review did not audit whether the adb client internally reads its console authentication token."
+    }
+  ],
+  "limits": [
+    "No installed Emulator binary or active endpoint was inspected.",
+    "No claim is made about whether adb emu internally reads a console token.",
+    "The historical receipt remains linked to its historical report hash; this addendum alone reviews the current frozen report hash.",
+    "No auth read, client setup or input event is authorized or qualified by this review."
+  ],
+  "files_modified": [
+    "This new addendum only; report.md, independent-review.json and repository files were not modified."
+  ]
+}

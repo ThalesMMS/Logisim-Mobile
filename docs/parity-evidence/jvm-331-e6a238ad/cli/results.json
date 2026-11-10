@@ -1,0 +1,1324 @@
+{
+ "mobile_revision": "e6a238ad5c5fac8a26859fa4cad62a61acb84e4b",
+ "mobile_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+ "evolution_jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+ "java": "openjdk version \"21.0.13.0.3\" 2026-10-24",
+ "command": "python3 -I scripts/oracle/cli/run.py --evolution-jar EVOLUTION_JAR",
+ "rows": {
+  "cli/help": {
+   "pass": 1,
+   "diff": 1,
+   "known": [
+    "spellings"
+   ]
+  },
+  "cli/version": {
+   "pass": 0,
+   "diff": 2,
+   "known": [
+    "product-identity",
+    "product-identity"
+   ]
+  },
+  "cli/tty": {
+   "pass": 19,
+   "diff": 1,
+   "known": [
+    "tty-default-profile"
+   ]
+  },
+  "cli/load": {
+   "pass": 4,
+   "diff": 0,
+   "known": []
+  },
+  "cli/save": {
+   "pass": 2,
+   "diff": 0,
+   "known": []
+  },
+  "cli/substitute": {
+   "pass": 5,
+   "diff": 2,
+   "known": [
+    "substitute-paths",
+    "substitute-paths"
+   ]
+  },
+  "cli/toplevel-circuit": {
+   "pass": 4,
+   "diff": 0,
+   "known": []
+  },
+  "cli/test-vector": {
+   "pass": 3,
+   "diff": 1,
+   "known": [
+    "vector-exit"
+   ]
+  },
+  "cli/test-circuit": {
+   "pass": 2,
+   "diff": 0,
+   "known": []
+  },
+  "cli/new-file-format": {
+   "pass": 6,
+   "diff": 4,
+   "known": [
+    "convert-preserves-profile",
+    "convert-preserves-profile",
+    "convert-preserves-profile",
+    "convert-preserves-profile"
+   ]
+  },
+  "cli/test-fpga": {
+   "pass": 1,
+   "diff": 0,
+   "known": []
+  },
+  "cli/clear-prefs": {
+   "pass": 5,
+   "diff": 2,
+   "known": [
+    "clear-prefs-tty",
+    "clear-prefs-tty"
+   ]
+  },
+  "cli/gates": {
+   "pass": 4,
+   "diff": 0,
+   "known": []
+  },
+  "cli/locale": {
+   "pass": 3,
+   "diff": 2,
+   "known": [
+    "locale-set",
+    "locale-set"
+   ]
+  },
+  "cli/user-template": {
+   "pass": 5,
+   "diff": 0,
+   "known": []
+  },
+  "cli/no-splash": {
+   "pass": 0,
+   "diff": 1,
+   "known": [
+    "no-splash-notice"
+   ]
+  }
+ },
+ "cases": [
+  {
+   "row": "cli/help",
+   "case": "help-exit",
+   "result": "PASS",
+   "detail": "both exit 0 and print usage",
+   "commands": {
+    "evolution": "logisim-evolution --help",
+    "mobile": "HeadlessCircuitCli --help"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/help-exit.txt"
+  },
+  {
+   "row": "cli/help",
+   "case": "help-option-spellings",
+   "result": "DIFF",
+   "detail": "Evolution spellings absent from the Mobile help text: --fpga-cable, -h, -m",
+   "commands": {
+    "evolution": "logisim-evolution --help",
+    "mobile": "HeadlessCircuitCli --help"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/help-option-spellings.txt",
+   "known": "spellings"
+  },
+  {
+   "row": "cli/version",
+   "case": "version__version",
+   "result": "DIFF",
+   "detail": "evolution ['Logisim-evolution v5.1.0dev'] (4 lines), mobile ['Logisim Mobile 0.2.0']; exit 0/0",
+   "commands": {
+    "evolution": "logisim-evolution --version",
+    "mobile": "HeadlessCircuitCli --version"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/version__version.txt",
+   "known": "product-identity"
+  },
+  {
+   "row": "cli/version",
+   "case": "version_v",
+   "result": "DIFF",
+   "detail": "evolution ['Logisim-evolution v5.1.0dev'] (4 lines), mobile ['Logisim Mobile 0.2.0']; exit 0/0",
+   "commands": {
+    "evolution": "logisim-evolution -v",
+    "mobile": "HeadlessCircuitCli -v"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/version_v.txt",
+   "known": "product-identity"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-and",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table examples/and.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table examples/and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-and.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-bus-adder",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table examples/bus-adder.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table examples/bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-bus-adder.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-hierarchy",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table examples/hierarchy.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table examples/hierarchy.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-hierarchy.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-d-flip-flop",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table examples/d-flip-flop.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table examples/d-flip-flop.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-d-flip-flop.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-bus-adder-table-csv",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table,csv examples/bus-adder.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,csv examples/bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-bus-adder-table-csv.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-bus-adder-table-tabs",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table,tabs examples/bus-adder.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,tabs examples/bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-bus-adder-table-tabs.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-bus-adder-table-hex",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table,hex examples/bus-adder.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,hex examples/bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-bus-adder-table-hex.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-bus-adder-table-binary",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table,binary examples/bus-adder.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,binary examples/bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-bus-adder-table-binary.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-bus-adder-table-csv-hex",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table,csv,hex examples/bus-adder.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,csv,hex examples/bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-bus-adder-table-csv-hex.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "table-bus-adder-table-tabs-binary",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table,tabs,binary examples/bus-adder.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,tabs,binary examples/bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/table-bus-adder-table-tabs-binary.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "same-args-dash-tty-table",
+   "result": "DIFF",
+   "detail": "stdout differs (evolution 5 lines, mobile 1 lines)",
+   "commands": {
+    "evolution": "logisim-evolution -tty table examples/and.circ",
+    "mobile": "HeadlessCircuitCli -tty table examples/and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": "timeout"
+   },
+   "log": "logs/same-args-dash-tty-table.txt",
+   "known": "tty-default-profile"
+  },
+  {
+   "row": "cli/tty",
+   "case": "same-args-t",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table examples/and.circ",
+    "mobile": "HeadlessCircuitCli -t table examples/and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/same-args-t.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "same-args-tty",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution --tty table examples/and.circ",
+    "mobile": "HeadlessCircuitCli --tty table examples/and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/same-args-tty.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "halt-trace",
+   "result": "PASS",
+   "detail": "trace equal: True; halt reason evolution='halt pin', mobile='halt pin'; both on stderr: True",
+   "commands": {
+    "evolution": "logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ",
+    "mobile": "HeadlessCircuitCli -t table,halt scripts/oracle/cli/fixtures/memory.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/halt-trace.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "stats-hierarchy",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t stats examples/hierarchy.circ",
+    "mobile": "HeadlessCircuitCli -t stats examples/hierarchy.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/stats-hierarchy.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "stats-sap1",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t stats examples/sap1.circ",
+    "mobile": "HeadlessCircuitCli -t stats examples/sap1.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/stats-sap1.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "stats-memory",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t stats scripts/oracle/cli/fixtures/memory.circ",
+    "mobile": "HeadlessCircuitCli -t stats scripts/oracle/cli/fixtures/memory.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/stats-memory.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "speed",
+   "result": "PASS",
+   "detail": "speed line format and tick count: evolution=9, mobile=9",
+   "commands": {
+    "evolution": "logisim-evolution -t halt,speed scripts/oracle/cli/fixtures/memory.circ",
+    "mobile": "HeadlessCircuitCli -t halt,speed scripts/oracle/cli/fixtures/memory.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/speed.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "tty-component",
+   "result": "PASS",
+   "detail": "TTY bytes and halt reason equal",
+   "commands": {
+    "evolution": "logisim-evolution -t tty,halt scripts/oracle/cli/fixtures/tty.circ",
+    "mobile": "HeadlessCircuitCli -tty tty,halt scripts/oracle/cli/fixtures/tty.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/tty-component.txt"
+  },
+  {
+   "row": "cli/tty",
+   "case": "tty-component-with-table",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table,tty scripts/oracle/cli/fixtures/tty.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,tty scripts/oracle/cli/fixtures/tty.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/tty-component-with-table.txt"
+  },
+  {
+   "row": "cli/load",
+   "case": "load-labeled-ram-and-rom",
+   "result": "PASS",
+   "detail": "same arguments: trace equal after loading mem.hex and code.hex by label",
+   "commands": {
+    "evolution": "logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem -l scripts/oracle/cli/fixtures/code.hex code --save $WORK/evolution-save.hex",
+    "mobile": "HeadlessCircuitCli -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem -l scripts/oracle/cli/fixtures/code.hex code --save $WORK/mobile-save.hex"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/load-labeled-ram-and-rom.txt"
+  },
+  {
+   "row": "cli/save",
+   "case": "save-ram-after-halt",
+   "result": "PASS",
+   "detail": "saved images byte-equal: True (['11 22 33 44 55 66 77 88'])",
+   "commands": {
+    "evolution": "logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem -l scripts/oracle/cli/fixtures/code.hex code --save $WORK/evolution-save.hex",
+    "mobile": "HeadlessCircuitCli -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem -l scripts/oracle/cli/fixtures/code.hex code --save $WORK/mobile-save.hex"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/save-ram-after-halt.txt"
+  },
+  {
+   "row": "cli/load",
+   "case": "load-unlabeled",
+   "result": "PASS",
+   "detail": "same arguments: an unlabeled image loads every RAM and ROM in both programs",
+   "commands": {
+    "evolution": "logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex",
+    "mobile": "HeadlessCircuitCli -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/load-unlabeled.txt"
+  },
+  {
+   "row": "cli/load",
+   "case": "load-unknown-label",
+   "result": "PASS",
+   "detail": "both fail for an absent label (exit 255/2)",
+   "commands": {
+    "evolution": "logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex nolabel",
+    "mobile": "HeadlessCircuitCli -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex nolabel"
+   },
+   "exit": {
+    "evolution": 255,
+    "mobile": 2
+   },
+   "log": "logs/load-unknown-label.txt"
+  },
+  {
+   "row": "cli/load",
+   "case": "same-args-l",
+   "result": "PASS",
+   "detail": "Mobile accepts Evolution's '-l'",
+   "commands": {
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem"
+   },
+   "exit": {
+    "mobile": 0
+   },
+   "log": "logs/same-args-l.txt"
+  },
+  {
+   "row": "cli/save",
+   "case": "save-without-ram",
+   "result": "PASS",
+   "detail": "circuit without RAM and without halt pin: exit 0/0",
+   "commands": {
+    "evolution": "logisim-evolution -t table examples/and.circ --save $WORK/evolution-save.hex",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table examples/and.circ --save $WORK/mobile-save.hex"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/save-without-ram.txt"
+  },
+  {
+   "row": "cli/substitute",
+   "case": "absolute-old-path",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/absolute-old-path.txt"
+  },
+  {
+   "row": "cli/substitute",
+   "case": "identity-mapping",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/identity-mapping.txt"
+  },
+  {
+   "row": "cli/substitute",
+   "case": "project-relative-old-path",
+   "result": "DIFF",
+   "detail": "stdout differs (evolution 3 lines, mobile 3 lines)",
+   "commands": {
+    "evolution": "logisim-evolution -t table -s lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/project-relative-old-path.txt",
+   "known": "substitute-paths"
+  },
+  {
+   "row": "cli/substitute",
+   "case": "no-mapping",
+   "result": "DIFF",
+   "detail": "stdout differs (evolution 3 lines, mobile 0 lines)",
+   "commands": {
+    "evolution": "logisim-evolution -t table scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 2
+   },
+   "log": "logs/no-mapping.txt",
+   "known": "substitute-paths"
+  },
+  {
+   "row": "cli/substitute",
+   "case": "same-args-s",
+   "result": "PASS",
+   "detail": "Mobile accepts Evolution's '-s'",
+   "commands": {
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "mobile": 0
+   },
+   "log": "logs/same-args-s.txt"
+  },
+  {
+   "row": "cli/substitute",
+   "case": "same-args-substitute",
+   "result": "PASS",
+   "detail": "Mobile accepts Evolution's '--substitute'",
+   "commands": {
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table --substitute scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "mobile": 0
+   },
+   "log": "logs/same-args-substitute.txt"
+  },
+  {
+   "row": "cli/substitute",
+   "case": "duplicate-old",
+   "result": "PASS",
+   "detail": "both reject a repeated OLD (exit 10/2)",
+   "commands": {
+    "evolution": "logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 10,
+    "mobile": 2
+   },
+   "log": "logs/duplicate-old.txt"
+  },
+  {
+   "row": "cli/toplevel-circuit",
+   "case": "select-top",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit top scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --circuit top scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/select-top.txt"
+  },
+  {
+   "row": "cli/toplevel-circuit",
+   "case": "select-main",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit main scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --circuit main scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/select-main.txt"
+  },
+  {
+   "row": "cli/toplevel-circuit",
+   "case": "absent-circuit",
+   "result": "PASS",
+   "detail": "absent circuit: exit 255/2",
+   "commands": {
+    "evolution": "logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit absent scripts/oracle/cli/fixtures/sub/main.circ",
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --circuit absent scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "evolution": 255,
+    "mobile": 2
+   },
+   "log": "logs/absent-circuit.txt"
+  },
+  {
+   "row": "cli/toplevel-circuit",
+   "case": "same-args-toplevel-circuit",
+   "result": "PASS",
+   "detail": "Mobile accepts Evolution's '--toplevel-circuit'",
+   "commands": {
+    "mobile": "HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit top scripts/oracle/cli/fixtures/sub/main.circ"
+   },
+   "exit": {
+    "mobile": 0
+   },
+   "log": "logs/same-args-toplevel-circuit.txt"
+  },
+  {
+   "row": "cli/test-vector",
+   "case": "vectors-and",
+   "result": "PASS",
+   "detail": "failing vectors, observed values and totals: evolution=({5: [('Y', '1')], 7: [('Y', 'E')]}, (6, 2)), mobile=({5: [('Y', '1')], 7: [('Y', 'E')]}, (6, 2))",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle vector $WORK/vectors/and.circ AND scripts/oracle/vectors/and.txt",
+    "mobile": "HeadlessCircuitCli -w AND scripts/oracle/vectors/and.txt $WORK/vectors/and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 1
+   },
+   "log": "logs/vectors-and.txt"
+  },
+  {
+   "row": "cli/test-vector",
+   "case": "vectors-and-exit",
+   "result": "DIFF",
+   "detail": "exit evolution=0 (Startup.run exits 0 after -w), mobile=1",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle vector $WORK/vectors/and.circ AND scripts/oracle/vectors/and.txt",
+    "mobile": "HeadlessCircuitCli -w AND scripts/oracle/vectors/and.txt $WORK/vectors/and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 1
+   },
+   "log": "logs/vectors-and-exit.txt",
+   "known": "vector-exit"
+  },
+  {
+   "row": "cli/test-vector",
+   "case": "vectors-flip",
+   "result": "PASS",
+   "detail": "failing vectors, observed values and totals: evolution=({}, (6, 0)), mobile=({}, (6, 0))",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle vector $WORK/vectors/flip.circ Flip scripts/oracle/vectors/flip.txt",
+    "mobile": "HeadlessCircuitCli -w Flip scripts/oracle/vectors/flip.txt $WORK/vectors/flip.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/vectors-flip.txt"
+  },
+  {
+   "row": "cli/test-vector",
+   "case": "vectors-flip-exit",
+   "result": "PASS",
+   "detail": "exit evolution=0 (Startup.run exits 0 after -w), mobile=0",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle vector $WORK/vectors/flip.circ Flip scripts/oracle/vectors/flip.txt",
+    "mobile": "HeadlessCircuitCli -w Flip scripts/oracle/vectors/flip.txt $WORK/vectors/flip.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/vectors-flip-exit.txt"
+  },
+  {
+   "row": "cli/test-circuit",
+   "case": "bench-pass",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle bench scripts/oracle/cli/fixtures/bench-pass.circ",
+    "mobile": "HeadlessCircuitCli -b scripts/oracle/cli/fixtures/bench-pass.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/bench-pass.txt"
+  },
+  {
+   "row": "cli/test-circuit",
+   "case": "bench-fail",
+   "result": "PASS",
+   "detail": "stdout and exit class equal",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle bench scripts/oracle/cli/fixtures/bench-fail.circ",
+    "mobile": "HeadlessCircuitCli -b scripts/oracle/cli/fixtures/bench-fail.circ"
+   },
+   "exit": {
+    "evolution": 255,
+    "mobile": 1
+   },
+   "log": "logs/bench-fail.txt"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-and",
+   "result": "PASS",
+   "detail": "Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': 'af1ecc8e670a', 'evolution-n': 'af1ecc8e670a', 'mobile-n': 'af1ecc8e670a'}",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert examples/and.circ $WORK/evolution-and.circ",
+    "mobile": "HeadlessCircuitCli -n examples/and.circ $WORK/mobile-and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-and.txt"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-and-header",
+   "result": "DIFF",
+   "detail": "written source version: evolution=5.1.0dev, mobile=5.1.0-dev",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert examples/and.circ $WORK/evolution-and.circ",
+    "mobile": "HeadlessCircuitCli -n examples/and.circ $WORK/mobile-and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-and-header.txt",
+   "known": "convert-preserves-profile"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-hierarchy",
+   "result": "PASS",
+   "detail": "Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '0ee7ccccf019', 'evolution-n': '0ee7ccccf019', 'mobile-n': '0ee7ccccf019'}",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert examples/hierarchy.circ $WORK/evolution-hierarchy.circ",
+    "mobile": "HeadlessCircuitCli -n examples/hierarchy.circ $WORK/mobile-hierarchy.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-hierarchy.txt"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-hierarchy-header",
+   "result": "DIFF",
+   "detail": "written source version: evolution=5.1.0dev, mobile=3.8.0",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert examples/hierarchy.circ $WORK/evolution-hierarchy.circ",
+    "mobile": "HeadlessCircuitCli -n examples/hierarchy.circ $WORK/mobile-hierarchy.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-hierarchy-header.txt",
+   "known": "convert-preserves-profile"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-bus-adder",
+   "result": "PASS",
+   "detail": "Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '8f877d0c1d05', 'evolution-n': '8f877d0c1d05', 'mobile-n': '8f877d0c1d05'}",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert examples/bus-adder.circ $WORK/evolution-bus-adder.circ",
+    "mobile": "HeadlessCircuitCli -n examples/bus-adder.circ $WORK/mobile-bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-bus-adder.txt"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-bus-adder-header",
+   "result": "DIFF",
+   "detail": "written source version: evolution=5.1.0dev, mobile=3.8.0",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert examples/bus-adder.circ $WORK/evolution-bus-adder.circ",
+    "mobile": "HeadlessCircuitCli -n examples/bus-adder.circ $WORK/mobile-bus-adder.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-bus-adder-header.txt",
+   "known": "convert-preserves-profile"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-memory",
+   "result": "PASS",
+   "detail": "Evolution -t table,halt output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '18f5c8d76614', 'evolution-n': '18f5c8d76614', 'mobile-n': '18f5c8d76614'}",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert scripts/oracle/cli/fixtures/memory.circ $WORK/evolution-memory.circ",
+    "mobile": "HeadlessCircuitCli -n scripts/oracle/cli/fixtures/memory.circ $WORK/mobile-memory.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-memory.txt"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-memory-header",
+   "result": "PASS",
+   "detail": "written source version: evolution=5.1.0dev, mobile=5.1.0dev",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert scripts/oracle/cli/fixtures/memory.circ $WORK/evolution-memory.circ",
+    "mobile": "HeadlessCircuitCli -n scripts/oracle/cli/fixtures/memory.circ $WORK/mobile-memory.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-memory-header.txt"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-counter",
+   "result": "PASS",
+   "detail": "Evolution -t table,halt output equal for the original, Evolution's -n output and Mobile's -n output: {'original': 'ded48bbed0e8', 'evolution-n': 'ded48bbed0e8', 'mobile-n': 'ded48bbed0e8'}",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert core/src/jvmTest/resources/original/counter.circ $WORK/evolution-counter.circ",
+    "mobile": "HeadlessCircuitCli -n core/src/jvmTest/resources/original/counter.circ $WORK/mobile-counter.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-counter.txt"
+  },
+  {
+   "row": "cli/new-file-format",
+   "case": "convert-counter-header",
+   "result": "DIFF",
+   "detail": "written source version: evolution=5.1.0dev, mobile=2.7.1",
+   "commands": {
+    "evolution": "java EvolutionAutomationOracle convert core/src/jvmTest/resources/original/counter.circ $WORK/evolution-counter.circ",
+    "mobile": "HeadlessCircuitCli -n core/src/jvmTest/resources/original/counter.circ $WORK/mobile-counter.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/convert-counter-header.txt",
+   "known": "convert-preserves-profile"
+  },
+  {
+   "row": "cli/test-fpga",
+   "case": "hdlonly-basys3-constraints",
+   "result": "PASS",
+   "detail": "Vivado flow on both: (True, True); physical pins, I/O standards and clock period: evolution=([('U16', 'LVCMOS33'), ('V16', 'LVCMOS33'), ('V17', 'LVCMOS33'), ('W5', 'LVCMOS33')], [('W5', 10.0)]), mobile=([('U16', 'LVCMOS33'), ('V16', 'LVCMOS33'), ('V17', 'LVCMOS33'), ('W5', 'LVCMOS33')], [('W5', 10.0)])",
+   "commands": {
+    "evolution": "logisim-evolution -f core/src/jvmTest/resources/fpga/sr-dedicated.circ main BASYS3 HDLONLY",
+    "mobile": "HeadlessCircuitCli -f core/src/jvmTest/resources/fpga/sr-dedicated.circ main core/src/jvmTest/resources/fpga/BASYS3.xml HDLONLY --output $WORK/mobile-fpga.zip"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/hdlonly-basys3-constraints.txt"
+  },
+  {
+   "row": "cli/clear-prefs",
+   "case": "profile-defaults",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle",
+    "mobile": "HeadlessCircuitCli --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-defaults.txt"
+  },
+  {
+   "row": "cli/gates",
+   "case": "profile-gates-iec",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'iec', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --gates iec",
+    "mobile": "HeadlessCircuitCli --gates iec --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-gates-iec.txt"
+  },
+  {
+   "row": "cli/gates",
+   "case": "profile-persisted-after-gates",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'iec', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle",
+    "mobile": "HeadlessCircuitCli --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-persisted-after-gates.txt"
+  },
+  {
+   "row": "cli/gates",
+   "case": "profile-gates-ANSI-short",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle -g ANSI",
+    "mobile": "HeadlessCircuitCli -g ANSI --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-gates-ANSI-short.txt"
+  },
+  {
+   "row": "cli/gates",
+   "case": "profile-gates-invalid",
+   "result": "PASS",
+   "detail": "option rejected: evolution=True (exit 0), mobile=True (exit 2)",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --gates round",
+    "mobile": "HeadlessCircuitCli --gates round --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 2
+   },
+   "log": "logs/profile-gates-invalid.txt"
+  },
+  {
+   "row": "cli/locale",
+   "case": "profile-locale-pt",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --locale pt",
+    "mobile": "HeadlessCircuitCli --locale pt --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-locale-pt.txt"
+  },
+  {
+   "row": "cli/locale",
+   "case": "profile-persisted-after-locale",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle",
+    "mobile": "HeadlessCircuitCli --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-persisted-after-locale.txt"
+  },
+  {
+   "row": "cli/locale",
+   "case": "profile-locale-pt-BR",
+   "result": "DIFF",
+   "detail": "option rejected: evolution=True (exit 0), mobile=False (exit 0)",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle -o pt-BR",
+    "mobile": "HeadlessCircuitCli -o pt-BR --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-locale-pt-BR.txt",
+   "known": "locale-set"
+  },
+  {
+   "row": "cli/locale",
+   "case": "profile-locale-de",
+   "result": "DIFF",
+   "detail": "option rejected: evolution=False (exit 0), mobile=True (exit 2)",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --locale de",
+    "mobile": "HeadlessCircuitCli --locale de --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 2
+   },
+   "log": "logs/profile-locale-de.txt",
+   "known": "locale-set"
+  },
+  {
+   "row": "cli/locale",
+   "case": "profile-locale-en",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --locale en",
+    "mobile": "HeadlessCircuitCli --locale en --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-locale-en.txt"
+  },
+  {
+   "row": "cli/user-template",
+   "case": "profile-template-empty",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --user-template empty",
+    "mobile": "HeadlessCircuitCli --user-template empty --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-template-empty.txt"
+  },
+  {
+   "row": "cli/user-template",
+   "case": "profile-persisted-after-template",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle",
+    "mobile": "HeadlessCircuitCli --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-persisted-after-template.txt"
+  },
+  {
+   "row": "cli/user-template",
+   "case": "profile-template-custom",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'custom:FILE'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'custom:FILE'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle -u scripts/oracle/cli/fixtures/template.circ",
+    "mobile": "HeadlessCircuitCli -u scripts/oracle/cli/fixtures/template.circ --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-template-custom.txt"
+  },
+  {
+   "row": "cli/user-template",
+   "case": "profile-template-missing",
+   "result": "PASS",
+   "detail": "option rejected: evolution=True (exit 0), mobile=True (exit 2)",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle -u scripts/oracle/cli/fixtures/absent.circ",
+    "mobile": "HeadlessCircuitCli -u scripts/oracle/cli/fixtures/absent.circ --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 2
+   },
+   "log": "logs/profile-template-missing.txt"
+  },
+  {
+   "row": "cli/user-template",
+   "case": "profile-template-plain",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle -u plain",
+    "mobile": "HeadlessCircuitCli -u plain --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-template-plain.txt"
+  },
+  {
+   "row": "cli/no-splash",
+   "case": "profile-no-splash",
+   "result": "DIFF",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}; evolution splash=false, mobile stderr='warning=--no-splash: the headless JVM launcher already runs without a splash.'",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --no-splash",
+    "mobile": "HeadlessCircuitCli --no-splash --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-no-splash.txt",
+   "known": "no-splash-notice"
+  },
+  {
+   "row": "cli/clear-prefs",
+   "case": "profile-gates-iec-before-clear",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'iec', 'locale': 'pt', 'template': 'empty'}, mobile={'gates': 'iec', 'locale': 'pt', 'template': 'empty'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --gates iec -u empty --locale pt",
+    "mobile": "HeadlessCircuitCli --gates iec -u empty --locale pt --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-gates-iec-before-clear.txt"
+  },
+  {
+   "row": "cli/clear-prefs",
+   "case": "profile-clear-prefs",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --clear-prefs",
+    "mobile": "HeadlessCircuitCli --clear-prefs --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-clear-prefs.txt"
+  },
+  {
+   "row": "cli/clear-prefs",
+   "case": "profile-persisted-after-clear",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle",
+    "mobile": "HeadlessCircuitCli --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-persisted-after-clear.txt"
+  },
+  {
+   "row": "cli/clear-prefs",
+   "case": "profile-gates-iec-before-tty-clear",
+   "result": "PASS",
+   "detail": "evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'iec', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle --gates iec",
+    "mobile": "HeadlessCircuitCli --gates iec --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-gates-iec-before-tty-clear.txt"
+  },
+  {
+   "row": "cli/clear-prefs",
+   "case": "profile-clear-prefs-with-tty",
+   "result": "DIFF",
+   "detail": "evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "logisim-evolution --clear-prefs -t table examples/and.circ",
+    "mobile": "HeadlessCircuitCli --clear-prefs --tty-evolution -tty table examples/and.circ"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-clear-prefs-with-tty.txt",
+   "known": "clear-prefs-tty"
+  },
+  {
+   "row": "cli/clear-prefs",
+   "case": "profile-persisted-after-tty-clear",
+   "result": "DIFF",
+   "detail": "evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}",
+   "commands": {
+    "evolution": "java EvolutionStartupOracle",
+    "mobile": "HeadlessCircuitCli --startup-settings"
+   },
+   "exit": {
+    "evolution": 0,
+    "mobile": 0
+   },
+   "log": "logs/profile-persisted-after-tty-clear.txt",
+   "known": "clear-prefs-tty"
+  }
+ ]
+}

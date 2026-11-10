@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#TCL" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="1" loc="(200,100)" name="TclGeneric">
+      <a name="label" val="Safe Tcl counter"/>
+      <a name="filePath" val="counter.tcl"/>
+      <a name="content" val="entity counter is port(sysclk_i : in std_logic; rst_i : in std_logic; cpt_o : out std_logic_vector(3 downto 0)); end counter;"/>
+    </comp>
+    <comp lib="0" loc="(120,140)" name="Clock"/>
+    <comp lib="0" loc="(120,150)" name="Pin"><a name="label" val="Reset"/></comp>
+    <comp lib="0" loc="(400,140)" name="Pin"><a name="output" val="true"/><a name="width" val="4"/><a name="label" val="Count"/></comp>
+    <wire from="(120,140)" to="(200,140)"/>
+    <wire from="(120,150)" to="(200,150)"/>
+    <wire from="(340,140)" to="(400,140)"/>
+  </circuit>
+</project>

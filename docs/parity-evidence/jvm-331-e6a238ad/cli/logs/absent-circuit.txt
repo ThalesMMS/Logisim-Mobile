@@ -1,0 +1,21 @@
+row: cli/toplevel-circuit
+case: absent-circuit
+result: PASS
+detail: absent circuit: exit 255/2
+
+=== evolution: logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit absent scripts/oracle/cli/fixtures/sub/main.circ
+exit: 255
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (6 lines, sha256 702cf39e3c3b1e3c4d0d3819d9bcd62538db8f334a57ed5f595ae90ad61273eb)
+java.lang.NullPointerException: Cannot invoke "com.cburch.logisim.circuit.Circuit.getAppearance()" because "circuit" is null
+	at com.cburch.logisim.circuit.Analyze.getPinLabels(Analyze.java:270)
+	at com.cburch.logisim.gui.start.TtyInterface.run(TtyInterface.java:328)
+	at com.cburch.logisim.gui.start.TtyInterface.run(TtyInterface.java:303)
+	at com.cburch.logisim.gui.start.Startup.run(Startup.java:921)
+	at com.cburch.logisim.Main.main(Main.java:85)
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --circuit absent scripts/oracle/cli/fixtures/sub/main.circ
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 6d74689532b77f7399524b2cb3559a0a4bba9a08e1f05842613d1890cc797ad6)
+error=No circuit named 'absent'.

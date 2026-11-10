@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "case": "automatic",
+  "status": "PASS",
+  "qualification_gate": "PARTIAL",
+  "selected_test": "EditorEndToEndTests/EditorEndToEndTests/testSap1AutomaticRunPause",
+  "testIdentifier": "EditorEndToEndTests/testSap1AutomaticRunPause()",
+  "durationSeconds": 28.827,
+  "run_id": "d870b0afd63d",
+  "pins": {
+    "appProducer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "appTestValidation": "85da031e4ed11474c2e763976392729810ef142d",
+    "uiHarness": "ba9d9682248fca28adbf5fc050f018156c7edc5c"
+  },
+  "route": "Library SAP-1 shortcut, Reset/Run/Pause UI controls; no SystemOpen",
+  "results": "automatic/results.json",
+  "installedAfter": "automatic/installed-after.json",
+  "testLog": "automatic/test.log",
+  "runConfiguration": "automatic/Run.json",
+  "attachments": {
+    "final-screen": "automatic/attachments/ED186C89-F1F5-4324-8D55-0481E683436D.png",
+    "native-tree": "automatic/attachments/9E98F77C-A250-480C-AEB4-6488D06E6430.txt",
+    "sap1-paused": "automatic/attachments/CFC4F268-4B5D-441F-A8F6-6B07EE0CDFB4.png",
+    "sap1-run-pause-observation": "automatic/attachments/4507F36E-6E5C-49C5-A1A1-D1DFED0C354A.txt",
+    "geometry-editor-simulation-toolbar-overflow": "automatic/attachments/DCEDEB21-B27D-4F39-ABBA-317CDBC56946.txt",
+    "observed-orientation": "automatic/attachments/7B050EAD-EE5F-43AF-A714-1C328DAD138E.txt",
+    "import-report-before-close-tree": "automatic/attachments/7E4AA16D-D779-48B8-85E8-F34BBB80A34B.txt",
+    "import-report-before-close": "automatic/attachments/5EEB3401-5653-467F-A6C1-ACE43BF3CA56.png"
+  },
+  "observations": {
+    "manualHalfCycles": null,
+    "assertCounterEvery": null,
+    "canvasOutputSuffix": null,
+    "hexDisplays": [],
+    "runStartedAt": 0,
+    "pausedAt": 1,
+    "requestedRunMilliseconds": 1500,
+    "pauseObservationMilliseconds": 2500
+  },
+  "limits": [
+    "Selected test only; issue #36 remains partial",
+    "Simulator only; no physical device",
+    "No project XML was copied or compared by this selected case",
+    "Pause checks two counter readings around a requested 2500 ms interval, not every internal state or continuous stability",
+    "Semantic display states are not an independent pixel oracle",
+    "No other projects, Save/restart, SystemOpen or multiwindow qualified"
+  ]
+}

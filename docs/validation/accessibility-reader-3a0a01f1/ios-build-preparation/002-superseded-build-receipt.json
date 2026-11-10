@@ -1,0 +1,28 @@
+{
+  "scope": "Build only standalone XCTest target; no product app/Kotlin build or device control",
+  "command": [
+    "xcodebuild",
+    "-project",
+    "outputs/voiceover-service-prepared-002/LogisimVoiceOverProbe.xcodeproj",
+    "-scheme",
+    "VoiceOverProbe",
+    "-configuration",
+    "Debug",
+    "-destination",
+    "generic/platform=iOS Simulator",
+    "-derivedDataPath",
+    "outputs/voiceover-service-prepared-002/DerivedData",
+    "-resultBundlePath",
+    "outputs/voiceover-service-prepared-002/build.xcresult",
+    "CODE_SIGNING_ALLOWED=NO",
+    "ARCHS=arm64",
+    "ONLY_ACTIVE_ARCH=YES",
+    "build-for-testing"
+  ],
+  "serialized_by": "/tmp/logisim-gradle-serial.py",
+  "exit_code": 0,
+  "duration_seconds": 4.968,
+  "runtime_status": "NOT_RUN",
+  "probe_source_sha256": "15151300199331baa4c44a20eadcabb2c77554e514f3c5484c7378f68f3147be",
+  "created_utc": "2026-11-05T07:28:03.739528+00:00"
+}

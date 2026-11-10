@@ -1,0 +1,18 @@
+row: cli/test-circuit
+case: bench-pass
+result: PASS
+detail: stdout and exit class equal
+
+=== evolution: java EvolutionAutomationOracle bench scripts/oracle/cli/fixtures/bench-pass.circ
+exit: 0
+--- stdout (2 lines, sha256 050241d47b8b1d6916034bd28e4258a7f8d0d31b20d8e80f6ae91151ed2203fc)
+Test bench pass
+
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -b scripts/oracle/cli/fixtures/bench-pass.circ
+exit: 0
+--- stdout (2 lines, sha256 050241d47b8b1d6916034bd28e4258a7f8d0d31b20d8e80f6ae91151ed2203fc)
+Test bench pass
+
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

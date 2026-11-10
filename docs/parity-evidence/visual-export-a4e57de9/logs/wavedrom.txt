@@ -1,0 +1,21 @@
+$ java -Djava.awt.headless=true -Djava.util.prefs.PreferencesFactory=MemoryPreferencesFactory -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmp4nqrlgpo:/Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar WaveDromDesktopOracle scripts/oracle/visual-export/wavedrom.circ 34
+exit 0
+--- stdout
+{
+  "signal": [
+    { "name": "clk", "wave": "01010101010101010101010101010101010x" },
+    { "name": "Counter(300,200)[3..0]", "wave": "02.2.2.2.2.2.2.2.2.2.2.2.2.2.1.0.2.x", "data": ["0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "0001"] },
+    { "name": "carry", "wave": "0............................1.0...x" },
+    { "name": "q[3..0]", "wave": "02.2.2.2.2.2.2.2.2.2.2.2.2.2.1.0.2.x", "data": ["0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "0001"] },
+    { "name": "open", "wave": "x..................................x" }
+  ]
+}
+--- stderr
+timeScale=5000 start=0 end=175000 clockMode=true fine=false
+
+$ java -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmp4nqrlgpo:/Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/core/build/libs/core-jvm.jar:/Users/user/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar WaveDromMobileOracle scripts/oracle/visual-export/wavedrom.circ 34 clk q carry open
+exit 0
+--- stdout
+{"signal":[{"name":"clk","wave":"01010101010101010101010101010101010"},{"data":["0000","0001","0010","0011","0100","0101","0110","0111","1000","1001","1010","1011","1100","1101","1110","1111","0000","0001"],"name":"q","wave":"22.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2."},{"name":"carry","wave":"0............................1.0..."},{"name":"open","wave":"x.................................."}]}
+--- stderr
+

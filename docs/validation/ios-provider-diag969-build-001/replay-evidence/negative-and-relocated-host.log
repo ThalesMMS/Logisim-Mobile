@@ -1,0 +1,28 @@
+test_archive_passes_after_relocation_without_external_commands (test_verify.ArchiveVerificationTests.test_archive_passes_after_relocation_without_external_commands) ... ok
+test_default_cli_runs_from_unrelated_working_directory (test_verify.ArchiveVerificationTests.test_default_cli_runs_from_unrelated_working_directory) ... ok
+test_der_semantics_are_checked_after_matching_pair_rehash (test_verify.ArchiveVerificationTests.test_der_semantics_are_checked_after_matching_pair_rehash) ... ok
+test_generated_and_retained_section_mismatch_is_rejected (test_verify.ArchiveVerificationTests.test_generated_and_retained_section_mismatch_is_rejected) ... ok
+test_inventory_payload_tamper_is_rejected (test_verify.ArchiveVerificationTests.test_inventory_payload_tamper_is_rejected) ... ok
+test_inventory_traversal_is_rejected (test_verify.ArchiveVerificationTests.test_inventory_traversal_is_rejected) ... ok
+test_manifest_anchor_survives_inventory_rehash (test_verify.ArchiveVerificationTests.test_manifest_anchor_survives_inventory_rehash) ... ok
+test_missing_inventory_entry_is_rejected (test_verify.ArchiveVerificationTests.test_missing_inventory_entry_is_rejected) ... ok
+test_native_claim_is_rejected_even_after_inventory_rehash (test_verify.ArchiveVerificationTests.test_native_claim_is_rejected_even_after_inventory_rehash) ... ok
+test_raw_byte_proof_rejects_crlf_in_mutation_body (test_verify.ArchiveVerificationTests.test_raw_byte_proof_rejects_crlf_in_mutation_body) ... ok
+test_rehashed_protected_source_change_is_rejected (test_verify.ArchiveVerificationTests.test_rehashed_protected_source_change_is_rejected) ... ok
+test_sdk_option_availability_change_is_rejected (test_verify.ArchiveVerificationTests.test_sdk_option_availability_change_is_rejected) ... ok
+test_bundle_tree_hash_is_recomputed (test_verify.BundleIndexTests.test_bundle_tree_hash_is_recomputed) ... ok
+test_duplicate_relative_path_is_rejected (test_verify.BundleIndexTests.test_duplicate_relative_path_is_rejected) ... ok
+test_executable_hash_is_tied_to_file_index (test_verify.BundleIndexTests.test_executable_hash_is_tied_to_file_index) ... ok
+test_incomplete_file_index_is_rejected (test_verify.BundleIndexTests.test_incomplete_file_index_is_rejected) ... ok
+test_index_path_traversal_is_rejected (test_verify.BundleIndexTests.test_index_path_traversal_is_rejected) ... ok
+test_preview_sections_cannot_be_reported_as_main_only (test_verify.BundleIndexTests.test_preview_sections_cannot_be_reported_as_main_only) ... ok
+test_all_uint64_bits_preserve_unknown_mask (test_verify.MaskDecodingTests.test_all_uint64_bits_preserve_unknown_mask) ... ok
+test_empty_mask (test_verify.MaskDecodingTests.test_empty_mask) ... ok
+test_high_unknown_bit_is_not_discarded (test_verify.MaskDecodingTests.test_high_unknown_bit_is_not_discarded) ... ok
+test_invalid_raw_masks_are_rejected (test_verify.MaskDecodingTests.test_invalid_raw_masks_are_rejected) ... ok
+test_host_replay_after_relocation (test_verify.OptionalHostReplayTests.test_host_replay_after_relocation) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.346s
+
+OK

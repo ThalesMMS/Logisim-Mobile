@@ -1,0 +1,796 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_FOR_LISTED_CASES",
+  "issue": 27,
+  "fullIssueQualification": "NOT_QUALIFIED",
+  "sourceRevision": "3d231c537ac25de240889e327f3fd27a3b1e0902",
+  "baseRevision": "50668f45230ada6f49b10c1e05fe983b8ea183c4",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5556",
+  "apiLevel": 35,
+  "androidFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "testProducers": {
+    "cancelAndContext": "b3437c979ed05e2c81870624bbed601f009cbd66",
+    "mixed": "10651a76e6d768ccde16e567767156ef48caba54"
+  },
+  "testObservationPatchForMixed": "439e4d7eadb4d4a3d206a4cdce0eec0b13cce112",
+  "scope": [
+    "Synthesized public Android system input in the isolated Alpha app on the API 35 emulator.",
+    "The app and native-test installed APK hashes were checked before and after each case.",
+    "The auxiliary snapshot helper is declared as 139f59d5827afd178b078ba00ec811717bdcfcf15c7dd112361b8f5dc4b580b0 in supplied triplet manifests, but these Native wrappers did not measure it before and after their cases.",
+    "This receipt does not qualify Beta, a later main revision, physical mouse/trackpad/stylus ergonomics, focus, scroll, pinch, focusloss, io-release, or issue 27 as a whole.",
+    "The separate focus case from the mixed/focus host job failed and is not included or promoted by this receipt."
+  ],
+  "cases": [
+    {
+      "case": "cancel",
+      "status": "PASS",
+      "qualification": "PARTIAL",
+      "elapsedSeconds": 11.373,
+      "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+      "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+      "installedArtifactsBeforeAndAfterEqual": true,
+      "lastAnrUnchanged": true,
+      "snapshots": [
+        {
+          "file": "0-fixture.circ",
+          "bytes": 1191,
+          "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "1-cancel-before.circ",
+          "bytes": 1191,
+          "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "2-cancel-after.circ",
+          "bytes": 1191,
+          "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "3-cancel-valid-move.circ",
+          "bytes": 1279,
+          "sha256": "2f6f17612ed91a9f5ebff264bc91561b5d24169eedf79a9ef363de3e8111a6fd",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(250,120)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(220,100)"
+            },
+            {
+              "a": "(220,100)",
+              "b": "(220,120)"
+            },
+            {
+              "a": "(250,120)",
+              "b": "(300,120)"
+            },
+            {
+              "a": "(300,100)",
+              "b": "(300,120)"
+            }
+          ]
+        },
+        {
+          "file": "4-cancel-one-undo.circ",
+          "bytes": 1191,
+          "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "context",
+      "status": "PASS",
+      "qualification": "PARTIAL",
+      "elapsedSeconds": 12.119,
+      "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+      "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+      "installedArtifactsBeforeAndAfterEqual": true,
+      "lastAnrUnchanged": true,
+      "snapshots": [
+        {
+          "file": "0-fixture.circ",
+          "bytes": 1197,
+          "sha256": "6339c376fe15bde651f81a0aee33c0122496532c1f7bfc72fe035d9ae54ebe98",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "1-context-before.circ",
+          "bytes": 1197,
+          "sha256": "6339c376fe15bde651f81a0aee33c0122496532c1f7bfc72fe035d9ae54ebe98",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "2-context-duplicate.circ",
+          "bytes": 1468,
+          "sha256": "3499fc2015698418fda7d96b5c1b71e64ae5b257f7a4bf4f8423c4e4d9b9bc8f",
+          "components": [
+            {
+              "id": "c1",
+              "name": "NOT Gate",
+              "loc": "(220,120)"
+            },
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "3-context-undo.circ",
+          "bytes": 1197,
+          "sha256": "6339c376fe15bde651f81a0aee33c0122496532c1f7bfc72fe035d9ae54ebe98",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": "mixed",
+      "status": "PASS",
+      "qualification": "PARTIAL",
+      "elapsedSeconds": 13.347,
+      "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+      "testSha256": "f5bca14d490db09c2045700f525251138568b961d918532ecfa23a20b56db267",
+      "installedArtifactsBeforeAndAfterEqual": true,
+      "lastAnrUnchanged": true,
+      "snapshots": [
+        {
+          "file": "0-fixture.circ",
+          "bytes": 1185,
+          "sha256": "a8d86994c3d96d72e001b69e6e980b4ef83077af71f04b0d14d2adfd1fa04968",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "1-mixed-before.circ",
+          "bytes": 1185,
+          "sha256": "a8d86994c3d96d72e001b69e6e980b4ef83077af71f04b0d14d2adfd1fa04968",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "2-mixed-keyboard.circ",
+          "bytes": 1185,
+          "sha256": "e7bc010a273343b00348489868c315b9041f31d2ea7e3e31cf8cee1dbc9f9ceb",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(210,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(180,100)"
+            },
+            {
+              "a": "(210,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "3-mixed-stylus.circ",
+          "bytes": 1273,
+          "sha256": "3a83fa0033f8bfb4c3f2221aefd25c999088b96f26ed6621d3c7cf62cb45ccae",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(260,120)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(230,100)"
+            },
+            {
+              "a": "(230,100)",
+              "b": "(230,120)"
+            },
+            {
+              "a": "(260,120)",
+              "b": "(300,120)"
+            },
+            {
+              "a": "(300,100)",
+              "b": "(300,120)"
+            }
+          ]
+        },
+        {
+          "file": "4-mixed-stylus-undo.circ",
+          "bytes": 1185,
+          "sha256": "e7bc010a273343b00348489868c315b9041f31d2ea7e3e31cf8cee1dbc9f9ceb",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(210,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(180,100)"
+            },
+            {
+              "a": "(210,100)",
+              "b": "(300,100)"
+            }
+          ]
+        },
+        {
+          "file": "5-mixed-keyboard-undo.circ",
+          "bytes": 1185,
+          "sha256": "a8d86994c3d96d72e001b69e6e980b4ef83077af71f04b0d14d2adfd1fa04968",
+          "components": [
+            {
+              "id": "mi-input",
+              "name": "Pin",
+              "loc": "(100,100)"
+            },
+            {
+              "id": "mi-not",
+              "name": "NOT Gate",
+              "loc": "(200,100)"
+            },
+            {
+              "id": "mi-output",
+              "name": "Pin",
+              "loc": "(300,100)"
+            }
+          ],
+          "wires": [
+            {
+              "a": "(100,100)",
+              "b": "(170,100)"
+            },
+            {
+              "a": "(200,100)",
+              "b": "(300,100)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rawInventory": [
+    {
+      "path": "cancel/instrumentation.txt",
+      "bytes": 69141,
+      "sha256": "0c1a8eba0ea2f6ba780c46d81135156628ce0d4ff76a6dba250a906640051a13",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/instrumentation.txt"
+    },
+    {
+      "path": "cancel/lastanr-after.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/lastanr-after.txt"
+    },
+    {
+      "path": "cancel/lastanr-before.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/lastanr-before.txt"
+    },
+    {
+      "path": "cancel/manifest.json",
+      "bytes": 120595,
+      "sha256": "5e77c0250779f8b61022b4c97dba3b8f8ee77b47b850d34b7d8c25eb00cf9999",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/manifest.json"
+    },
+    {
+      "path": "cancel/native/0-fixture.circ",
+      "bytes": 1191,
+      "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/native/0-fixture.circ"
+    },
+    {
+      "path": "cancel/native/1-cancel-before.circ",
+      "bytes": 1191,
+      "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/native/1-cancel-before.circ"
+    },
+    {
+      "path": "cancel/native/2-cancel-after.circ",
+      "bytes": 1191,
+      "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/native/2-cancel-after.circ"
+    },
+    {
+      "path": "cancel/native/3-cancel-valid-move.circ",
+      "bytes": 1279,
+      "sha256": "2f6f17612ed91a9f5ebff264bc91561b5d24169eedf79a9ef363de3e8111a6fd",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/native/3-cancel-valid-move.circ"
+    },
+    {
+      "path": "cancel/native/4-cancel-one-undo.circ",
+      "bytes": 1191,
+      "sha256": "f159516b225aa304f8cad185be93a89b357bad4e71e51389e8ce933db0d561e8",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/native/4-cancel-one-undo.circ"
+    },
+    {
+      "path": "cancel/native/cancel-complete.png",
+      "bytes": 256005,
+      "sha256": "0d61c39848b17aff9b524fa4ad0ba16912cd49d40cc3794d034d9c236649bfa4",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/native/cancel-complete.png"
+    },
+    {
+      "path": "cancel/native/result.json",
+      "bytes": 111941,
+      "sha256": "89ec17bcad86524e0caebde3cc398bd752f43445e6311c9f160ccc2aba70b027",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-cancel-control/native/result.json"
+    },
+    {
+      "path": "context/instrumentation.txt",
+      "bytes": 59261,
+      "sha256": "8493622b504d52194528bbdd63ee9c8a6899df5756b7707921f0fde5e9f0f0d2",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/instrumentation.txt"
+    },
+    {
+      "path": "context/lastanr-after.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/lastanr-after.txt"
+    },
+    {
+      "path": "context/lastanr-before.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/lastanr-before.txt"
+    },
+    {
+      "path": "context/manifest.json",
+      "bytes": 102598,
+      "sha256": "13041351d1957a1eed9e8362e5de238c24e4050821fcb2a4675d2f8a367244e3",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/manifest.json"
+    },
+    {
+      "path": "context/native/0-fixture.circ",
+      "bytes": 1197,
+      "sha256": "6339c376fe15bde651f81a0aee33c0122496532c1f7bfc72fe035d9ae54ebe98",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/native/0-fixture.circ"
+    },
+    {
+      "path": "context/native/1-context-before.circ",
+      "bytes": 1197,
+      "sha256": "6339c376fe15bde651f81a0aee33c0122496532c1f7bfc72fe035d9ae54ebe98",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/native/1-context-before.circ"
+    },
+    {
+      "path": "context/native/2-context-duplicate.circ",
+      "bytes": 1468,
+      "sha256": "3499fc2015698418fda7d96b5c1b71e64ae5b257f7a4bf4f8423c4e4d9b9bc8f",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/native/2-context-duplicate.circ"
+    },
+    {
+      "path": "context/native/3-context-undo.circ",
+      "bytes": 1197,
+      "sha256": "6339c376fe15bde651f81a0aee33c0122496532c1f7bfc72fe035d9ae54ebe98",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/native/3-context-undo.circ"
+    },
+    {
+      "path": "context/native/context-complete.png",
+      "bytes": 347473,
+      "sha256": "374876c657967c5948df5d2739e51145bb6e372218934a2e9787b7fa62a2c576",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/native/context-complete.png"
+    },
+    {
+      "path": "context/native/result.json",
+      "bytes": 95387,
+      "sha256": "12db2e42f449bc61fcf99ed292b65ac2415a5b1c24bca2c12b47002c903d6edb",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-context-control/native/result.json"
+    },
+    {
+      "path": "mixed/instrumentation.txt",
+      "bytes": 68291,
+      "sha256": "9d8e04a5a29a21013306b25bc76ff74a7aa195b5cf7bf42c6a44d82f1fb1e11e",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/instrumentation.txt"
+    },
+    {
+      "path": "mixed/lastanr-after.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/lastanr-after.txt"
+    },
+    {
+      "path": "mixed/lastanr-before.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/lastanr-before.txt"
+    },
+    {
+      "path": "mixed/manifest.json",
+      "bytes": 118626,
+      "sha256": "3d258db73d28dcc1da8437c5fb880fc750222219c5787f49540c4c6ed7b9f7fa",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/manifest.json"
+    },
+    {
+      "path": "mixed/native/0-fixture.circ",
+      "bytes": 1185,
+      "sha256": "a8d86994c3d96d72e001b69e6e980b4ef83077af71f04b0d14d2adfd1fa04968",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/0-fixture.circ"
+    },
+    {
+      "path": "mixed/native/1-mixed-before.circ",
+      "bytes": 1185,
+      "sha256": "a8d86994c3d96d72e001b69e6e980b4ef83077af71f04b0d14d2adfd1fa04968",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/1-mixed-before.circ"
+    },
+    {
+      "path": "mixed/native/2-mixed-keyboard.circ",
+      "bytes": 1185,
+      "sha256": "e7bc010a273343b00348489868c315b9041f31d2ea7e3e31cf8cee1dbc9f9ceb",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/2-mixed-keyboard.circ"
+    },
+    {
+      "path": "mixed/native/3-mixed-stylus.circ",
+      "bytes": 1273,
+      "sha256": "3a83fa0033f8bfb4c3f2221aefd25c999088b96f26ed6621d3c7cf62cb45ccae",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/3-mixed-stylus.circ"
+    },
+    {
+      "path": "mixed/native/4-mixed-stylus-undo.circ",
+      "bytes": 1185,
+      "sha256": "e7bc010a273343b00348489868c315b9041f31d2ea7e3e31cf8cee1dbc9f9ceb",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/4-mixed-stylus-undo.circ"
+    },
+    {
+      "path": "mixed/native/5-mixed-keyboard-undo.circ",
+      "bytes": 1185,
+      "sha256": "a8d86994c3d96d72e001b69e6e980b4ef83077af71f04b0d14d2adfd1fa04968",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/5-mixed-keyboard-undo.circ"
+    },
+    {
+      "path": "mixed/native/mixed-complete.png",
+      "bytes": 273604,
+      "sha256": "ed864a840118fdc78991259000dd7744f87ed8fbb20709c51df1f88c12e9b4aa",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/mixed-complete.png"
+    },
+    {
+      "path": "mixed/native/result.json",
+      "bytes": 110153,
+      "sha256": "3ff1b24a9c31a61e1b3883b4f6feb4c6fd0ed55536d46664ee214b395d61b77b",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/3d231c53-native-mixed-439/native/result.json"
+    },
+    {
+      "path": "producer/app-build-receipt.json",
+      "bytes": 6700,
+      "sha256": "ad9f5a28afbdbffb493f1ed885df283632d3da1572449c6eb0084c004a9af48b",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-3d231c53/app-build-receipt.json"
+    },
+    {
+      "path": "producer/control-triplet-manifest.json",
+      "bytes": 901,
+      "sha256": "5190a87b911897c7a578c5358a736c2f06235e425271408b8e83bfb3fc6e8fac",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-3d231c53/triplet-manifest.json"
+    },
+    {
+      "path": "producer/mixed-triplet-manifest.json",
+      "bytes": 770,
+      "sha256": "a389f75909c90d4876e2088dc45344efd7dca66794c8e16619988661cac07a77",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-3d231c53-test439/triplet-manifest.json"
+    },
+    {
+      "path": "producer/mixed-test-build-receipt.json",
+      "bytes": 2178,
+      "sha256": "a4123ac959990d5cfc4ef5fd1da43f90eaec7932f082c93cd967ebf3da20b85a",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-3d231c53-test439/test-build-receipt.json"
+    }
+  ],
+  "injectorSourceComparison": {
+    "path": "androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java",
+    "commits": [
+      "b3437c979ed05e2c81870624bbed601f009cbd66",
+      "10651a76e6d768ccde16e567767156ef48caba54"
+    ],
+    "sha256AtBothCommits": "9835a5a753ed9e486d7dd3df760d6ffa93f4ec53f8e5201fef61ece595e2544c",
+    "method": "SHA-256 of git show <commit>:<path>; no device access."
+  }
+}

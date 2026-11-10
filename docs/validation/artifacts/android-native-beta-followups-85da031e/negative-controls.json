@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "checks": 6,
+  "results": [
+    {
+      "mutation": "release_milestone_reordered",
+      "status": "REJECTED",
+      "reason": "io-release: elapsedRealtime milestone order differs"
+    },
+    {
+      "mutation": "held_high_not_ready",
+      "status": "REJECTED",
+      "reason": "wrong outcome: held button output is high"
+    },
+    {
+      "mutation": "callback_after_up",
+      "status": "REJECTED",
+      "reason": "io-release: archived injector callback is not between DOWN and UP"
+    },
+    {
+      "mutation": "xml_wire_changed",
+      "status": "REJECTED",
+      "reason": "io-release: full XML is not byte-exact"
+    },
+    {
+      "mutation": "pinch_promoted_to_pass",
+      "status": "REJECTED",
+      "reason": "pinch: wrong preserved status"
+    },
+    {
+      "mutation": "pinch_after_xml_added",
+      "status": "REJECTED",
+      "reason": "pinch: unexpected after-XML claim"
+    }
+  ],
+  "scope": "Offline semantic mutations with recomputed payload hashes; no runtime execution."
+}

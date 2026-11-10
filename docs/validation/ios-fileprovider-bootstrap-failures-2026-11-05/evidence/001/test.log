@@ -1,0 +1,85 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-ui/outputs/ios-provider-bootstrap-b25-001/harness/LogisimFileProviderBootstrap.xcodeproj -scheme FixtureBootstrap -destination "platform=iOS Simulator,id=B25F12A5-62D8-4E9E-964E-96519DB6FB69" -derivedDataPath /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-ui/outputs/ios-provider-bootstrap-b25-001/DerivedData CODE_SIGNING_ALLOWED=NO test-without-building -parallel-testing-enabled NO -collect-test-diagnostics never -test-timeouts-enabled YES -default-test-execution-time-allowance 240 -resultBundlePath /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-ui/outputs/ios-provider-bootstrap-b25-001/bootstrap.xcresult "-only-testing:FileProviderBootstrapTests/FileProviderBootstrapTests/testPrepareRegisterAndInspectFixtureDomain"
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-ui/outputs/ios-provider-bootstrap-b25-001/bootstrap.xcresult
+
+2026-11-05 02:32:25.947047-0300 FileProviderBootstrapTests-Runner[11949:9611227] [Default] Running tests...
+2026-11-05 02:32:26.004559-0300 FileProviderBootstrapTests-Runner[11949:9611227] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-11-05 02:32:28.982.
+Test Suite 'FileProviderBootstrapTests.xctest' started at 2026-11-05 02:32:28.983.
+Test Suite 'FileProviderBootstrapTests' started at 2026-11-05 02:32:28.983.
+Test Case '-[FileProviderBootstrapTests.FileProviderBootstrapTests testPrepareRegisterAndInspectFixtureDomain]' started.
+    t =     0.01s Start Test at 2026-11-05 02:32:28.992
+    t =     0.03s Set Up
+    t =     0.04s Added attachment named 'provided-signed-fixture-provenance'
+    t =     0.05s Open thalesmms.logisim.validation.revocationfixture
+    t =     0.05s     Launch thalesmms.logisim.validation.revocationfixture
+    t =     0.13s         Wait for accessibility to load
+    t =     0.13s         Setting up automation session
+objc[11949]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x106fac310) and /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x106f40398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     3.63s         Wait for thalesmms.logisim.validation.revocationfixture to idle
+    t =     3.66s Unable to monitor event loop
+    t =     4.67s Wait for thalesmms.logisim.validation.revocationfixture to become Running Foreground
+    t =     4.67s Waiting 10.0s for "fixture.evidence" TextView to exist
+    t =     5.73s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =     5.74s         Checking existence of `"fixture.evidence" TextView`
+    t =     5.74s         Capturing element debug description
+    t =     6.69s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =     6.69s         Checking existence of `"fixture.evidence" TextView`
+    t =     6.69s         Capturing element debug description
+    t =     7.76s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =     7.76s         Checking existence of `"fixture.evidence" TextView`
+    t =     7.76s         Capturing element debug description
+    t =     8.72s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =     8.72s         Checking existence of `"fixture.evidence" TextView`
+    t =     8.72s         Capturing element debug description
+    t =     9.68s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =     9.68s         Checking existence of `"fixture.evidence" TextView`
+    t =     9.69s         Capturing element debug description
+    t =    10.75s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =    10.75s         Checking existence of `"fixture.evidence" TextView`
+    t =    10.75s         Capturing element debug description
+    t =    11.71s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =    11.71s         Checking existence of `"fixture.evidence" TextView`
+    t =    11.71s         Capturing element debug description
+    t =    12.67s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =    12.67s         Checking existence of `"fixture.evidence" TextView`
+    t =    12.68s         Capturing element debug description
+    t =    13.73s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =    13.74s         Checking existence of `"fixture.evidence" TextView`
+    t =    13.74s         Capturing element debug description
+    t =    14.68s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =    14.68s         Checking existence of `"fixture.evidence" TextView`
+    t =    14.68s         Capturing element debug description
+    t =    14.68s     Checking existence of `"fixture.evidence" TextView`
+    t =    15.69s     Checking existence of `"fixture.evidence" TextView` (retry 1)
+    t =    16.70s     Checking existence of `"fixture.evidence" TextView` (retry 2)
+    t =    16.70s Collecting debug information to assist test failure triage
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-ui/outputs/ios-provider-bootstrap-b25-001/harness/FileProviderBootstrapTests.swift:67: error: -[FileProviderBootstrapTests.FileProviderBootstrapTests testPrepareRegisterAndInspectFixtureDomain] : XCTAssertTrue failed
+    t =    16.76s Tear Down
+    t =    16.77s Checking for reports corresponding to termination of 1 app(s).
+Test Case '-[FileProviderBootstrapTests.FileProviderBootstrapTests testPrepareRegisterAndInspectFixtureDomain]' failed (36.779 seconds).
+Test Suite 'FileProviderBootstrapTests' failed at 2026-11-05 02:33:05.772.
+	 Executed 1 test, with 1 failure (0 unexpected) in 36.779 (36.788) seconds
+Test Suite 'FileProviderBootstrapTests.xctest' failed at 2026-11-05 02:33:05.772.
+	 Executed 1 test, with 1 failure (0 unexpected) in 36.779 (36.789) seconds
+Test Suite 'Selected tests' failed at 2026-11-05 02:33:05.773.
+	 Executed 1 test, with 1 failure (0 unexpected) in 36.779 (36.791) seconds
+2026-11-05 02:33:06.080 xcodebuild[11944:9611000] [MT] IDETestOperationsObserverDebug: 41.518 elapsed -- Testing started completed.
+2026-11-05 02:33:06.080 xcodebuild[11944:9611000] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-05 02:33:06.080 xcodebuild[11944:9611000] [MT] IDETestOperationsObserverDebug: 41.518 sec, +41.518 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-ui/outputs/ios-provider-bootstrap-b25-001/bootstrap.xcresult
+
+Failing tests:
+	FileProviderBootstrapTests.testPrepareRegisterAndInspectFixtureDomain()
+
+** TEST EXECUTE FAILED **
+
+Testing started

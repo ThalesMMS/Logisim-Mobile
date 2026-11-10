@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+  This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="LegacyLatch"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings/>
+  <toolbar/>
+  <circuit name="LegacyLatch">
+    <a name="circuit" val="LegacyLatch"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(100,130)" to="(260,130)"/>
+    <wire from="(100,270)" to="(260,270)"/>
+    <wire from="(200,250)" to="(260,250)"/>
+    <wire from="(200,220)" to="(350,220)"/>
+    <wire from="(220,180)" to="(370,180)"/>
+    <wire from="(300,140)" to="(350,140)"/>
+    <wire from="(350,140)" to="(350,220)"/>
+    <wire from="(370,180)" to="(370,260)"/>
+    <wire from="(220,150)" to="(260,150)"/>
+    <wire from="(200,220)" to="(200,250)"/>
+    <wire from="(220,150)" to="(220,180)"/>
+    <wire from="(300,260)" to="(370,260)"/>
+    <wire from="(350,140)" to="(420,140)"/>
+    <comp lib="1" loc="(300,140)" name="NOR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(300,260)" name="NOR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(100,270)" name="Pin">
+      <a name="label" val="S"/>
+    </comp>
+    <comp lib="0" loc="(420,140)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Q"/>
+    </comp>
+    <comp lib="0" loc="(100,130)" name="Pin">
+      <a name="label" val="R"/>
+    </comp>
+  </circuit>
+</project>

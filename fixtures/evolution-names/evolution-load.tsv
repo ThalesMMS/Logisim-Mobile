@@ -1,0 +1,241 @@
+file	mobile-demo.circ
+name	mobile-demo.circ	circuit	Minha_primeira_porta_AND
+name	mobile-demo.circ	label	Minha_primeira_porta_AND	(100,100)	A
+name	mobile-demo.circ	label	Minha_primeira_porta_AND	(100,200)	B
+name	mobile-demo.circ	label	Minha_primeira_porta_AND	(300,150)	AND
+name	mobile-demo.circ	label	Minha_primeira_porta_AND	(420,150)	Y
+result	mobile-demo.circ	names-unchanged-on-open	true
+result	mobile-demo.circ	same-names-on-second-open	true
+result	mobile-demo.circ	names-unchanged-after-resave	true
+file	mobile-example-and.circ
+name	mobile-example-and.circ	circuit	AND
+name	mobile-example-and.circ	label	AND	(120,140)	A
+name	mobile-example-and.circ	label	AND	(120,240)	B
+name	mobile-example-and.circ	label	AND	(420,190)	A_AND_B
+result	mobile-example-and.circ	names-unchanged-on-open	true
+result	mobile-example-and.circ	same-names-on-second-open	true
+result	mobile-example-and.circ	names-unchanged-after-resave	true
+file	mobile-example-bus-adder.circ
+name	mobile-example-bus-adder.circ	circuit	BusAdder
+name	mobile-example-bus-adder.circ	label	BusAdder	(100,120)	A
+name	mobile-example-bus-adder.circ	label	BusAdder	(100,220)	B
+name	mobile-example-bus-adder.circ	label	BusAdder	(420,160)	S
+name	mobile-example-bus-adder.circ	label	BusAdder	(420,260)	Carry
+result	mobile-example-bus-adder.circ	names-unchanged-on-open	true
+result	mobile-example-bus-adder.circ	same-names-on-second-open	true
+result	mobile-example-bus-adder.circ	names-unchanged-after-resave	true
+file	mobile-example-bus-conflict.circ
+name	mobile-example-bus-conflict.circ	circuit	BusConflict
+name	mobile-example-bus-conflict.circ	label	BusConflict	(100,100)	A
+name	mobile-example-bus-conflict.circ	label	BusConflict	(100,200)	B
+name	mobile-example-bus-conflict.circ	label	BusConflict	(300,100)	Y
+result	mobile-example-bus-conflict.circ	names-unchanged-on-open	true
+result	mobile-example-bus-conflict.circ	same-names-on-second-open	true
+result	mobile-example-bus-conflict.circ	names-unchanged-after-resave	true
+file	mobile-example-d-flip-flop.circ
+name	mobile-example-d-flip-flop.circ	circuit	DMemory
+name	mobile-example-d-flip-flop.circ	label	DMemory	(100,180)	D
+name	mobile-example-d-flip-flop.circ	label	DMemory	(100,260)	CLK
+name	mobile-example-d-flip-flop.circ	label	DMemory	(100,320)	CLR
+name	mobile-example-d-flip-flop.circ	label	DMemory	(420,200)	Q
+result	mobile-example-d-flip-flop.circ	names-unchanged-on-open	true
+result	mobile-example-d-flip-flop.circ	same-names-on-second-open	true
+result	mobile-example-d-flip-flop.circ	names-unchanged-after-resave	true
+file	mobile-example-hierarchy.circ
+name	mobile-example-hierarchy.circ	circuit	Hierarchy
+name	mobile-example-hierarchy.circ	circuit	Inversor
+name	mobile-example-hierarchy.circ	label	Hierarchy	(100,140)	A
+name	mobile-example-hierarchy.circ	label	Hierarchy	(420,140)	Y
+name	mobile-example-hierarchy.circ	label	Inversor	(100,100)	Entrada
+name	mobile-example-hierarchy.circ	label	Inversor	(300,100)	Y
+result	mobile-example-hierarchy.circ	names-unchanged-on-open	true
+result	mobile-example-hierarchy.circ	same-names-on-second-open	true
+result	mobile-example-hierarchy.circ	names-unchanged-after-resave	true
+file	mobile-example-rom.circ
+name	mobile-example-rom.circ	circuit	RomLookup
+name	mobile-example-rom.circ	label	RomLookup	(100,150)	ADDR
+name	mobile-example-rom.circ	label	RomLookup	(520,200)	Dados
+result	mobile-example-rom.circ	names-unchanged-on-open	true
+result	mobile-example-rom.circ	same-names-on-second-open	true
+result	mobile-example-rom.circ	names-unchanged-after-resave	true
+file	mobile-example-sap1.circ
+name	mobile-example-sap1.circ	circuit	Acumulador
+name	mobile-example-sap1.circ	circuit	CP
+name	mobile-example-sap1.circ	circuit	REGISTRADOR_DE_INSTRUCOES_2d63c7b0
+name	mobile-example-sap1.circ	circuit	REM
+name	mobile-example-sap1.circ	circuit	Registrador_B_6a147718
+name	mobile-example-sap1.circ	circuit	Somador_Subtrator
+name	mobile-example-sap1.circ	circuit	main
+name	mobile-example-sap1.circ	label	Acumulador	(120,140)	nLa
+name	mobile-example-sap1.circ	label	Acumulador	(120,170)	CLK
+name	mobile-example-sap1.circ	label	Acumulador	(120,210)	Ea
+name	mobile-example-sap1.circ	label	Acumulador	(140,90)	A_dataIn
+name	mobile-example-sap1.circ	label	Acumulador	(290,150)	A_dataOut2
+name	mobile-example-sap1.circ	label	Acumulador	(290,90)	A_dataOut1
+name	mobile-example-sap1.circ	label	CP	(270,130)	output2
+name	mobile-example-sap1.circ	label	CP	(270,90)	CP_dataOut
+name	mobile-example-sap1.circ	label	CP	(90,100)	Cpp
+name	mobile-example-sap1.circ	label	CP	(90,130)	nCLK
+name	mobile-example-sap1.circ	label	CP	(90,160)	CLR
+name	mobile-example-sap1.circ	label	CP	(90,190)	Ep
+name	mobile-example-sap1.circ	label	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	(120,140)	nLi
+name	mobile-example-sap1.circ	label	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	(120,170)	CLK
+name	mobile-example-sap1.circ	label	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	(120,210)	CLR
+name	mobile-example-sap1.circ	label	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	(140,90)	RI2_dataIn
+name	mobile-example-sap1.circ	label	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	(400,90)	RI2_dataOut1
+name	mobile-example-sap1.circ	label	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	(420,30)	RI2_dataOut2
+name	mobile-example-sap1.circ	label	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	(60,230)	nEi
+name	mobile-example-sap1.circ	label	REM	(110,290)	CLK
+name	mobile-example-sap1.circ	label	REM	(120,140)	nLM
+name	mobile-example-sap1.circ	label	REM	(140,90)	ADDR_In
+name	mobile-example-sap1.circ	label	REM	(350,190)	ADDR_Out
+name	mobile-example-sap1.circ	label	Registrador_B_6a147718	(120,140)	nLb
+name	mobile-example-sap1.circ	label	Registrador_B_6a147718	(120,170)	CLK
+name	mobile-example-sap1.circ	label	Registrador_B_6a147718	(140,90)	B_dataIn
+name	mobile-example-sap1.circ	label	Registrador_B_6a147718	(290,90)	B_dataOut
+name	mobile-example-sap1.circ	label	Somador_Subtrator	(140,260)	B_data
+name	mobile-example-sap1.circ	label	Somador_Subtrator	(140,290)	A_data
+name	mobile-example-sap1.circ	label	Somador_Subtrator	(340,280)	A_dataOut2
+name	mobile-example-sap1.circ	label	Somador_Subtrator	(80,330)	Eu
+name	mobile-example-sap1.circ	label	Somador_Subtrator	(90,120)	Su
+name	mobile-example-sap1.circ	label	main	(100,430)	CLK
+name	mobile-example-sap1.circ	label	main	(100,450)	CLR
+name	mobile-example-sap1.circ	label	main	(130,500)	ADR_Com
+name	mobile-example-sap1.circ	label	main	(150,710)	CLK
+name	mobile-example-sap1.circ	label	main	(150,780)	CLR
+name	mobile-example-sap1.circ	label	main	(170,450)	RI
+name	mobile-example-sap1.circ	label	main	(220,100)	CP_mod
+name	mobile-example-sap1.circ	label	main	(220,190)	REM_mod
+name	mobile-example-sap1.circ	label	main	(250,480)	ADR_Val
+name	mobile-example-sap1.circ	label	main	(260,410)	RI_data_IN
+name	mobile-example-sap1.circ	label	main	(260,730)	D1
+name	mobile-example-sap1.circ	label	main	(280,870)	T1
+name	mobile-example-sap1.circ	label	main	(290,250)	CLK
+name	mobile-example-sap1.circ	label	main	(330,250)	nCE
+name	mobile-example-sap1.circ	label	main	(350,870)	T2
+name	mobile-example-sap1.circ	label	main	(40,410)	nLi
+name	mobile-example-sap1.circ	label	main	(40,470)	nEi
+name	mobile-example-sap1.circ	label	main	(400,510)	T3_D
+name	mobile-example-sap1.circ	label	main	(400,660)	nCLK
+name	mobile-example-sap1.circ	label	main	(410,40)	Comando
+name	mobile-example-sap1.circ	label	main	(430,870)	T3
+name	mobile-example-sap1.circ	label	main	(450,610)	CLR
+name	mobile-example-sap1.circ	label	main	(450,860)	T3_D
+name	mobile-example-sap1.circ	label	main	(480,40)	Valor
+name	mobile-example-sap1.circ	label	main	(520,300)	nLo
+name	mobile-example-sap1.circ	label	main	(520,870)	T4
+name	mobile-example-sap1.circ	label	main	(540,420)	Reset
+name	mobile-example-sap1.circ	label	main	(580,380)	CLK
+name	mobile-example-sap1.circ	label	main	(580,420)	CLR
+name	mobile-example-sap1.circ	label	main	(590,380)	CLR
+name	mobile-example-sap1.circ	label	main	(610,870)	T5
+name	mobile-example-sap1.circ	label	main	(640,470)	nCLK
+name	mobile-example-sap1.circ	label	main	(650,450)	CLK
+name	mobile-example-sap1.circ	label	main	(690,870)	T6
+name	mobile-example-sap1.circ	label	main	(70,540)	CS_mod
+name	mobile-example-sap1.circ	label	main	(730,100)	Ea
+name	mobile-example-sap1.circ	label	main	(730,150)	Su
+name	mobile-example-sap1.circ	label	main	(730,170)	Eu
+name	mobile-example-sap1.circ	label	main	(730,230)	CLK
+name	mobile-example-sap1.circ	label	main	(730,80)	CLK
+name	mobile-example-sap1.circ	label	main	(760,210)	nLb
+name	mobile-example-sap1.circ	label	main	(760,60)	nLa
+name	mobile-example-sap1.circ	label	main	(780,510)	nLo
+name	mobile-example-sap1.circ	label	main	(780,530)	nLb
+name	mobile-example-sap1.circ	label	main	(780,550)	Eu
+name	mobile-example-sap1.circ	label	main	(780,570)	Su
+name	mobile-example-sap1.circ	label	main	(780,590)	Ea
+name	mobile-example-sap1.circ	label	main	(780,610)	nLa
+name	mobile-example-sap1.circ	label	main	(780,630)	nEi
+name	mobile-example-sap1.circ	label	main	(780,650)	nLi
+name	mobile-example-sap1.circ	label	main	(780,670)	nCE
+name	mobile-example-sap1.circ	label	main	(780,690)	nLM
+name	mobile-example-sap1.circ	label	main	(780,710)	Ep
+name	mobile-example-sap1.circ	label	main	(780,730)	Cpp
+name	mobile-example-sap1.circ	label	main	(80,110)	CLR
+name	mobile-example-sap1.circ	label	main	(80,130)	Ep
+name	mobile-example-sap1.circ	label	main	(80,180)	nLM
+name	mobile-example-sap1.circ	label	main	(80,200)	CLK
+name	mobile-example-sap1.circ	label	main	(80,70)	Cpp
+name	mobile-example-sap1.circ	label	main	(80,90)	nCLK
+result	mobile-example-sap1.circ	names-unchanged-on-open	true
+result	mobile-example-sap1.circ	same-names-on-second-open	true
+result	mobile-example-sap1.circ	names-unchanged-after-resave	true
+file	mobile-old-demo.circ
+name	mobile-old-demo.circ	circuit	Minha_primeira_porta_AND_dbf00f70
+name	mobile-old-demo.circ	label	Minha_primeira_porta_AND_dbf00f70	(100,100)	A
+name	mobile-old-demo.circ	label	Minha_primeira_porta_AND_dbf00f70	(100,200)	B
+name	mobile-old-demo.circ	label	Minha_primeira_porta_AND_dbf00f70	(300,150)	AND
+name	mobile-old-demo.circ	label	Minha_primeira_porta_AND_dbf00f70	(420,150)	Sa_da_8ec98612
+result	mobile-old-demo.circ	names-unchanged-on-open	true
+result	mobile-old-demo.circ	same-names-on-second-open	true
+result	mobile-old-demo.circ	names-unchanged-after-resave	true
+file	mobile-unicode.circ
+name	mobile-unicode.circ	circuit	Vis_o_a6e3837c
+name	mobile-unicode.circ	label	Vis_o_a6e3837c	(100,100)	E2E_liga_o_longa_entrada_dab08e64
+result	mobile-unicode.circ	names-unchanged-on-open	true
+result	mobile-unicode.circ	same-names-on-second-open	true
+result	mobile-unicode.circ	names-unchanged-after-resave	true
+result	Visão → ‫اختبار‬	generateValidVHDLLabel	true
+result	Visão → ‫اختبار‬	SyntaxChecker-accepts	true
+result	Visão → ‫اختبار‬	labelVHDLInvalid	true
+result	E2E — ligação longa → entrada / ‫مرحبا‬	generateValidVHDLLabel	true
+result	E2E — ligação longa → entrada / ‫مرحبا‬	SyntaxChecker-accepts	true
+result	E2E — ligação longa → entrada / ‫مرحبا‬	labelVHDLInvalid	true
+result	Minha primeira porta AND	generateValidVHDLLabel	true
+result	Minha primeira porta AND	SyntaxChecker-accepts	true
+result	Minha primeira porta AND	labelVHDLInvalid	true
+result	Saída	generateValidVHDLLabel	true
+result	Saída	SyntaxChecker-accepts	true
+result	Saída	labelVHDLInvalid	true
+result	  padded  	generateValidVHDLLabel	true
+result	  padded  	SyntaxChecker-accepts	true
+result	  padded  	labelVHDLInvalid	true
+result	9a!b	generateValidVHDLLabel	true
+result	9a!b	SyntaxChecker-accepts	true
+result	9a!b	labelVHDLInvalid	true
+result	~x😀y	generateValidVHDLLabel	true
+result	~x😀y	SyntaxChecker-accepts	true
+result	~x😀y	labelVHDLInvalid	true
+result	a_	generateValidVHDLLabel	true
+result	a_	SyntaxChecker-accepts	true
+result	a_	labelVHDLInvalid	true
+result	a__b	generateValidVHDLLabel	true
+result	a__b	SyntaxChecker-accepts	true
+result	a__b	labelVHDLInvalid	true
+result	A AND B	generateValidVHDLLabel	true
+result	A AND B	SyntaxChecker-accepts	true
+result	A AND B	labelVHDLInvalid	true
+result	3 + 2	generateValidVHDLLabel	true
+result	3 + 2	SyntaxChecker-accepts	true
+result	3 + 2	labelVHDLInvalid	true
+result	Child (2)	generateValidVHDLLabel	true
+result	Child (2)	SyntaxChecker-accepts	true
+result	Child (2)	labelVHDLInvalid	true
+result	Minha_primeira_porta_AND	generateValidVHDLLabel	true
+result	Minha_primeira_porta_AND	SyntaxChecker-accepts	true
+result	Minha_primeira_porta_AND	labelVHDLInvalid	true
+result	Y	generateValidVHDLLabel	true
+result	Y	SyntaxChecker-accepts	true
+result	Y	labelVHDLInvalid	true
+result	AND	generateValidVHDLLabel	true
+result	AND	SyntaxChecker-accepts	true
+result	AND	labelVHDLInvalid	true
+result	signal	generateValidVHDLLabel	true
+result	signal	SyntaxChecker-accepts	true
+result	signal	labelVHDLInvalid	true
+result	_x	generateValidVHDLLabel	true
+result	_x	SyntaxChecker-accepts	true
+result	_x	labelVHDLInvalid	true
+result	x1	generateValidVHDLLabel	true
+result	x1	SyntaxChecker-accepts	true
+result	x1	labelVHDLInvalid	true
+result	DFF	generateValidVHDLLabel	true
+result	DFF	SyntaxChecker-accepts	true
+result	DFF	labelVHDLInvalid	true
+result	1abc	generateValidVHDLLabel	true
+result	1abc	SyntaxChecker-accepts	true
+result	1abc	labelVHDLInvalid	true
+result	Bus-input	generateValidVHDLLabel	true
+result	Bus-input	SyntaxChecker-accepts	true
+result	Bus-input	labelVHDLInvalid	true

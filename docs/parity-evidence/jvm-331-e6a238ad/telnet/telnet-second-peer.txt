@@ -1,0 +1,69 @@
+case: second-peer telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  wr=1: out=0000000? av=1
+  in=87: out=0000000? av=1
+  write 87 clk=1: out=0000000? av=1
+  write 87 clk=0: out=0000000? av=1
+  wr=0: out=0000000? av=1
+  first client receives: []
+  second client receives: [87]
+  clk=0 after bytes: out=0000000? av=1
+  rd=1: out=00110001 av=1
+  read 0 clk=1: out=00110001 av=1
+  read 0 clk=0: out=01110000 av=1
+  read 1 clk=1: out=01110000 av=1
+  read 1 clk=0: out=01110001 av=1
+  read 2 clk=1: out=01110001 av=1
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+
+=== mobile-companion
+  wr=1: out=0000000? av=1
+  in=87: out=0000000? av=1
+  write 87 clk=1: out=0000000? av=1
+  write 87 clk=0: out=0000000? av=1
+  wr=0: out=0000000? av=1
+! first client receives: [] EOF
+  second client receives: [87]
+  clk=0 after bytes: out=0000000? av=1
+  rd=1: out=00110001 av=1
+! read 0 clk=1: out=01110001 av=1
+! read 0 clk=0: out=01110001 av=1
+! read 1 clk=1: out=11111111 av=0
+! read 1 clk=0: out=11111111 av=0
+! read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+--- sampled at rising edges and socket bytes: DIFF
+  write 87 sampled out=0000000? av=1
+! first client receives: [] EOF
+  second client receives: [87]
+  read 0 sampled out=00110001 av=1
+! read 1 sampled out=01110001 av=1
+! read 2 sampled out=11111111 av=0
+
+=== mobile-jvm
+  wr=1: out=0000000? av=1
+  in=87: out=0000000? av=1
+  write 87 clk=1: out=0000000? av=1
+  write 87 clk=0: out=0000000? av=1
+  wr=0: out=0000000? av=1
+! first client receives: [] EOF
+  second client receives: [87]
+  clk=0 after bytes: out=0000000? av=1
+  rd=1: out=00110001 av=1
+! read 0 clk=1: out=01110001 av=1
+! read 0 clk=0: out=01110001 av=1
+! read 1 clk=1: out=11111111 av=0
+! read 1 clk=0: out=11111111 av=0
+! read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+--- sampled at rising edges and socket bytes: DIFF
+  write 87 sampled out=0000000? av=1
+! first client receives: [] EOF
+  second client receives: [87]
+  read 0 sampled out=00110001 av=1
+! read 1 sampled out=01110001 av=1
+! read 2 sampled out=11111111 av=0

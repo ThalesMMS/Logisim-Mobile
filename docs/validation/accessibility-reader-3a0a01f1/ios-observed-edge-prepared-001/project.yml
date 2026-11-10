@@ -1,0 +1,30 @@
+name: LogisimVoiceOverObservedEdge
+options:
+  bundleIdPrefix: thalesmms.logisim.validation
+  deploymentTarget:
+    iOS: "27.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGNING_ALLOWED: NO
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  VoiceOverObservedEdgeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - VoiceOverObservedEdgeUITests.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: thalesmms.logisim.validation.voiceoverobservededge
+        TEST_TARGET_NAME: ""
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  VoiceOverObservedEdge:
+    build:
+      targets:
+        VoiceOverObservedEdgeUITests: all
+    test:
+      targets:
+        - VoiceOverObservedEdgeUITests
+      gatherCoverageData: false

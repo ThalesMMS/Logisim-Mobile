@@ -1,0 +1,1043 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T09:54:19.703261+00:00",
+  "scope": "Read-only retained case inputs for parent rerunnable actor/cohort census; no builds, device queries, downloads, resets or ps arguments.",
+  "premise_to_question": "The recurrence is caused by Window selection/test helper, rather than a shared compositor-service failure family.",
+  "inputs": [
+    {
+      "id": "ios-combined-e7-e2e-003",
+      "kind": "service_abort",
+      "started": "2026-11-04T23:16:41.694780+00:00",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "FAIL",
+      "selected_tests": [
+        "EditorEndToEndTests/EditorEndToEndTests/testLargeProjectXmlCopyInPortraitAndLandscape"
+      ],
+      "cohort": {
+        "udid": "EFC1402B-5511-40D9-8A21-359172F886AB",
+        "name": "iPad Pro 11-inch (M5)",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "e7ebaf0b60e98f2dd2d6d9568d084e1e0b8ee583",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "974f10a831573a42957d605e3a330d93efa0610b141c1fe61584608840bbdee2",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "Return from ClipboardReceiver, activate product, tap Close; not immediate SystemOpen",
+        "system_open_log_entries": [],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-combined-e7-e2e-003/results.json",
+          "role": "retained runner results",
+          "sha256": "c4e084b69394790fc7e44b918afeef294d058e7dd1b71ba43e1494d48ff7f075",
+          "bytes": 7747
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-combined-e7-e2e-003/test.log",
+          "role": "retained XCTest log",
+          "sha256": "7a54d353a4637cf98fedb75eefe1f0e2f57f18a5ae6a90f681520dbc1cb3b134",
+          "bytes": 19246
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-combined-e7-e2e-003/attachments/11FAAD5E-9CDF-4B5B-A471-A975C7FAE0B4.ips",
+          "role": "retained original/xcresult-exported backboardd IPS",
+          "sha256": "f3b4a53dbcb997123b80adf1e1119c79f4ae01fdfba671792b6a02a612daa1f3",
+          "bytes": 43034
+        }
+      ],
+      "crash": {
+        "incident_id": "1B7C5C85-441D-4E7E-B83E-F5FF1B67F883",
+        "procName": "backboardd",
+        "pid": 17819,
+        "procLaunch": "2026-11-04 20:06:28.4081 -0300",
+        "parentProc": "launchd_sim",
+        "parentPid": 17793,
+        "coalitionName": "com.apple.CoreSimulator.SimDevice.EFC1402B-5511-40D9-8A21-359172F886AB",
+        "captureTime": "2026-11-04 20:17:53.8555 -0300",
+        "exception": {
+          "codes": "0x0000000000000000, 0x0000000000000000",
+          "rawCodes": [
+            0,
+            0
+          ],
+          "type": "EXC_CRASH",
+          "signal": "SIGABRT"
+        },
+        "host_osVersion_from_ips": {
+          "train": "macOS 27.2",
+          "build": "26B123",
+          "releaseType": "User"
+        },
+        "faultingThread_index": 2,
+        "faultingThread_name": "com.apple.coreanimation.display.primary",
+        "frame_count": 72,
+        "normalized_frames_sha256": "5af56aaab10ae056f7a8d76f85cad3c6597c0c051dac62353e305b5ad31fa20d",
+        "normalization_fields": [
+          "image name",
+          "image UUID",
+          "symbol",
+          "imageOffset",
+          "symbolLocation"
+        ],
+        "stack_family_symbols": [
+          "MTLReportFailure.cold.1",
+          "MTLReportFailure",
+          "_MTLMessageContextEndNewNSErrorOrAbort(_MTLMessageContext*, bool, NSString*, unsigned long)",
+          "-[MTLTextureDescriptorInternal validateWithDevice:]",
+          "-[MTLSimDevice newTextureWithDescriptor:]",
+          "CA::OGL::MetalContext::create_surface_with_properties(int, CA::Bounds const&, unsigned int, CA::OGL::Context::SurfaceProperties const&, __CFString const*)",
+          "CA::OGL::FlattenNode::retain_surface(float&, unsigned int)"
+        ],
+        "attribution": "Service-process abort; no submitting app/layer/caller established by this stack."
+      }
+    },
+    {
+      "id": "ios-focus-beta-b9bd-e2e-004",
+      "kind": "service_abort",
+      "started": "2026-11-05T01:42:36.740871+00:00",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "FAIL",
+      "selected_tests": [
+        "EditorEndToEndTests/DestinationExportEndToEndTests/testSaveAsChoosesARealFilesDestinationAndReopensTheExport"
+      ],
+      "cohort": {
+        "udid": "EFC1402B-5511-40D9-8A21-359172F886AB",
+        "name": "iPad Pro 11-inch (M5)",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "b9bd71ae49e562661ee114b248e342a02ed29508",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "SystemOpen warm.circ",
+        "system_open_log_entries": [
+          {
+            "line": 33,
+            "text": "    t =    14.23s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/EFC1402B-5511-40D9-8A21-359172F886AB/data/Containers/Data/Application/302EB17C-9285-4B67-A94E-816A2218AFC0/Documents/LogisimE2E/d404f690d03a/warm.circ"
+          }
+        ],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-004/results.json",
+          "role": "retained runner results",
+          "sha256": "155f7a60c07611929c0996cde39e51fab6441010c3f885a26bfeeda456fbd1b2",
+          "bytes": 27142
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-004/test.log",
+          "role": "retained XCTest log",
+          "sha256": "81f1b55fea37e2ee6b98f8f75f576f20a7ce5c292a73f0161351bf633ce96849",
+          "bytes": 5399
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-004/backboardd-2026-11-04-224324.ips",
+          "role": "retained original/xcresult-exported backboardd IPS",
+          "sha256": "2a2c772b0e02e0b69866128e641a52a947e8336d27d08b9fe92967a044dcf95d",
+          "bytes": 43803
+        }
+      ],
+      "crash": {
+        "incident_id": "41736435-4F3A-40EB-A7DA-2FF91B5040FD",
+        "procName": "backboardd",
+        "pid": 21478,
+        "procLaunch": "2026-11-04 20:17:53.6731 -0300",
+        "parentProc": "launchd_sim",
+        "parentPid": 17793,
+        "coalitionName": "com.apple.CoreSimulator.SimDevice.EFC1402B-5511-40D9-8A21-359172F886AB",
+        "captureTime": "2026-11-04 22:43:19.7861 -0300",
+        "exception": {
+          "codes": "0x0000000000000000, 0x0000000000000000",
+          "rawCodes": [
+            0,
+            0
+          ],
+          "type": "EXC_CRASH",
+          "signal": "SIGABRT"
+        },
+        "host_osVersion_from_ips": {
+          "train": "macOS 27.2",
+          "build": "26B123",
+          "releaseType": "User"
+        },
+        "faultingThread_index": 2,
+        "faultingThread_name": "com.apple.coreanimation.display.primary",
+        "frame_count": 74,
+        "normalized_frames_sha256": "45b07256254cf5015fe9f47bcb3ac8b8aa1e7b6403f306f67a1f70bc5f3a98d0",
+        "normalization_fields": [
+          "image name",
+          "image UUID",
+          "symbol",
+          "imageOffset",
+          "symbolLocation"
+        ],
+        "stack_family_symbols": [
+          "MTLReportFailure.cold.1",
+          "MTLReportFailure",
+          "_MTLMessageContextEndNewNSErrorOrAbort(_MTLMessageContext*, bool, NSString*, unsigned long)",
+          "-[MTLTextureDescriptorInternal validateWithDevice:]",
+          "-[MTLSimDevice newTextureWithDescriptor:]",
+          "CA::OGL::MetalContext::create_surface_with_properties(int, CA::Bounds const&, unsigned int, CA::OGL::Context::SurfaceProperties const&, __CFString const*)",
+          "CA::OGL::FlattenNode::retain_surface(float&, unsigned int)"
+        ],
+        "attribution": "Service-process abort; no submitting app/layer/caller established by this stack."
+      }
+    },
+    {
+      "id": "ios-focus-beta-b9bd-e2e-005",
+      "kind": "service_abort",
+      "started": "2026-11-05T01:48:30.061535+00:00",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "FAIL",
+      "selected_tests": [
+        "EditorEndToEndTests/DestinationExportEndToEndTests/testSaveAsChoosesARealFilesDestinationAndReopensTheExport"
+      ],
+      "cohort": {
+        "udid": "EFC1402B-5511-40D9-8A21-359172F886AB",
+        "name": "iPad Pro 11-inch (M5)",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "b9bd71ae49e562661ee114b248e342a02ed29508",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "SystemOpen warm.circ",
+        "system_open_log_entries": [
+          {
+            "line": 33,
+            "text": "    t =    22.18s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/EFC1402B-5511-40D9-8A21-359172F886AB/data/Containers/Data/Application/302EB17C-9285-4B67-A94E-816A2218AFC0/Documents/LogisimE2E/ecb04e0c97d6/warm.circ"
+          }
+        ],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-005/results.json",
+          "role": "retained runner results",
+          "sha256": "98d79a4a7b597a5b301cde3262182e3a307bd8cc79ccbda508820c18009ed567",
+          "bytes": 27198
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-005/test.log",
+          "role": "retained XCTest log",
+          "sha256": "45ac5079f4f417089863fe0ebc27c561bc3cb311a4fb63475df788bb01046bfd",
+          "bytes": 5402
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-005/backboardd-2026-11-04-224958.ips",
+          "role": "retained original/xcresult-exported backboardd IPS",
+          "sha256": "9ed9014fcbee72541ab2f1163e75aef7b945ddef1b1a11d98ee44a7010f8fe35",
+          "bytes": 43525
+        }
+      ],
+      "crash": {
+        "incident_id": "4A232138-7EB0-4C87-85FF-65E801CE4BF6",
+        "procName": "backboardd",
+        "pid": 90252,
+        "procLaunch": "2026-11-04 22:43:19.6128 -0300",
+        "parentProc": "launchd_sim",
+        "parentPid": 17793,
+        "coalitionName": "com.apple.CoreSimulator.SimDevice.EFC1402B-5511-40D9-8A21-359172F886AB",
+        "captureTime": "2026-11-04 22:49:47.7297 -0300",
+        "exception": {
+          "codes": "0x0000000000000000, 0x0000000000000000",
+          "rawCodes": [
+            0,
+            0
+          ],
+          "type": "EXC_CRASH",
+          "signal": "SIGABRT"
+        },
+        "host_osVersion_from_ips": {
+          "train": "macOS 27.2",
+          "build": "26B123",
+          "releaseType": "User"
+        },
+        "faultingThread_index": 2,
+        "faultingThread_name": "com.apple.coreanimation.display.primary",
+        "frame_count": 72,
+        "normalized_frames_sha256": "5af56aaab10ae056f7a8d76f85cad3c6597c0c051dac62353e305b5ad31fa20d",
+        "normalization_fields": [
+          "image name",
+          "image UUID",
+          "symbol",
+          "imageOffset",
+          "symbolLocation"
+        ],
+        "stack_family_symbols": [
+          "MTLReportFailure.cold.1",
+          "MTLReportFailure",
+          "_MTLMessageContextEndNewNSErrorOrAbort(_MTLMessageContext*, bool, NSString*, unsigned long)",
+          "-[MTLTextureDescriptorInternal validateWithDevice:]",
+          "-[MTLSimDevice newTextureWithDescriptor:]",
+          "CA::OGL::MetalContext::create_surface_with_properties(int, CA::Bounds const&, unsigned int, CA::OGL::Context::SurfaceProperties const&, __CFString const*)",
+          "CA::OGL::FlattenNode::retain_surface(float&, unsigned int)"
+        ],
+        "attribution": "Service-process abort; no submitting app/layer/caller established by this stack."
+      }
+    },
+    {
+      "id": "ios-a-4ab8-missing-001",
+      "kind": "service_abort",
+      "started": "2026-11-05T04:09:32.235802+00:00",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "FAIL",
+      "selected_tests": [
+        "EditorEndToEndTests/FilesEndToEndTests/testMissingExternalDocumentReportsFailureAndPreservesProject"
+      ],
+      "cohort": {
+        "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "name": "Logisim SaveAs Beta iPad 27.0",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "4ab8aa93ac28e273cfe3193838cc97ea2098e218",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "d39e8d7b8f02dc114a0f83c3c491d9d7aaa114dc43e38d15efcb373d81129cb4",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "SystemOpen still-existing missing-external.circ before delete/save",
+        "system_open_log_entries": [
+          {
+            "line": 30,
+            "text": "    t =     5.42s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/70339B04-8B62-4DC4-8127-9944BC81B884/Documents/LogisimE2E/1f17c4194d96/missing-external.circ"
+          }
+        ],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-a-4ab8-missing-001/results.json",
+          "role": "retained runner results",
+          "sha256": "ff87a8d050c42e8bbb69dae7ae9f4d21b16f2a2975e69b9eb783d867ed09765c",
+          "bytes": 27661
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-a-4ab8-missing-001/test.log",
+          "role": "retained XCTest log",
+          "sha256": "e2c089936938245c6d777ef1d40be84fdae05f63c8a29dac58c835194eea1168",
+          "bytes": 5195
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-a-4ab8-missing-001/backboardd-2026-11-05-010949.ips",
+          "role": "retained original/xcresult-exported backboardd IPS",
+          "sha256": "f898bfd688358a986f7361193c435c76ecee9474174868e79f0d364bdbe68059",
+          "bytes": 39908
+        }
+      ],
+      "crash": {
+        "incident_id": "A4794CE4-A053-4EF5-AC7A-1798EA0EE42C",
+        "procName": "backboardd",
+        "pid": 98576,
+        "procLaunch": "2026-11-04 23:07:11.3314 -0300",
+        "parentProc": "launchd_sim",
+        "parentPid": 98551,
+        "coalitionName": "com.apple.CoreSimulator.SimDevice.B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "captureTime": "2026-11-05 01:09:48.2769 -0300",
+        "exception": {
+          "codes": "0x0000000000000000, 0x0000000000000000",
+          "rawCodes": [
+            0,
+            0
+          ],
+          "type": "EXC_CRASH",
+          "signal": "SIGABRT"
+        },
+        "host_osVersion_from_ips": {
+          "train": "macOS 27.2",
+          "build": "26B123",
+          "releaseType": "User"
+        },
+        "faultingThread_index": 2,
+        "faultingThread_name": "com.apple.coreanimation.display.primary",
+        "frame_count": 72,
+        "normalized_frames_sha256": "5af56aaab10ae056f7a8d76f85cad3c6597c0c051dac62353e305b5ad31fa20d",
+        "normalization_fields": [
+          "image name",
+          "image UUID",
+          "symbol",
+          "imageOffset",
+          "symbolLocation"
+        ],
+        "stack_family_symbols": [
+          "MTLReportFailure.cold.1",
+          "MTLReportFailure",
+          "_MTLMessageContextEndNewNSErrorOrAbort(_MTLMessageContext*, bool, NSString*, unsigned long)",
+          "-[MTLTextureDescriptorInternal validateWithDevice:]",
+          "-[MTLSimDevice newTextureWithDescriptor:]",
+          "CA::OGL::MetalContext::create_surface_with_properties(int, CA::Bounds const&, unsigned int, CA::OGL::Context::SurfaceProperties const&, __CFString const*)",
+          "CA::OGL::FlattenNode::retain_surface(float&, unsigned int)"
+        ],
+        "attribution": "Service-process abort; no submitting app/layer/caller established by this stack."
+      }
+    },
+    {
+      "id": "ios-3a0a01f1-io44-window-scope-b25-r2-001",
+      "kind": "service_abort",
+      "started": "2026-11-05T09:33:36.625393+00:00",
+      "native_execution_gate": "NATIVE_INCOMPLETE",
+      "qualification_gate": "NOT_QUALIFIED",
+      "selected_tests": [
+        "EditorEndToEndTests/IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing",
+        "EditorEndToEndTests/IoEndToEndTests/testIoDimensionChangesRemainExportable",
+        "EditorEndToEndTests/IoEndToEndTests/testIoMomentaryControlsAndJoystick",
+        "EditorEndToEndTests/IoEndToEndTests/testIoKeyboardTtyAndCapacity"
+      ],
+      "cohort": {
+        "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "name": "Logisim SaveAs Beta iPad 27.0",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "First SystemOpen owned Dimensions fixture; Wait Running Foreground; before exported Window admission",
+        "system_open_log_entries": [
+          {
+            "line": 34,
+            "text": "    t =     6.46s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/0F32BEE1-3943-450A-A0A5-6349895068D5/Documents/LogisimE2E/8be004945120/io-showcase-55AE3E74-59E7-4A4B-ACFD-B1C4AB7EACA4.circ"
+          }
+        ],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": "Dimensions: System Open of its owned fixture, then Wait Running Foreground at t8.41s. Signals reached Set Up only during the internal XCTest restart."
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count.",
+        "window_admission": "NO_EXPORTED_EVIDENCE"
+      },
+      "recording": {
+        "enabled": true,
+        "kind": "Passive external screen recording",
+        "video_pid": 34668,
+        "video_exit": 0,
+        "artifact_sha256": "6fade7ed8e82acca693a948feb7730dbed5fe5dd8aca59065159e31a8ee827f9",
+        "evidence": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/docs/validation/ios-io44-window-r2-abort/manifest.json"
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/results.json",
+          "role": "retained runner results",
+          "sha256": "da121192cfa790fe3d064eec5f4d472260a735953e2f7b287db04fbe63886a19",
+          "bytes": 28181
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/test.log",
+          "role": "retained XCTest log",
+          "sha256": "6b5cfedb3f187cdb78112b0e23e41f005d38a3b6675354f8f748a63e89e897a2",
+          "bytes": 6077
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/triage/backboardd-2026-11-05-063406.ips",
+          "role": "retained original/xcresult-exported backboardd IPS",
+          "sha256": "aced38010f4bf47f23d72c9ee8642d8bc42d39bcff22656955de15960fe7596e",
+          "bytes": 38031
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/docs/validation/ios-io44-window-r2-abort/manifest.json",
+          "role": "frozen portable interruption manifest",
+          "sha256": "5528b4e70bf6ecb78169f6db7e2bad401bb4bf4c4f6bfde8328570156283c6f5",
+          "bytes": 3117
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/docs/validation/ios-io44-window-r2-abort/README.md",
+          "role": "frozen portable interruption scope",
+          "sha256": "451ba94a85bcfe0b29ef918d31fb7abd504efac5274f1e896014008032b707e8",
+          "bytes": 3217
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001-video/wrapper-receipt.json",
+          "role": "passive recording wrapper receipt",
+          "sha256": "ab1195f447fa2b5a4a3bfd3a297a9f03d0d7342dd665bff21e721536aa8b1687",
+          "bytes": 3736
+        }
+      ],
+      "crash": {
+        "incident_id": "309A5776-D422-4C75-A9CF-86548F9FADDD",
+        "procName": "backboardd",
+        "pid": 66271,
+        "procLaunch": "2026-11-05 01:09:48.1947 -0300",
+        "parentProc": "launchd_sim",
+        "parentPid": 98551,
+        "coalitionName": "com.apple.CoreSimulator.SimDevice.B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "captureTime": "2026-11-05 06:34:05.3038 -0300",
+        "exception": {
+          "codes": "0x0000000000000000, 0x0000000000000000",
+          "rawCodes": [
+            0,
+            0
+          ],
+          "type": "EXC_CRASH",
+          "signal": "SIGABRT"
+        },
+        "host_osVersion_from_ips": {
+          "train": "macOS 27.2",
+          "build": "26B123",
+          "releaseType": "User"
+        },
+        "faultingThread_index": 2,
+        "faultingThread_name": "com.apple.coreanimation.display.primary",
+        "frame_count": 72,
+        "normalized_frames_sha256": "5af56aaab10ae056f7a8d76f85cad3c6597c0c051dac62353e305b5ad31fa20d",
+        "normalization_fields": [
+          "image name",
+          "image UUID",
+          "symbol",
+          "imageOffset",
+          "symbolLocation"
+        ],
+        "stack_family_symbols": [
+          "MTLReportFailure.cold.1",
+          "MTLReportFailure",
+          "_MTLMessageContextEndNewNSErrorOrAbort(_MTLMessageContext*, bool, NSString*, unsigned long)",
+          "-[MTLTextureDescriptorInternal validateWithDevice:]",
+          "-[MTLSimDevice newTextureWithDescriptor:]",
+          "CA::OGL::MetalContext::create_surface_with_properties(int, CA::Bounds const&, unsigned int, CA::OGL::Context::SurfaceProperties const&, __CFString const*)",
+          "CA::OGL::FlattenNode::retain_surface(float&, unsigned int)"
+        ],
+        "attribution": "Service-process abort; no submitting app/layer/caller established by this stack."
+      },
+      "harness_source": "0732f74f1483bdccdc6c40abd9670bf00d45822a",
+      "artifact_result_classification": "INFRA_ABORT / no functional qualification"
+    },
+    {
+      "id": "ios-focus-beta-b9bd-e2e-008",
+      "kind": "native_control",
+      "started": "2026-11-05T02:14:16.867016+00:00",
+      "native_execution_gate": "NATIVE_PASS",
+      "qualification_gate": "PARTIAL",
+      "selected_tests": [
+        "EditorEndToEndTests/DestinationExportEndToEndTests/testSaveAsChoosesARealFilesDestinationAndReopensTheExport"
+      ],
+      "cohort": {
+        "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "name": "Logisim SaveAs Beta iPad 27.0",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "b9bd71ae49e562661ee114b248e342a02ed29508",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "SystemOpen warm + distinct cold + saved destination",
+        "system_open_log_entries": [
+          {
+            "line": 33,
+            "text": "    t =     4.87s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/3e2abb693068/warm.circ"
+          },
+          {
+            "line": 688,
+            "text": "    t =    99.47s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/3e2abb693068/cold.circ"
+          },
+          {
+            "line": 774,
+            "text": "    t =   117.97s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/3e2abb693068/IOS-E2E-3e2abb693068-warm.circ"
+          }
+        ],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-008/results.json",
+          "role": "retained runner results",
+          "sha256": "02008397085a1f4ec18dd1979646190fc5c2468606f78f60a581765337e96c5e",
+          "bytes": 26815
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-focus-beta-b9bd-e2e-008/test.log",
+          "role": "retained XCTest log",
+          "sha256": "ec6cc2246c5e594035ad229e7885d9ca38fe75971a9472e346b887691726bba1",
+          "bytes": 85789
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/docs/validation/ios-beta-saveas-008.json",
+          "role": "final SaveAs008 receipt",
+          "sha256": "98854b0a614856ee5b063785c35c769a2abb45591753b6ea18ab95c1f121f06f",
+          "bytes": 6674
+        }
+      ],
+      "crash": null,
+      "status": "PASS",
+      "duration_seconds": 215.584,
+      "control_limit": "One selected case; suite PARTIAL. Same Beta fingerprint as EFC004/005, different cohort/history; not a controlled single-variable A/B."
+    },
+    {
+      "id": "uikit-document-control-001",
+      "kind": "native_control",
+      "status": "PASS",
+      "duration_seconds": 11.247,
+      "test": "DocumentControlTests/testSystemOpenExistingCircIntoUIKitConsumer",
+      "cohort": {
+        "udid": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+        "name": "LogisimUIKitDocumentControl",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "model_identifier": "iPad17,2",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "cohort.json and xcresult summary.json"
+      },
+      "app": {
+        "source": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+        "bundle_id": "thalesmms.logisim.validation.documentconsumer",
+        "bundle_tree_sha256": "33781915e6fc0121ab0756672a8d917f80f04d7593f7c45b3a1471111f13a458",
+        "main_family": "UIKitDocumentConsumer, separate test app; product not installed",
+        "renderer": "UIKit only; no Compose/Skiko/custom Metal app source/direct Metal framework link",
+        "renderer_evidence": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/artifact.json"
+      },
+      "transition": {
+        "classification": "SystemOpen one still-existing own-Documents circ",
+        "system_open_log_entries": [
+          {
+            "line": 43,
+            "text": "    t =     8.51s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Data/Application/3B620057-379A-47E4-947A-A959FBF9C70A/Documents/LogisimE2E/UIKitDocumentControl/missing-external.circ"
+          }
+        ],
+        "receive_phase": "willConnect",
+        "fixture_sha256": "8a41b55f3745d2fabb2ea2d0b52b6b1237aaabe49cffebec1423faf26099eeed"
+      },
+      "scene_window": {
+        "observed_scene_count": 2,
+        "observed_scene_ids": [
+          "A5822B8C-7296-496E-8B21-72E969105213",
+          "BEBD92D5-45E4-4C7C-97F7-DFA56738A365"
+        ],
+        "scene_count_basis": "Distinct IDs in retained lifecycle events, not connected/active scene census",
+        "observed_window_count": null,
+        "unknown_reason": "No explicit runtime window cardinality exported."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN"
+      },
+      "backboardd_control": {
+        "before_pid": 83449,
+        "after_pid": 83449,
+        "matching_cohort_ips_after": [],
+        "scope": "Retained bounded control observations, not global absence proof."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/artifact.json",
+          "role": "retained UIKit control artifact.json",
+          "sha256": "cf36f1bcbaedeb2bcfb9d104166bd04a54cd42e8a22827d5b422751d4eff2704",
+          "bytes": 4865
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/cohort.json",
+          "role": "retained UIKit control cohort.json",
+          "sha256": "8a83e0e55672d7663c5f81052a2e9a79485446f159f4eab21c51abfa3555547e",
+          "bytes": 840
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/summary.json",
+          "role": "retained UIKit control summary.json",
+          "sha256": "83a9d006a9ed4701c32542f52c55ff1dd2fb5f149f530dc065f52a51ef17a235",
+          "bytes": 1187
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/consumer-events-after.json",
+          "role": "retained UIKit control consumer-events-after.json",
+          "sha256": "b42fba0725fccbd9378d2a21e3d61e4dbd6c9156df9eda011fdb649415060c2c",
+          "bytes": 2452
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/preflight.json",
+          "role": "retained UIKit control preflight.json",
+          "sha256": "d2a2d69a33d93005e004c21c2e535971ab11509f446175ad9bd87b51a65f4267",
+          "bytes": 1158
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/postflight.json",
+          "role": "retained UIKit control postflight.json",
+          "sha256": "236d1215d54451afba5c9b3c0832b3f31ab40376ec0946fd69ee90fd69992747",
+          "bytes": 316
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/test.log",
+          "role": "retained UIKit control test.log",
+          "sha256": "49285e541a8fb3efbf2749e265c9081764fd75cb28a63034935a4113575e3b14",
+          "bytes": 8198
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/outputs/uikit-document-control-001/UIKitDocumentConsumer-linkage.txt",
+          "role": "retained UIKit control UIKitDocumentConsumer-linkage.txt",
+          "sha256": "5ac23b63506d5f5f68f4e07e3bbf08c47e03943bde321ee22984b97c53058177",
+          "bytes": 2301
+        }
+      ],
+      "source_evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/scripts/ios_uikit_document_control/ControlApp.swift",
+          "git_source": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+          "sha256": "eac1b5550691b40c02e60dc2a4d9c912d8564b826daa741117b360dc1e057b15"
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/scripts/ios_uikit_document_control/DocumentControlTests.swift",
+          "git_source": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+          "sha256": "5210c37d113044d8fdd18245f434d8da933920e0b78dc2fb7a8b74f58cdeb8f9"
+        }
+      ],
+      "crash": null,
+      "control_limit": "Same iPad model/runtime and fixture as prior product interruption, but different app/renderer and new cohort; no exclusive cause established."
+    },
+    {
+      "id": "ios-final-6cef-inspector-phone-005",
+      "kind": "native_control",
+      "started": "2026-11-05T05:05:34.007895+00:00",
+      "native_execution_gate": "NATIVE_PASS",
+      "qualification_gate": "PARTIAL",
+      "selected_tests": [
+        "EditorEndToEndTests/InspectorEndToEndTests/testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction"
+      ],
+      "cohort": {
+        "udid": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+        "name": "iPhone 17e",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "Files Import Copy picker setup",
+        "system_open_log_entries": [],
+        "import_copy_log_entries": [
+          {
+            "line": 92,
+            "text": "    t =    15.30s Tap \"Import a copy\" Button"
+          }
+        ],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-dev/docs/validation/artifacts/ios-inspector-phone005-pass/results.json",
+          "role": "retained runner results",
+          "sha256": "ba642ba87a90876d595ffa4f1ac81cb8797461cf0df106120e2f4adeaeb0bda0",
+          "bytes": 27357
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-dev/docs/validation/artifacts/ios-inspector-phone005-pass/test.log",
+          "role": "retained XCTest log",
+          "sha256": "230bf4bc1077241df72c3051bb3f6c4985ea4ee165965425f1ab5ae7b72e294c",
+          "bytes": 141146
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-dev/docs/validation/ios-inspector-phone005-pass.json",
+          "role": "final Phone005 Inspector receipt",
+          "sha256": "d2a8148a8132966fae115cc79b516a564f600d6add1d6a4395894dad38ca39ff",
+          "bytes": 3492
+        }
+      ],
+      "crash": null,
+      "status": "PASS",
+      "duration_seconds": 173.818,
+      "control_limit": "Selected case PASS only; no SystemOpen route qualification and no global compositor-stability claim."
+    },
+    {
+      "id": "ios-ce3-missing-files-phone-001",
+      "kind": "native_control",
+      "started": "2026-11-05T06:21:04.642111+00:00",
+      "native_execution_gate": "NATIVE_PASS",
+      "qualification_gate": "PARTIAL",
+      "selected_tests": [
+        "EditorEndToEndTests/FilesEndToEndTests/testMissingExternalDocumentReportsFailureAndPreservesProject"
+      ],
+      "cohort": {
+        "udid": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+        "name": "iPhone 17e",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "f392420c7f33834a7cf851b643bca64011fd62a7f7d49cfee760e7ad6dcc911f",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "Files Import Copy picker setup",
+        "system_open_log_entries": [],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-missing-ce3-pass-receipt/docs/validation/artifacts/ios-missing-file-selected-runs/ce3-pass/results.json",
+          "role": "retained runner results",
+          "sha256": "16008352f0cddeb5c04d3c4ba4a66631551edfea0bbf8f560e0dbe7fafa112ac",
+          "bytes": 27350
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-missing-ce3-pass-receipt/docs/validation/artifacts/ios-missing-file-selected-runs/ce3-pass/test.log",
+          "role": "retained XCTest log",
+          "sha256": "a491e804a0b664f6ad898981ba9ff337915c9f2d71ea516480f9d4d2ea0b69e2",
+          "bytes": 69391
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-missing-ce3-pass-receipt/docs/validation/ios-missing-file-selected-runs.json",
+          "role": "final selected Missing Files receipt",
+          "sha256": "10ed14910449724d28868622dfa81052a5110e74360619c29fab3f4150839ea2",
+          "bytes": 10515
+        }
+      ],
+      "crash": null,
+      "status": "PASS",
+      "duration_seconds": 169.212,
+      "control_limit": "Selected case PASS only; source/device differ from6cef B25 failure, not a controlled A/B."
+    },
+    {
+      "id": "ios-final-6cef-missing-files-001",
+      "kind": "native_control",
+      "started": "2026-11-05T05:21:10.540724+00:00",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "FAIL",
+      "selected_tests": [
+        "EditorEndToEndTests/FilesEndToEndTests/testMissingExternalDocumentReportsFailureAndPreservesProject"
+      ],
+      "cohort": {
+        "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "name": "Logisim SaveAs Beta iPad 27.0",
+        "device_type": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "runtime_identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "runtime_build": "24A434",
+        "runtime_build_evidence": "Runtime cryptex path in retained XCTest log",
+        "model_identifier": null
+      },
+      "app": {
+        "source": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+        "main_family": "LogisimMain",
+        "renderer": null,
+        "renderer_evidence": "UNKNOWN_FROM_RUN; parent source review may bind renderer to the pinned app source."
+      },
+      "transition": {
+        "classification": "Files Import Copy picker setup reached contextual-error guard",
+        "system_open_log_entries": [],
+        "import_copy_log_entries": [],
+        "phase_at_interrupt": null
+      },
+      "scene_window": {
+        "observed_scene_count": null,
+        "observed_window_count": null,
+        "unknown_reason": "No explicit scene/window cardinality exported in reviewed receipts; an admission/query is not a count."
+      },
+      "recording": {
+        "enabled": null,
+        "evidence": "UNKNOWN; no inference from absence of a video file."
+      },
+      "evidence": [
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-missing-ce3-pass-receipt/docs/validation/artifacts/ios-missing-file-selected-runs/6cef-fail/results.json",
+          "role": "retained runner results",
+          "sha256": "09c9e648a4afd82f23d23e3a61049c61c4630f469ffa9c74faf96d0fad74ad7f",
+          "bytes": 27389
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-missing-ce3-pass-receipt/docs/validation/artifacts/ios-missing-file-selected-runs/6cef-fail/test.log",
+          "role": "retained XCTest log",
+          "sha256": "b4d201cf0ad3cf2f786fac011f15bc352025abee25aaea3154780c04a130e634",
+          "bytes": 56248
+        },
+        {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-missing-ce3-pass-receipt/docs/validation/ios-missing-file-selected-runs.json",
+          "role": "selected Missing Files comparative receipt",
+          "sha256": "10ed14910449724d28868622dfa81052a5110e74360619c29fab3f4150839ea2",
+          "bytes": 10515
+        }
+      ],
+      "crash": null,
+      "status": "FAIL",
+      "artifact_result_classification": "Functional guard failure, not a documented backboardd abort",
+      "control_limit": "No service abort is established by this receipt; do not convert functional FAIL into PASS or absence of all infrastructure faults."
+    }
+  ],
+  "actor_continuity": {
+    "cohort": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "old_abort_pid": 98576,
+    "replacement_pid": 66271,
+    "replacement_spawn_observed": "2026-11-05 01:09:48.196 -0300",
+    "later_abort_pid": 66271,
+    "later_procLaunch": "2026-11-05 01:09:48.1947 -0300",
+    "later_captureTime": "2026-11-05 06:34:05.3038 -0300",
+    "evidence": [
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-a-4ab8-missing-001/receipt-draft/interruption-receipt-draft.json",
+        "role": "retained actor respawn timeline (draft metadata backed by bounded-log excerpts)",
+        "sha256": "c9bbf75bef81a6b645d0055668b88c43c3cde787340b5b8d1ed9178f531628ec",
+        "bytes": 4141
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-a-4ab8-missing-001/receipt-draft/metal-respawn-extract.txt",
+        "role": "retained bounded-log Metal/respawn excerpts",
+        "sha256": "ae233fbe5d8844a6b96d8ee2e02705d3be68d61ad4bdc635e65201b72e371b87",
+        "bytes": 6069
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/triage/backboardd-2026-11-05-063406.ips",
+        "role": "later service actor identity",
+        "sha256": "aced38010f4bf47f23d72c9ee8642d8bc42d39bcff22656955de15960fe7596e",
+        "bytes": 38031
+      }
+    ],
+    "limit": "Actor continuity in the same cohort, not a trigger or exclusive-cause claim."
+  },
+  "summary": {
+    "service_abort_incidents": 5,
+    "crash_processes": [
+      "backboardd"
+    ],
+    "crash_cohorts": [
+      "EFC1402B-5511-40D9-8A21-359172F886AB",
+      "B25F12A5-62D8-4E9E-964E-96519DB6FB69"
+    ],
+    "positive_controls": 4,
+    "extra_functional_failure_context": 1,
+    "all_crash_ips_host_os": "macOS27.2 build26B123; this field is host OS, not target iOS runtime.",
+    "historical_runtime_build": "24A434 evidenced independently in retained XCTest runtime paths; UIKit summary/cohort records it explicitly."
+  },
+  "limits": [
+    "This is a selected retained corpus, not an exhaustive crash rate or population denominator.",
+    "No live device/simulator logs or file containers were read. All pointers are repo/worktree retained files.",
+    "Renderer of Logisim Main pins is intentionally null for parent pinned-source audit; UIKit renderer scope is explicitly recorded by its separate artifact.",
+    "Null cardinality/recording fields are unknown, not zero or disabled.",
+    "Do not promote old failures or reattribute passing controls to later app sources."
+  ]
+}

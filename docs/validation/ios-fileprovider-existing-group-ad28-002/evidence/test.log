@@ -1,0 +1,158 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-diagnostic-ad28-001/harness/LogisimFileProviderBootstrap.xcodeproj -scheme FixtureBootstrap -destination "platform=iOS Simulator,id=AD28C68F-21D3-4FA6-BCD7-383AE2A1D372" -derivedDataPath /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-diagnostic-ad28-001/DerivedData CODE_SIGNING_ALLOWED=NO test-without-building -parallel-testing-enabled NO -collect-test-diagnostics never -test-timeouts-enabled YES -default-test-execution-time-allowance 240 -resultBundlePath /Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-existing-group-ad28-002/bootstrap.xcresult "-only-testing:FileProviderBootstrapTests/FileProviderBootstrapTests/testPrepareRegisterAndInspectFixtureDomain"
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-existing-group-ad28-002/bootstrap.xcresult
+
+2026-11-05 04:27:38.703642-0300 FileProviderBootstrapTests-Runner[86968:9988310] [Default] Running tests...
+2026-11-05 04:27:38.753931-0300 FileProviderBootstrapTests-Runner[86968:9988310] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-11-05 04:27:41.082.
+Test Suite 'FileProviderBootstrapTests.xctest' started at 2026-11-05 04:27:41.082.
+Test Suite 'FileProviderBootstrapTests' started at 2026-11-05 04:27:41.083.
+Test Case '-[FileProviderBootstrapTests.FileProviderBootstrapTests testPrepareRegisterAndInspectFixtureDomain]' started.
+    t =     0.00s Start Test at 2026-11-05 04:27:41.085
+    t =     0.02s Set Up
+    t =     0.03s Added attachment named 'provided-signed-fixture-provenance'
+    t =     0.03s Open thalesmms.logisim.validation.revocationfixture
+    t =     0.03s     Launch thalesmms.logisim.validation.revocationfixture
+    t =     0.05s         Setting up automation session
+objc[86968]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x110d28310) and /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x110cdc398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     1.88s         Wait for thalesmms.logisim.validation.revocationfixture to idle
+    t =     3.33s Wait for thalesmms.logisim.validation.revocationfixture to become Running Foreground
+    t =     3.33s Waiting 10.0s for "fixture.evidence" TextView to exist
+    t =     4.39s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.evidence" TextView`
+    t =     4.39s         Checking existence of `"fixture.evidence" TextView`
+    t =     4.45s Get number of matches for: Elements matching predicate '"fixture.evidence" IN identifiers'
+    t =     4.48s Find the "fixture.evidence" TextView
+    t =     4.49s Checking existence of `"fixture.evidence" TextView`
+    t =     4.49s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =     4.51s Find the "fixture.evidence" TextView
+    t =     5.61s Checking `Expect predicate `BLOCKPREDICATE(0x108789950)` for object Application 'thalesmms.logisim.validation.revocationfixture'`
+    t =     5.61s     Find the "fixture.evidence" TextView
+    t =     5.64s Find the "fixture.evidence" TextView
+    t =     5.67s Find the "fixture.evidence" TextView
+    t =     5.70s Find the "fixture.status" StaticText
+    t =     5.72s Find the "fixture.evidence" TextView
+    t =     5.74s Added attachment named 'baseline-public-evidence'
+    t =     5.74s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =     5.87s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =     5.90s Added attachment named 'baseline-tree'
+    t =     5.90s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =     6.01s Added attachment named 'baseline'
+    t =     6.01s Waiting 5.0s for "fixture.prepare" Button to exist
+    t =     7.07s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.prepare" Button`
+    t =     7.07s         Checking existence of `"fixture.prepare" Button`
+    t =     7.08s Get number of matches for: Elements matching predicate '"fixture.prepare" IN identifiers'
+    t =     7.10s Find the "fixture.prepare" Button
+    t =     7.11s Checking existence of `"fixture.prepare" Button`
+    t =     7.12s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =     7.13s Find the "fixture.prepare" Button
+    t =     8.20s Checking `Expect predicate `BLOCKPREDICATE(0x10878b300)` for object Application 'thalesmms.logisim.validation.revocationfixture'`
+    t =     8.21s     Find the "fixture.prepare" Button
+    t =     8.22s Find the "fixture.status" StaticText
+    t =     8.24s Find the "fixture.evidence" TextView
+    t =     8.27s Added attachment named 'before-fixture.prepare-public-evidence'
+    t =     8.27s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =     8.39s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =     8.43s Added attachment named 'before-fixture.prepare-tree'
+    t =     8.43s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =     8.53s Added attachment named 'before-fixture.prepare'
+    t =     8.53s Tap "fixture.prepare" Button
+    t =     8.53s     Wait for thalesmms.logisim.validation.revocationfixture to idle
+    t =     8.53s     Find the "fixture.prepare" Button
+    t =     8.54s     Check for interrupting elements affecting "fixture.prepare" Button
+    t =     8.56s         Wait for com.apple.springboard to idle
+    t =     8.57s     Synthesize event
+    t =     8.87s     Wait for thalesmms.logisim.validation.revocationfixture to idle
+    t =     9.94s Checking `Expect predicate `BLOCKPREDICATE(0x108789680)` for object Application 'thalesmms.logisim.validation.revocationfixture'`
+    t =     9.94s     Find the "fixture.prepare" Button
+    t =     9.99s     Find the "fixture.status" StaticText
+    t =    10.02s     Find the "fixture.status" StaticText
+    t =    10.04s Find the "fixture.status" StaticText
+    t =    11.12s Checking `Expect predicate `BLOCKPREDICATE(0x10878b4e0)` for object Application 'thalesmms.logisim.validation.revocationfixture'`
+    t =    11.12s     Find the "fixture.status" StaticText
+    t =    11.15s     Find the "fixture.evidence" TextView
+    t =    11.17s Find the "fixture.status" StaticText
+    t =    11.20s Find the "fixture.evidence" TextView
+    t =    11.22s Find the "fixture.status" StaticText
+    t =    11.24s Find the "fixture.evidence" TextView
+    t =    11.26s Added attachment named 'prepared-public-evidence'
+    t =    11.26s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    11.39s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    11.43s Added attachment named 'prepared-tree'
+    t =    11.43s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =    11.53s Added attachment named 'prepared'
+    t =    11.53s Waiting 5.0s for "fixture.domain.add" Button to exist
+    t =    12.59s     Checking `Expect predicate `existsNoRetry == 1` for object "fixture.domain.add" Button`
+    t =    12.59s         Checking existence of `"fixture.domain.add" Button`
+    t =    12.61s Get number of matches for: Elements matching predicate '"fixture.domain.add" IN identifiers'
+    t =    12.65s Find the "fixture.domain.add" Button
+    t =    12.66s Checking existence of `"fixture.domain.add" Button`
+    t =    12.66s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =    12.68s Find the "fixture.domain.add" Button
+    t =    13.74s Checking `Expect predicate `BLOCKPREDICATE(0x1086e4a20)` for object Application 'thalesmms.logisim.validation.revocationfixture'`
+    t =    13.74s     Find the "fixture.domain.add" Button
+    t =    13.76s Find the "fixture.status" StaticText
+    t =    13.79s Find the "fixture.evidence" TextView
+    t =    13.81s Added attachment named 'before-fixture.domain.add-public-evidence'
+    t =    13.81s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    13.95s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    13.99s Added attachment named 'before-fixture.domain.add-tree'
+    t =    13.99s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =    14.09s Added attachment named 'before-fixture.domain.add'
+    t =    14.09s Tap "fixture.domain.add" Button
+    t =    14.09s     Wait for thalesmms.logisim.validation.revocationfixture to idle
+    t =    14.09s     Find the "fixture.domain.add" Button
+    t =    14.10s     Check for interrupting elements affecting "fixture.domain.add" Button
+    t =    14.12s         Wait for com.apple.springboard to idle
+    t =    14.13s     Synthesize event
+    t =    14.43s     Wait for thalesmms.logisim.validation.revocationfixture to idle
+    t =    15.51s Checking `Expect predicate `BLOCKPREDICATE(0x1086e5f20)` for object Application 'thalesmms.logisim.validation.revocationfixture'`
+    t =    15.51s     Find the "fixture.domain.add" Button
+    t =    15.57s     Find the "fixture.status" StaticText
+    t =    15.60s Find the "fixture.status" StaticText
+    t =    15.63s Find the "fixture.status" StaticText
+    t =    15.66s Find the "fixture.evidence" TextView
+    t =    15.69s Added attachment named 'operation-failed-public-evidence'
+    t =    15.69s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    15.86s Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    15.91s Added attachment named 'operation-failed-tree'
+    t =    15.91s Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =    16.01s Added attachment named 'operation-failed'
+    t =    16.01s Find the "fixture.status" StaticText
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-diagnostic-ad28-001/harness/FileProviderBootstrapTests.swift:156: error: -[FileProviderBootstrapTests.FileProviderBootstrapTests testPrepareRegisterAndInspectFixtureDomain] : failed - Operation failed: NSFileProviderErrorDomain / -2001
+The application cannot be used right now.
+Native scenario: NOT_RUN.
+    t =    16.07s Tear Down
+    t =    16.07s     Find the "fixture.status" StaticText
+    t =    16.10s     Find the "fixture.evidence" TextView
+    t =    16.14s     Added attachment named 'terminal-public-evidence'
+    t =    16.14s     Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    16.31s     Requesting snapshot of accessibility hierarchy for app with pid 86977
+    t =    16.36s     Added attachment named 'terminal-tree'
+    t =    16.36s     Find the Application 'thalesmms.logisim.validation.revocationfixture'
+    t =    16.45s     Added attachment named 'terminal'
+Test Case '-[FileProviderBootstrapTests.FileProviderBootstrapTests testPrepareRegisterAndInspectFixtureDomain]' failed (16.731 seconds).
+Test Suite 'FileProviderBootstrapTests' failed at 2026-11-05 04:27:57.817.
+	 Executed 1 test, with 1 failure (0 unexpected) in 16.731 (16.735) seconds
+Test Suite 'FileProviderBootstrapTests.xctest' failed at 2026-11-05 04:27:57.818.
+	 Executed 1 test, with 1 failure (0 unexpected) in 16.731 (16.735) seconds
+Test Suite 'Selected tests' failed at 2026-11-05 04:27:57.818.
+	 Executed 1 test, with 1 failure (0 unexpected) in 16.731 (16.736) seconds
+2026-11-05 04:27:58.132 xcodebuild[86961:9988093] [MT] IDETestOperationsObserverDebug: 20.505 elapsed -- Testing started completed.
+2026-11-05 04:27:58.133 xcodebuild[86961:9988093] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-05 04:27:58.133 xcodebuild[86961:9988093] [MT] IDETestOperationsObserverDebug: 20.505 sec, +20.505 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-provider-existing-group-ad28-002/bootstrap.xcresult
+
+Failing tests:
+	FileProviderBootstrapTests.testPrepareRegisterAndInspectFixtureDomain()
+
+** TEST EXECUTE FAILED **
+
+Testing started

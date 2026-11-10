@@ -1,0 +1,74 @@
+{
+  "reviewer": "/root/accessibility28/grpc_discovery_sources",
+  "completed_utc": "2026-11-05T10:17:00.065678+00:00",
+  "scope": "Offline source and synthetic-client review only; no discovery invocation, network, RPC, device, credential or environment-value inspection",
+  "result": "PASS_PREPARATION_ONLY_WITH_RUNTIME_LIMITS",
+  "files": {
+    "getter-status.mjs": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-grpc-getter-prepared-001/getter-status.mjs",
+      "bytes": 7635,
+      "sha256": "0e42a24f2007170f53bc8c9c98c2267e126f3fe496a609af7b35c4faa47d1927"
+    },
+    "getter-status.test.mjs": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-grpc-getter-prepared-001/getter-status.test.mjs",
+      "bytes": 5929,
+      "sha256": "5de117c7406fd7b0e357bea8460208881c9044010786882315049a0cf69b979e"
+    },
+    "controller.pb": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-grpc-getter-prepared-001/controller.pb",
+      "bytes": 17471,
+      "sha256": "c252221fa860ad424bfcb98228ddd9d423f9e4a6ec98e5397a0a8c1d64dc1489"
+    }
+  },
+  "suite": {
+    "command": "node --test docs/validation/accessibility-reader-3a0a01f1/android-grpc-getter-prepared-001/getter-status.test.mjs",
+    "tests": 11,
+    "pass": 11,
+    "fail": 0,
+    "skipped": 0
+  },
+  "additional_checks": [
+    {
+      "case": "late NODE_DEBUG clear does not disable startup HTTP2 debug",
+      "result": "REPRODUCED_OFFLINE_BEFORE_FIX",
+      "secret": "synthetic marker only"
+    },
+    {
+      "case": "exported raw transport bypasses endpoint gate",
+      "result": "REPRODUCED_WITH_FAKE_CONNECT_BEFORE_FIX",
+      "network_calls": 0
+    },
+    {
+      "case": "real frozen descriptor decodes synthetic version37.1.11.0 uptime123 bootedtrue",
+      "result": "PASS",
+      "rpc_calls": 0
+    },
+    {
+      "case": "default transport with entirely fake HTTP2 connection: success, grpc-status16 and timer deadline",
+      "result": "3_PASS",
+      "closed_connection_each": true,
+      "destroyed_request_each": true,
+      "cleared_timer_each": true,
+      "network_calls": 0
+    },
+    {
+      "case": "pending credential loader",
+      "result": "Unbounded by helper; source awaits loader without timeout; 30ms offline demonstration remained pending",
+      "network_calls": 0
+    }
+  ],
+  "accepted_fixes": [
+    "HTTP2 debug enabled check precedes credential loader and blocks with zero calls",
+    "raw HTTP2 transport no longer exported",
+    "descriptor SHA checked before decoder",
+    "literal payload decoder test added"
+  ],
+  "remaining_limits": [
+    "No active gRPC endpoint was proved by this review; coordinator reports console KO, so no credential load or RPC is justified.",
+    "The credential loader has no helper-level deadline. A future concrete loader or outer driver must bound it.",
+    "No live HTTP2 handshake, server authentication, actual gRPC response, cancellation under real I/O or kernel/reader input was tested.",
+    "Proof is trusted in-process metadata, not an unforgeable security token; the future driver must obtain a fresh discoverEndpoint result rather than fabricate or reuse fixture data."
+  ],
+  "runtime_authorized": false,
+  "production_changed": false
+}

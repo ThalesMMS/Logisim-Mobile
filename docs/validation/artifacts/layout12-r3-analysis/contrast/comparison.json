@@ -1,0 +1,182 @@
+{
+  "scope": "Offline comparison of existing immutable producer artifacts. No device/getter/ADB/build/native action; no source or producer edits.",
+  "paths": {
+    "layout": "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/outputs/layout12-small-phone-font1-5558-003",
+    "keyboard": "/Users/thales/GitHub/logisim-mobile-worktrees/android-keyboard-visible-label-fix/outputs/3a-keyboard-5c-helper-r2",
+    "keyboardReceipt": "/Users/thales/GitHub/logisim-mobile-worktrees/android-keyboard-r2-evidence/docs/validation/android-io-keyboard-3a0a01f1-r2/receipt.json"
+  },
+  "same": {
+    "appSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "appSha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973",
+    "testSha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b",
+    "helperSha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c",
+    "deviceFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+    "clientSha256": "8afbbc3514a2dcc33939f4c7a4bc9ec1674b54c2eb4610a5764336238057a634"
+  },
+  "different": {
+    "serials": {
+      "layout": "emulator-5558",
+      "keyboard": "emulator-5556"
+    },
+    "harnessPins": {
+      "layout": "68a3138307638dad928b184a0d3ec30c8eb30ead",
+      "keyboard": "b56aa75e776477833cc038f8d6cb5ea28d1f598d"
+    },
+    "layoutConfigured": {
+      "name": "applied-configuration",
+      "logicalOrientation": "portrait",
+      "userRotation": 0,
+      "expectedDisplayDp": [
+        320,
+        568
+      ],
+      "fontScale": 1.0,
+      "observedDisplay": {
+        "display_px": [
+          320,
+          568
+        ],
+        "display_dp": [
+          320.0,
+          568.0
+        ],
+        "density": 160,
+        "font_scale": 1.0
+      },
+      "displayMode": "simulated-small-phone"
+    },
+    "keyboardPhysicalSize": "Physical size: 1080x2400",
+    "keyboardDensity": "Physical density: 420",
+    "keyboardExplicitFontScale": "NOT_RECORDED; do not claim a controlled font1 configuration.",
+    "systemLocalesManifest": {
+      "layout": "null",
+      "keyboard": "en-US"
+    }
+  },
+  "acquisition": {
+    "layout": {
+      "sdkArtifactCount": 0,
+      "failurePath": "CLI _screen_uiautomator after Read copied XML; wait_editor remaining deadline 1.147873832989717s at terminal call.",
+      "typedROOT": "Not observed or exercised; SDK branch was not active before failed baseline.",
+      "retainedCliPollCount": "Not reconstructable. CLI transport deletes remote temporary dumps and does not retain every stdout/status/root.",
+      "deadlineLimit": "Terminal remaining timeout does not mean the whole30-second wait had no roots. Earlier successful roots/reports may have consumed the caller budget; those polls are not retained."
+    },
+    "keyboard": {
+      "sdkCaptures": 26,
+      "stateCounts": {
+        "COMPLETE": 26
+      },
+      "sourceCounts": {
+        "active-window": 25,
+        "window-active": 1
+      },
+      "uniqueNonces": 26,
+      "pidPairs": [
+        [
+          "25265",
+          "25265"
+        ]
+      ],
+      "rootIdCount": 26,
+      "focusedEditTextSnapshots": 18,
+      "lastSdkCapture": {
+        "sequence": 26,
+        "status": "complete",
+        "state": "COMPLETE",
+        "rootSource": "active-window",
+        "windowId": "30930",
+        "appPidBefore": "25265",
+        "appPidAfter": "25265",
+        "uptime": "52328511",
+        "captureMillis": "121",
+        "rootWaitMillis": "34",
+        "rootAttempts": "2",
+        "fields": [],
+        "nodeCount": "164",
+        "rootPackages": [
+          "thalesmms.logisim.mobile.e2e"
+        ]
+      },
+      "captureInternalMillisRange": [
+        28,
+        378
+      ],
+      "rootWaitInternalMillisRange": [
+        2,
+        330
+      ],
+      "timingLimit": "Internal metadata only, not full invocation or user-perceived latency.",
+      "retainedCliPollCount": "Not reconstructable.",
+      "baselineBeforeInputText": {
+        "path": "io-baseline.circ",
+        "bytes": 21971,
+        "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+        "components": 54,
+        "wireSegments": 64,
+        "sourceSequence": "Selected keyboard-tty text() calls fresh()/baseline export before enter_keyboard()/first input_text. Acquisition starts inactive; CLI phase success is supported by source order and actual complete baseline, but individual polls and foreground roots are not recorded."
+      }
+    }
+  },
+  "screenshotObservations": [
+    {
+      "producer": "layout",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/outputs/layout12-small-phone-font1-5558-003/run/import-report-3.png",
+      "sha256": "8b1b1200fdf4f1fcc42c6ad2590f0febd4e8b3c2199cb912a46acd7694d21de7",
+      "dimensions": [
+        320,
+        568
+      ]
+    },
+    {
+      "producer": "layout",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/outputs/layout12-small-phone-font1-5558-003/run/layout12-001-window-before-layout.png",
+      "sha256": "f7f69f320abbcb52881c6e8f263bedcfd9787c1ced144d1d4f3bdd6fcfab1622",
+      "dimensions": [
+        1080,
+        2400
+      ]
+    },
+    {
+      "producer": "layout",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/outputs/layout12-small-phone-font1-5558-003/run/failure.png",
+      "sha256": "e77b34fcab53bc3f37a18a6a8f7225a2f706edb5fd7f5972556ec0ce4d09f1a7",
+      "dimensions": [
+        1080,
+        2400
+      ]
+    },
+    {
+      "producer": "keyboard",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-keyboard-visible-label-fix/outputs/3a-keyboard-5c-helper-r2/import-report-2.png",
+      "sha256": "dc7fe71d5e577a25072918e57642ee02fc52e90e3cc03b89ea3caf11e412fbe9",
+      "dimensions": [
+        1080,
+        2400
+      ]
+    },
+    {
+      "producer": "keyboard",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-keyboard-visible-label-fix/outputs/3a-keyboard-5c-helper-r2/io-keyboard-capacity.png",
+      "sha256": "233c64f220f60f8bbc04c7017147193a36c5eefd2400cc4622fe77665a4a1fe5",
+      "dimensions": [
+        1080,
+        2400
+      ]
+    }
+  ],
+  "limits": [
+    "Different devices and widths, different fixtures and phases, Keyboard font not controlled; this is not a matched transport/performance experiment.",
+    "No retained receiver clipboard XML or full post-Read acquisition timeline in LayoutR3. App-only private archives do not establish absence of the .test receiver file on device.",
+    "Layout final screenshots are1080x2400 after restoration; they do not prove the modal present during the failed320px readiness interval.",
+    "No cause assigned to product, Android, receiver callback, transport or timing; no adapter/timeout change is justified by this contrast alone."
+  ],
+  "analysisCleanup": {
+    "record": "analysis-cache-cleanup.json",
+    "finalInventory": "producer-final-inventory.json",
+    "nativeFiles": 83,
+    "rawFiles": 80,
+    "apkFiles": 3,
+    "sourceImportOrigin": "NOT_ESTABLISHED",
+    "scope": "Only the explicitly identified post-Native .pyc and then-empty directory were removed; no original producer payload modified."
+  }
+}

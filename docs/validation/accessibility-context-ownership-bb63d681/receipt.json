@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "base_source": "bb63d681afac30197e1db0e3869672b94662acc9",
+  "issue": 28,
+  "status": "PARTIAL",
+  "original_expectations": {
+    "tests": 2,
+    "failures": 2,
+    "production_patch_applied": false
+  },
+  "direct_junit": {
+    "tests": 21,
+    "failures": 0,
+    "new_ownership_tests": 8,
+    "existing_model_tests": 13
+  },
+  "direct_ui_compile": {
+    "status": "PASS",
+    "files": [
+      "App.kt",
+      "CircuitCanvas.kt",
+      "CircuitSemanticOverlay.kt"
+    ]
+  },
+  "source_files": [
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitAccessibilityModel.kt",
+      "sha256": "2643bfc3e6aa55f931cfc9f10671443f742203d304db5a270ad9e9e234744c49"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitAccessibilityTools.kt",
+      "sha256": "ef080d4c8f8e5306cb276c4535e098559756e6067f8513e45a6afe5db23d04e3"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorTools.kt",
+      "sha256": "5506f8ccfc16f3e6b1626dbbe2afd792030ab38bb2b7b3b160137362c2885058"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AccessibleCircuitExplorer.kt",
+      "sha256": "1f47ab956fcfff5cad4217c528b3d8a963e0376b18fd99fd72e16e5c0d78f0aa"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt",
+      "sha256": "be12aa51367565c1c3a93bdd3f3753abe801c8b1e8f8509e3996bd73554af99f"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt",
+      "sha256": "faf7125a49b0d8651359d4ff7ff26c0034e8cf80db6b4facf2f45e64fe63b6bf"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitSemanticOverlay.kt",
+      "sha256": "ccb3a54da6b7a9bc12515010410534a76932958b1bf33341ec9afa4aa75ceecb"
+    },
+    {
+      "path": "composeApp/src/commonTest/kotlin/dev/logisim/mobile/AccessibilityContextOwnershipTest.kt",
+      "sha256": "238278ebdf4511ace132b99eb394a1c47b2205880e04a4e6cc8b67b534ba0c12"
+    },
+    {
+      "path": "composeApp/src/commonTest/kotlin/dev/logisim/mobile/CircuitAccessibilityModelTest.kt",
+      "sha256": "128350c02fd20285e9daa9e1d9fb9f9e03661e90d8dbc56b3377eb9eed7273de"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "red/AccessibilityContextOwnershipTest.kt.txt",
+      "bytes": 2683,
+      "sha256": "a8d9e7dc36cd5afc93f9ae69067c6e708cefbd5a459de63fc453844f6dcae672"
+    },
+    {
+      "path": "red/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "red/junit.log",
+      "bytes": 1800,
+      "sha256": "fb3a7f8225f583934542471fdbbca9298c0c2bb90c9df87094d32dc4d9009431"
+    },
+    {
+      "path": "red/receipt.json",
+      "bytes": 4399,
+      "sha256": "25ccd2573655236fe6811e3777076e9ccde3037e76e6a808331efd71365bd75a"
+    },
+    {
+      "path": "green/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "green/junit.log",
+      "bytes": 71,
+      "sha256": "0333e1e1352675dbb33f4b35f0ee95d81838f3a90c0e9c6ea33284416dbf1bba"
+    },
+    {
+      "path": "green/receipt.json",
+      "bytes": 4874,
+      "sha256": "64adc09223d2093a711e8938579b471df65e2604a9753e6ebc69db567f6b22d5"
+    },
+    {
+      "path": "ui-compile/compile.log",
+      "bytes": 843,
+      "sha256": "aed990e9472e7430809edfe76e452de2801cf2782f11daae8ebf0e663122ba43"
+    },
+    {
+      "path": "ui-compile/receipt.json",
+      "bytes": 4970,
+      "sha256": "49b824a72d468b63ebd292389521a8f3550479a2a9d3b27316cc30bbafdaf79e"
+    }
+  ],
+  "validation_limits": [
+    "Direct Kotlin/JVM compilation and JUnit against copied cached classes, not a Gradle build.",
+    "No application installation, native UI, screen reader, device or simulator actions.",
+    "Existing failing geometry/audit and pending VoiceOver/TalkBack workflows are unchanged."
+  ],
+  "review": {
+    "status": "PASS",
+    "agent": "a11y_actions_review",
+    "scope": "Independent source review only; no build or UI execution."
+  }
+}

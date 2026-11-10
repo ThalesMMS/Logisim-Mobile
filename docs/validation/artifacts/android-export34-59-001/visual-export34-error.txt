@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 1090, in <lambda>
+    scenarios.run("visual-export34", lambda: run_visual_export34(scenarios))
+                                             ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_visual_export34_scenarios.py", line 346, in run_visual_export34
+    png = save_to_downloads(s, base + ".png")
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_visual_export34_scenarios.py", line 135, in save_to_downloads
+    wait_for(lambda: native_documents_field(ui), "DocumentsUI Create Document")
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_visual_export34_scenarios.py", line 35, in wait_for
+    value = probe()
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_visual_export34_scenarios.py", line 135, in <lambda>
+    wait_for(lambda: native_documents_field(ui), "DocumentsUI Create Document")
+                     ~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_visual_export34_scenarios.py", line 128, in native_documents_field
+    return next((n for n in ui.screen().iter("node") if n.get("class") == "android.widget.EditText"
+                            ~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_ui.py", line 84, in screen
+    root = self._screen_instrumentation(max(0.1, deadline - time.monotonic()))
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_ui.py", line 121, in _screen_instrumentation
+    raise AssertionError("Focus snapshot failed: " + values.get("snapshotError", result[-1000:]))
+AssertionError: Focus snapshot failed: IllegalStateException: Accessibility child is unavailable at index 7

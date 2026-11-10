@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0-dev" version="1.0">
+  <lib desc="#Wiring" name="0" />
+  <lib desc="#Gates" name="1" />
+  <main name="IOS-PEER-5f364710641a"/>
+  <circuit name="IOS-PEER-5f364710641a" id="IOS-PEER-5f364710641a">
+    <comp lib="0" loc="(100,100)" name="Pin" logisim-mobile-id="import-1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="PEER_EDIT_5f364710641a"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelloc" val="west"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <comp lib="1" loc="(200,100)" name="NOT Gate" logisim-mobile-id="import-2">
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+      <a name="size" val="30"/>
+      <a name="out" val="01"/>
+      <a name="label" val="E2E_NOT"/>
+    </comp>
+    <comp lib="0" loc="(300,100)" name="Pin" logisim-mobile-id="import-3">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="E2E_OUT"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelloc" val="west"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <wire from="(100,100)" to="(170,100)"/>
+    <wire from="(200,100)" to="(300,100)"/>
+  </circuit>
+</project>

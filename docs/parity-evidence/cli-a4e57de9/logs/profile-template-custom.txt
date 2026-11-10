@@ -1,0 +1,22 @@
+row: cli/user-template
+case: profile-template-custom
+result: PASS
+detail: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'custom:FILE'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'custom:FILE'}
+
+=== evolution: java EvolutionStartupOracle -u scripts/oracle/cli/fixtures/template.circ
+exit: 0
+--- stdout (5 lines, sha256 33636e94522b87db811a421de085fae7b770ef1ff5379d47f0774b267763f00f)
+parse=ok
+splash=true
+gates=ansi
+locale=en session=en
+template=custom:scripts/oracle/cli/fixtures/template.circ
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -u scripts/oracle/cli/fixtures/template.circ --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 162a9c1b040be3e2b8d085dfb89f236999e3d4ac96f89f5a2a8954aa1d417cd5)
+gates=ansi
+locale=en
+template=scripts/oracle/cli/fixtures/template.circ
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

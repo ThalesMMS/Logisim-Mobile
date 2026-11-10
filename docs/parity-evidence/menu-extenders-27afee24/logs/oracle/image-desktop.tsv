@@ -1,0 +1,25 @@
+cached	2048x2048	2048x2048
+cached	4096x1000	2048x500
+cached	2100x2100	2048x2048
+cached	100x3000	68x2048
+cached	2049x7	2048x6
+reset	badge	width=48,height=32
+optimize	badge	64x64 fit	already 48x32
+optimize	badge	40x30 fit	resize 48x32->40x26 frame=40x26
+optimize	badge	400x400 fit	already 48x32
+optimize	badge	64x64 stretch	resize 48x32->64x64
+optimize	badge	320x150 stretch	resize 48x32->320x150
+optimize	badge	64x64 cover	resize 48x32->64x64
+optimize	badge	160x100 cover	resize 48x32->160x100
+optimize	badge	30x60 cover	resize 48x32->30x60
+transparent	badge	badge-transparent.png
+reset	photo	width=160,height=100
+optimize	photo	64x64 fit	resize 160x100->64x40 frame=64x40
+optimize	photo	40x30 fit	resize 160x100->40x25 frame=40x25
+optimize	photo	400x400 fit	already 160x100
+optimize	photo	64x64 stretch	resize 160x100->64x64
+optimize	photo	320x150 stretch	resize 160x100->320x150
+optimize	photo	64x64 cover	resize 160x100->64x64
+optimize	photo	160x100 cover	already 160x100
+optimize	photo	30x60 cover	resize 160x100->30x60
+transparent	photo	photo-transparent.png

@@ -1,0 +1,240 @@
+{
+  "status": "OFFLINE_DIAGNOSTIC_CHECKS_PASS",
+  "date": "2026-11-05",
+  "baseline": "48412de3dae41e97fba38623f1dc466f41bbe441",
+  "change": "Add an optional bounded NSError diagnostic to existing fixture events; keep the root errorDomain/errorCode and all runtime actions unchanged.",
+  "diagnostic": {
+    "field": "errorDiagnostic",
+    "entryFields": [
+      "domain",
+      "code",
+      "reason"
+    ],
+    "traversedKey": "NSUnderlyingErrorKey",
+    "maximumDepth": 8,
+    "cycleIdentity": "ObjectIdentifier(NSError), retaining visited objects while traversing",
+    "termination": [
+      "complete",
+      "cycle",
+      "depthLimit"
+    ],
+    "reason": "localizedFailureReason ?? localizedDescription",
+    "maximumReasonUnicodeScalars": 512,
+    "arbitraryUserInfoSerialized": false,
+    "olderEventsWithoutFieldDecodeAs": "nil"
+  },
+  "sourceFiles": {
+    "Shared/FixtureErrorDiagnostic.swift": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/Shared/FixtureErrorDiagnostic.swift",
+      "bytes": 2046,
+      "sha256": "4260933a1c29a227132e15252f76f64a29446cebfa3e94203d4a8b9503dcb3e4"
+    },
+    "Shared/FixtureStore.swift": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/Shared/FixtureStore.swift",
+      "bytes": 9606,
+      "sha256": "71053b0a6849e9acdbf06fd29881141a6707102b8c22f47ec0ad2e8fc0f6385b"
+    },
+    "FixtureErrorDiagnosticChecks.swift": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/FixtureErrorDiagnosticChecks.swift",
+      "bytes": 14476,
+      "sha256": "56d4135a80cca218ca6a4eb9ce3bea4b4449d22c191160337552f77a0bad9cb5"
+    },
+    "run-host-checks.py": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/run-host-checks.py",
+      "bytes": 718,
+      "sha256": "6206baebf4a552356e7e159e865ab0ed9e2429231d444c0068ea5328223e4b56"
+    }
+  },
+  "checks": {
+    "hostFoundation": {
+      "checks": [
+        "root domain, code and failure-reason precedence",
+        "localized-description fallback and empty reason",
+        "underlying -2012/-2013/-2014 beneath root -2001",
+        "absent and non-error underlying values",
+        "Swift Error bridging",
+        "distinct identities with equal diagnostic fields",
+        "self cycle",
+        "two-node cycle",
+        "seven/eight complete entries and ninth-entry depth limit",
+        "cycle detection at the eighth entry",
+        "512-scalar reason limit including one oversized grapheme",
+        "literal Codable payload and round trip"
+      ],
+      "hostErrorDiagnostic": "PASS",
+      "nativeExecution": "NOT_RUN",
+      "scope": "Foundation NSError capture and Codable only; no FileProvider domain, UI or registration."
+    },
+    "hostCommand": {
+      "compileCommand": [
+        "xcrun",
+        "swiftc",
+        "-swift-version",
+        "5",
+        "-warnings-as-errors",
+        "-module-cache-path",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/host-module-cache",
+        "scripts/ios_fileprovider_revocation/Shared/FixtureErrorDiagnostic.swift",
+        "scripts/ios_fileprovider_revocation/FixtureErrorDiagnosticChecks.swift",
+        "-o",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/fixture-error-diagnostic-checks"
+      ],
+      "compileExitCode": 0,
+      "scope": "Foundation-only host executable with synthetic NSError objects; no FileProvider, App Group or UI calls.",
+      "checkExitCode": 0
+    },
+    "appSDKTypecheck": {
+      "command": [
+        "xcrun",
+        "swiftc",
+        "-typecheck",
+        "-swift-version",
+        "5",
+        "-warnings-as-errors",
+        "-target",
+        "arm64-apple-ios17.0-simulator",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+        "-module-cache-path",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/app-module-cache",
+        "scripts/ios_fileprovider_revocation/Shared/FixtureErrorDiagnostic.swift",
+        "scripts/ios_fileprovider_revocation/Shared/FixtureStore.swift",
+        "scripts/ios_fileprovider_revocation/ControlApp/RevocationFixtureApp.swift"
+      ],
+      "exitCode": 0,
+      "scope": "SDK typecheck only; no app build, signing or native execution."
+    },
+    "providerSDKTypecheck": {
+      "command": [
+        "xcrun",
+        "swiftc",
+        "-typecheck",
+        "-swift-version",
+        "5",
+        "-warnings-as-errors",
+        "-target",
+        "arm64-apple-ios17.0-simulator",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+        "-module-cache-path",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/provider-module-cache",
+        "-application-extension",
+        "scripts/ios_fileprovider_revocation/Shared/FixtureErrorDiagnostic.swift",
+        "scripts/ios_fileprovider_revocation/Shared/FixtureStore.swift",
+        "scripts/ios_fileprovider_revocation/Provider/RevocationFileProvider.swift",
+        "scripts/ios_fileprovider_revocation/Provider/RevocationProviderEnumerator.swift",
+        "scripts/ios_fileprovider_revocation/Provider/RevocationProviderItem.swift"
+      ],
+      "exitCode": 0,
+      "scope": "SDK typecheck only; no app build, signing or native execution."
+    },
+    "sourceIsolation": {
+      "status": "PASS",
+      "baseline": "48412de3dae41e97fba38623f1dc466f41bbe441",
+      "protectedFilesVerified": 12,
+      "protectedFiles": {
+        "ControlApp/RevocationFixtureApp.swift": "efc145d0ce3a622afdd4e62998a28decad3fecf96b255d6aaeb8a112a25a854f",
+        "Provider/RevocationFileProvider.swift": "1db4774dd8b92b71b7e4242e763b6d6b5145417745eb8e68dbab725e0bee5479",
+        "Provider/RevocationProviderEnumerator.swift": "2febd2e330fe52d64c0c9d35620797ef20b7ea3d1030a4dc7e0df80ed03bab63",
+        "Provider/RevocationProviderItem.swift": "9090827e2c9115c2ec789e5a6aebf69258423c1b3b5f4b9ac089747cedc85a67",
+        "Config/App-Info.plist": "a20392ef271a21a2d9d94abb8ee780c2cc8c6fa3f424e1cab8adcadff1c3ab4c",
+        "Config/Provider-Info.plist": "a7d0e11d1ccddfe1546982d707c01e9bd3db7bdc05de03d548dcb858afe4bb38",
+        "Config/App.entitlements": "58006ed768bb0e33b699b5dedbc6db4924e24cfd3684a0eb298ac78954dfd637",
+        "Config/Provider.entitlements": "58006ed768bb0e33b699b5dedbc6db4924e24cfd3684a0eb298ac78954dfd637",
+        "project.yml": "d639c03361e5ae2d54869be44d208835a0276111a605e436b340390cb8bd4839",
+        "QUALIFY.md": "169bb4ac001a85ad13434238366356a4ca40f6f33aae3825b6914ab745111127",
+        "build-simulator-fixture.py": "e44222c9b33fe41b6d969c64747fe966da2182c8d5359eba3c30db07172e1255",
+        "HostChecks.swift": "e2205c3a2c7df9b4aefc4543aec5aeae00be5ae80f60982d6850e51cc1bf466a"
+      },
+      "pythonHostRunnerSyntax": "PASS",
+      "scope": "Only diagnostic source/event field/host compile input/isolated checks/docs changed; Controller, provider, backend policy and configuration preserved."
+    },
+    "review": "Independent static review found no source/integration blockers.",
+    "localEvidence": {
+      "host-command.json": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/host-command.json",
+        "bytes": 783,
+        "sha256": "1ae5192ff5930b245c3c3ff5916fc516b5435486a5cdff852fb1e239b0ed47cd"
+      },
+      "host-compile.log": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/host-compile.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "host-checks.log": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/host-checks.log",
+        "bytes": 748,
+        "sha256": "8a0035e5c4b0a88b7f0ec700afbe9811ba849acaf0980b5ca4ffb3674b608125"
+      },
+      "app-typecheck.json": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/app-typecheck.json",
+        "bytes": 810,
+        "sha256": "3fac88eaacf387026f5ca9678e18c91a05d34999f749774b1ae290fe5bb2f1ec"
+      },
+      "app-typecheck.log": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/app-typecheck.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "provider-typecheck.json": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/provider-typecheck.json",
+        "bytes": 1013,
+        "sha256": "bef21fec300305989f9fc47b7836abb82948530dd6bedd3f0bba56539870b2ce"
+      },
+      "provider-typecheck.log": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/provider-typecheck.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "source-isolation.json": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-error-chain-preparation/source-isolation.json",
+        "bytes": 1566,
+        "sha256": "07bd140679659e377643d46cf535efa7d9878237ef5f47aadf8ef205f02c4cec"
+      }
+    }
+  },
+  "formerSignedArtifactUnchanged": {
+    "source": "48412de3dae41e97fba38623f1dc466f41bbe441",
+    "manifest": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/artifact.json",
+      "bytes": 10951,
+      "sha256": "7a6e5491f880d1427b677fc425f8c20f68c953720e49c1f44c769dfffb5f1400"
+    },
+    "app": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+      "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+      "executable_sha256": "f8a1e37a8cde77f49da141e0ac80c5994759dcfd02bbc73891ed0ceaa4cbdf9e",
+      "bundle_tree_sha256": "e4f87964086776be370e8d3471a89a79836206aa22d43abecf3c8bea59df7111",
+      "version": "1.0",
+      "build": "1"
+    },
+    "provider": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+      "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+      "executable_sha256": "569983c6a92ff71538fa0bc3652e97d2adb6d0ba189a0a22c017a9d89f9f9880",
+      "bundle_tree_sha256": "e2307e9a8631a8804ac83ade63691156c178744c59f53da235434b021518fe5b",
+      "version": "1.0",
+      "build": "1"
+    },
+    "usedToQualifyNewDiagnostic": false
+  },
+  "preservedNativeFailures": {
+    "archiveOriginalCommit": "f2b4cde813727ee5d5a844cfbf7894bf071abc09",
+    "officialAppleCensusCommit": "be212b154cd9c0f78f4912207c6344de0ac93a3c",
+    "first": "FAIL; 36.779 s; exit 65. The ff99 fixture trapped before Prepare/Register.",
+    "second": "FAIL; 16.147 s; exit 65. Source 48412 Prepare was observed, followed by registration callback -2001; no Inspect or underlying chain was retained.",
+    "newDiagnosticDoesNotReplaceResults": true
+  },
+  "appBuild": "NOT_RUN",
+  "signing": "NOT_RUN",
+  "installedProvenanceUpdate": "NOT_RUN",
+  "nativeExecution": "NOT_RUN",
+  "registration": "NOT_RUN",
+  "existingStoreChecks": "NOT_RUN during this change",
+  "limits": [
+    "Synthetic Foundation checks demonstrate capture and encoding only; no actual future FileProvider error chain is claimed.",
+    "No Prepare/Register/Inspect behavior, controller, provider, backend policy, App Group, entitlements, target flags, profile, Team or production app changed.",
+    "No application/harness build, signing, installation, launch, Simulator query, retry or domain action occurred.",
+    "The previous artifact fingerprints remain frozen. A future explicitly coordinated build must produce new signatures/fingerprints, followed by a separate bootstrap-pin update before native execution."
+  ]
+}

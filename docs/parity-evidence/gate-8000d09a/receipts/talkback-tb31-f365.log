@@ -1,0 +1,17 @@
+PASS example-open 
+BEFORE [{"id": "canvas-component:a", "desc": "A", "state": "false", "b": [59, 1019, 185, 1145]}, {"id": "canvas-component:and", "desc": "AND", "state": "true", "b": [529, 1145, 656, 1272]}, {"id": "canvas-component:out", "desc": "Y", "state": "false", "b": [923, 1146, 1049, 1272]}, {"id": "canvas-component:b", "desc": "B", "state": "false", "b": [59, 1273, 185, 1399]}]
+PASS preview-confirm-exposed 4
+AFTER [{"id": "canvas-component:a", "desc": "A", "state": "false", "b": [59, 1019, 185, 1145]}, {"id": "canvas-component:and", "desc": "AND (300, 150), and", "state": "false", "b": [403, 1145, 529, 1271]}, {"id": "canvas-component:out", "desc": "Y", "state": "false", "b": [923, 1146, 1049, 1272]}, {"id": "canvas-component:c1", "desc": "AND (320, 170), c1", "state": "true", "b": [579, 1196, 706, 1323]}, {"id": "canvas-component:b", "desc": "B", "state": "false", "b": [59, 1273, 185, 1399]}]
+PASS duplicate-applied status present
+PASS one-node-per-component canvas nodes 4->5
+PASS nodes-disjoint 
+ANDS [{"id": "canvas-component:and", "desc": "AND (300, 150), and", "state": "false", "b": [403, 1145, 529, 1271]}, {"id": "canvas-component:c1", "desc": "AND (320, 170), c1", "state": "true", "b": [579, 1196, 706, 1323]}]
+PASS two-and-nodes 2 AND nodes
+PASS unselected-and-exists selected=1 unselected=1
+AFTER_TAP [{"id": "canvas-component:a", "desc": "A", "state": "false", "b": [59, 1019, 185, 1145]}, {"id": "canvas-component:and", "desc": "AND (300, 150), and", "state": "true", "b": [529, 1145, 656, 1272]}, {"id": "canvas-component:out", "desc": "Y", "state": "false", "b": [923, 1146, 1049, 1272]}, {"id": "canvas-component:c1", "desc": "AND (320, 170), c1", "state": "false", "b": [579, 1322, 705, 1448]}, {"id": "canvas-component:b", "desc": "B", "state": "false", "b": [59, 1273, 185, 1399]}]
+PASS double-tap-selects-other canvas-component:and
+PASS still-one-node-per-component 5 canvas nodes
+PASS swipes-keep-tree 
+EXPLORER ['Showing 5 components.', 'Select AND (300, 150), and']
+PASS explorer-lists-both count text
+ALLPASS

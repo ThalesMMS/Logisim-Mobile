@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <lib name="1" desc="#Gates"/>
+  <lib name="4" desc="#Memory"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" name="Clock" loc="(100,450)"/>
+    <comp lib="4" name="D Flip-Flop" loc="(300,400)"/>
+    <comp lib="0" name="Pin" loc="(460,410)">
+      <a name="label" val="q0"/>
+      <a name="type" val="output"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp name="stage" loc="(500,520)"/>
+    <wire from="(100,450)" to="(290,450)"/>
+    <wire from="(350,410)" to="(460,410)"/>
+    <wire from="(350,450)" to="(370,450)"/>
+    <wire from="(370,380)" to="(370,450)"/>
+    <wire from="(280,380)" to="(370,380)"/>
+    <wire from="(280,380)" to="(280,410)"/>
+    <wire from="(280,410)" to="(290,410)"/>
+    <wire from="(370,450)" to="(370,530)"/>
+    <wire from="(370,530)" to="(500,530)"/>
+  </circuit>
+  <circuit name="stage">
+    <comp lib="0" name="Pin" loc="(100,450)">
+      <a name="label" val="clk"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="4" name="D Flip-Flop" loc="(300,400)"/>
+    <comp lib="0" name="Pin" loc="(460,410)">
+      <a name="label" val="q"/>
+      <a name="type" val="output"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <wire from="(100,450)" to="(290,450)"/>
+    <wire from="(350,410)" to="(460,410)"/>
+    <wire from="(350,450)" to="(370,450)"/>
+    <wire from="(370,380)" to="(370,450)"/>
+    <wire from="(280,380)" to="(370,380)"/>
+    <wire from="(280,380)" to="(280,410)"/>
+    <wire from="(280,410)" to="(290,410)"/>
+  </circuit>
+</project>

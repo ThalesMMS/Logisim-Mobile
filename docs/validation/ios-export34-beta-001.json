@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "issue": 34,
+  "platform": "iOS Simulator",
+  "status": "FAIL",
+  "testCase": "VisualExportEndToEndTests.testEditorExportsPixelsAndCancelsNativeDelivery",
+  "testSeconds": 224.988,
+  "testCount": 1,
+  "failures": 1,
+  "unexpectedFailures": 0,
+  "exitCode": 65,
+  "physicalDevice": false,
+  "sourcePin": "b9bd71ae49e562661ee114b248e342a02ed29508",
+  "harnessPin": "89c944468b03f24187acb3658d496b340028b557",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "0f0c7eb6784f4b77f3ebe9778fa4a7bf8a236a87731a05733bb97130f50b7867",
+    "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data",
+    "dataPathSize": 2777206784,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "lastUsedAt": "2026-11-05T02:07:11Z",
+    "isAvailable": true,
+    "logPathSize": 315392,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "state": "Booted",
+    "name": "Logisim SaveAs Beta iPad 27.0",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "fixtureSHA256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "contractSHA256": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "visualSwiftSHA256": "74d896ae36ba47c8bf49bcd18796e4c0bb28dbd7a1776641414ff12d58012da3",
+  "nativeHarnessSHA256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+  "observed": {
+    "fixtureImported": {
+      "circuits": 3,
+      "mainComponents": 78,
+      "mainWires": 4
+    },
+    "tool": "The mounted Export drawing panel opened after Copy XML.",
+    "field": "Video frame37s visibly contains File name and its original visual_export_qualification value. Native label, viewport and hittability were not captured in a complete panel tree.",
+    "harness": "reveal kept searching for a reachable File name within editor-tool-sheet and sent repeated container-frame swipes.",
+    "finalDrag": "At test t83.62, the log records a drag from app point (417,8) to(417,760). The final screenshot shows Notification Center/clock.",
+    "appState": "Stackshot marks app 18832 suspended in 124 samples. Main thread is in CFRunLoop/mach_msg; last execution approximately t87.824. This does not demonstrate a renderer/main-thread deadlock.",
+    "teardown": "Test log terminates app 18832 and sets Portrait; no retry or post-release Simulator interaction."
+  },
+  "failure": {
+    "source": "NativeUIHarness.swift:145",
+    "message": "Failed to get matching snapshots: Timed out while evaluating UI query.",
+    "primaryUnresolvedProblem": "The visibly presented File name field was not found as a reachable scoped match before the app left the foreground.",
+    "limits": "No complete pre-input panel accessibility tree is available. The precise native label/viewport cause is unproven. There is no contemporaneous Metal/GPU failure proved by this receipt."
+  },
+  "qualification": {
+    "mountedImportAndXML": "PASS",
+    "panelPresentation": "OBSERVED",
+    "textReplacementHelper": "NOT_REACHED",
+    "nativeSave": "NOT_RUN",
+    "PNGBytesAnd78Regions": "NOT_RUN",
+    "selectedPDF": "NOT_RUN",
+    "share": "NOT_RUN",
+    "printPreview": "NOT_RUN",
+    "finalDocumentPreservation": "NOT_RUN"
+  },
+  "followUp": "A private alpha-only panel/field census was prepared and SDK typechecked; native census NOT_RUN. No shared source, timeout or coordinate fallback changed.",
+  "files": {
+    "results.json": {
+      "bytes": 26779,
+      "sha256": "0cf1c92ddc981b367b2d78d88b4729eb2bcc2fb25c1e3ded25c932914a005384"
+    },
+    "test.log": {
+      "bytes": 44534,
+      "sha256": "d56feeee88d402332819266996165f6aab731c5031a7be7053f6cad67a2469b8"
+    },
+    "visual-export-before.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    },
+    "final-screen.png": {
+      "bytes": 4177275,
+      "sha256": "d74b283ac6ef4c1a62ed8be1ddb46e2e845c239e6561e1e97d89a92629d54466"
+    },
+    "final-native-tree.txt": {
+      "bytes": 62,
+      "sha256": "dbed1991f656315118f46bc63fdcb4058464703b5baa4eebb189e59eab950ccc"
+    },
+    "panel-frame-37s.png": {
+      "bytes": 542031,
+      "sha256": "637e2287592c5f2ec85a5fb7f5a44c0f1b4d57b81fa69e9abee911bc344a2f37"
+    },
+    "transition-frame-85s.png": {
+      "bytes": 711468,
+      "sha256": "c9c4a319486de26ce16d45e17cebdb70085196bd28893a8322894220b4c648ba"
+    },
+    "stackshot-excerpts.txt": {
+      "bytes": 21343,
+      "sha256": "3ab191286c0d10e77606eb243f5186f0715e23a504b3d93025c8f3c624a4794e"
+    }
+  },
+  "localEvidence": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-001",
+  "uncommittedLargeEvidence": {
+    "video": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-001/attachments/92718653-9FDC-424A-BD62-E54A6C8A7FAC.mp4",
+      "bytes": 88661447,
+      "sha256": "171f7ce308ab1414d2925701d51ec8fc75bcfa8d4f4ab371a9ec6860a1b7b03c"
+    },
+    "completeStackshot": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-001/attachments/8F9BDEF6-A2D3-4A45-87AE-F04202DAAAB5.txt",
+      "bytes": 14034757,
+      "sha256": "5f2aad65aa9960175fbe83862599c5f936a404fbdbc1d1c9eb07a70a1171d114"
+    }
+  },
+  "lease": "B25/cache explicitly returned to ios_files after terminal failure. No later Simulator or UI operation by this executor."
+}

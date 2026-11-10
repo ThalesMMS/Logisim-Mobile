@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "status": "FAIL_SETUP",
+  "source_pin": "2827b19b2041ed98dc5e10f2c9d4a94e07911869",
+  "product_pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "exec_handle": 89831,
+  "observed_exit_code": 1,
+  "terminal_provenance": "Recorded from exec 89831 final tool result after process completion, not a redirected stdout file.",
+  "terminal_stdout": "{\"status\": \"FAIL\", \"sampling_started\": false, \"output\": \"/Users/thales/GitHub/logisim-mobile-worktrees/performance48-native-source-plan/outputs/performance/android-3a-input-idle16-001\", \"failure\": \"AssertionError('The status_file_opened control did not appear within 30s')\", \"postflight_failure\": null}\n",
+  "native_case_attempts": 1,
+  "sampling_started": false,
+  "collector_launched": false,
+  "native_retries": 0,
+  "builds": 0,
+  "installs": 0,
+  "original_file_count": 243,
+  "original_payload_bytes": 1332430,
+  "raw_archive": {
+    "file": "raw-attempt.zip",
+    "bytes": 542536,
+    "sha256": "d26cba82aed3662406ec760c32f0e146424550a43ceb5428b82ef568e7796c23"
+  },
+  "raw_manifest": {
+    "file": "raw-manifest.json",
+    "bytes": 32666,
+    "sha256": "8437a5cd723a56c630123911eab6d749c347727a3fc67e01747bb9fe58252f67"
+  },
+  "producer_clean_after": {
+    "head": "2827b19b2041ed98dc5e10f2c9d4a94e07911869",
+    "porcelain": ""
+  },
+  "not_observed": [
+    "20-second passive CPU/PSS/RSS/gfxinfo collection",
+    "canonical XML or model shape after import",
+    "same-PID before/after the sample window",
+    "provider source bytes after the window",
+    "a quiet host or physical device budget",
+    "energy, draw/pan/zoom or cancellation latency"
+  ],
+  "host_argument_collection": false,
+  "notes": [
+    "No host process census ran: preparation stopped before host_state.",
+    "Raw ADB stdout/stderr are preserved untrimmed. The fixture-writing adb shell command is delegated by stock Scenarios.fixture and was not intercepted by AuditUi; the immediately following provider readback is logged and equals the exact historical bytes."
+  ]
+}

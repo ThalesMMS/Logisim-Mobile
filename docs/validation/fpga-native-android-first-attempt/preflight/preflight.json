@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "adbUsed": false,
+  "source": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "aapt2": "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt2",
+  "aapt2Sha256": "a8844d4089b442b034aed8953deee1893253053c900e03141ae7173e3edd8157",
+  "files": [
+    {
+      "kind": "e2e_apk",
+      "source": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/ce3e061d/e2e_apk.apk",
+      "destination": "androidApp-e2e.apk",
+      "bytes": 16298862,
+      "sha256": "71bafede4e6c9c5ea637d5ad0bb7cce5e366b0842b8f06d32d34143db2277a43"
+    },
+    {
+      "kind": "e2e_test_apk",
+      "source": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/ce3e061d/e2e_test_apk.apk",
+      "destination": "androidApp-e2e-androidTest.apk",
+      "bytes": 138810,
+      "sha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882"
+    },
+    {
+      "kind": "snapshot_apk",
+      "source": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/ce3e061d/snapshot_apk.apk",
+      "destination": "androidSnapshot-debug.apk",
+      "bytes": 951790,
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "identities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  }
+}

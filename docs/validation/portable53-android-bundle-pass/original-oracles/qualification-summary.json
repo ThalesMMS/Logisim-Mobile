@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "status": "ANDROID_BUNDLE_NATIVE_STORAGE_DESKTOP_VALIDATED",
+  "scope": "Portable53 bundle scenario only. The outer native run later failed in folder navigation; folder and complete issue53 acceptance are not qualified by this report.",
+  "nativeBundleReceipt": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-receipt.json",
+  "nativeBundleReceiptSha256": "68d6c8ea3e55c05cc1ac865d9de834a298a9c6874c068d57b2bf5b5f6be05e7a",
+  "nativeBundleStatus": "PASSED",
+  "outerRunResults": [
+    {
+      "scenario": "portable-bundle-storage-roundtrip",
+      "status": "passed",
+      "seconds": 204.06
+    },
+    {
+      "scenario": "portable-folder-storage-roundtrip",
+      "status": "failed",
+      "error": "Visible control missing: {'text': 'Downloads', 'description': None, 'resource_id': None, 'prefix': False}"
+    }
+  ],
+  "outputs": {
+    "out-first53": "00001000",
+    "out-second53": "00000011"
+  },
+  "definitions": 3,
+  "components": 11,
+  "wires": 7,
+  "runtimeInstances": 4,
+  "importedProjectId": "f50f2c7e98770d5a23d939fbff31d2e7",
+  "restartedProjectId": "f50f2c7e98770d5a23d939fbff31d2e7",
+  "reopenedProjectId": "dd3f317c1a1470a930e0735d67fba6a1",
+  "freshWorkspace": true,
+  "freshReopenedWorkspace": true,
+  "nativeReferenceAbsent": true,
+  "sourceArchiveSha256": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc",
+  "reopenedSourceArchiveSha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+  "validatedExports": [
+    {
+      "role": "artifact",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-after-restart.lsebdl",
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+      "afterRestart": true,
+      "desktopChecked": true
+    },
+    {
+      "role": "peer",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-before-restart.lsebdl",
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+      "afterRestart": false,
+      "desktopChecked": false
+    }
+  ],
+  "desktopScope": "Desktop opened the AFTER export. The BEFORE peer was independently bound to the same passed receipt and verified by the mobile graph/identity oracle; both exports have identical bytes.",
+  "snapshots": {
+    "before": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-before-workspace.tar",
+      "archiveSha256": "22bb701705694c76173b0ce30505e6a03e9b95aca3cd278565b99c8b450d12da",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/before/workspace"
+    },
+    "imported": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-imported-workspace.tar",
+      "archiveSha256": "b42bc1f0ddcd48530a9e0998b7f2ae531f5b510c4b70a9cab631c6554c38681b",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/imported/workspace"
+    },
+    "restarted": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-restored-workspace.tar",
+      "archiveSha256": "2cffa2f177182f69010cbbf071735d04c5203ea96fe0308e5d69304406b6e926",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/restarted/workspace"
+    },
+    "reopened": {
+      "archive": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/59d5606b-portable-5558-en-bc98f934/portable-bundle-reopened-workspace.tar",
+      "archiveSha256": "23fbd900d884629ccfe1a1cc55b11e5f9dde70725dfbac97bceb9bb3f75f1999",
+      "destination": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/android53-bundle-bc98-oracles/snapshots/reopened/workspace"
+    }
+  },
+  "reports": {
+    "input-admission.json": "dd84174c456a66d53cfea899ceba0e452d37e34a78cd67dca56d8c563a194517",
+    "desktop-proof.json": "2cc37eac96a8fd877cc7be021d9d6b25fc758da5685faa2e29aef9ec9141071a",
+    "storage-proof.json": "f62d32441408607178568878d45bd79a7db9c1ff6ec1e651def6f60bd5b13488"
+  },
+  "references": {
+    "core-jvm.jar": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+    "desktop.jar": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01"
+  },
+  "qualificationStillMissing": [
+    "Android folder source grant flow",
+    "iOS complete bundle/folder flows per owner acceptance"
+  ],
+  "deviceAccessPerformedByThisWorker": false,
+  "sourceEditsPerformedByThisWorker": false,
+  "recordedAtUtc": "2026-11-05T02:55:36.123028+00:00"
+}

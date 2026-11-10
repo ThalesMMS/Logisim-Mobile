@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "status": "PREPARED_OFFLINE",
+  "nativeExecution": "NOT_RUN",
+  "deviceAccess": false,
+  "builtHarness": false,
+  "sourceRevision": "177ced4e87146a75b3ca2e80a80da7c654cb019d",
+  "sourceClean": true,
+  "sourceEquivalentToCanonical177": true,
+  "root8LabelPolicy": "No extra delta applied; exact canonical177 helper blobs are frozen. Parent accepted this concrete contract.",
+  "runner": {
+    "run-ios-e2e.py": {
+      "path": "scripts/run-ios-e2e.py",
+      "sha256": "90372e223b94910c2a67d83fa1dd24d0e9dfeeaa5d7faf15c98571af8597d174"
+    },
+    "run-ios-accessibility.py": {
+      "path": "scripts/run-ios-accessibility.py",
+      "sha256": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e"
+    }
+  },
+  "swiftSources": {
+    "AccessibilityUITests.swift": {
+      "path": "scripts/ios_accessibility_ui/AccessibilityUITests.swift",
+      "sha256": "ca5d6c441c1270d915cfcce1bb456f200bbbf83e78af18667f5a72359293d150"
+    },
+    "ClipboardReceiverUI.swift": {
+      "path": "scripts/ios_e2e_ui/ClipboardReceiverUI.swift",
+      "sha256": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b"
+    },
+    "DestinationExportEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/DestinationExportEndToEndTests.swift",
+      "sha256": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a"
+    },
+    "EditorEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/EditorEndToEndTests.swift",
+      "sha256": "df046e24e72b26919e1e2b8ae3d767a2eae3b784f5925a0d946198f11d17ed07"
+    },
+    "ExternalProviderEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/ExternalProviderEndToEndTests.swift",
+      "sha256": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386"
+    },
+    "FilesEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/FilesEndToEndTests.swift",
+      "sha256": "212e924d95a8898feea0d1dccec45ffafee116e917f9f2212c4d8c0b262d6510"
+    },
+    "InspectorEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/InspectorEndToEndTests.swift",
+      "sha256": "23b26eaba12d5608fae8bb0dd29161c1fb881da1b8108b9a4bcc566895192951"
+    },
+    "IoEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/IoEndToEndTests.swift",
+      "sha256": "a35eb43f3d5bd46d9ef1edaf1ce9c79a2c9c11a5ab4f14e5a7027e1f3780c535"
+    },
+    "NativeFilesDestinationNavigator.swift": {
+      "path": "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift",
+      "sha256": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46"
+    },
+    "NativeFilesPeerNavigator.swift": {
+      "path": "scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift",
+      "sha256": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5"
+    },
+    "NativeTextReplacement.swift": {
+      "path": "scripts/ios_native_ui/NativeTextReplacement.swift",
+      "sha256": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b"
+    },
+    "NativeUIHarness.swift": {
+      "path": "scripts/ios_native_ui/NativeUIHarness.swift",
+      "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379"
+    },
+    "ObservedProjectXML.swift": {
+      "path": "scripts/ios_e2e_ui/ObservedProjectXML.swift",
+      "sha256": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609"
+    },
+    "PortableProjectEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift",
+      "sha256": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5"
+    },
+    "PortableWorkspaceEvidence.swift": {
+      "path": "scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift",
+      "sha256": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660"
+    },
+    "VisualExportEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/VisualExportEndToEndTests.swift",
+      "sha256": "90bbb48c720bd8afe123c254b7cf9a4bf61af3f78cde77788ebb2294bf848fc6"
+    },
+    "XmlDialogEndToEndTests.swift": {
+      "path": "scripts/ios_e2e_ui/XmlDialogEndToEndTests.swift",
+      "sha256": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346"
+    }
+  },
+  "cases": {
+    "bundle": {
+      "status": "PREPARED",
+      "nativeExecutionGate": "NATIVE_NOT_RUN",
+      "selectedTest": "EditorEndToEndTests/PortableProjectEndToEndTests/testBundleImportExportsAndRestoresItsSourceArchive",
+      "resultsSha256": "6ccd0d6a8415da329a89170dc6cf27498d18c05fadc663fc0eb3d9bdc1407b15",
+      "runSha256": "cfba6ecb65fc79004f3d09dbdfcf633fb2a67a162497a398a06cd248b0e2be56",
+      "catalogSha256": "83a6f69e2a6d530a8afff326250dcd2c09416d4deeb35187d03117b2b5f6c6ca",
+      "catalogMessageCount": 2496,
+      "swiftSourceCount": 17,
+      "placeholderSimulatorUUID": "00000000-0000-0000-0000-000000000000",
+      "buildSHA256": "NOT_RUN"
+    },
+    "folder": {
+      "status": "PREPARED",
+      "nativeExecutionGate": "NATIVE_NOT_RUN",
+      "selectedTest": "EditorEndToEndTests/PortableProjectEndToEndTests/testFolderImportExportsAndRestoresItsSourceArchive",
+      "resultsSha256": "0df4a3c075fdf58cb5df3e077c8b5698fa2a1ba10ebe8edbeca998e4fd295847",
+      "runSha256": "eab7b27542c08714004868067e9d300ea0176af8ddcd973e12311cdba7fb921b",
+      "catalogSha256": "83a6f69e2a6d530a8afff326250dcd2c09416d4deeb35187d03117b2b5f6c6ca",
+      "catalogMessageCount": 2496,
+      "swiftSourceCount": 17,
+      "placeholderSimulatorUUID": "00000000-0000-0000-0000-000000000000",
+      "buildSHA256": "NOT_RUN"
+    }
+  },
+  "productBefore": {
+    "status": "OFFLINE_ARTIFACT_VALIDATED",
+    "nativeExecution": "NOT_RUN",
+    "deviceAccess": false,
+    "manifestSha256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+    "producer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "testValidation": "85da031e4ed11474c2e763976392729810ef142d",
+    "observedArtifact": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "dylibSha256": "db2c909500c95f345362fdf06f5fd17c3647af9800863fc53d0b6a9bf31647cf",
+    "catalogRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542",
+    "catalogMessageCount": 2496
+  },
+  "productArtifactManifestSha256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+  "futureExecutor": "Parent/root only, after explicit lease; this worker did not execute native commands.",
+  "futureSimulatorUUID": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+  "futureExclusiveDerivedData": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-derived",
+  "limitations": [
+    "prepare-only uses a syntactic all-zero simulator placeholder and buildSHA256 NOT_RUN; its Run.json is never admitted for native execution.",
+    "Real commands use fresh output directories and regenerate Run.json against the actual leased app container and actual artifact fingerprint.",
+    "No simctl, device access, XCTest, xcodebuild, product build or old shared DerivedData was used. Only xcodegen file generation occurred in prepare-only.",
+    "Installed-before/installed fingerprints are recorded by the unchanged native runner only when root executes. Final installed/source fingerprint is still pending; the canonical runner does not automatically record an after-test installed fingerprint."
+  ]
+}

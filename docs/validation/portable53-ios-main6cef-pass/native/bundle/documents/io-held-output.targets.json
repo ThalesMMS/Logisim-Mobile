@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "scope": "native-mounted-editor",
+  "fixture": "examples/io-held-output.circ",
+  "circuit": "IO_Held_Output",
+  "button": {"label": "BTN_HELD", "kind": "BUTTON", "anchor": [140, 120], "bounds": [120, 110, 140, 130], "center": [130, 120]},
+  "probe": {"label": "OUT_HELD", "kind": "OUTPUT", "anchor": [240, 120], "bounds": [240, 110, 260, 130], "center": [250, 120], "width": 1, "radix": "2", "glyphInsetFraction": 0.2},
+  "referenceProbes": {
+    "low": {"label": "REF_LOW", "kind": "OUTPUT", "anchor": [240, 200], "bounds": [240, 190, 260, 210], "center": [250, 200], "width": 1, "radix": "2", "expected": "0", "constant": {"label": "CONST_LOW", "anchor": [140, 200], "width": 1, "value": "0x0"}},
+    "high": {"label": "REF_HIGH", "kind": "OUTPUT", "anchor": [240, 280], "bounds": [240, 270, 260, 290], "center": [250, 280], "width": 1, "radix": "2", "expected": "1", "constant": {"label": "CONST_HIGH", "anchor": [140, 280], "width": 1, "value": "0x1"}}
+  },
+  "expectedSequence": ["0", "1", "0"],
+  "requestedHoldSeconds": 4,
+  "limits": {"maxPressLatencySeconds": 0.75, "maxReleaseLatencySeconds": 0.5, "minHeldSampleSeparationSeconds": 1, "maxHeldEndGapSeconds": 0.75},
+  "qualification": "Fixture and geometric reference only. No native execution or held output is inferred."
+}

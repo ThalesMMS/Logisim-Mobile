@@ -1,0 +1,159 @@
+{
+  "scope": "read-only R2 infrastructure abort postflight; no native execution inferred",
+  "status": "INFRA_ABORT_INCOMPLETE",
+  "issue44": "not-qualified",
+  "sourceCommit": "c11cbbaf2764d91240081df359a86d5e55e8a285",
+  "raw": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001",
+  "rawReportStatus": "FAIL",
+  "nativeExecutionGate": "NATIVE_INCOMPLETE",
+  "nativeFunctionalFailuresInferred": 0,
+  "normalPostflightRefusal": "The terminal runner report and exported attachment manifest must exist",
+  "sourceSha256": {
+    "results.json": "da121192cfa790fe3d064eec5f4d472260a735953e2f7b287db04fbe63886a19",
+    "test.log": "6b5cfedb3f187cdb78112b0e23e41f005d38a3b6675354f8f748a63e89e897a2",
+    "execution-error.txt": "8daf550a18d7b9cb7f59f8cf2a7d545ec97fb883653f44817b24cd87061b0df3"
+  },
+  "frozenSha256": {
+    "scripts/ios_io44_case_postflight.py": "b91555c1f464a3d73827df20e426831332cc52da5b4366e7fb43376c126073f3",
+    "oracle/scripts/io_showcase_contract.py": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7",
+    "oracle/fixtures/user-scenarios/io-actions-v1.json": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+    "oracle/examples/io-showcase.circ": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+    "oracle/examples/io-showcase.targets.json": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15"
+  },
+  "documentSummary": {
+    "expectedCheckpoints": 18,
+    "qualifiedCheckpointPairs": 0,
+    "caseIncomplete": 2,
+    "caseNotRun": 2
+  },
+  "cases": [
+    {
+      "testCase": "IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing()",
+      "nativeMethodLogStatus": "incomplete",
+      "qualification": "INCOMPLETE",
+      "expectedCheckpointCount": 2,
+      "qualifiedCheckpointPairs": 0,
+      "checkpointEvidence": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "2-io-display-transitions.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        }
+      ]
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoDimensionChangesRemainExportable()",
+      "nativeMethodLogStatus": "incomplete",
+      "qualification": "INCOMPLETE",
+      "expectedCheckpointCount": 12,
+      "qualifiedCheckpointPairs": 0,
+      "checkpointEvidence": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "2-io-dimension-io_ledbar-height.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "3-io-restored-io_ledbar-height.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "4-io-dimension-io_tty-rows.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "5-io-restored-io_tty-rows.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "6-io-dimension-io_tty-cols.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "7-io-restored-io_tty-cols.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "8-io-dimension-io_dot_matrix-matrixrows.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "9-io-restored-io_dot_matrix-matrixrows.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "10-io-dimension-io_keypad-size.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "11-io-restored-io_keypad-size.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        },
+        {
+          "document": "12-io-dimensions-restored.circ",
+          "status": "INCOMPLETE",
+          "reason": "INFRA_ABORT_NO_EXPORTED_MANIFEST"
+        }
+      ]
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoMomentaryControlsAndJoystick()",
+      "nativeMethodLogStatus": "not_run",
+      "qualification": "NOT_RUN",
+      "expectedCheckpointCount": 2,
+      "qualifiedCheckpointPairs": 0,
+      "checkpointEvidence": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "NOT_REACHED",
+          "reason": "TESTCASE_NOT_STARTED"
+        },
+        {
+          "document": "2-io-pointer-controls.circ",
+          "status": "NOT_REACHED",
+          "reason": "TESTCASE_NOT_STARTED"
+        }
+      ]
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoKeyboardTtyAndCapacity()",
+      "nativeMethodLogStatus": "not_run",
+      "qualification": "NOT_RUN",
+      "expectedCheckpointCount": 2,
+      "qualifiedCheckpointPairs": 0,
+      "checkpointEvidence": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "NOT_REACHED",
+          "reason": "TESTCASE_NOT_STARTED"
+        },
+        {
+          "document": "2-io-keyboard-capacity.circ",
+          "status": "NOT_REACHED",
+          "reason": "TESTCASE_NOT_STARTED"
+        }
+      ]
+    }
+  ],
+  "windowOriginReceiptAvailability": "NO_EXPORTED_MANIFEST; no receipt, value, XML capture or absence is inferred inside the incomplete xcresult",
+  "limits": "The started cases have no complete exported checkpoint evidence. Their stages remain INCOMPLETE rather than asserting how far they ran. NOT_REACHED applies only to cases absent from the native test log. No product or observer cause is assigned."
+}

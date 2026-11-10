@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T00:54:18.696124+00:00",
+  "source_sha": "b9bd71ae49e562661ee114b248e342a02ed29508",
+  "source_tree": "345cca995083dc4c0faf599f851d8387200fe5b2",
+  "source_root": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment",
+  "source_dirty": false,
+  "baseline_sha": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "candidate_dependency_commit": "52c7ce8f",
+  "build_status": "PASS",
+  "original_build_exit_code": 0,
+  "build_elapsed_seconds": 853.304,
+  "build_log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/build.log",
+  "result_bundle": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/build.xcresult",
+  "architecture": "arm64",
+  "platform": "iOS Simulator",
+  "xcode": "Xcode 27.2\nBuild version 27B52",
+  "sdk": "27.2",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "0f0c7eb6784f4b77f3ebe9778fa4a7bf8a236a87731a05733bb97130f50b7867",
+    "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+    "bundle_tree_hash_algorithm": "Sorted relative POSIX path + NUL + file SHA256 hex + newline for every file, matching run-ios-accessibility.py artifact()",
+    "file_count": 12,
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "framework": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/composeApp/build/bin/iosSimulatorArm64/debugFramework/ComposeApp.framework/ComposeApp",
+    "sha256": "826aebcd1788bc7de4ac1a252b91491badb0439b668ab87f8d682831ff175b21",
+    "bytes": 276649368
+  },
+  "dylibs": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app/LogisimMobile.debug.dylib",
+      "sha256": "9ae14dc1d411075c6670e5304518dcec98e30fa671ec2d034ced203250d3c603",
+      "bytes": 86700328,
+      "architecture": "arm64"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app/__preview.dylib",
+      "sha256": "6783338d8a0a3607ce0efc2ed77325783f7aa8cabd4141cb4f8e6d542e52461d",
+      "bytes": 16760,
+      "architecture": "arm64"
+    }
+  ],
+  "signature": {
+    "kind": "ad-hoc",
+    "verification": "PASS",
+    "log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/codesign.log"
+  },
+  "runtime_status": "NOT_RUN",
+  "runtime_note": "Build only. No app installation, launch or simulator/device control performed by this producer.",
+  "build_command": [
+    "xcodebuild",
+    "-project",
+    "iosApp/LogisimMobile.xcodeproj",
+    "-scheme",
+    "LogisimMobile",
+    "-configuration",
+    "Debug",
+    "-destination",
+    "generic/platform=iOS Simulator",
+    "-derivedDataPath",
+    "outputs/ios-focus-beta-52c7ce8f/DerivedData",
+    "-resultBundlePath",
+    "outputs/ios-focus-beta-52c7ce8f/build.xcresult",
+    "ARCHS=arm64",
+    "ONLY_ACTIVE_ARCH=YES",
+    "CODE_SIGNING_ALLOWED=NO",
+    "build"
+  ],
+  "dependency_report": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/resolved-dependencies.log",
+    "exit_code": 0,
+    "command": [
+      "./gradlew",
+      ":composeApp:dependencies",
+      "--configuration",
+      "iosSimulatorArm64CompileKlibraries",
+      "--console=plain"
+    ]
+  },
+  "catalog": {
+    "root": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment",
+    "message_count": 2495,
+    "languages": [
+      "en",
+      "pt"
+    ],
+    "files": [
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/GeneratedMessages.kt",
+        "sha256": "fec858f523f4a1ae3a362a9f3a83d9309fc8858f9ca6fe312b5f8236f1cbd32b"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/composeApp/src/commonMain/composeResources/values/strings.xml",
+        "sha256": "d4e65112ab111a21e61b52947e55fbf1a28cb29ea8fcc90239dbfcd9bcc379d4"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/composeApp/src/commonMain/composeResources/values-pt/strings.xml",
+        "sha256": "6d5ce2357a16b639cbb469311d7dce8f4edc9a4d9a17f4e1d5b746902ee7d6dd"
+      }
+    ],
+    "checks": {
+      "source_boundaries_and_formatting": "PASS",
+      "generator_check": "PASS"
+    }
+  },
+  "baseline_artifact": {
+    "manifest": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/artifact.json",
+    "manifest_sha256": "660cdf583354614d03f55859804f272845179787ec1d49671c7f69590be93399",
+    "source_sha": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "dylibs": [
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app/LogisimMobile.debug.dylib",
+        "sha256": "fac38e32b9f62fc63bc3a1b9bc5fe4ba5b9bf73f61138155d06745eb7eb569d9",
+        "bytes": 87832440,
+        "architecture": "arm64"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app/__preview.dylib",
+        "sha256": "6783338d8a0a3607ce0efc2ed77325783f7aa8cabd4141cb4f8e6d542e52461d",
+        "bytes": 16760,
+        "architecture": "arm64"
+      }
+    ]
+  },
+  "status": "BUILD_PASS_RUNTIME_NOT_RUN",
+  "checks": {
+    "source_boundaries_and_formatting": "PASS",
+    "localization_keys": 2495,
+    "localization_generator_check": "PASS",
+    "independent_source_review": "PASS: five version changes in two Gradle files; all product sources/resources identical to a046",
+    "native_compile_task": "PASS: :composeApp:compileKotlinIosSimulatorArm64 executed",
+    "native_link_task": "PASS: :composeApp:linkDebugFrameworkIosSimulatorArm64 executed",
+    "xcodebuild": "PASS: original exit code 0",
+    "resolved_dependency_report": "PASS: exit code 0",
+    "signature_verification": "PASS: ad-hoc, deep strict",
+    "canonical_artifact_hash_comparison": "PASS",
+    "catalog_hashes_match_a046": "PASS: all three files",
+    "android_compile_and_runtime": "NOT_RUN",
+    "native_focus_and_clipboard": "NOT_RUN"
+  },
+  "preserved_logs": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/build.log",
+      "sha256": "b4364c83a24eb0d7f8a3ebc5a71acbbb25649478d1ca9f2e26005762de192a4c"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/build-state.json",
+      "sha256": "a24a8bdf1fff54e7b8dfd99e5aae62b97aced227415d9590221f8957edbd3694"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/resolved-dependencies.log",
+      "sha256": "a8a3ecc63393e9aa2df246d26f3d3add43aff708d026ea886b6f74d53245d89a"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/codesign.log",
+      "sha256": "5620a7aa7b00223b3ef11de5c3bd68f937994c70248dbf5766f561c3aa56540b"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/artifact.json",
+      "sha256": "8196024783d1c18fd4c04189ee93efa78b9d4d084867568a019a1b2d1bcdb24b"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/queue-state.json",
+      "sha256": "71714eca9f23f99d968c9535d6869a3f13ac2d3c145856e28c9922741abfe1fe"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/gradle-thread-sample.txt",
+      "sha256": "7c51b41c9ea44af247aad79106f62782fdeb2488d95fcc1a1b16b1930c2af171"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/gradle-thread-sample-2.txt",
+      "sha256": "b66da60aaddf789fcccd320d0ff4a3239789dc7084e449929a4be0f737f6779e"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/client-thread-sample.txt",
+      "sha256": "d14a631905f4116456d019f25d9ea40b1f82dd91eddbeab6525afbdb3a025fc9"
+    }
+  ],
+  "handoff": {
+    "consumer": "ios_text_focus",
+    "native_harness_commit": "ae6eb077",
+    "verified_original_case_commit": "4780852b",
+    "case": "EditorEndToEndTests/EditorEndToEndTests/testApplicationCommandAAfterFullInspectorRoundtrip",
+    "simulator": "EFC1402B-5511-40D9-8A21-359172F886AB",
+    "requires_lease_from": "ios_files",
+    "alpha": true,
+    "test_timeout_seconds": 240,
+    "selection_requirement": "After QFOCUS, Command-A followed by one Delete must empty Find; R must enter Find and X/Y must remain intact. No retap or focus repair after Command-A.",
+    "runtime_status": "NOT_RUN at producer handoff"
+  }
+}

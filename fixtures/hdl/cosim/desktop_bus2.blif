@@ -1,0 +1,12 @@
+.model desktop_bus2
+.inputs a[0] a[1] b[0] b[1] en_a[0] en_a[1] en_b[0] en_b[1]
+.outputs y[0] y[1]
+.names $undef
+.subckt TRIS A=a[0] B=en_a[0] Y=left0
+.subckt TRISI A=b[0] B=en_b[0] Y=right0
+.gate BUS A=left0 B=right0 Y=y[0]
+.subckt TRIS A=a[1] B=en_a[1] Y=left1
+.subckt TRISI A=b[1] B=en_b[1] Y=right1
+.subckt BUS A=left1 B=$undef Y=left1_resolved
+.gate BUS A=left1_resolved B=right1 Y=y[1]
+.end

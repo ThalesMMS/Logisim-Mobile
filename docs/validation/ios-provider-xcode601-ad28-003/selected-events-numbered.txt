@@ -1,0 +1,85 @@
+Zero-based positions in a bundle-filtered JSON array; system processing is separate from later UI domain registration.
+INDEX 23 | 2026-11-05 08:50:59.574898+0000 | PID 23503 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd
+-[IXSPlaceholder setAttributes:]: <IXSPlaceholder(0x10110c780) Name:PlugInKit Placeholder: Logisim Revocation Fixture (thalesmms.logisim.validation.revocationfixture.provider) Creator:InstallCoordination Simple SPI UUID:292C0B85-1A12-48B4-9B74-56D411C1C93B Location:[system-defined]>: setting placeholder attributes to <IXPlaceholderAttributes<0x1010ac960> : {
+    CFBundleShortVersionString = "1.0";
+    CFBundleSupportedPlatforms =     (
+        iPhoneSimulator
+    );
+    CFBundleVersion = 1;
+    DTPlatformName = iphonesimulator;
+    MinimumOSVersion = "17.0";
+    NSExtension =     {
+        NSExtensionFileProviderDocumentGroup = "group.thalesmms.logisim.validation.revocationfixture";
+        NSExtensionFileProviderSupportsEnumeration = 1;
+        NSExtensionPointIdentifier = "com.apple.fileprovider-nonui";
+        NSExtensionPrincipalClass = "RevocationProvider.RevocationFileProvider";
+    };
+    UIDeviceFamily =     (
+        1,
+        2
+    );
+}>
+
+INDEX 848 | 2026-11-05 08:51:09.608832+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Query; personaid = 4294967295, type = NOPERSONA, name = <unknown>, origin [pid = 0, personaid = 0], proximate [pid = 0, personaid = 0], euid = 501, uid = 501, class = 7, identifier = [(null)](0), gidentifier = [group.thalesmms.logisim.validation.revocationfixture](1), flags = 900000002
+
+INDEX 851 | 2026-11-05 08:51:09.623686+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Query result; index [0] [appGroup:group.thalesmms.logisim.validation.revocationfixture:501::(C4A78BD1-44B3-4590-B045-A3AC1883D566):{501:20:u+rwx,g+rx,o+rx}] /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4
+
+INDEX 852 | 2026-11-05 08:51:09.665815+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[NOTICE] ┏7 writing domain properties for thalesmms.logisim.validation.revocationfixture.provider onto <FPDVolume:0x106043660 role:home dev:16777232 uuid:FC...59 '/S{4}m/V{5}s/D{2}a'>
+
+INDEX 853 | 2026-11-05 08:51:09.666028+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[INFO] Updating plist for thalesmms.logisim.validation.revocationfixture.provider on <FPDVolume:0x106043660 role:home dev:16777232 uuid:FC...59 '/S{4}m/V{5}s/D{2}a'> (file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Library/Application%20Support/FileProvider/)
+
+INDEX 854 | 2026-11-05 08:51:09.679908+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[NOTICE] (
+    "<FPDCloudDocsExtension:0x1060bd380 \"com.apple.CloudDocs.iCloudDriveFileProvider\" uuid:\"90F19229-D66E-401B-B117-14155C5542E3\" persona:\"(null)\">",
+    "<FPDExtension:0x1060bf180 \"thalesmms.logisim.validation.revocationfixture.provider\" uuid:\"EE01632E-C8E9-4DE7-9982-4B355E84C2F4\" persona:\"(null)\">",
+    "<FPDExtension:0x1060bfc00 \"com.apple.mobileslideshow.PhotosFileProvider\" uuid:\"BB7CF609-CADA-4C8F-8BBF-5FC74976451F\" persona:\"(null)\">"
+) -> {unregistering: (
+), registering: (
+    "<FPDExtension:0x1060bfc00 \"com.apple.mobileslideshow.PhotosFileProvider\" uuid:\"BB7CF609-CADA-4C8F-8BBF-5FC74976451F\" persona:\"(null)\">",
+    "<FPDCloudDocsExtension:0x1060bd380 \"com.apple.CloudDocs.iCloudDriveFileProvider\" uuid:\"90F19229-D66E-401B-B117-14155C5542E3\" persona:\"(null)\">",
+    "<FPDExtension:0x1060bf180 \"thalesmms.logisim.validation.revocationfixture.provider\" uuid:\"EE01632E-C8E9-4DE7-9982-4B355E84C2F4\" persona:\"(null)\">"
+)}
+
+INDEX 855 | 2026-11-05 08:51:09.715563+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[NOTICE] ┏12 Starting domains for thalesmms.logisim.validation.revocationfixture.provider
+
+INDEX 856 | 2026-11-05 08:51:09.716042+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[NOTICE] [<FPDExtensionSession(thalesmms.logisim.validation.revocationfixture.provider/N{35}r): 0x1060cd5e0 requests(0){}, extenders(0){}>] starting extension request thalesmms.logisim.validation.revocationfixture.provider
+
+INDEX 857 | 2026-11-05 08:51:09.717909+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Adding provider thalesmms.logisim.validation.revocationfixture.provider for URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4/File%20Provider%20Storage/
+
+INDEX 859 | 2026-11-05 08:51:09.718285+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[INFO] 🅿️ Registered file provider extension thalesmms.logisim.validation.revocationfixture.provider/N{35}r (thalesmms.logisim.validation.revocationfixture.provider) for path <GroupContainers>/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4/F{19}e: <FPDFileCoordinationProvider: 0x1062fc0f0>
+
+INDEX 862 | 2026-11-05 08:51:09.872561+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Launching process with config: identity: RecordIdentity(record: ExtensionFoundation.Database._ExtensionRecord(lsRecord: <LSApplicationExtensionRecord 0x106041c20> { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/, super: <LSApplicationExtensionRecord 0x106041c20> { table: 20, unit: 7e4, attached: yes } })) instance: _InstanceIdentifier(_id: Optional(5A150949-2FED-41C2-8442-7B629AC413F6))
+
+INDEX 863 | 2026-11-05 08:51:09.872939+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Sending launch request: <RBSLaunchRequest| extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]; "(null)">
+
+INDEX 872 | 2026-11-05 08:51:09.910753+0000 | PID 83430 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/runningboardd
+Full encoding handle [extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]:23598], with data e634cd4d00005c2e, and pid 23598
+
+INDEX 880 | 2026-11-05 08:51:09.911196+0000 | PID 83430 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/runningboardd
+Calculated state for extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]: running-active (role: UserInteractiveNonFocal) (endowments: (null))
+
+INDEX 892 | 2026-11-05 08:51:09.912409+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Starting death monitoring for handle [extension<thalesmms.logisim.validation.revocationfixture.provider[config:6E69CA09-34E3-3493-B8FC-B5021E1ACB71]((null):23580)>[uuid:5A150949-2FED-41C2-8442-7B629AC413F6]:23598]
+
+INDEX 897 | 2026-11-05 08:51:09.912979+0000 | PID 23580 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[INFO] [helena] Creating new XPC connection for extension <FPDExtension:0x1060bf180 "thalesmms.logisim.validation.revocationfixture.provider" uuid:"EE01632E-C8E9-4DE7-9982-4B355E84C2F4" persona:"(null)">, instance [_EXExtensionInstanceIdentifier: 5A150949-2FED-41C2-8442-7B629AC413F6] at QoS 17
+
+INDEX 920 | 2026-11-05 08:51:10.138188+0000 | PID 23598 | /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider
+[0x105914000] readying connection: mach=false listener=true peer=false name=thalesmms.logisim.validation.revocationfixture.provider
+
+INDEX 921 | 2026-11-05 08:51:10.140477+0000 | PID 23598 | /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider
+[0x105914000] activating connection: mach=false listener=true peer=false name=thalesmms.logisim.validation.revocationfixture.provider
+
+INDEX 922 | 2026-11-05 08:51:10.140675+0000 | PID 23598 | /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider
+[0x105914280] activating connection: mach=false listener=false peer=true name=thalesmms.logisim.validation.revocationfixture.provider.peer[23580].0x105914280
+

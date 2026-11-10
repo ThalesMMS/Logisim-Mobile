@@ -1,0 +1,81 @@
+PASS cli/help help-exit: both exit 0 and print usage
+DIFF cli/help help-option-spellings: Evolution spellings absent from the Mobile help text: --fpga-cable, -h, -m
+DIFF cli/version version__version: evolution ['Logisim-evolution v5.1.0dev'] (4 lines), mobile ['Logisim Mobile 0.2.0']; exit 0/0
+DIFF cli/version version_v: evolution ['Logisim-evolution v5.1.0dev'] (4 lines), mobile ['Logisim Mobile 0.2.0']; exit 0/0
+PASS cli/tty table-and: stdout and exit class equal
+PASS cli/tty table-bus-adder: stdout and exit class equal
+PASS cli/tty table-hierarchy: stdout and exit class equal
+PASS cli/tty table-d-flip-flop: stdout and exit class equal
+PASS cli/tty table-bus-adder-table-csv: stdout and exit class equal
+PASS cli/tty table-bus-adder-table-tabs: stdout and exit class equal
+PASS cli/tty table-bus-adder-table-hex: stdout and exit class equal
+PASS cli/tty table-bus-adder-table-binary: stdout and exit class equal
+PASS cli/tty table-bus-adder-table-csv-hex: stdout and exit class equal
+PASS cli/tty table-bus-adder-table-tabs-binary: stdout and exit class equal
+DIFF cli/tty same-args-dash-tty-table: stdout differs (evolution 5 lines, mobile 1 lines)
+PASS cli/tty same-args-t: stdout and exit class equal
+PASS cli/tty same-args-tty: stdout and exit class equal
+PASS cli/tty halt-trace: trace equal: True; halt reason evolution='halt pin', mobile='halt pin'; both on stderr: True
+PASS cli/tty stats-hierarchy: stdout and exit class equal
+PASS cli/tty stats-sap1: stdout and exit class equal
+PASS cli/tty stats-memory: stdout and exit class equal
+PASS cli/tty speed: speed line format and tick count: evolution=9, mobile=9
+PASS cli/tty tty-component: TTY bytes and halt reason equal
+PASS cli/tty tty-component-with-table: stdout and exit class equal
+PASS cli/load load-labeled-ram-and-rom: same arguments: trace equal after loading mem.hex and code.hex by label
+PASS cli/save save-ram-after-halt: saved images byte-equal: True (['11 22 33 44 55 66 77 88'])
+PASS cli/load load-unlabeled: same arguments: an unlabeled image loads every RAM and ROM in both programs
+PASS cli/load load-unknown-label: both fail for an absent label (exit 255/2)
+PASS cli/load same-args-l: Mobile accepts Evolution's '-l'
+PASS cli/save save-without-ram: circuit without RAM and without halt pin: exit 0/0
+PASS cli/substitute absolute-old-path: stdout and exit class equal
+PASS cli/substitute identity-mapping: stdout and exit class equal
+DIFF cli/substitute project-relative-old-path: stdout differs (evolution 3 lines, mobile 3 lines)
+DIFF cli/substitute no-mapping: stdout differs (evolution 3 lines, mobile 0 lines)
+PASS cli/substitute same-args-s: Mobile accepts Evolution's '-s'
+PASS cli/substitute same-args-substitute: Mobile accepts Evolution's '--substitute'
+PASS cli/substitute duplicate-old: both reject a repeated OLD (exit 10/2)
+PASS cli/toplevel-circuit select-top: stdout and exit class equal
+PASS cli/toplevel-circuit select-main: stdout and exit class equal
+PASS cli/toplevel-circuit absent-circuit: absent circuit: exit 255/2
+PASS cli/toplevel-circuit same-args-toplevel-circuit: Mobile accepts Evolution's '--toplevel-circuit'
+PASS cli/test-vector vectors-and: failing vectors, observed values and totals: evolution=({5: [('Y', '1')], 7: [('Y', 'E')]}, (6, 2)), mobile=({5: [('Y', '1')], 7: [('Y', 'E')]}, (6, 2))
+DIFF cli/test-vector vectors-and-exit: exit evolution=0 (Startup.run exits 0 after -w), mobile=1
+PASS cli/test-vector vectors-flip: failing vectors, observed values and totals: evolution=({}, (6, 0)), mobile=({}, (6, 0))
+PASS cli/test-vector vectors-flip-exit: exit evolution=0 (Startup.run exits 0 after -w), mobile=0
+PASS cli/test-circuit bench-pass: stdout and exit class equal
+PASS cli/test-circuit bench-fail: stdout and exit class equal
+PASS cli/new-file-format convert-and: Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': 'af1ecc8e670a', 'evolution-n': 'af1ecc8e670a', 'mobile-n': 'af1ecc8e670a'}
+DIFF cli/new-file-format convert-and-header: written source version: evolution=5.1.0dev, mobile=5.1.0-dev
+PASS cli/new-file-format convert-hierarchy: Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '0ee7ccccf019', 'evolution-n': '0ee7ccccf019', 'mobile-n': '0ee7ccccf019'}
+DIFF cli/new-file-format convert-hierarchy-header: written source version: evolution=5.1.0dev, mobile=3.8.0
+PASS cli/new-file-format convert-bus-adder: Evolution -t table output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '8f877d0c1d05', 'evolution-n': '8f877d0c1d05', 'mobile-n': '8f877d0c1d05'}
+DIFF cli/new-file-format convert-bus-adder-header: written source version: evolution=5.1.0dev, mobile=3.8.0
+PASS cli/new-file-format convert-memory: Evolution -t table,halt output equal for the original, Evolution's -n output and Mobile's -n output: {'original': '18f5c8d76614', 'evolution-n': '18f5c8d76614', 'mobile-n': '18f5c8d76614'}
+PASS cli/new-file-format convert-memory-header: written source version: evolution=5.1.0dev, mobile=5.1.0dev
+PASS cli/new-file-format convert-counter: Evolution -t table,halt output equal for the original, Evolution's -n output and Mobile's -n output: {'original': 'ded48bbed0e8', 'evolution-n': 'ded48bbed0e8', 'mobile-n': 'ded48bbed0e8'}
+DIFF cli/new-file-format convert-counter-header: written source version: evolution=5.1.0dev, mobile=2.7.1
+PASS cli/test-fpga hdlonly-basys3-constraints: Vivado flow on both: (True, True); physical pins, I/O standards and clock period: evolution=([('U16', 'LVCMOS33'), ('V16', 'LVCMOS33'), ('V17', 'LVCMOS33'), ('W5', 'LVCMOS33')], [('W5', 10.0)]), mobile=([('U16', 'LVCMOS33'), ('V16', 'LVCMOS33'), ('V17', 'LVCMOS33'), ('W5', 'LVCMOS33')], [('W5', 10.0)])
+PASS cli/clear-prefs profile-defaults: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+PASS cli/gates profile-gates-iec: evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'iec', 'locale': 'en', 'template': 'plain'}
+PASS cli/gates profile-persisted-after-gates: evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'iec', 'locale': 'en', 'template': 'plain'}
+PASS cli/gates profile-gates-ANSI-short: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+PASS cli/gates profile-gates-invalid: option rejected: evolution=True (exit 0), mobile=True (exit 2)
+PASS cli/locale profile-locale-pt: evolution={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}
+PASS cli/locale profile-persisted-after-locale: evolution={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'pt', 'template': 'plain'}
+DIFF cli/locale profile-locale-pt-BR: option rejected: evolution=True (exit 0), mobile=False (exit 0)
+DIFF cli/locale profile-locale-de: option rejected: evolution=False (exit 0), mobile=True (exit 2)
+PASS cli/locale profile-locale-en: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+PASS cli/user-template profile-template-empty: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}
+PASS cli/user-template profile-persisted-after-template: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}
+PASS cli/user-template profile-template-custom: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'custom:FILE'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'custom:FILE'}
+PASS cli/user-template profile-template-missing: option rejected: evolution=True (exit 0), mobile=True (exit 2)
+PASS cli/user-template profile-template-plain: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+DIFF cli/no-splash profile-no-splash: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}; evolution splash=false, mobile stderr='warning=--no-splash: the headless JVM launcher already runs without a splash.'
+PASS cli/clear-prefs profile-gates-iec-before-clear: evolution={'gates': 'iec', 'locale': 'pt', 'template': 'empty'}, mobile={'gates': 'iec', 'locale': 'pt', 'template': 'empty'}
+PASS cli/clear-prefs profile-clear-prefs: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+PASS cli/clear-prefs profile-persisted-after-clear: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+PASS cli/clear-prefs profile-gates-iec-before-tty-clear: evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'iec', 'locale': 'en', 'template': 'plain'}
+DIFF cli/clear-prefs profile-clear-prefs-with-tty: evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+DIFF cli/clear-prefs profile-persisted-after-tty-clear: evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+64 PASS, 16 DIFF (0 without a recorded cause)

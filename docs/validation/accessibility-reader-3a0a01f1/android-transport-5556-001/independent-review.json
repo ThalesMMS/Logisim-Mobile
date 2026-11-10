@@ -1,0 +1,35 @@
+{
+  "reviewer": "/root/accessibility28/a11y_actions_review",
+  "scope": "Independent offline archive, command, snapshot, screenshot and video review; no device/build/runtime action",
+  "archive_result": "PASS_INTEGRITY_ONLY",
+  "archive_entries_verified": 299,
+  "sdk_captures_verified": 5,
+  "sdk_checks": [
+    "protocol",
+    "nonce",
+    "PID",
+    "XML"
+  ],
+  "ui_command_json_files_reviewed": 43,
+  "app_swipes_in_retained_commands": 1,
+  "following_app_swipe_or_doubletap": false,
+  "restoration": [
+    "reader disabled; public service settings empty",
+    "touchExplorationEnabled false in final dumpsys",
+    "Speech display OFF screenshot032",
+    "ERROR unchanged",
+    "notifications granted=false; USER_SET disclosed",
+    "all three installed APK hashes match preflight"
+  ],
+  "video_frames_reviewed": 27,
+  "speech_display_caption_frames": [
+    13,
+    23
+  ],
+  "unit_result": "FAIL_NOT_QUALIFIED",
+  "limits": [
+    "Reader-produced Canvas text is retained in video, with no audio track.",
+    "The live bound-service/touch-exploration gap around ON snapshots remains.",
+    "No product defect attribution or issue28 closure follows."
+  ]
+}

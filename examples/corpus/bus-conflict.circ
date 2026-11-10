@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <main name="BusConflict"/>
+  <circuit name="BusConflict">
+    <comp lib="0" name="Pin" loc="(100,100)"><a name="label" val="A"/><a name="width" val="4"/><a name="appearance" val="classic"/></comp>
+    <comp lib="0" name="Pin" loc="(100,200)"><a name="label" val="B"/><a name="width" val="4"/><a name="appearance" val="classic"/></comp>
+    <comp lib="0" name="Pin" loc="(300,100)"><a name="label" val="Y"/><a name="width" val="4"/><a name="type" val="output"/><a name="appearance" val="classic"/></comp>
+    <wire from="(100,100)" to="(200,100)"/><wire from="(100,200)" to="(200,200)"/><wire from="(200,200)" to="(200,100)"/><wire from="(200,100)" to="(300,100)"/>
+  </circuit>
+</project>

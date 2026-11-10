@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "scope": "Offline geometry verification of the exact private test function; not native UIKit qualification",
+  "status": "PASS",
+  "cases": 10,
+  "sourceMethodSHA256": "8aff48e1a0d74d9445adec535403f8d43ee83f72039aa572ef9dc113418bcc11",
+  "visualSwiftSHA256": "4a340e08ad07e01f27b880ab1da678bd98f0184386d7426535f5fed119a24461",
+  "sourceNativeTreeSHA256": "01b74bbba94b07728449263a1e48ebdcea8ab7bcc9eede4801b36b814291cf48",
+  "capturedPoint": [
+    152.25,
+    600
+  ],
+  "translatedPoint": [
+    1252.25,
+    1300
+  ],
+  "translation": [
+    1100,
+    700
+  ],
+  "positiveConditions": [
+    "Inside the observed content and native dismissal rectangles",
+    "Outside the popover and all twelve control frames with four-point margin",
+    "Eight-point minimum candidate-cell extent",
+    "Translation changes the point instead of using a fixed window coordinate"
+  ],
+  "negativeCases": [
+    "Popover covers the content",
+    "A control covers the remaining content",
+    "Null dismissal rectangle",
+    "Null popover rectangle",
+    "Invalid control frame",
+    "Content too narrow",
+    "Infinite content rectangle",
+    "Disjoint dismissal rectangle"
+  ],
+  "initialProbe": "The retained initial probe failed its infinite-content assertion because CGRect.infinite has finite numeric components. The corrected boundary guard rejects isInfinite explicitly; all ten cases then passed.",
+  "nativeRuntime": "NOT_RUN for this correction",
+  "files": {
+    "inputs.json": {
+      "bytes": 1056,
+      "sha256": "0ee02fccbf924747057a69d74c346907542704065b504a3bd09c4d653026fb12"
+    },
+    "probe.swift": {
+      "bytes": 4751,
+      "sha256": "a5dfd7367cb50269ff3c63911b1797645276e305e025b8c20c8a37aae0681ee8"
+    },
+    "result.txt": {
+      "bytes": 91,
+      "sha256": "eb5b7851747e3e3912c25b7dbacdbf6db437178f5443f5e22fe1f1671fd674be"
+    },
+    "source-method.sha256": {
+      "bytes": 65,
+      "sha256": "4d54d83b9b811aa29896169326f148f87212944f46dff904ac771c960e4b2c73"
+    },
+    "initial-probe.swift": {
+      "bytes": 4715,
+      "sha256": "63e9de37b40b5da9040d582fd5d09a3bdb5500fb6ad125b30bd0d54c80796234"
+    }
+  }
+}

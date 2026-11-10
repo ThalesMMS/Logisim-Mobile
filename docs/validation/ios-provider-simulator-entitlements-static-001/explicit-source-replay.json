@@ -1,0 +1,335 @@
+{
+  "kind": "Offline explicit source-byte replay; selected file was read, never executed",
+  "recordedUTC": "2026-11-05T08:01:10.081792+00:00",
+  "command": [
+    "python3",
+    "-B",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-entitlements-evidence/docs/validation/ios-provider-simulator-entitlements-static-001/inspect-binary.py",
+    "--binary",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture",
+    "--expected-sha256",
+    "93f5c45e71c1ba64b2789bae430ab117a3152260f17f950bd5d97eab656d08a8",
+    "--output",
+    "/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/provider-signature-explicit-final-glnvbjdy/new",
+    "--label",
+    "explicit-app"
+  ],
+  "exitCode": 0,
+  "stdout": "{\"status\": \"STATIC_INSPECTION_PASS\", \"sha256\": \"93f5c45e71c1ba64b2789bae430ab117a3152260f17f950bd5d97eab656d08a8\", \"signatureSlots\": [0, 2, 5, 7, 65536], \"sectionCount\": 14, \"runtimeTrust\": \"NOT_ESTABLISHED\"}\n",
+  "stderr": "",
+  "parserDriverSHA256": "deaf42dfb98992d7016066ca325677a25a4f1d63826962cc43a897877c53cd1c",
+  "inspection": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture",
+    "bytes": 40688,
+    "sha256": "93f5c45e71c1ba64b2789bae430ab117a3152260f17f950bd5d97eab656d08a8",
+    "machHeader": {
+      "cpuType": "0x100000c",
+      "fileType": 2,
+      "flags": "0x200085",
+      "ncmds": 21
+    },
+    "codeSignatureCommand": {
+      "index": 20,
+      "loadCommandFileOffset": 2000,
+      "signatureFileOffset": 39696,
+      "signatureBytes": 992
+    },
+    "superBlob": {
+      "magic": "0xfade0cc0",
+      "length": 975,
+      "loadCommandSize": 992,
+      "count": 5,
+      "sha256DeclaredLength": "e85519c135a8f50d4c31edd72ef85fec04e3a0a46606ee38a60cbc0d0976d500",
+      "paddingBytes": 17
+    },
+    "slots": [
+      {
+        "slot": 0,
+        "magic": "0xfade0c02",
+        "superBlobOffset": 52,
+        "fileOffset": 39748,
+        "bytes": 455,
+        "blobSHA256": "4a3ccdd1d28038bb5343103b4d6b554b3c7586d1ff97d488a9d6ce802a3e28b1",
+        "blobFile": "explicit-app-slot-0.blob",
+        "payloadSHA256": "976ac30658db893432dc5f290f03d6f261bb50c3f6b9541ac01851af8eaf647d",
+        "payloadBytes": 447
+      },
+      {
+        "slot": 2,
+        "magic": "0xfade0c01",
+        "superBlobOffset": 507,
+        "fileOffset": 40203,
+        "bytes": 12,
+        "blobSHA256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986",
+        "blobFile": "explicit-app-slot-2.blob",
+        "payloadSHA256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payloadBytes": 4
+      },
+      {
+        "slot": 5,
+        "magic": "0xfade7171",
+        "superBlobOffset": 519,
+        "fileOffset": 40215,
+        "bytes": 336,
+        "blobSHA256": "017a1181f1f961c0e685433cec6a39a943307b15091ce1ef694619774749c91a",
+        "blobFile": "explicit-app-slot-5.blob",
+        "payloadSHA256": "58006ed768bb0e33b699b5dedbc6db4924e24cfd3684a0eb298ac78954dfd637",
+        "payloadBytes": 328,
+        "decodedXML": {
+          "com.apple.security.application-groups": [
+            "group.thalesmms.logisim.validation.revocationfixture"
+          ]
+        }
+      },
+      {
+        "slot": 7,
+        "magic": "0xfade7172",
+        "superBlobOffset": 855,
+        "fileOffset": 40551,
+        "bytes": 112,
+        "blobSHA256": "26c2dda714a8d8e38954596706640d3e846180d64a444f4ec9043b024617994c",
+        "blobFile": "explicit-app-slot-7.blob",
+        "payloadSHA256": "72c71bbb63d33e2341a304f97b90adb1983485cfc99e4144067dcd4b8b06652e",
+        "payloadBytes": 104,
+        "decodedDER": {
+          "com.apple.security.application-groups": [
+            "group.thalesmms.logisim.validation.revocationfixture"
+          ]
+        }
+      },
+      {
+        "slot": 65536,
+        "magic": "0xfade0b01",
+        "superBlobOffset": 967,
+        "fileOffset": 40663,
+        "bytes": 8,
+        "blobSHA256": "e6c83bc98a10348492c7d4d2378a54572ef29e1a5692ccd02b5e29f4b762d6a0",
+        "blobFile": "explicit-app-slot-65536.blob",
+        "payloadSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "payloadBytes": 0
+      }
+    ],
+    "codeDirectories": [
+      {
+        "slot": 0,
+        "version": "0x20400",
+        "flags": "0x2",
+        "adhocFlag": true,
+        "linkerSignedFlag": false,
+        "hashOffset": 359,
+        "hashSize": 32,
+        "hashType": 2,
+        "platform": 0,
+        "pageSizeExponent": 14,
+        "identifier": "thalesmms.logisim.validation.revocationfixture",
+        "teamIdentifier": null,
+        "specialSlotCount": 7,
+        "codeSlotCount": 3,
+        "codeLimit": 39696,
+        "specialSlots": [
+          {
+            "slot": 1,
+            "codeDirectoryOffset": 327,
+            "storedDigest": "15a5f3485b7cbc3b2d6d4d33895b6b8b1ee65749c35510175f411c5250b5fcef",
+            "blobPresent": false,
+            "actualBlobDigest": null,
+            "digestMatchesBlob": null
+          },
+          {
+            "slot": 2,
+            "codeDirectoryOffset": 295,
+            "storedDigest": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986",
+            "blobPresent": true,
+            "actualBlobDigest": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986",
+            "digestMatchesBlob": true
+          },
+          {
+            "slot": 3,
+            "codeDirectoryOffset": 263,
+            "storedDigest": "97205a87ce96a0ad6c4e41325816b519acb5d9c261c5f4460d6f0db042a7ff93",
+            "blobPresent": false,
+            "actualBlobDigest": null,
+            "digestMatchesBlob": null
+          },
+          {
+            "slot": 4,
+            "codeDirectoryOffset": 231,
+            "storedDigest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "blobPresent": false,
+            "actualBlobDigest": null,
+            "digestMatchesBlob": null
+          },
+          {
+            "slot": 5,
+            "codeDirectoryOffset": 199,
+            "storedDigest": "017a1181f1f961c0e685433cec6a39a943307b15091ce1ef694619774749c91a",
+            "blobPresent": true,
+            "actualBlobDigest": "017a1181f1f961c0e685433cec6a39a943307b15091ce1ef694619774749c91a",
+            "digestMatchesBlob": true
+          },
+          {
+            "slot": 6,
+            "codeDirectoryOffset": 167,
+            "storedDigest": "0000000000000000000000000000000000000000000000000000000000000000",
+            "blobPresent": false,
+            "actualBlobDigest": null,
+            "digestMatchesBlob": null
+          },
+          {
+            "slot": 7,
+            "codeDirectoryOffset": 135,
+            "storedDigest": "26c2dda714a8d8e38954596706640d3e846180d64a444f4ec9043b024617994c",
+            "blobPresent": true,
+            "actualBlobDigest": "26c2dda714a8d8e38954596706640d3e846180d64a444f4ec9043b024617994c",
+            "digestMatchesBlob": true
+          }
+        ],
+        "allCodePageDigestsMatch": true,
+        "codePageCount": 3
+      }
+    ],
+    "sections": [
+      {
+        "segment": "__TEXT",
+        "section": "__text",
+        "address": "0x100000818",
+        "bytes": 6988,
+        "fileOffset": 2072,
+        "flags": "0x80000400",
+        "zeroFill": false,
+        "sha256": "fe4dd880c510eb7800b04d1ab71ddcf4e199d69460a384751ae805f353ce572c"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__stubs",
+        "address": "0x100002364",
+        "bytes": 336,
+        "fileOffset": 9060,
+        "flags": "0x80000408",
+        "zeroFill": false,
+        "sha256": "3dfc4773ba4978a3b3db18d4f1595398fce0afcec2b813a530184a17036bc4e8"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__swift5_entry",
+        "address": "0x1000024b4",
+        "bytes": 8,
+        "fileOffset": 9396,
+        "flags": "0x0",
+        "zeroFill": false,
+        "sha256": "f88e39f8e0f2aa491f4e40f3f9bb0e960a83eaf0a58481d57a459ab932b00ff5"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__const",
+        "address": "0x1000024c0",
+        "bytes": 48,
+        "fileOffset": 9408,
+        "flags": "0x0",
+        "zeroFill": false,
+        "sha256": "565a4280442207ecd18cc6d49f019fe9426571988a0766a657f5b19880ad71c2"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__cstring",
+        "address": "0x1000024f0",
+        "bytes": 565,
+        "fileOffset": 9456,
+        "flags": "0x2",
+        "zeroFill": false,
+        "sha256": "ad7181a8b5c1c8d463ed982d4c75792653c7c0d5f0ecef9b88c776401da5ff25"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__oslogstring",
+        "address": "0x100002725",
+        "bytes": 2894,
+        "fileOffset": 10021,
+        "flags": "0x2",
+        "zeroFill": false,
+        "sha256": "5279f89fe00c9fa4819e87aabe4b2924718119dd777cb05f69a4c5bec531a473"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__debug_dylib",
+        "address": "0x100003273",
+        "bytes": 29,
+        "fileOffset": 12915,
+        "flags": "0x0",
+        "zeroFill": false,
+        "sha256": "9348c7d31959ef712e396a1dde7f8c0762493e40479fbe81f08ffb8cae18177b"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__debug_instlnm",
+        "address": "0x100003290",
+        "bytes": 36,
+        "fileOffset": 12944,
+        "flags": "0x0",
+        "zeroFill": false,
+        "sha256": "7bf55d47e540b62de2e463ac090d16429b25cd2c03f304c5a546de2a6587ca38"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__debug_entry",
+        "address": "0x1000032b4",
+        "bytes": 0,
+        "fileOffset": 12980,
+        "flags": "0x0",
+        "zeroFill": false,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__unwind_info",
+        "address": "0x1000032b4",
+        "bytes": 200,
+        "fileOffset": 12980,
+        "flags": "0x0",
+        "zeroFill": false,
+        "sha256": "29429ff643fd8a8ae28f11d0d8231ed23787ce80e0ab9378de1fa729e337f938"
+      },
+      {
+        "segment": "__TEXT",
+        "section": "__eh_frame",
+        "address": "0x100003380",
+        "bytes": 120,
+        "fileOffset": 13184,
+        "flags": "0x6800000b",
+        "zeroFill": false,
+        "sha256": "9a315926363f0ac3c3b03a5f8c94ca8a6a4e33d9a224182d8184876ffc55c203"
+      },
+      {
+        "segment": "__DATA_CONST",
+        "section": "__got",
+        "address": "0x100004000",
+        "bytes": 232,
+        "fileOffset": 16384,
+        "flags": "0x6",
+        "zeroFill": false,
+        "sha256": "6298671111d61480cde3651a9e61c2bbfe30a9745bf19281d9107ccaa70e3492"
+      },
+      {
+        "segment": "__DATA",
+        "section": "__common",
+        "address": "0x100008000",
+        "bytes": 2048,
+        "fileOffset": 0,
+        "flags": "0x1",
+        "zeroFill": true,
+        "sha256": null
+      },
+      {
+        "segment": "__DATA",
+        "section": "__bss",
+        "address": "0x100008800",
+        "bytes": 8,
+        "fileOffset": 0,
+        "flags": "0x1",
+        "zeroFill": true,
+        "sha256": null
+      }
+    ]
+  },
+  "sourceBytesRetained": false
+}

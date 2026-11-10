@@ -1,0 +1,138 @@
+{
+  "status": "BUILD_AND_ADHOC_SIGN_PASS",
+  "archivalScope": "One recorded source601 build/signature verification, with offline byte/log review only.",
+  "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+  "manifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+  "started": "2026-11-05T08:16:39.472610+00:00",
+  "finished": "2026-11-05T08:16:47.411520+00:00",
+  "sdk": "27.2",
+  "architecture": "arm64",
+  "app": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+    "executable_sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+    "bundle_tree_sha256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+    "version": "1.0",
+    "build": "1"
+  },
+  "provider": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+    "executable_sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+    "bundle_tree_sha256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+    "version": "1.0",
+    "build": "1"
+  },
+  "simulatorEntitlementReviewRequired": true,
+  "additionalEntitlementReview": "PENDING_ROOT_REVIEW",
+  "prefix": "P4VGX44GD8",
+  "prefixOriginEstablished": false,
+  "prefixApprovedAsTeam": false,
+  "products": {
+    "Provider": {
+      "bundleIdentifier": "thalesmms.logisim.validation.revocationfixture.provider",
+      "sectionOwners": [
+        "main"
+      ],
+      "mainImage": {
+        "image": "main",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider",
+        "bytes": 37840,
+        "sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+        "sections": {
+          "__entitlements": {
+            "fileOffset": 10018,
+            "bytes": 449,
+            "sha256": "db38978790025ed2c514445b0dcb62286331f01cb5a580982c12def85896118a",
+            "path": "Provider-main-__entitlements.bin"
+          },
+          "__ents_der": {
+            "fileOffset": 10467,
+            "bytes": 200,
+            "sha256": "6dd8ac249508fe2e9e1aef11c16b43774d0bf00cfca0a04080a1fb74415226a3",
+            "path": "Provider-main-__ents_der.bin"
+          }
+        }
+      },
+      "sectionDictionary": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture.provider",
+        "com.apple.security.application-groups": [
+          "group.thalesmms.logisim.validation.revocationfixture"
+        ]
+      },
+      "generatedAdditionalKeys": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture.provider"
+      },
+      "codeSignatureEntitlements": {},
+      "review": "PENDING_ROOT_REVIEW"
+    },
+    "App": {
+      "bundleIdentifier": "thalesmms.logisim.validation.revocationfixture",
+      "sectionOwners": [
+        "main"
+      ],
+      "mainImage": {
+        "image": "main",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture",
+        "bytes": 40448,
+        "sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+        "sections": {
+          "__entitlements": {
+            "fileOffset": 13124,
+            "bytes": 440,
+            "sha256": "279c91edc22ba362aeb82088100a50ce07e0b8710de79a13eea38a1737898d10",
+            "path": "App-main-__entitlements.bin"
+          },
+          "__ents_der": {
+            "fileOffset": 13564,
+            "bytes": 191,
+            "sha256": "65b1e6a3efe8427d4fa9c133701e5c0bc6294b51e57d1981a706ebf1c696cc96",
+            "path": "App-main-__ents_der.bin"
+          }
+        }
+      },
+      "sectionDictionary": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture",
+        "com.apple.security.application-groups": [
+          "group.thalesmms.logisim.validation.revocationfixture"
+        ]
+      },
+      "generatedAdditionalKeys": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture"
+      },
+      "codeSignatureEntitlements": {},
+      "review": "PENDING_ROOT_REVIEW"
+    }
+  },
+  "sourceComparison": "Runtime Swift, Config and project.yml byte-identical to 11fc; driver/helper tooling differs.",
+  "nativeExecution": "NOT_RUN",
+  "domainRegistration": "NOT_RUN",
+  "installation": "NOT_RUN",
+  "buildPerformedByArchivalWorker": false,
+  "independentReview": "Static byte/log PASS; prefix/extra review remains pending, not authorization to install or register.",
+  "ownershipEvidenceLimit": "Owners/main and absence on debug dylibs were read from original images by independent static reviews. The portable archive rechecks retained blobs/inputs/decoded dictionaries and preserved reports; whole Mach-O images are excluded.",
+  "limits": [
+    "The generated application-identifier values are recorded exactly, not approved.",
+    "No com.apple.developer.team-identifier is present in the decoded sections and code-signature entitlement dictionaries are empty. The application-identifier prefix does not establish a Team identity.",
+    "Code-signature entitlements and Simulator __TEXT entitlement sections are separate channels; the empty former is not substituted with the latter.",
+    "A successful build and static signature/byte review establish no runtime trust, group access, discovery, registration, authentication denial or cause of earlier FAILs.",
+    "No producer/source/build/signature/install/Native state was changed during archiving."
+  ],
+  "reviewStatusTimeScope": "Captured before the separate Root admission; original manifest/report flags are not rewritten.",
+  "laterAdmission": {
+    "reportedBy": "coordinator",
+    "scope": "Exact 601 extras approved for one local Simulator test only, not Apple Developer Team identity or release.",
+    "record": "ProvenanceArtifactReview.json, maintained separately in ios-fileprovider-bootstrap-xcode-601",
+    "formalPinCapturedInThisArchive": false,
+    "doesNotQualifyRegistration": true,
+    "reference": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-xcode-601/scripts/ios_fileprovider_bootstrap/ProvenanceArtifactReview.json",
+      "sha256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8",
+      "scope": "LOCAL_SIMULATOR_ONLY",
+      "operation": "ONE_PREPARE_REGISTER_INSPECT",
+      "developerTeamApproved": false,
+      "releaseApproved": false,
+      "sourcePinState": "PENDING at archive capture; reference only, not included as build evidence."
+    }
+  }
+}

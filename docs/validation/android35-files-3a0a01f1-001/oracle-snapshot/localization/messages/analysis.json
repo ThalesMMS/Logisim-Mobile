@@ -1,0 +1,290 @@
+{
+  "analysis_title": {
+    "en": "Combinational analysis",
+    "pt": "Análise combinacional"
+  },
+  "analysis_created": {
+    "en": "Equivalent circuit created. Use Undo to remove it.",
+    "pt": "Circuito equivalente criado. Use Desfazer para removê-lo."
+  },
+  "analysis_cancelled": {
+    "en": "Analysis cancelled.",
+    "pt": "Análise cancelada."
+  },
+  "analysis_failed": {
+    "en": "Could not analyze the circuit.",
+    "pt": "Não foi possível analisar o circuito."
+  },
+  "analysis_limits_help": {
+    "en": "Table: up to 12 inputs and 4,096 rows. Exact minimization and Karnaugh maps: up to 6 inputs.",
+    "pt": "Tabela: até 12 entradas e 4.096 linhas. Simplificação exata e Karnaugh: até 6 entradas."
+  },
+  "analysis_read_circuit": {
+    "en": "Read circuit",
+    "pt": "Ler circuito"
+  },
+  "analysis_table": {
+    "en": "Table",
+    "pt": "Tabela"
+  },
+  "analysis_expressions": {
+    "en": "Expressions",
+    "pt": "Expressões"
+  },
+  "analysis_karnaugh": {
+    "en": "Karnaugh",
+    "pt": "Karnaugh"
+  },
+  "analysis_assignment_help": {
+    "en": "One assignment per line: Y := A & B",
+    "pt": "Uma atribuição por linha: Y := A & B"
+  },
+  "analysis_distinct_outputs": {
+    "en": "Use distinct output names.",
+    "pt": "Use nomes de saída distintos."
+  },
+  "analysis_expressions_table": {
+    "en": "Create table from expressions",
+    "pt": "Criar tabela das expressões"
+  },
+  "analysis_input_list": {
+    "en": "Inputs separated by commas",
+    "pt": "Entradas separadas por vírgula"
+  },
+  "analysis_output_list": {
+    "en": "Outputs separated by commas",
+    "pt": "Saídas separadas por vírgula"
+  },
+  "analysis_max_inputs": {
+    "en": {
+      "one": "Use up to {count} input.",
+      "other": "Use up to {count} inputs."
+    },
+    "pt": {
+      "one": "Use até {count} entrada.",
+      "other": "Use até {count} entradas."
+    }
+  },
+  "analysis_max_outputs": {
+    "en": {
+      "one": "Use up to {count} output.",
+      "other": "Use up to {count} outputs."
+    },
+    "pt": {
+      "one": "Use até {count} saída.",
+      "other": "Use até {count} saídas."
+    }
+  },
+  "analysis_empty_table": {
+    "en": "Create empty table",
+    "pt": "Criar tabela vazia"
+  },
+  "analysis_sop": {
+    "en": "Sum of products",
+    "pt": "Soma de produtos"
+  },
+  "analysis_pos": {
+    "en": "Product of sums",
+    "pt": "Produto de somas"
+  },
+  "analysis_simplify": {
+    "en": "Minimize",
+    "pt": "Simplificar"
+  },
+  "analysis_generated_name": {
+    "en": "{name} analyzed",
+    "pt": "{name} analisado"
+  },
+  "analysis_generated_mismatch": {
+    "en": "The generated circuit does not match the table.",
+    "pt": "O circuito gerado não corresponde à tabela."
+  },
+  "analysis_generate": {
+    "en": "Generate circuit",
+    "pt": "Gerar circuito"
+  },
+  "analysis_table_help": {
+    "en": "Tap an output to cycle through 0, 1, and x. Inputs are ordered from the most significant bit to the least significant bit.",
+    "pt": "Toque numa saída para alternar 0, 1 e x. Entradas são ordenadas do bit mais significativo ao menos significativo."
+  },
+  "analysis_a11y_table_cell": {
+    "en": "Row {row}, output {output}: {value}",
+    "pt": "Linha {row}, saída {output}: {value}"
+  },
+  "analysis_karnaugh_reduce": {
+    "en": "Reduce the table to at most 6 inputs to view a Karnaugh map.",
+    "pt": "Reduza a tabela para no máximo 6 entradas para ver Karnaugh."
+  },
+  "analysis_karnaugh_axes": {
+    "en": "Rows: {rows} · Columns: {columns}",
+    "pt": "Linhas: {rows} · Colunas: {columns}"
+  },
+  "analysis_a11y_karnaugh_cell": {
+    "en": "Karnaugh row {row} column {column}: {value}",
+    "pt": "Karnaugh linha {row} coluna {column}: {value}"
+  },
+  "analysis_input_undefined": {
+    "en": "Input not defined: {name}.",
+    "pt": "Entrada não definida: {name}."
+  },
+  "analysis_parse_position": {
+    "en": "{reason} Position {position}.",
+    "pt": "{reason} Posição {position}."
+  },
+  "analysis_assignment_required": {
+    "en": "Use an assignment such as Y := A & B.",
+    "pt": "Use uma atribuição como Y := A & B."
+  },
+  "analysis_expression_length": {
+    "en": "The expression exceeds 16,384 characters.",
+    "pt": "A expressão excede 16.384 caracteres."
+  },
+  "analysis_unexpected_symbol": {
+    "en": "Unexpected symbol: {symbol}.",
+    "pt": "Símbolo inesperado: {symbol}."
+  },
+  "analysis_expression_complexity": {
+    "en": "The expression exceeds the complexity limit.",
+    "pt": "A expressão excede o limite de complexidade."
+  },
+  "analysis_missing_close": {
+    "en": "Missing closing parenthesis.",
+    "pt": "Parêntese de fechamento ausente."
+  },
+  "analysis_expected_operand": {
+    "en": "Expected a name, constant, or parenthesis.",
+    "pt": "Esperado nome, constante ou parêntese."
+  },
+  "analysis_empty_name": {
+    "en": "Empty name.",
+    "pt": "Nome vazio."
+  },
+  "analysis_unterminated_name": {
+    "en": "Unterminated backtick-quoted name.",
+    "pt": "Nome entre crases não terminado."
+  },
+  "analysis_invalid_bus_index": {
+    "en": "Invalid bus index.",
+    "pt": "Índice de barramento inválido."
+  },
+  "analysis_invalid_symbol": {
+    "en": "Invalid symbol: {symbol}.",
+    "pt": "Símbolo inválido: {symbol}."
+  },
+  "analysis_operation_limit": {
+    "en": {
+      "one": "Analysis exceeded {count} operation. Reduce the table.",
+      "other": "Analysis exceeded {count} operations. Reduce the table."
+    },
+    "pt": {
+      "one": "A análise excedeu {count} operação. Reduza a tabela.",
+      "other": "A análise excedeu {count} operações. Reduza a tabela."
+    }
+  },
+  "analysis_table_inputs_limit": {
+    "en": "The table exceeds 20 input bits.",
+    "pt": "A tabela excede 20 bits de entrada."
+  },
+  "analysis_output_range": {
+    "en": "Use between 1 and 256 outputs.",
+    "pt": "Use entre 1 e 256 saídas."
+  },
+  "analysis_unique_inputs": {
+    "en": "Inputs need unique names.",
+    "pt": "Entradas precisam de nomes únicos."
+  },
+  "analysis_unique_outputs": {
+    "en": "Outputs need unique names.",
+    "pt": "Saídas precisam de nomes únicos."
+  },
+  "analysis_rows_required": {
+    "en": {
+      "one": "The table needs {count} row.",
+      "other": "The table needs {count} rows."
+    },
+    "pt": {
+      "one": "A tabela precisa de {count} linha.",
+      "other": "A tabela precisa de {count} linhas."
+    }
+  },
+  "analysis_row_outputs_required": {
+    "en": {
+      "one": "Each row needs {count} output.",
+      "other": "Each row needs {count} outputs."
+    },
+    "pt": {
+      "one": "Cada linha precisa de {count} saída.",
+      "other": "Cada linha precisa de {count} saídas."
+    }
+  },
+  "analysis_unlisted_variables": {
+    "en": "Some variables are outside the input list.",
+    "pt": "Há variáveis fora da lista de entradas."
+  },
+  "analysis_input_bits_limit": {
+    "en": "Input bit limit: {bits}. Row limit: {rows}.",
+    "pt": "Limite de bits de entrada: {bits}. Limite de linhas: {rows}."
+  },
+  "analysis_output_bits_limit": {
+    "en": {
+      "one": "The table is limited to {count} output bit.",
+      "other": "The table is limited to {count} output bits."
+    },
+    "pt": {
+      "one": "A tabela está limitada a {count} bit de saída.",
+      "other": "A tabela está limitada a {count} bits de saída."
+    }
+  },
+  "analysis_missing_circuit": {
+    "en": "Missing circuit: {name}.",
+    "pt": "Circuito ausente: {name}."
+  },
+  "analysis_recursive_circuit": {
+    "en": "Recursive circuit cannot be analyzed: {name}.",
+    "pt": "Circuito recursivo não pode ser analisado: {name}."
+  },
+  "analysis_temporal_circuit": {
+    "en": "Combinational analysis does not accept memory, clocks, or timed inputs.",
+    "pt": "A análise combinacional não aceita memória, clocks ou entradas temporais."
+  },
+  "analysis_distinct_pins": {
+    "en": "Pins need distinct labels for analysis.",
+    "pt": "Os pinos precisam de rótulos distintos para a análise."
+  },
+  "analysis_circuit_failed": {
+    "en": "The circuit could not be analyzed: {reason}",
+    "pt": "O circuito não pôde ser analisado: {reason}"
+  },
+  "analysis_undefined_output": {
+    "en": "Output {name} is undefined at row {row}.",
+    "pt": "Saída {name} indefinida na linha {row}."
+  },
+  "analysis_undeclared_inputs": {
+    "en": "The expression contains undeclared inputs.",
+    "pt": "A expressão contém entradas não declaradas."
+  },
+  "analysis_component_limit": {
+    "en": {
+      "one": "The generated circuit exceeds {count} component.",
+      "other": "The generated circuit exceeds {count} components."
+    },
+    "pt": {
+      "one": "O circuito gerado excede {count} componente.",
+      "other": "O circuito gerado excede {count} componentes."
+    }
+  },
+  "analysis_minimization_limit": {
+    "en": {
+      "one": "Exact minimization is limited to {count} input.",
+      "other": "Exact minimization is limited to {count} inputs."
+    },
+    "pt": {
+      "one": "A simplificação exata está limitada a {count} entrada.",
+      "other": "A simplificação exata está limitada a {count} entradas."
+    }
+  },
+  "analysis_karnaugh_limit": {
+    "en": "The Karnaugh map is limited to 6 inputs.",
+    "pt": "O mapa de Karnaugh está limitado a 6 entradas."
+  }
+}

@@ -1,0 +1,120 @@
+
+firmware.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 07 00 	jmp	plain
+  1:	0c 94 08 00 	jmp	upper case
+	2:	0c 94 09 00 	jmp	tab indent: no match
+     2:	0c 94 0a 00 	jmp	after tab line
+   03:	0c 94 0b 00 	jmp	leading zero: no match
+4:	0c 94 0c 00 	jmp	no indent: no match
+ 5:	0c 94 0d 00 	jmp	first of two
+   5:	0c 94 0e 00 	jmp	second of two
+   6 :	0c 94 0f 00 	jmp	space before colon: no match
+00000007 <label_7>:
+    7:	0c 94 11 00 	jmp	after label
+   9:	0c 94 12 00 	jmp	plain
+  A:	0c 94 13 00 	jmp	upper case
+	b:	0c 94 14 00 	jmp	tab indent: no match
+     b:	0c 94 15 00 	jmp	after tab line
+   0c:	0c 94 16 00 	jmp	leading zero: no match
+d:	0c 94 17 00 	jmp	no indent: no match
+ e:	0c 94 18 00 	jmp	first of two
+   e:	0c 94 19 00 	jmp	second of two
+   f :	0c 94 1a 00 	jmp	space before colon: no match
+00000010 <label_10>:
+    10:	0c 94 1c 00 	jmp	after label
+   12:	0c 94 1d 00 	jmp	plain
+  13:	0c 94 1e 00 	jmp	upper case
+	14:	0c 94 1f 00 	jmp	tab indent: no match
+     14:	0c 94 20 00 	jmp	after tab line
+   015:	0c 94 21 00 	jmp	leading zero: no match
+16:	0c 94 22 00 	jmp	no indent: no match
+ 17:	0c 94 23 00 	jmp	first of two
+   17:	0c 94 24 00 	jmp	second of two
+   18 :	0c 94 25 00 	jmp	space before colon: no match
+00000019 <label_19>:
+    19:	0c 94 27 00 	jmp	after label
+   1b:	0c 94 28 00 	jmp	plain
+  1C:	0c 94 29 00 	jmp	upper case
+	1d:	0c 94 2a 00 	jmp	tab indent: no match
+     1d:	0c 94 2b 00 	jmp	after tab line
+   01e:	0c 94 2c 00 	jmp	leading zero: no match
+1f:	0c 94 2d 00 	jmp	no indent: no match
+ 20:	0c 94 2e 00 	jmp	first of two
+   20:	0c 94 2f 00 	jmp	second of two
+   21 :	0c 94 30 00 	jmp	space before colon: no match
+00000022 <label_22>:
+    22:	0c 94 32 00 	jmp	after label
+   24:	0c 94 33 00 	jmp	plain
+  25:	0c 94 34 00 	jmp	upper case
+	26:	0c 94 35 00 	jmp	tab indent: no match
+     26:	0c 94 36 00 	jmp	after tab line
+   027:	0c 94 37 00 	jmp	leading zero: no match
+28:	0c 94 38 00 	jmp	no indent: no match
+ 29:	0c 94 39 00 	jmp	first of two
+   29:	0c 94 3a 00 	jmp	second of two
+   2a :	0c 94 3b 00 	jmp	space before colon: no match
+0000002b <label_2b>:
+    2b:	0c 94 3d 00 	jmp	after label
+   2d:	0c 94 3e 00 	jmp	plain
+  2E:	0c 94 3f 00 	jmp	upper case
+	2f:	0c 94 40 00 	jmp	tab indent: no match
+     2f:	0c 94 41 00 	jmp	after tab line
+   030:	0c 94 42 00 	jmp	leading zero: no match
+31:	0c 94 43 00 	jmp	no indent: no match
+ 32:	0c 94 44 00 	jmp	first of two
+   32:	0c 94 45 00 	jmp	second of two
+   33 :	0c 94 46 00 	jmp	space before colon: no match
+00000034 <label_34>:
+    34:	0c 94 48 00 	jmp	after label
+   36:	0c 94 49 00 	jmp	plain
+  37:	0c 94 4a 00 	jmp	upper case
+	38:	0c 94 4b 00 	jmp	tab indent: no match
+     38:	0c 94 4c 00 	jmp	after tab line
+   039:	0c 94 4d 00 	jmp	leading zero: no match
+3a:	0c 94 4e 00 	jmp	no indent: no match
+ 3b:	0c 94 4f 00 	jmp	first of two
+   3b:	0c 94 50 00 	jmp	second of two
+   3c :	0c 94 51 00 	jmp	space before colon: no match
+0000003d <label_3d>:
+    3d:	0c 94 53 00 	jmp	after label
+   3f:	0c 94 54 00 	jmp	plain
+  40:	0c 94 55 00 	jmp	upper case
+	41:	0c 94 56 00 	jmp	tab indent: no match
+     41:	0c 94 57 00 	jmp	after tab line
+   042:	0c 94 58 00 	jmp	leading zero: no match
+43:	0c 94 59 00 	jmp	no indent: no match
+ 44:	0c 94 5a 00 	jmp	first of two
+   44:	0c 94 5b 00 	jmp	second of two
+   45 :	0c 94 5c 00 	jmp	space before colon: no match
+00000046 <label_46>:
+    46:	0c 94 5e 00 	jmp	after label
+   48:	0c 94 5f 00 	jmp	plain
+  49:	0c 94 60 00 	jmp	upper case
+	4a:	0c 94 61 00 	jmp	tab indent: no match
+     4a:	0c 94 62 00 	jmp	after tab line
+   04b:	0c 94 63 00 	jmp	leading zero: no match
+4c:	0c 94 64 00 	jmp	no indent: no match
+ 4d:	0c 94 65 00 	jmp	first of two
+   4d:	0c 94 66 00 	jmp	second of two
+   4e :	0c 94 67 00 	jmp	space before colon: no match
+0000004f <label_4f>:
+    4f:	0c 94 69 00 	jmp	after label
+   51:	0c 94 6a 00 	jmp	plain
+  52:	0c 94 6b 00 	jmp	upper case
+	53:	0c 94 6c 00 	jmp	tab indent: no match
+     53:	0c 94 6d 00 	jmp	after tab line
+   054:	0c 94 6e 00 	jmp	leading zero: no match
+55:	0c 94 6f 00 	jmp	no indent: no match
+ 56:	0c 94 70 00 	jmp	first of two
+   56:	0c 94 71 00 	jmp	second of two
+   57 :	0c 94 72 00 	jmp	space before colon: no match
+00000058 <label_58>:
+    58:	0c 94 74 00 	jmp	after label
+   5a:	0c 94 75 00 	jmp	plain
+  5B:	0c 94 76 00 	jmp	upper case
+	5c:	0c 94 77 00 	jmp	tab indent: no match     5c:	0c 94 78 00 	jmp	after tab line   05d:	0c 94 79 00 	jmp	leading zero: no match5e:	0c 94 7a 00 	jmp	no indent: no match 5f:	0c 94 7b 00 	jmp	first of two   5f:	0c 94 7c 00 	jmp	second of two   b:	0c 94 7d 00 	jmp	ADDR step   16:	0c 94 7e 00 	jmp	ADDR step   21:	0c 94 7f 00 	jmp	ADDR step   2c:	0c 94 80 00 	jmp	ADDR step   37:	0c 94 81 00 	jmp	ADDR step   42:	0c 94 82 00 	jmp	ADDR step   4d:	0c 94 83 00 	jmp	ADDR step   58:	0c 94 84 00 	jmp	ADDR step   63:	0c 94 85 00 	jmp	ADDR step   6e:	0c 94 86 00 	jmp	ADDR step   79:	0c 94 87 00 	jmp	ADDR step   84:	0c 94 88 00 	jmp	ADDR step   8f:	0c 94 89 00 	jmp	ADDR step   9a:	0c 94 8a 00 	jmp	ADDR step   a5:	0c 94 8b 00 	jmp	ADDR step   b0:	0c 94 8c 00 	jmp	ADDR step   bb:	0c 94 8d 00 	jmp	ADDR step   c6:	0c 94 8e 00 	jmp	ADDR step   d1:	0c 94 8f 00 	jmp	ADDR step   dc:	0c 94 90 00 	jmp	ADDR step   e7:	0c 94 91 00 	jmp	ADDR step   f2:	0c 94 92 00 	jmp	ADDR step   fd:	0c 94 93 00 	jmp	ADDR step   108:	0c 94 94 00 	jmp	ADDR step   113:	0c 94 95 00 	jmp	ADDR step   11e:	0c 94 96 00 	jmp	ADDR step   129:	0c 94 97 00 	jmp	ADDR step   134:	0c 94 98 00 	jmp	ADDR step   13f:	0c 94 99 00 	jmp	ADDR step   14a:	0c 94 9a 00 	jmp	ADDR step   155:	0c 94 9b 00 	jmp	ADDR step   160:	0c 94 9c 00 	jmp	ADDR step   16b:	0c 94 9d 00 	jmp	ADDR step   176:	0c 94 9e 00 	jmp	ADDR step   181:	0c 94 9f 00 	jmp	ADDR step   18c:	0c 94 a0 00 	jmp	ADDR step   197:	0c 94 a1 00 	jmp	ADDR step   1a2:	0c 94 a2 00 	jmp	ADDR step   1ad:	0c 94 a3 00 	jmp	ADDR step   1b8:	0c 94 a4 00 	jmp	ADDR step   1c3:	0c 94 a5 00 	jmp	ADDR step   1ce:	0c 94 a6 00 	jmp	ADDR step   1d9:	0c 94 a7 00 	jmp	ADDR step   1e4:	0c 94 a8 00 	jmp	ADDR step   1ef:	0c 94 a9 00 	jmp	ADDR step   1fa:	0c 94 aa 00 	jmp	ADDR step   205:	0c 94 ab 00 	jmp	ADDR step   10001:	0c 94 ac 00 	jmp	BIG step   20002:	0c 94 ad 00 	jmp	BIG step   30003:	0c 94 ae 00 	jmp	BIG step   40004:	0c 94 af 00 	jmp	BIG step   50005:	0c 94 b0 00 	jmp	BIG step   60006:	0c 94 b1 00 	jmp	BIG step   70007:	0c 94 b2 00 	jmp	BIG step   80008:	0c 94 b3 00 	jmp	BIG step   90009:	0c 94 b4 00 	jmp	BIG step   a000a:	0c 94 b5 00 	jmp	BIG step   b000b:	0c 94 b6 00 	jmp	BIG step   c000c:	0c 94 b7 00 	jmp	BIG step   d000d:	0c 94 b8 00 	jmp	BIG step   e000e:	0c 94 b9 00 	jmp	BIG step   f000f:	0c 94 ba 00 	jmp	BIG step   100010:	0c 94 bb 00 	jmp	BIG step   110011:	0c 94 bc 00 	jmp	BIG step   120012:	0c 94 bd 00 	jmp	BIG step   130013:	0c 94 be 00 	jmp	BIG step   140014:	0c 94 bf 00 	jmp	BIG step   150015:	0c 94 c0 00 	jmp	BIG step   160016:	0c 94 c1 00 	jmp	BIG step   170017:	0c 94 c2 00 	jmp	BIG step   180018:	0c 94 c3 00 	jmp	BIG step   190019:	0c 94 c4 00 	jmp	BIG step   1a001a:	0c 94 c5 00 	jmp	BIG step   1b001b:	0c 94 c6 00 	jmp	BIG step   1c001c:	0c 94 c7 00 	jmp	BIG step   1d001d:	0c 94 c8 00 	jmp	BIG step   25:	0c 94 c9 00 	jmp	ACC step   4A:	0c 94 ca 00 	jmp	ACC step   6F:	0c 94 cb 00 	jmp	ACC step   94:	0c 94 cc 00 	jmp	ACC step   B9:	0c 94 cd 00 	jmp	ACC step   DE:	0c 94 ce 00 	jmp	ACC step   103:	0c 94 cf 00 	jmp	ACC step   128:	0c 94 d0 00 	jmp	ACC step   14D:	0c 94 d1 00 	jmp	ACC step   172:	0c 94 d2 00 	jmp	ACC step   197:	0c 94 d3 00 	jmp	ACC step   1BC:	0c 94 d4 00 	jmp	ACC step   1E1:	0c 94 d5 00 	jmp	ACC step   206:	0c 94 d6 00 	jmp	ACC step   22B:	0c 94 d7 00 	jmp	ACC step   250:	0c 94 d8 00 	jmp	ACC step   275:	0c 94 d9 00 	jmp	ACC step   29A:	0c 94 da 00 	jmp	ACC step   2BF:	0c 94 db 00 	jmp	ACC step   2E4:	0c 94 dc 00 	jmp	ACC step   309:	0c 94 dd 00 	jmp	ACC step   32E:	0c 94 de 00 	jmp	ACC step   353:	0c 94 df 00 	jmp	ACC step   378:	0c 94 e0 00 	jmp	ACC step   39D:	0c 94 e1 00 	jmp	ACC step   3C2:	0c 94 e2 00 	jmp	ACC step   3E7:	0c 94 e3 00 	jmp	ACC step   40C:	0c 94 e4 00 	jmp	ACC step   431:	0c 94 e5 00 	jmp	ACC step   456:	0c 94 e6 00 	jmp	ACC step   47B:	0c 94 e7 00 	jmp	ACC step   4A0:	0c 94 e8 00 	jmp	ACC step   4C5:	0c 94 e9 00 	jmp	ACC step   4EA:	0c 94 ea 00 	jmp	ACC step   50F:	0c 94 eb 00 	jmp	ACC step   534:	0c 94 ec 00 	jmp	ACC step   559:	0c 94 ed 00 	jmp	ACC step   57E:	0c 94 ee 00 	jmp	ACC step   5A3:	0c 94 ef 00 	jmp	ACC step

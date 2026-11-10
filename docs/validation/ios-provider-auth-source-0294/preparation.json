@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "scope": "SOURCE_PREPARATION_ONLY",
+  "sourceCommit": "0294ef605e5b78fa441461e978071cf0cee74b07",
+  "sourceBase": "7559839c287c8ba0ae1dc99acf1c2772ad6ef9a5",
+  "recordedUTC": "2026-11-05T10:14:35.013329+00:00",
+  "mainProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "fixtureProducer": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+  "scopeGates": {
+    "nativeAuthentication": "NOT_RUN",
+    "newProviderLocationSelectors": "PENDING_RUNTIME",
+    "issue26": "OPEN",
+    "physicalDevices": "NOT_RUN",
+    "rootRuntimeLease": null
+  },
+  "checks": {
+    "pythonRunnerTests": {
+      "passed": 24,
+      "exitCode": 0
+    },
+    "pureSwiftOracle": {
+      "passed": 36,
+      "failed": 0
+    },
+    "simulatorSDKTypecheck": {
+      "sources": 6,
+      "exitCode": 0,
+      "execution": "NOT_RUN"
+    },
+    "prepare": {
+      "status": "PREPARED",
+      "swiftSources": 6,
+      "jsonResources": 5,
+      "commands": [
+        "codesign",
+        "codesign",
+        "codesign",
+        "codesign",
+        "codesign",
+        "codesign",
+        "xcodegen"
+      ]
+    },
+    "independentReviews": {
+      "oracleAndTimeline": "PASS_AFTER_TWO_FIXES",
+      "controllerAndNavigator": "PASS",
+      "runnerProjectAndScenario": "PASS"
+    }
+  },
+  "limits": [
+    "No Simulator query, install, launch, registration, build or Native test occurred.",
+    "SDK typechecking is not execution on iOS.",
+    "The historical fixture bootstrap approval does not authorize this auth scenario.",
+    "A future selected-case pass covers provider authentication after a prior grant, not kernel-token revocation.",
+    "The Save/request association uses a public action/error time window plus item, request UUID and extension process; Main has no request-ID instrumentation."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+ "schema": 1,
+ "issue": 314,
+ "evolution_revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+ "mobile_revision": "494bf291a8769d42b09276dc5ba51c986b54d006",
+ "tested_tree": "Change 235e7bfd on base fcbfd700, rebased onto e4c7d1a0 (conflicts only in generated localization, translation catalogs and neighbouring preference fields) as 494bf291a8769d42b09276dc5ba51c986b54d006; the focused Kotlin tests were repeated on 494bf291a8769d42b09276dc5ba51c986b54d006.",
+ "kotlin_tests": {
+  "command": "./gradlew :composeApp:testAndroidHostTest --tests EvolutionHotkeysTest EditorKeyboardShortcutsTest EditorPreferencesTest EditorSearchCommandsTest KeyboardShortcutPolicyTest PlacementAutoLabelTest ImportedEditToolTest CanvasInteractionTest CanvasWindowFocusTest",
+  "revision": "494bf291a8769d42b09276dc5ba51c986b54d006",
+  "result": "76 tests, 0 failures"
+ },
+ "android": {
+  "status": "PASS",
+  "platform": "emulator",
+  "avd": "logisim35tab (API 35, 2560x1600, -read-only, -gpu host)",
+  "serial": "emulator-5610",
+  "apk": "androidApp-debug.apk from 235e7bfd",
+  "injection": "adb shell input keyboard keycombination / input keyevent; observation by uiautomator dump",
+  "steps": [
+   [
+    "Ctrl+8",
+    "8th selectable toolbar tool (AND) selected; status 'Tap the grid to insert AND.'"
+   ],
+   [
+    "W, =, R, tap",
+    "placed AND: Facing South, Gate size 70, Number of inputs 3"
+   ],
+   [
+    "M, - on the selection",
+    "Gate size 50, Number of inputs 2; zoom unchanged (400%)"
+   ],
+   [
+    "Insert",
+    "duplicate of the selection placed (6 components)"
+   ],
+   [
+    "- with nothing selected",
+    "zoom 400% -> 320%"
+   ],
+   [
+    "Shift, Shift",
+    "Find Action opened (Commands heading)"
+   ],
+   [
+    "Ctrl+Shift+E",
+    "Export circuit drawing panel opened"
+   ],
+   [
+    "Ctrl+P",
+    "Export circuit drawing panel opened (Print PDF)"
+   ],
+   [
+    "Ctrl+Shift+D then Ctrl+Shift+U (SAP-1 main)",
+    "status 'Circuit order updated.' and order restored"
+   ],
+   [
+    "Preferences: double Shift off; Tool 11 row '—'; Ctrl+S in its field",
+    "'Already assigned to Save.'"
+   ],
+   [
+    "Ctrl+J, Apply, Ctrl+J in editor",
+    "toolbar tool 11 (NAND) selected; Shift, Shift does not open Find Action"
+   ],
+   [
+    "force-stop and relaunch",
+    "Ctrl+J still selects NAND; double Shift still off"
+   ],
+   [
+    "Restore shortcut defaults; double Shift on",
+    "restore disabled, Tool 11 row '—', Ctrl+J inert, Shift, Shift opens Find Action"
+   ],
+   [
+    "Ctrl+Shift+W",
+    "workspace project list with Close session"
+   ],
+   [
+    "LED tool: H, L (Auto Label 'L1'), place; V; T",
+    "label hidden at placement; V shows 'L1'; T hides it again"
+   ]
+  ]
+ },
+ "ios": {
+  "status": "PASS",
+  "device": "t314 iPad",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-2",
+  "physical_device": false,
+  "command": "python3 scripts/run-ios-fpga-tick.py --only-testing ShortcutRemapEndToEndTests/testEvolutionHotkeysWithHardwareKeys",
+  "artifact": {
+   "bundle_id": "thalesmms.logisim.mobile",
+   "executable_sha256": "300cf7cd2ac626426d18f93fb1c37eec94102d92537d092ab3f5a77f08d8184a",
+   "bundle_tree_sha256": "b37dee2a6b18466ca3ed5047a448fadac2b5df722496a671459449ec7944e892"
+  },
+  "observations": {
+   "314-close": "close opened projects=true",
+   "314-applied-row": "Select toolbar tool 11, ⌘+J | Select toolbar tool 11 | ⌘+J",
+   "314-edited-inspector": "Facing=South Gate size=50 Number of inputs=2",
+   "314-placed-inspector": "Facing=South Gate size=70 Number of inputs=3",
+   "314-3-print": "314-3-print opened=true",
+   "314-2-export": "314-2-export opened=true",
+   "314-double-shift": "double-shift opened=false"
+  },
+  "double_shift": "Not proven: XCUITest typeKey(.shift) and XCUIElement.perform(withKeyModifiers: .shift) did not open Find Action. Each synthesized event is slow, so the two presses may fall outside the 300 ms window; no faster injector (Simulator.app) is installed on the host. Android proves the gesture."
+ }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#I/O" name="0"/>
+  <lib desc="#Wiring" name="1"/>
+  <lib desc="#Memory" name="2"/>
+  <main name="main"/>
+  <circuit name="main" id="main">
+    <boardmap boardname="REPTAR_SPARTAN_6" mobilepart="xc6slx150t" mobilepackage="FGG900">
+<mc key="/reptar_localbus_host_input" mobileport="reptar_localbus_host_input" mobilepins="R25,W21,P24,P25,AG27,AE26,AG29,AH30,AK27,AJ28,AK28,T24,W22" pmap="626_45_0,626_45_1,626_45_2,626_45_3,626_45_4,626_45_5,626_45_6,626_45_7,626_45_8,626_45_9,626_45_10,626_45_11,626_45_12"/>
+<mc key="/reptar_localbus_host_output" mobileport="reptar_localbus_host_output" mobilepins="R24,AB30" pmap="626_45_13,626_45_14"/>
+<mc key="/reptar_localbus_host_data" mobileport="reptar_localbus_host_data" mobilepins="AK29,AJ30,AJ29,AG28,AG30,AE25,Y22,Y24,AH27,V24,U24,T25,Y25,V23,U25,AD27" pmap="626_45_15,626_45_16,626_45_17,626_45_18,626_45_19,626_45_20,626_45_21,626_45_22,626_45_23,626_45_24,626_45_25,626_45_26,626_45_27,626_45_28,626_45_29,626_45_30"/>
+</boardmap>
+    <comp loc="(120,60)" logisim-mobile-id="bus" name="ReptarLB" lib="0">
+      <a name="label" val="LocalBus"/>
+    </comp>
+    <comp loc="(60,250)" logisim-mobile-id="clk" name="Clock" lib="1">
+      <a name="facing" val="east"/>
+      <a name="highDuration" val="1"/>
+      <a name="lowDuration" val="1"/>
+      <a name="phaseOffset" val="0"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="tick"/>
+    </comp>
+    <comp loc="(80,120)" logisim-mobile-id="data" name="Constant" lib="1">
+      <a name="width" val="16"/>
+      <a name="value" val="0x3456"/>
+    </comp>
+    <comp loc="(60,270)" logisim-mobile-id="one" name="Constant" lib="1">
+    </comp>
+    <comp loc="(100,250)" logisim-mobile-id="tff" name="T Flip-Flop" lib="2">
+      <a name="appearance" val="classic"/>
+      <a name="label" val=""/>
+      <a name="trigger" val="rising"/>
+    </comp>
+    <wire from="(80,120)" to="(120,120)"/>
+    <wire from="(100,250)" to="(110,250)"/>
+    <wire from="(110,250)" to="(110,130)"/>
+    <wire from="(110,130)" to="(120,130)"/>
+  </circuit>
+</project>

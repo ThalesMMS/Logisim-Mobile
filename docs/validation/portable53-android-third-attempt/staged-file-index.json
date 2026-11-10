@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "content",
+      "query",
+      "--uri",
+      "content://media/external/file",
+      "--projection",
+      "_id:_display_name:mime_type:is_download:is_pending:is_trashed:relative_path",
+      "--where",
+      "_data LIKE '%logisim-portable53-359e9f205bb843e99882e9e90c11a100%'"
+    ],
+    "exitCode": 0,
+    "stdout": "Row: 0 _id=1000000213, _display_name=logisim-portable53-359e9f205bb843e99882e9e90c11a100, mime_type=NULL, is_download=1, is_pending=0, is_trashed=0, relative_path=Download/\nRow: 1 _id=1000000214, _display_name=portable53.lsebdl, mime_type=application/octet-stream, is_download=0, is_pending=1, is_trashed=0, relative_path=Download/logisim-portable53-359e9f205bb843e99882e9e90c11a100/\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "content",
+      "query",
+      "--uri",
+      "content://media/external/downloads",
+      "--projection",
+      "_id:_display_name:mime_type:is_pending:relative_path",
+      "--where",
+      "_data LIKE '%logisim-portable53-359e9f205bb843e99882e9e90c11a100%'"
+    ],
+    "exitCode": 0,
+    "stdout": "Row: 0 _id=1000000213, _display_name=logisim-portable53-359e9f205bb843e99882e9e90c11a100, mime_type=NULL, is_pending=0, relative_path=Download/\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "sha256sum",
+      "/sdcard/Download/logisim-portable53-359e9f205bb843e99882e9e90c11a100/portable53.lsebdl"
+    ],
+    "exitCode": 0,
+    "stdout": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc  /sdcard/Download/logisim-portable53-359e9f205bb843e99882e9e90c11a100/portable53.lsebdl\n",
+    "stderr": ""
+  }
+]

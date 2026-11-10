@@ -1,0 +1,54 @@
+{
+  "transitionLimitSeconds": 30,
+  "totalLimitSeconds": 90,
+  "maximumActions": 3,
+  "events": [
+    {
+      "seconds": 0.0001,
+      "phase": "presentation",
+      "kind": "start"
+    },
+    {
+      "seconds": 5.1757,
+      "phase": "presentation",
+      "kind": "screen",
+      "querySeconds": 5.1741,
+      "timeoutSeconds": 29.9999,
+      "hierarchy": "downloads-navigation-177bd61f136d48d68757a96259090b42-01.xml"
+    },
+    {
+      "seconds": 5.1758,
+      "phase": "presentation",
+      "kind": "already-at-downloads",
+      "sourceHierarchy": "downloads-navigation-177bd61f136d48d68757a96259090b42-01.xml",
+      "package": "com.google.android.documentsui",
+      "breadcrumb": {
+        "index": "0",
+        "text": "Downloads",
+        "resource-id": "com.google.android.documentsui:id/breadcrumb_text",
+        "class": "android.widget.TextView",
+        "package": "com.google.android.documentsui",
+        "content-desc": "",
+        "checkable": "false",
+        "checked": "false",
+        "clickable": "false",
+        "enabled": "true",
+        "focusable": "false",
+        "focused": "false",
+        "scrollable": "false",
+        "long-clickable": "false",
+        "password": "false",
+        "selected": "false",
+        "bounds": "[0,254][288,380]"
+      },
+      "directoryResourceId": "com.google.android.documentsui:id/dir_list"
+    },
+    {
+      "seconds": 5.1758,
+      "phase": "presentation",
+      "kind": "finish",
+      "actions": 0
+    }
+  ],
+  "status": "PASSED"
+}

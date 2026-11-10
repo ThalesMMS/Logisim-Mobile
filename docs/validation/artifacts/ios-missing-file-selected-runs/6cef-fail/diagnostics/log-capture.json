@@ -1,0 +1,22 @@
+{
+  "command": [
+    "xcrun",
+    "simctl",
+    "spawn",
+    "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "log",
+    "show",
+    "--style",
+    "compact",
+    "--start",
+    "2026-11-05 02:22:23",
+    "--end",
+    "2026-11-05 02:22:36",
+    "--predicate",
+    "process == \"LogisimMobile\"",
+    "--info"
+  ],
+  "exit_code": 0,
+  "captured_utc": "2026-11-05T05:26:33.581936+00:00",
+  "scope": "13secondhistoricalLogisimMobileonly; noUI/runtimechange"
+}

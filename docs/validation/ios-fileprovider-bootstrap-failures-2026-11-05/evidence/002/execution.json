@@ -1,0 +1,30 @@
+{
+  "command": [
+    "xcodebuild",
+    "-project",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-scenes/outputs/ios-provider-bootstrap-scenes-b25-002/harness/LogisimFileProviderBootstrap.xcodeproj",
+    "-scheme",
+    "FixtureBootstrap",
+    "-destination",
+    "platform=iOS Simulator,id=B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "-derivedDataPath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-scenes/outputs/ios-provider-bootstrap-scenes-b25-002/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "test-without-building",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-test-timeouts-enabled",
+    "YES",
+    "-default-test-execution-time-allowance",
+    "240",
+    "-resultBundlePath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-scenes/outputs/ios-provider-bootstrap-scenes-b25-002/bootstrap.xcresult",
+    "-only-testing:FileProviderBootstrapTests/FileProviderBootstrapTests/testPrepareRegisterAndInspectFixtureDomain"
+  ],
+  "started": "2026-11-05T06:13:51.967281+00:00",
+  "scope": "BOOTSTRAP_REGISTER only; extension/fetch/auth/Save/grant revocation NOT_RUN",
+  "exit_code": 65,
+  "finished": "2026-11-05T06:14:12.871953+00:00"
+}

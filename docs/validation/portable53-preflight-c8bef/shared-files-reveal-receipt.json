@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "status": "OFFLINE_SOURCE_PICKER_QUERY_AND_REVEAL_ALIGNED",
+  "nativeUiStatus": "NOT_RUN",
+  "dependency": "ios_files b869dcc561a49dcdf7f0f0013fdb3796344ddadb, following its shared directory presentation contract",
+  "changes": [
+    "Wait for the native document manager directory identity before navigating.",
+    "Filter candidate cells by exact label or complete name plus native comma separator before enumerating AX elements.",
+    "Use the shared observed File View revealer for run folders, source folders and files; local-device navigation remains separate."
+  ],
+  "reason": "The preserved native fixture directory contains more folders than the current viewport, and enumerating the complete application cell tree performs unnecessary AX work.",
+  "checks": "shared-files-reveal-checks.json",
+  "scope": "SDK typecheck and macOS collector execution only. No Portable53 native UI result or exported artifact is claimed."
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#I/O" name="1"/>
+  <main name="io-release_deeb6aa5"/>
+  <circuit name="io-release_deeb6aa5" id="io-release_deeb6aa5">
+    <comp lib="1" loc="(100,100)" name="Button" logisim-mobile-id="mi-button">
+      <a name="facing" val="east"/>
+      <a name="label" val="MI_io-release_deeb6aa5_BUTTON"/>
+    </comp>
+    <comp lib="0" loc="(300,100)" name="Pin" logisim-mobile-id="mi-output">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="MI_io-release_deeb6aa5_OUT"/>
+    </comp>
+    <wire from="(100,100)" to="(300,100)"/>
+  </circuit>
+</project>

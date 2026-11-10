@@ -1,0 +1,268 @@
+{
+  "libraryId": "DriveFixture",
+  "circuit": "main",
+  "ports": [
+    {
+      "name": "A",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "EA",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "B",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "EB",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "Y",
+      "direction": "output",
+      "width": 1
+    }
+  ],
+  "frames": [
+    {
+      "Y": "E"
+    },
+    {
+      "Y": "1"
+    },
+    {
+      "Y": "E"
+    },
+    {
+      "Y": "?"
+    }
+  ],
+  "instanceTrace": {
+    "instances": [
+      {
+        "id": "/200,100",
+        "path": [],
+        "circuit": "main",
+        "factory": "Fixture Output",
+        "location": [
+          200,
+          100
+        ],
+        "bounds": [
+          170,
+          95,
+          30,
+          20
+        ],
+        "terminals": [
+          {
+            "position": [
+              170,
+              100
+            ],
+            "direction": "input",
+            "width": 1,
+            "exclusive": false
+          },
+          {
+            "position": [
+              170,
+              110
+            ],
+            "direction": "input",
+            "width": 1,
+            "exclusive": false
+          },
+          {
+            "position": [
+              200,
+              100
+            ],
+            "direction": "output",
+            "width": 1,
+            "exclusive": true
+          }
+        ]
+      },
+      {
+        "id": "/200,180",
+        "path": [],
+        "circuit": "main",
+        "factory": "Fixture Inout",
+        "location": [
+          200,
+          180
+        ],
+        "bounds": [
+          170,
+          175,
+          30,
+          20
+        ],
+        "terminals": [
+          {
+            "position": [
+              170,
+              180
+            ],
+            "direction": "input",
+            "width": 1,
+            "exclusive": false
+          },
+          {
+            "position": [
+              170,
+              190
+            ],
+            "direction": "input",
+            "width": 1,
+            "exclusive": false
+          },
+          {
+            "position": [
+              200,
+              180
+            ],
+            "direction": "inout",
+            "width": 1,
+            "exclusive": false
+          }
+        ]
+      }
+    ],
+    "frames": [
+      {
+        "/200,100": [
+          "0",
+          "1",
+          "E"
+        ],
+        "/200,180": [
+          "1",
+          "1",
+          "E"
+        ]
+      },
+      {
+        "/200,100": [
+          "0",
+          "0",
+          "1"
+        ],
+        "/200,180": [
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "/200,100": [
+          "E",
+          "1",
+          "E"
+        ],
+        "/200,180": [
+          "1",
+          "0",
+          "E"
+        ]
+      },
+      {
+        "/200,100": [
+          "?",
+          "1",
+          "?"
+        ],
+        "/200,180": [
+          "1",
+          "0",
+          "?"
+        ]
+      }
+    ],
+    "drives": [
+      {
+        "/200,100": [
+          null,
+          null,
+          "0"
+        ],
+        "/200,180": [
+          null,
+          null,
+          "1"
+        ]
+      },
+      {
+        "/200,100": [
+          null,
+          null,
+          "Z"
+        ],
+        "/200,180": [
+          null,
+          null,
+          "1"
+        ]
+      },
+      {
+        "/200,100": [
+          null,
+          null,
+          "E"
+        ],
+        "/200,180": [
+          null,
+          null,
+          "Z"
+        ]
+      },
+      {
+        "/200,100": [
+          null,
+          null,
+          "?"
+        ],
+        "/200,180": [
+          null,
+          null,
+          "Z"
+        ]
+      }
+    ]
+  },
+  "projectSha256": "84fc3718f98ea3dd70823951e22990bd04f040d40e4cc4938f36e5b7222f56ff",
+  "librarySha256": "8e7d6ab44ff516d57b73095e26d9b9f5583a80e75e831bc55ed7b5227a7c583c",
+  "evolutionRevision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "inputs": [
+    {
+      "A": "0",
+      "EA": "1",
+      "B": "1",
+      "EB": "1"
+    },
+    {
+      "A": "0",
+      "EA": "0",
+      "B": "1",
+      "EB": "1"
+    },
+    {
+      "A": "E",
+      "EA": "1",
+      "B": "1",
+      "EB": "0"
+    },
+    {
+      "A": "?",
+      "EA": "1",
+      "B": "1",
+      "EB": "0"
+    }
+  ]
+}

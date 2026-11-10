@@ -1,0 +1,213 @@
+{
+  "recordedAtUtc": "2026-11-05T00:33:00.534232+00:00",
+  "issue": 61,
+  "baseSource": "cc43bae617c6afa436ecb8b9fae61fd7cd51d7e9",
+  "status": "SOFTWARE_PASS_NATIVE_UI_NOT_RUN",
+  "freshRuns": {
+    "pythonTelnet": {
+      "tests": 24,
+      "failures": 0,
+      "seconds": 1.834
+    },
+    "before": {
+      "tests": 15,
+      "failures": 5,
+      "seconds": 14.333
+    },
+    "after": {
+      "tests": 16,
+      "failures": 0,
+      "seconds": 9.3
+    }
+  },
+  "beforeFailures": [
+    "removalResolvesAndClosesAnUncertainStartInsteadOfLosingItsRecoveryIdentity",
+    "changingConfigurationStillClosesItsListenerWhileNetworkPollingIsPaused",
+    "simulationResetStillClosesItsListenerWhileNetworkPollingIsPaused",
+    "removingAnInstanceStillClosesItsListenerWhileNetworkPollingIsPaused",
+    "editorExchangesBytesAndRemovalReleasesAPausedRealListener"
+  ],
+  "sourcesBeforeSha256": {
+    "composeApp/src/commonTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeTest.kt": "6d751cb42572a0a267f22c584f0414e89d4d74f605b100853e4fbc21b55b15ec",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt": "40991d091c3d70692ac8db613e37dcbcfcff1c7eccc32ca8935b5aad9557521d",
+    "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeHttpTest.kt": "9cf1761fc0005ee61d4ad44e1c0b2498803858755fec14d1e6652e051a60ef22"
+  },
+  "sourcesAfterSha256": {
+    "composeApp/src/commonTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeTest.kt": "b8488b8a4cb8cabc5f6d57d45b051deea9454925e7caf545bfc7ee91f660513b",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt": "b193e27c279fd8612768dc3f818a4ca628cc854f1b89ac31b0cc4f1a4e55d9fc",
+    "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridgeHttpTest.kt": "9cf1761fc0005ee61d4ad44e1c0b2498803858755fec14d1e6652e051a60ef22"
+  },
+  "referenceClassFiles": 1827,
+  "referenceClassManifestSha256": "d3cb7e7084d54e3d3502c3f4b02ebae2e72bb2121033d8c446d13c468b984f9d",
+  "localLogs": {
+    "outputs/external-io-acceptance/python-telnet.log": "67afaac65d82a81b61c6afe2efd5381bb7ee471ef32f272edf62e9e0f92303e8",
+    "outputs/external-io-acceptance/before/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outputs/external-io-acceptance/before/junit.log": "105dd2f257ce075cd474e85a7ae2b1ae0e1ea8bdded4bc387d72eccb7577013f",
+    "outputs/external-io-acceptance/after/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outputs/external-io-acceptance/after/junit.log": "3c09c60fba4416f1442445650de4b3d6d47911e3e40e76f0cb4b6341bb67681e"
+  },
+  "priorIntegratedCoreReports": [
+    {
+      "path": "core/build/test-results/iosSimulatorArm64Test/TEST-iosSimulatorArm64Test.dev.logisim.mobile.core.DefaultCatalogIntegrationTest.xml",
+      "sha256": "c149ce9c62248c8556d187309c5fd5e9eaccb52850443b0636b9fd0f3424cd62",
+      "name": "iosSimulatorArm64Test.dev.logisim.mobile.core.DefaultCatalogIntegrationTest",
+      "tests": "4",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:33:55.427Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.0"
+    },
+    {
+      "path": "core/build/test-results/iosSimulatorArm64Test/TEST-iosSimulatorArm64Test.dev.logisim.mobile.core.ExternalIoComponentsTest.xml",
+      "sha256": "30a45c786f520bf7be2cb1f629fb3be158d42da15a8848a97276c0bc8fa5cc5c",
+      "name": "iosSimulatorArm64Test.dev.logisim.mobile.core.ExternalIoComponentsTest",
+      "tests": "11",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:33:55.427Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.0"
+    },
+    {
+      "path": "core/build/test-results/iosSimulatorArm64Test/TEST-iosSimulatorArm64Test.dev.logisim.mobile.core.ExternalIoRuntimeEventsTest.xml",
+      "sha256": "b5806d2ccdb9ae2aa71f9cf251e9c52dd8d1d842031b13cf1cb8ff170d16622a",
+      "name": "iosSimulatorArm64Test.dev.logisim.mobile.core.ExternalIoRuntimeEventsTest",
+      "tests": "5",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:33:55.427Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.0"
+    },
+    {
+      "path": "core/build/test-results/iosSimulatorArm64Test/TEST-iosSimulatorArm64Test.dev.logisim.mobile.core.TelnetRuntimeTest.xml",
+      "sha256": "7ffe682817cb5681fc41390b90a181991746ba8ed66bd7aa757613668589269c",
+      "name": "iosSimulatorArm64Test.dev.logisim.mobile.core.TelnetRuntimeTest",
+      "tests": "7",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:33:59.463Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.0"
+    },
+    {
+      "path": "core/build/test-results/iosSimulatorArm64Test/TEST-iosSimulatorArm64Test.dev.logisim.mobile.core.VideoFrameSpansTest.xml",
+      "sha256": "5879772a978cb1271935ce8e6769d81a0d54c25244e69c92bab1d84ee45fcf8b",
+      "name": "iosSimulatorArm64Test.dev.logisim.mobile.core.VideoFrameSpansTest",
+      "tests": "5",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:33:59.467Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.0"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.CompanionTelnetHttpTest.xml",
+      "sha256": "1a8348e70aa9f29fea4dbb6e7fb9d44675459ea3525a6ec8878ec10912cfb908",
+      "name": "CompanionTelnetHttpTest[jvm]",
+      "tests": "2",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:35.442Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "8.743"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.DefaultCatalogIntegrationTest.xml",
+      "sha256": "5313c3d5fce188ec2fead8ee155e9e5eeea6563d9c642dca4c462daad2ba881b",
+      "name": "DefaultCatalogIntegrationTest[jvm]",
+      "tests": "4",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:44.203Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.02"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.ExternalIoComponentsTest.xml",
+      "sha256": "49bf16c5e81f11fcb595d5887f0059c2d201206d905668e0183d554878c37041",
+      "name": "ExternalIoComponentsTest[jvm]",
+      "tests": "11",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:44.227Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.004"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.ExternalIoRuntimeEventsTest.xml",
+      "sha256": "872cf3aff3b459df1f3684699cbe267bdc2012ddc732cd5ddd41f07eee9d2150",
+      "name": "ExternalIoRuntimeEventsTest[jvm]",
+      "tests": "5",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:44.233Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.003"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.JvmTelnetTransportTest.xml",
+      "sha256": "a6e259b24e9e40c2f1b0e95d4fc9d42ba7826dfb83b96856ae49e683eb195e0c",
+      "name": "JvmTelnetTransportTest[jvm]",
+      "tests": "3",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:47.724Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.002"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.TelnetRuntimeTest.xml",
+      "sha256": "91d668d545493c17bd3db73cf4b62979ae70df172b40b63b951a74e6757a02cd",
+      "name": "TelnetRuntimeTest[jvm]",
+      "tests": "7",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:49.377Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.003"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.VideoColorCompatibilityTest.xml",
+      "sha256": "ab32653cdd4354a1d9cfb3299d2e20c7f4a2965111e5fb7534baafea932addae",
+      "name": "VideoColorCompatibilityTest[jvm]",
+      "tests": "1",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:49.785Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.062"
+    },
+    {
+      "path": "core/build/test-results/jvmTest/TEST-dev.logisim.mobile.core.VideoFrameSpansTest.xml",
+      "sha256": "6748f884dfd38ba074cca6cdca08375f702f36af53641f495bc6555948995569",
+      "name": "VideoFrameSpansTest[jvm]",
+      "tests": "5",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-11-04T21:32:49.848Z",
+      "hostname": "Thaless-MacBook-Air.local",
+      "time": "0.001"
+    }
+  ],
+  "limits": [
+    "The bridge and both test sources were recompiled with Kotlin and Compose compiler 2.4.21 against a frozen snapshot of existing editor/core Android-host classes. This was a direct JUnit run, not a new Gradle build.",
+    "The HTTP test invokes reviewed plan confirmation through the production gateway and delivers events through EditorState.sendComponentEvent. It does not mount the Compose Runtime or operate native UI.",
+    "Physical device, LAN permission, touchscreen and frame presentation were not exercised.",
+    "Issue61 remains open while dependency44 is open."
+  ]
+}

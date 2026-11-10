@@ -1,0 +1,55 @@
+     1	//___FILEHEADER___
+     2	
+     3	import FileProvider
+     4	
+     5	class FileProviderExtension: NSObject, NSFileProviderReplicatedExtension {
+     6	    required init(domain: NSFileProviderDomain) {
+     7	        // TODO: The containing application must create a domain using `NSFileProviderManager.add(_:, completionHandler:)`. The system will then launch the application extension process, call `FileProviderExtension.init(domain:)` to instantiate the extension for that domain, and call methods on the instance.
+     8	        super.init()
+     9	    }
+    10	    
+    11	    func invalidate() {
+    12	        // TODO: cleanup any resources
+    13	    }
+    14	    
+    15	    func item(for identifier: NSFileProviderItemIdentifier, request: NSFileProviderRequest, completionHandler: @escaping (NSFileProviderItem?, Error?) -> Void) -> Progress {
+    16	        // resolve the given identifier to a record in the model
+    17	        
+    18	        // TODO: implement the actual lookup
+    19	
+    20	        completionHandler(FileProviderItem(identifier: identifier), nil)
+    21	        return Progress()
+    22	    }
+    23	    
+    24	    func fetchContents(for itemIdentifier: NSFileProviderItemIdentifier, version requestedVersion: NSFileProviderItemVersion?, request: NSFileProviderRequest, completionHandler: @escaping (URL?, NSFileProviderItem?, Error?) -> Void) -> Progress {
+    25	        // TODO: implement fetching of the contents for the itemIdentifier at the specified version
+    26	        
+    27	        completionHandler(nil, nil, NSError(domain: NSCocoaErrorDomain, code: NSFeatureUnsupportedError, userInfo:[:]))
+    28	        return Progress()
+    29	    }
+    30	    
+    31	    func createItem(basedOn itemTemplate: NSFileProviderItem, fields: NSFileProviderItemFields, contents url: URL?, options: NSFileProviderCreateItemOptions = [], request: NSFileProviderRequest, completionHandler: @escaping (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?) -> Void) -> Progress {
+    32	        // TODO: a new item was created on disk, process the item's creation
+    33	        
+    34	        completionHandler(itemTemplate, [], false, nil)
+    35	        return Progress()
+    36	    }
+    37	    
+    38	    func modifyItem(_ item: NSFileProviderItem, baseVersion version: NSFileProviderItemVersion, changedFields: NSFileProviderItemFields, contents newContents: URL?, options: NSFileProviderModifyItemOptions = [], request: NSFileProviderRequest, completionHandler: @escaping (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?) -> Void) -> Progress {
+    39	        // TODO: an item was modified on disk, process the item's modification
+    40	        
+    41	        completionHandler(nil, [], false, NSError(domain: NSCocoaErrorDomain, code: NSFeatureUnsupportedError, userInfo:[:]))
+    42	        return Progress()
+    43	    }
+    44	    
+    45	    func deleteItem(identifier: NSFileProviderItemIdentifier, baseVersion version: NSFileProviderItemVersion, options: NSFileProviderDeleteItemOptions = [], request: NSFileProviderRequest, completionHandler: @escaping (Error?) -> Void) -> Progress {
+    46	        // TODO: an item was deleted on disk, process the item's deletion
+    47	        
+    48	        completionHandler(NSError(domain: NSCocoaErrorDomain, code: NSFeatureUnsupportedError, userInfo:[:]))
+    49	        return Progress()
+    50	    }
+    51	    
+    52	    func enumerator(for containerItemIdentifier: NSFileProviderItemIdentifier, request: NSFileProviderRequest) throws -> NSFileProviderEnumerator {
+    53	        return FileProviderEnumerator(enumeratedItemIdentifier: containerItemIdentifier)
+    54	    }
+    55	}

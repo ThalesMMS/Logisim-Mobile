@@ -1,0 +1,50 @@
+status=Operation failed: NSFileProviderErrorDomain / -2001
+The application cannot be used right now.
+Native scenario: NOT_RUN.
+
+Native scenario: NOT_RUN
+App Group: group.thalesmms.logisim.validation.revocationfixture
+Domain: logisim-revocation-fixture-v1
+Item: revocation-circuit-v1
+
+SNAPSHOT
+{
+  "events" : [
+    {
+      "details" : {
+
+      },
+      "kind" : "prepare",
+      "process" : "RevocationFixture:34488",
+      "sequence" : 1,
+      "timestamp" : "2026-11-05T06:14:04.903Z"
+    },
+    {
+      "details" : {
+        "domain" : "logisim-revocation-fixture-v1"
+      },
+      "kind" : "domain.registration.requested",
+      "process" : "RevocationFixture:34488",
+      "sequence" : 2,
+      "timestamp" : "2026-11-05T06:14:10.182Z"
+    },
+    {
+      "details" : {
+
+      },
+      "errorCode" : -2001,
+      "errorDomain" : "NSFileProviderErrorDomain",
+      "kind" : "domain.registration.failed",
+      "process" : "RevocationFixture:34488",
+      "sequence" : 3,
+      "timestamp" : "2026-11-05T06:14:10.198Z"
+    }
+  ],
+  "state" : {
+    "authenticationAllowed" : true,
+    "backendByteCount" : 552,
+    "backendSHA256" : "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "generation" : 1,
+    "schemaVersion" : 1
+  }
+}

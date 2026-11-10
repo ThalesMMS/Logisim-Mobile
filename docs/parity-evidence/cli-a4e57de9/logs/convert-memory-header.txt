@@ -1,0 +1,14 @@
+row: cli/new-file-format
+case: convert-memory-header
+result: PASS
+detail: written source version: evolution=5.1.0dev, mobile=5.1.0dev
+
+=== evolution: java EvolutionAutomationOracle convert scripts/oracle/cli/fixtures/memory.circ $WORK/evolution-memory.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -n scripts/oracle/cli/fixtures/memory.circ $WORK/mobile-memory.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

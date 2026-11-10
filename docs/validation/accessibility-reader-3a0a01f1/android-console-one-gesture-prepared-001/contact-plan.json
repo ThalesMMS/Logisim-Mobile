@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "status": "PREPARED_NOT_EXECUTED_ROOT_LEASE_REQUIRED",
+  "source_product": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "serial": "emulator-5556",
+  "device": "/dev/input/event1",
+  "device_name": "virtio_input_multi_touch_1",
+  "transport": "Existing emulator console event send; no service startup or framework input injection",
+  "display": {
+    "id": 0,
+    "width": 1080,
+    "height": 2400,
+    "orientation": 0
+  },
+  "contact": {
+    "slot": 0,
+    "linux_tracking_id": 1,
+    "grpc_logical_identifier": "NOT_USED_BY_THIS_ROUTE",
+    "pressure": 64,
+    "pixel_y": 800,
+    "pixel_x": [
+      300,
+      350,
+      400,
+      450,
+      500,
+      550,
+      600,
+      650,
+      700
+    ],
+    "coordinate_rule": "floor(pixel * 32767 / dimension)",
+    "nominal_contact_ms": 180,
+    "sample_interval_ms": 20,
+    "abort_move_lateness_ms": 50,
+    "kernel_syn_duration_us": [
+      120000,
+      300000
+    ]
+  },
+  "initial_state_limits": {
+    "selected_slot_from_fresh_getter": 0,
+    "pressure_from_fresh_getter": 0,
+    "tracking_in_all_slots": "UNKNOWN_NOT_RETURNED_BY_CAPABILITY_GETTER",
+    "global_neutral_start_proven": false,
+    "required_ownership": "Root grants exclusive headless lane; no concurrent hardware actor. Do not infer global inactivity from silence."
+  },
+  "frames": [
+    {
+      "name": "down",
+      "offset_ms": 0,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          57,
+          1
+        ],
+        [
+          3,
+          55,
+          0
+        ],
+        [
+          3,
+          53,
+          9101
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:57:1",
+        "3:55:0",
+        "3:53:9101",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-1",
+      "offset_ms": 20,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          10618
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:10618",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-2",
+      "offset_ms": 40,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          12135
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:12135",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-3",
+      "offset_ms": 60,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          13652
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:13652",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-4",
+      "offset_ms": 80,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          15169
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:15169",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-5",
+      "offset_ms": 100,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          16686
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:16686",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-6",
+      "offset_ms": 120,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          18203
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:18203",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-7",
+      "offset_ms": 140,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          19720
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:19720",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "move-8",
+      "offset_ms": 160,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          53,
+          21237
+        ],
+        [
+          3,
+          54,
+          10922
+        ],
+        [
+          3,
+          58,
+          64
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:53:21237",
+        "3:54:10922",
+        "3:58:64",
+        "0:0:0"
+      ]
+    },
+    {
+      "name": "up",
+      "offset_ms": 180,
+      "events": [
+        [
+          3,
+          47,
+          0
+        ],
+        [
+          3,
+          58,
+          0
+        ],
+        [
+          3,
+          57,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5556",
+        "emu",
+        "event",
+        "send",
+        "3:47:0",
+        "3:58:0",
+        "3:57:-1",
+        "0:0:0"
+      ]
+    }
+  ],
+  "passive_monitor": {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5556",
+      "shell",
+      "-T",
+      "timeout",
+      "-s",
+      "INT",
+      "-k",
+      "1",
+      "8",
+      "getevent",
+      "-t",
+      "-v6",
+      "/dev/input/event1"
+    ],
+    "readiness": "Exact add-device path plus virtio_input_multi_touch_1 name before any contact; bounded wait",
+    "maximum_nominal_lifetime_seconds": 9,
+    "default_no_monitor": true,
+    "source_stdout_unbuffered": true,
+    "functionality_status": "Only timeout help and getevent capability getters inspected; monitor not executed"
+  },
+  "preconditions": [
+    "Fresh Root lease bound to frozen code/payload hash and deadline",
+    "Revalidate installed app/test/helper, framebuffer/orientation and current device mapping",
+    "Original reader/speech display/settings recorded, no new fixture or document changes",
+    "Root approves public setup/restoration separately; sender never enables reader or manipulates UI",
+    "Exact AMS TalkBack service/binder/system-client evidence correlated with one actual spoken/touch-capable Bound record and touch exploration true around each preserve-only SDK capture; Bound has no component field",
+    "Paused foreground app without sheet/keyboard; one unique settled baseline AX focus A and matching actual reader caption; retain identity before Down",
+    "Continuous reader-caption video starts before public app return; screenshot/tree baseline captured",
+    "Every numeric event tuple and UP validated before the first send; confirm the fixed contact region has no actionable control"
+  ],
+  "proof_layers": [
+    "Console ACK is command acknowledgment only",
+    "Independent passive checker validates nine active SYN frames and same-slot pressure0/tracking-1/SYN close",
+    "Actual new focus B, distinct from A and from the whole Canvas node, outside the neutral contact region, with matching reader caption, unchanged circuit viewport and live service state, qualifies only one observed transition",
+    "No global traversal order, activation, workflow or issue28 closure follows"
+  ],
+  "failure_and_restore": [
+    "Any command, timing, readiness, service, focus, caption or trace failure stops further moves; no second gesture or fallback",
+    "After possible Down, attempt one bounded UP in finally independently of log persistence",
+    "Missing/failed UP or missing kernel-close proof keeps the lane with the owner for Root recovery",
+    "Capture own passive monitor terminal state; do not kill unrelated getevent or other processes",
+    "Restore TalkBack and speech display to original values through public UI; preserve ERROR, shortcuts, IME, font and rotation",
+    "Verify notification grant stays denied, all original public settings and three APKs, then return lane"
+  ],
+  "runtime_executed": false,
+  "reader_qualified": false,
+  "baseline_policy": "Projects is a common baseline, not a forced or required focus. Freeze the actual unique A before arming; do not infer B or traversal order from XML. No fallback gesture is permitted."
+}

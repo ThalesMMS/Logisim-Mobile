@@ -1,0 +1,97 @@
+test_after_sdk_captured_state_is_parsed_without_reader_acceptance (test_captured_binding.CapturedBindingTests.test_after_sdk_captured_state_is_parsed_without_reader_acceptance) ... ok
+test_before_sdk_captured_state_is_parsed_without_reader_acceptance (test_captured_binding.CapturedBindingTests.test_before_sdk_captured_state_is_parsed_without_reader_acceptance) ... ok
+test_captured_state_without_touch_exploration_is_rejected (test_captured_binding.CapturedBindingTests.test_captured_state_without_touch_exploration_is_rejected) ... ok
+test_correct_format_does_not_replace_spoken_feedback_or_touch_capability (test_captured_binding.CapturedBindingTests.test_correct_format_does_not_replace_spoken_feedback_or_touch_capability) ... ok
+test_missing_equals_and_serviceinfo_colon_are_rejected (test_captured_binding.CapturedBindingTests.test_missing_equals_and_serviceinfo_colon_are_rejected) ... ok
+test_noncanonical_or_wrong_formatter_outputs_are_rejected (test_captured_binding.CapturedBindingTests.test_noncanonical_or_wrong_formatter_outputs_are_rejected) ... ok
+test_source_defined_zero_all_single_multiple_and_unknown_bits (test_captured_binding.CapturedBindingTests.test_source_defined_zero_all_single_multiple_and_unknown_bits) ... ok
+test_binding_flags_false_are_rejected (test_check_binding.BindingTests.test_binding_flags_false_are_rejected) ... ok
+test_closed_user_state_cannot_borrow_orphan_bound_lines (test_check_binding.BindingTests.test_closed_user_state_cannot_borrow_orphan_bound_lines) ... ok
+test_concatenated_registered_clients_footer_format (test_check_binding.BindingTests.test_concatenated_registered_clients_footer_format) ... ok
+test_dead_missing_or_unlinked_connection_is_rejected (test_check_binding.BindingTests.test_dead_missing_or_unlinked_connection_is_rejected) ... ok
+test_duplicate_active_service_is_ambiguous (test_check_binding.BindingTests.test_duplicate_active_service_is_ambiguous) ... ok
+test_enabled_and_registered_tokens_are_not_used_as_proof (test_check_binding.BindingTests.test_enabled_and_registered_tokens_are_not_used_as_proof) ... ok
+test_enabled_or_registered_identity_does_not_replace_bound_record (test_check_binding.BindingTests.test_enabled_or_registered_identity_does_not_replace_bound_record) ... ok
+test_fields_from_another_binding_cannot_complete_the_target_binding (test_check_binding.BindingTests.test_fields_from_another_binding_cannot_complete_the_target_binding) ... ok
+test_full_and_short_tokens_are_equivalent_only_for_exact_component (test_check_binding.BindingTests.test_full_and_short_tokens_are_equivalent_only_for_exact_component) ... ok
+test_installed_or_enabled_without_active_binding_is_not_evidence (test_check_binding.BindingTests.test_installed_or_enabled_without_active_binding_is_not_evidence) ... ok
+test_label_is_observed_but_never_identity (test_check_binding.BindingTests.test_label_is_observed_but_never_identity) ... ok
+test_literal_positive_and_honest_limits (test_check_binding.BindingTests.test_literal_positive_and_honest_limits) ... ok
+test_multiple_bound_records_are_rejected_without_component_join (test_check_binding.BindingTests.test_multiple_bound_records_are_rejected_without_component_join) ... ok
+test_null_or_unrecognized_binder_is_rejected (test_check_binding.BindingTests.test_null_or_unrecognized_binder_is_rejected) ... ok
+test_other_active_user_or_historical_record_is_not_current_service (test_check_binding.BindingTests.test_other_active_user_or_historical_record_is_not_current_service) ... ok
+test_other_component_and_partial_component_are_rejected (test_check_binding.BindingTests.test_other_component_and_partial_component_are_rejected) ... ok
+test_realistic_off_footer_is_parsed_but_does_not_prove_reader_on (test_check_binding.BindingTests.test_realistic_off_footer_is_parsed_but_does_not_prove_reader_on) ... ok
+test_root_identity_cannot_be_borrowed_from_nested_intent (test_check_binding.BindingTests.test_root_identity_cannot_be_borrowed_from_nested_intent) ... ok
+test_source_defined_early_footer_does_not_borrow_orphan_bound_lines (test_check_binding.BindingTests.test_source_defined_early_footer_does_not_borrow_orphan_bound_lines) ... ok
+test_touch_exploration_false_or_wrong_user_is_rejected (test_check_binding.BindingTests.test_touch_exploration_false_or_wrong_user_is_rejected) ... ok
+test_truncated_concatenated_footer_is_not_closed_by_unrelated_later_text (test_check_binding.BindingTests.test_truncated_concatenated_footer_is_not_closed_by_unrelated_later_text) ... ok
+test_truncated_user_state_is_rejected (test_check_binding.BindingTests.test_truncated_user_state_is_rejected) ... ok
+test_wrong_or_unknown_system_pid_name_or_uid_is_rejected (test_check_binding.BindingTests.test_wrong_or_unknown_system_pid_name_or_uid_is_rejected) ... ok
+test_review_regressions (unittest.loader._FailedTest.test_review_regressions) ... ERROR
+test_run_contact (unittest.loader._FailedTest.test_run_contact) ... ERROR
+test_embedded_carriage_return_is_not_a_valid_ok (contact_test.ContactTest.test_embedded_carriage_return_is_not_a_valid_ok) ... ok
+test_error_after_possible_down_still_attempts_one_close (contact_test.ContactTest.test_error_after_possible_down_still_attempts_one_close) ... ok
+test_interruption_during_move_closes_without_retry_or_further_move (contact_test.ContactTest.test_interruption_during_move_closes_without_retry_or_further_move) ... ok
+test_interruption_while_waiting_for_up_still_attempts_close (contact_test.ContactTest.test_interruption_while_waiting_for_up_still_attempts_close) ... ok
+test_late_sample_stops_and_closes (contact_test.ContactTest.test_late_sample_stops_and_closes) ... ok
+test_malformed_event_is_rejected_before_transmission (contact_test.ContactTest.test_malformed_event_is_rejected_before_transmission) ... ok
+test_one_contact_has_absolute_nominal_times_and_never_claims_reader_success (contact_test.ContactTest.test_one_contact_has_absolute_nominal_times_and_never_claims_reader_success) ... ok
+test_payload_and_raw_coordinates_are_literal_expected_values (contact_test.ContactTest.test_payload_and_raw_coordinates_are_literal_expected_values) ... ok
+test_process_success_with_protocol_ko_is_a_failure (contact_test.ContactTest.test_process_success_with_protocol_ko_is_a_failure) ... ok
+test_release_error_is_retained_without_retry (contact_test.ContactTest.test_release_error_is_retained_without_retry) ... ok
+
+======================================================================
+ERROR: test_review_regressions (unittest.loader._FailedTest.test_review_regressions)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_review_regressions
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/test_review_regressions.py", line 4, in <module>
+    from unittest.mock import patch
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/mock.py", line 27, in <module>
+    import asyncio
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/__init__.py", line 8, in <module>
+    from .base_events import *
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/base_events.py", line 36, in <module>
+    import ssl
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/ssl.py", line 1012, in <module>
+    class SSLSocket(socket):
+    ...<489 lines>...
+                return None
+TypeError: function() argument 'code' must be code, not str
+
+
+======================================================================
+ERROR: test_run_contact (unittest.loader._FailedTest.test_run_contact)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_run_contact
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/test_run_contact.py", line 8, in <module>
+    from unittest.mock import patch
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/mock.py", line 27, in <module>
+    import asyncio
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/__init__.py", line 8, in <module>
+    from .base_events import *
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/base_events.py", line 36, in <module>
+    import ssl
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/ssl.py", line 1012, in <module>
+    class SSLSocket(socket):
+    ...<489 lines>...
+                return None
+TypeError: function() argument 'code' must be code, not str
+
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.009s
+
+FAILED (errors=2)

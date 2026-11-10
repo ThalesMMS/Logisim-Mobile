@@ -1,0 +1,26 @@
+A	Invert	NOT Gate	200,100	facing	east
+A	Invert	Pin	100,100	facing	east
+A	Invert	Pin	100,100	label	A
+A	Invert	Pin	300,100	facing	west
+A	Invert	Pin	300,100	label	Y
+A	LegacyHierarchy	Invert	300,140	facing	east
+A	LegacyHierarchy	Pin	100,140	facing	east
+A	LegacyHierarchy	Pin	100,140	label	A
+A	LegacyHierarchy	Pin	420,140	facing	west
+A	LegacyHierarchy	Pin	420,140	label	Y
+F	circuits	2
+F	main	LegacyHierarchy
+G	Invert	NOT Gate	200,100	170,100:1:1;200,100:1:2
+G	Invert	Pin	100,100	100,100:1:2
+G	Invert	Pin	300,100	300,100:1:1
+G	LegacyHierarchy	Invert	300,140	270,140:1:1;300,140:1:2
+G	LegacyHierarchy	Pin	100,140	100,140:1:2
+G	LegacyHierarchy	Pin	420,140	420,140:1:1
+M	revision	2.7.1
+V	input-high	Y	0
+V	input-low	Y	1
+V	input-low-again	Y	1
+W	Invert	100,100	170,100	1
+W	Invert	200,100	300,100	1
+W	LegacyHierarchy	100,140	270,140	1
+W	LegacyHierarchy	300,140	420,140	1

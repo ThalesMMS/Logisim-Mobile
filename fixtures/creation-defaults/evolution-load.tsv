@@ -1,0 +1,186 @@
+profile	classic-false-false-true
+evolution	classic-false-false-true	libraries	#Base,#Gates,#Memory,#Wiring
+evolution	classic-false-false-true	main	main
+evolution	classic-false-false-true	toolbar	0	Poke Tool	{}
+evolution	classic-false-false-true	toolbar	1	Edit Tool	{}
+evolution	classic-false-false-true	toolbar	2	Wiring Tool	{}
+evolution	classic-false-false-true	toolbar	3	Text Tool	{color=#000000, font=SansSerif bold 16, halign=center, text=, valign=base}
+evolution	classic-false-false-true	toolbar	4	Image	{attribution=, dataSize=0 B, height=64, image=, license=Unspecified, scale=fit, width=64}
+evolution	classic-false-false-true	toolbar	5	separator
+evolution	classic-false-false-true	toolbar	6	Pin	{appearance=classic, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+evolution	classic-false-false-true	toolbar	7	Pin	{appearance=classic, facing=west, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=output, width=1}
+evolution	classic-false-false-true	toolbar	8	separator
+evolution	classic-false-false-true	toolbar	9	NOT Gate	{facing=east, label=, labelfont=SansSerif bold 16, out=01, size=30, width=1}
+evolution	classic-false-false-true	toolbar	10	AND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	classic-false-false-true	toolbar	11	OR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	classic-false-false-true	toolbar	12	XOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1, xor=1}
+evolution	classic-false-false-true	toolbar	13	NAND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	classic-false-false-true	toolbar	14	NOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	classic-false-false-true	toolbar	15	separator
+evolution	classic-false-false-true	toolbar	16	D Flip-Flop	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+evolution	classic-false-false-true	toolbar	17	Register	{appearance=classic, label=, labelfont=SansSerif bold 16, labelloc=north, showInTab=false, trigger=rising, width=8}
+evolution	classic-false-false-true	mapping	Button2	Poke Tool
+evolution	classic-false-false-true	mapping	Button3	Menu Tool
+evolution	classic-false-false-true	mapping	Ctrl Button1	Menu Tool
+evolution	classic-false-false-true	circuit	main	{appearance=classic, circuit=main, circuitnamedboxfixedsize=false, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+evolution	classic-false-false-true	component	main	D Flip-Flop	(300,200)	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+evolution	classic-false-false-true	component	main	Pin	(100,200)	{appearance=classic, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+evolution	classic-false-false-true	circuit	sub	{appearance=classic, circuit=sub, circuitnamedboxfixedsize=false, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+mobile	classic-false-false-true	libraries	#Base,#Gates,#Memory,#Wiring
+mobile	classic-false-false-true	main	main
+mobile	classic-false-false-true	toolbar	0	Poke Tool	{}
+mobile	classic-false-false-true	toolbar	1	Edit Tool	{}
+mobile	classic-false-false-true	toolbar	2	Wiring Tool	{}
+mobile	classic-false-false-true	toolbar	3	Text Tool	{color=#000000, font=SansSerif bold 16, halign=center, text=, valign=base}
+mobile	classic-false-false-true	toolbar	4	Image	{attribution=, dataSize=0 B, height=64, image=, license=Unspecified, scale=fit, width=64}
+mobile	classic-false-false-true	toolbar	5	separator
+mobile	classic-false-false-true	toolbar	6	Pin	{appearance=classic, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+mobile	classic-false-false-true	toolbar	7	Pin	{appearance=classic, facing=west, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=output, width=1}
+mobile	classic-false-false-true	toolbar	8	separator
+mobile	classic-false-false-true	toolbar	9	NOT Gate	{facing=east, label=, labelfont=SansSerif bold 16, out=01, size=30, width=1}
+mobile	classic-false-false-true	toolbar	10	AND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	classic-false-false-true	toolbar	11	OR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	classic-false-false-true	toolbar	12	XOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1, xor=1}
+mobile	classic-false-false-true	toolbar	13	NAND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	classic-false-false-true	toolbar	14	NOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	classic-false-false-true	toolbar	15	separator
+mobile	classic-false-false-true	toolbar	16	D Flip-Flop	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+mobile	classic-false-false-true	toolbar	17	Register	{appearance=classic, label=, labelfont=SansSerif bold 16, labelloc=north, showInTab=false, trigger=rising, width=8}
+mobile	classic-false-false-true	mapping	Button2	Poke Tool
+mobile	classic-false-false-true	mapping	Button3	Menu Tool
+mobile	classic-false-false-true	mapping	Ctrl Button1	Menu Tool
+mobile	classic-false-false-true	circuit	main	{appearance=classic, circuit=main, circuitnamedboxfixedsize=false, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+mobile	classic-false-false-true	component	main	D Flip-Flop	(300,200)	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+mobile	classic-false-false-true	component	main	Pin	(100,200)	{appearance=classic, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+mobile	classic-false-false-true	circuit	sub	{appearance=classic, circuit=sub, circuitnamedboxfixedsize=false, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+result	classic-false-false-true	circuits-and-components-match	true
+result	classic-false-false-true	template-matches	true
+result	classic-false-false-true	evolution-resave-unchanged	true
+profile	evolution-true-true-false
+evolution	evolution-true-true-false	libraries	#Arithmetic,#BFH-Praktika,#Base,#FPArithmetic,#Gates,#I/O,#Input/Output-Extra,#Memory,#Plexers,#Soc,#TCL,#TTL,#Wiring
+evolution	evolution-true-true-false	main	main
+evolution	evolution-true-true-false	toolbar	0	Poke Tool	{}
+evolution	evolution-true-true-false	toolbar	1	Edit Tool	{}
+evolution	evolution-true-true-false	toolbar	2	Wiring Tool	{}
+evolution	evolution-true-true-false	toolbar	3	Text Tool	{color=#000000, font=SansSerif bold 16, halign=center, text=, valign=base}
+evolution	evolution-true-true-false	toolbar	4	Image	{attribution=, dataSize=0 B, height=64, image=, license=Unspecified, scale=fit, width=64}
+evolution	evolution-true-true-false	toolbar	5	separator
+evolution	evolution-true-true-false	toolbar	6	Pin	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+evolution	evolution-true-true-false	toolbar	7	Pin	{appearance=NewPins, facing=west, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=output, width=1}
+evolution	evolution-true-true-false	toolbar	8	separator
+evolution	evolution-true-true-false	toolbar	9	NOT Gate	{facing=east, label=, labelfont=SansSerif bold 16, out=01, size=30, width=1}
+evolution	evolution-true-true-false	toolbar	10	AND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	evolution-true-true-false	toolbar	11	OR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	evolution-true-true-false	toolbar	12	XOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1, xor=1}
+evolution	evolution-true-true-false	toolbar	13	NAND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	evolution-true-true-false	toolbar	14	NOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	evolution-true-true-false	toolbar	15	separator
+evolution	evolution-true-true-false	toolbar	16	D Flip-Flop	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+evolution	evolution-true-true-false	toolbar	17	Register	{appearance=classic, label=, labelfont=SansSerif bold 16, labelloc=north, showInTab=false, trigger=rising, width=8}
+evolution	evolution-true-true-false	mapping	Button2	Poke Tool
+evolution	evolution-true-true-false	mapping	Button3	Menu Tool
+evolution	evolution-true-true-false	mapping	Ctrl Button1	Menu Tool
+evolution	evolution-true-true-false	circuit	main	{appearance=evolution, circuit=main, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+evolution	evolution-true-true-false	component	main	D Flip-Flop	(300,200)	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+evolution	evolution-true-true-false	component	main	Pin	(100,200)	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+evolution	evolution-true-true-false	circuit	sub	{appearance=evolution, circuit=sub, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+mobile	evolution-true-true-false	libraries	#Arithmetic,#BFH-Praktika,#Base,#FPArithmetic,#Gates,#I/O,#Input/Output-Extra,#Memory,#Plexers,#Soc,#TCL,#TTL,#Wiring
+mobile	evolution-true-true-false	main	main
+mobile	evolution-true-true-false	toolbar	0	Poke Tool	{}
+mobile	evolution-true-true-false	toolbar	1	Edit Tool	{}
+mobile	evolution-true-true-false	toolbar	2	Wiring Tool	{}
+mobile	evolution-true-true-false	toolbar	3	Text Tool	{color=#000000, font=SansSerif bold 16, halign=center, text=, valign=base}
+mobile	evolution-true-true-false	toolbar	4	Image	{attribution=, dataSize=0 B, height=64, image=, license=Unspecified, scale=fit, width=64}
+mobile	evolution-true-true-false	toolbar	5	separator
+mobile	evolution-true-true-false	toolbar	6	Pin	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+mobile	evolution-true-true-false	toolbar	7	Pin	{appearance=NewPins, facing=west, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=output, width=1}
+mobile	evolution-true-true-false	toolbar	8	separator
+mobile	evolution-true-true-false	toolbar	9	NOT Gate	{facing=east, label=, labelfont=SansSerif bold 16, out=01, size=30, width=1}
+mobile	evolution-true-true-false	toolbar	10	AND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	evolution-true-true-false	toolbar	11	OR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	evolution-true-true-false	toolbar	12	XOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1, xor=1}
+mobile	evolution-true-true-false	toolbar	13	NAND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	evolution-true-true-false	toolbar	14	NOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	evolution-true-true-false	toolbar	15	separator
+mobile	evolution-true-true-false	toolbar	16	D Flip-Flop	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+mobile	evolution-true-true-false	toolbar	17	Register	{appearance=classic, label=, labelfont=SansSerif bold 16, labelloc=north, showInTab=false, trigger=rising, width=8}
+mobile	evolution-true-true-false	mapping	Button2	Poke Tool
+mobile	evolution-true-true-false	mapping	Button3	Menu Tool
+mobile	evolution-true-true-false	mapping	Ctrl Button1	Menu Tool
+mobile	evolution-true-true-false	circuit	main	{appearance=evolution, circuit=main, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+mobile	evolution-true-true-false	component	main	D Flip-Flop	(300,200)	{appearance=classic, label=, labelfont=SansSerif bold 16, trigger=rising}
+mobile	evolution-true-true-false	component	main	Pin	(100,200)	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+mobile	evolution-true-true-false	circuit	sub	{appearance=evolution, circuit=sub, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+result	evolution-true-true-false	circuits-and-components-match	true
+result	evolution-true-true-false	template-matches	true
+result	evolution-true-true-false	evolution-resave-unchanged	true
+profile	logisim_evolution-true-true-true
+evolution	logisim_evolution-true-true-true	libraries	#Base,#Gates,#Memory,#Wiring
+evolution	logisim_evolution-true-true-true	main	main
+evolution	logisim_evolution-true-true-true	toolbar	0	Poke Tool	{}
+evolution	logisim_evolution-true-true-true	toolbar	1	Edit Tool	{}
+evolution	logisim_evolution-true-true-true	toolbar	2	Wiring Tool	{}
+evolution	logisim_evolution-true-true-true	toolbar	3	Text Tool	{color=#000000, font=SansSerif bold 16, halign=center, text=, valign=base}
+evolution	logisim_evolution-true-true-true	toolbar	4	Image	{attribution=, dataSize=0 B, height=64, image=, license=Unspecified, scale=fit, width=64}
+evolution	logisim_evolution-true-true-true	toolbar	5	separator
+evolution	logisim_evolution-true-true-true	toolbar	6	Pin	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+evolution	logisim_evolution-true-true-true	toolbar	7	Pin	{appearance=NewPins, facing=west, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=output, width=1}
+evolution	logisim_evolution-true-true-true	toolbar	8	separator
+evolution	logisim_evolution-true-true-true	toolbar	9	NOT Gate	{facing=east, label=, labelfont=SansSerif bold 16, out=01, size=30, width=1}
+evolution	logisim_evolution-true-true-true	toolbar	10	AND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	logisim_evolution-true-true-true	toolbar	11	OR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	logisim_evolution-true-true-true	toolbar	12	XOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1, xor=1}
+evolution	logisim_evolution-true-true-true	toolbar	13	NAND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	logisim_evolution-true-true-true	toolbar	14	NOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+evolution	logisim_evolution-true-true-true	toolbar	15	separator
+evolution	logisim_evolution-true-true-true	toolbar	16	D Flip-Flop	{appearance=logisim_evolution, label=, labelfont=SansSerif bold 16, trigger=rising}
+evolution	logisim_evolution-true-true-true	toolbar	17	Register	{appearance=logisim_evolution, label=, labelfont=SansSerif bold 16, labelloc=north, showInTab=false, trigger=rising, width=8}
+evolution	logisim_evolution-true-true-true	mapping	Button2	Poke Tool
+evolution	logisim_evolution-true-true-true	mapping	Button3	Menu Tool
+evolution	logisim_evolution-true-true-true	mapping	Ctrl Button1	Menu Tool
+evolution	logisim_evolution-true-true-true	circuit	main	{appearance=logisim_evolution, circuit=main, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+evolution	logisim_evolution-true-true-true	component	main	D Flip-Flop	(300,200)	{appearance=logisim_evolution, label=, labelfont=SansSerif bold 16, trigger=rising}
+evolution	logisim_evolution-true-true-true	component	main	Pin	(100,200)	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+evolution	logisim_evolution-true-true-true	circuit	sub	{appearance=logisim_evolution, circuit=sub, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+mobile	logisim_evolution-true-true-true	libraries	#Base,#Gates,#Memory,#Wiring
+mobile	logisim_evolution-true-true-true	main	main
+mobile	logisim_evolution-true-true-true	toolbar	0	Poke Tool	{}
+mobile	logisim_evolution-true-true-true	toolbar	1	Edit Tool	{}
+mobile	logisim_evolution-true-true-true	toolbar	2	Wiring Tool	{}
+mobile	logisim_evolution-true-true-true	toolbar	3	Text Tool	{color=#000000, font=SansSerif bold 16, halign=center, text=, valign=base}
+mobile	logisim_evolution-true-true-true	toolbar	4	Image	{attribution=, dataSize=0 B, height=64, image=, license=Unspecified, scale=fit, width=64}
+mobile	logisim_evolution-true-true-true	toolbar	5	separator
+mobile	logisim_evolution-true-true-true	toolbar	6	Pin	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+mobile	logisim_evolution-true-true-true	toolbar	7	Pin	{appearance=NewPins, facing=west, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=output, width=1}
+mobile	logisim_evolution-true-true-true	toolbar	8	separator
+mobile	logisim_evolution-true-true-true	toolbar	9	NOT Gate	{facing=east, label=, labelfont=SansSerif bold 16, out=01, size=30, width=1}
+mobile	logisim_evolution-true-true-true	toolbar	10	AND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	logisim_evolution-true-true-true	toolbar	11	OR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	logisim_evolution-true-true-true	toolbar	12	XOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1, xor=1}
+mobile	logisim_evolution-true-true-true	toolbar	13	NAND Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	logisim_evolution-true-true-true	toolbar	14	NOR Gate	{facing=east, inputs=2, label=, labelfont=SansSerif bold 16, negate0=false, negate1=false, out=01, size=50, width=1}
+mobile	logisim_evolution-true-true-true	toolbar	15	separator
+mobile	logisim_evolution-true-true-true	toolbar	16	D Flip-Flop	{appearance=logisim_evolution, label=, labelfont=SansSerif bold 16, trigger=rising}
+mobile	logisim_evolution-true-true-true	toolbar	17	Register	{appearance=logisim_evolution, label=, labelfont=SansSerif bold 16, labelloc=north, showInTab=false, trigger=rising, width=8}
+mobile	logisim_evolution-true-true-true	mapping	Button2	Poke Tool
+mobile	logisim_evolution-true-true-true	mapping	Button3	Menu Tool
+mobile	logisim_evolution-true-true-true	mapping	Ctrl Button1	Menu Tool
+mobile	logisim_evolution-true-true-true	circuit	main	{appearance=logisim_evolution, circuit=main, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+mobile	logisim_evolution-true-true-true	component	main	D Flip-Flop	(300,200)	{appearance=logisim_evolution, label=, labelfont=SansSerif bold 16, trigger=rising}
+mobile	logisim_evolution-true-true-true	component	main	Pin	(100,200)	{appearance=NewPins, behavior=simple, facing=east, initial=0x0, label=, labelfont=SansSerif bold 16, labelloc=west, radix=2, type=input, width=1}
+mobile	logisim_evolution-true-true-true	circuit	sub	{appearance=logisim_evolution, circuit=sub, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+result	logisim_evolution-true-true-true	circuits-and-components-match	true
+result	logisim_evolution-true-true-true	template-matches	true
+result	logisim_evolution-true-true-true	evolution-resave-unchanged	true
+profile	empty
+evolution	empty	libraries	
+evolution	empty	main	main
+evolution	empty	circuit	main	{appearance=logisim_evolution, circuit=main, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+evolution	empty	circuit	sub	{appearance=logisim_evolution, circuit=sub, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+mobile	empty	libraries	
+mobile	empty	main	main
+mobile	empty	circuit	main	{appearance=logisim_evolution, circuit=main, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=1.0}
+mobile	empty	circuit	sub	{appearance=logisim_evolution, circuit=sub, circuitnamedboxfixedsize=true, clabel=, clabelfont=SansSerif bold 16, clabelup=east, downloadBoard=, downloadFrequency=-1.0, simulationFrequency=-1.0}
+result	empty	circuits-and-components-match	true
+result	empty	template-matches	true
+result	empty	evolution-resave-unchanged	true

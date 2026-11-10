@@ -1,0 +1,89 @@
+{
+  "scope": "two complete HDL scenarios attempted with canonical touch text entry",
+  "source_sha": "b90a716b8372ce4cb143b082292cdc9bbe42a576",
+  "harness_sha": "c282c577",
+  "canonical_nonconfidential_helper_source": "32244d70",
+  "canonical_nonconfidential_helper_sha256": "155897ce27e810d1f8174a87fa7336b761064428dfeb06cfea085fa8ee4a1d4d",
+  "status": "FAIL",
+  "native_execution_gate": "NATIVE_FAIL",
+  "qualification_gate": "NOT_QUALIFIED",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-ime-header-candidate/outputs/ios-ime-header-b90a716b/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "955bc8593d6e4092f98b2577b10f255cd1640f21bb0405f98ff861af5fa940ea",
+    "bundle_tree_sha256": "2dcadc37dc246edae9892785f086f9b9bf8b0b84727198b50d42c96df413c180",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "installed_artifact": {
+    "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/20A4D87D-A2A6-46BD-A889-C4888CE1E152/data/Containers/Bundle/Application/6DA4E445-D3CB-4F99-A10B-EEF26B13C03D/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "955bc8593d6e4092f98b2577b10f255cd1640f21bb0405f98ff861af5fa940ea",
+    "bundle_tree_sha256": "2dcadc37dc246edae9892785f086f9b9bf8b0b84727198b50d42c96df413c180",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifact_after": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-ime-header-candidate/outputs/ios-ime-header-b90a716b/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "955bc8593d6e4092f98b2577b10f255cd1640f21bb0405f98ff861af5fa940ea",
+    "bundle_tree_sha256": "2dcadc37dc246edae9892785f086f9b9bf8b0b84727198b50d42c96df413c180",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "simulator": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+  "physical_device": false,
+  "alpha": false,
+  "selected_tests": [],
+  "scenario_results": {
+    "testCompactCosimulationSamplesResetStopAndCompilerFailure": "FAIL: selection-menu-missing while replacing the nonconfidential companion address.",
+    "testCompactImportFailureAndVerilogBlifApply": "FAIL at the same native selection menu requirement."
+  },
+  "observed_input_state": {
+    "field": "HTTPS address or local loopback",
+    "keyboard_focused": true,
+    "initial_address_unchanged": true,
+    "native_selection_menu_visible_in_screenshot": false,
+    "native_menu_items_in_failure_tree": 0,
+    "select_all_cut_copy_in_failure_tree": 0,
+    "value_entry_and_pairing": "NOT_RUN: the menu postcondition failed before clearing or entering replacement text."
+  },
+  "landscape_ime_and_hdl": "NOT_RUN: neither scenario reached landscape or a compiler/import operation. No conclusion about the header z-order or its lower-edge touch is inferred.",
+  "companion_operations": 0,
+  "not_inferred": "This receipt preserves an observed touch selection failure. It does not attribute the failure exclusively to the test harness, the focus behavior change or the application. Earlier candidates exposed native Select All on this field; that difference requires investigation.",
+  "guards_preserved": "The canonical helper and literal value postconditions are unchanged. No shortcut, clipboard, focus repair, geometry relaxation, timeout increase or partial qualification was added.",
+  "evidence": {
+    "cosimulation_screenshot": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/270A55B7-1826-4DA4-9D7B-694A656F1D02.png",
+      "sha256": "f1918326810311e1ec98d07c51e4ae288a5fc5e2d08c8dcddfb4425d9b0d2746"
+    },
+    "cosimulation_tree": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/EC47F824-0C2B-4027-9646-3C8F7C900B51.txt",
+      "sha256": "4d372a74e86873cf5b0aed27b3d40cdb71acd00174dfe76c95e3774afe7e351f"
+    },
+    "cosimulation_field": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/9E112F94-C9E9-4AA4-9150-A71AC2264E07.txt",
+      "sha256": "4b2a44a276113a84997fc4f278fcb2ffa806ce7fe726768662813f9ad4f4b6d3"
+    },
+    "import_screenshot": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/95984F03-B5A2-4AE9-8409-F2D2F1FCB85D.png",
+      "sha256": "e465d52614e98536c6b878f9aecc2ab6c518fff095645803064399a0da658a99"
+    },
+    "import_tree": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/6E788F61-C461-480B-9B34-2F2110824E32.txt",
+      "sha256": "b210dc4113d1e0ede510dad89d6a5f6ae30a18b49b1f1d1f1646c5a48ddcc450"
+    },
+    "test_log": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/test.log",
+      "sha256": "57b590e8ffdb16f8c34f633ec82ede70daf4c42bcce2dee6e7a4a5b4bda778b4"
+    },
+    "companion_audit": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/companion-audit.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "results": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/results.json",
+      "sha256": "8a25b8e8f98427805436e2713e39315020f475f6bd22515d10dbf6ab4a4e0c4d"
+    }
+  }
+}

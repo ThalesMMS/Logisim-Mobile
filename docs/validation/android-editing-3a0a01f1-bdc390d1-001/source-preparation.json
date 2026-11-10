@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "status": "SOURCE_PREPARED",
+  "nativeStatus": "NOT_RUN",
+  "base": "98e1c5d23d15ea9478d3a55fca25f2c9b38cdaca",
+  "productionChanged": false,
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "helperProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "nextSelectedCase": "dip-last",
+  "preparedSources": {
+    "scripts/android_editing_scenarios.py": {
+      "bytes": 23770,
+      "sha256": "184fb1691b75636794ca9f25f71cf14bf06752c8c697bbc4e7ae6004fb478458"
+    },
+    "scripts/test_android_editing_scenarios.py": {
+      "bytes": 21403,
+      "sha256": "61750d78c2a67f269ecce481dbd1d045ce48303111c248c1214f59da684e7e4e"
+    },
+    "scripts/e2e-android.py": {
+      "bytes": 68215,
+      "sha256": "2d5578df30d1e32d0a6e29c2890c78f48f8792cffab84cc76761c2f2db169466"
+    },
+    "scripts/android_ui.py": {
+      "bytes": 45996,
+      "sha256": "24fd80149ebb6c803a474c741065d3db3cc78f54b9fd03bdd3b48b4d28b0ab1e"
+    },
+    "scripts/android_io_showcase_scenarios.py": {
+      "bytes": 17497,
+      "sha256": "d6a8c2c58b671cdb5a3a87e0189883e4bc60e7e27f4e6c5539ece4320f023396"
+    }
+  },
+  "unchangedOracleInputs": {
+    "examples/io-showcase.circ": {
+      "bytes": 21971,
+      "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9"
+    },
+    "examples/io-showcase.targets.json": {
+      "bytes": 17651,
+      "sha256": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15"
+    },
+    "fixtures/user-scenarios/io-actions-v1.json": {
+      "bytes": 10589,
+      "sha256": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb"
+    },
+    "fixtures/user-scenarios/editor-actions-v1.json": {
+      "bytes": 9468,
+      "sha256": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9"
+    },
+    "scripts/io_showcase_contract.py": {
+      "bytes": 10376,
+      "sha256": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7"
+    }
+  },
+  "artifacts": {
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/androidApp-e2e.apk": {
+      "bytes": 16298862,
+      "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+    },
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/androidApp-e2e-androidTest.apk": {
+      "bytes": 221322,
+      "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+    },
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/androidSnapshot-debug.apk": {
+      "bytes": 965334,
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    }
+  },
+  "buildReceipt": {
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/outputs/artifacts-5c-keyboard/app-build-receipt.json": {
+      "bytes": 630,
+      "sha256": "e3e70e4c479d82fb8e6eb369100e297a2e8e9bea82d8710233db93b15e55e775"
+    }
+  },
+  "verification": {
+    "editingSelectorTests": {
+      "command": "python3 -B -m unittest discover -s scripts -p test_android_editing_scenarios.py -v",
+      "passed": 22,
+      "failed": 0
+    },
+    "originalPreRevealNegative": {
+      "methodRestoredInMemory": true,
+      "testsRun": 2,
+      "expectedFailures": 2,
+      "unexpectedErrors": 0
+    },
+    "independentReview": "Approved source-only by io44_touch_audit; no production, oracle, injector, deadline or fixture changes."
+  },
+  "limits": [
+    "No Android commands or native runs occurred.",
+    "No production APK was built.",
+    "The pointer showcase requires a drawing transform before reuse.",
+    "Existing passes retain their original producers; no blanket current-source qualification is inferred."
+  ]
+}

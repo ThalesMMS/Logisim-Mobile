@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 477, in folder
+    self.roundtrip("folder", before)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 403, in roundtrip
+    assert first_window and imported["windows"].get(first_window) == imported["project"]["id"], \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: The actual export session is not linked to the imported workspace

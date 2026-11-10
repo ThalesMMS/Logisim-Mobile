@@ -1,0 +1,26 @@
+{
+  "status": "APPROVED",
+  "scope": "Offline preservation of one failed Android editing invocation",
+  "reviewer": "/root/android_acceptance35_resume/issue35_existing_proof/dip_archive_review",
+  "findings": [],
+  "checks": {
+    "producerEquality": "274 raw files and 74 controller files are byte-identical to their originals, excluding the two unpublished TARs.",
+    "portableVerifier": "PASS: 358 inventory entries, 42 complete SDK captures, two public XML checkpoints and the separate private North checkpoint.",
+    "semanticNegativesAndRelocation": {
+      "independentlyExecuted": true,
+      "testsRun": 5,
+      "failures": 0,
+      "errors": 0
+    },
+    "unpublishedTars": "Both original 86586-byte TAR hashes and their retained 1952-byte workspace member were independently checked.",
+    "documents": "README, receipt, verification and local TAR check match the retained evidence.",
+    "classification": "The first editing group remains FAIL; the other three remain NOT_RUN. North is a private checkpoint, not a completed Copy XML export.",
+    "identities": "Producer3a, helper5c, source pre/post hashes, installed APK identities and getter readback are consistent."
+  },
+  "limits": [
+    "The 0.462-second terminal budget is residual within wait_editor's original 30-second deadline; no causal attribution is made.",
+    "Apply, Back and receiver audit entries establish requests only. Inspector North does not establish Back delivery or handler execution.",
+    "No SDK recovery, uninterrupted PID continuity or completed editing workflow is claimed.",
+    "No device, build or archive mutation was performed by this review."
+  ]
+}

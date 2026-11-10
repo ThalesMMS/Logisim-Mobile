@@ -1,0 +1,121 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ENTITY tb IS END ENTITY;
+ARCHITECTURE sim OF tb IS
+  SIGNAL s_fpga_p0_b0 : std_logic := '0';
+  SIGNAL s_fpga_p1_b0 : std_logic := '0';
+  SIGNAL s_fpga_p2_b0 : std_logic := '0';
+  SIGNAL s_fpga_p3_b0 : std_logic := '0';
+  SIGNAL s_fpga_p4_b0 : std_logic := '0';
+  SIGNAL s_fpga_p5_b0 : std_logic := '0';
+  SIGNAL s_fpga_p6_b0 : std_logic := '0';
+BEGIN
+  dut: ENTITY work.logisim_fpga_top PORT MAP (
+    fpga_p0_b0 => s_fpga_p0_b0,
+    fpga_p1_b0 => s_fpga_p1_b0,
+    fpga_p2_b0 => s_fpga_p2_b0,
+    fpga_p3_b0 => s_fpga_p3_b0,
+    fpga_p4_b0 => s_fpga_p4_b0,
+    fpga_p5_b0 => s_fpga_p5_b0,
+    fpga_p6_b0 => s_fpga_p6_b0
+  );
+  PROCESS BEGIN
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0000 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0001 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0010 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0011 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0100 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0101 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0110 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '0';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 0111 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1000 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1001 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1010 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '0';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1011 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1100 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '0';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1101 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '0';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1110 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    s_fpga_p0_b0 <= '1';
+    s_fpga_p2_b0 <= '1';
+    s_fpga_p3_b0 <= '1';
+    s_fpga_p4_b0 <= '1';
+    FOR i IN 0 TO 7 LOOP WAIT FOR 5 ns; END LOOP;
+    REPORT "ROW 1111 " & std_logic'image(s_fpga_p5_b0) & "," & std_logic'image(s_fpga_p6_b0) & "," & std_logic'image(s_fpga_p1_b0) SEVERITY NOTE;
+    WAIT;
+  END PROCESS;
+END ARCHITECTURE;

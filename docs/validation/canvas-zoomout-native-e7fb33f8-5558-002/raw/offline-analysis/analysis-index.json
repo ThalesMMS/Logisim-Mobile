@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "OFFLINE_ANALYSIS_COMPLETE",
+  "nativeResultPreserved": "FAIL_NOT_QUALIFIED",
+  "files": {
+    "BoundsReplay.java": {
+      "bytes": 1818,
+      "sha256": "23495e50ebdaf9a6bb716f395d3d6522e362e307977d5a5f6afac2c7b6049965"
+    },
+    "run.py": {
+      "bytes": 10599,
+      "sha256": "2b76f01a65c9af061def60f0227ef17b537526d0b4873b14d03bfac015fe4e7b"
+    },
+    "math-readme.md": {
+      "bytes": 3822,
+      "sha256": "977b97b88be8b5683ecd792bba55fbde207dab8188bc42a374ac0923b1d8a3c2"
+    },
+    "math-summary.json": {
+      "bytes": 7903,
+      "sha256": "6a14b206e31d7770ef33b4fc1391ca9ea5dcc34051c6aa1406ea380ef5902eac"
+    },
+    "replay-report.json.gz": {
+      "bytes": 202036,
+      "sha256": "dfcc908c69898dcb599ff79b93ce3a071d4cca5f0e9d6970c565edb665986597"
+    },
+    "replay-compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "replay-stdout.log": {
+      "bytes": 2139,
+      "sha256": "dcd42f5c72bdbc64d895dbb686a2598b9b5d6bd5547fe6bc59348175de8a4b3f"
+    },
+    "math-index.json": {
+      "bytes": 1982,
+      "sha256": "dbf8906e96e7d0e1ad189e531db89246da076f637a4c5f3bd9b6411947ff3055"
+    },
+    "compose-provenance.json": {
+      "bytes": 11724,
+      "sha256": "8859757aa9b04a802a4d685b6d591a0cd3d12c7b04c51d39ac4b7c07464f989b"
+    },
+    "compose-analysis.md": {
+      "bytes": 4937,
+      "sha256": "f1690bd532d70250e5b21978542c036769a53104a85cbb617664e288904a9f17"
+    }
+  },
+  "archivePolicy": "Copy exactly these ten files and this index. Do not copy the whole directory. No JAR or class binary is included.",
+  "mathIndexSha256": "dbf8906e96e7d0e1ad189e531db89246da076f637a4c5f3bd9b6411947ff3055",
+  "sourceJarUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.13.0-beta02/ui-android-1.13.0-beta02-sources.jar",
+  "sourceJarSha256": "dc792b09830252c0c9f285933172ed63a1e7c67c4ec7e1588a962e04c525241e",
+  "excludedLocalArtifacts": [
+    "BoundsProbe.class",
+    "BoundsProbe.java",
+    "command-1.log",
+    "command-2.log",
+    "report.json"
+  ],
+  "replayScope": "The pure-function replay passed with 1,867 input identities unchanged. The Android-region algorithm is modeled, not executed by Compose or Android.",
+  "literalRatioAssertionOperands": "NOT_SERIALIZED",
+  "nextAnchorAssertion": "NOT_RUN; source tolerance 4 pixels; modeled endpoint displacement 7.5 pixels",
+  "deviceQueries": false,
+  "nativeRun": false,
+  "cacheCalls": false,
+  "gradleOrAppBuild": false,
+  "oracleOrProductEdits": false
+}

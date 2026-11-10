@@ -1,0 +1,36 @@
+{
+  "reviewer": "/root/accessibility28/grpc_discovery_sources/touch_identifier_review",
+  "reviewed_utc": "2026-11-05T10:33:25.484331+00:00",
+  "scope": "Independent offline review against already copied public source files only. No VM, device, console, RPC, GUI, build, credentials, process arguments or environment was consulted.",
+  "result": "PASS_PUBLIC_SOURCE_START_STOP_REVIEW_ONLY",
+  "report": {
+    "path": "/tmp/logisim-grpc-start-stop-public-sources/report.md",
+    "bytes": 5714,
+    "sha256": "19dc61b2163f441c2ecf6f006c6ab5822f884fbde782a79d485c24619048805e",
+    "matches_author_frozen_hash": true
+  },
+  "source_manifest": {
+    "path": "/tmp/logisim-grpc-start-stop-public-sources/source-manifest.json",
+    "sha256": "66fbb94fc95d66f728f7e021d8ccf56ad1836108a952dcecc0de19c0da024b87",
+    "verified_public_source_files": 11,
+    "all_sizes_and_sha256_match": true
+  },
+  "checks": [
+    "Console grpc0 follows start, not stop; bound start_grpc ignores the console parameters in this commit.",
+    "New qemu_setup_grpc reads original launch options and may reuse the existing service only when already present.",
+    "Builder token/JWT override restricts otherwise insecure transport to loopback; TLS/mTLS is explicitly separate from bearer/JWT enforcement.",
+    "A new legacy token or PID/UUID JWK directory is a startup state effect; advertisement/failure paths do not establish read-only or complete rollback behavior.",
+    "Internal stop calls server Shutdown; inspected public console/QGrpcAgent/main controller proto do not expose endpoint-only stop.",
+    "Observed stop/reset/advertiser removal is in global emulation teardown.",
+    "Idle timeout invokes VM shutdown then process kill and cannot provide endpoint-only rollback.",
+    "Conclusion is bounded to inspected public interfaces and does not identify or exercise the installed Emulator binary."
+  ],
+  "limits": [
+    "No actual endpoint or auth mode was inspected.",
+    "No endpoint start, stop, key publication or secret read is authorized or qualified by this review.",
+    "Absence of endpoint-only stop is limited to the interfaces and source commit stated in the report."
+  ],
+  "files_modified": [
+    "This new independent-review.json only; report, source copies and repositories remain unchanged."
+  ]
+}

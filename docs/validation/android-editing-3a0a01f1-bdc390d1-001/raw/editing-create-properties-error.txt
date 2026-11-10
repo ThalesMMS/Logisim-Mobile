@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/android_editing_scenarios.py", line 329, in create_and_properties
+    self.assert_document("editing-property-north", "north")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/android_editing_scenarios.py", line 311, in assert_document
+    xml, project = self.export(name)
+                   ~~~~~~~~~~~^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/android_editing_scenarios.py", line 213, in export
+    return self.s.export_xml(name)
+           ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/e2e-android.py", line 463, in export_xml
+    self.wait_editor()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/e2e-android.py", line 226, in wait_editor
+    root = self.ui.screen(timeout=max(0.1, deadline - time.monotonic()))
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/android_ui.py", line 131, in screen
+    return self._screen_uiautomator(timeout)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/scripts/android_ui.py", line 402, in _screen_uiautomator
+    raise AssertionError(f"No fresh Android UI hierarchy within {timeout}s: {last_error}")
+AssertionError: No fresh Android UI hierarchy within 0.46215945898438804s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5556', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-33b1cd5ef9a049b38419931ceb024060-73.xml']' timed out after 0.46215629199286923 seconds

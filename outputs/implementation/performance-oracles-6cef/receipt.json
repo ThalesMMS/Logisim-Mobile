@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "production_source_pin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "scope": "Correctness tests and entrypoint compilation only. No performance benchmark main or mobile UI was executed by this unit.",
+  "tests": {
+    "total": 21,
+    "failures": 0,
+    "new_oracle_tests": 18,
+    "negative_oracle_tests": 16,
+    "existing_fixture_tests": 3
+  },
+  "red_control": {
+    "total": 21,
+    "failures": 2,
+    "reason": "The previous helper accepted missing child state and changed root/child identity despite correct output literals."
+  },
+  "benchmark_compile_exit": 0,
+  "benchmark_main_executed": false,
+  "sequence_correction": "Toggle the last input at every input_change call, preserving a transition across odd warmup counts. The recorded static review approved this correction against its preceding source hash.",
+  "source_sha256": {
+    "core/src/commonTest/kotlin/dev/logisim/mobile/core/PerformanceOracle.kt": "63c0a645dcbef7d9738afd9531c2ad92b7a62043d48836b29db686635b83e797",
+    "core/src/commonTest/kotlin/dev/logisim/mobile/core/PerformanceOracleTest.kt": "52b1654bedb80c48d1eaabafd2a3570406c854c619daec91d88e528c2c337e6b",
+    "core/src/jvmTest/kotlin/dev/logisim/mobile/core/CircuitPerformanceBenchmark.kt": "32196c1634bf25c726f2987075d30ed1e41ccb3fda33160ff4ff4591fb41c77f",
+    "docs/performance-hosts.md": "7b579d6194b52845a5441fb94ec4a0d2a839070361f3c1fcd3c9e9a6e37fb589"
+  },
+  "payload_sha256": {
+    "fresh-core-receipt.json": "e184fd9cc6cb757c282c4166efd1a2e87228f7c4137ce81e47403f8b0ba2e8be",
+    "fresh-core-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hierarchy-red-receipt.json": "d47fec6f238093016eadf36649b7e57b9d09e4e848eda08938d636ec9760455e",
+    "hierarchy-red-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hierarchy-green-receipt.json": "89e3c5f93703a22ffd42d4866a5306900b496108949ef35468ab1a445dd7cc1e",
+    "hierarchy-green-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "benchmark-sequence-compile-receipt.json": "edb2eeec75ffeb38da0d551541b7dc5bd5ffe317b09d1deefc45cbfe66dc9492",
+    "benchmark-sequence-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "integration-review.md": "77426b58090b268bd4f834f7a8f3a47652aa6fc2eebf6137741cd0cf539ce194",
+    "hierarchy-red-junit.log.gz": "e707468b4327fd3574aad30c822623de4539ca4bbafdbbe2fed1e10dd3754d49",
+    "hierarchy-green-junit.log.gz": "aba9403df1149bdf170c6558b68da34ddb203783c07de1ead28a7b9a2f5ac545"
+  },
+  "reproduce_focused_tests": [
+    "./gradlew",
+    ":core:jvmTest",
+    "--tests",
+    "dev.logisim.mobile.core.PerformanceOracleTest",
+    "--tests",
+    "dev.logisim.mobile.core.PerformanceCircuitsTest"
+  ],
+  "unmeasured": [
+    "JVM performance baseline",
+    "Native execution performance",
+    "mobile frame/touch latency",
+    "memory retention",
+    "physical device energy"
+  ],
+  "gzip_uncompressed_sha256": {
+    "hierarchy-red-junit.log.gz": "b8b0b98023bb3a5996a486519d561f76afb5fa98315ca0e9806c8044bbbbc20c",
+    "hierarchy-green-junit.log.gz": "2e946f4ca256cd8539eeb5e01d6b9b0734a3a6c71db8b7c9a844e840a10cc161"
+  },
+  "log_encoding": "JUnit stdout logs are gzip-compressed without changing their original bytes.",
+  "documentation_followup": "Added --prepare-only instructions after the compile-only gate; the compiled benchmark/helper sources and raw gate receipts are unchanged."
+}

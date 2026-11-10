@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 641, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 424, in bundle
+    self.open_bundle("portable53.lsebdl", staged=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 299, in open_bundle
+    self.s.choose_native_file(self.remote_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 734, in choose_native_file
+    assert len(lists) == 1, "DocumentsUI did not expose its file list"
+           ^^^^^^^^^^^^^^^
+AssertionError: DocumentsUI did not expose its file list

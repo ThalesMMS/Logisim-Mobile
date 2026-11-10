@@ -1,0 +1,270 @@
+{
+  "hdl_import_json_size_limit": {
+    "en": "HDL netlist exceeds 32 MiB.",
+    "pt": "A netlist HDL excede 32 MiB."
+  },
+  "hdl_import_json_suffix": {
+    "en": "Unexpected JSON suffix at {offset}.",
+    "pt": "Conteúdo inesperado após o JSON na posição {offset}."
+  },
+  "hdl_import_json_structure_limit": {
+    "en": "HDL JSON nesting or node limit exceeded.",
+    "pt": "O JSON HDL excede o limite de aninhamento ou de elementos."
+  },
+  "hdl_import_json_value_incomplete": {
+    "en": "Incomplete JSON value.",
+    "pt": "Valor JSON incompleto."
+  },
+  "hdl_import_json_token_invalid": {
+    "en": "Invalid JSON token at {offset}.",
+    "pt": "Token JSON inválido na posição {offset}."
+  },
+  "hdl_import_json_key_expected": {
+    "en": "Expected JSON key at {offset}.",
+    "pt": "Era esperada uma chave JSON na posição {offset}."
+  },
+  "hdl_import_json_key_duplicate": {
+    "en": "Duplicate JSON key: {key}.",
+    "pt": "Chave JSON duplicada: {key}."
+  },
+  "hdl_import_json_colon_expected": {
+    "en": "Expected JSON colon at {offset}.",
+    "pt": "Era esperado dois-pontos no JSON na posição {offset}."
+  },
+  "hdl_import_json_comma_expected": {
+    "en": "Expected JSON comma at {offset}.",
+    "pt": "Era esperada uma vírgula no JSON na posição {offset}."
+  },
+  "hdl_import_json_string_expected": {
+    "en": "Expected JSON string at {offset}.",
+    "pt": "Era esperada uma string JSON na posição {offset}."
+  },
+  "hdl_import_json_string_incomplete": {
+    "en": "Incomplete JSON string.",
+    "pt": "String JSON incompleta."
+  },
+  "hdl_import_json_control_character": {
+    "en": "Unescaped JSON control character.",
+    "pt": "Caractere de controle sem escape no JSON."
+  },
+  "hdl_import_json_escape_incomplete": {
+    "en": "Incomplete JSON escape.",
+    "pt": "Sequência de escape JSON incompleta."
+  },
+  "hdl_import_json_unicode_incomplete": {
+    "en": "Incomplete JSON Unicode escape.",
+    "pt": "Sequência de escape Unicode JSON incompleta."
+  },
+  "hdl_import_json_unicode_invalid": {
+    "en": "Invalid JSON Unicode escape.",
+    "pt": "Sequência de escape Unicode JSON inválida."
+  },
+  "hdl_import_json_escape_invalid": {
+    "en": "Invalid JSON escape: {escape}.",
+    "pt": "Sequência de escape JSON inválida: {escape}."
+  },
+  "hdl_import_json_number_incomplete": {
+    "en": "Incomplete JSON number.",
+    "pt": "Número JSON incompleto."
+  },
+  "hdl_import_json_number_invalid": {
+    "en": "Invalid JSON number.",
+    "pt": "Número JSON inválido."
+  },
+  "hdl_import_json_fraction_invalid": {
+    "en": "Invalid JSON fraction.",
+    "pt": "Parte fracionária JSON inválida."
+  },
+  "hdl_import_json_exponent_invalid": {
+    "en": "Invalid JSON exponent.",
+    "pt": "Expoente JSON inválido."
+  },
+  "hdl_import_json_literal_invalid": {
+    "en": "Invalid JSON literal at {offset}.",
+    "pt": "Literal JSON inválido na posição {offset}."
+  },
+  "hdl_import_json_object_expected": {
+    "en": "Expected JSON object.",
+    "pt": "Era esperado um objeto JSON."
+  },
+  "hdl_import_json_array_expected": {
+    "en": "Expected JSON array.",
+    "pt": "Era esperada uma lista JSON."
+  },
+  "hdl_import_json_text_or_number_expected": {
+    "en": "Expected JSON text or number.",
+    "pt": "Era esperado texto ou número JSON."
+  },
+  "hdl_import_input_name": {
+    "en": "Use a relative HDL file path with letters, digits, dots, underscores and hyphens.",
+    "pt": "Use um caminho relativo para o arquivo HDL, com letras, dígitos, pontos, sublinhados e hífens."
+  },
+  "hdl_import_source_size": {
+    "en": "An HDL source exceeds 128 KiB.",
+    "pt": "Uma fonte HDL excede 128 KiB."
+  },
+  "hdl_import_source_control_characters": {
+    "en": "An HDL source contains unsupported control characters.",
+    "pt": "Uma fonte HDL contém caracteres de controle não suportados."
+  },
+  "hdl_import_net_identifier_nonnegative": {
+    "en": "HDL net identifiers must be nonnegative.",
+    "pt": "Os identificadores de rede HDL devem ser não negativos."
+  },
+  "hdl_import_constant_invalid": {
+    "en": "Invalid HDL constant.",
+    "pt": "Constante HDL inválida."
+  },
+  "hdl_import_modules_missing": {
+    "en": "Synthesis result has no modules.",
+    "pt": "O resultado da síntese não contém módulos."
+  },
+  "hdl_import_modules_limit": {
+    "en": "Synthesis result must contain 1 to 512 modules.",
+    "pt": "O resultado da síntese deve conter de 1 a 512 módulos."
+  },
+  "hdl_import_black_box": {
+    "en": "Black-box module is unsupported: {module}.",
+    "pt": "Módulo caixa-preta não suportado: {module}."
+  },
+  "hdl_import_port_direction": {
+    "en": "Invalid port direction in {module}.{port}.",
+    "pt": "Direção de porta inválida em {module}.{port}."
+  },
+  "hdl_import_ports_limit": {
+    "en": "Module {module} exceeds 256 ports.",
+    "pt": "O módulo {module} excede 256 portas."
+  },
+  "hdl_import_cells_limit": {
+    "en": "Synthesis result exceeds 16,384 cells.",
+    "pt": "O resultado da síntese excede 16.384 células."
+  },
+  "hdl_import_cell_type_missing": {
+    "en": "Cell {module}.{cell} has no type.",
+    "pt": "A célula {module}.{cell} não tem tipo."
+  },
+  "hdl_import_nonzero_initialization": {
+    "en": "Nonzero register initialization requires a reset-based design: {module}.{net}.",
+    "pt": "A inicialização de registradores com valor diferente de zero exige um circuito com reset: {module}.{net}."
+  },
+  "hdl_import_top_unique": {
+    "en": "Choose a unique top module.",
+    "pt": "Escolha um único módulo principal."
+  },
+  "hdl_import_top_missing": {
+    "en": "Top module does not exist: {module}.",
+    "pt": "O módulo principal não existe: {module}."
+  },
+  "hdl_import_recursive_hierarchy": {
+    "en": "Recursive HDL hierarchy: {module}.",
+    "pt": "Hierarquia HDL recursiva: {module}."
+  },
+  "hdl_import_netlist_invalid": {
+    "en": "Invalid synthesis netlist.",
+    "pt": "Netlist de síntese inválida."
+  },
+  "hdl_import_connection_missing": {
+    "en": "Missing netlist connection.",
+    "pt": "Conexão ausente na netlist."
+  },
+  "hdl_import_connection_width": {
+    "en": "HDL ports and connections must contain 1 to 64 bits.",
+    "pt": "As portas e conexões HDL devem conter de 1 a 64 bits."
+  },
+  "hdl_import_net_identifier_invalid": {
+    "en": "Invalid HDL net identifier.",
+    "pt": "Identificador de rede HDL inválido."
+  },
+  "hdl_import_connection_invalid": {
+    "en": "Invalid HDL connection.",
+    "pt": "Conexão HDL inválida."
+  },
+  "hdl_import_sources_limit": {
+    "en": "HDL sources must have unique names and contain at most 64 files.",
+    "pt": "As fontes HDL devem ter nomes únicos e conter no máximo 64 arquivos."
+  },
+  "hdl_import_bidirectional_port": {
+    "en": "Bidirectional port {port} must use distinct nets, without constants or bits shared with other bidirectional ports.",
+    "pt": "A porta bidirecional {port} deve usar redes distintas, sem constantes nem bits compartilhados com outras portas bidirecionais."
+  },
+  "hdl_import_unsupported_cell": {
+    "en": "Unsupported synthesis cell {type}; no project was imported.",
+    "pt": "Célula de síntese não suportada: {type}. Nenhum projeto foi importado."
+  },
+  "hdl_import_module_missing": {
+    "en": "Missing module {module}.",
+    "pt": "Módulo ausente: {module}."
+  },
+  "hdl_import_conversion_failed": {
+    "en": "HDL conversion failed.",
+    "pt": "A conversão HDL falhou."
+  },
+  "hdl_import_editable_cells_limit": {
+    "en": "Module exceeds the 8,192-cell editable-layout limit.",
+    "pt": "O módulo excede o limite de 8.192 células do diagrama editável."
+  },
+  "hdl_import_coordinate_limit": {
+    "en": "The synthesized layout exceeds the supported coordinate range; import a smaller module.",
+    "pt": "O diagrama sintetizado excede o intervalo de coordenadas suportado. Importe um módulo menor."
+  },
+  "hdl_import_cell_port_missing": {
+    "en": "{type} is missing port {port}.",
+    "pt": "A célula {type} não contém a porta {port}."
+  },
+  "hdl_import_cell_not_normalized": {
+    "en": "{type}.{port} was not normalized to one bit.",
+    "pt": "A porta {type}.{port} não foi normalizada para um bit."
+  },
+  "hdl_import_instance_port_missing": {
+    "en": "Instance {instance} has no port {port}.",
+    "pt": "A instância {instance} não contém a porta {port}."
+  },
+  "hdl_import_instance_width": {
+    "en": "Instance {instance}.{port} has an incompatible width.",
+    "pt": "A porta {instance}.{port} tem largura incompatível."
+  },
+  "hdl_import_undefined_constant": {
+    "en": "Explicit x constant requires an undefined-value policy.",
+    "pt": "Uma constante x explícita exige uma política para valores indefinidos."
+  },
+  "hdl_import_routing_conflict": {
+    "en": "A local terminal stub could not be routed without joining another signal.",
+    "pt": "Não foi possível conectar um terminal local sem uni-lo a outro sinal."
+  },
+  "hdl_import_request_files": {
+    "en": "Supply one to 64 uniquely named source and library files.",
+    "pt": "Forneça de 1 a 64 arquivos de fontes e bibliotecas com nomes únicos."
+  },
+  "hdl_import_request_sources": {
+    "en": "Select the source files to synthesize.",
+    "pt": "Selecione os arquivos de fonte para sintetizar."
+  },
+  "hdl_import_request_top": {
+    "en": "The top module must be an identifier.",
+    "pt": "O módulo principal deve ser um identificador."
+  },
+  "hdl_import_request_defines": {
+    "en": "Defines require NAME or NAME=literal.",
+    "pt": "As definições devem usar NOME ou NOME=literal."
+  },
+  "hdl_import_synthesis_incomplete": {
+    "en": "The synthesis job did not complete successfully.",
+    "pt": "A tarefa de síntese não foi concluída com sucesso."
+  },
+  "hdl_import_synthesis_object": {
+    "en": "Synthesis result must be an object.",
+    "pt": "O resultado da síntese deve ser um objeto."
+  },
+  "hdl_import_artifact_format": {
+    "en": "Unsupported synthesis artifact format.",
+    "pt": "Formato de artefato de síntese não suportado."
+  },
+  "hdl_import_artifact_missing": {
+    "en": "The synthesis artifact is missing.",
+    "pt": "O artefato de síntese está ausente."
+  },
+  "hdl_import_artifact_invalid": {
+    "en": "Invalid synthesis artifact.",
+    "pt": "Artefato de síntese inválido."
+  }
+}

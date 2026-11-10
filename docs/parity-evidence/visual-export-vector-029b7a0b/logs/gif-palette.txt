@@ -1,0 +1,10 @@
+$ java -Djava.awt.headless=true -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmpd7fjkvk2:/Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/core/build/libs/core-jvm.jar:/Users/user/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar GifPalette docs/validation/artifacts/android-export34-final-002/whole.png docs/validation/artifacts/ios-export34-final-6cef-002/whole.png
+exit 0
+--- stdout
+gif	android-export34-final-002:imageio-pixels	PASS	0 of 1369264 decoded pixels differ from ImageIO's GIF of the same pixels; 431 source colours, 256 palette colours used
+gif	android-export34-final-002:max-channel-error	PASS	Mobile GIF 3, ImageIO GIF 3 against the source PNG
+gif	ios-export34-final-6cef-002:imageio-pixels	PASS	0 of 1369264 decoded pixels differ from ImageIO's GIF of the same pixels; 363 source colours, 256 palette colours used
+gif	ios-export34-final-6cef-002:max-channel-error	PASS	Mobile GIF 2, ImageIO GIF 2 against the source PNG
+summary	PASS	0 failed checks
+--- stderr
+

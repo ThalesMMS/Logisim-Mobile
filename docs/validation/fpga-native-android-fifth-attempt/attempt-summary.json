@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "status": "FAIL_PRESERVED",
+  "issue": 65,
+  "attempt": 5,
+  "serial": "emulator-5558",
+  "source": "aea3a63f5c2d90acec8786456c328cb0d2821f9f",
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "snapshotProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "caseInvocations": 1,
+  "exitCode": 1,
+  "elapsedSeconds": 130.269223625015,
+  "selectedCases": [
+    "synthesis",
+    "tool-error",
+    "cancel"
+  ],
+  "caseResults": {
+    "synthesis": "FAIL_BEFORE_BOARD_SELECTION",
+    "tool-error": "NOT_RUN",
+    "cancel": "NOT_RUN"
+  },
+  "qualifiedCases": 0,
+  "pairingStatus": "PUBLIC_VERIFIED_CARD_OBSERVED",
+  "boardPublication": {
+    "status": "PASS",
+    "bytes": 536,
+    "sha256": "9698c56dba0ad67652823d7d68f1c736dac69df63a2f1398870f42a985993602",
+    "metadata": "Row: 0 _id=1000001314, _display_name=logisim-fpga-board-FPGA_E2E_HX1K_48957ff6.xml, mime_type=text/xml, is_download=1, is_pending=0\n"
+  },
+  "boardImportStatus": "NOT_REACHED",
+  "failureBoundary": "Scenarios.choose_downloads, before Scenarios.choose_native_file",
+  "nativeHierarchyFacts": {
+    "initial": "One Downloads breadcrumb, one DocumentsUI dir_list, and no roots_list.",
+    "requestedActions": [
+      "Show roots",
+      "Downloads"
+    ],
+    "later": "Twelve retained post-tap trees keep the drawer. The final query times out with 1.1226 seconds remaining.",
+    "callbackDelivery": "NOT_OBSERVED",
+    "windowTokenAndPidAtTap": "NOT_OBSERVED"
+  },
+  "hostRequests": 0,
+  "hostJobs": 0,
+  "cleanupVerified": true,
+  "settingsClaim": "Nine recorded settings and wm size/density are equal before and after. No full device-preference identity is inferred.",
+  "foregroundAfterCleanup": "com.google.android.documentsui/com.android.documentsui.picker.PickActivity",
+  "ownedNonceXmlRetainedInDownloads": true,
+  "anrLastUnchanged": true,
+  "limits": [
+    "No board filename was selected, and no imported board identity was observed.",
+    "Mapping, project ZIP export, synthesis, real tool failure, cancellation, bitstream generation, iOS execution, and physical programming are not qualified.",
+    "The terminal error does not establish an Android snapshot helper or application importer defect.",
+    "No retry or additional native execution followed this result."
+  ]
+}

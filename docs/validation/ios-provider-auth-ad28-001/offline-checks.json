@@ -1,0 +1,29 @@
+{
+  "scope": "OFFLINE_ARCHIVE_VERIFICATION_ONLY",
+  "status": "PASS",
+  "positiveChecks": 1,
+  "relocationChecks": 1,
+  "negativeChecks": 8,
+  "unitTestCount": 10,
+  "commands": [
+    [
+      "/opt/homebrew/opt/python@3.15/bin/python3.15",
+      "verify.py"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.15/bin/python3.15",
+      "test_archive.py"
+    ]
+  ],
+  "exitCodes": [
+    0,
+    0
+  ],
+  "sourceSHA256": {
+    "verify.py": "eaf4e7ab7decc29c55aa7f271d8c473133109922793696c2a5d8513b93c388bd",
+    "test_archive.py": "454e8a3604970f543463dc89c6209d688cc6462a66422a564e376cf2ecb29d68",
+    "openstep_inventory.py": "d19d4f713668ea0c62e82c2bfb85cebbba8ab84794becd537792e20c1edf05ae"
+  },
+  "appleToolsInvoked": false,
+  "nativeExecution": "NOT_RUN"
+}

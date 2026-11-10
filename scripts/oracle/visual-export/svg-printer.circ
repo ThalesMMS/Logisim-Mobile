@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="1" loc="(200,100)" name="OR Gate"><a name="facing" val="east"/><a name="size" val="70"/></comp>
+    <wire from="(130,40)" to="(130,80)"/>
+    <comp lib="1" loc="(400,100)" name="XOR Gate"><a name="facing" val="east"/><a name="size" val="70"/></comp>
+    <comp lib="0" loc="(320,120)" name="Pin"><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(600,100)" name="NOR Gate"><a name="facing" val="east"/></comp>
+    <comp lib="1" loc="(200,300)" name="OR Gate"><a name="facing" val="west"/><a name="size" val="70"/></comp>
+    <wire from="(270,320)" to="(270,360)"/>
+  </circuit>
+</project>

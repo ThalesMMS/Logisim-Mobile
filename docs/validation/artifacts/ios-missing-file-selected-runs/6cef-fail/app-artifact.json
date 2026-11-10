@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T04:30:19.999976+00:00",
+  "source_sha": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "source_tree": "48e2e60c41da95d3008ec8eaffccd059a708aa5f",
+  "source_dirty": false,
+  "build_status": "PASS",
+  "build_log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/build.log",
+  "result_bundle": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/build.xcresult",
+  "architecture": "arm64",
+  "platform": "iOS Simulator",
+  "xcode": "Xcode 27.2\nBuild version 27B52",
+  "sdk": "27.2",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+    "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+    "bundle_tree_hash_algorithm": "Iterate sorted pathlib.Path objects by components, then serialize each relative POSIX path + NUL + file SHA256 hex + newline, matching runner artifact()",
+    "file_count": 12,
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "framework": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/composeApp/build/bin/iosSimulatorArm64/debugFramework/ComposeApp.framework/ComposeApp",
+    "sha256": "b9776e7e58064fbb297c0becb9ff00a38bc7f44a3aad8e5c556d15c3a46d28f7",
+    "bytes": 276828704
+  },
+  "dylibs": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app/LogisimMobile.debug.dylib",
+      "sha256": "db2c909500c95f345362fdf06f5fd17c3647af9800863fc53d0b6a9bf31647cf",
+      "bytes": 86835224,
+      "architecture": "arm64"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app/__preview.dylib",
+      "sha256": "6783338d8a0a3607ce0efc2ed77325783f7aa8cabd4141cb4f8e6d542e52461d",
+      "bytes": 16760,
+      "architecture": "arm64"
+    }
+  ],
+  "signature": {
+    "kind": "ad-hoc",
+    "verification": "PASS",
+    "log": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/codesign.log"
+  },
+  "runtime_status": "NOT_RUN",
+  "runtime_note": "Build only. No app installation, launch or simulator/device control performed by this producer.",
+  "build_command": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "python3",
+    "outputs/ios-final-runtime-6cef0542/build-driver.py"
+  ],
+  "catalog": {
+    "root": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542",
+    "message_count": 2496,
+    "languages": [
+      "en",
+      "pt"
+    ],
+    "files": [
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/GeneratedMessages.kt",
+        "sha256": "2c0e713ef5d0b11f3a8127988a6ad42105950a826589e1682adc9ce145ce4c86"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/composeApp/src/commonMain/composeResources/values/strings.xml",
+        "sha256": "cab7c7a592080ba0845a7e54f0d01d77e13c84d4c240e8117b79de716fbb59fd"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/composeApp/src/commonMain/composeResources/values-pt/strings.xml",
+        "sha256": "ecb8fa8f918cda6f2d8958e7671419a880da62845017d261b230183997708fc9"
+      }
+    ],
+    "checks": {
+      "source_boundaries_and_formatting": "PASS",
+      "generator_check": "PASS",
+      "localization_tests": {
+        "passed": 10,
+        "failed": 0
+      }
+    }
+  },
+  "app_producer_source": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "test_validation_source": "85da031e4ed11474c2e763976392729810ef142d",
+  "source_test_only_addendum": {
+    "status": "PASS",
+    "root_authorized": true,
+    "root_gate_job": "71473",
+    "app_producer_source": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "test_validation_source": "85da031e4ed11474c2e763976392729810ef142d",
+    "source_test_only_changed_paths": [
+      "composeApp/src/androidHostTest/kotlin/dev/logisim/mobile/RuntimeSimulationRequestTest.kt"
+    ],
+    "production_inputs_identical": true,
+    "production_input_digest": "fe8c7e9337359543a49fb38d9a6c6f003866436a16cb327acbb76abc8c80c9e2",
+    "reported_counts": {
+      "core_jvm": 981,
+      "editor_host": 489,
+      "snapshot_junit": 8,
+      "android_apks": 4
+    },
+    "reported_python_telnet": 21,
+    "gate_log": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/runtime-external-integrated-85da031e.log",
+    "prior_fail": "Root65206 source6cef:RuntimeSimulationRequestTestStringthreadname debug suffix; archived, repaired testonly; no production delta."
+  },
+  "independent_source_review": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/independent-source-review.json",
+    "source_tree": "48e2e60c41da95d3008ec8eaffccd059a708aa5f",
+    "app_blob": "bc04ddb481d2de08eb90ef83846c7b1a24ee8ec3",
+    "result": "PASS"
+  },
+  "production_inputs": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/production-inputs.json",
+    "file_count": 301,
+    "digest": "fe8c7e9337359543a49fb38d9a6c6f003866436a16cb327acbb76abc8c80c9e2"
+  },
+  "cache_provenance": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/cache-provenance.json",
+  "pipeline": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/pipeline-state.json",
+    "status": "PASS",
+    "elapsed_seconds": 73.453
+  },
+  "source_root": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542",
+  "canvas_accessibility_source": "Original spatial overlay plus b75 window-focus cancellation; no003/66/627 list-first UX.",
+  "xcode_command": [
+    "xcodebuild",
+    "-project",
+    "iosApp/LogisimMobile.xcodeproj",
+    "-scheme",
+    "LogisimMobile",
+    "-configuration",
+    "Debug",
+    "-destination",
+    "generic/platform=iOS Simulator",
+    "-derivedDataPath",
+    "outputs/ios-final-runtime-6cef0542/DerivedData",
+    "-resultBundlePath",
+    "outputs/ios-final-runtime-6cef0542/build.xcresult",
+    "ARCHS=arm64",
+    "ONLY_ACTIVE_ARCH=YES",
+    "CODE_SIGNING_ALLOWED=NO",
+    "build"
+  ],
+  "native_unit_tests": {
+    "status": "NOT_RUN",
+    "reason": "Parent deferred fullNativeunits; this task built the production app only."
+  },
+  "handoff_status": "Awaiting root artifact review before Files/Codec handoff."
+}

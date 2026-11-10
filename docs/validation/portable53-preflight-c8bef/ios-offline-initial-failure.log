@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/scripts/check-ios-portable-preparation.py", line 71, in <module>
+    main()
+    ~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/scripts/check-ios-portable-preparation.py", line 50, in main
+    run(["xcrun", "swiftc", "-typecheck", "-target", "arm64-apple-ios17.0-simulator", "-sdk", sdk,
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         "-F", platform / "Library/Frameworks", "-I", platform / "usr/lib", *frozen[:-1]])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/scripts/check-ios-portable-preparation.py", line 16, in run
+    raise RuntimeError(f"Offline command failed ({result.returncode}): {command[0]}\n{result.stdout}{result.stderr}")
+RuntimeError: Offline command failed (1): xcrun
+/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/portable-ios-offline-q8gyc2d6/ObservedProjectXML.swift:45:23: error: cannot find 'copiedProjectXMLViaReceiver' in scope
+43 |             XCTAssertEqual(XCTWaiter.wait(for: [copied], timeout: 5), .completed,
+44 |                            "The production Copy action must update the system pasteboard")
+45 |             xml = try copiedProjectXMLViaReceiver(expectedFragment: "<project", attachmentName: attachmentName + "-receiver")
+   |                       `- error: cannot find 'copiedProjectXMLViaReceiver' in scope
+46 |             XCTAssertTrue(xml.contains("<project") && xml.contains("</project>"),
+47 |                           "Read the complete copied XML rather than the shortened preview")

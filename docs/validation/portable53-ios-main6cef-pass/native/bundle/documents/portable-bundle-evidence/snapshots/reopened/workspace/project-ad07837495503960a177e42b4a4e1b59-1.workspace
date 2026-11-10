@@ -1,0 +1,85 @@
+LOGISIM-PROJECT
+4
+3a2aa575fe96596
+
+32:ad07837495503960a177e42b4a4e1b594:main1:113:179384742999313:17938474299935:false1:01:03980:<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0" version="1.0" qualification="portable53-v1" qualification-source="main53">
+  <lib name="library_0_w" desc="#Wiring"/>
+  <lib name="library_1_w" desc="#Wiring"/>
+  <lib name="library_2_w" desc="#Wiring"/>
+  <main name="Top53" marker="main53"/>
+  <circuit logisim-mobile-source="5.1.0" logisim-mobile-global-id="true" name="Top53" id="circuit-top53">
+    <comp lib="library_0_w" name="Constant" loc="(100,100)" logisim-mobile-id="source-first53">
+      <a name="width" val="8"/>
+      <a name="value" val="0x08"/>
+      <a name="label" val="SOURCE_FIRST53"/>
+    </comp>
+    <comp name="library_8e59453ebbd98c0f_Bridge53" loc="(200,100)" logisim-mobile-id="instance-first53">
+      <a name="label" val="FIRST53"/>
+      <a name="facing" val="east"/>
+    </comp>
+    <comp lib="library_0_w" name="Pin" loc="(300,100)" logisim-mobile-id="out-first53">
+      <a name="type" val="output"/>
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="OUT_FIRST53"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <comp lib="library_0_w" name="Constant" loc="(100,300)" logisim-mobile-id="source-second53">
+      <a name="width" val="8"/>
+      <a name="value" val="0x03"/>
+      <a name="label" val="SOURCE_SECOND53"/>
+    </comp>
+    <comp name="library_8e59453ebbd98c0f_Bridge53" loc="(200,300)" logisim-mobile-id="instance-second53">
+      <a name="label" val="SECOND53"/>
+      <a name="facing" val="east"/>
+    </comp>
+    <comp lib="library_0_w" name="Pin" loc="(300,300)" logisim-mobile-id="out-second53">
+      <a name="type" val="output"/>
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="OUT_SECOND53"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <wire from="(100,100)" to="(160,100)"/>
+    <wire from="(240,100)" to="(300,100)"/>
+    <wire from="(100,300)" to="(160,300)"/>
+    <wire from="(240,300)" to="(300,300)"/>
+  </circuit>
+  <circuit logisim-mobile-source="5.1.0" logisim-mobile-global-id="true" name="library_d57865cd03fa49d1_Cell53" id="library:9a2bec1ebaaea193:circuit-cell53">
+    <a name="appearance" val="custom"/>
+    <appear><rect x="60" y="80" width="80" height="40"/><circ-anchor facing="east" x="100" y="100"/><circ-port dir="in" pin="0,0" x="60" y="100"/><circ-port dir="out" pin="140,0" x="140" y="100"/></appear>
+    <comp lib="library_1_w" name="Pin" loc="(0,0)" logisim-mobile-id="cell-in53">
+      <a name="width" val="8"/>
+      <a name="label" val="CELL_IN53"/>
+    </comp>
+    <comp lib="library_1_w" name="Pin" loc="(140,0)" logisim-mobile-id="cell-out53">
+      <a name="type" val="output"/>
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="CELL_OUT53"/>
+    </comp>
+    <wire from="(0,0)" to="(140,0)"/>
+  </circuit>
+  <circuit logisim-mobile-source="5.1.0" logisim-mobile-global-id="true" name="library_8e59453ebbd98c0f_Bridge53" id="library:3c856486672fce8c:circuit-bridge53">
+    <a name="appearance" val="custom"/>
+    <appear><rect x="60" y="80" width="80" height="40"/><circ-anchor facing="east" x="100" y="100"/><circ-port dir="in" pin="0,100" x="60" y="100"/><circ-port dir="out" pin="200,100" x="140" y="100"/></appear>
+    <comp lib="library_2_w" name="Pin" loc="(0,100)" logisim-mobile-id="bridge-in53">
+      <a name="width" val="8"/>
+      <a name="label" val="BRIDGE_IN53"/>
+    </comp>
+    <comp name="library_d57865cd03fa49d1_Cell53" loc="(100,100)" logisim-mobile-id="bridge-cell53">
+      <a name="label" val="TRANSITIVE53"/>
+      <a name="facing" val="east"/>
+    </comp>
+    <comp lib="library_2_w" name="Pin" loc="(200,100)" logisim-mobile-id="bridge-out53">
+      <a name="type" val="output"/>
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="BRIDGE_OUT53"/>
+    </comp>
+    <wire from="(0,100)" to="(60,100)"/>
+    <wire from="(140,100)" to="(200,100)"/>
+  </circuit>
+</project>
+0:1:06:LEGACY1:01:01:01:115:portable-source11:main.lsebdl28:application/x-logisim-bundle4:490064:1a61c84c81a139325920666ae4e941d73b2679feb10cfa48a07aff0f79536f31

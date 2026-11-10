@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/scripts/android_layout12_scenarios.py", line 350, in run
+    baseline, _ = self.export(f"layout12-font{font}-baseline")
+                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/scripts/android_layout12_scenarios.py", line 140, in export
+    return self.s.export_xml(name)
+           ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/scripts/e2e-android.py", line 471, in export_xml
+    self.wait_editor()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/scripts/e2e-android.py", line 226, in wait_editor
+    root = self.ui.screen(timeout=max(0.1, deadline - time.monotonic()))
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/scripts/android_ui.py", line 125, in screen
+    return self._screen_uiautomator(timeout)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-export-preparation/scripts/android_ui.py", line 396, in _screen_uiautomator
+    raise AssertionError(f"No fresh Android UI hierarchy within {timeout}s: {last_error}")
+AssertionError: No fresh Android UI hierarchy within 1.147873832989717s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-941114e76141456380c1d2b78b1a73e1-36.xml']' timed out after 1.1478658750129398 seconds

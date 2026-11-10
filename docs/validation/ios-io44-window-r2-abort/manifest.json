@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "scope": "One interrupted iOS IO44 R2 call; no functional qualification.",
+  "harnessSource": "0732f74f1483bdccdc6c40abd9670bf00d45822a",
+  "appSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+  "productBundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+  "catalogCount": 2497,
+  "singleWrapperInvocation": {
+    "runnerPid": 34686,
+    "runnerExit": 130,
+    "videoPid": 34668,
+    "videoExit": 0
+  },
+  "internalXCTestRestart": {
+    "count": 1,
+    "runnerPidsInLog": [
+      "34967",
+      "35622"
+    ],
+    "notAdditionalInvocation": true
+  },
+  "documentSummary": {
+    "expectedCheckpoints": 18,
+    "qualifiedCheckpointPairs": 0,
+    "caseIncomplete": 2,
+    "caseNotRun": 2
+  },
+  "nativeFunctionalFailuresInferred": 0,
+  "windowOriginQualification": "NO_EXPORTED_EVIDENCE",
+  "systemCrash": {
+    "file": "triage/backboardd-2026-11-05-063406.ips",
+    "incident": "309A5776-D422-4C75-A9CF-86548F9FADDD",
+    "process": "backboardd",
+    "pid": 66271,
+    "coalitionName": "com.apple.CoreSimulator.SimDevice.B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "captureTime": "2026-11-05 06:34:05.3038 -0300",
+    "signal": "SIGABRT",
+    "termination": {
+      "flags": 0,
+      "code": 6,
+      "namespace": "SIGNAL",
+      "indicator": "Abort trap: 6",
+      "byProc": "backboardd",
+      "byPid": 66271
+    },
+    "faultingThread": "com.apple.coreanimation.display.primary",
+    "firstStackSymbols": [
+      "__pthread_kill",
+      "pthread_kill",
+      "abort",
+      "__assert_rtn",
+      "MTLReportFailure.cold.1",
+      "MTLReportFailure",
+      "_MTLMessageContextEndNewNSErrorOrAbort(_MTLMessageContext*, bool, NSString*, unsigned long)",
+      "-[MTLTextureDescriptorInternal validateWithDevice:]",
+      "-[MTLSimDevice newTextureWithDescriptor:]",
+      "CA::OGL::MetalContext::create_surface_with_properties(int, CA::Bounds const&, unsigned int, CA::OGL::Context::SurfaceProperties const&, __CFString const*)",
+      "CA::OGL::FlattenNode::retain_surface(float&, unsigned int)",
+      "CA::OGL::ImagingNode::prepare_roi()"
+    ]
+  },
+  "lastLoggedStage": "Dimensions: System Open of its owned fixture, then Wait Running Foreground at t8.41s. Signals reached Set Up only during the internal XCTest restart.",
+  "attributionLimit": "The system service abort is confirmed. The report has no assertion text or texture descriptor and does not identify a triggering app, harness query, or recorder.",
+  "cleanup": "Owned runner/recorder stopped, supplied and installed app fingerprints match, leased B25 app terminated and lease returned. No recovery or retry.",
+  "videoRetainedAtOriginalRaw": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-window-scope/outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001-video/screen.mp4",
+    "bytes": 31070896,
+    "sha256": "6fade7ed8e82acca693a948feb7730dbed5fe5dd8aca59065159e31a8ee827f9"
+  },
+  "rawResultBundle": "Incomplete, no Info.plist. Read-only summary/tests/diagnostics exports failed and their errors are retained."
+}

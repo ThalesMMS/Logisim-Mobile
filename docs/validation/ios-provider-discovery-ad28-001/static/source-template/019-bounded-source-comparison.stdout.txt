@@ -1,0 +1,70 @@
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/Provider/RevocationFileProvider.swift
+1: import CryptoKit
+2: import FileProvider
+3: import Foundation
+4: 
+5: @available(iOS 16.0, *)
+6: final class RevocationFileProvider: NSObject, NSFileProviderReplicatedExtension {
+7:     private typealias ItemResult = (NSFileProviderItem?, Error?)
+8:     private typealias FetchResult = (URL?, NSFileProviderItem?, Error?)
+9:     private typealias MutationResult = (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?)
+10:     private let domain: NSFileProviderDomain
+11:     private let storeResult: Result<FixtureStore, Error>
+12:     private let manager: NSFileProviderManager?
+13:     private let queue = DispatchQueue(label: "dev.logisim.validation.revocation-provider", qos: .utility, attributes: .concurrent)
+14:     private let lock = NSLock()
+15:     private var invalidated = false
+16:     private var fileIdentifier: NSFileProviderItemIdentifier {
+17:         NSFileProviderItemIdentifier(rawValue: FixtureConfiguration.itemIdentifier)
+18:     }
+19: 
+20:     required init(domain: NSFileProviderDomain) {
+21:         self.domain = domain
+22:         manager = NSFileProviderManager(for: domain)
+23:         if domain.identifier.rawValue == FixtureConfiguration.domainIdentifier {
+24:             storeResult = Result { try FixtureStore() }
+25:         } else {
+26:             storeResult = .failure(RevocationProviderError.unsupported("The fixture only serves its own registered domain."))
+27:         }
+28:         super.init()
+29:         record("provider.initialized")
+30:     }
+31: 
+32:     func invalidate() {
+33:         lock.lock()
+34:         invalidated = true
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/Config/Provider-Info.plist
+12:     <key>NSExtension</key><dict>
+13:         <key>NSExtensionPointIdentifier</key><string>com.apple.fileprovider-nonui</string>
+14:         <key>NSExtensionPrincipalClass</key><string>$(PRODUCT_MODULE_NAME).RevocationFileProvider</string>
+15:         <key>NSExtensionFileProviderDocumentGroup</key><string>group.thalesmms.logisim.validation.revocationfixture</string>
+16:         <key>NSExtensionFileProviderSupportsEnumeration</key><true/>
+17:     </dict>
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application Extension/File Provider Extension.xctemplate/TemplateInfo.plist
+151:         <key>Info.plist:NSExtension</key>
+152:         <string><![CDATA[<key>NSExtension</key>
+153: <dict>
+154:     <key>NSExtensionPointIdentifier</key>
+155:     <string>com.apple.fileprovider-nonui</string>
+156:     <key>NSExtensionFileProviderDocumentGroup</key>
+157:     <string>group.___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___</string>
+158:     <key>NSExtensionPrincipalClass</key>
+159:     <string>___VARIABLE_moduleNamePrefixForClasses:XML___FileProviderExtension</string>
+160:     <key>NSExtensionFileProviderSupportsEnumeration</key>
+161:     <true/>
+162: </dict>
+163: ]]></string>
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application Extension/File Provider Extension.xctemplate/FileProviderExtension.swift
+1: //___FILEHEADER___
+2: 
+3: import FileProvider
+4: 
+5: class FileProviderExtension: NSObject, NSFileProviderReplicatedExtension {
+6:     required init(domain: NSFileProviderDomain) {
+7:         // TODO: The containing application must create a domain using `NSFileProviderManager.add(_:, completionHandler:)`. The system will then launch the application extension process, call `FileProviderExtension.init(domain:)` to instantiate the extension for that domain, and call methods on the instance.
+8:         super.init()
+9:     }
+10:     
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/Config/Provider.entitlements {"com.apple.security.application-groups": ["group.thalesmms.logisim.validation.revocationfixture"]}
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/scripts/ios_fileprovider_revocation/Config/App.entitlements {"com.apple.security.application-groups": ["group.thalesmms.logisim.validation.revocationfixture"]}
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application Extension/File Provider Extension.xctemplate/___PACKAGENAMEASIDENTIFIER___.entitlements {"com.apple.security.application-groups": ["group.___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___"]}

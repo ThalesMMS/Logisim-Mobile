@@ -1,0 +1,123 @@
+{
+  "transitionLimitSeconds": 30,
+  "totalLimitSeconds": 90,
+  "maximumActions": 3,
+  "events": [
+    {
+      "seconds": 0.0001,
+      "phase": "presentation",
+      "kind": "start"
+    },
+    {
+      "seconds": 3.2392,
+      "phase": "presentation",
+      "kind": "screen",
+      "querySeconds": 3.2379,
+      "timeoutSeconds": 29.9999,
+      "hierarchy": "downloads-navigation-1abea307f9ac4b29bc2bede2f8f4cc12-01.xml"
+    },
+    {
+      "seconds": 5.5182,
+      "phase": "presentation",
+      "kind": "screen",
+      "querySeconds": 2.0686,
+      "timeoutSeconds": 26.5512,
+      "hierarchy": "downloads-navigation-1abea307f9ac4b29bc2bede2f8f4cc12-02.xml"
+    },
+    {
+      "seconds": 5.5183,
+      "phase": "roots-open",
+      "kind": "tap",
+      "action": 1,
+      "text": "",
+      "description": "Show roots",
+      "resourceId": "",
+      "package": "com.google.android.documentsui",
+      "bounds": "[0,128][147,254]",
+      "enabled": "true",
+      "sourceHierarchy": "downloads-navigation-1abea307f9ac4b29bc2bede2f8f4cc12-02.xml",
+      "windowContext": {
+        "source": "UIAUTOMATOR_XML_ONLY",
+        "hierarchyAttributes": {
+          "rotation": "0"
+        },
+        "topLevelNodes": [
+          {
+            "package": "com.google.android.documentsui",
+            "class": "android.widget.FrameLayout",
+            "bounds": "[0,0][1080,2400]"
+          }
+        ],
+        "wmToken": null,
+        "pid": null,
+        "wmTokenObservedAtTap": false,
+        "pidObservedAtTap": false
+      }
+    },
+    {
+      "seconds": 5.5578,
+      "phase": "roots-open",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0395
+    },
+    {
+      "seconds": 8.2697,
+      "phase": "roots-open",
+      "kind": "screen",
+      "querySeconds": 2.7115,
+      "timeoutSeconds": 29.9605,
+      "hierarchy": "downloads-navigation-1abea307f9ac4b29bc2bede2f8f4cc12-03.xml"
+    },
+    {
+      "seconds": 8.2698,
+      "phase": "location-content",
+      "kind": "tap",
+      "action": 2,
+      "text": "Downloads",
+      "description": "",
+      "resourceId": "android:id/title",
+      "package": "com.google.android.documentsui",
+      "bounds": "[168,323][714,374]",
+      "enabled": "true",
+      "sourceHierarchy": "downloads-navigation-1abea307f9ac4b29bc2bede2f8f4cc12-03.xml",
+      "windowContext": {
+        "source": "UIAUTOMATOR_XML_ONLY",
+        "hierarchyAttributes": {
+          "rotation": "0"
+        },
+        "topLevelNodes": [
+          {
+            "package": "com.google.android.documentsui",
+            "class": "android.widget.FrameLayout",
+            "bounds": "[0,0][1080,2400]"
+          }
+        ],
+        "wmToken": null,
+        "pid": null,
+        "wmTokenObservedAtTap": false,
+        "pidObservedAtTap": false
+      }
+    },
+    {
+      "seconds": 8.3112,
+      "phase": "location-content",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0414
+    },
+    {
+      "seconds": 10.7291,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.417,
+      "timeoutSeconds": 29.9586,
+      "hierarchy": "downloads-navigation-1abea307f9ac4b29bc2bede2f8f4cc12-04.xml"
+    },
+    {
+      "seconds": 10.7291,
+      "phase": "location-content",
+      "kind": "finish",
+      "actions": 2
+    }
+  ],
+  "status": "PASSED"
+}

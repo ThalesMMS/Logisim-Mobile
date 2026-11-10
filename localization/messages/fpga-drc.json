@@ -1,0 +1,78 @@
+{
+  "fpga_check_circuit_drc": {
+    "en": "Check circuit for FPGA",
+    "pt": "Verificar circuito para FPGA"
+  },
+  "fpga_circuit_drc_clear": {
+    "en": "No circuit rule violations found.",
+    "pt": "Nenhum problema encontrado nas regras do circuito."
+  },
+  "fpga_circuit_drc_heading": {
+    "en": "Circuit rules",
+    "pt": "Regras do circuito"
+  },
+  "fpga_core_circuit_input_open": {
+    "en": "Circuit input {component} is unconnected.",
+    "pt": "A entrada {component} do circuito está desconectada."
+  },
+  "fpga_core_circuit_no_driver": {
+    "en": "The signal connected to {component}.{terminal} has no driver.",
+    "pt": "O sinal ligado a {component}.{terminal} não tem fonte."
+  },
+  "fpga_core_circuit_no_sink": {
+    "en": "A signal from {components} has no destination.",
+    "pt": "Um sinal de {components} não tem destino."
+  },
+  "fpga_core_circuit_output_open": {
+    "en": "Circuit output {component} is unconnected.",
+    "pt": "A saída {component} do circuito está desconectada."
+  },
+  "fpga_core_circuit_short": {
+    "en": "More than one output drives the same signal: {drivers}.",
+    "pt": "Mais de uma saída controla o mesmo sinal: {drivers}."
+  },
+  "fpga_core_circuit_width_mismatch": {
+    "en": "Connected terminals have different widths: {widths} bits.",
+    "pt": "Terminais conectados têm larguras diferentes: {widths} bits."
+  },
+  "fpga_core_clock_disconnected": {
+    "en": "The clock input on {component} has no source.",
+    "pt": "A entrada de clock de {component} não tem fonte."
+  },
+  "fpga_core_clock_external": {
+    "en": "The clock input on {component} comes from a circuit input and may be gated.",
+    "pt": "O clock de {component} vem de uma entrada do circuito e pode passar por lógica."
+  },
+  "fpga_core_clock_gated": {
+    "en": "The clock input on {component} is driven by logic in {source}.",
+    "pt": "O clock de {component} é gerado pela lógica de {source}."
+  },
+  "fpga_core_clock_mixed_instances": {
+    "en": "Instance {component} belongs to a circuit used with both dedicated and gated clocks.",
+    "pt": "A instância {component} pertence a um circuito usado com clock dedicado e clock controlado por lógica."
+  },
+  "fpga_core_drc_instance_limit": {
+    "en": "FPGA circuit verification exceeded {limit} circuit instances.",
+    "pt": "A verificação do circuito para FPGA excedeu {limit} instâncias de circuitos."
+  },
+  "fpga_core_no_circuit_io": {
+    "en": "The top circuit has no FPGA input or output ports.",
+    "pt": "O circuito principal não tem portas de entrada ou saída para FPGA."
+  },
+  "fpga_core_terminal_open": {
+    "en": "Input {component}.{terminal} is unconnected.",
+    "pt": "A entrada {component}.{terminal} está desconectada."
+  },
+  "fpga_hdl_diagnostics_heading": {
+    "en": "HDL generation",
+    "pt": "Geração de HDL"
+  },
+  "fpga_hide_circuit_drc": {
+    "en": "Hide circuit diagnostics",
+    "pt": "Ocultar diagnósticos do circuito"
+  },
+  "fpga_pin_diagnostics_heading": {
+    "en": "Pin mapping diagnostics",
+    "pt": "Diagnósticos do mapeamento de pinos"
+  }
+}

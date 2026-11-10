@@ -1,0 +1,31 @@
+{
+  "status": "OFFLINE_TYPECHECK_PASSED",
+  "nativeUiStatus": "NOT_RUN_FOR_DELTA",
+  "sourcePin": "549c883fa523ae670367c529bbf1404e1a2d126f",
+  "target": "arm64-apple-ios17.0-simulator",
+  "sdk": "iPhoneSimulator27.2.sdk",
+  "sources": {
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_native_ui/NativeTextReplacement.swift": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_e2e_ui/ObservedProjectXML.swift": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "762207285068a672db07b7de6d68dadceacff830a36c42254e64f478f0e9ce3f",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/scripts/ios_e2e_ui/ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift": "2b0e2c3c1a0bc969fac008a9c110aec510c28051cddae2e72d41e2293736e23b"
+  },
+  "preservedFailure": {
+    "results": "bundle/results.json",
+    "receipt": "bundle/documents/portable-bundle-evidence/ui-receipt.json",
+    "receiptStatus": "FAILED",
+    "tree": "bundle/documents/portable-bundle-evidence/evidence/003-portable-panel-opened.txt",
+    "containerFrame": "{{97.0, 0.0}, {640.0, 460.0}}",
+    "buttonFrame": "{{125.0, 934.0}, {584.0, 48.0}}",
+    "observedFailure": "Scoped reveal swiped the displaced empty sheet identifier and dismissed the visible panel before import"
+  },
+  "scope": "Select only one canonical-label button already visible, enabled and hittable, with its complete frame inside the app. This delta does not qualify scrolling to offscreen targets or change the product.",
+  "deltaCommit": "b6f1d51eb0d00b7af4f9188a9038b989b9b8bf2e",
+  "canonicalUnchanged": true,
+  "canonicalHead": "549c883fa523ae670367c529bbf1404e1a2d126f",
+  "wrapperState": "STOPPED_EXIT_65",
+  "nativeRetest": "NOT_RUN"
+}

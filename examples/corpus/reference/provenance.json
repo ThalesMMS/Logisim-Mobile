@@ -1,0 +1,15 @@
+{
+  "desktopRevision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "desktopJarSha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+  "fixtures": {
+    "examples/and.circ": "140ac373dd9841b46be652c4cc292e77ad756953d19ab51c6a82af3e9d6af219",
+    "examples/d-flip-flop.circ": "44a8090a069b053d7b8c1ab148775842035a4ffeb04dd6a5346be3e33b4c6599",
+    "examples/bus-adder.circ": "1ff9accefb91ab7f57192af7dc025c158c16225ccefb227e3a34324f8999368c",
+    "examples/hierarchy.circ": "a82a4021d3232a742f8263b33042cce349de882f0dc7833a425b88387f52b1c9",
+    "examples/rom.circ": "8706c925d2c714ee280fcd5fc3ff35f98ab69d0e1fdb4460cee217659d294763",
+    "examples/sap1.circ": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac",
+    "examples/corpus/bus-conflict.circ": "e9890abf2420699d70d9ca95fb378a54bfeeceb29e83b293be241f65669c7df7"
+  },
+  "records": 222,
+  "command": "python3 scripts/verify-corpus.py --desktop-jar DESKTOP_JAR --update-reference"
+}

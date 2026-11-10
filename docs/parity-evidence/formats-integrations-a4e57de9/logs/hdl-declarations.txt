@@ -1,0 +1,103 @@
+DIFF evolution_generics.vhd
+  desktop Counter_Gen [clk:in:1, rst:in:1, load_i:in:8, q_o:out:8, nibble_o:out:4, carry_o:out:1] {mode=0, offset=31, start=3, step=3, width=8}
+  mobile  REJECT
+  mobile diagnostics [HdlIpDiagnostic(code=missing-generic, notice=LocalizedText(key=hdl_ip_missing_generic, arguments={name=MODE}, quantity=null, fallback=null, localizedArguments={}, joinedParts=null, joinSeparator=
+))]
+SAME evolution_minimal.vhd
+  desktop just_ports [x:in:1, y:out:1] {}
+  mobile  just_ports [x:in:1, y:out:1] {}
+SAME evolution_template.vhd
+  desktop VHDL_Component [horloge_i:in:1, val_i:in:4, max_o:out:1, cpt_o:out:4] {}
+  mobile  VHDL_Component [horloge_i:in:1, val_i:in:4, max_o:out:1, cpt_o:out:4] {}
+DIFF evolution_time_generic.vhd
+  desktop delayed [a:in:1, y:out:1] {delay=5000000}
+  mobile  REJECT
+  mobile diagnostics [HdlIpDiagnostic(code=unsupported-generic, notice=LocalizedText(key=hdl_ip_unsupported_generic_declaration, arguments={declaration=DELAY : time := 5 ns}, quantity=null, fallback=null, localizedArguments={}, joinedParts=null, joinSeparator=
+))]
+SAME evolution_wide.vhd
+  desktop wide_bus [a_i:in:32, b_i:in:64, sel:in:1, y_o:out:64] {}
+  mobile  wide_bus [a_i:in:32, b_i:in:64, sel:in:1, y_o:out:64] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SUPERSET and_gate.vhd
+  desktop REJECT
+  mobile  and_gate [a:in:1, b:in:1, y:out:1] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SUPERSET busy_loop.vhd
+  desktop REJECT
+  mobile  busy_loop [a:in:1, y:out:1] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: Illegal port syntax
+SUPERSET counter.vhd
+  desktop REJECT
+  mobile  counter [clk:in:1, reset:in:1, q:out:4] {initial=0, width=4}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: Illegal port syntax before  := '0');
+end entity;
+
+architecture rtl of delayed_gate is
+begin
+  y <= a after 3 ns;
+end architecture;
+SUPERSET delayed_gate.vhd
+  desktop REJECT
+  mobile  delayed_gate [a:in:1, y:out:1] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SUPERSET delta_loop.vhd
+  desktop REJECT
+  mobile  delta_loop [a:in:1, y:out:1] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SUPERSET failing_gate.vhd
+  desktop REJECT
+  mobile  failing_gate [a:in:1, y:out:1] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SUPERSET logic_states.vhd
+  desktop REJECT
+  mobile  logic_states [a:in:9, y:out:9] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SUPERSET noisy_gate.vhd
+  desktop REJECT
+  mobile  noisy_gate [a:in:1, y:out:1] {}
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SAME clock-tick-test.vhd
+  desktop REJECT
+  mobile  REJECT
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SAME local-bus-test.vhd
+  desktop REJECT
+  mobile  REJECT
+  desktop error com.cburch.logisim.vhdl.base.VhdlParser$IllegalVhdlContentException: The entity declaration cannot be found
+SAME unisim-model.vhd
+  desktop REJECT
+  mobile  REJECT
+  desktop error java.lang.RuntimeException: odd .names (try 'write_blif -icells -conn out.blif')
+SUPERSET and_bus2.blif
+  desktop REJECT
+  mobile  and_bus2 [a:in:2, b:in:2, y:out:2] {}
+  desktop error java.lang.RuntimeException: odd .names (try 'write_blif -icells -conn out.blif')
+SUPERSET and_gate.blif
+  desktop REJECT
+  mobile  and_gate [a:in:1, b:in:1, y:out:1] {}
+SAME desktop_bus2.blif
+  desktop desktop_bus2 [a:in:2, b:in:2, en_a:in:2, en_b:in:2, y:out:2] {}
+  mobile  desktop_bus2 [a:in:2, b:in:2, en_a:in:2, en_b:in:2, y:out:2] {}
+SAME desktop_lightswitch.blif
+  desktop lightswitch [button:in:1, reset:in:1, light_out:out:1] {}
+  mobile  lightswitch [button:in:1, reset:in:1, light_out:out:1] {}
+SAME dff.blif
+  desktop dff [clk:in:1, d:in:1, q:out:1] {}
+  mobile  dff [clk:in:1, d:in:1, q:out:1] {}
+SAME one_bit_indexed.blif
+  desktop one_bit_indexed [a[0]:in:1, y[0]:out:1] {}
+  mobile  one_bit_indexed [a[0]:in:1, y[0]:out:1] {}
+  desktop error java.lang.RuntimeException: odd .names (try 'write_blif -icells -conn out.blif')
+SUPERSET and_gate.blif
+  desktop REJECT
+  mobile  and_gate [a:in:1, b:in:1, y:out:1] {}
+SAME desktop_bus.blif
+  desktop desktop_bus [a:in:1, b:in:1, y:out:1] {}
+  mobile  desktop_bus [a:in:1, b:in:1, y:out:1] {}
+SAME desktop_trisi.blif
+  desktop desktop_trisi [a:in:1, b:in:1, y:out:1] {}
+  mobile  desktop_trisi [a:in:1, b:in:1, y:out:1] {}
+SAME dff.blif
+  desktop dff [clk:in:1, d:in:1, q:out:1] {}
+  mobile  dff [clk:in:1, d:in:1, q:out:1] {}
+FAIL: 13/26 HDL declarations match Evolution, 11 accepted only by Mobile, 2 differ

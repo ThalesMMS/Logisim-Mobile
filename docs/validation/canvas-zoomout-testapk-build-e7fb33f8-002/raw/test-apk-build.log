@@ -1,0 +1,72 @@
+Configuration 'e2eAndroidTestCompileClasspath' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'e2eAndroidTestRuntimeClasspath' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+Configuration 'e2eRuntimeClasspath' was resolved during configuration time.
+This is a build performance and scalability issue.
+See https://github.com/gradle/gradle/issues/2298
+Run with --info for a stacktrace.
+> Task :androidApp:bundleE2eClassesToCompileJar SKIPPED
+> Task :androidApp:preE2eAndroidTestBuild SKIPPED
+> Task :androidApp:generateE2eAndroidTestResValues
+> Task :androidApp:generateE2eAndroidTestResources
+> Task :androidApp:packageE2eAndroidTestResources
+> Task :androidApp:processE2eAndroidTestNavigationResources
+> Task :androidApp:generateE2eAndroidTestAssets UP-TO-DATE
+> Task :androidApp:javaPreCompileE2eAndroidTest
+> Task :androidApp:mergeE2eAndroidTestAssets
+> Task :androidApp:parseE2eAndroidTestLocalResources
+> Task :androidApp:compressE2eAndroidTestAssets
+> Task :androidApp:generateE2eAndroidTestRFile
+> Task :androidApp:generateE2eAndroidTestGlobalSynthetics
+> Task :androidApp:checkE2eAndroidTestDuplicateClasses
+> Task :androidApp:desugarE2eAndroidTestFileDependencies
+> Task :androidApp:mergeExtDexE2eAndroidTest
+> Task :androidApp:mergeLibDexE2eAndroidTest
+> Task :androidApp:checkE2eAndroidTestAarMetadata
+> Task :androidApp:mapE2eAndroidTestSourceSetPaths
+> Task :androidApp:compileE2eAndroidTestNavigationResources
+> Task :androidApp:mergeE2eAndroidTestManifest
+> Task :androidApp:processE2eAndroidTestManifest
+> Task :androidApp:mergeE2eAndroidTestJniLibFolders
+> Task :androidApp:mergeE2eAndroidTestNativeLibs NO-SOURCE
+> Task :androidApp:stripE2eAndroidTestDebugSymbols NO-SOURCE
+> Task :androidApp:validateSigningE2eAndroidTest
+> Task :androidApp:writeE2eAndroidTestSigningConfigVersions
+> Task :androidApp:mergeE2eAndroidTestResources
+> Task :androidApp:processE2eAndroidTestResources
+
+> Task :androidApp:compileE2eAndroidTestKotlin
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/CanvasInputTraceCapture.kt:94:49 'val id: Long' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:779:21 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:814:47 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:924:57 'var isChecked: Boolean' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:1123:67 'var isChecked: Boolean' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/ZoomOutObservationCapture.kt:62:98 Unnecessary non-null assertion (!!) on a non-null receiver of type 'Float'.
+
+> Task :androidApp:compileE2eAndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :androidApp:processE2eAndroidTestJavaRes
+> Task :androidApp:mergeE2eAndroidTestJavaResource
+> Task :androidApp:dexBuilderE2eAndroidTest
+> Task :androidApp:mergeProjectDexE2eAndroidTest
+> Task :androidApp:packageE2eAndroidTest
+> Task :androidApp:createE2eAndroidTestApkListingFileRedirect
+> Task :androidApp:assembleE2eAndroidTest
+
+[Incubating] Problems report is available at: file:///Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 4s
+32 actionable tasks: 32 executed

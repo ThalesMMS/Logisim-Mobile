@@ -1,0 +1,170 @@
+{
+  "diagnostic_title": {
+    "en": "Diagnostics and statistics",
+    "pt": "Diagnósticos e estatísticas"
+  },
+  "diagnostic_unknown_component": {
+    "en": "The component type {type} is not registered.",
+    "pt": "O tipo de componente {type} não está registrado."
+  },
+  "diagnostic_invalid_attributes": {
+    "en": "Component {component} has invalid attributes: {detail}",
+    "pt": "O componente {component} contém atributos inválidos: {detail}"
+  },
+  "diagnostic_driver_conflict": {
+    "en": "Conflicting drivers on bit {bit}: {drivers}.",
+    "pt": "Drivers em conflito no bit {bit}: {drivers}."
+  },
+  "diagnostic_width_mismatch": {
+    "en": "The connected terminals disagree on width: {widths} bits.",
+    "pt": "Os terminais conectados têm larguras diferentes: {widths} bits."
+  },
+  "diagnostic_value_error": {
+    "en": "The net carries an error on bits {bits}.",
+    "pt": "A rede contém erro nos bits {bits}."
+  },
+  "diagnostic_unconnected_input": {
+    "en": "Input {component}.{terminal} has no wire or junction. Some controls have defaults.",
+    "pt": "A entrada {component}.{terminal} está sem fio ou junção. Alguns controles têm valores padrão."
+  },
+  "diagnostic_invalid_reference": {
+    "en": "The referenced circuit {circuit} does not exist.",
+    "pt": "O circuito referenciado {circuit} não existe."
+  },
+  "diagnostic_recursive_reference": {
+    "en": "The reference to {circuit} creates a recursive circuit hierarchy.",
+    "pt": "A referência a {circuit} cria uma hierarquia recursiva."
+  },
+  "diagnostic_oscillation": {
+    "en": "Propagation did not settle. The selected components form combinational feedback.",
+    "pt": "A propagação não estabilizou. Os componentes selecionados formam realimentação combinacional."
+  },
+  "diagnostic_execution_limit": {
+    "en": "Propagation reached its execution limit. This does not prove an electrical oscillation.",
+    "pt": "A propagação atingiu o limite de execução. Isso não comprova uma oscilação elétrica."
+  },
+  "diagnostic_import_error": {
+    "en": "The file was not imported: {detail}",
+    "pt": "O arquivo não foi importado: {detail}"
+  },
+  "diagnostic_analysis_limit": {
+    "en": "Diagnostics stopped after {count} circuit instances. The report is partial.",
+    "pt": "Os diagnósticos pararam após {count} instâncias de circuito. O relatório é parcial."
+  },
+  "diagnostic_error": {
+    "en": "Error",
+    "pt": "Erro"
+  },
+  "diagnostic_warning": {
+    "en": "Warning",
+    "pt": "Aviso"
+  },
+  "diagnostic_information": {
+    "en": "Information",
+    "pt": "Informação"
+  },
+  "diagnostic_electrical": {
+    "en": "Electrical",
+    "pt": "Elétrico"
+  },
+  "diagnostic_document": {
+    "en": "Document",
+    "pt": "Documento"
+  },
+  "diagnostic_execution": {
+    "en": "Execution",
+    "pt": "Execução"
+  },
+  "diagnostic_all": {
+    "en": "All",
+    "pt": "Todos"
+  },
+  "diagnostic_include_warnings": {
+    "en": "Include unconnected input warnings",
+    "pt": "Incluir avisos de entradas sem conexão"
+  },
+  "diagnostic_empty": {
+    "en": "No diagnostics in this view.",
+    "pt": "Nenhum diagnóstico nesta visualização."
+  },
+  "diagnostic_go_to_origin": {
+    "en": "Navigate to the origin",
+    "pt": "Navegar até a origem"
+  },
+  "diagnostic_report_counts": {
+    "en": "{errors} · {warnings}",
+    "pt": "{errors} · {warnings}"
+  },
+  "diagnostic_stats_title": {
+    "en": "Circuit statistics",
+    "pt": "Estatísticas do circuito"
+  },
+  "diagnostic_stats_project": {
+    "en": "Project definitions",
+    "pt": "Definições do projeto"
+  },
+  "diagnostic_stats_components": {
+    "en": "Components: {count}",
+    "pt": "Componentes: {count}"
+  },
+  "diagnostic_stats_wires": {
+    "en": "Wire segments: {count}",
+    "pt": "Segmentos de fio: {count}"
+  },
+  "diagnostic_stats_nets": {
+    "en": "Nets: {count}",
+    "pt": "Redes: {count}"
+  },
+  "diagnostic_stats_terminals": {
+    "en": "Terminals: {count}",
+    "pt": "Terminais: {count}"
+  },
+  "diagnostic_stats_junctions": {
+    "en": "Junctions: {count}",
+    "pt": "Junções: {count}"
+  },
+  "diagnostic_stats_circuits": {
+    "en": "Circuit definitions: {count}",
+    "pt": "Definições de circuitos: {count}"
+  },
+  "diagnostic_stats_instances": {
+    "en": "Expanded circuit instances: {count}",
+    "pt": "Instâncias de circuitos expandidas: {count}"
+  },
+  "diagnostic_stats_partial": {
+    "en": "Terminal and net counts exclude unresolved layouts: {components}.",
+    "pt": "As contagens de terminais e redes excluem geometrias não resolvidas: {components}."
+  },
+  "diagnostic_stats_invalid_hierarchy": {
+    "en": "Expanded counts are unavailable because the hierarchy is invalid or exceeds the count limit.",
+    "pt": "As contagens expandidas estão indisponíveis porque a hierarquia é inválida ou excede o limite de contagem."
+  },
+  "diagnostic_circuit_name": {
+    "en": "Circuit: {name}",
+    "pt": "Circuito: {name}"
+  },
+  "diagnostic_running": {
+    "en": "Updating diagnostics…",
+    "pt": "Atualizando os diagnósticos…"
+  },
+  "diagnostic_error_count": {
+    "en": {
+      "one": "{count} error",
+      "other": "{count} errors"
+    },
+    "pt": {
+      "one": "{count} erro",
+      "other": "{count} erros"
+    }
+  },
+  "diagnostic_warning_count": {
+    "en": {
+      "one": "{count} warning",
+      "other": "{count} warnings"
+    },
+    "pt": {
+      "one": "{count} aviso",
+      "other": "{count} avisos"
+    }
+  }
+}

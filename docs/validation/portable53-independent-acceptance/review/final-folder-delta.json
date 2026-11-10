@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "evidenceCommit": "2832d29b053da7026540dcc63bd62aed1d040845",
+  "receiptStatus": "PASSED",
+  "receiptSha256": "ac99fccb7831d3276446a96e1681db1260bf311dc628aacb6263569589a1ccb3",
+  "importedProjectId": "13dc653f7acf119c9f70fe84ad1aa6a1",
+  "restartedProjectId": "13dc653f7acf119c9f70fe84ad1aa6a1",
+  "reopenedProjectId": "ef5cd59f81bd8ad0e9d2a63a43b78854",
+  "exports": [
+    {
+      "path": "logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-before-restart.lsebdl",
+      "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+      "afterRestart": false
+    },
+    {
+      "path": "logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-after-restart.lsebdl",
+      "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+      "afterRestart": true
+    }
+  ],
+  "canvasChecks": [
+    {
+      "stage": "imported",
+      "path": "/tmp/logisim-portable53-review/docs/validation/portable53-android-folder-pass/passed-48824/portable-000-folder-imported-canvas-ui.xml",
+      "sha256": "c4c8da1cf37986ba17ce44cd39b74a052c1ed98ff40b80405b97ad171ecd64c9",
+      "nativeOutputs8And3": true
+    },
+    {
+      "stage": "restored",
+      "path": "/tmp/logisim-portable53-review/docs/validation/portable53-android-folder-pass/passed-48824/portable-006-folder-restored-canvas-ui.xml",
+      "sha256": "c4c8da1cf37986ba17ce44cd39b74a052c1ed98ff40b80405b97ad171ecd64c9",
+      "nativeOutputs8And3": true
+    },
+    {
+      "stage": "reopened",
+      "path": "/tmp/logisim-portable53-review/docs/validation/portable53-android-folder-pass/passed-48824/portable-014-folder-reopened-canvas-ui.xml",
+      "sha256": "9e3fdf7598625424d438278bc6e0d95b15883147f51ed4b16d9e0dcecbbb1740",
+      "nativeOutputs8And3": true
+    }
+  ],
+  "scope": "Actual receipt/export/canvas review; no new native execution"
+}

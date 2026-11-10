@@ -1,0 +1,20 @@
+row: cli/tty
+case: tty-component
+result: PASS
+detail: TTY bytes and halt reason equal
+
+=== evolution: logisim-evolution -t tty,halt scripts/oracle/cli/fixtures/tty.circ
+exit: 0
+--- stdout (2 lines, sha256 673688da4c13fdf105f843ad6d691d0945911a70f05fec4d4e21d42a2b936f37)
+Hi!
+O
+--- stderr (1 lines, sha256 42caa89a2d5183d363839e6cd6140f3319051a4ef3d04a0d1736cd45d01c4b3f)
+[main] ERROR com.cburch.logisim.gui.start.TtyInterface - halted due to halt pin
+
+=== mobile: HeadlessCircuitCli -tty tty,halt scripts/oracle/cli/fixtures/tty.circ
+exit: 0
+--- stdout (3 lines, sha256 90c09c6b9733212bc0daf264e96838a7bcf43afd0c4e3e2e8227304368adb7fd)
+Hi!
+O
+halted due to halt pin
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

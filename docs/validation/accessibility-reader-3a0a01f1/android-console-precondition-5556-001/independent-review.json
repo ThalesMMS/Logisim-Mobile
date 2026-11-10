@@ -1,0 +1,166 @@
+{
+  "result": "NOT_QUALIFIED_STOPPED_BEFORE_HARDWARE_CONTACT",
+  "scope": "Offline evidence and source-format review; no source/shared-file edits or device/runtime actions",
+  "created_utc": "2026-11-05T12:41:22.512131+00:00",
+  "evidence_root": "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/outputs/android-console-reader-5556-001",
+  "controller_commit": "8dcede427cd594f65704a9827276a19506c464ea",
+  "source_product": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "prepared_hardware_contact": {
+    "down_executed": false,
+    "getevent_executed": false,
+    "lease_artifact_in_output": false,
+    "registered_argv_reviewed": 49,
+    "forbidden_route_observation": "No recorded emu event send, getevent or --execute; this means no prepared hardware contact, not an assertion that public UI taps contain no low-level touch events"
+  },
+  "gate": {
+    "before_sdk": "BindingError: Bound record differs from the source-derived profile",
+    "after_sdk": "BindingError: Bound record differs from the source-derived profile",
+    "actual_bound_event_types": "TYPES_ALL_MASK",
+    "actual_bound_capabilities": 251,
+    "actual_feedback": [
+      "FEEDBACK_SPOKEN",
+      "FEEDBACK_HAPTIC",
+      "FEEDBACK_AUDIBLE"
+    ],
+    "actual_touch_exploration_before_and_after": true,
+    "system_server_pid": 582,
+    "ams_observation": "Exact TalkBack component, published BinderProxy, requested/received/hasBound true and matching system/1000 connection occur in both AMS dumps",
+    "classification": "Validation parser format mismatch, without attribution to app or reader",
+    "source_limit": "Locally retained AOSP15 AbstractAccessibilityServiceConnection.dump forwards AccessibilityEvent.eventTypeToString; the callee implementation was not newly fetched or reviewed in this offline pass"
+  },
+  "sdk": {
+    "captures": 3,
+    "nonces_distinct": true,
+    "app_pid_before_after_all_captures": 9541,
+    "instrumentation_code": -1,
+    "adb_exit": 0,
+    "stderr_empty": true,
+    "complete_protocol_and_saved_xml_match": true,
+    "evidence_source": "captures002/focus-snapshot-* files and independent offline reviewer"
+  },
+  "baseline_A": {
+    "xml": "captures002/011-baseline-a-reader-on.xml",
+    "screenshot": "captures002/012-baseline-a-reader-on.png",
+    "node_count": 99,
+    "unique_accessibility_focus": true,
+    "focus_bounds": "[21,137][222,263]",
+    "focused_node_identity": "Anonymous android.view.View container with Projects TextView and Button descendants; Projects ring visually corroborated",
+    "projects_caption_demonstrated": false,
+    "reader_speech_demonstrated": false,
+    "qualification": "NOT_QUALIFIED; focus evidence alone is insufficient",
+    "video_review_limit": "Only the retained prompt image and selected screenshots were visually inspected by this reviewer; no whole-video absence-of-speech claim"
+  },
+  "notification_prompt": {
+    "image": "video-frames/frame-055.png",
+    "observed": "Android Accessibility Suite notifications permission dialog, green ring on Allow",
+    "earlier_screenshot": "captures002/010-reader-enabled-system-page.png has no dialog",
+    "requested_extraction_offset_seconds": 55,
+    "offset_source": "Operator clarification: ffmpeg used -ss55; filename is a requested offset, not source frame index",
+    "exact_image_pts": "NOT_ARCHIVED_NOT_ASSERTED",
+    "operator_report": "No notifications button was clicked; app launch covered the prompt",
+    "independent_limit": "Foreground app capture and final denied permission do not prove the prompt was dismissed, denied or closed. No exact UTC alignment is inferred from the filename",
+    "timestamp_erratum": "An earlier reviewer message incorrectly associated source frame index55 PTS27.596478 with frame-055.png. That association is withdrawn; the inspected source frame index and the seek-extracted image were not linked"
+  },
+  "media": {
+    "private_video_sha256": "a3c195f54956b90425740c49d7205731309c1c2f63ac4a009aaf9633cc6fe7fb",
+    "private_video_bytes": 6586104,
+    "offline_ffprobe_stream_types": [
+      "video",
+      "data",
+      "data"
+    ],
+    "audio_stream_present": false,
+    "private_media_copied_to_review_output": false,
+    "exact_frame055_pts_claimed": false
+  },
+  "restoration": {
+    "settings_all_eight_equal": true,
+    "public_settings": {
+      "reader-enabled": "0",
+      "reader-services": "",
+      "font-scale": "1.0",
+      "rotation-auto": "1",
+      "rotation-user": "0",
+      "ime": "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+      "size": "Physical size: 1080x2400",
+      "density": "Physical density: 420"
+    },
+    "final_bound_services_empty": true,
+    "final_touch_exploration": false,
+    "registered_apk_hashes_equal": true,
+    "apk_hashes": {
+      "app": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973",
+      "test": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b",
+      "helper": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    },
+    "apk_verification_limit": "Compared captured hash records; no remote APK bytes were fetched or independently rehashed by this review",
+    "notification_permission_before": [
+      "android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED]"
+    ],
+    "notification_permission_after": [
+      "android.permission.POST_NOTIFICATIONS: granted=false, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED]"
+    ],
+    "speech_display_visual": "OFF in captures002/022-restored-speech-display-off.png; ERROR remains visible",
+    "opaque_preferences_byte_identical_claim": false
+  },
+  "app_tree_comparison": {
+    "paths": [
+      "captures002/001-app-before-reader.xml",
+      "captures002/023-final-app-reader-off.xml"
+    ],
+    "same_shape_entries_including_hierarchy": 100,
+    "changed_non_root_attributes": [
+      {
+        "node_path": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          5,
+          0
+        ],
+        "attribute": "text",
+        "before": "Circuit Sem título.",
+        "after": "Operation cancelled."
+      }
+    ],
+    "changed_root_attributes": [
+      "snapshot-nonce",
+      "uptime-millis"
+    ],
+    "geometry_observation": "All other retained tree attributes, including geometry, match; this is not byte-identical XML or opaque-state identity"
+  },
+  "termination": {
+    "observer_session": 6428,
+    "observer_terminal_exit_operator_report": 0,
+    "observer_finish_file": "captures002/025-restoration-confirmed.json",
+    "observer_terminal_transcript_in_output": "NOT_LOCATED; finish receipt says independent restoration evidence is required",
+    "screenrecord_session": 52513,
+    "screenrecord_terminal_exit_recorded": 0,
+    "screenrecord_evidence": "private-video.json",
+    "lane_returned": "Operator reported; no new device query by reviewer"
+  },
+  "limits": [
+    "No B state, hardware transport or kernel sequence was exercised",
+    "Baseline A lacks demonstrated matching caption/speech",
+    "Unexpected notification prompt makes the screenshot-only setup assumption insufficient",
+    "AMS/accessibility dumps are separate observations and their component join remains correlation only",
+    "No workflow, gesture navigation, reader ordering, physical hardware, audio quality or issue28 closure qualification"
+  ],
+  "review_actions": {
+    "device_queries": 0,
+    "reader_actions": 0,
+    "native_build_or_test_runs": 0,
+    "network_requests": 0,
+    "shared_files_modified": 0,
+    "offline_only": [
+      "Filesystem/JSON/XML/hash reads",
+      "Viewed existing images",
+      "ffprobe metadata on existing private local MP4"
+    ]
+  }
+}

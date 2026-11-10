@@ -1,0 +1,32 @@
+> Task :core:kmpPartiallyResolvedDependenciesChecker
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:jvmProcessResources NO-SOURCE
+> Task :core:processJvmMainResources SKIPPED
+> Task :core:jvmTestProcessResources
+> Task :core:processJvmTestResources SKIPPED
+> Task :core:compileKotlinJvm
+> Task :core:compileJvmMainJava NO-SOURCE
+> Task :core:jvmMainClasses
+> Task :core:jvmJar
+> Task :core:compileTestKotlinJvm
+> Task :core:compileJvmTestJava NO-SOURCE
+> Task :core:jvmTestClasses
+
+> Task :core:jvmTest FAILED
+
+FpgaProjectTest[jvm] > ice40ProjectsPreservePhysicalClockFrequencyInTheirExportedConstraints[jvm] FAILED
+    org.junit.ComparisonFailure at FpgaProjectTest.kt:139
+
+1 test completed, 1 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':core:jvmTest'.
+> There were failing tests. See the report at: file:///Users/thales/GitHub/logisim-mobile-worktrees/fpga-final/core/build/reports/tests/jvmTest/index.html
+
+* Try:
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 10s
+6 actionable tasks: 6 executed

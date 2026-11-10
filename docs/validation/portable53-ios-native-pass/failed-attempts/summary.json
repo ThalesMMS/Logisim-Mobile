@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "scope": "Historical failed executions remain failed. A single exported artifact passed a separate partial desktop check; this does not promote the failed native flow.",
+  "attempts": [
+    {
+      "path": "bundle-initial",
+      "runnerStatus": "FAIL",
+      "nativeExecutionGate": "NATIVE_FAIL",
+      "nativeReceiptStatus": "FAILED",
+      "nativeReceiptSha256": "d41061fe92bfffc07911c4e26db4dd0beb1e67b87ae338bcd7b285ccb1aa38d6",
+      "actualExports": 0,
+      "workspaceSnapshots": 1,
+      "cause": "Displaced editor-tool-sheet frame caused safe reveal to dismiss a panel with an already visible canonical action."
+    },
+    {
+      "path": "bundle-retry2",
+      "runnerStatus": "FAIL",
+      "nativeExecutionGate": "NATIVE_FAIL",
+      "nativeReceiptStatus": "FAILED",
+      "nativeReceiptSha256": "c55f6c0e39094eb301ec6519e98810f7f4de5797258a435ba2f55b3dd07a255f",
+      "actualExports": 1,
+      "workspaceSnapshots": 3,
+      "cause": "Files sidebar and File View each exposed the run-folder label; the destination navigator rejected two candidates."
+    }
+  ],
+  "partialExport1": {
+    "path": "bundle-retry2/partial-export1-desktop.json",
+    "sha256": "b56b84c15cb7f59c2c6bb6e7abac485a8e381eb7b66dc34d90377dd87ec33cd5",
+    "status": "PARTIAL_REAL_APP_EXPORT_DESKTOP_VALIDATED",
+    "qualificationGate": "INCOMPLETE_EXPORT1_ONLY",
+    "nativeUiStatus": "FAILED",
+    "artifactSha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+    "missingEvidence": [
+      "second actual export after restart",
+      "reopened fresh workspace snapshot",
+      "completed native bundle flow",
+      "native folder flow",
+      "Android complete flow"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/scripts/e2e-android.py", line 1279, in main
+    scenarios.run("native-file-workflow", scenarios.files)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/scripts/e2e-android.py", line 1059, in files
+    self.run("saf-local-import-preserves-source", local_import)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/scripts/e2e-android.py", line 1053, in local_import
+    self.wait_key("status_file_opened", name=name)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-files-final/scripts/e2e-android.py", line 220, in wait_key
+    raise AssertionError(f"The {key} control did not appear within {timeout}s")
+AssertionError: The status_file_opened control did not appear within 30s

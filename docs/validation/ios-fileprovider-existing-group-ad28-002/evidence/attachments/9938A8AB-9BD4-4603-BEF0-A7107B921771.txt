@@ -1,0 +1,122 @@
+Attributes: Application, 0x10846a6c0, pid: 86977, label: 'Logisim Revocation Fixture'
+Element subtree:
+ →Application, 0x10846a6c0, pid: 86977, label: 'Logisim Revocation Fixture'
+    Window (Main), 0x108469540, {{0.0, 0.0}, {834.0, 1210.0}}
+      Other, 0x1084697c0, {{0.0, 0.0}, {834.0, 1210.0}}
+        Other, 0x108469400, {{0.0, 0.0}, {834.0, 1210.0}}
+          Other, 0x108469680, {{0.0, 0.0}, {834.0, 1210.0}}
+            NavigationBar, 0x108469f40, {{0.0, 32.0}, {834.0, 54.0}}, identifier: 'Logisim Revocation Fixture'
+              StaticText, 0x10846a080, {{310.0, 43.5}, {213.5, 21.0}}, label: 'Logisim Revocation Fixture'
+            Other, 0x10846b480, {{0.0, 0.0}, {834.0, 1210.0}}
+              Other, 0x10846b5c0, {{0.0, 0.0}, {834.0, 1210.0}}
+                Other, 0x108469e00, {{0.0, 0.0}, {834.0, 1210.0}}
+                  ScrollView, 0x108468b40, {{0.0, 86.0}, {834.0, 1104.0}}
+                    Other, 0x10846a300, {{16.0, 102.0}, {802.0, 1065.5}}
+                      StaticText, 0x10846a1c0, {{16.0, 102.0}, {802.0, 61.0}}, label: 'Test fixture only. Prepare, register the domain, then select revocation.circ in another app's Files picker. Close that app before eviction. Denial is proven only when a later system-dispatched provider request fails and the editor preserves its project.'
+                      StaticText, 0x10846a940, {{16.0, 175.0}, {802.0, 20.5}}, identifier: 'fixture.status', label: 'Prepared backend Native scenario: NOT_RUN.'
+                      Button, 0x10846a580, {{16.0, 207.5}, {802.0, 48.0}}, identifier: 'fixture.prepare', label: 'Prepare backend'
+                        StaticText, 0x10846a800, {{16.0, 222.5}, {116.0, 18.0}}, label: 'Prepare backend'
+                      Button, 0x10846aa80, {{16.0, 267.5}, {802.0, 48.0}}, identifier: 'fixture.domain.add', label: 'Register fixture domain'
+                        StaticText, 0x10846af80, {{16.0, 282.5}, {159.0, 18.0}}, label: 'Register fixture domain'
+                      Button, 0x10846abc0, {{16.0, 327.5}, {802.0, 48.0}}, identifier: 'fixture.domain.inspect', label: 'Inspect fixture domain'
+                        StaticText, 0x10846ad00, {{16.0, 342.5}, {153.0, 18.0}}, label: 'Inspect fixture domain'
+                      Button, 0x10846b0c0, {{16.0, 387.5}, {802.0, 48.0}}, identifier: 'fixture.auth.allow', label: 'Allow authentication'
+                        StaticText, 0x10846ae40, {{16.0, 402.5}, {139.0, 18.0}}, label: 'Allow authentication'
+                      Button, 0x10846b200, {{16.0, 447.5}, {802.0, 48.0}}, identifier: 'fixture.auth.deny', label: 'Deny authentication without eviction'
+                        StaticText, 0x10846b700, {{16.0, 462.5}, {250.0, 18.0}}, label: 'Deny authentication without eviction'
+                      Button, 0x10846b840, {{16.0, 507.5}, {802.0, 48.0}}, identifier: 'fixture.evict', label: 'Evict item'
+                        StaticText, 0x10846bac0, {{16.0, 522.5}, {68.0, 18.0}}, label: 'Evict item'
+                      Button, 0x10846be80, {{16.0, 567.5}, {802.0, 48.0}}, identifier: 'fixture.evictThenDeny', label: 'Evict, then deny authentication'
+                        StaticText, 0x10846bc00, {{16.0, 582.5}, {212.0, 18.0}}, label: 'Evict, then deny authentication'
+                      Button, 0x108468a00, {{16.0, 627.5}, {802.0, 48.0}}, identifier: 'fixture.evidence.refresh', label: 'Refresh evidence'
+                        StaticText, 0x108469180, {{16.0, 642.5}, {119.0, 18.0}}, label: 'Refresh evidence'
+                      Button, 0x111294000, {{16.0, 687.5}, {802.0, 48.0}}, identifier: 'fixture.evidence.share', label: 'Share evidence'
+                        StaticText, 0x111294140, {{16.0, 702.5}, {106.0, 18.0}}, label: 'Share evidence'
+                      TextView, 0x111294280, {{16.0, 747.5}, {802.0, 420.0}}, identifier: 'fixture.evidence', value: Native scenario: N...
+                        TextView, 0x1112943c0, {{21.0, 755.5}, {178.0, 14.3}}, label: 'Native scenario: NOT_RUN'
+                        TextView, 0x111294500, {{21.0, 769.8}, {467.3, 14.3}}, label: 'App Group: group.thalesmms.logisim.validation.revocationfixture'
+                        TextView, 0x111294640, {{21.0, 784.1}, {274.5, 14.3}}, label: 'Domain: logisim-revocation-fixture-v1'
+                        TextView, 0x111294780, {{21.0, 798.5}, {200.3, 14.3}}, label: 'Item: revocation-circuit-v1'
+                        TextView, 0x1112948c0, {{21.0, 827.1}, {59.3, 14.3}}, label: 'SNAPSHOT'
+                        TextView, 0x111294a00, {{21.0, 841.4}, {7.4, 14.3}}, label: '{'
+                        TextView, 0x111294b40, {{21.0, 855.7}, {103.9, 14.3}}, label: '  "events" : ['
+                        TextView, 0x111294c80, {{21.0, 870.1}, {37.1, 14.3}}, label: '    {'
+                        TextView, 0x111294dc0, {{21.0, 884.4}, {140.9, 14.3}}, label: '      "details" : {'
+                        TextView, 0x111294f00, {{21.0, 913.0}, {59.3, 14.3}}, label: '      },'
+                        TextView, 0x111295040, {{21.0, 927.3}, {185.4, 14.3}}, label: '      "kind" : "prepare",'
+                        TextView, 0x111295180, {{21.0, 941.7}, {326.4, 14.3}}, label: '      "process" : "RevocationFixture:69225",'
+                        TextView, 0x1112952c0, {{21.0, 956.0}, {155.8, 14.3}}, label: '      "sequence" : 1,'
+                        TextView, 0x111295400, {{21.0, 970.3}, {341.2, 14.3}}, label: '      "timestamp" : "2026-11-05T06:58:24.548Z"'
+                        TextView, 0x111295540, {{21.0, 984.6}, {44.5, 14.3}}, label: '    },'
+                        TextView, 0x111295680, {{21.0, 998.9}, {37.1, 14.3}}, label: '    {'
+                        TextView, 0x1112957c0, {{21.0, 1013.3}, {140.9, 14.3}}, label: '      "details" : {'
+                        TextView, 0x111295900, {{21.0, 1027.6}, {370.9, 14.3}}, label: '        "domain" : "logisim-revocation-fixture-v1"'
+                        TextView, 0x111295a40, {{21.0, 1041.9}, {59.3, 14.3}}, label: '      },'
+                        TextView, 0x111295b80, {{21.0, 1056.2}, {348.6, 14.3}}, label: '      "kind" : "domain.registration.requested",'
+                        TextView, 0x111295cc0, {{21.0, 1070.5}, {326.4, 14.3}}, label: '      "process" : "RevocationFixture:69225",'
+                        TextView, 0x111295e00, {{21.0, 1084.9}, {155.8, 14.3}}, label: '      "sequence" : 2,'
+                        TextView, 0x111295f40, {{21.0, 1099.2}, {341.2, 14.3}}, label: '      "timestamp" : "2026-11-05T06:58:29.879Z"'
+                        TextView, 0x111296080, {{21.0, 1113.5}, {44.5, 14.3}}, label: '    },'
+                        TextView, 0x1112961c0, {{21.0, 1127.8}, {37.1, 14.3}}, label: '    {'
+                        TextView, 0x111296300, {{21.0, 1142.1}, {140.9, 14.3}}, label: '      "details" : {'
+                        TextView, 0x111296440, {{21.0, 1170.8}, {59.3, 14.3}}, label: '      },'
+                        TextView, 0x111296580, {{21.0, 1185.1}, {192.9, 14.3}}, label: '      "errorCode" : -2001,'
+                        TextView, 0x1112966c0, {{21.0, 1199.4}, {200.3, 14.3}}, label: '      "errorDiagnostic" : {'
+                        TextView, 0x111296800, {{21.0, 1213.8}, {140.9, 14.3}}, label: '        "chain" : ['
+                        TextView, 0x111296940, {{21.0, 1228.1}, {81.6, 14.3}}, label: '          {'
+                        TextView, 0x111296a80, {{21.0, 1242.4}, {200.3, 14.3}}, label: '            "code" : -2001,'
+                        TextView, 0x111296bc0, {{21.0, 1256.7}, {378.3, 14.3}}, label: '            "domain" : "NSFileProviderErrorDomain",'
+                        TextView, 0x111296d00, {{21.0, 1271.0}, {489.6, 14.3}}, label: '            "reason" : "The application cannot be used right now."'
+                        TextView, 0x111296e40, {{21.0, 1285.4}, {89.0, 14.3}}, label: '          },'
+                        TextView, 0x111296f80, {{21.0, 1299.7}, {81.6, 14.3}}, label: '          {'
+                        TextView, 0x1112970c0, {{21.0, 1314.0}, {200.3, 14.3}}, label: '            "code" : -2014,'
+                        TextView, 0x111297200, {{21.0, 1328.3}, {378.3, 14.3}}, label: '            "domain" : "NSFileProviderErrorDomain",'
+                        TextView, 0x111297340, {{21.0, 1342.6}, {756.6, 14.3}}, label: '            "reason" : "The operation couldn’t be completed. (NSFileProviderErrorDomain error -2014.)"'
+                        TextView, 0x111297480, {{21.0, 1357.0}, {81.6, 14.3}}, label: '          }'
+                        TextView, 0x1112975c0, {{21.0, 1371.3}, {74.2, 14.3}}, label: '        ],'
+                        TextView, 0x111297700, {{21.0, 1385.6}, {252.2, 14.3}}, label: '        "termination" : "complete"'
+                        TextView, 0x111297840, {{21.0, 1399.9}, {59.3, 14.3}}, label: '      },'
+                        TextView, 0x111297980, {{21.0, 1414.2}, {370.9, 14.3}}, label: '      "errorDomain" : "NSFileProviderErrorDomain",'
+                        TextView, 0x111297ac0, {{21.0, 1428.6}, {326.4, 14.3}}, label: '      "kind" : "domain.registration.failed",'
+                        TextView, 0x111297c00, {{21.0, 1442.9}, {326.4, 14.3}}, label: '      "process" : "RevocationFixture:69225",'
+                        TextView, 0x111297d40, {{21.0, 1457.2}, {155.8, 14.3}}, label: '      "sequence" : 3,'
+                        TextView, 0x111297e80, {{21.0, 1471.5}, {341.2, 14.3}}, label: '      "timestamp" : "2026-11-05T06:58:29.901Z"'
+                        TextView, 0x1089d0000, {{21.0, 1485.8}, {44.5, 14.3}}, label: '    },'
+                        TextView, 0x1089d0140, {{21.0, 1500.2}, {37.1, 14.3}}, label: '    {'
+                        TextView, 0x1089d0280, {{21.0, 1514.5}, {140.9, 14.3}}, label: '      "details" : {'
+                        TextView, 0x1089d03c0, {{21.0, 1543.1}, {59.3, 14.3}}, label: '      },'
+                        TextView, 0x1089d0500, {{21.0, 1557.4}, {185.4, 14.3}}, label: '      "kind" : "prepare",'
+                        TextView, 0x1089d0640, {{21.0, 1571.8}, {326.4, 14.3}}, label: '      "process" : "RevocationFixture:86977",'
+                        TextView, 0x1089d0780, {{21.0, 1586.1}, {155.8, 14.3}}, label: '      "sequence" : 4,'
+                        TextView, 0x1089d08c0, {{21.0, 1600.4}, {341.2, 14.3}}, label: '      "timestamp" : "2026-11-05T07:27:49.758Z"'
+                        TextView, 0x1089d0a00, {{21.0, 1614.7}, {37.1, 14.3}}, label: '    }'
+                        TextView, 0x1089d0b40, {{21.0, 1629.0}, {29.7, 14.3}}, label: '  ],'
+                        TextView, 0x1089d0c80, {{21.0, 1643.4}, {96.4, 14.3}}, label: '  "state" : {'
+                        TextView, 0x1089d0dc0, {{21.0, 1657.7}, {259.6, 14.3}}, label: '    "authenticationAllowed" : true,'
+                        TextView, 0x1089d0f00, {{21.0, 1672.0}, {215.1, 14.3}}, label: '    "backendByteCount" : 552,'
+                        TextView, 0x1089d1040, {{21.0, 1686.3}, {660.2, 14.3}}, label: '    "backendSHA256" : "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",'
+                        TextView, 0x1089d1180, {{21.0, 1700.6}, {155.8, 14.3}}, label: '    "generation" : 1,'
+                        TextView, 0x1089d12c0, {{21.0, 1715.0}, {170.6, 14.3}}, label: '    "schemaVersion" : 1'
+                        TextView, 0x1089d1400, {{21.0, 1729.3}, {22.3, 14.3}}, label: '  }'
+                        TextView, 0x1089d1540, {{21.0, 1779.0}, {7.4, 14.3}}, label: '}'
+                        Other, 0x1089d1680, {{785.0, 747.5}, {30.0, 420.0}}, label: 'Vertical scroll bar, 3 pages', value: 0%
+                          Other, 0x1089d17c0, {{812.0, 716.5}, {3.0, 28.0}}
+                        Other, 0x1089d1900, {{16.0, 1134.5}, {802.0, 30.0}}, label: 'Horizontal scroll bar, 1 page', value: 0%
+                          Other, 0x1089d1a40, {{-26.0, 1161.5}, {36.0, 3.0}}
+                    Other, 0x1089d1b80, {{801.0, 86.0}, {30.0, 1094.0}}, label: 'Vertical scroll bar, 1 page', value: 0%
+                      Other, 0x1089d1cc0, {{828.0, 95.5}, {3.0, 1081.5}}
+                    Other, 0x1089d1e00, {{10.0, 1157.0}, {814.0, 30.0}}, label: 'Horizontal scroll bar, 1 page', value: 0%
+                      Other, 0x1089d1f40, {{13.0, 1184.0}, {808.0, 3.0}}
+                    Other, 0x1089d2080, {{801.0, 86.0}, {30.0, 1094.0}}, label: 'Vertical scroll bar, 1 page', value: 0%
+                      Other, 0x1089d21c0, {{828.0, 95.5}, {3.0, 1081.5}}
+                    Other, 0x1089d2300, {{10.0, 1157.0}, {814.0, 30.0}}, label: 'Horizontal scroll bar, 1 page', value: 0%
+                      Other, 0x1089d2440, {{13.0, 1184.0}, {808.0, 3.0}}
+            Toolbar, 0x1089d2580, {{0.0, 0.0}, {834.0, 1210.0}}, identifier: 'Toolbar', label: 'Toolbar'
+              Other, 0x1089d26c0, {{0.0, 0.0}, {834.0, 1210.0}}
+Path to element:
+ →Application, 0x10846a6c0, pid: 86977, label: 'Logisim Revocation Fixture'
+Query chain:
+ →Find: Application 'thalesmms.logisim.validation.revocationfixture'
+  Output: {
+    Application, 0x1089d2800, pid: 86977, label: 'Logisim Revocation Fixture'
+  }

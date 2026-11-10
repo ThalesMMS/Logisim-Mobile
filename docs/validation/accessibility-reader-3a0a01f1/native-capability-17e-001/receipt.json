@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "status": "CAPABILITY_PASS",
+  "product_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "preparation_commits": [
+    "767aa86d",
+    "64cd40f9"
+  ],
+  "probe_source_sha256": "b24e559bc17a16b47a9bd73c64c39ceec175191635471e010f8296b44d05fd12",
+  "xctestrun_sha256": "94242aad6eaf0673f9fb137f7fa6903fdce13d716f7fa8b8671f1a8902a29e27",
+  "platform": {
+    "architecture": "arm64",
+    "deviceId": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "deviceName": "iPhone 17e",
+    "modelName": "iPhone 17e",
+    "osBuildNumber": "24A434",
+    "osVersion": "27.0",
+    "platform": "iOS Simulator"
+  },
+  "case_identifier": "VoiceOverServiceProbeUITests/testReaderNavigationAndSpeechWithRestoration()",
+  "tests": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "expected_failures": 0
+  },
+  "case_duration_seconds": 9.248,
+  "wrapper_duration_seconds": 14.073,
+  "attempts": 1,
+  "initial_app_state_raw": 4,
+  "voiceover_originally_enabled": false,
+  "voiceover_finally_enabled": false,
+  "utterances": {
+    "initial": "Circuit Sem t\u00edtulo.",
+    "forward": "Sem t\u00edtulo",
+    "backward": "Projects Button"
+  },
+  "app_bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+  "app_file_count": 12,
+  "app_and_catalog_before_after_equal": true,
+  "portrait_before_after_pixels": [
+    1170,
+    2532
+  ],
+  "postflight_app_visible": "Observed main Logisim UI in the final portrait screenshot",
+  "lease_returned_to_root": true,
+  "root_notified_return": true,
+  "scope": [
+    "Explicit enable/currentSpeech/moveForward/moveBackward/restore through public XCUIVoiceOverService on the single leased iPhone17e Simulator",
+    "No app install, product build, new fixture, SystemOpen, tap, rotor action, retry or other device"
+  ],
+  "not_qualified": [
+    "Identity/order of reader focus destinations",
+    "Activation, custom actions or rotor behavior",
+    "Canvas component or terminal traversal",
+    "Create/connect/edit/remove/simulate/save/reopen workflow",
+    "Speech audio quality",
+    "Physical iPhone/iPad behavior",
+    "Complete issue28 acceptance"
+  ],
+  "files": [
+    {
+      "path": "command.json",
+      "bytes": 689,
+      "sha256": "699c9b6efee012f5ab9c334542d5267abeb6aa3a29e11b5e2ed9992c011f69ba"
+    },
+    {
+      "path": "execution.json",
+      "bytes": 911,
+      "sha256": "7cf23a03774e961c528a426fa4635609e14b1ac0b3bdfd4b9edc5f582c09a94d"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 1002,
+      "sha256": "e4b919d9b4ec39ead6f8eba6156af24b64944f4a73ed6d6935bd88c1de386594"
+    },
+    {
+      "path": "launch.json",
+      "bytes": 479,
+      "sha256": "85dddd55703cc59aec7fe4ca440a35dba37828d3d95b0b417bbf734802d63b7a"
+    },
+    {
+      "path": "launch.stdout.txt",
+      "bytes": 32,
+      "sha256": "1239201f0eaa95c07cfd07f8815b251230ff17e23c1482501966bd5cb8ee344a"
+    },
+    {
+      "path": "launch.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "postflight.json",
+      "bytes": 2987,
+      "sha256": "ba6cc027b440c7b45768b8fa5d44c844b75b231e74d8e437bdadb7d0b63a577f"
+    },
+    {
+      "path": "before-reader.png",
+      "bytes": 413246,
+      "sha256": "f6b1f8ea4ad51b41d60557482cc32fee193aedc4e35e041c96c193d462eb3c50"
+    },
+    {
+      "path": "after-reader.png",
+      "bytes": 210309,
+      "sha256": "4456539d23b40de7dc1eb25ebf7c1af064a5725201902b0f2a2bdeb31ac0a334"
+    },
+    {
+      "path": "before-reader-screenshot.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "before-reader-screenshot.stderr.txt",
+      "bytes": 309,
+      "sha256": "c4f716980ca466540322e45ef5a7649afaf72c373bd757799036ea80c37a93e4"
+    },
+    {
+      "path": "after-reader-screenshot.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "after-reader-screenshot.stderr.txt",
+      "bytes": 308,
+      "sha256": "a8afb63b39b1818a98b0059cd229f1b576650467e5d0239b19fb472d5f4f8300"
+    },
+    {
+      "path": "export-attachments.log",
+      "bytes": 997,
+      "sha256": "e2093b7826dc9a2283082494e1c8a4b362b6f6324bce5488bb6795629effd8b0"
+    },
+    {
+      "path": "attachments/51963291-2E0A-4738-AEC6-4FB0046071F6.txt",
+      "bytes": 180,
+      "sha256": "dc6ff2ab0be809de3206c4134a6a86cdaa6e76e9ae7556fc268fef0843998c10"
+    },
+    {
+      "path": "attachments/5E8FBFC7-13DD-4130-B476-F544AB499AAD.txt",
+      "bytes": 211,
+      "sha256": "19560194eb9b4da99f38d67066bde9c7483cc76d73b77074b275a121aef0cc5c"
+    },
+    {
+      "path": "attachments/756B1B24-DF8E-47D1-8528-3CE878DA219B.txt",
+      "bytes": 240,
+      "sha256": "18c9e0d95587850b9f385c8f7718fb6a57c9c18087b01f7bcf640f3c1dfed796"
+    },
+    {
+      "path": "attachments/9F3266CA-6A84-4C26-A2F5-1828A14F4F03.txt",
+      "bytes": 207,
+      "sha256": "cb86d6e11ca48e7f7a308228741dd2674d6f84ace250a934667bab88de768bf4"
+    },
+    {
+      "path": "attachments/A9EFEB98-3292-4EF1-BEA2-1D080F6C119F.txt",
+      "bytes": 202,
+      "sha256": "e4418d900350e84fb604da4f36cce962219ae20c2e69d7b34607044911433bbb"
+    },
+    {
+      "path": "attachments/manifest.json",
+      "bytes": 2494,
+      "sha256": "e3e117713ffed9f7e83273416114a70f564ce69ecf9205673664fe365dae2b87"
+    },
+    {
+      "path": "preflight.json",
+      "bytes": 6959,
+      "sha256": "644f42ea91c9b854c87e0ea56b7777cf2a12c39fceee6332352a6c24ea662d91"
+    },
+    {
+      "path": "source/VoiceOverServiceProbeUITests.swift",
+      "bytes": 4392,
+      "sha256": "b24e559bc17a16b47a9bd73c64c39ceec175191635471e010f8296b44d05fd12"
+    },
+    {
+      "path": "source/run-once.py",
+      "bytes": 1987,
+      "sha256": "48fec62cc2122f671baa96512067f818c31e2ee0ff477cb764232d73380ce049"
+    },
+    {
+      "path": "test.log.gz",
+      "bytes": 1226,
+      "sha256": "5bb2b0519c7bbba15c1da4341e8b903fb7a4776ab4db97859479b00a7de18b07",
+      "uncompressed_bytes": 3704,
+      "uncompressed_sha256": "f2dde8a941a40ee9ec633da561ed6cd6084dfba4c5e75384006d867753f5b4b8"
+    }
+  ]
+}

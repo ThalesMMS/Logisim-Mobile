@@ -1,0 +1,17 @@
+DIFF pio_bidir
+  evolution driver  {DirectionReg=get@0x8,set@0x8, EdgeCapturReg=get@0xc,set@0xc, InputValue=get@0x0, IrqMaskReg=get@0x8,set@0x8, OutclearReg=set@0x14, OutputValue=set@0x0, OutsetReg=set@0x10}
+  mobile driver     {DirectionReg=get@0x4,set@0x4, EdgeCapturReg=get@0xc,set@0xc, InputValue=get@0x0, IrqMaskReg=get@0x8,set@0x8, OutclearReg=set@0x14, OutputValue=set@0x0, OutsetReg=set@0x10}
+SAME pio_in
+  evolution driver  {EdgeCapturReg=get@0xc,set@0xc, InputValue=get@0x0, IrqMaskReg=get@0x8,set@0x8}
+  mobile driver     {EdgeCapturReg=get@0xc,set@0xc, InputValue=get@0x0, IrqMaskReg=get@0x8,set@0x8}
+SAME pio_inout
+  evolution driver  {EdgeCapturReg=get@0xc,set@0xc, InputValue=get@0x0, OutclearReg=set@0x14, OutputValue=set@0x0, OutsetReg=set@0x10}
+  mobile driver     {EdgeCapturReg=get@0xc,set@0xc, InputValue=get@0x0, OutclearReg=set@0x14, OutputValue=set@0x0, OutsetReg=set@0x10}
+DIFF pio_out
+  evolution driver  {OutputValue=set@0x0}
+  mobile driver     {OutclearReg=set@0x14, OutputValue=set@0x0, OutsetReg=set@0x10}
+SAME pio_plain
+  evolution driver  {InputValue=get@0x0}
+  mobile driver     {InputValue=get@0x0}
+evolution PIO decoder offsets {DirectionReg=4, EdgeCapturReg=12, InputValue=0, IrqMaskReg=8, OutclearReg=20, OutputValue=0, OutsetReg=16}
+RESULT: 3/5 PIO driver register maps match Evolution's exportC

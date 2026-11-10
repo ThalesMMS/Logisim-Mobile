@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "scope": "dimensions-only",
+  "issue44": "partial",
+  "verification": "offline-audit-of-retained-native-owner-execution",
+  "nativeReexecuted": false,
+  "baselineProbes": 19,
+  "nativeProbeRecords": 6,
+  "installedApkReceipts": 6,
+  "checkpoints": [
+    {
+      "checkpoint": "io-baseline",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {}
+    },
+    {
+      "checkpoint": "io-dimension-io_ledbar-height",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_LEDBAR": {
+          "height": "4"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-restored-io_ledbar-height",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_LEDBAR": {
+          "height": "3"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-dimension-io_tty-rows",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_TTY": {
+          "rows": "4"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-restored-io_tty-rows",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_TTY": {
+          "rows": "3"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-dimension-io_tty-cols",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_TTY": {
+          "cols": "8"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-restored-io_tty-cols",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_TTY": {
+          "cols": "12"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-dimension-io_dot_matrix-matrixrows",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_DOT_MATRIX": {
+          "matrixrows": "8"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-restored-io_dot_matrix-matrixrows",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_DOT_MATRIX": {
+          "matrixrows": "7"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-dimension-io_keypad-size",
+      "components": 54,
+      "wireSegments": 80,
+      "expectedChanges": {
+        "IO_KEYPAD": {
+          "size": "normal"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-restored-io_keypad-size",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {
+        "IO_KEYPAD": {
+          "size": "large"
+        }
+      }
+    },
+    {
+      "checkpoint": "io-dimensions-restored",
+      "components": 54,
+      "wireSegments": 64,
+      "expectedChanges": {}
+    }
+  ]
+}

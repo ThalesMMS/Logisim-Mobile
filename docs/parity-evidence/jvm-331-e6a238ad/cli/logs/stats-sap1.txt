@@ -1,0 +1,62 @@
+row: cli/tty
+case: stats-sap1
+result: PASS
+detail: stdout and exit class equal
+
+=== evolution: logisim-evolution -t stats examples/sap1.circ
+exit: 0
+--- stdout (24 lines, sha256 71b886c668be47ee35302352cf4be4220695c1aff595fcf60148140891c6082b)
+  1	  1	CP                                	sap1
+  1	  1	Acumulador                        	sap1
+  1	  1	Somador_Subtrator                 	sap1
+  1	  1	Registrador_B_6a147718            	sap1
+  1	  1	REM                               	sap1
+  1	  1	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	sap1
+  4	  4	Splitter                          	Wiring
+ 64	 64	Pin                               	Wiring
+ 43	 43	Tunnel                            	Wiring
+  1	  1	Clock                             	Wiring
+  9	  9	NOT Gate                          	Gates
+  2	  2	AND Gate                          	Gates
+  1	  1	OR Gate                           	Gates
+  1	  1	NOR Gate                          	Gates
+  1	  1	XOR Gate                          	Gates
+  5	  5	Controlled Buffer                 	Gates
+  1	  1	Adder                             	Arithmetic
+  6	  6	D Flip-Flop                       	Memory
+  5	  5	Register                          	Memory
+  2	  2	Counter                           	Memory
+  3	  3	ROM                               	Memory
+  2	  2	Hex Digit Display                 	Input/Output
+150	150	TOTAL (without project’s sub circuits)
+156	156	TOTAL (with sub circuits)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -t stats examples/sap1.circ
+exit: 0
+--- stdout (24 lines, sha256 71b886c668be47ee35302352cf4be4220695c1aff595fcf60148140891c6082b)
+  1	  1	CP                                	sap1
+  1	  1	Acumulador                        	sap1
+  1	  1	Somador_Subtrator                 	sap1
+  1	  1	Registrador_B_6a147718            	sap1
+  1	  1	REM                               	sap1
+  1	  1	REGISTRADOR_DE_INSTRUCOES_2d63c7b0	sap1
+  4	  4	Splitter                          	Wiring
+ 64	 64	Pin                               	Wiring
+ 43	 43	Tunnel                            	Wiring
+  1	  1	Clock                             	Wiring
+  9	  9	NOT Gate                          	Gates
+  2	  2	AND Gate                          	Gates
+  1	  1	OR Gate                           	Gates
+  1	  1	NOR Gate                          	Gates
+  1	  1	XOR Gate                          	Gates
+  5	  5	Controlled Buffer                 	Gates
+  1	  1	Adder                             	Arithmetic
+  6	  6	D Flip-Flop                       	Memory
+  5	  5	Register                          	Memory
+  2	  2	Counter                           	Memory
+  3	  3	ROM                               	Memory
+  2	  2	Hex Digit Display                 	Input/Output
+150	150	TOTAL (without project’s sub circuits)
+156	156	TOTAL (with sub circuits)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

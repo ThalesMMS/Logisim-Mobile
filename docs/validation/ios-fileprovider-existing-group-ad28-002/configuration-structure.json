@@ -1,0 +1,39 @@
+{
+  "scope": "Source, compiled product and InstallCoordination placeholder structure only; not PlugInKit-normalized attributes or causal interpretation.",
+  "producerInfo": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/Info.plist",
+    "bytes": 1109,
+    "sha256": "ddf75da1d5927ab6da8e3fd93e7b9c25e24c1b0625a3ab450c4d5e799526d47e",
+    "NSExtension": {
+      "NSExtensionFileProviderDocumentGroup": "group.thalesmms.logisim.validation.revocationfixture",
+      "NSExtensionFileProviderSupportsEnumeration": true,
+      "NSExtensionPointIdentifier": "com.apple.fileprovider-nonui",
+      "NSExtensionPrincipalClass": "RevocationProvider.RevocationFileProvider"
+    }
+  },
+  "template": {
+    "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application Extension/File Provider Extension.xctemplate/TemplateInfo.plist",
+    "sha256": "c23094695a7352c0a346d0c32bf21012458bd38f11073dc26b71b4630fe9b7d9",
+    "lines": [
+      151,
+      164
+    ],
+    "numberedExcerpt": "151:         <key>Info.plist:NSExtension</key>\n152:         <string><![CDATA[<key>NSExtension</key>\n153: <dict>\n154:     <key>NSExtensionPointIdentifier</key>\n155:     <string>com.apple.fileprovider-nonui</string>\n156:     <key>NSExtensionFileProviderDocumentGroup</key>\n157:     <string>group.___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___</string>\n158:     <key>NSExtensionPrincipalClass</key>\n159:     <string>___VARIABLE_moduleNamePrefixForClasses:XML___FileProviderExtension</string>\n160:     <key>NSExtensionFileProviderSupportsEnumeration</key>\n161:     <true/>\n162: </dict>\n163: ]]></string>\n164:         <key>___PACKAGENAMEASIDENTIFIER___.entitlements</key>"
+  },
+  "observedPlaceholder": {
+    "source": "full-differential-history.stdout",
+    "index": 17,
+    "timestamp": "2026-11-05 07:27:29.533311+0000",
+    "actor": "installcoordinationd",
+    "assertion": "Group and SupportsEnumeration appear directly under NSExtension; no NSExtensionAttributes is printed in that dictionary."
+  },
+  "entitlementsLogMessages": {
+    "indices": [
+      2,
+      18
+    ],
+    "actor": "CoreSimulatorBridge",
+    "message": "had no entitlements",
+    "limit": "Preserved actor messages; effective signature entitlements are separately archived and are not replaced by this log claim."
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "issue": 34,
+  "platform": "iOS Simulator",
+  "status": "PASS",
+  "caseSeconds": 591.77,
+  "exitCode": 0,
+  "selectedTest": "EditorEndToEndTests/VisualExportEndToEndTests/testEditorExportsPixelsAndCancelsNativeDelivery",
+  "runID": "e1c981697fa9",
+  "started": "2026-11-05T06:19:30.739726+00:00",
+  "finished": "2026-11-05T06:30:02.771304+00:00",
+  "sourcePin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "harnessPin": "10d184581055ef1d8dcd77ad8ba760f96c439158",
+  "visualSwiftSHA256": "f5c2fc51f3d8cb9df09520b5f3488f74b6f9ce94367f046f013b906f0e2bff47",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+    "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "mainAppInstallation": {
+    "status": "REUSED_IDENTICAL",
+    "before": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/CEE032F0-DB8E-45F1-B272-991B329B6B78/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "installed": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/CEE032F0-DB8E-45F1-B272-991B329B6B78/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    }
+  },
+  "producerManifestSHA256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+  "device": {
+    "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "name": "Logisim SaveAs Beta iPad 27.0",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB"
+  },
+  "physicalDevice": false,
+  "fixtureSHA256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "contractSHA256": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "nativeExecutionGate": "NATIVE_PASS",
+  "wrapperQualificationGate": "PARTIAL",
+  "wrapperScope": "Only the selected complete issue34 scenario ran. The wrapper aggregate qualification_gate remains PARTIAL because the complete global test suite was not selected.",
+  "verifiedSubflows": {
+    "wholePNG": {
+      "nativeSave": "PASS",
+      "bytes": 5478460,
+      "sha256": "18912f4fedb71f1d8bea9af6f4bbf0ceef098fdf278ede921280536285145c9a",
+      "dimensions": [
+        1508,
+        908
+      ],
+      "colorSamples": 3,
+      "all78InkRegions": "PASS",
+      "annotationTextRegions": 2,
+      "symbolRegions": 72,
+      "frameEdgeRegions": 4
+    },
+    "selectedPDF": {
+      "nativeSave": "PASS",
+      "bytes": 42759,
+      "sha256": "1dff97f012a19b8cfa31f0145042c6c3f54a404498565d8b27dfcf7f727f914f",
+      "pages": 1,
+      "rasterDimensions": [
+        140,
+        100
+      ],
+      "pageMediaBoxPoints": [
+        595,
+        842
+      ],
+      "nativeCoreGraphics": "PASS",
+      "independentPopplerAndRasterSamples": "PASS"
+    },
+    "share": {
+      "nativePopover": "OBSERVED",
+      "preparedPDFEqualsVerifiedSavedPDF": true,
+      "recipientDelivery": "NOT_ATTEMPTED",
+      "cancellation": "PASS via observed outside-popover dismissal",
+      "point": [
+        152.25,
+        600
+      ],
+      "inputSurfaces": [],
+      "markerAndPopoverGone": "PASS",
+      "editorToolRemainsAvailable": "PASS",
+      "temporaryAssetCleanup": "PASS"
+    },
+    "print": {
+      "nativeInterface": "OBSERVED",
+      "preview": "PASS",
+      "previewFrame": [
+        16,
+        48,
+        218,
+        308
+      ],
+      "redPixels": 26180,
+      "greenPixels": 26004,
+      "preparedPDFEqualsVerifiedSavedPDF": true,
+      "nativeCancelLabel": "Cancel",
+      "nativeCancelFrame": [
+        264,
+        46,
+        36,
+        36
+      ],
+      "cancellation": "PASS",
+      "editorToolRemainsAvailable": "PASS",
+      "temporaryAssetCleanup": "PASS",
+      "printerJob": "NOT_ATTEMPTED"
+    },
+    "projectPreservation": {
+      "rawXMLByteIdentical": true,
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4",
+      "editorCircuitVisible": "PASS"
+    }
+  },
+  "bootstrap": "Exactly the existing single system.open fixture call ran; no additional issue26 scenario, alpha, fallback, retry or product rebuild.",
+  "priorFailure": "ios-export34-final-6cef-001 remains FAIL390.711s. This run validates the revised test cancellation route against the identical application.",
+  "lease": "B25 and dedicated DerivedData explicitly returned to ios_files after terminal exit0. Teardown terminated app40026 and restored portrait. No later Simulator/cache action by this executor.",
+  "limits": [
+    "iPad Simulator only",
+    "No physical printer job",
+    "No recipient delivery",
+    "No claim that the complete global test suite ran",
+    "Full-fixture SVG is unavailable under the declared export profile; the qualified output formats are PNG and printable PDF"
+  ],
+  "files": {
+    "after.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    },
+    "attachment-manifest.json": {
+      "bytes": 50911,
+      "sha256": "89a99dc9c96fe487888b3ddcf7f93f9ee3841096ca016cc6c83df842def1daf7"
+    },
+    "before.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    },
+    "contract-sha256.txt": {
+      "bytes": 64,
+      "sha256": "f7070c899a8e0b6faef2ed4365263a2e112e2df0b08a8f6917862a2ac4caa32b"
+    },
+    "final-screen.png": {
+      "bytes": 467658,
+      "sha256": "bec474495f1170c39c871ffd736d6400d7a557eaecb3d55bb8645979c02fbf72"
+    },
+    "final-tree.txt": {
+      "bytes": 45348,
+      "sha256": "93ecb328bcf035db94c42225c21b7de9935713ba194a8b91224edebb8e81541b"
+    },
+    "print-asset.txt": {
+      "bytes": 416,
+      "sha256": "b24b56fe2ce1d2005e9b500886ee1dea3507c7435b97c68770d1653b509ebb0d"
+    },
+    "print-cancel-control.txt": {
+      "bytes": 73,
+      "sha256": "11011e8ba609b479fc61b6653bff5f5b3ec477cde4d4ee9f40c61f088cbdc48b"
+    },
+    "print-preview-crop.png": {
+      "bytes": 20343,
+      "sha256": "00b920e7e33fca1ac0b084720def84449fb2204a03b1a62211c02b4886008f43"
+    },
+    "print-preview-pixels.txt": {
+      "bytes": 75,
+      "sha256": "79ecbe7c6f9bee1d0928c68b53b70302efc83cd7cf7a466d130d42e9698340a1"
+    },
+    "print-preview.png": {
+      "bytes": 190090,
+      "sha256": "eafe2e7c84825fa39e82af88187b677586c95615c43a28022f84b3999cc0a722"
+    },
+    "print-staged.pdf": {
+      "bytes": 42759,
+      "sha256": "1dff97f012a19b8cfa31f0145042c6c3f54a404498565d8b27dfcf7f727f914f"
+    },
+    "print-tree.txt": {
+      "bytes": 28479,
+      "sha256": "19b6ade855e014d8b87a2c77642874fe1adbcac183a1059e38608ca02c42231f"
+    },
+    "provenance.txt": {
+      "bytes": 222,
+      "sha256": "44e32e4cb886ca9177f1c72065b6a516188c7ba91a1f85d60043f9814683309f"
+    },
+    "results.json": {
+      "bytes": 27376,
+      "sha256": "9902afb1765a936189d634f3b4d14cd59926d7d1c48e33fb388dccb5fd3e8212"
+    },
+    "selection.pdf": {
+      "bytes": 42759,
+      "sha256": "1dff97f012a19b8cfa31f0145042c6c3f54a404498565d8b27dfcf7f727f914f"
+    },
+    "share-asset.txt": {
+      "bytes": 416,
+      "sha256": "5193df346fa29ee8e5dd27159b41ab85024b007916be3190f743bd007882de7c"
+    },
+    "share-dismissal-geometry.txt": {
+      "bytes": 562,
+      "sha256": "2bbe89b28b9fee6382d20c66d71f79faf9f13f8c9258762e3781c14b2c0cffdf"
+    },
+    "share-presented.png": {
+      "bytes": 615572,
+      "sha256": "7cd24d73a993b851ed2271ba477f289321181f6f4d0b6957e84ab8a8cd69229f"
+    },
+    "share-staged.pdf": {
+      "bytes": 42759,
+      "sha256": "1dff97f012a19b8cfa31f0145042c6c3f54a404498565d8b27dfcf7f727f914f"
+    },
+    "share-tree.txt": {
+      "bytes": 30653,
+      "sha256": "4a1693d7a67ac70703d4d3bd44e81a9a2faa549475b37e33ec5d1d8cc7536efe"
+    },
+    "test.log": {
+      "bytes": 205277,
+      "sha256": "5f6bbe4c0270c51301f44881b74685c18bc25943370ef087cbf14b9075718d0d"
+    },
+    "whole-ink.txt": {
+      "bytes": 9105,
+      "sha256": "af13cb1b4f9efe1ca7deac9a218a464ed8b30d055cc8e0306f95408f2e1f37ad"
+    },
+    "whole.png": {
+      "bytes": 5478460,
+      "sha256": "18912f4fedb71f1d8bea9af6f4bbf0ceef098fdf278ede921280536285145c9a"
+    },
+    "build.log.gz": {
+      "bytes": 5871,
+      "sha256": "96aed0d8fe3aef390c0ea0d1a37804106f8be9fd903c627d9a271b08b10f1e8a"
+    },
+    "offline-byte-postflight.json": {
+      "bytes": 43354,
+      "sha256": "09fabe3fb90d66c9c00e3798755a5d3560c7adbfdd5c8d5b6e5be0b8b38b0ad0"
+    }
+  },
+  "localEvidence": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-final-6cef-002",
+  "postflightFingerprint": {
+    "harnessHEAD": "10d184581055ef1d8dcd77ad8ba760f96c439158",
+    "harnessWorktreeClean": true,
+    "visualSHA256": "f5c2fc51f3d8cb9df09520b5f3488f74b6f9ce94367f046f013b906f0e2bff47",
+    "producerManifestSHA256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+    "executableSHA256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+    "debugDylibSHA256": "db2c909500c95f345362fdf06f5fd17c3647af9800863fc53d0b6a9bf31647cf",
+    "scope": "Read-only local source and frozen producer artifact checks after terminal. No device or cache access after lease return."
+  },
+  "buildLogOriginal": {
+    "bytes": 96481,
+    "sha256": "912a7a3a16f06668b4a11c3060217cf36af897ef368b60bd60fa7753f3009f32",
+    "compression": "gzip, lossless; native whitespace retained",
+    "localName": "build.log"
+  },
+  "offlinePostflight": {
+    "status": "PASS",
+    "independentChecks": "8/8",
+    "sha256": "09fabe3fb90d66c9c00e3798755a5d3560c7adbfdd5c8d5b6e5be0b8b38b0ad0",
+    "scope": "Actual PNG, contract78regions, PDF via independent Poppler/raster checks, exact saved/share/print bytes, exact projectXML, previewcrop-to-screenshot identity and colors, observed cancellation geometry plus frozen source/log. No new UI or device/cache access."
+  }
+}

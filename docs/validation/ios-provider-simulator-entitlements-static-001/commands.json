@@ -1,0 +1,458 @@
+[
+  {
+    "name": "produced-app-codesign-xml",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--xml",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture"
+    ],
+    "utc": "2026-11-05T07:47:13.406461+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-app-codesign-xml.stdout",
+      "bytes": 316,
+      "sha256": "5089d1514bbfbdaecd9dbae06f4d17c53ca34d48aac56e91326aa3bc534c5a7a"
+    },
+    "stderr": {
+      "file": "produced-app-codesign-xml.stderr",
+      "bytes": 226,
+      "sha256": "566c8f35ec617f022532cf35f99d8a0e832e0a3fd1725e22a53bb2eb8ad2a675"
+    }
+  },
+  {
+    "name": "produced-app-codesign-der",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--der",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture"
+    ],
+    "utc": "2026-11-05T07:47:13.413613+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-app-codesign-der.stdout",
+      "bytes": 104,
+      "sha256": "72c71bbb63d33e2341a304f97b90adb1983485cfc99e4144067dcd4b8b06652e"
+    },
+    "stderr": {
+      "file": "produced-app-codesign-der.stderr",
+      "bytes": 226,
+      "sha256": "566c8f35ec617f022532cf35f99d8a0e832e0a3fd1725e22a53bb2eb8ad2a675"
+    }
+  },
+  {
+    "name": "produced-app-openssl-asn1",
+    "argv": [
+      "openssl",
+      "asn1parse",
+      "-inform",
+      "DER",
+      "-in",
+      "/private/tmp/logisim-provider-entitlement-slots-001/produced-app-entitlements.der",
+      "-i"
+    ],
+    "utc": "2026-11-05T07:47:13.420521+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-app-openssl-asn1.stdout",
+      "bytes": 444,
+      "sha256": "35fe477800fe0698f4012c5e8a4fbd03215a1707eb587531a5d7b9d3128b2b45"
+    },
+    "stderr": {
+      "file": "produced-app-openssl-asn1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "installed-app-codesign-xml",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--xml",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/RevocationFixture"
+    ],
+    "utc": "2026-11-05T07:47:13.428052+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-app-codesign-xml.stdout",
+      "bytes": 316,
+      "sha256": "5089d1514bbfbdaecd9dbae06f4d17c53ca34d48aac56e91326aa3bc534c5a7a"
+    },
+    "stderr": {
+      "file": "installed-app-codesign-xml.stderr",
+      "bytes": 214,
+      "sha256": "625c5d59fa5969e1341e5d15a7f54c4d89f5f866b0d17810f8b003c0374d205f"
+    }
+  },
+  {
+    "name": "installed-app-codesign-der",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--der",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/RevocationFixture"
+    ],
+    "utc": "2026-11-05T07:47:13.434613+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-app-codesign-der.stdout",
+      "bytes": 104,
+      "sha256": "72c71bbb63d33e2341a304f97b90adb1983485cfc99e4144067dcd4b8b06652e"
+    },
+    "stderr": {
+      "file": "installed-app-codesign-der.stderr",
+      "bytes": 214,
+      "sha256": "625c5d59fa5969e1341e5d15a7f54c4d89f5f866b0d17810f8b003c0374d205f"
+    }
+  },
+  {
+    "name": "installed-app-openssl-asn1",
+    "argv": [
+      "openssl",
+      "asn1parse",
+      "-inform",
+      "DER",
+      "-in",
+      "/private/tmp/logisim-provider-entitlement-slots-001/installed-app-entitlements.der",
+      "-i"
+    ],
+    "utc": "2026-11-05T07:47:13.439872+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-app-openssl-asn1.stdout",
+      "bytes": 444,
+      "sha256": "35fe477800fe0698f4012c5e8a4fbd03215a1707eb587531a5d7b9d3128b2b45"
+    },
+    "stderr": {
+      "file": "installed-app-openssl-asn1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "produced-provider-codesign-xml",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--xml",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider"
+    ],
+    "utc": "2026-11-05T07:47:13.446656+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-provider-codesign-xml.stdout",
+      "bytes": 316,
+      "sha256": "5089d1514bbfbdaecd9dbae06f4d17c53ca34d48aac56e91326aa3bc534c5a7a"
+    },
+    "stderr": {
+      "file": "produced-provider-codesign-xml.stderr",
+      "bytes": 260,
+      "sha256": "1ed41278cc187056c0916bab4aec5e8876df2664b7ea8a1a48be76d701ca2235"
+    }
+  },
+  {
+    "name": "produced-provider-codesign-der",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--der",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider"
+    ],
+    "utc": "2026-11-05T07:47:13.452986+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-provider-codesign-der.stdout",
+      "bytes": 104,
+      "sha256": "72c71bbb63d33e2341a304f97b90adb1983485cfc99e4144067dcd4b8b06652e"
+    },
+    "stderr": {
+      "file": "produced-provider-codesign-der.stderr",
+      "bytes": 260,
+      "sha256": "1ed41278cc187056c0916bab4aec5e8876df2664b7ea8a1a48be76d701ca2235"
+    }
+  },
+  {
+    "name": "produced-provider-openssl-asn1",
+    "argv": [
+      "openssl",
+      "asn1parse",
+      "-inform",
+      "DER",
+      "-in",
+      "/private/tmp/logisim-provider-entitlement-slots-001/produced-provider-entitlements.der",
+      "-i"
+    ],
+    "utc": "2026-11-05T07:47:13.458392+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-provider-openssl-asn1.stdout",
+      "bytes": 444,
+      "sha256": "35fe477800fe0698f4012c5e8a4fbd03215a1707eb587531a5d7b9d3128b2b45"
+    },
+    "stderr": {
+      "file": "produced-provider-openssl-asn1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "installed-provider-codesign-xml",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--xml",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider"
+    ],
+    "utc": "2026-11-05T07:47:13.465328+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-provider-codesign-xml.stdout",
+      "bytes": 316,
+      "sha256": "5089d1514bbfbdaecd9dbae06f4d17c53ca34d48aac56e91326aa3bc534c5a7a"
+    },
+    "stderr": {
+      "file": "installed-provider-codesign-xml.stderr",
+      "bytes": 248,
+      "sha256": "d022f8616122ce178651210eb012639f125cd19e6a5cccecdc2f3339040c0857"
+    }
+  },
+  {
+    "name": "installed-provider-codesign-der",
+    "argv": [
+      "codesign",
+      "--display",
+      "--entitlements",
+      "-",
+      "--der",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider"
+    ],
+    "utc": "2026-11-05T07:47:13.471412+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-provider-codesign-der.stdout",
+      "bytes": 104,
+      "sha256": "72c71bbb63d33e2341a304f97b90adb1983485cfc99e4144067dcd4b8b06652e"
+    },
+    "stderr": {
+      "file": "installed-provider-codesign-der.stderr",
+      "bytes": 248,
+      "sha256": "d022f8616122ce178651210eb012639f125cd19e6a5cccecdc2f3339040c0857"
+    }
+  },
+  {
+    "name": "installed-provider-openssl-asn1",
+    "argv": [
+      "openssl",
+      "asn1parse",
+      "-inform",
+      "DER",
+      "-in",
+      "/private/tmp/logisim-provider-entitlement-slots-001/installed-provider-entitlements.der",
+      "-i"
+    ],
+    "utc": "2026-11-05T07:47:13.477073+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-provider-openssl-asn1.stdout",
+      "bytes": 444,
+      "sha256": "35fe477800fe0698f4012c5e8a4fbd03215a1707eb587531a5d7b9d3128b2b45"
+    },
+    "stderr": {
+      "file": "installed-provider-openssl-asn1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "produced-app-main-executable-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture"
+    ],
+    "utc": "2026-11-05T07:49:57.293300+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-app-main-executable-otool-headers-loadcommands.stdout",
+      "bytes": 6717,
+      "sha256": "cb5fd4ec06d9cd4a1c34699864c91f4fe2af34d52a82c0126d35152ca40ca89a"
+    },
+    "stderr": {
+      "file": "produced-app-main-executable-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "produced-app-debug-dylib-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib"
+    ],
+    "utc": "2026-11-05T07:49:57.304017+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-app-debug-dylib-otool-headers-loadcommands.stdout",
+      "bytes": 15472,
+      "sha256": "e10f74cb233691b4c0f8c0a55209d677a2e5c71b85025fd7df21f78318176ddc"
+    },
+    "stderr": {
+      "file": "produced-app-debug-dylib-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "installed-app-main-executable-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/RevocationFixture"
+    ],
+    "utc": "2026-11-05T07:49:57.314982+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-app-main-executable-otool-headers-loadcommands.stdout",
+      "bytes": 6705,
+      "sha256": "322f02541f5b13548ff3f26968815f6532fc27776ba474493473526378955f2c"
+    },
+    "stderr": {
+      "file": "installed-app-main-executable-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "installed-app-debug-dylib-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/RevocationFixture.debug.dylib"
+    ],
+    "utc": "2026-11-05T07:49:57.325118+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-app-debug-dylib-otool-headers-loadcommands.stdout",
+      "bytes": 15460,
+      "sha256": "8f0ca4cf3f952b2af6cf56b9ff9d68f86bbf579156c62259199bf07cf2c732d9"
+    },
+    "stderr": {
+      "file": "installed-app-debug-dylib-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "produced-provider-main-executable-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider"
+    ],
+    "utc": "2026-11-05T07:49:57.335173+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-provider-main-executable-otool-headers-loadcommands.stdout",
+      "bytes": 6640,
+      "sha256": "46fabcf1ea25a821d9fe2c4070e6ed4944e15d5b1fef2f9f91c1ee9599218919"
+    },
+    "stderr": {
+      "file": "produced-provider-main-executable-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "produced-provider-debug-dylib-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider.debug.dylib"
+    ],
+    "utc": "2026-11-05T07:49:57.345325+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "produced-provider-debug-dylib-otool-headers-loadcommands.stdout",
+      "bytes": 13600,
+      "sha256": "b41f1157986d4e68afb0151a0c89c915bc63aaa7977683379df4d64f530c91e9"
+    },
+    "stderr": {
+      "file": "produced-provider-debug-dylib-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "installed-provider-main-executable-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider"
+    ],
+    "utc": "2026-11-05T07:49:57.354777+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-provider-main-executable-otool-headers-loadcommands.stdout",
+      "bytes": 6628,
+      "sha256": "46d4a759a20d60f46ddbdb6a2c542755a8240a63df6466c118379d0ca2ab5850"
+    },
+    "stderr": {
+      "file": "installed-provider-main-executable-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "installed-provider-debug-dylib-otool-headers-loadcommands",
+    "argv": [
+      "xcrun",
+      "otool",
+      "-h",
+      "-l",
+      "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider.debug.dylib"
+    ],
+    "utc": "2026-11-05T07:49:57.363880+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "file": "installed-provider-debug-dylib-otool-headers-loadcommands.stdout",
+      "bytes": 13588,
+      "sha256": "f66e73ff9d5b8710dcd84974ec817b76ecf30fef3af27150ce873f4ac74b8ea5"
+    },
+    "stderr": {
+      "file": "installed-provider-debug-dylib-otool-headers-loadcommands.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

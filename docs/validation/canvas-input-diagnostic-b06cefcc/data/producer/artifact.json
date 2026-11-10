@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T07:36:41.380557+00:00",
+  "source_sha": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+  "source_tree": "e24981d26d6d293763966caa9961657a94ce27f6",
+  "source_dirty": false,
+  "source_root": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui",
+  "base_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "purpose": "Isolated opt-in Canvas input diagnostic for#27, no product fix or main integration.",
+  "build_status": "PASS",
+  "pipeline": {
+    "source_sha": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+    "source_tree": "e24981d26d6d293763966caa9961657a94ce27f6",
+    "status": "PASS",
+    "entered_lock_utc": "2026-11-05T07:33:21.332210+00:00",
+    "phases": [
+      {
+        "name": "identity",
+        "command": [
+          "python3",
+          "tools/generate_app_identity.py",
+          "--check"
+        ],
+        "log": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/identity.log",
+        "status": "PASS",
+        "started_utc": "2026-11-05T07:33:21.370529+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 0.028,
+        "ended_utc": "2026-11-05T07:33:21.399146+00:00"
+      },
+      {
+        "name": "localization",
+        "command": [
+          "python3",
+          "scripts/generate-localization.py",
+          "--check"
+        ],
+        "log": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/localization.log",
+        "status": "PASS",
+        "started_utc": "2026-11-05T07:33:21.461816+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 0.116,
+        "ended_utc": "2026-11-05T07:33:21.577712+00:00"
+      },
+      {
+        "name": "host-and-diagnostic-apks",
+        "command": [
+          "./gradlew",
+          ":composeApp:testAndroidHostTest",
+          "--tests",
+          "dev.logisim.mobile.CanvasInputTraceTest",
+          "--tests",
+          "dev.logisim.mobile.EditorViewportStateTest",
+          "--tests",
+          "dev.logisim.mobile.CircuitViewportTest",
+          "--tests",
+          "dev.logisim.mobile.CanvasWindowFocusTest",
+          "--tests",
+          "dev.logisim.mobile.CanvasInteractionTest",
+          "--tests",
+          "dev.logisim.mobile.CanvasWireEditingTest",
+          ":androidApp:assembleE2e",
+          ":androidApp:assembleE2eAndroidTest",
+          "-PandroidTestBuildType=e2e",
+          "--console=plain",
+          "--stacktrace"
+        ],
+        "log": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/build.log",
+        "status": "PASS",
+        "started_utc": "2026-11-05T07:33:21.640947+00:00",
+        "exit_code": 0,
+        "elapsed_seconds": 25.604,
+        "ended_utc": "2026-11-05T07:33:47.245715+00:00"
+      }
+    ],
+    "ended_utc": "2026-11-05T07:33:47.296890+00:00",
+    "elapsed_seconds": 25.964
+  },
+  "artifacts": [
+    {
+      "kind": "e2e_apk",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_apk.apk",
+      "bytes": 15868365,
+      "sha256": "c12be1b537b1e02744f057fb36372f3669df25e3385e9c2e7e4fda8a8fc1484b",
+      "package": "thalesmms.logisim.mobile.e2e",
+      "package_badging": "package: name='thalesmms.logisim.mobile.e2e' versionCode='2' versionName='0.2.0-e2e' platformBuildVersionName='17' platformBuildVersionCode='37' compileSdkVersion='37' compileSdkVersionCodename='17'",
+      "producer_source": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+      "signature_verification": "PASS",
+      "signature_log": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/e2e_apk-signature.txt",
+      "required_dex_descriptors_present": [
+        "Ldev/logisim/mobile/CanvasInputTrace;",
+        "Ldev/logisim/mobile/KeyboardInputDraft;",
+        "Ldev/logisim/mobile/CircuitAccessibilityContext;"
+      ]
+    },
+    {
+      "kind": "e2e_test_apk",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_test_apk.apk",
+      "bytes": 307103,
+      "sha256": "f0883691aea034441b4eda8375e424662e78e9a420e7b5f12d225f26e8d45c31",
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "package_badging": "package: name='thalesmms.logisim.mobile.e2e.test' versionCode='' versionName='' platformBuildVersionName='17' platformBuildVersionCode='37' compileSdkVersion='37' compileSdkVersionCodename='17'",
+      "producer_source": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+      "signature_verification": "PASS",
+      "signature_log": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/e2e_test_apk-signature.txt",
+      "required_dex_descriptors_present": [
+        "Ldev/logisim/mobile/input/CanvasInputTraceCapture;",
+        "Ldev/logisim/mobile/input/NativeCanvasTraceBuffer;"
+      ]
+    }
+  ],
+  "snapshot_helper": {
+    "source": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+    "source_gate": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/5c2abc60/manifest.json",
+    "source_gate_sha256": "1684bbbe5623d4d4807d2d7dea9b34025985f10269644ba5e5c829f7f2b7fc8e",
+    "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/snapshot-helper-5c2abc60/snapshot_apk.apk",
+    "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c",
+    "bytes": 965334,
+    "root_validation": {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "rebuilt": false,
+    "note": "Authorized import of helper only. Diagnostic app/test APKs built freshly atb06cefcc."
+  },
+  "host_tests": {
+    "source_sha": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+    "totals": {
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/host-test-results/TEST-dev.logisim.mobile.CanvasInputTraceTest.xml",
+        "name": "dev.logisim.mobile.CanvasInputTraceTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/host-test-results/TEST-dev.logisim.mobile.CanvasInteractionTest.xml",
+        "name": "dev.logisim.mobile.CanvasInteractionTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/host-test-results/TEST-dev.logisim.mobile.CanvasWindowFocusTest.xml",
+        "name": "dev.logisim.mobile.CanvasWindowFocusTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/host-test-results/TEST-dev.logisim.mobile.CanvasWireEditingTest.xml",
+        "name": "dev.logisim.mobile.CanvasWireEditingTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/host-test-results/TEST-dev.logisim.mobile.CircuitViewportTest.xml",
+        "name": "dev.logisim.mobile.CircuitViewportTest",
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/host-test-results/TEST-dev.logisim.mobile.EditorViewportStateTest.xml",
+        "name": "dev.logisim.mobile.EditorViewportStateTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "scope": "Focused actual Android-host Gradle tests only, no instrumentation/device execution."
+  },
+  "production_inputs": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/production-inputs.json",
+    "file_count": 312,
+    "digest": "e33e1726857f19011c1e780f786b2128a17e73a4849fe619037ac82c43c0375b"
+  },
+  "catalog": {
+    "root": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui",
+    "message_count": 2497,
+    "generator_check": "PASS",
+    "files": [
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/GeneratedMessages.kt",
+        "sha256": "923d0e39f08002337fffc888b20a0be17be950faa7e599ddd354e8ea97f80b78"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/composeApp/src/commonMain/composeResources/values/strings.xml",
+        "sha256": "245cbfc8248fe683379f6c28ec42da99f65e7c97923efbe888eb7ad6125fa67d"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/composeApp/src/commonMain/composeResources/values-pt/strings.xml",
+        "sha256": "b3e54b0eed4245d25a5bbe13f1545b18d413e649e56b56cf3521f1bedefd6b0c"
+      }
+    ]
+  },
+  "independent_source_review": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/independent-source-review.json",
+    "sha256": "b41160fdd7762bdf211589fefcb5ed672a801aa82e4ce00cdb99a85127d16fe4",
+    "result": "PASS"
+  },
+  "retained_direct_check": {
+    "receipt": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/direct-check-receipt.json",
+    "sha256": "7aa9c23437e3dc839855cc7edf7483d1f751d4f20b70dca1669e226aab8913f6",
+    "source_equivalence": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/direct-check-source-equivalence.json",
+    "scope": "Prior8buffer/5hook/18fake-runner checks and direct compilation retained, not re-executed by this builder."
+  },
+  "source_binding": "Clean exact source checkout with fresh Gradle task history/output and new app/test assembly. Runtime sourceRevision remains a declaration linked through these APK hashes, not embedded source attestation.",
+  "cache_policy": "No producer intermediates/final app/test APK copied; only shared Gradle dependency cache. Imported SDK helper has a separate5c producer.",
+  "runtime_status": "NOT_RUN",
+  "qualification": "DIAGNOSTIC_BUILD_ONLY",
+  "opt_in_argument": "canvasInputTrace=1",
+  "trace_limits": {
+    "input_records": 64,
+    "input_bytes": 65536,
+    "state_records": 192,
+    "state_bytes": 131072,
+    "record_bytes": 8192,
+    "pointer_limit": 4,
+    "field_limit": 24
+  },
+  "interpretation_limits": [
+    "COLLECTION_ERROR, dropped/oversized records and callback failures require review before interpreting missing observations.",
+    "Trace does not change original geometry/XML oracles or their case result.",
+    "No scroll/pinch regression reclassification, performance claim, physical ergonomics or runtime approval."
+  ],
+  "forbidden_actions_not_run": [
+    "main integration/push",
+    "iOS/Native",
+    "ADB/device/install/launch"
+  ],
+  "dependency_alignment": {
+    "source_sha": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+    "product_runtime_before_fix": "androidx.compose.ui:ui-android:1.13.0-beta02",
+    "current": {
+      "runtime": "androidx.compose.ui:ui-android:1.13.0-beta02",
+      "test-compile": "androidx.compose.ui:ui-android:1.13.0-beta02"
+    },
+    "runtime_ui_coordinate_unchanged": true,
+    "test_compile_ui_matches_runtime": true,
+    "test_only_added_coordinate": "androidx.compose.ui:ui:1.13.0-beta02",
+    "baseline_log": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/prior-ea-failure/product-runtime-ui-insight.log",
+      "sha256": "cb7049a89c5e9b909a9b519295581c8cc8206feeeb9d390b4a87ba9c15820812"
+    },
+    "logs": {
+      "runtime": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/runtime-ui-insight.log",
+        "sha256": "bca8a3b96bb529f3355f0fe5ec6b0083fcb7fa4d9bd1e09db6ce9a75e1063ffa",
+        "command": [
+          "./gradlew",
+          ":androidApp:dependencyInsight",
+          "--configuration",
+          "e2eRuntimeClasspath",
+          "--dependency",
+          "androidx.compose.ui:ui-android",
+          "-PandroidTestBuildType=e2e",
+          "--console=plain"
+        ]
+      },
+      "test-compile": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/test-compile-ui-insight.log",
+        "sha256": "c2718a42f1db02d8671bf485dc5bc0e21b82ccc8b31f2a1aeec4c919fb0a8f5f",
+        "command": [
+          "./gradlew",
+          ":androidApp:dependencyInsight",
+          "--configuration",
+          "e2eAndroidTestCompileClasspath",
+          "--dependency",
+          "androidx.compose.ui:ui-android",
+          "-PandroidTestBuildType=e2e",
+          "--console=plain"
+        ]
+      }
+    },
+    "no_compilation_rerun": "Dependency inspection tasks only after the successful build."
+  },
+  "prior_failed_producer": {
+    "source_sha": "ea756002d71c0fa06eeb10de6b542e5e8dba335b",
+    "manifest": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/prior-ea-failure/artifact-failed.json",
+    "status": "FAIL preserved; no retroactive promotion"
+  }
+}

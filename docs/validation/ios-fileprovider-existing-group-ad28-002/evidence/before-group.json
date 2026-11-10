@@ -1,0 +1,82 @@
+{
+  "queriedUTC": "2026-11-05T07:27:29.439514+00:00",
+  "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4",
+  "metadata": {
+    "MCMMetadataIdentifier": "group.thalesmms.logisim.validation.revocationfixture",
+    "MCMMetadataInfo": {
+      "com.apple.MobileInstallation.ContentProtectionClass": 0
+    },
+    "MCMMetadataVersion": 9,
+    "MCMMetadataUserIdentity": {
+      "posixUID": 501,
+      "posixGID": 20,
+      "type": 2,
+      "version": "2"
+    },
+    "MCMMetadataContentClass": 7,
+    "MCMMetadataUUID": "C4A78BD1-44B3-4590-B045-A3AC1883D566",
+    "MCMMetadataOwnership": {
+      "uid": 501,
+      "gid": 20,
+      "mode": "u+rwx,g+rx,o+rx",
+      "version": 1
+    },
+    "MCMMetadataSchemaVersion": 2,
+    "MCMMetadataCreator": "thalesmms.logisim.validation.revocationfixture",
+    "MCMMetadataActiveDPClass": 0
+  },
+  "metadataSHA256": "8c201b2817be6f80df980e79e8f90e6e2cd9dd0c22ad25220f9fc4eda5852158",
+  "directoryBirthUTC": "2026-11-05T06:58:17.691188+00:00",
+  "stateSHA256": "5d70dcefd804d8ac2113e532a52c7d7091a0510f318233ec20373d36c56bdf35",
+  "backendBytes": 552,
+  "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+  "state": {
+    "authenticationAllowed": true,
+    "backendByteCount": 552,
+    "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "generation": 1,
+    "schemaVersion": 1
+  },
+  "events": [
+    {
+      "details": {},
+      "kind": "prepare",
+      "process": "RevocationFixture:69225",
+      "sequence": 1,
+      "timestamp": "2026-11-05T06:58:24.548Z"
+    },
+    {
+      "details": {
+        "domain": "logisim-revocation-fixture-v1"
+      },
+      "kind": "domain.registration.requested",
+      "process": "RevocationFixture:69225",
+      "sequence": 2,
+      "timestamp": "2026-11-05T06:58:29.879Z"
+    },
+    {
+      "details": {},
+      "errorCode": -2001,
+      "errorDiagnostic": {
+        "chain": [
+          {
+            "code": -2001,
+            "domain": "NSFileProviderErrorDomain",
+            "reason": "The application cannot be used right now."
+          },
+          {
+            "code": -2014,
+            "domain": "NSFileProviderErrorDomain",
+            "reason": "The operation couldn\u2019t be completed. (NSFileProviderErrorDomain error -2014.)"
+          }
+        ],
+        "termination": "complete"
+      },
+      "errorDomain": "NSFileProviderErrorDomain",
+      "kind": "domain.registration.failed",
+      "process": "RevocationFixture:69225",
+      "sequence": 3,
+      "timestamp": "2026-11-05T06:58:29.901Z"
+    }
+  ]
+}

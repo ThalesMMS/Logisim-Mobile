@@ -1,0 +1,108 @@
+{
+  "started": "2026-11-05T06:08:33.712051+00:00",
+  "status": "FAIL",
+  "nativeExecutionGate": "NATIVE_FAIL",
+  "qualificationGate": "NOT_QUALIFIED",
+  "physicalHardware": false,
+  "programmingEnabled": false,
+  "selectedCases": [
+    "synthesis",
+    "tool-error",
+    "cancel"
+  ],
+  "harnessSource": "219edebd298d62f4bb12eb0e842fb09e5577c47b",
+  "catalogRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-catalog-ce3e061d",
+  "serial": "emulator-5556",
+  "sources": {
+    "scripts/run-android-fpga.py": "488f90f0a079a6050a933579827f20496e69b389aac077873d7ae7d040559f88",
+    "scripts/android_fpga_scenarios.py": "a9101e3dbd9df47c32494f01c7f1c32dfe861907fb5cc4a072d667f358681917",
+    "scripts/fpga_native_companion.py": "f03cc488316c0d85f17f86cb8dbfd6f146cf164ab5b30950aebef211fc315c06",
+    "scripts/e2e-android.py": "7daafc411e1ec483e757669bd87e4e5943f2225e685138917ae758e6579747d8",
+    "scripts/android_ui.py": "3dbfc89e317719ae6b2041e4f13b4f365810da30ae1b81d3142e6eabbed1053c",
+    "scripts/android_editing_scenarios.py": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673",
+    "scripts/user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+    "fixtures/user-scenarios/fpga-actions-v1.json": "aa65bc09902f366308af9572ce80cbe83cb69eef238264d68fe2baa8ea6ccb80",
+    "fixtures/user-scenarios/fpga-and.circ": "abf81355647b0ca0f899acbb293b2862247453c94f738c2dac4c21c098c32fd9",
+    "fixtures/user-scenarios/fpga-hx1k.xml": "9570a46724aabdeca9d2c35871562716867ad09bc3d4b6c188571d8ebe282763",
+    "fixtures/user-scenarios/fpga-hx1k-invalid-pin.xml": "4a3d40cdda86f55dc043c641ef6569ebd72d3b675ee5d4832976acce9a18751f"
+  },
+  "artifactSource": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+  "apkIdentities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  },
+  "installedBefore": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~0EXoSvah3Yrs5CxB-ryFQg==/thalesmms.logisim.mobile.e2e-o-uxD1TzTqkJUiWyMasKDw==/base.apk",
+      "sha256": "71bafede4e6c9c5ea637d5ad0bb7cce5e366b0842b8f06d32d34143db2277a43"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~cGBc0snzQH04v0Vbp1PUFQ==/thalesmms.logisim.mobile.e2e.test-E4qG5vOdPG9ydZ7Qc_ANzA==/base.apk",
+      "sha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~gmdJQDuTediF2DOvzlGD-w==/thalesmms.logisim.mobile.snapshot.e2e.test-SOPD8VMGp30L5ZOkZ1Q8MA==/base.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "deviceFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "systemLocales": "en-US",
+  "reversePort": 57931,
+  "error": {
+    "type": "AssertionError",
+    "message": "Pairing must expose one confidential token field"
+  },
+  "companionAudit": {
+    "host": "127.0.0.1",
+    "endpoint": "http://127.0.0.1:57931",
+    "operations": [
+      "fpga-synthesize"
+    ],
+    "programmingRegistered": false,
+    "tools": {
+      "yosys": {
+        "path": "/opt/homebrew/Cellar/yosys/0.70/bin/yosys",
+        "sha256": "435b1d43de6985eeaad8330b0636d0f7bb1143311fd27382bf258d04fb2873c4"
+      },
+      "nextpnr-ice40": {
+        "path": "/opt/homebrew/Cellar/nextpnr-ice40/0.11.1_2/bin/nextpnr-ice40",
+        "sha256": "26e1963d2242ae49cc859275aff91e2df05acbf1541c1da3c1e3df2d37b55ccd"
+      },
+      "icepack": {
+        "path": "/opt/homebrew/Cellar/icestorm/1.1_1/bin/icepack",
+        "sha256": "0f85ee7f182b0305eb5091b2829b56ddd53dfe478790be518713e4fb8efbe112"
+      }
+    },
+    "requests": [],
+    "events": [],
+    "jobs": []
+  },
+  "finished": "2026-11-05T06:08:55.001737+00:00"
+}

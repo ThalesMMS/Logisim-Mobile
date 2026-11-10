@@ -1,0 +1,30 @@
+{
+  "command": [
+    "xcodebuild",
+    "-project",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-xcode-601/outputs/ios-provider-xcode601-bootstrap-preparation-001/harness/LogisimFileProviderBootstrap.xcodeproj",
+    "-scheme",
+    "FixtureBootstrap",
+    "-destination",
+    "platform=iOS Simulator,id=AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+    "-derivedDataPath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-xcode-601/outputs/ios-provider-xcode601-bootstrap-preparation-001/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "test-without-building",
+    "-parallel-testing-enabled",
+    "NO",
+    "-collect-test-diagnostics",
+    "never",
+    "-test-timeouts-enabled",
+    "YES",
+    "-default-test-execution-time-allowance",
+    "240",
+    "-resultBundlePath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-provider-xcode601-ad28-003/bootstrap.xcresult",
+    "-only-testing:FileProviderBootstrapTests/FileProviderBootstrapTests/testPrepareRegisterAndInspectFixtureDomain"
+  ],
+  "started": "2026-11-05T08:51:11.766203+00:00",
+  "scope": "One authorized root-reviewed Simulator fixture601 installation and unchanged Prepare/Register/Inspect UI flow on existing-group AD28; no fixture rebuild, retry or erase.",
+  "exit_code": 0,
+  "finished": "2026-11-05T08:51:44.569577+00:00"
+}

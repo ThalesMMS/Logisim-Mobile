@@ -1,0 +1,76 @@
+[
+  {
+    "name": "appinfo",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "appinfo",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture"
+    ],
+    "startedUTC": "2026-11-05T07:41:36.334037+00:00",
+    "finishedUTC": "2026-11-05T07:41:36.679323+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "bytes": 1274,
+      "sha256": "998c98eb1080ef985360c2d23c4799c6a45b176fa13f89153936dd30b639c17d"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "group-registry",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "get_app_container",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "thalesmms.logisim.validation.revocationfixture",
+      "groups"
+    ],
+    "startedUTC": "2026-11-05T07:41:36.679692+00:00",
+    "finishedUTC": "2026-11-05T07:41:36.786102+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "plugin-match",
+    "argv": [
+      "xcrun",
+      "simctl",
+      "spawn",
+      "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "pluginkit",
+      "-m",
+      "-A",
+      "-D",
+      "-v",
+      "-v",
+      "-v",
+      "-p",
+      "com.apple.fileprovider-nonui",
+      "-i",
+      "thalesmms.logisim.validation.revocationfixture.provider"
+    ],
+    "startedUTC": "2026-11-05T07:41:36.786318+00:00",
+    "finishedUTC": "2026-11-05T07:41:37.075560+00:00",
+    "exitCode": 0,
+    "stdout": {
+      "bytes": 816,
+      "sha256": "54c6f48c3b19f191188783c6e7e93c1d9e560f465a08e3042b52bf32718810b2"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

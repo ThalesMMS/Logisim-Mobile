@@ -1,0 +1,18 @@
+{
+  "status": "NO_CONCRETE_BLOCKER_IN_FIXED_SYN_CONTRACT",
+  "source_sha256": "ca4c99b786917c7075bcb927742525f6bb802bffb241172cb2cb51841b9e5a2d",
+  "independent_reviewer": "/root/accessibility28/a11y_actions_review/reader_observer_review",
+  "inspection_only": true,
+  "clarifications_applied": [
+    "duration_basis explicitly means first down SYN_REPORT to final release SYN_REPORT",
+    "Initial slot-0 inactivity requires independent external evidence for any neutral-start claim; selected-slot/axes and silence do not establish it"
+  ],
+  "claim_limit": "PASS_KERNEL_SEQUENCE_ONLY; no global contact absence, driver scheduling, TalkBack or app workflow claim",
+  "device_runtime": "NOT_RUN",
+  "tool_type_delta_review": {
+    "reviewer": "/root/accessibility28/a11y_actions_review/typeb_final_review",
+    "result": "NO_BLOCKER",
+    "inspection_only": true,
+    "scope": "Code0x37 allows only value0; literal positive0/negative1 tests preserve all prior gates"
+  }
+}

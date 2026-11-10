@@ -1,0 +1,11 @@
+SKIP and_bus2.blif: Evolution's BlifParser rejects .names logic tables (Mobile accepts them)
+SKIP and_gate.blif: Evolution's BlifParser rejects .names logic tables (Mobile accepts them)
+SAME desktop_bus2.blif: 320 steps, 0 mismatches
+SAME desktop_lightswitch.blif: 9 steps, 0 mismatches
+SKIP dff.blif: Evolution's BlifParser ignores .latch lines (only DFF/DFFSR/latch cells)
+SAME one_bit_indexed.blif: 3 steps, 0 mismatches
+SKIP and_gate.blif: Evolution's BlifParser rejects .names logic tables (Mobile accepts them)
+SAME desktop_bus.blif: 9 steps, 0 mismatches
+SAME desktop_trisi.blif: 9 steps, 0 mismatches
+SKIP dff.blif: Evolution's BlifParser ignores .latch lines (only DFF/DFFSR/latch cells)
+PASS: 350 BLIF co-simulation steps compared with Evolution

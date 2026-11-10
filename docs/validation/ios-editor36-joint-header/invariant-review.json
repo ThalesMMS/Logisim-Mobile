@@ -1,0 +1,45 @@
+{
+  "status": "SOURCE_ONLY_APPROVED",
+  "utc": "2026-11-05T09:38:53.654611+00:00",
+  "base": "199fafae",
+  "scope": "Invariant and single-tap review only; geometry reviewed separately by parent. No build, SDK, Native or device operations.",
+  "changedFile": "scripts/ios_e2e_ui/EditorEndToEndTests.swift",
+  "workingSHA256": "36a12b9b83c82fafbdb70744ae13a4eecc74cf67561c3b9241ed02d320c80c6a",
+  "baseSHA256": "6b74d8c4489e4b382af7a35444b4fc54e9f0a820487214566ba8af5a11366fa9",
+  "invariants": {
+    "prefixBeforeExplorerSearchByteIdentical": true,
+    "suffixFromCloseExplorerByteIdentical": true,
+    "explorerSearchOnlyTwoCallsiteSubstitutions": true,
+    "singleExplicitComponentsTapInHelper": 1,
+    "noFirstSelectorInNewHelper": true,
+    "immutableFiles": [
+      {
+        "path": "fixtures/user-scenarios/editor-actions-v1.json",
+        "byteIdentical": true,
+        "sha256": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9"
+      },
+      {
+        "path": "scripts/ios_native_ui/NativeUIHarness.swift",
+        "byteIdentical": true,
+        "sha256": "eb78306974bbd0832204b459c78f041b8fd106fa378d39a8aeb02e65038f3159"
+      },
+      {
+        "path": "scripts/ios_native_ui/NativeTextReplacement.swift",
+        "byteIdentical": true,
+        "sha256": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b"
+      }
+    ]
+  },
+  "controlFlow": [
+    "Publicly selected Components returns without a tap only after observe has validated unique canonical role, enabled state and finite48-point frame.",
+    "False selection requires fully visible, hittable re-observation, executes one tap and then either returns a freshly observed selected control or throws.",
+    "No loop continuation or retry follows the tap; missing/ambiguous post-tap targets terminate.",
+    "Search returns the re-observed control without tapping; the existing text mechanism remains unchanged.",
+    "Missing header permits bounded short backward scrolling; an observed below-viewport frame fails the backward-only branch."
+  ],
+  "limits": [
+    "Source-only reasoning. No runtime selection or focus claim.",
+    "No review of the full geometric model or its test execution."
+  ],
+  "blockers": []
+}

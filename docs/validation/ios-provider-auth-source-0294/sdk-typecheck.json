@@ -1,0 +1,33 @@
+{
+  "scope": "SDK typecheck only; no build or execution on Simulator",
+  "command": [
+    "xcrun",
+    "swiftc",
+    "-typecheck",
+    "-swift-version",
+    "5",
+    "-target",
+    "arm64-apple-ios17.0-simulator",
+    "-sdk",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk",
+    "-F",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks",
+    "-I",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib",
+    "scripts/ios_native_ui/NativeUIHarness.swift",
+    "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift",
+    "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift",
+    "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift",
+    "scripts/ios_provider_auth_ui/ProviderFixtureController.swift",
+    "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift"
+  ],
+  "exitCode": 0,
+  "sourceSHA256": {
+    "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+    "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+    "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "7d4867f8f90e5a9f305c10cb070ef4792e480fd0070b989b344d8fb1912dade2",
+    "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "137cf34c16eb90b7b68748879a5217a3175bb5a7f4ef0fb92b459efa1e4fc43d",
+    "scripts/ios_provider_auth_ui/ProviderFixtureController.swift": "093f3267b29fe8e75fa12d21e50f906d5f6492b8bdd1d888cb422fd2f55504a2",
+    "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift": "c1456b52f89dffe9e0692a4956d36aadb565d4c5754b8cda9b068ed3f17f2225"
+  }
+}

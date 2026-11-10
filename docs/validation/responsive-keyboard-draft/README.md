@@ -1,0 +1,21 @@
+# Keyboard drafts across responsive Inspector layouts
+
+The original keyboard field owned `KeyboardInputDraft` inside `IoInputPanel`. Replacing the inline panel with a sheet created a fresh draft. An accepted event could still be pending while the new field displayed the old simulation value. The negative control in `KeyboardInspectorRuntimeTest` reproduces that difference with the same pending event.
+
+`KeyboardInspectorSession` now owns the existing draft above the layout breakpoint. `KbdDraftContext` contains the document identity, circuit, instance path, and selected keyboard ID. Attribute changes keep that session. Each edit reads the current `buflen`, so a retained callback uses the capacity after Apply.
+
+Each mounted keyboard field has its own host token. Dispatch requires a live token, the current session, the matching context, an editable document, and enabled interactions. A disposed host cannot submit edits or keyboard controls. Removing a host and closing a session do not cancel or resubmit accepted simulation events.
+
+The `KeyboardInputDraft` state machine is unchanged. Its optimistic value belongs to the exact event object while that event remains pending. The panel still receives the complete `SimulationRunStatus`, including its request stamp. Acknowledged or canceled events resume the existing kernel value and cursor behavior. Keyboard edits remain transient simulation input and create no document undo entry.
+
+`InspectorFocusState` contains the focus handoff from the [property Inspector patch](../responsive-inspector-draft/README.md). Both fields use the same rules: capture intent before host disposal, target one presentation, retarget rapid resize, and complete the request after focus and bring-into-view. Explicit sheet dismissal clears both fields' intent. Gaining focus in either field or opening a property revokes the other field's pending request. Both fields revalidate the token after the frame and before requesting focus. Momentary buttons, joystick cancellation, keypad release, and their existing event paths are unchanged.
+
+The final Android host task ran **552 tests in 93 suites**, with two failures, zero errors, and zero skips. Both failures are `TimeoutException` in the unchanged `ExternalIoRuntimeBridgeHttpTest`: `recreatedSessionPreservesTheFirstReceivedBatchAfterLifecycleCleanup` and `editorExchangesBytesAndRemovalReleasesAPausedRealListener`. Their cause was not investigated. No rerun followed the user's request to pause.
+
+All **41 checks** in the keyboard and property Inspector suites passed in that final run. Nine new checks cover pending text, selection, composition, host replacement, acknowledgments without duplicate dispatch, capacity changes, stale callbacks, and competing focus requests. The existing production callback, keyboard draft, and property Inspector checks also passed. An earlier full run passed 550 tests before the two final focus checks and guards were added. Its result does not qualify the final source as a complete passing suite.
+
+The empty-applier Compose tests exercise production session ownership and host disposal with the asynchronous controller. They do not mount TextFields or execute native focus and IME behavior. No APK, framework, device test, or Native UI test was built or run. Real IME composition, touch, keyboard visibility, enlarged text, and focus at the actual breakpoint remain unqualified. This receipt does not close issues #12 or #28.
+
+The first focused run had one test failure: its wait accepted the already-visible text before the ack recomposition. The corrected wait requires the full acknowledged `TextFieldValue` before asserting cursor and composition. Both focused runs and all three full-run logs are retained. The first run's JUnit reports are retained separately. An intermediate full build failed at host compilation because source changed while main compilation was already running. The newer tests referenced a focus guard absent from that main artifact. The final full run started after the source was frozen.
+
+`receipt.json` records the exact commands and source hashes collected after the final run. `verify.py` checks the archived reports and artifact hashes without a compiler or device. No before-and-after source hash comparison is claimed.

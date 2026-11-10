@@ -1,0 +1,17 @@
+# AD28 provider discovery: retained read-only evidence
+
+This archive explains the first AD28 fixture result, which remains **FAIL 17.003 s**. It contains later read-only inspection of that execution; it is not another UI test and does not qualify issue #26. The error-chain execution is preserved separately in `../ios-fileprovider-ad28-diagnostic-001/` (source commit `124d5ef4f937780f3d972c390d492e3f2c8b965a`).
+
+The initial extension installation preceded the recorded birth time of the current container for the exact declared App Group. The retained log reports an unsuccessful group lookup and descriptor construction at 06:57:51 UTC. MCM later issued a group token at 06:58:17; the current container's birth time and metadata agree with that event. The control app then recorded Prepare at 06:58:24 and Register failure at 06:58:29, with `NSFileProviderErrorDomain` -2001 → -2014.
+
+The exact group identifier is `group.thalesmms.logisim.validation.revocationfixture`. The later physical directory is `5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4`; its metadata UUID is `C4A78BD1-44B3-4590-B045-A3AC1883D566`. Those are different identifiers with different roles. The failed initial lookup returned no resolved path, so this archive does not attribute a returned UUID/path to that failed lookup. The group currently contains the diagnostic backend of 552 bytes, SHA-256 `54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88`. These are backend bytes inside fixture JSON, not a system-fetched circuit document.
+
+Source inspection shows that the control app's initial `refreshEvidence()` already constructs `FixtureStore` and calls the App Group API. The current container's creation is therefore not attributed specifically to the later Prepare button. The retained birth time does not prove that no earlier container or prior access failure existed. PlugInKit lists the installed extension, but its documented matching operation does not apply host-specific acceptance rules. Matching is not proof that File Provider accepts or launches the extension. The static comparison found matching source/template configuration, installed bytes, principal class, architecture and effective signed entitlements; it does not establish runtime trust or a cause for descriptor rejection.
+
+The observations motivated a separately authorized exact-bundle reinstall with the group already present. That later execution belongs to `ios-fileprovider-existing-group-ad28-002`; its events and result are deliberately excluded here. The present archive does not claim that an absent group explains all failures, or that a delay, reinstall, entitlement edit, signature change or Simulator restriction is a verified remedy.
+
+## Replay
+
+Run `python3 verify-archived-evidence.py` from this directory. It checks archived hashes and the original raw log against selected original indices, then compares ordering, group identity, metadata and the retained failed public evidence. The gzip log is a deterministic compression of the original bytes; its decompressed SHA-256 is retained. No device, installation, File Provider API, UI, network, external source worktree or original absolute path is required for replay.
+
+`report.md` and the static report explain the detailed observations. Command journals preserve exact query arguments, times, return values and stream hashes, including usage-command nonzero exits and query warnings. Empty `GroupContainers` query results and file-signature entitlement results are recorded separately; neither silently replaces the other.

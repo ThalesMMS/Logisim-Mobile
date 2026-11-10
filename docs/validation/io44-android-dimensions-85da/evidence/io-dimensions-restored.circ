@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#I/O" name="0"/>
+  <lib desc="#Wiring" name="1"/>
+  <main name="IO_Showcase"/>
+  <circuit name="IO_Showcase" id="IO_Showcase">
+    <comp loc="(180,120)" logisim-mobile-id="io_button" name="Button" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="press" val="active"/>
+      <a name="label" val="IO_BUTTON"/>
+    </comp>
+    <comp loc="(320,120)" logisim-mobile-id="io_led_button" name="LED" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="active" val="true"/>
+      <a name="label" val="IO_LED_BUTTON"/>
+    </comp>
+    <comp loc="(440,120)" logisim-mobile-id="out_button" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_BUTTON"/>
+    </comp>
+    <comp loc="(580,120)" logisim-mobile-id="io_led" name="LED" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="active" val="true"/>
+      <a name="label" val="IO_LED"/>
+    </comp>
+    <comp loc="(500,200)" logisim-mobile-id="in_led_level" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="IN_LED_LEVEL"/>
+    </comp>
+    <comp loc="(700,120)" logisim-mobile-id="out_led_level" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_LED_LEVEL"/>
+    </comp>
+    <comp loc="(120,280)" logisim-mobile-id="io_dip" name="DipSwitch" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="facing" val="east"/>
+      <a name="number" val="8"/>
+      <a name="resetbehavior" val="last"/>
+      <a name="positions" val="0"/>
+      <a name="label" val="IO_DIP"/>
+    </comp>
+    <comp loc="(300,290)" logisim-mobile-id="out_dip0" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_DIP0"/>
+    </comp>
+    <comp loc="(300,340)" logisim-mobile-id="out_dip1" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_DIP1"/>
+    </comp>
+    <comp loc="(440,320)" logisim-mobile-id="io_joystick" name="Joystick" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="bits" val="4"/>
+      <a name="label" val="IO_JOYSTICK"/>
+    </comp>
+    <comp loc="(580,320)" logisim-mobile-id="io_hex" name="Hex Digit Display" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="decimalPoint" val="false"/>
+      <a name="labelloc" val="north"/>
+      <a name="label" val="IO_HEX"/>
+    </comp>
+    <comp loc="(680,320)" logisim-mobile-id="out_joy_x" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="4"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_JOY_X"/>
+    </comp>
+    <comp loc="(680,380)" logisim-mobile-id="out_joy_y" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="4"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_JOY_Y"/>
+    </comp>
+    <comp loc="(900,120)" logisim-mobile-id="io_rgb" name="RGBLED" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="active" val="true"/>
+      <a name="label" val="IO_RGB"/>
+    </comp>
+    <comp loc="(780,120)" logisim-mobile-id="in_rgb_r" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="IN_RGB_R"/>
+    </comp>
+    <comp loc="(800,60)" logisim-mobile-id="in_rgb_g" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="IN_RGB_G"/>
+    </comp>
+    <comp loc="(800,180)" logisim-mobile-id="in_rgb_b" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="IN_RGB_B"/>
+    </comp>
+    <comp loc="(840,90)" logisim-mobile-id="out_rgb_r" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_RGB_R"/>
+    </comp>
+    <comp loc="(1020,60)" logisim-mobile-id="out_rgb_g" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_RGB_G"/>
+    </comp>
+    <comp loc="(1020,180)" logisim-mobile-id="out_rgb_b" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_RGB_B"/>
+    </comp>
+    <comp loc="(900,270)" logisim-mobile-id="io_ledbar" name="LedBar" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="inputtype" val="row"/>
+      <a name="matrixcols" val="8"/>
+      <a name="matrixrows" val="1"/>
+      <a name="height" val="3"/>
+      <a name="label" val="IO_LEDBAR"/>
+    </comp>
+    <comp loc="(760,270)" logisim-mobile-id="in_bar_value" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="165"/>
+      <a name="label" val="IN_BAR_VALUE"/>
+    </comp>
+    <comp loc="(840,230)" logisim-mobile-id="out_bar_value" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_BAR_VALUE"/>
+    </comp>
+    <comp loc="(900,390)" logisim-mobile-id="io_seven_segment" name="7-Segment Display" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="inputmode" val="bus"/>
+      <a name="decimalPoint" val="true"/>
+      <a name="busside" val="west"/>
+      <a name="labelloc" val="north"/>
+      <a name="label" val="IO_SEVEN_SEGMENT"/>
+    </comp>
+    <comp loc="(760,420)" logisim-mobile-id="in_segments" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="63"/>
+      <a name="label" val="IN_SEGMENTS"/>
+    </comp>
+    <comp loc="(840,370)" logisim-mobile-id="out_segments" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_SEGMENTS"/>
+    </comp>
+    <comp loc="(180,600)" logisim-mobile-id="io_keyboard" name="Keyboard" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="buflen" val="16"/>
+      <a name="trigger" val="rising"/>
+      <a name="label" val="IO_KEYBOARD"/>
+    </comp>
+    <comp loc="(540,700)" logisim-mobile-id="io_tty" name="TTY" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="rows" val="3"/>
+      <a name="cols" val="12"/>
+      <a name="trigger" val="rising"/>
+      <a name="label" val="IO_TTY"/>
+    </comp>
+    <comp loc="(100,700)" logisim-mobile-id="io_clock" name="Clock" lib="1">
+      <a name="facing" val="east"/>
+      <a name="highDuration" val="1"/>
+      <a name="lowDuration" val="1"/>
+      <a name="phaseOffset" val="0"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="label" val="IO_CLOCK"/>
+    </comp>
+    <comp loc="(700,700)" logisim-mobile-id="out_clock" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_CLOCK"/>
+    </comp>
+    <comp loc="(500,610)" logisim-mobile-id="out_keyboard_data" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="7"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_KEYBOARD_DATA"/>
+    </comp>
+    <comp loc="(500,660)" logisim-mobile-id="out_keyboard_available" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_KEYBOARD_AVAILABLE"/>
+    </comp>
+    <comp loc="(190,650)" logisim-mobile-id="in_read_enable" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="IN_READ_ENABLE"/>
+    </comp>
+    <comp loc="(260,650)" logisim-mobile-id="in_keyboard_clear" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="IN_KEYBOARD_CLEAR"/>
+    </comp>
+    <comp loc="(640,760)" logisim-mobile-id="in_write_enable" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="IN_WRITE_ENABLE"/>
+    </comp>
+    <comp loc="(700,820)" logisim-mobile-id="in_tty_clear" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="IN_TTY_CLEAR"/>
+    </comp>
+    <comp loc="(940,640)" logisim-mobile-id="io_dot_matrix" name="DotMatrix" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="inputtype" val="row"/>
+      <a name="matrixrows" val="7"/>
+      <a name="matrixcols" val="5"/>
+      <a name="persist" val="0"/>
+      <a name="dotshape" val="square"/>
+      <a name="label" val="IO_DOT_MATRIX"/>
+    </comp>
+    <comp loc="(820,640)" logisim-mobile-id="in_matrix_row_0" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="14"/>
+      <a name="label" val="IN_MATRIX_ROW_0"/>
+    </comp>
+    <comp loc="(880,580)" logisim-mobile-id="out_matrix_row0" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_MATRIX_ROW0"/>
+    </comp>
+    <comp loc="(820,650)" logisim-mobile-id="in_matrix_row_1" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="17"/>
+      <a name="label" val="IN_MATRIX_ROW_1"/>
+    </comp>
+    <comp loc="(820,660)" logisim-mobile-id="in_matrix_row_2" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="17"/>
+      <a name="label" val="IN_MATRIX_ROW_2"/>
+    </comp>
+    <comp loc="(820,670)" logisim-mobile-id="in_matrix_row_3" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="31"/>
+      <a name="label" val="IN_MATRIX_ROW_3"/>
+    </comp>
+    <comp loc="(820,680)" logisim-mobile-id="in_matrix_row_4" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="17"/>
+      <a name="label" val="IN_MATRIX_ROW_4"/>
+    </comp>
+    <comp loc="(820,690)" logisim-mobile-id="in_matrix_row_5" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="17"/>
+      <a name="label" val="IN_MATRIX_ROW_5"/>
+    </comp>
+    <comp loc="(820,700)" logisim-mobile-id="in_matrix_row_6" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="5"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="false"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="17"/>
+      <a name="label" val="IN_MATRIX_ROW_6"/>
+    </comp>
+    <comp loc="(300,1000)" logisim-mobile-id="io_keypad" name="MatrixKeypad" lib="0">
+      <a name="labelvisible" val="true"/>
+      <a name="mode" val="pmod_kypd"/>
+      <a name="size" val="large"/>
+      <a name="label" val="IO_KEYPAD"/>
+    </comp>
+    <comp loc="(250,1150)" logisim-mobile-id="in_scan_row_0" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0"/>
+      <a name="label" val="IN_SCAN_ROW_0"/>
+    </comp>
+    <comp loc="(520,950)" logisim-mobile-id="out_keypad_c0" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_KEYPAD_C0"/>
+    </comp>
+    <comp loc="(260,1150)" logisim-mobile-id="in_scan_row_1" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="IN_SCAN_ROW_1"/>
+    </comp>
+    <comp loc="(520,960)" logisim-mobile-id="out_keypad_c1" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_KEYPAD_C1"/>
+    </comp>
+    <comp loc="(270,1150)" logisim-mobile-id="in_scan_row_2" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="IN_SCAN_ROW_2"/>
+    </comp>
+    <comp loc="(520,970)" logisim-mobile-id="out_keypad_c2" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_KEYPAD_C2"/>
+    </comp>
+    <comp loc="(280,1150)" logisim-mobile-id="in_scan_row_3" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="1"/>
+      <a name="label" val="IN_SCAN_ROW_3"/>
+    </comp>
+    <comp loc="(520,980)" logisim-mobile-id="out_keypad_c3" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="labelvisible" val="true"/>
+      <a name="radix" val="2"/>
+      <a name="label" val="OUT_KEYPAD_C3"/>
+    </comp>
+    <wire from="(180,120)" to="(320,120)"/>
+    <wire from="(320,120)" to="(440,120)"/>
+    <wire from="(500,200)" to="(520,200)"/>
+    <wire from="(520,120)" to="(520,200)"/>
+    <wire from="(520,120)" to="(580,120)"/>
+    <wire from="(580,120)" to="(700,120)"/>
+    <wire from="(120,290)" to="(300,290)"/>
+    <wire from="(120,300)" to="(220,300)"/>
+    <wire from="(220,300)" to="(220,340)"/>
+    <wire from="(220,340)" to="(300,340)"/>
+    <wire from="(440,320)" to="(580,320)"/>
+    <wire from="(580,320)" to="(680,320)"/>
+    <wire from="(440,330)" to="(520,330)"/>
+    <wire from="(520,330)" to="(520,380)"/>
+    <wire from="(520,380)" to="(680,380)"/>
+    <wire from="(780,120)" to="(840,120)"/>
+    <wire from="(840,120)" to="(900,120)"/>
+    <wire from="(840,90)" to="(840,120)"/>
+    <wire from="(800,60)" to="(910,60)"/>
+    <wire from="(910,60)" to="(910,110)"/>
+    <wire from="(910,60)" to="(1020,60)"/>
+    <wire from="(800,180)" to="(910,180)"/>
+    <wire from="(910,130)" to="(910,180)"/>
+    <wire from="(910,180)" to="(1020,180)"/>
+    <wire from="(760,270)" to="(840,270)"/>
+    <wire from="(840,270)" to="(900,270)"/>
+    <wire from="(840,230)" to="(840,270)"/>
+    <wire from="(760,420)" to="(840,420)"/>
+    <wire from="(840,420)" to="(890,420)"/>
+    <wire from="(840,370)" to="(840,420)"/>
+    <wire from="(100,600)" to="(100,700)"/>
+    <wire from="(100,600)" to="(180,600)"/>
+    <wire from="(100,700)" to="(540,700)"/>
+    <wire from="(540,700)" to="(700,700)"/>
+    <wire from="(320,610)" to="(420,610)"/>
+    <wire from="(420,610)" to="(420,690)"/>
+    <wire from="(420,690)" to="(540,690)"/>
+    <wire from="(420,610)" to="(500,610)"/>
+    <wire from="(310,610)" to="(310,660)"/>
+    <wire from="(310,660)" to="(500,660)"/>
+    <wire from="(190,610)" to="(190,650)"/>
+    <wire from="(200,650)" to="(260,650)"/>
+    <wire from="(200,610)" to="(200,650)"/>
+    <wire from="(550,760)" to="(640,760)"/>
+    <wire from="(550,710)" to="(550,760)"/>
+    <wire from="(560,820)" to="(700,820)"/>
+    <wire from="(560,710)" to="(560,820)"/>
+    <wire from="(820,640)" to="(880,640)"/>
+    <wire from="(880,640)" to="(940,640)"/>
+    <wire from="(880,580)" to="(880,640)"/>
+    <wire from="(820,650)" to="(940,650)"/>
+    <wire from="(820,660)" to="(940,660)"/>
+    <wire from="(820,670)" to="(940,670)"/>
+    <wire from="(820,680)" to="(940,680)"/>
+    <wire from="(820,690)" to="(940,690)"/>
+    <wire from="(820,700)" to="(940,700)"/>
+    <wire from="(250,1060)" to="(250,1150)"/>
+    <wire from="(260,1060)" to="(260,1150)"/>
+    <wire from="(270,1060)" to="(270,1150)"/>
+    <wire from="(280,1060)" to="(280,1150)"/>
+    <wire from="(360,950)" to="(520,950)"/>
+    <wire from="(360,960)" to="(520,960)"/>
+    <wire from="(360,970)" to="(520,970)"/>
+    <wire from="(360,980)" to="(520,980)"/>
+  </circuit>
+</project>

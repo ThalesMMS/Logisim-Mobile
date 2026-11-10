@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+        "deviceName" : "LogisimUIKitDocumentControl",
+        "modelName" : "iPad Pro 11-inch (M5)",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 0,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "ProviderAuthenticationHarness · Built with macOS 27.2",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1793877263.84,
+  "passedTests" : 0,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1793877093.808,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "Failed to get matching snapshot: No matches found for Descendants matching type NavigationBar from input {(\n    Application, pid: 7707, label: 'Logisim Mobile'\n)}",
+      "targetName" : "ProviderAuthenticationEndToEndTests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject()",
+      "testIdentifierURL" : "test://com.apple.xcode/LogisimProviderAuthenticationHarness/ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject",
+      "testName" : "testAuthenticationDenialAfterGrantPreservesProject()"
+    }
+  ],
+  "title" : "Test - ProviderAuthenticationHarness",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 1
+}

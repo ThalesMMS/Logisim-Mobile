@@ -1,0 +1,93 @@
+{
+ "status": "PASS",
+ "nativeExecutionGate": "NATIVE_PASS",
+ "qualificationGate": "FPGA_SOFTWARE_SIMULATOR_PASS",
+ "artifactSource": "2653be42eac04211ba478e981850d8cf7de191d0",
+ "harnessSource": "c9e63083983d1e5b405d6b78a2010c6e400d48dd",
+ "companionVerification": {
+  "status": "PASS",
+  "cases": [
+   "synthesis",
+   "tool-error",
+   "cancel"
+  ],
+  "jobs": 3
+ },
+ "observations": [
+  {
+   "case": "synthesis",
+   "jobId": "b66a315f85804d5ab98ea32ed2fae8fb",
+   "reviewedParameters": {
+    "flow": "ice40",
+    "goal": "synthesis",
+    "language": "vhdl",
+    "package": "tq144",
+    "part": "hx1k",
+    "sources": [
+     "source-0000.vhd",
+     "source-0001.vhd"
+    ],
+    "top": "logisim_fpga_top"
+   },
+   "projectArchive": {
+    "path": "logisim-fpga-native-04589e6ba1b54f328d16fc619a60dc8d.zip",
+    "bytes": 2206,
+    "sha256": "61e5e74cf738aba2c543b9da6ee88ae2c9d28096047f4b7d6c0a16b10ed18a29",
+    "files": {
+     "pins.pcf": {
+      "bytes": 63,
+      "sha256": "3632100dba016e5664e102fc41b5b020af2552f1a274259e2a94079504ce89bd"
+     },
+     "synthesis.ys": {
+      "bytes": 142,
+      "sha256": "cddbce5614e1e21b8edaff8e57c0c5659173350dae476f8d59faf95436a18b15"
+     },
+     "logisim_fpga_top.vhd": {
+      "bytes": 609,
+      "sha256": "486f882d4c7002aa550f9cf096a595107ee9dfe5c72f32d310c683075b33ce5f"
+     },
+     "c_main.vhd": {
+      "bytes": 966,
+      "sha256": "e14e5f8f93b37933620aafd57f897b18a1d42a3cae850a43417dfac23b607b57"
+     }
+    }
+   }
+  },
+  {
+   "case": "tool-error",
+   "jobId": "ba3365d0384644a59f873abcd8715814",
+   "reviewedParameters": {
+    "constraint": "pins.pcf",
+    "flow": "ice40",
+    "goal": "bitstream",
+    "language": "vhdl",
+    "package": "tq144",
+    "part": "hx1k",
+    "sources": [
+     "source-0000.vhd",
+     "source-0001.vhd"
+    ],
+    "top": "logisim_fpga_top"
+   }
+  },
+  {
+   "case": "cancel",
+   "jobId": "1189354f85694332bd3a19b93f296021",
+   "reviewedParameters": {
+    "constraint": "pins.pcf",
+    "flow": "ice40",
+    "goal": "bitstream",
+    "language": "vhdl",
+    "package": "tq144",
+    "part": "hx1k",
+    "sources": [
+     "source-0000.vhd",
+     "source-0001.vhd"
+    ],
+    "top": "logisim_fpga_top"
+   },
+   "observedNonterminalState": "running"
+  }
+ ],
+ "finished": "2026-11-08T17:18:37.371591+00:00"
+}

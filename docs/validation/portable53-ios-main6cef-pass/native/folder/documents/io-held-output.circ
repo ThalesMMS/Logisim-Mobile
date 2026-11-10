@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#I/O"/>
+  <lib name="1" desc="#Wiring"/>
+  <main name="IO_Held_Output"/>
+  <circuit name="IO_Held_Output" id="IO_Held_Output">
+    <comp lib="0" name="Button" loc="(140,120)" logisim-mobile-id="held_button">
+      <a name="facing" val="east"/>
+      <a name="press" val="active"/>
+      <a name="color" val="#ffffff"/>
+      <a name="label" val="BTN_HELD"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif plain 12"/>
+      <a name="labelvisible" val="true"/>
+      <a name="labelcolor" val="#000000"/>
+    </comp>
+    <comp lib="1" name="Pin" loc="(240,120)" logisim-mobile-id="held_output">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="radix" val="2"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="OUT_HELD"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelvisible" val="true"/>
+    </comp>
+    <wire from="(140,120)" to="(240,120)"/>
+    <comp lib="1" name="Constant" loc="(140,200)" logisim-mobile-id="held_constant_low">
+      <a name="facing" val="east"/><a name="width" val="1"/><a name="value" val="0x0"/>
+      <a name="label" val="CONST_LOW"/><a name="labelvisible" val="false"/>
+    </comp>
+    <comp lib="1" name="Pin" loc="(240,200)" logisim-mobile-id="held_reference_low">
+      <a name="facing" val="west"/><a name="type" val="output"/><a name="width" val="1"/>
+      <a name="behavior" val="simple"/><a name="initial" val="0x0"/><a name="radix" val="2"/>
+      <a name="appearance" val="classic"/><a name="label" val="REF_LOW"/><a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/><a name="labelvisible" val="true"/>
+    </comp>
+    <wire from="(140,200)" to="(240,200)"/>
+    <comp lib="1" name="Constant" loc="(140,280)" logisim-mobile-id="held_constant_high">
+      <a name="facing" val="east"/><a name="width" val="1"/><a name="value" val="0x1"/>
+      <a name="label" val="CONST_HIGH"/><a name="labelvisible" val="false"/>
+    </comp>
+    <comp lib="1" name="Pin" loc="(240,280)" logisim-mobile-id="held_reference_high">
+      <a name="facing" val="west"/><a name="type" val="output"/><a name="width" val="1"/>
+      <a name="behavior" val="simple"/><a name="initial" val="0x0"/><a name="radix" val="2"/>
+      <a name="appearance" val="classic"/><a name="label" val="REF_HIGH"/><a name="labelloc" val="north"/>
+      <a name="labelfont" val="SansSerif bold 16"/><a name="labelvisible" val="true"/>
+    </comp>
+    <wire from="(140,280)" to="(240,280)"/>
+  </circuit>
+</project>

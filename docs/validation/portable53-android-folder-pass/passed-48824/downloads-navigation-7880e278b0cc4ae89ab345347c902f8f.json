@@ -1,0 +1,165 @@
+{
+  "transitionLimitSeconds": 30,
+  "totalLimitSeconds": 90,
+  "maximumActions": 3,
+  "events": [
+    {
+      "seconds": 0.0001,
+      "phase": "presentation",
+      "kind": "start"
+    },
+    {
+      "seconds": 3.3475,
+      "phase": "presentation",
+      "kind": "screen",
+      "querySeconds": 3.3465,
+      "timeoutSeconds": 29.9999,
+      "hierarchy": "downloads-navigation-7880e278b0cc4ae89ab345347c902f8f-01.xml"
+    },
+    {
+      "seconds": 3.3475,
+      "phase": "roots-open",
+      "kind": "tap",
+      "action": 1,
+      "text": "",
+      "description": "Show roots",
+      "resourceId": "",
+      "package": "com.google.android.documentsui",
+      "bounds": "[0,128][147,254]",
+      "enabled": "true",
+      "sourceHierarchy": "downloads-navigation-7880e278b0cc4ae89ab345347c902f8f-01.xml",
+      "windowContext": {
+        "source": "UIAUTOMATOR_XML_ONLY",
+        "hierarchyAttributes": {
+          "rotation": "0"
+        },
+        "topLevelNodes": [
+          {
+            "package": "com.google.android.documentsui",
+            "class": "android.widget.FrameLayout",
+            "bounds": "[0,0][1080,2400]"
+          }
+        ],
+        "wmToken": null,
+        "pid": null,
+        "wmTokenObservedAtTap": false,
+        "pidObservedAtTap": false
+      }
+    },
+    {
+      "seconds": 3.3933,
+      "phase": "roots-open",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0457
+    },
+    {
+      "seconds": 6.2013,
+      "phase": "roots-open",
+      "kind": "screen",
+      "querySeconds": 2.8073,
+      "timeoutSeconds": 29.9542,
+      "hierarchy": "downloads-navigation-7880e278b0cc4ae89ab345347c902f8f-02.xml"
+    },
+    {
+      "seconds": 6.2295,
+      "phase": "roots-open",
+      "kind": "device-model",
+      "querySeconds": 0.028
+    },
+    {
+      "seconds": 6.2295,
+      "phase": "location-content",
+      "kind": "tap",
+      "action": 2,
+      "text": "sdk_gphone64_arm64",
+      "description": "",
+      "resourceId": "android:id/title",
+      "package": "com.google.android.documentsui",
+      "bounds": "[168,323][714,374]",
+      "enabled": "true",
+      "sourceHierarchy": "downloads-navigation-7880e278b0cc4ae89ab345347c902f8f-02.xml",
+      "windowContext": {
+        "source": "UIAUTOMATOR_XML_ONLY",
+        "hierarchyAttributes": {
+          "rotation": "0"
+        },
+        "topLevelNodes": [
+          {
+            "package": "com.google.android.documentsui",
+            "class": "android.widget.FrameLayout",
+            "bounds": "[0,0][1080,2400]"
+          }
+        ],
+        "wmToken": null,
+        "pid": null,
+        "wmTokenObservedAtTap": false,
+        "pidObservedAtTap": false
+      }
+    },
+    {
+      "seconds": 6.325,
+      "phase": "location-content",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0955
+    },
+    {
+      "seconds": 8.7189,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.3931,
+      "timeoutSeconds": 29.9045,
+      "hierarchy": "downloads-navigation-7880e278b0cc4ae89ab345347c902f8f-03.xml"
+    },
+    {
+      "seconds": 8.719,
+      "phase": "download-content",
+      "kind": "tap",
+      "action": 3,
+      "text": "Download",
+      "description": "",
+      "resourceId": "android:id/title",
+      "package": "com.google.android.documentsui",
+      "bounds": "[675,1191][839,1242]",
+      "enabled": "true",
+      "sourceHierarchy": "downloads-navigation-7880e278b0cc4ae89ab345347c902f8f-03.xml",
+      "windowContext": {
+        "source": "UIAUTOMATOR_XML_ONLY",
+        "hierarchyAttributes": {
+          "rotation": "0"
+        },
+        "topLevelNodes": [
+          {
+            "package": "com.google.android.documentsui",
+            "class": "android.widget.FrameLayout",
+            "bounds": "[0,0][1080,2400]"
+          }
+        ],
+        "wmToken": null,
+        "pid": null,
+        "wmTokenObservedAtTap": false,
+        "pidObservedAtTap": false
+      }
+    },
+    {
+      "seconds": 8.7502,
+      "phase": "download-content",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0312
+    },
+    {
+      "seconds": 12.2543,
+      "phase": "download-content",
+      "kind": "screen",
+      "querySeconds": 3.5032,
+      "timeoutSeconds": 29.9687,
+      "hierarchy": "downloads-navigation-7880e278b0cc4ae89ab345347c902f8f-04.xml"
+    },
+    {
+      "seconds": 12.2543,
+      "phase": "download-content",
+      "kind": "finish",
+      "actions": 3
+    }
+  ],
+  "status": "PASSED"
+}

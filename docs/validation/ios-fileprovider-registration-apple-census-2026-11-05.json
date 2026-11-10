@@ -1,0 +1,159 @@
+{
+  "status": "STATIC_CENSUS_COMPLETE_CAUSE_UNDETERMINED",
+  "date": "2026-11-05",
+  "fixtureSource": "48412de3dae41e97fba38623f1dc466f41bbe441",
+  "archivalCommit": "f2b4cde813727ee5d5a844cfbf7894bf071abc09",
+  "artifactManifest": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/artifact.json",
+    "bytes": 10951,
+    "sha256": "7a6e5491f880d1427b677fc425f8c20f68c953720e49c1f44c769dfffb5f1400"
+  },
+  "resolvedArchivedInfoPlists": {
+    "app": {
+      "originalCompiledPlist": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/Info.plist",
+        "bytes": 1527,
+        "sha256": "15a5f3485b7cbc3b2d6d4d33895b6b8b1ee65749c35510175f411c5250b5fcef"
+      },
+      "selectedResolvedValues": {
+        "CFBundleIdentifier": "thalesmms.logisim.validation.revocationfixture",
+        "CFBundleExecutable": "RevocationFixture",
+        "CFBundlePackageType": "APPL",
+        "MinimumOSVersion": "17.0",
+        "UIApplicationSceneManifest": {
+          "UIApplicationSupportsMultipleScenes": false,
+          "UISceneConfigurations": {
+            "UIWindowSceneSessionRoleApplication": [
+              {
+                "UISceneConfigurationName": "Fixture",
+                "UISceneDelegateClassName": "RevocationFixture.FixtureSceneDelegate"
+              }
+            ]
+          }
+        }
+      },
+      "embeddedProvisioningProfilePresent": false
+    },
+    "provider": {
+      "originalCompiledPlist": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/Info.plist",
+        "bytes": 1109,
+        "sha256": "ddf75da1d5927ab6da8e3fd93e7b9c25e24c1b0625a3ab450c4d5e799526d47e"
+      },
+      "selectedResolvedValues": {
+        "CFBundleIdentifier": "thalesmms.logisim.validation.revocationfixture.provider",
+        "CFBundleExecutable": "RevocationProvider",
+        "CFBundlePackageType": "XPC!",
+        "MinimumOSVersion": "17.0",
+        "NSExtension": {
+          "NSExtensionFileProviderDocumentGroup": "group.thalesmms.logisim.validation.revocationfixture",
+          "NSExtensionFileProviderSupportsEnumeration": true,
+          "NSExtensionPointIdentifier": "com.apple.fileprovider-nonui",
+          "NSExtensionPrincipalClass": "RevocationProvider.RevocationFileProvider"
+        }
+      },
+      "embeddedProvisioningProfilePresent": false
+    }
+  },
+  "archivedSignatures": {
+    "App": {
+      "log": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/signature-App.log",
+        "bytes": 1087,
+        "sha256": "f8a1a2671616cc9b6ad8d3f9d23db2e52eda436d8dc207dd294d98e37a23f5d9"
+      },
+      "signature": "adhoc",
+      "teamIdentifier": "not set",
+      "effectiveEntitlements": {
+        "com.apple.security.application-groups": [
+          "group.thalesmms.logisim.validation.revocationfixture"
+        ]
+      }
+    },
+    "Provider": {
+      "log": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-scene-lifecycle/outputs/ios-fileprovider-fixture-48412de3/artifact/signature-Provider.log",
+        "bytes": 1126,
+        "sha256": "4468653fe5141f3471c95dce0ddfed1fb1d550e45e14e1da13e7429bbe85ca9b"
+      },
+      "signature": "adhoc",
+      "teamIdentifier": "not set",
+      "effectiveEntitlements": {
+        "com.apple.security.application-groups": [
+          "group.thalesmms.logisim.validation.revocationfixture"
+        ]
+      }
+    }
+  },
+  "officialSources": [
+    {
+      "title": "providerNotFound",
+      "url": "https://developer.apple.com/documentation/fileprovider/nsfileprovidererror/code/providernotfound",
+      "accessed": "2026-11-05",
+      "scope": "Error-category meaning; documented inclusion and registration-pending possibilities, not a cause assigned to this run."
+    },
+    {
+      "title": "File Provider updates",
+      "url": "https://developer.apple.com/documentation/updates/fileprovider",
+      "accessed": "2026-11-05",
+      "scope": "March2024 underlying error categories; snapshot did not preserve NSError chain and does not prove any suberror was present."
+    },
+    {
+      "title": "add(_:completionHandler:)",
+      "url": "https://developer.apple.com/documentation/fileprovider/nsfileprovidermanager/add(_:completionhandler:)",
+      "accessed": "2026-11-05",
+      "scope": "Domain-registration API takes a domain and callback."
+    },
+    {
+      "title": "init(for:)",
+      "url": "https://developer.apple.com/documentation/fileprovider/nsfileprovidermanager/init(for:)",
+      "accessed": "2026-11-05",
+      "scope": "Manager initializer takes a domain; no caller-selected bundle argument."
+    },
+    {
+      "title": "providerIdentifier",
+      "url": "https://developer.apple.com/documentation/fileprovider/nsfileprovidermanager/provideridentifier",
+      "accessed": "2026-11-05",
+      "scope": "Coordination purpose identifier; not documented as provider-selection override."
+    },
+    {
+      "title": "NSExtensionPrincipalClass",
+      "url": "https://developer.apple.com/documentation/bundleresources/information-property-list/nsextension/nsextensionprincipalclass",
+      "accessed": "2026-11-05",
+      "scope": "Principal class and storyboard are mutually exclusive."
+    },
+    {
+      "title": "Configuring app groups",
+      "url": "https://developer.apple.com/documentation/xcode/configuring-app-groups",
+      "accessed": "2026-11-05",
+      "scope": "Same-team sharing and group registration for iOS-family platforms; no causal Simulator signing conclusion."
+    },
+    {
+      "title": "Diagnosing Issues with Entitlements",
+      "url": "https://developer.apple.com/documentation/bundleresources/diagnosing-issues-with-entitlements",
+      "accessed": "2026-11-05",
+      "scope": "Distinguishes source entitlement configuration from signed entitlements and provisioning."
+    },
+    {
+      "title": "Entitlements",
+      "url": "https://developer.apple.com/documentation/bundleresources/entitlements",
+      "accessed": "2026-11-05",
+      "scope": "Entitlements are embedded in executable signatures; source configuration alone is insufficient."
+    }
+  ],
+  "facts": [
+    "Both native bootstrap results remain FAIL.",
+    "The second callback had domain NSFileProviderErrorDomain and code -2001 after control-app Prepare.",
+    "The recorded source stores error.domain/code; the visible status adds localizedDescription. An underlying NSError chain was not retained.",
+    "Compiled archived provider Info.plist resolves its principal class and contains no conflicting storyboard key.",
+    "Both signed artifacts have the same group entitlement; signature logs are ad-hoc with no TeamIdentifier."
+  ],
+  "hypothesesNotProven": [
+    "Provider registration timing or discovery state.",
+    "Signing or App Group authorization as a cause of this callback.",
+    "Simulator FileProvider support or lack of support.",
+    "A missing, unavailable or unregistered domain as a specific underlying state."
+  ],
+  "nativeOrDeviceOperationsDuringCensus": false,
+  "changesToFixtureOrConfiguration": false
+}

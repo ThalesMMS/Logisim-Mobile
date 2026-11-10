@@ -1,0 +1,22 @@
+row: cli/gates
+case: profile-gates-ANSI-short
+result: PASS
+detail: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+
+=== evolution: java EvolutionStartupOracle -g ANSI
+exit: 0
+--- stdout (5 lines, sha256 47935bf01d6a9a6f537d4d63d3cc3692a3eb831fd078a01c22202b73a201a385)
+parse=ok
+splash=true
+gates=ansi
+locale= session=en
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -g ANSI --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 ec4517c74767d30183159c030b4fe2977eac90a3c9012bc4b9fb6382781aaa1a)
+gates=ansi
+locale=en
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

@@ -1,0 +1,72 @@
+{
+  "recordedAtUtc": "2026-11-04T19:33:27.413853+00:00",
+  "sourceBaseRevision": "87ab3ac5",
+  "codecSourceSha256": "a7244b4a90753ba5adbc7cbd4c63c3ab10ed4f9a8e54d08b1ab81b340e08066c",
+  "desktopJarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "mobileReferenceJarSha256": "ad9fbcc1df1e5491804979e33731d2aa66fb18605a84b6a0b416aa69dfba62ad",
+  "buildMethod": "Kotlin 2.4.21 cached compiler over existing reference JAR, JVM 21; no Gradle invoked",
+  "jvmTests": {
+    "tests": 47,
+    "failures": 0,
+    "classes": [
+      "CircComponentIdentityTest",
+      "CircCodecTest",
+      "CircProjectCodecTest",
+      "CircFormatProfileTest",
+      "CircLibraryCodecTest"
+    ]
+  },
+  "identityOracle": {
+    "runner": "scripts/verify-circ-component-identities.sh",
+    "output": [
+      "PASS desktop SHA-256 0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+      "PASS desktop accepts 5 opaque component identities across 2 circuits with unchanged geometry",
+      "PASS desktop save/reload retains geometry and discards logisim-mobile-id; desktop identity persistence is not guaranteed",
+      "PASS mobile import/export retains 5 opaque component identities and desktop geometry"
+    ]
+  },
+  "compatibilityOracle": {
+    "runner": "scripts/CircDesktopCompatibility.java (javac/java with existing mobile overlay/reference/stdlib/desktop artifacts; no Gradle)",
+    "fixtures": [
+      {
+        "path": "examples/compatibility/annotations-symbols.circ",
+        "sha256": "875fd74336d9ad982c81e21deb8cb9c3f2cd79f56e5159d261eaeac8c7e4b78b"
+      },
+      {
+        "path": "examples/compatibility/appearance-default-text.circ",
+        "sha256": "adad6c7095e79246623a0b41b12f6e66595e4ffd7c7e7433de676714778ed6be"
+      },
+      {
+        "path": "examples/compatibility/evolution-3.6.1.circ",
+        "sha256": "f98cb7e0cc9bc70c48b6abd6f52143668b935c5b487b5c0f1e2269080e155199"
+      },
+      {
+        "path": "examples/compatibility/evolution-5.1.0.circ",
+        "sha256": "a8066a53315006956ee00904dbe10176e3f75f827af1b888cc29153190a0b99c"
+      },
+      {
+        "path": "examples/compatibility/holy-cross-3.8.0.circ",
+        "sha256": "4b7c1c5fc704b81ed84218048bbe8e318b1a0a828d621831abb652d5ed7c0fbb"
+      },
+      {
+        "path": "examples/compatibility/logisim-2.7.2.circ",
+        "sha256": "e5e364ef7d09291bd691754ea1d2270657841dd7c48667db383c217a81d8d4ce"
+      },
+      {
+        "path": "examples/sap1.circ",
+        "sha256": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac"
+      }
+    ],
+    "output": [
+      "PASS desktop reopened mobile export: annotations-symbols.circ",
+      "PASS desktop reopened mobile export: appearance-default-text.circ",
+      "PASS desktop reopened mobile export: evolution-3.6.1.circ",
+      "PASS desktop reopened mobile export: evolution-5.1.0.circ",
+      "PASS desktop reopened mobile export: holy-cross-3.8.0.circ",
+      "PASS desktop reopened mobile export: logisim-2.7.2.circ",
+      "PASS desktop reopened mobile export: sap1.circ",
+      "PASS 184 desktop component port layouts preserved"
+    ]
+  },
+  "scope": "Desktop loading and geometry only; desktop save intentionally drops mobile identity extensions. Native UI/storage integration is verified separately."
+}

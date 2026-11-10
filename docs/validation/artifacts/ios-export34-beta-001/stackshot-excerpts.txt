@@ -1,0 +1,150 @@
+Original stackshot: /Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-001/attachments/8F9BDEF6-A2D3-4A45-87AE-F04202DAAAB5.txt
+SHA256: 5f2aad65aa9960175fbe83862599c5f936a404fbdbc1d1c9eb07a70a1171d114
+
+Original lines 1-40:
+1: Date/Time:        2026-11-05 00:06:39.572 -0300
+2: End time:         2026-11-05 00:06:44.577 -0300
+3: OS Version:       macOS 27.2 (Build 26B123)
+4: Architecture:     arm64e
+5: Report Version:   73
+6: Incident Identifier: FC0DBBAE-86EE-4677-8966-56ADDEFEC6BA
+7: 
+8: Data Source:      Stackshots
+9: Shared Cache:     B411828B-4450-38E3-973A-AFE7B7B5BEF5 slid base address 0x184a78000 (System Primary)
+10: Shared Cache:     40CD6C3B-2C55-330E-96A8-14656C4F8A58 slid base address 0x198dd4000 (DriverKit)
+11: Shared Cache:     B411828B-4450-38E3-973A-AFE7B7B5BEF5 slid base address 0x19cbbc000
+12: Reason:           Requested by testmanagerd [61989] - XCTest Diagnostics
+13: 
+14: Command:          LogisimMobile
+15: Path:             /Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/192AD52B-5A62-4917-8EA2-062DFF68D4A7/LogisimMobile.app/LogisimMobile
+16: Identifier:       thalesmms.logisim.mobile
+17: Version:          0.2.0 (2)
+18: Is First Party:   No
+19: Beta Identifier:  74FAAD44-FE0E-548B-9CC0-2BD16ED7C0B2
+20: Architecture:     arm64
+21: Parent:           launchd_sim [98551] [unique pid 2176710]
+22: Responsible:      launchd_sim [98551] [unique pid 2176710]
+23: PID:              18832
+24: Time Since Fork:  186s
+25: 
+26: Duration:         5.00s
+27: Steps:            124 (10ms sampling interval)
+28: 
+29: Hardware model:   Mac16,12
+30: Active cpus:      10
+31: Memory size:      32 GB
+32: HW page size:     16384
+33: VM page size:     16384
+34: Shared cache residency: 8.17% (561.97 MB / 6880.38 MB)
+35: 
+36: Time Since Boot:  251234s
+37: Time Awake Since Boot: 193878s
+38: Time Since Wake:  48383s
+39: 
+40: Total CPU Time:   11.549s (32.0G cycles, 39.2G instructions, 0.82c/i, 2.77GHz avg)
+
+Original lines 60-100:
+60: Process:          LogisimMobile [18832] [unique pid 2196453] (suspended)
+61: UUID:             8B578E0F-FC95-3D0F-84A6-DB5AC8201274
+62: Path:             /Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/192AD52B-5A62-4917-8EA2-062DFF68D4A7/LogisimMobile.app/LogisimMobile
+63: Identifier:       thalesmms.logisim.mobile
+64: Version:          0.2.0 (2)
+65: Is First Party:   No
+66: Beta Identifier:  74FAAD44-FE0E-548B-9CC0-2BD16ED7C0B2
+67: Shared Cache:     5827BB56-52E1-3D0B-AC02-7A3201246563 slid base address 0x1c0000000
+68: Architecture:     arm64
+69: Parent:           launchd_sim [98551] [unique pid 2176710]
+70: Responsible:      launchd_sim [98551] [unique pid 2176710]
+71: UID:              501
+72: Memory Limit:     0MB
+73: Jetsam Priority:  180
+74: Footprint:        124.94 MB
+75: Time Since Fork:  186s
+76: Num samples:      124 (1-124)
+77: Note:             Suspended for 124 samples
+78: Num threads:      9
+79: Note:             1 idle work queue thread omitted
+80: 
+81:   Thread 0x8bba9c    DispatchQueue "com.apple.main-thread"(1)    124 samples (1-124)    priority 4 (base 4)    last ran 96.808s ago
+82:   <thread QoS background (requested user interactive), process unclamped, jetsam priority 180 (requested 180, assertion 0), process memory limit 0MB, thread darwinbg, process darwinbg, process received importance donation from SpringBoard [98554] [unique pid 2176713], process received importance donation from EditorEndToEndTests-Runner [18772] [unique pid 2196393], IO tier 2>
+83:   124  start + 6652 (dyld + 204156) [0x105321d7c] 1-124
+84:     124  start_sim + 20 (dyld + 66384) [0x1050b4350] 1-124
+85:       124  __debug_main_executable_dylib_entry_point + 12 (LogisimMobileApp.swift in LogisimMobile.debug.dylib + 24660) [0x10a712054] 1-124
+86:         124  static LogisimMobileApp.$main() + 40 (<compiler-generated> in LogisimMobile.debug.dylib + 8888) [0x10a70e2b8] 1-124
+87:           124  static App.main() + 148 (SwiftUI + 5830480) [0x1c9b09750] 1-124
+88:             124  runApp<A>(_:) + 204 (SwiftUI + 8460164) [0x1c9d8b784] 1-124
+89:               124  closure #1 in KitRendererCommon(_:) + 164 (SwiftUI + 8460552) [0x1c9d8b908] 1-124
+90:                 124  UIApplicationMain + 124 (UIKitCore + 26439216) [0x1c5535e30] 1-124
+91:                   124  GSEventRunModal + 116 (GraphicsServices + 10668) [0x2219199ac] 1-124
+92:                     124  _CFRunLoopRunSpecificWithOptions + 496 (CoreFoundation + 606272) [0x1c01de040] 1-124
+93:                       124  __CFRunLoopRun + 1100 (CoreFoundation + 627168) [0x1c01e31e0] 1-124
+94:                         124  __CFRunLoopServiceMachPort + 156 (CoreFoundation + 630800) [0x1c01e4010] 1-124
+95:                           124  mach_msg + 20 (libsystem_kernel.dylib + 3804) [0x105170edc] 1-124
+96:                             124  mach_msg_overwrite + 484 (libsystem_kernel.dylib + 35928) [0x105178c58] 1-124
+97:                               124  mach_msg2_trap + 8 (libsystem_kernel.dylib + 2908) [0x105170b5c] 1-124
+98:                                *118  ??? (kernel.release.t8132 + 781636) [0xfffffe000bd16d44] (suspended) 1-118
+99:   <3776ms gap with no samples>
+100:                                *6    ??? (kernel.release.t8132 + 781636) [0xfffffe000bd16d44] (suspended) 119-124
+
+Original lines 33015-33075:
+33015:                                                                                                                                               124  +[XCTFailableInvocation invokeErrorConventionInvocation:completion:] + 84 (XCTestCore + 357372) [0x1059033fc] 1-124
+33016:                                                                                                                                                 124  -[NSInvocation invoke] + 276 (CoreFoundation + 1317392) [0x1c028ba10] 1-124
+33017:                                                                                                                                                   124  __invoking___ + 144 (CoreFoundation + 1329216) [0x1c028e840] 1-124
+33018:                                                                                                                                                     124  @objc VisualExportEndToEndTests.testEditorExportsPixelsAndCancelsNativeDelivery() + 56 (<compiler-generated> in EditorEndToEndTests + 1069328) [0x10a361110] 1-124
+33019:                                                                                                                                                       124  VisualExportEndToEndTests.testEditorExportsPixelsAndCancelsNativeDelivery() + 4444 (VisualExportEndToEndTests.swift:45,13 in EditorEndToEndTests + 1023728) [0x10a355ef0] 1-124
+33020:                                                                                                                                                         124  VisualExportEndToEndTests.setField(_:_:) + 316 (VisualExportEndToEndTests.swift:109,17 in EditorEndToEndTests + 1040660) [0x10a35a114] 1-124
+33021:                                                                                                                                                           124  NativeUIHarness.reveal(_:toolbar:verticalRegion:prefix:) + 6220 (NativeUIHarness.swift:145,17 in EditorEndToEndTests + 752508) [0x10a313b7c] 1-124
+33022:                                                                                                                                                             124  XCTAssertTrue(_:_:file:line:) + 56 (libXCTestSwiftSupport.dylib + 235564) [0x109aa982c] 1-124
+33023:                                                                                                                                                               124  _XCTRunThrowableBlock(_:) + 180 (libXCTestSwiftSupport.dylib + 228144) [0x109aa7b30] 1-124
+33024:                                                                                                                                                                 124  _XCTRunThrowableBlockBridge + 28 (XCTestCore + 348844) [0x1059012ac] 1-124
+33025:                                                                                                                                                                   124  thunk for @escaping @callee_guaranteed () -> () + 20 (libXCTestSwiftSupport.dylib + 265452) [0x109ab0cec] 1-124
+33026:                                                                                                                                                                     124  <deduplicated_symbol> + 20 (libXCTestSwiftSupport.dylib + 192044) [0x109a9ee2c] 1-124
+33027:                                                                                                                                                                       124  closure #1 in _XCTRunThrowableBlock(_:) + 36 (libXCTestSwiftSupport.dylib + 228328) [0x109aa7be8] 1-124
+33028:                                                                                                                                                                         124  <deduplicated_symbol> + 12 (libXCTestSwiftSupport.dylib + 236404) [0x109aa9b74] 1-124
+33029:                                                                                                                                                                           124  <deduplicated_symbol> + 24 (libXCTestSwiftSupport.dylib + 259340) [0x109aaf50c] 1-124
+33030:                                                                                                                                                                             124  partial apply for implicit closure #9 in NativeUIHarness.reveal(_:toolbar:verticalRegion:prefix:) + 24 (<compiler-generated> in EditorEndToEndTests + 755004) [0x10a31453c] 1-124
+33031:                                                                                                                                                                               124  implicit closure #9 in NativeUIHarness.reveal(_:toolbar:verticalRegion:prefix:) + 24 (<compiler-generated> in EditorEndToEndTests + 754964) [0x10a314514] 1-124
+33032:                                                                                                                                                                                 124  -[XCUIElement waitForExistenceWithTimeout:] + 192 (XCUIAutomation + 208024) [0x105afec98] 1-124
+33033:                                                                                                                                                                                   124  -[XCTContext runInternalActivityNamed:block:] + 120 (XCTestCore + 35784) [0x1058b4bc8] 1-124
+33034:                                                                                                                                                                                     124  -[XCTContext _runActivityNamed:type:block:] + 180 (XCTestCore + 40392) [0x1058b5dc8] 1-124
+33035:                                                                                                                                                                                       124  __43-[XCUIElement waitForExistenceWithTimeout:]_block_invoke + 188 (XCUIAutomation + 208324) [0x105afedc4] 1-124
+33036:                                                                                                                                                                                         124  -[XCUIElement exists] + 484 (XCUIAutomation + 204228) [0x105afddc4] 1-124
+33037:                                                                                                                                                                                           124  _XCUIFailWithError + 212 (XCUIAutomation + 110664) [0x105ae7048] 1-124
+33038:                                                                                                                                                                                             124  -[XCUIApplication diagnosticAttachmentsForError:] + 60 (XCUIAutomation + 53032) [0x105ad8f28] 1-124
+33039:                                                                                                                                                                                               124  -[XCUIApplicationProcess diagnosticAttachmentsForError:] + 120 (XCUIAutomation + 98972) [0x105ae429c] 1-124
+33040:                                                                                                                                                                                                 124  -[XCUIDevice spindumpAttachmentForProcessID:error:] + 204 (XCUIAutomation + 153840) [0x105af18f0] 1-124
+33041:                                                                                                                                                                                                   124  -[XCTFuture value] + 24 (XCTestCore + 387584) [0x10590aa00] 1-124
+33042:                                                                                                                                                                                                     124  -[XCTFuture _waitForFulfillmentSync:withCompletion:] + 832 (XCTestCore + 382728) [0x105909708] 1-124
+33043:                                                                                                                                                                                                       124  -[XCTWaiter waitForExpectations:timeout:enforceOrder:] + 108 (XCTestCore + 396968) [0x10590cea8] 1-124
+33044:                                                                                                                                                                                                         124  -[XCTWaiter _waitForExpectations:timeout:enforceOrder:synchronously:completionHandler:] + 484 (XCTestCore + 397532) [0x10590d0dc] 1-124
+33045:                                                                                                                                                                                                           124  -[XCTWaiter _performWait:manager:completionHandler:] + 808 (XCTestCore + 405316) [0x10590ef44] 1-124
+33046:                                                                                                                                                                                                             124  +[XCTWaiter _synchronouslyWaitForTimeInterval:] + 108 (XCTestCore + 403268) [0x10590e744] 1-124
+33047:                                                                                                                                                                                                               124  _CFRunLoopRunSpecificWithOptions + 496 (CoreFoundation + 606272) [0x1c01de040] 1-124
+33048:                                                                                                                                                                                                                 79   __CFRunLoopRun + 1100 (CoreFoundation + 627168) [0x1c01e31e0] 1-79
+33049:                                                                                                                                                                                                                   79   __CFRunLoopServiceMachPort + 156 (CoreFoundation + 630800) [0x1c01e4010] 1-79
+33050:                                                                                                                                                                                                                     79   mach_msg + 20 (libsystem_kernel.dylib + 3804) [0x104bbcedc] 1-79
+33051:                                                                                                                                                                                                                       79   mach_msg_overwrite + 484 (libsystem_kernel.dylib + 35928) [0x104bc4c58] 1-79
+33052:                                                                                                                                                                                                                         79   mach_msg2_trap + 8 (libsystem_kernel.dylib + 2908) [0x104bbcb5c] 1-79
+33053:                                                                                                                                                                                                                          *79   ??? (kernel.release.t8132 + 198992) [0xfffffe000bc88950] 1-79
+33054:                                                                                                                                                                                                                 1    __CFRunLoopRun + 2560 (CoreFoundation + 628628) [0x1c01e3794] 80
+33055:                                                                                                                                                                                                                   1    dispatch_channel_cancel + 48 (libdispatch.dylib + 103964) [0x1e643361c] 80
+33056:                                                                                                                                                                                                                     1    _dispatch_root_queue_poke_slow + 360 (libdispatch.dylib + 62940) [0x1e64295dc] 80
+33057:                                                                                                                                                                                                                       1    __workq_kernreturn + 8 (libsystem_kernel.dylib + 9868) [0x104bbe68c] (running) 80
+33058:                                                                                                                                                                                                                 44   __CFRunLoopRun + 1100 (CoreFoundation + 627168) [0x1c01e31e0] 81-124
+33059:                                                                                                                                                                                                                   44   __CFRunLoopServiceMachPort + 156 (CoreFoundation + 630800) [0x1c01e4010] 81-124
+33060:                                                                                                                                                                                                                     44   mach_msg + 20 (libsystem_kernel.dylib + 3804) [0x104bbcedc] 81-124
+33061:                                                                                                                                                                                                                       44   mach_msg_overwrite + 484 (libsystem_kernel.dylib + 35928) [0x104bc4c58] 81-124
+33062:                                                                                                                                                                                                                         44   mach_msg2_trap + 8 (libsystem_kernel.dylib + 2908) [0x104bbcb5c] 81-124
+33063:                                                                                                                                                                                                                          *38   ??? (kernel.release.t8132 + 198992) [0xfffffe000bc88950] 81-118
+33064:   <3776ms gap with no samples>
+33065:                                                                                                                                                                                                                          *6    ??? (kernel.release.t8132 + 198992) [0xfffffe000bc88950] 119-124
+33066: 
+33067:   Thread 0x8bc8b6    1 sample (80)    priority 31 (base 31)    cpu time <0.001s (405.9K cycles, 88.7K instructions, 4.58c/i, 2.75GHz avg)
+33068:   <Thread in another call tree for 79 samples, thread QoS default (requested user interactive), jetsam priority 180 (requested 180, assertion 0), process memory limit 0MB, IO tier 0>
+33069:   1  start_wqthread + 8 (libsystem_pthread.dylib + 6752) [0x104c2da60] 80
+33070:     1  __workq_kernreturn + 8 (libsystem_kernel.dylib + 9868) [0x104bbe68c] 80
+33071:      *1  ??? (kernel.release.t8132 + 6034704) [0xfffffe000c219510] (runnable) 80
+33072: 
+33073:   Binary Images:
+33074:            0x1047d0000 -        0x1047dffff  thalesmms.logisim.validation.editor.xctrunner 1.0 (1) <CC1BBF6E-4DDE-3789-8413-8995F0EAB902>             /Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/FC556109-8402-4188-A424-80CAE82A3A68/EditorEndToEndTests-Runner.app/EditorEndToEndTests-Runner
+33075:            0x104918000 -        0x1049a7fff  dyld (27062)                                          <6FAE6738-0877-3F55-80B9-6AE42FCB8606>             /usr/lib/dyld

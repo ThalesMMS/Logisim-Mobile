@@ -1,0 +1,48 @@
+Zero-based indices in the original filtered JSON array; this is not an unfiltered system trace.
+INDEX 631 | 2026-11-05 07:27:29.784735+0000 | pid=68822 | thread=9987522 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/pkd
+[u F8E78B69-61F8-495B-A993-E0BB85E025F4] [thalesmms.logisim.validation.revocationfixture.provider(1.0)] plugin INSTALLED; bundleID: [thalesmms.logisim.validation.revocationfixture.provider], path: [/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex], contained in [thalesmms.logisim.validation.revocationfixture]
+
+INDEX 958 | 2026-11-05 07:27:30.127311+0000 | pid=68875 | thread=9903950 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Query; personaid = 4294967295, type = NOPERSONA, name = <unknown>, origin [pid = 0, personaid = 0], proximate [pid = 0, personaid = 0], euid = 501, uid = 501, class = 7, identifier = [(null)](0), gidentifier = [group.thalesmms.logisim.validation.revocationfixture](1), flags = 900000002
+
+INDEX 960 | 2026-11-05 07:27:30.128916+0000 | pid=83490 | thread=9481958 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/containermanagerd
+Issuing token to pid 68875 for identifier = [group.thalesmms.logisim.validation.revocationfixture](container_class_t(rawValue: 7), path = [/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4] (extension class: com.apple.sandbox.application-group)
+
+INDEX 961 | 2026-11-05 07:27:30.129291+0000 | pid=68875 | thread=9903950 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+Query result; index [0] [appGroup:group.thalesmms.logisim.validation.revocationfixture:501::(C4A78BD1-44B3-4590-B045-A3AC1883D566):{501:20:u+rwx,g+rx,o+rx}] /Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4
+
+INDEX 962 | 2026-11-05 07:27:30.129652+0000 | pid=68875 | thread=9903950 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[ERROR] Extension { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/ } doesn't have a group container for document group group.thalesmms.logisim.validation.revocationfixture specified via NSExtensionFileProviderDocumentGroup. Ignoring the extension.
+
+INDEX 963 | 2026-11-05 07:27:30.129717+0000 | pid=68875 | thread=9903950 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
+[WARNING] Failed to create descriptor for extension { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/8EA27060-12CE-46F0-BE04-AC91EAD53EE4/RevocationFixture.app/PlugIns/RevocationProvider.appex/ }
+
+
+Separate source: full-differential-history.stdout; zero-based indices.
+INDEX 2 | 2026-11-05 07:27:29.525259+0000 | pid=83458 | /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/Resources/Platforms/iphoneos/usr/libexec/CoreSimulatorBridge
++[IXPlaceholder _setEntitlementsFromBundleExecutableURL:withBundleID:client:onPlaceholder:location:error:]: Executable for thalesmms.logisim.validation.revocationfixture at RevocationFixture -- file:///Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/ had no entitlements
+
+INDEX 17 | 2026-11-05 07:27:29.533311+0000 | pid=68775 | /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd
+-[IXSPlaceholder setAttributes:]: <IXSPlaceholder(0x105508f00) Name:PlugInKit Placeholder: Logisim Revocation Fixture (thalesmms.logisim.validation.revocationfixture.provider) Creator:InstallCoordination Simple SPI UUID:1F434DBF-85C1-40DD-9A95-A58DAA326C6E Location:[system-defined]>: setting placeholder attributes to <IXPlaceholderAttributes<0x1054acdc0> : {
+    CFBundleShortVersionString = "1.0";
+    CFBundleSupportedPlatforms =     (
+        iPhoneSimulator
+    );
+    CFBundleVersion = 1;
+    DTPlatformName = iphonesimulator;
+    MinimumOSVersion = "17.0";
+    NSExtension =     {
+        NSExtensionFileProviderDocumentGroup = "group.thalesmms.logisim.validation.revocationfixture";
+        NSExtensionFileProviderSupportsEnumeration = 1;
+        NSExtensionPointIdentifier = "com.apple.fileprovider-nonui";
+        NSExtensionPrincipalClass = "RevocationProvider.RevocationFileProvider";
+    };
+    UIDeviceFamily =     (
+        1,
+        2
+    );
+}>
+
+INDEX 18 | 2026-11-05 07:27:29.533746+0000 | pid=83458 | /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/A/Resources/Platforms/iphoneos/usr/libexec/CoreSimulatorBridge
++[IXPlaceholder _setEntitlementsFromBundleExecutableURL:withBundleID:client:onPlaceholder:location:error:]: Executable for thalesmms.logisim.validation.revocationfixture.provider at RevocationProvider -- file:///Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/ had no entitlements
+

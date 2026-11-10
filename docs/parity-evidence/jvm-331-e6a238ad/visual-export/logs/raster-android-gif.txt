@@ -1,0 +1,25 @@
+$ java -Djava.awt.headless=true -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmpre__ph8m:/Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/core/build/libs/core-jvm.jar:/Users/user/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar RasterCompare fixtures/visual-export/contract.json docs/validation/artifacts/android-export34-final-002/whole.png /Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/docs/parity-evidence/jvm-331-e6a238ad/visual-export/evolution/qualification/visual_export_qualification.gif -5 -5 --gif-roundtrip
+exit 0
+--- stdout
+regions	contract	PASS	78 regions parsed
+size	mobile	PASS	1508x908
+size	evolution	PASS	1503x903
+size	frame	PASS	Evolution width 1503 vs Mobile width minus its extra margin 1503
+ink-regions	mobile	PASS	78/78 regions with ink (least 69 px)
+ink-outside	mobile	PASS	470 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]
+colour	mobile-red	PASS	pixel (32,56) = ff0000, expected ff0000
+colour	mobile-green	PASS	pixel (55,56) = 7fff7f, expected 7fff7f
+ink-regions	evolution	PASS	78/78 regions with ink (least 79 px)
+ink-outside	evolution	PASS	248 ink px outside the regions (limit 1357); fullest world cells [400,200:40, 5900,3500:39, -100,0:20, -100,3500:20, 0,-100:20]
+colour	evolution-red	PASS	pixel (29,53) = ff0000, expected ff0000
+colour	evolution-green	PASS	pixel (52,53) = 7fff7f, expected 7fff7f
+gif	evolution-palette	PASS	Evolution GIF vs the same drawing as PNG: max channel error 1 (ImageIO builds an adaptive palette)
+gif	mobile-size	PASS	1508x908
+gif	mobile-quantisation	PASS	max channel error R=3 G=3 B=3 (RGB 3-3-2 steps 36.4/36.4/85)
+ink-regions	mobile-gif	PASS	78/78 regions with ink (least 70 px)
+ink-outside	mobile-gif	PASS	470 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]
+colour	mobile-gif-red	PASS	pixel (32,56) = ff0000, expected ff0000
+colour	mobile-gif-green	PASS	pixel (55,56) = 7fff7f, expected 7fff7f
+summary	PASS	0 failed checks
+--- stderr
+

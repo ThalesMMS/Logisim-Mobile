@@ -1,0 +1,110 @@
+[
+  {
+    "name": "guest-hz",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "getconf",
+      "CLK_TCK"
+    ],
+    "utc": "2026-11-04T21:47:25.506556+00:00",
+    "beforeMonotonicNs": 174723787578250,
+    "afterMonotonicNs": 174723902818541,
+    "returncode": 0
+  },
+  {
+    "name": "guest-vcpus",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "getconf",
+      "_NPROCESSORS_ONLN"
+    ],
+    "utc": "2026-11-04T21:47:25.561453+00:00",
+    "beforeMonotonicNs": 174723902847250,
+    "afterMonotonicNs": 174723957021291,
+    "returncode": 0
+  },
+  {
+    "name": "guest-cpuinfo",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "cat",
+      "/proc/cpuinfo"
+    ],
+    "utc": "2026-11-04T21:47:25.652542+00:00",
+    "beforeMonotonicNs": 174723957032666,
+    "afterMonotonicNs": 174724048111250,
+    "returncode": 0
+  },
+  {
+    "name": "guest-load",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "cat",
+      "/proc/loadavg"
+    ],
+    "utc": "2026-11-04T21:47:25.714609+00:00",
+    "beforeMonotonicNs": 174724048118500,
+    "afterMonotonicNs": 174724110181375,
+    "returncode": 0
+  },
+  {
+    "name": "host-sysctl",
+    "argv": [
+      "sysctl",
+      "hw.ncpu",
+      "hw.physicalcpu",
+      "hw.logicalcpu",
+      "hw.memsize",
+      "vm.swapusage"
+    ],
+    "utc": "2026-11-04T21:47:25.735059+00:00",
+    "beforeMonotonicNs": 174724110189208,
+    "afterMonotonicNs": 174724130628666,
+    "returncode": 0
+  },
+  {
+    "name": "host-uptime",
+    "argv": [
+      "uptime"
+    ],
+    "utc": "2026-11-04T21:47:25.754454+00:00",
+    "beforeMonotonicNs": 174724130641833,
+    "afterMonotonicNs": 174724150023375,
+    "returncode": 0
+  },
+  {
+    "name": "host-processes",
+    "argv": [
+      "ps",
+      "-A",
+      "-o",
+      "pid,ppid,comm,pcpu,pmem"
+    ],
+    "utc": "2026-11-04T21:47:25.991345+00:00",
+    "beforeMonotonicNs": 174724150038208,
+    "afterMonotonicNs": 174724386922333,
+    "returncode": 0
+  },
+  {
+    "name": "host-vm-stat",
+    "argv": [
+      "vm_stat"
+    ],
+    "utc": "2026-11-04T21:47:26.003279+00:00",
+    "beforeMonotonicNs": 174724386927666,
+    "afterMonotonicNs": 174724398849791,
+    "returncode": 0
+  }
+]

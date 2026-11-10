@@ -1,0 +1,73 @@
+{
+  "result": "PASS_OFFLINE_PARSER_CORRECTION_ONLY",
+  "candidate": "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001",
+  "helper_sha256": "08c8a26539bb71a3f2b4f741bffa7d490c394ecb89c55b204fafb7940fa2d777",
+  "wrapper_sha256": "2db798b0b8386cef7347d0b0f57b4f5b323542caabe9dfe0cdbaa41a522ca297",
+  "source_archive_sha256": "7c5f947c8cc3ea7d1e942d58bc1c85ababf9132676c7f8f5ac1c0136b5eeef75",
+  "source_files_verified": 4,
+  "declared_event_names_verified_from_Java_constants": 27,
+  "wrapper_change": "Only the helper SHA pin differs from 8dcede42",
+  "immutable_payload_files": {
+    "contact.py": true,
+    "contact-plan.json": true,
+    "numeric-capabilities.fixture.txt": true
+  },
+  "event_format_review": [
+    "Zero produces empty string",
+    "ALL=-1 produces TYPES_ALL_MASK",
+    "One bit produces an unbracketed name or lowercase hex",
+    "2 to 31 bits produce a canonical ascending-bit bracketed list",
+    "Known bits 0 through 26 use exact names; 27 through 31 use Integer.toHexString",
+    "All 32 bits use ALL literal, so a 32-atom list is invalid",
+    "Duplicate, out-of-order, unknown and invalid-separator tokens remain rejected"
+  ],
+  "source_lines": {
+    "AccessibilityEvent.java": "1776\u20131835",
+    "AbstractAccessibilityServiceConnection.java": "1592\u20131605"
+  },
+  "previous_guard_review": "Diff leaves component/PID/user/binder/connection/footer/touch/capability guards unchanged",
+  "independent_reviewer": "reader_observer_review",
+  "independent_result": "No concrete blocker; source inspection only",
+  "reported_green_receipt": {
+    "phase": "GREEN",
+    "tests": 71,
+    "errors": 0,
+    "failures": 0,
+    "external_process_and_socket_boundaries": "BLOCKED",
+    "external_attempts": 0,
+    "helper_sha256": "08c8a26539bb71a3f2b4f741bffa7d490c394ecb89c55b204fafb7940fa2d777",
+    "wrapper_sha256": "2db798b0b8386cef7347d0b0f57b4f5b323542caabe9dfe0cdbaa41a522ca297",
+    "runtime": "NONE",
+    "reader_qualification": false
+  },
+  "reported_captured_red_receipt": {
+    "phase": "RED",
+    "tests": 3,
+    "errors": 2,
+    "failures": 0,
+    "external_process_and_socket_boundaries": "BLOCKED",
+    "helper_origin": "8dcede427cd594f65704a9827276a19506c464ea",
+    "error": "unknown_bound_format"
+  },
+  "tests_executed_by_this_review": false,
+  "native_or_reader_runtime": "NOT_RUN",
+  "previous_unit_status": "NOT_QUALIFIED remains; corrected parsing cannot supply absent caption/B/gesture",
+  "limits": [
+    "Parses field representation only",
+    "No stronger component identity in accessibility Bound",
+    "No callback or current Binder liveness proof added",
+    "No reader, input, speech, focus or workflow qualification"
+  ],
+  "final_document_controls_reviewed": {
+    "settled_post_enable_and_second_screenshot_after_two_seconds": true,
+    "observed_Dont_allow_and_result_required_for_notification_prompt": true,
+    "real_matching_A_caption_required_before_lease_or_monitor": true,
+    "separate_new_Root_authorization_required": true,
+    "reader_cycle_is_prepared_not_runtime_proof": true
+  },
+  "candidate_document_hashes": {
+    "README.md": "3d0deb185de8ce6f57f471a6edbb31332da33b7ccc9efd41b4094a83103651c8",
+    "reader-cycle-plan.md": "c6ed076b6cae327a3605d1fc73018508531aaee28f122e6be4b9558aee9930f3",
+    "run_offline_tests.py": "3dd7d555adbba2dca670f0993918cb89204df39d937f732691a63e623e66965b"
+  }
+}

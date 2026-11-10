@@ -1,0 +1,614 @@
+{
+  "codec_appearance_anchor_invalid": {
+    "en": "{child_name}: appearance must have exactly one anchor.",
+    "pt": "{child_name}: aparência sem âncora única."
+  },
+  "codec_appearance_pin_missing": {
+    "en": "{child_name}: appearance port has no matching pin: {pinPoint}.",
+    "pt": "{child_name}: porta de aparência não corresponde a um pino: {pinPoint}."
+  },
+  "codec_appearance_pins_invalid": {
+    "en": "{child_name}: appearance must represent every pin exactly once.",
+    "pt": "{child_name}: aparência não representa todos os pinos exatamente uma vez."
+  },
+  "codec_attribute_duplicate": {
+    "en": "Duplicate attribute: {key}.",
+    "pt": "Atributo duplicado: {key}."
+  },
+  "codec_attribute_name_required": {
+    "en": "Attribute name is missing.",
+    "pt": "Atributo sem nome."
+  },
+  "codec_attribute_two_values": {
+    "en": "Attribute {key} has two values.",
+    "pt": "Atributo {key} possui dois valores."
+  },
+  "codec_bundle_absolute_path": {
+    "en": "Absolute path is not allowed in bundle: {raw}.",
+    "pt": "Caminho absoluto não permitido no pacote: {raw}."
+  },
+  "codec_bundle_absolute_reference": {
+    "en": "Absolute reference is not allowed: {relative}.",
+    "pt": "Referência absoluta não permitida: {relative}."
+  },
+  "codec_bundle_case_collision": {
+    "en": "File names collide on case-insensitive systems.",
+    "pt": "Nomes de arquivo colidem em sistemas sem distinção de maiúsculas."
+  },
+  "codec_bundle_file_count_limit": {
+    "en": "The bundle contains too many files.",
+    "pt": "O pacote contém arquivos demais."
+  },
+  "codec_bundle_invalid": {
+    "en": "Invalid bundle.",
+    "pt": "Pacote inválido."
+  },
+  "codec_bundle_library_location": {
+    "en": "Library files must be directly inside library/.",
+    "pt": "Arquivos de biblioteca precisam estar diretamente em library/."
+  },
+  "codec_bundle_main_invalid": {
+    "en": "Invalid main entry in manifest.",
+    "pt": "Entrada principal inválida no manifesto."
+  },
+  "codec_bundle_main_mismatch": {
+    "en": "The manifest points to another main file.",
+    "pt": "O manifesto aponta para outro arquivo principal."
+  },
+  "codec_bundle_main_missing": {
+    "en": "Main file is missing from bundle: {mainFile}.",
+    "pt": "O arquivo principal não está no pacote: {mainFile}."
+  },
+  "codec_bundle_main_root": {
+    "en": "The main file must be at the bundle root.",
+    "pt": "O arquivo principal precisa estar na raiz do pacote."
+  },
+  "codec_bundle_main_unique": {
+    "en": "Manifest must have exactly one main file.",
+    "pt": "Manifesto sem arquivo principal único."
+  },
+  "codec_bundle_manifest_missing": {
+    "en": "Bundle is missing manifest.xml.",
+    "pt": "Pacote sem manifest.xml."
+  },
+  "codec_bundle_manifest_unsupported": {
+    "en": "Unsupported bundle manifest.",
+    "pt": "Manifesto de pacote não suportado."
+  },
+  "codec_bundle_name_invalid": {
+    "en": "Invalid file name in bundle.",
+    "pt": "Nome de arquivo inválido no pacote."
+  },
+  "codec_bundle_name_nonportable": {
+    "en": "File name is not portable in bundle: {raw}.",
+    "pt": "Nome de arquivo não portável no pacote: {raw}."
+  },
+  "codec_bundle_path_invalid": {
+    "en": "Path is not allowed in bundle: {raw}.",
+    "pt": "Caminho não permitido no pacote: {raw}."
+  },
+  "codec_bundle_paths_noncanonical": {
+    "en": "The bundle contains noncanonical paths.",
+    "pt": "O pacote contém caminhos não canônicos."
+  },
+  "codec_bundle_reference_escape": {
+    "en": "Reference leaves the bundle: {relative}.",
+    "pt": "A referência sai do pacote: {relative}."
+  },
+  "codec_bundle_size_limit": {
+    "en": "The bundle exceeds the size limit.",
+    "pt": "O pacote excede o limite de tamanho."
+  },
+  "codec_bundle_tool_identity": {
+    "en": "Manifest is missing the tool identity.",
+    "pt": "Manifesto sem identificação da ferramenta."
+  },
+  "codec_circuit_names_invalid": {
+    "en": "Circuit names are empty or duplicated.",
+    "pt": "Nomes de circuito vazios ou duplicados."
+  },
+  "codec_circuit_text_unexpected": {
+    "en": "Unexpected text in circuit {node_attributes__name}.",
+    "pt": "Texto inesperado no circuito {node_attributes__name}."
+  },
+  "codec_component_address_width_invalid": {
+    "en": "{name}: invalid address width.",
+    "pt": "{name}: largura de endereço inválida."
+  },
+  "codec_component_direction_invalid": {
+    "en": "{name}: invalid direction: {it}.",
+    "pt": "{name}: direção inválida: {it}."
+  },
+  "codec_component_inputs_invalid": {
+    "en": "{name}: invalid input count.",
+    "pt": "{name}: quantidade de entradas inválida."
+  },
+  "codec_component_name_required": {
+    "en": "Component name is missing.",
+    "pt": "Componente sem nome."
+  },
+  "codec_component_text_unexpected": {
+    "en": "Unexpected text in component.",
+    "pt": "Texto inesperado no componente."
+  },
+  "codec_component_unimplemented": {
+    "en": "Component is not implemented: {name}.",
+    "pt": "Componente não implementado: {name}."
+  },
+  "codec_component_unsupported": {
+    "en": "Unsupported component: {name} (library {value2}).",
+    "pt": "Componente não suportado: {name} (biblioteca {value2})."
+  },
+  "codec_component_width_invalid": {
+    "en": "{name}: {key} must be between 1 and 64.",
+    "pt": "{name}: {key} deve estar entre 1 e 64."
+  },
+  "codec_coordinate_invalid": {
+    "en": "{element_name}: invalid coordinate {key}.",
+    "pt": "{element_name}: coordenada {key} inválida."
+  },
+  "codec_deflate_code_length_invalid": {
+    "en": "Invalid DEFLATE code length.",
+    "pt": "Comprimento de código DEFLATE inválido."
+  },
+  "codec_deflate_distance_invalid": {
+    "en": "Invalid DEFLATE distance.",
+    "pt": "Distância DEFLATE inválida."
+  },
+  "codec_deflate_end_missing": {
+    "en": "DEFLATE block has no end.",
+    "pt": "Bloco DEFLATE sem fim."
+  },
+  "codec_deflate_length_invalid": {
+    "en": "Invalid DEFLATE length.",
+    "pt": "Comprimento DEFLATE inválido."
+  },
+  "codec_deflate_repetition_invalid": {
+    "en": "Invalid DEFLATE repetition.",
+    "pt": "Repetição DEFLATE inválida."
+  },
+  "codec_deflate_reserved_block": {
+    "en": "Reserved DEFLATE block type.",
+    "pt": "Tipo de bloco DEFLATE reservado."
+  },
+  "codec_deflate_size_exceeded": {
+    "en": "DEFLATE exceeded the declared size.",
+    "pt": "DEFLATE excedeu o tamanho declarado."
+  },
+  "codec_deflate_size_inconsistent": {
+    "en": "Inconsistent DEFLATE size.",
+    "pt": "Tamanho DEFLATE inconsistente."
+  },
+  "codec_deflate_size_invalid": {
+    "en": "Invalid DEFLATE size.",
+    "pt": "Tamanho DEFLATE inválido."
+  },
+  "codec_deflate_trees_invalid": {
+    "en": "Invalid DEFLATE trees.",
+    "pt": "Árvores DEFLATE inválidas."
+  },
+  "codec_deflate_truncated": {
+    "en": "Truncated DEFLATE.",
+    "pt": "DEFLATE truncado."
+  },
+  "codec_deflate_uncompressed_invalid": {
+    "en": "Invalid uncompressed DEFLATE block.",
+    "pt": "Bloco DEFLATE sem compressão inválido."
+  },
+  "codec_deflate_window_reference": {
+    "en": "DEFLATE reference is outside the window.",
+    "pt": "Referência DEFLATE fora da janela."
+  },
+  "codec_export_unimplemented": {
+    "en": "Export is not implemented for {component_kind}.",
+    "pt": "Exportação não implementada para {component_kind}."
+  },
+  "codec_external_circuit_missing": {
+    "en": "Circuit is missing from external library: {name}.",
+    "pt": "Circuito ausente em biblioteca externa: {name}."
+  },
+  "codec_external_empty_export": {
+    "en": "Library {sourceId} has no circuits. Remove its references before exporting.",
+    "pt": "A biblioteca {sourceId} ficou sem circuitos. Remova suas referências antes de exportar."
+  },
+  "codec_external_library_unknown": {
+    "en": "Unknown library during export: {globalId}.",
+    "pt": "Biblioteca desconhecida ao exportar: {globalId}."
+  },
+  "codec_external_main_export": {
+    "en": "Move the main definition to its source project before exporting external libraries.",
+    "pt": "Mova a definição principal para o projeto de origem antes de exportar bibliotecas externas."
+  },
+  "codec_external_names_duplicate": {
+    "en": "Duplicate circuit names in library {sourceId}.",
+    "pt": "Nomes de circuito duplicados na biblioteca {sourceId}."
+  },
+  "codec_external_subcircuit": {
+    "en": "external/subcircuit",
+    "pt": "externa/subcircuito"
+  },
+  "codec_external_subcircuit_missing": {
+    "en": "Subcircuit is missing during export.",
+    "pt": "Subcircuito ausente ao exportar."
+  },
+  "codec_format_version_unsupported": {
+    "en": "Unsupported .circ format version: {root_attributes__version}.",
+    "pt": "Versão de formato .circ não suportada: {root_attributes__version}."
+  },
+  "codec_huffman_code_invalid": {
+    "en": "Invalid Huffman code.",
+    "pt": "Código Huffman inválido."
+  },
+  "codec_huffman_code_limit": {
+    "en": "Huffman code is too long.",
+    "pt": "Código Huffman longo demais."
+  },
+  "codec_huffman_tree_overloaded": {
+    "en": "Overloaded Huffman tree.",
+    "pt": "Árvore Huffman sobrecarregada."
+  },
+  "codec_libraries_resolution_failed": {
+    "en": "Could not resolve the libraries.",
+    "pt": "Não foi possível resolver as bibliotecas."
+  },
+  "codec_library_changed": {
+    "en": "Library changed: {reference_path}. Reopen the project before continuing.",
+    "pt": "Biblioteca alterada: {reference_path}. Reabra o projeto antes de continuar."
+  },
+  "codec_library_changed_during_read": {
+    "en": "Library {source_id} changed during reading.",
+    "pt": "A biblioteca {source_id} mudou durante a leitura."
+  },
+  "codec_library_check_failed": {
+    "en": "Could not check {reference_path}: {failure_message}.",
+    "pt": "Não foi possível verificar {reference_path}: {failure_message}."
+  },
+  "codec_library_circuit_ambiguous": {
+    "en": "Ambiguous circuit in library {fileId}: {name}.",
+    "pt": "Circuito ambíguo na biblioteca {fileId}: {name}."
+  },
+  "codec_library_circuit_name_required": {
+    "en": "Circuit name is missing in {source_id}.",
+    "pt": "Circuito sem nome em {source_id}."
+  },
+  "codec_library_circuits_invalid": {
+    "en": "Circuits are empty or duplicated in {source_id}.",
+    "pt": "Circuitos vazios ou duplicados em {source_id}."
+  },
+  "codec_library_content_limit": {
+    "en": "The project exceeds the library content limit.",
+    "pt": "O projeto excede o limite de conteúdo das bibliotecas."
+  },
+  "codec_library_count_limit": {
+    "en": "The project exceeds the library count limit.",
+    "pt": "O projeto excede o limite de bibliotecas."
+  },
+  "codec_library_cycle": {
+    "en": "Library cycle: {value1}.",
+    "pt": "Ciclo de bibliotecas: {value1}."
+  },
+  "codec_library_description_required": {
+    "en": "Library description is missing.",
+    "pt": "Biblioteca sem descrição."
+  },
+  "codec_library_duplicate": {
+    "en": "Duplicate library: {id}.",
+    "pt": "Biblioteca duplicada: {id}."
+  },
+  "codec_library_id_duplicate": {
+    "en": "Duplicate library identity: {id}.",
+    "pt": "Identificação de biblioteca duplicada: {id}."
+  },
+  "codec_library_identity_changed": {
+    "en": "The reference now identifies another file: {reference_path}.",
+    "pt": "A referência passou a identificar outro arquivo: {reference_path}."
+  },
+  "codec_library_identity_required": {
+    "en": "Library identity is missing.",
+    "pt": "Biblioteca sem identificação."
+  },
+  "codec_library_missing": {
+    "en": "Library is missing: {reference_path}.",
+    "pt": "Biblioteca ausente: {reference_path}."
+  },
+  "codec_library_project_invalid": {
+    "en": "Library {source_id} is not a .circ project.",
+    "pt": "A biblioteca {source_id} não é um projeto .circ."
+  },
+  "codec_library_reference_invalid": {
+    "en": "Invalid library reference.",
+    "pt": "Referência de biblioteca inválida."
+  },
+  "codec_library_reference_missing": {
+    "en": "Library is missing: {path}, referenced by {source_id}.",
+    "pt": "Biblioteca ausente: {path}, referenciada por {source_id}."
+  },
+  "codec_library_unknown": {
+    "en": "Unknown library: {id}.",
+    "pt": "Biblioteca desconhecida: {id}."
+  },
+  "codec_main_circuit_missing": {
+    "en": "The main circuit does not exist: {main}.",
+    "pt": "O circuito principal não existe: {main}."
+  },
+  "codec_main_metadata_invalid": {
+    "en": "Main circuit metadata must be a main element.",
+    "pt": "Os metadados do circuito principal precisam ser um elemento main."
+  },
+  "codec_main_missing": {
+    "en": "The main circuit does not exist.",
+    "pt": "Circuito principal inexistente."
+  },
+  "codec_legacy_library_unsupported": {
+    "en": "This file contains components from the discontinued Legacy library. Conversion would remove them. Review the original in Logisim before saving a converted copy.",
+    "pt": "Este arquivo contém componentes da biblioteca descontinuada Legacy. A conversão removeria esses componentes. Revise o original no Logisim antes de salvar uma cópia convertida."
+  },
+  "codec_legacy_project_converted": {
+    "en": "The project was converted from {source} to {target}. Legacy tool and library references were updated.",
+    "pt": "O projeto foi convertido de {source} para {target}. As referências a ferramentas e bibliotecas antigas foram atualizadas."
+  },
+  "codec_migration_fp_library": {
+    "en": "{name}: legacy arithmetic library resolved as floating point.",
+    "pt": "{name}: biblioteca aritmética legada resolvida como ponto flutuante."
+  },
+  "codec_migration_implicit_attributes": {
+    "en": "{name}: effective attributes {value2} follow source version {profile_source}; the original XML is preserved.",
+    "pt": "{name}: atributos efetivos {value2} definidos pela origem {profile_source}; o XML original é preservado."
+  },
+  "codec_multiple_circuits": {
+    "en": "This file contains multiple circuits. Use readProject to preserve the complete project.",
+    "pt": "Este arquivo contém vários circuitos. Use readProject para preservar o projeto completo."
+  },
+  "codec_multiple_main_circuits": {
+    "en": "The project contains more than one main circuit.",
+    "pt": "O projeto contém mais de um circuito principal."
+  },
+  "codec_pin_output_invalid": {
+    "en": "Pin: invalid output value.",
+    "pt": "Pin: output inválido."
+  },
+  "codec_pin_type_unsupported": {
+    "en": "Pin: unsupported type: {type}.",
+    "pt": "Pin: tipo não suportado: {type}."
+  },
+  "codec_position_invalid": {
+    "en": "Invalid position: {text}.",
+    "pt": "Posição inválida: {text}."
+  },
+  "codec_position_limit": {
+    "en": "Position exceeds the allowed range.",
+    "pt": "Posição fora do limite permitido."
+  },
+  "codec_project_empty": {
+    "en": "The project must contain a circuit.",
+    "pt": "O projeto precisa conter um circuito."
+  },
+  "codec_project_no_circuits": {
+    "en": "The project contains no circuits.",
+    "pt": "O projeto não contém circuitos."
+  },
+  "codec_project_root_required": {
+    "en": "The root element must be <project>.",
+    "pt": "O elemento raiz precisa ser <project>."
+  },
+  "codec_random_simulation_enabled": {
+    "en": "Random propagation delays are enabled (simrand={value}).",
+    "pt": "Os atrasos aleatórios de propagação estão ativos (simrand={value})."
+  },
+  "codec_recursive_subcircuits": {
+    "en": "Recursive subcircuits are not supported: {value1}.",
+    "pt": "Subcircuitos recursivos não são suportados: {value1}."
+  },
+  "codec_resolver_identity_required": {
+    "en": "The resolver returned a library without an identity.",
+    "pt": "O resolvedor retornou uma biblioteca sem identidade."
+  },
+  "codec_source_identity_required": {
+    "en": "The document must have a source identity.",
+    "pt": "O documento precisa de uma identidade de origem."
+  },
+  "codec_source_invalid": {
+    "en": "Invalid source version.",
+    "pt": "Versão de origem inválida."
+  },
+  "codec_source_version_ambiguous": {
+    "en": "The .circ source version is missing. {component} in {circuit} has different behavior depending on the version. Specify the version that created this file.",
+    "pt": "A versão de origem do .circ está ausente. O componente {component} em {circuit} muda de comportamento conforme a versão. Informe a versão que criou o arquivo."
+  },
+  "codec_source_version_invalid": {
+    "en": "Invalid .circ source version: {source}.",
+    "pt": "Versão de origem .circ inválida: {source}."
+  },
+  "codec_subcircuit_missing": {
+    "en": "Subcircuit does not exist: {component_circuitName}.",
+    "pt": "Subcircuito inexistente: {component_circuitName}."
+  },
+  "codec_subcircuit_reference_required": {
+    "en": "Subcircuit reference is missing.",
+    "pt": "Subcircuito sem referência."
+  },
+  "codec_undefined_inputs_unsupported": {
+    "en": "Unsupported undefined-input policy: {value}.",
+    "pt": "Política de entradas indefinidas não suportada: {value}."
+  },
+  "codec_wire_attributes_unsupported": {
+    "en": "Unsupported wire attributes.",
+    "pt": "Atributos de fio não suportados."
+  },
+  "codec_wire_content_unsupported": {
+    "en": "Unsupported wire content.",
+    "pt": "Conteúdo de fio não suportado."
+  },
+  "codec_xml_attribute_name_invalid": {
+    "en": "Invalid XML attribute name: {name}.",
+    "pt": "Nome de atributo XML inválido: {name}."
+  },
+  "codec_xml_between_elements": {
+    "en": "Meaningful text between project elements is not supported.",
+    "pt": "Texto significativo entre elementos do projeto não é suportado."
+  },
+  "codec_xml_cdata_unterminated": {
+    "en": "Unterminated XML CDATA section.",
+    "pt": "Seção CDATA do XML não terminada."
+  },
+  "codec_xml_character_invalid": {
+    "en": "Invalid XML character.",
+    "pt": "Caractere XML inválido."
+  },
+  "codec_xml_closing_invalid": {
+    "en": "Incorrect XML closing element: {end}, expected {name}.",
+    "pt": "Fechamento XML incorreto: {end}, esperado {name}."
+  },
+  "codec_xml_comment_invalid": {
+    "en": "Invalid XML comment.",
+    "pt": "Comentário XML inválido."
+  },
+  "codec_xml_declaration_invalid": {
+    "en": "Invalid XML declaration or unsupported XML version.",
+    "pt": "Declaração XML inválida ou versão XML não suportada."
+  },
+  "codec_xml_declaration_position": {
+    "en": "XML declaration must be at the start of the file.",
+    "pt": "Declaração XML fora do início do arquivo."
+  },
+  "codec_xml_declaration_unterminated": {
+    "en": "Unterminated XML declaration.",
+    "pt": "Declaração XML não terminada."
+  },
+  "codec_xml_element_unterminated": {
+    "en": "Unterminated <{name}> element.",
+    "pt": "Elemento <{name}> não terminado."
+  },
+  "codec_xml_encoding_invalid": {
+    "en": "Invalid or unsupported XML encoding: {encoding}.",
+    "pt": "Codificação XML inválida ou não suportada: {encoding}."
+  },
+  "codec_xml_entities_unsupported": {
+    "en": "DTDs and entity declarations are not supported.",
+    "pt": "DTDs e declarações de entidades não são suportadas."
+  },
+  "codec_xml_entity_invalid": {
+    "en": "Invalid XML entity.",
+    "pt": "Entidade XML inválida."
+  },
+  "codec_xml_entity_unsupported": {
+    "en": "Unsupported XML entity: &{entity};.",
+    "pt": "Entidade XML não suportada: &{entity};."
+  },
+  "codec_xml_expected_token": {
+    "en": "Invalid XML at position {offset}; expected {token}.",
+    "pt": "XML inválido na posição {offset}; esperado {token}."
+  },
+  "codec_xml_instruction_unsupported": {
+    "en": "Internal XML instructions are not supported.",
+    "pt": "Instrução XML interna não suportada."
+  },
+  "codec_xml_name_invalid": {
+    "en": "Invalid XML name.",
+    "pt": "Nome XML inválido."
+  },
+  "codec_xml_structure_inconsistent": {
+    "en": "Inconsistent XML structure.",
+    "pt": "Estrutura XML inconsistente."
+  },
+  "codec_zip64_unsupported": {
+    "en": "ZIP64 is not supported.",
+    "pt": "ZIP64 não é suportado."
+  },
+  "codec_zip_checksum_invalid": {
+    "en": "Invalid checksum in file {path}.",
+    "pt": "Checksum inválido no arquivo {path}."
+  },
+  "codec_zip_content_truncated": {
+    "en": "Truncated ZIP content.",
+    "pt": "Conteúdo ZIP truncado."
+  },
+  "codec_zip_descriptor_inconsistent": {
+    "en": "Inconsistent ZIP descriptor.",
+    "pt": "Descritor ZIP inconsistente."
+  },
+  "codec_zip_directory_content": {
+    "en": "ZIP directory contains unexpected data.",
+    "pt": "Diretório ZIP contém dados inesperados."
+  },
+  "codec_zip_directory_invalid": {
+    "en": "Invalid ZIP directory.",
+    "pt": "Diretório ZIP inválido."
+  },
+  "codec_zip_directory_missing": {
+    "en": "ZIP directory was not found.",
+    "pt": "Diretório ZIP não encontrado."
+  },
+  "codec_zip_directory_unsupported": {
+    "en": "Directory is not allowed in bundle: {name}.",
+    "pt": "Diretório não permitido no pacote: {name}."
+  },
+  "codec_zip_entry_invalid": {
+    "en": "Invalid ZIP entry.",
+    "pt": "Entrada ZIP inválida."
+  },
+  "codec_zip_expanded_size_limit": {
+    "en": "Uncompressed content exceeds the bundle limit.",
+    "pt": "Conteúdo descompactado excede o limite do pacote."
+  },
+  "codec_zip_file_count_invalid": {
+    "en": "Invalid ZIP file count.",
+    "pt": "Quantidade de arquivos ZIP inválida."
+  },
+  "codec_zip_file_size_limit": {
+    "en": "An archived file exceeds the size limit.",
+    "pt": "Arquivo interno excede o limite de tamanho."
+  },
+  "codec_zip_headers_inconsistent": {
+    "en": "Inconsistent ZIP headers.",
+    "pt": "Cabeçalhos ZIP inconsistentes."
+  },
+  "codec_zip_local_header_invalid": {
+    "en": "Invalid local ZIP header.",
+    "pt": "Cabeçalho ZIP local inválido."
+  },
+  "codec_zip_local_size_mismatch": {
+    "en": "Local ZIP CRC or size differs from the directory.",
+    "pt": "CRC ou tamanho local do ZIP diverge do diretório."
+  },
+  "codec_zip_method_unsupported": {
+    "en": "Encrypted or unsupported ZIP method.",
+    "pt": "Método ZIP criptografado ou não suportado."
+  },
+  "codec_zip_name_duplicate": {
+    "en": "Duplicate name in bundle: {path}.",
+    "pt": "Nome duplicado no pacote: {path}."
+  },
+  "codec_zip_name_encoding": {
+    "en": "Unsupported ZIP name encoding.",
+    "pt": "Codificação de nome ZIP não suportada."
+  },
+  "codec_zip_name_truncated": {
+    "en": "Truncated ZIP name.",
+    "pt": "Nome ZIP truncado."
+  },
+  "codec_zip_names_inconsistent": {
+    "en": "Inconsistent ZIP names.",
+    "pt": "Nomes ZIP inconsistentes."
+  },
+  "codec_zip_size_inconsistent": {
+    "en": "Inconsistent ZIP size.",
+    "pt": "Tamanho ZIP inconsistente."
+  },
+  "codec_zip_size_limit": {
+    "en": "ZIP file exceeds the size limit.",
+    "pt": "Arquivo ZIP excede o limite de tamanho."
+  },
+  "codec_zip_split_unsupported": {
+    "en": "Split ZIP volumes are not supported.",
+    "pt": "ZIP dividido em volumes não é suportado."
+  },
+  "codec_zip_symlink_unsupported": {
+    "en": "Symbolic links are not allowed in bundle.",
+    "pt": "Links simbólicos não são aceitos no pacote."
+  },
+  "codec_zip_truncated": {
+    "en": "Truncated ZIP.",
+    "pt": "ZIP truncado."
+  }
+}

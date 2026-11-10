@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "status": "SOURCE_PREPARED",
+  "nativeStatus": "NOT_RUN",
+  "base": "2d4d417f2b170a86f7d3a7b4ab75ad1cd87872c4",
+  "selectedCase": "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+  "priorFailureOriginal": "4c60e16ed574eea549cff125c7bfb60f82841811",
+  "source": {
+    "path": "scripts/ios_e2e_ui/EditorEndToEndTests.swift",
+    "beforeSHA256": "18277b6c0b070df22b5e64ccf6247342164e026e1f324985f9338ab78c5ed8b6",
+    "afterSHA256": "6b74d8c4489e4b382af7a35444b4fc54e9f0a820487214566ba8af5a11366fa9",
+    "normalizedOutsidePrivateRevealDeltaIsIdentical": true
+  },
+  "unchangedFiles": {
+    "scripts/ios_native_ui/NativeUIHarness.swift": "eb78306974bbd0832204b459c78f041b8fd106fa378d39a8aeb02e65038f3159",
+    "scripts/ios_native_ui/NativeTextReplacement.swift": "c4093125813875b73618e046b41126496eea0dc37955afcd2f95206bc5c1320b",
+    "fixtures/user-scenarios/editor-actions-v1.json": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9"
+  },
+  "validation": {
+    "sdkTypecheck": {
+      "exit": 0,
+      "swiftSources": 17
+    },
+    "geometryProbe": {
+      "status": "PASS",
+      "cases": 15,
+      "noDevice": true
+    },
+    "nativeRetry": false
+  },
+  "limits": [
+    "Short backward scroll reduces the requested drag span; native overscroll behavior remains unqualified.",
+    "No receive/consume/dismissal callback was measured in the failed run.",
+    "All62 literal actions and source-port/destination-port command bodies remain unchanged."
+  ],
+  "files": {
+    "README.md": {
+      "bytes": 2979,
+      "sha256": "93d3d643cb8a2236485f45ef3e0d13b0a917bdb85d41bc549e24fffc34613db0"
+    },
+    "geometry-probe-initial-error.log": {
+      "bytes": 20360,
+      "sha256": "1958b9a5d31895d57c291659f8d21be6c9479751eef7f0e2466ee1097281dd0a"
+    },
+    "geometry-probe.log": {
+      "bytes": 46,
+      "sha256": "a224fa8353ba8e65bc8561a40551fdccdefce5a9f54181b2dd3b3dcd9b1a75d4"
+    },
+    "geometry-probe.swift": {
+      "bytes": 4761,
+      "sha256": "f41c2a6d2ff0cfa3ebffe185079c5c3b49fea7fd89a5f2ed2e09557ceaeffb83"
+    },
+    "geometry-receipt-initial-error.json": {
+      "bytes": 248,
+      "sha256": "b124d0f041e9d7f224010606d7a8ce332cefcef24fdde01213a2ad3f1ba744b6"
+    },
+    "geometry-receipt.json": {
+      "bytes": 456,
+      "sha256": "0c81b32bad03c532d75bee6be6652c35096a7cb4db094fb3fc093678c0e256a0"
+    },
+    "negative-input-red.json": {
+      "bytes": 195,
+      "sha256": "aeb2bcd0ee32d6b49db05e42ed8e78a4b099e620af42eeee28bfa276159a196d"
+    },
+    "negative-input-red.log": {
+      "bytes": 68,
+      "sha256": "a0173ee5f71fbfc7ec47085fe0c5f43a86067d2d3703366b0fbd73379b70da5c"
+    },
+    "negative-input-red.swift": {
+      "bytes": 1816,
+      "sha256": "28b306e7edf3a4f4827fd99dd4dd4f68c9ca6880e6701be571e254838c32707b"
+    },
+    "typecheck.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

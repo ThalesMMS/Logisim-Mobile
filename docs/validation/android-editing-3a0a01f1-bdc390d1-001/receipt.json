@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "status": "FAIL_PRESERVED",
+  "nativeInvocations": 1,
+  "nativeExitCode": 1,
+  "wrapperSeconds": 205.80498083299608,
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "helperProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "harnessProducer": "bdc390d1a23f87c9429537db5bca6b2e05f88f1b",
+  "scope": "One Android editing invocation; no completed editing group",
+  "rawProducer": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/outputs/android-editing-3a0a01f1-bdc390d1-001",
+  "controllerProducer": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/outputs/android-editing-3a0a01f1-bdc390d1-001-control",
+  "inventory": {
+    "entries": 358,
+    "bytes": 4672898,
+    "retainedRawFiles": 274,
+    "retainedControllerFiles": 74,
+    "localOriginalTars": 2
+  },
+  "failureStage": [
+    "create_and_properties",
+    "assert_document(editing-property-north,north)",
+    "export",
+    "export_xml receiver preparation",
+    "wait_editor(timeout=30)",
+    "CLI fresh hierarchy acquisition"
+  ],
+  "terminalGetterBudgetSeconds": 0.46215945898438804,
+  "terminalBudgetCausality": "Not inferred; this is the residual getter budget inside the original readiness deadline.",
+  "completedPublicXmlCheckpoints": [
+    "empty",
+    "components"
+  ],
+  "privateCheckpoint": {
+    "file": "raw/failure-checkpoint-36.circ",
+    "checkpoint": "north",
+    "origin": "Final .workspace member extracted by the original failure collector",
+    "copyXmlNorthCompleted": false,
+    "sourceMember": "final-private-checkpoint.workspace"
+  },
+  "documentChecks": {
+    "editing-empty.circ": {
+      "checkpoint": "empty",
+      "componentCount": 0,
+      "wireCount": 0,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    "editing-components.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "failure-checkpoint-36.circ": {
+      "checkpoint": "north",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "11ba7d73610a3fc8043a3a974f29bf076ea70529936a8cc2e2844e7b8f91e6d8"
+    }
+  },
+  "finalHierarchy": {
+    "inspector": "E2E_NOT",
+    "facing": "North",
+    "backDeliveryOrHandler": "Not established"
+  },
+  "requestsOnly": [
+    {
+      "elapsedSeconds": 167.788970915979,
+      "utc": "2026-11-05T10:21:06.507447+00:00",
+      "request": [
+        "shell",
+        "input",
+        "tap",
+        "818",
+        "1615"
+      ]
+    },
+    {
+      "elapsedSeconds": 167.8144408329972,
+      "utc": "2026-11-05T10:21:06.532919+00:00",
+      "request": [
+        "shell",
+        "input",
+        "keyevent",
+        "4"
+      ]
+    },
+    {
+      "elapsedSeconds": 167.83958729097503,
+      "utc": "2026-11-05T10:21:06.558061+00:00",
+      "request": [
+        "shell",
+        "am",
+        "start",
+        "-W",
+        "-n",
+        "thalesmms.logisim.mobile.e2e.test/dev.logisim.mobile.documents.DocumentClipboardReaderActivity",
+        "--es",
+        "prepareCopy",
+        "2c169d739686470baf5c673c46bc1b01"
+      ]
+    }
+  ],
+  "sdk": {
+    "completeCaptures": 42,
+    "pidBeforeAfterEachQuery": "5182",
+    "recoveryQualified": false,
+    "continuousPidQualified": false
+  },
+  "notRun": [
+    "editing-wires-truth-table",
+    "editing-selection-history",
+    "editing-viewport-touch-parity"
+  ],
+  "restoration": {
+    "settingsDifferences": {},
+    "lastAnrChanged": false,
+    "readerOffBeforeAfter": true,
+    "installedApksAndSourcesUnchanged": true,
+    "cleanupOwnedE2eOnly": true,
+    "pidAfterCleanup": ""
+  },
+  "verification": {
+    "portableReplay": "verification.json",
+    "semanticNegativesAndRelocation": {
+      "testsRun": 5,
+      "log": "negative-controls.log"
+    },
+    "unpublishedTars": "local-tar-check.json",
+    "independentReview": "review.json"
+  },
+  "limits": [
+    "No product or IME cause is assigned.",
+    "ADB audit records command requests only, not completion, delivery or callbacks.",
+    "last-document is the earlier components export, not the final private North checkpoint.",
+    "The first editing group failed and the other three did not run.",
+    "Original TARs remain local; the portable packet retains references and the necessary final member only."
+  ]
+}

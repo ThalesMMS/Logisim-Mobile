@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-05T09:52:27.937286+00:00",
+  "scope": "Read-only immutable-source, preserved-artifact plist/header and local KLIB IR review. Only this report is written. No build, Gradle, tests, device, process arguments, downloads or cache reset.",
+  "source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "control_source_sha": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+  "finding": "No source evidence assigning the reported backboardd display.primary/MTLSimDevice/QuartzCore stack to an application fault.",
+  "sources": [
+    {
+      "source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "relative_path": "iosApp/LogisimMobileApp.swift",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/iosApp/LogisimMobileApp.swift",
+      "git_blob_sha256": "f4a50d9deac21090054dbf572393e88ca1670b4add13e854160654cf70b14469",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 4,
+          "last": 20,
+          "text": "4: @main\n5: struct LogisimMobileApp: App {\n6:     var body: some Scene {\n7:         WindowGroup {\n8:             DocumentWindow()\n9:         }\n10:     }\n11: }\n12: \n13: private struct DocumentWindow: View {\n14:     @State private var incomingDocument: IncomingDocument?\n15:     @SceneStorage(\"externalDocumentSessionID\") private var sessionID = UUID().uuidString\n16: \n17:     var body: some View {\n18:         CircuitView(sessionID: sessionID, incomingDocument: incomingDocument)\n19:             .ignoresSafeArea()\n20:             .onOpenURL { incomingDocument = IncomingDocument(url: $0) }"
+        },
+        {
+          "first": 29,
+          "last": 51,
+          "text": "29: private struct CircuitView: UIViewControllerRepresentable {\n30:     let sessionID: String\n31:     let incomingDocument: IncomingDocument?\n32: \n33:     final class Coordinator {\n34:         let session: IosDocumentSession\n35:         var lastDocumentID: UUID?\n36: \n37:         init(sessionID: String) { session = IosDocumentSession(sessionId: sessionID) }\n38:     }\n39: \n40:     func makeCoordinator() -> Coordinator { Coordinator(sessionID: sessionID) }\n41: \n42:     func makeUIViewController(context: Context) -> UIViewController {\n43:         context.coordinator.session.makeViewController()\n44:     }\n45: \n46:     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {\n47:         guard let request = incomingDocument,\n48:               request.id != context.coordinator.lastDocumentID else { return }\n49:         context.coordinator.lastDocumentID = request.id\n50:         context.coordinator.session.openURL(url: request.url)\n51:     }"
+        }
+      ]
+    },
+    {
+      "source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "relative_path": "iosApp/project.yml",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/iosApp/project.yml",
+      "git_blob_sha256": "bed7ba1bf09e8fa5bd19b04771b7553463b0249904cd07a81aefedd624cd0825",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 24,
+          "last": 35,
+          "text": "24:         PRODUCT_NAME: LogisimMobile\n25:         GENERATE_INFOPLIST_FILE: YES\n26:         INFOPLIST_FILE: Info.plist\n27:         INFOPLIST_KEY_CFBundleDisplayName: $(LOGISIM_DISPLAY_NAME)\n28:         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon\n29:         INFOPLIST_KEY_UILaunchScreen_Generation: YES\n30:         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES\n31:         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES\n32:         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight\n33:         TARGETED_DEVICE_FAMILY: \"1,2\"\n34:         FRAMEWORK_SEARCH_PATHS: $(inherited) $(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)\n35:         OTHER_LDFLAGS: $(inherited) -framework ComposeApp"
+        }
+      ]
+    },
+    {
+      "source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "relative_path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/MainViewController.kt",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/composeApp/src/iosMain/kotlin/dev/logisim/mobile/MainViewController.kt",
+      "git_blob_sha256": "533bee8ad74060620d56eef581c813582124eb4277b5d5e6fd9cff3b9af0d3f2",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 30,
+          "last": 48,
+          "text": "30: /** A SwiftUI window keeps its own session so incoming URLs reach that window's editor. */\n31: @OptIn(ExperimentalForeignApi::class, kotlin.experimental.ExperimentalNativeApi::class)\n32: class IosDocumentSession(private val sessionId: String) {\n33:     private val slot = ControllerSlot()\n34:     private val presenter: () -> UIViewController? = slot.let { controllerSlot ->\n35:         { controllerSlot.reference?.get() }\n36:     }\n37:     private val documents = IosDocumentActions(presenter,\n38:         referenceKey = \"workspace.external-document.v1.$sessionId\")\n39:     private val assets = IosDocumentAssetActions(presenter)\n40:     private val directoryAssets = IosDirectoryAssetActions(presenter)\n41:     private var controller: UIViewController? = null\n42: \n43:     fun makeViewController(): UIViewController = controller ?: createViewController(documents, assets, directoryAssets, sessionId).also {\n44:         controller = it\n45:         slot.reference = WeakReference(it)\n46:     }\n47: \n48:     fun openURL(url: NSURL) { documents.openURL(url) }"
+        },
+        {
+          "first": 60,
+          "last": 90,
+          "text": "60:     val defaults = NSUserDefaults.standardUserDefaults\n61:     val storage = IosCatalogStorage()\n62:     val preferences = IosPreferencesStorage()\n63:     return ComposeUIViewController(configure = {\n64:         onFocusBehavior = OnFocusBehavior.DoNothing\n65:     }) {\n66:         var restored by remember { mutableStateOf<LegacyBootstrap?>(null) }\n67:         LaunchedEffect(storage, documents) {\n68:             val legacy = withContext(Dispatchers.Default) {\n69:                 WorkspaceRepository(storage,\n70:                     validate = { CircCodec.readProject(it) is CircProjectImportResult.Success },\n71:                 ).load(defaults.stringForKey(\"workspace.circuit\"))\n72:             }\n73:             documents.bindWorkspace(legacy.xml)\n74:             restored = LegacyBootstrap(legacy.xml, documents.currentReference)\n75:         }\n76:         restored?.let { legacy ->\n77:             CatalogWorkspaceHost(\n78:                 storage = storage,\n79:                 legacyXml = legacy.xml,\n80:                 documents = documents,\n81:                 windowId = windowId,\n82:                 legacyExternalReference = legacy.reference,\n83:                 onExternalWorkspaceSaved = documents::workspaceSaved,\n84:                 preferencesStorage = preferences,\n85:                 assets = assets,\n86:                 directoryAssets = directoryAssets,\n87:             )\n88:         } ?: MaterialTheme {\n89:             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator() }\n90:         }"
+        }
+      ]
+    },
+    {
+      "source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "relative_path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosDocumentActions.kt",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosDocumentActions.kt",
+      "git_blob_sha256": "64fe1e96fb4597247a1b3c250f2ac9a1457888ed7bbf4fdef9110cdd863eecbd",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 128,
+          "last": 149,
+          "text": "128:     override fun open(mode: DocumentOpenMode) {\n129:         if (pickerOperation != null) {\n130:             emitOpen(DocumentOpenResult.Failure(iosNotice(\"busy\")))\n131:             return\n132:         }\n133:         val type = UTType.typeWithIdentifier(\"org.logisim-evolution.circuit\")\n134:             ?: UTType.typeWithIdentifier(\"public.xml\")\n135:             ?: iosError(\"xml_type_unavailable\")\n136:         val picker = UIDocumentPickerViewController(forOpeningContentTypes = listOf(type), asCopy = mode == DocumentOpenMode.IMPORT_COPY)\n137:         picker.delegate = pickerDelegate\n138:         picker.allowsMultipleSelection = false\n139:         pickerOperation = PickerOperation.Open(mode, beginOpen())\n140:         if (!present(picker)) {\n141:             pickerOperation = null\n142:             emitOpen(DocumentOpenResult.Failure(iosNotice(\"open_picker_failed\")))\n143:         }\n144:     }\n145: \n146:     /** The receiving scene calls this for Files/Open With; no other scene's project is replaced. */\n147:     fun openURL(url: NSURL) {\n148:         read(url, DocumentOpenMode.EDIT_IN_PLACE, beginOpen())\n149:     }"
+        },
+        {
+          "first": 203,
+          "last": 215,
+          "text": "203:     internal fun selectedDocuments(didPickDocumentsAtURLs: List<*>) {\n204:         val operation = pickerOperation ?: return\n205:         pickerOperation = null\n206:         val url = didPickDocumentsAtURLs.singleOrNull() as? NSURL\n207:         if (url == null) {\n208:             when (operation) {\n209:                 is PickerOperation.Open -> if (operation.generation == openGeneration) emitOpen(DocumentOpenResult.Failure(iosNotice(\"pick_one\")))\n210:                 is PickerOperation.Create -> operation.complete(DocumentWriteResult.Failure(iosNotice(\"provider_no_file\")))\n211:             }\n212:             return\n213:         }\n214:         when (operation) {\n215:             is PickerOperation.Open -> read(url, operation.mode, operation.generation)"
+        },
+        {
+          "first": 232,
+          "last": 251,
+          "text": "232:     private fun read(url: NSURL, mode: DocumentOpenMode, generation: Long) {\n233:         background({ readDocument(url, mode) }) { result ->\n234:             if (generation != openGeneration) return@background\n235:             emitOpen(result.fold({ DocumentOpenResult.Opened(it) }, { DocumentOpenResult.Failure(it.localizedDescription(iosNotice(\"operation_failed\"))) }))\n236:         }\n237:     }\n238: \n239:     internal fun readReference(reference: DocumentReference): DocumentContent = readDocument(resolve(reference), reference.mode)\n240: \n241:     internal fun readDocument(url: NSURL, mode: DocumentOpenMode): DocumentContent {\n242:         requireLocalized(url.fileURL) { iosNotice(\"file_url_required\") }\n243:         return withSecurityScope(url) {\n244:             coordinatedRead(url) { actual ->\n245:                 val data = fileData(actual, documentFilename(url))\n246:                 val text = NSString.create(data = data, encoding = NSUTF8StringEncoding)?.toString()\n247:                     ?: iosError(\"invalid_utf8\")\n248:                 val source = if (mode == DocumentOpenMode.IMPORT_COPY) temporaryDocument(url.lastPathComponent ?: \"circuit.circ\", text) else url\n249:                 DocumentContent(reference(source, mode, sha256(data)), text)\n250:             }\n251:         }"
+        },
+        {
+          "first": 313,
+          "last": 326,
+          "text": "313:     private fun temporaryDocument(suggestedName: String, text: String): NSURL {\n314:         requireLocalized(text.encodeToByteArray().size.toULong() <= MAX_DOCUMENT_BYTES) { iosNotice(\"document_too_large\") }\n315:         val cache = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, true).firstOrNull() as? String\n316:             ?: iosError(\"export_prepare_failed\")\n317:         val directory = \"$cache/LogisimExports/\" + NSUUID().UUIDString\n318:         checkLocalized(NSFileManager.defaultManager.createDirectoryAtPath(directory, true, null, null)) {\n319:             iosNotice(\"export_prepare_failed\")\n320:         }\n321:         val name = suggestedName.substringAfterLast('/').substringAfterLast('\\\\').ifBlank { \"circuit.circ\" }\n322:         val url = NSURL.fileURLWithPath(\"$directory/${if (name.endsWith(\".circ\", true)) name else \"$name.circ\"}\")\n323:         checkLocalized(NSString.create(string = text).writeToURL(url, true, NSUTF8StringEncoding, null)) {\n324:             iosNotice(\"export_write_failed\")\n325:         }\n326:         return url"
+        },
+        {
+          "first": 329,
+          "last": 355,
+          "text": "329:     private fun present(controller: UIViewController): Boolean {\n330:         var host = presenter() ?: return false\n331:         while (host.presentedViewController != null) host = host.presentedViewController!!\n332:         if (host.view.window == null) return false\n333:         controller.popoverPresentationController?.let { popover ->\n334:             popover.sourceView = host.view\n335:             popover.sourceRect = host.view.bounds\n336:         }\n337:         host.presentViewController(controller, animated = true, completion = {\n338:             if (controller is UIDocumentPickerViewController) controller.presentationController?.delegate = pickerDelegate\n339:         })\n340:         return true\n341:     }\n342: \n343:     private fun beginOpen(): Long {\n344:         pendingOpen.clear()\n345:         return ++openGeneration\n346:     }\n347: \n348:     private fun emitOpen(result: DocumentOpenResult) {\n349:         openHandler?.invoke(result) ?: pendingOpen.addLast(result)\n350:     }\n351: \n352:     private fun <T> background(action: () -> T, completion: (Result<T>) -> Unit) {\n353:         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT.toLong(), 0u)) {\n354:             val result = runCatching(action)\n355:             dispatch_async(dispatch_get_main_queue()) { completion(result) }"
+        },
+        {
+          "first": 386,
+          "last": 402,
+          "text": "386: private fun <T> withSecurityScope(url: NSURL, block: () -> T): T {\n387:     val acquired = url.startAccessingSecurityScopedResource()\n388:     return try { block() } finally { if (acquired) url.stopAccessingSecurityScopedResource() }\n389: }\n390: \n391: private fun <T> coordinatedRead(url: NSURL, block: (NSURL) -> T): T = memScoped {\n392:     val failure = alloc<ObjCObjectVar<NSError?>>()\n393:     failure.value = null\n394:     var value: Result<T>? = null\n395:     NSFileCoordinator(null).coordinateReadingItemAtURL(url, 0u, failure.ptr) { actual ->\n396:         value = runCatching { block(actual ?: iosError(\"provider_no_access\")) }\n397:     }\n398:     failure.value?.let {\n399:         NSLog(\"Coordinated document read failed: %@ (%ld)\", it.domain, it.code)\n400:         throw LocalizedStateException(iosDocumentProviderNotice(it, documentFilename(url), iosNotice(\"provider_no_access\")))\n401:     }\n402:     (value ?: iosError(\"provider_read_incomplete\")).getOrThrow()"
+        }
+      ]
+    },
+    {
+      "source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "relative_path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorDocuments.kt",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorDocuments.kt",
+      "git_blob_sha256": "8b4958d5db69b6f9a833e048d19a719862d6f441802231d676a8bbb4feff8038",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 30,
+          "last": 54,
+          "text": "30:     fun attach() {\n31:         val generation = ++attachmentGeneration\n32:         state.onProjectReplaced = ::unlink\n33:         actions.setOpenHandler { result ->\n34:             when (result) {\n35:                 is DocumentOpenResult.Opened -> importDocument(result.content, { generation == attachmentGeneration }) { accepted ->\n36:                     if (accepted && generation == attachmentGeneration) {\n37:                         retain(result.content.reference.takeIf { it.mode == DocumentOpenMode.EDIT_IN_PLACE })\n38:                         state.reportStatus(message(Messages.StatusFileOpened, \"name\" to result.content.reference.name))\n39:                     }\n40:                 }\n41:                 is DocumentOpenResult.Failure -> state.reportError(result.notice)\n42:                 DocumentOpenResult.Cancelled -> Unit\n43:             }\n44:         }\n45:     }\n46: \n47:     fun detach() {\n48:         attachmentGeneration++\n49:         actions.setOpenHandler(null)\n50:         state.onProjectReplaced = {}\n51:     }\n52: \n53:     fun openCopy() = actions.open(DocumentOpenMode.IMPORT_COPY)\n54:     fun editFile() = actions.open(DocumentOpenMode.EDIT_IN_PLACE)"
+        }
+      ]
+    },
+    {
+      "source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "relative_path": "composeApp/build.gradle.kts",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/composeApp/build.gradle.kts",
+      "git_blob_sha256": "c4cfa202b8202fbb7a9fa2112bda9396d0df8c21c6c3d2261881806fcab6649a",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 26,
+          "last": 40,
+          "text": "26:     listOf(iosArm64(), iosSimulatorArm64()).forEach {\n27:         it.binaries.framework {\n28:             baseName = \"ComposeApp\"\n29:             isStatic = true\n30:         }\n31:     }\n32:     sourceSets {\n33:         commonMain.dependencies {\n34:             implementation(project(\":core\"))\n35:             implementation(\"org.jetbrains.compose.runtime:runtime:1.13.0-beta02\")\n36:             implementation(\"org.jetbrains.compose.foundation:foundation:1.13.0-beta02\")\n37:             implementation(\"org.jetbrains.compose.ui:ui:1.13.0-beta02\")\n38:             implementation(\"org.jetbrains.compose.material3:material3:1.9.0\")\n39:             implementation(\"org.jetbrains.compose.components:components-resources:1.13.0-beta02\")\n40:             implementation(\"org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.11.0\")"
+        }
+      ]
+    },
+    {
+      "source_sha": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+      "relative_path": "scripts/ios_uikit_document_control/ControlApp.swift",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/scripts/ios_uikit_document_control/ControlApp.swift",
+      "git_blob_sha256": "eac1b5550691b40c02e60dc2a4d9c912d8564b826daa741117b360dc1e057b15",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 4,
+          "last": 39,
+          "text": "4: @main\n5: final class AppDelegate: UIResponder, UIApplicationDelegate {\n6:     func application(_ application: UIApplication, configurationForConnecting session: UISceneSession,\n7:                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {\n8:         let configuration = UISceneConfiguration(name: \"Default\", sessionRole: session.role)\n9:         configuration.delegateClass = SceneDelegate.self\n10:         return configuration\n11:     }\n12: }\n13: \n14: final class SceneDelegate: UIResponder, UIWindowSceneDelegate {\n15:     var window: UIWindow?\n16:     private let store = DocumentProbe.shared\n17: \n18:     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options: UIScene.ConnectionOptions) {\n19:         guard let scene = scene as? UIWindowScene else { return }\n20:         store.bootstrap()\n21:         let controller = ControlViewController(scene: scene)\n22:         let window = UIWindow(windowScene: scene)\n23:         window.rootViewController = controller\n24:         self.window = window\n25:         window.makeKeyAndVisible()\n26:         store.event(\"willConnect\", scene: scene)\n27:         for context in options.urlContexts { store.receive(context, phase: \"willConnect\", scene: scene) }\n28:         controller.refresh()\n29:     }\n30: \n31:     func scene(_ scene: UIScene, openURLContexts contexts: Set<UIOpenURLContext>) {\n32:         store.event(\"openURLContexts\", scene: scene)\n33:         for context in contexts { store.receive(context, phase: \"openURLContexts\", scene: scene) }\n34:         (window?.rootViewController as? ControlViewController)?.refresh()\n35:     }\n36: \n37:     func sceneDidBecomeActive(_ scene: UIScene) { store.event(\"didBecomeActive\", scene: scene) }\n38:     func sceneWillResignActive(_ scene: UIScene) { store.event(\"willResignActive\", scene: scene) }\n39:     func sceneDidEnterBackground(_ scene: UIScene) { store.event(\"didEnterBackground\", scene: scene) }"
+        },
+        {
+          "first": 62,
+          "last": 80,
+          "text": "62:     override func viewDidLoad() {\n63:         super.viewDidLoad()\n64:         view.backgroundColor = .systemBackground\n65:         titleLabel.text = \"UIKit document control\"\n66:         resultLabel.numberOfLines = 0\n67:         stateLabel.text = \"Read-only document and scene state\"\n68:         stateLabel.isAccessibilityElement = true\n69:         stateLabel.accessibilityIdentifier = \"document-control-state\"\n70:         stateLabel.read = { [weak self] in DocumentProbe.shared.snapshot(scene: self?.scene) }\n71:         let stack = UIStackView(arrangedSubviews: [titleLabel, resultLabel, stateLabel])\n72:         stack.axis = .vertical\n73:         stack.spacing = 20\n74:         stack.translatesAutoresizingMaskIntoConstraints = false\n75:         view.addSubview(stack)\n76:         NSLayoutConstraint.activate([\n77:             stack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),\n78:             stack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),\n79:             stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),\n80:         ])"
+        },
+        {
+          "first": 131,
+          "last": 160,
+          "text": "131:     func receive(_ context: UIOpenURLContext, phase: String, scene: UIScene) {\n132:         let url = context.url\n133:         var record: [String: Any] = [\"phase\": phase, \"time\": Date().timeIntervalSince1970,\n134:             \"scene\": scene.session.persistentIdentifier, \"url\": url.absoluteString, \"name\": url.lastPathComponent,\n135:             \"fileURL\": url.isFileURL, \"openInPlace\": context.options.openInPlace,\n136:             \"sourceApplication\": context.options.sourceApplication ?? \"\", \"existsBeforeRead\": FileManager.default.fileExists(atPath: url.path)]\n137:         let scoped = url.startAccessingSecurityScopedResource()\n138:         record[\"securityScopeStarted\"] = scoped\n139:         defer { if scoped { url.stopAccessingSecurityScopedResource() } }\n140:         if url.isFileURL {\n141:             var coordinationError: NSError?\n142:             NSFileCoordinator(filePresenter: nil).coordinate(readingItemAt: url, options: .withoutChanges, error: &coordinationError) { coordinated in\n143:                 do {\n144:                     let data = try Data(contentsOf: coordinated)\n145:                     record[\"bytes\"] = data.count\n146:                     record[\"sha256\"] = Self.hash(data)\n147:                     record[\"coordinatedURL\"] = coordinated.absoluteString\n148:                 } catch {\n149:                     let error = error as NSError\n150:                     record[\"readErrorDomain\"] = error.domain\n151:                     record[\"readErrorCode\"] = error.code\n152:                 }\n153:             }\n154:             if let error = coordinationError {\n155:                 record[\"coordinationErrorDomain\"] = error.domain\n156:                 record[\"coordinationErrorCode\"] = error.code\n157:             }\n158:         }\n159:         receives.append(record)\n160:         persist()"
+        }
+      ]
+    },
+    {
+      "source_sha": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+      "relative_path": "scripts/ios_uikit_document_control/ConsumerInfo.plist",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/scripts/ios_uikit_document_control/ConsumerInfo.plist",
+      "git_blob_sha256": "ccc86915869f5d25c59297605f99821ac249973485beb83570a1ba9d136dde00",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 40,
+          "last": 58,
+          "text": "40: \t<key>LSSupportsOpeningDocumentsInPlace</key>\n41: \t<true/>\n42: \t<key>UIApplicationSceneManifest</key>\n43: \t<dict>\n44: \t\t<key>UIApplicationSupportsMultipleScenes</key>\n45: \t\t<true/>\n46: \t\t<key>UISceneConfigurations</key>\n47: \t\t<dict>\n48: \t\t\t<key>UIWindowSceneSessionRoleApplication</key>\n49: \t\t\t<array>\n50: \t\t\t\t<dict>\n51: \t\t\t\t\t<key>UISceneConfigurationName</key>\n52: \t\t\t\t\t<string>Default</string>\n53: \t\t\t\t\t<key>UISceneDelegateClassName</key>\n54: \t\t\t\t\t<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>\n55: \t\t\t\t</dict>\n56: \t\t\t</array>\n57: \t\t</dict>\n58: \t</dict>"
+        }
+      ]
+    },
+    {
+      "source_sha": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+      "relative_path": "scripts/ios_uikit_document_control/project.yml",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/scripts/ios_uikit_document_control/project.yml",
+      "git_blob_sha256": "bbb41509596c9dfce096feef5587e801d6d5a44591958d70900b55504fb0e78b",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 11,
+          "last": 19,
+          "text": "11:   UIKitDocumentConsumer:\n12:     type: application\n13:     platform: iOS\n14:     sources:\n15:       - ControlApp.swift\n16:       - path: Fixture.circ\n17:         buildPhase: resources\n18:     info:\n19:       path: ConsumerInfo.plist"
+        },
+        {
+          "first": 39,
+          "last": 44,
+          "text": "39:         UIApplicationSceneManifest:\n40:           UIApplicationSupportsMultipleScenes: true\n41:           UISceneConfigurations:\n42:             UIWindowSceneSessionRoleApplication:\n43:               - UISceneConfigurationName: Default\n44:                 UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate"
+        }
+      ]
+    },
+    {
+      "source_sha": "a8e32bc20f3708ecd7fb6d729be94578ab23bf89",
+      "relative_path": "scripts/ios_uikit_document_control/DocumentControlTests.swift",
+      "absolute_worktree_path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-uikit-document-control/scripts/ios_uikit_document_control/DocumentControlTests.swift",
+      "git_blob_sha256": "5210c37d113044d8fdd18245f434d8da933920e0b78dc2fb7a8b74f58cdeb8f9",
+      "worktree_matches_git": true,
+      "selected_lines": [
+        {
+          "first": 43,
+          "last": 70,
+          "text": "43:         let ready = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in\n44:             guard let state = activeState() else { return false }\n45:             return state[\"ready\"] as? Bool == true && state[\"fixtureExists\"] as? Bool == true &&\n46:                 state[\"applicationState\"] as? Int == 0 && state[\"fixtureSHA256\"] as? String == expected\n47:         }, object: app)\n48:         let bootstrap = XCTWaiter.wait(for: [ready], timeout: 20)\n49:         capture(\"uikit-document-before-system-open\")\n50:         XCTAssertEqual(bootstrap, .completed, \"Bootstrap the active UIKit consumer and exact still-existing fixture before the single System Open\")\n51:         let before = try XCTUnwrap(activeState())\n52:         XCTAssertEqual(before[\"fixtureBytes\"] as? Int, 1391)\n53:         XCTAssertEqual((before[\"receives\"] as? [[String: Any]])?.count, 0)\n54:         let url = try XCTUnwrap(URL(string: try XCTUnwrap(before[\"fixtureURL\"] as? String)))\n55:         XCTAssertEqual(url.pathExtension, \"circ\")\n56: \n57:         // Exactly the public API used by the interrupted B25 existing-file handoff.\n58:         XCUIDevice.shared.system.open(url)\n59: \n60:         let opened = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in\n61:             guard let state = activeState(), let records = state[\"receives\"] as? [[String: Any]], records.count == 1 else { return false }\n62:             return records[0][\"sha256\"] as? String == expected && records[0][\"bytes\"] as? Int == 1391\n63:         }, object: app)\n64:         let handoff = XCTWaiter.wait(for: [opened], timeout: 20)\n65:         capture(\"uikit-document-after-system-open\")\n66:         XCTAssertEqual(handoff, .completed, \"The UIKit callback must observe and hash the exact document bytes\")\n67:         let after = try XCTUnwrap(activeState())\n68:         XCTAssertEqual(after[\"fixtureExists\"] as? Bool, true)\n69:         XCTAssertEqual(after[\"fixtureSHA256\"] as? String, expected)\n70:         XCTAssertEqual(after[\"bundleID\"] as? String, \"thalesmms.logisim.validation.documentconsumer\")"
+        }
+      ]
+    }
+  ],
+  "producer": {
+    "manifest_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/artifact.json",
+    "manifest_sha256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+    "declared_source_sha": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "declared_source_tree": "7bb179163b2c59afe86e3349ed50d7144867072f",
+    "declared_app_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+    "declared_framework_sha256": "dd12979d049b48324155149ac3215234273cc3a222e946be66f522a17bb2dcde",
+    "declared_actual_compile_and_link": "PASS",
+    "info_plist_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app/Info.plist",
+    "info_plist_sha256": "b00f52de3c17ca0c5fb9ee560dad2fc6fd97fae44e39e16184df14fa2ea45f14",
+    "scene_manifest": {
+      "UIApplicationSupportsMultipleScenes": true,
+      "UISceneConfigurations": {}
+    },
+    "CADisableMinimumFrameDurationOnPhone": true,
+    "header_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/composeApp/build/bin/iosSimulatorArm64/debugFramework/ComposeApp.framework/Headers/ComposeApp.h",
+    "header_sha256": "fd17cc607ce5425ef0b6c4c09776e8c3849495d90b18256ea1a21baacb02f07f",
+    "header_exported_session_methods": [
+      "IosDocumentSession.makeViewController",
+      "IosDocumentSession.openURL"
+    ],
+    "header_does_not_expose_ComposeUIViewControllerConfiguration": true,
+    "cache_provenance_path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/cache-provenance.json",
+    "cache_provenance_sha256": "fa2016aad9670158fafdbd8e92bf6d20713b3868f29461110c9da6eccbe69eff",
+    "cache_origin_source": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+    "cache_requirement": "Actual final-pin Native compile/link; cached intermediates do not qualify the new app."
+  },
+  "dependency_module": {
+    "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-skiko-iossimulatorarm64/1.13.0-beta02/fed382b2947ff5db4632a167c171ebdd8aa51e40/ui-skiko-iossimulatorarm64-1.13.0-beta02.module",
+    "sha256": "e27f193deb1922c129e4aa0d901e85ed1137f2444640bf158462e3ff875cc1cd",
+    "skiko_dependencies": [
+      {
+        "variant": "iosSimulatorArm64ApiElements-published",
+        "dependency": {
+          "group": "org.jetbrains.skiko",
+          "module": "skiko",
+          "version": {
+            "requires": "0.156.1"
+          }
+        }
+      },
+      {
+        "variant": "iosSimulatorArm64MetadataElements-published",
+        "dependency": {
+          "group": "org.jetbrains.skiko",
+          "module": "skiko",
+          "version": {
+            "requires": "0.156.1"
+          }
+        }
+      }
+    ]
+  },
+  "klib_inspections": [
+    {
+      "library_path": "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-iossimulatorarm64/1.13.0-beta02/3e438f9ac6ff435a0cb917470375d4ad5651b5e2/ui-iosSimulatorArm64Main-1.13.0-beta02.klib",
+      "library_sha256": "4a0cc474f3f75ce3523236911effd31a48e14acaedbe9131d6bc58595bc2a44f",
+      "command": [
+        "/Users/thales/.konan/kotlin-native-prebuilt-macos-aarch64-2.4.21/bin/klib",
+        "dump-ir",
+        "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-iossimulatorarm64/1.13.0-beta02/3e438f9ac6ff435a0cb917470375d4ad5651b5e2/ui-iosSimulatorArm64Main-1.13.0-beta02.klib"
+      ],
+      "exit_code": 0,
+      "full_stdout_sha256": "051f80513fb5d361a2cacefec9c461f9160eae97160c3e2af9f11dff9bd53bf0",
+      "full_stdout_line_count": 251421,
+      "selected_ir": [
+        {
+          "first_ir_line": 189185,
+          "last_ir_line": 189187,
+          "symbol": "ComposeContainerConfiguration.onFocusBehavior",
+          "text": "        FIELD PROPERTY_BACKING_FIELD name:onFocusBehavior signature:[ androidx.compose.ui.uikit/ComposeContainerConfiguration.onFocusBehavior|{}onFocusBehavior[0] <- Local[<BF>] ] type:androidx.compose.ui.uikit.OnFocusBehavior visibility:private\n          EXPRESSION_BODY\n            GET_OBJECT 'androidx.compose.ui.uikit/OnFocusBehavior.FocusableAboveKeyboard|null[0]' type=androidx.compose.ui.uikit.OnFocusBehavior.FocusableAboveKeyboard"
+        },
+        {
+          "first_ir_line": 189206,
+          "last_ir_line": 189208,
+          "symbol": "ComposeContainerConfiguration.opaque",
+          "text": "        FIELD PROPERTY_BACKING_FIELD name:opaque signature:[ androidx.compose.ui.uikit/ComposeContainerConfiguration.opaque|{}opaque[0] <- Local[<BF>] ] type:kotlin.Boolean visibility:private\n          EXPRESSION_BODY\n            CONST Boolean type=kotlin.Boolean value=true"
+        },
+        {
+          "first_ir_line": 189225,
+          "last_ir_line": 189227,
+          "symbol": "ComposeContainerConfiguration.enforceStrictPlistSanityCheck",
+          "text": "        FIELD PROPERTY_BACKING_FIELD name:enforceStrictPlistSanityCheck signature:[ androidx.compose.ui.uikit/ComposeContainerConfiguration.enforceStrictPlistSanityCheck|{}enforceStrictPlistSanityCheck[0] <- Local[<BF>] ] type:kotlin.Boolean visibility:private\n          EXPRESSION_BODY\n            CONST Boolean type=kotlin.Boolean value=true"
+        },
+        {
+          "first_ir_line": 189246,
+          "last_ir_line": 189248,
+          "symbol": "ComposeContainerConfiguration.parallelRendering",
+          "text": "        FIELD PROPERTY_BACKING_FIELD name:parallelRendering signature:[ androidx.compose.ui.uikit/ComposeContainerConfiguration.parallelRendering|{}parallelRendering[0] <- Local[<BF>] ] type:kotlin.Boolean visibility:private\n          EXPRESSION_BODY\n            CONST Boolean type=kotlin.Boolean value=true"
+        }
+      ]
+    },
+    {
+      "library_path": "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.skiko/skiko-iossimulatorarm64/0.156.1/35b95a0bbec93124948ceabf8833198cc0bf3210/skiko-iosSimulatorArm64Main-0.156.1.klib",
+      "library_sha256": "dae33b2e06414c3c52ccf582dcb85cfd60a52467d37179cd884f4e7de32d5a42",
+      "command": [
+        "/Users/thales/.konan/kotlin-native-prebuilt-macos-aarch64-2.4.21/bin/klib",
+        "dump-ir",
+        "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.skiko/skiko-iossimulatorarm64/0.156.1/35b95a0bbec93124948ceabf8833198cc0bf3210/skiko-iosSimulatorArm64Main-0.156.1.klib"
+      ],
+      "exit_code": 0,
+      "full_stdout_sha256": "8951a8eecaae975abe761b3f36c20f03714ef1388f507a0955347adf853c0f3a",
+      "full_stdout_line_count": 76743,
+      "selected_ir": [
+        {
+          "first_ir_line": 75188,
+          "last_ir_line": 75201,
+          "symbol": "org.jetbrains.skiko.SkiaLayer.renderApi",
+          "text": "      PROPERTY name:renderApi signature:org.jetbrains.skiko/SkiaLayer.renderApi|{}renderApi[0] visibility:public modality:FINAL [var]\n        FUN name:<get-renderApi> signature:org.jetbrains.skiko/SkiaLayer.renderApi.<get-renderApi>|<get-renderApi>(){}[0] visibility:public modality:FINAL returnType:org.jetbrains.skiko.GraphicsApi\n          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:org.jetbrains.skiko.SkiaLayer\n          correspondingProperty: PROPERTY name:renderApi signature:org.jetbrains.skiko/SkiaLayer.renderApi|{}renderApi[0] visibility:public modality:FINAL [var]\n          BLOCK_BODY\n            RETURN type=kotlin.Nothing from='org.jetbrains.skiko/SkiaLayer.renderApi.<get-renderApi>|<get-renderApi>(){}[0]'\n              GET_ENUM 'org.jetbrains.skiko/GraphicsApi.METAL|null[0]' type=org.jetbrains.skiko.GraphicsApi\n        FUN name:<set-renderApi> signature:org.jetbrains.skiko/SkiaLayer.renderApi.<set-renderApi>|<set-renderApi>(org.jetbrains.skiko.GraphicsApi){}[0] visibility:public modality:FINAL returnType:kotlin.Unit\n          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:org.jetbrains.skiko.SkiaLayer\n          VALUE_PARAMETER kind:Regular name:_ index:1 type:org.jetbrains.skiko.GraphicsApi\n          correspondingProperty: PROPERTY name:renderApi signature:org.jetbrains.skiko/SkiaLayer.renderApi|{}renderApi[0] visibility:public modality:FINAL [var]\n          BLOCK_BODY\n            THROW type=kotlin.Nothing\n              CONSTRUCTOR_CALL 'kotlin/UnsupportedOperationException.<init>|<init>(){}[0]' type=kotlin.UnsupportedOperationException origin=null"
+        }
+      ]
+    }
+  ],
+  "compose_configuration_metadata": {
+    "command": [
+      "/Users/thales/.konan/kotlin-native-prebuilt-macos-aarch64-2.4.21/bin/klib",
+      "dump-metadata",
+      "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.ui/ui-iossimulatorarm64/1.13.0-beta02/3e438f9ac6ff435a0cb917470375d4ad5651b5e2/ui-iosSimulatorArm64Main-1.13.0-beta02.klib"
+    ],
+    "exit_code": 0,
+    "full_stdout_sha256": "a1bebc5f8138cfc66d1d39903c3f3a98b8783d4df47399afc1e388442c45a8f8",
+    "first_metadata_line": 32729,
+    "last_metadata_line": 32769,
+    "text": "    public sealed class androidx/compose/ui/uikit/ComposeContainerConfiguration : kotlin/Any {\n\n      protected constructor()\n\n      public final var onFocusBehavior: androidx/compose/ui/uikit/OnFocusBehavior\n        public final get\n        public final set\n\n      @androidx/compose/ui/ExperimentalComposeUiApi\n      public final var opaque: kotlin/Boolean\n        public final get\n        public final set\n\n      public final var enforceStrictPlistSanityCheck: kotlin/Boolean\n        public final get\n        public final set\n\n      @androidx/compose/ui/ExperimentalComposeUiApi\n      public final var parallelRendering: kotlin/Boolean\n        public final get\n        public final set\n\n      @androidx/compose/ui/ExperimentalComposeUiApi\n      public final var endEdgePanGestureBehavior: androidx/compose/ui/uikit/EndEdgePanGestureBehavior\n        public final get\n        public final set\n\n      @androidx/compose/ui/ExperimentalComposeUiApi\n      public final var isClearFocusOnMouseDownEnabled: kotlin/Boolean\n        public final get\n        public final set\n\n      @androidx/compose/ui/ExperimentalComposeUiApi\n      public final var preferredSizeReportingStrategy: androidx/compose/ui/uikit/PreferredSizeReportingStrategy\n        public final get\n        public final set\n\n      // sealed subclass: androidx/compose/ui/uikit/ComposeUIViewConfiguration\n\n      // sealed subclass: androidx/compose/ui/uikit/ComposeUIViewControllerConfiguration\n    }"
+  },
+  "findings": [
+    {
+      "id": "system_open",
+      "evidence": "Swift onOpenURL stores a new request UUID; updateUIViewController deduplicates that UUID and forwards to the receiving window session. Session caches one controller. openURL reads EDIT_IN_PLACE on a worker and delivers on main. No explicit UIWindow or extra Compose controller is created by openURL itself."
+    },
+    {
+      "id": "files_import_copy",
+      "evidence": "EditorDocuments.openCopy invokes IMPORT_COPY; UIDocumentPicker asCopy=true is presented above the existing host controller. Its selection uses the same read pipeline. IMPORT_COPY writes Caches/LogisimExports; neither route changes renderer settings or clears graphic caches."
+    },
+    {
+      "id": "scene_support",
+      "evidence": "Product generated plist supports multiple scenes; WindowGroup/SceneStorage allocates per-window document sessions. UIKit control also supports multiple scenes and handles connection URL contexts plus openURLContexts. Configured support establishes neither current scene/window counts nor which route the OS selected in the failed run."
+    },
+    {
+      "id": "uikit_control",
+      "evidence": "Control a8e32bc2 uses UIKit labels and stack views without Compose/Skiko, creates a UIWindow for each connected UIWindowScene, and performs scoped/coordinated read/hash in its callback. Its test uses one public System Open and checks exact 1391-byte hash in an active key scene. It does not exercise the product parser/workspace/Compose frontend."
+    },
+    {
+      "id": "render_configuration",
+      "evidence": "Product configure block sets only OnFocusBehavior.DoNothing. Local Beta KLIB IR initializes opaque, parallelRendering and enforceStrictPlistSanityCheck to true. Opaque/parallelRendering are public experimental options, not a documented backend switch in this configuration."
+    },
+    {
+      "id": "no_proven_software_fallback",
+      "evidence": "Local Skiko iOS0.156.1 KLIB IR returns GraphicsApi.METAL from SkiaLayer.renderApi; its setter throws UnsupportedOperationException. Presence of SOFTWARE enum values alone does not establish a supported iOS software fallback."
+    }
+  ],
+  "limits": [
+    "No runtime census performed; no current window/scene/texture counts inferred.",
+    "Local dependency KLIB IR is identified by path/hash and product-declared version; this report is not a disassembly proving the active renderer class in the failing process.",
+    "Producer artifact manifest identities were read; full bundle tree was not independently recomputed here.",
+    "UIKit AD28 PASS timing/events and FilesImportCopy PASS belong to the separate census receipts. This source audit does not re-run or independently re-qualify them.",
+    "Cold System Open may entail new scene/controller/render initialization; FilesImportCopy presupposes a mounted host. This is a source-path distinction, not a causal attribution of the abort."
+  ]
+}

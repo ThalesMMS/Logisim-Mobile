@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/scripts/e2e-android.py", line 1210, in main
+    run_editing(scenarios)
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/scripts/android_editing_scenarios.py", line 493, in run_editing
+    scenarios.run(name, action)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/scripts/android_editing_scenarios.py", line 389, in wiring_and_truth_table
+    self.connect("E2E_IN", "out", "E2E_NOT", "in")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/scripts/android_editing_scenarios.py", line 378, in connect
+    self.search(destination)  # Keep the pending connection while filtering.
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/scripts/android_editing_scenarios.py", line 289, in search
+    assert viewport is not None, "The circuit search viewport disappeared"
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The circuit search viewport disappeared

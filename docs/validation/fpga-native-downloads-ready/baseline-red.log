@@ -1,0 +1,23 @@
+test_observed_downloads_content_needs_no_navigation_tap (downloads_ready_red_tests.DownloadsNavigationTests.test_observed_downloads_content_needs_no_navigation_tap) ... FAIL
+
+======================================================================
+FAIL: test_observed_downloads_content_needs_no_navigation_tap (downloads_ready_red_tests.DownloadsNavigationTests.test_observed_downloads_content_needs_no_navigation_tap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/test_android_downloads_navigation.py", line 122, in test_observed_downloads_content_needs_no_navigation_tap
+    self.assertEqual([], ui.taps)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['Show roots', 'Downloads']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'Show roots'
+
+- []
++ ['Show roots', 'Downloads']
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)
+Expected baseline RED reproduced without Android processes

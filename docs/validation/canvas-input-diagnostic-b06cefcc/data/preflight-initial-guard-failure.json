@@ -1,0 +1,324 @@
+{
+  "status": "FAIL",
+  "scope": "Preflight/install/readback only; no input case yet",
+  "serial": "emulator-5558",
+  "producerManifest": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/artifact.json",
+  "producerManifestSha256": "c80e3dcd473512af573e4ca636ce84ed571a9f2ff8b336e370b3331c2205d0f9",
+  "commands": [
+    {
+      "arguments": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.313882+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.322704+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.322722+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.331510+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "git",
+        "status",
+        "--porcelain",
+        "--untracked-files=normal"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.331527+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.359731+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "git",
+        "ls-tree",
+        "-r",
+        "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.359746+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.386836+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "python3",
+        "scripts/generate-localization.py",
+        "--check"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.390330+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.503217+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "python3",
+        "tools/generate_app_identity.py",
+        "--check"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.503238+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.528931+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "get-state"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.528947+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.539758+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.539772+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.556500+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "dumpsys",
+        "activity",
+        "processes"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.556519+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.585769+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "dumpsys",
+        "activity",
+        "lastanr"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.589843+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.609539+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt",
+        "dump",
+        "badging",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_apk.apk"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.623936+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.667388+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt",
+        "dump",
+        "xmltree",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_apk.apk",
+        "AndroidManifest.xml"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.667408+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.675036+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "install",
+        "-r",
+        "-t",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_apk.apk"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.675445+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.904736+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pm",
+        "path",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.904770+00:00",
+      "finishedUTC": "2026-11-05T07:49:26.995890+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "exec-out",
+        "cat",
+        "/data/app/~~Cl38KGSLBd0Fki3CFinFYw==/thalesmms.logisim.mobile.e2e-lOoTwv9wPMe1YoHdp2YMWA==/base.apk"
+      ],
+      "startedUTC": "2026-11-05T07:49:26.995933+00:00",
+      "finishedUTC": "2026-11-05T07:49:27.792483+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt",
+        "dump",
+        "badging",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_test_apk.apk"
+      ],
+      "startedUTC": "2026-11-05T07:49:27.806018+00:00",
+      "finishedUTC": "2026-11-05T07:49:27.816635+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt",
+        "dump",
+        "xmltree",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_test_apk.apk",
+        "AndroidManifest.xml"
+      ],
+      "startedUTC": "2026-11-05T07:49:27.816655+00:00",
+      "finishedUTC": "2026-11-05T07:49:27.826433+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "install",
+        "-r",
+        "-t",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_test_apk.apk"
+      ],
+      "startedUTC": "2026-11-05T07:49:27.826844+00:00",
+      "finishedUTC": "2026-11-05T07:49:27.944886+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pm",
+        "path",
+        "thalesmms.logisim.mobile.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:49:27.944910+00:00",
+      "finishedUTC": "2026-11-05T07:49:27.980322+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "exec-out",
+        "cat",
+        "/data/app/~~tRl_ABqgv8S7y0KfiAYw1g==/thalesmms.logisim.mobile.e2e.test-ONimpk0QflI1_AjQfW9t7w==/base.apk"
+      ],
+      "startedUTC": "2026-11-05T07:49:27.980347+00:00",
+      "finishedUTC": "2026-11-05T07:49:28.004596+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt",
+        "dump",
+        "badging",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/snapshot-helper-5c2abc60/snapshot_apk.apk"
+      ],
+      "startedUTC": "2026-11-05T07:49:28.005910+00:00",
+      "finishedUTC": "2026-11-05T07:49:28.017122+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt",
+        "dump",
+        "xmltree",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/snapshot-helper-5c2abc60/snapshot_apk.apk",
+        "AndroidManifest.xml"
+      ],
+      "startedUTC": "2026-11-05T07:49:28.017148+00:00",
+      "finishedUTC": "2026-11-05T07:49:28.030752+00:00",
+      "exitCode": 0
+    }
+  ],
+  "source": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+  "tree": "e24981d26d6d293763966caa9961657a94ce27f6",
+  "productionFilesVerified": 312,
+  "catalog": {
+    "root": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui",
+    "message_count": 2497,
+    "generator_check": "PASS",
+    "files": [
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/GeneratedMessages.kt",
+        "sha256": "923d0e39f08002337fffc888b20a0be17be950faa7e599ddd354e8ea97f80b78"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/composeApp/src/commonMain/composeResources/values/strings.xml",
+        "sha256": "245cbfc8248fe683379f6c28ec42da99f65e7c97923efbe888eb7ad6125fa67d"
+      },
+      {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/composeApp/src/commonMain/composeResources/values-pt/strings.xml",
+        "sha256": "b3e54b0eed4245d25a5bbe13f1545b18d413e649e56b56cf3521f1bedefd6b0c"
+      }
+    ]
+  },
+  "localizationCheck": "Localization: 2497 keys, English fallback and Portuguese complete.",
+  "identityCheckExit": 0,
+  "fingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "instrumentationCensusLines": [],
+  "artifacts": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_apk.apk",
+      "sha256": "c12be1b537b1e02744f057fb36372f3669df25e3385e9c2e7e4fda8a8fc1484b",
+      "installedPath": "/data/app/~~Cl38KGSLBd0Fki3CFinFYw==/thalesmms.logisim.mobile.e2e-lOoTwv9wPMe1YoHdp2YMWA==/base.apk",
+      "installedSha256": "c12be1b537b1e02744f057fb36372f3669df25e3385e9c2e7e4fda8a8fc1484b",
+      "targetPackages": [],
+      "install": "Performing Streamed Install\nSuccess"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_test_apk.apk",
+      "sha256": "f0883691aea034441b4eda8375e424662e78e9a420e7b5f12d225f26e8d45c31",
+      "installedPath": "/data/app/~~tRl_ABqgv8S7y0KfiAYw1g==/thalesmms.logisim.mobile.e2e.test-ONimpk0QflI1_AjQfW9t7w==/base.apk",
+      "installedSha256": "f0883691aea034441b4eda8375e424662e78e9a420e7b5f12d225f26e8d45c31",
+      "targetPackages": [
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "install": "Performing Streamed Install\nSuccess"
+    }
+  ],
+  "error": "AssertionError(['thalesmms.logisim.mobile.snapshot.e2e.test', 'thalesmms.logisim.mobile.snapshot.e2e.test'])",
+  "finishedUTC": "2026-11-05T07:49:28.031153+00:00"
+}

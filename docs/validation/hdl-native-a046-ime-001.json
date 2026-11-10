@@ -1,0 +1,113 @@
+{
+  "scope": "selected co-simulation alpha on the consolidated iOS focus-behavior candidate",
+  "status": "FAIL",
+  "native_execution_gate": "NATIVE_FAIL",
+  "qualification_gate": "NOT_QUALIFIED",
+  "source_sha": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "harness_sha": "0522be13ff49b4c8d3520ebc5d32ef1636e9db8c",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "installed_artifact": {
+    "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/20A4D87D-A2A6-46BD-A889-C4888CE1E152/data/Containers/Bundle/Application/5B478D54-0209-4321-B588-07AA583C167C/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifact_after": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "catalog_sha256": "a333d7af9bc2e6f793ef4d7062727678736e3a5583acaff3f9e19c05f8748ea9",
+  "simulator": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+  "physical_device": false,
+  "portrait": {
+    "hide_actions_passed": 2,
+    "geometry_measurements_passed": 4,
+    "control_minimum_points": [
+      48,
+      48
+    ],
+    "keyboard_hidden": true,
+    "address_preserved_exactly": true,
+    "token_preserved_through_successful_authentication": true
+  },
+  "landscape": {
+    "native_assertion_failure": "Immediately after source focus, the measured Hide keyboard control height is 40 points, below the unchanged 48-point requirement.",
+    "improvement_from_e7": "The action is inside the viewport instead of being translated to y=-48. This observation does not qualify the complete tool workflow.",
+    "source_entry": "NOT_RUN: the immediate focus geometry guard fails before replacing source text.",
+    "insert_prepare_and_compilation": "NOT_RUN",
+    "frames": {
+      "editor-tool-sheet": [
+        102,
+        0,
+        640,
+        152
+      ],
+      "editor-tool-hide-keyboard": [
+        606.6666870117188,
+        26,
+        123.33331298828125,
+        40
+      ],
+      "hdl-sim-scroll": [
+        114,
+        74,
+        616,
+        46
+      ],
+      "hdl-sim-source": [
+        114,
+        66,
+        616,
+        54
+      ],
+      "inputView": [
+        75,
+        166,
+        694,
+        224
+      ]
+    }
+  },
+  "companion_operations": 0,
+  "not_inferred": "No HDL compiler, sample, reset or imported circuit was exercised. The corrected focus offset and portrait keyboard actions do not qualify #58/#59.",
+  "guards_preserved": "48-point action minimum, 24-point scroll minimum and original timeouts remain unchanged. Hardware keyboard and simulator accessibility settings were not changed.",
+  "evidence": {
+    "screenshot": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/034BEB98-A5E7-43FB-B64B-78729D769B19.png",
+      "sha256": "ce91bf8b3917619b36579c509623bea1d3e43b57a5e2aa9558fd210f3e547f6b"
+    },
+    "native_tree": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/7891790A-7510-427A-A1D0-179D8C6A6D83.txt",
+      "sha256": "f946d7d54d25e9795b102a5641e16a531e24bd6ab514736a0c01e58ae28cfea7"
+    },
+    "landscape_geometry": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/27B8AAFF-12E7-4A33-9520-F1294A880B33.txt",
+      "sha256": "683d18af9f9b3cdfdac7a472c9680e3b36d2e575abd9f76c17e697d954dbcaee"
+    },
+    "test_log": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/test.log",
+      "sha256": "a35bd27a21cb1fbe92c3cb7721b2949c5c64912d8b78f85b989fc11dc833d5cc"
+    },
+    "companion_audit": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/companion-audit.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "results": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/results.json",
+      "sha256": "604e54a338646f0f0c322c4929137c894e1646d7d2c9a6c6eff09b5eb1a23ece"
+    }
+  }
+}

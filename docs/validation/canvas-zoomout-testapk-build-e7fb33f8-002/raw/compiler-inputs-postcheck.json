@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "scope": "Read-only final compiler input identity check after successful test-only build",
+  "checks": [
+    {
+      "report": "guard-build-inputs-compileE2eAndroidTestKotlin.json",
+      "task": ":androidApp:compileE2eAndroidTestKotlin",
+      "files": 76,
+      "missingRootsBefore": 0,
+      "afterDifferences": []
+    },
+    {
+      "report": "guard-build-inputs-compileE2eAndroidTestJavaWithJavac.json",
+      "task": ":androidApp:compileE2eAndroidTestJavaWithJavac",
+      "files": 84,
+      "missingRootsBefore": 0,
+      "afterDifferences": []
+    }
+  ],
+  "allCapturedInputBytesUnchanged": true
+}

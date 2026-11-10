@@ -1,0 +1,104 @@
+Failed connection handshake with /127.0.0.1:50864.
+java.io.IOException: Did not receive connection preamble within 10s
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.waitForConnectionPreamble(TcpIncomingConnector.java:164)
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.run(TcpIncomingConnector.java:126)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Failed connection handshake with /127.0.0.1:50876.
+java.io.IOException: Did not receive connection preamble within 10s
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.waitForConnectionPreamble(TcpIncomingConnector.java:164)
+	at org.gradle.internal.remote.internal.inet.TcpIncomingConnector$Receiver.run(TcpIncomingConnector.java:126)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+> Task :core:kmpPartiallyResolvedDependenciesChecker
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeApp:checkJvmMainComposeLibrariesCompatibility
+> Task :core:compileKotlinJvm UP-TO-DATE
+> Task :core:compileJvmMainJava NO-SOURCE
+> Task :core:jvmProcessResources NO-SOURCE
+> Task :core:processJvmMainResources SKIPPED
+> Task :core:jvmMainClasses UP-TO-DATE
+> Task :core:jvmJar UP-TO-DATE
+> Task :core:jvmTestProcessResources UP-TO-DATE
+> Task :core:processJvmTestResources SKIPPED
+> Task :core:compileAndroidMain UP-TO-DATE
+> Task :core:androidPreBuild UP-TO-DATE
+> Task :core:preAndroidMainBuild UP-TO-DATE
+> Task :core:bundleAndroidMainClassesToCompileJar UP-TO-DATE
+> Task :core:bundleAndroidMainClassesToRuntimeJar UP-TO-DATE
+> Task :core:processAndroidMainJavaRes UP-TO-DATE
+> Task :composeApp:kmpPartiallyResolvedDependenciesChecker
+> Task :composeApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeApp:convertXmlValueResourcesForCommonMain UP-TO-DATE
+> Task :composeApp:copyNonXmlValueResourcesForCommonMain UP-TO-DATE
+> Task :composeApp:prepareComposeResourcesTaskForCommonMain UP-TO-DATE
+> Task :composeApp:generateResourceAccessorsForCommonMain UP-TO-DATE
+> Task :composeApp:convertXmlValueResourcesForJvmMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForJvmMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForJvmMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForJvmMain NO-SOURCE
+> Task :composeApp:generateActualResourceCollectorsForJvmMain UP-TO-DATE
+> Task :composeApp:generateComposeResClass UP-TO-DATE
+> Task :composeApp:generateExpectResourceCollectorsForCommonMain UP-TO-DATE
+> Task :composeApp:compileKotlinJvm UP-TO-DATE
+> Task :composeApp:compileJvmMainJava NO-SOURCE
+> Task :composeApp:checkJvmTestComposeLibrariesCompatibility
+> Task :composeApp:convertXmlValueResourcesForCommonTest NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForCommonTest NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForCommonTest NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForCommonTest NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForJvmTest NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForJvmTest NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForJvmTest NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForJvmTest NO-SOURCE
+> Task :composeApp:assembleJvmMainResources UP-TO-DATE
+> Task :composeApp:jvmProcessResources UP-TO-DATE
+> Task :composeApp:processJvmMainResources SKIPPED
+> Task :composeApp:jvmMainClasses UP-TO-DATE
+> Task :composeApp:jvmJar UP-TO-DATE
+> Task :composeApp:compileTestKotlinJvm UP-TO-DATE
+> Task :composeApp:compileJvmTestJava NO-SOURCE
+> Task :composeApp:assembleJvmTestResources UP-TO-DATE
+> Task :composeApp:jvmTestProcessResources UP-TO-DATE
+> Task :composeApp:processJvmTestResources SKIPPED
+> Task :composeApp:jvmTestClasses UP-TO-DATE
+> Task :composeApp:jvmTest UP-TO-DATE
+> Task :composeApp:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForAndroidMain NO-SOURCE
+> Task :composeApp:generateActualResourceCollectorsForAndroidMain UP-TO-DATE
+> Task :composeApp:androidPreBuild UP-TO-DATE
+> Task :composeApp:preAndroidMainBuild UP-TO-DATE
+> Task :composeApp:generateAndroidMainEmptyResourceFiles UP-TO-DATE
+> Task :composeApp:copyAndroidMainComposeResourcesToAndroidAssets UP-TO-DATE
+> Task :composeApp:packageAndroidMainResources UP-TO-DATE
+> Task :composeApp:parseAndroidMainLocalResources UP-TO-DATE
+> Task :composeApp:generateAndroidMainRFile UP-TO-DATE
+> Task :composeApp:compileAndroidMain UP-TO-DATE
+> Task :composeApp:bundleAndroidMainClassesToRuntimeJar UP-TO-DATE
+> Task :composeApp:androidJar UP-TO-DATE
+> Task :composeApp:bundleAndroidMainClassesToCompileJar UP-TO-DATE
+> Task :composeApp:convertXmlValueResourcesForAndroidHostTest NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForAndroidHostTest NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForAndroidHostTest NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForAndroidHostTest NO-SOURCE
+> Task :core:compileTestKotlinJvm
+> Task :core:compileJvmTestJava NO-SOURCE
+> Task :core:jvmTestClasses
+> Task :composeApp:compileAndroidHostTest UP-TO-DATE
+> Task :composeApp:preAndroidHostTestBuild UP-TO-DATE
+> Task :composeApp:processAndroidHostTestJavaRes NO-SOURCE
+> Task :composeApp:processAndroidMainJavaRes UP-TO-DATE
+> Task :composeApp:testAndroidHostTest
+> Task :core:jvmTest
+
+BUILD SUCCESSFUL in 7s
+41 actionable tasks: 7 executed, 34 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.6.1/userguide/configuration_cache_enabling.html

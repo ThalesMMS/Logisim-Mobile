@@ -1,0 +1,22 @@
+row: cli/clear-prefs
+case: profile-gates-iec-before-clear
+result: PASS
+detail: evolution={'gates': 'iec', 'locale': 'pt', 'template': 'empty'}, mobile={'gates': 'iec', 'locale': 'pt', 'template': 'empty'}
+
+=== evolution: java EvolutionStartupOracle --gates iec -u empty --locale pt
+exit: 0
+--- stdout (5 lines, sha256 422fddd64c09e87dd8ce12f1d8b4ae6b989f16221d7575e45cae849b44f082a5)
+parse=ok
+splash=true
+gates=iec
+locale=pt session=pt
+template=empty
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --gates iec -u empty --locale pt --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 5ca2965446300d34c91d769293efeedd4b1fd6415ba3f62b715541d215be108b)
+gates=iec
+locale=pt
+template=empty
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

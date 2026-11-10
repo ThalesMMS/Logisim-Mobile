@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Memory" name="4"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="12"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <circuit name="main">
+    <comp lib="0" loc="(100,100)" name="Pin">
+      <a name="label" val="a"/>
+    </comp>
+    <wire from="(100,100)" to="(130,100)"/>
+    <comp lib="1" loc="(150,100)" name="Buffer">
+    </comp>
+    <wire from="(150,100)" to="(160,100)"/>
+    <comp lib="1" loc="(180,100)" name="Buffer">
+    </comp>
+    <wire from="(180,100)" to="(190,100)"/>
+    <comp lib="1" loc="(210,100)" name="Buffer">
+    </comp>
+    <wire from="(210,100)" to="(220,100)"/>
+    <comp lib="1" loc="(240,100)" name="Buffer">
+    </comp>
+    <wire from="(240,100)" to="(250,100)"/>
+    <comp lib="1" loc="(270,100)" name="Buffer">
+    </comp>
+    <wire from="(270,100)" to="(280,100)"/>
+    <comp lib="1" loc="(300,100)" name="Buffer">
+    </comp>
+    <wire from="(300,100)" to="(310,100)"/>
+    <comp lib="1" loc="(330,100)" name="Buffer">
+    </comp>
+    <wire from="(330,100)" to="(340,100)"/>
+    <comp lib="1" loc="(360,100)" name="Buffer">
+    </comp>
+    <wire from="(360,100)" to="(370,100)"/>
+    <comp lib="1" loc="(390,100)" name="Buffer">
+    </comp>
+    <wire from="(390,100)" to="(400,100)"/>
+    <comp lib="1" loc="(420,100)" name="Buffer">
+    </comp>
+    <wire from="(420,100)" to="(430,100)"/>
+    <comp lib="1" loc="(450,100)" name="Buffer">
+    </comp>
+    <wire from="(450,100)" to="(460,100)"/>
+    <comp lib="1" loc="(480,100)" name="Buffer">
+    </comp>
+    <wire from="(480,100)" to="(540,100)"/>
+    <comp lib="0" loc="(540,100)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y"/>
+    </comp>
+  </circuit>
+</project>

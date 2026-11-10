@@ -1,0 +1,93 @@
+{
+  "status": "PREPARATION_ARTIFACT_VALIDATED",
+  "origin": "fixture",
+  "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/fixtures/portable-projects/portable53.lsebdl",
+  "mobile": {
+    "circuitIds": {
+      "Top53": "circuit-top53",
+      "Bridge53": "library:c86f087d72e5b445:circuit-bridge53",
+      "Cell53": "library:a1b6c3bc97f799f2:circuit-cell53"
+    },
+    "definitions": 3,
+    "components": 11,
+    "wires": 7,
+    "runtimeInstances": 4,
+    "componentIds": {
+      "Top53": [
+        "instance-first53",
+        "instance-second53",
+        "out-first53",
+        "out-second53",
+        "source-first53",
+        "source-second53"
+      ],
+      "Bridge53": [
+        "bridge-cell53",
+        "bridge-in53",
+        "bridge-out53"
+      ],
+      "Cell53": [
+        "cell-in53",
+        "cell-out53"
+      ]
+    },
+    "topLabels": [
+      "FIRST53",
+      "SECOND53"
+    ],
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    },
+    "sourceMarkers": [
+      "bridge53",
+      "cell53",
+      "main53"
+    ],
+    "sourcePaths": {
+      "main53": "main.circ",
+      "cell53": "library/cell.circ",
+      "bridge53": "library/bridge.circ"
+    },
+    "zipEntries": [
+      "library/bridge.circ",
+      "library/cell.circ",
+      "library/unreferenced53.circ",
+      "main.circ",
+      "manifest.xml",
+      "readme53.txt"
+    ],
+    "opaqueEntries": {
+      "readme53.txt": "37a856e1f329cc282ca3b931d3b3d4cbc1cecee04c8f74158d49eeceffe50712",
+      "library/unreferenced53.circ": "cc8c3da7dee2fa79f7e88068bb0a882b94711f760eac700ca2b04c84f452ff15"
+    },
+    "archiveSha256": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc"
+  },
+  "desktop": {
+    "status": "PASSED",
+    "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+    "definitions": [
+      "Top53",
+      "Bridge53",
+      "Cell53"
+    ],
+    "topInstances": 2,
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    }
+  },
+  "recordedAtUtc": "2026-11-05T00:19:41.871132+00:00",
+  "sourceRevision": "c8bef175a7c6de0ad2e5a22ea2999df0212414c9",
+  "worktreeDirty": false,
+  "oracleSourcesSha256": {
+    "scripts/portable/Portable53Oracle.kt": "ca53e5c8b4207a40887ec6dc8ff87a06c6fd5997c5ee61059498758152f73d8d",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt": "03eab1e7e489cad53d18f26e4e8984eeddecc9fca5ced868446a555461fe9f57",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt": "e09e9fca28c47b36f299e71b708bc3f07d2cbf69f88a2c1087147cdcd6a8ec9b",
+    "scripts/verify-portable53.py": "bd01e28d8b9b42165a67be92255f8d164a858cdd53d58020bfa0d48558a50a2f",
+    "scripts/portable_receipt_contract.py": "46785e0f07abb65c94824f09a544c2b052b6d963b9c9005a9612ab44ac234360"
+  },
+  "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+  "referenceDesktopSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "nativeUiStatus": "NOT_RUN"
+}

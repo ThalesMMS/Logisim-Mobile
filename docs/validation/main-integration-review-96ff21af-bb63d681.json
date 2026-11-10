@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "base_exclusive": "96ff21af60e81ae1306722da518d6c1abd9d3dba",
+    "head_inclusive": "bb63d681afac30197e1db0e3869672b94662acc9",
+    "source_tree": "72cd2be3cb80c0721608a40ea31bfba9b88b5b6e",
+    "review_type": "Read-only integration audit. Receipt files only on isolated review branch.",
+    "excluded": "Later #34 receipt integrations and upcoming keyboard/action-ownership changes; no later-source freshness inferred."
+  },
+  "provenance": [
+    {
+      "integrated": "e46990692ae09006bd505c757ff48b7ebc49318e",
+      "subject": "fix(simulation): retain document initialization across inactivity",
+      "original": "1532eff97aaf908ab3b4107d660d65e25ee16a7b",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+      "subject": "fix(ios): preserve document names in provider errors",
+      "original": "b4872a5cfce27fbf7ddbc30e8700d534d206687c",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "7ca2799f3bc56fa8ce56b6f10e8064e184cc5c2c",
+      "subject": "test(android): retry validated incomplete snapshots within the screen deadline",
+      "original": "ccc9d248368c50e1ab640ac67db7a529a221c1dc",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "c153baa2b45d19e80b050599c5b99abfe35e4b72",
+      "subject": "test(android): reject contradictory snapshot instrumentation protocols",
+      "original": "89588909233d8c207d3b3e2a89289edfed9c9a5e",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "d9ff0f623a180d999c4076c85e15d77e27a6f30a",
+      "subject": "docs(parity): record Inspector and portable-project acceptance",
+      "original": "9cc58a15c8ae97296e9d3822943888368bcc4dff",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "b4eeb74ed1596696fce948ed5f5793767292dec0",
+      "subject": "Freeze benchmark classpaths and validate execution provenance",
+      "original": "bddd9c0997df68e70a53d44db3041a677121a674",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "02d0dc3c6c302681026a3b9262a31ddb53aa18a3",
+      "subject": "Add structural and literal correctness oracles for performance runs",
+      "original": "c75747b5d4de5a22b8cfffd86e62aadece92aa33",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "4050de077869ddc7e58e4c6b0d340a5677077bf5",
+      "subject": "test(perf): reject invalid benchmark payloads and results",
+      "original": "38ce7848c293e4630ea6dfebe249ad93bcf2eecf",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "1693ec68fb6580d02b6e29dac82cbc25bce58d9b",
+      "subject": "Require complete instance identities in performance state checks",
+      "original": "fc477249fce7ed14175851f36df521f3e89cacaf",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "f1ada45e679565f3c1d5076e26e7eadbf3fee729",
+      "subject": "test(perf): reject missing or misidentified hierarchy state",
+      "original": "f0ab8237e6adcf4aa01128b5653448777fc8af57",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "fe0c29a082841d6e59a787b28b4c18be9b3f97bd",
+      "subject": "Validate benchmark results outside measured operations",
+      "original": "0c529762a0894c7132050df7ad1b40ca1c621644",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "72a3d8444b3d09a0c4bf4807d097b21dcaffccbd",
+      "subject": "Prepare benchmark classpaths without running measurements",
+      "original": "08bdd37e2a0fa736279d355aafa011d93f2ab771",
+      "stable_patch_id_matches_original": true,
+      "changed_file_endpoints_match_original": true
+    },
+    {
+      "integrated": "bb63d681afac30197e1db0e3869672b94662acc9",
+      "subject": "docs(parity): record partial performance tooling and evidence",
+      "original": "c2def1b50cd9b68738688bdb8f93d377ff1d94df",
+      "stable_patch_id_matches_original": false,
+      "changed_file_endpoints_match_original": false,
+      "delta_review": {
+        "original": "c2def1b50cd9b68738688bdb8f93d377ff1d94df",
+        "files": [
+          {
+            "path": "docs/parity.json",
+            "endpoint_identical": false,
+            "original_sha256": "5f33f425df054c9073b47b56b48b862f03569633460ecd5df977be1c6818c7ff",
+            "integrated_sha256": "da5de28cb7fb2cbee4754ceb1da082530bcc253667badd370e002b7eafa76e5a"
+          },
+          {
+            "path": "docs/parity.md",
+            "endpoint_identical": false,
+            "original_sha256": "cdc24db17705b11947429aa570ca864e5e254af7c0d21b97f1b7cb04c0cd4ead",
+            "integrated_sha256": "5ae38ff741b30c267e74fbebf42c3b37025b604bda44b6d06e773019a13cde93"
+          },
+          {
+            "path": "parity/performance-support.json",
+            "endpoint_identical": true,
+            "original_sha256": "b090d862ac652eada9aff0334252dadb879810a2968f0b2261667ee955343a20",
+            "integrated_sha256": "b090d862ac652eada9aff0334252dadb879810a2968f0b2261667ee955343a20"
+          }
+        ],
+        "finding": "Performance support source identical; docs reports regenerated against integrated source inventory/product support, keeping performance partial and conservatively downgrading stale Inspector mapping."
+      }
+    }
+  ],
+  "product_after_ce3": {
+    "changed_paths": []
+  },
+  "snapshot": {
+    "integrated_commits": [
+      "7ca2799f3bc56fa8ce56b6f10e8064e184cc5c2c",
+      "c153baa2b45d19e80b050599c5b99abfe35e4b72"
+    ],
+    "original_commits": [
+      "ccc9d248368c50e1ab640ac67db7a529a221c1dc",
+      "89588909233d8c207d3b3e2a89289edfed9c9a5e"
+    ],
+    "patches_exact": true,
+    "endpoints_exact": true,
+    "helper_source_changed": false,
+    "review": "Retry is limited to authenticated IncompleteSnapshotTree under the original screen deadline, pins PID across retries, fresh nonce/receipt each attempt; SDK errors, invalid metadata, ADB timeout, failure/crash fields and terminal continuation remain terminal. External activity observation retains previous path. No concrete semantic integration issue found.",
+    "line_references": [
+      "scripts/android_ui.py:81",
+      "scripts/android_ui.py:115",
+      "scripts/android_ui.py:127",
+      "scripts/android_ui.py:188",
+      "scripts/android_ui.py:237",
+      "scripts/android_ui.py:264"
+    ],
+    "validation_limit": "Static review only; mocked tests/protocol replay are original claims, not rerun by this reviewer."
+  },
+  "catalog_semantics": {
+    "composeApp/src/commonMain/composeResources/values/strings.xml": {
+      "before": 2496,
+      "after": 2497,
+      "added": [
+        "ios_document_access_failed"
+      ],
+      "removed": [],
+      "changed": [],
+      "sha256": "245cbfc8248fe683379f6c28ec42da99f65e7c97923efbe888eb7ad6125fa67d"
+    },
+    "composeApp/src/commonMain/composeResources/values-pt/strings.xml": {
+      "before": 2496,
+      "after": 2497,
+      "added": [
+        "ios_document_access_failed"
+      ],
+      "removed": [],
+      "changed": [],
+      "sha256": "b3e54b0eed4245d25a5bbe13f1545b18d413e649e56b56cf3521f1bedefd6b0c"
+    },
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/GeneratedMessages.kt": {
+      "before": 2496,
+      "after": 2497,
+      "added": [
+        "ios_document_access_failed"
+      ],
+      "removed": [],
+      "changed": [],
+      "sha256": "923d0e39f08002337fffc888b20a0be17be950faa7e599ddd354e8ea97f80b78"
+    }
+  },
+  "claims": {
+    "desktop_registry_or_status_policy_changed": false,
+    "generated_report_current_at_head": {
+      "files": 944,
+      "hash_mismatches": 0
+    },
+    "temporary_stale_report_at_d9ff": {
+      "files": 940,
+      "hash_mismatches": 9,
+      "superseded_by": "bb63d681"
+    },
+    "status_changes_d9ff_to_bb63": {
+      "attributes": "implemented/current -> partial/not-current due to stale whole-file EditorState mapping",
+      "performance": "absent -> partial, no timing or Native qualification",
+      "external_libraries": "implemented/current retained",
+      "portable_bundle_lsebdl": "implemented/current retained"
+    },
+    "native_provenance_preserved": {
+      "inspector": "6cef0542 production /85da031e Android validation; iPad retains A4ab",
+      "portable": "Android 59d5606b, iOS 6cef0542/85da031e; individual failed/partial runs remain so"
+    },
+    "finding": "No additional unsupported promotion found."
+  },
+  "findings": [
+    {
+      "id": "inspector-hash-freshness",
+      "severity": "metadata",
+      "path": "parity/product-support.json:128",
+      "actual_hash": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6",
+      "declared_hash": "eb20d3d26fa4fb55248324550158e2d584ead6f9b89c4c1d100240ec8ee77f06",
+      "effect": "The final generated report conservatively marks #21 partial despite preserved Inspector bodies and newer host evidence. This is stale mapping, not evidence of a product regression.",
+      "resolution": "Defer metadata refresh to the next stable product after pending keyboard/action-ownership changes and gates. Keep whole-file hashing, attach source delta review plus focused gate receipt, and retain original Native producer identities."
+    }
+  ],
+  "inspector_delta_review": {
+    "range": {
+      "base": "96ff21af60e81ae1306722da518d6c1abd9d3dba",
+      "head": "bb63d681afac30197e1db0e3869672b94662acc9"
+    },
+    "catalog_semantics": {
+      "composeApp/src/commonMain/composeResources/values/strings.xml": {
+        "before": 2496,
+        "after": 2497,
+        "added": [
+          "ios_document_access_failed"
+        ],
+        "removed": [],
+        "changed": [],
+        "sha256": "245cbfc8248fe683379f6c28ec42da99f65e7c97923efbe888eb7ad6125fa67d"
+      },
+      "composeApp/src/commonMain/composeResources/values-pt/strings.xml": {
+        "before": 2496,
+        "after": 2497,
+        "added": [
+          "ios_document_access_failed"
+        ],
+        "removed": [],
+        "changed": [],
+        "sha256": "b3e54b0eed4245d25a5bbe13f1545b18d413e649e56b56cf3521f1bedefd6b0c"
+      },
+      "core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/GeneratedMessages.kt": {
+        "before": 2496,
+        "after": 2497,
+        "added": [
+          "ios_document_access_failed"
+        ],
+        "removed": [],
+        "changed": [],
+        "sha256": "923d0e39f08002337fffc888b20a0be17be950faa7e599ddd354e8ea97f80b78"
+      }
+    },
+    "inspector_current_host_evidence": {
+      "source": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+      "manifest": "outputs/implementation/artifacts/ce3e061d/manifest.json",
+      "manifest_sha256": "921779a60dffc5b5c2bb35b444749a26cc6fd138308263519069164f5143eecb",
+      "tests": [
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitDiagnosticsTest.xml",
+          "sha256": "5e202ea0f15f5d4b7617aa9274277d64b8c3965cc946f57b5c65b0b041fb83e9",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:35.895Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditingTest.xml",
+          "sha256": "9d6d2a2bab5d14ff18c8ae6fb36209afcc0fe39255dabbecee848031bedd09cf",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:35.915Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditorTest.xml",
+          "sha256": "d7f644a72d08ab4f13ad3f3e1c230f91b9e7f226c612a5c53820fa47c05dcf9f",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:35.922Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ComponentRegistryTest.xml",
+          "sha256": "dacedcda34305e979cca02db08f55721bb1c7d94d626277a09ee59307f5d43a0",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:50.481Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.DefaultCatalogIntegrationTest.xml",
+          "sha256": "2d2fde56dfb84de3650343af27faa4d510ef05122e95f7982f894e0b3d37c544",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:50.488Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.KeypadResizeEditorTest.xml",
+          "sha256": "cd14db036546534f05c8c0b5a261646c346a37df3f765e0ff87f75d96a6144d3",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:53.763Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorRegistryIntegrationTest.xml",
+          "sha256": "1e0e285d086d1a2568b25db5969fa03012905cfda82183b4fc299d702ceb549f",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:46.848Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PropertyEditorModelTest.xml",
+          "sha256": "b3c2c18ef1c71e0af41341521986a9188e8becd3fba470230d28eeb2d8527498",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:57.015Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PropertyLocalizationTest.xml",
+          "sha256": "d0bab0119b2be3d21f5da560bdcad1266bb4221549c8bf567acf87a1134e10c7",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:57.018Z"
+        },
+        {
+          "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/editor_android_host/TEST-dev.logisim.mobile.TypedAttributeEditingTest.xml",
+          "sha256": "f5f5d7af02f219466c304cb29cdaa20d29ad3cbda07108515119105ed0c86701",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timestamp": "2026-11-05T05:57:57.119Z"
+        }
+      ],
+      "totals": {
+        "tests": 65,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "note": "Read-only revalidation of frozen XML and manifest, no rerun"
+    },
+    "source_comparison": {
+      "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt": {
+        "native_baseline_sha256": "cad5d185b7b8b423316e32e78887246508dcb4a5c5ccdf16cc014d36ecb1cb33",
+        "reviewed_sha256": "cad5d185b7b8b423316e32e78887246508dcb4a5c5ccdf16cc014d36ecb1cb33",
+        "byte_identical": true
+      },
+      "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorState.kt": {
+        "native_baseline_sha256": "eb20d3d26fa4fb55248324550158e2d584ead6f9b89c4c1d100240ec8ee77f06",
+        "reviewed_sha256": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6",
+        "byte_identical": false
+      },
+      "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PropertyEditorModel.kt": {
+        "native_baseline_sha256": "65028df769cc9395940d152eb62cb283da26e8cbb05ef9ee03aeba6be386562d",
+        "reviewed_sha256": "65028df769cc9395940d152eb62cb283da26e8cbb05ef9ee03aeba6be386562d",
+        "byte_identical": true
+      },
+      "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TypedPropertyInspector.kt": {
+        "native_baseline_sha256": "43ba60067ca3bd2a41b5751ab67a53d5235792b0d4454e03cd5d17125d03bdac",
+        "reviewed_sha256": "43ba60067ca3bd2a41b5751ab67a53d5235792b0d4454e03cd5d17125d03bdac",
+        "byte_identical": true
+      },
+      "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitEditor.kt": {
+        "native_baseline_sha256": "fbd09a07a863a03c02ac30eced87247bfa07cfc6454c4ff8436e65c8562d7e3f",
+        "reviewed_sha256": "fbd09a07a863a03c02ac30eced87247bfa07cfc6454c4ff8436e65c8562d7e3f",
+        "byte_identical": true
+      },
+      "core/src/commonMain/kotlin/dev/logisim/mobile/core/ComponentRegistry.kt": {
+        "native_baseline_sha256": "dd0d9baf081ad69783820c799e56cc4e61bb097e62b35bb30832d59a0f9d4a6d",
+        "reviewed_sha256": "dd0d9baf081ad69783820c799e56cc4e61bb097e62b35bb30832d59a0f9d4a6d",
+        "byte_identical": true
+      },
+      "composeApp/src/commonTest/kotlin/dev/logisim/mobile/PropertyEditorModelTest.kt": {
+        "native_baseline_sha256": "7712e8ab62755e3def7e40b67ab4d436676a4d33bc023097616f2c43c9f453cc",
+        "reviewed_sha256": "7712e8ab62755e3def7e40b67ab4d436676a4d33bc023097616f2c43c9f453cc",
+        "byte_identical": true
+      },
+      "composeApp/src/commonTest/kotlin/dev/logisim/mobile/PropertyLocalizationTest.kt": {
+        "native_baseline_sha256": "5cadbaa68fe1398f9d29f6ba9666a5e56be20df7e42405627f325def641c67e6",
+        "reviewed_sha256": "5cadbaa68fe1398f9d29f6ba9666a5e56be20df7e42405627f325def641c67e6",
+        "byte_identical": true
+      },
+      "composeApp/src/commonTest/kotlin/dev/logisim/mobile/TypedAttributeEditingTest.kt": {
+        "native_baseline_sha256": "e64d50932ff084b2209124e4de55468531a1c363f811b928d9d2533c8f2e5da5",
+        "reviewed_sha256": "e64d50932ff084b2209124e4de55468531a1c363f811b928d9d2533c8f2e5da5",
+        "byte_identical": true
+      },
+      "composeApp/src/commonTest/kotlin/dev/logisim/mobile/EditorRegistryIntegrationTest.kt": {
+        "native_baseline_sha256": "691c0412d646223f95b15f6cbe3973d86c53e387a55d6644d159d90a087189da",
+        "reviewed_sha256": "691c0412d646223f95b15f6cbe3973d86c53e387a55d6644d159d90a087189da",
+        "byte_identical": true
+      },
+      "core/src/commonTest/kotlin/dev/logisim/mobile/core/ComponentRegistryTest.kt": {
+        "native_baseline_sha256": "66eab63f58ddbfe7d300829ae5683cfc8f70c9f0d1d3c41d65f0557418ee1ddb",
+        "reviewed_sha256": "66eab63f58ddbfe7d300829ae5683cfc8f70c9f0d1d3c41d65f0557418ee1ddb",
+        "byte_identical": true
+      },
+      "core/src/commonTest/kotlin/dev/logisim/mobile/core/CircuitEditingTest.kt": {
+        "native_baseline_sha256": "9c624970e36c5532baf0abd9f13c1ab2bd48ca07f66514b4e255506409aeba20",
+        "reviewed_sha256": "9c624970e36c5532baf0abd9f13c1ab2bd48ca07f66514b4e255506409aeba20",
+        "byte_identical": true
+      },
+      "core/src/commonTest/kotlin/dev/logisim/mobile/core/CircuitEditorTest.kt": {
+        "native_baseline_sha256": "707f0110c2a56bd2bc910f4120ea3456a5bfb74d398a6b71e3eb4825ad777d17",
+        "reviewed_sha256": "707f0110c2a56bd2bc910f4120ea3456a5bfb74d398a6b71e3eb4825ad777d17",
+        "byte_identical": true
+      },
+      "core/src/commonTest/kotlin/dev/logisim/mobile/core/DefaultCatalogIntegrationTest.kt": {
+        "native_baseline_sha256": "5bf743f15b89cd8a0f9abf2d2cb48cc1c8363de46976f3c447fa0ba41f726b41",
+        "reviewed_sha256": "5bf743f15b89cd8a0f9abf2d2cb48cc1c8363de46976f3c447fa0ba41f726b41",
+        "byte_identical": true
+      },
+      "core/src/commonTest/kotlin/dev/logisim/mobile/core/CircuitDiagnosticsTest.kt": {
+        "native_baseline_sha256": "181140fd9b9c531b770f94e3b7e96b147e1528bdb6f81757d16476e9ff5a2fd2",
+        "reviewed_sha256": "181140fd9b9c531b770f94e3b7e96b147e1528bdb6f81757d16476e9ff5a2fd2",
+        "byte_identical": true
+      },
+      "core/src/jvmTest/kotlin/dev/logisim/mobile/core/KeypadResizeEditorTest.kt": {
+        "native_baseline_sha256": "ba185410dd1aa0eba2b640e7481069043b17133a2bbac26d1ba4463d82ddffbd",
+        "reviewed_sha256": "ba185410dd1aa0eba2b640e7481069043b17133a2bbac26d1ba4463d82ddffbd",
+        "byte_identical": true
+      }
+    },
+    "document_lifecycle_host_evidence": {
+      "source": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+      "path": "outputs/implementation/artifacts/ce3e061d/raw-test-results/editor_android_host/TEST-dev.logisim.mobile.InactiveImportedSimulationTest.xml",
+      "sha256": "c25238f3b237eb75b43e7c4959234055bd8145de1269af66128e2b03963af7c1",
+      "totals": {
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "inspector_refresh_proposal": {
+      "mapped_file": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorState.kt",
+      "old_sha256": "eb20d3d26fa4fb55248324550158e2d584ead6f9b89c4c1d100240ec8ee77f06",
+      "new_sha256": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6",
+      "native_producer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+      "native_android_validation": "85da031e4ed11474c2e763976392729810ef142d",
+      "native_rerun": false,
+      "reviewed_source": "bb63d681afac30197e1db0e3869672b94662acc9",
+      "host_validation_source": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+      "main_edits_performed": false,
+      "recommendation": "Retain whole-file hash mechanism; update only mapped EditorState hash and add explicit delta-review receipt reference in limitation/verification metadata. Regenerate docs after root adoption; preserve Native producer identities."
+    },
+    "editor_state_delta_review": {
+      "original_change": "1532eff97aaf908ab3b4107d660d65e25ee16a7b",
+      "integrated_change": "e46990692ae09006bd505c757ff48b7ebc49318e",
+      "finding": "Only reset/settle/import/load/document-replacement purpose changed; property batch and change bodies unchanged. Default settle is COMMAND; same-document Undo remains COMMAND, replacement uses DOCUMENT_INITIALIZATION. Controller accepts initialization only for current-owned RESET/SETTLE, ordinary commands remain same path.",
+      "independent_reviewer": "/root/coordination_review/parity_claims_review",
+      "gate_scope": "65 existing Inspector/model/core cases plus 14 new lifecycle cases verified from frozen ce3 XML; no tests rerun."
+    },
+    "verification_limits": [
+      "Read-only Git/blob/XML/manifest review, no build, Gradle, benchmark, UI or devices.",
+      "No Native6cef evidence is assigned to ce3 or bb63.",
+      "This supports source mapping freshness, not a new full application or physical-device qualification."
+    ]
+  },
+  "performance_semantic_review": {
+    "status": "PASS; no new semantic integration blocker found",
+    "reviewer": "/root/coordination_review/integrated_merge_review",
+    "findings": [
+      "CircuitPerformanceBenchmark.kt:85-89 validates outside Meter.measure; lines 117-128 alternate actual inputs and retain the last inputs for unchanged-settle.",
+      "PerformanceOracle.kt:35-68 validates imported structure, literal 00/5a outputs, complete hierarchy identity/presence and diagnostic failures.",
+      "benchmark-circuits.py:148-173 measures physical classpath copies and validates source/classpath identity before and after execution.",
+      "benchmark-circuits.py:99-121 rejects stale skip-build stamps and stops prepare-only before launching Java.",
+      "Retained receipts explicitly limit execution to 6cef correctness tests/compilation with benchmark_main_executed=false. Schema 2, warmed JVM, heap/GC and unmeasured Native/mobile/energy limits remain explicit."
+    ],
+    "no_measurement_run_by_reviewer": true
+  },
+  "review_limits": [
+    "No Gradle/build/benchmark/test rerun/UI/device command by reviewers. Existing frozen XML/manifests were revalidated only.",
+    "Root separately reports999JVM and16Pythonbenchmark PASS; those executions are not attributed to this read-only review.",
+    "No claim of new Native Inspector/portable/performance validation; ce3 app and8Boundary are separate producer receipts."
+  ],
+  "provenance_summary": {
+    "commits": 13,
+    "exact_original_patches": 12,
+    "generated_report_reconciliation": 1,
+    "duplicate_patch_ids_within_reviewed_range": 0
+  },
+  "result": "No new product/snapshot/benchmark integration blocker found; one Inspector mapping freshness item deferred to stable final producer."
+}

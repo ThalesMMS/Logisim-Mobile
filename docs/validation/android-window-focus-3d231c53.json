@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "case": "focusloss",
+  "suiteQualification": "PARTIAL",
+  "scope": "This exact Nativefocusloss case only; issue27 remains open. Synthesized SDK input on emulator5556, not physical-input ergonomics or performance.",
+  "appProducerHead": "3d231c537ac25de240889e327f3fd27a3b1e0902",
+  "appParent": "50668f45230ada6f49b10c1e05fe983b8ea183c4",
+  "testProducerHead": "b3437c979ed05e2c81870624bbed601f009cbd66",
+  "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+  "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+  "sameTestApkAsBefore": true,
+  "beforeFixtureEquivalentExceptNonce": true,
+  "motionActionCounts": {
+    "ACTION_DOWN": 1,
+    "ACTION_MOVE": 10,
+    "ACTION_UP": 1
+  },
+  "allMotionEventsAccepted": true,
+  "motionSource": 4098,
+  "pointerIds": [
+    0
+  ],
+  "constantDownTimeMillis": [
+    37740601
+  ],
+  "focusObservations": {
+    "editorWindowId": 22125,
+    "labelWindowId": 22132,
+    "editorLostAndRegainedWindowFocus": true,
+    "fieldFocusObservedBeforeDismissAndUp": true,
+    "orderingEvidence": "The same sequential dragInterrupted callback focuses the field and dismisses it before injecting UP. No numeric interval is inferred between elapsedRealtime readiness and uptimeMillis motion clocks."
+  },
+  "oracle": "Complete exported XML equals fixture/before after window focus loss, return and UP. NOT remains at(200,100), two wires.",
+  "xmlBytes": 1209,
+  "beforeXmlSha256": "1f179531fa031305867320984d051f7edf81b84fdf216893119e888f71af8ae6",
+  "afterXmlSha256": "1f179531fa031305867320984d051f7edf81b84fdf216893119e888f71af8ae6",
+  "installedArtifactsAfter": {
+    "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+    "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70"
+  },
+  "lastAnrUnchanged": true,
+  "elapsedSeconds": 21.158,
+  "controlsNotRunHere": [
+    "cancel",
+    "context"
+  ],
+  "artifacts": {
+    "manifest.json": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/manifest.json",
+      "sha256": "fd1121019771cdcb8a932ffcdc3bf60e54fd01b3c11d99ae28d7e0a1a29baaef",
+      "bytes": 105861
+    },
+    "result.json": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/result.json",
+      "sha256": "e78b2bebd5baa8674dd6234ed6a24d3b0e9e857b14786a9ff8d5b956783249dc",
+      "bytes": 98416
+    },
+    "0-fixture.circ": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/0-fixture.circ",
+      "sha256": "1f179531fa031305867320984d051f7edf81b84fdf216893119e888f71af8ae6",
+      "bytes": 1209
+    },
+    "1-focusloss-before.circ": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/1-focusloss-before.circ",
+      "sha256": "1f179531fa031305867320984d051f7edf81b84fdf216893119e888f71af8ae6",
+      "bytes": 1209
+    },
+    "2-focusloss-after-up.circ": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/2-focusloss-after-up.circ",
+      "sha256": "1f179531fa031305867320984d051f7edf81b84fdf216893119e888f71af8ae6",
+      "bytes": 1209
+    },
+    "app-build-receipt.json": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/app-build-receipt.json",
+      "sha256": "ad9f5a28afbdbffb493f1ed885df283632d3da1572449c6eb0084c004a9af48b",
+      "bytes": 6700
+    },
+    "triplet-manifest.json": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/triplet-manifest.json",
+      "sha256": "5190a87b911897c7a578c5358a736c2f06235e425271408b8e83bfb3fc6e8fac",
+      "bytes": 901
+    },
+    "focusloss-complete.png": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/focusloss-complete.png",
+      "sha256": "781fb9cb530e8e3def4788ea4da3d533ccc6b67ddbbbd5a25eae34089a05ae93",
+      "bytes": 234547
+    },
+    "focusloss-field-focused.png": {
+      "path": "docs/validation/artifacts/android-window-focus-3d231c53/focusloss-field-focused.png",
+      "sha256": "8491cf3c3d0294e96f70851ab227d3bddeb3936f13019067d2e665e9116680e1",
+      "bytes": 146727
+    }
+  },
+  "beforeFailure": {
+    "status": "FAIL",
+    "classification": "WINDOW_FOCUS_RETURN_THEN_UP_COMMITS_DRAG",
+    "appProducerHead": "76ea1ec1282e2a2106fde6792bc9512975cd7125",
+    "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+    "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+    "observed": "NOT moved from(200,100) to(250,120); two wires became four segments after focused field, dismiss and UP.",
+    "artifacts": {
+      "manifest.json": {
+        "path": "docs/validation/artifacts/android-window-focus-3d231c53/before-r1/manifest.json",
+        "sha256": "79dd2609386c160c05d8ca132725a118ce3c06123872fcc2c95e0b752c0e39c2",
+        "bytes": 107475
+      },
+      "result.json": {
+        "path": "docs/validation/artifacts/android-window-focus-3d231c53/before-r1/result.json",
+        "sha256": "a5bd6f16682a4b814c70b05fb918c972a0c18d43b22e451a7709b42a5d4d1399",
+        "bytes": 99970
+      },
+      "1-focusloss-before.circ": {
+        "path": "docs/validation/artifacts/android-window-focus-3d231c53/before-r1/1-focusloss-before.circ",
+        "sha256": "f8838dc85f7401f713f970991aecef33fc869a9a1480b877f536f7eab5989256",
+        "bytes": 1209
+      },
+      "2-focusloss-after-up.circ": {
+        "path": "docs/validation/artifacts/android-window-focus-3d231c53/before-r1/2-focusloss-after-up.circ",
+        "sha256": "f79d97859d1f861c517d7dda8029dadc7018ac40d7dce19a33630a5919407022",
+        "bytes": 1297
+      },
+      "focusloss-failure.png": {
+        "path": "docs/validation/artifacts/android-window-focus-3d231c53/before-r1/focusloss-failure.png",
+        "sha256": "3a6102fb1a974ea5bc7c704215dda52e6bf8c775ba6b13c0c47deccb22a55156",
+        "bytes": 334969
+      }
+    }
+  }
+}

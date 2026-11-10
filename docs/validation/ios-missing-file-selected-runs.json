@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "scope": "Two selected local missing-document runs, each bound to its own artifact and device",
+  "test": "EditorEndToEndTests/FilesEndToEndTests/testMissingExternalDocumentReportsFailureAndPreservesProject",
+  "evidenceDirectory": "artifacts/ios-missing-file-selected-runs",
+  "evidenceManifestSHA256": "735d823a60f27848bfb87c88b6952cf3d8b53adb2819bcd12ff9ced01b3dbcc8",
+  "rawFileCount": 74,
+  "rawFileBytes": 1991541,
+  "cases": {
+    "6cef-fail": {
+      "sourceOutput": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-missing-files-001",
+      "status": "FAIL",
+      "nativeExecutionGate": "NATIVE_FAIL",
+      "wholeSuiteQualification": "FAIL",
+      "durationSeconds": 82.204,
+      "selectedTests": 1,
+      "failedTests": 1,
+      "wrapperExitCode": 65,
+      "runID": "2b70fa63bb48",
+      "sourceAppCommit": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+      "appArtifactManifestSHA256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+      "appBundleTreeSHA256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "appExecutableSHA256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "device": {
+        "name": "Logisim SaveAs Beta iPad 27.0",
+        "model": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "physicalDevice": false
+      },
+      "retainedAttachmentRoles": {
+        "final-screen": [
+          "attachments/14440586-06FB-4909-A556-89AA1D4DF6D3.png"
+        ],
+        "native-tree": [
+          "attachments/5180FCD5-62FF-44AE-8869-E659E830A78F.txt"
+        ],
+        "before-missing-external": [
+          "attachments/959F7B71-BA4C-4ABE-81A1-26A554FF0DB9.xml"
+        ],
+        "missing-external-picker-setup": [
+          "attachments/EFEAF878-7C37-44AA-AA38-10A844F8EA54.txt"
+        ],
+        "document-external-tree": [
+          "attachments/D4A3FC84-1B6D-45E8-AC4A-E467C3ADB156.txt"
+        ],
+        "files-peer-18-picker-dismissed-tree": [
+          "attachments/0D8D0782-9A18-443B-83A6-1E063AE01C21.txt"
+        ],
+        "files-peer-17-after-document-selection-tree": [
+          "attachments/78FFBAFE-35B0-4AA1-9331-7121D0AE1AAF.txt"
+        ],
+        "files-peer-fixture-document-control": [
+          "attachments/9DACB31A-6627-4284-8D1E-3AF8081DCBFB.txt"
+        ],
+        "files-peer-requested-document": [
+          "attachments/2CDCA8FE-1DDC-41E3-9FFA-A9A60A39885B.txt"
+        ],
+        "files-peer-run-folder-control": [
+          "attachments/688BBF00-6576-4062-967E-CA895209F4C6.txt"
+        ],
+        "files-peer-e2e-folder-control": [
+          "attachments/CFD80D9D-F17D-4607-9CDC-F20C87C4256A.txt"
+        ],
+        "files-peer-peer-application-folder-control": [
+          "attachments/33731C9A-06CD-410B-9FC3-C84D36400246.txt"
+        ],
+        "files-peer-local-device-control": [
+          "attachments/8BDABF73-239D-40A4-8BE6-3EFDEE0FB67C.txt"
+        ],
+        "files-peer-1-picker-presentation-tree": [
+          "attachments/F6ED68B3-F7DB-4659-9E23-3CE3DBDEE684.txt"
+        ],
+        "missing-external-original": [
+          "attachments/ACC5C6FB-0F99-4538-994A-2E07EAFBEE0E"
+        ]
+      },
+      "retainedAttachments": 15,
+      "totalAttachmentsInRawManifest": 101,
+      "stageReached": "contextual-error guard",
+      "afterAcknowledgementXML": "NOT_RUN",
+      "observedDialogMessage": "The file doesn’t exist.",
+      "excludedBoundedLog": {
+        "source": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-missing-files-001/diagnostics/app-error-bounded.log",
+        "bytes": 2601103,
+        "sha256": "96c8b634397fd18eb1ce03bd4091a5fa00a1fb0c0ef5d75197ada11fb0e5b270",
+        "retained": "LOCAL_ONLY",
+        "nativeErrorDomainAndCode": "UNKNOWN",
+        "note": "Historical 13-second process log did not expose the exact NSError domain/code; not required by the portable verifier."
+      }
+    },
+    "ce3-pass": {
+      "sourceOutput": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-ce3-missing-files-phone-001",
+      "status": "PASS",
+      "nativeExecutionGate": "NATIVE_PASS",
+      "wholeSuiteQualification": "PARTIAL",
+      "durationSeconds": 169.212,
+      "selectedTests": 1,
+      "failedTests": 0,
+      "wrapperExitCode": 0,
+      "runID": "c702d6c5c277",
+      "sourceAppCommit": "ce3e061d38cd9851038d1cd8a71557ede9add641",
+      "appArtifactManifestSHA256": "3b48f3ca39420de5e36f6ff5e1a8304c1bbb6bfafb953acd57e7adf5dc09fd2d",
+      "appBundleTreeSHA256": "f392420c7f33834a7cf851b643bca64011fd62a7f7d49cfee760e7ad6dcc911f",
+      "appExecutableSHA256": "833ac07f15eab61ee059f4cc97ea6fd9e4cb2477425cf7f7b831a932c73788cc",
+      "device": {
+        "name": "iPhone 17e",
+        "model": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e",
+        "udid": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+        "physicalDevice": false
+      },
+      "retainedAttachmentRoles": {
+        "final-screen": [
+          "attachments/1FC4FC38-7BD7-4D99-BF77-C001CB6D941A.png"
+        ],
+        "native-tree": [
+          "attachments/3DD30540-F22C-4442-83AD-D243AA683E05.txt"
+        ],
+        "geometry-editor-project-toolbar-overflow": [
+          "attachments/2BC87BC3-8650-48CE-801D-6018997036D4.txt",
+          "attachments/350F711B-73FA-4B8A-91F0-7BE4ED5691DD.txt",
+          "attachments/402287F9-FD5A-41BA-9EA3-AD37B31FF5FB.txt",
+          "attachments/CCA446C2-3DA1-4408-9A47-98C98D7A1F54.txt"
+        ],
+        "geometry-canvas-after-missing-external": [
+          "attachments/F2E58C8D-87D6-4CCC-8541-C2549557AF22.txt"
+        ],
+        "after-missing-external": [
+          "attachments/A259A022-6C58-4035-8221-F4BD707F7805.xml"
+        ],
+        "document-external-tree": [
+          "attachments/06BB9D91-240C-4574-B313-27A3834C84AC.txt",
+          "attachments/E1FCE4F4-B9C8-4613-B9F3-044FEDAE4312.txt"
+        ],
+        "missing-external-error-tree": [
+          "attachments/E3D9B643-7D9B-4B09-BEB3-0CA047670D57.txt"
+        ],
+        "missing-external-error": [
+          "attachments/A5F9F3BB-5D56-4729-B332-8EA4F6BA2078.png"
+        ],
+        "before-missing-external": [
+          "attachments/E2226845-AE23-4170-8AB9-EAE1050FEFA4.xml"
+        ],
+        "missing-external-picker-setup": [
+          "attachments/584E6399-CE65-4855-A9E7-6A45C76D2B56.txt"
+        ],
+        "files-peer-19-picker-dismissed-tree": [
+          "attachments/D1E10FAE-1E89-4547-8CDB-9BD72F9CC7D7.txt"
+        ],
+        "files-peer-18-after-document-selection-tree": [
+          "attachments/060722E3-A410-4D65-97DA-0D59FED2D9EF.txt"
+        ],
+        "files-peer-fixture-document-control": [
+          "attachments/B4B749E1-96A5-438D-9FE0-AD4EB756579E.txt"
+        ],
+        "files-peer-requested-document": [
+          "attachments/07500B6C-4E0D-49F5-A3FE-C517E43B7164.txt"
+        ],
+        "files-peer-run-folder-control": [
+          "attachments/0C5230E3-8081-4087-AB39-A6B9AA81E7A9.txt"
+        ],
+        "files-peer-e2e-folder-control": [
+          "attachments/C9723456-7B67-4337-8DFF-B8F69CB09134.txt"
+        ],
+        "files-peer-peer-application-folder-control": [
+          "attachments/F6571820-0662-4D7D-B2FE-48CDE4C79CC7.txt"
+        ],
+        "files-peer-local-device-control": [
+          "attachments/A9928E9F-E466-46F4-9B72-22A10900DBD9.txt"
+        ],
+        "files-peer-1-picker-presentation-tree": [
+          "attachments/6BC13C6F-7D22-41A2-9EE3-77185AC38AD7.txt"
+        ],
+        "missing-external-original": [
+          "attachments/251B74F7-B64D-41F5-88D7-C716EE879071.circ"
+        ]
+      },
+      "retainedAttachments": 24,
+      "totalAttachmentsInRawManifest": 63,
+      "stageReached": "post-acknowledgement XML, control, missing-file and editor checks complete",
+      "afterAcknowledgementXML": "EXACT_MATCH",
+      "observedDialogMessage": "Could not access missing-external.circ: The file doesn’t exist."
+    }
+  },
+  "ce3UIXML": {
+    "bytes": 1591,
+    "sha256": "f1797171784e749359236dfcc86c70b64f71e258416cba76d7e7641f30496894"
+  },
+  "ce3UntouchedControl": {
+    "file": "staged-external.circ",
+    "bytes": 1391,
+    "sha256": "b97c12341ff44a655a750f9ec21c2597c2d76478efa93522076b01fc229278ff"
+  },
+  "interpretation": "Separate historical observations, not a controlled A/B test of one line: ce3 includes initialization/lifecycle and error-context changes; device and run-specific fixture identities also differ.",
+  "relatedOriginalCommits": {
+    "missingFilesSetup": "c893460e63b3c05e4560e42c6d3be11d9e3fa8b9",
+    "errorContext": "b4872a5cfce27fbf7ddbc30e8700d534d206687c",
+    "initializationLifecycle": "1532eff97aaf908ab3b4107d660d65e25ee16a7b",
+    "initializationLifecycleMirror": "e46990692ae09006bd505c757ff48b7ebc49318e",
+    "fixtureFamily": [
+      "ff99aadb4991933774eed684dda70805de9d0055",
+      "c8c8185e5a644cd28ed12411d01c6fa079b3b212",
+      "48412de3dae41e97fba38623f1dc466f41bbe441"
+    ],
+    "bootstrapHarnessFamily": [
+      "10099e21e2f46d811effd495c3f28bce34b10172",
+      "628562d52e3b0c957be67a43ac2851b7f84c23c5"
+    ],
+    "bootstrapFailureArchive": "f2b4cde813727ee5d5a844cfbf7894bf071abc09"
+  },
+  "separateFixtureArchive": "docs/validation/ios-fileprovider-bootstrap-failures-2026-11-05/",
+  "limits": [
+    "No new native execution or live artifact access during packaging.",
+    "Files Edit external selects a run-owned file in the Logisim Mobile Documents folder; it does not use the separate FileProvider extension fixture.",
+    "6cef remains FAIL and its post-acknowledgement XML/control/usability checks were not run.",
+    "ce3 remains one selected PASS with qualification_gate PARTIAL; it does not replace 6cef evidence.",
+    "No System Open, revoked authorization, cloud/remote provider, extension execution, physical-device or global26/36 qualification.",
+    "Absence in the runner staging directory is not a deletion oracle; missing-file persistence is recorded by executed XCTest assertions and ce3 postflight."
+  ],
+  "nativeRerun": "NOT_RUN",
+  "controlledAB": false,
+  "qualifiedScenarios": {
+    "systemOpen": false,
+    "revokedAuthorization": false,
+    "cloudOrRemoteProvider": false,
+    "fileProviderExtension": false,
+    "physicalDevice": false,
+    "allIssue26Or36": false
+  }
+}

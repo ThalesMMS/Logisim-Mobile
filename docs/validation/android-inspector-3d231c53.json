@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "case": "inspector-invalid-value-focus-and-undo",
+  "issue": 21,
+  "appProducerHead": "3d231c537ac25de240889e327f3fd27a3b1e0902",
+  "appParent": "50668f45230ada6f49b10c1e05fe983b8ea183c4",
+  "harnessProducerHead": "3c721289743e55713a45a53578d610936e33761d",
+  "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+  "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+  "snapshotSha256": "139f59d5827afd178b078ba00ec811717bdcfcf15c7dd112361b8f5dc4b580b0",
+  "nativeResults": [
+    {
+      "scenario": "inspector-invalid-value-focus-and-undo",
+      "status": "passed",
+      "seconds": 181.48
+    }
+  ],
+  "observations": {
+    "numericFieldFocused": true,
+    "softwareKeyboardShown": true,
+    "invalidWidth": 0,
+    "invalidApplyEnabled": false,
+    "invalidExportUnchanged": true,
+    "validExportWidth": 4,
+    "singleUndoExportWidth": 1
+  },
+  "baselineXmlSha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+  "invalidXmlSha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+  "validXmlSha256": "7ec125e62cad73963d6dc9aceb205d1c88d372024b5306a9c6271779f1912538",
+  "undoXmlSha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+  "validChange": "The only serialized change is width from 1 to 4 on the known input Pin.",
+  "invalidAndUndoBytesEqualBaseline": true,
+  "installedArtifactsAfter": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "sha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+      "path": "/data/app/~~TNOSQnhwPWCGvwd9q5FBfA==/thalesmms.logisim.mobile.e2e-FznV86Gq1eCP0xdA_J8ivQ==/base.apk"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "sha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+      "path": "/data/app/~~2LSDtNNvZztkn2DaALoCBA==/thalesmms.logisim.mobile.e2e.test-adKpKz3JbyP-dbjc6KEl8g==/base.apk"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "sha256": "139f59d5827afd178b078ba00ec811717bdcfcf15c7dd112361b8f5dc4b580b0",
+      "path": "/data/app/~~uMCnCCXtW3vJ4hTtUrhcLA==/thalesmms.logisim.mobile.snapshot.e2e.test-yY-ob2h0KzaazN4IytY9OQ==/base.apk"
+    }
+  ],
+  "noRecordedAnr": true,
+  "scope": "English application UI on Android API35 emulator5556. Dedicated width validation/focus/IME/one-Undo case, not physical-device, multiselection or later main builds.",
+  "artifacts": {
+    "manifest.json": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/manifest.json",
+      "sha256": "2f71c5d68ff84da84790af667c1a69c1a7255001d195b59962e82907d6f38227",
+      "bytes": 5113
+    },
+    "results.json": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/results.json",
+      "sha256": "c0c14da8828246d92b09061e3fcac5863acbc06deb437bb669247501cf01b128",
+      "bytes": 116
+    },
+    "inspector-observations.json": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-observations.json",
+      "sha256": "826c7faa03a0e6d07d3428d8058352dadde9136132d4b58ec61a8e164b61b742",
+      "bytes": 209
+    },
+    "inspector-before.circ": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-before.circ",
+      "sha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+      "bytes": 964
+    },
+    "inspector-invalid-unchanged.circ": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-invalid-unchanged.circ",
+      "sha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+      "bytes": 964
+    },
+    "inspector-valid-width4.circ": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-valid-width4.circ",
+      "sha256": "7ec125e62cad73963d6dc9aceb205d1c88d372024b5306a9c6271779f1912538",
+      "bytes": 964
+    },
+    "inspector-width-undo.circ": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-width-undo.circ",
+      "sha256": "a7538c0d619d18e700050dc52f56fc67af6b4f124ebd379deffc04c4c0160480",
+      "bytes": 964
+    },
+    "inspector-invalid-rejected.png": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-invalid-rejected.png",
+      "sha256": "6d3b53ff156646cb68ebddbbe705616a762b7009f0aaccb55372a1d3b5997186",
+      "bytes": 125738
+    },
+    "inspector-invalid-rejected-ui.xml": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-invalid-rejected-ui.xml",
+      "sha256": "d2bb0779a31af5c18eeee2d7a46ae37ceb09ef7594e035ff084194baef010ee6",
+      "bytes": 8259
+    },
+    "inspector-invalid-value-focus-and-undo.png": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-invalid-value-focus-and-undo.png",
+      "sha256": "ba8afc109795f6e5d780df28c3bdd2e220999e9b3af7e0cb32ece10e225df6ee",
+      "bytes": 102381
+    },
+    "inspector-invalid-value-focus-and-undo-ui.xml": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/inspector-invalid-value-focus-and-undo-ui.xml",
+      "sha256": "281cecd2b7d76ea069d97465d3a70864b6e25f0ac4309c1752a954fe96d1c586",
+      "bytes": 31700
+    },
+    "post-case-verification.json": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/post-case-verification.json",
+      "sha256": "510b52aa5fd9bce63c6b627f8c6565657b8eaaa70908b3946ac9f089631be4f9",
+      "bytes": 1128
+    },
+    "post-case-last-anr.txt": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/post-case-last-anr.txt",
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "bytes": 88
+    },
+    "app-build-receipt.json": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/app-build-receipt.json",
+      "sha256": "ad9f5a28afbdbffb493f1ed885df283632d3da1572449c6eb0084c004a9af48b",
+      "bytes": 6700
+    },
+    "source-android_inspector_scenarios.py": {
+      "path": "docs/validation/artifacts/android-inspector-3d231c53/source-android_inspector_scenarios.py",
+      "sha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+      "bytes": 8646
+    }
+  }
+}

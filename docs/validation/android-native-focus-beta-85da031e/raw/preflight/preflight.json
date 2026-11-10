@@ -1,0 +1,74 @@
+{
+  "utc": "2026-11-05T05:34:43.083786+00:00",
+  "harnessProducer": "f4f72c6de53fbd634703ed23f066af88f58d5485",
+  "appProducer": "85da031e4ed11474c2e763976392729810ef142d",
+  "testOriginalPatch": "4a1658d753ca124df22a267cd1b1fe987c9bceb9",
+  "serial": "emulator-5558",
+  "concurrency": {
+    "otherDevice": "emulator-5556",
+    "otherCase": "dimensions",
+    "otherHandle": 93920,
+    "performanceQualification": false
+  },
+  "hostPreflightBeforeAdb": {
+    "app": {
+      "path": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/85da031e/e2e_apk.apk",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+      "package": "thalesmms.logisim.mobile.e2e",
+      "aaptExitCode": 0
+    },
+    "test": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-artifacts/native-focus4a/androidApp-e2e-androidTest.apk",
+      "sha256": "04a4fdecd9dfdae6577ce040a7595e8c96bb62ac821080ee6faa0f1de7cde52f",
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "aaptExitCode": 0
+    },
+    "snapshot": {
+      "path": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/85da031e/snapshot_apk.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387",
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "aaptExitCode": 0
+    }
+  },
+  "preflightGuardCorrection": {
+    "scope": "Read-only guard before any install or native run",
+    "initialAssertion": "mCurrentFocus was searched in dumpsys window windows, which omitted that field",
+    "observed": "The saved dumpsys activity activities includes both topResumedActivity and mCurrentFocus for the exact MainActivity",
+    "nativeAttemptsBeforeCorrection": 0,
+    "testInstallsBeforeCorrection": 0
+  },
+  "installedBeforeTestInstall": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~9Sqzr9mtAcveSVavITQCPw==/thalesmms.logisim.mobile.e2e-7CjIyG4Br0wG2Ya8ARvAqA==/base.apk",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~joKBPD0csRnjSJ8UjqmpqA==/thalesmms.logisim.mobile.snapshot.e2e.test-ZgQ0q2QzBTYADh-BX_MBJw==/base.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "appPidBeforeTestInstall": "6144",
+  "mainActivityBeforeTestInstall": "Exact MainActivity confirmed by fresh activity topResumedActivity and mCurrentFocus",
+  "installedAfterTestInstall": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~9Sqzr9mtAcveSVavITQCPw==/thalesmms.logisim.mobile.e2e-7CjIyG4Br0wG2Ya8ARvAqA==/base.apk",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~LFm_Oo1ycKzmd6my8TGqrA==/thalesmms.logisim.mobile.e2e.test-yjTgLHbIq2BPUVg3njC7vQ==/base.apk",
+      "sha256": "04a4fdecd9dfdae6577ce040a7595e8c96bb62ac821080ee6faa0f1de7cde52f"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~joKBPD0csRnjSJ8UjqmpqA==/thalesmms.logisim.mobile.snapshot.e2e.test-ZgQ0q2QzBTYADh-BX_MBJw==/base.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "appReinstalledOrCleared": false,
+  "onlyTestApkInstalled": true,
+  "completedAtUtc": "2026-11-05T05:35:14.674038+00:00"
+}

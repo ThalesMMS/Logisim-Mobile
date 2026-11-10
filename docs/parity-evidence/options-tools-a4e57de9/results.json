@@ -1,0 +1,25 @@
+{
+  "mobile_revision": "a4e57de9eb3555fb5e6eed78ab6d5470e43ee229",
+  "mobile_core_jar_sha256": "0e596cb9d1a760eeb30d3f871adf5d009b3305f67f2cb5d3f82bef1205a500b9",
+  "evolution_revision": "d58a61e0c290361722b43df5b1a6b86c1f7c7f0d",
+  "evolution_jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+  "environment": "macOS Apple silicon, OpenJDK 21.0.13 (Homebrew), JVM only, 2026-11-07",
+  "commands": [
+    "scripts/oracle/project-options/run.sh EVOLUTION_JAR",
+    "scripts/oracle/base-tools/run.sh EVOLUTION_JAR"
+  ],
+  "rows": {
+    "option/gateUndefined": {"result": "SAME", "fixtures": 3, "same": 3},
+    "option/simlimit": {"result": "DIFF", "fixtures": 14, "same": 9,
+      "diff": ["simlimit-ring-halt-4", "simlimit-ring-halt-5", "simlimit-ring-halt-6", "simlimit-ring-halt-1000", "pulse-latch-halt-0"],
+      "cause": "Mobile applies propagationLimit steps before reporting oscillation; Evolution applies propagationLimit-1"},
+    "option/simrand": {"result": "SAME_SETTLED", "fixtures": 4, "same": 4,
+      "race_runs": "simrand=32: both halt at random ticks; end reason differs by the simlimit cause"},
+    "Base/PokeTool": {"result": "DIFF", "same": ["1-bit two-state pin", "clock poke ticks all clocks"],
+      "diff": ["tri-state 1-bit cycle", "multi-bit bit/digit poke", "tri-state bus poke"]},
+    "Base/TextTool": {"result": "DIFF", "same": ["new text from toolbar tool", "label edit", "text edit", "empty new text discarded", "explicit-font bounds"],
+      "diff": ["clearing an existing Text: Evolution keeps it, Mobile removes it", "absent font: Evolution SansSerif bold 16, Mobile SansSerif plain 12"]},
+    "Base/MenuTool": {"result": "DIFF",
+      "diff": ["no Rotate Left/Right", "no MenuExtender items (RAM/ROM contents, PLA, Splitter distribute)", "menu also on empty canvas, extra Paste/Duplicate/Select all/Fit/Split items"]}
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "scope": "Source-only SDK27.2 interpretation and pure mask checks; not an observation of Auth004 arguments or a Swift runtime test",
+  "sources": {
+    "NSFileProviderItem.h": {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderItem.h",
+      "sha256": "3f48afe1e78469571b8f863592d4fb54883b773b23e35897455a3059471897cd",
+      "lineRanges": [
+        [
+          205,
+          217
+        ],
+        [
+          253,
+          289
+        ],
+        [
+          355,
+          355
+        ],
+        [
+          833,
+          836
+        ]
+      ]
+    },
+    "NSFileProviderModifyItemOptions.h": {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderModifyItemOptions.h",
+      "sha256": "7f71b47afabba6037bd62073ac073db950903a0da52562161aa0cbfccbd7fd80",
+      "lineRanges": [
+        [
+          9,
+          34
+        ]
+      ]
+    },
+    "NSFileProviderDefines.h": {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderDefines.h",
+      "sha256": "1c9898b293b92b4f22a793d8b6bacdb31fd0e0fa1f8c4b2295f76f9653498ba3",
+      "lineRanges": [
+        [
+          19,
+          19
+        ],
+        [
+          27,
+          33
+        ],
+        [
+          54,
+          54
+        ]
+      ]
+    },
+    "helper": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-modify-diagnostics/scripts/ios_fileprovider_revocation/Provider/RevocationModifyDiagnostics.swift",
+      "sha256": "9e80543cd9b54826b33af3ed58bcbf59eea53c2b79f44bba1e2d56a3e85e3676",
+      "lineRanges": [
+        [
+          5,
+          16
+        ],
+        [
+          19,
+          33
+        ],
+        [
+          36,
+          43
+        ]
+      ]
+    }
+  },
+  "fieldBits": [
+    {
+      "mask": 1,
+      "name": "contents"
+    },
+    {
+      "mask": 2,
+      "name": "filename"
+    },
+    {
+      "mask": 4,
+      "name": "parentItemIdentifier"
+    },
+    {
+      "mask": 8,
+      "name": "lastUsedDate"
+    },
+    {
+      "mask": 16,
+      "name": "tagData"
+    },
+    {
+      "mask": 32,
+      "name": "favoriteRank"
+    },
+    {
+      "mask": 64,
+      "name": "creationDate"
+    },
+    {
+      "mask": 128,
+      "name": "contentModificationDate"
+    },
+    {
+      "mask": 256,
+      "name": "fileSystemFlags"
+    },
+    {
+      "mask": 512,
+      "name": "extendedAttributes"
+    },
+    {
+      "mask": 1024,
+      "name": "typeAndCreator"
+    }
+  ],
+  "fieldsKnownMask": 2047,
+  "optionBits": [
+    {
+      "mask": 1,
+      "name": "mayAlreadyExist",
+      "iOSAvailability": "16.0+"
+    },
+    {
+      "mask": 2,
+      "name": "failOnConflict",
+      "iOSAvailability": "26.0+"
+    },
+    {
+      "mask": 4,
+      "name": "isImmediateUploadRequestByPresentingApplication",
+      "iOSAvailability": "26.0+"
+    }
+  ],
+  "policyValues": [
+    {
+      "raw": 0,
+      "name": "inherited",
+      "iOSAvailability": "16.0+"
+    },
+    {
+      "raw": 1,
+      "name": "downloadLazily",
+      "iOSAvailability": "not available to iOS in SDK27.2"
+    },
+    {
+      "raw": 2,
+      "name": "downloadLazilyAndEvictOnRemoteUpdate",
+      "iOSAvailability": "16.0+"
+    },
+    {
+      "raw": 3,
+      "name": "downloadEagerlyAndKeepDownloaded",
+      "iOSAvailability": "not available to iOS in SDK27.2"
+    }
+  ],
+  "observability": {
+    "requestedPolicy": "Optional incoming NSFileProviderItem property; absent is not inherited(0)",
+    "fixtureDeclaredPolicy": "Source getter currently advertises raw2; not a value persisted in FixtureState",
+    "currentItemWithoutExtraStoreRead": "If an actual current item is needed, construct it from the state already loaded by modifyItem and read its getter. Do not fetch/snapshot again merely for logging.",
+    "IOAddedByDetailsHelper": "None; fields/options/newContents presence are arguments, policy reads use supplied metadata/getter. Structured event persistence remains the existing logging path."
+  },
+  "swiftAvailabilityNote": "Do not refer to macOS-only policy cases in iOS Swift. Raw-name table is observation schema. failOnConflict/immediate-upload symbolic references require iOS26 availability; rawValue logging needs no such symbol.",
+  "guard": "Unchanged: changedFields.contains(.contents) && newContents != nil",
+  "actualAuth004Fields": "UNKNOWN_UNTIL_FUTURE_DIAGNOSTIC",
+  "pureChecksPassed": 23,
+  "fixtureSourceReview": {
+    "status": "SOURCE_ONLY_PASS",
+    "workClosureByteIdenticalTo601": true,
+    "currentItemGetterByteIdenticalTo601": true,
+    "reservedRequestIDAndDomainPreserved": true,
+    "newExplicitStoreOrURLReads": false,
+    "providerSourceSHA256": "2d0011f80f05d9ab8cfa0b9f0ea07be24f44eb07a2908f84dbe8de95043b3b5a",
+    "fixtureItemSourceSHA256": "9090827e2c9115c2ec789e5a6aebf69258423c1b3b5f4b9ac089747cedc85a67",
+    "notes": [
+      "Only modifyItem supplies extra input details; other perform callers retain default empty details.",
+      "The same immutable details dictionary reaches all started/terminal/cancellation paths.",
+      "fixtureDeclaredContentPolicy is explicitly a source declaration, not a persisted store policy.",
+      "No actual Auth004 field mask, incoming policy or URL presence is inferred."
+    ]
+  }
+}

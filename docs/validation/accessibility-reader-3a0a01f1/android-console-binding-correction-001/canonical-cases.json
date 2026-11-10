@@ -1,0 +1,62 @@
+{
+  "status": "SOURCE_DERIVED_EXPECTATIONS_ONLY_NOT_EXECUTED",
+  "source_tag": "android-15.0.0_r1",
+  "valid_public_formatter_cases": [
+    {
+      "mask_hex": "00000000",
+      "formatter_text": "",
+      "bound_field": "eventTypes="
+    },
+    {
+      "mask_hex": "ffffffff",
+      "formatter_text": "TYPES_ALL_MASK",
+      "bound_field": "eventTypes=TYPES_ALL_MASK"
+    },
+    {
+      "mask_hex": "00000001",
+      "formatter_text": "TYPE_VIEW_CLICKED",
+      "bound_field": "eventTypes=TYPE_VIEW_CLICKED"
+    },
+    {
+      "mask_hex": "00000003",
+      "formatter_text": "[TYPE_VIEW_CLICKED, TYPE_VIEW_LONG_CLICKED]",
+      "bound_field": "eventTypes=[TYPE_VIEW_CLICKED, TYPE_VIEW_LONG_CLICKED]"
+    },
+    {
+      "mask_hex": "08000000",
+      "formatter_text": "8000000",
+      "bound_field": "eventTypes=8000000"
+    },
+    {
+      "mask_hex": "80000000",
+      "formatter_text": "80000000",
+      "bound_field": "eventTypes=80000000"
+    },
+    {
+      "mask_hex": "80000001",
+      "formatter_text": "[TYPE_VIEW_CLICKED, 80000000]",
+      "bound_field": "eventTypes=[TYPE_VIEW_CLICKED, 80000000]"
+    }
+  ],
+  "invalid_bound_field_values": [
+    "[]",
+    "[TYPE_VIEW_CLICKED]",
+    "0",
+    "ffffffff",
+    "0x80000000",
+    "08000000",
+    "TYPE_UNKNOWN",
+    "[TYPE_VIEW_LONG_CLICKED, TYPE_VIEW_CLICKED]",
+    "[TYPE_VIEW_CLICKED, TYPE_VIEW_CLICKED]",
+    "[TYPE_VIEW_CLICKED,TYPE_VIEW_LONG_CLICKED]",
+    "[TYPES_ALL_MASK]",
+    "[TYPE_VIEW_CLICKED, TYPE_VIEW_LONG_CLICKED, TYPE_VIEW_SELECTED, TYPE_VIEW_FOCUSED, TYPE_VIEW_TEXT_CHANGED, TYPE_WINDOW_STATE_CHANGED, TYPE_NOTIFICATION_STATE_CHANGED, TYPE_VIEW_HOVER_ENTER, TYPE_VIEW_HOVER_EXIT, TYPE_TOUCH_EXPLORATION_GESTURE_START, TYPE_TOUCH_EXPLORATION_GESTURE_END, TYPE_WINDOW_CONTENT_CHANGED, TYPE_VIEW_SCROLLED, TYPE_VIEW_TEXT_SELECTION_CHANGED, TYPE_ANNOUNCEMENT, TYPE_VIEW_ACCESSIBILITY_FOCUSED, TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED, TYPE_VIEW_TEXT_TRAVERSED_AT_MOVEMENT_GRANULARITY, TYPE_GESTURE_DETECTION_START, TYPE_GESTURE_DETECTION_END, TYPE_TOUCH_INTERACTION_START, TYPE_TOUCH_INTERACTION_END, TYPE_WINDOWS_CHANGED, TYPE_VIEW_CONTEXT_CLICKED, TYPE_ASSIST_READING_CONTEXT, TYPE_SPEECH_STATE_CHANGE, TYPE_VIEW_TARGETED_BY_SCROLL, 8000000, 10000000, 20000000, 40000000, 80000000]"
+  ],
+  "invalid_bound_prefix_cases": [
+    "eventTypes[TYPE_VIEW_CLICKED]",
+    "eventTypes=[TYPE_VIEW_CLICKED]",
+    "eventTypes:[]",
+    "eventTypesTYPES_ALL_MASK"
+  ],
+  "scope": "These are a specification for future parser tests, not parser, Java, device, Binder, touch, reader or speech execution results."
+}

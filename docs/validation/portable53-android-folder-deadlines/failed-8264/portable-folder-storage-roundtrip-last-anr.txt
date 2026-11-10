@@ -1,0 +1,58 @@
+ACTIVITY MANAGER LAST ANR (dumpsys activity lastanr)
+  ANR time: Nov 4, 2026 10:49:50 PM
+  Reason: Input dispatching timed out (225f7f7 thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity (server) is not responding. Waited 5013ms for FocusEvent(hasFocus=false)).
+
+  * Task{b5a8049 #15 type=standard A=10207:thalesmms.logisim.mobile.e2e U=0 visible=true visibleRequested=true mode=fullscreen translucent=false sz=2}
+    mLastPausedActivity: ActivityRecord{db04650 u0 thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity t15}
+    mLastNonFullscreenBounds=Rect(276, 692 - 804, 1772)
+    isSleeping=false
+    topResumedActivity=ActivityRecord{196b724 u0 com.google.android.documentsui/com.android.documentsui.picker.PickActivity t15}
+
+  (nothing)
+  packageName=thalesmms.logisim.mobile.e2e processName=thalesmms.logisim.mobile.e2e
+  launchedFromUid=2000 launchedFromPackage=com.android.shell launchedFromFeature=null userId=0
+  app=ProcessRecord{befd7f3 13344:thalesmms.logisim.mobile.e2e/u0a207}
+  Intent { flg=0x10000000 cmp=thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity }
+  rootOfTask=true task=Task{b5a8049 #15 type=standard A=10207:thalesmms.logisim.mobile.e2e}
+  taskAffinity=10207:thalesmms.logisim.mobile.e2e
+  mActivityComponent=thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity
+  baseDir=/data/app/~~0YZQub3ismQ_3VBjN3vleA==/thalesmms.logisim.mobile.e2e-yOq8iVC1okLdz2LsxMpHYA==/base.apk
+  dataDir=/data/user/0/thalesmms.logisim.mobile.e2e
+  stateNotNeeded=false componentSpecified=true mActivityType=standard
+  compat={420dpi} theme=0x1030241
+  mLastReportedConfigurations:
+    mGlobalConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.4 s.76 fontWeightAdjustment=0}
+    mOverrideConfig={1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} as.4 s.3 fontWeightAdjustment=0}
+  mLastReportedActivityWindowInfo=ActivityWindowInfo{isEmbedded=false, taskBounds=Rect(0, 0 - 1080, 2400), taskFragmentBounds=Rect(0, 0 - 1080, 2400)}
+  CurrentConfiguration={1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0} as.4 s.3 fontWeightAdjustment=0}
+  RequestedOverrideConfiguration={0.0 ?mcc0mnc ?localeList ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?ldr ?wideColorGamut ?orien ?uimode ?night ?touch ?keyb/?/? ?nav/? winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=null mMaxBounds=Rect(0, 0 - 0, 0) mDisplayRotation=undefined mWindowingMode=undefined mActivityType=standard mAlwaysOnTop=undefined mRotation=undefined} ?fontWeightAdjustment}
+  ResolvedOverrideConfiguration={0.0 ?mcc0mnc ?localeList ?layoutDir ?swdp ?wdp ?hdp ?density ?lsize ?long ?ldr ?wideColorGamut ?orien ?uimode ?night ?touch ?keyb/?/? ?nav/? winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=null mMaxBounds=Rect(0, 0 - 0, 0) mDisplayRotation=undefined mWindowingMode=undefined mActivityType=undefined mAlwaysOnTop=undefined mRotation=undefined} s.3 ?fontWeightAdjustment}
+  taskDescription: label="null" icon=null iconResource=/0 iconFilename=null primaryColor=fff5f5f5
+    backgroundColor=fffafafa statusBarColor=ff757575 navigationBarColor=808080
+   backgroundColorFloating=ffffffff
+  launchFailed=false launchCount=1 lastLaunchTime=-1m37s312ms
+  mHaveState=false mIcicle=null
+  state=PAUSED delayedResume=false finishing=false
+  keysPaused=false inHistory=true idle=true
+  occludesParent=true noDisplay=false immersive=false launchMode=1
+  mActivityType=standard
+  mImeInsetsFrozenUntilStartInput=false
+  windows=[Window{eca196c u0 thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity}, Window{225f7f7 u0 thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity}]
+  windowType=2
+  mOccludesParent=true
+  overrideOrientation=SCREEN_ORIENTATION_UNSPECIFIED
+  requestedOrientation=SCREEN_ORIENTATION_UNSPECIFIED
+  mVisibleRequested=false mVisible=true mClientVisible=true reportedDrawn=true reportedVisible=true
+  mNumInterestingWindows=2 mNumDrawnWindows=2 allDrawn=true lastAllDrawn=false)
+  startingData=null firstWindowDrawn=true mIsExiting=false
+  nowVisible=true lastVisibleTime=-1m35s447ms
+  resizeMode=RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION
+  mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+  supportsSizeChanges=SIZE_CHANGES_UNSUPPORTED_METADATA
+  configChanges=0x5a3
+  neverSandboxDisplayApis=false
+  alwaysSandboxDisplayApis=false
+  areBoundsLetterboxed=false
+  mCameraCompatControlState=hidden
+  mCameraCompatControlEnabled=true
+

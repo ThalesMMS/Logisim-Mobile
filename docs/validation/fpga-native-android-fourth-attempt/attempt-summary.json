@@ -1,0 +1,161 @@
+{
+  "attempt": 4,
+  "status": "FAIL",
+  "nativeExecutionGate": "NATIVE_FAIL",
+  "qualificationGate": "NOT_QUALIFIED",
+  "durationSeconds": 91.492409,
+  "harnessSource": "51a6a01c93e2195d40c2ee98e84365b262da97e3",
+  "actualAppTestSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "integratedManifestHelperSource": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "observerSha256": "8afbbc3514a2dcc33939f4c7a4bc9ec1674b54c2eb4610a5764336238057a634",
+  "pairing": "PASS",
+  "boardImport": "FAIL",
+  "mapping": "NOT_RUN",
+  "projectExport": "NOT_RUN",
+  "synthesis": "NOT_RUN",
+  "toolError": "NOT_RUN",
+  "cancel": "NOT_RUN",
+  "physicalHardware": false,
+  "programming": false,
+  "nativeRetryPerformed": false,
+  "intendedXml": {
+    "bytes": 535,
+    "sha256": "998c7feaa473cccf9b6b3ab2cd8876cba828f06a51733ea963327b71771fd2cf"
+  },
+  "observedXml": {
+    "bytes": 245,
+    "sha256": "79b593dd4b1d939e820bada61560b1af03384e1fd0508fef11bdf8220aae4094",
+    "exactPrefixOfIntended": true,
+    "tail": "Button Label=\"A"
+  },
+  "observedImportError": "Unable to import the FPGA board XML: Unterminated XML attribute.",
+  "truncationMechanism": "NOT_DETERMINED",
+  "terminalError": {
+    "type": "AssertionError",
+    "message": "The active panel exposes no scrollable content"
+  },
+  "companionAuditCounts": {
+    "requests": 0,
+    "events": 0,
+    "jobs": 0
+  },
+  "cleanup": {
+    "ownPort": 60113,
+    "ownListenerPresent": false,
+    "ownReversePresent": false,
+    "apkHashesUnchanged": true,
+    "leaseReturned": true,
+    "leaseScreenDescriptionDiscrepancy": "Raw lease-return.json says sheet remains open, but both final XML hierarchies show the editor without an editor-tool-sheet and with Operation cancelled. Use the saved hierarchies; preserve raw receipt unchanged."
+  },
+  "focusedCaptures": [
+    {
+      "capture": 1,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 72,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 2,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 32,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 3,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 461,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 4,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 26,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 5,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 55,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 6,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 228,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 7,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 51,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 8,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 52,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 9,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 36,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 10,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 76,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 11,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 52,
+      "overrunMillis": 0
+    },
+    {
+      "capture": 12,
+      "status": "complete",
+      "appPidBefore": "19581",
+      "appPidAfter": "19581",
+      "elapsedMillis": 173,
+      "overrunMillis": 0
+    }
+  ],
+  "preparedCorrection": {
+    "nativeExecution": "NOT_RUN",
+    "transport": "native-open-document",
+    "publicAction": "fpga_import_board_file",
+    "pasteXmlQualification": "NOT_RUN",
+    "focusedChecksPassed": 45,
+    "productChanged": false,
+    "observerChanged": false,
+    "subsequentOraclesAndJobDeadlinesChanged": false,
+    "publicationDeadlineSeconds": 30,
+    "rejectLatePublicationMetadata": true
+  },
+  "remainingIssue65Gate": "Physical board/toolchain verification and unqualified native software cases remain required. Issue stays open."
+}

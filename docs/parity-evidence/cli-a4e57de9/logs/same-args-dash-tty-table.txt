@@ -1,0 +1,20 @@
+row: cli/tty
+case: same-args-dash-tty-table
+result: DIFF
+detail: stdout differs (evolution 5 lines, mobile 1 lines)
+
+=== evolution: logisim-evolution -tty table examples/and.circ
+exit: 0
+--- stdout (5 lines, sha256 af1ecc8e670ab75338d57e14ccea03bc5fb0084ad6a321d86be879f881b37840)
+A B A_AND_B
+0 0       0
+0 1       0
+1 0       0
+1 1       1
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -tty table examples/and.circ
+exit: timeout
+--- stdout (1 lines, sha256 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa)
+0
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

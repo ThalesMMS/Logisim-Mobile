@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Memory" name="0"/>
+  <lib desc="#Wiring" name="1"/>
+  <main name="main"/>
+  <circuit name="main" id="main">
+    <comp loc="(300,200)" logisim-mobile-id="flip" name="D Flip-Flop" lib="0">
+      <a name="appearance" val="classic"/>
+      <a name="trigger" val="rising"/>
+      <a name="label" val="u_flip"/>
+    </comp>
+    <comp loc="(260,200)" logisim-mobile-id="clk" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="u_clk"/>
+    </comp>
+    <comp loc="(260,220)" logisim-mobile-id="data" name="Pin" lib="1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="u_data"/>
+    </comp>
+    <comp loc="(300,200)" logisim-mobile-id="result" name="Pin" lib="1">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="u_result"/>
+    </comp>
+  </circuit>
+</project>

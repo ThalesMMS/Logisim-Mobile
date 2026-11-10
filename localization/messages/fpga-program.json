@@ -1,0 +1,110 @@
+{
+  "fpga_program_title": {
+    "en": "Program board",
+    "pt": "Programar placa"
+  },
+  "fpga_program_import": {
+    "en": "Program an existing bitstream",
+    "pt": "Programar um bitstream existente"
+  },
+  "fpga_program_imported_name": {
+    "en": "Selected file: {name}",
+    "pt": "Arquivo selecionado: {name}"
+  },
+  "fpga_program_invalid_import": {
+    "en": "Choose a nonempty .sof file up to 8 MiB or a nonempty .bit, .bin, .fs, .pof or .jed file up to 4 MiB.",
+    "pt": "Escolha um arquivo .sof não vazio de até 8 MiB ou um arquivo .bit, .bin, .fs, .pof ou .jed não vazio de até 4 MiB."
+  },
+  "fpga_program_target_profile": {
+    "en": "Board {board}, cable {cable}, transport {transport}",
+    "pt": "Placa {board}, cabo {cable}, transporte {transport}"
+  },
+  "fpga_program_chain_position": {
+    "en": "JTAG position: {position} (zero-based)",
+    "pt": "Posição JTAG: {position} (começa em zero)"
+  },
+  "fpga_program_flash_device": {
+    "en": "Flash device: {device}",
+    "pt": "Dispositivo de flash: {device}"
+  },
+  "fpga_program_flash_chain_position": {
+    "en": "Flash JTAG position: {position} (zero-based)",
+    "pt": "Posição JTAG da flash: {position} (começa em zero)"
+  },
+  "fpga_program_target_unavailable": {
+    "en": "Unavailable on the companion: {reason}",
+    "pt": "Indisponível no companion: {reason}"
+  },
+  "fpga_program_help": {
+    "en": "Select a host-approved board and cable, then review the destination, mode, and bitstream.",
+    "pt": "Selecione uma placa e um cabo aprovados pelo host. Depois confira o destino, o modo e o bitstream."
+  },
+  "fpga_program_cpld_help": {
+    "en": "This file programs the CPLD's nonvolatile memory. The design stays on the device after power is removed. Review the file, board, cable and JTAG position before confirming.",
+    "pt": "Este arquivo grava a memória não volátil do CPLD. O circuito fica gravado após desligar a placa. Confira o arquivo, a placa, o cabo e a posição JTAG antes de confirmar."
+  },
+  "fpga_program_no_targets": {
+    "en": "No available programming targets on this host.",
+    "pt": "Não há destinos de programação disponíveis neste host."
+  },
+  "fpga_program_selected": {
+    "en": "Selected: {target}",
+    "pt": "Selecionado: {target}"
+  },
+  "fpga_program_prepare": {
+    "en": "Review programming request",
+    "pt": "Revisar solicitação de programação"
+  },
+  "fpga_program_review": {
+    "en": "Review this request before programming the connected board.",
+    "pt": "Confira esta solicitação antes de programar a placa conectada."
+  },
+  "fpga_program_mode": {
+    "en": "Programming mode",
+    "pt": "Modo de programação"
+  },
+  "fpga_program_mode_ram": {
+    "en": "Temporary (RAM)",
+    "pt": "Temporária (RAM)"
+  },
+  "fpga_program_mode_flash": {
+    "en": "Persistent (flash)",
+    "pt": "Persistente (flash)"
+  },
+  "fpga_program_review_target": {
+    "en": "Board and cable: {target}",
+    "pt": "Placa e cabo: {target}"
+  },
+  "fpga_program_confirm": {
+    "en": "Confirm programming",
+    "pt": "Confirmar programação"
+  },
+  "fpga_program_confirm_flash": {
+    "en": "Confirm flash write",
+    "pt": "Confirmar gravação na flash"
+  },
+  "fpga_program_cpld_confirm": {
+    "en": "Confirm nonvolatile CPLD programming",
+    "pt": "Confirmar gravação não volátil do CPLD"
+  },
+  "fpga_program_reported": {
+    "en": "Programmer reported success: {value}",
+    "pt": "Programador informou sucesso: {value}"
+  },
+  "fpga_program_hardware_unverified": {
+    "en": "Board operation has not been verified.",
+    "pt": "O funcionamento da placa não foi verificado."
+  },
+  "fpga_program_flash_unverified": {
+    "en": "Flash persistence is unverified. Turn the board off and on to verify its behavior.",
+    "pt": "A persistência na flash ainda precisa ser verificada. Desligue e religue a placa para conferir o funcionamento."
+  },
+  "fpga_program_failure": {
+    "en": "Programming request failed: {detail}",
+    "pt": "Falha na solicitação de programação: {detail}"
+  },
+  "fpga_program_discard": {
+    "en": "Discard review",
+    "pt": "Descartar revisão"
+  }
+}

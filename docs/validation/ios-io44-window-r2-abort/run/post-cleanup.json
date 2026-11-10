@@ -1,0 +1,204 @@
+{
+  "scope": "Post-run immutable fingerprint and owned B25 cleanup only",
+  "utc": "2026-11-05T09:36:23.883699+00:00",
+  "infraAbort": {
+    "observedHostUTC": "2026-11-05T09:34:17.843534+00:00",
+    "source": "test.log",
+    "line": "Restarting after unexpected exit, crash, or test timeout; summary will include totals from previous launches."
+  },
+  "runnerExit": 130,
+  "videoExit": 0,
+  "sourceHead": "0732f74f1483bdccdc6c40abd9670bf00d45822a",
+  "sourceStatus": "",
+  "sourceFilesVerified": {
+    "scripts/ios_accessibility_ui/AccessibilityUITests.swift": "ca5d6c441c1270d915cfcce1bb456f200bbbf83e78af18667f5a72359293d150",
+    "scripts/ios_e2e_ui/ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+    "scripts/ios_e2e_ui/DestinationExportEndToEndTests.swift": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+    "scripts/ios_native_ui/DocumentWindowRules.swift": "a1f3dc1672e11394fbf3b654bd47cb7c9d2421b34fe5af193965b71779c6432c",
+    "scripts/ios_native_ui/DocumentWindowScope.swift": "a7714f97d6decfe3893c3eb9c93229cd7a69d0e5bbae4fffe32f85bc25da6d80",
+    "scripts/ios_e2e_ui/EditorEndToEndTests.swift": "df046e24e72b26919e1e2b8ae3d767a2eae3b784f5925a0d946198f11d17ed07",
+    "scripts/ios_e2e_ui/ExternalProviderEndToEndTests.swift": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+    "scripts/ios_e2e_ui/FilesEndToEndTests.swift": "b9cec3bf6b3cc840d53471a00872602fcbb6ada22eaa94b08d25844d0ebd9da0",
+    "scripts/ios_e2e_ui/InspectorEndToEndTests.swift": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+    "scripts/ios_e2e_ui/IoEndToEndTests.swift": "d6df71d27310657830a036902acb289f227f555a03b53742fd6b77f8775febd2",
+    "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+    "scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+    "scripts/ios_native_ui/NativeTextReplacement.swift": "3bd31ec0424e639e3b1e9f746ce0c95b634de9ef98f4dfba38c23147f4c8a44c",
+    "scripts/ios_native_ui/NativeUIHarness.swift": "4d23b09ac805b77eba83d95abfedfa68e1a1249174d1f9939bd55fefe1672bd1",
+    "scripts/ios_e2e_ui/ObservedProjectXML.swift": "272571f609cc37fd225d785346d82e6f0314753dada5eb3ed21c150d36aaefd3",
+    "scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+    "scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+    "scripts/ios_e2e_ui/VisualExportEndToEndTests.swift": "d5203b7ac8938a904d85f9d196549b28a2caddd9244c7d892ba87ea162e16752",
+    "scripts/ios_e2e_ui/XmlDialogEndToEndTests.swift": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346",
+    "scripts/run-ios-e2e.py": "9d4646ff1f9900db2225ec3c98b0d2b418bc88c8e593cb3ec697a05a6f632775",
+    "scripts/run-ios-accessibility.py": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+    "scripts/ios_e2e_ui/project.yml": "1e98d4ab186ec01e1f58e3fdde92bbac23dcb1c386fb5c3641fa47063bd86232",
+    "scripts/io_showcase_contract.py": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7",
+    "fixtures/user-scenarios/io-actions-v1.json": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+    "examples/io-showcase.circ": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+    "examples/io-showcase.targets.json": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15"
+  },
+  "product": {
+    "supplied": {
+      "files": [
+        {
+          "path": "AppIcon60x60@2x.png",
+          "sha256": "abf03e007277626ef8b906b3b45b96f85f4ee05dced40da133b776002f3deccf",
+          "bytes": 2875
+        },
+        {
+          "path": "AppIcon76x76@2x~ipad.png",
+          "sha256": "15c71f577e9c315a6d1bee2cdcf9c01cd86e888765d0845c72248c1f2dd6402e",
+          "bytes": 3692
+        },
+        {
+          "path": "Assets.car",
+          "sha256": "e055436642f96615d3622772291b821f4ccadb7a2dab2621c20ba120f26cba4d",
+          "bytes": 32312
+        },
+        {
+          "path": "Info.plist",
+          "sha256": "b00f52de3c17ca0c5fb9ee560dad2fc6fd97fae44e39e16184df14fa2ea45f14",
+          "bytes": 2181
+        },
+        {
+          "path": "LogisimMobile",
+          "sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+          "bytes": 40080
+        },
+        {
+          "path": "LogisimMobile.debug.dylib",
+          "sha256": "84c64e315e959842ae92b0891c6895e40aa2f70496eaf6c1a228a2140ed202fb",
+          "bytes": 86931160
+        },
+        {
+          "path": "PkgInfo",
+          "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+          "bytes": 8
+        },
+        {
+          "path": "PrivacyInfo.xcprivacy",
+          "sha256": "b762e231fd02c6b4a216b8269abd57f351921ba1b02ad2987832ea816debaebf",
+          "bytes": 924
+        },
+        {
+          "path": "_CodeSignature/CodeResources",
+          "sha256": "b6575d64561270be42ccd94761f94c48bb21b6823e4d16e5c4cf6c81cf831442",
+          "bytes": 4035
+        },
+        {
+          "path": "__preview.dylib",
+          "sha256": "6783338d8a0a3607ce0efc2ed77325783f7aa8cabd4141cb4f8e6d542e52461d",
+          "bytes": 16760
+        },
+        {
+          "path": "compose-resources/composeResources/logisimmobile.composeapp.generated.resources/values/strings.commonMain.cvr",
+          "sha256": "1c0fcd270fc67c86034e0ee27d4786e6049f5cc94b7805a4cf1f9e57417a7910",
+          "bytes": 194394
+        },
+        {
+          "path": "compose-resources/composeResources/logisimmobile.composeapp.generated.resources/values-pt/strings.commonMain.cvr",
+          "sha256": "afbe0bf1de2ed19512002b783626a3183399259a1ddfba8524f21ccd3bceac51",
+          "bytes": 208662
+        }
+      ],
+      "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef"
+    },
+    "installedPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/615BA661-4DC6-4B3B-B473-966C79AD96FF/LogisimMobile.app",
+    "installed": {
+      "files": [
+        {
+          "path": "AppIcon60x60@2x.png",
+          "sha256": "abf03e007277626ef8b906b3b45b96f85f4ee05dced40da133b776002f3deccf",
+          "bytes": 2875
+        },
+        {
+          "path": "AppIcon76x76@2x~ipad.png",
+          "sha256": "15c71f577e9c315a6d1bee2cdcf9c01cd86e888765d0845c72248c1f2dd6402e",
+          "bytes": 3692
+        },
+        {
+          "path": "Assets.car",
+          "sha256": "e055436642f96615d3622772291b821f4ccadb7a2dab2621c20ba120f26cba4d",
+          "bytes": 32312
+        },
+        {
+          "path": "Info.plist",
+          "sha256": "b00f52de3c17ca0c5fb9ee560dad2fc6fd97fae44e39e16184df14fa2ea45f14",
+          "bytes": 2181
+        },
+        {
+          "path": "LogisimMobile",
+          "sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+          "bytes": 40080
+        },
+        {
+          "path": "LogisimMobile.debug.dylib",
+          "sha256": "84c64e315e959842ae92b0891c6895e40aa2f70496eaf6c1a228a2140ed202fb",
+          "bytes": 86931160
+        },
+        {
+          "path": "PkgInfo",
+          "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+          "bytes": 8
+        },
+        {
+          "path": "PrivacyInfo.xcprivacy",
+          "sha256": "b762e231fd02c6b4a216b8269abd57f351921ba1b02ad2987832ea816debaebf",
+          "bytes": 924
+        },
+        {
+          "path": "_CodeSignature/CodeResources",
+          "sha256": "b6575d64561270be42ccd94761f94c48bb21b6823e4d16e5c4cf6c81cf831442",
+          "bytes": 4035
+        },
+        {
+          "path": "__preview.dylib",
+          "sha256": "6783338d8a0a3607ce0efc2ed77325783f7aa8cabd4141cb4f8e6d542e52461d",
+          "bytes": 16760
+        },
+        {
+          "path": "compose-resources/composeResources/logisimmobile.composeapp.generated.resources/values/strings.commonMain.cvr",
+          "sha256": "1c0fcd270fc67c86034e0ee27d4786e6049f5cc94b7805a4cf1f9e57417a7910",
+          "bytes": 194394
+        },
+        {
+          "path": "compose-resources/composeResources/logisimmobile.composeapp.generated.resources/values-pt/strings.commonMain.cvr",
+          "sha256": "afbe0bf1de2ed19512002b783626a3183399259a1ddfba8524f21ccd3bceac51",
+          "bytes": 208662
+        }
+      ],
+      "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef"
+    },
+    "codesignDeepStrict": 0
+  },
+  "ownedPidStates": {
+    "runnerPid": {
+      "pid": 34686,
+      "running": false
+    },
+    "videoPid": {
+      "pid": 34668,
+      "running": false
+    }
+  },
+  "catalogCount": 2497,
+  "catalogInputsVerified": true,
+  "cleanup": [
+    {
+      "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+      "bundle": "thalesmms.logisim.mobile",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+      "bundle": "thalesmms.logisim.validation.editor.xctrunner",
+      "exit": 3,
+      "stdout": "",
+      "stderr": "An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):\nSimulator device failed to terminate thalesmms.logisim.validation.editor.xctrunner.\nfound nothing to terminate\nUnderlying error (domain=NSPOSIXErrorDomain, code=3):\n\tThe request to terminate \"thalesmms.logisim.validation.editor.xctrunner\" failed. found nothing to terminate\n\tfound nothing to terminate\n"
+    }
+  ],
+  "cleanupScope": "Only the app and owned test runner on leased B25. No uninstall, deletion, preference/workspace mutation, relaunch, or other simulator."
+}

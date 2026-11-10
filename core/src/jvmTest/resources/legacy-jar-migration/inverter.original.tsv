@@ -1,0 +1,28 @@
+M	revision	2.7.1
+F	main	main
+F	circuits	1
+G	main	Pin	100,100	100,100:4:2
+A	main	Pin	100,100	label	A
+A	main	Pin	100,100	facing	east
+G	main	Bus Inverter	200,100	180,100:4:1;200,100:4:2
+G	main	Pin	260,100	260,100:4:1
+A	main	Pin	260,100	label	Y
+A	main	Pin	260,100	facing	west
+W	main	100,100	180,100	1
+W	main	200,100	260,100	1
+V	0000	Y	1111
+V	0001	Y	1110
+V	0010	Y	1101
+V	0011	Y	1100
+V	0100	Y	1011
+V	0101	Y	1010
+V	0110	Y	1001
+V	0111	Y	1000
+V	1000	Y	0111
+V	1001	Y	0110
+V	1010	Y	0101
+V	1011	Y	0100
+V	1100	Y	0011
+V	1101	Y	0010
+V	1110	Y	0001
+V	1111	Y	0000

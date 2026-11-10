@@ -1,0 +1,104 @@
+{
+  "scope": "offline harness preparation only; target application not installed or launched",
+  "native_execution_gate": "NATIVE_NOT_RUN",
+  "qualification_gate": "NOT_QUALIFIED",
+  "physical_device": false,
+  "base_commit": "fc5f8769904737b2e1fa86d8529219e5a17931e9",
+  "source_files": {
+    "scripts/run-ios-hdl.py": "6144895b61424bf419758cf8e3cb990317125366377eaceab447b71df4179937",
+    "scripts/ios_hdl_ui/HdlEndToEndTests.swift": "1cfe1247ddc62cd2c93069761db58842c7f7f234d54a2aef2da1dd55aeeded90",
+    "scripts/ios_hdl_ui/project.yml": "69cc59b2836975382436a65760dc1ca58242e25e6b8a540258bac03e43a8a86a",
+    "scripts/tests/test_ios_hdl_runner.py": "b78510fc34fe929486136483d9023c5538c453907f4ea016d04d6b5f378983de"
+  },
+  "checker_tests": {
+    "command": "python3 -m unittest discover -s scripts/tests -p test_ios_hdl_runner.py -v",
+    "tests": 7,
+    "failures": 0
+  },
+  "canonical_keys_checked": 38,
+  "harness_build": {
+    "started": "2026-11-04T21:59:46.783866+00:00",
+    "baseline_sha": "9455c044",
+    "simulator": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "physical_device": false,
+    "alpha": false,
+    "native_execution_gate": "NATIVE_NOT_RUN",
+    "qualification_gate": "NOT_QUALIFIED",
+    "configuration": {
+      "run_id": "19537fcf96",
+      "companion_endpoint": "http://127.0.0.1:8042"
+    },
+    "build": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "resource_preflight": "PASS",
+    "status": "BUILT",
+    "finished": "2026-11-04T21:59:51.251046+00:00"
+  },
+  "local_nvc_fixture_preflight": {
+    "status": "PASS",
+    "scope": "local real NVC fixture only; native UI not run",
+    "source_sha256": "dc89ccf939e494230dd1353bfafc619f4a60592f323c75760ad901074cc2250d",
+    "samples": [
+      {
+        "outputs": {
+          "y": {
+            "stdLogic": "01",
+            "logic": "01"
+          }
+        },
+        "diagnostics": "",
+        "ok": true,
+        "status": "ready",
+        "sessionId": "2b387abc964a49718c7240bef7440c24",
+        "timeNs": 5,
+        "step": 1,
+        "sourceSha256": "dc89ccf939e494230dd1353bfafc619f4a60592f323c75760ad901074cc2250d"
+      },
+      {
+        "outputs": {
+          "y": {
+            "stdLogic": "11",
+            "logic": "11"
+          }
+        },
+        "diagnostics": "",
+        "ok": true,
+        "status": "ready",
+        "sessionId": "2b387abc964a49718c7240bef7440c24",
+        "timeNs": 7,
+        "step": 2,
+        "sourceSha256": "dc89ccf939e494230dd1353bfafc619f4a60592f323c75760ad901074cc2250d"
+      },
+      {
+        "outputs": {
+          "y": {
+            "stdLogic": "01",
+            "logic": "01"
+          }
+        },
+        "diagnostics": "",
+        "ok": true,
+        "status": "ready",
+        "sessionId": "2b387abc964a49718c7240bef7440c24",
+        "timeNs": 9,
+        "step": 1,
+        "sourceSha256": "dc89ccf939e494230dd1353bfafc619f4a60592f323c75760ad901074cc2250d"
+      }
+    ],
+    "reset": {
+      "ok": true,
+      "status": "ready",
+      "sessionId": "2b387abc964a49718c7240bef7440c24",
+      "outputs": {},
+      "timeNs": 0,
+      "sourceSha256": "dc89ccf939e494230dd1353bfafc619f4a60592f323c75760ad901074cc2250d"
+    }
+  },
+  "limits": [
+    "A compiled test bundle is not native UI proof.",
+    "An explicitly reserved iPhone and a consolidated app artifact are required before execution.",
+    "Unknown custom source archive options are discarded by desktop resave."
+  ]
+}

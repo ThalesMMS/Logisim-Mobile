@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "status": "PARTIAL_PASS_CASE_FAILED",
+  "caseStatus": "FAIL",
+  "qualification": "NOT_QUALIFIED",
+  "classification": "CANCEL_PRESERVED_DOCUMENT_CONTROL_TARGET_UNAVAILABLE",
+  "appProducerHead": "76ea1ec1282e2a2106fde6792bc9512975cd7125",
+  "productPatch": "36a54b1c370b638be1afa52d33bef47a02ad73f1",
+  "fixtureSetupPatch": "73f92b795450c436d39d4c85f685272421268200",
+  "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+  "testSha256": "2706fd5ec065a9e8bfb63b4f4597d972edc91006ef147dd2d02f20840f4350e2",
+  "beforeReceipt": "android-pointer-cancel-before-df276e.json",
+  "productionFilesChanged": [
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CanvasInteraction.kt",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt"
+  ],
+  "cancelMethodUnchanged": true,
+  "cancelMethodSha256": "3977a52d16a4319996417f825c30b8a2eeadcc0f164bce89582ba22eb2646ec8",
+  "motionActionCounts": {
+    "ACTION_DOWN": 1,
+    "ACTION_MOVE": 10,
+    "ACTION_CANCEL": 1
+  },
+  "allMotionEventsAccepted": true,
+  "motionSource": 4098,
+  "tool": "TOUCH",
+  "pointerIds": [
+    0
+  ],
+  "downTimesMillis": [
+    33356158
+  ],
+  "cancelAssertion": "PASS: complete exported XML is byte-for-byte equal after ACTION_CANCEL.",
+  "document": {
+    "bytes": 1191,
+    "beforeSha256": "612038e988fdf01ffb1c78506fabfb23f89f944b8e98b4f846f7ff4e72bf6e6f",
+    "afterSha256": "612038e988fdf01ffb1c78506fabfb23f89f944b8e98b4f846f7ff4e72bf6e6f",
+    "componentLocations": {
+      "mi-input": "(100,100)",
+      "mi-not": "(200,100)",
+      "mi-output": "(300,100)"
+    },
+    "wireCount": 2
+  },
+  "remainingControl": "Normal-release drag and one Undo were not reached. The next componentCenter lookup expired.",
+  "failureSnapshot": {
+    "nodes": 99,
+    "missingTag": "canvas-component:mi-not",
+    "presentTags": [
+      "canvas-component:mi-input",
+      "canvas-component:mi-output",
+      "canvas-port:6:mi-not:in",
+      "canvas-port:6:mi-not:out"
+    ],
+    "observation": "PNG shows the selected NOT, and exported project also contains it."
+  },
+  "installedArtifactsAfter": {
+    "appSha256": "76b64e7bb65a6eea9b4fff6f9c084778f46906014ccf7c7fe2dbbb91fee35000",
+    "testSha256": "2706fd5ec065a9e8bfb63b4f4597d972edc91006ef147dd2d02f20840f4350e2"
+  },
+  "lastAnrUnchanged": true,
+  "elapsedSeconds": 23.356,
+  "limits": [
+    "Synthesized Android input on emulator; physical ergonomics not qualified.",
+    "Full case remains failed; normal-release and Undo controls were not run.",
+    "Fixture setup differs from R5: owner-UID broker grants exact new source URI read-only. Injector and cancellation assertions unchanged.",
+    "Concurrent portable work on emulator-5558 excludes performance attribution."
+  ],
+  "rawArtifacts": {
+    "outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/manifest.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/manifest.json",
+      "sha256": "48e99ce7c44e6f494c2c302e4be2a3e4206cd201c489452020f2f78fa691a088"
+    },
+    "outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/result.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/result.json",
+      "sha256": "672fb2eb4f66269597ca9b065f82e622ce827c41e2d449f9e1b454baaba34e0a"
+    },
+    "outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/1-cancel-before.circ": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/1-cancel-before.circ",
+      "sha256": "612038e988fdf01ffb1c78506fabfb23f89f944b8e98b4f846f7ff4e72bf6e6f"
+    },
+    "outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/2-cancel-after.circ": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/2-cancel-after.circ",
+      "sha256": "612038e988fdf01ffb1c78506fabfb23f89f944b8e98b4f846f7ff4e72bf6e6f"
+    },
+    "outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/cancel-failure-tree.txt": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/cancel-failure-tree.txt",
+      "sha256": "677c3427240e1e88977904e95981aaac0cee2a4c46cbdb3a3f201d3d555a3338"
+    },
+    "outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/cancel-failure.png": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-cancel-fixed-r6/native-run2/native/cancel-failure.png",
+      "sha256": "99bf06cfa7e3c1ea5277754619f48825c9a57c69363baa2af395473dedf53894"
+    },
+    "outputs/android-e2e/artifacts-df276e/native-cancel-fixed/build-receipt.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-df276e/native-cancel-fixed/build-receipt.json",
+      "sha256": "e6e800d9f975f4a264ba1c160d8201467f392aeab05d258edb30f8b9d535876a"
+    },
+    "outputs/android-e2e/df276e-native-cancel-fixed-r6/installation.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-native-cancel-fixed-r6/installation.json",
+      "sha256": "a63ec55a130fbda7b7865a2c64cacd4be36402d4f190928dd9a5de2506a2c0cf"
+    }
+  }
+}

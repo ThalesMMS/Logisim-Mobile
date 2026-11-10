@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "scope": "Offline geometry cases for native input-surface exclusion; no native UI",
+  "status": "PASS",
+  "cases": 14,
+  "originalCapturedNoIMEPoint": [
+    152.25,
+    600.0
+  ],
+  "originalPointPreserved": true,
+  "syntheticInputCases": {
+    "Keyboard": {
+      "rect": [
+        0,
+        580,
+        834,
+        630
+      ],
+      "replacement": [
+        152.25,
+        565.0
+      ]
+    },
+    "inputViewWithoutKeyboard": {
+      "rect": [
+        100,
+        570,
+        630,
+        400
+      ],
+      "replacement": [
+        512.5,
+        1003.0
+      ]
+    },
+    "SystemInputAssistantViewWithoutKeyboard": {
+      "rect": [
+        0,
+        580,
+        834,
+        44
+      ],
+      "replacement": [
+        687.5,
+        674.0
+      ]
+    },
+    "allContentCovered": {
+      "rect": [
+        0,
+        500,
+        834,
+        710
+      ],
+      "result": "NO_SAFE_POINT"
+    }
+  },
+  "sourceMethodSHA256": "8aff48e1a0d74d9445adec535403f8d43ee83f72039aa572ef9dc113418bcc11",
+  "visualSwiftSHA256": "f5c2fc51f3d8cb9df09520b5f3488f74b6f9ce94367f046f013b906f0e2bff47",
+  "collector": "Query all Keyboard nodes and independently query inputView and SystemInputAssistantView by identifier. Retain finite positive intersections with app bounds; containers do not need isEnabled/isHittable. Include these frames among blocked rectangles and record names/frames in the dismissal attachment.",
+  "validation": "SDK/XCTest typecheck and the exact-function macOS geometry probe passed. Surface collection and UIKit dismissal remain native NOT_RUN.",
+  "files": {
+    "probe.swift": {
+      "bytes": 5859,
+      "sha256": "bff36393ae6489b675ba119be8fe5cd2861846f5e39c7c31fa24a2895f4d2167"
+    },
+    "result.txt": {
+      "bytes": 402,
+      "sha256": "48fe72b4921e71c0c49a498fe840abedf31819e465e57f90dadcab68432c303b"
+    },
+    "inputs.json": {
+      "bytes": 1056,
+      "sha256": "0ee02fccbf924747057a69d74c346907542704065b504a3bd09c4d653026fb12"
+    },
+    "source-method.sha256": {
+      "bytes": 65,
+      "sha256": "4d54d83b9b811aa29896169326f148f87212944f46dff904ac771c960e4b2c73"
+    }
+  }
+}

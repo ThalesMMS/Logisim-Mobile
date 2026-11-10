@@ -1,0 +1,151 @@
+{
+  "NSFileProviderItem.h": {
+    "historicalPath": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderItem.h",
+    "bytes": 39588,
+    "fullSourceSHA256": "3f48afe1e78469571b8f863592d4fb54883b773b23e35897455a3059471897cd",
+    "lineRecords": [
+      {
+        "line": 205,
+        "text": "typedef NS_OPTIONS(NSUInteger, NSFileProviderItemFields) {"
+      },
+      {
+        "line": 206,
+        "text": "    NSFileProviderItemContents = 1 << 0,"
+      },
+      {
+        "line": 207,
+        "text": "    NSFileProviderItemFilename = 1 << 1,"
+      },
+      {
+        "line": 208,
+        "text": "    NSFileProviderItemParentItemIdentifier = 1 << 2,"
+      },
+      {
+        "line": 209,
+        "text": "    NSFileProviderItemLastUsedDate = 1 << 3,"
+      },
+      {
+        "line": 210,
+        "text": "    NSFileProviderItemTagData = 1 << 4,"
+      },
+      {
+        "line": 211,
+        "text": "    NSFileProviderItemFavoriteRank = 1 << 5,"
+      },
+      {
+        "line": 212,
+        "text": "    NSFileProviderItemCreationDate = 1 << 6,"
+      },
+      {
+        "line": 213,
+        "text": "    NSFileProviderItemContentModificationDate = 1 << 7,"
+      },
+      {
+        "line": 214,
+        "text": "    NSFileProviderItemFileSystemFlags = 1 << 8,"
+      },
+      {
+        "line": 215,
+        "text": "    NSFileProviderItemExtendedAttributes = 1 << 9,"
+      },
+      {
+        "line": 216,
+        "text": "    NSFileProviderItemTypeAndCreator FILEPROVIDER_API_AVAILABILITY_V4_0_IOS = 1 << 10,"
+      },
+      {
+        "line": 217,
+        "text": "} FILEPROVIDER_API_AVAILABILITY_V3_IOS;"
+      },
+      {
+        "line": 253,
+        "text": "FILEPROVIDER_API_AVAILABILITY_V5_0_IOS"
+      },
+      {
+        "line": 254,
+        "text": "typedef NS_ENUM(NSInteger, NSFileProviderContentPolicy) {"
+      },
+      {
+        "line": 260,
+        "text": "    NSFileProviderContentPolicyInherited FILEPROVIDER_API_AVAILABILITY_V5_0_IOS,"
+      },
+      {
+        "line": 269,
+        "text": "    NSFileProviderContentPolicyDownloadLazily FILEPROVIDER_API_AVAILABILITY_V5_0,"
+      },
+      {
+        "line": 278,
+        "text": "    NSFileProviderContentPolicyDownloadLazilyAndEvictOnRemoteUpdate FILEPROVIDER_API_AVAILABILITY_V5_0_IOS,"
+      },
+      {
+        "line": 288,
+        "text": "    NSFileProviderContentPolicyDownloadEagerlyAndKeepDownloaded FILEPROVIDER_API_AVAILABILITY_V5_0"
+      },
+      {
+        "line": 289,
+        "text": "};"
+      },
+      {
+        "line": 355,
+        "text": "@optional"
+      },
+      {
+        "line": 836,
+        "text": "@property (nonatomic, readonly) NSFileProviderContentPolicy contentPolicy FILEPROVIDER_API_AVAILABILITY_V5_0_IOS;"
+      }
+    ]
+  },
+  "NSFileProviderModifyItemOptions.h": {
+    "historicalPath": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderModifyItemOptions.h",
+    "bytes": 1843,
+    "fullSourceSHA256": "7f71b47afabba6037bd62073ac073db950903a0da52562161aa0cbfccbd7fd80",
+    "lineRecords": [
+      {
+        "line": 10,
+        "text": "typedef NS_OPTIONS(NSUInteger, NSFileProviderModifyItemOptions) {"
+      },
+      {
+        "line": 15,
+        "text": "    NSFileProviderModifyItemMayAlreadyExist = 1 << 0,"
+      },
+      {
+        "line": 29,
+        "text": "    NSFileProviderModifyItemFailOnConflict FILEPROVIDER_API_AVAILABILITY_SYNC_CONTROLS = 1 << 1,"
+      },
+      {
+        "line": 33,
+        "text": "    NSFileProviderModifyItemIsImmediateUploadRequestByPresentingApplication FILEPROVIDER_API_AVAILABILITY_SYNC_CONTROLS = 1 << 2,"
+      },
+      {
+        "line": 34,
+        "text": "} FILEPROVIDER_API_AVAILABILITY_V3_IOS;"
+      }
+    ]
+  },
+  "NSFileProviderDefines.h": {
+    "historicalPath": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderDefines.h",
+    "bytes": 4079,
+    "fullSourceSHA256": "1c9898b293b92b4f22a793d8b6bacdb31fd0e0fa1f8c4b2295f76f9653498ba3",
+    "lineRecords": [
+      {
+        "line": 19,
+        "text": "#define FILEPROVIDER_API_AVAILABILITY_V3_IOS API_AVAILABLE(macos(11.0), ios(16.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macCatalyst)"
+      },
+      {
+        "line": 27,
+        "text": "#define FILEPROVIDER_API_AVAILABILITY_V4_0_IOS API_AVAILABLE(macos(12.0), ios(16.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macCatalyst)"
+      },
+      {
+        "line": 31,
+        "text": "#define FILEPROVIDER_API_AVAILABILITY_V5_0 API_AVAILABLE(macos(13.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macCatalyst)"
+      },
+      {
+        "line": 33,
+        "text": "#define FILEPROVIDER_API_AVAILABILITY_V5_0_IOS API_AVAILABLE(macos(13.0), ios(16.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macCatalyst)"
+      },
+      {
+        "line": 54,
+        "text": "#define FILEPROVIDER_API_AVAILABILITY_SYNC_CONTROLS API_AVAILABLE(macos(26.0), ios(26.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macCatalyst)"
+      }
+    ]
+  }
+}

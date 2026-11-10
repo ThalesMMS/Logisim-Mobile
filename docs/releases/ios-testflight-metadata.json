@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "draft-not-submitted",
+  "bundle_id": "thalesmms.logisim.mobile",
+  "version": "0.2.0",
+  "build": "2",
+  "app_name": "Logisim Mobile",
+  "primary_language": "en-US",
+  "category_candidate": "Education",
+  "account": {
+    "apple_team_id": null,
+    "app_store_connect_app_id": null,
+    "beta_group": null,
+    "review_contact_name": null,
+    "review_contact_email": null,
+    "review_contact_phone": null
+  },
+  "localizations": {
+    "en-US": {
+      "beta_description": "Create and inspect digital logic circuits on iPhone and iPad. Includes a SAP-1 example, an editable circuit canvas, and simulation controls. Optional desktop tool integrations connect to a companion host chosen by the user.",
+      "what_to_test": "Load the built-in SAP-1 example. Step and run the simulation, pause it, then save and reopen a circuit using Files. Check that projects and preferences survive relaunch. Test touch, keyboard, rotation, split view, and accessibility on the devices available to you. Report the device, OS version, build number, and exact steps for any problem.",
+      "feedback_email": null
+    }
+  },
+  "review": {
+    "sign_in_required": false,
+    "notes": "The circuit editor and built-in examples work without an account or a companion host. Desktop tool actions require the user to configure and explicitly authorize their own companion host. This is an independent Kotlin Multiplatform port of Logisim Evolution, which continues Carl Burch's original Logisim. Licenses and credits are available offline in Help. Add the public corresponding-source URL for the submitted build to the beta information. Include final review steps, device evidence, and any companion access information in the review notes.",
+    "demo_credentials": null
+  },
+  "privacy": {
+    "policy_url": null,
+    "support_url": null,
+    "draft_policy": "docs/releases/ios-privacy-draft.md",
+    "app_privacy_answers": "pending-final-binary-and-companion-data-review",
+    "required_api_manifest": "iosApp/PrivacyInfo.xcprivacy"
+  },
+  "export_compliance": {
+    "uses_non_exempt_encryption": null,
+    "review_required": "Check the final binary and App Store Connect encryption questions before upload."
+  },
+  "license": {
+    "application": "GPL-3.0-only",
+    "notices": "THIRD_PARTY_NOTICES.md",
+    "channel_reconciliation": "pending-testflight-license-terms-and-final-ipa",
+    "corresponding_source_url": "https://github.com/ThalesMMS/Logisim-Mobile/tree/ios-0.2.0-2",
+    "corresponding_source_archive": null
+  },
+  "screenshots": {
+    "iphone": [],
+    "ipad": [],
+    "source_build": null
+  },
+  "qualification": {
+    "signed_archive": "not-built",
+    "exported_ipa": "not-built",
+    "physical_install_update_migration": "pending-last",
+    "performance_energy": "pending-issue-48",
+    "voiceover": "pending-issue-28",
+    "end_to_end": "pending-issue-36",
+    "app_store_connect_upload": "not-run",
+    "testflight_processing": "not-run",
+    "beta_review": "not-run",
+    "signed_archive_entitlements": "not-inspected"
+  },
+  "requirements_checked_on": "2026-11-04",
+  "official_sources": [
+    "https://developer.apple.com/app-store/review/guidelines/",
+    "https://developer.apple.com/news/upcoming-requirements/",
+    "https://developer.apple.com/documentation/bundleresources/describing-use-of-required-reason-api",
+    "https://developer.apple.com/help/app-store-connect/test-a-beta-version/provide-test-information/",
+    "https://www.apple.com/legal/internet-services/itunes/testflight/br/terms.html"
+  ]
+}

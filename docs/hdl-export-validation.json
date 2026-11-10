@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "validatedOn": "2026-11-04",
+  "domain": "Settled, defined binary inputs; sampled fixture equivalence, not arbitrary-circuit proof.",
+  "kotlinTestCases": 12,
+  "fixtures": 26,
+  "compiledAndSimulatedDesigns": 52,
+  "literalOutputComparisons": 3076,
+  "toolVersions": {
+    "iverilog": "Icarus Verilog version 13.0 (stable) (v13_0)",
+    "nvc": "nvc 1.23.1 (Using LLVM 23.1.4)"
+  },
+  "reproduce": "ANDROID_HOME=\"$HOME/Library/Android/sdk\" ./scripts/verify-hdl-export.sh",
+  "sourceSha256": {
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlExport.kt": "04f7dda0b9e70350e96741c45120e735c6bb614442495dcf2a350823f7373322",
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlEmitter.kt": "49221653d6a99a234bb70aacd8cbf7a9ad0483845f488c661139a6f82b35ce91",
+    "core/src/commonTest/kotlin/dev/logisim/mobile/core/HdlFixtureCases.kt": "8bd5cc2593c67e458deee19db8b532291d87f04359a7095adb81efac5ee1d132"
+  }
+}

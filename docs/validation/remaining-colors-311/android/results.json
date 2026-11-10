@@ -1,0 +1,68 @@
+[
+  {
+    "step": "01-311-width-error-default",
+    "screenshotSha256": "9d026fb4ed353e4b396d0f277c332b02552cfb53c540a0c69b086603b6f3e7ee",
+    "message": "Incompatible widths (2)",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320), probe-driven",
+      "canvas-component:probe-floating": "F"
+    }
+  },
+  {
+    "step": "02-311-wire-poke-stroke",
+    "screenshotSha256": "e0414e1034d96c628646202933af79c1a4346d9ae6c4722e6d68f0d7a58fdfa2",
+    "tap": [
+      341,
+      1546
+    ]
+  },
+  {
+    "step": "03-311-unknown-char-preference",
+    "screenshotSha256": "999c74e3b72d1c232015bb82472bf4479be4cb0301d50273c3b1438458155a5f",
+    "unknownChar": "?"
+  },
+  {
+    "step": "04-311-color-dialog-width-error",
+    "screenshotSha256": "99ff74ce3136c9d2ea2fcda0d515d68f21f7b44585d85e65a448b67ee7b8b3dc"
+  },
+  {
+    "step": "05-311-changed-before-restart",
+    "screenshotSha256": "66aea46cb903bdfe8bc35dda6edc53375ee1941b7eb47f3e763662241b8f4206",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320), probe-driven",
+      "canvas-component:probe-floating": "F"
+    },
+    "widthError": "#0000FF"
+  },
+  {
+    "step": "06-311-after-restart",
+    "screenshotSha256": "cefe5d6087d9a7767c7580fcae153553f9a8edf9644ed30bed2b647d167f4f74",
+    "pidBefore": "3013",
+    "pidAfter": "4119",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320), probe-driven",
+      "canvas-component:probe-floating": "F"
+    },
+    "preferences": {
+      "color.widthError": "#0000FF",
+      "valueChar.unknown": "?"
+    }
+  },
+  {
+    "step": "07-311-restored-defaults",
+    "screenshotSha256": "94b2138cfaa6944a4ee737f9331454b5ec37111e1a755fe8fb655f32a7e25adb",
+    "probes": {
+      "canvas-component:probe-driven": "Probe (160, 320), probe-driven",
+      "canvas-component:probe-floating": "F"
+    }
+  },
+  {
+    "step": "08-311-kmap-groups",
+    "screenshotSha256": "f14b3a6926c16b1fb4c93ad824689b852f9223bf51ef1e43fb9ad1aadfa0a071",
+    "groups": "Karnaugh map groups: 2"
+  },
+  {
+    "step": "09-311-table-cursor-selection",
+    "screenshotSha256": "39a0fedca293550174081f5a01eaefe5a364e4293afb2afb34a0fe7712fd257d"
+  }
+]

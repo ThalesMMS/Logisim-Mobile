@@ -1,0 +1,181 @@
+{
+  "scope": "native-mounted-editor",
+  "fixtureSha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5556",
+  "automatedObservations": [
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_BUTTON": "0",
+        "OUT_DIP0": "0",
+        "OUT_DIP1": "0",
+        "OUT_JOY_X": "1000",
+        "OUT_JOY_Y": "1000",
+        "OUT_RGB_R": "1",
+        "OUT_RGB_G": "1",
+        "OUT_RGB_B": "0",
+        "OUT_BAR_VALUE": "10100101",
+        "OUT_SEGMENTS": "00111111",
+        "OUT_KEYBOARD_DATA": "0000000",
+        "OUT_KEYBOARD_AVAILABLE": "0",
+        "OUT_CLOCK": "0",
+        "OUT_MATRIX_ROW0": "01110",
+        "OUT_KEYPAD_C0": "1",
+        "OUT_KEYPAD_C1": "1",
+        "OUT_KEYPAD_C2": "1",
+        "OUT_KEYPAD_C3": "1",
+        "OUT_LED_LEVEL": "0"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_KEYBOARD_DATA": "1000001",
+        "OUT_KEYBOARD_AVAILABLE": "1"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 1000001, OUT_KEYBOARD_AVAILABLE: 1, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_KEYBOARD_DATA": "1000010",
+        "OUT_KEYBOARD_AVAILABLE": "1"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 1000010, OUT_KEYBOARD_AVAILABLE: 1, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "visual-review-required",
+      "component": "IO_TTY",
+      "expectedRows": [
+        "A",
+        "",
+        ""
+      ]
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_KEYBOARD_DATA": "0000000",
+        "OUT_KEYBOARD_AVAILABLE": "0"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0000000, OUT_KEYBOARD_AVAILABLE: 0, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "visual-review-required",
+      "component": "IO_TTY",
+      "expectedRows": [
+        "AB",
+        "",
+        ""
+      ]
+    },
+    {
+      "recordType": "keyboard-control-observation",
+      "key": "io_ascii_backspace",
+      "stage": "tap",
+      "labelBounds": "[518,1158][795,1211]",
+      "targetBounds": "[455,1122][858,1248]",
+      "rowBounds": "[21,1121][1059,1247]",
+      "tree": "io-keyboard-io_ascii_backspace-tap.xml",
+      "commandCompleted": true,
+      "point": [
+        656,
+        1184
+      ]
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_KEYBOARD_DATA": "0001000",
+        "OUT_KEYBOARD_AVAILABLE": "1"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0001000, OUT_KEYBOARD_AVAILABLE: 1, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "visual-review-required",
+      "component": "IO_TTY",
+      "expectedRows": [
+        "A",
+        "",
+        ""
+      ]
+    },
+    {
+      "recordType": "keyboard-control-observation",
+      "key": "io_ascii_form_feed",
+      "stage": "reveal-horizontal",
+      "labelBounds": "[932,1158][1059,1211]",
+      "targetBounds": "[869,1122][1059,1248]",
+      "rowBounds": "[21,1121][1059,1247]",
+      "tree": "io-keyboard-io_ascii_form_feed-reveal-horizontal.xml",
+      "commandCompleted": true,
+      "start": [
+        851,
+        1184
+      ],
+      "end": [
+        229,
+        1184
+      ]
+    },
+    {
+      "recordType": "keyboard-control-observation",
+      "key": "io_ascii_form_feed",
+      "stage": "tap",
+      "labelBounds": "[735,1158][996,1211]",
+      "targetBounds": "[672,1122][1059,1248]",
+      "rowBounds": "[21,1121][1059,1247]",
+      "tree": "io-keyboard-io_ascii_form_feed-tap.xml",
+      "commandCompleted": true,
+      "point": [
+        865,
+        1184
+      ]
+    },
+    {
+      "recordType": "native-canvas-probes",
+      "expected": {
+        "OUT_KEYBOARD_DATA": "0001100",
+        "OUT_KEYBOARD_AVAILABLE": "1"
+      },
+      "observedDescription": "Circuit area. OUT_BUTTON: 0, OUT_LED_LEVEL: 0, OUT_DIP0: 0, OUT_DIP1: 0, IO_HEX: 1000, OUT_JOY_X: 1000, OUT_JOY_Y: 1000, OUT_RGB_R: 1, OUT_RGB_G: 1, OUT_RGB_B: 0, OUT_BAR_VALUE: 10100101, OUT_SEGMENTS: 00111111, OUT_CLOCK: 0, OUT_KEYBOARD_DATA: 0001100, OUT_KEYBOARD_AVAILABLE: 1, OUT_MATRIX_ROW0: 01110, OUT_KEYPAD_C0: 1, OUT_KEYPAD_C1: 1, OUT_KEYPAD_C2: 1, OUT_KEYPAD_C3: 1. Use two fingers to zoom and pan."
+    },
+    {
+      "recordType": "visual-review-required",
+      "component": "IO_TTY",
+      "expectedRows": [
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "selectionScope": "selected-cases",
+  "selectedCases": [
+    "keyboard-tty"
+  ],
+  "notSelectedCases": [
+    "signals",
+    "dip-last",
+    "pointer-controls",
+    "dimensions"
+  ],
+  "caseResults": [
+    {
+      "case": "keyboard-tty",
+      "scenario": "io-showcase-keyboard-tty",
+      "status": "passed"
+    }
+  ],
+  "visualReview": "required",
+  "requiredVisualReview": [
+    "Momentary Button and keypad are visibly pressed while held and released after pointer up/cancellation.",
+    "Joystick handle moves during drag and returns to center on release.",
+    "LED, LED bar, RGB, seven segment, hex display and dot matrix match their connected probes and the fixture labels.",
+    "TTY displays A, AB, A after ASCII backspace, and an empty screen after form feed.",
+    "Changed dimensions and font/label geometry remain visible and the selected control stays reachable."
+  ],
+  "qualification": "No overall #44 completion is inferred from automated probes alone."
+}

@@ -1,0 +1,616 @@
+--------- beginning of main
+11-05 07:40:33.819 29923 29923 I isim.mobile.e2e: Late-enabling -Xcheck:jni
+11-05 07:40:33.840 29923 29923 I isim.mobile.e2e: Using CollectorTypeCMC GC.
+11-05 07:40:33.882 29923 29923 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-05 07:40:33.999 29923 29923 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-05 07:40:33.999 29923 29923 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+11-05 07:40:33.999 29923 29923 W ziparchive: Unable to open '/data/app/~~BBpaw4RdIZKqFD7-44YmQg==/thalesmms.logisim.mobile.e2e-Bs6JmLjpIWLG0-1ZLv9kgQ==/base.dm': No such file or directory
+11-05 07:40:33.999 29923 29923 W ziparchive: Unable to open '/data/app/~~BBpaw4RdIZKqFD7-44YmQg==/thalesmms.logisim.mobile.e2e-Bs6JmLjpIWLG0-1ZLv9kgQ==/base.dm': No such file or directory
+11-05 07:40:34.645 29923 29923 D nativeloader: Configuring clns-7 for other apk /data/app/~~BBpaw4RdIZKqFD7-44YmQg==/thalesmms.logisim.mobile.e2e-Bs6JmLjpIWLG0-1ZLv9kgQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~BBpaw4RdIZKqFD7-44YmQg==/thalesmms.logisim.mobile.e2e-Bs6JmLjpIWLG0-1ZLv9kgQ==/lib/arm64:/data/app/~~BBpaw4RdIZKqFD7-44YmQg==/thalesmms.logisim.mobile.e2e-Bs6JmLjpIWLG0-1ZLv9kgQ==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/thalesmms.logisim.mobile.e2e
+11-05 07:40:34.651 29923 29923 V GraphicsEnvironment: Currently set values for:
+11-05 07:40:34.651 29923 29923 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-05 07:40:34.651 29923 29923 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-05 07:40:34.651 29923 29923 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+11-05 07:40:34.652 29923 29923 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-05 07:40:34.722 29923 29923 W HWUI    : Unknown dataspace 0
+11-05 07:40:34.885 29923 29962 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+11-05 07:40:34.885 29923 29962 I EGL_emulation: Opening libGLESv2_emulation.so
+11-05 07:40:34.898 29923 29962 W HWUI    : Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+11-05 07:40:34.898 29923 29962 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+11-05 07:40:34.919 29923 29962 I Gralloc4: mapper 4.x is not supported
+11-05 07:40:34.941 29923 29923 W isim.mobile.e2e: Accessing hidden method Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V (unsupported, reflection, allowed)
+11-05 07:40:35.477 29923 29928 I isim.mobile.e2e: Compiler allocated 5250KB to compile void android.view.ViewRootImpl.performTraversals()
+11-05 07:40:35.640 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:40:35.640 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:40:36.303 29923 29962 D EGL_emulation: app_time_stats: avg=100.55ms min=2.06ms max=283.14ms count=13
+11-05 07:40:37.230 29923 29962 D EGL_emulation: app_time_stats: avg=441.98ms min=166.25ms max=882.81ms count=3
+11-05 07:40:40.370 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@4a8e6ab
+11-05 07:40:40.371 29923 30023 D ProfileInstaller: Installing profile for thalesmms.logisim.mobile.e2e
+11-05 07:40:40.485 29923 29928 I isim.mobile.e2e: JIT allocated 57KB for stack maps of kotlin.Unit dev.logisim.mobile.AppKt.EditorApp$lambda$95$1$0(dev.logisim.mobile.localization.Localizer, dev.logisim.mobile.EditorState, dev.logisim.mobile.SimulationRunController, dev.logisim.mobile.EditorDocuments, java.util.List, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, dev.logisim.mobile.EditorExampleLoader, androidx.compose.runtime.State, dev.logisim.mobile.EditorPreferences, dev.logisim.mobile.core.ComponentRegistry, kotlin.jvm.functions.Function2, dev.logisim.mobile.CircuitAccessibilityActions, dev.logisim.mobile.CircuitAccessibilityContext, boolean, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, double, androidx.compose.foundation.layout.BoxWithConstraintsScope, androidx.compose.runtime.Composer, int)
+11-05 07:40:40.485 29923 29928 I isim.mobile.e2e: Compiler allocated 17MB to compile kotlin.Unit dev.logisim.mobile.AppKt.EditorApp$lambda$95$1$0(dev.logisim.mobile.localization.Localizer, dev.logisim.mobile.EditorState, dev.logisim.mobile.SimulationRunController, dev.logisim.mobile.EditorDocuments, java.util.List, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, dev.logisim.mobile.EditorExampleLoader, androidx.compose.runtime.State, dev.logisim.mobile.EditorPreferences, dev.logisim.mobile.core.ComponentRegistry, kotlin.jvm.functions.Function2, dev.logisim.mobile.CircuitAccessibilityActions, dev.logisim.mobile.CircuitAccessibilityContext, boolean, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, androidx.compose.runtime.MutableState, double, androidx.compose.foundation.layout.BoxWithConstraintsScope, androidx.compose.runtime.Composer, int)
+11-05 07:40:40.551 29923 29928 I isim.mobile.e2e: Compiler allocated 10099KB to compile void dev.logisim.mobile.CircuitCanvasKt.CircuitCanvas(dev.logisim.mobile.core.CircuitDocument, dev.logisim.mobile.core.SimulationState, java.lang.String, dev.logisim.mobile.core.GridPoint, dev.logisim.mobile.EditorMode, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function1, int, java.util.Set, java.util.Set, dev.logisim.mobile.CanvasViewportState, kotlin.jvm.functions.Function1, boolean, kotlin.jvm.functions.Function3, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, boolean, dev.logisim.mobile.core.ComponentRegistry, boolean, boolean, boolean, java.lang.String, kotlin.jvm.functions.Function2, dev.logisim.mobile.CircuitAccessibilityActions, dev.logisim.mobile.CircuitAccessibilityContext, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function2, dev.logisim.mobile.EditorGateShape, dev.logisim.mobile.EditorShortcutScheme, kotlin.jvm.functions.Function1, androidx.compose.runtime.Composer, int, int, int, int, int, int)
+11-05 07:40:41.578 29923 29962 D EGL_emulation: app_time_stats: avg=1042.28ms min=14.91ms max=5073.45ms count=5
+11-05 07:40:48.566 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:40:48.566 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:40:48.610 29923 29962 D EGL_emulation: app_time_stats: avg=7031.64ms min=7031.64ms max=7031.64ms count=1
+11-05 07:40:48.731 29923 29928 I isim.mobile.e2e: Compiler allocated 4224KB to compile void dev.logisim.mobile.AppKt.LibraryPanel(dev.logisim.mobile.EditorState, androidx.compose.ui.Modifier, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int)
+11-05 07:40:49.947 29923 29962 D EGL_emulation: app_time_stats: avg=88.19ms min=10.49ms max=421.34ms count=13
+11-05 07:40:52.885 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@4fd2171
+11-05 07:40:52.951 29923 29962 D EGL_emulation: app_time_stats: avg=206.39ms min=14.28ms max=3323.80ms count=20
+11-05 07:40:53.080 29923 29928 I isim.mobile.e2e: Compiler allocated 11MB to compile void dev.logisim.mobile.AppKt.EditorApp(java.lang.String, kotlin.jvm.functions.Function1, dev.logisim.mobile.DocumentActions, java.util.List, dev.logisim.mobile.core.ComponentRegistry, dev.logisim.mobile.EditorSessionControl, kotlin.jvm.functions.Function1, dev.logisim.mobile.MemoryEditorFileActions, dev.logisim.mobile.DocumentAssetActions, dev.logisim.mobile.EditorImportReport, boolean, dev.logisim.mobile.PortableProjectWorkspaceAccess, dev.logisim.mobile.DirectoryAssetActions, dev.logisim.mobile.EditorPreferences, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function0, dev.logisim.mobile.core.localization.LocalizedText, kotlin.jvm.functions.Function0, androidx.compose.runtime.Composer, int, int)
+11-05 07:40:53.701 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:41:00.066 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:00.066 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:00.182 29923 29962 D EGL_emulation: app_time_stats: avg=1490.14ms min=66.83ms max=4258.03ms count=3
+11-05 07:41:01.809 29923 29962 D EGL_emulation: app_time_stats: avg=441.51ms min=101.57ms max=1075.62ms count=3
+11-05 07:41:02.831 29923 29962 D EGL_emulation: app_time_stats: avg=198.81ms min=5.04ms max=917.46ms count=5
+11-05 07:41:05.010 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d664e3
+11-05 07:41:05.204 29923 29962 D EGL_emulation: app_time_stats: avg=247.43ms min=16.84ms max=4062.70ms count=19
+11-05 07:41:12.208 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:12.208 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:12.214 29923 29962 D EGL_emulation: app_time_stats: avg=1427.66ms min=66.64ms max=4119.94ms count=3
+11-05 07:41:13.594 29923 29962 D EGL_emulation: app_time_stats: avg=607.16ms min=108.76ms max=1105.55ms count=2
+11-05 07:41:14.577 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:14.577 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:14.583 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d1c3413
+11-05 07:41:15.757 29923 29962 D EGL_emulation: app_time_stats: avg=539.28ms min=32.57ms max=1046.00ms count=2
+11-05 07:41:16.726 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@8f97b67
+11-05 07:41:16.729 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:16.729 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:17.942 29923 29962 D EGL_emulation: app_time_stats: avg=37.11ms min=0.95ms max=479.94ms count=24
+11-05 07:41:20.815 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:20.815 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:20.821 29923 29962 D EGL_emulation: app_time_stats: avg=2879.03ms min=2879.03ms max=2879.03ms count=1
+11-05 07:41:22.148 29923 29962 D EGL_emulation: app_time_stats: avg=379.87ms min=91.20ms max=950.86ms count=3
+11-05 07:41:25.059 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:41:25.060 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:48b9d0d4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:41:25.060 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{8c46e85 VFED..... .F....ID 0,0-840,1797 aid=1073741837} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:41:25.083 29923 29962 D EGL_emulation: app_time_stats: avg=2935.39ms min=2935.39ms max=2935.39ms count=1
+11-05 07:41:25.083 29923 29923 I AssistStructure: Flattened final assist data: 1684 bytes, containing 3 windows, 11 views
+11-05 07:41:25.086 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:927094ec: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:41:25.086 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{8c46e85 VFED..... .F...... 0,0-840,1797 aid=1073741837} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:41:25.466 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:41:25.477 29923 29923 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=true, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=thalesmms.logisim.mobile.e2e
+11-05 07:41:25.481 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:41:25.481 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:927094ec: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+11-05 07:41:25.565 29923 29962 D EGL_emulation: app_time_stats: avg=648.68ms min=8.62ms max=12359.23ms count=20
+11-05 07:41:25.599 29923 29962 D EGL_emulation: app_time_stats: avg=168.66ms min=12.13ms max=3842.77ms count=27
+11-05 07:41:25.804 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:48b9d0d4: onShown
+11-05 07:41:26.265 29923 29962 D EGL_emulation: app_time_stats: avg=73.69ms min=7.86ms max=376.82ms count=15
+11-05 07:41:26.900 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:41:27.022 29923 29962 D EGL_emulation: app_time_stats: avg=160.01ms min=42.70ms max=477.12ms count=9
+11-05 07:41:27.069 29923 29962 D EGL_emulation: app_time_stats: avg=245.03ms min=72.92ms max=739.93ms count=6
+11-05 07:41:27.257 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:62b46a5d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:41:27.262 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:84a57f9f: onHidden
+11-05 07:41:28.195 29923 29962 D EGL_emulation: app_time_stats: avg=162.70ms min=0.97ms max=500.25ms count=9
+11-05 07:41:28.640 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@200f7e8
+11-05 07:41:28.712 29923 29962 D EGL_emulation: app_time_stats: avg=422.34ms min=92.86ms max=1096.17ms count=4
+11-05 07:41:28.796 29923 29962 D EGL_emulation: app_time_stats: avg=431.60ms min=38.97ms max=1483.98ms count=4
+11-05 07:41:31.286 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:41:31.286 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:5d0a2b35: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:41:31.287 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{996da42 VFED..... .F....ID 0,0-1080,2400 aid=1073741835} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:41:31.299 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:72a460bd: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:41:31.300 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{996da42 VFED..... .F...... 0,0-1080,2400 aid=1073741835} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:41:31.300 29923 29962 D EGL_emulation: app_time_stats: avg=834.84ms min=39.20ms max=2415.51ms count=3
+11-05 07:41:31.530 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:41:31.637 29923 29962 D EGL_emulation: app_time_stats: avg=480.94ms min=28.88ms max=2457.88ms count=6
+11-05 07:41:31.869 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:72a460bd: onShown
+11-05 07:41:32.344 29923 29962 D EGL_emulation: app_time_stats: avg=42.58ms min=2.91ms max=183.92ms count=21
+11-05 07:41:32.535 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:41:32.671 29923 29962 D EGL_emulation: app_time_stats: avg=93.07ms min=36.97ms max=288.69ms count=11
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 72, 1969737, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1969781, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1969828, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1969852, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1969876, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1969876, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1969886, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1969886, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.729 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1969895, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:32.730 29923 30547 V PerfettoTrigger: Triggering /system/bin/trigger_perfetto com.android.telemetry.interaction-jank-monitor-80
+11-05 07:41:32.861 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:a439d5b8: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:41:32.861 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:ac5086fc: onHidden
+11-05 07:41:32.989 29923 29929 W isim.mobile.e2e: Cleared Reference was only reachable from finalizer (only reported once)
+11-05 07:41:33.389 29923 29962 D EGL_emulation: app_time_stats: avg=106.46ms min=12.44ms max=479.75ms count=9
+11-05 07:41:33.528 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@57eae5
+11-05 07:41:33.538 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:33.538 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:33.673 29923 29962 D EGL_emulation: app_time_stats: avg=141.09ms min=14.84ms max=356.17ms count=7
+11-05 07:41:36.219 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:36.579 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:41:36.580 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:a035a15f: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:41:36.580 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{82b40b6 VFED..... .F....ID 0,0-1080,2400 aid=1073741839} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:41:36.596 29923 29923 I AssistStructure: Flattened final assist data: 736 bytes, containing 2 windows, 5 views
+11-05 07:41:36.598 29923 29962 D EGL_emulation: app_time_stats: avg=138.78ms min=14.18ms max=2140.82ms count=20
+11-05 07:41:36.599 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:fc0ec886: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:41:36.599 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{82b40b6 VFED..... .F...... 0,0-1080,2400 aid=1073741839} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:41:36.784 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:41:36.788 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:41:36.788 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:fc0ec886: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+11-05 07:41:36.891 29923 29962 D EGL_emulation: app_time_stats: avg=3217.78ms min=3217.78ms max=3217.78ms count=1
+11-05 07:41:37.131 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:a035a15f: onShown
+11-05 07:41:37.567 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:37.567 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1968241, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:37.567 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 24, 1968397, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:37.567 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 24, 1968397, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:37.567 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1968426, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:37.567 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1968426, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:37.568 29923 30547 V PerfettoTrigger: Triggering /system/bin/trigger_perfetto com.android.telemetry.interaction-jank-monitor-81
+11-05 07:41:37.647 29923 29962 D EGL_emulation: app_time_stats: avg=32.89ms min=1.61ms max=172.00ms count=26
+11-05 07:41:37.847 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:41:37.947 29923 29962 D EGL_emulation: app_time_stats: avg=174.76ms min=37.92ms max=550.71ms count=6
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1971235, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1971235, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1971264, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1971303, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1971318, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1971318, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1971357, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1971357, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1971381, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1971398, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1971406, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1971414, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:38.024 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:41:38.202 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:273cba28: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:41:38.204 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:6018ca52: onHidden
+11-05 07:41:38.705 29923 29962 D EGL_emulation: app_time_stats: avg=53.06ms min=7.63ms max=199.37ms count=18
+11-05 07:41:39.726 29923 29962 D EGL_emulation: app_time_stats: avg=26.21ms min=3.84ms max=168.22ms count=28
+11-05 07:41:39.841 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@2b4db00
+11-05 07:41:42.159 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:42.159 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:42.164 29923 29962 D EGL_emulation: app_time_stats: avg=467.08ms min=41.97ms max=3447.41ms count=9
+11-05 07:41:43.109 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:43.109 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 73, 1970094, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:43.109 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 73, 1970094, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:43.109 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1970116, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:43.109 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1970169, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:43.109 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1970237, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:43.109 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-81 - not enough time since last trigger
+11-05 07:41:43.462 29923 29962 D EGL_emulation: app_time_stats: avg=622.78ms min=49.00ms max=1196.56ms count=2
+11-05 07:41:44.377 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:44.377 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:44.379 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1056698
+11-05 07:41:45.561 29923 29962 D EGL_emulation: app_time_stats: avg=575.27ms min=33.06ms max=1117.48ms count=2
+11-05 07:41:46.492 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@be1d7e5
+11-05 07:41:46.496 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:46.496 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:47.740 29923 29962 D EGL_emulation: app_time_stats: avg=39.66ms min=0.60ms max=567.00ms count=24
+11-05 07:41:48.498 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:50.695 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:41:50.695 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:41:50.701 29923 29962 D EGL_emulation: app_time_stats: avg=2960.92ms min=2960.92ms max=2960.92ms count=1
+11-05 07:41:51.703 29923 29962 D EGL_emulation: app_time_stats: avg=29.21ms min=9.50ms max=78.44ms count=23
+11-05 07:41:51.992 29923 29962 D EGL_emulation: app_time_stats: avg=375.27ms min=66.99ms max=952.07ms count=3
+11-05 07:41:54.867 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:41:54.867 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:6d2bad38: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:41:54.867 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{981a9b7 VFED..... .F....ID 0,0-840,1797 aid=1073741847} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:41:54.879 29923 29962 D EGL_emulation: app_time_stats: avg=2886.82ms min=2886.82ms max=2886.82ms count=1
+11-05 07:41:54.880 29923 29923 I AssistStructure: Flattened final assist data: 1684 bytes, containing 3 windows, 11 views
+11-05 07:41:54.882 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:2cfbe1a4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:41:54.882 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{981a9b7 VFED..... .F...... 0,0-840,1797 aid=1073741847} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:41:55.254 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:41:55.338 29923 29962 D EGL_emulation: app_time_stats: avg=415.10ms min=6.14ms max=12241.66ms count=31
+11-05 07:41:55.401 29923 29962 D EGL_emulation: app_time_stats: avg=3687.24ms min=3687.24ms max=3687.24ms count=1
+11-05 07:41:55.651 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:2cfbe1a4: onShown
+11-05 07:41:55.981 29923 29962 D EGL_emulation: app_time_stats: avg=79.51ms min=6.30ms max=256.96ms count=13
+11-05 07:41:56.384 29923 29962 D EGL_emulation: app_time_stats: avg=149.46ms min=44.42ms max=248.18ms count=7
+11-05 07:41:56.680 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:41:56.903 29923 29962 D EGL_emulation: app_time_stats: avg=250.34ms min=74.69ms max=734.85ms count=6
+11-05 07:41:57.056 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1976255, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:57.056 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1976284, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:57.056 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 65, 1976384, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:57.056 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1976468, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:57.074 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:41:57.083 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:22aaca85: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:41:57.084 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:ad74fd07: onHidden
+11-05 07:41:57.486 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:41:57.486 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:cdf369a8: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:41:57.486 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{981a9b7 VFED..... .F....ID 0,0-840,1240 aid=1073741847} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:41:57.490 29923 29962 D EGL_emulation: app_time_stats: avg=182.03ms min=52.55ms max=374.20ms count=6
+11-05 07:41:57.553 29923 29962 D EGL_emulation: app_time_stats: avg=166.33ms min=51.80ms max=371.66ms count=7
+11-05 07:41:57.554 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:6a6c9dc7: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:41:57.555 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{981a9b7 VFED..... .F....ID 0,0-840,1240 aid=1073741847} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:41:58.015 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:41:58.214 29923 29962 D EGL_emulation: app_time_stats: avg=218.49ms min=76.41ms max=582.00ms count=6
+11-05 07:41:58.374 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:6a6c9dc7: onShown
+11-05 07:41:58.546 29923 29962 D EGL_emulation: app_time_stats: avg=175.95ms min=82.97ms max=334.31ms count=6
+11-05 07:41:58.599 29923 29962 D EGL_emulation: app_time_stats: avg=130.26ms min=4.23ms max=252.71ms count=8
+11-05 07:41:58.651 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@3a15fba
+11-05 07:41:59.244 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:41:59.532 29923 29962 D EGL_emulation: app_time_stats: avg=262.06ms min=50.14ms max=822.69ms count=5
+11-05 07:41:59.615 29923 29962 D EGL_emulation: app_time_stats: avg=151.03ms min=46.71ms max=382.63ms count=7
+11-05 07:41:59.738 29923 29962 D EGL_emulation: app_time_stats: avg=90.40ms min=8.16ms max=424.69ms count=12
+11-05 07:41:59.739 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1977881, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:59.740 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1977881, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:59.740 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 66, 1977910, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:59.740 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1978059, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:59.740 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1978059, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:41:59.742 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:41:59.787 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:b3c433bf: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:41:59.788 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:71ca3c64: onHidden
+11-05 07:41:59.895 29923 29929 I isim.mobile.e2e: Background concurrent mark compact GC freed 8100KB AllocSpace bytes, 3(64KB) LOS objects, 49% free, 9996KB/19MB, paused 124us,1.297ms total 365.046ms
+11-05 07:42:00.755 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@6ae8a42
+11-05 07:42:00.766 29923 29962 D EGL_emulation: app_time_stats: avg=308.51ms min=59.12ms max=888.30ms count=4
+11-05 07:42:00.870 29923 29962 D EGL_emulation: app_time_stats: avg=209.09ms min=37.52ms max=593.70ms count=6
+11-05 07:42:03.613 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:42:03.633 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:6c4e26c8: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:42:03.633 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{83547d8 VFED..... .F....ID 0,0-1080,2400 aid=1073741845} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:42:03.655 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:201d92e8: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:42:03.655 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{83547d8 VFED..... .F...... 0,0-1080,2400 aid=1073741845} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:42:03.662 29923 29962 D EGL_emulation: app_time_stats: avg=963.69ms min=145.79ms max=2598.47ms count=3
+11-05 07:42:03.905 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:42:03.905 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:42:03.905 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:201d92e8: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+11-05 07:42:04.066 29923 29962 D EGL_emulation: app_time_stats: avg=346.13ms min=5.75ms max=2780.38ms count=9
+11-05 07:42:04.262 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:6c4e26c8: onShown
+11-05 07:42:04.744 29923 29962 D EGL_emulation: app_time_stats: avg=57.30ms min=16.80ms max=346.35ms count=17
+11-05 07:42:05.304 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:42:05.375 29923 29962 D EGL_emulation: app_time_stats: avg=144.40ms min=36.81ms max=572.63ms count=9
+11-05 07:42:05.475 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1979899, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:05.475 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1979927, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:05.475 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1979927, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:05.475 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1979964, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:05.475 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1980019, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:05.475 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 65, 1980043, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:05.475 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1980054, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:05.476 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:42:05.682 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:c58253a4: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:42:05.683 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:26093029: onHidden
+11-05 07:42:06.106 29923 29962 D EGL_emulation: app_time_stats: avg=62.32ms min=3.16ms max=350.32ms count=20
+11-05 07:42:06.293 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@51dcaa4
+11-05 07:42:06.298 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:42:06.298 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:42:06.389 29923 29962 D EGL_emulation: app_time_stats: avg=121.52ms min=13.10ms max=340.29ms count=8
+11-05 07:42:07.451 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:08.974 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:42:08.974 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:a1308121: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:42:08.974 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{9ba8510 VFED..... .F....ID 0,0-1080,2400 aid=1073741850} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:42:08.982 29923 29923 I AssistStructure: Flattened final assist data: 736 bytes, containing 2 windows, 5 views
+11-05 07:42:08.982 29923 29962 D EGL_emulation: app_time_stats: avg=123.35ms min=5.79ms max=2024.83ms count=20
+11-05 07:42:08.983 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:92193832: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:42:08.983 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{9ba8510 VFED..... .F...... 0,0-1080,2400 aid=1073741850} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:42:09.127 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:42:09.318 29923 29962 D EGL_emulation: app_time_stats: avg=2929.65ms min=2929.65ms max=2929.65ms count=1
+11-05 07:42:09.475 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:92193832: onShown
+11-05 07:42:09.984 29923 29962 D EGL_emulation: app_time_stats: avg=59.33ms min=0.65ms max=272.98ms count=16
+11-05 07:42:10.184 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.557 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:42:10.635 29923 29962 D EGL_emulation: app_time_stats: avg=106.01ms min=33.10ms max=483.74ms count=12
+11-05 07:42:10.717 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1981517, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.717 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1981547, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.717 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1981577, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.717 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 73, 1981631, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.717 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 73, 1981631, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.717 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 65, 1981656, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.717 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1981671, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:10.717 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:42:10.891 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:383596d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:42:10.892 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:bf3bb4e6: onHidden
+11-05 07:42:11.253 29923 29962 D EGL_emulation: app_time_stats: avg=57.37ms min=9.53ms max=278.37ms count=20
+11-05 07:42:12.341 29923 29962 D EGL_emulation: app_time_stats: avg=27.80ms min=9.29ms max=84.51ms count=29
+11-05 07:42:12.593 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@c45b002
+11-05 07:42:14.875 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:42:14.875 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:42:14.883 29923 29962 D EGL_emulation: app_time_stats: avg=383.44ms min=8.66ms max=3323.28ms count=11
+11-05 07:42:15.938 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:15.939 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1980381, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:15.939 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1980381, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:15.939 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 73, 1980396, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:15.939 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 73, 1980396, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:15.939 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1980470, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:15.939 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 66, 1980509, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:15.939 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-81 - not enough time since last trigger
+11-05 07:42:16.109 29923 29962 D EGL_emulation: app_time_stats: avg=546.73ms min=5.33ms max=1088.13ms count=2
+11-05 07:42:17.025 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:42:17.025 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:42:17.027 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@7d903c9
+11-05 07:42:18.190 29923 29962 D EGL_emulation: app_time_stats: avg=564.70ms min=36.42ms max=1092.97ms count=2
+11-05 07:42:19.143 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d18753d
+11-05 07:42:19.147 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:42:19.147 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:42:20.427 29923 29962 D EGL_emulation: app_time_stats: avg=42.58ms min=3.06ms max=603.85ms count=24
+11-05 07:42:21.157 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:23.412 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:42:23.412 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:42:23.419 29923 29962 D EGL_emulation: app_time_stats: avg=2992.04ms min=2992.04ms max=2992.04ms count=1
+11-05 07:42:24.708 29923 29962 D EGL_emulation: app_time_stats: avg=360.56ms min=17.84ms max=909.74ms count=3
+11-05 07:42:27.654 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:42:27.654 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:ae7c4e36: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:42:27.655 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{cc5469c VFED..... .F....ID 0,0-840,1797 aid=1073741858} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:42:27.667 29923 29962 D EGL_emulation: app_time_stats: avg=2958.55ms min=2958.55ms max=2958.55ms count=1
+11-05 07:42:27.667 29923 29923 I AssistStructure: Flattened final assist data: 1684 bytes, containing 3 windows, 11 views
+11-05 07:42:27.668 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:d54905c: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:42:27.668 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{cc5469c VFED..... .F...... 0,0-840,1797 aid=1073741858} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:42:28.035 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:42:28.165 29923 29962 D EGL_emulation: app_time_stats: avg=447.75ms min=2.36ms max=12355.17ms count=29
+11-05 07:42:28.197 29923 29962 D EGL_emulation: app_time_stats: avg=160.41ms min=3.30ms max=3856.81ms count=28
+11-05 07:42:28.454 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:d54905c: onShown
+11-05 07:42:28.826 29923 29962 D EGL_emulation: app_time_stats: avg=65.05ms min=14.01ms max=299.29ms count=17
+11-05 07:42:29.933 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:42:30.102 29923 29962 D EGL_emulation: app_time_stats: avg=171.14ms min=7.94ms max=961.88ms count=11
+11-05 07:42:30.196 29923 29962 D EGL_emulation: app_time_stats: avg=333.13ms min=70.42ms max=1282.36ms count=6
+11-05 07:42:30.307 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1986873, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:30.307 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1986938, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:30.307 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1986982, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:30.307 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1987058, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:30.307 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1987151, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:30.307 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1987151, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:30.340 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:42:30.341 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:c8a535ac: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:42:30.342 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:8e15ed55: onHidden
+11-05 07:42:30.904 29923 29962 D EGL_emulation: app_time_stats: avg=144.86ms min=1.15ms max=507.61ms count=10
+11-05 07:42:30.909 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:42:30.911 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:f05f3060: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:42:30.911 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{cc5469c VFED..... .F....ID 0,0-840,1240 aid=1073741858} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:42:31.128 29923 29962 D EGL_emulation: app_time_stats: avg=126.65ms min=19.62ms max=221.69ms count=8
+11-05 07:42:31.256 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:17ed10af: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:42:31.256 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{cc5469c VFED..... .F...... 0,0-840,1240 aid=1073741858} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:42:31.543 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:42:31.785 29923 29962 D EGL_emulation: app_time_stats: avg=262.59ms min=55.61ms max=611.08ms count=6
+11-05 07:42:31.878 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 65, 1987859, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:31.878 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1987888, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:31.878 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1987888, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:31.878 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1988058, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:31.878 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1988058, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:31.879 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-81 - not enough time since last trigger
+11-05 07:42:31.886 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:17ed10af: onShown
+11-05 07:42:31.984 29923 29962 D EGL_emulation: app_time_stats: avg=105.21ms min=10.57ms max=237.20ms count=10
+11-05 07:42:32.350 29923 29962 D EGL_emulation: app_time_stats: avg=244.39ms min=75.14ms max=599.85ms count=5
+11-05 07:42:32.448 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@e926507
+11-05 07:42:33.039 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:42:33.092 29923 29962 D EGL_emulation: app_time_stats: avg=101.07ms min=1.25ms max=438.05ms count=10
+11-05 07:42:33.228 29923 29962 D EGL_emulation: app_time_stats: avg=236.94ms min=49.92ms max=731.80ms count=6
+11-05 07:42:33.344 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1988801, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:33.345 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1988823, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:33.345 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1988823, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:33.345 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 66, 1988980, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:33.345 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:42:33.442 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:f59c0019: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:42:33.442 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:8b2c2085: onHidden
+11-05 07:42:33.470 29923 29962 D EGL_emulation: app_time_stats: avg=219.55ms min=44.60ms max=717.36ms count=5
+11-05 07:42:34.427 29923 29962 D EGL_emulation: app_time_stats: avg=221.70ms min=44.37ms max=503.55ms count=6
+11-05 07:42:34.517 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@885a42b
+11-05 07:42:34.589 29923 29962 D EGL_emulation: app_time_stats: avg=340.19ms min=52.35ms max=1075.67ms count=4
+11-05 07:42:34.672 29923 29962 D EGL_emulation: app_time_stats: avg=240.43ms min=51.70ms max=795.45ms count=5
+11-05 07:42:35.198 29923 29929 I isim.mobile.e2e: Background concurrent mark compact GC freed 11MB AllocSpace bytes, 3(60KB) LOS objects, 49% free, 9475KB/18MB, paused 3.391ms,24.187ms total 461.668ms
+11-05 07:42:37.424 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:42:37.425 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:fc01a43d: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:42:37.425 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{585110 VFED..... .F....ID 0,0-1080,2400 aid=1073741856} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:42:37.431 29923 29962 D EGL_emulation: app_time_stats: avg=947.52ms min=160.79ms max=2482.27ms count=3
+11-05 07:42:37.432 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:62715fa8: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:42:37.432 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{585110 VFED..... .F...... 0,0-1080,2400 aid=1073741856} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:42:37.621 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:42:37.735 29923 29962 D EGL_emulation: app_time_stats: avg=434.63ms min=52.95ms max=2497.73ms count=7
+11-05 07:42:37.960 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:62715fa8: onShown
+11-05 07:42:38.463 29923 29962 D EGL_emulation: app_time_stats: avg=38.88ms min=1.95ms max=223.52ms count=22
+11-05 07:42:38.703 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:42:38.804 29923 29962 D EGL_emulation: app_time_stats: avg=94.85ms min=27.82ms max=374.15ms count=11
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1990946, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1990976, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1990976, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1991014, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1991014, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1991053, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1991053, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1991076, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.876 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1991076, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.877 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1991105, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.877 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1991150, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.877 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1991172, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:38.878 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:42:39.044 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:8721d0bc: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:42:39.045 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:e116bb23: onHidden
+11-05 07:42:39.577 29923 29962 D EGL_emulation: app_time_stats: avg=79.41ms min=7.84ms max=483.22ms count=13
+11-05 07:42:40.143 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@e0635c
+11-05 07:42:40.152 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:42:40.152 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:42:40.181 29923 29962 D EGL_emulation: app_time_stats: avg=172.14ms min=52.72ms max=638.05ms count=8
+11-05 07:42:43.121 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:42:43.122 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:3189f4ce: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:42:43.122 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{6afc307 VFED..... .F....ID 0,0-1080,2400 aid=1073741861} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:42:43.140 29923 29962 D EGL_emulation: app_time_stats: avg=125.01ms min=4.71ms max=2210.27ms count=21
+11-05 07:42:43.145 29923 29923 I AssistStructure: Flattened final assist data: 736 bytes, containing 2 windows, 5 views
+11-05 07:42:43.150 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:1f302cb1: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:42:43.150 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{6afc307 VFED..... .F...... 0,0-1080,2400 aid=1073741861} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:42:43.369 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:42:43.505 29923 29962 D EGL_emulation: app_time_stats: avg=1661.98ms min=78.90ms max=3245.07ms count=2
+11-05 07:42:43.709 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:1f302cb1: onShown
+11-05 07:42:43.762 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:43.762 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1989527, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:43.762 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1989542, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:43.762 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1989689, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:43.762 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1989689, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:43.762 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-81 - not enough time since last trigger
+11-05 07:42:44.207 29923 29962 D EGL_emulation: app_time_stats: avg=40.81ms min=3.71ms max=338.21ms count=21
+11-05 07:42:44.583 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:42:44.678 29923 29962 D EGL_emulation: app_time_stats: avg=93.81ms min=22.28ms max=441.68ms count=12
+11-05 07:42:44.746 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1992664, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.750 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1992687, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.750 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 1992718, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.750 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 1992718, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.750 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1992734, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.750 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1992744, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.750 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1992761, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.750 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 1992776, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:44.767 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:42:44.938 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:3ae8c513: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:42:44.938 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:1f48927b: onHidden
+11-05 07:42:45.395 29923 29962 D EGL_emulation: app_time_stats: avg=80.36ms min=11.22ms max=421.54ms count=14
+11-05 07:42:46.209 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:42:46.209 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:42:46.404 29923 29962 D EGL_emulation: app_time_stats: avg=32.53ms min=17.27ms max=68.47ms count=25
+11-05 07:42:47.417 29923 29962 D EGL_emulation: app_time_stats: avg=270.07ms min=40.01ms max=780.38ms count=4
+11-05 07:42:49.307 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:49.596 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@6dc3b9a
+11-05 07:42:49.633 29923 29962 D EGL_emulation: app_time_stats: avg=379.83ms min=40.34ms max=3969.84ms count=13
+11-05 07:42:49.675 29923 29962 D EGL_emulation: app_time_stats: avg=158.61ms min=0.82ms max=2454.95ms count=19
+11-05 07:42:50.791 29923 29962 D EGL_emulation: app_time_stats: avg=217.48ms min=28.38ms max=499.96ms count=5
+11-05 07:42:52.024 29923 29962 D EGL_emulation: app_time_stats: avg=410.89ms min=233.09ms max=500.14ms count=3
+11-05 07:42:52.309 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@4713a09
+11-05 07:42:54.436 29923 29962 D EGL_emulation: app_time_stats: avg=948.61ms min=30.00ms max=4515.20ms count=5
+11-05 07:42:54.962 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:42:55.212 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:42:56.861 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=false newVisibility=true
+11-05 07:42:57.380 29923 29929 I isim.mobile.e2e: Background concurrent mark compact GC freed 9792KB AllocSpace bytes, 1(20KB) LOS objects, 49% free, 8543KB/16MB, paused 94us,16.309ms total 264.328ms
+11-05 07:43:02.138 29923 29962 D EGL_emulation: app_time_stats: avg=1700.90ms min=164.09ms max=4739.71ms count=3
+11-05 07:43:02.187 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:43:02.187 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:43:03.178 29923 29962 D EGL_emulation: app_time_stats: avg=42.55ms min=21.48ms max=121.82ms count=19
+11-05 07:43:03.826 29923 29962 D EGL_emulation: app_time_stats: avg=573.22ms min=44.96ms max=1101.48ms count=2
+11-05 07:43:04.827 29923 29962 D EGL_emulation: app_time_stats: avg=199.20ms min=5.14ms max=914.96ms count=5
+11-05 07:43:07.125 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d85c5aa
+11-05 07:43:07.504 29923 29962 D EGL_emulation: app_time_stats: avg=1066.99ms min=22.69ms max=4171.58ms count=4
+11-05 07:43:08.121 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:43:14.491 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:43:14.491 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:43:15.757 29923 29962 D EGL_emulation: app_time_stats: avg=543.93ms min=26.60ms max=1061.26ms count=2
+11-05 07:43:16.658 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:43:16.658 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:43:16.662 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@6be2060
+11-05 07:43:17.844 29923 29962 D EGL_emulation: app_time_stats: avg=574.78ms min=6.50ms max=1143.05ms count=2
+11-05 07:43:18.745 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@a093a24
+11-05 07:43:18.749 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:43:18.749 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:43:20.092 29923 29962 D EGL_emulation: app_time_stats: avg=50.56ms min=7.40ms max=669.00ms count=22
+11-05 07:43:23.000 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:43:23.000 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:925ab4ff: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:43:23.001 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{15b42a3 VFED..... .F....ID 0,0-1080,2400 aid=1073741871} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:43:23.010 29923 29923 I AssistStructure: Flattened final assist data: 1012 bytes, containing 2 windows, 6 views
+11-05 07:43:23.013 29923 29962 D EGL_emulation: app_time_stats: avg=2920.32ms min=2920.32ms max=2920.32ms count=1
+11-05 07:43:23.014 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:3d44fef0: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:43:23.014 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{15b42a3 VFED..... .F...... 0,0-1080,2400 aid=1073741871} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:43:23.170 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:43:23.334 29923 29962 D EGL_emulation: app_time_stats: avg=423.16ms min=11.09ms max=7901.86ms count=30
+11-05 07:43:23.539 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:3d44fef0: onShown
+11-05 07:43:24.104 29923 29962 D EGL_emulation: app_time_stats: avg=50.84ms min=0.64ms max=232.67ms count=19
+11-05 07:43:24.517 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:43:24.581 29923 29962 D EGL_emulation: app_time_stats: avg=112.36ms min=29.04ms max=490.46ms count=11
+11-05 07:43:24.681 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2006199, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:43:24.681 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 65, 2006244, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:43:24.681 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2006297, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:43:24.681 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2006337, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:43:24.681 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 2006361, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:43:24.681 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 2006361, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:43:24.684 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:43:24.855 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:36f77433: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:43:24.856 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:e34f0a3: onHidden
+11-05 07:43:25.277 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@e75f39f
+11-05 07:43:25.283 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:43:25.283 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:43:25.760 29923 29962 D EGL_emulation: app_time_stats: avg=131.06ms min=39.73ms max=303.28ms count=9
+11-05 07:43:26.192 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:43:26.192 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:43:26.482 29923 29962 D EGL_emulation: app_time_stats: avg=38.30ms min=5.42ms max=147.73ms count=23
+11-05 07:43:27.694 29923 29962 D EGL_emulation: app_time_stats: avg=656.52ms min=97.55ms max=1215.49ms count=2
+11-05 07:43:28.699 29923 29962 D EGL_emulation: app_time_stats: avg=250.23ms min=5.44ms max=930.97ms count=4
+11-05 07:43:30.780 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@e9a9351
+11-05 07:43:30.821 29923 29962 D EGL_emulation: app_time_stats: avg=1265.17ms min=52.88ms max=4858.62ms count=4
+11-05 07:43:30.860 29923 29962 D EGL_emulation: app_time_stats: avg=282.38ms min=12.88ms max=3703.51ms count=15
+11-05 07:43:33.158 29923 29962 D EGL_emulation: app_time_stats: avg=1148.77ms min=92.69ms max=2204.85ms count=2
+11-05 07:43:33.407 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@326653e
+11-05 07:43:35.143 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:43:35.468 29923 29962 D EGL_emulation: app_time_stats: avg=1150.49ms min=17.19ms max=4484.63ms count=4
+11-05 07:43:35.554 29923 29929 I isim.mobile.e2e: Background concurrent mark compact GC freed 10MB AllocSpace bytes, 2(40KB) LOS objects, 49% free, 9255KB/18MB, paused 23.036ms,5.428ms total 120.933ms
+11-05 07:43:36.066 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:43:42.477 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:43:42.477 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:43:43.018 29923 29923 I Choreographer: Skipped 31 frames!  The application may be doing too much work on its main thread.
+11-05 07:43:43.291 29923 29986 I HWUI    : Davey! duration=775ms; Flags=0, FrameTimelineVsyncId=2012905, IntendedVsync=50485070154109, Vsync=50485586820755, InputEventId=0, HandleInputStart=50485600892864, AnimationStart=50485600895447, PerformTraversalsStart=50485608303822, DrawStart=50485745534072, FrameDeadline=50485786820747, FrameInterval=50485600243531, FrameStartTime=16666666, SyncQueued=50485745929322, SyncStart=50485750838447, IssueDrawCommandsStart=50485750883947, SwapBuffers=50485783541281, FrameCompleted=50485850482989, DequeueBufferDuration=1750, QueueBufferDuration=95542, GpuCompleted=50485850482989, SwapBuffersCompleted=50485822114031, DisplayPresentTime=0, CommandSubmissionCompleted=50485783541281, 
+11-05 07:43:44.438 29923 29962 D EGL_emulation: app_time_stats: avg=743.67ms min=213.78ms max=1273.57ms count=2
+11-05 07:43:45.445 29923 29962 D EGL_emulation: app_time_stats: avg=332.24ms min=4.66ms max=953.01ms count=3
+11-05 07:43:47.707 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@6fdf0a7
+11-05 07:43:47.741 29923 29962 D EGL_emulation: app_time_stats: avg=87.35ms min=4.66ms max=1415.69ms count=24
+11-05 07:43:47.747 29923 29962 D HWUI    : endAllActiveAnimators on 0xb400006eda544550 (UnprojectedRipple) with handle 0xb400006efa552c60
+11-05 07:43:48.158 29923 29962 D EGL_emulation: app_time_stats: avg=834.38ms min=22.65ms max=4666.14ms count=12
+11-05 07:43:48.785 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:43:55.799 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:43:55.828 29923 29962 D HWUI    : endAllActiveAnimators on 0xb400006eda4e7640 (UnprojectedRipple) with handle 0xb400006efa51dd10
+11-05 07:44:02.945 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:44:02.945 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:44:02.983 29923 29962 D EGL_emulation: app_time_stats: avg=1604.94ms min=62.63ms max=4689.46ms count=3
+11-05 07:44:04.494 29923 29962 D EGL_emulation: app_time_stats: avg=603.00ms min=79.53ms max=1126.46ms count=2
+11-05 07:44:05.534 29923 29962 D EGL_emulation: app_time_stats: avg=336.90ms min=27.45ms max=947.93ms count=3
+11-05 07:44:07.783 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@1284069
+11-05 07:44:08.072 29923 29962 D EGL_emulation: app_time_stats: avg=283.00ms min=5.43ms max=4085.36ms count=17
+11-05 07:44:08.864 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:44:10.904 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=false newVisibility=true
+11-05 07:44:15.158 29923 29962 D EGL_emulation: app_time_stats: avg=1368.07ms min=96.54ms max=3891.44ms count=3
+11-05 07:44:15.323 29923 29929 I isim.mobile.e2e: Background concurrent mark compact GC freed 8484KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 7966KB/15MB, paused 42us,10.851ms total 118.812ms
+11-05 07:44:15.871 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:44:15.903 29923 29962 D HWUI    : endAllActiveAnimators on 0xb400006eda54ac50 (UnprojectedRipple) with handle 0xb400006efa555180
+11-05 07:44:22.546 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:44:22.546 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:44:24.229 29923 29962 D EGL_emulation: app_time_stats: avg=680.19ms min=183.56ms max=1176.81ms count=2
+11-05 07:44:25.248 29923 29962 D EGL_emulation: app_time_stats: avg=166.99ms min=1.74ms max=878.30ms count=6
+11-05 07:44:27.357 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@ec3c752
+11-05 07:44:27.595 29923 29962 D EGL_emulation: app_time_stats: avg=581.30ms min=23.38ms max=4541.74ms count=16
+11-05 07:44:28.278 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:44:30.430 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=false newVisibility=true
+11-05 07:44:34.699 29923 29962 D EGL_emulation: app_time_stats: avg=1371.47ms min=40.12ms max=4003.27ms count=3
+11-05 07:44:35.390 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:44:35.491 29923 29962 D HWUI    : endAllActiveAnimators on 0xb400006eda4e7640 (UnprojectedRipple) with handle 0xb400006efa598350
+11-05 07:44:41.996 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:44:41.996 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:44:42.082 29923 29962 D EGL_emulation: app_time_stats: avg=1498.66ms min=58.45ms max=4344.66ms count=3
+11-05 07:44:43.567 29923 29962 D EGL_emulation: app_time_stats: avg=687.50ms min=52.30ms max=1322.70ms count=2
+11-05 07:44:44.599 29923 29962 D EGL_emulation: app_time_stats: avg=195.75ms min=1.38ms max=928.04ms count=5
+11-05 07:44:46.858 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@7a97868
+11-05 07:44:47.169 29923 29962 D EGL_emulation: app_time_stats: avg=301.17ms min=27.58ms max=4172.77ms count=16
+11-05 07:44:47.967 29923 29923 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+11-05 07:44:56.426 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:44:56.426 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:44:57.609 29923 29962 D EGL_emulation: app_time_stats: avg=554.47ms min=63.35ms max=1045.59ms count=2
+11-05 07:44:58.508 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:44:58.508 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:44:58.511 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@7bc590
+11-05 07:44:59.786 29923 29962 D EGL_emulation: app_time_stats: avg=602.23ms min=39.59ms max=1164.87ms count=2
+11-05 07:45:00.744 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@d859854
+11-05 07:45:00.750 29923 29923 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 07:45:00.750 29923 29923 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 07:45:02.024 29923 29962 D EGL_emulation: app_time_stats: avg=44.05ms min=2.88ms max=583.45ms count=24
+11-05 07:45:04.926 29923 29923 D InsetsController: show(ime(), fromIme=false)
+11-05 07:45:04.927 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:8c4d89e8: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+11-05 07:45:04.927 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{22daed0 VFED..... .F....ID 0,0-1080,2400 aid=1073741889} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+11-05 07:45:04.934 29923 29962 D EGL_emulation: app_time_stats: avg=2909.88ms min=2909.88ms max=2909.88ms count=1
+11-05 07:45:04.935 29923 29923 I AssistStructure: Flattened final assist data: 1012 bytes, containing 2 windows, 6 views
+11-05 07:45:04.940 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:3702a72e: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+11-05 07:45:04.940 29923 29923 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{22daed0 VFED..... .F...... 0,0-1080,2400 aid=1073741889} flags=0 reason=SHOW_SOFT_INPUT
+11-05 07:45:05.195 29923 29923 D InsetsController: show(ime(), fromIme=true)
+11-05 07:45:05.285 29923 29962 D EGL_emulation: app_time_stats: avg=523.50ms min=10.55ms max=7909.60ms count=28
+11-05 07:45:05.535 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:3702a72e: onShown
+11-05 07:45:05.935 29923 29962 D EGL_emulation: app_time_stats: avg=41.25ms min=7.25ms max=246.96ms count=20
+11-05 07:45:06.192 29923 29923 D InsetsController: hide(ime(), fromIme=true)
+11-05 07:45:06.345 29923 29962 D EGL_emulation: app_time_stats: avg=115.00ms min=18.98ms max=362.83ms count=9
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2042964, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2042994, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043023, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043061, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043101, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043112, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043120, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.428 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043128, 0, CUJ=J<IME_INSETS_SHOW_ANIMATION::0@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:06.429 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-80 - not enough time since last trigger
+11-05 07:45:06.550 29923 29923 I ImeTracker: thalesmms.logisim.mobile.e2e:90706630: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT_ON_ANIMATION_STATE_CHANGED fromUser false
+11-05 07:45:06.551 29923 29923 I ImeTracker: com.google.android.inputmethod.latin:5ae943ff: onHidden
+11-05 07:45:06.948 29923 29962 D EGL_emulation: app_time_stats: avg=65.66ms min=7.76ms max=358.44ms count=14
+11-05 07:45:07.829 29923 29923 W isim.mobile.e2e: Accessing hidden method Landroid/view/ViewTreeObserver;->dispatchOnScrollChanged()V (unsupported, reflection, allowed)
+11-05 07:45:07.966 29923 29962 D EGL_emulation: app_time_stats: avg=26.10ms min=5.53ms max=119.80ms count=28
+11-05 07:45:08.968 29923 29962 D EGL_emulation: app_time_stats: avg=47.78ms min=16.56ms max=201.89ms count=17
+11-05 07:45:10.012 29923 29962 D EGL_emulation: app_time_stats: avg=38.62ms min=12.10ms max=207.32ms count=20
+11-05 07:45:11.175 29923 29962 D EGL_emulation: app_time_stats: avg=58.08ms min=10.76ms max=425.94ms count=15
+11-05 07:45:12.210 29923 29962 D EGL_emulation: app_time_stats: avg=46.66ms min=1.52ms max=265.97ms count=16
+11-05 07:45:13.225 29923 29962 D EGL_emulation: app_time_stats: avg=507.83ms min=501.22ms max=514.44ms count=2
+11-05 07:45:14.229 29923 29962 D EGL_emulation: app_time_stats: avg=501.76ms min=489.82ms max=513.70ms count=2
+11-05 07:45:15.241 29923 29962 D EGL_emulation: app_time_stats: avg=505.64ms min=494.80ms max=516.47ms count=2
+11-05 07:45:16.272 29923 29962 D EGL_emulation: app_time_stats: avg=52.39ms min=0.79ms max=499.82ms count=17
+11-05 07:45:16.782 29923 29923 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@a9d7d1c
+11-05 07:45:16.834 29923 29923 E FrameTracker: force finish cuj, time out: J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 2043367, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 2043367, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043382, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043434, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 29923 W FrameTracker: Missed App frame:UNKNOWN: 88, 2043480, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 88, 2043480, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 29923 W FrameTracker: Missed SF frame:UNKNOWN: 80, 2043563, 0, CUJ=J<IME_INSETS_HIDE_ANIMATION::1@1@thalesmms.logisim.mobile.e2e>
+11-05 07:45:16.834 29923 30547 V PerfettoTrigger: Not triggering com.android.telemetry.interaction-jank-monitor-81 - not enough time since last trigger

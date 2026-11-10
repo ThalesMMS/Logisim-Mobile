@@ -1,0 +1,103 @@
+{
+  "status": "FAILED_WINDOW_ORDER_REPLAYED",
+  "snapshots": [
+    {
+      "file": "portable-folder-imported-workspace.tar",
+      "sha256": "2fa07bffa5497ad08bec57bf9df549e616f65bc06336134c93acd762689215c4",
+      "activeProject": {
+        "id": "72be893d7f51138afdb9f99380ea7957",
+        "name": "main",
+        "revision": 1,
+        "deleted": false,
+        "created": 1793850147951,
+        "updated": 1793850147951,
+        "previous": 0,
+        "history": []
+      },
+      "catalogProjectIds": [
+        "5b174d4d17eefb24cc2ad5d81b3dc432",
+        "72be893d7f51138afdb9f99380ea7957",
+        "f33b7bd5cea6be9a6459411a64b31c74"
+      ],
+      "stableWindows": {
+        "36d6551b-a976-41f1-95e3-1a0dabfb9124": "f33b7bd5cea6be9a6459411a64b31c74"
+      },
+      "pendingWindows": {
+        "36d6551b-a976-41f1-95e3-1a0dabfb9124": "72be893d7f51138afdb9f99380ea7957"
+      }
+    },
+    {
+      "file": "portable-folder-storage-roundtrip-private-files.tar",
+      "sha256": "1166f43f5df82196311784745060006ed606554e4eb839a90eb04b37ea05d852",
+      "activeProject": {
+        "id": "72be893d7f51138afdb9f99380ea7957",
+        "name": "main",
+        "revision": 2,
+        "deleted": false,
+        "created": 1793850147951,
+        "updated": 1793850149482,
+        "previous": 1,
+        "history": [
+          1
+        ]
+      },
+      "catalogProjectIds": [
+        "5b174d4d17eefb24cc2ad5d81b3dc432",
+        "72be893d7f51138afdb9f99380ea7957",
+        "f33b7bd5cea6be9a6459411a64b31c74"
+      ],
+      "stableWindows": {
+        "36d6551b-a976-41f1-95e3-1a0dabfb9124": "72be893d7f51138afdb9f99380ea7957"
+      },
+      "pendingWindows": {}
+    },
+    {
+      "file": "failure-private-files.tar",
+      "sha256": "1166f43f5df82196311784745060006ed606554e4eb839a90eb04b37ea05d852",
+      "activeProject": {
+        "id": "72be893d7f51138afdb9f99380ea7957",
+        "name": "main",
+        "revision": 2,
+        "deleted": false,
+        "created": 1793850147951,
+        "updated": 1793850149482,
+        "previous": 1,
+        "history": [
+          1
+        ]
+      },
+      "catalogProjectIds": [
+        "5b174d4d17eefb24cc2ad5d81b3dc432",
+        "72be893d7f51138afdb9f99380ea7957",
+        "f33b7bd5cea6be9a6459411a64b31c74"
+      ],
+      "stableWindows": {
+        "36d6551b-a976-41f1-95e3-1a0dabfb9124": "72be893d7f51138afdb9f99380ea7957"
+      },
+      "pendingWindows": {}
+    }
+  ],
+  "createOperation": {
+    "file": "asset-36d6551b-a976-41f1-95e3-1a0dabfb9124-create.json",
+    "session": "36d6551b-a976-41f1-95e3-1a0dabfb9124",
+    "operation": {
+      "name": "Top53.lsebdl",
+      "mime": "application/x-logisim-bundle",
+      "payload": "4a2aba01-967f-4a25-905b-27dfe3ed0c22",
+      "phase": "picker"
+    }
+  },
+  "partialAppExport": {
+    "file": "logisim-portable53-0762ff4fc06d4897b6ff6561caeb0f1c-folder-before-restart.lsebdl",
+    "bytes": 4905,
+    "sha256": "0bc5e1a2a7cbf699324d692964d8c7a1eb24038b31a271072cdb1201267da689",
+    "zipCrcsValid": true,
+    "entries": [
+      "main.circ",
+      "library/library_4bb1b5b23966bea2.circ",
+      "library/library_48811827991dbd5e.circ",
+      "manifest.xml"
+    ]
+  },
+  "scope": "Read-only replay of the failed run. No restart, peer export, strict artifact qualification or desktop reopen is claimed."
+}

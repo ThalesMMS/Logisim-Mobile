@@ -1,0 +1,133 @@
+{
+  "review": "Independent offline review of Editor36 R3 portable failure package",
+  "status": "APPROVED_FOR_FAILURE_ARCHIVAL",
+  "blockers": [],
+  "scope": "Read-only review of original R3 files and the portable package; no build, SDK, Native, device, simulator, UI or repository mutation.",
+  "harnessSource": "91bc58e38e0171777df5951b018a23ac6da8da69",
+  "appProducerSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "reviewedFiles": {
+    "README.md": {
+      "bytes": 3984,
+      "sha256": "5a6a77e45a08fcb087f44d4b69a5f4006ee5c1748ba919837d16fab4e916ed0b"
+    },
+    "verify.py": {
+      "bytes": 18692,
+      "sha256": "f4fadb64da4ac187261086c0f8d045b8b2d9ca4cb42a6153da19408b73ac1300"
+    },
+    "test_verify.py": {
+      "bytes": 10018,
+      "sha256": "774e81a7c8c02320c40e4f873cf95d916e23f520ddb97178876585401cda8989"
+    },
+    "oracle.py": {
+      "bytes": 5319,
+      "sha256": "b0f10d85305e17070b1a473c96d14d5b68faf0e79022de815a5857e4d174c142"
+    },
+    "receipt.json": {
+      "bytes": 10315,
+      "sha256": "8d41297ede9671bf16dadb610450aebe0c14ea6b1684560b5d743bae894a28d5"
+    },
+    "raw-members.json": {
+      "bytes": 107759,
+      "sha256": "9df2fabf3e01626ecdbe3e151e231a7b8cf67babbfd8fc1f039ed547991ebc58"
+    },
+    "raw.tar.gz": {
+      "bytes": 7677332,
+      "sha256": "c2f867954f1d9d73846dc7a48c4235428366e7b44cd1c358328cb6eeb5fb46a3"
+    }
+  },
+  "rawComparison": {
+    "members": 669,
+    "originalMatches": 669,
+    "mismatches": 0,
+    "attachmentsTotal": 556,
+    "archivedNonVideoAttachments": 555,
+    "inputSourceFiles": 50,
+    "method": "Compared raw bytes to original execution/preflight/postflight/setup files; input-source members compared to git show at the executed 91bc58e revision."
+  },
+  "nativeFacts": {
+    "status": "FAIL",
+    "nativeExecutionGate": "NATIVE_FAIL",
+    "tests": 1,
+    "failures": 1,
+    "exitCode": 65,
+    "seconds": 300.753,
+    "passedContractSteps": 15,
+    "xmlCheckpoints": [
+      2,
+      7,
+      9,
+      11,
+      13,
+      15
+    ],
+    "failedAttemptedStep": 16,
+    "compiledSwiftSources": 17,
+    "preparedSwiftSources": 18,
+    "testTimeoutSeconds": 900,
+    "alpha": false,
+    "selector": "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport"
+  },
+  "headerFacts": {
+    "observations": 20,
+    "decisions": 7,
+    "skipPubliclySelectedDecisions": 7,
+    "headerTapRequests": 0,
+    "headerScrollRequests": 0,
+    "selectedTrue": 7,
+    "selectedUnobserved": 13,
+    "hittableTrue": 19,
+    "hittableUnqueried": 1,
+    "lastSearchCount": 1,
+    "lastSearchRole": 52,
+    "lastSearchLabel": "",
+    "lastSearchEnabled": true,
+    "lastSearchField": [
+      24,
+      158,
+      342,
+      24
+    ],
+    "lastViewport": [
+      24,
+      182,
+      342,
+      604
+    ],
+    "lastInputRegions": [],
+    "finalTreesKeepSheetAndList": true
+  },
+  "portableReplay": {
+    "root": "/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/editor36-r3-review-4vdghq9w/portable",
+    "outsideGit": true,
+    "verifierExitCode": 0,
+    "verifierStatus": "FAIL_PRESERVED",
+    "testExitCode": 0,
+    "testCount": 20,
+    "positiveTests": 1,
+    "negativeTests": 19,
+    "localOnlyPathsReadByDefaultVerifier": false
+  },
+  "interpretationLimits": [
+    "Zero tap/scroll refers only to the new header helper. The test log records the Start source-port tap request at 297.98 seconds.",
+    "Search existed. Its final public label/frame snapshot was rejected before reveal in that invocation. No callback delivery, consumed gesture or sheet dismissal is established.",
+    "Unobserved selection and unqueried hittable remain unknown, not false. Empty observed input regions do not prove universal input-method absence.",
+    "Components-false tap-once/selection-confirmation and short-backward-scroll paths were not exercised.",
+    "The full 62-step Editor case and all post-connection behavior remain unqualified.",
+    "Setup 003/003b are preserved preparation errors with zero Native runs, separate from the single R3 Native execution.",
+    "The publicFiles map was intentionally empty at review time and remains for package owner finalization. This review does not attest a later commit, push or issue closure."
+  ],
+  "supportingReports": {
+    "originals": {
+      "path": "/tmp/logisim-editor36-r3-original-evidence-review.json",
+      "sha256": "19a4adac4a42be85f72dae94ad93bb54edc096f30e8440b51c87fd88e8007532"
+    },
+    "archiveBytes": {
+      "path": "/tmp/logisim-editor36-r3-archive-byte-review.json",
+      "sha256": "976f6a0fc3d881a07579aff44f5a0b9cd32feae70cf280933e08f091e3fb3d56"
+    },
+    "portableReplay": {
+      "path": "/tmp/logisim-editor36-r3-portable-replay.json",
+      "sha256": "9d143bcc37593f6a7ab85815a7e747b867373b62dee70f68dcfb1b8645a54a21"
+    }
+  }
+}

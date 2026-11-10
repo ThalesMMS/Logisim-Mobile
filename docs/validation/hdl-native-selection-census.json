@@ -1,0 +1,638 @@
+{
+  "created_at": "2026-11-05T00:58:36.054373+00:00",
+  "mode": "saved-data-read-only-no-ui-no-jobs",
+  "method": {
+    "native_select_all_actions": "A Tap action explicitly naming Select All MenuItem, or Tap Any resolved to that MenuItem followed by Synthesize event. Type/typeText/credential/predicate mentions are not counted.",
+    "selection_failure_count": "Unique test.log error lines requiring native Select All or an editing selection menu.",
+    "tree_census": "Counts actual actor records in the latest named native-tree attachment per testcase and latest overall; no field values are emitted.",
+    "producer": "Runner-reported baseline_sha, resolved to full local Git commit; not an independent source-to-binary attestation.",
+    "value_policy": "Field contents and URL equality are intentionally not emitted or inferred; native debug values may be truncated."
+  },
+  "script": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/scripts/ios_hdl_ui/text_selection_census.py",
+    "sha256": "a915da6292a521b5f5d28ce51982cc42db91b77939e6b6ed19bca1044b9cc4b9"
+  },
+  "runs": [
+    {
+      "run": "ios-hdl-eb376-002",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002",
+      "inputs": {
+        "results": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002/results.json",
+          "sha256": "09f09bee0190ca28f1c0c8f863bb0bb26feee8be331abee6e83b61c8229922ff"
+        },
+        "test_log": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002/test.log",
+          "sha256": "232af3b7518b4887de07cd8181f3328cd28144995f3f4f3027517c7ec1f42dda"
+        },
+        "attachment_manifest": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002/attachments/manifest.json",
+          "sha256": "2a5ac447a393ef951b0806a25d5d7e2e300e57f26d4a40c5ad89297d206318b1"
+        }
+      },
+      "producer_reported": "eb376d71",
+      "producer_resolved_local": "eb376d71cab4a13bc19ac18371d330464ac78327",
+      "artifact_identity": {
+        "bundle_id": "thalesmms.logisim.mobile",
+        "version": "0.2.0",
+        "build": "2"
+      },
+      "status": "FAIL",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "NOT_QUALIFIED",
+      "alpha": true,
+      "selected_tests": [
+        "testCompactCosimulationSamplesResetStopAndCompilerFailure"
+      ],
+      "native_select_all_menuitem_action_count": 2,
+      "native_select_all_actions": [
+        {
+          "tap_line": 193,
+          "target_line": 196,
+          "synthesize_event_line": 197,
+          "observed_target_role": "MenuItem",
+          "observed_target_label": "Select All"
+        },
+        {
+          "tap_line": 374,
+          "target_line": 377,
+          "synthesize_event_line": 378,
+          "observed_target_role": "MenuItem",
+          "observed_target_label": "Select All"
+        }
+      ],
+      "selection_menu_failure_count": 0,
+      "selection_menu_failures": [],
+      "native_trees": [
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002/attachments/2E096753-01FD-403A-8459-C430EF192DD7.txt",
+          "timestamp": 1793830899.408,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002/attachments/2E096753-01FD-403A-8459-C430EF192DD7.txt",
+            "sha256": "8e81c1355f042d04ffe7737da007fe26178ef864081d7e3ca06d3d998fd87c3e"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 0,
+              "source": 1,
+              "other": 2
+            },
+            "focused_editable_fields": {
+              "address": 0,
+              "source": 1,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        }
+      ],
+      "selection_failure_snapshots": [],
+      "last_native_tree": {
+        "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+        "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002/attachments/2E096753-01FD-403A-8459-C430EF192DD7.txt",
+        "timestamp": 1793830899.408,
+        "input": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-eb376-002/attachments/2E096753-01FD-403A-8459-C430EF192DD7.txt",
+          "sha256": "8e81c1355f042d04ffe7737da007fe26178ef864081d7e3ca06d3d998fd87c3e"
+        },
+        "actors": {
+          "menu": 0,
+          "menu_item": 0,
+          "editable_fields": {
+            "address": 0,
+            "source": 1,
+            "other": 2
+          },
+          "focused_editable_fields": {
+            "address": 0,
+            "source": 1,
+            "other": 0
+          },
+          "menu_item_labels": {
+            "select_all": 0,
+            "cut": 0,
+            "copy": 0
+          }
+        }
+      }
+    },
+    {
+      "run": "ios-hdl-e7-hide-001",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001",
+      "inputs": {
+        "results": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/results.json",
+          "sha256": "16c4780ec6836f876f51b92a7ae92783e3a20352e3c02d80b419bd7fd262c464"
+        },
+        "test_log": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/test.log",
+          "sha256": "2fcf4444a289b0826bbe0071a11d6a2af4914bacbda59a4a6e6459e379672b12"
+        },
+        "attachment_manifest": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/attachments/manifest.json",
+          "sha256": "c6ef16b649c18810f6f0363d6fe447c94036d094a856d74736f9c78315697274"
+        }
+      },
+      "producer_reported": "e7ebaf0b60e98f2dd2d6d9568d084e1e0b8ee583",
+      "producer_resolved_local": "e7ebaf0b60e98f2dd2d6d9568d084e1e0b8ee583",
+      "artifact_identity": {
+        "bundle_id": "thalesmms.logisim.mobile",
+        "version": "0.2.0",
+        "build": "2"
+      },
+      "status": "FAIL",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "NOT_QUALIFIED",
+      "alpha": true,
+      "selected_tests": [
+        "testCompactCosimulationSamplesResetStopAndCompilerFailure"
+      ],
+      "native_select_all_menuitem_action_count": 1,
+      "native_select_all_actions": [
+        {
+          "tap_line": 215,
+          "target_line": 218,
+          "synthesize_event_line": 219,
+          "observed_target_role": "MenuItem",
+          "observed_target_label": "Select All"
+        }
+      ],
+      "selection_menu_failure_count": 1,
+      "selection_menu_failures": [
+        {
+          "line": 503,
+          "kind": "native-selection-menu-required"
+        }
+      ],
+      "native_trees": [
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/attachments/E0CC53FC-ED6B-484E-A7B6-3071B3A3F73F.txt",
+          "timestamp": 1793834043.287,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/attachments/E0CC53FC-ED6B-484E-A7B6-3071B3A3F73F.txt",
+            "sha256": "e8b83a49a53ae2d718eddf63565401726536e9ed3de37fa1eeca278dd48eed94"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 0,
+              "source": 1,
+              "other": 2
+            },
+            "focused_editable_fields": {
+              "address": 0,
+              "source": 1,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        }
+      ],
+      "selection_failure_snapshots": [],
+      "last_native_tree": {
+        "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+        "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/attachments/E0CC53FC-ED6B-484E-A7B6-3071B3A3F73F.txt",
+        "timestamp": 1793834043.287,
+        "input": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-e7-hide-001/attachments/E0CC53FC-ED6B-484E-A7B6-3071B3A3F73F.txt",
+          "sha256": "e8b83a49a53ae2d718eddf63565401726536e9ed3de37fa1eeca278dd48eed94"
+        },
+        "actors": {
+          "menu": 0,
+          "menu_item": 0,
+          "editable_fields": {
+            "address": 0,
+            "source": 1,
+            "other": 2
+          },
+          "focused_editable_fields": {
+            "address": 0,
+            "source": 1,
+            "other": 0
+          },
+          "menu_item_labels": {
+            "select_all": 0,
+            "cut": 0,
+            "copy": 0
+          }
+        }
+      }
+    },
+    {
+      "run": "ios-hdl-a046-ime-001",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001",
+      "inputs": {
+        "results": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/results.json",
+          "sha256": "604e54a338646f0f0c322c4929137c894e1646d7d2c9a6c6eff09b5eb1a23ece"
+        },
+        "test_log": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/test.log",
+          "sha256": "a35bd27a21cb1fbe92c3cb7721b2949c5c64912d8b78f85b989fc11dc833d5cc"
+        },
+        "attachment_manifest": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/manifest.json",
+          "sha256": "6ae82fb14184ee8a8b13bec4e1e2ff26355dedeb4dcc780a04b0c4536039f73d"
+        }
+      },
+      "producer_reported": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+      "producer_resolved_local": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+      "artifact_identity": {
+        "bundle_id": "thalesmms.logisim.mobile",
+        "version": "0.2.0",
+        "build": "2"
+      },
+      "status": "FAIL",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "NOT_QUALIFIED",
+      "alpha": true,
+      "selected_tests": [
+        "testCompactCosimulationSamplesResetStopAndCompilerFailure"
+      ],
+      "native_select_all_menuitem_action_count": 0,
+      "native_select_all_actions": [],
+      "selection_menu_failure_count": 0,
+      "selection_menu_failures": [],
+      "native_trees": [
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/7891790A-7510-427A-A1D0-179D8C6A6D83.txt",
+          "timestamp": 1793835865.177,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/7891790A-7510-427A-A1D0-179D8C6A6D83.txt",
+            "sha256": "f946d7d54d25e9795b102a5641e16a531e24bd6ab514736a0c01e58ae28cfea7"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 0,
+              "source": 1,
+              "other": 2
+            },
+            "focused_editable_fields": {
+              "address": 0,
+              "source": 1,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        }
+      ],
+      "selection_failure_snapshots": [],
+      "last_native_tree": {
+        "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+        "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/7891790A-7510-427A-A1D0-179D8C6A6D83.txt",
+        "timestamp": 1793835865.177,
+        "input": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-a046-ime-001/attachments/7891790A-7510-427A-A1D0-179D8C6A6D83.txt",
+          "sha256": "f946d7d54d25e9795b102a5641e16a531e24bd6ab514736a0c01e58ae28cfea7"
+        },
+        "actors": {
+          "menu": 0,
+          "menu_item": 0,
+          "editable_fields": {
+            "address": 0,
+            "source": 1,
+            "other": 2
+          },
+          "focused_editable_fields": {
+            "address": 0,
+            "source": 1,
+            "other": 0
+          },
+          "menu_item_labels": {
+            "select_all": 0,
+            "cut": 0,
+            "copy": 0
+          }
+        }
+      }
+    },
+    {
+      "run": "ios-hdl-b90-full-001",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001",
+      "inputs": {
+        "results": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/results.json",
+          "sha256": "30b7486a74f49d4539a35be85ff439e5a312d9434947f86383f441ced73da2a8"
+        },
+        "test_log": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/test.log",
+          "sha256": "37ac30aeeb4d5151119293ccdf962707bf60a9df5145f8a8f56f897b11af9af0"
+        },
+        "attachment_manifest": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/attachments/manifest.json",
+          "sha256": "8e6a3d1a5370db23530affa9536a62302c04839307f88ad0b0e4413d949f4571"
+        }
+      },
+      "producer_reported": "b90a716b8372ce4cb143b082292cdc9bbe42a576",
+      "producer_resolved_local": "b90a716b8372ce4cb143b082292cdc9bbe42a576",
+      "artifact_identity": {
+        "bundle_id": "thalesmms.logisim.mobile",
+        "version": "0.2.0",
+        "build": "2"
+      },
+      "status": "FAIL",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "NOT_QUALIFIED",
+      "alpha": false,
+      "selected_tests": [],
+      "native_select_all_menuitem_action_count": 0,
+      "native_select_all_actions": [],
+      "selection_menu_failure_count": 0,
+      "selection_menu_failures": [],
+      "native_trees": [
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/attachments/8387506B-7C85-42D5-870A-98E970D91AAC.txt",
+          "timestamp": 1793839447.862,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/attachments/8387506B-7C85-42D5-870A-98E970D91AAC.txt",
+            "sha256": "8821319d71cf2d7b51750ddaf5a5c763ceb926f6034e354c172ead344156de0b"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 1
+            },
+            "focused_editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        },
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactImportFailureAndVerilogBlifApply()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/attachments/7A6FAFDD-E250-46F0-822E-5221AA06F3C4.txt",
+          "timestamp": 1793839517.256,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/attachments/7A6FAFDD-E250-46F0-822E-5221AA06F3C4.txt",
+            "sha256": "1d222bf659876e1650eecfdb1a676ca4ebfe4271daf422ece89764d26cb2c5d9"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 1
+            },
+            "focused_editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        }
+      ],
+      "selection_failure_snapshots": [],
+      "last_native_tree": {
+        "test_identifier": "HdlEndToEndTests/testCompactImportFailureAndVerilogBlifApply()",
+        "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/attachments/7A6FAFDD-E250-46F0-822E-5221AA06F3C4.txt",
+        "timestamp": 1793839517.256,
+        "input": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-001/attachments/7A6FAFDD-E250-46F0-822E-5221AA06F3C4.txt",
+          "sha256": "1d222bf659876e1650eecfdb1a676ca4ebfe4271daf422ece89764d26cb2c5d9"
+        },
+        "actors": {
+          "menu": 0,
+          "menu_item": 0,
+          "editable_fields": {
+            "address": 1,
+            "source": 0,
+            "other": 1
+          },
+          "focused_editable_fields": {
+            "address": 1,
+            "source": 0,
+            "other": 0
+          },
+          "menu_item_labels": {
+            "select_all": 0,
+            "cut": 0,
+            "copy": 0
+          }
+        }
+      }
+    },
+    {
+      "run": "ios-hdl-b90-full-002",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002",
+      "inputs": {
+        "results": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/results.json",
+          "sha256": "8a25b8e8f98427805436e2713e39315020f475f6bd22515d10dbf6ab4a4e0c4d"
+        },
+        "test_log": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/test.log",
+          "sha256": "57b590e8ffdb16f8c34f633ec82ede70daf4c42bcce2dee6e7a4a5b4bda778b4"
+        },
+        "attachment_manifest": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/manifest.json",
+          "sha256": "deab948eab6bee2b2220abfad8ee204caadb56249d72df4d7b9931cd01436ec5"
+        }
+      },
+      "producer_reported": "b90a716b8372ce4cb143b082292cdc9bbe42a576",
+      "producer_resolved_local": "b90a716b8372ce4cb143b082292cdc9bbe42a576",
+      "artifact_identity": {
+        "bundle_id": "thalesmms.logisim.mobile",
+        "version": "0.2.0",
+        "build": "2"
+      },
+      "status": "FAIL",
+      "native_execution_gate": "NATIVE_FAIL",
+      "qualification_gate": "NOT_QUALIFIED",
+      "alpha": false,
+      "selected_tests": [],
+      "native_select_all_menuitem_action_count": 0,
+      "native_select_all_actions": [],
+      "selection_menu_failure_count": 2,
+      "selection_menu_failures": [
+        {
+          "line": 334,
+          "kind": "native-selection-menu-required"
+        },
+        {
+          "line": 665,
+          "kind": "native-selection-menu-required"
+        }
+      ],
+      "native_trees": [
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/2604CC68-2879-4090-B6F1-02ED8609CD8C.txt",
+          "timestamp": 1793839857.132,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/2604CC68-2879-4090-B6F1-02ED8609CD8C.txt",
+            "sha256": "3eca6c8b850fe630df56525fecc6ce28ecbbe437b94230bde79eb02340bf62e0"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 1
+            },
+            "focused_editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        },
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactImportFailureAndVerilogBlifApply()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/16497E79-A8C4-45F5-8D5E-8D987213B091.txt",
+          "timestamp": 1793839909.557,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/16497E79-A8C4-45F5-8D5E-8D987213B091.txt",
+            "sha256": "df4f090f00eb56632ecf639cc3ba9cb67d4ef5a214f11811ff68e7e5f38bfe63"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 1
+            },
+            "focused_editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        }
+      ],
+      "selection_failure_snapshots": [
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactCosimulationSamplesResetStopAndCompilerFailure()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/EC47F824-0C2B-4027-9646-3C8F7C900B51.txt",
+          "timestamp": 1793839856.501,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/EC47F824-0C2B-4027-9646-3C8F7C900B51.txt",
+            "sha256": "4d372a74e86873cf5b0aed27b3d40cdb71acd00174dfe76c95e3774afe7e351f"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 1
+            },
+            "focused_editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        },
+        {
+          "test_identifier": "HdlEndToEndTests/testCompactImportFailureAndVerilogBlifApply()",
+          "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/6E788F61-C461-480B-9B34-2F2110824E32.txt",
+          "timestamp": 1793839909.118,
+          "input": {
+            "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/6E788F61-C461-480B-9B34-2F2110824E32.txt",
+            "sha256": "b210dc4113d1e0ede510dad89d6a5f6ae30a18b49b1f1d1f1646c5a48ddcc450"
+          },
+          "actors": {
+            "menu": 0,
+            "menu_item": 0,
+            "editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 1
+            },
+            "focused_editable_fields": {
+              "address": 1,
+              "source": 0,
+              "other": 0
+            },
+            "menu_item_labels": {
+              "select_all": 0,
+              "cut": 0,
+              "copy": 0
+            }
+          }
+        }
+      ],
+      "last_native_tree": {
+        "test_identifier": "HdlEndToEndTests/testCompactImportFailureAndVerilogBlifApply()",
+        "file": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/16497E79-A8C4-45F5-8D5E-8D987213B091.txt",
+        "timestamp": 1793839909.557,
+        "input": {
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-native-proof/outputs/ios-hdl-b90-full-002/attachments/16497E79-A8C4-45F5-8D5E-8D987213B091.txt",
+          "sha256": "df4f090f00eb56632ecf639cc3ba9cb67d4ef5a214f11811ff68e7e5f38bfe63"
+        },
+        "actors": {
+          "menu": 0,
+          "menu_item": 0,
+          "editable_fields": {
+            "address": 1,
+            "source": 0,
+            "other": 1
+          },
+          "focused_editable_fields": {
+            "address": 1,
+            "source": 0,
+            "other": 0
+          },
+          "menu_item_labels": {
+            "select_all": 0,
+            "cut": 0,
+            "copy": 0
+          }
+        }
+      }
+    }
+  ]
+}

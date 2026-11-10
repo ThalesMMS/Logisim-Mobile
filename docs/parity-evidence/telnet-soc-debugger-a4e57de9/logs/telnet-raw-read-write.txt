@@ -1,0 +1,113 @@
+case: raw-read-write telnetMode=false buflen=1024 trigger=rising
+
+=== evolution
+  initial: out=0000000? av=0
+  client receives on connect: []
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01000001 av=1
+  read 0 clk=1: out=01000001 av=1
+  read 0 clk=0: out=01000010 av=1
+  read 1 clk=1: out=01000010 av=1
+  read 1 clk=0: out=01000011 av=1
+  read 2 clk=1: out=01000011 av=1
+  read 2 clk=0: out=11111111 av=0
+  read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=72: out=0000000? av=0
+  write 72 clk=1: out=0000000? av=0
+  write 72 clk=0: out=0000000? av=0
+  in=73: out=0000000? av=0
+  write 73 clk=1: out=0000000? av=0
+  write 73 clk=0: out=0000000? av=0
+  in=0: out=0000000? av=0
+  write 0 clk=1: out=0000000? av=0
+  write 0 clk=0: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+
+=== mobile-companion
+  initial: out=0000000? av=0
+  client receives on connect: []
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01000001 av=1
+! read 0 clk=1: out=01000010 av=1
+  read 0 clk=0: out=01000010 av=1
+! read 1 clk=1: out=01000011 av=1
+  read 1 clk=0: out=01000011 av=1
+! read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=72: out=0000000? av=0
+  write 72 clk=1: out=0000000? av=0
+  write 72 clk=0: out=0000000? av=0
+  in=73: out=0000000? av=0
+  write 73 clk=1: out=0000000? av=0
+  write 73 clk=0: out=0000000? av=0
+  in=0: out=0000000? av=0
+  write 0 clk=1: out=0000000? av=0
+  write 0 clk=0: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+--- sampled at rising edges and socket bytes: SAME
+  client receives on connect: []
+  read 0 sampled out=01000001 av=1
+  read 1 sampled out=01000010 av=1
+  read 2 sampled out=01000011 av=1
+  read 3 sampled out=11111111 av=0
+  write 72 sampled out=0000000? av=0
+  write 73 sampled out=0000000? av=0
+  write 0 sampled out=0000000? av=0
+  write 255 sampled out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+
+=== mobile-jvm
+  initial: out=0000000? av=0
+  client receives on connect: []
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01000001 av=1
+! read 0 clk=1: out=01000010 av=1
+  read 0 clk=0: out=01000010 av=1
+! read 1 clk=1: out=01000011 av=1
+  read 1 clk=0: out=01000011 av=1
+! read 2 clk=1: out=11111111 av=0
+  read 2 clk=0: out=11111111 av=0
+  read 3 clk=1: out=11111111 av=0
+  read 3 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=72: out=0000000? av=0
+  write 72 clk=1: out=0000000? av=0
+  write 72 clk=0: out=0000000? av=0
+  in=73: out=0000000? av=0
+  write 73 clk=1: out=0000000? av=0
+  write 73 clk=0: out=0000000? av=0
+  in=0: out=0000000? av=0
+  write 0 clk=1: out=0000000? av=0
+  write 0 clk=0: out=0000000? av=0
+  in=255: out=0000000? av=0
+  write 255 clk=1: out=0000000? av=0
+  write 255 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [72, 73, 0, 255]
+--- sampled at rising edges and socket bytes: SAME
+  client receives on connect: []
+  read 0 sampled out=01000001 av=1
+  read 1 sampled out=01000010 av=1
+  read 2 sampled out=01000011 av=1
+  read 3 sampled out=11111111 av=0
+  write 72 sampled out=0000000? av=0
+  write 73 sampled out=0000000? av=0
+  write 0 sampled out=0000000? av=0
+  write 255 sampled out=0000000? av=0
+  client receives: [72, 73, 0, 255]

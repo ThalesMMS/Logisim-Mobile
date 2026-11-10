@@ -1,0 +1,50 @@
+{
+  "synthesized": true,
+  "placedAndRouted": true,
+  "bitstreamGenerated": true,
+  "programmed": false,
+  "hardwareVerified": false,
+  "flow": "ice40",
+  "top": "logisim_fpga_top",
+  "status": "passed",
+  "clock_log": [
+    "Info: constraining clock net 'fpga_p0_b0' to 12.29 MHz"
+  ],
+  "stages": [
+    "synthesize",
+    "place-route",
+    "pack"
+  ],
+  "frequency_source": "generated PCF; no frequency_mhz request parameter",
+  "pcf": "set_io fpga_p0_b0 21\nset_frequency fpga_p0_b0 12.288\nset_io fpga_p1_b0 23\n",
+  "artifacts": {
+    "synthesized.json": {
+      "bytes": 396399,
+      "sha256": "c633c85bef4a7855e64e6fc54e34ac84640b157ac9a009d6d0ec2180b7ccfe47"
+    },
+    "routed.asc": {
+      "bytes": 184476,
+      "sha256": "de779d17ff8bcd15b516d9d57bc731605c3aa95fedcf3901e3f0ed01e27831c8"
+    },
+    "design.bin": {
+      "bytes": 32220,
+      "sha256": "7bd2f880d3c5d9ceb6da087d4c5d9126364ef15972b720fdeae393f025f44df6"
+    }
+  },
+  "inputs": {
+    "user_top.v": {
+      "bytes": 85,
+      "sha256": "26caf92b07ca3bdff574f26b33bcc2fa007d7bcf0096d09a930bd5e9548cc404"
+    },
+    "logisim_fpga_top.v": {
+      "bytes": 246,
+      "sha256": "f715d35f088c9a5b03890bad9de10b76e01554727cfdb4947080b6be5b475a2d"
+    },
+    "pins.pcf": {
+      "bytes": 74,
+      "sha256": "3519a034131eb2d95e6c9db0740b8d3f58d5552ac47c25eea2434bd8ef3acb0f"
+    }
+  },
+  "core_sha256": "d2538748e003a7c7f8fa95f2f65144a89a54ca1a9fadca075d1119bf10c1e5d6",
+  "zip_sha256": "f2c97ccee48c8c78c08e70318d422495d8a1ecae88fa10cafd8bff8157b770d4"
+}

@@ -1,0 +1,91 @@
+{
+  "status": "MAIN6CEF_IOS_BUNDLE_THREE_STRICT_ORACLES_PASSED",
+  "sourcePin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "installedAfter": {
+    "status": "INSTALLED_AFTER_NATIVE_PASS_VERIFIED",
+    "nativeCase": "bundle",
+    "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "producer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "testValidation": "85da031e4ed11474c2e763976392729810ef142d",
+    "observed": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/CEE032F0-DB8E-45F1-B272-991B329B6B78/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "debugDylibSha256": "db2c909500c95f345362fdf06f5fd17c3647af9800863fc53d0b6a9bf31647cf",
+    "scope": "Read-only fingerprint after terminal native case; no launch, UI, reinstall or other device touched."
+  },
+  "oracles": {
+    "storage": {
+      "status": "STORAGE_SNAPSHOTS_VALIDATED",
+      "importedProjectId": "6086b81489d71caa348cc9d04fc3fa2f",
+      "restartedProjectId": "6086b81489d71caa348cc9d04fc3fa2f",
+      "reopenedProjectId": "a796d460c21455246db49f725dfd0770",
+      "sourceArchiveSha256": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc",
+      "reopenedSourceArchiveSha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+      "opaqueEntries": {
+        "readme53.txt": "37a856e1f329cc282ca3b931d3b3d4cbc1cecee04c8f74158d49eeceffe50712",
+        "library/unreferenced53.circ": "cc8c3da7dee2fa79f7e88068bb0a882b94711f760eac700ca2b04c84f452ff15"
+      },
+      "reportSha256": "bf600bb9b6cce43e1ad86dced7875085d801baf41c2e126e03ffa4f00a696723",
+      "logSha256": "c022a33c6db1d6b929651e2217d00a4517628f40dfc21a8ccbeabbde148463a3",
+      "exitCode": 0
+    },
+    "desktop-before": {
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/export-before-restart.lsebdl",
+      "nativeUiReceiptSha256": "c06a4ca703d9fb32587031b27d6ac7ecd2d7b0c740e14b67f1825e63d8f4e4ab",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "opaqueEntries": {
+        "readme53.txt": "37a856e1f329cc282ca3b931d3b3d4cbc1cecee04c8f74158d49eeceffe50712",
+        "library/unreferenced53.circ": "cc8c3da7dee2fa79f7e88068bb0a882b94711f760eac700ca2b04c84f452ff15"
+      },
+      "reportSha256": "83b3cc14deaf8f924c6a48039a39e6455963c8fa3949e6457422ebc5aa66e77c",
+      "logSha256": "fb5a8d1149d82408007e4fc7bda78e0fb3b6721a1ff263230bd86600d83ffb09",
+      "exitCode": 0
+    },
+    "desktop-after": {
+      "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+      "artifactPath": "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/export-after-restart.lsebdl",
+      "nativeUiReceiptSha256": "c06a4ca703d9fb32587031b27d6ac7ecd2d7b0c740e14b67f1825e63d8f4e4ab",
+      "desktop": {
+        "status": "PASSED",
+        "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+        "definitions": [
+          "Top53",
+          "Bridge53",
+          "Cell53"
+        ],
+        "topInstances": 2,
+        "outputs": {
+          "out-first53": "00001000",
+          "out-second53": "00000011"
+        }
+      },
+      "opaqueEntries": {
+        "readme53.txt": "37a856e1f329cc282ca3b931d3b3d4cbc1cecee04c8f74158d49eeceffe50712",
+        "library/unreferenced53.circ": "cc8c3da7dee2fa79f7e88068bb0a882b94711f760eac700ca2b04c84f452ff15"
+      },
+      "reportSha256": "3c80f0cee921f9cacee4b88f2799f20ca4e9eaaa5231c700fa2e9e8d0c581f60",
+      "logSha256": "50e2262f4d7763cba180ee60568bf8e45fcf59571b895f3f00300edf68fb2fd1",
+      "exitCode": 0
+    }
+  },
+  "scope": "New iOS main6cef bundle only, no folder admission or older Beta/Android report reuse. Bundle opaque entries required."
+}

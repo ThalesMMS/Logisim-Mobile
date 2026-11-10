@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <lib name="1" desc="#Memory"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="1" loc="(200,200)" name="S-R Flip-Flop">
+      <a name="appearance" val="classic"/>
+      <a name="trigger" val="rising"/>
+    </comp>
+    <comp lib="0" loc="(100,200)" name="Pin"><a name="label" val="set_in"/></comp>
+    <comp lib="0" loc="(100,220)" name="Pin"><a name="label" val="reset_in"/></comp>
+    <comp lib="0" loc="(100,210)" name="Clock">
+      <a name="highDuration" val="2"/>
+      <a name="lowDuration" val="3"/>
+    </comp>
+    <comp lib="0" loc="(170,260)" name="Ground"/>
+    <comp lib="0" loc="(190,260)" name="Ground"/>
+    <comp lib="0" loc="(250,200)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="label" val="q_out"/>
+    </comp>
+    <wire from="(100,200)" to="(160,200)"/>
+    <wire from="(100,210)" to="(160,210)"/>
+    <wire from="(100,220)" to="(160,220)"/>
+    <wire from="(170,230)" to="(170,260)"/>
+    <wire from="(190,230)" to="(190,260)"/>
+    <wire from="(200,200)" to="(250,200)"/>
+    <boardmap boardname="BASYS3">
+      <mc key="/set_in" pmap="647_323_0"/>
+      <mc key="/reset_in" pmap="609_323_0"/>
+      <mc key="/q_out" pmap="649_295_0"/>
+    </boardmap>
+  </circuit>
+</project>

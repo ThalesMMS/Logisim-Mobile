@@ -1,0 +1,38 @@
+{
+  "status": "PASS_ARCHIVE_CHECK",
+  "fullIssueQualification": "NOT_QUALIFIED",
+  "rawFiles": 35,
+  "results": [
+    {
+      "case": "io-release",
+      "status": "PASS",
+      "caseMillis": 7839,
+      "wrapperSeconds": 12.245,
+      "milestoneTimesElapsedMillis": {
+        "button output starts low": 44765770,
+        "held button output is high": 44766103,
+        "label owns input focus": 44767275,
+        "focus loss releases button before pointer UP": 44768552,
+        "button stays released after pointer UP": 44768664
+      },
+      "waitMilestoneClock": "SystemClock.elapsedRealtime",
+      "pointerEventClock": "SystemClock.uptimeMillis",
+      "pointerDownEventTimeUptimeMillis": 44765772,
+      "pointerUpEventTimeUptimeMillis": 44768649,
+      "crossClockComparison": "NOT_PERFORMED",
+      "beforeUpCheckOrder": "Archived source callback and DOWN/after-callback/UP record order",
+      "fullXmlSha256": "44622aa7388737118aaa7650cdb69f2100ab09743b02fafbe6d7ab5439ff2026"
+    },
+    {
+      "case": "pinch",
+      "status": "FAIL",
+      "caseMillis": 31023,
+      "wrapperSeconds": 33.592,
+      "lastWaitOutcome": "RETURNED_FALSE",
+      "sdkMotionEvents": 17,
+      "canvasEventReception": "NOT_OBSERVED",
+      "ratioAnchorAndAfterXmlChecks": "NOT_REACHED"
+    }
+  ],
+  "scope": "Archived evidence only; no new runtime execution or physical-device qualification."
+}

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "OFFLINE_PREFLIGHT_PASSED_AFTER_HARNESS_DEPENDENCY_FIX",
+  "sourceBase": "c8bef175a7c6de0ad2e5a22ea2999df0212414c9",
+  "nativeUiStatus": "NOT_RUN",
+  "scope": "Simulator SDK typecheck, macOS collector checks and mobile/desktop fixture oracle only. No native app execution; actual native exports and reopens remain required.",
+  "checks": {
+    "collector": 14,
+    "receiptContract": 6,
+    "fixtureOutputs": {
+      "FIRST53": "00001000",
+      "SECOND53": "00000011"
+    }
+  },
+  "fixedFailure": "The canonical ObservedProjectXML extension now uses ClipboardReceiverUI; add that existing source to the isolated offline typecheck. No production or central harness change.",
+  "files": {
+    "ios-offline-initial-failure.log": "5d5c2778415973f515b21ca53cfbd4258ce4ef20f294734809a01a7660cbecf9",
+    "ios-offline-initial-failure.json": "c4447fe248498fbab6170abe9e7ada7f108ad6bc752241569dbbe787f9e76943",
+    "fixture-desktop.json": "0530ba0f8a7f3fc5cb2bd3bd72d0a8b1026e350b723d9324e5afb5e9509edab7",
+    "ios-offline-checks.json": "58de748a1056a23ae67447c22dee65b05559f37d04195c9dd3114f1a50d81d58"
+  }
+}

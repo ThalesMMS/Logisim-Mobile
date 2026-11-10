@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "productionPin": "85da031e4ed11474c2e763976392729810ef142d",
+  "applicationVariant": "Android Beta E2E (reported by scenario owner)",
+  "appPackage": "thalesmms.logisim.mobile.e2e",
+  "apkSha256FromScenarioManifest": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+  "scenarioManifestSha256Observed": "6a7f8290ea52dbb3982d2b9ae3b7fcaf8da79db8c97d6d79d0f52690f73907c6",
+  "harnessGitHead": "8cf98577877f368af927ace72450b03d2fb5e512",
+  "scenario": "sequential",
+  "appLanguage": "en",
+  "artifact": "/Users/thales/GitHub/logisim-mobile-worktrees/android-beta-ui-exec/outputs/85da031e-sequential-en-r1/sap1-at-half-cycle-56.png",
+  "imageSha256": "373aebbb080a768f9261c7038e16c9a44b7ceaf7e2d11106c81081d2bebc73d1",
+  "dimensions": [
+    1080,
+    2400
+  ],
+  "imageUnchangedDuringCheck": true,
+  "oracleSourceCommit": "b078cbe86fa5ac83f7d990b2d7afc4d18355a5c9",
+  "oracleSourceSha256": "fdd9142df51e62c8fbda7fc5b88c77575f3d2a7c876437b009823f745dac213b",
+  "method": "Original PNG pixels decoded by Java ImageIO. Four-connected opaque red regions classified by geometry; no accessibility or simulation values enter the pixel oracle.",
+  "digitRois": [
+    [
+      800,
+      1170,
+      842,
+      1228
+    ],
+    [
+      848,
+      1170,
+      892,
+      1228
+    ]
+  ],
+  "roiValidation": "Inspected the new full-resolution capture and enumerated its red pixel regions before choosing ROIs. Observed digit bounds: left x804..837/y1174..1224, right x852..886/y1174..1224; all regions lie strictly inside the new explicit ROIs. No old ROI or changed tolerance was assumed.",
+  "unchangedPixelThreshold": {
+    "alphaMin": 200,
+    "redGreaterThan": 180,
+    "greenLessThan": 50,
+    "blueLessThan": 50,
+    "minimumRegionPixelsExclusive": 2
+  },
+  "command": [
+    "java",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/display-renderer/scripts/SevenSegmentPixelOracle.java",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/android-beta-ui-exec/outputs/85da031e-sequential-en-r1/sap1-at-half-cycle-56.png",
+    "800",
+    "1170",
+    "842",
+    "1228",
+    "0",
+    "848",
+    "1170",
+    "892",
+    "1228",
+    "8"
+  ],
+  "digits": [
+    {
+      "digit": "0",
+      "activeSegments": "abcdef",
+      "redRegions": 6,
+      "regions": [
+        {
+          "left": 810,
+          "top": 1174,
+          "right": 831,
+          "bottom": 1177,
+          "pixels": 88
+        },
+        {
+          "left": 804,
+          "top": 1176,
+          "right": 807,
+          "bottom": 1198,
+          "pixels": 92
+        },
+        {
+          "left": 834,
+          "top": 1176,
+          "right": 837,
+          "bottom": 1198,
+          "pixels": 92
+        },
+        {
+          "left": 804,
+          "top": 1201,
+          "right": 807,
+          "bottom": 1222,
+          "pixels": 88
+        },
+        {
+          "left": 834,
+          "top": 1201,
+          "right": 837,
+          "bottom": 1222,
+          "pixels": 88
+        },
+        {
+          "left": 810,
+          "top": 1221,
+          "right": 831,
+          "bottom": 1224,
+          "pixels": 88
+        }
+      ]
+    },
+    {
+      "digit": "8",
+      "activeSegments": "abcdefg",
+      "redRegions": 7,
+      "regions": [
+        {
+          "left": 858,
+          "top": 1174,
+          "right": 880,
+          "bottom": 1177,
+          "pixels": 92
+        },
+        {
+          "left": 852,
+          "top": 1176,
+          "right": 856,
+          "bottom": 1198,
+          "pixels": 115
+        },
+        {
+          "left": 882,
+          "top": 1176,
+          "right": 886,
+          "bottom": 1198,
+          "pixels": 115
+        },
+        {
+          "left": 858,
+          "top": 1197,
+          "right": 880,
+          "bottom": 1200,
+          "pixels": 92
+        },
+        {
+          "left": 852,
+          "top": 1201,
+          "right": 856,
+          "bottom": 1222,
+          "pixels": 110
+        },
+        {
+          "left": 882,
+          "top": 1201,
+          "right": 886,
+          "bottom": 1222,
+          "pixels": 110
+        },
+        {
+          "left": 858,
+          "top": 1221,
+          "right": 880,
+          "bottom": 1224,
+          "pixels": 92
+        }
+      ]
+    }
+  ],
+  "negativeControl": {
+    "expected": "E",
+    "exitCode": 1,
+    "observedActiveSegments": "abcdefg",
+    "rejected": true
+  },
+  "status": "PASS",
+  "scope": "Verifies visible 08 at half-cycle 56 in this Beta screenshot only. Does not qualify the complete scenario suite, other images/palettes, or physical hardware. No ADB, emulator, APK, production code, main branch or Gradle interaction."
+}

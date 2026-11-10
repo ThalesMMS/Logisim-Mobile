@@ -1,0 +1,306 @@
+{
+  "archive": "ios-final-6cef-peer-001",
+  "runID": "5f364710641a",
+  "localSourceArchive": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-peer-001",
+  "summaryExtraction": [
+    "xcrun",
+    "xcresulttool",
+    "get",
+    "test-results",
+    "summary",
+    "--path",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-peer-001/editor.xcresult",
+    "--format",
+    "json"
+  ],
+  "historicalPaths": "Paths in copied JSON are metadata only and are never followed by the verifier.",
+  "artifacts": [
+    {
+      "source": "results.json",
+      "copy": "evidence/results.json",
+      "bytes": 27368,
+      "sha256": "16b8f4e3feb3b07229655546c0e71a3bf99e9cacb3de76460dbb3bdaf768bef2",
+      "purpose": "Original terminal results; selected PASS and suite PARTIAL"
+    },
+    {
+      "source": "test.log",
+      "copy": "evidence/test.log",
+      "bytes": 237459,
+      "sha256": "f99085ec16054ca82a55920c27575593105c6349da2f70426feac436c4a529d3",
+      "purpose": "Actual Copy/Edit/Save/restart/conflict UI actions and terminal case PASS"
+    },
+    {
+      "source": "attachments/manifest.json",
+      "copy": "evidence/attachment-manifest.json",
+      "bytes": 59843,
+      "sha256": "98f1baf9c6ca87d2bbd36096d790e6717915a4291cc12079312b8114c5021e68",
+      "purpose": "Original attachment identities"
+    },
+    {
+      "source": "independent-postflight.json",
+      "copy": "evidence/independent-postflight.json",
+      "bytes": 3471,
+      "sha256": "6e47714e86b206e7889d668d088015d60c0a951bebf9662e1f73f36da886f660",
+      "purpose": "Coordinator postflight byte checks and installed FINAL fingerprint"
+    },
+    {
+      "source": "documents/external-peer.json",
+      "copy": "evidence/peer-configuration.json",
+      "bytes": 888,
+      "sha256": "46f6d4f6f702b2142aac3118cb91d6dcf1b61e033444f90ed9a1a8c55365a393",
+      "purpose": "Old-run peer provenance in a distinct local app container"
+    },
+    {
+      "source": "documents/external-peer-receipt.json",
+      "copy": "evidence/native-peer-receipt.json",
+      "bytes": 2029,
+      "sha256": "7c07dd2bc0e24d13399c1feebe237b2eefee9f47d5dab0a1c71db4f05aeb81d5",
+      "purpose": "In-test receipt and four stage hashes"
+    },
+    {
+      "source": "attachments/A7D4B37F-8BD1-4DA4-9BE1-18F85A6E8F48.txt",
+      "copy": "evidence/native-peer-receipt-attachment.txt",
+      "bytes": 2029,
+      "sha256": "7c07dd2bc0e24d13399c1feebe237b2eefee9f47d5dab0a1c71db4f05aeb81d5",
+      "purpose": "Original native receipt attachment"
+    },
+    {
+      "source": "external-peer-documents/control.circ",
+      "copy": "evidence/peer/control-final.circ",
+      "bytes": 1375,
+      "sha256": "f0cd987911c1a965ca95f1a42c3287bee70ba3d08900a5d09a7d33eea0da1604",
+      "purpose": "Archived actual final control bytes"
+    },
+    {
+      "source": "external-peer-documents/peer.circ",
+      "copy": "evidence/peer/peer-final.circ",
+      "bytes": 1650,
+      "sha256": "a0ea1ac33f3041d3fc2a05c089a2f4d096e12f38648b71cfda3de20a793362d7",
+      "purpose": "Archived actual peer bytes after conflict"
+    },
+    {
+      "source": "harness/ExternalProviderEndToEndTests.swift",
+      "copy": "evidence/harness/ExternalProviderEndToEndTests.swift",
+      "bytes": 21823,
+      "sha256": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+      "purpose": "Executed source snapshot and recorded source fingerprint"
+    },
+    {
+      "source": "harness/NativeFilesPeerNavigator.swift",
+      "copy": "evidence/harness/NativeFilesPeerNavigator.swift",
+      "bytes": 11314,
+      "sha256": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+      "purpose": "Executed source snapshot and recorded source fingerprint"
+    },
+    {
+      "source": "harness/ObservedProjectXML.swift",
+      "copy": "evidence/harness/ObservedProjectXML.swift",
+      "bytes": 3639,
+      "sha256": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+      "purpose": "Executed source snapshot and recorded source fingerprint"
+    },
+    {
+      "source": "harness/NativeUIHarness.swift",
+      "copy": "evidence/harness/NativeUIHarness.swift",
+      "bytes": 14507,
+      "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "purpose": "Executed source snapshot and recorded source fingerprint"
+    },
+    {
+      "source": "harness/NativeTextReplacement.swift",
+      "copy": "evidence/harness/NativeTextReplacement.swift",
+      "bytes": 10663,
+      "sha256": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3",
+      "purpose": "Executed source snapshot and recorded source fingerprint"
+    },
+    {
+      "source": "harness/ClipboardReceiverUI.swift",
+      "copy": "evidence/harness/ClipboardReceiverUI.swift",
+      "bytes": 4152,
+      "sha256": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+      "purpose": "Executed source snapshot and recorded source fingerprint"
+    },
+    {
+      "source": "harness/project.yml",
+      "copy": "evidence/harness/project.yml",
+      "bytes": 2322,
+      "sha256": "2c389877b6766d84b8b3215f45abec477115d69b6077217617aae2827211f7cc",
+      "purpose": "Archived test bundle configuration; paths remain historical metadata"
+    },
+    {
+      "source": "harness/Run.json",
+      "copy": "evidence/harness/Run.json",
+      "bytes": 20453,
+      "sha256": "66bc9368b80961f377869f4e9a084b228e5cc89cf5d53d007904ec6b9cea9aef",
+      "purpose": "Archived test bundle configuration; paths remain historical metadata"
+    },
+    {
+      "source": "harness/TestInfo.plist",
+      "copy": "evidence/harness/TestInfo.plist",
+      "bytes": 809,
+      "sha256": "e6cd9afed36cf415a11bf9ebc7d01cbb46455929d10064649df8f7d7f5cbbf57",
+      "purpose": "Archived test bundle configuration; paths remain historical metadata"
+    },
+    {
+      "source": "attachments/1269E84F-BC95-43D4-AE89-DF44AB0FF982.xml",
+      "copy": "evidence/xml/peer-copy-baseline.circ",
+      "bytes": 1567,
+      "sha256": "48e5ea375be43cdc473f951927d492a834d5c1cbe7bc2c17c5c6616ec2d47354",
+      "purpose": "Complete observed editor XML: peer-copy-baseline"
+    },
+    {
+      "source": "attachments/9FA1CC65-6461-43DD-9D4A-B73A4E3D3352.xml",
+      "copy": "evidence/xml/peer-copy-edited.circ",
+      "bytes": 1583,
+      "sha256": "f67433f0968fc5964a28e41253c9fbc6dda10ce0a1076c82f942f978a7699989",
+      "purpose": "Complete observed editor XML: peer-copy-edited"
+    },
+    {
+      "source": "attachments/42C2A17B-BEFA-4004-89C1-B11B434B89B9.xml",
+      "copy": "evidence/xml/peer-external-baseline.circ",
+      "bytes": 1567,
+      "sha256": "48e5ea375be43cdc473f951927d492a834d5c1cbe7bc2c17c5c6616ec2d47354",
+      "purpose": "Complete observed editor XML: peer-external-baseline"
+    },
+    {
+      "source": "attachments/36DC6381-1B65-41D4-AE94-64483106E13B.xml",
+      "copy": "evidence/xml/peer-external-edited.circ",
+      "bytes": 1583,
+      "sha256": "7a2447c4aef8bd89d19d936c1e9eae43c0e4acc6d2add2fc8f9eb149e88b2b31",
+      "purpose": "Complete observed editor XML: peer-external-edited"
+    },
+    {
+      "source": "attachments/5C7C4AC8-82C3-4BC8-9FCB-0069D03CA2CA.xml",
+      "copy": "evidence/xml/peer-restored-after-restart.circ",
+      "bytes": 1583,
+      "sha256": "7a2447c4aef8bd89d19d936c1e9eae43c0e4acc6d2add2fc8f9eb149e88b2b31",
+      "purpose": "Complete observed editor XML: peer-restored-after-restart"
+    },
+    {
+      "source": "attachments/7FB9C810-0928-4BB0-B9C8-BC89D66DB4DD.xml",
+      "copy": "evidence/xml/peer-restarted-edited.circ",
+      "bytes": 1586,
+      "sha256": "77113b1fb40fd34f87eab526654d2515a17916820f30634790d504b186f39c15",
+      "purpose": "Complete observed editor XML: peer-restarted-edited"
+    },
+    {
+      "source": "attachments/7AE4416C-DB3D-4DD3-B133-A92C947FEBA6.xml",
+      "copy": "evidence/xml/peer-local-after-conflict.circ",
+      "bytes": 1586,
+      "sha256": "77113b1fb40fd34f87eab526654d2515a17916820f30634790d504b186f39c15",
+      "purpose": "Complete observed editor XML: peer-local-after-conflict"
+    },
+    {
+      "source": "attachments/9F9137B3-D8B5-47CD-A484-450A9FA4B2D6",
+      "copy": "evidence/peer/original.circ",
+      "bytes": 1375,
+      "sha256": "f0cd987911c1a965ca95f1a42c3287bee70ba3d08900a5d09a7d33eea0da1604",
+      "purpose": "Actual initial peer input attached before Copy"
+    },
+    {
+      "source": "attachments/5B657E69-3342-42DE-BD73-8ECB8FCF38EC",
+      "copy": "evidence/peer/conflicting-revision.circ",
+      "bytes": 1650,
+      "sha256": "a0ea1ac33f3041d3fc2a05c089a2f4d096e12f38648b71cfda3de20a793362d7",
+      "purpose": "Exact external revision deliberately injected by the harness"
+    },
+    {
+      "source": "attachments/AD14D451-9646-4579-B557-AED3310EF2EB.txt",
+      "copy": "evidence/ui/first-save-tree.txt",
+      "bytes": 14717,
+      "sha256": "acc49ab44977c105505b56ca5f8833c6ef7e25c042079e6f161b66e09b6ef41b",
+      "purpose": "Saved notice before terminating Logisim"
+    },
+    {
+      "source": "attachments/D0B94AFA-22C1-4B3B-88CC-F7E19AFE58CB.png",
+      "copy": "evidence/ui/first-save.png",
+      "bytes": 252291,
+      "sha256": "750ff8031ddf5a073107e37fb63da68dd3052af4733273f572f77f94ba1ef1f1",
+      "purpose": "UI after the first real Save"
+    },
+    {
+      "source": "attachments/83B1007E-3C68-4C20-B249-95F553F7572E.txt",
+      "copy": "evidence/ui/second-save-tree.txt",
+      "bytes": 14725,
+      "sha256": "5e6ea0348a5a24bf3e746e855063968e5a6ef274108766e053e964d0b6b1c764",
+      "purpose": "UI after the post-restart Save and before conflict injection"
+    },
+    {
+      "source": "attachments/17041F96-1254-4CDA-958F-804AC61BA96E.png",
+      "copy": "evidence/ui/second-save.png",
+      "bytes": 252822,
+      "sha256": "6152a00c5e9fa37ecf6aaec29012519162dc9102b832253d5282b27687627c42",
+      "purpose": "UI after the second real Save"
+    },
+    {
+      "source": "attachments/C81FB427-4FE0-41D5-A3E2-DC98E407CA62.txt",
+      "copy": "evidence/ui/conflict-tree.txt",
+      "bytes": 2451,
+      "sha256": "906a67de650a2404f26d0c074ed4a77a8f72adb09ff0685b47dc6674e06c328e",
+      "purpose": "Actual production conflict notice"
+    },
+    {
+      "source": "attachments/4A8A1DC9-7B17-484E-9310-1FC5B39882EE.png",
+      "copy": "evidence/ui/conflict.png",
+      "bytes": 240781,
+      "sha256": "e566135d77b8a212e5baaa14f223e728f09332b8dfeb8c1c6179cfdcf5339bd6",
+      "purpose": "Actual conflict UI screenshot"
+    },
+    {
+      "source": "attachments/CFDEEA5E-582A-45EB-9485-DBCDA900B863.txt",
+      "copy": "evidence/ui/completed-phase.txt",
+      "bytes": 104,
+      "sha256": "6df31c8d9288547cda6303bdc2872dbdca7eff48a440db74288338ec1a929088",
+      "purpose": "Completed phase and grantRevocation NOT_TESTED"
+    },
+    {
+      "source": "attachments/57BAC4AA-E8A4-4677-AA85-5E91983E0F0D.txt",
+      "copy": "evidence/ui/copy-native-picker.txt",
+      "bytes": 59116,
+      "sha256": "be9bf32fc1062f83a1e49b8dcfcd496581284bc9ca27fbdfcd9ab7b14ce65dc5",
+      "purpose": "Observed native Files peer selection: copy"
+    },
+    {
+      "source": "attachments/D5701637-3BBF-4771-BC39-641D2D235DE2.png",
+      "copy": "evidence/ui/copy-native-picker.png",
+      "bytes": 208249,
+      "sha256": "2e9a046c65d052127f8657d4228c0ddca411c0e234a1573b4b26aae274e2c03c",
+      "purpose": "Observed native Files peer selection: copy"
+    },
+    {
+      "source": "attachments/A430364A-8CA4-4DA5-A3CA-647520F558BB.txt",
+      "copy": "evidence/ui/edit-native-picker.txt",
+      "bytes": 41894,
+      "sha256": "d800d4c6343ee354a52d13eb7154aa5f21b45a4f24a35dda8aedd6b632cff99b",
+      "purpose": "Observed native Files peer selection: edit"
+    },
+    {
+      "source": "attachments/F303E844-0330-4E27-BF97-76790CEC7AC3.png",
+      "copy": "evidence/ui/edit-native-picker.png",
+      "bytes": 208334,
+      "sha256": "810f884665c5249f7c8f29d0ca68bd9e0fe99e31c97d4d01c5bf4606e72da489",
+      "purpose": "Observed native Files peer selection: edit"
+    },
+    {
+      "source": "editor.xcresult (read-only xcresulttool get test-results summary)",
+      "copy": "evidence/xcresult-summary.json",
+      "bytes": 1031,
+      "sha256": "89dcb1aab1a5b41ddf8aa8e1a0dce02841f3d7bba6b3d05ac478a89755ae840c",
+      "purpose": "Authoritative local xcresult testcase count and device summary"
+    },
+    {
+      "source": "attachments/CAF5C5C5-D43D-4FD0-BF44-072C76BF0E3F",
+      "copy": "evidence/peer/control-final-attachment.circ",
+      "bytes": 1375,
+      "sha256": "f0cd987911c1a965ca95f1a42c3287bee70ba3d08900a5d09a7d33eea0da1604",
+      "purpose": "Actual final control captured by native teardown"
+    },
+    {
+      "source": "attachments/3943CCBF-053C-49BD-9DC9-4899CCA7C9E1",
+      "copy": "evidence/peer/peer-final-attachment.circ",
+      "bytes": 1650,
+      "sha256": "a0ea1ac33f3041d3fc2a05c089a2f4d096e12f38648b71cfda3de20a793362d7",
+      "purpose": "Actual final peer captured by native teardown"
+    }
+  ]
+}

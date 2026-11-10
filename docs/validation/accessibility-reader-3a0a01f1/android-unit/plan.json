@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "scenario": "talkback-navigation-tools-activation-5556-v1",
+  "status": "PREPARED_ONLY",
+  "root_runtime_lease": "One unit on emulator-5556 after Root explicitly returned it; no other device",
+  "product_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "expected_apks": {
+    "app": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973",
+    "test": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b",
+    "helper": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+  },
+  "observer_source": "96a59ba4b1dcf37ceb97ccabd6f5a34d9d759994",
+  "observation": "Always SDK preserve_accessibility_services=True for app trees; screenshots/video for system Settings and TalkBack overlays; no CLI dump or MixedInput",
+  "public_changes_allowed": [
+    "Speech display checkbox through public TalkBack settings while reader is disabled",
+    "Use TalkBack toggle and required standard confirmation through public Settings",
+    "Public UI navigation necessary for that setup; no promise of opaque tutorial byte identity"
+  ],
+  "settings_unchanged": [
+    "Font scale",
+    "Rotation",
+    "IME selection",
+    "Log verbosity",
+    "App preferences and circuit fixture"
+  ],
+  "preflight": [
+    "Revalidate installed app, test and helper bytes plus compiled manifests",
+    "Capture public settings, reader/service state, display, locale, font, rotation and IME",
+    "Confirm reader initially disabled and record Speech display state before changing it",
+    "Prepare paused existing app without fixture/import/SystemOpen/install/build"
+  ],
+  "reader_actions": [
+    "Two single-finger right swipes with distinct app accessibility focus and corresponding actual reader speech",
+    "At most 30 further observed swipes to the canonical Project tools control",
+    "Exactly one double-tap at an observed neutral app point outside the focused button, requiring actual menu appearance and reader speech"
+  ],
+  "transport": "Public input touchscreen swipe/tap requests; exit zero alone proves no reader processing. Observe every action before the next. A failed gesture ends the case; no retap, direct control tap, setText, performAction or transport fallback.",
+  "evidence": [
+    "Continuous video containing the TalkBack speech display",
+    "Complete app snapshots and metadata from the non-suppressing SDK observer",
+    "Actual focused node labels and bounds correlated with speech and menu",
+    "Every input request and host timestamps",
+    "Screenshots of every changed public control before and after",
+    "Installed APK hashes before and after"
+  ],
+  "restoration": [
+    "Restore TalkBack and Speech display to recorded public values",
+    "Restore every other public control actually changed and disclose any unplanned setting request",
+    "Confirm service state and settings; return the lane explicitly",
+    "Do not claim opaque internal preferences or tutorial state are byte-identical"
+  ],
+  "fail_stop": [
+    "Missing preflight identity or wrong artifact",
+    "Configuration requires an unapproved setting",
+    "No actual reader speech evidence",
+    "Gesture not observed in focus and speech",
+    "Missing or ambiguous target focus",
+    "No Tools menu after the one neutral double-tap",
+    "Observer fallback or suppressing instrumentation",
+    "Restoration cannot be verified"
+  ],
+  "not_qualified": [
+    "Create/connect/edit/remove/simulate/save/reopen workflow",
+    "Physical touchscreen or hardware reader behavior",
+    "Audio quality if only speech display is retained",
+    "Complete issue28 acceptance"
+  ]
+}

@@ -1,0 +1,46 @@
+LOGISIM-PROJECT
+4
+5fcbc3c69ccbaaba
+
+32:895441ae3c63564f9b213ca239323b4225:IOS-E2E-3e2abb693068-warm1:313:179384487285513:17938448734785:false1:21:01579:<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0-dev" version="1.0">
+  <lib desc="#Wiring" name="0" />
+  <lib desc="#Gates" name="1" />
+  <main name="IOS-E2E-3e2abb693068-warm"/>
+  <circuit name="IOS-E2E-3e2abb693068-warm" id="IOS-E2E-3e2abb693068-warm">
+    <comp lib="0" loc="(100,100)" name="Pin" logisim-mobile-id="import-1">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="E2E_IN"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelloc" val="west"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <comp lib="1" loc="(200,100)" name="NOT Gate" logisim-mobile-id="import-2">
+      <a name="facing" val="east"/>
+      <a name="width" val="1"/>
+      <a name="size" val="30"/>
+      <a name="out" val="01"/>
+      <a name="label" val="E2E_NOT"/>
+    </comp>
+    <comp lib="0" loc="(300,100)" name="Pin" logisim-mobile-id="import-3">
+      <a name="facing" val="west"/>
+      <a name="type" val="output"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="label" val="E2E_OUT"/>
+      <a name="behavior" val="simple"/>
+      <a name="initial" val="0x0"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="labelloc" val="west"/>
+      <a name="radix" val="2"/>
+    </comp>
+    <wire from="(100,100)" to="(170,100)"/>
+    <wire from="(200,100)" to="(300,100)"/>
+  </circuit>
+</project>
+25:IOS-E2E-3e2abb693068-warm1:015:LENGTH_PREFIXED1:128:25:IOS-E2E-3e2abb693068-warm8:3.5032689:-8.0522888:435.83661:01:01:0

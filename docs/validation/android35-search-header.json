@@ -1,0 +1,50 @@
+{
+  "status": "SOURCE_PREPARED",
+  "nativeStatus": "NOT_RUN",
+  "base": "1bb155453a05acca8585d5da15c182c08bda41d0",
+  "changedEditingMethods": [
+    "search"
+  ],
+  "unchangedMethodCount": 30,
+  "files": {
+    "scripts/android_editing_scenarios.py": {
+      "bytes": 28229,
+      "sha256": "2fdfec7f08893b8db60c91be4ed830faddbb273aa369ee0fd5bec7b0f5e7d044"
+    },
+    "scripts/test_android_editing_scenarios.py": {
+      "bytes": 29290,
+      "sha256": "73a61f866db02e1526cd94491e67a2415fea814732964bb34d50704026032225"
+    },
+    "scripts/e2e-android.py": {
+      "bytes": 68215,
+      "sha256": "2d5578df30d1e32d0a6e29c2890c78f48f8792cffab84cc76761c2f2db169466"
+    },
+    "scripts/android_ui.py": {
+      "bytes": 45996,
+      "sha256": "24fd80149ebb6c803a474c741065d3db3cc78f54b9fd03bdd3b48b4d28b0ab1e"
+    },
+    "fixtures/user-scenarios/editor-actions-v1.json": {
+      "bytes": 9468,
+      "sha256": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9"
+    },
+    "scripts/user_scenario_contract.py": {
+      "bytes": 7203,
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AccessibleCircuitExplorer.kt": {
+      "bytes": 22507,
+      "sha256": "1f47ab956fcfff5cad4217c528b3d8a963e0376b18fd99fd72e16e5c0d78f0aa"
+    }
+  },
+  "checks": {
+    "pythonSelectorChecksPassed": 33,
+    "originalSearchR2GeometryNegative": {
+      "testsRun": 1,
+      "expectedFailures": 1,
+      "unexpectedErrors": 0
+    },
+    "productionAndOraclesUnchanged": true,
+    "independentReview": "Approved source-only: short backward motion, scope, geometry, text policy and retained observations; no native execution."
+  },
+  "scope": "Private Search header preparation only; generic reveal/swipe, text policy and four scenario bodies remain unchanged."
+}

@@ -1,0 +1,102 @@
+commit 0605b5a58c9539509c287134bc36d28c3aeec778
+Author:     Thales Santos <tmmscomp@gmail.com>
+AuthorDate: Thu Nov 5 09:34:54 2026 -0300
+Commit:     Thales Santos <tmmscomp@gmail.com>
+CommitDate: Thu Nov 5 09:34:54 2026 -0300
+
+    test(ios): preserve raw bytes in fixture source proof
+    
+    Read source without newline normalization and reject CRLF changes in the mutation body. Add real negative checks for guard, store and policy changes.
+    
+    28 host tests pass. This test-only follow-up does not change the runtime files or rebuild diagnostic producer969f2d08; the signed artifact remains pinned to that original producer.
+
+diff --git a/scripts/ios_fileprovider_revocation/run-modify-diagnostic-checks.py b/scripts/ios_fileprovider_revocation/run-modify-diagnostic-checks.py
+index d567ecc0..b47e2db8 100644
+--- a/scripts/ios_fileprovider_revocation/run-modify-diagnostic-checks.py
++++ b/scripts/ios_fileprovider_revocation/run-modify-diagnostic-checks.py
+@@ -37,7 +37,7 @@ def verify_source():
+         old = baseline(relative)
+         assert (ROOT / relative).read_bytes() == old, relative
+         protected[relative] = sha(old)
+-    provider = (ROOT / "Provider/RevocationFileProvider.swift").read_text()
++    provider = (ROOT / "Provider/RevocationFileProvider.swift").read_bytes().decode("utf-8")
+     old = baseline("Provider/RevocationFileProvider.swift").decode()
+     mutation_body = "{ beginCommit in\n"
+     end = "\n    func deleteItem("
+@@ -54,7 +54,7 @@ def verify_source():
+     expected_start = expected_start.replace('let details = ["requestID": requestID]',
+                                             'let details = requestDetails.merging(["requestID": requestID]) { _, new in new }', 1)
+     assert actual_start == expected_start, "perform changed beyond event details"
+-    item = (ROOT / "Provider/RevocationProviderItem.swift").read_text()
++    item = (ROOT / "Provider/RevocationProviderItem.swift").read_bytes().decode("utf-8")
+     assert "var contentPolicy: NSFileProviderContentPolicy { .downloadLazilyAndEvictOnRemoteUpdate }" in item
+     assert "fixtureDeclaredContentPolicyRaw: NSFileProviderContentPolicy.downloadLazilyAndEvictOnRemoteUpdate.rawValue" in provider
+     return {"baseline": BASE, "protectedFilesByteIdentical": protected,
+diff --git a/scripts/ios_fileprovider_revocation/test_modify_diagnostic_proof.py b/scripts/ios_fileprovider_revocation/test_modify_diagnostic_proof.py
+new file mode 100644
+index 00000000..80fd2b51
+--- /dev/null
++++ b/scripts/ios_fileprovider_revocation/test_modify_diagnostic_proof.py
+@@ -0,0 +1,62 @@
++"""Exercise the source proof against changed runtime bytes, without building the fixture."""
++import importlib.util
++from pathlib import Path
++import shutil
++import tempfile
++import unittest
++from unittest.mock import patch
++
++
++HERE = Path(__file__).resolve().parent
++SPEC = importlib.util.spec_from_file_location("modify_proof", HERE / "run-modify-diagnostic-checks.py")
++PROOF = importlib.util.module_from_spec(SPEC)
++SPEC.loader.exec_module(PROOF)
++
++
++class SourceProofTests(unittest.TestCase):
++    def setUp(self):
++        self.temporary = tempfile.TemporaryDirectory(prefix="logisim-modify-proof-")
++        self.addCleanup(self.temporary.cleanup)
++        self.fixture = Path(self.temporary.name) / "fixture"
++        shutil.copytree(HERE, self.fixture, ignore=shutil.ignore_patterns("__pycache__"))
++        self.provider = self.fixture / "Provider/RevocationFileProvider.swift"
++
++    def verify(self):
++        with patch.object(PROOF, "ROOT", self.fixture):
++            return PROOF.verify_source()
++
++    def test_original_bytes_pass(self):
++        self.assertTrue(self.verify()["mutationBodyByteIdentical"])
++
++    def test_crlf_mutation_body_is_rejected(self):
++        data = self.provider.read_bytes()
++        marker = b"{ beginCommit in\n"
++        start = data.index(marker) + len(marker)
++        end = data.index(b"\n    func deleteItem(", start)
++        body = data[start:end].replace(b"\n", b"\r\n")
++        self.provider.write_bytes(data[:start] + body + data[end:])
++        with self.assertRaisesRegex(AssertionError, "Mutation body changed"):
++            self.verify()
++
++    def test_changed_content_guard_is_rejected(self):
++        data = self.provider.read_bytes().replace(b"guard changedFields.contains(.contents), let newContents else",
++                                                 b"guard let newContents else", 1)
++        self.provider.write_bytes(data)
++        with self.assertRaisesRegex(AssertionError, "Mutation body changed"):
++            self.verify()
++
++    def test_changed_store_is_rejected(self):
++        store = self.fixture / "Shared/FixtureStore.swift"
++        store.write_bytes(store.read_bytes() + b"\n")
++        with self.assertRaisesRegex(AssertionError, "Shared/FixtureStore.swift"):
++            self.verify()
++
++    def test_changed_policy_is_rejected(self):
++        item = self.fixture / "Provider/RevocationProviderItem.swift"
++        item.write_bytes(item.read_bytes().replace(b".downloadLazilyAndEvictOnRemoteUpdate", b".inherited"))
++        with self.assertRaisesRegex(AssertionError, "Provider/RevocationProviderItem.swift"):
++            self.verify()
++
++
++if __name__ == "__main__":
++    unittest.main()

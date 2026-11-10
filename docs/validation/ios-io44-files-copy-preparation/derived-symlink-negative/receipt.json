@@ -1,0 +1,19 @@
+{
+  "scope": "Foundation source-only; no Native/UI",
+  "reconstruction": "Current working source with exactly the two newly inserted fixture.resolvingSymlinksInPath checks removed. This reproduces the pre-fix behavior; no original raw log was retained by the earlier temporary execution.",
+  "derivedSourceSHA256": "c78548384e85939614cd7c3c354deeb64263eec7b265993b0296697fc5ae55a6",
+  "currentSourceSHA256": "4ace912a1b1c4edfbcfc902121bf04027a9f855d934f5c786b6362917f370999",
+  "fixtureSHA256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+  "buildCommand": [
+    "swiftc",
+    "-module-cache-path",
+    "/tmp/logisim-io-copy-symlink-review-red-rfnqmr29/cache",
+    "/tmp/logisim-io-copy-symlink-review-red-rfnqmr29/FilesCopySource-before.swift",
+    "/tmp/logisim-io-copy-symlink-review-red-rfnqmr29/main.swift",
+    "-o",
+    "/tmp/logisim-io-copy-symlink-review-red-rfnqmr29/review"
+  ],
+  "buildExit": 0,
+  "runExit": 0,
+  "observed": "ACCEPTED fixture symlink introduced after init; selected bytes verified\n"
+}

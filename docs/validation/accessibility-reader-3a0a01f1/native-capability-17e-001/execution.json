@@ -1,0 +1,22 @@
+{
+  "exit_code": 0,
+  "duration_seconds": 14.073,
+  "command": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "xcodebuild",
+    "-xctestrun",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/outputs/voiceover-service-prepared-003/DerivedData/Build/Products/VoiceOverProbe_iphonesimulator27.2-arm64.xctestrun",
+    "-destination",
+    "id=20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+    "-resultBundlePath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/outputs/ios-voiceover-capability-3a-17e-001/run.xcresult",
+    "-parallel-testing-enabled",
+    "NO",
+    "-only-testing:VoiceOverServiceProbeUITests/VoiceOverServiceProbeUITests/testReaderNavigationAndSpeechWithRestoration",
+    "test-without-building"
+  ],
+  "attempts": 1,
+  "lease_returned": false,
+  "note": "Inspect restoration attachments and app/orientation before lane return."
+}

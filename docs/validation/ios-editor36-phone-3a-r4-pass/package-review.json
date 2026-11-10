@@ -1,0 +1,133 @@
+{
+  "status": "APPROVED_FOR_SELECTED_CASE_PASS_ARCHIVAL",
+  "blockers": [],
+  "scope": "Independent read-only review of terminal R4 originals and portable packet. No build, Native, device, simulator or UI operation and no source/output/package mutation.",
+  "harnessSource": "f25facb3f53a166c375cf2379b0e49839ecec022",
+  "appProducerSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "files": {
+    "verify.py": {
+      "bytes": 23374,
+      "sha256": "fa0a8a96e59008c01368d58f1efbb74549b7024d0e2234b20cee0e3bc21d66d7"
+    },
+    "test_verify.py": {
+      "bytes": 11373,
+      "sha256": "f71ad69a058ed66680e02f81bbc1ffffe0bae0e8699c3d0c665622da59800246"
+    },
+    "README.md": {
+      "bytes": 4860,
+      "sha256": "f49a980890383f7faf96b4c39db3b2e072d973cd204962ac052480d8d6284049"
+    },
+    "oracle.py": {
+      "bytes": 5319,
+      "sha256": "b0f10d85305e17070b1a473c96d14d5b68faf0e79022de815a5857e4d174c142"
+    },
+    "receipt.json": {
+      "bytes": 25318,
+      "sha256": "95de763d77dc1f026d8b5a57787135788b03437d01c9ee14910872f3030cb24f"
+    },
+    "raw-members.json": {
+      "bytes": 54129,
+      "sha256": "12ff184d58f868238e5427ed838c4c3b9d7c4214d680b3a6457592d52ac1eb73"
+    },
+    "raw.tar.gz": {
+      "bytes": 7658737,
+      "sha256": "469ce3809a8af218a70c251702f9f16d1f90dc7c4219598edbcb4c23e67059d7"
+    }
+  },
+  "nativeFacts": {
+    "selectedTest": "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+    "runId": "0a10c9841e58",
+    "nativeStatus": "NATIVE_PASS",
+    "wrapperQualification": "PARTIAL",
+    "tests": 1,
+    "failures": 0,
+    "exitCode": 0,
+    "seconds": 629.969,
+    "timeoutSeconds": 900,
+    "alpha": false,
+    "completedContractSteps": 62,
+    "xmlExports": 20,
+    "preparedSwift": 18,
+    "compiledSwift": 17,
+    "nativeAttachments": 206,
+    "exportedVideos": 0
+  },
+  "independentChecks": {
+    "archiveMembersMatchedOriginalBytes": 336,
+    "mismatches": 0,
+    "literalDocumentAndIdentityOracles": "All 20 XML checkpoints independently parsed against the fixed contract. Original IDs c1/c2/c3 and pasted IDs c4/c5/c6 remain stable across history.",
+    "scopedOutputs": {
+      "19": "1",
+      "21": "0",
+      "23": "1"
+    },
+    "scopedZoomPercent": {
+      "53": 172,
+      "55": 215,
+      "57": 172,
+      "60": 400
+    },
+    "nativeCopyCaptions": "Three distinct-caption attachments agree with pasted XML IDs/locations and occur between passed notes35 and36.",
+    "prePost": "PASS, 50 unchanged pinned inputs, 12 producer/installed files checked by preserved strict preflight source, 2497 catalogue messages.",
+    "header": {
+      "observations": 53,
+      "decisions": 19,
+      "invocations": 30,
+      "publiclySelectedSkips": 15,
+      "shortBackwardScrollRequests": 4,
+      "recoveringInvocations": 3,
+      "selectedStates": {
+        "true": 17,
+        "unobserved": 36
+      },
+      "hittableStates": {
+        "true": 45,
+        "unqueried": 8
+      },
+      "firstClippedSearchInvocation": "D34D1EE1-2917-43F5-B3D1-740AF5A3A31B",
+      "firstRecovery": "Orders0/1 record existing enabled count1 role52 blank-label Search at (24,158,342,24); Press/drag requested at301.22s from(195,436)to(195,532); orders2/3 record canonical label/frame(24,204,342,64), fullyVisible/hittable true."
+    }
+  },
+  "portableReplay": {
+    "outsideGit": true,
+    "verifierExitCode": 0,
+    "verifierStatus": "SELECTED_CASE_PASS",
+    "wrapperQualification": "PARTIAL",
+    "tests": 23,
+    "positiveTests": 1,
+    "negativeTests": 22,
+    "testExitCode": 0,
+    "originalWorktreeAccess": "Python open audit guard denied any attempted read from original mobile worktrees. The verifier reported zero attempts; tests passed under the same deny guard.",
+    "defaultReadsLocalOnly": false
+  },
+  "limits": [
+    "Qualification covers one selected Editor62 case on iPhone17e Simulator, while wrapper remains PARTIAL.",
+    "Header request/public-snapshot records do not establish gesture consumer or callback delivery.",
+    "Components selected=false/tap-once/fresh-confirmation path was not exercised.",
+    "Empty observed input-region sets are not proof of universal input-method absence; unobserved/unqueried remain unknown.",
+    "No SAP-1, all-suite, other selectors, physical device, VoiceOver, native pan/pinch or save/restart validation inferred.",
+    "publicFiles was intentionally empty at review time and remains for owner finalization; no commit, push or issue closure attested."
+  ],
+  "supportingReports": {
+    "originals": {
+      "path": "/tmp/logisim-editor36-r4-original-evidence-review.json",
+      "sha256": "838eb995ab6b5824679907fefe0a6ec430226eca9b8f3d2c9df514e3b98958db"
+    },
+    "archiveBytes": {
+      "path": "/tmp/logisim-editor36-r4-archive-byte-review.json",
+      "sha256": "96e0972ff04b56281c3c2d6cf09a5c3120806f27e811b04eec6905edf38790ca"
+    },
+    "header": {
+      "path": "/tmp/logisim-editor36-r4-header-evidence-review.json",
+      "sha256": "7d229f1aa49b2a715f8005d44dce628e0510509dd966ce6c23e057d68d270165"
+    },
+    "localReferences": {
+      "path": "/tmp/logisim-editor36-r4-local-reference-review.json",
+      "sha256": "87d21d643f33240ec8a2e28ac0d4d20c8949a2a90e5508d5390ca01090e41ef4"
+    },
+    "portableReplay": {
+      "path": "/tmp/logisim-editor36-r4-portable-replay.json",
+      "sha256": "5b2ffde7ca1819c2d03340f7e4e6e9e6a849ed2f130d4cba8db750f433478349"
+    }
+  }
+}

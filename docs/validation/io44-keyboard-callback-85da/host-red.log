@@ -1,0 +1,44 @@
+JUnit version 4.13.2
+.EditProcessor origin=file:/private/tmp/logisim-keyboard-callback/ui-text-android-1.13.0-beta02.jar
+Production callback=IoInputPanel$lambda$1$6$0
+blockWorker=true frame=true callbacks=[A, B] final=B
+E.EditProcessor origin=file:/private/tmp/logisim-keyboard-callback/ui-text-android-1.13.0-beta02.jar
+Production callback=IoInputPanel$lambda$1$6$0
+blockWorker=true frame=false callbacks=[A, AB] final=AB
+.EditProcessor origin=file:/private/tmp/logisim-keyboard-callback/ui-text-android-1.13.0-beta02.jar
+Production callback=IoInputPanel$lambda$1$6$0
+blockWorker=false frame=true callbacks=[A, AB] final=AB
+
+Time: 0.182
+There was 1 failure:
+1) typingAcrossAFrameMustPreserveBothCharactersBeforeWorkerPublishes(dev.logisim.mobile.KeyboardInputCallbackRaceTest)
+org.junit.ComparisonFailure: Two input characters must survive a recomposition before asynchronous simulation publication expected:<[A]B> but was:<[]B>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at kotlin.test.junit.JUnitAsserter.assertEquals(JUnitSupport.kt:32)
+	at kotlin.test.AssertionsKt__AssertionsKt.assertEquals(Assertions.kt:83)
+	at kotlin.test.AssertionsKt.assertEquals(Unknown Source)
+	at dev.logisim.mobile.KeyboardInputCallbackRaceTest$exercise$2.invokeSuspend(KeyboardInputCallbackRaceTest.kt:83)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.ScopeCoroutine.afterResume(Scopes.kt:35)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:101)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:47)
+	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:233)
+	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:152)
+	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:470)
+	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$kotlinx_coroutines_core(CancellableContinuationImpl.kt:504)
+	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$kotlinx_coroutines_core$default(CancellableContinuationImpl.kt:493)
+	at kotlinx.coroutines.CancellableContinuationImpl.resumeUndispatched(CancellableContinuationImpl.kt:596)
+	at kotlinx.coroutines.EventLoopImplBase$DelayedResumeTask.run(EventLoop.common.kt:490)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:256)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:54)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlockingImpl(Builders.kt:30)
+	at kotlinx.coroutines.BuildersKt.runBlockingImpl(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK(Builders.concurrent.kt:172)
+	at kotlinx.coroutines.BuildersKt.runBlockingK(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_concurrentKt.runBlockingK$default(Builders.concurrent.kt:157)
+	at kotlinx.coroutines.BuildersKt.runBlockingK$default(Unknown Source)
+	at dev.logisim.mobile.KeyboardInputCallbackRaceTest.typingAcrossAFrameMustPreserveBothCharactersBeforeWorkerPublishes(KeyboardInputCallbackRaceTest.kt:18)
+
+FAILURES!!!
+Tests run: 3,  Failures: 1
+

@@ -1,0 +1,47 @@
+{
+  "status": "NO_ACTIVE_GRPC_SERVICE_GETSTATUS_NOT_RUN",
+  "serial": "emulator-5556",
+  "avd": "ISIS-VALIDATE",
+  "pid": 28678,
+  "binary": "/Users/thales/Library/Android/sdk/emulator/qemu/darwin-aarch64/qemu-system-aarch64-headless",
+  "console_getter": "avd grpc",
+  "console_process_exit_code": 0,
+  "console_protocol_reply": "KO: No active gRPC service",
+  "attributed_controller_port": null,
+  "other_listeners_not_controller_proof": [
+    5556,
+    5557,
+    60089,
+    60090,
+    60097
+  ],
+  "installed_sdk_proto": {
+    "path": "/Users/thales/Library/Android/sdk/emulator/lib/emulator_controller.proto",
+    "sha256": "1d62c6bcad5f06621f90ec2bf26c661ba769ccd0f1416b5314d25a68e04eee5f"
+  },
+  "prepared_descriptor": {
+    "path": "controller.pb",
+    "sha256": "c252221fa860ad424bfcb98228ddd9d423f9e4a6ec98e5397a0a8c1d64dc1489"
+  },
+  "client": {
+    "node": "v26.10.0, built-in HTTP/2 available",
+    "protoc": "36.2",
+    "external_package_install": false,
+    "default_rpc": "NONE; CLI only supports read-only discovery",
+    "getter_method": "android.emulation.control.EmulatorController/getStatus"
+  },
+  "our_credential_source_inspected": false,
+  "credential_type": "NOT_IDENTIFIED",
+  "credential_existence": "NOT_INSPECTED",
+  "credential_value_hash_claims_in_receipt": false,
+  "rpc_sent": false,
+  "reader_enabled_by_this_unit": false,
+  "gesture_sent": false,
+  "runtime_scope": "Only source-backed console discovery, PID/name/listeners, proto/tool metadata and offline tests; UI lane belongs to another worker",
+  "limits": [
+    "Console exit zero does not turn protocol KO into success.",
+    "No arbitrary listener, port8554 or first-discovered emulator fallback.",
+    "Prepared HTTP/2 getter has not been exercised against a controller endpoint.",
+    "No auth loader is supplied; future approved existing credential source only, in memory, after endpoint attribution."
+  ]
+}

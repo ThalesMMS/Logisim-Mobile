@@ -1,0 +1,32 @@
+{
+  "status": "SOURCE_ONLY_REVIEW_PASS",
+  "reviewedUTC": "2026-11-05T08:12:40.943203+00:00",
+  "worktree": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing",
+  "filesSHA256": {
+    "build-simulator-fixture.py": "00b2630cf48108729e90ebecdfd2251b7842ea502b351b8b0381e6b9835bea8d",
+    "simulator_entitlements.py": "123bae1c9879682785bcf77d4f817bdae5c5c80ac6970bb5231a285c2766ec89",
+    "test_build_simulator_fixture.py": "dc860be8b67334dca369ad626334bdd72508083c0adf369fb858660bb78c4324",
+    "test_simulator_entitlements.py": "f9fec29b25226642f8e7a845d233c872efb5080ce45c5db89b06b788e93ed793",
+    "test_xcode_simulator_build.py": "5f8491055277a8b2776d6840f845a61275a1fddf1cb86667dd0bfdd7499fbc25"
+  },
+  "blockers": [],
+  "scope": [
+    "Source reading only",
+    "README intentionally excluded",
+    "No tests, SDK commands, build, signing, installation, Simulator API, app execution or UI performed by this review"
+  ],
+  "checks": [
+    "Xcode signing flags enable Simulator ad-hoc signing with manual identity -, empty team, no post-build signing command",
+    "Driver and helper readers come from the expected commit; helpers execute the same retained byte buffers",
+    "Mach-O reader admits bounded thin arm64 images and locates exact __TEXT entitlement section pairs, retaining the true owner",
+    "DER v1 decoder enforces bounded structure, canonical lengths/integers, unique keys, supported types and full consumption",
+    "XML/DER semantic comparison preserves boolean/integer distinction; exact fixture group and no nonempty team claim enforced",
+    "Packaging input matching requires one unique bundle-specific generated XML plus DER and byte equality with every observed image owner",
+    "Build success remains separate from generated-entitlement review and Native discovery qualification"
+  ],
+  "limits": [
+    "Debug-dylib-only section ownership is recorded as such and does not claim main ownership; it still requires pre-Native review",
+    "Actual Xcode output names, generated dictionaries, ad-hoc signing and lack of provisioning are not established by this source review",
+    "The review does not establish that the placeholder reads sections or explain the provider discovery failure"
+  ]
+}

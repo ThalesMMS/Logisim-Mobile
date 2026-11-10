@@ -1,0 +1,330 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import org.gradle.api.GradleException
+import org.gradle.api.Task
+import org.gradle.api.tasks.TaskState
+import org.gradle.api.artifacts.component.ModuleComponentIdentifier
+import org.gradle.api.execution.TaskExecutionGraph
+import java.nio.charset.StandardCharsets
+import java.nio.file.Files
+import java.nio.file.LinkOption
+import java.nio.file.Path
+import java.nio.file.StandardOpenOption
+import java.nio.file.attribute.BasicFileAttributes
+import java.security.MessageDigest
+import java.util.HexFormat
+
+// Test-only admission. One frozen-output marker is disabled and has its public actions removed.
+def expectedRoot = new File('/Users/thales/GitHub/logisim-mobile-worktrees/canvas-zoomout-retention').toPath()
+def preflightPath = expectedRoot.resolve('outputs/android-testapk-e7fb33f8-graph-001/reuse-preflight.json')
+def outputValue = System.getProperty('e7.artifact.output')
+def phase = System.getProperty('e7.phase')
+if (!outputValue || !(phase in ['dry-run', 'build'])) {
+    throw new GradleException('The e7 artifact output and dry-run/build phase are required')
+}
+Path outputPath = new File(outputValue).toPath().toAbsolutePath().normalize()
+if (!outputPath.startsWith(expectedRoot.resolve('outputs'))) {
+    throw new GradleException('The e7 report output must stay inside this worktree outputs directory')
+}
+if (gradle.startParameter.isConfigurationCacheRequested()) {
+    throw new GradleException('The e7 guard requires --no-configuration-cache')
+}
+if (gradle.startParameter.dryRun != (phase == 'dry-run')) {
+    throw new GradleException('The e7 phase does not match Gradle dry-run state')
+}
+
+def rejectSymbolicParents = { Path input ->
+    Path absolute = input.toAbsolutePath().normalize()
+    Path cursor = absolute.root
+    for (Path part : absolute) {
+        cursor = cursor.resolve(part)
+        if (Files.isSymbolicLink(cursor)) {
+            throw new GradleException('A provenance path contains a symbolic link: ' + cursor)
+        }
+    }
+    absolute
+}
+
+def hashRegularFile = { Path input ->
+    Path path = rejectSymbolicParents(input)
+    BasicFileAttributes before = Files.readAttributes(path, BasicFileAttributes, LinkOption.NOFOLLOW_LINKS)
+    if (!before.isRegularFile()) {
+        throw new GradleException('A provenance file is not regular: ' + path)
+    }
+    def linksBefore = Files.getAttribute(path, 'unix:nlink', LinkOption.NOFOLLOW_LINKS)
+    if (!(linksBefore instanceof Number) || linksBefore.longValue() != 1L) {
+        throw new GradleException('A provenance file has multiple hard links: ' + path)
+    }
+    MessageDigest digest = MessageDigest.getInstance('SHA-256')
+    long bytesRead = 0L
+    def stream = Files.newInputStream(path, StandardOpenOption.READ, LinkOption.NOFOLLOW_LINKS)
+    try {
+        byte[] block = new byte[65536]
+        int count
+        while ((count = stream.read(block)) != -1) {
+            digest.update(block, 0, count)
+            bytesRead += count
+        }
+    } finally {
+        stream.close()
+    }
+    BasicFileAttributes after = Files.readAttributes(path, BasicFileAttributes, LinkOption.NOFOLLOW_LINKS)
+    def linksAfter = Files.getAttribute(path, 'unix:nlink', LinkOption.NOFOLLOW_LINKS)
+    if (!after.isRegularFile() || linksAfter != linksBefore || before.fileKey() != after.fileKey() ||
+            before.size() != after.size() || before.lastModifiedTime() != after.lastModifiedTime() ||
+            bytesRead != before.size()) {
+        throw new GradleException('A provenance file changed while hashing: ' + path)
+    }
+    [path: path.toString(), bytes: bytesRead, sha256: HexFormat.of().formatHex(digest.digest())]
+}
+
+def snapshotFiles = { Collection<File> inputs ->
+    def roots = []
+    def recordsByPath = new TreeMap<String, Map>()
+    for (File input : inputs.toList().sort { a, b -> a.absolutePath <=> b.absolutePath }) {
+        Path path = rejectSymbolicParents(input.toPath())
+        if (!Files.exists(path, LinkOption.NOFOLLOW_LINKS)) {
+            roots.add([path: path.toString(), kind: 'MISSING'])
+            continue
+        }
+        BasicFileAttributes attributes = Files.readAttributes(path, BasicFileAttributes, LinkOption.NOFOLLOW_LINKS)
+        if (attributes.isRegularFile()) {
+            roots.add([path: path.toString(), kind: 'FILE'])
+            def record = hashRegularFile(path)
+            recordsByPath.put(record.path, record)
+        } else if (attributes.isDirectory()) {
+            roots.add([path: path.toString(), kind: 'DIRECTORY'])
+            def paths = []
+            def walk = Files.walk(path)
+            try {
+                def iterator = walk.iterator()
+                while (iterator.hasNext()) paths.add(iterator.next())
+            } finally {
+                walk.close()
+            }
+            for (Path child : paths.sort { a, b -> a.toString() <=> b.toString() }) {
+                rejectSymbolicParents(child)
+                BasicFileAttributes childAttributes = Files.readAttributes(child, BasicFileAttributes, LinkOption.NOFOLLOW_LINKS)
+                if (childAttributes.isRegularFile()) {
+                    def record = hashRegularFile(child)
+                    recordsByPath.put(record.path, record)
+                } else if (!childAttributes.isDirectory()) {
+                    throw new GradleException('A provenance directory contains a non-regular entry: ' + child)
+                }
+            }
+        } else {
+            throw new GradleException('A provenance input is neither a file nor a directory: ' + path)
+        }
+    }
+    [roots: roots, files: recordsByPath.values().toList(), missingRoots: roots.count { it.kind == 'MISSING' }]
+}
+
+def writeReport = { String filename, Map value ->
+    rejectSymbolicParents(outputPath)
+    if (!Files.isDirectory(outputPath, LinkOption.NOFOLLOW_LINKS)) {
+        throw new GradleException('The e7 output directory must already exist')
+    }
+    Path destination = outputPath.resolve(filename)
+    byte[] payload = (JsonOutput.prettyPrint(JsonOutput.toJson(value)) + '\n').getBytes(StandardCharsets.UTF_8)
+    Files.write(destination, payload, StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE)
+}
+
+def preflightIdentity = hashRegularFile(preflightPath)
+def preflight = new JsonSlurper().parse(preflightPath.toFile(), 'UTF-8')
+if (preflight.source != 'e7fb33f8d76c6ec8bc7a7046e7c252fb9386d630' ||
+        preflight.producer != 'b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e' ||
+        !(preflight.testTasks instanceof List) || preflight.testTasks.size() != 37) {
+    throw new GradleException('The frozen e7 reuse preflight or 37-task allowlist is invalid')
+}
+def allowed = new LinkedHashSet<String>()
+for (def path : preflight.testTasks) {
+    if (!(path instanceof String) || !(path ==~ /:androidApp:[A-Za-z0-9]*E2eAndroidTest[A-Za-z0-9]*/)) {
+        throw new GradleException('The e7 allowlist contains a non-test task')
+    }
+    allowed.add(path)
+}
+if (allowed.size() != 37) throw new GradleException('The e7 allowlist contains duplicates')
+
+def markerPath = ':androidApp:bundleE2eClassesToCompileJar'
+def markerRelativeJar = 'intermediates/compile_app_classes_jar/e2e/bundleE2eClassesToCompileJar/classes.jar'
+def producerSnapshotPath = expectedRoot.resolve('outputs/android-testapk-e7fb33f8-001/reused-producer-inputs-before.json')
+def producerSnapshotIdentity = hashRegularFile(producerSnapshotPath)
+if (producerSnapshotIdentity.sha256 != 'e39e341627dbaf131b0d5b8cf167bdd43ebe7f3deda8f803adc3c6c8ce64be31') {
+    throw new GradleException('The original frozen producer snapshot changed')
+}
+def producerSnapshot = new JsonSlurper().parse(producerSnapshotPath.toFile(), 'UTF-8')
+def markerRows = producerSnapshot.androidApp.findAll { it.path == markerRelativeJar }
+if (markerRows.size() != 1 || markerRows[0].bytes != 153299 ||
+        markerRows[0].sha256 != '2b34b6c3fc3eddf347456d9c77cbd30114a7af0771f475416a84d9edd4c64656') {
+    throw new GradleException('The frozen marker JAR row is invalid')
+}
+def markerJarPath = expectedRoot.resolve('androidApp/build/' + markerRelativeJar)
+def expectedProducerExclusions = new LinkedHashSet<String>(preflight.producerTasksThatWouldNeedExclusion)
+if (expectedProducerExclusions.size() != 63 || !expectedProducerExclusions.remove(markerPath)) {
+    throw new GradleException('The original 63-producer exclusion list is invalid')
+}
+if (new LinkedHashSet<String>(gradle.startParameter.excludedTaskNames) != expectedProducerExclusions) {
+    throw new GradleException('Exactly the other 62 producer tasks must remain excluded')
+}
+def expectedGraphTasks = new LinkedHashSet<String>(allowed)
+expectedGraphTasks.add(markerPath)
+Task frozenMarker = null
+def markerChecks = [:]
+
+def checkMarkerJar = {
+    def observed = hashRegularFile(markerJarPath)
+    if (observed.bytes != markerRows[0].bytes || observed.sha256 != markerRows[0].sha256) {
+        throw new GradleException('The frozen marker JAR changed')
+    }
+    observed
+}
+
+def checkMarkerOutputs = { Task marker ->
+    def outputs = marker.outputs.files.files.collect { rejectSymbolicParents(it.toPath()).toString() }.sort()
+    if (outputs != [markerJarPath.toString()]) {
+        throw new GradleException('The marker must declare exactly its frozen JAR output')
+    }
+    outputs
+}
+
+def requireDisabledMarker = {
+    if (frozenMarker == null || frozenMarker.enabled || !frozenMarker.actions.isEmpty()) {
+        throw new GradleException('The frozen marker must remain disabled and have no actions')
+    }
+}
+
+def markerStateRecord = { TaskState state ->
+    [executed: state.executed, skipped: state.skipped, didWork: state.didWork,
+        failure: state.failure == null ? null : state.failure.class.name, skipMessage: state.skipMessage]
+}
+
+def requireSkippedMarker = {
+    requireDisabledMarker()
+    def state = markerStateRecord(frozenMarker.state)
+    if (!state.executed || !state.skipped || state.didWork || state.failure != null || markerChecks.afterTask == null) {
+        throw new GradleException('The frozen marker has not completed through the SKIPPED path')
+    }
+    checkMarkerOutputs(frozenMarker)
+    checkMarkerJar()
+}
+
+gradle.taskGraph.whenReady { TaskExecutionGraph graph ->
+    def tasks = graph.allTasks.collect { it.path }
+    def unexpected = tasks.findAll { !expectedGraphTasks.contains(it) }
+    def missing = expectedGraphTasks.findAll { !tasks.contains(it) }
+    boolean admitted = unexpected.isEmpty() && missing.isEmpty() && tasks.size() == 38
+    def graphReport = [schema: 2, phase: phase, status: 'REJECTED', tasks: tasks,
+        unexpected: unexpected, missing: missing, testTaskCount: 37, markerTask: markerPath,
+        excludedProducerTaskCount: 62, preflight: preflightIdentity,
+        producerSnapshot: producerSnapshotIdentity, gradleVersion: gradle.gradleVersion]
+    Throwable admissionFailure = null
+    try {
+        if (!admitted) throw new GradleException('The graph must contain exactly 37 AndroidTest tasks and one frozen marker')
+        frozenMarker = graph.allTasks.find { it.path == markerPath }
+        frozenMarker.enabled = false
+        frozenMarker.actions.clear()
+        requireDisabledMarker()
+        markerChecks.outputsAtGraph = checkMarkerOutputs(frozenMarker)
+        markerChecks.jarAtGraph = checkMarkerJar()
+        graphReport.markerAdmission = [enabled: frozenMarker.enabled, actionCount: frozenMarker.actions.size(),
+            outputs: markerChecks.outputsAtGraph, jar: markerChecks.jarAtGraph,
+            runtimeStateStatus: 'NOT_RUN']
+        graphReport.status = 'ADMITTED'
+    } catch (Throwable error) {
+        admissionFailure = error
+        graphReport.errorClass = error.class.name
+    } finally {
+        writeReport('guard-' + phase + '-task-graph.json', graphReport)
+    }
+    if (admissionFailure != null) throw new GradleException('The frozen marker graph was rejected', admissionFailure)
+
+    def artifactReports = []
+    def appProject = gradle.rootProject.findProject(':androidApp')
+    if (appProject == null) throw new GradleException('The androidApp project is missing')
+    for (String name : ['e2eAndroidTestCompileClasspath', 'e2eAndroidTestRuntimeClasspath', 'e2eRuntimeClasspath']) {
+        def configuration = appProject.configurations.getByName(name)
+        if (!configuration.canBeResolved) throw new GradleException('A requested classpath is not resolvable: ' + name)
+        def components = configuration.incoming.resolutionResult.allComponents.collect { it.id.displayName }.sort()
+        def externalView = configuration.incoming.artifactView { viewConfiguration ->
+            viewConfiguration.componentFilter { componentId -> componentId instanceof ModuleComponentIdentifier }
+        }
+        def artifacts = externalView.artifacts.artifacts.toList().sort { a, b ->
+            (a.id.componentIdentifier.displayName <=> b.id.componentIdentifier.displayName) ?:
+                (a.file.absolutePath <=> b.file.absolutePath)
+        }
+        def rows = []
+        for (def artifact : artifacts) {
+            def snapshot = snapshotFiles([artifact.file])
+            if (snapshot.missingRoots != 0) throw new GradleException('A resolved artifact file is missing')
+            rows.add([componentIdentifier: artifact.id.componentIdentifier.displayName,
+                artifactFile: artifact.file.absolutePath, roots: snapshot.roots, files: snapshot.files])
+        }
+        artifactReports.add([configuration: name, components: components, externalArtifacts: rows,
+            projectArtifactPolicy: 'NOT_FORCED_USE_COMPILER_INPUT_SNAPSHOTS'])
+    }
+    writeReport('guard-' + phase + '-resolved-artifacts.json', [schema: 1, phase: phase,
+        status: 'CAPTURED', configurations: artifactReports])
+}
+
+def compileTasks = [':androidApp:compileE2eAndroidTestKotlin', ':androidApp:compileE2eAndroidTestJavaWithJavac'] as Set
+gradle.taskGraph.beforeTask { Task task ->
+    if (task.path == markerPath) {
+        requireDisabledMarker()
+        markerChecks.outputsBeforeTask = checkMarkerOutputs(task)
+        markerChecks.jarBeforeTask = checkMarkerJar()
+        return
+    }
+    if (!compileTasks.contains(task.path)) return
+    requireSkippedMarker()
+    def report = [schema: 1, phase: phase, task: task.path, status: 'CAPTURING']
+    Throwable failure = null
+    try {
+        report.putAll(snapshotFiles(task.inputs.files.files))
+        report.status = 'CAPTURED'
+    } catch (Throwable error) {
+        failure = error
+        report.status = 'ERROR'
+        report.errorClass = error.class.name
+    } finally {
+        writeReport('guard-' + phase + '-inputs-' + task.name + '.json', report)
+    }
+    if (failure != null) throw new GradleException('Could not capture AndroidTest compiler inputs', failure)
+}
+
+
+gradle.taskGraph.afterTask { Task task, TaskState state ->
+    if (task.path != markerPath) return
+    def stateFields = markerStateRecord(state)
+    def report = [schema: 2, phase: phase, task: markerPath, status: 'CHECKING',
+        state: stateFields, executed: stateFields.executed, skipped: stateFields.skipped,
+        didWork: stateFields.didWork, failure: stateFields.failure,
+        enabled: task.enabled, actions: task.actions.size(),
+        jarBeforeSha256: markerChecks.jarBeforeTask?.sha256,
+        outputsAtGraph: markerChecks.outputsAtGraph,
+        outputsBeforeTask: markerChecks.outputsBeforeTask, jarAtGraph: markerChecks.jarAtGraph,
+        jarBeforeTask: markerChecks.jarBeforeTask]
+    Throwable failure = null
+    try {
+        requireDisabledMarker()
+        if (!state.executed || !state.skipped || state.didWork || state.failure != null) {
+            throw new GradleException('The frozen marker did not finish as SKIPPED without work')
+        }
+        report.outputsAfterTask = task.outputs.files.files.collect { rejectSymbolicParents(it.toPath()).toString() }.sort()
+        report.jarAfterTask = hashRegularFile(markerJarPath)
+        report.jarAfterSha256 = report.jarAfterTask.sha256
+        if (report.outputsAfterTask != [markerJarPath.toString()] ||
+                report.outputsAfterTask != markerChecks.outputsBeforeTask ||
+                report.jarAfterTask != markerChecks.jarBeforeTask || report.jarAfterTask.sha256 != markerRows[0].sha256) {
+            throw new GradleException('The skipped marker changed its frozen outputs')
+        }
+        markerChecks.afterTask = report.jarAfterTask
+        report.status = 'SKIPPED_FROZEN_OUTPUTS_UNCHANGED'
+    } catch (Throwable error) {
+        failure = error
+        report.status = 'ERROR'
+        report.errorClass = error.class.name
+    } finally {
+        writeReport('guard-' + phase + '-disabled-producer-marker-state.json', report)
+    }
+    if (failure != null) throw new GradleException('The frozen marker outcome was rejected', failure)
+}

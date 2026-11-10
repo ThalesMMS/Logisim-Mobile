@@ -1,0 +1,66 @@
+{
+  "scope": "Independent local replay in copied bundle with frozen oracle; no UI or app build",
+  "copyRoot": "/tmp/logisim-io44-portable-independent-review-001",
+  "scriptSha256": {
+    "ios_io44_case_postflight.py": "b91555c1f464a3d73827df20e426831332cc52da5b4366e7fb43376c126073f3",
+    "verify_ios_io44_failed_receipt.py": "c1bf465d0a7cc9cf3b0878584de6b864d49e68370cb3bf0e1d6c69bb73772caf",
+    "test_ios_io44_case_postflight.py": "8308d7b7df9da3a74fb9f7a93b971590015343c3e190434d0778ec1dba09e058",
+    "test_ios_io44_failed_receipt.py": "7b93c2f479b6b93f0c9c7a719020378748a5a50255df4190091166cfd8b5c768"
+  },
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "scripts/verify_ios_io44_failed_receipt.py",
+        "--bundle",
+        "docs/validation/io44-ios-3a0a01f1-failed"
+      ],
+      "exit": 0,
+      "log": "check-1.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/ios_io44_case_postflight.py",
+        "--run",
+        "docs/validation/io44-ios-3a0a01f1-failed/run",
+        "--repository",
+        "docs/validation/io44-ios-3a0a01f1-failed/oracle",
+        "--output",
+        "postflight-replay"
+      ],
+      "exit": 0,
+      "log": "check-2.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_ios_io44*.py"
+      ],
+      "exit": 0,
+      "log": "check-3.log"
+    }
+  ],
+  "result": {
+    "pairedDocumentsPassed": 0,
+    "metadataAttachments": 0,
+    "expectedDocumentsIfAllFourMethodsComplete": 18,
+    "orphanDocumentAttachments": 1,
+    "nativeMethodFailures": [
+      "IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing()",
+      "IoEndToEndTests/testIoDimensionChangesRemainExportable()",
+      "IoEndToEndTests/testIoMomentaryControlsAndJoystick()",
+      "IoEndToEndTests/testIoKeyboardTtyAndCapacity()"
+    ],
+    "unqualifiedDocumentStages": 18,
+    "incompleteAfterXmlCapture": 1,
+    "notReachedDocumentStages": 17,
+    "status": "document-checks-only-no-native-or-issue-qualification"
+  }
+}

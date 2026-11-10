@@ -1,0 +1,4346 @@
+{
+  "schema": "canvas-input-trace-v1",
+  "captureId": "9bf65475-9840-4306-92ee-d9641c3be737",
+  "scope": "Synchronous observations from existing handlers; synthesized input; no physical-device qualification",
+  "clocks": {
+    "eventTime\/downTime\/changeUptime\/receiverUptimeMillis": "UPTIME_MILLIS",
+    "receiverElapsedMillis": "ELAPSED_REALTIME_MILLIS"
+  },
+  "pointerLimit": 4,
+  "fieldLimit": 24,
+  "maxRecordBytes": 8192,
+  "loggingErrors": 0,
+  "hookCallbackFailures": 0,
+  "duplicateCompositionsOmitted": 1,
+  "lastSequence": 120,
+  "input": {
+    "maxCount": 64,
+    "maxBytes": 65536,
+    "count": 13,
+    "bytes": 12647,
+    "total": 13,
+    "dropped": 0,
+    "oversized": 0,
+    "entries": [
+      {
+        "sequence": 74,
+        "utf8Bytes": 974,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142266,
+          "receiverElapsedMillis": 40142266,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 1,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Enter",
+          "ctrl": true,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142229,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 12288,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142229,
+            "downTimeUptimeMillis": 40142228,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 0,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 76,
+        "utf8Bytes": 976,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142268,
+          "receiverElapsedMillis": 40142268,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 2,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Scroll",
+          "ctrl": true,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142229,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 0,
+              "scrollY": -1
+            }
+          ],
+          "native": {
+            "action": 8,
+            "actionMasked": 8,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 12288,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142229,
+            "downTimeUptimeMillis": 40142228,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 0,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 84,
+        "utf8Bytes": 973,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142308,
+          "receiverElapsedMillis": 40142308,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 3,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Move",
+          "ctrl": true,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142274,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 12288,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142274,
+            "downTimeUptimeMillis": 40142228,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 0,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 86,
+        "utf8Bytes": 972,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142398,
+          "receiverElapsedMillis": 40142398,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 4,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Exit",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142386,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 10,
+            "actionMasked": 10,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142386,
+            "downTimeUptimeMillis": 40142384,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 1,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 88,
+        "utf8Bytes": 973,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142399,
+          "receiverElapsedMillis": 40142399,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 5,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Scroll",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142386,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 1,
+              "scrollY": -1
+            }
+          ],
+          "native": {
+            "action": 8,
+            "actionMasked": 8,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142386,
+            "downTimeUptimeMillis": 40142384,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 1,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 96,
+        "utf8Bytes": 970,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142422,
+          "receiverElapsedMillis": 40142422,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 6,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Move",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142407,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142407,
+            "downTimeUptimeMillis": 40142384,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 1,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 98,
+        "utf8Bytes": 970,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142841,
+          "receiverElapsedMillis": 40142841,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 7,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Move",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142812,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142812,
+            "downTimeUptimeMillis": 40142384,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 1,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 100,
+        "utf8Bytes": 970,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40142902,
+          "receiverElapsedMillis": 40142902,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 8,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Move",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40142871,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 643,
+              "y": 697,
+              "previousX": 643,
+              "previousY": 697,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40142871,
+            "downTimeUptimeMillis": 40142384,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 643,
+                "y": 1344,
+                "rawX": 643,
+                "rawY": 1344,
+                "hScroll": 1,
+                "vScroll": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 102,
+        "utf8Bytes": 974,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40148490,
+          "receiverElapsedMillis": 40148490,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 9,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Exit",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40148454,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 559,
+              "y": 781,
+              "previousX": 559,
+              "previousY": 781,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 10,
+            "actionMasked": 10,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40148454,
+            "downTimeUptimeMillis": 40148453,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 559,
+                "y": 1428,
+                "rawX": 559,
+                "rawY": 1428,
+                "hScroll": -1,
+                "vScroll": -1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 104,
+        "utf8Bytes": 976,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40148503,
+          "receiverElapsedMillis": 40148503,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 10,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Scroll",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40148454,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 559,
+              "y": 781,
+              "previousX": 559,
+              "previousY": 781,
+              "scrollX": -1,
+              "scrollY": 1
+            }
+          ],
+          "native": {
+            "action": 8,
+            "actionMasked": 8,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40148454,
+            "downTimeUptimeMillis": 40148453,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 559,
+                "y": 1428,
+                "rawX": 559,
+                "rawY": 1428,
+                "hScroll": -1,
+                "vScroll": -1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 112,
+        "utf8Bytes": 973,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40148577,
+          "receiverElapsedMillis": 40148577,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 11,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Move",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40148528,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 559,
+              "y": 781,
+              "previousX": 559,
+              "previousY": 781,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40148528,
+            "downTimeUptimeMillis": 40148453,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 559,
+                "y": 1428,
+                "rawX": 559,
+                "rawY": 1428,
+                "hScroll": -1,
+                "vScroll": -1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 117,
+        "utf8Bytes": 973,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40148986,
+          "receiverElapsedMillis": 40148986,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 12,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Move",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40148962,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 559,
+              "y": 781,
+              "previousX": 559,
+              "previousY": 781,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40148962,
+            "downTimeUptimeMillis": 40148453,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 559,
+                "y": 1428,
+                "rawX": 559,
+                "rawY": 1428,
+                "hScroll": -1,
+                "vScroll": -1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "sequence": 119,
+        "utf8Bytes": 973,
+        "record": {
+          "stage": "pointer-received",
+          "receiverUptimeMillis": 40149063,
+          "receiverElapsedMillis": 40149063,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 13,
+          "gestureId": 0,
+          "handler": "wheel",
+          "composeType": "Move",
+          "ctrl": false,
+          "meta": false,
+          "shift": false,
+          "alt": false,
+          "composePointerCount": 1,
+          "composePointersOmitted": 0,
+          "composeCoordinateSpace": "CANVAS_LOCAL",
+          "composePointers": [
+            {
+              "composeId": 0,
+              "uptimeMillis": 40149022,
+              "type": "Mouse",
+              "pressed": false,
+              "previousPressed": false,
+              "consumedAtHandlerEntry": false,
+              "x": 559,
+              "y": 781,
+              "previousX": 559,
+              "previousY": 781,
+              "scrollX": 0,
+              "scrollY": 0
+            }
+          ],
+          "native": {
+            "action": 9,
+            "actionMasked": 9,
+            "actionIndex": 0,
+            "source": 8194,
+            "deviceId": -1,
+            "metaState": 0,
+            "buttonState": 0,
+            "eventTimeUptimeMillis": 40149022,
+            "downTimeUptimeMillis": 40148453,
+            "historySize": 0,
+            "pointerCount": 1,
+            "pointersOmitted": 0,
+            "localCoordinateSpace": "NATIVE_MOTION_EVENT_LOCAL",
+            "rawCoordinateSpace": "SCREEN",
+            "pointers": [
+              {
+                "nativeId": 0,
+                "toolType": 3,
+                "x": 559,
+                "y": 1428,
+                "rawX": 559,
+                "rawY": 1428,
+                "hScroll": -1,
+                "vScroll": -1
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "state": {
+    "maxCount": 192,
+    "maxBytes": 131072,
+    "count": 107,
+    "bytes": 49089,
+    "total": 107,
+    "dropped": 0,
+    "oversized": 0,
+    "entries": [
+      {
+        "sequence": 1,
+        "utf8Bytes": 449,
+        "record": {
+          "stage": "viewport-map-import",
+          "receiverUptimeMillis": 40138717,
+          "receiverElapsedMillis": 40138717,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "13:External_IO61",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 2,
+        "utf8Bytes": 482,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40138786,
+          "receiverElapsedMillis": 40138786,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "0",
+            "canvasHeight": "0",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 3,
+        "utf8Bytes": 521,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40138971,
+          "receiverElapsedMillis": 40138971,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 4,
+        "utf8Bytes": 543,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40138972,
+          "receiverElapsedMillis": 40138972,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "13:External_IO61"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 5,
+        "utf8Bytes": 451,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40138972,
+          "receiverElapsedMillis": 40138972,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "13:External_IO61",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 6,
+        "utf8Bytes": 458,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40138972,
+          "receiverElapsedMillis": 40138972,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 0,
+            "height": 0,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 7,
+        "utf8Bytes": 494,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40139050,
+          "receiverElapsedMillis": 40139050,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1346",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 8,
+        "utf8Bytes": 527,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40139203,
+          "receiverElapsedMillis": 40139203,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 9,
+        "utf8Bytes": 549,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40139205,
+          "receiverElapsedMillis": 40139205,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "13:External_IO61"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 10,
+        "utf8Bytes": 451,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40139205,
+          "receiverElapsedMillis": 40139205,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "13:External_IO61",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 11,
+        "utf8Bytes": 464,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40139205,
+          "receiverElapsedMillis": 40139205,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 12,
+        "utf8Bytes": 337,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40139206,
+          "receiverElapsedMillis": 40139206,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 13,
+        "utf8Bytes": 495,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40139210,
+          "receiverElapsedMillis": 40139210,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 0.2987152,
+            "panX": 98.547104,
+            "panY": 73.55432,
+            "width": 1080,
+            "height": 1346,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1346",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 14,
+        "utf8Bytes": 408,
+        "record": {
+          "stage": "viewport-map-clear",
+          "receiverUptimeMillis": 40139259,
+          "receiverElapsedMillis": 40139259,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "External_IO61",
+          "before": null,
+          "after": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "13:External_IO61"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 15,
+        "utf8Bytes": 468,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40139332,
+          "receiverElapsedMillis": 40139332,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1346",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 16,
+        "utf8Bytes": 488,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40139491,
+          "receiverElapsedMillis": 40139491,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 17,
+        "utf8Bytes": 512,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40139491,
+          "receiverElapsedMillis": 40139491,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 18,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40139491,
+          "receiverElapsedMillis": 40139491,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 19,
+        "utf8Bytes": 437,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40139491,
+          "receiverElapsedMillis": 40139491,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1,
+            "panX": 0,
+            "panY": 0,
+            "width": 0,
+            "height": 0,
+            "initialized": false,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 20,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40139514,
+          "receiverElapsedMillis": 40139514,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1283",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 21,
+        "utf8Bytes": 505,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40139597,
+          "receiverElapsedMillis": 40139597,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 22,
+        "utf8Bytes": 529,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40139597,
+          "receiverElapsedMillis": 40139597,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 23,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40139597,
+          "receiverElapsedMillis": 40139597,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 24,
+        "utf8Bytes": 454,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40139598,
+          "receiverElapsedMillis": 40139598,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 25,
+        "utf8Bytes": 502,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40139598,
+          "receiverElapsedMillis": 40139598,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 26,
+        "utf8Bytes": 529,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40139598,
+          "receiverElapsedMillis": 40139598,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 27,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40139598,
+          "receiverElapsedMillis": 40139598,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 28,
+        "utf8Bytes": 451,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40139598,
+          "receiverElapsedMillis": 40139598,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 29,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40139618,
+          "receiverElapsedMillis": 40139618,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1409",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 30,
+        "utf8Bytes": 505,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40139717,
+          "receiverElapsedMillis": 40139717,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 31,
+        "utf8Bytes": 529,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40139717,
+          "receiverElapsedMillis": 40139717,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 32,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40139717,
+          "receiverElapsedMillis": 40139717,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 33,
+        "utf8Bytes": 454,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40139717,
+          "receiverElapsedMillis": 40139717,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 350,
+            "width": 1080,
+            "height": 1283,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 34,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40139728,
+          "receiverElapsedMillis": 40139728,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1409",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 35,
+        "utf8Bytes": 505,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40139749,
+          "receiverElapsedMillis": 40139749,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 36,
+        "utf8Bytes": 529,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40139749,
+          "receiverElapsedMillis": 40139749,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 37,
+        "utf8Bytes": 443,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40139750,
+          "receiverElapsedMillis": 40139750,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 38,
+        "utf8Bytes": 454,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40139750,
+          "receiverElapsedMillis": 40139750,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 39,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40139922,
+          "receiverElapsedMillis": 40139922,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1409",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 40,
+        "utf8Bytes": 339,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40140052,
+          "receiverElapsedMillis": 40140052,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 41,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40140059,
+          "receiverElapsedMillis": 40140059,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1409",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 42,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40140092,
+          "receiverElapsedMillis": 40140092,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 43,
+        "utf8Bytes": 507,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40140093,
+          "receiverElapsedMillis": 40140093,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 44,
+        "utf8Bytes": 531,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40140093,
+          "receiverElapsedMillis": 40140093,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 45,
+        "utf8Bytes": 445,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40140093,
+          "receiverElapsedMillis": 40140093,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 46,
+        "utf8Bytes": 454,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40140093,
+          "receiverElapsedMillis": 40140093,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 413,
+            "width": 1080,
+            "height": 1409,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 47,
+        "utf8Bytes": 487,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40140160,
+          "receiverElapsedMillis": 40140160,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 48,
+        "utf8Bytes": 509,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40140177,
+          "receiverElapsedMillis": 40140177,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 49,
+        "utf8Bytes": 533,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40140177,
+          "receiverElapsedMillis": 40140177,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 50,
+        "utf8Bytes": 445,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40140177,
+          "receiverElapsedMillis": 40140177,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 51,
+        "utf8Bytes": 456,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40140177,
+          "receiverElapsedMillis": 40140177,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "resize",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 52,
+        "utf8Bytes": 506,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40140255,
+          "receiverElapsedMillis": 40140255,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 53,
+        "utf8Bytes": 533,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40140255,
+          "receiverElapsedMillis": 40140255,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 54,
+        "utf8Bytes": 445,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40140255,
+          "receiverElapsedMillis": 40140255,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 55,
+        "utf8Bytes": 453,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40140255,
+          "receiverElapsedMillis": 40140255,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "fit",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 56,
+        "utf8Bytes": 486,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40140305,
+          "receiverElapsedMillis": 40140305,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 57,
+        "utf8Bytes": 339,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40140566,
+          "receiverElapsedMillis": 40140566,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 58,
+        "utf8Bytes": 487,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40140568,
+          "receiverElapsedMillis": 40140568,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 59,
+        "utf8Bytes": 486,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40141060,
+          "receiverElapsedMillis": 40141060,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "INTERACT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 60,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40141125,
+          "receiverElapsedMillis": 40141125,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 61,
+        "utf8Bytes": 339,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40141666,
+          "receiverElapsedMillis": 40141666,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 62,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40141696,
+          "receiverElapsedMillis": 40141696,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 63,
+        "utf8Bytes": 484,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40141874,
+          "receiverElapsedMillis": 40141874,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 64,
+        "utf8Bytes": 508,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40141992,
+          "receiverElapsedMillis": 40141992,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 65,
+        "utf8Bytes": 534,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40141993,
+          "receiverElapsedMillis": 40141993,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 66,
+        "utf8Bytes": 446,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40141993,
+          "receiverElapsedMillis": 40141993,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 67,
+        "utf8Bytes": 454,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40141993,
+          "receiverElapsedMillis": 40141993,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 2.3043478,
+            "panX": 275,
+            "panY": 444.5,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": true
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 68,
+        "utf8Bytes": 485,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40142017,
+          "receiverElapsedMillis": 40142017,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 69,
+        "utf8Bytes": 512,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40142114,
+          "receiverElapsedMillis": 40142114,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 70,
+        "utf8Bytes": 538,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40142114,
+          "receiverElapsedMillis": 40142114,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 71,
+        "utf8Bytes": 449,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40142114,
+          "receiverElapsedMillis": 40142114,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 72,
+        "utf8Bytes": 455,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40142114,
+          "receiverElapsedMillis": 40142114,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.8434782,
+            "panX": 328,
+            "panY": 502.8,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "zoom",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 73,
+        "utf8Bytes": 488,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40142128,
+          "receiverElapsedMillis": 40142128,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 75,
+        "utf8Bytes": 319,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142266,
+          "receiverElapsedMillis": 40142266,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 1,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 77,
+        "utf8Bytes": 411,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142268,
+          "receiverElapsedMillis": 40142268,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 2,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "zoom",
+            "deltaX": "0.0",
+            "deltaY": "-1.0",
+            "factor": "1.1274968",
+            "anchorX": "643.0",
+            "anchorY": "697.0",
+            "density": "2.625"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 78,
+        "utf8Bytes": 527,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40142268,
+          "receiverElapsedMillis": 40142268,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 2,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "wheel-zoom"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 79,
+        "utf8Bytes": 547,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40142268,
+          "receiverElapsedMillis": 40142268,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 80,
+        "utf8Bytes": 455,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40142268,
+          "receiverElapsedMillis": 40142268,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 81,
+        "utf8Bytes": 464,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40142268,
+          "receiverElapsedMillis": 40142268,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 2,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "wheel-zoom",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 82,
+        "utf8Bytes": 412,
+        "record": {
+          "stage": "wheel-return",
+          "receiverUptimeMillis": 40142268,
+          "receiverElapsedMillis": 40142268,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 2,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.4747826,
+            "panX": 370.4,
+            "panY": 549.44,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "consumedCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 83,
+        "utf8Bytes": 494,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40142273,
+          "receiverElapsedMillis": 40142273,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 85,
+        "utf8Bytes": 319,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142308,
+          "receiverElapsedMillis": 40142308,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 3,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 87,
+        "utf8Bytes": 319,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142398,
+          "receiverElapsedMillis": 40142398,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 4,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 89,
+        "utf8Bytes": 353,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142399,
+          "receiverElapsedMillis": 40142399,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 5,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "pan",
+            "deltaX": "1.0",
+            "deltaY": "-1.0",
+            "density": "2.625"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 90,
+        "utf8Bytes": 532,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40142399,
+          "receiverElapsedMillis": 40142399,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 5,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "wheel-pan"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 91,
+        "utf8Bytes": 553,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40142399,
+          "receiverElapsedMillis": 40142399,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 92,
+        "utf8Bytes": 455,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40142399,
+          "receiverElapsedMillis": 40142399,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 93,
+        "utf8Bytes": 469,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40142399,
+          "receiverElapsedMillis": 40142399,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 5,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "wheel-pan",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 94,
+        "utf8Bytes": 418,
+        "record": {
+          "stage": "wheel-return",
+          "receiverUptimeMillis": 40142399,
+          "receiverElapsedMillis": 40142399,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 5,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "consumedCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 95,
+        "utf8Bytes": 494,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40142407,
+          "receiverElapsedMillis": 40142407,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 97,
+        "utf8Bytes": 319,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142422,
+          "receiverElapsedMillis": 40142422,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 6,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 99,
+        "utf8Bytes": 319,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142841,
+          "receiverElapsedMillis": 40142841,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 7,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 101,
+        "utf8Bytes": 319,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40142918,
+          "receiverElapsedMillis": 40142918,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 8,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 103,
+        "utf8Bytes": 319,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40148502,
+          "receiverElapsedMillis": 40148502,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 9,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 105,
+        "utf8Bytes": 354,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40148504,
+          "receiverElapsedMillis": 40148504,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 10,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "pan",
+            "deltaX": "-1.0",
+            "deltaY": "1.0",
+            "density": "2.625"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 106,
+        "utf8Bytes": 533,
+        "record": {
+          "stage": "viewport-request",
+          "receiverUptimeMillis": 40148504,
+          "receiverElapsedMillis": 40148504,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 10,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "wheel-pan"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 107,
+        "utf8Bytes": 553,
+        "record": {
+          "stage": "viewport-store-before",
+          "receiverUptimeMillis": 40148504,
+          "receiverElapsedMillis": 40148504,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 108,
+        "utf8Bytes": 455,
+        "record": {
+          "stage": "viewport-stored",
+          "receiverUptimeMillis": 40148505,
+          "receiverElapsedMillis": 40148505,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "navigationKey": "15:scroll_1220a87c",
+            "entryCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 109,
+        "utf8Bytes": 470,
+        "record": {
+          "stage": "viewport-callback-return",
+          "receiverUptimeMillis": 40148505,
+          "receiverElapsedMillis": 40148505,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 10,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "wheel-pan",
+            "observation": "IMMEDIATE_PROP_REREAD"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 110,
+        "utf8Bytes": 419,
+        "record": {
+          "stage": "wheel-return",
+          "receiverUptimeMillis": 40148505,
+          "receiverElapsedMillis": 40148505,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 10,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 251.64435,
+            "panY": 614.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "consumedCount": "1"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 111,
+        "utf8Bytes": 494,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40148528,
+          "receiverElapsedMillis": 40148528,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 113,
+        "utf8Bytes": 320,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40148577,
+          "receiverElapsedMillis": 40148577,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 11,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 114,
+        "utf8Bytes": 339,
+        "record": {
+          "stage": "interaction-cancel",
+          "receiverUptimeMillis": 40148787,
+          "receiverElapsedMillis": 40148787,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "reason": "window-focus-lost",
+            "phase": "null"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 115,
+        "utf8Bytes": 495,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40148788,
+          "receiverElapsedMillis": 40148788,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "false",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 116,
+        "utf8Bytes": 494,
+        "record": {
+          "stage": "composed",
+          "receiverUptimeMillis": 40148958,
+          "receiverElapsedMillis": 40148958,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 0,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": {
+            "scale": 1.6628127,
+            "panX": 335.64435,
+            "panY": 530.6266,
+            "width": 1080,
+            "height": 1472,
+            "initialized": true,
+            "fitted": false
+          },
+          "documentIdTruncated": false,
+          "fields": {
+            "canvasWidth": "1080",
+            "canvasHeight": "1472",
+            "density": "2.625",
+            "windowFocused": "true",
+            "mode": "SELECT"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 118,
+        "utf8Bytes": 320,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40148986,
+          "receiverElapsedMillis": 40148986,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 12,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      },
+      {
+        "sequence": 120,
+        "utf8Bytes": 320,
+        "record": {
+          "stage": "wheel-branch",
+          "receiverUptimeMillis": 40149063,
+          "receiverElapsedMillis": 40149063,
+          "threadId": 2,
+          "threadName": "main",
+          "sampleId": 13,
+          "gestureId": 0,
+          "documentId": "scroll_1220a87c",
+          "before": null,
+          "after": null,
+          "documentIdTruncated": false,
+          "fields": {
+            "branch": "ignored-non-scroll"
+          },
+          "fieldsOmitted": 0,
+          "fieldValuesTruncated": 0
+        }
+      }
+    ]
+  }
+}

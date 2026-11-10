@@ -1,0 +1,74 @@
+{
+  "sourceRevision": "2832d29b053da7026540dcc63bd62aed1d040845",
+  "cwd": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof",
+  "nativeSourcePin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "scope": "New main6cef iOS bundle only. No allow-no-opaque.",
+  "jobs": [
+    {
+      "name": "storage",
+      "args": [
+        "python3",
+        "scripts/verify-portable53.py",
+        "--core-jar",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/portable53-preflight/references/core-jvm.jar",
+        "--desktop-jar",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/portable53-preflight/references/desktop.jar",
+        "--workspace-before",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/snapshots/before/workspace",
+        "--workspace-imported",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/snapshots/imported/workspace",
+        "--workspace-restarted",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/snapshots/restarted/workspace",
+        "--workspace-reopened",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/snapshots/reopened/workspace",
+        "--output",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/outputs/ios53-main6cef-oracles/bundle/storage-proof.json"
+      ],
+      "log": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/outputs/ios53-main6cef-oracles/bundle/storage.log"
+    },
+    {
+      "name": "desktop-before",
+      "args": [
+        "python3",
+        "scripts/verify-portable53.py",
+        "--core-jar",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/portable53-preflight/references/core-jvm.jar",
+        "--desktop-jar",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/portable53-preflight/references/desktop.jar",
+        "--artifact",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/export-before-restart.lsebdl",
+        "--peer",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/export-after-restart.lsebdl",
+        "--origin",
+        "app-export",
+        "--ui-receipt",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/ui-receipt.json",
+        "--output",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/outputs/ios53-main6cef-oracles/bundle/desktop-before-proof.json"
+      ],
+      "log": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/outputs/ios53-main6cef-oracles/bundle/desktop-before.log"
+    },
+    {
+      "name": "desktop-after",
+      "args": [
+        "python3",
+        "scripts/verify-portable53.py",
+        "--core-jar",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/portable53-preflight/references/core-jvm.jar",
+        "--desktop-jar",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/portable53-preflight/references/desktop.jar",
+        "--artifact",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/export-after-restart.lsebdl",
+        "--peer",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/export-before-restart.lsebdl",
+        "--origin",
+        "app-export",
+        "--ui-receipt",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-native/bundle/documents/portable-bundle-evidence/ui-receipt.json",
+        "--output",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/outputs/ios53-main6cef-oracles/bundle/desktop-after-proof.json"
+      ],
+      "log": "/Users/thales/GitHub/logisim-mobile-worktrees/portable53-android-bundle-proof/outputs/ios53-main6cef-oracles/bundle/desktop-after.log"
+    }
+  ]
+}

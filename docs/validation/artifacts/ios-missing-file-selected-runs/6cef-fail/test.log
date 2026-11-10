@@ -1,0 +1,641 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-missing-files-001/harness/LogisimEditorHarness.xcodeproj -scheme EditorHarness -destination "platform=iOS Simulator,id=B25F12A5-62D8-4E9E-964E-96519DB6FB69" -derivedDataPath /Users/thales/GitHub/logisim-mobile-worktrees/portable-native-evidence/outputs/ios53-final-6cef-derived CODE_SIGNING_ALLOWED=NO test-without-building -parallel-testing-enabled NO -collect-test-diagnostics never -test-timeouts-enabled YES -default-test-execution-time-allowance 900 -resultBundlePath /Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-missing-files-001/editor.xcresult "-only-testing:EditorEndToEndTests/FilesEndToEndTests/testMissingExternalDocumentReportsFailureAndPreservesProject" "-skip-testing:EditorEndToEndTests/VisualExportEndToEndTests/testVisualExportFieldCensus"
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-missing-files-001/editor.xcresult
+
+2026-11-05 02:21:16.857042-0300 EditorEndToEndTests-Runner[4203:9575226] [Default] Running tests...
+2026-11-05 02:21:16.912413-0300 EditorEndToEndTests-Runner[4203:9575226] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-11-05 02:21:19.083.
+Test Suite 'EditorEndToEndTests.xctest' started at 2026-11-05 02:21:19.083.
+Test Suite 'FilesEndToEndTests' started at 2026-11-05 02:21:19.084.
+Test Case '-[EditorEndToEndTests.FilesEndToEndTests testMissingExternalDocumentReportsFailureAndPreservesProject]' started.
+    t =     0.00s Start Test at 2026-11-05 02:21:19.086
+    t =     0.02s Set Up
+    t =     0.03s     Getting device orientation
+    t =     0.03s     Open thalesmms.logisim.mobile
+    t =     0.03s         Launch thalesmms.logisim.mobile
+    t =     0.14s             Setting up automation session
+objc[4203]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x10aae0310) and /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x10aa94398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     1.90s             Wait for thalesmms.logisim.mobile to idle
+    t =     4.53s     Checking `Expect predicate `BLOCKPREDICATE(0x10a2ead90)` for object Application 'thalesmms.logisim.mobile'`
+    t =     4.53s         Checking existence of `"editor-import-report" Any`
+    t =     4.69s         Checking existence of `"editor-project-toolbar" Any`
+    t =     4.70s     Checking existence of `"editor-import-report" Any`
+    t =     4.75s Added attachment named 'missing-external-original.circ'
+    t =     4.75s Checking existence of `"editor-project-toolbar-menu" Any`
+    t =     4.81s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =     4.86s Checking existence of `"editor-project-toolbar" Any`
+    t =     4.87s Find the Application 'thalesmms.logisim.mobile'
+    t =     4.88s Get all elements bound by index for: Elements matching predicate '(label == "Abrir, salvar e compartilhar arquivos" OR label BEGINSWITH "Abrir, salvar e compartilhar arquivos, ") OR (label == "Open, save, and share files" OR label BEGINSWITH "Open, save, and share files, ")'
+    t =     4.90s Checking existence of `Any (Element at index 0)`
+    t =     4.92s Find the Any (Element at index 0)
+    t =     4.94s Find the "Open, save, and share files, File" Button
+    t =     4.96s Tap "Open, save, and share files, File" Button
+    t =     4.96s     Wait for thalesmms.logisim.mobile to idle
+    t =     4.97s     Find the "Open, save, and share files, File" Button
+    t =     4.98s     Check for interrupting elements affecting "Open, save, and share files, File" Button
+    t =     5.00s         Wait for com.apple.springboard to idle
+    t =     5.02s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =     5.02s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =     5.02s     Synthesize event
+    t =     5.32s     Wait for thalesmms.logisim.mobile to idle
+    t =     5.32s Waiting 5.0s for Any (First Match) to exist
+    t =     6.40s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =     6.40s         Checking existence of `Any (First Match)`
+    t =     6.42s Find the Application 'thalesmms.logisim.mobile'
+    t =     6.43s Get all elements bound by index for: Elements matching predicate '(label == "Edit external file" OR label BEGINSWITH "Edit external file, ") OR (label == "Editar arquivo externo" OR label BEGINSWITH "Editar arquivo externo, ")'
+    t =     6.44s Checking existence of `Any (Element at index 0)`
+    t =     6.45s Find the Any (Element at index 0)
+    t =     6.46s Find the "Edit external file" Button
+    t =     6.47s Tap "Edit external file" Button
+    t =     6.47s     Wait for thalesmms.logisim.mobile to idle
+    t =     6.47s     Find the "Edit external file" Button
+    t =     6.48s     Check for interrupting elements affecting "Edit external file" Button
+    t =     6.49s         Wait for com.apple.springboard to idle
+    t =     6.89s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =     6.89s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =     6.89s     Synthesize event
+    t =     7.18s     Wait for thalesmms.logisim.mobile to idle
+    t =     7.19s Find the Application 'thalesmms.logisim.mobile'
+    t =     7.30s Added attachment named 'files-peer-1-picker-presentation'
+    t =     7.30s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =     7.47s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =     7.51s Added attachment named 'files-peer-1-picker-presentation-tree'
+    t =     7.51s Waiting 30.0s for Any (First Match) to exist
+    t =     8.58s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =     8.58s         Checking existence of `Any (First Match)`
+    t =     8.60s         Capturing element debug description
+    t =     9.56s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =     9.57s         Checking existence of `Any (First Match)`
+    t =     9.59s         Capturing element debug description
+    t =    10.56s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    10.56s         Checking existence of `Any (First Match)`
+    t =    12.88s Added attachment named 'files-peer-2-before-local-device-navigation'
+    t =    12.88s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    13.46s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    13.62s Added attachment named 'files-peer-2-before-local-device-navigation-tree'
+    t =    13.62s Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    13.68s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    13.75s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    13.82s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    13.89s Get all elements bound by index for: Elements matching predicate '"Browse View" IN identifiers'
+    t =    13.98s Checking existence of `"Browse View" CollectionView`
+    t =    14.04s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    14.10s Checking existence of `Cell (Element at index 0)`
+    t =    14.17s Find the Cell (Element at index 0)
+    t =    14.23s Find the Application 'thalesmms.logisim.mobile'
+    t =    14.28s Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    14.34s Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    14.40s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    14.46s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    14.59s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    14.75s Added attachment named 'files-peer-3-before-local-device'
+    t =    14.75s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    15.14s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    15.25s Added attachment named 'files-peer-3-before-local-device-tree'
+    t =    16.33s Checking `Expect predicate `BLOCKPREDICATE(0x10a2b62b0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    16.33s     Get all elements bound by index for: Elements matching predicate '"Browse View" IN identifiers'
+    t =    16.42s     Checking existence of `"Browse View" CollectionView`
+    t =    16.48s     Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    16.54s     Checking existence of `Cell (Element at index 0)`
+    t =    16.60s     Find the Cell (Element at index 0)
+    t =    16.66s     Find the Application 'thalesmms.logisim.mobile'
+    t =    16.71s     Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    16.78s Get all elements bound by index for: Elements matching predicate '"Browse View" IN identifiers'
+    t =    16.84s Checking existence of `"Browse View" CollectionView`
+    t =    16.90s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    16.96s Checking existence of `Cell (Element at index 0)`
+    t =    17.02s Find the Cell (Element at index 0)
+    t =    17.08s Find the Application 'thalesmms.logisim.mobile'
+    t =    17.13s Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    17.22s Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    17.28s Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    17.34s Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    17.40s Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    17.46s Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    17.53s Added attachment named 'files-peer-local-device-control'
+    t =    17.64s Added attachment named 'files-peer-4-ready-to-open-local-device'
+    t =    17.64s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    18.04s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    18.16s Added attachment named 'files-peer-4-ready-to-open-local-device-tree'
+    t =    18.16s Tap "DOC.sidebar.item.On My iPad" Cell
+    t =    18.16s     Wait for thalesmms.logisim.mobile to idle
+    t =    18.16s     Find the "DOC.sidebar.item.On My iPad" Cell
+    t =    18.22s     Check for interrupting elements affecting "DOC.sidebar.item.On My iPad" Cell
+    t =    18.28s         Wait for com.apple.springboard to idle
+    t =    18.29s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    18.29s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    18.30s     Synthesize event
+    t =    18.59s     Wait for thalesmms.logisim.mobile to idle
+    t =    18.69s Added attachment named 'files-peer-5-after-opening-On My iPad'
+    t =    18.69s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    20.04s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    20.15s Added attachment named 'files-peer-5-after-opening-On My iPad-tree'
+    t =    21.22s Checking `Expect predicate `BLOCKPREDICATE(0x11523fdb0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    21.22s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    21.31s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    21.38s     Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    21.44s     Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    21.50s     Checking existence of `StaticText (Element at index 0)`
+    t =    21.56s     Find the StaticText (Element at index 0)
+    t =    21.62s     Find the Application 'thalesmms.logisim.mobile'
+    t =    21.69s Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    21.75s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    21.81s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    21.87s Get all elements bound by index for: Elements matching predicate '(label == "On My iPad" OR label BEGINSWITH "On My iPad, ") OR (label == "No Meu iPad" OR label BEGINSWITH "No Meu iPad, ")'
+    t =    21.92s Checking existence of `StaticText (Element at index 0)`
+    t =    21.98s Find the StaticText (Element at index 0)
+    t =    22.04s Find the Application 'thalesmms.logisim.mobile'
+    t =    22.19s Added attachment named 'files-peer-6-before-peer-application-folder'
+    t =    22.19s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    22.58s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    22.69s Added attachment named 'files-peer-6-before-peer-application-folder-tree'
+    t =    22.69s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    22.75s Checking existence of `"File View" CollectionView`
+    t =    22.81s Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+    t =    22.87s Checking existence of `Cell (Element at index 0)`
+    t =    22.93s Find the Cell (Element at index 0)
+    t =    22.99s Find the Application 'thalesmms.logisim.mobile'
+    t =    23.04s Find the "Logisim Mobile, Container" Cell
+    t =    24.16s Checking `Expect predicate `BLOCKPREDICATE(0x10a2b6850)` for object Application 'thalesmms.logisim.mobile'`
+    t =    24.17s     Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    24.25s     Checking existence of `"File View" CollectionView`
+    t =    24.32s     Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+    t =    24.38s     Checking existence of `Cell (Element at index 0)`
+    t =    24.44s     Find the Cell (Element at index 0)
+    t =    24.50s     Find the Application 'thalesmms.logisim.mobile'
+    t =    24.55s     Find the "Logisim Mobile, Container" Cell
+    t =    24.62s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    24.67s Checking existence of `"File View" CollectionView`
+    t =    24.74s Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+    t =    24.80s Checking existence of `Cell (Element at index 0)`
+    t =    24.86s Find the Cell (Element at index 0)
+    t =    24.92s Find the Application 'thalesmms.logisim.mobile'
+    t =    24.96s Find the "Logisim Mobile, Container" Cell
+    t =    25.02s Find the "Logisim Mobile, Container" Cell
+    t =    25.08s Find the "Logisim Mobile, Container" Cell
+    t =    25.14s Find the "Logisim Mobile, Container" Cell
+    t =    25.20s Find the "Logisim Mobile, Container" Cell
+    t =    25.26s Find the "Logisim Mobile, Container" Cell
+    t =    25.32s Added attachment named 'files-peer-peer-application-folder-control'
+    t =    25.42s Added attachment named 'files-peer-7-ready-to-open-peer-application-folder'
+    t =    25.43s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    25.88s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    26.00s Added attachment named 'files-peer-7-ready-to-open-peer-application-folder-tree'
+    t =    26.00s Tap "Logisim Mobile, Container" Cell
+    t =    26.00s     Wait for thalesmms.logisim.mobile to idle
+    t =    26.00s     Find the "Logisim Mobile, Container" Cell
+    t =    26.06s     Check for interrupting elements affecting "Logisim Mobile, Container" Cell
+    t =    26.11s         Wait for com.apple.springboard to idle
+    t =    26.12s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    26.13s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    26.13s     Synthesize event
+    t =    26.43s     Wait for thalesmms.logisim.mobile to idle
+    t =    26.53s Added attachment named 'files-peer-8-after-opening-Logisim Mobile'
+    t =    26.53s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    27.73s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    27.83s Added attachment named 'files-peer-8-after-opening-Logisim Mobile-tree'
+    t =    28.91s Checking `Expect predicate `BLOCKPREDICATE(0x115215440)` for object Application 'thalesmms.logisim.mobile'`
+    t =    28.91s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    29.00s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    29.05s     Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+    t =    29.12s     Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+    t =    29.18s     Find the Button (Element at index 0)
+    t =    29.24s     Checking existence of `"Logisim Mobile, Actions Menu" Button`
+    t =    29.30s     Find the "Logisim Mobile, Actions Menu" Button
+    t =    29.36s     Find the Application 'thalesmms.logisim.mobile'
+    t =    29.41s Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    29.46s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    29.52s Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+    t =    29.58s Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+    t =    29.64s Find the Button (Element at index 0)
+    t =    29.69s Checking existence of `"Logisim Mobile, Actions Menu" Button`
+    t =    29.75s Find the "Logisim Mobile, Actions Menu" Button
+    t =    29.81s Find the Application 'thalesmms.logisim.mobile'
+    t =    29.96s Added attachment named 'files-peer-9-before-e2e-folder'
+    t =    29.96s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    30.36s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    30.46s Added attachment named 'files-peer-9-before-e2e-folder-tree'
+    t =    30.46s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    30.51s Checking existence of `"File View" CollectionView`
+    t =    30.57s Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+    t =    30.63s Checking existence of `Cell (Element at index 0)`
+    t =    30.69s Find the Cell (Element at index 0)
+    t =    30.75s Find the Application 'thalesmms.logisim.mobile'
+    t =    30.80s Find the "LogisimE2E, Folder" Cell
+    t =    31.93s Checking `Expect predicate `BLOCKPREDICATE(0x11506da70)` for object Application 'thalesmms.logisim.mobile'`
+    t =    31.93s     Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    31.99s     Checking existence of `"File View" CollectionView`
+    t =    32.05s     Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+    t =    32.11s     Checking existence of `Cell (Element at index 0)`
+    t =    32.16s     Find the Cell (Element at index 0)
+    t =    32.23s     Find the Application 'thalesmms.logisim.mobile'
+    t =    32.28s     Find the "LogisimE2E, Folder" Cell
+    t =    32.34s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    32.40s Checking existence of `"File View" CollectionView`
+    t =    32.46s Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+    t =    32.52s Checking existence of `Cell (Element at index 0)`
+    t =    32.57s Find the Cell (Element at index 0)
+    t =    32.63s Find the Application 'thalesmms.logisim.mobile'
+    t =    32.68s Find the "LogisimE2E, Folder" Cell
+    t =    32.74s Find the "LogisimE2E, Folder" Cell
+    t =    32.80s Find the "LogisimE2E, Folder" Cell
+    t =    32.86s Find the "LogisimE2E, Folder" Cell
+    t =    32.91s Find the "LogisimE2E, Folder" Cell
+    t =    32.97s Find the "LogisimE2E, Folder" Cell
+    t =    33.03s Added attachment named 'files-peer-e2e-folder-control'
+    t =    33.13s Added attachment named 'files-peer-10-ready-to-open-e2e-folder'
+    t =    33.13s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    33.51s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    33.61s Added attachment named 'files-peer-10-ready-to-open-e2e-folder-tree'
+    t =    33.61s Tap "LogisimE2E, Folder" Cell
+    t =    33.61s     Wait for thalesmms.logisim.mobile to idle
+    t =    33.61s     Find the "LogisimE2E, Folder" Cell
+    t =    33.67s     Check for interrupting elements affecting "LogisimE2E, Folder" Cell
+    t =    33.73s         Wait for com.apple.springboard to idle
+    t =    33.75s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    33.75s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    33.75s     Synthesize event
+    t =    34.05s     Wait for thalesmms.logisim.mobile to idle
+    t =    34.15s Added attachment named 'files-peer-11-after-opening-LogisimE2E'
+    t =    34.15s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    35.44s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    35.57s Added attachment named 'files-peer-11-after-opening-LogisimE2E-tree'
+    t =    36.65s Checking `Expect predicate `BLOCKPREDICATE(0x10a2b7420)` for object Application 'thalesmms.logisim.mobile'`
+    t =    36.65s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    36.75s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    36.83s     Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+    t =    36.91s     Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+    t =    36.99s     Find the Button (Element at index 0)
+    t =    37.07s     Checking existence of `"LogisimE2E, Actions Menu" Button`
+    t =    37.14s     Find the "LogisimE2E, Actions Menu" Button
+    t =    37.23s     Find the Application 'thalesmms.logisim.mobile'
+    t =    37.30s Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    37.37s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    37.45s Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+    t =    37.53s Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+    t =    37.61s Find the Button (Element at index 0)
+    t =    37.69s Checking existence of `"LogisimE2E, Actions Menu" Button`
+    t =    37.77s Find the "LogisimE2E, Actions Menu" Button
+    t =    37.85s Find the Application 'thalesmms.logisim.mobile'
+    t =    38.01s Added attachment named 'files-peer-12-before-run-folder'
+    t =    38.01s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    38.62s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    38.76s Added attachment named 'files-peer-12-before-run-folder-tree'
+    t =    38.76s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    38.84s Checking existence of `"File View" CollectionView`
+    t =    38.92s Get all elements bound by index for: Elements matching predicate 'label == "2b70fa63bb48" OR label BEGINSWITH "2b70fa63bb48, "'
+    t =    39.00s Checking existence of `Cell (Element at index 0)`
+    t =    39.08s Find the Cell (Element at index 0)
+    t =    39.15s Find the Application 'thalesmms.logisim.mobile'
+    t =    39.21s Find the "2b70fa63bb48, Folder" Cell
+    t =    40.37s Checking `Expect predicate `BLOCKPREDICATE(0x115216af0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    40.37s     Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    40.46s     Checking existence of `"File View" CollectionView`
+    t =    40.54s     Get all elements bound by index for: Elements matching predicate 'label == "2b70fa63bb48" OR label BEGINSWITH "2b70fa63bb48, "'
+    t =    40.62s     Checking existence of `Cell (Element at index 0)`
+    t =    40.70s     Find the Cell (Element at index 0)
+    t =    40.79s     Find the Application 'thalesmms.logisim.mobile'
+    t =    40.85s     Find the "2b70fa63bb48, Folder" Cell
+    t =    41.06s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    41.16s Checking existence of `"File View" CollectionView`
+    t =    41.24s Get all elements bound by index for: Elements matching predicate 'label == "2b70fa63bb48" OR label BEGINSWITH "2b70fa63bb48, "'
+    t =    41.32s Checking existence of `Cell (Element at index 0)`
+    t =    41.40s Find the Cell (Element at index 0)
+    t =    41.49s Find the Application 'thalesmms.logisim.mobile'
+    t =    41.55s Find the "2b70fa63bb48, Folder" Cell
+    t =    41.63s Find the "2b70fa63bb48, Folder" Cell
+    t =    41.71s Find the "2b70fa63bb48, Folder" Cell
+    t =    41.80s Find the "2b70fa63bb48, Folder" Cell
+    t =    41.88s Find the "2b70fa63bb48, Folder" Cell
+    t =    41.96s Find the "2b70fa63bb48, Folder" Cell
+    t =    42.04s Added attachment named 'files-peer-run-folder-control'
+    t =    42.16s Added attachment named 'files-peer-13-ready-to-open-run-folder'
+    t =    42.16s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    42.68s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    42.81s Added attachment named 'files-peer-13-ready-to-open-run-folder-tree'
+    t =    42.81s Tap "2b70fa63bb48, Folder" Cell
+    t =    42.81s     Wait for thalesmms.logisim.mobile to idle
+    t =    42.81s     Find the "2b70fa63bb48, Folder" Cell
+    t =    42.89s     Check for interrupting elements affecting "2b70fa63bb48, Folder" Cell
+    t =    42.97s         Wait for com.apple.springboard to idle
+    t =    42.99s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    42.99s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    43.00s     Synthesize event
+    t =    43.30s     Wait for thalesmms.logisim.mobile to idle
+    t =    43.40s Added attachment named 'files-peer-14-after-opening-2b70fa63bb48'
+    t =    43.40s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    45.23s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    45.37s Added attachment named 'files-peer-14-after-opening-2b70fa63bb48-tree'
+    t =    46.43s Checking `Expect predicate `BLOCKPREDICATE(0x11684e7c0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    46.43s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    46.54s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    46.61s     Get all elements bound by index for: Elements matching predicate 'label == "2b70fa63bb48" OR label BEGINSWITH "2b70fa63bb48, "'
+    t =    46.68s     Get all elements bound by index for: Elements matching predicate 'label == "2b70fa63bb48" OR label BEGINSWITH "2b70fa63bb48, "'
+    t =    46.76s     Find the Button (Element at index 0)
+    t =    46.83s     Checking existence of `"2b70fa63bb48, Actions Menu" Button`
+    t =    46.91s     Find the "2b70fa63bb48, Actions Menu" Button
+    t =    46.99s     Find the Application 'thalesmms.logisim.mobile'
+    t =    47.06s Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    47.14s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    47.21s Get all elements bound by index for: Elements matching predicate 'label == "2b70fa63bb48" OR label BEGINSWITH "2b70fa63bb48, "'
+    t =    47.29s Get all elements bound by index for: Elements matching predicate 'label == "2b70fa63bb48" OR label BEGINSWITH "2b70fa63bb48, "'
+    t =    47.37s Find the Button (Element at index 0)
+    t =    47.45s Checking existence of `"2b70fa63bb48, Actions Menu" Button`
+    t =    47.53s Find the "2b70fa63bb48, Actions Menu" Button
+    t =    47.61s Find the Application 'thalesmms.logisim.mobile'
+    t =    47.67s Added attachment named 'files-peer-requested-document'
+    t =    47.77s Added attachment named 'files-peer-15-before-fixture-document'
+    t =    47.77s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    48.27s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    48.40s Added attachment named 'files-peer-15-before-fixture-document-tree'
+    t =    48.40s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    48.47s Checking existence of `"File View" CollectionView`
+    t =    48.55s Get all elements bound by index for: Elements matching predicate '(label == "missing-external.circ" OR label BEGINSWITH "missing-external.circ, ") OR (label == "missing-external" OR label BEGINSWITH "missing-external, ")'
+    t =    48.62s Checking existence of `Cell (Element at index 0)`
+    t =    48.70s Find the Cell (Element at index 0)
+    t =    48.79s Find the Application 'thalesmms.logisim.mobile'
+    t =    48.85s Find the "missing-external, circ" Cell
+    t =    50.01s Checking `Expect predicate `BLOCKPREDICATE(0x11523fb10)` for object Application 'thalesmms.logisim.mobile'`
+    t =    50.01s     Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    50.11s     Checking existence of `"File View" CollectionView`
+    t =    50.19s     Get all elements bound by index for: Elements matching predicate '(label == "missing-external.circ" OR label BEGINSWITH "missing-external.circ, ") OR (label == "missing-external" OR label BEGINSWITH "missing-external, ")'
+    t =    50.28s     Checking existence of `Cell (Element at index 0)`
+    t =    50.35s     Find the Cell (Element at index 0)
+    t =    50.43s     Find the Application 'thalesmms.logisim.mobile'
+    t =    50.50s     Find the "missing-external, circ" Cell
+    t =    50.58s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    50.65s Checking existence of `"File View" CollectionView`
+    t =    50.72s Get all elements bound by index for: Elements matching predicate '(label == "missing-external.circ" OR label BEGINSWITH "missing-external.circ, ") OR (label == "missing-external" OR label BEGINSWITH "missing-external, ")'
+    t =    50.80s Checking existence of `Cell (Element at index 0)`
+    t =    50.88s Find the Cell (Element at index 0)
+    t =    50.95s Find the Application 'thalesmms.logisim.mobile'
+    t =    51.01s Find the "missing-external, circ" Cell
+    t =    51.09s Find the "missing-external, circ" Cell
+    t =    51.17s Find the "missing-external, circ" Cell
+    t =    51.24s Find the "missing-external, circ" Cell
+    t =    51.32s Find the "missing-external, circ" Cell
+    t =    51.40s Find the "missing-external, circ" Cell
+    t =    51.48s Added attachment named 'files-peer-fixture-document-control'
+    t =    51.59s Added attachment named 'files-peer-16-ready-to-open-fixture-document'
+    t =    51.59s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    52.08s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    52.20s Added attachment named 'files-peer-16-ready-to-open-fixture-document-tree'
+    t =    52.20s Tap "missing-external, circ" Cell
+    t =    52.20s     Wait for thalesmms.logisim.mobile to idle
+    t =    52.20s     Find the "missing-external, circ" Cell
+    t =    52.29s     Check for interrupting elements affecting "missing-external, circ" Cell
+    t =    52.35s         Wait for com.apple.springboard to idle
+    t =    52.37s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    52.37s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    52.37s     Synthesize event
+    t =    52.67s     Wait for thalesmms.logisim.mobile to idle
+    t =    52.79s Added attachment named 'files-peer-17-after-document-selection'
+    t =    52.79s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    53.58s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    53.84s Added attachment named 'files-peer-17-after-document-selection-tree'
+    t =    54.88s Checking `Expect predicate `BLOCKPREDICATE(0x115205890)` for object Application 'thalesmms.logisim.mobile'`
+    t =    54.88s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    54.92s     Checking existence of `"DOCPicker.actionButton" Button`
+    t =    54.96s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    54.98s Checking existence of `"DOCPicker.actionButton" Button`
+    t =    56.02s Checking `Expect predicate `BLOCKPREDICATE(0x1152070f0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    56.02s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    56.06s     Checking existence of `"DOCPicker.actionButton" Button`
+    t =    56.19s Added attachment named 'files-peer-18-picker-dismissed'
+    t =    56.19s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    56.34s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    56.37s Added attachment named 'files-peer-18-picker-dismissed-tree'
+    t =    57.44s Checking `Expect predicate `BLOCKPREDICATE(0x115206310)` for object Application 'thalesmms.logisim.mobile'`
+    t =    57.44s     Checking existence of `"editor-import-report" Any`
+    t =    57.51s     Checking existence of `Any (First Match)`
+    t =    57.52s Checking existence of `"editor-import-report" Any`
+    t =    57.56s Checking existence of `Any (First Match)`
+    t =    58.61s Checking `Expect predicate `BLOCKPREDICATE(0x115207750)` for object Application 'thalesmms.logisim.mobile'`
+    t =    58.61s     Checking existence of `"editor-import-report" Any`
+    t =    58.68s     Checking existence of `Any (First Match)`
+    t =    58.68s Checking existence of `"editor-import-report" Any`
+    t =    58.72s Checking existence of `Any (First Match)`
+    t =    58.82s Added attachment named 'document-external'
+    t =    58.82s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    58.95s Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    58.99s Added attachment named 'document-external-tree'
+    t =    58.99s Checking existence of `"editor-project-toolbar-menu" Any`
+    t =    59.03s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    59.07s Checking existence of `"editor-project-toolbar" Any`
+    t =    59.08s Find the Application 'thalesmms.logisim.mobile'
+    t =    59.09s Get all elements bound by index for: Elements matching predicate '(label == "Abrir, salvar e compartilhar arquivos" OR label BEGINSWITH "Abrir, salvar e compartilhar arquivos, ") OR (label == "Open, save, and share files" OR label BEGINSWITH "Open, save, and share files, ")'
+    t =    59.11s Checking existence of `Any (Element at index 0)`
+    t =    59.12s Find the Any (Element at index 0)
+    t =    59.14s Find the "Open, save, and share files, File" Button
+    t =    59.17s Tap "Open, save, and share files, File" Button
+    t =    59.17s     Wait for thalesmms.logisim.mobile to idle
+    t =    59.17s     Find the "Open, save, and share files, File" Button
+    t =    59.19s     Check for interrupting elements affecting "Open, save, and share files, File" Button
+    t =    59.20s         Wait for com.apple.springboard to idle
+    t =    59.21s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    59.22s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    59.22s     Synthesize event
+    t =    59.50s     Wait for thalesmms.logisim.mobile to idle
+    t =    59.51s Waiting 5.0s for Any (First Match) to exist
+    t =    60.51s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    60.53s         Checking existence of `Any (First Match)`
+    t =    60.54s Find the Application 'thalesmms.logisim.mobile'
+    t =    60.54s Get all elements bound by index for: Elements matching predicate '(label == "Salvar no arquivo" OR label BEGINSWITH "Salvar no arquivo, ") OR (label == "Save to file" OR label BEGINSWITH "Save to file, ")'
+    t =    60.55s Checking existence of `Any (Element at index 0)`
+    t =    60.56s Find the Any (Element at index 0)
+    t =    60.57s Find the "Save to file" Button
+    t =    60.58s Find the "Save to file" Button
+    t =    60.59s Find the Application 'thalesmms.logisim.mobile'
+    t =    60.59s Get all elements bound by index for: Elements matching predicate '(label == "Fechar" OR label BEGINSWITH "Fechar, ") OR (label == "Close" OR label BEGINSWITH "Close, ")'
+    t =    60.60s Checking existence of `Any (Element at index 0)`
+    t =    60.60s Find the Any (Element at index 0)
+    t =    60.61s Find the "Close" Button
+    t =    60.62s Tap "Close" Button
+    t =    60.62s     Wait for thalesmms.logisim.mobile to idle
+    t =    60.62s     Find the "Close" Button
+    t =    60.63s     Check for interrupting elements affecting "Close" Button
+    t =    60.64s         Wait for com.apple.springboard to idle
+    t =    60.66s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    60.66s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    60.66s     Synthesize event
+    t =    60.94s     Wait for thalesmms.logisim.mobile to idle
+    t =    60.94s Added attachment named 'missing-external-picker-setup'
+    t =    60.95s Checking existence of `"editor-project-toolbar-menu" Any`
+    t =    61.00s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    61.05s Checking existence of `"editor-project-toolbar" Any`
+    t =    61.05s Find the Application 'thalesmms.logisim.mobile'
+    t =    61.06s Get all elements bound by index for: Elements matching predicate '(label == "Importar ou exportar circuito e projeto" OR label BEGINSWITH "Importar ou exportar circuito e projeto, ") OR (label == "Import or export circuit and project" OR label BEGINSWITH "Import or export circuit and project, ")'
+    t =    61.08s Checking existence of `Any (Element at index 0)`
+    t =    61.10s Find the Any (Element at index 0)
+    t =    61.12s Find the "Import or export circuit and project, .circ" Button
+    t =    61.14s Tap "Import or export circuit and project, .circ" Button
+    t =    61.14s     Wait for thalesmms.logisim.mobile to idle
+    t =    61.14s     Find the "Import or export circuit and project, .circ" Button
+    t =    61.16s     Check for interrupting elements affecting "Import or export circuit and project, .circ" Button
+    t =    61.17s         Wait for com.apple.springboard to idle
+    t =    61.18s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    61.19s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    61.19s     Synthesize event
+    t =    61.47s     Wait for thalesmms.logisim.mobile to idle
+    t =    62.52s Checking `Expect predicate `BLOCKPREDICATE(0x1152059b0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    62.52s     Checking existence of `"editor-xml-body" Any`
+    t =    62.55s     Find the "editor-xml-body" Any
+    t =    62.57s     Find the "editor-xml-body" Other
+    t =    62.58s Checking existence of `"editor-xml-body" Other`
+    t =    62.59s Waiting 5.0s for "editor-xml-body" Any to exist
+    t =    63.61s     Checking `Expect predicate `existsNoRetry == 1` for object "editor-xml-body" Any`
+    t =    63.61s         Checking existence of `"editor-xml-body" Any`
+    t =    63.62s Find the Application 'thalesmms.logisim.mobile'
+    t =    63.63s Find the "editor-xml-body" Any
+    t =    63.65s Get all elements bound by index for: Elements matching predicate '(label == "Editar XML" OR label BEGINSWITH "Editar XML, ") OR (label == "Edit XML" OR label BEGINSWITH "Edit XML, ") OR (label == "Copy" OR label BEGINSWITH "Copy, ") OR (label == "Copiar" OR label BEGINSWITH "Copiar, ")'
+    t =    63.66s Checking existence of `Any (Element at index 0)`
+    t =    63.67s Find the Any (Element at index 0)
+    t =    63.69s Find the "Edit XML" Button
+    t =    63.71s Find the "Edit XML" Button
+    t =    63.72s Find the "Edit XML" Button
+    t =    63.73s Tap "Edit XML" Button
+    t =    63.73s     Wait for thalesmms.logisim.mobile to idle
+    t =    63.74s     Find the "Edit XML" Button
+    t =    63.75s     Check for interrupting elements affecting "Edit XML" Button
+    t =    63.76s         Wait for com.apple.springboard to idle
+    t =    63.77s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    63.77s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    63.78s     Synthesize event
+    t =    64.08s     Wait for thalesmms.logisim.mobile to idle
+    t =    65.14s Checking `Expect predicate `BLOCKPREDICATE(0x10a2b60a0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    65.14s     Get all elements bound by index for: Descendants matching type TextView
+    t =    65.16s     Get all elements bound by index for: Descendants matching type TextField
+    t =    65.17s     Checking existence of `TextView (Element at index 0)`
+    t =    65.19s     Find the TextView (Element at index 0)
+    t =    65.19s Get all elements bound by index for: Descendants matching type TextView
+    t =    65.20s Get all elements bound by index for: Descendants matching type TextField
+    t =    65.21s Checking existence of `TextView (Element at index 0)`
+    t =    65.21s Find the TextView (Element at index 0)
+    t =    65.22s Find the "Project XML" TextView
+    t =    65.23s Added attachment named 'before-missing-external.circ'
+    t =    65.23s Find the Application 'thalesmms.logisim.mobile'
+    t =    65.24s Get all elements bound by index for: Elements matching predicate '(label == "Fechar" OR label BEGINSWITH "Fechar, ") OR (label == "Close" OR label BEGINSWITH "Close, ")'
+    t =    65.25s Checking existence of `Any (Element at index 0)`
+    t =    65.26s Find the Any (Element at index 0)
+    t =    65.27s Find the "Close" Button
+    t =    65.28s Tap "Close" Button
+    t =    65.28s     Wait for thalesmms.logisim.mobile to idle
+    t =    65.28s     Find the "Close" Button
+    t =    65.29s     Check for interrupting elements affecting "Close" Button
+    t =    65.30s         Wait for com.apple.springboard to idle
+    t =    65.32s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    65.32s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    65.33s     Synthesize event
+    t =    65.62s     Wait for thalesmms.logisim.mobile to idle
+    t =    66.69s Checking `Expect predicate `BLOCKPREDICATE(0x10a2b7d50)` for object Application 'thalesmms.logisim.mobile'`
+    t =    66.69s     Checking existence of `Any (First Match)`
+    t =    66.73s Checking existence of `"editor-project-toolbar-menu" Any`
+    t =    66.78s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    66.83s Checking existence of `"editor-project-toolbar" Any`
+    t =    66.84s Find the Application 'thalesmms.logisim.mobile'
+    t =    66.85s Get all elements bound by index for: Elements matching predicate '(label == "Abrir, salvar e compartilhar arquivos" OR label BEGINSWITH "Abrir, salvar e compartilhar arquivos, ") OR (label == "Open, save, and share files" OR label BEGINSWITH "Open, save, and share files, ")'
+    t =    66.87s Checking existence of `Any (Element at index 0)`
+    t =    66.88s Find the Any (Element at index 0)
+    t =    66.90s Find the "Open, save, and share files, File" Button
+    t =    66.93s Tap "Open, save, and share files, File" Button
+    t =    66.93s     Wait for thalesmms.logisim.mobile to idle
+    t =    66.93s     Find the "Open, save, and share files, File" Button
+    t =    66.95s     Check for interrupting elements affecting "Open, save, and share files, File" Button
+    t =    66.96s         Wait for com.apple.springboard to idle
+    t =    66.98s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    66.98s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    66.98s     Synthesize event
+    t =    67.27s     Wait for thalesmms.logisim.mobile to idle
+    t =    67.28s Waiting 5.0s for Any (First Match) to exist
+    t =    68.29s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    68.29s         Checking existence of `Any (First Match)`
+    t =    68.29s Find the Application 'thalesmms.logisim.mobile'
+    t =    68.30s Get all elements bound by index for: Elements matching predicate '(label == "Salvar no arquivo" OR label BEGINSWITH "Salvar no arquivo, ") OR (label == "Save to file" OR label BEGINSWITH "Save to file, ")'
+    t =    68.31s Checking existence of `Any (Element at index 0)`
+    t =    68.32s Find the Any (Element at index 0)
+    t =    68.33s Find the "Save to file" Button
+    t =    68.35s Find the "Save to file" Button
+    t =    68.36s Tap "Save to file" Button
+    t =    68.36s     Wait for thalesmms.logisim.mobile to idle
+    t =    68.36s     Find the "Save to file" Button
+    t =    68.37s     Check for interrupting elements affecting "Save to file" Button
+    t =    68.38s         Wait for com.apple.springboard to idle
+    t =    68.40s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    68.40s Ignoring failure to get hierarchy for remote element in process 95333 (Error getting main window kAXErrorServerNotFound)
+    t =    68.40s     Synthesize event
+    t =    68.69s     Wait for thalesmms.logisim.mobile to idle
+    t =    68.69s Waiting 20.0s for Any (First Match) to exist
+    t =    69.70s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    69.70s         Checking existence of `Any (First Match)`
+    t =    69.72s Waiting 10.0s for Any (First Match) to exist
+    t =    70.77s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    70.78s         Checking existence of `Any (First Match)`
+    t =    70.80s Waiting 10.0s for Any (First Match) to exist
+    t =    71.82s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    71.82s         Checking existence of `Any (First Match)`
+    t =    71.83s         Capturing element debug description
+    t =    72.84s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    72.84s         Checking existence of `Any (First Match)`
+    t =    72.86s         Capturing element debug description
+    t =    73.89s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    73.89s         Checking existence of `Any (First Match)`
+    t =    73.91s         Capturing element debug description
+    t =    74.87s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    74.87s         Checking existence of `Any (First Match)`
+    t =    74.88s         Capturing element debug description
+    t =    75.81s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    75.82s         Checking existence of `Any (First Match)`
+    t =    75.84s         Capturing element debug description
+    t =    76.88s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    76.88s         Checking existence of `Any (First Match)`
+    t =    76.90s         Capturing element debug description
+    t =    77.81s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    77.81s         Checking existence of `Any (First Match)`
+    t =    77.83s         Capturing element debug description
+    t =    78.84s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    78.84s         Checking existence of `Any (First Match)`
+    t =    78.86s         Capturing element debug description
+    t =    79.87s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    79.87s         Checking existence of `Any (First Match)`
+    t =    79.88s         Capturing element debug description
+    t =    80.80s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    80.80s         Checking existence of `Any (First Match)`
+    t =    80.82s         Capturing element debug description
+    t =    80.83s     Checking existence of `Any (First Match)`
+    t =    80.84s Collecting debug information to assist test failure triage
+    t =    80.84s     Requesting snapshot of accessibility hierarchy for app with pid 4251
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-missing-files-001/harness/FilesEndToEndTests.swift:183: error: -[EditorEndToEndTests.FilesEndToEndTests testMissingExternalDocumentReportsFailureAndPreservesProject] : XCTAssertTrue failed - The error must identify the missing file or a canonical provider/access failure; an unrelated alert is insufficient
+    t =    80.93s Tear Down
+    t =    80.93s     Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    80.97s     Requesting snapshot of accessibility hierarchy for app with pid 4251
+    t =    80.98s     Added attachment named 'native-tree'
+    t =    81.08s     Added attachment named 'final-screen'
+    t =    81.08s     Terminate thalesmms.logisim.mobile:4251
+    t =    82.10s     Setting device orientation to Portrait
+    t =    82.11s         Wait for com.apple.springboard to idle
+Test Case '-[EditorEndToEndTests.FilesEndToEndTests testMissingExternalDocumentReportsFailureAndPreservesProject]' failed (82.204 seconds).
+Test Suite 'FilesEndToEndTests' failed at 2026-11-05 02:22:41.290.
+	 Executed 1 test, with 1 failure (0 unexpected) in 82.204 (82.206) seconds
+Test Suite 'EditorEndToEndTests.xctest' failed at 2026-11-05 02:22:41.290.
+	 Executed 1 test, with 1 failure (0 unexpected) in 82.204 (82.207) seconds
+Test Suite 'Selected tests' failed at 2026-11-05 02:22:41.291.
+	 Executed 1 test, with 1 failure (0 unexpected) in 82.204 (82.208) seconds
+2026-11-05 02:22:41.578 xcodebuild[4184:9575113] [MT] IDETestOperationsObserverDebug: 85.809 elapsed -- Testing started completed.
+2026-11-05 02:22:41.578 xcodebuild[4184:9575113] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-05 02:22:41.578 xcodebuild[4184:9575113] [MT] IDETestOperationsObserverDebug: 85.809 sec, +85.809 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-missing-files-001/editor.xcresult
+
+Failing tests:
+	FilesEndToEndTests.testMissingExternalDocumentReportsFailureAndPreservesProject()
+
+** TEST EXECUTE FAILED **
+
+Testing started

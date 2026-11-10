@@ -1,0 +1,19 @@
+# Android library directory access
+
+`AndroidDirectoryAssetActions` uses `ACTION_OPEN_DOCUMENT_TREE` and returns the common `DirectoryAssetGrant`. Construct the adapter before the activity starts, then supply it to the library import controller. Picker callbacks run on the main thread. The grant's blocking `circuitFiles` and `read` operations belong on the controller's IO worker.
+
+Folder import uses public APIs available on API 26–28 as well as newer Android releases. It does not call the API 29 client helper `DocumentsContract.isChildDocument`, use reflection, or use hidden methods. Runtime execution on API 26–28 is still **NOT_RUN**.
+
+The adapter walks only children returned under the selected tree. Before descending or reading, it queries the document URI built with `buildDocumentUriUsingTree` and requires exactly one metadata row with the requested opaque document ID. Document flags must be present and non-null, so missing virtual-document metadata is rejected. Each URI must retain the granted authority and tree root. All child queries and byte reads also use that tree; it never derives filesystem paths or opens siblings of a separately granted document.
+
+This relies on the provider's tree enforcement rather than on a client-side path approximation. In both [Android 8's DocumentsProvider](https://android.googlesource.com/platform/frameworks/base/+/android-8.0.0_r1/core/java/android/provider/DocumentsProvider.java) and [Android 9's DocumentsProvider](https://android.googlesource.com/platform/frameworks/base/+/android-9.0.0_r1/core/java/android/provider/DocumentsProvider.java), the final document/children query handler calls `enforceTree`. File, asset-file, and typed asset-file open handlers enforce the tree again before returning a stream. A provider that does not establish descendant membership denies access; the default provider implementation returns false. A denied or unsupported proof is never retried using an unscoped document URI.
+
+SAF does not expose a portable physical-symlink attribute. Containment relies on the provider's document hierarchy and the operating system's tree permission. Repeated IDs, cycles, ambiguous names, virtual documents, and documents outside the reported tree are refused. This is not a filesystem-level symlink audit of a third-party provider.
+
+Paths use exact, case-sensitive names and forward slashes. Empty segments, absolute paths, dot segments, backslashes, colons, and control characters are rejected. Circuit listing recognizes `.circ` without regard to case and fails on overflow instead of truncating. The traversal limits are 16,384 nodes including the root and 64 path segments. A requested circuit-file limit must be between 1 and 4,096; reads must request between 1 and 2,000,000 bytes.
+
+The grant is temporary. The adapter does not call `takePersistableUriPermission`, release persistent permissions, or revoke global URI permissions belonging to another flow. `release` closes this reader capability without blocking the UI; subsequent operations fail. Cursors and streams close within each operation. A missing file returns null, while revoked access and an unprovable directory produce localized failures.
+
+Activity destruction cancels the active picker callback exactly once. If process recreation loses that callback, the native recovery notice asks the user to select the folder again. It does not attach an older directory to a different project.
+
+The original 19 graph-policy tests remain, with two additional cases for provider denial and a source moved outside the tree after listing. These tests do not execute `ContentResolver`, Android's provider enforcement, or the native picker. Compilation and API 26–28/provider execution remain deferred to the coordinated Android gate. The 17 message keys are preserved, including the earlier unsupported-version notice for catalog compatibility.

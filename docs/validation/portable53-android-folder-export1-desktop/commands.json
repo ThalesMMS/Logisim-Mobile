@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "scope": "Low-level artifact-only inspection. Strict complete-flow wrapper was not invoked or weakened. No peer or passed UI receipt exists.",
+  "compile": [
+    "java",
+    "-cp",
+    "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/2.4.21/3cd9c37c505fb9879e03ebeaf91d9c9500ab6eca/kotlin-compiler-embeddable-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.4.21/abc7ff9f7e229cb6bdfadad81e93c871e6cdde41/kotlin-script-runtime-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/2.4.21/5d9b0394b3ff65cd3dd33c6c31a2956b1d59885a/kotlin-daemon-embeddable-2.4.21.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.6.10/1cbe9c92c12a94eea200d23c2bbaedaf3daf5132/kotlin-reflect-1.6.10.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.0/ac1dc37a30a93150b704022f8d895ee1bd3a36b3/kotlinx-coroutines-core-jvm-1.8.0.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar",
+    "org.jetbrains.kotlin.cli.jvm.K2JVMCompiler",
+    "-no-stdlib",
+    "-no-reflect",
+    "-jvm-target",
+    "21",
+    "-classpath",
+    "/tmp/logisim-io-driver-review/core-jvm.jar:/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+    "-Xfriend-paths=/tmp/logisim-io-driver-review/core-jvm.jar",
+    "-d",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/outputs/partial-android-folder13849/classes",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/docs/validation/portable53-ios-native-pass/frozen/offline-replay/scripts/portable/Portable53Oracle.kt",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/docs/validation/portable53-ios-native-pass/frozen/offline-replay/composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/docs/validation/portable53-ios-native-pass/frozen/offline-replay/composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt"
+  ],
+  "inspect": [
+    "java",
+    "-Djava.awt.headless=true",
+    "-cp",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/outputs/partial-android-folder13849/classes:/tmp/logisim-io-driver-review/core-jvm.jar:/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+    "dev.logisim.mobile.qualification.Portable53OracleKt",
+    "artifact",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/outputs/partial-android-folder13849/actual-export-before-restart.lsebdl",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/outputs/partial-android-folder13849/oracle-raw-internal.json",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/portable-ios-run-beta/docs/validation/portable53-ios-native-pass/frozen/offline-replay/fixtures/portable-projects",
+    "false",
+    "partial-app-export"
+  ]
+}

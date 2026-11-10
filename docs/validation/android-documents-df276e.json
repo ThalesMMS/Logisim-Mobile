@@ -1,0 +1,78 @@
+{
+  "productionPin": "df276e39e2af27fdbe26d220913657b43ee717a9",
+  "scope": "Three positive circuit import flows only; independent of the unfinished file-workflow and issue35 qualification",
+  "result": "PASS",
+  "imports": [
+    {
+      "action": "VIEW",
+      "export": "incoming-sap1.circ",
+      "bytes": 52859,
+      "sha256": "91dbf06c1b3a94a604d62ed840ae06530a77ecf5e98a30bcfd7e5b7daaf4c0bc",
+      "observedImportToken": "e16cce7ee95747398e7b51c526e204fb",
+      "counts": {
+        "circuits": 7,
+        "components": 156,
+        "wires": 318
+      }
+    },
+    {
+      "action": "SEND",
+      "export": "incoming-share.circ",
+      "bytes": 52859,
+      "sha256": "4175e40a2a5009144b834b6fc9dd50a177db1a56f561ebfb9254357f400f3ba0",
+      "observedImportToken": "87e5149f724f4055a27de883973a3910",
+      "counts": {
+        "circuits": 7,
+        "components": 156,
+        "wires": 318
+      }
+    },
+    {
+      "action": "SAF",
+      "export": "local-import.circ",
+      "bytes": 52859,
+      "sha256": "d28a996f12cfabb6a85f693d1f7af6540c2ea77a16a23461eac7a941cd1a5984",
+      "observedImportToken": "64c0d61e3e9141fbaf39616e21b1cdd0",
+      "counts": {
+        "circuits": 7,
+        "components": 156,
+        "wires": 318
+      }
+    }
+  ],
+  "expectedNonceProof": "Retained runner source generates a new random source marker per action and asserts the exported marker equals it. This receipt reports observed tokens; it does not reconstruct deleted provider sources.",
+  "retainedHarness": {
+    "e2e-android.py": "02a61f4b9483d764209c8a3fe12644b64fb331094e312fcfdbb44a3ac0ff1cfd",
+    "android_ui.py": "4ddef955872bfca21fa38c2f2cd7be0e3aca62413b6255f16842b2b5ce93a4e3",
+    "android_editing_scenarios.py": "2a6e91143da79df1bc35b009189384d635da520904a3e0615e581c9c655c8871",
+    "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+    "android_inspector_scenarios.py": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+    "android_io_showcase_scenarios.py": "7cbeb3b512d026516dc58d457c78b125798b1c129973530426b9468d25a2f7d4",
+    "android_portable_scenarios.py": "0ee6c51e732b207a0696c84f8dca7dfc5285721743aaa86226e3f1560967db64",
+    "android_visual_export34_scenarios.py": "2d949a08f35a073b0a5cb51e84557e7bbb5bc514b00331c8a6f57cd36756b2a0"
+  },
+  "installedArtifactsAfterImports": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~wwIxlPmp4a6j51m_vRrC0w==/thalesmms.logisim.mobile.e2e-AnIR-k0Eic-0hZUwzF8msg==/base.apk",
+      "sha256": "600f656ac6cbb4661bbff880995b77a1fc240bb0607671bb96d0a010b234a834"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~8nKXfpfYH4PTv4puxEu3gA==/thalesmms.logisim.mobile.e2e.test-0q0Psn7aIpYYiDA6tacsJw==/base.apk",
+      "sha256": "9ce4fc8339818d6cfa56dc590aba9b66b26cf161842b81ce8422247768d03c3a"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~NoXMuElO4oOIVLScTDFvkA==/thalesmms.logisim.mobile.snapshot.e2e.test-QnMwMl1-nDRRDSo744dzXw==/base.apk",
+      "sha256": "a6754c413910b6f3e700390f68e1b1d0258d00fca6f08b14fc365b35a05e6b3a"
+    }
+  ],
+  "manifest": "manifest.json",
+  "buildReceipt": "build-receipt.json",
+  "apkProducerHead": "40dd9172e5775bb65232dafac3a401ee59ebf9e4",
+  "harnessGitHead": "fff054eb62e3834a9cbf5c70fbdc1d34c135d36a",
+  "rawArtifactWorktree": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e",
+  "rawArtifactDirectory": "outputs/android-e2e/df276e-files-en",
+  "issue": 25
+}

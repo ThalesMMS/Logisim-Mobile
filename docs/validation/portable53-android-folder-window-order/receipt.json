@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "status": "FAILED_AFTER_FIRST_PARTIAL_FOLDER_EXPORT",
+  "wrapperSession": 13849,
+  "harnessHead": "1d146f334f80fe35e0c47e46568cd3761f6583f2",
+  "appProducer": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "nativeResult": "failed-13849/results.json",
+  "nativeError": "The actual export session is not linked to the imported workspace",
+  "observedSession": "36d6551b-a976-41f1-95e3-1a0dabfb9124",
+  "activeProject": "72be893d7f51138afdb9f99380ea7957",
+  "previousWindowProject": "f33b7bd5cea6be9a6459411a64b31c74",
+  "observed": [
+    "The imported TAR has active revision 1 and a stable window link to the previous project.",
+    "The imported TAR also has a pending .workspace-link.new for the same session pointing to the imported project.",
+    "Both later failure TARs are byte-identical and have active revision 2 with the correct stable window link.",
+    "The actual CreateDocument session is the same session present in those links.",
+    "The frozen scenario's export guard compares that session against the earlier imported snapshot."
+  ],
+  "partialAppExport": {
+    "file": "failed-13849/logisim-portable53-0762ff4fc06d4897b6ff6561caeb0f1c-folder-before-restart.lsebdl",
+    "bytes": 4905,
+    "sha256": "0bc5e1a2a7cbf699324d692964d8c7a1eb24038b31a271072cdb1201267da689",
+    "zipCrcsValid": true,
+    "afterRestartPeer": null,
+    "strictArtifactQualification": "NOT_RUN",
+    "desktopReopen": "NOT_RUN"
+  },
+  "offlineReplay": "replay-report.json",
+  "scope": "Preserved failed folder attempt and literal snapshot order. No completed restart/reopen flow, native PASSED receipt, issue closure or performance claim."
+}

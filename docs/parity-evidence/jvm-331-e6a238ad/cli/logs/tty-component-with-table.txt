@@ -1,0 +1,20 @@
+row: cli/tty
+case: tty-component-with-table
+result: PASS
+detail: stdout and exit class equal
+
+=== evolution: logisim-evolution -t table,tty scripts/oracle/cli/fixtures/tty.circ
+exit: 0
+--- stdout (3 lines, sha256 167c4d8e900fb8621a3c305aab77dbba0cf698012cf26659937a8ea8f6cbbb69)
+
+Hi!
+O
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table,tty scripts/oracle/cli/fixtures/tty.circ
+exit: 0
+--- stdout (3 lines, sha256 167c4d8e900fb8621a3c305aab77dbba0cf698012cf26659937a8ea8f6cbbb69)
+
+Hi!
+O
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

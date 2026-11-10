@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/scripts/e2e-android.py", line 1204, in <lambda>
+    scenarios.run("visual-export34", lambda: run_visual_export34(scenarios))
+                                             ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/scripts/android_visual_export34_scenarios.py", line 358, in run_visual_export34
+    configure_panel(s, True, base, contract["selected"], contract["mainCircuit"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/scripts/android_visual_export34_scenarios.py", line 303, in configure_panel
+    edit_field(s, "visual_export_margin", settings["margin"], "10")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/scripts/android_visual_export34_scenarios.py", line 91, in edit_field
+    field = identify(s.ui.screen())
+                     ~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/scripts/android_ui.py", line 84, in screen
+    root = self._screen_instrumentation(max(0.1, deadline - time.monotonic()))
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/scripts/android_ui.py", line 166, in _screen_instrumentation
+    raise AssertionError("Focus snapshot failed: " + values.get("snapshotError", result[-1000:]))
+AssertionError: Focus snapshot failed: IncompleteTreeException: Accessibility child is unavailable at index 11 of 15 under 0/0/0/0/0/0/0/1/0/1, windowId=9484, nodeCount=42

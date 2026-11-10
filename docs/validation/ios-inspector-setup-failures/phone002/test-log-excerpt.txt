@@ -1,0 +1,249 @@
+=== original test.log lines 13-18 ===
+Test Suite 'EditorEndToEndTests.xctest' started at 2026-11-05 01:32:14.029.
+Test Suite 'InspectorEndToEndTests' started at 2026-11-05 01:32:14.029.
+Test Case '-[EditorEndToEndTests.InspectorEndToEndTests testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction]' started.
+    t =     0.00s Start Test at 2026-11-05 01:32:14.031
+    t =     0.05s Set Up
+    t =     0.05s     Getting device orientation
+=== original test.log lines 31-36 ===
+    t =     6.34s     Find the Application 'thalesmms.logisim.mobile'
+    t =     6.37s Find the Application 'thalesmms.logisim.mobile'
+    t =     6.39s Added attachment named 'observed-orientation'
+    t =     6.41s Checking existence of `"editor-project-toolbar-menu" Any`
+    t =     6.44s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =     6.46s Checking existence of `"editor-project-toolbar" Any`
+=== original test.log lines 42-49 ===
+    t =     6.52s Find the Application 'thalesmms.logisim.mobile'
+    t =     6.53s Find the Application 'thalesmms.logisim.mobile'
+    t =     6.53s Added attachment named 'geometry-editor-project-toolbar-overflow'
+    t =     6.53s Find the "editor-project-toolbar-overflow" Button
+    t =     6.55s Tap "editor-project-toolbar-overflow" Button
+    t =     6.55s     Wait for thalesmms.logisim.mobile to idle
+    t =     6.55s     Find the "editor-project-toolbar-overflow" Button
+    t =     6.56s     Check for interrupting elements affecting "editor-project-toolbar-overflow" Button
+=== original test.log lines 59-64 ===
+    t =     8.02s Find the Any (Element at index 0)
+    t =     8.04s Find the "Open, save, and share files, File" Button
+    t =     8.06s Tap "Open, save, and share files, File" Button
+    t =     8.06s     Wait for thalesmms.logisim.mobile to idle
+    t =     8.06s     Find the "Open, save, and share files, File" Button
+    t =     8.07s     Check for interrupting elements affecting "Open, save, and share files, File" Button
+=== original test.log lines 73-78 ===
+    t =     9.51s Find the Any (Element at index 0)
+    t =     9.52s Find the "Import a copy" Button
+    t =     9.53s Tap "Import a copy" Button
+    t =     9.53s     Wait for thalesmms.logisim.mobile to idle
+    t =     9.53s     Find the "Import a copy" Button
+    t =     9.54s     Check for interrupting elements affecting "Import a copy" Button
+=== original test.log lines 80-88 ===
+    t =     9.84s     Wait for thalesmms.logisim.mobile to idle
+    t =     9.84s Find the Application 'thalesmms.logisim.mobile'
+    t =     9.94s Added attachment named 'files-peer-1-picker-presentation'
+    t =     9.95s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    10.02s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    10.04s Added attachment named 'files-peer-1-picker-presentation-tree'
+    t =    10.04s Waiting 30.0s for Any (First Match) to exist
+    t =    11.11s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    11.11s         Checking existence of `Any (First Match)`
+=== original test.log lines 96-104 ===
+    t =    14.04s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    14.04s         Checking existence of `Any (First Match)`
+    t =    14.20s Added attachment named 'files-peer-2-before-local-device-navigation'
+    t =    14.20s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    14.44s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    14.50s Added attachment named 'files-peer-2-before-local-device-navigation-tree'
+    t =    14.50s Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    14.53s Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    14.57s Get all elements bound by index for: Elements matching predicate '(label == "On My iPhone" OR label BEGINSWITH "On My iPhone, ") OR (label == "No Meu iPhone" OR label BEGINSWITH "No Meu iPhone, ")'
+=== original test.log lines 121-130 ===
+    t =    16.20s Find the Application 'thalesmms.logisim.mobile'
+    t =    16.23s Find the "Browse" Button
+    t =    16.35s Added attachment named 'files-peer-3-ready-to-open-browse-tab'
+    t =    16.35s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    16.57s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    16.63s Added attachment named 'files-peer-3-ready-to-open-browse-tab-tree'
+    t =    16.63s Tap "Browse" Button
+    t =    16.63s     Wait for thalesmms.logisim.mobile to idle
+    t =    16.63s     Find the "Browse" Button
+    t =    16.66s     Check for interrupting elements affecting "Browse" Button
+=== original test.log lines 146-154 ===
+    t =    18.31s Find the StaticText (Element at index 0)
+    t =    18.35s Find the Application 'thalesmms.logisim.mobile'
+    t =    18.46s Added attachment named 'files-peer-4-after-opening-On My iPhone'
+    t =    18.46s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    18.81s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    18.91s Added attachment named 'files-peer-4-after-opening-On My iPhone-tree'
+    t =    20.00s Checking `Expect predicate `BLOCKPREDICATE(0x1062d43f0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    20.00s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    20.05s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+=== original test.log lines 165-173 ===
+    t =    20.43s Find the StaticText (Element at index 0)
+    t =    20.46s Find the Application 'thalesmms.logisim.mobile'
+    t =    20.57s Added attachment named 'files-peer-5-before-peer-application-folder'
+    t =    20.57s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    20.77s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    20.83s Added attachment named 'files-peer-5-before-peer-application-folder-tree'
+    t =    20.83s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    20.87s Checking existence of `"File View" CollectionView`
+    t =    20.90s Get all elements bound by index for: Elements matching predicate 'label == "Logisim Mobile" OR label BEGINSWITH "Logisim Mobile, "'
+=== original test.log lines 196-215 ===
+    t =    22.79s Find the "Logisim Mobile, Container" Cell
+    t =    22.83s Find the "Logisim Mobile, Container" Cell
+    t =    22.86s Added attachment named 'files-peer-peer-application-folder-control'
+    t =    22.95s Added attachment named 'files-peer-6-ready-to-open-peer-application-folder'
+    t =    22.95s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    23.16s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    23.22s Added attachment named 'files-peer-6-ready-to-open-peer-application-folder-tree'
+    t =    23.22s Tap "Logisim Mobile, Container" Cell
+    t =    23.22s     Wait for thalesmms.logisim.mobile to idle
+    t =    23.22s     Find the "Logisim Mobile, Container" Cell
+    t =    23.26s     Check for interrupting elements affecting "Logisim Mobile, Container" Cell
+    t =    23.29s     Synthesize event
+    t =    23.60s     Wait for thalesmms.logisim.mobile to idle
+    t =    23.67s Added attachment named 'files-peer-7-after-opening-Logisim Mobile'
+    t =    23.67s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    24.01s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    24.18s Added attachment named 'files-peer-7-after-opening-Logisim Mobile-tree'
+    t =    25.25s Checking `Expect predicate `BLOCKPREDICATE(0x110b353e0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    25.25s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    25.29s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+=== original test.log lines 228-236 ===
+    t =    25.72s Find the "Logisim Mobile, Actions Menu" Button
+    t =    25.76s Find the Application 'thalesmms.logisim.mobile'
+    t =    25.85s Added attachment named 'files-peer-8-before-e2e-folder'
+    t =    25.85s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    26.06s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    26.11s Added attachment named 'files-peer-8-before-e2e-folder-tree'
+    t =    26.11s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    26.15s Checking existence of `"File View" CollectionView`
+    t =    26.18s Get all elements bound by index for: Elements matching predicate 'label == "LogisimE2E" OR label BEGINSWITH "LogisimE2E, "'
+=== original test.log lines 259-278 ===
+    t =    27.96s Find the "LogisimE2E, Folder" Cell
+    t =    27.99s Find the "LogisimE2E, Folder" Cell
+    t =    28.02s Added attachment named 'files-peer-e2e-folder-control'
+    t =    28.10s Added attachment named 'files-peer-9-ready-to-open-e2e-folder'
+    t =    28.10s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    28.30s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    28.35s Added attachment named 'files-peer-9-ready-to-open-e2e-folder-tree'
+    t =    28.36s Tap "LogisimE2E, Folder" Cell
+    t =    28.36s     Wait for thalesmms.logisim.mobile to idle
+    t =    28.36s     Find the "LogisimE2E, Folder" Cell
+    t =    28.39s     Check for interrupting elements affecting "LogisimE2E, Folder" Cell
+    t =    28.42s     Synthesize event
+    t =    28.71s     Wait for thalesmms.logisim.mobile to idle
+    t =    28.78s Added attachment named 'files-peer-10-after-opening-LogisimE2E'
+    t =    28.78s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    29.05s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    29.12s Added attachment named 'files-peer-10-after-opening-LogisimE2E-tree'
+    t =    30.20s Checking `Expect predicate `BLOCKPREDICATE(0x1062d4b10)` for object Application 'thalesmms.logisim.mobile'`
+    t =    30.20s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    30.26s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+=== original test.log lines 291-299 ===
+    t =    30.72s Find the "LogisimE2E, Actions Menu" Button
+    t =    30.76s Find the Application 'thalesmms.logisim.mobile'
+    t =    30.85s Added attachment named 'files-peer-11-before-run-folder'
+    t =    30.85s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    31.06s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    31.12s Added attachment named 'files-peer-11-before-run-folder-tree'
+    t =    31.12s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    31.16s Checking existence of `"File View" CollectionView`
+    t =    31.19s Get all elements bound by index for: Elements matching predicate 'label == "dbcb8502d157" OR label BEGINSWITH "dbcb8502d157, "'
+=== original test.log lines 322-341 ===
+    t =    33.07s Find the "dbcb8502d157, Folder" Cell
+    t =    33.11s Find the "dbcb8502d157, Folder" Cell
+    t =    33.14s Added attachment named 'files-peer-run-folder-control'
+    t =    33.22s Added attachment named 'files-peer-12-ready-to-open-run-folder'
+    t =    33.22s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    33.43s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    33.49s Added attachment named 'files-peer-12-ready-to-open-run-folder-tree'
+    t =    33.49s Tap "dbcb8502d157, Folder" Cell
+    t =    33.49s     Wait for thalesmms.logisim.mobile to idle
+    t =    33.49s     Find the "dbcb8502d157, Folder" Cell
+    t =    33.53s     Check for interrupting elements affecting "dbcb8502d157, Folder" Cell
+    t =    33.56s     Synthesize event
+    t =    33.86s     Wait for thalesmms.logisim.mobile to idle
+    t =    33.93s Added attachment named 'files-peer-13-after-opening-dbcb8502d157'
+    t =    33.93s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    34.33s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    34.43s Added attachment named 'files-peer-13-after-opening-dbcb8502d157-tree'
+    t =    35.50s Checking `Expect predicate `BLOCKPREDICATE(0x110b34180)` for object Application 'thalesmms.logisim.mobile'`
+    t =    35.50s     Get all elements bound by index for: Elements matching predicate '"FullDocumentManagerViewControllerNavigationBar" IN identifiers'
+    t =    35.58s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+=== original test.log lines 354-363 ===
+    t =    36.17s Find the "dbcb8502d157, Actions Menu" Button
+    t =    36.21s Find the Application 'thalesmms.logisim.mobile'
+    t =    36.25s Added attachment named 'files-peer-requested-document'
+    t =    36.32s Added attachment named 'files-peer-14-before-fixture-document'
+    t =    36.32s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    36.62s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    36.69s Added attachment named 'files-peer-14-before-fixture-document-tree'
+    t =    36.69s Get all elements bound by index for: Elements matching predicate '"File View" IN identifiers'
+    t =    36.74s Checking existence of `"File View" CollectionView`
+    t =    36.79s Get all elements bound by index for: Elements matching predicate '(label == "inspector-width.circ" OR label BEGINSWITH "inspector-width.circ, ") OR (label == "inspector-width" OR label BEGINSWITH "inspector-width, ")'
+=== original test.log lines 386-405 ===
+    t =    38.90s Find the "inspector-width, circ" Cell
+    t =    38.94s Find the "inspector-width, circ" Cell
+    t =    38.99s Added attachment named 'files-peer-fixture-document-control'
+    t =    39.08s Added attachment named 'files-peer-15-ready-to-open-fixture-document'
+    t =    39.08s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    39.38s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    39.45s Added attachment named 'files-peer-15-ready-to-open-fixture-document-tree'
+    t =    39.45s Tap "inspector-width, circ" Cell
+    t =    39.45s     Wait for thalesmms.logisim.mobile to idle
+    t =    39.45s     Find the "inspector-width, circ" Cell
+    t =    39.50s     Check for interrupting elements affecting "inspector-width, circ" Cell
+    t =    39.54s     Synthesize event
+    t =    39.84s     Wait for thalesmms.logisim.mobile to idle
+    t =    39.91s Added attachment named 'files-peer-16-after-document-selection'
+    t =    39.91s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    40.27s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    40.34s Added attachment named 'files-peer-16-after-document-selection-tree'
+    t =    41.41s Checking `Expect predicate `BLOCKPREDICATE(0x1119ccab0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    41.41s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    41.44s     Checking existence of `"DOCPicker.actionButton" Button`
+=== original test.log lines 409-426 ===
+    t =    42.52s     Checking existence of `"FullDocumentManagerViewControllerNavigationBar" NavigationBar`
+    t =    42.55s     Checking existence of `"DOCPicker.actionButton" Button`
+    t =    42.64s Added attachment named 'files-peer-17-picker-dismissed'
+    t =    42.64s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    42.68s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    42.70s Added attachment named 'files-peer-17-picker-dismissed-tree'
+    t =    43.76s Checking `Expect predicate `BLOCKPREDICATE(0x1119ccb40)` for object Application 'thalesmms.logisim.mobile'`
+    t =    43.77s     Checking existence of `"editor-import-report" Any`
+    t =    43.79s     Checking existence of `StaticText (First Match)`
+    t =    43.81s Checking existence of `"editor-import-report" Any`
+    t =    43.82s Checking existence of `StaticText (First Match)`
+    t =    43.91s Added attachment named 'inspector-import-copy-report'
+    t =    43.91s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    43.95s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    43.96s Added attachment named 'inspector-import-copy-report-tree'
+    t =    43.96s Checking existence of `"editor-import-report" Any`
+    t =    43.97s Checking existence of `StaticText (First Match)`
+    t =    43.98s Find the Application 'thalesmms.logisim.mobile'
+=== original test.log lines 429-434 ===
+    t =    43.99s Find the Any (Element at index 0)
+    t =    44.00s Find the "Close" Button
+    t =    44.01s Tap "Close" Button
+    t =    44.01s     Wait for thalesmms.logisim.mobile to idle
+    t =    44.02s     Find the "Close" Button
+    t =    44.02s     Check for interrupting elements affecting "Close" Button
+=== original test.log lines 522-540 ===
+    t =    62.50s     Capturing element debug description
+    t =    62.50s         Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    62.82s Added attachment named 'inspector-import-copy-source-missing'
+    t =    62.82s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    62.90s Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    62.92s Added attachment named 'inspector-import-copy-source-missing-tree'
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-a-4ab8-inspector-phone-002/harness/InspectorEndToEndTests.swift:112: error: -[EditorEndToEndTests.InspectorEndToEndTests testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction] : failed - Import Copy must expose the exact selected filename in its report or opened-file status
+    t =    63.03s Tear Down
+    t =    63.03s     Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    63.10s     Requesting snapshot of accessibility hierarchy for app with pid 81523
+    t =    63.12s     Added attachment named 'native-tree'
+    t =    63.18s     Added attachment named 'final-screen'
+    t =    63.18s     Terminate thalesmms.logisim.mobile:81523
+    t =    64.28s     Setting device orientation to Portrait
+    t =    64.30s         Wait for com.apple.springboard to idle
+Test Case '-[EditorEndToEndTests.InspectorEndToEndTests testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction]' failed (64.391 seconds).
+Test Suite 'InspectorEndToEndTests' failed at 2026-11-05 01:33:18.422.
+	 Executed 1 test, with 1 failure (0 unexpected) in 64.391 (64.393) seconds
+Test Suite 'EditorEndToEndTests.xctest' failed at 2026-11-05 01:33:18.424.

@@ -1,0 +1,17 @@
+row: cli/new-file-format
+case: convert-counter
+result: PASS
+detail: Evolution -t table,halt output equal for the original, Evolution's -n output and Mobile's -n output: {'original': 'ded48bbed0e8', 'evolution-n': 'ded48bbed0e8', 'mobile-n': 'ded48bbed0e8'}
+
+=== evolution: java EvolutionAutomationOracle convert core/src/jvmTest/resources/original/counter.circ $WORK/evolution-counter.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (3 lines, sha256 bdcc2461f6b6cd3863fd31be5463f045c9812ebebeaf7f0468dd76dde4ad5529)
+[main] WARN com.cburch.logisim.gui.generic.OptionPane - Old file format -- compatibility mode:You are opening a file created with original Logisim code.
+You might encounter some problems in the execution, since some components evolved since then.
+Moreover, labels will be converted to match VHDL limitations for variable names.
+
+=== mobile: HeadlessCircuitCli -n core/src/jvmTest/resources/original/counter.circ $WORK/mobile-counter.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

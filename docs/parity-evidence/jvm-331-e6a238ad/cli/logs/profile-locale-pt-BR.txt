@@ -1,0 +1,36 @@
+row: cli/locale
+case: profile-locale-pt-BR
+result: DIFF
+detail: option rejected: evolution=True (exit 0), mobile=False (exit 0)
+
+=== evolution: java EvolutionStartupOracle -o pt-BR
+exit: 0
+--- stdout (4 lines, sha256 2a204075cf9ad9126e9e6b6e7efb3c10ca7fc3b0d3e2348db8a8bfc2bdf9e3ba)
+parse=error
+gates=ansi
+locale=pt session=pt
+template=plain
+--- stderr (15 lines, sha256 7eb748234a2205718d248385521afa63c4f4a4b2ede3d8d9e5a486494dd28df3)
+[main] WARN com.cburch.logisim.gui.start.Startup - Definições regionais sem suporte.
+[main] WARN com.cburch.logisim.gui.start.Startup - Definições regionais com suporte:
+[main] WARN com.cburch.logisim.gui.start.Startup -    de
+[main] WARN com.cburch.logisim.gui.start.Startup -    el
+[main] WARN com.cburch.logisim.gui.start.Startup -    en
+[main] WARN com.cburch.logisim.gui.start.Startup -    es
+[main] WARN com.cburch.logisim.gui.start.Startup -    fr
+[main] WARN com.cburch.logisim.gui.start.Startup -    pt
+[main] WARN com.cburch.logisim.gui.start.Startup -    ru
+[main] WARN com.cburch.logisim.gui.start.Startup -    it
+[main] WARN com.cburch.logisim.gui.start.Startup -    nl
+[main] WARN com.cburch.logisim.gui.start.Startup -    ja
+[main] WARN com.cburch.logisim.gui.start.Startup -    pl
+[main] WARN com.cburch.logisim.gui.start.Startup -    tr
+[main] WARN com.cburch.logisim.gui.start.Startup -    zh
+
+=== mobile: HeadlessCircuitCli -o pt-BR --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 28b16a71dac4b56561f1d33c6d3226f0adf35275d1a5c7f2b740995b1700f376)
+gates=ansi
+locale=pt
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

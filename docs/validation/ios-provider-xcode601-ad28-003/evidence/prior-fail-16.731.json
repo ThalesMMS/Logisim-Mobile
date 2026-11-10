@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "status": "FAIL",
+  "archivalBase": "124d5ef4f937780f3d972c390d492e3f2c8b965a",
+  "fixtureSource": "11fc44d53b229558fbfc57b66e0b2f2d11a0037b",
+  "harnessSource": "6630378c89a0c9e0a6b15ee8b6ec275a5cd1aaca",
+  "scope": "One exact full-bundle reinstall on existing-group AD28, followed by the unchanged single Prepare/Register/Inspect case.",
+  "caseSeconds": 16.731,
+  "exitCode": 65,
+  "counts": {
+    "totalTestCount": 1,
+    "passedTests": 0,
+    "failedTests": 1,
+    "skippedTests": 0
+  },
+  "device": {
+    "device": {
+      "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data",
+      "dataPathSize": 2564812800,
+      "logPath": "/Users/thales/Library/Logs/CoreSimulator/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "udid": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "lastUsedAt": "2026-11-05T04:37:00Z",
+      "isAvailable": true,
+      "logPathSize": 348160,
+      "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+      "state": "Booted",
+      "name": "LogisimUIKitDocumentControl",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+    },
+    "runtime": {
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "version": "27.0",
+      "buildversion": "24A434",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ]
+    }
+  },
+  "manifestSHA256": "bda24c74410814276f00474a689ae95508deb7330cc0eacae9f55bf54ec7388a",
+  "app": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+    "executable_sha256": "93f5c45e71c1ba64b2789bae430ab117a3152260f17f950bd5d97eab656d08a8",
+    "bundle_tree_sha256": "8b2577dbe1c2f1e3233448010f82d7399b9f41d8fa52f8b4e73cc81ea1d34e2a",
+    "version": "1.0",
+    "build": "1"
+  },
+  "provider": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+    "executable_sha256": "5c7d3f12196d954902c4bb814532500e7a82bd83c55da89f2da3504302795c75",
+    "bundle_tree_sha256": "d6e6ee495cdeb2189c023d04977c0fafa0425aa4aa47083f5fb86d2e85fa0684",
+    "version": "1.0",
+    "build": "1"
+  },
+  "group": {
+    "identifier": "group.thalesmms.logisim.validation.revocationfixture",
+    "directoryUUID": "5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4",
+    "metadataUUID": "C4A78BD1-44B3-4590-B045-A3AC1883D566",
+    "birthUTC": "2026-11-05T06:58:17.691188+00:00",
+    "metadataSHA256": "8c201b2817be6f80df980e79e8f90e6e2cd9dd0c22ad25220f9fc4eda5852158",
+    "statePreserved": true,
+    "backendBytes": 552,
+    "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "eventPrefixPreserved": true,
+    "beforeLastSequence": 3,
+    "afterLastSequence": 6,
+    "databaseHashChangesBecauseEventsAppend": true
+  },
+  "reinstall": {
+    "record": "evidence/commands.json",
+    "commandName": "reinstall-exact-fixture",
+    "count": 1,
+    "artifactBytesUnchanged": true,
+    "installedBundlePathChanged": true,
+    "newPluginUUID": "F8E78B69-61F8-495B-A993-E0BB85E025F4"
+  },
+  "discovery": {
+    "source": "new-discovery-after-reinstall.stdout",
+    "indexBase": 0,
+    "selectedIndices": [
+      631,
+      958,
+      960,
+      961,
+      962,
+      963
+    ],
+    "queryPID": 68875,
+    "queryThread": 9903950,
+    "queryResultContainsExistingContainer": true,
+    "subsequentRejection": "FileProviderd reports no group container for the extension document group, ignores extension and fails descriptor creation.",
+    "scope": "Ordered messages in the bundle-filtered log, not a source-level data-flow explanation."
+  },
+  "installationStructure": {
+    "source": "full-differential-history.stdout",
+    "selectedIndices": [
+      2,
+      17,
+      18
+    ],
+    "placeholderActor": "installcoordinationd",
+    "placeholderIndex": 17,
+    "groupAndEnumerationDirectUnderNSExtension": true,
+    "NSExtensionAttributesPrinted": false,
+    "notAPlugInKitNormalizationClaim": true,
+    "bridgeMessages": "Indices2/18 say had no entitlements; effective codesign entitlements are separately present and preserved.",
+    "cause": "UNDETERMINED"
+  },
+  "nativeObservation": {
+    "eventsAdded": [
+      {
+        "sequence": 4,
+        "kind": "prepare"
+      },
+      {
+        "sequence": 5,
+        "kind": "domain.registration.requested"
+      },
+      {
+        "sequence": 6,
+        "kind": "domain.registration.failed"
+      }
+    ],
+    "errorDiagnostic": {
+      "chain": [
+        {
+          "code": -2001,
+          "domain": "NSFileProviderErrorDomain",
+          "reason": "The application cannot be used right now."
+        },
+        {
+          "code": -2014,
+          "domain": "NSFileProviderErrorDomain",
+          "reason": "The operation couldn\u2019t be completed. (NSFileProviderErrorDomain error -2014.)"
+        }
+      ],
+      "termination": "complete"
+    },
+    "rootErrorDomain": "NSFileProviderErrorDomain",
+    "rootErrorCode": -2001,
+    "underlyingErrorCode": -2014,
+    "classification": "Provider discovery/launchability failure reported by the system; underlying cause undetermined.",
+    "inspect": "NOT_REACHED",
+    "domainCount": "NOT_OBSERVED"
+  },
+  "limits": {
+    "rootCause": "UNDETERMINED",
+    "signingOrSimulatorCauseEstablished": false,
+    "providerExecution": "NOT_DEMONSTRATED",
+    "fetch": "NOT_RUN",
+    "authenticationDenial": "NOT_RUN",
+    "revocationIssue26": "NOT_QUALIFIED",
+    "Save": "NOT_RUN",
+    "retry": "NOT_RUN",
+    "physicalDevice": false
+  },
+  "preservedEarlierResults": {
+    "originalAD28Archive": "124d5ef4f937780f3d972c390d492e3f2c8b965a",
+    "originalB25Archive": "f2b4cde813727ee5d5a844cfbf7894bf071abc09",
+    "allRemain": "FAIL"
+  },
+  "archiveWork": "Only file copies, deterministic gzip and offline verification/review. No source, main/canonical, device, UI, build, signing, registration or retry operation.",
+  "originalOutputsModified": false
+}

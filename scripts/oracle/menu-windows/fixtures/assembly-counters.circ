@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Arithmetic" name="1"/>
+  <lib desc="#Memory" name="2"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" loc="(240,140)" name="Clock"/>
+    <comp lib="2" loc="(290,100)" name="Register"><a name="appearance" val="classic"/><a name="width" val="8"/><a name="label" val="PC"/></comp>
+    <comp lib="0" loc="(110,110)" name="Constant"><a name="width" val="8"/><a name="value" val="0x1"/></comp>
+    <comp lib="1" loc="(170,100)" name="Adder"><a name="width" val="8"/></comp>
+    <comp lib="0" loc="(240,340)" name="Clock"/>
+    <comp lib="2" loc="(290,300)" name="Register"><a name="appearance" val="classic"/><a name="width" val="16"/><a name="label" val="ADDR"/></comp>
+    <comp lib="0" loc="(110,310)" name="Constant"><a name="width" val="16"/><a name="value" val="0xb"/></comp>
+    <comp lib="1" loc="(170,300)" name="Adder"><a name="width" val="16"/></comp>
+    <comp lib="0" loc="(240,540)" name="Clock"/>
+    <comp lib="2" loc="(290,500)" name="Register"><a name="appearance" val="classic"/><a name="width" val="32"/><a name="label" val="BIG"/></comp>
+    <comp lib="0" loc="(110,510)" name="Constant"><a name="width" val="32"/><a name="value" val="0x10001"/></comp>
+    <comp lib="1" loc="(170,500)" name="Adder"><a name="width" val="32"/></comp>
+    <comp lib="0" loc="(240,740)" name="Clock"/>
+    <comp lib="2" loc="(290,700)" name="Register"><a name="appearance" val="classic"/><a name="width" val="8"/></comp>
+    <comp lib="0" loc="(110,710)" name="Constant"><a name="width" val="8"/><a name="value" val="0x3"/></comp>
+    <comp lib="1" loc="(170,700)" name="Adder"><a name="width" val="8"/></comp>
+    <comp lib="0" loc="(240,940)" name="Clock"/>
+    <comp lib="2" loc="(290,900)" name="Register"><a name="appearance" val="classic"/><a name="width" val="8"/><a name="label" val="UND"/></comp>
+    <comp lib="0" loc="(240,1140)" name="Clock"/>
+    <comp lib="2" loc="(290,1100)" name="Register"><a name="appearance" val="classic"/><a name="width" val="12"/><a name="label" val="ACC"/></comp>
+    <comp lib="0" loc="(110,1110)" name="Constant"><a name="width" val="12"/><a name="value" val="0x25"/></comp>
+    <comp lib="1" loc="(170,1100)" name="Adder"><a name="width" val="12"/></comp>
+    <wire from="(240,140)" to="(270,140)"/>
+    <wire from="(270,120)" to="(270,140)"/>
+    <wire from="(290,100)" to="(320,100)"/>
+    <wire from="(110,110)" to="(130,110)"/>
+    <wire from="(170,100)" to="(260,100)"/>
+    <wire from="(320,60)" to="(320,100)"/>
+    <wire from="(130,60)" to="(320,60)"/>
+    <wire from="(130,60)" to="(130,90)"/>
+    <wire from="(240,340)" to="(270,340)"/>
+    <wire from="(270,320)" to="(270,340)"/>
+    <wire from="(290,300)" to="(320,300)"/>
+    <wire from="(110,310)" to="(130,310)"/>
+    <wire from="(170,300)" to="(260,300)"/>
+    <wire from="(320,260)" to="(320,300)"/>
+    <wire from="(130,260)" to="(320,260)"/>
+    <wire from="(130,260)" to="(130,290)"/>
+    <wire from="(240,540)" to="(270,540)"/>
+    <wire from="(270,520)" to="(270,540)"/>
+    <wire from="(290,500)" to="(320,500)"/>
+    <wire from="(110,510)" to="(130,510)"/>
+    <wire from="(170,500)" to="(260,500)"/>
+    <wire from="(320,460)" to="(320,500)"/>
+    <wire from="(130,460)" to="(320,460)"/>
+    <wire from="(130,460)" to="(130,490)"/>
+    <wire from="(240,740)" to="(270,740)"/>
+    <wire from="(270,720)" to="(270,740)"/>
+    <wire from="(290,700)" to="(320,700)"/>
+    <wire from="(110,710)" to="(130,710)"/>
+    <wire from="(170,700)" to="(260,700)"/>
+    <wire from="(320,660)" to="(320,700)"/>
+    <wire from="(130,660)" to="(320,660)"/>
+    <wire from="(130,660)" to="(130,690)"/>
+    <wire from="(240,940)" to="(270,940)"/>
+    <wire from="(270,920)" to="(270,940)"/>
+    <wire from="(290,900)" to="(320,900)"/>
+    <wire from="(240,1140)" to="(270,1140)"/>
+    <wire from="(270,1120)" to="(270,1140)"/>
+    <wire from="(290,1100)" to="(320,1100)"/>
+    <wire from="(110,1110)" to="(130,1110)"/>
+    <wire from="(170,1100)" to="(260,1100)"/>
+    <wire from="(320,1060)" to="(320,1100)"/>
+    <wire from="(130,1060)" to="(320,1060)"/>
+    <wire from="(130,1060)" to="(130,1090)"/>
+  </circuit>
+</project>

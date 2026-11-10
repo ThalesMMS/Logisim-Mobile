@@ -1,0 +1,184 @@
+{
+  "captured_utc": "2026-11-05T10:03:19.242136+00:00",
+  "scope": "Read-only xcodebuild metadata and simctl list inventory only; no create/boot/reset/download/Metal change.",
+  "active_xcode": {
+    "developer_directory": "/Applications/Xcode.app/Contents/Developer",
+    "version": "27.2",
+    "build": "27B52"
+  },
+  "simulator_sdk": {
+    "canonical_name": "iphonesimulator27.2",
+    "version": "27.2",
+    "maximum_deployment_target": "27.2.99"
+  },
+  "xcode_applications": [
+    {
+      "app": "/Applications/Xcode.app",
+      "version": "27.2",
+      "build": "27B52"
+    }
+  ],
+  "runtimes": [
+    {
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-0",
+      "name": "iOS 27.0",
+      "platform": "iOS",
+      "version": "27.0",
+      "buildversion": "24A434",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ],
+      "supported_device_type_count": 62
+    },
+    {
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-1",
+      "name": "iOS 27.1",
+      "platform": "iOS",
+      "version": "27.1",
+      "buildversion": "24A94401",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ],
+      "supported_device_type_count": 1
+    },
+    {
+      "identifier": "com.apple.CoreSimulator.SimRuntime.tvOS-27-0",
+      "name": "tvOS 27.0",
+      "platform": "tvOS",
+      "version": "27.0",
+      "buildversion": "24J360",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ],
+      "supported_device_type_count": 4
+    },
+    {
+      "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-27-0",
+      "name": "watchOS 27.0",
+      "platform": "watchOS",
+      "version": "27.0",
+      "buildversion": "24R362",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ],
+      "supported_device_type_count": 13
+    },
+    {
+      "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-27-0",
+      "name": "visionOS 27.0",
+      "platform": "xrOS",
+      "version": "27.0",
+      "buildversion": "24M362",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ],
+      "supported_device_type_count": 1
+    }
+  ],
+  "ios27_1": {
+    "runtime": {
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-27-1",
+      "name": "iOS 27.1",
+      "buildversion": "24A94401",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ]
+    },
+    "existing_devices": [
+      {
+        "name": "iPhone Duo",
+        "udid": "E080E673-6049-4238-A73D-7507A40EAE4A",
+        "state": "Shutdown",
+        "isAvailable": true,
+        "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Duo"
+      },
+      {
+        "name": "iPhone Duo",
+        "udid": "AA1E9DE5-C242-4D32-96CB-D4202136430B",
+        "state": "Shutdown",
+        "isAvailable": true,
+        "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Duo"
+      }
+    ],
+    "supported_models": [
+      {
+        "name": "iPhone Duo",
+        "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Duo",
+        "productFamily": "iPhone"
+      }
+    ],
+    "inventory_command": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "--json"
+    ],
+    "command_stdout_sha256": "c7e607ae8f928d88258df8149e5dbf6df4bdb495a4456a02f6a49ff2e8693252",
+    "scope": "Read-only availability inventory; no create/boot/reset/Metal change."
+  },
+  "common_supported_ios27_0_and27_1_device_types": [],
+  "m5_11inch_admitted_by27_0": [
+    {
+      "name": "iPad Pro 11-inch (M5)",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB"
+    }
+  ],
+  "commands": {
+    "xcode-version": {
+      "command": [
+        "xcodebuild",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "67c5b47bcf0e788aecae2f9b3af345813bdf7fe736faefb9666a7f4b2bf27ba7"
+    },
+    "sdk-list": {
+      "command": [
+        "xcodebuild",
+        "-showsdks",
+        "-json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3e22989a27d7f60013138e71d865503e450fb4734cb9c2eb39b202ad23ef1ad6"
+    },
+    "sim-runtimes": {
+      "command": [
+        "xcrun",
+        "simctl",
+        "list",
+        "runtimes",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "68f245bf3f25f27c332b736408d8669203af3a5230fd6dce6405067ebe8db1c9"
+    },
+    "sim-runtime-help": {
+      "command": [
+        "xcrun",
+        "simctl",
+        "help",
+        "runtime"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sim-runtime-images": {
+      "command": [
+        "xcrun",
+        "simctl",
+        "runtime",
+        "list",
+        "-j"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d829d7114a97984d9d1d7d98ec8edbbc342e6706b4cd85646dba38ad7c416135"
+    }
+  }
+}

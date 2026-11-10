@@ -1,0 +1,102 @@
+{
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5556",
+  "utc": "20261105T035117Z",
+  "appSha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556",
+  "testSha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70",
+  "gitHead": "3d231c537ac25de240889e327f3fd27a3b1e0902",
+  "deviceFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "scenario": "inspector",
+  "portableMode": null,
+  "artifactPaths": {
+    "app": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-3d231c53/androidApp-e2e.apk",
+    "test": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-3d231c53/androidApp-e2e-androidTest.apk",
+    "snapshot": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-3d231c53/androidSnapshot-debug.apk"
+  },
+  "apkManifestIdentities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  },
+  "aapt2": "/Users/thales/Library/Android/sdk/build-tools/36.0.0/aapt2",
+  "harnessGitHead": "3c721289743e55713a45a53578d610936e33761d",
+  "sourceChanges": [],
+  "deviceApi": "35",
+  "screenSize": "Physical size: 1080x2400",
+  "screenDensity": "Physical density: 420",
+  "systemLocales": "en-US",
+  "appLanguage": "en",
+  "focusSnapshots": "Dedicated SDK snapshot APK during focused app EditText; CLI for external activities",
+  "snapshotPackage": "thalesmms.logisim.mobile.snapshot.e2e.test",
+  "snapshotSha256": "139f59d5827afd178b078ba00ec811717bdcfcf15c7dd112361b8f5dc4b580b0",
+  "scenarioSources": {
+    "e2e-android.py": "e32edbc1738367fb59dd45981055ab6094443f71610c0979db60e019e04b9679",
+    "android_ui.py": "5a0fe68103eea25ecdf5111107035389af3a1a139b49acb02cdb7b11fb6a5e86",
+    "android_editing_scenarios.py": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673",
+    "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+    "android_inspector_scenarios.py": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+    "android_io_showcase_scenarios.py": "1490f9c19e44ad4b76cab0fba222be61566940a305a17c4644894347cf464272",
+    "android_portable_scenarios.py": "38611e7a471296b1b0d8064bad85d917671b587364ee5784a8eae27bc8487004",
+    "android_visual_export34_scenarios.py": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763"
+  },
+  "scenarioContractSha256": "4475d0c71c04e5d53f1eb9165ff2fc7382655a66b47c4419beae4ccef59dc0f4",
+  "resetTaskIdsBefore": [],
+  "installedArtifactsBefore": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~TNOSQnhwPWCGvwd9q5FBfA==/thalesmms.logisim.mobile.e2e-FznV86Gq1eCP0xdA_J8ivQ==/base.apk",
+      "sha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~2LSDtNNvZztkn2DaALoCBA==/thalesmms.logisim.mobile.e2e.test-adKpKz3JbyP-dbjc6KEl8g==/base.apk",
+      "sha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~uMCnCCXtW3vJ4hTtUrhcLA==/thalesmms.logisim.mobile.snapshot.e2e.test-yY-ob2h0KzaazN4IytY9OQ==/base.apk",
+      "sha256": "139f59d5827afd178b078ba00ec811717bdcfcf15c7dd112361b8f5dc4b580b0"
+    }
+  ],
+  "resetTaskRemoval": [],
+  "installedArtifactsAfter": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~TNOSQnhwPWCGvwd9q5FBfA==/thalesmms.logisim.mobile.e2e-FznV86Gq1eCP0xdA_J8ivQ==/base.apk",
+      "sha256": "6c094eb693758117fd19ab5b54c0a87718cec5046d34e4ef8566dfe5128f3556"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~2LSDtNNvZztkn2DaALoCBA==/thalesmms.logisim.mobile.e2e.test-adKpKz3JbyP-dbjc6KEl8g==/base.apk",
+      "sha256": "31d6e6cad94ac10f6a0bf21b5bd9c675b2ea80cbbfb71f7917f554f394b97f70"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~uMCnCCXtW3vJ4hTtUrhcLA==/thalesmms.logisim.mobile.snapshot.e2e.test-yY-ob2h0KzaazN4IytY9OQ==/base.apk",
+      "sha256": "139f59d5827afd178b078ba00ec811717bdcfcf15c7dd112361b8f5dc4b580b0"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Memory" name="4"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" loc="(280,260)" name="Clock"/>
+    <comp lib="4" loc="(300,200)" name="Counter"><a name="width" val="3"/><a name="max" val="0x5"/><a name="appearance" val="classic"/></comp>
+    <comp lib="4" loc="(400,100)" name="RAM"><a name="addrWidth" val="3"/><a name="dataWidth" val="8"/><a name="appearance" val="classic"/><a name="label" val="mem"/></comp>
+    <comp lib="4" loc="(400,300)" name="ROM"><a name="addrWidth" val="3"/><a name="dataWidth" val="8"/><a name="appearance" val="classic"/><a name="label" val="code"/><a name="contents">addr/data: 3 8
+9 8 7 6 5 4 3 2
+</a></comp>
+    <comp lib="0" loc="(340,240)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="label" val="halt"/></comp>
+    <comp lib="0" loc="(680,190)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="width" val="8"/><a name="label" val="D"/></comp>
+    <comp lib="0" loc="(680,360)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="width" val="8"/><a name="label" val="R"/></comp>
+    <wire from="(280,220)" to="(280,260)"/>
+    <wire from="(300,200)" to="(360,200)"/>
+    <wire from="(360,110)" to="(360,200)"/>
+    <wire from="(360,200)" to="(360,310)"/>
+    <wire from="(360,110)" to="(400,110)"/>
+    <wire from="(360,310)" to="(400,310)"/>
+    <wire from="(300,210)" to="(300,240)"/>
+    <wire from="(300,240)" to="(340,240)"/>
+    <wire from="(640,190)" to="(680,190)"/>
+    <wire from="(640,360)" to="(680,360)"/>
+  </circuit>
+</project>

@@ -1,0 +1,30 @@
+{
+  "status": "APPROVED_FACTUAL_PORTABLE_FAILURE_RECEIPT",
+  "reviewScope": "Read-only local evidence/source review and packet verification. No ADB, Native, UI, host, build or toolchain activity.",
+  "source": "515983508151c2adc52e443655c584ad7057855e",
+  "observedManifestSha256": "f93823c359d5bf0709d1cd161d9fc7b4344ba88e9163d9d845a064bd5b7ef90f",
+  "checks": [
+    "Portable and original-path verifiers both passed for148 listed archive files and142 original copies totaling2264846 bytes.",
+    "Independent comparison of all247 current frozen original files passed against the retained Root5c manifest.",
+    "Exactly one case-all invocation exited1 after112.84384241700172 seconds; synthesis preparation failed, tool-error and cancel did not run.",
+    "Native companion card retains verified text, fpga-synthesize availability and Disconnect host.",
+    "Downloads trace contains one screen query, ready at3.3157 seconds and zero requested taps.",
+    "Imported board tree contains one sheet marker, one exact nonce board identity and one OPEN_FPGA ice40 hx1k tq144 device identity.",
+    "536-byte staged XML has identical staged, uploaded and post-import source hashes; board receipt PASS.",
+    "Failure traceback is validate(valid=False) then reveal(key); exact target key, intermediate trees and gestures were not retained.",
+    "Final retained tree has no sheet marker and contains Operation cancelled; callback or dismissal cause is not established.",
+    "Audit retains zero requests, execution events and jobs, with only fpga-synthesize registered.",
+    "Cleanup receipt retains no listener/reverse62546, exact three installed APK hashes, matching nine settings/display size/density and unchanged lastANR.",
+    "The retained final foreground is the system picker after stopping owned E2E packages; no full preference or viewport restoration is claimed."
+  ],
+  "qualification": "FAIL_PRESERVED; zero qualified FPGA cases; board import setup passed; issue65 remains open.",
+  "nonBlockingPrecision": [
+    "FpgaPanel action composition also requires a nonnull design and callbacks; Prepare additionally requires an open supported flow. README should not imply board and flow alone universally guarantee both controls."
+  ],
+  "limitations": [
+    "No intermediate action delivery, swipe count, failing key or dismissal callback can be reconstructed from the retained endpoints.",
+    "No application, snapshot helper or SDK defect is inferred.",
+    "No mapping, ZIP, synthesis, tool failure, cancellation, bitstream, iOS or hardware success is qualified."
+  ],
+  "blockers": []
+}

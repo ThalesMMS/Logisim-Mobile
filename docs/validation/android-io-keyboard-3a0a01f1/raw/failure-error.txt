@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/e2e-android.py", line 1220, in main
+    run_io_showcase(scenarios, selected_cases=selected_io_cases)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/android_io_showcase_scenarios.py", line 301, in run_io_showcase
+    scenarios.run("io-showcase-" + name, actions[name])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/android_io_showcase_scenarios.py", line 265, in text
+    self.click(case[checkpoint]["controlKey"])
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/android_editing_scenarios.py", line 209, in click
+    self.wait_node(key, description=description, **arguments)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/android_editing_scenarios.py", line 114, in wait_node
+    return self.wait(locate, key)
+           ~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/android_editing_scenarios.py", line 125, in wait
+    root = self.ui.screen(timeout=max(0.1, deadline - time.monotonic()))
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/android_ui.py", line 125, in screen
+    return self._screen_uiautomator(timeout)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-io-keyboard-3a-exec/scripts/android_ui.py", line 396, in _screen_uiautomator
+    raise AssertionError(f"No fresh Android UI hierarchy within {timeout}s: {last_error}")
+AssertionError: No fresh Android UI hierarchy within 0.15576812499784864s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5556', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-7522cda8289d46f0998b87dd69f9af7e-56.xml']' timed out after 0.15576341599808075 seconds

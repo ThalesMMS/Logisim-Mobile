@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Memory" name="4"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="1" loc="(300,100)" name="AND Gate">
+      <a name="size" val="50"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(200,80)" name="Pin">
+      <a name="label" val="a0"/>
+    </comp>
+    <wire from="(200,80)" to="(250,80)"/>
+    <comp lib="0" loc="(400,100)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y0_and_open"/>
+    </comp>
+    <wire from="(300,100)" to="(400,100)"/>
+    <comp lib="1" loc="(300,200)" name="OR Gate">
+      <a name="size" val="50"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(200,180)" name="Pin">
+      <a name="label" val="a1"/>
+    </comp>
+    <wire from="(200,180)" to="(250,180)"/>
+    <wire from="(230,220)" to="(250,220)"/>
+    <comp lib="0" loc="(400,200)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y1_or_stub"/>
+    </comp>
+    <wire from="(300,200)" to="(400,200)"/>
+    <comp lib="1" loc="(300,300)" name="AND Gate">
+      <a name="size" val="50"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(200,280)" name="Pin">
+      <a name="label" val="a2"/>
+    </comp>
+    <wire from="(200,280)" to="(250,280)"/>
+    <comp lib="0" loc="(200,320)" name="Pin">
+      <a name="label" val="b2"/>
+    </comp>
+    <wire from="(200,320)" to="(250,320)"/>
+    <comp lib="0" loc="(400,300)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y2_and_driven"/>
+    </comp>
+    <wire from="(300,300)" to="(400,300)"/>
+    <comp lib="1" loc="(300,400)" name="XOR Gate">
+      <a name="size" val="50"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(200,380)" name="Pin">
+      <a name="label" val="a3"/>
+    </comp>
+    <wire from="(200,380)" to="(250,380)"/>
+    <wire from="(230,420)" to="(250,420)"/>
+    <comp lib="0" loc="(400,400)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y3_xor_stub"/>
+    </comp>
+    <wire from="(300,400)" to="(400,400)"/>
+    <comp lib="1" loc="(300,500)" name="NAND Gate">
+      <a name="size" val="50"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(400,500)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y4_nand_none"/>
+    </comp>
+    <wire from="(300,500)" to="(400,500)"/>
+    <comp lib="1" loc="(300,600)" name="NOT Gate">
+    </comp>
+    <wire from="(250,600)" to="(270,600)"/>
+    <comp lib="0" loc="(400,600)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y5_not_stub"/>
+    </comp>
+    <wire from="(300,600)" to="(400,600)"/>
+    <comp lib="1" loc="(300,700)" name="NOT Gate">
+    </comp>
+    <comp lib="0" loc="(200,700)" name="Pin">
+      <a name="label" val="a6"/>
+    </comp>
+    <wire from="(200,700)" to="(270,700)"/>
+    <comp lib="0" loc="(400,700)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y6_not_driven"/>
+    </comp>
+    <wire from="(300,700)" to="(400,700)"/>
+    <comp lib="1" loc="(300,800)" name="Buffer">
+    </comp>
+    <wire from="(250,800)" to="(280,800)"/>
+    <comp lib="0" loc="(400,800)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y7_buffer_stub"/>
+    </comp>
+    <wire from="(300,800)" to="(400,800)"/>
+    <comp lib="1" loc="(300,900)" name="Controlled Buffer">
+    </comp>
+    <comp lib="0" loc="(200,900)" name="Pin">
+      <a name="label" val="a8"/>
+    </comp>
+    <wire from="(200,900)" to="(280,900)"/>
+    <comp lib="0" loc="(400,900)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y8_cbuf_open"/>
+    </comp>
+    <wire from="(300,900)" to="(400,900)"/>
+    <comp lib="1" loc="(300,1000)" name="Controlled Buffer">
+    </comp>
+    <comp lib="0" loc="(200,1000)" name="Pin">
+      <a name="label" val="a9"/>
+    </comp>
+    <wire from="(200,1000)" to="(280,1000)"/>
+    <comp lib="0" loc="(200,1040)" name="Pin">
+      <a name="label" val="c9"/>
+    </comp>
+    <wire from="(200,1040)" to="(290,1040)"/>
+    <wire from="(290,1040)" to="(290,1010)"/>
+    <comp lib="0" loc="(400,1000)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="y9_cbuf_driven"/>
+    </comp>
+    <wire from="(300,1000)" to="(400,1000)"/>
+  </circuit>
+</project>

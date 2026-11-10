@@ -1,0 +1,44 @@
+{
+  "accessed": "2026-11-05",
+  "localSDK": [
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderError.h",
+      "sourceSHA256": "fee0ea8b3b3ac08bfb1f34a7fc9622077391077ed85d5510483e51797b342ecd",
+      "ranges": [
+        [
+          62,
+          65
+        ],
+        [
+          181,
+          185
+        ]
+      ]
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderDefines.h",
+      "sourceSHA256": "1c9898b293b92b4f22a793d8b6bacdb31fd0e0fa1f8c4b2295f76f9653498ba3",
+      "ranges": [
+        [
+          37,
+          39
+        ]
+      ]
+    }
+  ],
+  "apple": [
+    {
+      "url": "https://developer.apple.com/documentation/fileprovider/nsfileprovidererror/code/applicationextensionnotfound",
+      "scope": "Official short description of the applicationExtensionNotFound case."
+    },
+    {
+      "url": "https://developer.apple.com/documentation/fileprovider/nsfileprovidererror/code/providernotfound",
+      "scope": "Root providerNotFound classification; no cause assigned to this run."
+    },
+    {
+      "url": "https://developer.apple.com/documentation/updates/fileprovider",
+      "scope": "March2024 identifies applicationExtensionNotFound as an underlying error category of providerNotFound."
+    }
+  ],
+  "limits": "The header specifies launchability for the domain app bundle; the nominal category alone does not prove missing on-disk appex, signing invalidity or unsupported Simulator behavior."
+}

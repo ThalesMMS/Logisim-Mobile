@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "status": "FAILED_BEFORE_FIRST_FOLDER_EXPORT",
+  "wrapperSession": 8264,
+  "harnessHead": "707a0ca4c05253ba65d4d7c3b149bad5d4b52b3f",
+  "appProducer": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "device": "emulator-5558",
+  "observed": [
+    "Explicit sources folder grant completed and the actual imported canvas displayed 8 and 3.",
+    "The wrapper failed in choose_downloads during the first CREATE_DOCUMENT export.",
+    "The failure hierarchy retained the Save to roots drawer with the native Downloads location.",
+    "This attempt produced no completed app export and does not qualify the folder roundtrip."
+  ],
+  "hypothesis": "The old shared deadline could expire after a new navigation action. The failed run has no per-phase timestamps, so its logs do not prove that this caused this particular failure.",
+  "correction": {
+    "perTransitionSeconds": 30,
+    "totalSeconds": 90,
+    "maximumActions": 3,
+    "previousTotalSeconds": 30,
+    "totalBudgetIncreased": true,
+    "rules": [
+      "Start a transition deadline only at the initial observation or an actual navigation tap; never reset it while polling.",
+      "The total deadline starts once and bounds all navigation actions, model lookup, hierarchy reads and taps.",
+      "Forward the remaining budget to blocking driver calls and reject late ready results.",
+      "Use the fresh device-storage file list for its Download row; do not start a nested file-picker deadline.",
+      "Record timestamped actions and hierarchy query durations in a unique JSON trace for each invocation."
+    ]
+  },
+  "offlineChecks": {
+    "downloadsNavigation": 21,
+    "portablePreparation": 10,
+    "artifactPreflight": 11,
+    "resetLifecycle": 5
+  },
+  "scope": "Harness correction only; no performance claim, product change or relaxation of bytes, identities, grants, restart or desktop oracles."
+}

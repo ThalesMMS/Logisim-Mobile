@@ -1,0 +1,237 @@
+{
+  "reviewedSource": "ab1b04cf4c396c0391b2aa9c4ad8f486f45d5d0c",
+  "fullGate": {
+    "core_jvm": {
+      "tests": 981,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "editor_android_host": {
+      "tests": 478,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "snapshot_junit": {
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "rootManifestSha256": "bef5609ecf6f6da2c0f2fcfa55dd9642f4f8a6fc20570d1124f9fb084efa9881",
+  "scope": "Read-only review of archived results; no new tests or native execution.",
+  "selectedSuites": [
+    {
+      "suite": "PropertyEditorModelTest",
+      "target": "editor_android_host",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/editor_android_host/TEST-dev.logisim.mobile.PropertyEditorModelTest.xml",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:40.925Z",
+      "sha256": "c67f1f76a4318b58900724d97b1de5d6f92fddb62477c02acc8fc800a100123b",
+      "testCases": [
+        "fieldsUseDeclaredTypesAndDefaults",
+        "invalidValuesReportTheSpecificProperty",
+        "unregisteredTypesAreReportedWithoutInventingEditableProperties",
+        "editedNumbersAreNormalizedBeforeApplying",
+        "layoutConstraintsAreCheckedBeforeTheEditIsAccepted",
+        "multiSelectionValidatesAgainstEveryComponentSchema",
+        "aParserFailureIsReportedAsAnInvalidFieldInsteadOfEscaping",
+        "editingKnownPropertiesPreservesUnknownValues",
+        "mixedValuesAreExplicitAndUnknownAttributesRemainReadOnly"
+      ]
+    },
+    {
+      "suite": "PropertyLocalizationTest",
+      "target": "editor_android_host",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/editor_android_host/TEST-dev.logisim.mobile.PropertyLocalizationTest.xml",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:40.930Z",
+      "sha256": "6b87f17ede5cfb71d8e3f24bcc6b56ffdf7bb2d3b3ff2546b071b8c680bb45ab",
+      "testCases": [
+        "unknownFieldsAndTextValuesRemainUserData",
+        "labelsAndBooleanDirectionValuesTranslateWithoutChangingSerializedData",
+        "invalidPropertyMessagesRemainStructuredAndKeepUserInputLiteral"
+      ]
+    },
+    {
+      "suite": "TypedAttributeEditingTest",
+      "target": "editor_android_host",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/editor_android_host/TEST-dev.logisim.mobile.TypedAttributeEditingTest.xml",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:41.173Z",
+      "sha256": "a14187023b4daa33c919356be0ba13be85f7b6ab7ea27f839c0b54157a2e70b0",
+      "testCases": [
+        "labelsCanBeEditedAcrossTheSelectionAndUndone",
+        "invalidTypedValueCannotPartiallyModifyTheSelection",
+        "commonAttributesChangeEverySelectedComponentInOneUndoAction"
+      ]
+    },
+    {
+      "suite": "EditorRegistryIntegrationTest",
+      "target": "editor_android_host",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/editor_android_host/TEST-dev.logisim.mobile.EditorRegistryIntegrationTest.xml",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:27.140Z",
+      "sha256": "8d6eca9cbc9cf3bec39abbbe051903b9d6b2d9d547ab65463f8236fcd98b28a8",
+      "testCases": [
+        "oneRegistryControlsPaletteImportPropertiesInsertionGeometryAndSimulation"
+      ]
+    },
+    {
+      "suite": "ComponentRegistryTest",
+      "target": "core_jvm",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/core_jvm/TEST-dev.logisim.mobile.core.ComponentRegistryTest.xml",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:25.432Z",
+      "sha256": "7778fd09ad30b58602b6233bc9abbbbba43f6a9f8184c9851a0d5b0afb5bd33b",
+      "testCases": [
+        "externalTypeRoundTripsItsFileIdentityAttributesAndPorts[jvm]",
+        "schemaAppliesTypedDefaultsAndPreservesUnknownFields[jvm]",
+        "unregisteredTypesNeverAcquireFallbackGateGeometry[jvm]",
+        "attributeChangesReconnectStableNamedPortsAndRejectInvalidValuesAtomically[jvm]",
+        "existingComponentsKeepTheirPortGeometryForEveryDirection[jvm]",
+        "weakPullsUseInferredBusWidthAndNeverOverrideStrongDrivers[jvm]",
+        "registryAddsTypesWithoutChangingBuiltinsOrMutatingItsSource[jvm]",
+        "groupAttributeChangesValidateBeforePublishingOneHistoryEntry[jvm]",
+        "topologyExportsConnectedBitsWithoutJoiningDifferentBusBits[jvm]"
+      ]
+    },
+    {
+      "suite": "CircuitEditingTest",
+      "target": "core_jvm",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditingTest.xml",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:04.958Z",
+      "sha256": "e7f75b2ab2d7c72ccc83942a0dccec9ec1a16f12ee2579125e4eb0ee25595981",
+      "testCases": [
+        "copyingPreservesAttributesSubcircuitReferencesAndSymbolPorts[jvm]",
+        "deletingComponentsAndExplicitWiresIsAtomic[jvm]",
+        "groupMovementAndItsBoundaryConnectionsAreOneUndoStep[jvm]",
+        "repeatedPastesAllocateDistinctIdsAndPreserveLabelsAndGeometry[jvm]",
+        "emptySelectionAndClipboardDoNotCreateHistory[jvm]",
+        "movingUsesTheOtherElbowToAvoidAnUnrelatedNetwork[jvm]",
+        "movingWireKeepsItsOriginalEndsConnected[jvm]",
+        "unrelatedUnmarkedCrossingsRemainUnsplit[jvm]",
+        "changingFacingReconnectsPortsWithoutShortingInputToOutput[jvm]",
+        "aBranchAtTheMiddleOfAWireSplitsItAndCanBeUndoneTogether[jvm]",
+        "copyingAGroupKeepsInternalWiresAndExcludesExternalBranches[jvm]"
+      ]
+    },
+    {
+      "suite": "CircuitEditorTest",
+      "target": "core_jvm",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditorTest.xml",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:04.968Z",
+      "sha256": "1616034ac239dcc47053809a3b66cd761ba8e4cd2bf6699182f4e090fc6a5635",
+      "testCases": [
+        "connectIsOneUndoableOperationEvenWhenItNeedsAnElbow[jvm]",
+        "newDocumentCanBeUndoneWithoutLosingPreviousCircuit[jvm]",
+        "newEditDiscardsRedoAndReplacingKeepsUndoHistory[jvm]",
+        "movingAnEndpointPreservesItsConnectionAndCanBeUndone[jvm]",
+        "documentRejectsDuplicateIdsAndDiagonalWireSegments[jvm]",
+        "addingMovingDeletingAndUndoRestoreTheDocument[jvm]"
+      ]
+    },
+    {
+      "suite": "DefaultCatalogIntegrationTest",
+      "target": "core_jvm",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/core_jvm/TEST-dev.logisim.mobile.core.DefaultCatalogIntegrationTest.xml",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:25.444Z",
+      "sha256": "b9d16a73376af428b4332d3b3abd1a779bbbf8600d4d2c4b9d8692ae61c9c8d5",
+      "testCases": [
+        "defaultSimulatorRunsNewPlexersAndExtraComponentsAndExternalPinEvents[jvm]",
+        "defaultCatalogRetainsEveryFamilyAndItsDesktopIdentity[jvm]",
+        "genericAttributeEditsUseWiringRulesAndRetainUnknownMetadata[jvm]",
+        "allDefaultComponentsRoundTripWithoutACustomRegistry[jvm]"
+      ]
+    },
+    {
+      "suite": "KeypadResizeEditorTest",
+      "target": "core_jvm",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/core_jvm/TEST-dev.logisim.mobile.core.KeypadResizeEditorTest.xml",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:33.567Z",
+      "sha256": "6676419633661e7c3d2e401dd4aed4c2f4b1adbe3e440437b942cff2c179594d",
+      "testCases": [
+        "reroutingRetainsAClosedWireLoopAttachedToAMovingTerminal[jvm]",
+        "reroutingKeepsAnOpenChainWhoseLooseEndIsTheNewPortPosition[jvm]",
+        "reroutingKeepsAPortSharedWithAFixedComponentConnected[jvm]",
+        "movingAPortOntoAnotherNetStillRejectsTheWholeEdit[jvm]",
+        "connectedKeypadCanShrinkAndGrowWithoutJoiningScanRowsOrColumns[jvm]",
+        "reroutingKeepsAJunctionAndItsFixedBranch[jvm]"
+      ]
+    },
+    {
+      "suite": "CircuitDiagnosticsTest",
+      "target": "core_jvm",
+      "path": "docs/validation/artifacts/inspector-acceptance-ab1b04cf/core_jvm/TEST-dev.logisim.mobile.core.CircuitDiagnosticsTest.xml",
+      "tests": "13",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-11-05T03:55:04.920Z",
+      "sha256": "d45f2a02853ed798e23c6aff79d045fb5e2b0bda17692c605edc3b47454b2a3e",
+      "testCases": [
+        "splitterConflictPointsToDriversOnBothSidesOfTheSplit[jvm]",
+        "editUndoAndRemoveRecomputeDiagnosticsWithoutReusingAnOldGraph[jvm]",
+        "partialDriverConflictUsesRawDriverValuesAndNamesTheConflictingBit[jvm]",
+        "analysisBudgetIsExplicitInsteadOfFreezingOnAnExpandedHierarchy[jvm]",
+        "widthMismatchKeepsIdentityAcrossSplitsAndOrderingChanges[jvm]",
+        "actualFeedbackAndAnExecutionLimitHaveDifferentCodes[jvm]",
+        "unusedDefinitionsValidateCyclesAndDoNotBorrowTheMainSimulation[jvm]",
+        "importErrorsDoNotPretendToBeElectricalConflicts[jvm]",
+        "weakPullConflictsAreSelectableAndStrongDriversOverrideThem[jvm]",
+        "unconnectedInputIsAWarningWithAStableNamedTerminalTarget[jvm]",
+        "unknownTypeAndInvalidReferenceRemainDocumentErrors[jvm]",
+        "twoInstancesHaveDifferentDiagnosticIdentitiesAndNavigablePaths[jvm]",
+        "recursiveReferencesAreFiniteAndPointAtTheOffendingInstance[jvm]"
+      ]
+    }
+  ],
+  "iphone001Failure": {
+    "status": "FAIL",
+    "stage": "loadInput/Project XML before numeric Inspector",
+    "reason": "The native editing menu must expose Select All or an enabled Cut and Copy pair.",
+    "files": {
+      "docs/validation/artifacts/inspector-acceptance-ab1b04cf/iphone001-results.json": {
+        "sha256": "5e09dc90dd6d05b93d90e0696b4d1997c67a8a700702a0772bc53f72fb5e9872",
+        "bytes": 26898
+      },
+      "docs/validation/artifacts/inspector-acceptance-ab1b04cf/iphone001-xcresult-summary.json": {
+        "sha256": "4a6b831bfcdb1e974a490bc3beaef3ed4c7a8d1dcc4d4a74c01e5b1f73c3a03b",
+        "bytes": 1581
+      }
+    }
+  }
+}

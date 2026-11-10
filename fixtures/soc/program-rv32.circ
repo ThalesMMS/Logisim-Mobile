@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0" version="1.0">
+  <lib desc="#Soc" name="8"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="8" loc="(20,20)" name="SocBus"><a name="SocBusIdentifier" val="program-bus"/></comp>
+    <comp lib="8" loc="(20,250)" name="Socmem"><a name="SocBusSelection" val="program-bus"/></comp>
+    <comp lib="8" loc="(20,350)" name="SocPio"><a name="SocBusSelection" val="program-bus"/><a name="StartAddress" val="0x1000"/><a name="direction" val="outputonly"/><a name="width" val="8"/></comp>
+    <comp lib="8" loc="(800,20)" name="Rv32im"><a name="SocBusSelection" val="program-bus"/></comp>
+  </circuit>
+</project>

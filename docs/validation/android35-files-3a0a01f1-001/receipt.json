@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "issue": 35,
+  "status": "FAIL",
+  "qualification": "FILES_FAILED_AT_SAF_NAMED_STATUS",
+  "archiveReplayStatus": "PASS",
+  "nativeReplay": "NOT_RUN",
+  "source": "abc480b3c7e6a67442c5ca33e22c5014d2e29f68",
+  "filesSource": "e7933b187d886bf29764b565c0a4a030e520d999",
+  "readinessOriginalCommit": "a39f7e140ffb136d91b98868ffb4b2ca61d86da7",
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "helperProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5558",
+  "apiLevel": 35,
+  "appLanguage": "en",
+  "originalNativeInvocations": 1,
+  "nativeExitCode": 1,
+  "startedUTC": "2026-11-05T13:02:19.778103+00:00",
+  "finishedUTC": "2026-11-05T13:06:13.068545+00:00",
+  "wrapperElapsedSeconds": 233.28950829201494,
+  "caseResults": [
+    {
+      "scenario": "incoming-share-imports-a-copy",
+      "status": "passed",
+      "seconds": 63.21
+    },
+    {
+      "scenario": "saf-local-import-preserves-source",
+      "status": "failed",
+      "error": "The status_file_opened control did not appear within 30s"
+    },
+    {
+      "scenario": "native-file-workflow",
+      "status": "failed",
+      "error": "The status_file_opened control did not appear within 30s"
+    }
+  ],
+  "casePartition": {
+    "incoming-share-imports-a-copy": "PASS",
+    "saf-local-import-preserves-source": "FAIL",
+    "cancel-open-preserves-project": "NOT_RUN",
+    "cancel-export-preserves-project": "NOT_RUN",
+    "cancel-share-preserves-project": "NOT_RUN",
+    "external-receiver-reads-share-grant": "NOT_RUN",
+    "invalid-and-incompatible-files-preserve-project": "NOT_RUN",
+    "save-as-local-document": "NOT_RUN",
+    "recover-create-document-after-process-death": "NOT_RUN"
+  },
+  "initialView": "Public XML and named status retained; frozen producer source readback assertion completed before SEND",
+  "lastPublicCopy": "raw/incoming-share.circ",
+  "localSafPublicCopyExported": false,
+  "privateCheckpointIsPublicExport": false,
+  "observedTokens": {
+    "view": "565fd4848f2d45b7a5eec196ccf17d74",
+    "send": "b2b4a0bc78294733a7e619e401c09609",
+    "stagedAndPrivateSaf": "aa7bea2d4d7441a899115cc43f3f3db0"
+  },
+  "sap1Oracle": "Historical structural counts only: 7 circuits/156 components/318 wires",
+  "privateCheckpoint": {
+    "path": "private/final-saf-checkpoint.workspace",
+    "bytes": 53068,
+    "sha256": "68a0b6daaef1ee9fa48ab6b0375eb9f6736667bc3775efe326bd24543fc4357a",
+    "normalizedXmlBytes": 52858,
+    "normalizedXmlSHA256": "bbfb6f8397d5d837f794bb0bdbcd487d1e747785b9349b8c7673681152d5b6a5",
+    "sourceKind": "Private failure collector; not public Copy XML"
+  },
+  "inventory": {
+    "file": "inventory.json",
+    "fileCount": 283,
+    "bytes": 11322941,
+    "rawFiles": 95,
+    "controlFiles": 101,
+    "historicalSources": 83,
+    "historicalManifestFiles": 1,
+    "privateMembers": 1,
+    "provenanceFiles": 2
+  },
+  "sourceManifestPinBeforeImport": {
+    "path": "oracle-snapshot/manifest.json",
+    "sha256": "8e874a1e80ea99eb559daf027d11d469eb1faa2d869f3ab1069cdb773318bf32"
+  },
+  "postflight": {
+    "sourcePins": 71,
+    "localApkAndReceiptPins": 4,
+    "settingsDifferences": {},
+    "anrChanged": false,
+    "readerEnabled": false,
+    "cleanupOwnedMainOnly": true,
+    "mainPidAfterForceStop": "",
+    "testPackagePidBeforeCleanup": "17772",
+    "helperPidBeforeCleanup": "",
+    "allHelpersStoppedClaim": false
+  },
+  "observations": {
+    "controllerCommandRequestsOnly": 301,
+    "publicCopyPreparationRequests": 2,
+    "focusSdkCaptures": 0,
+    "recovery": "NOT_RUN",
+    "threeCancellationReadiness": "NOT_RUN",
+    "shareReceiver": "NOT_RUN"
+  },
+  "offlineChecks": {
+    "testsPassed": 12,
+    "semanticControlsRehashModifiedEvidence": true,
+    "relocationOutsideCheckout": "PASS",
+    "nativeExecution": "NOT_RUN"
+  },
+  "limits": [
+    "Seven later Files cases were not run; this receipt does not close issue35 or reclassify prior issue25 evidence.",
+    "SAP1 oracle checks structural counts, not complete attribute/wire equivalence to the original.",
+    "SEND has token/status/public XML checks but no external source preservation readback.",
+    "A private SAF-token document and a named import report do not qualify local-import public Copy XML or explain the absent status.",
+    "Operation cancelled is retained text, without assigning Back/callback/IME/lifecycle cause.",
+    "Controller requests are not command completion/event delivery; no continuous process or recovery PID transition is claimed.",
+    "Only Main was force-stopped; the pre-cleanup test-package PID was 17772 and helper PID was empty.",
+    "Original TARs remain local with hashes; no APK, JAR or TAR is published."
+  ],
+  "checks": {
+    "verify.py": {
+      "bytes": 16522,
+      "sha256": "6ae66e61833853124a8ba391f718f521ab875ec0a0fc790f7409e2ba3527da91"
+    },
+    "test_verify.py": {
+      "bytes": 6722,
+      "sha256": "27352979f745298f56159ea983efadd85ed079f386a095f713e3444b78d81d8e"
+    },
+    "verification.json": {
+      "bytes": 1622,
+      "sha256": "6a3046adb7d684110dcea9509a271899652314ee742faa6e350e09cbb64011c9"
+    },
+    "checks.log": {
+      "bytes": 1971,
+      "sha256": "c55303a14db98271dc2c4e5cff6a689789bc5cf0ac79ce9900987c5931b8601e"
+    },
+    "inventory.json": {
+      "bytes": 45574,
+      "sha256": "89e259fefb18954da3c2da559a1f4f0f8e2297b3a9971c24c9ac16ade3c873f7"
+    }
+  },
+  "independentReview": {
+    "agent": "/root/android_acceptance35_resume/issue35_existing_proof/dip_archive_review",
+    "status": "APPROVED",
+    "findings": [],
+    "portableReplay": "PASS",
+    "testsRun": 12,
+    "failures": 0,
+    "errors": 0,
+    "nativeExecution": "NOT_RUN",
+    "delivery": "Review result delivered in the existing agent message; the reviewer edited no files.",
+    "scope": "Historical source authentication, semantic rehashed controls/relocation, public SEND vs private SAF, failed named status, seven NOT_RUN cases, 71+4 pins/getter readbacks and Main-only cleanup."
+  }
+}

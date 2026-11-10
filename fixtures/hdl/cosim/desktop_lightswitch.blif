@@ -1,0 +1,12 @@
+# Circuit from the desktop resources/logisim/hdl/blif.templ.
+.model lightswitch
+.inputs button reset
+.outputs light_out
+.names $false
+.names $true
+1
+.names $undef
+.subckt NOT A=light Y=light_inv
+.subckt DFFSR C=button D=light_inv Q=light R=reset S=$false
+.conn light light_out
+.end

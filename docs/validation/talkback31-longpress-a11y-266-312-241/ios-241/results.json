@@ -1,0 +1,57 @@
+{
+ "started": "2026-11-07T22:39:03.672243+00:00",
+ "finished": "2026-11-07T22:55:08.962500+00:00",
+ "run_id": "5faf5701d52e",
+ "declared_baseline_sha": "1295aead",
+ "simulator": "67EB8F00-C084-4073-8742-2DADC0C2AA68",
+ "status": "PASS",
+ "native_execution_gate": "NATIVE_PASS",
+ "qualification_gate": "PARTIAL",
+ "selected_tests": [
+  "EditorEndToEndTests/EditorEndToEndTests/testAccessibleAndGateExplorerFlowSaveAndReopen"
+ ],
+ "execution": {
+  "status": "PASS",
+  "exit_code": 0,
+  "xcresult": "/private/tmp/t241-r27-1/editor.xcresult",
+  "selection": [
+   "EditorEndToEndTests/EditorEndToEndTests/testAccessibleAndGateExplorerFlowSaveAndReopen"
+  ]
+ },
+ "artifact": {
+  "path": "/private/tmp/t241-app/LogisimMobile.app",
+  "bundle_id": "thalesmms.logisim.mobile",
+  "executable_sha256": "300cf7cd2ac626426d18f93fb1c37eec94102d92537d092ab3f5a77f08d8184a",
+  "bundle_tree_sha256": "d4695b3aaf840d8b663a3075c184f03560d690b19cd261d92d8e00cc7372a8c0",
+  "version": "0.2.0",
+  "build": "2"
+ },
+ "device": {
+  "dataPath": "/Users/user/Library/Developer/CoreSimulator/Devices/67EB8F00-C084-4073-8742-2DADC0C2AA68/data",
+  "dataPathSize": 276180992,
+  "logPath": "/Users/user/Library/Logs/CoreSimulator/67EB8F00-C084-4073-8742-2DADC0C2AA68",
+  "udid": "67EB8F00-C084-4073-8742-2DADC0C2AA68",
+  "lastUsedAt": "2026-11-07T22:38:36Z",
+  "isAvailable": true,
+  "logPathSize": 172032,
+  "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+  "state": "Booted",
+  "name": "t241 iPhone 27.0",
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+ },
+ "main_app_installation": {
+  "status": "INSTALLED_VERIFIED",
+  "before_error": {
+   "type": "CalledProcessError",
+   "message": "Command ['xcrun', 'simctl', 'get_app_container', '67EB8F00-C084-4073-8742-2DADC0C2AA68', 'thalesmms.logisim.mobile', 'app'] returned non-zero exit status 2."
+  },
+  "installed": {
+   "path": "/Users/user/Library/Developer/CoreSimulator/Devices/67EB8F00-C084-4073-8742-2DADC0C2AA68/data/Containers/Bundle/Application/0DA2CC17-6B15-4681-9578-749D88FB1EF9/LogisimMobile.app",
+   "bundle_id": "thalesmms.logisim.mobile",
+   "executable_sha256": "300cf7cd2ac626426d18f93fb1c37eec94102d92537d092ab3f5a77f08d8184a",
+   "bundle_tree_sha256": "d4695b3aaf840d8b663a3075c184f03560d690b19cd261d92d8e00cc7372a8c0",
+   "version": "0.2.0",
+   "build": "2"
+  }
+ }
+}

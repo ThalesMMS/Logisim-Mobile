@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "scope": "paused SAP-1 immediately after library load, one Android emulator window",
+  "source_pin_declared": "aaa1f62bb3a576d7b45404c111491dd685f33dcb",
+  "apk_sha256_verified": "39103ec1ab40d88b153442680c30c54ad59dc64e3146529ea666e8435ede9f26",
+  "application_id": "thalesmms.logisim.mobile.e2e",
+  "pid": 8614,
+  "device_model": "sdk_gphone64_arm64",
+  "android_release": "15",
+  "emulator": true,
+  "started_utc": "2026-11-04T19:27:36.331172+00:00",
+  "finished_utc": "2026-11-04T19:27:41.753827+00:00",
+  "requested_seconds": 5.0,
+  "sample_count": 5,
+  "circuit_sha256": "bc7d59581b0585968478def47661c06d3245c11050460f83c5e97f61758cc670",
+  "circuit_counts_declared_by_owner": {
+    "circuits": 7,
+    "components": 156,
+    "wires": 318
+  },
+  "cpu_estimate_and_bounds": {
+    "process_cpu_percent_one_core_estimate": 3.8657581405967845,
+    "process_cpu_percent_one_core_lower_bound": 3.4421413622158017,
+    "process_cpu_percent_one_core_upper_bound": 4.293504148010582,
+    "process_cpu_quantization_allowance_ticks": 2,
+    "process_cpu_valid_samples": 5,
+    "process_cpu_window_monotonic_ns": [
+      166335043045041.5,
+      166339957992979.0
+    ]
+  },
+  "memory": {
+    "pss_kib": {
+      "first": 126696,
+      "last": 112187,
+      "minimum": 112187,
+      "maximum": 126696,
+      "median": 113051
+    },
+    "rss_kib": {
+      "first": 256364,
+      "last": 242136,
+      "minimum": 242136,
+      "maximum": 256364,
+      "median": 243000
+    }
+  },
+  "new_observed_frames": 0,
+  "initial_observed_frames_excluded": 107,
+  "gfxinfo_reset": false,
+  "device_control_actions": [],
+  "raw_manifest_sha256": "2d00a57217bc45b021fc3fc57668580b95e8d27d0cb2cec24e5b34e786402aa1",
+  "analysis_script_sha256": "8536f6c20055957d1d016d6f0d6e0df4ffe15a5572124a3bf81fc6083d287f50",
+  "raw_artifact_directory": "outputs/performance/android-aaa1f62-sap1-idle-01",
+  "analysis_note": "The raw manifest is unchanged. CPU bounds here were recomputed from its counters with stat-read timing and a two-tick quantization allowance.",
+  "limitations": [
+    "Five-second post-load window, not a steady-state or long-running budget",
+    "CPU bounds include stat-read timing and clock-tick quantization",
+    "No frame trace, Compose invalidation count, input latency or physical energy was measured",
+    "This capture identifies aaa1f62, not the final global acceptance baseline"
+  ]
+}

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_fpga_scenarios.py", line 504, in success
+    before, archive = self.mapping(export=True)
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_fpga_scenarios.py", line 424, in mapping
+    before = self.load(board)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_fpga_scenarios.py", line 313, in load
+    self.s.choose_downloads()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/e2e-android.py", line 852, in choose_downloads
+    root = screen()
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/e2e-android.py", line 775, in screen
+    root = self.ui.screen(timeout=limit)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_ui.py", line 125, in screen
+    return self._screen_uiautomator(timeout)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_ui.py", line 396, in _screen_uiautomator
+    raise AssertionError(f"No fresh Android UI hierarchy within {timeout}s: {last_error}")
+AssertionError: No fresh Android UI hierarchy within 1.1225581250037067s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-0ec1f5a2e8734f409e5ec03dab07afd8-43.xml']' timed out after 1.1225531669915654 seconds

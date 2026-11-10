@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+        "deviceName" : "iPhone 17e",
+        "modelName" : "iPhone 17e",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 0,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "EditorHarness · Built with macOS 27.2",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1793851009.784,
+  "passedTests" : 0,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1793850971.838,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "failed - The native editing menu must expose Select All or an enabled Cut and Copy pair.",
+      "targetName" : "EditorEndToEndTests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "InspectorEndToEndTests/testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction()",
+      "testIdentifierURL" : "test://com.apple.xcode/LogisimEditorHarness/EditorEndToEndTests/InspectorEndToEndTests/testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction",
+      "testName" : "testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction()"
+    }
+  ],
+  "title" : "Test - EditorHarness",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 1
+}

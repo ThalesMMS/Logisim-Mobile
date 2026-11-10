@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<project source="2.7.1" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Plexers" name="1"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="1" loc="(1200,800)" name="Demultiplexer"/>
+    <comp lib="0" loc="(1210,860)" name="Constant">
+      <a name="value" val="0x0"/>
+    </comp>
+    <wire from="(1210,820)" to="(1210,860)"/>
+    <comp lib="0" loc="(1280,790)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="facing" val="west"/>
+    </comp>
+    <wire from="(1230,790)" to="(1280,790)"/>
+    <comp lib="1" loc="(1400,800)" name="Decoder"/>
+    <comp lib="0" loc="(1350,800)" name="Constant">
+      <a name="value" val="0x0"/>
+    </comp>
+    <wire from="(1350,800)" to="(1390,800)"/>
+    <comp lib="0" loc="(1450,770)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="facing" val="west"/>
+    </comp>
+    <wire from="(1410,770)" to="(1450,770)"/>
+    <comp lib="1" loc="(200,1000)" name="Priority Encoder"/>
+    <comp lib="0" loc="(180,1090)" name="Constant">
+      <a name="value" val="0x0"/>
+    </comp>
+    <wire from="(180,1050)" to="(180,1090)"/>
+    <comp lib="0" loc="(250,1000)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="3"/>
+      <a name="facing" val="west"/>
+    </comp>
+    <wire from="(200,1000)" to="(250,1000)"/>
+  </circuit>
+</project>

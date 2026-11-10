@@ -1,0 +1,28 @@
+row: cli/load
+case: load-unlabeled
+result: DIFF
+detail: unlabeled image: Evolution loads every RAM and ROM; compare the ROM column
+
+=== evolution: logisim-evolution -t table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex
+exit: 0
+--- stdout (6 lines, sha256 62a9c1beef7eba0a3180a3a458bc73d8148e3cf7e3e23123c434027f3ac40ff1)
+UUUU UUUU	0001 0001
+UUUU UUUU	0010 0010
+UUUU UUUU	0011 0011
+UUUU UUUU	0100 0100
+UUUU UUUU	0101 0101
+UUUU UUUU	0110 0110
+--- stderr (1 lines, sha256 42caa89a2d5183d363839e6cd6140f3319051a4ef3d04a0d1736cd45d01c4b3f)
+[main] ERROR com.cburch.logisim.gui.start.TtyInterface - halted due to halt pin
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table,halt scripts/oracle/cli/fixtures/memory.circ --load scripts/oracle/cli/fixtures/mem.hex
+exit: 0
+--- stdout (7 lines, sha256 854bb76ba766f8f47f6f7bfdcf569d78505ea20756b2bbf01a3098dcf1d9e93c)
+xxxx xxxx	0000 1001
+xxxx xxxx	0000 1000
+xxxx xxxx	0000 0111
+xxxx xxxx	0000 0110
+xxxx xxxx	0000 0101
+xxxx xxxx	0000 0100
+halted due to halt pin
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

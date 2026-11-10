@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "result": "APPROVED_SOURCE_ONLY",
+  "utc": "2026-11-05T10:15:08.917461+00:00",
+  "baseOriginal": "91bc58e38e0171777df5951b018a23ac6da8da69",
+  "sourceSHA256": "40a53a4ef494688103909044828121126c90db3ce7222867b6033db6250f0b34",
+  "checkerSHA256": "ae915551ebee700204f45f52463413b55c104c71c718f969496f2dcaf9d9e8e5",
+  "nativeStatus": "NOT_RUN_BY_REVIEWER",
+  "scope": "Read-only source, checker and literal-evidence review. No check script, compiler, SDK, build, UI or Simulator operation.",
+  "rootCause": {
+    "query": "Unique TextView a11y-circuit-search, descendant of a11y-circuit-list in the R3 tree.",
+    "frame": [
+      24,
+      158,
+      342,
+      24
+    ],
+    "viewport": [
+      24,
+      182,
+      342,
+      604
+    ],
+    "label": "",
+    "enabled": true,
+    "failedClauses": [
+      "canonical == false",
+      "height 24 < 48"
+    ],
+    "notFailed": "Enabled was true. The frame ends at the viewport top. The R3 guard rejected preparation before a reveal gesture.",
+    "limit": "The evidence does not prove a persistent absence of the canonical label, a gesture consumer, or success after revealing."
+  },
+  "proof": [
+    "The pure readiness first rejects disabled, nonfinite, zero and negative raw dimensions.",
+    "A contained control is admissible only with canonical label and dimensions of at least 48 points. Native hittability is then queried and required by the unchanged final action path.",
+    "A control outside or partly outside the viewport may prepare; this does not set fullyVisible true unless all admission requirements pass.",
+    "All three public-selected Components return paths also require canSkipSelected. That flag preserves canonical label, enabled state and minimum 48-point dimensions even offscreen.",
+    "The single Components tap and fresh posttap confirmation remain intact, without a retap path.",
+    "The actual query, native roles and ambiguity guard are byte-identical to the base; the real XCUI query is not executed by the host probe.",
+    "The 62-step case prefix and Start/Complete/text suffix are byte-identical to the base.",
+    "The checker extracts the actual readiness source and uses the literal R3 frame and observation. It pins the three complete literal inputs and fixed canonical EN/PT values.",
+    "The checker includes 17 literal expectations, including independent offscreen wrong-label and undersized-canonical skip negatives. It verifies the actual printed count and all input bytes before/after the subprocess."
+  ],
+  "literalSHA256": {
+    "r3-tree.txt": "c2cb79f20864a7dc835a1d7f92dc34d9a7e16037494ce6dc95b573aec10b15aa",
+    "r3-observation.txt": "d56c61dc955dcd0a39e4bd21435c5f14a5059170c3bbded6fc5420380b181aa8",
+    "canonical-labels.json": "e169da87187f243cc9d20442f3e33b95301aeedaae7da099ff76584f18a813d9"
+  },
+  "closedReviewPoints": [
+    "Pinned full tree/observation/labels hashes rather than relying on a matching fragment.",
+    "Added separate offscreen canonical-label and minimum-size skip negatives."
+  ],
+  "independentCounterexampleReview": {
+    "path": "/tmp/logisim-editor36-readiness-admission-review.json",
+    "sha256": "9ce7e1c10ad85384492649acfe14fdd80b711aabe017505d0d8981100af36657"
+  },
+  "findings": [],
+  "limits": [
+    "No native success or gesture delivery is claimed.",
+    "Host readiness tests do not execute XCUI queries or prove callback delivery.",
+    "The existing backward-only reachability and twelve-gesture limit remain unchanged."
+  ]
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "utc": "2026-11-04T21:49:27.011165+00:00",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "pidof",
+      "thalesmms.logisim.mobile.e2e"
+    ],
+    "beforeMonotonicNs": 174845294346666,
+    "afterMonotonicNs": 174845406467875,
+    "returncode": 0
+  },
+  {
+    "utc": "2026-11-04T21:49:27.382174+00:00",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "top",
+      "-b",
+      "-n",
+      "1",
+      "-m",
+      "12"
+    ],
+    "beforeMonotonicNs": 174845406974541,
+    "afterMonotonicNs": 174845777103041,
+    "returncode": 0
+  },
+  {
+    "utc": "2026-11-04T21:49:29.887342+00:00",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "uiautomator",
+      "dump",
+      "--compressed",
+      "/sdcard/logisim-perf-final.xml"
+    ],
+    "beforeMonotonicNs": 174845777609375,
+    "afterMonotonicNs": 174848282257708,
+    "returncode": 0
+  },
+  {
+    "utc": "2026-11-04T21:49:29.927834+00:00",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "cat",
+      "/sdcard/logisim-perf-final.xml"
+    ],
+    "beforeMonotonicNs": 174848282290333,
+    "afterMonotonicNs": 174848322769208,
+    "returncode": 0
+  },
+  {
+    "utc": "2026-11-04T21:49:30.369745+00:00",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "beforeMonotonicNs": 174848323329333,
+    "afterMonotonicNs": 174848764677125,
+    "returncode": 0
+  },
+  {
+    "utc": "2026-11-04T21:49:30.572241+00:00",
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "am",
+      "force-stop",
+      "thalesmms.logisim.mobile.e2e"
+    ],
+    "beforeMonotonicNs": 174848775115000,
+    "afterMonotonicNs": 174848967158583,
+    "returncode": 0
+  }
+]

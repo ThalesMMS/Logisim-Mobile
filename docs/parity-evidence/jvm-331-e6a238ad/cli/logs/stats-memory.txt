@@ -1,0 +1,28 @@
+row: cli/tty
+case: stats-memory
+result: PASS
+detail: stdout and exit class equal
+
+=== evolution: logisim-evolution -t stats scripts/oracle/cli/fixtures/memory.circ
+exit: 0
+--- stdout (7 lines, sha256 9b499fcb42be5e5873532cc9a3a8a4766495a3bf74adff8d1d56cd854949be85)
+3	3	Pin    	Wiring
+1	1	Clock  	Wiring
+1	1	Counter	Memory
+1	1	RAM    	Memory
+1	1	ROM    	Memory
+7	7	TOTAL (without project’s sub circuits)
+7	7	TOTAL (with sub circuits)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -t stats scripts/oracle/cli/fixtures/memory.circ
+exit: 0
+--- stdout (7 lines, sha256 9b499fcb42be5e5873532cc9a3a8a4766495a3bf74adff8d1d56cd854949be85)
+3	3	Pin    	Wiring
+1	1	Clock  	Wiring
+1	1	Counter	Memory
+1	1	RAM    	Memory
+1	1	ROM    	Memory
+7	7	TOTAL (without project’s sub circuits)
+7	7	TOTAL (with sub circuits)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

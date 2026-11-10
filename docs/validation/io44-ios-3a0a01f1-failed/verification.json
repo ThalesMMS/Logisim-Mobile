@@ -1,0 +1,84 @@
+{
+  "status": "verified-failed-native-run",
+  "nativeMethods": "four-failed",
+  "qualifiedCheckpointPairs": 0,
+  "documentStages": {
+    "incompleteAfterXmlCapture": 1,
+    "reason": "METADATA_MISSING",
+    "notReached": 17
+  },
+  "orphanXmlContent": "complete-fixture-unpaired-not-qualified",
+  "caseObservations": [
+    {
+      "testCase": "IoEndToEndTests/testIoDimensionChangesRemainExportable()",
+      "pid": 76677,
+      "nonce": "io-showcase-0CC34CEE-65CC-4467-8BDC-30F865D372C8.circ",
+      "frame": [
+        250.0,
+        228.0,
+        584.0,
+        927.0
+      ],
+      "summariesAtFirstMarkerFrame": 1,
+      "match19": [
+        false
+      ],
+      "uniqueSelectorReturnsValue": true
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing()",
+      "pid": 77115,
+      "nonce": "io-showcase-859BC72B-6EEE-4231-9E57-20FCFF08DFD6.circ",
+      "frame": [
+        250.0,
+        228.0,
+        584.0,
+        879.0
+      ],
+      "summariesAtFirstMarkerFrame": 2,
+      "match19": [
+        true,
+        true
+      ],
+      "uniqueSelectorReturnsValue": false
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoKeyboardTtyAndCapacity()",
+      "pid": 77507,
+      "nonce": "io-showcase-FAD7C837-8CC4-4455-98CB-ADFD40BA82FE.circ",
+      "frame": [
+        250.0,
+        228.0,
+        584.0,
+        879.0
+      ],
+      "summariesAtFirstMarkerFrame": 2,
+      "match19": [
+        true,
+        true
+      ],
+      "uniqueSelectorReturnsValue": false
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoMomentaryControlsAndJoystick()",
+      "pid": 77724,
+      "nonce": "io-showcase-CAA39522-60AF-4B2C-B504-72FAA47CF5A2.circ",
+      "frame": [
+        250.0,
+        228.0,
+        584.0,
+        879.0
+      ],
+      "summariesAtFirstMarkerFrame": 2,
+      "match19": [
+        true,
+        true
+      ],
+      "uniqueSelectorReturnsValue": false
+    }
+  ],
+  "closeEvent": "synthesis-verified-delivery-not-established",
+  "emptyWaitSnapshots": 10,
+  "videoEvidence": "four-retained-extracted-frames-full-stream-not-archived",
+  "issue44": "not-qualified"
+}

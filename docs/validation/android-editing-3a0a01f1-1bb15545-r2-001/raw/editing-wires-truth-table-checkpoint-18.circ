@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <options>
+    <a name="simlimit" val="256"/>
+    <a name="memoryStartupUnknown" val="false"/>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="tickFrequencyHz" val="4.0"/>
+    <a name="autoPropagating" val="true"/>
+  </options>
+  <main name="Sem título"/>
+  <circuit name="Sem título" id="Sem título">
+    <a name="simulationFrequency" val="4.0"/>
+    <comp loc="(100,100)" logisim-mobile-id="c1" name="Pin" lib="0">
+      <a name="facing" val="east"/>
+      <a name="type" val="input"/>
+      <a name="width" val="1"/>
+      <a name="appearance" val="classic"/>
+      <a name="behavior" val="simple"/>
+      <a name="label" val="E2E_IN"/>
+      <a name="labelloc" val="west"/>
+      <a name="labelfont" val="SansSerif bold 16"/>
+      <a name="radix" val="2"/>
+      <a name="initial" val="0x0"/>
+    </comp>
+  </circuit>
+</project>

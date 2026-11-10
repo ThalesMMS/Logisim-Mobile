@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "status": "FAILED_AFTER_EXPORTS_BEFORE_REOPEN",
+  "wrapperSession": 14368,
+  "harnessHeadShort": "40493ec1",
+  "appProducer": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "nativeResult": "failed-14368/results.json",
+  "snapshotStages": ["before", "imported", "restored"],
+  "reopenedSnapshot": null,
+  "nativePassedReceipt": null,
+  "lastNavigation": {
+    "file": "failed-14368/downloads-navigation-713a48c4ff744a2592c80fe3ac8c754f.json",
+    "status": "FAILED",
+    "phase": "location-content",
+    "downloadsTapSeconds": 6.4758,
+    "finishedSeconds": 36.5346,
+    "completedQueriesAfterTap": 12,
+    "terminalTimedOutQueriesAfterTap": 1,
+    "intermediateHierarchyContentsRecorded": false,
+    "tapBoundsRecorded": false
+  },
+  "finalNativeUi": {
+    "package": "com.google.android.documentsui",
+    "activity": "com.android.documentsui.picker.PickActivity",
+    "rootsListCountInXml": 1,
+    "directoryListCountInXml": 0,
+    "screenshot": "Drawer open, Downloads highlighted, directory content visible behind its shadow.",
+    "xmlLimit": "No dir_list in the final XML does not establish physical absence of directory content."
+  },
+  "partialAppExports": {
+    "count": 2,
+    "bytesEach": 4899,
+    "sha256Each": "93da3a9c25dac5e1b012f3448f55437033fa5311cac2416a4b63478f7ef5ed51",
+    "zipCrcsValid": true,
+    "strictArtifactQualification": "NOT_RUN",
+    "storageOracle": "NOT_RUN",
+    "desktopQualification": "NOT_RUN"
+  },
+  "hypothesisToReview": "Selecting a native root always closes the drawer.",
+  "causalAttribution": "Not established by these observations.",
+  "offlineCensus": "census-report.json",
+  "scope": "Preserved failed native folder attempt. No reopened workspace, native PASSED receipt, issue closure or performance claim."
+}

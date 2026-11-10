@@ -1,0 +1,3259 @@
+{
+  "schemaVersion": 1,
+  "status": "summarized",
+  "input": "/Users/thales/GitHub/logisim-mobile-worktrees/performance-coldrestore-04a/outputs/performance/coldrestore-04a-20261104T212354Z",
+  "requestedPid": 9898,
+  "sourceRevision": "04a0b34a38689932a3f3aaed7f4ea5cb6b63c8db",
+  "sourceAttestation": "The operator declares the installed artifact's producing revision.",
+  "toolSha256": "67ea1c6744f186e7f17c4c663aac9bb31031336220448da9a8e34a12ba701c74",
+  "inputSha256": {
+    "am-start.txt": "0dc55ce210eb74a7ce4885765fafec44360c40bef683aa3f351836f6189c4852",
+    "anr-list.txt": "3e0c67d6ec780dd6a8764ae16b87c9063be56b5abbe9924442ae909a97d9583f",
+    "app-logcat.txt": "f0282e9c83ece6d43e82253ab5b9b58d31ebeca16e8a8322d94cd922607a0f3f",
+    "before-dialog.xml": "f63210ac8204fb6a1ecf9651f18d02ea7e7c03a3fb1d6f98f627edc40b387728",
+    "canvas.xml": "12321712ef399a6c2df263510feb1b1dedbae012f2939737942927ff2160d3f4",
+    "capture-coldrestore-once.py": "ae0130a4658b88d3a4c71a13f3768b775b9ae7f23539cffd1987d6a3648a9053",
+    "device-id.txt": "5255619d9d7729bfb9cef904021ce5f0acf9225650b56c711e27ece440351e94",
+    "environment-post-capture.json": "8851c489c1d0135ef6128dd3e8410208744ef445a4461997973edb404f3ac69a",
+    "events.json": "2870393857a376f36480c7174367919344f6ac8a7f68dfc54ce27e130bbb333a",
+    "final-pid.txt": "bf600159c2f308d1a2201004533c16855318a78ef0917e1022dc04a5665a9be2",
+    "final-screen.png": "7a5b329aa6b2bfc2f11aefb4a227781ef86d1d6e5ce8de842921394aa9149642",
+    "final-top.txt": "2c5665b23afdee05dfca52bc081f467b586e256ea2ab0f5e36417a926912f7f4",
+    "final-ui.xml": "46f2d854efb3dc7ac6c8eaf960b969962c5539ab25f9f34a3518e60f09dd33c7",
+    "guest-cpuinfo.txt": "84b4e265699afd4b3ee8aab3352bec3ddc6aabc6d4e77e208c3d1b72cc86cb80",
+    "guest-hz.txt": "4ac009a8d4cf915149cf48414b74a051735c24cfb31261e6d2733b6a8140eaf0",
+    "guest-load.txt": "663428422f136e116141b48bcbb09050b8bc8aa1fe20d75aa4b75b85f1d2499b",
+    "guest-vcpus.txt": "71a54fadf174ec95b5cefdd02fada92ddf387439cfd4360188ce196b67eecb3a",
+    "host-processes.txt": "7c8dba513d94447d2d4c4611e55b6a446ff52a970715dd2a6524698b8859dc4e",
+    "host-qemu-mapping.txt": "75c00940d3e1767b6ad50962b023bd5f652e623e57736eef2098150be5d19175",
+    "host-sysctl.txt": "ab5281da6d07f920a27130aa9386b4efbf96ef3bdae6592f3512a3bf3a9ad532",
+    "host-uptime.txt": "4cb0eb6ad6338d66b10c5081c50e76e29fd7d5325ebc3407bdae13f2687038f4",
+    "host-vm-stat.txt": "1a01cb15619e91c41b18e2fc09d326981b217ab74f37f2cffe9dd4644d10c008",
+    "lastanr.txt": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+    "observer-source-at-capture.py": "f42ce56ccae63f60b9f6d0c3e42f6933314b954bbb57aab53f38e3ae3886a3f5",
+    "passive/receipt.json": "345d0df2306ba37df40ab982f0e7b4641728d6f701c4632cfa434071abc7f6e3",
+    "passive/sample-0000.txt": "e1502ff8c5a19c1bb60eb202d8cd3676d50736c7aed539ede6dfe5a2e9b5342b",
+    "passive/sample-0001.txt": "69d8e6174bc6a43a4170a82357d1790e9072debd01cd2336a0323cd6b361fca6",
+    "passive/sample-0002.txt": "5f71be0f77beaa6cec1cd89727f4480385fb4635684fa81acb6a246554341291",
+    "passive/sample-0003.txt": "9a8d2e6cb8d1f8dad9ec7b3debfbac863d0e7e18432d36cd69eaee609d5315af",
+    "passive/sample-0004.txt": "6ff7ad9b94c08ea590506349ff23b2802a6f8ed4c05affe19d77d77d086bc0c7",
+    "passive/sample-0005.txt": "c793d565bd9444fab45a9e829beacf02bd7b1ee5b724867a1ba8174adc7a4779",
+    "passive/sample-0006.txt": "d75b16fa480c4c2fac7dacf6c4c6acae3378da7dc2df069e5b053b7f55354d05",
+    "passive/sample-0007.txt": "01d7f58cac80566b3aef266b4a03fd148d863cde66ad8a82f40939fc7b565691",
+    "passive/sample-0008.txt": "8cd28d1f448d99df6758293b9b08263c929cf0bc5f21154a96a67591ec288bcd",
+    "passive/sample-0009.txt": "72d65ed167e64af1b49ba786eea558d8f6c3a2669463d4ff59d04e4eca01a573",
+    "passive/sample-0010.txt": "6ec610c9b8351f93026dcc8c9ccf6106441187e149dddebef65a102c13b3930d",
+    "passive/sample-0011.txt": "3457c131c9406ab83b898a62c1dca2d6217c580f3e34be719919a4c4c3088acf",
+    "passive/sample-0012.txt": "555edc48270e790039b8353f154b43a1075768be352c66411f216cd67b2155c8",
+    "passive/sample-0013.txt": "e2d34eadce967a70b84d872bc0f064136a1f4e666f60ef482e878b1cf9c4ddef",
+    "passive/sample-0014.txt": "580e5131887c7e5444e0bc66e4ed084cc5c7a8c42f0b6f17cf1e6e25d37c34a4",
+    "passive/sample-0015.txt": "d9016e48199f2c0eecfdc501f4e2566e97f442bf9b5146d17224c44decc51751",
+    "passive/sample-0016.txt": "aa6b49f973a76b1da0ed3bcecbd170409c7f8c7cdf7fd17b83e500e571540d9d",
+    "passive/sample-0017.txt": "18bbeee6986ba05730aef625e3bdb10cf30735346d75b593d4ac015cc4a1f16c",
+    "passive/sample-0018.txt": "cd13c82b8aa74f9941262f2babe39703dac218f0d718ac43c4b90457da37b698",
+    "passive/sample-0019.txt": "1e72c2258768b5cc4795a991283fe4f7ce17f4e81384dbbb62a12564d82240a9",
+    "passive/samples.json": "d159ba4586e88415b1b70d7793742b8588f6ef91c9b84b6039e23857de6c4b0d",
+    "passive.log": "b5af3ca41567758109b32978c5e8e1209f72e19751397a1ba0894b9fa8d13e22",
+    "private-file-hashes-after.txt": "5470b35b069f389a0f1ac52b906d5cfa847e51b23b8f08b56949455bf90affe4",
+    "private-file-hashes-before.txt": "9a5547bc303d52e7c05a2619040f03f6e17077b027df8357f7554b2f3bc9863b",
+    "private-files-before.txt": "9dd9a05be86c4916523957431b3ff9c6d1a19eaa2ad9a1f2de2a0084527ac7e9",
+    "provenance.json": "3c587db7efc2efe8854e9278f26fa299dc6a6a4a46f8d90406556c1e1b3a8840",
+    "screen-12s.png": "6e326b577cda02629cc5e89d2664647428ca55b38a711176a324ff444b136ab0",
+    "screen-30s.png": "66cfdfb8d7aacc73423f0638a676700143d28d323a9683094f55b547a7ac9190",
+    "setup-commands.json": "d00498b6b5d03c5c5ec1692517606221cd9853485e6d0e632a02dc69f1ff4239",
+    "shutdown-commands.json": "9ef33751f51304d16837318e7dfadc51c5c2617549b12580b9b4a5f0b0cf2210",
+    "sigquit-9898-trace.txt": "c2b3f3f784502c0670be20933f720dd1bc374342486c42a4236b5490db5ada5a",
+    "tombstone-list.txt": "c6536ed5ddff191a0e38db80adcc2da2ee739f5769471e9a418281c78908e098",
+    "trace-extraction-commands.json": "5a0a959dfb91ec548d3a9b94fc6258abe6bca17996505c281332bc29eaf4760c",
+    "trace-read-shell.txt": "afdf3bd633e45b8309ea092f04d09e57b0f999dbbdff6959a8f27850a3826e78",
+    "ui-0007.xml": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+    "ui-0011.xml": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7",
+    "ui-0014.xml": "1e64622270da894b000364ea0950cf7388e66647c33d5c0efc4d1ead29c843f7"
+  },
+  "apk": {
+    "beforeSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+    "afterSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+    "expectedSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+    "verifiedBeforeAndAfter": true
+  },
+  "observer": {
+    "receiptSha256": "f42ce56ccae63f60b9f6d0c3e42f6933314b954bbb57aab53f38e3ae3886a3f5",
+    "rawThreadFormats": [
+      "legacy-per-thread"
+    ],
+    "savedSourceSha256": "f42ce56ccae63f60b9f6d0c3e42f6933314b954bbb57aab53f38e3ae3886a3f5",
+    "sourceMatchesReceipt": true
+  },
+  "processes": [
+    {
+      "pid": 8880,
+      "startTicks": 114759,
+      "selected": false,
+      "cpu": {
+        "observations": 2,
+        "firstFile": "sample-0000.txt",
+        "lastFile": "sample-0001.txt",
+        "firstReadEnvelopeNs": [
+          173473511604666,
+          173475653603291
+        ],
+        "lastReadEnvelopeNs": [
+          173475654229625,
+          173481630668916
+        ],
+        "firstCounters": {
+          "utimeTicks": 5119,
+          "stimeTicks": 1971
+        },
+        "lastCounters": {
+          "utimeTicks": 5122,
+          "stimeTicks": 1972
+        },
+        "deltaTicks": {
+          "user": 3,
+          "system": 1,
+          "total": 4
+        },
+        "hz": 100,
+        "cpuSeconds": 0.04,
+        "wallSeconds": {
+          "lowerBound": 0.000626334,
+          "midpointEstimate": 4.059845292,
+          "upperBound": 8.11906425
+        },
+        "quantizationAllowanceTicks": 2,
+        "oneCorePercent": {
+          "midpointEstimate": 0.9852592185919187,
+          "lowerBound": 0.24633380626344967,
+          "upperBound": 9579.553401220435
+        },
+        "upperRateUnbounded": false,
+        "singleObservation": false
+      },
+      "threads": [
+        {
+          "tid": 8880,
+          "startTicks": 114759,
+          "name": "isim.mobile.e2e",
+          "cpu": {
+            "observations": 2,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0001.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173475654229625,
+              173481630668916
+            ],
+            "firstCounters": {
+              "utimeTicks": 2588,
+              "stimeTicks": 574
+            },
+            "lastCounters": {
+              "utimeTicks": 2590,
+              "stimeTicks": 575
+            },
+            "deltaTicks": {
+              "user": 2,
+              "system": 1,
+              "total": 3
+            },
+            "hz": 100,
+            "cpuSeconds": 0.03,
+            "wallSeconds": {
+              "lowerBound": 0.000626334,
+              "midpointEstimate": 4.059845292,
+              "upperBound": 8.11906425
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.738944413943939,
+              "lowerBound": 0.12316690313172483,
+              "upperBound": 7982.961167683696
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 2
+          },
+          "wchanCounts": {
+            "do_epoll_wait": 2
+          }
+        },
+        {
+          "tid": 8881,
+          "startTicks": 114771,
+          "name": "Signal Catcher",
+          "cpu": {
+            "observations": 2,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0001.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173475654229625,
+              173481630668916
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.000626334,
+              "midpointEstimate": 4.059845292,
+              "upperBound": 8.11906425
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 3193.1844670734786
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 2
+          },
+          "wchanCounts": {
+            "do_sigtimedwait": 2
+          }
+        },
+        {
+          "tid": 8882,
+          "startTicks": 114771,
+          "name": "perfetto_hprof_",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "pipe_read": 1
+          }
+        },
+        {
+          "tid": 8883,
+          "startTicks": 114774,
+          "name": "ADB-JDWP Connec",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "do_sys_poll": 1
+          }
+        },
+        {
+          "tid": 8884,
+          "startTicks": 114774,
+          "name": "Jit thread pool",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 643,
+              "stimeTicks": 245
+            },
+            "lastCounters": {
+              "utimeTicks": 643,
+              "stimeTicks": 245
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8885,
+          "startTicks": 114775,
+          "name": "HeapTaskDaemon",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 61,
+              "stimeTicks": 18
+            },
+            "lastCounters": {
+              "utimeTicks": 61,
+              "stimeTicks": 18
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8886,
+          "startTicks": 114775,
+          "name": "ReferenceQueueD",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 6,
+              "stimeTicks": 1
+            },
+            "lastCounters": {
+              "utimeTicks": 6,
+              "stimeTicks": 1
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8887,
+          "startTicks": 114775,
+          "name": "FinalizerDaemon",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8888,
+          "startTicks": 114775,
+          "name": "FinalizerWatchd",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8889,
+          "startTicks": 114778,
+          "name": "binder:8880_1",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 7,
+              "stimeTicks": 9
+            },
+            "lastCounters": {
+              "utimeTicks": 7,
+              "stimeTicks": 9
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 1
+          }
+        },
+        {
+          "tid": 8890,
+          "startTicks": 114784,
+          "name": "binder:8880_2",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 4,
+              "stimeTicks": 1
+            },
+            "lastCounters": {
+              "utimeTicks": 4,
+              "stimeTicks": 1
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 1
+          }
+        },
+        {
+          "tid": 8894,
+          "startTicks": 114802,
+          "name": "binder:8880_3",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 6,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 6,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 1
+          }
+        },
+        {
+          "tid": 8895,
+          "startTicks": 114828,
+          "name": "binder:8880_4",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 6,
+              "stimeTicks": 2
+            },
+            "lastCounters": {
+              "utimeTicks": 6,
+              "stimeTicks": 2
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 1
+          }
+        },
+        {
+          "tid": 8900,
+          "startTicks": 115040,
+          "name": "Profile Saver",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 128,
+              "stimeTicks": 9
+            },
+            "lastCounters": {
+              "utimeTicks": 128,
+              "stimeTicks": 9
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8901,
+          "startTicks": 115046,
+          "name": "RenderThread",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 112,
+              "stimeTicks": 807
+            },
+            "lastCounters": {
+              "utimeTicks": 112,
+              "stimeTicks": 807
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "do_epoll_wait": 1
+          }
+        },
+        {
+          "tid": 8905,
+          "startTicks": 115127,
+          "name": "SurfaceSyncGrou",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "do_epoll_wait": 1
+          }
+        },
+        {
+          "tid": 8907,
+          "startTicks": 115134,
+          "name": "hwuiTask0",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8908,
+          "startTicks": 115134,
+          "name": "hwuiTask1",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8909,
+          "startTicks": 115139,
+          "name": "DefaultDispatch",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 656,
+              "stimeTicks": 37
+            },
+            "lastCounters": {
+              "utimeTicks": 656,
+              "stimeTicks": 37
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8911,
+          "startTicks": 115141,
+          "name": "DefaultDispatch",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 11,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 11,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8926,
+          "startTicks": 115332,
+          "name": "binder:8880_4",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 1
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 1
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 8949,
+          "startTicks": 115864,
+          "name": "binder:8880_5",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 18,
+              "stimeTicks": 7
+            },
+            "lastCounters": {
+              "utimeTicks": 18,
+              "stimeTicks": 7
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 1
+          }
+        },
+        {
+          "tid": 9081,
+          "startTicks": 120658,
+          "name": "binder:8880_6",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 26,
+              "stimeTicks": 10
+            },
+            "lastCounters": {
+              "utimeTicks": 26,
+              "stimeTicks": 10
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 1
+          }
+        },
+        {
+          "tid": 9109,
+          "startTicks": 121193,
+          "name": "DefaultExecutor",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 745,
+              "stimeTicks": 270
+            },
+            "lastCounters": {
+              "utimeTicks": 745,
+              "stimeTicks": 270
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1
+          }
+        },
+        {
+          "tid": 9166,
+          "startTicks": 133355,
+          "name": "binder:8880_7",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0000.txt",
+            "lastFile": "sample-0000.txt",
+            "firstReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "lastReadEnvelopeNs": [
+              173473511604666,
+              173475653603291
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 2.141998625
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "S": 1
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 1
+          }
+        }
+      ],
+      "ioDelta": {
+        "cancelled_write_bytes": 0,
+        "rchar": 320,
+        "read_bytes": 0,
+        "syscr": 40,
+        "syscw": 59,
+        "wchar": 472,
+        "write_bytes": 0
+      },
+      "rssKiB": {
+        "minimum": 217452,
+        "median": 217516.0,
+        "maximum": 217580,
+        "first": 217452,
+        "last": 217580
+      },
+      "probeThreadCounts": [
+        {
+          "file": "sample-0000.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0001.txt",
+          "processStat": 25,
+          "threadStatsRead": 2
+        }
+      ]
+    },
+    {
+      "pid": 9898,
+      "startTicks": 266496,
+      "selected": true,
+      "cpu": {
+        "observations": 17,
+        "firstFile": "sample-0003.txt",
+        "lastFile": "sample-0019.txt",
+        "firstReadEnvelopeNs": [
+          173482678851000,
+          173485128382708
+        ],
+        "lastReadEnvelopeNs": [
+          173547545265375,
+          173551203946416
+        ],
+        "firstCounters": {
+          "utimeTicks": 9,
+          "stimeTicks": 11
+        },
+        "lastCounters": {
+          "utimeTicks": 2294,
+          "stimeTicks": 794
+        },
+        "deltaTicks": {
+          "user": 2285,
+          "system": 783,
+          "total": 3068
+        },
+        "hz": 100,
+        "cpuSeconds": 30.68,
+        "wallSeconds": {
+          "lowerBound": 62.416882667,
+          "midpointEstimate": 65.4709890415,
+          "upperBound": 68.525095416
+        },
+        "quantizationAllowanceTicks": 2,
+        "oneCorePercent": {
+          "midpointEstimate": 46.86044987124436,
+          "lowerBound": 44.742732299561546,
+          "upperBound": 49.18541056237527
+        },
+        "upperRateUnbounded": false,
+        "singleObservation": false
+      },
+      "threads": [
+        {
+          "tid": 9898,
+          "startTicks": 266496,
+          "name": "isim.mobile.e2e",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 10,
+              "stimeTicks": 10
+            },
+            "lastCounters": {
+              "utimeTicks": 1023,
+              "stimeTicks": 77
+            },
+            "deltaTicks": {
+              "user": 1013,
+              "system": 67,
+              "total": 1080
+            },
+            "hz": 100,
+            "cpuSeconds": 10.8,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 16.495855886878722,
+              "lowerBound": 15.73146295464036,
+              "upperBound": 17.335053494622166
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "R": 9,
+            "S": 8
+          },
+          "wchanCounts": {
+            "0": 10,
+            "futex_wait_queue": 6,
+            "do_epoll_wait": 1
+          }
+        },
+        {
+          "tid": 10060,
+          "startTicks": 267195,
+          "name": "DefaultDispatch",
+          "cpu": {
+            "observations": 13,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 699,
+              "stimeTicks": 22
+            },
+            "deltaTicks": {
+              "user": 699,
+              "system": 22,
+              "total": 721
+            },
+            "hz": 100,
+            "cpuSeconds": 7.21,
+            "wallSeconds": {
+              "lowerBound": 56.04380425,
+              "midpointEstimate": 59.5538370415,
+              "upperBound": 63.063869833
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 12.106692630024362,
+              "lowerBound": 11.4011398587494,
+              "upperBound": 12.900623176379039
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 1,
+            "R": 12
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 1,
+            "0": 12
+          }
+        },
+        {
+          "tid": 10005,
+          "startTicks": 267065,
+          "name": "RenderThread",
+          "cpu": {
+            "observations": 14,
+            "firstFile": "sample-0006.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173487134845125,
+              173487704370208
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 103,
+              "stimeTicks": 551
+            },
+            "deltaTicks": {
+              "user": 103,
+              "system": 551,
+              "total": 654
+            },
+            "hz": 100,
+            "cpuSeconds": 6.54,
+            "wallSeconds": {
+              "lowerBound": 59.840895167,
+              "midpointEstimate": 61.954998229,
+              "upperBound": 64.069101291
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 10.55604904680434,
+              "lowerBound": 10.176512341551895,
+              "upperBound": 10.962402854590973
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 5,
+            "R": 9
+          },
+          "wchanCounts": {
+            "do_epoll_wait": 6,
+            "0": 8
+          }
+        },
+        {
+          "tid": 9916,
+          "startTicks": 266727,
+          "name": "Jit thread pool",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 371,
+              "stimeTicks": 123
+            },
+            "deltaTicks": {
+              "user": 371,
+              "system": 123,
+              "total": 494
+            },
+            "hz": 100,
+            "cpuSeconds": 4.94,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 7.545326674183415,
+              "lowerBound": 7.17985136705293,
+              "upperBound": 7.946567960566167
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "R": 16,
+            "S": 1
+          },
+          "wchanCounts": {
+            "0": 17
+          }
+        },
+        {
+          "tid": 9917,
+          "startTicks": 266727,
+          "name": "HeapTaskDaemon",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 19,
+              "stimeTicks": 6
+            },
+            "deltaTicks": {
+              "user": 19,
+              "system": 6,
+              "total": 25
+            },
+            "hz": 100,
+            "cpuSeconds": 0.25,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.3818485158999704,
+              "lowerBound": 0.335643458215889,
+              "upperBound": 0.4325752720469487
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 14,
+            "R": 3
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 15,
+            "0": 2
+          }
+        },
+        {
+          "tid": 9912,
+          "startTicks": 266713,
+          "name": "Signal Catcher",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 13,
+              "stimeTicks": 4
+            },
+            "deltaTicks": {
+              "user": 13,
+              "system": 4,
+              "total": 17
+            },
+            "hz": 100,
+            "cpuSeconds": 0.17,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.25965699081197985,
+              "lowerBound": 0.21889790753210148,
+              "upperBound": 0.304404821070075
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 17
+          },
+          "wchanCounts": {
+            "do_sigtimedwait": 17
+          }
+        },
+        {
+          "tid": 10321,
+          "startTicks": 269142,
+          "name": "binder:9898_7",
+          "cpu": {
+            "observations": 9,
+            "firstFile": "sample-0011.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173509965663083,
+              173517551804375
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 1,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 5,
+              "stimeTicks": 7
+            },
+            "deltaTicks": {
+              "user": 4,
+              "system": 7,
+              "total": 11
+            },
+            "hz": 100,
+            "cpuSeconds": 0.11,
+            "wallSeconds": {
+              "lowerBound": 29.993461,
+              "midpointEstimate": 35.6158721665,
+              "upperBound": 41.238283333
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.30885106360940145,
+              "lowerBound": 0.21824380824305442,
+              "upperBound": 0.43342780614747994
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 9
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 8,
+            "0": 1
+          }
+        },
+        {
+          "tid": 9934,
+          "startTicks": 266813,
+          "name": "binder:9898_1",
+          "cpu": {
+            "observations": 16,
+            "firstFile": "sample-0004.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173485128780458,
+              173485857204916
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 3,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 8,
+              "stimeTicks": 5
+            },
+            "deltaTicks": {
+              "user": 5,
+              "system": 5,
+              "total": 10
+            },
+            "hz": 100,
+            "cpuSeconds": 0.1,
+            "wallSeconds": {
+              "lowerBound": 61.688060459,
+              "midpointEstimate": 63.8816132085,
+              "upperBound": 66.075165958
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.1565395658898203,
+              "lowerBound": 0.1210742324141133,
+              "upperBound": 0.19452710801266984
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 14,
+            "R": 2
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 13,
+            "0": 3
+          }
+        },
+        {
+          "tid": 10061,
+          "startTicks": 267195,
+          "name": "DefaultDispatch",
+          "cpu": {
+            "observations": 13,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 9,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 9,
+              "system": 0,
+              "total": 9
+            },
+            "hz": 100,
+            "cpuSeconds": 0.09,
+            "wallSeconds": {
+              "lowerBound": 56.04380425,
+              "midpointEstimate": 59.5538370415,
+              "upperBound": 63.063869833
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.15112376375897263,
+              "lowerBound": 0.11099857998782447,
+              "upperBound": 0.1962750414110227
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 12,
+            "R": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 13
+          }
+        },
+        {
+          "tid": 9918,
+          "startTicks": 266727,
+          "name": "ReferenceQueueD",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 5,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 5,
+              "system": 0,
+              "total": 5
+            },
+            "hz": 100,
+            "cpuSeconds": 0.05,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.07636970317999407,
+              "lowerBound": 0.0437795815064203,
+              "upperBound": 0.11214914460476448
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 16,
+            "R": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 16,
+            "0": 1
+          }
+        },
+        {
+          "tid": 10125,
+          "startTicks": 267470,
+          "name": "binder:9898_4",
+          "cpu": {
+            "observations": 12,
+            "firstFile": "sample-0008.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173491503856666,
+              173497309739333
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 1,
+              "stimeTicks": 3
+            },
+            "deltaTicks": {
+              "user": 1,
+              "system": 3,
+              "total": 4
+            },
+            "hz": 100,
+            "cpuSeconds": 0.04,
+            "wallSeconds": {
+              "lowerBound": 50.235526042,
+              "midpointEstimate": 54.967807896,
+              "upperBound": 59.70008975
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.07276986572882925,
+              "lowerBound": 0.03350078715752684,
+              "upperBound": 0.11943738769618199
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 12
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 12
+          }
+        },
+        {
+          "tid": 10054,
+          "startTicks": 267176,
+          "name": "binder:9898_4",
+          "cpu": {
+            "observations": 13,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 2,
+              "stimeTicks": 1
+            },
+            "deltaTicks": {
+              "user": 2,
+              "system": 1,
+              "total": 3
+            },
+            "hz": 100,
+            "cpuSeconds": 0.03,
+            "wallSeconds": {
+              "lowerBound": 56.04380425,
+              "midpointEstimate": 59.5538370415,
+              "upperBound": 63.063869833
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.05037458791965754,
+              "lowerBound": 0.015856939998260638,
+              "upperBound": 0.08921592791410123
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 11,
+            "R": 2
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 10,
+            "0": 3
+          }
+        },
+        {
+          "tid": 9998,
+          "startTicks": 267055,
+          "name": "Profile Saver",
+          "cpu": {
+            "observations": 14,
+            "firstFile": "sample-0006.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173487134845125,
+              173487704370208
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 1,
+              "stimeTicks": 1
+            },
+            "deltaTicks": {
+              "user": 1,
+              "system": 1,
+              "total": 2
+            },
+            "hz": 100,
+            "cpuSeconds": 0.02,
+            "wallSeconds": {
+              "lowerBound": 59.840895167,
+              "midpointEstimate": 61.954998229,
+              "upperBound": 64.069101291
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.03228149555597658,
+              "lowerBound": 0.0,
+              "upperBound": 0.06684391984506692
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 14
+          },
+          "wchanCounts": {
+            "0": 1,
+            "futex_wait_queue": 13
+          }
+        },
+        {
+          "tid": 10118,
+          "startTicks": 267437,
+          "name": "binder:9898_5",
+          "cpu": {
+            "observations": 12,
+            "firstFile": "sample-0008.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173491503856666,
+              173497309739333
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 2,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 2,
+              "system": 0,
+              "total": 2
+            },
+            "hz": 100,
+            "cpuSeconds": 0.02,
+            "wallSeconds": {
+              "lowerBound": 50.235526042,
+              "midpointEstimate": 54.967807896,
+              "upperBound": 59.70008975
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.036384932864414625,
+              "lowerBound": 0.0,
+              "upperBound": 0.07962492513078799
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "R": 1,
+            "S": 11
+          },
+          "wchanCounts": {
+            "0": 1,
+            "binder_ioctl_write_read": 11
+          }
+        },
+        {
+          "tid": 10319,
+          "startTicks": 269131,
+          "name": "binder:9898_6",
+          "cpu": {
+            "observations": 9,
+            "firstFile": "sample-0011.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173509965663083,
+              173517551804375
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 2,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 2,
+              "system": 0,
+              "total": 2
+            },
+            "hz": 100,
+            "cpuSeconds": 0.02,
+            "wallSeconds": {
+              "lowerBound": 29.993461,
+              "midpointEstimate": 35.6158721665,
+              "upperBound": 41.238283333
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.05615473883807298,
+              "lowerBound": 0.0,
+              "upperBound": 0.13336240189153228
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 9
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 9
+          }
+        },
+        {
+          "tid": 9914,
+          "startTicks": 266726,
+          "name": "perfetto_hprof_",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.03204261274421842
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 17
+          },
+          "wchanCounts": {
+            "pipe_read": 17
+          }
+        },
+        {
+          "tid": 9915,
+          "startTicks": 266726,
+          "name": "ADB-JDWP Connec",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.03204261274421842
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 17
+          },
+          "wchanCounts": {
+            "do_sys_poll": 17
+          }
+        },
+        {
+          "tid": 9919,
+          "startTicks": 266727,
+          "name": "FinalizerDaemon",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.03204261274421842
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 16,
+            "R": 1
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 16,
+            "0": 1
+          }
+        },
+        {
+          "tid": 9920,
+          "startTicks": 266727,
+          "name": "FinalizerWatchd",
+          "cpu": {
+            "observations": 17,
+            "firstFile": "sample-0003.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173482678851000,
+              173485128382708
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 62.416882667,
+              "midpointEstimate": 65.4709890415,
+              "upperBound": 68.525095416
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.03204261274421842
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 17
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 17
+          }
+        },
+        {
+          "tid": 9938,
+          "startTicks": 266860,
+          "name": "binder:9898_2",
+          "cpu": {
+            "observations": 16,
+            "firstFile": "sample-0004.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173485128780458,
+              173485857204916
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 61.688060459,
+              "midpointEstimate": 63.8816132085,
+              "upperBound": 66.075165958
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.03242118466877831
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 16
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 16
+          }
+        },
+        {
+          "tid": 9948,
+          "startTicks": 266921,
+          "name": "binder:9898_3",
+          "cpu": {
+            "observations": 16,
+            "firstFile": "sample-0004.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173485128780458,
+              173485857204916
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 61.688060459,
+              "midpointEstimate": 63.8816132085,
+              "upperBound": 66.075165958
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.03242118466877831
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 16
+          },
+          "wchanCounts": {
+            "binder_ioctl_write_read": 16
+          }
+        },
+        {
+          "tid": 10016,
+          "startTicks": 267097,
+          "name": "SharedPreferenc",
+          "cpu": {
+            "observations": 4,
+            "firstFile": "sample-0006.txt",
+            "lastFile": "sample-0009.txt",
+            "firstReadEnvelopeNs": [
+              173487134845125,
+              173487704370208
+            ],
+            "lastReadEnvelopeNs": [
+              173497310370625,
+              173501460436583
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 9.606000417,
+              "midpointEstimate": 11.9657959375,
+              "upperBound": 14.325591458
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.20820319729119996
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 4
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 4
+          }
+        },
+        {
+          "tid": 10055,
+          "startTicks": 267180,
+          "name": "SurfaceSyncGrou",
+          "cpu": {
+            "observations": 13,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 56.04380425,
+              "midpointEstimate": 59.5538370415,
+              "upperBound": 63.063869833
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.035686371165640496
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 13
+          },
+          "wchanCounts": {
+            "do_epoll_wait": 13
+          }
+        },
+        {
+          "tid": 10057,
+          "startTicks": 267185,
+          "name": "hwuiTask0",
+          "cpu": {
+            "observations": 13,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 56.04380425,
+              "midpointEstimate": 59.5538370415,
+              "upperBound": 63.063869833
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.035686371165640496
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 13
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 13
+          }
+        },
+        {
+          "tid": 10058,
+          "startTicks": 267185,
+          "name": "hwuiTask1",
+          "cpu": {
+            "observations": 13,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0019.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173547545265375,
+              173551203946416
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 56.04380425,
+              "midpointEstimate": 59.5538370415,
+              "upperBound": 63.063869833
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.035686371165640496
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 13
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 13
+          }
+        },
+        {
+          "tid": 10059,
+          "startTicks": 267195,
+          "name": "DefaultDispatch",
+          "cpu": {
+            "observations": 12,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0018.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173543240678083,
+              173547542929333
+            ],
+            "firstCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 0,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 51.739216958,
+              "midpointEstimate": 55.571034854,
+              "upperBound": 59.40285275
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": 0.0,
+              "lowerBound": 0.0,
+              "upperBound": 0.03865539754155009
+            },
+            "upperRateUnbounded": false,
+            "singleObservation": false
+          },
+          "stateCounts": {
+            "S": 12
+          },
+          "wchanCounts": {
+            "futex_wait_queue": 12
+          }
+        },
+        {
+          "tid": 10062,
+          "startTicks": 267223,
+          "name": "EmojiCompatInit",
+          "cpu": {
+            "observations": 1,
+            "firstFile": "sample-0007.txt",
+            "lastFile": "sample-0007.txt",
+            "firstReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "lastReadEnvelopeNs": [
+              173488140076583,
+              173491501461125
+            ],
+            "firstCounters": {
+              "utimeTicks": 8,
+              "stimeTicks": 0
+            },
+            "lastCounters": {
+              "utimeTicks": 8,
+              "stimeTicks": 0
+            },
+            "deltaTicks": {
+              "user": 0,
+              "system": 0,
+              "total": 0
+            },
+            "hz": 100,
+            "cpuSeconds": 0.0,
+            "wallSeconds": {
+              "lowerBound": 0.0,
+              "midpointEstimate": 0.0,
+              "upperBound": 3.361384542
+            },
+            "quantizationAllowanceTicks": 2,
+            "oneCorePercent": {
+              "midpointEstimate": null,
+              "lowerBound": null,
+              "upperBound": null
+            },
+            "upperRateUnbounded": true,
+            "singleObservation": true
+          },
+          "stateCounts": {
+            "R": 1
+          },
+          "wchanCounts": {
+            "0": 1
+          }
+        }
+      ],
+      "ioDelta": {
+        "cancelled_write_bytes": 0,
+        "rchar": 15761085,
+        "read_bytes": 3784704,
+        "syscr": 79451,
+        "syscw": 6116,
+        "wchar": 2466491,
+        "write_bytes": 90112
+      },
+      "rssKiB": {
+        "minimum": 57436,
+        "median": 182792,
+        "maximum": 195568,
+        "first": 57436,
+        "last": 193740
+      },
+      "probeThreadCounts": [
+        {
+          "file": "sample-0003.txt",
+          "processStat": 9,
+          "threadStatsRead": 9
+        },
+        {
+          "file": "sample-0004.txt",
+          "processStat": 12,
+          "threadStatsRead": 12
+        },
+        {
+          "file": "sample-0005.txt",
+          "processStat": 12,
+          "threadStatsRead": 12
+        },
+        {
+          "file": "sample-0006.txt",
+          "processStat": 15,
+          "threadStatsRead": 15
+        },
+        {
+          "file": "sample-0007.txt",
+          "processStat": 23,
+          "threadStatsRead": 23
+        },
+        {
+          "file": "sample-0008.txt",
+          "processStat": 25,
+          "threadStatsRead": 24
+        },
+        {
+          "file": "sample-0009.txt",
+          "processStat": 24,
+          "threadStatsRead": 24
+        },
+        {
+          "file": "sample-0010.txt",
+          "processStat": 23,
+          "threadStatsRead": 23
+        },
+        {
+          "file": "sample-0011.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0012.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0013.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0014.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0015.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0016.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0017.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0018.txt",
+          "processStat": 25,
+          "threadStatsRead": 25
+        },
+        {
+          "file": "sample-0019.txt",
+          "processStat": 24,
+          "threadStatsRead": 24
+        }
+      ]
+    }
+  ],
+  "selectedIdentities": [
+    {
+      "pid": 9898,
+      "startTicks": 266496
+    }
+  ],
+  "probes": {
+    "count": 20,
+    "empty": [
+      "sample-0002.txt"
+    ],
+    "errors": [],
+    "durationSeconds": {
+      "minimum": 0.569525083,
+      "median": 3.7973674375,
+      "maximum": 8.504151167
+    },
+    "sumDurationSeconds": 76.728858001,
+    "spanSeconds": 77.69234175,
+    "commandOccupancyFraction": 0.9875987294590719,
+    "midpointSpacingSeconds": {
+      "minimum": 0.907947833504295,
+      "median": 4.048502729507163,
+      "maximum": 8.045638187497389
+    }
+  },
+  "timeline": [
+    {
+      "event": "baseline-probe-ready",
+      "utc": "2026-11-04T21:26:37.336668+00:00",
+      "monotonicNs": 173475739212583,
+      "observerPid": 74071,
+      "sinceLaunchSeconds": -1.459596333,
+      "sinceAmStartReturnSeconds": -12.382461208
+    },
+    {
+      "event": "launch-request",
+      "utc": "2026-11-04T21:26:38.796639+00:00",
+      "monotonicNs": 173477198808916,
+      "deadlineSeconds": 30,
+      "sinceLaunchSeconds": 0.0,
+      "sinceAmStartReturnSeconds": -10.922864875
+    },
+    {
+      "event": "am-start-returned",
+      "utc": "2026-11-04T21:26:49.719566+00:00",
+      "monotonicNs": 173488121673791,
+      "sinceLaunchSeconds": 10.922864875,
+      "sinceAmStartReturnSeconds": 0.0
+    },
+    {
+      "event": "screenshot",
+      "utc": "2026-11-04T21:26:52.560358+00:00",
+      "monotonicNs": 173490962459958,
+      "targetSeconds": 12,
+      "ready": false,
+      "sinceLaunchSeconds": 13.763651042,
+      "sinceAmStartReturnSeconds": 2.840786167
+    },
+    {
+      "event": "hierarchy",
+      "utc": "2026-11-04T21:26:57.121225+00:00",
+      "monotonicNs": 173495523300666,
+      "elapsedSeconds": 18.323025875,
+      "loading": true,
+      "beforeMonotonicNs": 173488122798166,
+      "sinceLaunchSeconds": 18.32449175,
+      "sinceAmStartReturnSeconds": 7.401626875,
+      "observationEnvelopeNs": [
+        173488122798166,
+        173495523300666
+      ]
+    },
+    {
+      "event": "sigquit-loading",
+      "utc": "2026-11-04T21:26:57.444063+00:00",
+      "monotonicNs": 173495846629833,
+      "pid": 9898,
+      "elapsedSeconds": 18.323025875,
+      "sinceLaunchSeconds": 18.647820917,
+      "sinceAmStartReturnSeconds": 7.724956042
+    },
+    {
+      "event": "hierarchy",
+      "utc": "2026-11-04T21:27:04.622026+00:00",
+      "monotonicNs": 173503047100958,
+      "elapsedSeconds": 25.728029125,
+      "loading": true,
+      "beforeMonotonicNs": 173496475488791,
+      "sinceLaunchSeconds": 25.848292042,
+      "sinceAmStartReturnSeconds": 14.925427167,
+      "observationEnvelopeNs": [
+        173496475488791,
+        173503047100958
+      ]
+    },
+    {
+      "event": "screenshot",
+      "utc": "2026-11-04T21:27:11.349442+00:00",
+      "monotonicNs": 173509751442375,
+      "targetSeconds": 30,
+      "ready": false,
+      "sinceLaunchSeconds": 32.552633459,
+      "sinceAmStartReturnSeconds": 21.629768584
+    },
+    {
+      "event": "hierarchy",
+      "utc": "2026-11-04T21:27:12.435333+00:00",
+      "monotonicNs": 173510837338541,
+      "elapsedSeconds": 33.637397042,
+      "loading": true,
+      "beforeMonotonicNs": 173503314414958,
+      "sinceLaunchSeconds": 33.638529625,
+      "sinceAmStartReturnSeconds": 22.71566475,
+      "observationEnvelopeNs": [
+        173503314414958,
+        173510837338541
+      ]
+    },
+    {
+      "event": "hierarchy-error",
+      "utc": "2026-11-04T21:27:20.325210+00:00",
+      "monotonicNs": 173518727171125,
+      "requestedTimeout": 7.08229466699413,
+      "beforeMonotonicNs": 173511040498666,
+      "error": "No fresh Android UI hierarchy within 7.08229466699413s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-f49e2481dda54ec996ee05b437d416fb-4.xml']' timed out after 7.082289874990238 seconds",
+      "sinceLaunchSeconds": 41.528362209,
+      "sinceAmStartReturnSeconds": 30.605497334,
+      "observationEnvelopeNs": [
+        173511040498666,
+        173518727171125
+      ]
+    },
+    {
+      "event": "editor-timeout",
+      "utc": "2026-11-04T21:27:20.326613+00:00",
+      "monotonicNs": 173518728560666,
+      "elapsedSeconds": 41.529747667,
+      "error": "No fresh Android UI hierarchy within 7.08229466699413s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-f49e2481dda54ec996ee05b437d416fb-4.xml']' timed out after 7.082289874990238 seconds",
+      "sinceLaunchSeconds": 41.52975175,
+      "sinceAmStartReturnSeconds": 30.606886875
+    }
+  ],
+  "readiness": {
+    "readyEventRecorded": false,
+    "timeoutEventRecorded": true,
+    "freshLoadingElapsedSeconds": [
+      18.323025875,
+      25.728029125,
+      33.637397042
+    ]
+  },
+  "hz": {
+    "used": 100,
+    "savedGuestValue": 100,
+    "matchesSavedGuest": true
+  },
+  "guestVcpus": 2,
+  "hostLoadAtCapture": "18:26  up 2 days, 16:07, 1 user, load averages: 181.85 120.85 62.73",
+  "supplementalMetadata": {
+    "guest-hz.txt": {
+      "text": "100",
+      "fileModifiedUtc": "2026-11-04T21:47:25.506484+00:00"
+    },
+    "guest-vcpus.txt": {
+      "text": "2",
+      "fileModifiedUtc": "2026-11-04T21:47:25.561418+00:00"
+    },
+    "guest-load.txt": {
+      "text": "0.14 0.28 0.94 1/1801 11044",
+      "fileModifiedUtc": "2026-11-04T21:47:25.714548+00:00"
+    },
+    "host-uptime.txt": {
+      "text": "18:47  up 2 days, 16:28, 1 user, load averages: 24.79 26.69 29.59",
+      "fileModifiedUtc": "2026-11-04T21:47:25.754404+00:00"
+    },
+    "host-sysctl.txt": {
+      "text": "hw.ncpu: 10\nhw.physicalcpu: 10\nhw.logicalcpu: 10\nhw.memsize: 34359738368\nvm.swapusage: total = 15360.00M  used = 14585.62M  free = 774.38M  (encrypted)",
+      "fileModifiedUtc": "2026-11-04T21:47:25.735025+00:00"
+    },
+    "host-qemu-mapping.txt": {
+      "text": "PID  PPID  %CPU    RSS COMMAND\n28678     1  13.5 167488 /Users/thales/Library/Android/sdk/emulator/qemu/darwin-aarch64/qemu-system-aarch64-headless -avd ISIS-VALIDATE -port 5556 -no-window -no-audio -no-snapshot\n45345     1 119.8 1181552 /Users/thales/Library/Android/sdk/emulator/qemu/darwin-aarch64/qemu-system-aarch64-headless -avd Logisim-E2E-PT-20261104T204213Z-5c6684 -port 5558 -no-snapshot -no-window -no-boot-anim -cores 2 -memory 2048",
+      "fileModifiedUtc": "2026-11-04T21:49:30.380116+00:00"
+    }
+  },
+  "privateFiles": {
+    "unchanged": [
+      "files/workspace/catalog.lock",
+      "files/workspace/catalog.previous",
+      "files/workspace/catalog.workspace",
+      "files/workspace/project-8689098a8bfa615ac1b46de000ba57b3-1.workspace",
+      "files/workspace/project-8689098a8bfa615ac1b46de000ba57b3-2.workspace",
+      "files/workspace/project-ba94bd41d0f9ab69697aae855e3761b0-1.workspace",
+      "files/workspace/project-ba94bd41d0f9ab69697aae855e3761b0-2.workspace",
+      "files/workspace/project-ba94bd41d0f9ab69697aae855e3761b0-3.workspace",
+      "files/workspace/window-36-65b5c503aae70819.workspace-link",
+      "files/workspace/window-36-f747689d1417e6ca.workspace-link"
+    ],
+    "changed": [
+      "files/profileInstalled"
+    ],
+    "added": [
+      "files/workspace/window-36-7a34a7e6a4729cd1.workspace-link"
+    ],
+    "removed": []
+  },
+  "limitations": [
+    "One captured launch, not a baseline, energy measurement or physical-device budget.",
+    "All stat, I/O and thread reads are non-atomic and can occur anywhere within each probe envelope.",
+    "Midpoint rates are estimates; rate bounds include probe duration and a two-tick quantization allowance.",
+    "Thread windows differ; their deltas must not be summed as an exact decomposition of process CPU.",
+    "State and wchan are point observations at different instants, not CPU duty cycles or function attribution.",
+    "Supplemental metadata file mtimes are not measurement timestamps; post-capture host data cannot replace capture host load.",
+    "SIGQUIT, hierarchy polling, screenshots and near-continuous probes can perturb the observed launch.",
+    "This capture used the older collector with per-thread cat calls; later vector-collector improvements were not measured here."
+  ]
+}

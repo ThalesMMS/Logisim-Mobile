@@ -1,0 +1,24 @@
+% Important: If latex complains about unicode characters,
+% please use "\usepackage[utf8x]{inputenc}" in your preamble
+% You can change the size of the picture by putting it into the construct:
+% 1) \resizebox{10cm}{!}{"below picture"} to scale horizontally to 10 cm
+% 2) \resizebox{!}{15cm}{"below picture"} to scale vertically to 15 cm
+% 3) \resizebox{10cm}{15cm}{"below picture"} a combination of above two
+% It is not recomended to use the scale option of the tikzpicture environment.
+\begin{tikzpicture}[x=1pt,y=-1pt,line cap=rect]
+\def\logisimfontA#1{\textsf{#1}}
+\definecolor{custcol_FFFFFF}{HTML}{FFFFFF}
+\definecolor{custcol_000000}{HTML}{000000}
+\draw [line width=3pt, custcol_000000] (5,5) |- (10,45);
+\draw [line width=3pt, custcol_000000] (135,285) -| (145,325);
+\draw [line width=2pt, custcol_000000] (75,65) .. controls (58.3333,41.6667) and (35,30) .. (5,30) .. controls (18.3333,53.3333) and (18.3333,76.6667) .. (5,100) .. controls (35,100) and (58.3333,88.3333) .. (75,65) -- cycle;
+\draw [line width=3pt, custcol_000000] (195,85) -- (200,85);
+\draw [line width=2pt, custcol_000000] (275,65) .. controls (258.3333,41.6667) and (235,30) .. (205,30) .. controls (218.3333,53.3333) and (218.3333,76.6667) .. (205,100) .. controls (235,100) and (258.3333,88.3333) .. (275,65) -- cycle;
+\draw [line width=2pt, custcol_000000] (195,30) .. controls (208.3333,53.3333) and (208.3333,76.6667) .. (195,100);
+\draw [line width=2pt, custcol_000000] (177,77) rectangle (195,95);
+\logisimfontA{\fontsize{12pt}{12pt}\selectfont\node[inner sep=0, outer sep=0, custcol_000000, anchor=base west] at (178,91) {x1};}
+\fill [line width=2pt, custcol_000000] (195,85) circle (2);
+\draw [line width=2pt, custcol_000000] (465,65) .. controls (451.6667,48.3333) and (435,40) .. (415,40) .. controls (423.6667,56.6667) and (423.6667,73.3333) .. (415,90) .. controls (435,90) and (451.6667,81.6667) .. (465,65) -- cycle;
+\draw [line width=2pt, custcol_000000] (470,65) circle (4.5);
+\draw [line width=2pt, custcol_000000] (75,265) .. controls (91.6667,288.3333) and (115,300) .. (145,300) .. controls (131.6667,276.6667) and (131.6667,253.3333) .. (145,230) .. controls (115,230) and (91.6667,241.6667) .. (75,265) -- cycle;
+\end{tikzpicture}

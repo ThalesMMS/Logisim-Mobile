@@ -1,0 +1,20 @@
+row: cli/locale
+case: profile-locale-de
+result: DIFF
+detail: option rejected: evolution=False (exit 0), mobile=True (exit 2)
+
+=== evolution: java EvolutionStartupOracle --locale de
+exit: 0
+--- stdout (5 lines, sha256 035220256d95d8d1954053adb98b9b696a7354394e2184aefa057bd6559cad90)
+parse=ok
+splash=true
+gates=ansi
+locale=de session=de
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --locale de --startup-settings
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 e9c1b30fc2cf3f04580024336db4f110949ac500c7294bb4638a212438cd6d79)
+error=--locale must be en or pt (regional variants are accepted).

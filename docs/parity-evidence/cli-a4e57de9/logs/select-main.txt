@@ -1,0 +1,20 @@
+row: cli/toplevel-circuit
+case: select-main
+result: PASS
+detail: stdout and exit class equal
+
+=== evolution: logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --toplevel-circuit main scripts/oracle/cli/fixtures/sub/main.circ
+exit: 0
+--- stdout (3 lines, sha256 0ee7ccccf019738f9c79ed2b671f1b857ad8c739b43f07e9e9907dde465f0e28)
+A Y
+0 1
+1 0
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ --circuit main scripts/oracle/cli/fixtures/sub/main.circ
+exit: 0
+--- stdout (3 lines, sha256 0ee7ccccf019738f9c79ed2b671f1b857ad8c739b43f07e9e9907dde465f0e28)
+A Y
+0 1
+1 0
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

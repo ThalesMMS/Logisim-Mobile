@@ -1,0 +1,17 @@
+A	main	Constant	140,260	facing	east
+A	main	Pin	260,340	facing	north
+A	main	Pin	260,340	label	SEL
+A	main	Pin	420,260	facing	west
+A	main	Pin	420,260	label	Y
+F	circuits	1
+F	main	main
+G	main	Constant	140,260	140,260:8:2
+G	main	Pin	260,340	260,340:1:2
+G	main	Pin	420,260	420,260:8:1
+G	main	ROM	350,260	210,260:8:1;260,300:1:1;350,260:8:3
+M	revision	2.7.1
+V	disabled	Y	????????
+V	enabled	Y	10100101
+W	main	140,260	210,260	1
+W	main	260,300	260,340	1
+W	main	350,260	420,260	1

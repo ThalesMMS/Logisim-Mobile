@@ -1,0 +1,81 @@
+{
+  "status": "PREPARED_OFFLINE_TESTED_RUNTIME_NOT_QUALIFIED",
+  "tests": {
+    "command": "python3 -m unittest -v test_run_contact.py test_check_binding.py",
+    "total": 50,
+    "wrapper": 27,
+    "binding_helper": 23,
+    "passed": 50,
+    "failed": 0,
+    "duration_seconds": 0.1,
+    "runtime": "FakeRuntime and synthetic/source-shaped fixtures only"
+  },
+  "files": {
+    "run_contact.py": {
+      "bytes": 24524,
+      "sha256": "f510ff63ba4229183af454ce23464464308b47c613063bb36a73421d9da408d3"
+    },
+    "test_run_contact.py": {
+      "bytes": 19794,
+      "sha256": "05ffea1a679cfcd4108a621988eefbda7fe6fbc9a54453b9d13cfed664b1c752"
+    },
+    "contact.py": {
+      "bytes": 4461,
+      "sha256": "b727c268cbc6ae3cd298221617b23ec1c5a177b690b09e49864b4c488209fc03"
+    },
+    "numeric-capabilities.fixture.txt": {
+      "bytes": 1115,
+      "sha256": "04572ecc585d4f5b9f3e5171fe85763a413344318ce2c8db24e1c35b4e24a940"
+    },
+    "check_binding.py": {
+      "bytes": 11388,
+      "sha256": "b91247f094e6d8d8e8ed7a64f6ca655fef2d49f5569e7c325b3988cdc6530fe3"
+    },
+    "test_check_binding.py": {
+      "bytes": 10920,
+      "sha256": "250fc13f7dc102f3ebf25014c9d4298e78ac7156d380530ce308384047a3992d"
+    }
+  },
+  "binding_helper_pin": "b91247f094e6d8d8e8ed7a64f6ca655fef2d49f5569e7c325b3988cdc6530fe3",
+  "legacy_reader_bound_gate_removed": true,
+  "current_user_zero_guard": "Explicit before both cross-evidence calls; currentUserId10 with user0 block is rejected before monitor/Down",
+  "extra_getter_argv": [
+    [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5556",
+      "shell",
+      "pidof",
+      "system_server"
+    ],
+    [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5556",
+      "shell",
+      "dumpsys",
+      "activity",
+      "services",
+      "com.google.android.marvin.talkback/.TalkBackService"
+    ]
+  ],
+  "authorized_lease_files_created": 0,
+  "actual_adb_or_monitor_calls": 0,
+  "reader_or_input_runtime_executed": false,
+  "limits": [
+    "The exact component is in the AMS service record only. The opaque accessibility Bound record has no component; cross-evidence identity remains correlation, as returned by the pinned helper.",
+    "Dumps are separate non-atomic observations. Published binder/received/hasBound flags do not prove callback completion or current Binder liveness.",
+    "Synthetic reader-on fixtures retain the footer shape from a previously captured OFF dump; they are not an observed reader-on state.",
+    "Selected slot0 and pressure0 do not prove absence of global contacts or initial tracking inactivity.",
+    "Monitor timeout and kernel event delivery have never been exercised by this preparation.",
+    "Only command attempts/acknowledgments and raw kernel capture are recorded; no ReaderPASS or kernel-close conclusion is produced."
+  ],
+  "independent_review": {
+    "result": "PASS_OFFLINE_AMS_INTEGRATION_REVIEW_ONLY",
+    "receipt": "/tmp/logisim-wrapper-offline-review-003/review-receipt.json",
+    "receipt_sha256": "8642b2191f8c53727efc43e901a20d6de10beb778ed4cb37e04debeafc0fb4d9",
+    "provided_tests_passed": 50,
+    "unchanged_independent_regressions_passed": 2,
+    "runtime_executed": false
+  }
+}

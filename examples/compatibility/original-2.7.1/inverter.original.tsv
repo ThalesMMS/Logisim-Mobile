@@ -1,0 +1,17 @@
+A	LegacyInverter	NOT Gate	200,100	facing	east
+A	LegacyInverter	NOT Gate	200,100	label	LegacyNot
+A	LegacyInverter	Pin	100,100	facing	east
+A	LegacyInverter	Pin	100,100	label	A
+A	LegacyInverter	Pin	300,100	facing	west
+A	LegacyInverter	Pin	300,100	label	Y
+F	circuits	1
+F	main	LegacyInverter
+G	LegacyInverter	NOT Gate	200,100	170,100:1:1;200,100:1:2
+G	LegacyInverter	Pin	100,100	100,100:1:2
+G	LegacyInverter	Pin	300,100	300,100:1:1
+M	revision	2.7.1
+V	input-high	Y	0
+V	input-low	Y	1
+V	input-low-again	Y	1
+W	LegacyInverter	100,100	170,100	1
+W	LegacyInverter	200,100	300,100	1

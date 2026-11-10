@@ -1,0 +1,1215 @@
+{
+  "source_sha": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "source_tree": "48e2e60c41da95d3008ec8eaffccd059a708aa5f",
+  "source_dirty": false,
+  "production_input_digest": "fe8c7e9337359543a49fb38d9a6c6f003866436a16cb327acbb76abc8c80c9e2",
+  "algorithm": "SHA256 over lexically sorted tracked productionpath+NUL+GitblobSHA1+newline",
+  "selection": "All non-test source sets in core/composeApp, tracked iOS host files and root/native Gradle config/wrapper; conservative inclusion of other production source sets. Test source sets are excluded.",
+  "file_count": 301,
+  "files": [
+    {
+      "path": "app.properties",
+      "blob": "1bfb0eddf56fe6a53b1b056fb2ec95354bc76c90"
+    },
+    {
+      "path": "build.gradle.kts",
+      "blob": "7b236653c0202fe2d7b2b5ccbbcd6980b32d87fb"
+    },
+    {
+      "path": "composeApp/build.gradle.kts",
+      "blob": "97d9b14eb932ae7828e2d0ce9d9c17abab6bc9ff"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidAssetFilePolicy.kt",
+      "blob": "a72a3d561c1804f0dda224e2a8051e5ff31309c5"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidAssetStore.kt",
+      "blob": "8fd4b93de6f9cfd8e3d745b81abc4d67e7afb86a"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidCatalogStorage.kt",
+      "blob": "cfddb2874196ac01cc8aed2748884083e3d8bd1b"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDirectoryAssetActions.kt",
+      "blob": "72b3367a4b8ea4a5386e1c32af218faf316c3f01"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDirectoryTree.kt",
+      "blob": "ac01a49b862ebaa19f9c965c6f01d50b2d7b85c1"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDocumentActions.kt",
+      "blob": "c999af5732218ac8ccaa71964a1936548035eef0"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDocumentAssetActions.kt",
+      "blob": "8e2188dbae841bce588c5c8acdb5801d89eb7b9c"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDocumentMessages.kt",
+      "blob": "b2c881245f0ea62a01f042b581b008b45e4be719"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDocumentStore.kt",
+      "blob": "80515167e82398336167d991a641dc147be1aae8"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidPdfPrintAdapter.kt",
+      "blob": "e1ec47fdcab5b00691531aa5a95c00ea849d4179"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidPreferencesStorage.kt",
+      "blob": "099a6424e7fd0e09cd817884e8efb7188caa46ba"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidWorkspace.kt",
+      "blob": "c2189f11cea344aa384ade50ce78faa9d2beda32"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AnnotationImageDecoder.android.kt",
+      "blob": "e8f91144fc9004d9be4f831661fe82f37793cb52"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AppDialogPresentation.android.kt",
+      "blob": "6744c20db9d4067ae12e83a56593724bd68cf6fc"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/EditorWindowSemantics.android.kt",
+      "blob": "55de7f8ac1ad5fd8c2305d9012a82563cdb78e8b"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/ExtraIoAudioPlayer.android.kt",
+      "blob": "f6a54e461a40d695d4f86d43cbefbad04cf48628"
+    },
+    {
+      "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/KeyboardShortcutPolicy.android.kt",
+      "blob": "51fb6da14461f6b4fe400e86a8a37484ac1a6be9"
+    },
+    {
+      "path": "composeApp/src/commonMain/composeResources/values-pt/strings.xml",
+      "blob": "f16e44efa986e043e0763eaf628f604a2453ad7b"
+    },
+    {
+      "path": "composeApp/src/commonMain/composeResources/values/strings.xml",
+      "blob": "ca09764e39a3e2348eb8dfa63019ca2b4104152f"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AccessibleCircuitExplorer.kt",
+      "blob": "8b82e4fb95ae9ab61b5c173913f1212fec3e0740"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AccessibleEditorNotice.kt",
+      "blob": "8ed6eb44a5026f35b148810e45ec0cfdec4f6008"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AdditionalEditorTools.kt",
+      "blob": "62b4751db79d137b8c5616b5325fac15c8670a92"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnalysisEditorTool.kt",
+      "blob": "5e57a35aac5cfdb4fd8036e9e4e1258d31e4c9ab"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnalyzePanel.kt",
+      "blob": "8e7e97529062968edf19681e8220de443f3e07a7"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnnotationImageDecoder.kt",
+      "blob": "aa3f6a867370eed015d684cd74a7f965111fdcc6"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnnotationRenderer.kt",
+      "blob": "30cb9bd8a2cf98a41d708f378be672a920f16340"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnnotationTools.kt",
+      "blob": "bfc5d68145dea1d2254920b2765b1b3995cec855"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt",
+      "blob": "bc04ddb481d2de08eb90ef83846c7b1a24ee8ec3"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AppDialogPresentation.kt",
+      "blob": "3406187c3b11b510cccba087bf8262cf201439ad"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AppIdentity.kt",
+      "blob": "49d75e0714ac3775065fe88cd0a3e49e89db1757"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AppearanceHitTesting.kt",
+      "blob": "2215748d6fda92755c1738e150590cdf60010438"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AppearanceTools.kt",
+      "blob": "0ad01c09bf3d9554349577f74a40c8f300f72afe"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/BuiltInEditorTools.kt",
+      "blob": "ceaf67200def9a6b1233a87c2e08c0fd38df66cd"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CanvasGridPlan.kt",
+      "blob": "814aae70687ef2b4efc76046185211ebceded19b"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CanvasInteraction.kt",
+      "blob": "905b89e00ad8918696fca43335d129b204b6e18a"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CanvasWindowFocus.kt",
+      "blob": "a476178c1d6449bbe6f19e8c5a79c324be90699c"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CatalogDocumentActions.kt",
+      "blob": "a857ac0322bef59eaf137cd403cdaa8f0101fb8f"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CatalogWorkspaceBinding.kt",
+      "blob": "8d05cd145d38a5bbd21c84b7e1f2538d1f84054f"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CatalogWorkspaceHost.kt",
+      "blob": "c87a98bcab6adeb2cd760cd725fac99823daadac"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CatalogWorkspaceRuntime.kt",
+      "blob": "ede2b80cc7d75240651d5e5d279a3e929d60c04e"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitAccessibilityModel.kt",
+      "blob": "0e0f74cc84deaddea5bb332dacfad6754339f630"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitAccessibilityTools.kt",
+      "blob": "ce8a965c9a15ddedf32a10742a795c78c583f0dc"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt",
+      "blob": "45dd100c9de8736a8fcd0ceac1923d68ff818322"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitDrawing.kt",
+      "blob": "23ff86e23eb9b25fb3e98c039dca08d31470c203"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitSemanticOverlay.kt",
+      "blob": "1d4b0f1a068c122a22ad508722542aeae992987d"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitSignalPalette.kt",
+      "blob": "68b85dd4473c82702acc2d1479ca28387821f5e9"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitVisualExportTool.kt",
+      "blob": "9ba34f1cc5e0b23dd17fca2e0c5d6cf3543a8e81"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ClassicRenderer.kt",
+      "blob": "212d97ceaf8f6dd5d1aa2c4bebcaf9aa7cc4fb32"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CompanionPairingPanel.kt",
+      "blob": "7a3b1e7904997cbb7d1030e2aed0c0fc2eedfc66"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DiagnosticPanel.kt",
+      "blob": "2ea8de3d2224b094d79f1a24f2ff3bdae44949df"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DirectoryAssetActions.kt",
+      "blob": "e0edef704573fab1108288db12c0cc61a9405ded"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt",
+      "blob": "ab91d360b563ab239738fa9776f9df208e371d42"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentAssetActions.kt",
+      "blob": "0b4b65ef7f5405398f3e33b5e9ac3b3e2696c32b"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorDialogBounds.kt",
+      "blob": "9566487c8318d709565fb6c9ad25185a0c3f59fc"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorDocuments.kt",
+      "blob": "74273bdd717e71d442f3b234143c5da7cfa7e1f4"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorExampleLoader.kt",
+      "blob": "520b9f4d82950d49a384ff6fb4d44d4d56b6c8cc"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorImportLoader.kt",
+      "blob": "6946cdc72e1b35e54f99549ee2b96d16cba133e7"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorImportReport.kt",
+      "blob": "c8868304087d2a0f954958dfd7b7858343ca8af3"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorInitialization.kt",
+      "blob": "1eb24b936a5f47038a9da0fd56c74f26e676a317"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorPreferences.kt",
+      "blob": "d0bcd6fcbc4808cc69e1cc59271b46014caeed2c"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorPreferencesPanel.kt",
+      "blob": "c3e64ee7a4fb370e0bf32112113d6c4c118b7831"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorProjectAccess.kt",
+      "blob": "23fd00911e181aac631a8523e6a4c81a6adde253"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorSearchCommands.kt",
+      "blob": "4791fb62f4e5e670adc86441cc2b50aec4cbb0d4"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorSessionControl.kt",
+      "blob": "2e041703c9691c08033c72018ef833b38de59c84"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorSheetDragHandle.kt",
+      "blob": "a2f46ea4c5878f48c7d3e70209130d16091b411c"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorState.kt",
+      "blob": "80de419e2adcb37ca41e40fc62145d3b9a5ec0da"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorToolbar.kt",
+      "blob": "df9305f039782ee4d25299dd0397d3b8401ff688"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorToolbarLayout.kt",
+      "blob": "49c153903142192d66134b8ab439110c8c97aa89"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorTools.kt",
+      "blob": "fb4af64322870c9a1843a7c5d7d391aed28c74e3"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorWindowSemantics.kt",
+      "blob": "3a2289c76d9d9695814f256581bea21d51e59128"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExtensionsPanel.kt",
+      "blob": "5703a0efaa8e079e7c4c4511cf6c5e7ebedcccd2"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoInteraction.kt",
+      "blob": "3a3a0c71a0e35d32f912dd44d90149451a1d833e"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRenderer.kt",
+      "blob": "68856e859827a8c78530afd56e51e7fedcdd18ae"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRuntimeBridge.kt",
+      "blob": "baa05b5741746dbdcb5272e445ae37242e1b2e53"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoTools.kt",
+      "blob": "1815ed3f98bf9b88632c62efaa5085a974361ff2"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExtraIoAudioEffects.kt",
+      "blob": "ce9af5078840052f7f3bb355b5ff263c8f955128"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExtraIoControls.kt",
+      "blob": "72a0317835e60951a5824bd9e8de61fcc0145a12"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExtraIoRenderer.kt",
+      "blob": "e6558a034eb720a2e1570b29ac25d77776a8b129"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExtraOscilloscopeRenderer.kt",
+      "blob": "388e8f18b6d99b0c192dd2d0784a49655f35b5d0"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaCompanionPanel.kt",
+      "blob": "b5cc0bda9a27d478fde7586bd8101bc52c48f01f"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaPanel.kt",
+      "blob": "e5e3437cfad653dd685829151520dca4dc7be6f5"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaProgramPanel.kt",
+      "blob": "03a5afa9c018930655b8dafe6021e5238aa82b18"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlExportPanel.kt",
+      "blob": "5e0e3102d014b51e3754a6863b901f27e7818703"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlImportTool.kt",
+      "blob": "c58b8a3fcff42e147e117e397e50710c64eed4de"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlSimulationTool.kt",
+      "blob": "3410fdf9abcee4b0324806264b1ec38030818e05"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlSourceDelivery.kt",
+      "blob": "672c8a5e3baac115586785b2c739941514a29a09"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/HelpContent.kt",
+      "blob": "0e0c98f915364e40471205910e837b52daeb89d6"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/HelpExamplesTool.kt",
+      "blob": "723e67afcfd9cd03e72481dc89b94d5bd3345dbc"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ImportReportDialog.kt",
+      "blob": "ab4424d62c00a6082c715659b3aa34d5f9822b86"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoComponentRenderer.kt",
+      "blob": "f187aaaf1a02381db299d68ac78226ee5900e641"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoInputPanel.kt",
+      "blob": "15cbea81b915daf73a63362567bf1c87c0c833ff"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoStateDescriptions.kt",
+      "blob": "1757d394d49d85e30a8e32b333676bfeb49f5fe7"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/KeyboardShortcutPolicy.kt",
+      "blob": "b95d56f4a58a11ba258d8d31338b0b66e44f5cf1"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/LegalNoticeContent.kt",
+      "blob": "320b3cca8aaf321bdbe283ab5c662a773d9d0ea9"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/LegalNoticesButton.kt",
+      "blob": "afc618f0cdf36f861eae9583a03589d72a353f65"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/MemoryEditorFileActions.kt",
+      "blob": "a9c0d6bb5fdf3af5c639db205bba64a423a66c23"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/MemoryEditorPanel.kt",
+      "blob": "76a607e71322ab965b292d286beeef70c1380d9e"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/MemoryEditorTool.kt",
+      "blob": "815308e63c323df94d6176e8b8839da2eb677a6d"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/NativeMemoryImageActions.kt",
+      "blob": "9684756149bba023548581df23a7b8d70184e143"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PlexersRenderer.kt",
+      "blob": "be35db4af1e441d9fcf763e4e7b832d373130cbd"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PortableProjectModel.kt",
+      "blob": "67a6b0734d024905291ef9978ea457e80b634179"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PortableProjectTools.kt",
+      "blob": "9d0da8687de18d11ee7708973087f51b6c5fd001"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PortableProjectWorkspaceBridge.kt",
+      "blob": "dd416efbc18bad3ec7e7f746f4e84f1cd0496dbd"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ProjectNavigation.kt",
+      "blob": "f17aa5a5ee96c0bae8f64b3e7137f33578561e02"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ProjectNavigationPanel.kt",
+      "blob": "c4d37d6d81d6a79254d72b4b88aa51a982d84770"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ProjectSearch.kt",
+      "blob": "33204149b5cf5baa6040fe0badba8ad747e671e3"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ProjectSearchPanel.kt",
+      "blob": "7ca92e8455414a0d6f1912e9de4403b59c335054"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PropertyEditorModel.kt",
+      "blob": "edbbe899850db8dedaca046bf3222d0aed26993b"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/RendererIEC.kt",
+      "blob": "a41e7b262d48015bd58433de45d28061a1b05e94"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/Sap1Example.kt",
+      "blob": "95b00def77b984b605b52ae757405ad18a57644b"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SimulationEditorDriver.kt",
+      "blob": "b861d5264fce78bab396fc3c22d65c22dbf03d4f"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SimulationOptionsPanel.kt",
+      "blob": "908e385b33b93d3f5647792fe948279d7b3c7c4f"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SimulationRequest.kt",
+      "blob": "dbae08ab7b597144c6bac0a0748277ee84955c4a"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SimulationRunController.kt",
+      "blob": "7ceaf50608368bc0bbd1c10806baa7651cc0ad27"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SocDebuggerTool.kt",
+      "blob": "a3d2aae7d65786cd5a041d7e918f9c31877c4ef8"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SocRenderer.kt",
+      "blob": "5c18ddf2743f412978f80f1da799dc8b553f8486"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SymbolRenderer.kt",
+      "blob": "e9765c28c7f08f0cd9061933dc6ec1999a2143bb"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TclPanel.kt",
+      "blob": "4b71fdfa9bcae6b13ee1ea27d8754e012aacb250"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TestVectorPanel.kt",
+      "blob": "18af29e675c593fbc421c5ac5b4a1ff5182c312d"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TestVectorTool.kt",
+      "blob": "3184ab08d50a41f53e69d598c43a3438d82406a8"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TracePanel.kt",
+      "blob": "00bbc5ce99eb080ea27fd49425b56dd2bee9f9a1"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TraceTool.kt",
+      "blob": "92abb8fee909eaf3117a4ac9e3ebdc3bb993d536"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TtlRenderer.kt",
+      "blob": "1cde326d6d15af42a2d948fe01473b7cf4436bc9"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TypedPropertyInspector.kt",
+      "blob": "ad8c9023e6cb733d10eeb8a1692c1b54a5660a2e"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ViewportState.kt",
+      "blob": "f2a5c9c3528e1b54776680ee68da53c836884861"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/VisualExportTools.kt",
+      "blob": "bd9be4254f8d9152cc47d097dc21e4d099dae358"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/VisualSceneRenderer.kt",
+      "blob": "8832fae230c2d28b495bc076c25901a9b3766ac2"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentCoordinator.kt",
+      "blob": "a883efff8fcffe9a30a50da21529147596b81f74"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt",
+      "blob": "98c48d3ef65440f68836ea01bd02bb8390bb3159"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspacePanel.kt",
+      "blob": "d10559eb10ec28e7ab0f56033cb51bdadcfaa517"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspacePreparedCopyResult.kt",
+      "blob": "d99955d2a875c55b0f44cb6e0319fbfa588ca465"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceSessionLifecycle.kt",
+      "blob": "5b35ce307e0b26bacc9caf1d2f9da22ded8d34fd"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorldDrawingText.kt",
+      "blob": "8306539bdba4dc57ade433571ff9c216d6894862"
+    },
+    {
+      "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/localization/AppLocalization.kt",
+      "blob": "3fc112d00579fa1474b2c435c06a8d269ceda9d6"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/AnnotationImageDecoder.ios.kt",
+      "blob": "ea157b6979e8139c436f93d17817987695718699"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/AppDialogPresentation.ios.kt",
+      "blob": "74731988266b65c0945de3571c57d16ab93cee0d"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/EditorWindowSemantics.ios.kt",
+      "blob": "419cc1c21329a1f035ebc1f98efcca3cfb295411"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/ExtraIoAudioPlayer.ios.kt",
+      "blob": "ea85ba7b37a85e39a7613ee46f5a8e3bfea424a9"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosCatalogStorage.kt",
+      "blob": "3121e4d8ecff4dda09e83d4cda43deb3e7754b3d"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosDirectoryAssetActions.kt",
+      "blob": "deed10eb8a3bf2096735e3427d427b939f6f876e"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosDocumentActions.kt",
+      "blob": "d72795bdd47bd881e88068bf300d2e44329f493e"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosDocumentAssetActions.kt",
+      "blob": "2f9508a45c80a586156a0a5fb296c0793dee8071"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosDocumentErrorBoundary.kt",
+      "blob": "5d752f5122c0987058607ecf77b56ad60ad408b2"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosPreferencesStorage.kt",
+      "blob": "1d32244d259b68cd05f67c7a76a1c55090a79d1c"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/KeyboardShortcutPolicy.ios.kt",
+      "blob": "4ebefac4fcdedc3adb7fafd17593a05af49f4a22"
+    },
+    {
+      "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/MainViewController.kt",
+      "blob": "fa6e881f1a27c23f38b9ca04a3f929b6219b5919"
+    },
+    {
+      "path": "core/build.gradle.kts",
+      "blob": "4b42e2cfecd7ddcca3c1428eb63d9d5bb6f84b48"
+    },
+    {
+      "path": "core/src/androidMain/kotlin/dev/logisim/mobile/core/localization/SystemLanguage.kt",
+      "blob": "37cdf1054f4c3227fb27e922a514105fef6914e4"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/AnalysisCircuitGenerator.kt",
+      "blob": "864aa263ca2207863b472ce9c01b75f905de6789"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/AnnotationEdits.kt",
+      "blob": "1e324ba2e82749a12c322c3d24f70901ab826b17"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/AnnotationLibrary.kt",
+      "blob": "57eafa88bfe602c08990eca5fb6b9655e5193942"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/AnnotationVisuals.kt",
+      "blob": "bb414da6fa41eb557e6b45bb30f56b1f0e1ad85e"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ArithmeticComponents.kt",
+      "blob": "8753ed434a087d69ad3136fd38f45affce39d6de"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ArithmeticLogic.kt",
+      "blob": "be029b766e12f41c8fa7175cf46fa84444a424bb"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/BooleanExpression.kt",
+      "blob": "e4ad15c4c917d22ac51f3164fdd2b6e17ab17fe6"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/BooleanMinimizer.kt",
+      "blob": "0ebc8aeb6fcbd1a94b8a917a1104a3fb69c27166"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/BundleDeflate.kt",
+      "blob": "be6cebcf3c8f86acf182abc4a05d41827c9c5073"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/BundledCircuitExamples.kt",
+      "blob": "3f07afca31a403bd151fd671842c3018e351c757"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircBundleCodec.kt",
+      "blob": "f06a994149edb26f1daa451536bbde7283b34cfa"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircCodec.kt",
+      "blob": "cf536e49bfb6d006020f89ffe36b3207606282f6"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircFormatProfile.kt",
+      "blob": "c9f6b8cf16aaa652312739408f659f6156f2bdc4"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircLibraryCodec.kt",
+      "blob": "1d6aef1eb1232b2100229ec7f7de3cbf210dea50"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircXmlParser.kt",
+      "blob": "7f896cba42821fc56ff5dbf4db734ef4e5fbd46c"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitDiagnostics.kt",
+      "blob": "6ec25091eba1cd175d083cd1cb98220ab96cdbf2"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitDocument.kt",
+      "blob": "c46ce9e6319604d65c79d1ca76c6e3d3a3881387"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitEditor.kt",
+      "blob": "737e57aefac704ffe477e98dad1da8faf57dbd3a"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitExamples.kt",
+      "blob": "58d8b86c361a58ff71302142cf884ac962cf45d7"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitNetworks.kt",
+      "blob": "837b878bef5d754c90c09cf096a4ed57a49034bf"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitProject.kt",
+      "blob": "8726f12faa49e9219b2bdd20659ed0b1ab8ccd95"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitSimulator.kt",
+      "blob": "8856aefe223ae4339da57aee317f1388051ce6d5"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitStatistics.kt",
+      "blob": "4986f31df07508e5b39f38d652c765ee28501a01"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitTemporalTrace.kt",
+      "blob": "56402db66dad5018eff6c92e0a6bcf94aebecf78"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitTopology.kt",
+      "blob": "23278b62d45013a1e91feb548f882b73f1ceaba9"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CompanionClient.kt",
+      "blob": "7f1e163471a78b20db5ed75835e8fb8f584a949d"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CompanionJson.kt",
+      "blob": "9e9b02424657591d90fac71ede59afc39a1c9a01"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CompanionModels.kt",
+      "blob": "79925e21ef05e3e0500c8c72a439c56e5b3016f3"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CompanionTclClient.kt",
+      "blob": "77fcdd8881362ff1536f86193820ba38eefe16e6"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CompanionTelnetClient.kt",
+      "blob": "59d57de59705848ed2f453f59ec049614f9980e5"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CompanionTransport.kt",
+      "blob": "e93fd8f2b69c5b9b320fb244fb10c6f9c3aa6b98"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ComponentAttributes.kt",
+      "blob": "5f9f235761dd59a86c0cb24b4754444aef688148"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ComponentBehavior.kt",
+      "blob": "b5b3f96a92722ec4d0312ed1f6ed364c1b411c2b"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ComponentCatalog.kt",
+      "blob": "ad7c4787a5ba94edc06f7709ae5431e17808ae33"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ComponentGeometry.kt",
+      "blob": "51e31e44b8f94e47ce10657a31f21ea41fcace04"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ComponentRegistry.kt",
+      "blob": "bb978f23cf8b513c4dd2d28c8f9f8532875282f8"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/DemoCircuits.kt",
+      "blob": "50c278a804c5218f74ad266e91a9db7db55feca8"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ExtensionDigest.kt",
+      "blob": "e45ad38a29e07cbf1b47e52801dfc4ccb037d725"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ExternalIoComponents.kt",
+      "blob": "e203e2bb6de72f1bad90129b86f7ef8b760b001a"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ExtraIoComponents.kt",
+      "blob": "88db563767f989da6fad6288d81223ac41eeab7e"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/ExtraIoLogic.kt",
+      "blob": "f80fe6bc0ce7579bd9158434ff5da56820f05430"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/FloatingPointLibrary.kt",
+      "blob": "75cbd3c799d2458235933221fcbcdfd76b068cdc"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/FloatingPointNumbers.kt",
+      "blob": "b20afad477b952a6a8a0e8b1d1b838f589bb5254"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/FpgaArchive.kt",
+      "blob": "3d0bfb088d4a9df0011d91c67ea8222026933d74"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/FpgaBoard.kt",
+      "blob": "369593b12beebbfd36c9e84ac826d6441521bd96"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/FpgaCompanion.kt",
+      "blob": "d632b2dd97f2706f4ee78bb6f94150042928e420"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/FpgaHdlAdapter.kt",
+      "blob": "f66511f388f6318615d687f3c9e6c2cc739a4865"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/FpgaProject.kt",
+      "blob": "8e11db72e31bf93d805840cb60d3d00799a01ef8"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/GatesLibrary.kt",
+      "blob": "0d4bca3cde0d16873a015492124073c3841506f9"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/GatesLogic.kt",
+      "blob": "af6d4142e7a07945809d44b41df3e93843bbfa85"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlEmitter.kt",
+      "blob": "19e8f0659a76357aafdc7ebb47bb4c5ba8b14002"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlExport.kt",
+      "blob": "c604118dd72c5d5d59e7c162a05a49428291140b"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlImportCompanion.kt",
+      "blob": "87cf9fc6e894ec727e929951b315563d33dbc8c5"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlIp.kt",
+      "blob": "5a8268cf20a52c367a099495b3c2aa760f8e156e"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlIpBehavior.kt",
+      "blob": "98c57235519a5919c42da41d88adcd2f7a4b41c8"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlIpDeclarations.kt",
+      "blob": "7bece4c451bf2831479dada90d17a00330492cbc"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlJson.kt",
+      "blob": "27e83174bee35a6606052018684758992d96b1e6"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlNativeImporter.kt",
+      "blob": "16ab03247cb4b7c8dec05f7608f3ec2b85f7aa4b"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlNetlist.kt",
+      "blob": "c6501e9b4d425eb338377098c6ac5ee483345d99"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HdlSimulationCompanion.kt",
+      "blob": "a18a14d01f03785e444d5e74a7b5e91e4e20ae71"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/HierarchicalDiagnosticFeedback.kt",
+      "blob": "ed58e739114648a45584a239ef037cc1ee9ef734"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/IoDemoCircuits.kt",
+      "blob": "7eecd1769cc28255e5cc3bd17bcb97c902460a7c"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/IoGeometry.kt",
+      "blob": "921d8e5a18a19da5df7d19c406af14b8e050d307"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/IoInteractions.kt",
+      "blob": "8abb21aee194d9bec69edaa4e94c07cb98c387b5"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/IoLibrary.kt",
+      "blob": "f1957fa63943dc75afdc69cc4840718922dfdfc8"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/IoLogic.kt",
+      "blob": "6b26270ffc30bb0e15c1d5924ca58c79ae71e67e"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/KarnaughMap.kt",
+      "blob": "ede6754a556c306ba9f86191118644c22add9079"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/LegacyComponentDefinitions.kt",
+      "blob": "29d9b710629a8f1cb3290786be610be4a31ac7ef"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/LogicVector.kt",
+      "blob": "8f593cae660f66ccd17aa5199ab49097c68be760"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MemoryComponents.kt",
+      "blob": "2bf7eb690765df473d87f71cbd8cca99e50cba5d"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MemoryCore.kt",
+      "blob": "6d75e6040f603ffa92b28ddfededf982d781f1fc"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MemoryEditorModel.kt",
+      "blob": "486dbb069ece397e6ed3db883230306ca5f7a133"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MemoryImage.kt",
+      "blob": "bd4bc2006b998072a3c27025579ccdf7703c647b"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MemoryImageCodec.kt",
+      "blob": "d51712cfb4ce04caad866ebc2377e8cfb8653307"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MemoryLayout.kt",
+      "blob": "a7d3e89b58da02fb4289fedef912332179702029"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MemoryLocalization.kt",
+      "blob": "5d60caad4bc6cd3be7b85cb4fb95d939f4898604"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/MobileExtensions.kt",
+      "blob": "c66cf984cd12298f67867f2c980b9a0bc4a2f706"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/Nios2Cpu.kt",
+      "blob": "95d27660485530320127b21e4b324ef48dfe0cc4"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/PlexersLibrary.kt",
+      "blob": "8217c43a45e879f237c491843e5663a09c2a53fa"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/PlexersLogic.kt",
+      "blob": "5223840121a3592bc2ae1081bbbe2e5ea497a3fd"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/Rv32Cpu.kt",
+      "blob": "de4ea705506d8f22466e75b0ff9abd6eb28e674d"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SequentialLibrary.kt",
+      "blob": "6b9a99b2c8a19cd891f7f1fa9316594d15f1cdc6"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SequentialLogic.kt",
+      "blob": "f29cf078e773fb4d21f4d4f45b253785cbbb1621"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SignalTrace.kt",
+      "blob": "adc2c32c5a5d97a71830f2085f20e0b8ca9e37e9"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SimulationComponents.kt",
+      "blob": "e91b41c4c40948d69c9423aa1ad73688c6d9e906"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SimulationProjectOptions.kt",
+      "blob": "e5a866ad15cf350bcd17de9b0d29c4cc323bd17e"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocBus.kt",
+      "blob": "139023280859604c99812c6db9ae602a3f4d5660"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocComponentBehavior.kt",
+      "blob": "f6b2b96154ed306a698f9ba63d920b2f77acedfd"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocComponents.kt",
+      "blob": "d0b508697515a5e86617a8ac67cfe1c3c0997d33"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocEvaluation.kt",
+      "blob": "c2d8e6dde41f82f00cfe7cd5c796e32a16be83ba"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocExecutable.kt",
+      "blob": "4384a4bc67819fa5a8ff34e2c6e9ada7bce88adc"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocPeripherals.kt",
+      "blob": "bf1479b59400d3ef8269a7aaf8368af96a138484"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocPlic.kt",
+      "blob": "8edd7ae14daebdab98218124222b5cff7568dd37"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SocRuntime.kt",
+      "blob": "a0de585116d3ca2e7f9e4bb1aed54c91dbebe10b"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SpatialIndex.kt",
+      "blob": "28f08e6738c63931a39de665423903f196592ebf"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SymbolAppearance.kt",
+      "blob": "671eff1b97117a8d97c3889be3530345e3cd8bf3"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/SymbolVisuals.kt",
+      "blob": "e64496a7257c8fa5d3122fadd1a9e210ee3ea2b5"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TclComponents.kt",
+      "blob": "bd053e57afca22ec150d900dead83655cb8a8678"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TclExecution.kt",
+      "blob": "74bf624766a1b7c29ca8e560a01528865a1f9b54"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TelnetRuntime.kt",
+      "blob": "ac5dd4defa2b812ad95e4f5bebe312da52718e16"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TestVectorFormat.kt",
+      "blob": "90c394329edf6ac53cfafbb014f1e08762872b9a"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TestVectorRunner.kt",
+      "blob": "c166821220eb083d04114fb94c4be21f1fb0ffd7"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TruthTable.kt",
+      "blob": "d4b9a24b72804b95b3e53e8b847e58fdc4948045"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlCatalog.kt",
+      "blob": "91bea6f383f5bd959bad8ca0cdb4b4a365f983a9"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlCombinational.kt",
+      "blob": "82e44104fd0f73fc8ac880898476f0d02743394e"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlComponents.kt",
+      "blob": "2bea3685d8ea5a4c943f975b87dfe1424d28d7a2"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlGeometry.kt",
+      "blob": "ef3f43e14c1c36a0317811acfa2aa159b7777a51"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlLogic.kt",
+      "blob": "2d4f98ed002d5011e10240ded0f44e2a3cc2c67d"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlPal.kt",
+      "blob": "47acdc6d8992405fa26af8ae3c62a2dc80c74c5e"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlSequential.kt",
+      "blob": "8c02ac041167f74ce0154f9930e9a5116ac70d2d"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/TtlSupport.kt",
+      "blob": "f185a98d4962bfbdf2be063ef554c54848b072f9"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VideoFrame.kt",
+      "blob": "97caaaf53f4f3acd65d41d0a27c906d0344f49bb"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VideoPalettes.kt",
+      "blob": "c45436a4084f2cbbc706c7e8abae8ca000377eff"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualExport.kt",
+      "blob": "2f4bbe1aedf18c9993266c66e2553e1887835f2d"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualPdf.kt",
+      "blob": "4d86c6029e906fc9b89eab893f51f3ac6ee053e3"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualPng.kt",
+      "blob": "48b31706518e03e19afc08a9811a7d317cfec8af"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualScene.kt",
+      "blob": "0fb6be2170b34ea7a9e53dc86a3403058c14fb62"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WiringLibrary.kt",
+      "blob": "4cd707f4315f54024e8e0a0e50e2571acf7df097"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WiringValues.kt",
+      "blob": "f813133e2b5efdcc586d699b1c127815063d4961"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WorkspaceAttachments.kt",
+      "blob": "1e4693bca677b7a19582958929c158fdbaef1d18"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WorkspaceCatalog.kt",
+      "blob": "ea3b4d621ffdc8eef07a4eec16e21bfe2b5eb98c"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WorkspaceCatalogFormat.kt",
+      "blob": "822986c4e97fe896a5a041ca2469405b5ec05a9f"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WorkspaceRepository.kt",
+      "blob": "20be016f54166581bd9d2011f7010df61e2bf7ad"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WorkspaceSession.kt",
+      "blob": "be2da789b7105464f50c953385d737519475d4f7"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/WorkspaceViewRestoration.kt",
+      "blob": "01998444870a45d800682c0dd4212225614a0655"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/AttributeText.kt",
+      "blob": "16f245cc3ad2f9c47bd83a1c8ea574f0d6611335"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/ComponentText.kt",
+      "blob": "0a4c5dfe2957e6a524c7a3d240a2323e71319509"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/GeneratedMessages.kt",
+      "blob": "fe00e293c59e0daa94af12b065cfd02347d7b802"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/LocalizedText.kt",
+      "blob": "61529eb1c14af24f41c648699878076130f4dafe"
+    },
+    {
+      "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/localization/SystemLanguage.kt",
+      "blob": "1da7e6cc55d032fa8a37fd8326beac1c2a8a05a7"
+    },
+    {
+      "path": "core/src/iosMain/kotlin/dev/logisim/mobile/core/CompanionPlatform.ios.kt",
+      "blob": "d7a6f37d446e7c7755f19fa16fb3b3ad4453f62d"
+    },
+    {
+      "path": "core/src/iosMain/kotlin/dev/logisim/mobile/core/localization/SystemLanguage.kt",
+      "blob": "d51a589ea3654a95e833dbbeb0f5c2ac3aa532bd"
+    },
+    {
+      "path": "core/src/jvmAndAndroidMain/kotlin/dev/logisim/mobile/core/CompanionPlatform.jvm.kt",
+      "blob": "27a42e71d067b39a1c01585b0bb393d92c16e9b4"
+    },
+    {
+      "path": "core/src/jvmMain/kotlin/dev/logisim/mobile/core/CircuitCorpusCli.kt",
+      "blob": "abebb37096edfdbea109a7eb5f7cd67add06a23a"
+    },
+    {
+      "path": "core/src/jvmMain/kotlin/dev/logisim/mobile/core/FileWorkspaceCatalogStorage.kt",
+      "blob": "cb80467eb8fa6c8dfe85bf9d8726cc0e0f96ba70"
+    },
+    {
+      "path": "core/src/jvmMain/kotlin/dev/logisim/mobile/core/JvmTelnetTransport.kt",
+      "blob": "9f063bac6a190b8264e2bfe0832db85356da0a54"
+    },
+    {
+      "path": "core/src/jvmMain/kotlin/dev/logisim/mobile/core/TemporalCorpusCli.kt",
+      "blob": "ff5b1514bf665ad774f85704ae15fe02d6ff54bf"
+    },
+    {
+      "path": "core/src/jvmMain/kotlin/dev/logisim/mobile/core/localization/SystemLanguage.kt",
+      "blob": "37cdf1054f4c3227fb27e922a514105fef6914e4"
+    },
+    {
+      "path": "gradle.properties",
+      "blob": "640ee71b62a934a3604aeab67204911d2bae3273"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "blob": "9fa7f288283f81eec4952784c271abd7e0938dee"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "blob": "29847de6dd38cfa4cc84dad30bccd9639a9a805a"
+    },
+    {
+      "path": "iosApp/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+      "blob": "f1c2423f6fc7bad6adf0611cdfbae1cc4596beef"
+    },
+    {
+      "path": "iosApp/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "blob": "7140563583a209df2e1515c4177e85428b7417f2"
+    },
+    {
+      "path": "iosApp/Assets.xcassets/Contents.json",
+      "blob": "f223229d3bb31f7cb8bd5ca05dec684d49f13a18"
+    },
+    {
+      "path": "iosApp/Config/Identity.xcconfig",
+      "blob": "14da9f801ced6f5e2ca67e73717a5fdb6a7c9c17"
+    },
+    {
+      "path": "iosApp/Info.plist",
+      "blob": "3915d6e8e7acead9c3c0cfb8b501adb131b5861d"
+    },
+    {
+      "path": "iosApp/LogisimMobileApp.swift",
+      "blob": "07e46b09095d8cca073ca961773a74731a2a70cc"
+    },
+    {
+      "path": "iosApp/PrivacyInfo.xcprivacy",
+      "blob": "000a0bab430376ef25b545d703580da26e32dde5"
+    },
+    {
+      "path": "iosApp/project.yml",
+      "blob": "f6b3835158bc548b80140618edd8948813889d2d"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "blob": "59e72c96616d2f308b666d8f606f9ac4969459d5"
+    }
+  ]
+}

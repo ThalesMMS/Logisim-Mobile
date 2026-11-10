@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "scope": "DERIVED_OFFLINE_ANALYSIS_NOT_RUNTIME_QUALIFICATION",
+  "source": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+  "commandWorkingDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui",
+  "commands": [
+    {
+      "case": "scroll",
+      "hostHandle": 96354,
+      "runnerExitCode": 0,
+      "command": [
+        "python3",
+        "scripts/run-android-mixed-input.py",
+        "--serial",
+        "emulator-5558",
+        "--apk",
+        "outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_apk.apk",
+        "--test-apk",
+        "outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_test_apk.apk",
+        "--source-revision",
+        "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+        "--case",
+        "scroll",
+        "--canvas-input-trace",
+        "--output",
+        "outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once",
+        "--adb",
+        "/Users/thales/Library/Android/sdk/platform-tools/adb"
+      ]
+    },
+    {
+      "case": "pinch",
+      "hostHandle": 98416,
+      "runnerExitCode": 1,
+      "command": [
+        "python3",
+        "scripts/run-android-mixed-input.py",
+        "--serial",
+        "emulator-5558",
+        "--apk",
+        "outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_apk.apk",
+        "--test-apk",
+        "outputs/android-canvas-input-diagnostic-b06cefcc/apks/e2e_test_apk.apk",
+        "--source-revision",
+        "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+        "--case",
+        "pinch",
+        "--canvas-input-trace",
+        "--output",
+        "outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once",
+        "--adb",
+        "/Users/thales/Library/Android/sdk/platform-tools/adb"
+      ]
+    }
+  ],
+  "scroll": {
+    "status": "PASS",
+    "qualification": "PARTIAL",
+    "caseElapsedMillis": 12046,
+    "chains": [
+      {
+        "sampleId": 2,
+        "requestSequence": 78,
+        "storedSequence": 80,
+        "composedSequence": 83,
+        "before": {
+          "scale": 1.4747826,
+          "panX": 370.4,
+          "panY": 549.44,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        },
+        "after": {
+          "scale": 1.6628127,
+          "panX": 335.64435,
+          "panY": 530.6266,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        }
+      },
+      {
+        "sampleId": 5,
+        "requestSequence": 90,
+        "storedSequence": 92,
+        "composedSequence": 95,
+        "before": {
+          "scale": 1.6628127,
+          "panX": 335.64435,
+          "panY": 530.6266,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        },
+        "after": {
+          "scale": 1.6628127,
+          "panX": 251.64435,
+          "panY": 614.6266,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        }
+      },
+      {
+        "sampleId": 10,
+        "requestSequence": 106,
+        "storedSequence": 108,
+        "composedSequence": 111,
+        "before": {
+          "scale": 1.6628127,
+          "panX": 251.64435,
+          "panY": 614.6266,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        },
+        "after": {
+          "scale": 1.6628127,
+          "panX": 335.64435,
+          "panY": 530.6266,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        }
+      }
+    ],
+    "matchedInjectedMotionEvents": 3,
+    "otherReceivedCallbacks": 10,
+    "otherCallbacksOriginFullyEstablished": false,
+    "xmlBeforeAfterByteIdentical": true,
+    "xmlSha256": "97dd76d6050d1cb4606c7c6e7e5d9108f1121d227a8f906a9bbd5aa80d17b6b1"
+  },
+  "pinch": {
+    "status": "FAIL",
+    "qualification": "NOT_QUALIFIED",
+    "failureStage": "PREPARATION_ZOOM_OUT_BEFORE_MOTION_EVENTS",
+    "caseElapsedMillis": 25908,
+    "zoomOutChains": [
+      {
+        "ordinal": 1,
+        "requestSequence": 54,
+        "storedSequence": 56,
+        "composedSequence": 58,
+        "before": {
+          "scale": 2.3043478,
+          "panX": 275,
+          "panY": 444.5,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": true
+        },
+        "after": {
+          "scale": 1.8434782,
+          "panX": 328,
+          "panY": 502.8,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        }
+      },
+      {
+        "ordinal": 2,
+        "requestSequence": 59,
+        "storedSequence": 61,
+        "composedSequence": 63,
+        "before": {
+          "scale": 1.8434782,
+          "panX": 328,
+          "panY": 502.8,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        },
+        "after": {
+          "scale": 1.4747826,
+          "panX": 370.4,
+          "panY": 549.44,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        }
+      },
+      {
+        "ordinal": 3,
+        "requestSequence": 64,
+        "storedSequence": 66,
+        "composedSequence": 68,
+        "before": {
+          "scale": 1.4747826,
+          "panX": 370.4,
+          "panY": 549.44,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        },
+        "after": {
+          "scale": 1.1798261,
+          "panX": 404.31998,
+          "panY": 586.75195,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        }
+      },
+      {
+        "ordinal": 4,
+        "requestSequence": 69,
+        "storedSequence": 71,
+        "composedSequence": 73,
+        "before": {
+          "scale": 1.1798261,
+          "panX": 404.31998,
+          "panY": 586.75195,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        },
+        "after": {
+          "scale": 0.94386095,
+          "panX": 431.456,
+          "panY": 616.60156,
+          "width": 1080,
+          "height": 1472,
+          "initialized": true,
+          "fitted": false
+        }
+      }
+    ],
+    "injectedMotionEvents": 0,
+    "lastWait": {
+      "attempts": 273,
+      "lastOutcome": "RETURNED_FALSE",
+      "lastOutcomeAtMillis": 40234122,
+      "historicalException": null,
+      "historicalExceptionAttempt": 0,
+      "historicalExceptionAtMillis": 0,
+      "waitId": 248,
+      "description": "zoom out applied",
+      "startedAtMillis": 40219123,
+      "elapsedMillis": 15050
+    },
+    "lastComposed": {
+      "stage": "composed",
+      "receiverUptimeMillis": 40219142,
+      "receiverElapsedMillis": 40219142,
+      "threadId": 2,
+      "threadName": "main",
+      "sampleId": 0,
+      "gestureId": 0,
+      "documentId": "pinch_80ac7783",
+      "before": null,
+      "after": {
+        "scale": 0.94386095,
+        "panX": 431.456,
+        "panY": 616.60156,
+        "width": 1080,
+        "height": 1472,
+        "initialized": true,
+        "fitted": false
+      },
+      "documentIdTruncated": false,
+      "fields": {
+        "canvasWidth": "1080",
+        "canvasHeight": "1472",
+        "density": "2.625",
+        "windowFocused": "true",
+        "mode": "SELECT"
+      },
+      "fieldsOmitted": 0,
+      "fieldValuesTruncated": 0
+    },
+    "failureRootQuery": {
+      "readId": 810,
+      "callsite": "snapshot:pinch-failure",
+      "startedAtMillis": 40234276,
+      "elapsedMillis": 1,
+      "outcome": "ACCEPTED_ACTIVE_ROOT",
+      "failurePhase": null,
+      "error": null,
+      "activeRoot": {
+        "outcome": "ACCEPTED",
+        "package": "thalesmms.logisim.mobile.e2e",
+        "windowId": 14571,
+        "elapsedMillis": 1,
+        "windowMetadata": "NOT_QUERIED_FROM_NODE"
+      },
+      "windowsEnumeration": "NOT_REQUESTED",
+      "windowsQueryStartedAtMillis": null,
+      "windowsQueryElapsedMillis": null,
+      "windowsListed": null,
+      "windowsInspected": 0,
+      "inspectionComplete": false,
+      "windowRecordsOmitted": 0,
+      "acceptedWindowId": 14571,
+      "windows": [],
+      "kind": "root-read",
+      "atElapsedMillis": 40234277,
+      "waitId": null,
+      "waitAttempt": null,
+      "waitDescription": null
+    },
+    "timeDomainForComparison": "ELAPSED_REALTIME_MILLIS",
+    "rootQueryAfterLastCompositionMillis": 15134,
+    "waitEndElapsedMillis": 40234173,
+    "screenshotTimestamp": null,
+    "perNodeCaptureTimestamp": null,
+    "capturesAtomic": false,
+    "sourceCallOrder": [
+      "waitFor throws",
+      "snapshot calls screenshot",
+      "snapshot calls root",
+      "snapshot recursively reads children"
+    ],
+    "axZoomText": "118%",
+    "pngZoomTextVisuallyReviewed": "94%",
+    "pngPixelTextParsedByVerifier": false,
+    "axFinalInputBounds": [
+      448,
+      1289,
+      560,
+      1415
+    ],
+    "axFinalOutputBounds": [
+      707,
+      1289,
+      833,
+      1415
+    ],
+    "axFinalInputCenterX": 504,
+    "axFinalOutputCenterX": 770,
+    "axFinalSpan": 266,
+    "beforeFourthZoomSpanRetained": false,
+    "genericReadinessDroppedRecords": 2766,
+    "genericWaitSummariesDroppedRecords": 762,
+    "causeAssigned": false
+  },
+  "limits": [
+    "The two runs belong to the diagnostic b06 APK pair and do not reclassify earlier failures.",
+    "No pinch MotionEvent was reached in this run.",
+    "Root acquisition time does not establish the age of cached child contents.",
+    "Screenshot and tree are not atomic and lack per-capture image and child timestamps.",
+    "No clearCache, refresh, new device run, fallback, manual viewport change or product fix was performed."
+  ]
+}

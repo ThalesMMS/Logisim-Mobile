@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "scope": "One selected dip-last case in the mounted Android API 35 editor; no overall issue44 completion",
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "helperProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "harnessProducer": "bdc390d1a23f87c9429537db5bca6b2e05f88f1b",
+  "nativeInvocations": 1,
+  "nativeExitCode": 0,
+  "scenarioSeconds": 284.82,
+  "wrapperSeconds": 299.3434882920119,
+  "rawSources": {
+    "raw": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/outputs/android-io-dip-3a0a01f1-001",
+    "controller": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-io44-gap-prep/outputs/android-io-dip-3a0a01f1-001-control"
+  },
+  "retained": {
+    "rawFiles": 131,
+    "controllerFiles": 75,
+    "inventoryEntries": 218,
+    "inventoryPayloadBytes": 5340566,
+    "sdkCompleteCaptures": 22,
+    "sdkPid": "32167",
+    "probeRecords": 4,
+    "completeExports": 6
+  },
+  "restoration": {
+    "settingsDifferences": {},
+    "lastAnrChanged": false,
+    "readerOffBeforeAfter": true,
+    "cleanupOwnedPackageOnly": true,
+    "pidAfterCleanup": ""
+  },
+  "invalidDimension": {
+    "value": "0",
+    "captures": [
+      14,
+      15
+    ],
+    "applyTextLeafEnabled": true,
+    "clickableApplyOwnerEnabled": false,
+    "cancelPreservesFullXml": true
+  },
+  "offlineVerification": {
+    "integrityAndSemantics": "verification.json",
+    "negativeControlsAndRelocation": "negative-controls.log",
+    "tests": 5,
+    "review": "review.json"
+  },
+  "limits": [
+    "Source preparation remains an unchanged historical SOURCE_PREPARED/NOT_RUN record.",
+    "ADB audit entries describe requests and UTC times; no completion, delivery or callback counts are inferred.",
+    "All 22 SDK captures were complete; no SDK recovery behavior was exercised.",
+    "The preflight PID differs after the runner reinstall/reset; only each query before/after PID is verified.",
+    "No causal attribution for historical failures, physical-device claim, broad I/O visual parity or overall issue44 completion."
+  ],
+  "documentEquality": [
+    "io-dip-four.circ == io-dip-invalid-preserved.circ",
+    "io-dip-export.circ == io-dip-reopened.circ == last-document.circ"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "source": "969f2d08010a22abbd8620f87ca9e382684b4b3f",
+  "mode": "PORTABLE_ARCHIVE_ONLY",
+  "inventory": {
+    "status": "PASS",
+    "fileCount": 93
+  },
+  "commands": {
+    "status": "PASS",
+    "commandCount": 7,
+    "postBuildSigning": false
+  },
+  "sourceProof": {
+    "status": "PASS",
+    "protectedFilesByteIdentical": 22,
+    "workBodyBytes": 2045,
+    "workBodySHA256": "d4a8b5c759f149b7a5b380247787a6e422eb253dc45a0b284dbb70566d11b53e",
+    "rawBytesCompared": true
+  },
+  "sdkReview": {
+    "status": "PASS",
+    "fieldCount": 11,
+    "policyCount": 4,
+    "optionCount": 3,
+    "review": "SOURCE_ONLY",
+    "actualAuth004Fields": "UNKNOWN_UNTIL_FUTURE_DIAGNOSTIC"
+  },
+  "entitlements": {
+    "status": "PASS",
+    "mainSectionPairs": 2,
+    "generatedInputPairs": 2,
+    "codeSignatureEntitlements": {},
+    "prior601AuthorizationReused": false
+  },
+  "bundleIndex": {
+    "status": "PASS",
+    "appFiles": 11,
+    "providerFiles": 5,
+    "allImmediateMachOSectionOwners": [
+      "main",
+      "__preview.dylib"
+    ],
+    "binaryBytesRetained": false,
+    "verification": "index metadata against pinned manifest hashes"
+  },
+  "postBuildTestAddendum": {
+    "status": "PASS",
+    "source": "0605b5a58c9539509c287134bc36d28c3aeec778",
+    "rebuilt": false,
+    "historicalPythonTests": 28,
+    "historicalHostChecks": 79
+  },
+  "nativeExecution": "NOT_RUN",
+  "domainRegistration": "NOT_RUN",
+  "physicalDevice": false,
+  "simulatorEntitlementReviewRequired": true,
+  "prior601AuthorizationReused": false
+}

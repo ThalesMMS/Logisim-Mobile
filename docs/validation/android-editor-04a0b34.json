@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "productionPin": "04a0b34a38689932a3f3aaed7f4ea5cb6b63c8db",
+  "rawArtifactWorktree": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-release",
+  "scope": "Android API35 emulator, isolated .e2e package; partial qualification, not a complete #35 pass",
+  "runs": [
+    {
+      "artifacts": "outputs/android-e2e/04a0b34-all-en",
+      "producerHead": "d6b5dd8ccd9cc51adbda20ea7aab277c608207e0",
+      "appSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+      "testSha256": "140a7579526bde3f6b37231e5b10001b71f5d1e73c395f7b5354b61ba07284ae",
+      "scenarioSources": {
+        "e2e-android.py": "13715f279767cfb79b6ac048a862ac93b0ff640608fcc94c969ef211f5d9d7a2",
+        "android_ui.py": "d3434bd390932f73a87fd6ab13fba3a74bb919406db5691edbcc621d0591f817",
+        "android_editing_scenarios.py": "3193a39075d73ec737a1bc9012e4e323333e3ed986bbfbc6a4130304dbb08070",
+        "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+      },
+      "results": [
+        {
+          "scenario": "sequential-simulation-and-recovery",
+          "status": "passed",
+          "seconds": 254.63
+        },
+        {
+          "scenario": "incoming-share-imports-a-copy",
+          "status": "passed",
+          "seconds": 52.49
+        },
+        {
+          "scenario": "saf-local-import-preserves-source",
+          "status": "passed",
+          "seconds": 62.62
+        },
+        {
+          "scenario": "cancel-open-preserves-project",
+          "status": "passed",
+          "seconds": 91.55
+        },
+        {
+          "scenario": "cancel-export-preserves-project",
+          "status": "passed",
+          "seconds": 74.06
+        },
+        {
+          "scenario": "cancel-share-preserves-project",
+          "status": "passed",
+          "seconds": 71.35
+        },
+        {
+          "scenario": "external-receiver-reads-share-grant",
+          "status": "passed",
+          "seconds": 69.41
+        },
+        {
+          "scenario": "invalid-and-incompatible-files-preserve-project",
+          "status": "failed",
+          "error": "The action_understood control did not appear within 30s"
+        },
+        {
+          "scenario": "native-file-workflow",
+          "status": "failed",
+          "error": "The action_understood control did not appear within 30s"
+        }
+      ],
+      "files": {
+        "manifest.json": {
+          "sha256": "85e16754ca53d8e349642a5f9e4212804f8b3d80fc73f0d44d5a4944e86db19d",
+          "bytes": 2690
+        },
+        "results.json": {
+          "sha256": "84f689b119564ba65f881e6607a23e3bc9ac7ac3f8e24a53cb05330d592b15d1",
+          "bytes": 1058
+        },
+        "failure-error.txt": {
+          "sha256": "c6373da488f6bd180530e7e8dec712a8f026d23e002bf3e23b24baa716746b37",
+          "bytes": 1563
+        },
+        "sap1-pixel-oracle.json": {
+          "sha256": "d7643270733ba279681cfc187b3dd861679302f9d0454ff1f047dcedad45acf4",
+          "bytes": 4010
+        }
+      }
+    },
+    {
+      "artifacts": "outputs/android-e2e/04a0b34-rejected-en-r2",
+      "producerHead": "d6b5dd8ccd9cc51adbda20ea7aab277c608207e0",
+      "appSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+      "testSha256": "140a7579526bde3f6b37231e5b10001b71f5d1e73c395f7b5354b61ba07284ae",
+      "scenarioSources": {
+        "e2e-android.py": "73a80b3d310ca1c88dc81f8467ac24d08b2eec11741156f8ee78699359a1f582",
+        "android_ui.py": "d3434bd390932f73a87fd6ab13fba3a74bb919406db5691edbcc621d0591f817",
+        "android_editing_scenarios.py": "2a6e91143da79df1bc35b009189384d635da520904a3e0615e581c9c655c8871",
+        "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+      },
+      "results": [
+        {
+          "scenario": "invalid-and-incompatible-files-preserve-project",
+          "status": "passed",
+          "seconds": 165.35
+        }
+      ],
+      "files": {
+        "manifest.json": {
+          "sha256": "a65114c15a7392329637ed3027f2675bf8451fdc3e8b0c5310c58f6831096988",
+          "bytes": 3260
+        },
+        "results.json": {
+          "sha256": "27feec735baf413c12b30dc8dad6dd8338c152fbbb57ea23711cea93903eed42",
+          "bytes": 125
+        }
+      }
+    },
+    {
+      "artifacts": "outputs/android-e2e/04a0b34-layout-en",
+      "producerHead": "d6b5dd8ccd9cc51adbda20ea7aab277c608207e0",
+      "appSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+      "testSha256": "140a7579526bde3f6b37231e5b10001b71f5d1e73c395f7b5354b61ba07284ae",
+      "scenarioSources": {
+        "e2e-android.py": "db7bf713641dd736dd93774067af82fc08390702e236a82d292b2f07e480654c",
+        "android_ui.py": "d3434bd390932f73a87fd6ab13fba3a74bb919406db5691edbcc621d0591f817",
+        "android_editing_scenarios.py": "2a6e91143da79df1bc35b009189384d635da520904a3e0615e581c9c655c8871",
+        "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+      },
+      "results": [
+        {
+          "scenario": "landscape-and-large-text-actions",
+          "status": "passed",
+          "seconds": 230.59
+        }
+      ],
+      "files": {
+        "manifest.json": {
+          "sha256": "a34663d25d197a7bc9337909b0f7fd537f0c1cc77aade304949f11e766d9e70a",
+          "bytes": 3259
+        },
+        "results.json": {
+          "sha256": "5e17d59a830e18d9777daaab6442e49662c335cddec11cca984bffc0ac9fb2fc",
+          "bytes": 110
+        }
+      }
+    },
+    {
+      "artifacts": "outputs/android-e2e/04a0b34-editing-en",
+      "producerHead": "d6b5dd8ccd9cc51adbda20ea7aab277c608207e0",
+      "appSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+      "testSha256": "140a7579526bde3f6b37231e5b10001b71f5d1e73c395f7b5354b61ba07284ae",
+      "scenarioSources": {
+        "e2e-android.py": "db7bf713641dd736dd93774067af82fc08390702e236a82d292b2f07e480654c",
+        "android_ui.py": "d3434bd390932f73a87fd6ab13fba3a74bb919406db5691edbcc621d0591f817",
+        "android_editing_scenarios.py": "3193a39075d73ec737a1bc9012e4e323333e3ed986bbfbc6a4130304dbb08070",
+        "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+      },
+      "results": [
+        {
+          "scenario": "editing-create-properties",
+          "status": "failed",
+          "error": "Could not read the component name from ''"
+        }
+      ],
+      "files": {
+        "manifest.json": {
+          "sha256": "c40172fd664da03a5f5de44e2171d263f40554ded3db24f2f6e77f996b71fad2",
+          "bytes": 2690
+        },
+        "results.json": {
+          "sha256": "0853fa56ab566ec69dcb0b5d0f2157672625a58d3412a599c47332a2f3d051db",
+          "bytes": 138
+        },
+        "failure-error.txt": {
+          "sha256": "dd86a2f797b7a0829fff4acd30ea34ce98f45edfd6e35c78eaecfa82519e2463",
+          "bytes": 1221
+        }
+      }
+    },
+    {
+      "artifacts": "outputs/android-e2e/04a0b34-editing-en-r2",
+      "producerHead": "d6b5dd8ccd9cc51adbda20ea7aab277c608207e0",
+      "appSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+      "testSha256": "140a7579526bde3f6b37231e5b10001b71f5d1e73c395f7b5354b61ba07284ae",
+      "scenarioSources": {
+        "e2e-android.py": "db7bf713641dd736dd93774067af82fc08390702e236a82d292b2f07e480654c",
+        "android_ui.py": "d3434bd390932f73a87fd6ab13fba3a74bb919406db5691edbcc621d0591f817",
+        "android_editing_scenarios.py": "2a6e91143da79df1bc35b009189384d635da520904a3e0615e581c9c655c8871",
+        "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+      },
+      "results": [
+        {
+          "scenario": "editing-create-properties",
+          "status": "failed",
+          "error": "No fresh Android UI hierarchy within 7.999996583996108s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5556', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-7f5b86331bcd41f19187de7cb33c263f-28.xml']' timed out after 2.807359625992831 seconds"
+        }
+      ],
+      "files": {
+        "manifest.json": {
+          "sha256": "0e93abf89887929ef0b871c4f269d44a05ad946b3da513a5aa3cff87b1805061",
+          "bytes": 2690
+        },
+        "results.json": {
+          "sha256": "a0b4f9908b5d18a3193083462603005368504afdd77fe00711d37dfe8d126baa",
+          "bytes": 396
+        },
+        "failure-error.txt": {
+          "sha256": "b3f93a050004529a9f7e42eb8a811ce59eaba99c505472b8f23c0f37bba98f14",
+          "bytes": 1725
+        }
+      }
+    },
+    {
+      "artifacts": "outputs/android-e2e/04a0b34-all-pt-temporary-r2",
+      "producerHead": "d6b5dd8ccd9cc51adbda20ea7aab277c608207e0",
+      "appSha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+      "testSha256": "140a7579526bde3f6b37231e5b10001b71f5d1e73c395f7b5354b61ba07284ae",
+      "scenarioSources": {
+        "e2e-android.py": "db7bf713641dd736dd93774067af82fc08390702e236a82d292b2f07e480654c",
+        "android_ui.py": "d3434bd390932f73a87fd6ab13fba3a74bb919406db5691edbcc621d0591f817",
+        "android_editing_scenarios.py": "3193a39075d73ec737a1bc9012e4e323333e3ed986bbfbc6a4130304dbb08070",
+        "user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+      },
+      "results": [
+        {
+          "scenario": "sequential-simulation-and-recovery",
+          "status": "failed",
+          "error": "No fresh Android UI hierarchy within 6.07256079200306s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-7e1a052038ef479e9a0104e5e09e8b49-99.xml']' timed out after 6.072542667010566 seconds"
+        }
+      ],
+      "files": {
+        "manifest.json": {
+          "sha256": "8a6b3504916036fa28a233fba5dda4a55c5dc0c071ecf85b7099d3d5edfdbe82",
+          "bytes": 2690
+        },
+        "results.json": {
+          "sha256": "c073e38a0fb3d1b8968da59e90945a123ae4f2b78be449790b6773d9c3bfad25",
+          "bytes": 404
+        },
+        "failure-error.txt": {
+          "sha256": "78540837e9b800142dd22d6a11d38a1f8186a975aff82ac54eadd226b3d673bd",
+          "bytes": 1493
+        }
+      }
+    }
+  ],
+  "interpretation": {
+    "sequential": "English run passed 56 manual half-cycles, pixel08, Run/Pause and exact-XML process restart. Portuguese run reached56/08 but failed cold restore deadline.",
+    "files": "Six successful English file scenarios precede a failed rejected-input group. The missing-library error was visible in screenshot7; the harness dismissed it using stale report coordinates. The isolated rejected-input rerun passed all3payloads after fixing the harness.",
+    "layout": "English landscape/font1.6 scenario passed with identical installed APK hashes before and after; completed21:27:50Z, before diagnostic overlay install at21:40Z.",
+    "editing": "No complete editing group passed. First attempt failed semantic-child selection; second failed CLI hierarchy retrieval on a focused field. They remain failed, with corrections and snapshot helper qualification pending.",
+    "notCovered": [
+      "TalkBack physical usability",
+      "mixed input runtime",
+      "mounted visual export tool",
+      "portable library graphs",
+      "showcase I/O runtime",
+      "all scenarios on final consolidated APK"
+    ]
+  },
+  "subsequentHarnessReview": {
+    "positiveImports": "Initial VIEW, SEND and SAF local results remain unqualified: identical SAP-1 contents could satisfy the old oracle. A new unique document name and matching native callback are required before requalification.",
+    "historicalResultsPreserved": true,
+    "otherResults": "Layout, simulation, explicit errors, cancellation and external share byte checks retain their recorded scope."
+  }
+}

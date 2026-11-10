@@ -1,0 +1,32 @@
+SAME gate-undefined-default
+SAME gate-undefined-error
+SAME gate-undefined-ignore
+SAME pulse-latch-halt-0
+SAME simlimit-chain12-1000
+SAME simlimit-chain12-11
+SAME simlimit-chain12-12
+SAME simlimit-chain12-13
+SAME simlimit-chain12-14
+SAME simlimit-chain12-15
+SAME simlimit-chain12-2
+SAME simlimit-chain12-default
+SAME simlimit-ring-halt-1000
+SAME simlimit-ring-halt-3
+SAME simlimit-ring-halt-4
+SAME simlimit-ring-halt-5
+SAME simlimit-ring-halt-6
+SAME simrand-chain12-0
+SAME simrand-chain12-32
+SAME simrand-network-0
+SAME simrand-network-32
+RACE simrand=0 run=1 desktop=[no halt within 10s] mobile=[halted due to tick limit (5000 ticks ]
+RACE simrand=0 run=2 desktop=[no halt within 10s] mobile=[halted due to tick limit (5000 ticks ]
+RACE simrand=0 run=3 desktop=[no halt within 10s] mobile=[halted due to tick limit (5000 ticks ]
+RACE simrand=0 run=4 desktop=[no halt within 10s] mobile=[halted due to tick limit (5000 ticks ]
+RACE simrand=0 run=5 desktop=[no halt within 10s] mobile=[halted due to tick limit (5000 ticks ]
+RACE simrand=32 run=1 desktop=[halted due to detected oscillation (173 ticks ] mobile=[halted due to detected oscillation (157 ticks ]
+RACE simrand=32 run=2 desktop=[halted due to detected oscillation (190 ticks ] mobile=[halted due to detected oscillation (57 ticks ]
+RACE simrand=32 run=3 desktop=[halted due to detected oscillation (266 ticks ] mobile=[halted due to detected oscillation (128 ticks ]
+RACE simrand=32 run=4 desktop=[halted due to detected oscillation (75 ticks ] mobile=[halted due to detected oscillation (5 ticks ]
+RACE simrand=32 run=5 desktop=[halted due to detected oscillation (215 ticks ] mobile=[halted due to detected oscillation (4 ticks ]
+PASS: 21 project-option fixtures match Evolution

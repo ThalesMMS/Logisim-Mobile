@@ -1,0 +1,295 @@
+{
+  "status": "BUILD_AND_ADHOC_SIGN_PASS",
+  "started": "2026-11-05T08:16:39.472610+00:00",
+  "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+  "sourceRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing",
+  "buildDriverSHA256": "00b2630cf48108729e90ebecdfd2251b7842ea502b351b8b0381e6b9835bea8d",
+  "nativeExecution": "NOT_RUN",
+  "domainRegistration": "NOT_RUN",
+  "physicalDevice": false,
+  "signing": "Xcode ad-hoc Simulator signing, fixture source group only",
+  "simulatorEntitlementReviewRequired": true,
+  "commands": [
+    {
+      "arguments": [
+        "python3",
+        "verify-fixture.py"
+      ],
+      "started": "2026-11-05T08:16:39.764835+00:00",
+      "log": "configuration.log",
+      "finished": "2026-11-05T08:16:39.793669+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "xcodegen",
+        "generate",
+        "--spec",
+        "project.yml"
+      ],
+      "started": "2026-11-05T08:16:39.793884+00:00",
+      "log": "xcodegen.log",
+      "finished": "2026-11-05T08:16:39.822089+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "xcodebuild",
+        "-project",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/Fixture/LogisimRevocationFixture.xcodeproj",
+        "-scheme",
+        "RevocationFixture",
+        "-configuration",
+        "Debug",
+        "-sdk",
+        "iphonesimulator",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData",
+        "ARCHS=arm64",
+        "ONLY_ACTIVE_ARCH=YES",
+        "CODE_SIGNING_ALLOWED=YES",
+        "CODE_SIGNING_REQUIRED=YES",
+        "CODE_SIGN_STYLE=Manual",
+        "DEVELOPMENT_TEAM=",
+        "CODE_SIGN_IDENTITY=-",
+        "build"
+      ],
+      "started": "2026-11-05T08:16:39.822484+00:00",
+      "log": "build.log",
+      "finished": "2026-11-05T08:16:47.292039+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T08:16:47.325073+00:00",
+      "log": "verify-Provider.log",
+      "finished": "2026-11-05T08:16:47.333785+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--display",
+        "--verbose=4",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+      ],
+      "started": "2026-11-05T08:16:47.334123+00:00",
+      "log": "signature-Provider.log",
+      "finished": "2026-11-05T08:16:47.341577+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "--verbose=2",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T08:16:47.373544+00:00",
+      "log": "verify-App.log",
+      "finished": "2026-11-05T08:16:47.383370+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--display",
+        "--verbose=4",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app"
+      ],
+      "started": "2026-11-05T08:16:47.383726+00:00",
+      "log": "signature-App.log",
+      "finished": "2026-11-05T08:16:47.391471+00:00",
+      "exitCode": 0
+    }
+  ],
+  "sourceFiles": {
+    ".gitignore": "160eb7b4e81b209809ccd9429b5a642a221048962e45137f3598ef647aea851a",
+    "Config/App-Info.plist": "a20392ef271a21a2d9d94abb8ee780c2cc8c6fa3f424e1cab8adcadff1c3ab4c",
+    "Config/App.entitlements": "58006ed768bb0e33b699b5dedbc6db4924e24cfd3684a0eb298ac78954dfd637",
+    "Config/Provider-Info.plist": "a7d0e11d1ccddfe1546982d707c01e9bd3db7bdc05de03d548dcb858afe4bb38",
+    "Config/Provider.entitlements": "58006ed768bb0e33b699b5dedbc6db4924e24cfd3684a0eb298ac78954dfd637",
+    "ControlApp/RevocationFixtureApp.swift": "efc145d0ce3a622afdd4e62998a28decad3fecf96b255d6aaeb8a112a25a854f",
+    "FixtureErrorDiagnosticChecks.swift": "56d4135a80cca218ca6a4eb9ce3bea4b4449d22c191160337552f77a0bad9cb5",
+    "HostChecks.swift": "e2205c3a2c7df9b4aefc4543aec5aeae00be5ae80f60982d6850e51cc1bf466a",
+    "Provider/RevocationFileProvider.swift": "1db4774dd8b92b71b7e4242e763b6d6b5145417745eb8e68dbab725e0bee5479",
+    "Provider/RevocationProviderEnumerator.swift": "2febd2e330fe52d64c0c9d35620797ef20b7ea3d1030a4dc7e0df80ed03bab63",
+    "Provider/RevocationProviderItem.swift": "9090827e2c9115c2ec789e5a6aebf69258423c1b3b5f4b9ac089747cedc85a67",
+    "QUALIFY.md": "169bb4ac001a85ad13434238366356a4ca40f6f33aae3825b6914ab745111127",
+    "README.md": "a8c5c374bcdb236ff559117ace1ae6935d68347090f8cd06ac247dada28a9412",
+    "Shared/FixtureErrorDiagnostic.swift": "4260933a1c29a227132e15252f76f64a29446cebfa3e94203d4a8b9503dcb3e4",
+    "Shared/FixtureStore.swift": "71053b0a6849e9acdbf06fd29881141a6707102b8c22f47ec0ad2e8fc0f6385b",
+    "build-simulator-fixture.py": "00b2630cf48108729e90ebecdfd2251b7842ea502b351b8b0381e6b9835bea8d",
+    "project.yml": "d639c03361e5ae2d54869be44d208835a0276111a605e436b340390cb8bd4839",
+    "run-host-checks.py": "6206baebf4a552356e7e159e865ab0ed9e2429231d444c0068ea5328223e4b56",
+    "simulator_entitlements.py": "123bae1c9879682785bcf77d4f817bdae5c5c80ac6970bb5231a285c2766ec89",
+    "test_build_simulator_fixture.py": "dc860be8b67334dca369ad626334bdd72508083c0adf369fb858660bb78c4324",
+    "test_simulator_entitlements.py": "f9fec29b25226642f8e7a845d233c872efb5080ce45c5db89b06b788e93ed793",
+    "test_xcode_simulator_build.py": "5f8491055277a8b2776d6840f845a61275a1fddf1cb86667dd0bfdd7499fbc25",
+    "verify-fixture.py": "f9046bdb4da1c5c546c250a0d7efbcacedaa2be81d620d14fd3c22c1424012ed"
+  },
+  "simulatorEntitlementVerifierSHA256": "123bae1c9879682785bcf77d4f817bdae5c5c80ac6970bb5231a285c2766ec89",
+  "driverSourceMatchesExportedPin": true,
+  "artifactReaderSHA256": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+  "artifactReaderSourcePath": "scripts/run-ios-accessibility.py",
+  "lockRequested": "2026-11-05T08:16:39.764626+00:00",
+  "lockAcquired": "2026-11-05T08:16:39.764764+00:00",
+  "simulatorEntitlements": {
+    "Provider": {
+      "bundleIdentifier": "thalesmms.logisim.validation.revocationfixture.provider",
+      "images": [
+        {
+          "image": "main",
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider",
+          "bytes": 37840,
+          "sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+          "sections": {
+            "__entitlements": {
+              "fileOffset": 10018,
+              "bytes": 449,
+              "sha256": "db38978790025ed2c514445b0dcb62286331f01cb5a580982c12def85896118a",
+              "path": "Provider-main-__entitlements.bin"
+            },
+            "__ents_der": {
+              "fileOffset": 10467,
+              "bytes": 200,
+              "sha256": "6dd8ac249508fe2e9e1aef11c16b43774d0bf00cfca0a04080a1fb74415226a3",
+              "path": "Provider-main-__ents_der.bin"
+            }
+          }
+        },
+        {
+          "image": "debug-dylib",
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider.debug.dylib",
+          "bytes": 529840,
+          "sha256": "d1451a1b5b2926e9fc105a06cc90ba4cd86450792053032fa73e37489c96df7b",
+          "sections": {}
+        }
+      ],
+      "sectionOwners": [
+        "main"
+      ],
+      "nativeExecution": "NOT_RUN",
+      "generatedEntitlementsReview": "REQUIRED_BEFORE_NATIVE",
+      "simulatedEntitlements": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture.provider",
+        "com.apple.security.application-groups": [
+          "group.thalesmms.logisim.validation.revocationfixture"
+        ]
+      },
+      "generatedAdditionalKeys": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture.provider"
+      },
+      "mainHasSectionPair": true,
+      "packagingInputs": {
+        "__entitlements": {
+          "sourcePath": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/RevocationProvider.appex-Simulated.xcent",
+          "path": "Provider-generated-RevocationProvider.appex-Simulated.xcent",
+          "bytes": 449,
+          "sha256": "db38978790025ed2c514445b0dcb62286331f01cb5a580982c12def85896118a"
+        },
+        "__ents_der": {
+          "sourcePath": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationProvider.build/RevocationProvider.appex-Simulated.xcent.der",
+          "path": "Provider-generated-RevocationProvider.appex-Simulated.xcent.der",
+          "bytes": 200,
+          "sha256": "6dd8ac249508fe2e9e1aef11c16b43774d0bf00cfca0a04080a1fb74415226a3"
+        }
+      },
+      "codeSignatureEntitlements": {}
+    },
+    "App": {
+      "bundleIdentifier": "thalesmms.logisim.validation.revocationfixture",
+      "images": [
+        {
+          "image": "main",
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture",
+          "bytes": 40448,
+          "sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+          "sections": {
+            "__entitlements": {
+              "fileOffset": 13124,
+              "bytes": 440,
+              "sha256": "279c91edc22ba362aeb82088100a50ce07e0b8710de79a13eea38a1737898d10",
+              "path": "App-main-__entitlements.bin"
+            },
+            "__ents_der": {
+              "fileOffset": 13564,
+              "bytes": 191,
+              "sha256": "65b1e6a3efe8427d4fa9c133701e5c0bc6294b51e57d1981a706ebf1c696cc96",
+              "path": "App-main-__ents_der.bin"
+            }
+          }
+        },
+        {
+          "image": "debug-dylib",
+          "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib",
+          "bytes": 424848,
+          "sha256": "e153a3ba8e4436df331bf4103cc8fccb94d00a868147baa897114a75c634f66c",
+          "sections": {}
+        }
+      ],
+      "sectionOwners": [
+        "main"
+      ],
+      "nativeExecution": "NOT_RUN",
+      "generatedEntitlementsReview": "REQUIRED_BEFORE_NATIVE",
+      "simulatedEntitlements": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture",
+        "com.apple.security.application-groups": [
+          "group.thalesmms.logisim.validation.revocationfixture"
+        ]
+      },
+      "generatedAdditionalKeys": {
+        "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture"
+      },
+      "mainHasSectionPair": true,
+      "packagingInputs": {
+        "__entitlements": {
+          "sourcePath": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/RevocationFixture.app-Simulated.xcent",
+          "path": "App-generated-RevocationFixture.app-Simulated.xcent",
+          "bytes": 440,
+          "sha256": "279c91edc22ba362aeb82088100a50ce07e0b8710de79a13eea38a1737898d10"
+        },
+        "__ents_der": {
+          "sourcePath": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Intermediates.noindex/LogisimRevocationFixture.build/Debug-iphonesimulator/RevocationFixture.build/RevocationFixture.app-Simulated.xcent.der",
+          "path": "App-generated-RevocationFixture.app-Simulated.xcent.der",
+          "bytes": 191,
+          "sha256": "65b1e6a3efe8427d4fa9c133701e5c0bc6294b51e57d1981a706ebf1c696cc96"
+        }
+      },
+      "codeSignatureEntitlements": {}
+    }
+  },
+  "app": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+    "executable_sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+    "bundle_tree_sha256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+    "version": "1.0",
+    "build": "1"
+  },
+  "provider": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+    "executable_sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+    "bundle_tree_sha256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+    "version": "1.0",
+    "build": "1"
+  },
+  "appGroup": "group.thalesmms.logisim.validation.revocationfixture",
+  "sdk": "27.2",
+  "architecture": "arm64",
+  "lockWorkFinished": "2026-11-05T08:16:47.411493+00:00",
+  "finished": "2026-11-05T08:16:47.411520+00:00"
+}

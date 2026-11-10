@@ -1,0 +1,22 @@
+row: cli/clear-prefs
+case: profile-persisted-after-tty-clear
+result: DIFF
+detail: evolution={'gates': 'iec', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}
+
+=== evolution: java EvolutionStartupOracle
+exit: 0
+--- stdout (5 lines, sha256 0eb61561fc5653c9eaefb924d9d9acb7632babd5c2dccd13f16bd18cec06801b)
+parse=ok
+splash=true
+gates=iec
+locale= session=en
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 ec4517c74767d30183159c030b4fe2977eac90a3c9012bc4b9fb6382781aaa1a)
+gates=ansi
+locale=en
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

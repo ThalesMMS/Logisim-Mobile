@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "scope": "case-scoped-document-postflight",
+  "nativeExecution": "not-inferred-by-the-document-oracle",
+  "issue44": "not-qualified",
+  "runStatus": "FAIL",
+  "finished": "2026-11-05T07:10:36.482626+00:00",
+  "sourceSha256": {
+    "runnerReport": "5d8c3e54e2c1708575e93bca5c695b57f501c03b5a1e10730cfc117220e0b9b3",
+    "attachmentManifest": "d097bea30afe87b9fdcaa1fae620e692e0b021e10a0e6c656bdd3d9466833cd9",
+    "testLog": "804b0b9a87bafc477c376d977ef1f26faf06e51e88540b843c26651a17735623",
+    "ioContract": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+    "documentOracle": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7"
+  },
+  "cases": [
+    {
+      "testCase": "IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing()",
+      "nativeMethodStatus": "failed",
+      "expectedCheckpointCount": 2,
+      "metadataAttachments": 0,
+      "pairedDocumentCount": 0,
+      "checkpointResults": [],
+      "missingCheckpoints": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "2-io-display-transitions.circ",
+          "status": "NOT_REACHED"
+        }
+      ],
+      "orphanDocumentAttachments": [],
+      "errors": [],
+      "postflightStatus": "NOT_RUN"
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoDimensionChangesRemainExportable()",
+      "nativeMethodStatus": "failed",
+      "expectedCheckpointCount": 12,
+      "metadataAttachments": 0,
+      "pairedDocumentCount": 0,
+      "checkpointResults": [],
+      "missingCheckpoints": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "INCOMPLETE_AFTER_XML_CAPTURE",
+          "reason": "METADATA_MISSING"
+        },
+        {
+          "document": "2-io-dimension-io_ledbar-height.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "3-io-restored-io_ledbar-height.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "4-io-dimension-io_tty-rows.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "5-io-restored-io_tty-rows.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "6-io-dimension-io_tty-cols.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "7-io-restored-io_tty-cols.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "8-io-dimension-io_dot_matrix-matrixrows.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "9-io-restored-io_dot_matrix-matrixrows.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "10-io-dimension-io_keypad-size.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "11-io-restored-io_keypad-size.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "12-io-dimensions-restored.circ",
+          "status": "NOT_REACHED"
+        }
+      ],
+      "orphanDocumentAttachments": [
+        {
+          "originalName": "1-io-fixture-opened.circ",
+          "exportedFileName": "EB379FD8-8FF7-4584-88DE-E1155FD198B8.xml",
+          "sha256": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+          "status": "unpaired-not-qualified",
+          "reason": "No successful metadata/XML pair from this testcase"
+        }
+      ],
+      "errors": [],
+      "postflightStatus": "INCOMPLETE_AFTER_XML_CAPTURE"
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoMomentaryControlsAndJoystick()",
+      "nativeMethodStatus": "failed",
+      "expectedCheckpointCount": 2,
+      "metadataAttachments": 0,
+      "pairedDocumentCount": 0,
+      "checkpointResults": [],
+      "missingCheckpoints": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "2-io-pointer-controls.circ",
+          "status": "NOT_REACHED"
+        }
+      ],
+      "orphanDocumentAttachments": [],
+      "errors": [],
+      "postflightStatus": "NOT_RUN"
+    },
+    {
+      "testCase": "IoEndToEndTests/testIoKeyboardTtyAndCapacity()",
+      "nativeMethodStatus": "failed",
+      "expectedCheckpointCount": 2,
+      "metadataAttachments": 0,
+      "pairedDocumentCount": 0,
+      "checkpointResults": [],
+      "missingCheckpoints": [
+        {
+          "document": "1-io-fixture-opened.circ",
+          "status": "NOT_REACHED"
+        },
+        {
+          "document": "2-io-keyboard-capacity.circ",
+          "status": "NOT_REACHED"
+        }
+      ],
+      "orphanDocumentAttachments": [],
+      "errors": [],
+      "postflightStatus": "NOT_RUN"
+    }
+  ],
+  "summary": {
+    "pairedDocumentsPassed": 0,
+    "metadataAttachments": 0,
+    "expectedDocumentsIfAllFourMethodsComplete": 18,
+    "orphanDocumentAttachments": 1,
+    "nativeMethodFailures": [
+      "IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing()",
+      "IoEndToEndTests/testIoDimensionChangesRemainExportable()",
+      "IoEndToEndTests/testIoMomentaryControlsAndJoystick()",
+      "IoEndToEndTests/testIoKeyboardTtyAndCapacity()"
+    ],
+    "unqualifiedDocumentStages": 18,
+    "incompleteAfterXmlCapture": 1,
+    "notReachedDocumentStages": 17,
+    "status": "document-checks-only-no-native-or-issue-qualification"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "issue": 34,
+  "platform": "Android",
+  "status": "FAIL",
+  "runtimeAttemptCount": 1,
+  "sourcePin": "85da031e4ed11474c2e763976392729810ef142d",
+  "productionEquivalentSource": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "harnessPin": "5cb2fead2743cbba84f0efbad51e8bca822c7f05",
+  "serial": "emulator-5558",
+  "physicalDevice": false,
+  "performanceQualification": false,
+  "artifactHashes": {
+    "appSha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+    "testSha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882",
+    "snapshotSha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+  },
+  "installedArtifactsBefore": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~XWm214e-GlhUhOyZwoD1AA==/thalesmms.logisim.mobile.e2e-z4GtBgb5RV9SbOqRJoi3Tw==/base.apk",
+      "sha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~Hkl5EwKsRH44xcZ7slcgvQ==/thalesmms.logisim.mobile.e2e.test-_UZ-mTtMwSW_MtLeEmVqMA==/base.apk",
+      "sha256": "c439cef16d4f9ccced20189d12b22b731449b17c5417dbe25d65167ad7e3d882"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~gT48Wjnxh8GQ2J23o-v8ag==/thalesmms.logisim.mobile.snapshot.e2e.test-465Irv4NtUJYmH2h-k8Ppw==/base.apk",
+      "sha256": "2f17d8af178460537e2e4106d8ea79063fa938b0fdebcae1710b9b0294fee387"
+    }
+  ],
+  "installedArtifactsAfter": "NOT_RUN after scenario failure",
+  "fixtureSHA256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "contractSHA256": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "moduleSHA256": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763",
+  "device": {
+    "deviceApi": "35",
+    "deviceFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+    "screenSize": "Physical size: 1080x2400",
+    "screenDensity": "Physical density: 420",
+    "systemLocales": "null",
+    "appLanguage": "en"
+  },
+  "resetTaskIdsBefore": [
+    "27"
+  ],
+  "resetTaskRemoval": [
+    {
+      "previousTaskIdsStillPresent": []
+    }
+  ],
+  "observed": {
+    "wholePNG": {
+      "status": "PASS",
+      "origin": "The mounted editor saved through DocumentsUI; decoder and all original pixel/ink oracles passed during the scenario and again offline from that actual saved file.",
+      "bytes": 5478460,
+      "sha256": "467feda7339d9a710cb5d70a1c7d6efe74dc8f52a5641f230e06baa118934a4d",
+      "width": 1508,
+      "height": 908,
+      "inkRegions": 78,
+      "minimumInkMarginAboveRequired": 64
+    },
+    "failureStage": "After selecting the image and reopening the PDF panel, filename and scale were configured. The initial screen() for Margin failed before the selection-only toggle and native PDF save.",
+    "documentThroughFailure": {
+      "after-last-document.circ": {
+        "beforeXmlSha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4",
+        "afterXmlSha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4",
+        "canonicalXmlSha256": "cfba8c0e89688a123f639f08d4b53e5613194a7069a75f7584be7d8a9b2f9d12"
+      },
+      "after-failure-checkpoint.circ": {
+        "beforeXmlSha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4",
+        "afterXmlSha256": "bd2fa2124e51857f52e40fc386282ade180edeb35565502590b1b52459e630ee",
+        "canonicalXmlSha256": "cfba8c0e89688a123f639f08d4b53e5613194a7069a75f7584be7d8a9b2f9d12"
+      }
+    },
+    "documentPreservationLimit": "These collected documents establish equality through the observed failure, not the unexecuted final share/print sequence."
+  },
+  "observerFailure": {
+    "message": "IncompleteTreeException: Accessibility child is unavailable at index 11 of 15 under 0/0/0/0/0/0/0/1/0/1, windowId=9484, nodeCount=42",
+    "state": "INCOMPLETE_TREE",
+    "appPidBefore": "3378",
+    "appPidAfter": "3378",
+    "captureAttempts": 1,
+    "captureElapsedMillis": 1796,
+    "captureOverrunMillis": 796,
+    "incompleteTreeAttempts": 1,
+    "rootAttempts": 3,
+    "rootWaitMillis": 96,
+    "rootSource": "active-window",
+    "attemptHistory": [
+      {
+        "attempt": 1,
+        "startedUptimeMillis": 29842455,
+        "elapsedMillis": 1796,
+        "state": "INCOMPLETE_TREE",
+        "error": "IncompleteTreeException: Accessibility child is unavailable at index 11 of 15 under 0/0/0/0/0/0/0/1/0/1, windowId=9484, nodeCount=42",
+        "parentPath": "0/0/0/0/0/0/0/1/0/1",
+        "childIndex": 11,
+        "parentChildCount": 15,
+        "windowId": 9484,
+        "nodeCount": 42
+      }
+    ],
+    "budget": "The same 1000 ms capture deadline was retained. The only traversal completed after that deadline, so no new retry began. This typed Bundle failure is distinct from an outer SDK/client timeout without metadata.",
+    "classificationLimit": "The exact reason the child was unavailable is not established by these artifacts."
+  },
+  "qualification": {
+    "wholePNGAndNativeSave": "PASS",
+    "selectedPDF": "NOT_RUN",
+    "share": "NOT_RUN",
+    "printPreview": "NOT_RUN",
+    "finalCompleteWorkflow": "FAIL"
+  },
+  "formatLimit": "SVG is unavailable for this complete fixture in the declared renderer profile; no runtime SVG pass is claimed.",
+  "lease": "5558 explicitly returned to android_files after terminal exit1; no later ADB/UI actions by this executor.5556 untouched.",
+  "files": {
+    "manifest.json": {
+      "bytes": 4317,
+      "sha256": "2b361ae48fe1c152b6e4fde216d220a5d3c398e41c2ef88e9557d9b9671441fb"
+    },
+    "results.json": {
+      "bytes": 242,
+      "sha256": "299c3c548a76b912044aea05ef49ebb16d362bbf632a905a54f5f26c1f5f8cf3"
+    },
+    "preflight.json": {
+      "bytes": 1421,
+      "sha256": "953220250cc0d23243b26fa7f9ff53e108456f8e216011b6803a76bded74f33b"
+    },
+    "app-build-receipt.json": {
+      "bytes": 476,
+      "sha256": "5448fbfd79cde4861de1f3d5cdb0bcbd21f1186582895aa56fcd707a2cab31d8"
+    },
+    "whole.png": {
+      "bytes": 5478460,
+      "sha256": "467feda7339d9a710cb5d70a1c7d6efe74dc8f52a5641f230e06baa118934a4d"
+    },
+    "whole-png-postflight.json": {
+      "bytes": 26137,
+      "sha256": "0359ac1f09221c748123bf70bf37a5c35dff041c455b1fe4a3169a68d9f84a63"
+    },
+    "before.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    },
+    "after-last-document.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    },
+    "after-failure-checkpoint.circ": {
+      "bytes": 15808,
+      "sha256": "bd2fa2124e51857f52e40fc386282ade180edeb35565502590b1b52459e630ee"
+    },
+    "failure-trace.txt": {
+      "bytes": 1928,
+      "sha256": "450c78b6383481667f448a201ee5d33d00ef3b3009d8b46bb7ddb85b3f06b7ce"
+    },
+    "failure-screen.png": {
+      "bytes": 207884,
+      "sha256": "1af67cecde30782bb0f296e689bbf1515b485fc2c0b8ef1fc3d9220fb45ebd30"
+    },
+    "failure-tree.xml": {
+      "bytes": 17835,
+      "sha256": "019edb2d464f1b39b353319c3e59bc0a2e867a8e84bcc28575378f36e5df6bb0"
+    },
+    "snapshot-failure.json": {
+      "bytes": 3697,
+      "sha256": "b41299969aef747e884783841c12a2669ce9f3988a5061700e41679aea5aa69d"
+    },
+    "snapshot-failure.stdout.txt": {
+      "bytes": 1810,
+      "sha256": "a78dc6d539240602da8085f93758efe8b9dd8ec5e2fae908197897e7a34b20d8"
+    },
+    "snapshot-failure.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "localEvidence": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-android-final-exec/outputs/android-export34-final-001"
+}

@@ -1,0 +1,47 @@
+     1	name: LogisimRevocationFixture
+     2	options:
+     3	  deploymentTarget:
+     4	    iOS: "17.0"
+     5	settings:
+     6	  base:
+     7	    SWIFT_VERSION: "5.0"
+     8	    TARGETED_DEVICE_FAMILY: "1,2"
+     9	    CODE_SIGN_STYLE: Automatic
+    10	    GENERATE_INFOPLIST_FILE: NO
+    11	    CURRENT_PROJECT_VERSION: "1"
+    12	    MARKETING_VERSION: "1.0"
+    13	targets:
+    14	  RevocationFixture:
+    15	    type: application
+    16	    platform: iOS
+    17	    sources:
+    18	      - ControlApp
+    19	      - Shared
+    20	    dependencies:
+    21	      - target: RevocationProvider
+    22	        embed: true
+    23	      - sdk: FileProvider.framework
+    24	    settings:
+    25	      base:
+    26	        PRODUCT_BUNDLE_IDENTIFIER: thalesmms.logisim.validation.revocationfixture
+    27	        INFOPLIST_FILE: Config/App-Info.plist
+    28	        CODE_SIGN_ENTITLEMENTS: Config/App.entitlements
+    29	  RevocationProvider:
+    30	    type: app-extension
+    31	    platform: iOS
+    32	    sources:
+    33	      - Provider
+    34	      - Shared
+    35	    dependencies:
+    36	      - sdk: FileProvider.framework
+    37	    settings:
+    38	      base:
+    39	        PRODUCT_BUNDLE_IDENTIFIER: thalesmms.logisim.validation.revocationfixture.provider
+    40	        INFOPLIST_FILE: Config/Provider-Info.plist
+    41	        CODE_SIGN_ENTITLEMENTS: Config/Provider.entitlements
+    42	        APPLICATION_EXTENSION_API_ONLY: YES
+    43	schemes:
+    44	  RevocationFixture:
+    45	    build:
+    46	      targets:
+    47	        RevocationFixture: all

@@ -1,0 +1,245 @@
+{
+ "evolution_jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+ "mobile_jar_sha256": "7569b0aac5e987454e139372ca009f14cecd7b072918e73f5418b04234deb67d",
+ "fixtures": {
+  "fixtures/visual-export/qualification.circ": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "fixtures/visual-export/contract.json": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "scripts/oracle/visual-export/svg-gates.circ": "8c4e36e80ec48233ef598594f6d861b84fcf2ebf84007d312446769a0fdd5d77",
+  "scripts/oracle/visual-export/svg-labels.circ": "abf4a6255de1f65715ec0d77a03aac8605ca41202006489199aab54e2d58df46"
+ },
+ "results": [
+  {
+   "row": "format/image-svg",
+   "case": "svg-labels-ansi",
+   "mobile": {
+    "file": "mobile/svg-labels.svg",
+    "sha256": "d21ca4f7ad3f33093f4eb708d85072c1acd4842f50cee64916733f29a221aceb"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-ansi/main.svg",
+    "sha256": "19c7f719bbc4699cd82d2b2184ef36f9a32cef6e24c7952f5c2987534b5c2933"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "DIFF",
+     "detail": "8 Evolution / 0 Mobile 10-unit edges; missing [((620, 500), (620, 510)), ((660, 500), (660, 510)), ((700, 260), (710, 260)), ((700, 300), (710, 300))] extra []; tracked in #358"
+    },
+    {
+     "check": "port-markers",
+     "result": "DIFF",
+     "detail": "88 Evolution / 88 Mobile terminal dots; tracked in #358"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "40 Evolution / 40 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "DIFF",
+     "detail": "largest base-west anchor offset 49.00 units (fonts differ; limit 12); canvas text placement differs from Evolution"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1225x552 from 100.0,58.375 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 89, 'stroke': 88} / Mobile {'fill': 141, 'stroke': 96} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": [
+    "wire-edges",
+    "port-markers",
+    "text-anchors"
+   ]
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "svg-labels-ansi",
+   "mobile": {
+    "file": "mobile/svg-labels.tex",
+    "sha256": "4d216ee67b85cfed3e4e905d088d3477957409a5dfe377d815509ac2ce7b6308"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-ansi/main.tex",
+    "sha256": "c181787d7a0857e1a02cbc0ec0c826dee1126c7643bf0831c31f3bccad74d587"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "DIFF",
+     "detail": "8 Evolution / 0 Mobile 10-unit edges; missing [((620, 500), (620, 510)), ((660, 500), (660, 510)), ((700, 260), (710, 260)), ((700, 300), (710, 300))] extra []; tracked in #358"
+    },
+    {
+     "check": "port-markers",
+     "result": "DIFF",
+     "detail": "88 Evolution / 88 Mobile terminal dots; tracked in #358"
+    },
+    {
+     "check": "texts",
+     "result": "PASS",
+     "detail": "40 Evolution / 40 Mobile strings; only Evolution [] only Mobile []"
+    },
+    {
+     "check": "text-anchors",
+     "result": "DIFF",
+     "detail": "largest base-west anchor offset 49.00 units (fonts differ; limit 12); canvas text placement differs from Evolution"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1225x552 from 100.0,58.375 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 89, 'stroke': 88} / Mobile {'fill': 141, 'stroke': 96} (canvas styles differ)"
+    },
+    {
+     "check": "tikz-svg",
+     "result": "PASS",
+     "detail": "SVG {'fill': 141, 'stroke': 96}, 40 texts / TikZ {'fill': 141, 'stroke': 96}, 40 texts"
+    }
+   ],
+   "failed": [],
+   "differences": [
+    "wire-edges",
+    "port-markers",
+    "text-anchors"
+   ]
+  },
+  {
+   "row": "format/image-svg",
+   "case": "svg-labels-iec",
+   "mobile": {
+    "file": "mobile/svg-labels-iec.svg",
+    "sha256": "9d01f40fa1eb0542d046db65eb9852bb050a4eacfc3308623be9f04fe0809146"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-iec/main.svg",
+    "sha256": "f3aa7304b0af370c4e4fdf2a0135a3ae91ff473e1c00a1f0231651d72d34a3dc"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "DIFF",
+     "detail": "4 Evolution / 0 Mobile 10-unit edges; missing [((950, 120), (950, 130)), ((960, 450), (970, 450)), ((1060, 580), (1070, 580)), ((1080, 280), (1080, 290))] extra []; tracked in #358"
+    },
+    {
+     "check": "port-markers",
+     "result": "DIFF",
+     "detail": "88 Evolution / 88 Mobile terminal dots; tracked in #358"
+    },
+    {
+     "check": "texts",
+     "result": "DIFF",
+     "detail": "64 Evolution / 72 Mobile strings; only Evolution [] only Mobile ['1', '1', '1', '1', '1']; tracked in #358"
+    },
+    {
+     "check": "text-anchors",
+     "result": "DIFF",
+     "detail": "largest base-west anchor offset 55.00 units (fonts differ; limit 12); canvas text placement differs from Evolution"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1225x552 from 100.0,58.375 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 89, 'stroke': 60} / Mobile {'fill': 141, 'stroke': 140} (canvas styles differ)"
+    }
+   ],
+   "failed": [],
+   "differences": [
+    "wire-edges",
+    "port-markers",
+    "texts",
+    "text-anchors"
+   ]
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "svg-labels-iec",
+   "mobile": {
+    "file": "mobile/svg-labels-iec.tex",
+    "sha256": "3bcc54e7029df8cda1ee20c3444d48d98393876bac9fdb27b3981404a3969fed"
+   },
+   "evolution": {
+    "file": "evolution/svg-labels-iec/main.tex",
+    "sha256": "91f7f02461109c86c3597916e32045558036644cb41bfb5359434fb2577e99a4"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "DIFF",
+     "detail": "4 Evolution / 0 Mobile 10-unit edges; missing [((950, 120), (950, 130)), ((960, 450), (970, 450)), ((1060, 580), (1070, 580)), ((1080, 280), (1080, 290))] extra []; tracked in #358"
+    },
+    {
+     "check": "port-markers",
+     "result": "DIFF",
+     "detail": "88 Evolution / 88 Mobile terminal dots; tracked in #358"
+    },
+    {
+     "check": "texts",
+     "result": "DIFF",
+     "detail": "64 Evolution / 72 Mobile strings; only Evolution [] only Mobile ['1', '1', '1', '1', '1']; tracked in #358"
+    },
+    {
+     "check": "text-anchors",
+     "result": "DIFF",
+     "detail": "largest base-west anchor offset 55.00 units (fonts differ; limit 12); canvas text placement differs from Evolution"
+    },
+    {
+     "check": "images",
+     "result": "PASS",
+     "detail": "Evolution [] / Mobile []"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution frame from bounds (105.0, 80.0) / Mobile 1225x552 from 100.0,58.375 (Mobile bounds include strokes and terminal dots)"
+    },
+    {
+     "check": "shape-counts",
+     "result": "PASS",
+     "detail": "Evolution {'fill': 89, 'stroke': 60} / Mobile {'fill': 141, 'stroke': 140} (canvas styles differ)"
+    },
+    {
+     "check": "tikz-svg",
+     "result": "PASS",
+     "detail": "SVG {'fill': 141, 'stroke': 140}, 72 texts / TikZ {'fill': 141, 'stroke': 140}, 72 texts"
+    }
+   ],
+   "failed": [],
+   "differences": [
+    "wire-edges",
+    "port-markers",
+    "texts",
+    "text-anchors"
+   ]
+  }
+ ],
+ "note": "Baseline: Mobile composeApp/src/commonMain at 28b99806 (before #356) with the 9715566a fixture, oracle and comparison script."
+}

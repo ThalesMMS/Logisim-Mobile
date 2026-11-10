@@ -1,0 +1,130 @@
+> Task :composeApp:androidPreBuild UP-TO-DATE
+> Task :core:androidPreBuild UP-TO-DATE
+> Task :composeApp:preAndroidMainBuild UP-TO-DATE
+> Task :core:preAndroidMainBuild UP-TO-DATE
+> Task :androidApp:preBuild UP-TO-DATE
+> Task :androidApp:preE2eBuild UP-TO-DATE
+> Task :composeApp:generateAndroidMainEmptyResourceFiles
+> Task :core:generateAndroidMainEmptyResourceFiles
+> Task :androidApp:generateE2eResValues
+> Task :androidApp:generateE2eResources
+> Task :core:kmpPartiallyResolvedDependenciesChecker
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :androidApp:packageE2eResources
+> Task :androidApp:processE2eNavigationResources
+> Task :androidApp:mapE2eSourceSetPaths
+> Task :androidApp:javaPreCompileE2e
+> Task :androidApp:compileE2eNavigationResources
+> Task :androidApp:parseE2eLocalResources
+> Task :core:writeAndroidMainAarMetadata
+> Task :core:mergeAndroidMainJniLibFolders
+> Task :core:mergeAndroidMainNativeLibs NO-SOURCE
+> Task :core:copyAndroidMainJniLibsProjectOnly
+> Task :core:processAndroidMainManifest
+> Task :composeApp:kmpPartiallyResolvedDependenciesChecker
+> Task :composeApp:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :composeApp:convertXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeApp:copyNonXmlValueResourcesForAndroidMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForAndroidMain NO-SOURCE
+> Task :composeApp:generateResourceAccessorsForAndroidMain NO-SOURCE
+> Task :composeApp:convertXmlValueResourcesForCommonMain
+> Task :composeApp:copyNonXmlValueResourcesForCommonMain NO-SOURCE
+> Task :composeApp:prepareComposeResourcesTaskForCommonMain
+> Task :androidApp:createE2eCompatibleScreenManifests
+> Task :androidApp:extractDeepLinksE2e
+> Task :androidApp:preE2eAndroidTestBuild SKIPPED
+> Task :androidApp:generateE2eAndroidTestResValues
+> Task :androidApp:generateE2eRFile
+> Task :androidApp:generateE2eAndroidTestResources
+> Task :androidApp:packageE2eAndroidTestResources
+> Task :androidApp:processE2eAndroidTestNavigationResources
+> Task :androidApp:generateE2eAndroidTestAssets UP-TO-DATE
+> Task :androidApp:javaPreCompileE2eAndroidTest
+> Task :androidApp:parseE2eAndroidTestLocalResources
+> Task :androidApp:mergeE2eAndroidTestAssets
+> Task :androidApp:compressE2eAndroidTestAssets
+> Task :androidApp:generateE2eAndroidTestRFile
+> Task :androidApp:mergeE2eResources
+> Task :composeApp:generateResourceAccessorsForCommonMain
+> Task :composeApp:generateActualResourceCollectorsForAndroidMain
+> Task :composeApp:generateComposeResClass
+> Task :composeApp:generateExpectResourceCollectorsForCommonMain
+> Task :composeApp:writeAndroidMainAarMetadata
+> Task :composeApp:mergeAndroidMainJniLibFolders
+> Task :composeApp:processAndroidMainManifest
+> Task :composeApp:mergeAndroidMainNativeLibs NO-SOURCE
+> Task :composeApp:copyAndroidMainJniLibsProjectOnly
+> Task :androidApp:generateE2eAndroidTestGlobalSynthetics
+> Task :androidApp:checkE2eAarMetadata
+> Task :androidApp:processE2eMainManifest
+> Task :androidApp:processE2eManifest
+> Task :androidApp:checkE2eAndroidTestDuplicateClasses
+> Task :androidApp:desugarE2eAndroidTestFileDependencies
+> Task :androidApp:checkE2eAndroidTestAarMetadata
+> Task :androidApp:mapE2eAndroidTestSourceSetPaths
+> Task :androidApp:mergeExtDexE2eAndroidTest
+> Task :androidApp:compileE2eAndroidTestNavigationResources
+> Task :androidApp:mergeE2eAndroidTestResources
+> Task :androidApp:mergeE2eAndroidTestManifest
+> Task :androidApp:processE2eAndroidTestManifest
+> Task :androidApp:mergeE2eAndroidTestJniLibFolders
+> Task :androidApp:mergeE2eJniLibFolders
+> Task :androidApp:mergeE2eNativeLibs
+> Task :androidApp:validateSigningE2eAndroidTest
+> Task :androidApp:mergeE2eAndroidTestNativeLibs NO-SOURCE
+> Task :androidApp:stripE2eAndroidTestDebugSymbols NO-SOURCE
+> Task :androidApp:writeE2eAndroidTestSigningConfigVersions
+> Task :androidApp:processE2eManifestForPackage
+> Task :androidApp:processE2eAndroidTestResources
+> Task :androidApp:processE2eResources
+> Task :core:compileAndroidMain
+> Task :core:processAndroidMainJavaRes
+> Task :core:bundleAndroidMainClassesToCompileJar
+> Task :core:bundleLibRuntimeToDirAndroidMain
+
+> Task :composeApp:compileAndroidMain
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/AdditionalEditorTools.kt:121:17 Expression is unused.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/AdditionalEditorTools.kt:136:17 Expression is unused.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CatalogWorkspaceRuntime.kt:380:103 Unnecessary safe call on a non-null receiver of type 'WorkspaceExternalDocument'.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt:339:53 Condition is always 'true'.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt:364:65 Condition is always 'true'.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt:399:60 Condition is always 'true'.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaPanel.kt:178:23 Condition is always 'false'.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaPanel.kt:178:50 Condition is always 'false'.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/FpgaPanel.kt:178:74 Condition is always 'false'.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/composeApp/src/commonMain/kotlin/dev/logisim/mobile/HdlExportPanel.kt:69:21 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+
+> Task :composeApp:processAndroidMainJavaRes
+> Task :composeApp:bundleAndroidMainClassesToCompileJar
+> Task :composeApp:bundleLibRuntimeToDirAndroidMain
+
+> Task :androidApp:compileE2eKotlin
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/e2e/kotlin/dev/logisim/mobile/NativeAssetFixtureActivity.kt:45:27 The corresponding parameter in the supertype 'ComponentActivity' is named 'savedInstanceState'. This may cause problems when calling this function with named arguments.
+
+> Task :androidApp:compileE2eJavaWithJavac NO-SOURCE
+> Task :androidApp:bundleE2eClassesToCompileJar
+
+> Task :androidApp:compileE2eAndroidTestKotlin
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:717:21 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:752:47 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:859:57 'var isChecked: Boolean' is deprecated. Deprecated in Java.
+w: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt:1057:67 'var isChecked: Boolean' is deprecated. Deprecated in Java.
+
+> Task :androidApp:compileE2eAndroidTestJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :androidApp:processE2eAndroidTestJavaRes
+> Task :androidApp:mergeE2eAndroidTestJavaResource
+> Task :androidApp:dexBuilderE2eAndroidTest
+> Task :androidApp:mergeProjectDexE2eAndroidTest
+> Task :androidApp:mergeLibDexE2eAndroidTest
+> Task :androidApp:packageE2eAndroidTest
+> Task :androidApp:createE2eAndroidTestApkListingFileRedirect
+> Task :androidApp:assembleE2eAndroidTest
+
+[Incubating] Problems report is available at: file:///Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 1m 10s
+79 actionable tasks: 79 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.6.1/userguide/configuration_cache_enabling.html

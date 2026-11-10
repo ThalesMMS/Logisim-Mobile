@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "status": "BUILD_ONLY_PASS",
+  "runtime_status": "NOT_RUN",
+  "xcode": {
+    "version": "27.2",
+    "build": "27B52"
+  },
+  "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+  "headers": [
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework/Headers/XCUIDevice.h",
+      "sha256": "2faa4a7b9b1e6ea98b3f15696983d93fa8de3b7afb93a4db9afea71bc2db08e0"
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework/Headers/XCUIVoiceOverService.h",
+      "sha256": "8b095cd7f1d986fbb83f5aab289f5a1369cce81b29f3f02d68f3790f735dace4"
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework/Headers/XCUIVoiceOverOutput.h",
+      "sha256": "a315b447f0bacf61b620ad3cc7191cdaef0d9ad3f0ba9a6bbeb1d15197f80f59"
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework/Headers/XCUIVoiceOverServiceError.h",
+      "sha256": "fd0242c19ab75b8e86fdd4120c49dd5c13e521c2bda68592ae4f98524f149706"
+    }
+  ],
+  "declared_availability": "iOS27.0 and corresponding27platforms",
+  "public_entry": "XCUIDevice.shared.voiceOverService",
+  "declared_operations": [
+    "enable",
+    "disable",
+    "isEnabled",
+    "moveForward",
+    "moveBackward",
+    "currentSpeech",
+    "moveIn",
+    "moveOut"
+  ],
+  "output": "XCUIVoiceOverService.Output.utterance",
+  "no_activation_or_rotor_operation_in_service_header": true,
+  "declared_errors": [
+    "FailedToStart",
+    "NotRunning",
+    "NoSpeech",
+    "FailedToStop"
+  ],
+  "probe_source_sha256": "b24e559bc17a16b47a9bd73c64c39ceec175191635471e010f8296b44d05fd12",
+  "target_build": {
+    "scope": "Build only standalone XCTest target; no product app/Kotlin build or device control",
+    "command": [
+      "xcodebuild",
+      "-project",
+      "outputs/voiceover-service-prepared-003/LogisimVoiceOverProbe.xcodeproj",
+      "-scheme",
+      "VoiceOverProbe",
+      "-configuration",
+      "Debug",
+      "-destination",
+      "generic/platform=iOS Simulator",
+      "-derivedDataPath",
+      "outputs/voiceover-service-prepared-003/DerivedData",
+      "-resultBundlePath",
+      "outputs/voiceover-service-prepared-003/build.xcresult",
+      "CODE_SIGNING_ALLOWED=NO",
+      "ARCHS=arm64",
+      "ONLY_ACTIVE_ARCH=YES",
+      "build-for-testing"
+    ],
+    "serialized_by": "/tmp/logisim-gradle-serial.py",
+    "exit_code": 0,
+    "duration_seconds": 5.316,
+    "runtime_status": "NOT_RUN",
+    "probe_source_sha256": "b24e559bc17a16b47a9bd73c64c39ceec175191635471e010f8296b44d05fd12",
+    "created_utc": "2026-11-05T07:35:04.997525+00:00"
+  },
+  "xctestrun": "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/outputs/voiceover-service-prepared-003/DerivedData/Build/Products/VoiceOverProbe_iphonesimulator27.2-arm64.xctestrun",
+  "xctestrun_sha256": "94242aad6eaf0673f9fb137f7fa6903fdce13d716f7fa8b8671f1a8902a29e27",
+  "target_runtime_proposed": "20A4D87D-A2A6-46BD-A889-C4888CE1E152",
+  "preparation_failures": [
+    "Missing output parent on initial xcodegen attempt; no build/runtime started.",
+    "First build-for-testing referenced an uncopied Swift source in generated project directory; failed65, retained at outputs/voiceover-service-prepared/build.log and build.xcresult.",
+    "Build-only candidate002 passed but source review found two separate app.state reads could allow a premature unfailed return. Candidate003 captures one initialAppState for assertion and guard. Both runtime statuses remainNOT_RUN;003 supersedes002."
+  ],
+  "runtime_claim_limits": [
+    "Header presence and target build do not demonstrate a functioning VoiceOver daemon or speech.",
+    "No activation/rotor/workflow/physical-device qualification.",
+    "A future PASS means nonempty current/forward/backward responses, not identity/order of focus targets, spoken audio quality or an app workflow."
+  ],
+  "runtime_authorized_at_preparation": false
+}

@@ -1,0 +1,41 @@
+case: falling-edge telnetMode=false buflen=1024 trigger=falling
+
+=== evolution
+  clk=0 after bytes: out=0000000? av=0
+  rd=1: out=01111000 av=1
+  read 0 clk=1: out=01111000 av=1
+  read 0 clk=0: out=01111001 av=1
+  read 1 clk=1: out=01111001 av=1
+  read 1 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=81: out=0000000? av=0
+  write 81 clk=1: out=0000000? av=0
+  write 81 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [81]
+
+=== mobile-companion
+! clk=0 after bytes: out=0000000? av=1
+  rd=1: out=01111000 av=1
+  read 0 clk=1: out=01111000 av=1
+  read 0 clk=0: out=01111001 av=1
+  read 1 clk=1: out=01111001 av=1
+  read 1 clk=0: out=11111111 av=0
+  rd=0: out=0000000? av=0
+  wr=1: out=0000000? av=0
+  in=81: out=0000000? av=0
+  write 81 clk=1: out=0000000? av=0
+  write 81 clk=0: out=0000000? av=0
+  wr=0: out=0000000? av=0
+  client receives: [81]
+--- sampled at rising edges and socket bytes: SAME
+  read 0 sampled out=01111000 av=1
+  read 1 sampled out=01111001 av=1
+  write 81 sampled out=0000000? av=0
+  client receives: [81]
+
+=== mobile-jvm
+! FAILURE java.net.ConnectException: Connection refused
+--- sampled at rising edges and socket bytes: DIFF
+! FAILURE java.net.ConnectException: Connection refused

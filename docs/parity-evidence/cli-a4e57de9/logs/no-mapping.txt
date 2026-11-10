@@ -1,0 +1,18 @@
+row: cli/substitute
+case: no-mapping
+result: DIFF
+detail: stdout differs (evolution 3 lines, mobile 0 lines)
+
+=== evolution: logisim-evolution -t table scripts/oracle/cli/fixtures/sub/main.circ
+exit: 0
+--- stdout (3 lines, sha256 0ee7ccccf019738f9c79ed2b671f1b857ad8c739b43f07e9e9907dde465f0e28)
+A Y
+0 1
+1 0
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table scripts/oracle/cli/fixtures/sub/main.circ
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 f239296c15e28b118233ae364916672188d7a5cc3bd69c34115d9e80998acae2)
+error=Componente não suportado: cell (biblioteca file#lib-not.circ).

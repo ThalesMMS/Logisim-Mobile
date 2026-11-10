@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "scope": "One synthetic JVM/JFR circuits workload. No Native, energy, historical corpus replay or SAP-1 claim.",
+  "authorization": "Explicit root second quiet-window handoff; all children on HOLD, first run potential javac overlap preserved separately",
+  "replication_reason": "First run had possible overlap from eight javac tests in another child; quiet qualification pending exact timestamps. This is a distinct preserved run.",
+  "identity_before": {
+    "revision": "bb63d681afac30197e1db0e3869672b94662acc9",
+    "worktree_dirty": false,
+    "stamp_sha256": "07e84832b6f8d2bf6f0e67f46c208cf98f9dc8e3f4cd170f0b54b55a001b87a8",
+    "runner_sha256": "bb580bc114325e0a8051c614dc9580a1c6a54e911c14cb38562d632ee15df37d",
+    "sources": 302,
+    "classes": 1255,
+    "classpath_files": 1257
+  },
+  "environment_before": {
+    "utc": "2026-11-05T06:50:33.498888+00:00",
+    "monotonic_ns": 207311724416541,
+    "load_average": [
+      5.52294921875,
+      6.95361328125,
+      12.37744140625
+    ],
+    "records": [
+      {
+        "argv": [
+          "uptime"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207311666979083,
+        "ended_monotonic_ns": 207311670772750,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-before-uptime.txt",
+        "sha256": "fb075a3df48630b8ea58e39e3e4c518e9284c1daac1901f85428d4b8d093b753"
+      },
+      {
+        "argv": [
+          "vm_stat"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207311670806583,
+        "ended_monotonic_ns": 207311673054583,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-before-vm-stat.txt",
+        "sha256": "a582f470b9ee6288d4178c5de201da3288efb7f7ab2daf5de66b0186b8cb1d78"
+      },
+      {
+        "argv": [
+          "sysctl",
+          "hw.memsize",
+          "hw.logicalcpu"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207311673086500,
+        "ended_monotonic_ns": 207311675267583,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-before-hardware.txt",
+        "sha256": "a968e3ff7fc559421bb3fcf506dec0df4af2c30544d3ed7f4e3df650719572f6"
+      },
+      {
+        "argv": [
+          "pmset",
+          "-g",
+          "therm"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207311675293750,
+        "ended_monotonic_ns": 207311681783708,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-before-thermal.txt",
+        "sha256": "96de6076213225f787270bff80efd2011e0ad142953c37697dc547f77d302892"
+      },
+      {
+        "argv": [
+          "ps",
+          "-ww",
+          "-axo",
+          "pid=,comm=,pcpu=,rss="
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207311681819625,
+        "ended_monotonic_ns": 207311724049833,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-before-process-census.txt",
+        "sha256": "cefed8e2c31516b8e4a76def8a30add9b0b77740d28da436c56589b2ec92608a"
+      }
+    ]
+  },
+  "compiler_preflight": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-compiler-preflight-1.txt",
+      "sha256": "ba3a87aec6c7e2f4baa6b2a6d593c6e249bb3b770bd3d55a80613cc3af0dd2b3"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-compiler-preflight-2.txt",
+      "sha256": "57ef5ea32539c995a63099f08e7307d164f21f80b7a3fd212974003a09df59da"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-compiler-preflight-wide-1.txt",
+      "sha256": "b5b1a752bbc238fa51eb12108785fff56dd0d142d9c2b336f04f97ae21e5f02e"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-compiler-preflight-wide-2.txt",
+      "sha256": "1d65573814553c627b2dee4378e0c6515d184ecaccc591f969420ccbdb5dbc5d"
+    }
+  ],
+  "started_utc": "2026-11-05T06:50:33.500989+00:00",
+  "argv": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "python3",
+    "scripts/benchmark-circuits.py",
+    "--workload",
+    "circuits",
+    "--sizes",
+    "16,64,256,384",
+    "--iterations",
+    "7",
+    "--warmups",
+    "2",
+    "--skip-build",
+    "--output",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02.json",
+    "--jfr",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02.jfr"
+  ],
+  "started_monotonic_ns": 207311726501916,
+  "returncode": 0,
+  "finished_utc": "2026-11-05T06:50:42.890910+00:00",
+  "ended_monotonic_ns": 207321116257375,
+  "environment_after": {
+    "utc": "2026-11-05T06:50:42.949260+00:00",
+    "monotonic_ns": 207321174599291,
+    "load_average": [
+      5.68896484375,
+      6.93896484375,
+      12.30859375
+    ],
+    "records": [
+      {
+        "argv": [
+          "uptime"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207321116268916,
+        "ended_monotonic_ns": 207321120695291,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-after-uptime.txt",
+        "sha256": "d5aaf0b9510c6205563028e5b1d297b9ad39a1d8b9d17721100fb09184f925be"
+      },
+      {
+        "argv": [
+          "vm_stat"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207321120731208,
+        "ended_monotonic_ns": 207321123280000,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-after-vm-stat.txt",
+        "sha256": "d9247c5313a31b02b2df63bf90de265cab31dee6beb023d313df6388f4f3d823"
+      },
+      {
+        "argv": [
+          "sysctl",
+          "hw.memsize",
+          "hw.logicalcpu"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207321123311750,
+        "ended_monotonic_ns": 207321125737541,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-after-hardware.txt",
+        "sha256": "a968e3ff7fc559421bb3fcf506dec0df4af2c30544d3ed7f4e3df650719572f6"
+      },
+      {
+        "argv": [
+          "pmset",
+          "-g",
+          "therm"
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207321125768416,
+        "ended_monotonic_ns": 207321132633291,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-after-thermal.txt",
+        "sha256": "96de6076213225f787270bff80efd2011e0ad142953c37697dc547f77d302892"
+      },
+      {
+        "argv": [
+          "ps",
+          "-ww",
+          "-axo",
+          "pid=,comm=,pcpu=,rss="
+        ],
+        "returncode": 0,
+        "started_monotonic_ns": 207321132665500,
+        "ended_monotonic_ns": 207321174521583,
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02-after-process-census.txt",
+        "sha256": "5cda96110c1aeab4f223113948598c1cb352da9572603652fdbf7a5989fc0763"
+      }
+    ]
+  },
+  "identity_after": {
+    "revision": "bb63d681afac30197e1db0e3869672b94662acc9",
+    "worktree_dirty": false,
+    "stamp_sha256": "07e84832b6f8d2bf6f0e67f46c208cf98f9dc8e3f4cd170f0b54b55a001b87a8",
+    "runner_sha256": "bb580bc114325e0a8051c614dc9580a1c6a54e911c14cb38562d632ee15df37d",
+    "sources": 302,
+    "classes": 1255,
+    "classpath_files": 1257
+  },
+  "files": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02.json",
+      "bytes": 445605,
+      "sha256": "32ddb592c9787dd375bee3055bd032429e1903ce918c34b5c7b8e4a493b384c7"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02.jfr",
+      "bytes": 1991712,
+      "sha256": "1eaa2e033daa4c0ef69cc4c11b23edcb604ae502a5c59b1bcb484778ba114307"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02.csv",
+      "bytes": 20195,
+      "sha256": "8e6f3aaa34bd31272bbaa1361f66fe8045021cb3cef27a92cbee68276214512f"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/jvm-quiet-02.log",
+      "bytes": 2161,
+      "sha256": "0a3c2f8fc68e59816301c38bd070701007b77bc0b9a988a96c4111a012408748"
+    }
+  ]
+}

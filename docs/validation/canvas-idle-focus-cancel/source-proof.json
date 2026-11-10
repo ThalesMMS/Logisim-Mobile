@@ -1,0 +1,62 @@
+{
+  "base_commit": "c3d7e000289115582ce901702e32268fce439bb2",
+  "source": {
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitCanvas.kt": {
+      "base_blob": "38c7b4cb35ae5a844e12ec4efb005fcabca47a4a",
+      "base_sha256": "faf7125a49b0d8651359d4ff7ff26c0034e8cf80db6b4facf2f45e64fe63b6bf",
+      "candidate_sha256": "0a6cf80530dbb42d4133e6ac3ad8993000c2d7b33371ae920015a6ce1bbcda4a",
+      "unchanged": false
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CanvasWindowFocus.kt": {
+      "base_blob": "a476178c1d6449bbe6f19e8c5a79c324be90699c",
+      "base_sha256": "7407e31e0997e3475cae86b1cea0873d5831b9988c59faba76456cf0f607d70e",
+      "candidate_sha256": "16b616715edd749cf2ba360fc4c9a9c3ceda57c3d2eb4b96972f016b36718526",
+      "unchanged": false
+    },
+    "composeApp/src/commonTest/kotlin/dev/logisim/mobile/CanvasWindowFocusTest.kt": {
+      "base_blob": "7911c6032af93e5d7cfd874ddfe7034bf1002bfe",
+      "base_sha256": "51fd053be9234a79e540957059e8470c7ef26eeca88d8387543f2b322860620d",
+      "candidate_sha256": "d8e8e1eab3171fe5361d7782252e0676a69e98a92249b540ff6706c39b201f08",
+      "unchanged": false
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorState.kt": {
+      "base_blob": "90c92b891a661a0742966495cfe2f68ed068aa4e",
+      "base_sha256": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6",
+      "candidate_sha256": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6",
+      "unchanged": true
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt": {
+      "base_blob": "e0deeca2bfe9bbe308d8e0cf7a59ca921502ab92",
+      "base_sha256": "133564a2cb23e5e58068f88e5014761b104d505ac707a0e02c573261375a98d2",
+      "candidate_sha256": "133564a2cb23e5e58068f88e5014761b104d505ac707a0e02c573261375a98d2",
+      "unchanged": true
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CanvasInteraction.kt": {
+      "base_blob": "905b89e00ad8918696fca43335d129b204b6e18a",
+      "base_sha256": "38615129c48c956f8f25f1b80a174583994efa8f2f83c62694a58a630e0ccf05",
+      "candidate_sha256": "38615129c48c956f8f25f1b80a174583994efa8f2f83c62694a58a630e0ccf05",
+      "unchanged": true
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoComponentRenderer.kt": {
+      "base_blob": "f187aaaf1a02381db299d68ac78226ee5900e641",
+      "base_sha256": "42498bb5c35f8621a074eef7d7fb7c7cb3b0438b2d1fc74984ecc30b60e397a6",
+      "candidate_sha256": "42498bb5c35f8621a074eef7d7fb7c7cb3b0438b2d1fc74984ecc30b60e397a6",
+      "unchanged": true
+    }
+  },
+  "key_event_block_unchanged": true,
+  "key_event_block_sha256": "148234df6ce2a1cf0151e3883a79ee686c7de260024c271f8a886c740945b7dc",
+  "production_scope": "Automatic Canvas/local-target and WindowInfo focus loss only; generic EditorState CANCEL and explicit key handler are unchanged.",
+  "active_input_definition": "A non-null gesture, pendingWire, or held IO pointer. The bool is captured before cleanup clears IO; no phase filter loses a gesture already cancelled by the window watcher.",
+  "independent_review": {
+    "reviewer": "/root/coordination_review/idle_focus_review",
+    "result": "PASS",
+    "checks": "Both automatic call paths, pending wire between taps, cleanup/release ordering, already-cancelled gesture, explicit ESC and EditorState preservation. Reviewer did not execute tests/UI/device."
+  },
+  "limits": [
+    "Host Compose snapshotFlow/WindowInfo state plus the actual shared Canvas callback and EditorState; no full Compose UI tree, platform focus delivery, or Native execution.",
+    "The test creates a valid imported editor and seeds the actual reportStatus(StatusFileOpened) API; no native file-picker route is claimed.",
+    "Historical Native events were not retained; this result does not establish their specific cause.",
+    "No App/APK/iOS package build, Native test, device/UI action, main edit or push."
+  ]
+}

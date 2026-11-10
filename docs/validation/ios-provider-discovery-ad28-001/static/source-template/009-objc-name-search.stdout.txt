@@ -1,0 +1,8 @@
+scripts/ios_fileprovider_revocation/README.md:20:The extension plist follows the installed Xcode iOS File Provider Extension template. It uses extension point `com.apple.fileprovider-nonui`, enumeration support, and principal class `$(PRODUCT_MODULE_NAME).RevocationFileProvider`. The SDK exposes the selected replicated APIs for iOS 16 and later. This project targets iOS 17 and later.
+scripts/ios_fileprovider_revocation/Provider/RevocationFileProvider.swift:6:final class RevocationFileProvider: NSObject, NSFileProviderReplicatedExtension {
+scripts/ios_fileprovider_revocation/verify-fixture.py:27:            "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).FixtureSceneDelegate",
+scripts/ios_fileprovider_revocation/verify-fixture.py:32:    assert extension["NSExtensionPrincipalClass"] == "$(PRODUCT_MODULE_NAME).RevocationFileProvider"
+scripts/ios_fileprovider_revocation/Config/App-Info.plist:8:    <key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+scripts/ios_fileprovider_revocation/Config/App-Info.plist:32:                <key>UISceneDelegateClassName</key><string>$(PRODUCT_MODULE_NAME).FixtureSceneDelegate</string>
+scripts/ios_fileprovider_revocation/Config/Provider-Info.plist:8:    <key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+scripts/ios_fileprovider_revocation/Config/Provider-Info.plist:14:        <key>NSExtensionPrincipalClass</key><string>$(PRODUCT_MODULE_NAME).RevocationFileProvider</string>

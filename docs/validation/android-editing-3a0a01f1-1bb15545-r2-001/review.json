@@ -1,0 +1,27 @@
+{
+  "status": "APPROVED",
+  "scope": "Offline review of the retained Android editing R2 result",
+  "reviewer": "/root/android_acceptance35_resume/issue35_existing_proof/dip_archive_review",
+  "findings": [],
+  "checks": {
+    "producerEquality": "328 raw files and 74 controller files are byte-identical to their originals, excluding two unpublished TARs.",
+    "portableVerifier": "PASS: 417 entries, 50 complete SDK captures, six public Copy XML exports and the separate private checkpoint44.",
+    "tests": {
+      "independentlyExecuted": true,
+      "testsRun": 5,
+      "failures": 0,
+      "errors": 0
+    },
+    "classification": "Creation/properties passed in249.87s; wiring failed; selection/history and viewport/touch parity did not run. Wrapper exit1 and292.686911s remain distinct.",
+    "searchCensus": "Capture49 retains Search extending46px above its viewport; capture50 retains the viewport but no Search field. Both retain the pending-connection public text.",
+    "requests": "Four ordered950px swipe requests match the audit log, including the final reverse request.",
+    "localTars": "Both original106042-byte TAR hashes and the retained1946-byte workspace member were independently checked.",
+    "documentation": "README, receipt, verification and local TAR check agree with the raw evidence."
+  },
+  "limits": [
+    "No complete connection, truth table or overall editing workflow is qualified.",
+    "Observed trees and command requests do not establish gesture delivery, callback counts or dismissal cause.",
+    "R1 and R2 used different emulator cohorts; no isolated causal comparison is claimed.",
+    "No device, build or archive mutation was performed by this review."
+  ]
+}

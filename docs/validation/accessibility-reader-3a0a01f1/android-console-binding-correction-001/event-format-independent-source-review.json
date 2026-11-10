@@ -1,0 +1,64 @@
+{
+  "reviewer": "/root/accessibility28/grpc_discovery_sources/touch_identifier_review",
+  "reviewed_utc": "2026-11-05T12:43:39.747451+00:00",
+  "result": "PASS_OFFLINE_AOSP15_FORMAT_SOURCE_REVIEW_ONLY",
+  "scope": "Offline comparison of the frozen report/specification files with the four copied official sources. Generic evidence JSON/hash inspection only; no Java formatter, project helper/parser, device, ADB, GUI, build, network or credential operation.",
+  "reviewed_frozen_files": [
+    {
+      "path": "/tmp/logisim-event-types-aosp15-source-review/report.md",
+      "bytes": 6772,
+      "sha256": "a294f40181ec6effee98c62b13e6da9dad1af5f8f22556b947a369800472e043"
+    },
+    {
+      "path": "/tmp/logisim-event-types-aosp15-source-review/canonical-atoms.json",
+      "bytes": 6360,
+      "sha256": "ad768b963e60ddf8f17252a2cd355975bb671ffbc6a4edb5a233e110d48816a8"
+    },
+    {
+      "path": "/tmp/logisim-event-types-aosp15-source-review/canonical-cases.json",
+      "bytes": 2568,
+      "sha256": "c4d45f4d27bb0a93539929f488d41b2a960d61b8585a529df8d2c448775f3ded"
+    },
+    {
+      "path": "/tmp/logisim-event-types-aosp15-source-review/source-manifest.json",
+      "bytes": 2123,
+      "sha256": "2fa9c62b716d8e483c78b627ddfa5395b0fb88fde45559071b397d2d2c16cd45"
+    }
+  ],
+  "source_profile": {
+    "tag": "android-15.0.0_r1",
+    "copied_source_files_verified": 4,
+    "all_sizes_and_sha256_match": true
+  },
+  "canonical_table": {
+    "atoms": 32,
+    "named_switch_atoms": 27,
+    "unknown_one_bit_hex_atoms": 5,
+    "ordered_bits_zero_through_31": true,
+    "named_constant_lines_match_source": true
+  },
+  "checks": [
+    "Bound writer emits exact eventTypes= and uses public AccessibilityEvent.eventTypeToString.",
+    "Feedback brackets/no-equals and ServiceInfo colon/always-bracket representation are separate grammars.",
+    "Zero is empty text; [] and a bracketed singleton are noncanonical for the Bound event value.",
+    "ALL32 is the literal TYPES_ALL_MASK, so a 32-atom list is noncanonical.",
+    "Single atom is bare; lists have2\u201331 unique atoms in strictly increasing bit order with exact comma-space separators.",
+    "Known bits0\u201326 and unknown bits27\u201331 match the switch/default and Integer unsigned-hex behavior.",
+    "Unknown names, alternate prefixes, noncanonical hex, duplicates, reordering and truncated fields are outside the closed canonical grammar.",
+    "The minimum recommended equals change does not add a legacy no-equals fallback or change identity/binding checks."
+  ],
+  "cases_reviewed": {
+    "valid_examples": 7,
+    "invalid_value_examples": 12,
+    "invalid_prefix_examples": 4,
+    "expectation_functions_executed": false,
+    "note": "The explicit negative examples are illustrative; truncated fields are rejected by the stated complete-value grammar rather than exhaustively enumerated."
+  },
+  "limits": [
+    "Archived fixture/hash and helper mismatch metadata were supplied by the report author and were not reopened in this independent source review.",
+    "No exact installed-runtime implementation match or actual output was established here.",
+    "Format recognition supplies no identity join, Binder callback/liveness, kernel delivery, reader gesture/focus/speech or workflow qualification.",
+    "This receipt approves source/specification consistency only, not a parser implementation or runtime attempt."
+  ],
+  "parent_or_repository_files_edited": false
+}

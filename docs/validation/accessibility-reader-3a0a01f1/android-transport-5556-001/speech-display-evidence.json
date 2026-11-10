@@ -1,0 +1,26 @@
+{
+  "kind": "Actual TalkBack speech display text in retained video; no audio",
+  "video": "outputs/android-talkback-videos-5556-001/logisim-talkback-5556-20261105-0853-003.mp4",
+  "video_sha256": "36497a28ad4a56a485571b3946f50b7207c1940ffeff9cddd9a99887d87f39b8",
+  "all_video_frames_reviewed": 27,
+  "caption_visible_frames": [
+    13,
+    23
+  ],
+  "first_visible_frame_pts_seconds": "60.834456",
+  "last_visible_frame_pts_seconds": "96.271544",
+  "retained_frame": {
+    "path": "reader-caption-frame015.png",
+    "number": 15,
+    "pts_seconds": "60.993378",
+    "bytes": 667404,
+    "sha256": "9fcf04098016bf3834f3a13f7c2117d16cce8b2c535a0fd09632f58bcf5b6350"
+  },
+  "reader_focus": "Canvas; Projects-to-Canvas transition and viewport pan did not qualify linear navigation",
+  "unit_result": "FAIL_NOT_QUALIFIED",
+  "limits": [
+    "Video has no audio stream.",
+    "Actual bound-service and touch-exploration states around SDK snapshots were not captured while ON.",
+    "Reader speech display does not establish how the injected gesture reached Canvas."
+  ]
+}

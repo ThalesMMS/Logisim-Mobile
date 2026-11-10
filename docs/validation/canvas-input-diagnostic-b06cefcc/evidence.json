@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "verificationScope": "ARCHIVED_EVIDENCE_INTEGRITY_ONLY",
+  "source": {
+    "commit": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+    "tree": "e24981d26d6d293763966caa9961657a94ce27f6",
+    "base": "3a0a01f1af05dd3fea75d5a1499c762d039c478a"
+  },
+  "target": {
+    "package": "thalesmms.logisim.mobile.e2e",
+    "serial": "emulator-5558",
+    "fingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys"
+  },
+  "apkSha256": {
+    "thalesmms.logisim.mobile.e2e": "c12be1b537b1e02744f057fb36372f3669df25e3385e9c2e7e4fda8a8fc1484b",
+    "thalesmms.logisim.mobile.e2e.test": "f0883691aea034441b4eda8375e424662e78e9a420e7b5f12d225f26e8d45c31",
+    "thalesmms.logisim.mobile.snapshot.e2e.test": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+  },
+  "cases": [
+    {
+      "id": "scroll-once",
+      "case": "scroll",
+      "status": "PASS",
+      "qualification": "PARTIAL",
+      "instrumentationCode": -1,
+      "inputRecords": 13,
+      "stateRecords": 107,
+      "motionEvents": 3
+    },
+    {
+      "id": "pinch-once",
+      "case": "pinch",
+      "status": "FAIL",
+      "qualification": "NOT_QUALIFIED",
+      "instrumentationCode": 0,
+      "inputRecords": 0,
+      "stateRecords": 73,
+      "motionEvents": 0,
+      "failureStage": "PREPARATION_ZOOM_OUT_BEFORE_MOTION_EVENTS"
+    }
+  ],
+  "captureSeparation": {
+    "pinchAccessibilityText": "118%",
+    "pinchLastComposedScale": 0.94386095,
+    "capturesAtomic": false,
+    "pngVerification": "FILE_SHA256_ONLY"
+  },
+  "exclusions": [
+    {
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/preflight.py",
+      "reason": "Runner source excluded. The archived initial FAIL and final PASS JSON preserve the helper guard correction; verify.py is the only offline verification entry point."
+    },
+    {
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/apks",
+      "reason": "APK binaries and builds are not archived. Their declared hashes and recorded installed readbacks are preserved."
+    }
+  ],
+  "files": [
+    {
+      "path": "data/apk-0-badging.txt",
+      "bytes": 5221,
+      "sha256": "c4af1e82436fdc748a8951952e08e48e43a2a66771e0b35139a9d8cebd85ab27",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/apk-0-badging.txt"
+    },
+    {
+      "path": "data/apk-0-manifest.txt",
+      "bytes": 9242,
+      "sha256": "4d72c994044da6362f3b357f2dd6b5e330cc0cf1b222ee5fb8a397be4528118e",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/apk-0-manifest.txt"
+    },
+    {
+      "path": "data/apk-1-badging.txt",
+      "bytes": 1120,
+      "sha256": "a020e792ab7ada18b1bd6ac1450ab12e0d135afb8401049ad59e56b61899e7e1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/apk-1-badging.txt"
+    },
+    {
+      "path": "data/apk-1-manifest.txt",
+      "bytes": 4335,
+      "sha256": "c7d6c10e130c91df81c3599a827f8dcf8b5681499e618490ffbfe15822fae375",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/apk-1-manifest.txt"
+    },
+    {
+      "path": "data/apk-2-badging.txt",
+      "bytes": 571,
+      "sha256": "5b71060519a0af5db99641bfeab043b408ebe7756a024aba520f0d812c900269",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/apk-2-badging.txt"
+    },
+    {
+      "path": "data/apk-2-manifest.txt",
+      "bytes": 1641,
+      "sha256": "8580a686e8ba39ec6cbcc24830e37679daf1ffb88cef5c5e8c045363c5586f47",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/apk-2-manifest.txt"
+    },
+    {
+      "path": "data/lastanr-final.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/lastanr-final.txt"
+    },
+    {
+      "path": "data/lastanr-preflight.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/lastanr-preflight.txt"
+    },
+    {
+      "path": "data/pinch-once/instrumentation.txt",
+      "bytes": 58820,
+      "sha256": "ec695c2263c40afb7e86586379fb032e5f3caccf08b5dded81bd6049138e7418",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/instrumentation.txt"
+    },
+    {
+      "path": "data/pinch-once/lastanr-after.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/lastanr-after.txt"
+    },
+    {
+      "path": "data/pinch-once/lastanr-before.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/lastanr-before.txt"
+    },
+    {
+      "path": "data/pinch-once/manifest.json",
+      "bytes": 98371,
+      "sha256": "f08dd48a7a9cf290e5c62ade05cb68963f7cf4d8983fb280288a159e2ba9b1b0",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/manifest.json"
+    },
+    {
+      "path": "data/pinch-once/native/0-fixture.circ",
+      "bytes": 1185,
+      "sha256": "dc7361a2867e86d65c1a8c0ea34fcee59364853e7a0be0187865980ba5edf31b",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/native/0-fixture.circ"
+    },
+    {
+      "path": "data/pinch-once/native/1-pinch-before.circ",
+      "bytes": 1185,
+      "sha256": "dc7361a2867e86d65c1a8c0ea34fcee59364853e7a0be0187865980ba5edf31b",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/native/1-pinch-before.circ"
+    },
+    {
+      "path": "data/pinch-once/native/canvas-input-trace.json",
+      "bytes": 68315,
+      "sha256": "3b0767e70fe22ea07e4e9abf37c66f195c191226c7d9ce551b7c5334bf656a2e",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/native/canvas-input-trace.json"
+    },
+    {
+      "path": "data/pinch-once/native/pinch-failure-tree.txt",
+      "bytes": 39507,
+      "sha256": "9f51f3e8134f02066b4a802b9968bdc7273d797f634c2ba8b6193bf62fe9ebb9",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/native/pinch-failure-tree.txt"
+    },
+    {
+      "path": "data/pinch-once/native/pinch-failure.png",
+      "bytes": 239334,
+      "sha256": "e435f3db80d14a9c9cf291cd51e17e26d4f2ec7df8a7f12b0d3d23c1711ff025",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/native/pinch-failure.png"
+    },
+    {
+      "path": "data/pinch-once/native/result.json",
+      "bytes": 91620,
+      "sha256": "7b90c37bf456f1c3a88806455b7b07e2adc0c70695ef3a78dc46a356bbf9fc49",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once/native/result.json"
+    },
+    {
+      "path": "data/pinch-once-runner.log",
+      "bytes": 86,
+      "sha256": "1430e7528d348a202074e8e330646b3a5b3c94f20c9bd6ecef44af3aba4558bb",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/pinch-once-runner.log"
+    },
+    {
+      "path": "data/postflight-cleanup.json",
+      "bytes": 7200,
+      "sha256": "503335ec9585243667ff286be958f8b3596e66ce95f10185cbba80e1bd133a34",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/postflight-cleanup.json"
+    },
+    {
+      "path": "data/preflight-initial-guard-failure.json",
+      "bytes": 11574,
+      "sha256": "63ab1588df2a4081a05b6c3ec50cababf53623c9557dd90de702d7d3c384b1f4",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/preflight-initial-guard-failure.json"
+    },
+    {
+      "path": "data/preflight.json",
+      "bytes": 14956,
+      "sha256": "896d20121acbc088b3bd34791c88471be3f98ca7dc274fcaf654e121c9be40d5",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/preflight.json"
+    },
+    {
+      "path": "data/scroll-once/instrumentation.txt",
+      "bytes": 57973,
+      "sha256": "54e5d4e5d2ec32b1d85435619ea1e423c665802d0678601cead8d5f47c2df36b",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/instrumentation.txt"
+    },
+    {
+      "path": "data/scroll-once/lastanr-after.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/lastanr-after.txt"
+    },
+    {
+      "path": "data/scroll-once/lastanr-before.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/lastanr-before.txt"
+    },
+    {
+      "path": "data/scroll-once/manifest.json",
+      "bytes": 98924,
+      "sha256": "09800411020ce64fb1a75b120e5fa8eb18b58c961d64c21790d2c61d2c894767",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/manifest.json"
+    },
+    {
+      "path": "data/scroll-once/native/0-fixture.circ",
+      "bytes": 1191,
+      "sha256": "97dd76d6050d1cb4606c7c6e7e5d9108f1121d227a8f906a9bbd5aa80d17b6b1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/native/0-fixture.circ"
+    },
+    {
+      "path": "data/scroll-once/native/1-scroll-before.circ",
+      "bytes": 1191,
+      "sha256": "97dd76d6050d1cb4606c7c6e7e5d9108f1121d227a8f906a9bbd5aa80d17b6b1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/native/1-scroll-before.circ"
+    },
+    {
+      "path": "data/scroll-once/native/2-scroll-after.circ",
+      "bytes": 1191,
+      "sha256": "97dd76d6050d1cb4606c7c6e7e5d9108f1121d227a8f906a9bbd5aa80d17b6b1",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/native/2-scroll-after.circ"
+    },
+    {
+      "path": "data/scroll-once/native/canvas-input-trace.json",
+      "bytes": 120771,
+      "sha256": "919d007eb8414683ee24056ff5366e9bd3245017dadd0d76aac175e0e86e4559",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/native/canvas-input-trace.json"
+    },
+    {
+      "path": "data/scroll-once/native/result.json",
+      "bytes": 92005,
+      "sha256": "90b932146110e9bd102c0d58f1d90b7c927761123146dec434f528a4c0befce7",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/native/result.json"
+    },
+    {
+      "path": "data/scroll-once/native/scroll-complete.png",
+      "bytes": 155127,
+      "sha256": "13656fee4762aa888829e3242c251c0e2e66e6a6558791665841be8ec291e440",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once/native/scroll-complete.png"
+    },
+    {
+      "path": "data/scroll-once-runner.log",
+      "bytes": 87,
+      "sha256": "fb85395b9642dab523e8280a434c7cb99a99f8738afbe4bff57483892c48a418",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc-native-5558/scroll-once-runner.log"
+    },
+    {
+      "path": "data/producer/artifact.json",
+      "bytes": 14670,
+      "sha256": "c80e3dcd473512af573e4ca636ce84ed571a9f2ff8b336e370b3331c2205d0f9",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/artifact.json"
+    },
+    {
+      "path": "data/producer/independent-source-review.json",
+      "bytes": 2405,
+      "sha256": "b41160fdd7762bdf211589fefcb5ed672a801aa82e4ce00cdb99a85127d16fe4",
+      "sourceLocalPath": "/Users/thales/GitHub/logisim-mobile-worktrees/android-canvas-input-diagnostic-test-ui/outputs/android-canvas-input-diagnostic-b06cefcc/independent-source-review.json"
+    },
+    {
+      "path": "data/api-audit/audit-provenance.json",
+      "bytes": 2341,
+      "sha256": "f353ecd0177b5d8579159a510d987ca3f9beb9251500fb53f5a718f6326d311b",
+      "sourceLocalPath": "/tmp/android35-accessibility-source-audit/audit-provenance.json"
+    },
+    {
+      "path": "data/api-audit/SDK35-UiAutomation.javap.txt",
+      "bytes": 2882,
+      "sha256": "e49eedb32cec8cf79201259369367d4d75c43205ecd8d62c1ab0d81cfec94a30",
+      "sourceLocalPath": "/tmp/android35-accessibility-source-audit/SDK35-UiAutomation.javap.txt"
+    },
+    {
+      "path": "data/api-audit/SDK35-AccessibilityNodeInfo.javap.txt",
+      "bytes": 12395,
+      "sha256": "26d5093ec0d84d9c87fd5c89e75a3699ae9206651c54737851154b401ca0f235",
+      "sourceLocalPath": "/tmp/android35-accessibility-source-audit/SDK35-AccessibilityNodeInfo.javap.txt"
+    }
+  ]
+}

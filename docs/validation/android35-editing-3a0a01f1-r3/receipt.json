@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "issue": 35,
+  "status": "PASS",
+  "qualification": "EDITING_FOUR_GROUPS_ONLY",
+  "source": "da4ffddb9e44e2686695d37e3e24a507fd6111c8",
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "helperProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "serial": "emulator-5558",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "apiLevel": 35,
+  "appLanguage": "en",
+  "screenPixels": [
+    1080,
+    2400
+  ],
+  "densityDpi": 420,
+  "originalNativeInvocations": 1,
+  "nativeExitCode": 0,
+  "startedUTC": "2026-11-05T11:17:36.872623+00:00",
+  "finishedUTC": "2026-11-05T11:30:57.294396+00:00",
+  "wrapperElapsedSeconds": 800.4179269580054,
+  "caseResults": [
+    {
+      "scenario": "editing-create-properties",
+      "status": "passed",
+      "seconds": 236.75
+    },
+    {
+      "scenario": "editing-wires-truth-table",
+      "status": "passed",
+      "seconds": 194.88
+    },
+    {
+      "scenario": "editing-selection-history",
+      "status": "passed",
+      "seconds": 176.08
+    },
+    {
+      "scenario": "editing-viewport-touch-parity",
+      "status": "passed",
+      "seconds": 179.99
+    }
+  ],
+  "inventory": {
+    "file": "inventory.json",
+    "fileCount": 494,
+    "bytes": 9313268,
+    "rawFiles": 403,
+    "controlFiles": 74,
+    "historicalSourceFiles": 16,
+    "historicalManifestFiles": 1
+  },
+  "originalSources": {
+    "raw": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-search-header/outputs/android-editing-3a0a01f1-da4ffddb-5558-r3-001",
+    "control": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-search-header/outputs/android-editing-3a0a01f1-da4ffddb-5558-r3-001-control",
+    "retainedByteIdentical": true
+  },
+  "sourcePinsBeforeImport": {
+    "manifest": "oracle-snapshot/manifest.json",
+    "sha256": "a84dc7c0613dc541ec11879b18a0c86067b3200c26b9cb962a96a7621b58d307"
+  },
+  "observed": {
+    "fullXmlCheckpoints": 24,
+    "finalDocumentRestoredByteIdentically": true,
+    "orInsertionWorldPoint": [
+      220,
+      200
+    ],
+    "sdkCapturesComplete": 82,
+    "sdkCapturesNotContinuousPidProof": true,
+    "truthCaptures": [
+      {
+        "capture": 64,
+        "input": "1",
+        "not": "0",
+        "output": "0"
+      },
+      {
+        "capture": 68,
+        "input": "0",
+        "not": "1",
+        "output": "1"
+      }
+    ],
+    "initialOutputOneBeforeCapture64Retained": false,
+    "searchJournals": 10,
+    "searchRequests": {
+      "E2E_NOT": 1,
+      "E2E_OUT": 6
+    },
+    "controllerAdbRequestRecords": 1813,
+    "copyXmlPrepareRequests": 24
+  },
+  "postflight": {
+    "sourceFilesBeforeAfterIdentical": true,
+    "installedApkHashesBeforeAfterIdentical": true,
+    "settingsDifferences": {},
+    "anrChanged": false,
+    "readerEnabled": false,
+    "cleanupOwnedAppOnly": true,
+    "pidAfterOwnedForceStop": ""
+  },
+  "offlineChecks": {
+    "testsPassed": 13,
+    "semanticNegativesRehashTheirModifiedEvidence": true,
+    "differentFreshOrIdentityPositiveControl": true,
+    "relocationOutsideCheckoutPassed": true,
+    "nativeReplay": "NOT_RUN"
+  },
+  "limits": [
+    "This receipt qualifies one Android editing invocation containing the four named groups. It does not qualify the pending Files workflow or close issue35.",
+    "R1 and R2 remain failed. R1 used5556; R2 and R3 used5558. These runs do not isolate a callback, IME, renderer or device cause.",
+    "The original mounted runner passed its output assertions1 then0 then1. The retained SDK trees independently show only the two NOT truth rows in captures64 and68; no initial1 capture before64 was found.",
+    "Search journals and the controller audit record command requests and sampled trees. They do not establish callback count, event delivery, exact causal timing or continuous process identity.",
+    "Zoom-control percentage checks passed in the original case. This does not measure painted pan/zoom latency, pinch, physical input ergonomics, performance or complete UI parity.",
+    "The historical document oracle ignores element order and generated component IDs. The added envelope check preserves metadata/library ownership and requires unique IDs; the OR comparison permits different fresh IDs.",
+    "No APK, JAR or new native execution is included in this portable replay."
+  ],
+  "checks": {
+    "verify.py": {
+      "bytes": 16396,
+      "sha256": "4d9bc670464545328ed89a447f30d55c6f0d56b2b79e15aa403cc2abda8e7f0b"
+    },
+    "test_verify.py": {
+      "bytes": 7094,
+      "sha256": "56404643220de159fb96b2f0d0756d60d52661989a13b3e67b27215bf74704bb"
+    },
+    "verification.json": {
+      "bytes": 627,
+      "sha256": "3e0cd15a634eabc1cae40528acadbadd4c11e6e7aa4ff9ff3342fb83b5182c56"
+    },
+    "checks.log": {
+      "bytes": 2112,
+      "sha256": "545ae63712f513553e9a06d2b2d09c0efe5311421a1bb005d09dfe1acd5d0bad"
+    },
+    "inventory.json": {
+      "bytes": 86323,
+      "sha256": "08d58f7995286d7ac21fc946c449d2baa08d7f8e53faa450ef1660c776b35d93"
+    }
+  },
+  "independentReview": {
+    "agent": "/root/android_acceptance35_resume/io44_touch_audit/editing_r3_oracle_review",
+    "status": "APPROVED",
+    "scope": "Historical24checkpoint replay, source authentication before import, controller raw readback, NOT rows64/68, Search request geometry,13 negative/positive/relocation checks and bounded README/receipt claims.",
+    "reportedChecksPassed": 13,
+    "reportedElapsedSeconds": 2.464,
+    "nativeExecution": "NOT_RUN"
+  }
+}

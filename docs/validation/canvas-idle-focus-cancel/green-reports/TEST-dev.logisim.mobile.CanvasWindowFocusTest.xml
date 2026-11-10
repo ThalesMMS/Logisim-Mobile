@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.logisim.mobile.CanvasWindowFocusTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-11-05T12:54:25.103Z" hostname="Thaless-MacBook-Air.local" time="0.289">
+  <properties/>
+  <testcase name="explicitEscapeStillCancelsAnIdleEditor" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.197"/>
+  <testcase name="losingFocusBetweenWireTapsStillCancelsThePendingConnection" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.007"/>
+  <testcase name="losingFocusReleasesHeldIoOnceBeforeCancellingTheOperation" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.011"/>
+  <testcase name="losingAndRegainingWindowFocusCannotCommitTheHeldDragOnUp" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.042"/>
+  <testcase name="observingAnAlreadyUnfocusedWindowCancelsTheCurrentGesture" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.001"/>
+  <testcase name="focusLossCancelsPressedDraggedAndTransformingGesturesWithoutCommit" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.01"/>
+  <testcase name="aFocusedWindowCommitsExactlyOneNormalDragOnUp" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.006"/>
+  <testcase name="losingAnIdleWindowPreservesTheOpenedStatusAndDocument" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.005"/>
+  <testcase name="anInitiallyUnfocusedIdleWindowDoesNotCancelTheEditor" classname="dev.logisim.mobile.CanvasWindowFocusTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

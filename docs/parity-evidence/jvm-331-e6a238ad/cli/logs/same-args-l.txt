@@ -1,0 +1,16 @@
+row: cli/load
+case: same-args-l
+result: PASS
+detail: Mobile accepts Evolution's '-l'
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table,halt scripts/oracle/cli/fixtures/memory.circ -l scripts/oracle/cli/fixtures/mem.hex mem
+exit: 0
+--- stdout (6 lines, sha256 18f5c8d76614bc8fa2fb8bf3945b825984d67e73eb50bd485573b97b07bfeb99)
+UUUU UUUU	0000 1001
+UUUU UUUU	0000 1000
+UUUU UUUU	0000 0111
+UUUU UUUU	0000 0110
+UUUU UUUU	0000 0101
+UUUU UUUU	0000 0100
+--- stderr (1 lines, sha256 2b006bf6ac1239d171c8e562c7282518a68cf2739c6dd660761790163169e6f1)
+halted due to halt pin

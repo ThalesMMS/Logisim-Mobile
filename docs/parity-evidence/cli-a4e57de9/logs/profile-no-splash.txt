@@ -1,0 +1,23 @@
+row: cli/no-splash
+case: profile-no-splash
+result: DIFF
+detail: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'plain'}; evolution splash=false, mobile stderr='warning=--no-splash: the headless JVM launcher already runs without a splash.'
+
+=== evolution: java EvolutionStartupOracle --no-splash
+exit: 0
+--- stdout (5 lines, sha256 de9dd1b41e359dbb2b70d48bf3a1788bc961661bb48406d5f59e53f37f78fa7c)
+parse=ok
+splash=false
+gates=ansi
+locale=en session=en
+template=plain
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --no-splash --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 ec4517c74767d30183159c030b4fe2977eac90a3c9012bc4b9fb6382781aaa1a)
+gates=ansi
+locale=en
+template=plain
+--- stderr (1 lines, sha256 b2053331c4c46d2e551f338c4c4ce80c48ddd4ad07a87b78c2fd3e048ddca772)
+warning=--no-splash: the headless JVM launcher already runs without a splash.

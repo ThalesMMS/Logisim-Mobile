@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "source_proof": {
+    "base_source": "c3d7e000289115582ce901702e32268fce439bb2",
+    "production_path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoComponentRenderer.kt",
+    "patched_blob": "b8b13c4f781ff040dfeb409b01b58272322409a1",
+    "patched_sha256": "f14f4be12e0413622b1728e96201c8fe2ec1f187d2241df660f7b1ece7478ca0",
+    "scope": "Existing host/JVM renderer/geometry checks only; no app assembly, Native or device."
+  },
+  "totals": {
+    "tests": 21,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "module": "core",
+      "task": "jvmTest",
+      "name": "IoGeometryOracleTest[jvm]",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "c9df559e902af34c10098aadfb8f8abaf1df3a10e17dade2c47775a194b6f525",
+      "path": "docs/validation/raw-keypad-contrast/reports/TEST-dev.logisim.mobile.core.IoGeometryOracleTest.xml"
+    },
+    {
+      "module": "composeApp",
+      "task": "testAndroidHostTest",
+      "name": "dev.logisim.mobile.CircuitDrawingTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "2fe0f370a6e8b191c0d0c4e6f66c213a5b29633351cfab0ca159da571b991d12",
+      "path": "docs/validation/raw-keypad-contrast/reports/TEST-dev.logisim.mobile.CircuitDrawingTest.xml"
+    },
+    {
+      "module": "composeApp",
+      "task": "testAndroidHostTest",
+      "name": "dev.logisim.mobile.ExternalIoRendererTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "ba1e3f3248932d7746eb91d02584284adc8494b6c11a21871578499c104fe19b",
+      "path": "docs/validation/raw-keypad-contrast/reports/TEST-dev.logisim.mobile.ExternalIoRendererTest.xml"
+    },
+    {
+      "module": "composeApp",
+      "task": "testAndroidHostTest",
+      "name": "dev.logisim.mobile.RendererIECTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "d5b642eb2f16d7e6146bbeb638eedf56bbb18d94592661b54cd79dd318ac8d4d",
+      "path": "docs/validation/raw-keypad-contrast/reports/TEST-dev.logisim.mobile.RendererIECTest.xml"
+    },
+    {
+      "module": "composeApp",
+      "task": "testAndroidHostTest",
+      "name": "dev.logisim.mobile.WorldDrawingTextTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "1abe7ed23513b16568d0041e4eaf90c77efdb7f1551f20ff12c19b8776bf21ef",
+      "path": "docs/validation/raw-keypad-contrast/reports/TEST-dev.logisim.mobile.WorldDrawingTextTest.xml"
+    }
+  ],
+  "logs": [
+    {
+      "path": "docs/validation/raw-keypad-contrast/host-renderer.log.gz",
+      "sha256": "709f9b00d6acc70c9ed051f06012e63f6fa13d92fad6fc940d68f4e505cafaa1",
+      "raw_sha256": "bc651d7097926489bb670535c27340d599462dba584145c223c3301d1144afee"
+    },
+    {
+      "path": "docs/validation/raw-keypad-contrast/host-renderer.sdk-env-failure.log.gz",
+      "sha256": "baac40625127f95734ef50fd2bb62ca8692e223c27210687ac133e96fc965a25",
+      "raw_sha256": "9187b7a3046b2eaa7763ad297b22978788dc5d98ed515d307904daa9d00a1b4b"
+    }
+  ],
+  "initial_attempt": {
+    "result": "CONFIGURATION_ERROR",
+    "tests_executed": 0,
+    "cause": "ANDROID_HOME absent in new checkout; resolved by explicit SDK environment, no source change."
+  },
+  "scope": "Existing JVM/Android-host renderer/text/geometry tests only. No new tests, APK/App assembly, Native, UI or device operation.",
+  "limits": "No pixel/native/font2 qualification; foreground contrast is the pinned source-color benchmark.",
+  "command": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "./gradlew",
+    ":core:jvmTest",
+    "--tests",
+    "dev.logisim.mobile.core.IoGeometryOracleTest",
+    ":composeApp:testAndroidHostTest",
+    "--tests",
+    "dev.logisim.mobile.CircuitDrawingTest",
+    "--tests",
+    "dev.logisim.mobile.WorldDrawingTextTest",
+    "--tests",
+    "dev.logisim.mobile.ExternalIoRendererTest",
+    "--tests",
+    "dev.logisim.mobile.RendererIECTest",
+    "--console=plain",
+    "--stacktrace"
+  ],
+  "environment": {
+    "JAVA_HOME": "/usr/libexec/java_home -v21 result",
+    "ANDROID_HOME": "/Users/thales/Library/Android/sdk",
+    "ANDROID_SDK_ROOT": "/Users/thales/Library/Android/sdk"
+  }
+}

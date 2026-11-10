@@ -1,0 +1,39 @@
+{
+  "summary": {
+    "command": [
+      "xcrun",
+      "xcresulttool",
+      "get",
+      "test-results",
+      "summary",
+      "--path",
+      "outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/editor.xcresult"
+    ],
+    "exit": 64
+  },
+  "tests": {
+    "command": [
+      "xcrun",
+      "xcresulttool",
+      "get",
+      "test-results",
+      "tests",
+      "--path",
+      "outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/editor.xcresult"
+    ],
+    "exit": 64
+  },
+  "diagnostics": {
+    "command": [
+      "xcrun",
+      "xcresulttool",
+      "export",
+      "diagnostics",
+      "--path",
+      "outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/editor.xcresult",
+      "--output-path",
+      "outputs/ios-3a0a01f1-io44-window-scope-b25-r2-001/triage/diagnostics"
+    ],
+    "exit": 1
+  }
+}

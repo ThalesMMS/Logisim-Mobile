@@ -1,0 +1,26 @@
+{
+  "scope": "Offline receipt validation only; no Native tools",
+  "passed": 4,
+  "checks": [
+    {
+      "case": "native-gate",
+      "status": "REJECTED",
+      "expectedReason": "Preparation gates changed"
+    },
+    {
+      "case": "lease",
+      "status": "REJECTED",
+      "expectedReason": "No Native lease or device may be inferred"
+    },
+    {
+      "case": "dirty",
+      "status": "REJECTED",
+      "expectedReason": "The clean source pin must agree"
+    },
+    {
+      "case": "changed-evidence-bytes",
+      "status": "REJECTED",
+      "expectedReason": "Evidence bytes changed"
+    }
+  ]
+}

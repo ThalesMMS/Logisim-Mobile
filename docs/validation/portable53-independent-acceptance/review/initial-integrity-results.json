@@ -1,0 +1,249 @@
+{
+  "android": {
+    "files": 114,
+    "bytes": 2238955,
+    "inventory": {
+      "entries": 113,
+      "matched": 113,
+      "missing": [],
+      "mismatches": [],
+      "uncovered": [
+        "package-index.json"
+      ],
+      "extraneous": []
+    },
+    "copy_chain": {
+      "entries": 108,
+      "matched": 108,
+      "missing": [],
+      "mismatches": []
+    },
+    "original_copy_chain": {
+      "matched": 107,
+      "missing": [
+        "scenario-contract/editor-actions-v1.json"
+      ],
+      "mismatches": []
+    },
+    "frozen_sources": {
+      "e2e-android.py": true,
+      "android_ui.py": true,
+      "android_editing_scenarios.py": true,
+      "user_scenario_contract.py": true,
+      "android_inspector_scenarios.py": true,
+      "android_io_showcase_scenarios.py": true,
+      "android_portable_scenarios.py": true,
+      "android_visual_export34_scenarios.py": true
+    },
+    "contract_match": true,
+    "native_receipt_hash_matches": true,
+    "raw_snapshot_comparison": {
+      "before": {
+        "raw_file_count": 9,
+        "extracted_file_count": 9,
+        "same_names": true,
+        "same_bytes": true,
+        "unsafe_members": []
+      },
+      "imported": {
+        "raw_file_count": 11,
+        "extracted_file_count": 11,
+        "same_names": true,
+        "same_bytes": true,
+        "unsafe_members": []
+      },
+      "restarted": {
+        "raw_file_count": 13,
+        "extracted_file_count": 13,
+        "same_names": true,
+        "same_bytes": true,
+        "unsafe_members": []
+      },
+      "reopened": {
+        "raw_file_count": 15,
+        "extracted_file_count": 15,
+        "same_names": true,
+        "same_bytes": true,
+        "unsafe_members": []
+      }
+    },
+    "git_provenance": [
+      {
+        "path": "scenario-contract/editor-actions-v1.json",
+        "git_source": "git:bc98f9349dd326a4ba34623e3912ac6321ed1a5d:fixtures/user-scenarios/editor-actions-v1.json",
+        "matches": true
+      }
+    ],
+    "receipt_paths": [
+      {
+        "path": "portable-bundle-receipt.json",
+        "status": "PASSED",
+        "evidence_count": 16,
+        "evidence_missing": [],
+        "snapshot_count": 4,
+        "snapshots_missing": [],
+        "exports_checked": 2,
+        "export_mismatches": []
+      }
+    ]
+  },
+  "ios": {
+    "files": 835,
+    "bytes": 35973541,
+    "manifest": {
+      "entries": 833,
+      "matched": 833,
+      "missing": [],
+      "mismatches": [],
+      "uncovered": [
+        "SHA256SUMS",
+        "manifest.json"
+      ],
+      "extraneous": []
+    },
+    "declared_count_matches": true,
+    "declared_payload_bytes_matches": true,
+    "sha256sums": {
+      "entries": 834,
+      "matched": 834,
+      "missing": [],
+      "mismatches": [],
+      "parse_errors": [],
+      "uncovered": [
+        "SHA256SUMS"
+      ],
+      "extraneous": []
+    },
+    "copy_provenance": {
+      "entries": 812,
+      "matched": 812,
+      "missing": [],
+      "mismatches": [],
+      "duplicate_paths": 0
+    },
+    "original_copy_provenance": {
+      "matched": 810,
+      "missing": [
+        "frozen/native-runner/run-ios-e2e.py",
+        "frozen/native-runner/run-ios-accessibility.py"
+      ],
+      "mismatches": []
+    },
+    "explicit_external_only": [
+      {
+        "path": "bundle/last-screen.png",
+        "committed": false,
+        "source_available": true,
+        "source_hash_matches": true
+      },
+      {
+        "path": "folder/last-screen.png",
+        "committed": false,
+        "source_available": true,
+        "source_hash_matches": true
+      },
+      {
+        "path": "failed-attempts/bundle-initial/last-screen.png",
+        "committed": false,
+        "source_available": true,
+        "source_hash_matches": true
+      },
+      {
+        "path": "failed-attempts/bundle-retry2/last-screen.png",
+        "committed": false,
+        "source_available": true,
+        "source_hash_matches": true
+      }
+    ],
+    "git_provenance": [
+      {
+        "path": "frozen/native-runner/run-ios-e2e.py",
+        "git_source": "git:89c944468b03f24187acb3658d496b340028b557:scripts/run-ios-e2e.py",
+        "matches": true
+      },
+      {
+        "path": "frozen/native-runner/run-ios-accessibility.py",
+        "git_source": "git:89c944468b03f24187acb3658d496b340028b557:scripts/run-ios-accessibility.py",
+        "matches": true
+      }
+    ],
+    "harness_manifests": {
+      "bundle": {
+        "swift_sources_checked": 17,
+        "swift_sources_match": true,
+        "catalog_match": true,
+        "run_hash_match": true,
+        "run_configuration_equal": true
+      },
+      "folder": {
+        "swift_sources_checked": 17,
+        "swift_sources_match": true,
+        "catalog_match": true,
+        "run_hash_match": true,
+        "run_configuration_equal": true
+      }
+    },
+    "receipt_paths": [
+      {
+        "path": "bundle/native-evidence/ui-receipt.json",
+        "status": "PASSED",
+        "evidence_count": 78,
+        "evidence_missing": [],
+        "snapshot_count": 4,
+        "snapshots_missing": [],
+        "exports_checked": 2,
+        "export_mismatches": []
+      },
+      {
+        "path": "failed-attempts/bundle-initial/native-evidence/ui-receipt.json",
+        "status": "FAILED",
+        "evidence_count": 8,
+        "evidence_missing": [],
+        "snapshot_count": 1,
+        "snapshots_missing": [],
+        "exports_checked": 0,
+        "export_mismatches": []
+      },
+      {
+        "path": "failed-attempts/bundle-retry2/native-evidence/ui-receipt.json",
+        "status": "FAILED",
+        "evidence_count": 49,
+        "evidence_missing": [],
+        "snapshot_count": 3,
+        "snapshots_missing": [],
+        "exports_checked": 1,
+        "export_mismatches": []
+      },
+      {
+        "path": "folder/native-evidence/ui-receipt.json",
+        "status": "PASSED",
+        "evidence_count": 80,
+        "evidence_missing": [],
+        "snapshot_count": 4,
+        "snapshots_missing": [],
+        "exports_checked": 2,
+        "export_mismatches": []
+      }
+    ],
+    "partial_export_d5327c37": [
+      {
+        "earlier_path": "docs/validation/portable53-ios-export1/attachments/37DC35C1-1D96-4EE2-80F7-0EAE396A5B3E.zip",
+        "bytes": 5395,
+        "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+        "identical_copies": [
+          "failed-attempts/bundle-retry2/partial-export1-xctest-attachment.zip",
+          "failed-attempts/bundle-retry2/native-evidence/export-before-restart.lsebdl"
+        ]
+      },
+      {
+        "earlier_path": "docs/validation/portable53-ios-export1/export-before-restart.lsebdl",
+        "bytes": 5395,
+        "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+        "identical_copies": [
+          "failed-attempts/bundle-retry2/partial-export1-xctest-attachment.zip",
+          "failed-attempts/bundle-retry2/native-evidence/export-before-restart.lsebdl"
+        ]
+      }
+    ]
+  }
+}

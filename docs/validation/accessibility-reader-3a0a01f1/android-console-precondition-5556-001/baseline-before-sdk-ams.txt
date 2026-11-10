@@ -1,0 +1,50 @@
+ACTIVITY MANAGER SERVICES (dumpsys activity services)
+  User 0 active services:
+  * ServiceRecord{1eeeb70 u0 com.google.android.marvin.talkback/.TalkBackService c:android}
+    intent={cmp=com.google.android.marvin.talkback/.TalkBackService}
+    packageName=com.google.android.marvin.talkback
+    processName=com.google.android.marvin.talkback
+    targetSdkVersion=35
+    permission=android.permission.BIND_ACCESSIBILITY_SERVICE
+    baseDir=/product/app/talkback/talkback.apk
+    dataDir=/data/user/0/com.google.android.marvin.talkback
+    app=ProcessRecord{8b6f81b 29352:com.google.android.marvin.talkback/u0a160}
+    mIsAllowedBgActivityStartsByBinding=true
+    useNewWiuLogic_forCapabilities()=true
+    useNewWiuLogic_forStart()=true
+    useNewBfslLogic()=true
+    mAllowWiu_noBinding=DENIED
+    mAllowWiu_inBindService=PROC_STATE_PERSISTENT
+    mAllowWiu_byBindings=DENIED
+    getFgsAllowWiu_legacy=PROC_STATE_PERSISTENT
+    getFgsAllowWiu_new=DENIED
+    getFgsAllowWiu_forStart=DENIED
+    getFgsAllowWiu_forCapabilities=DENIED
+    allowUiJobScheduling=false
+    recentCallingPackage=android
+    recentCallingUid=1000
+    mAllowStart_noBinding=DENIED
+    mAllowStart_inBindService=PROC_STATE_PERSISTENT
+    mAllowStart_byBindings=DENIED
+    getFgsAllowStart_legacy=PROC_STATE_PERSISTENT
+    getFgsAllowStart_new=DENIED
+    getFgsAllowStart=DENIED
+    startForegroundCount=0
+    infoAllowStartForeground=[callingPackage: android; callingUid: 1000; uidState: PER ; uidBFSL: [BFSL]; intent: Intent { cmp=com.google.android.marvin.talkback/.TalkBackService }; code:PROC_STATE_PERSISTENT; tempAllowListReason:<null>; targetSdkVersion:35; callerTargetSdkVersion:35; startForegroundCount:0; bindFromPackage:null: isBindService:true]
+    createTime=-14s260ms startingBgTimeout=--
+    lastActivity=-14s260ms restartTime=-14s260ms createdFromFg=true
+    Bindings:
+    * IntentBindRecord{7982c01 CREATE}:
+      intent={cmp=com.google.android.marvin.talkback/.TalkBackService}
+      binder=android.os.BinderProxy@2f93aa6
+      requested=true received=true hasBound=true doRebind=false
+      * Client AppBindRecord{660bce7 ProcessRecord{f9743eb 582:system/1000}}
+        Per-process Connections:
+          ConnectionRecord{5ca59b3 u0 CR FGSA CAPS com.google.android.marvin.talkback/.TalkBackService:@1ff5b22 flags=0x2101001}
+    All Connections:
+      ConnectionRecord{5ca59b3 u0 CR FGSA CAPS com.google.android.marvin.talkback/.TalkBackService:@1ff5b22 flags=0x2101001}
+
+  Connection bindings to services:
+  * ConnectionRecord{5ca59b3 u0 CR FGSA CAPS com.google.android.marvin.talkback/.TalkBackService:@1ff5b22 flags=0x2101001}
+    binding=AppBindRecord{660bce7 com.google.android.marvin.talkback/.TalkBackService:system}
+    conn=android.app.LoadedApk$ServiceDispatcher$InnerConnection@1ff5b22 flags=0x2101001

@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-android-2d4d/scripts/e2e-android.py", line 1229, in main
+    run_layout12(scenarios, unit=args.layout12_unit or "small-phone", fonts=selected_fonts)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-android-2d4d/scripts/android_layout12_scenarios.py", line 383, in run_layout12
+    scenarios.run("layout12-" + unit, Layout12(scenarios, unit, fonts).run)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-android-2d4d/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-android-2d4d/scripts/android_layout12_scenarios.py", line 328, in run
+    _, initial = self.record("window-before-layout")
+                 ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-android-2d4d/scripts/android_layout12_scenarios.py", line 109, in record
+    window=parse_window_observation(windows, self.ui.package, size, activity_dump=activity), status="CAPTURED")
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-android-2d4d/scripts/android_layout12_window.py", line 144, in parse_window_observation
+    values = _one(frames, "Focused window has no unique frame observation")
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-android-2d4d/scripts/android_layout12_window.py", line 22, in _one
+    raise WindowObservationError(message)
+android_layout12_window.WindowObservationError: Focused window has no unique frame observation

@@ -1,0 +1,22 @@
+row: cli/user-template
+case: profile-template-empty
+result: PASS
+detail: evolution={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}, mobile={'gates': 'ansi', 'locale': 'en', 'template': 'empty'}
+
+=== evolution: java EvolutionStartupOracle --user-template empty
+exit: 0
+--- stdout (5 lines, sha256 7265cedb641ba9a601ef9972d90b83decb021f3b9c84d1918cc18122d411dd11)
+parse=ok
+splash=true
+gates=ansi
+locale=en session=en
+template=empty
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --user-template empty --startup-settings
+exit: 0
+--- stdout (3 lines, sha256 ab96dfb66f26af4f702ee492f0835a7bb9e00f5d55209df367a937dad8b1000d)
+gates=ansi
+locale=en
+template=empty
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

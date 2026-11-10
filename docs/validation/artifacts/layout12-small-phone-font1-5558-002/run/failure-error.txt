@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/android_layout12_scenarios.py", line 343, in run
+    baseline, _ = self.export(f"layout12-font{font}-baseline")
+                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/android_editing_scenarios.py", line 214, in export
+    return self.s.export_xml(name)
+           ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/e2e-android.py", line 463, in export_xml
+    self.wait_editor()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/e2e-android.py", line 231, in wait_editor
+    raise AssertionError("A toolbar menu is still open while waiting for the editor")
+AssertionError: A toolbar menu is still open while waiting for the editor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/e2e-android.py", line 1229, in main
+    run_layout12(scenarios, unit=args.layout12_unit or "small-phone", fonts=selected_fonts)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/android_layout12_scenarios.py", line 383, in run_layout12
+    scenarios.run("layout12-" + unit, Layout12(scenarios, unit, fonts).run)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/android_layout12_scenarios.py", line 371, in run
+    final = inventory(self.ui)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/android_accessibility_layout.py", line 181, in inventory
+    "input_method": ui.adb("shell", "dumpsys", "input_method"),
+                    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/android_ui.py", line 67, in adb
+    return self._run(args, text=text, timeout=timeout).stdout
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/layout12-verbose-window/scripts/android_ui.py", line 63, in _run
+    raise RuntimeError(f"adb failed ({result.returncode}): {command!r}\n{stderr[-4000:]}")
+RuntimeError: adb failed (255): ['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'dumpsys', 'input_method']
+

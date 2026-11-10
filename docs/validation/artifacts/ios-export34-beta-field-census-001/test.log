@@ -1,0 +1,235 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-field-census-001/harness/LogisimEditorHarness.xcodeproj -scheme EditorHarness -destination "platform=iOS Simulator,id=B25F12A5-62D8-4E9E-964E-96519DB6FB69" -derivedDataPath /Users/thales/GitHub/logisim-mobile-worktrees/ios-e2e/outputs/ios-e2e-alpha-002/DerivedData CODE_SIGNING_ALLOWED=NO test-without-building -parallel-testing-enabled NO -collect-test-diagnostics never -test-timeouts-enabled YES -default-test-execution-time-allowance 900 -resultBundlePath /Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-field-census-001/editor.xcresult "-only-testing:EditorEndToEndTests/VisualExportEndToEndTests/testVisualExportFieldCensus"
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-field-census-001/editor.xcresult
+
+2026-11-05 00:28:11.841519-0300 EditorEndToEndTests-Runner[29744:9218875] [Default] Running tests...
+2026-11-05 00:28:11.881529-0300 EditorEndToEndTests-Runner[29744:9218875] [UIKit App Config] Update the Info.plist: Launch screens will soon be required.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-11-05 00:28:14.240.
+Test Suite 'EditorEndToEndTests.xctest' started at 2026-11-05 00:28:14.241.
+Test Suite 'VisualExportEndToEndTests' started at 2026-11-05 00:28:14.241.
+Test Case '-[EditorEndToEndTests.VisualExportEndToEndTests testVisualExportFieldCensus]' started.
+    t =     0.00s Start Test at 2026-11-05 00:28:14.245
+    t =     0.03s Set Up
+    t =     0.04s     Getting device orientation
+    t =     0.05s     Open thalesmms.logisim.mobile
+    t =     0.05s         Launch thalesmms.logisim.mobile
+    t =     0.20s             Setting up automation session
+objc[29744]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x108604310) and /private/var/run/com.apple.security.cryptexd/mnt/iOS_24A434/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x108228398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     2.29s             Wait for thalesmms.logisim.mobile to idle
+    t =     4.91s     Checking `Expect predicate `BLOCKPREDICATE(0x107e8e280)` for object Application 'thalesmms.logisim.mobile'`
+    t =     4.91s         Checking existence of `"editor-import-report" Any`
+    t =     4.96s     Checking existence of `"editor-import-report" Any`
+    t =     5.07s     Added attachment named 'import-report-before-close'
+    t =     5.08s     Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =     5.14s     Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =     5.16s     Added attachment named 'import-report-before-close-tree'
+    t =     5.16s     Checking existence of `"editor-import-report" Any`
+    t =     5.17s     Find the Application 'thalesmms.logisim.mobile'
+    t =     5.17s     Get all elements bound by index for: Elements matching predicate '(label == "Close" OR label BEGINSWITH "Close, ") OR (label == "Fechar" OR label BEGINSWITH "Fechar, ")'
+    t =     5.18s     Checking existence of `Any (Element at index 0)`
+    t =     5.19s     Find the Any (Element at index 0)
+    t =     5.20s     Find the "Close" Button
+    t =     5.22s     Tap "Close" Button
+    t =     5.22s         Wait for thalesmms.logisim.mobile to idle
+    t =     5.22s         Find the "Close" Button
+    t =     5.23s         Check for interrupting elements affecting "Close" Button
+    t =     5.24s             Wait for com.apple.springboard to idle
+    t =     5.26s         Synthesize event
+    t =     5.55s         Wait for thalesmms.logisim.mobile to idle
+    t =     6.63s     Checking `Expect predicate `BLOCKPREDICATE(0x107e8eee0)` for object Application 'thalesmms.logisim.mobile'`
+    t =     6.63s         Checking existence of `"editor-import-report" Any`
+    t =     6.73s Opening default application for URL file:///Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Data/Application/6E2C72FD-C0D4-4C22-8F6C-3C6B9AE2AF8A/Documents/LogisimE2E/88fc76ebf52f/visual-export-88fc76ebf52f.circ
+    t =     6.87s     Wait for thalesmms.logisim.mobile to idle
+    t =     7.01s     Wait for com.apple.springboard to idle
+    t =     7.62s Wait for thalesmms.logisim.mobile to become Running Foreground
+    t =     8.69s Checking `Expect predicate `BLOCKPREDICATE(0x107e8fa80)` for object Application 'thalesmms.logisim.mobile'`
+    t =     8.69s     Checking existence of `"editor-import-report" Any`
+    t =     8.70s     Checking existence of `Any (First Match)`
+    t =     8.72s Checking existence of `"editor-import-report" Any`
+    t =     8.83s Added attachment named 'import-report-before-close'
+    t =     8.83s Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =    10.12s Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =    10.23s Added attachment named 'import-report-before-close-tree'
+    t =    10.23s Checking existence of `"editor-import-report" Any`
+    t =    10.25s Find the Application 'thalesmms.logisim.mobile'
+    t =    10.27s Get all elements bound by index for: Elements matching predicate '(label == "Close" OR label BEGINSWITH "Close, ") OR (label == "Fechar" OR label BEGINSWITH "Fechar, ")'
+    t =    10.32s Checking existence of `Any (Element at index 0)`
+    t =    10.36s Find the Any (Element at index 0)
+    t =    10.41s Find the "Close" Button
+    t =    10.46s Tap "Close" Button
+    t =    10.46s     Wait for thalesmms.logisim.mobile to idle
+    t =    10.46s     Find the "Close" Button
+    t =    10.51s     Check for interrupting elements affecting "Close" Button
+    t =    10.54s         Wait for com.apple.springboard to idle
+    t =    10.55s     Synthesize event
+    t =    10.84s     Wait for thalesmms.logisim.mobile to idle
+    t =    11.91s Checking `Expect predicate `BLOCKPREDICATE(0x107e07240)` for object Application 'thalesmms.logisim.mobile'`
+    t =    11.92s     Checking existence of `"editor-import-report" Any`
+    t =    12.12s Checking existence of `"editor-project-toolbar-menu" Any`
+    t =    12.31s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    12.51s Checking existence of `"editor-project-toolbar" Any`
+    t =    12.52s Find the Application 'thalesmms.logisim.mobile'
+    t =    12.56s Get all elements bound by index for: Elements matching predicate '(label == "Importar ou exportar circuito e projeto" OR label BEGINSWITH "Importar ou exportar circuito e projeto, ") OR (label == "Import or export circuit and project" OR label BEGINSWITH "Import or export circuit and project, ")'
+    t =    12.62s Checking existence of `Any (Element at index 0)`
+    t =    12.69s Find the Any (Element at index 0)
+    t =    12.76s Find the "Import or export circuit and project, .circ" Button
+    t =    12.83s Tap "Import or export circuit and project, .circ" Button
+    t =    12.83s     Wait for thalesmms.logisim.mobile to idle
+    t =    12.84s     Find the "Import or export circuit and project, .circ" Button
+    t =    12.90s     Check for interrupting elements affecting "Import or export circuit and project, .circ" Button
+    t =    12.94s         Wait for com.apple.springboard to idle
+    t =    12.96s     Synthesize event
+    t =    13.24s     Wait for thalesmms.logisim.mobile to idle
+    t =    14.31s Checking `Expect predicate `BLOCKPREDICATE(0x107e68930)` for object Application 'thalesmms.logisim.mobile'`
+    t =    14.32s     Checking existence of `"editor-xml-body" Any`
+    t =    14.34s     Find the "editor-xml-body" Any
+    t =    14.36s     Find the "editor-xml-body" Other
+    t =    14.37s Checking existence of `"editor-xml-body" Other`
+    t =    14.39s Waiting 5.0s for "editor-xml-body" Any to exist
+    t =    15.46s     Checking `Expect predicate `existsNoRetry == 1` for object "editor-xml-body" Any`
+    t =    15.47s         Checking existence of `"editor-xml-body" Any`
+    t =    15.49s Find the Application 'thalesmms.logisim.mobile'
+    t =    15.52s Find the "editor-xml-body" Any
+    t =    15.54s Get all elements bound by index for: Elements matching predicate '(label == "Edit XML" OR label BEGINSWITH "Edit XML, ") OR (label == "Editar XML" OR label BEGINSWITH "Editar XML, ") OR (label == "Copiar" OR label BEGINSWITH "Copiar, ") OR (label == "Copy" OR label BEGINSWITH "Copy, ")'
+    t =    15.55s Checking existence of `Any (Element at index 0)`
+    t =    15.57s Find the Any (Element at index 0)
+    t =    15.59s Find the "Edit XML" Button
+    t =    15.61s Find the "Edit XML" Button
+    t =    15.63s Tap "Edit XML" Button
+    t =    15.63s     Wait for thalesmms.logisim.mobile to idle
+    t =    15.63s     Find the "Edit XML" Button
+    t =    15.64s     Check for interrupting elements affecting "Edit XML" Button
+    t =    15.67s         Wait for com.apple.springboard to idle
+    t =    15.69s     Synthesize event
+    t =    15.98s     Wait for thalesmms.logisim.mobile to idle
+    t =    17.18s Checking `Expect predicate `BLOCKPREDICATE(0x107e683c0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    17.18s     Get all elements bound by index for: Descendants matching type TextView
+    t =    17.22s     Get all elements bound by index for: Descendants matching type TextField
+    t =    17.24s     Checking existence of `TextView (Element at index 0)`
+    t =    17.27s     Find the TextView (Element at index 0)
+    t =    17.29s Get all elements bound by index for: Descendants matching type TextView
+    t =    17.31s Get all elements bound by index for: Descendants matching type TextField
+    t =    17.33s Checking existence of `TextView (Element at index 0)`
+    t =    17.36s Find the TextView (Element at index 0)
+    t =    17.38s Find the "Project XML" TextView
+    t =    17.41s Added attachment named 'visual-census-before.circ'
+    t =    17.41s Find the Application 'thalesmms.logisim.mobile'
+    t =    17.43s Get all elements bound by index for: Elements matching predicate '(label == "Close" OR label BEGINSWITH "Close, ") OR (label == "Fechar" OR label BEGINSWITH "Fechar, ")'
+    t =    17.46s Checking existence of `Any (Element at index 0)`
+    t =    17.50s Find the Any (Element at index 0)
+    t =    17.54s Find the "Close" Button
+    t =    17.59s Tap "Close" Button
+    t =    17.59s     Wait for thalesmms.logisim.mobile to idle
+    t =    17.59s     Find the "Close" Button
+    t =    17.63s     Check for interrupting elements affecting "Close" Button
+    t =    17.66s         Wait for com.apple.springboard to idle
+    t =    17.67s     Synthesize event
+    t =    17.96s     Wait for thalesmms.logisim.mobile to idle
+    t =    19.05s Checking `Expect predicate `BLOCKPREDICATE(0x107e6b7b0)` for object Application 'thalesmms.logisim.mobile'`
+    t =    19.05s     Checking existence of `Any (First Match)`
+    t =    19.14s Checking existence of `"editor-project-toolbar-menu" Any`
+    t =    19.33s Checking existence of `"editor-command-toolbar-menu" Any`
+    t =    19.53s Checking existence of `"editor-project-toolbar" Any`
+    t =    19.54s Find the Application 'thalesmms.logisim.mobile'
+    t =    19.57s Get all elements bound by index for: Elements matching predicate '(label == "Open project tools" OR label BEGINSWITH "Open project tools, ") OR (label == "Abrir ferramentas do projeto" OR label BEGINSWITH "Abrir ferramentas do projeto, ")'
+    t =    19.64s Checking existence of `Any (Element at index 0)`
+    t =    19.70s Find the Any (Element at index 0)
+    t =    19.78s Find the "Open project tools, Tools" Button
+    t =    19.85s Tap "Open project tools, Tools" Button
+    t =    19.85s     Wait for thalesmms.logisim.mobile to idle
+    t =    19.85s     Find the "Open project tools, Tools" Button
+    t =    19.92s     Check for interrupting elements affecting "Open project tools, Tools" Button
+    t =    19.96s         Wait for com.apple.springboard to idle
+    t =    19.97s     Synthesize event
+    t =    20.26s     Wait for thalesmms.logisim.mobile to idle
+    t =    20.26s Waiting 5.0s for "editor-tool-menu" Any to exist
+    t =    21.33s     Checking `Expect predicate `existsNoRetry == 1` for object "editor-tool-menu" Any`
+    t =    21.33s         Checking existence of `"editor-tool-menu" Any`
+    t =    21.36s Find the Application 'thalesmms.logisim.mobile'
+    t =    21.38s Find the "editor-tool-menu" Any
+    t =    21.40s Get all elements bound by index for: Elements matching predicate '(label == "Export drawing" OR label BEGINSWITH "Export drawing, ") OR (label == "Exportar desenho" OR label BEGINSWITH "Exportar desenho, ")'
+    t =    21.42s Checking existence of `Any (Element at index 0)`
+    t =    21.44s Find the Any (Element at index 0)
+    t =    21.46s Find the "Export drawing" Button
+    t =    21.49s Tap "Export drawing" Button
+    t =    21.49s     Wait for thalesmms.logisim.mobile to idle
+    t =    21.49s     Find the "Export drawing" Button
+    t =    21.51s     Check for interrupting elements affecting "Export drawing" Button
+    t =    21.54s         Wait for com.apple.springboard to idle
+    t =    21.56s     Synthesize event
+    t =    21.85s     Wait for thalesmms.logisim.mobile to idle
+    t =    21.85s Waiting 5.0s for "editor-tool-sheet" Any to exist
+    t =    22.92s     Checking `Expect predicate `existsNoRetry == 1` for object "editor-tool-sheet" Any`
+    t =    22.93s         Checking existence of `"editor-tool-sheet" Any`
+    t =    22.95s Waiting 5.0s for Any (First Match) to exist
+    t =    24.03s     Checking `Expect predicate `existsNoRetry == 1` for object Any (First Match)`
+    t =    24.03s         Checking existence of `Any (First Match)`
+    t =    24.17s Added attachment named 'visual-export-panel-before-input'
+    t =    24.17s Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =    25.48s Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =    25.58s Added attachment named 'visual-export-panel-before-input-tree'
+    t =    25.58s Find the Application 'thalesmms.logisim.mobile'
+    t =    25.61s Find the "editor-tool-sheet" Any
+    t =    25.62s Get all elements bound by index for: Descendants matching type TextField
+    t =    25.65s Get all elements bound by index for: Descendants matching type TextView
+    t =    25.67s Get number of matches for: Elements matching predicate '(label == "File name" OR label BEGINSWITH "File name, ") OR (label == "Nome do arquivo" OR label BEGINSWITH "Nome do arquivo, ")'
+    t =    25.71s Find the TextView (Element at index 0)
+    t =    25.74s Find the Application 'thalesmms.logisim.mobile'
+    t =    25.76s Find the "File name" TextView
+    t =    25.79s Find the "File name" TextView
+    t =    25.81s Find the "File name" TextView
+    t =    25.84s Find the "File name" TextView
+    t =    25.86s Find the "File name" TextView
+    t =    25.89s Find the "File name" TextView
+    t =    25.91s Find the TextView (Element at index 1)
+    t =    25.94s Find the Application 'thalesmms.logisim.mobile'
+    t =    25.96s Find the "Scale" TextView
+    t =    25.99s Find the "Scale" TextView
+    t =    26.01s Find the "Scale" TextView
+    t =    26.04s Find the "Scale" TextView
+    t =    26.06s Find the "Scale" TextView
+    t =    26.09s Find the "Scale" TextView
+    t =    26.11s Find the TextView (Element at index 2)
+    t =    26.14s Find the Application 'thalesmms.logisim.mobile'
+    t =    26.16s Find the "Margin" TextView
+    t =    26.19s Find the "Margin" TextView
+    t =    26.22s Find the "Margin" TextView
+    t =    26.24s Find the "Margin" TextView
+    t =    26.27s Find the "Margin" TextView
+    t =    26.29s Find the "Margin" TextView
+    t =    26.32s Get all elements bound by index for: Descendants matching type TextField
+    t =    26.33s Get all elements bound by index for: Descendants matching type TextView
+    t =    26.34s Get number of matches for: Elements matching predicate '(label == "File name" OR label BEGINSWITH "File name, ") OR (label == "Nome do arquivo" OR label BEGINSWITH "Nome do arquivo, ")'
+    t =    26.36s Added attachment named 'visual-export-panel-field-census'
+    t =    26.46s Added attachment named 'visual-export-panel-after-readonly-census'
+    t =    26.46s Tear Down
+    t =    26.46s     Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =    28.03s     Requesting snapshot of accessibility hierarchy for app with pid 29768
+    t =    28.14s     Added attachment named 'native-tree'
+    t =    28.24s     Added attachment named 'final-screen'
+    t =    28.24s     Terminate thalesmms.logisim.mobile:29768
+    t =    29.34s     Setting device orientation to Portrait
+    t =    29.35s         Wait for com.apple.springboard to idle
+Test Case '-[EditorEndToEndTests.VisualExportEndToEndTests testVisualExportFieldCensus]' passed (29.436 seconds).
+Test Suite 'VisualExportEndToEndTests' passed at 2026-11-05 00:28:43.681.
+	 Executed 1 test, with 0 failures (0 unexpected) in 29.436 (29.440) seconds
+Test Suite 'EditorEndToEndTests.xctest' passed at 2026-11-05 00:28:43.683.
+	 Executed 1 test, with 0 failures (0 unexpected) in 29.436 (29.443) seconds
+Test Suite 'Selected tests' passed at 2026-11-05 00:28:43.684.
+	 Executed 1 test, with 0 failures (0 unexpected) in 29.436 (29.444) seconds
+2026-11-05 00:28:43.984 xcodebuild[29740:9218707] [MT] IDETestOperationsObserverDebug: 35.174 elapsed -- Testing started completed.
+2026-11-05 00:28:43.984 xcodebuild[29740:9218707] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-05 00:28:43.984 xcodebuild[29740:9218707] [MT] IDETestOperationsObserverDebug: 35.174 sec, +35.174 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-field-census-001/editor.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

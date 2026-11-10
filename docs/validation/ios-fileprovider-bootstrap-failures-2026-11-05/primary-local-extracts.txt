@@ -1,0 +1,161 @@
+[error]
+Source: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderError.h
+Whole-source SHA-256: fee0ea8b3b3ac08bfb1f34a7fc9622077391077ed85d5510483e51797b342ecd
+Lines 18-25:
+  18: FOUNDATION_EXPORT NSErrorUserInfoKey const NSFileProviderErrorNonExistentItemIdentifierKey FILEPROVIDER_API_AVAILABILITY_V2_V3;
+  19: 
+  20: 
+  21: typedef NS_ERROR_ENUM(NSFileProviderErrorDomain, NSFileProviderErrorCode) {
+  22:     /** The user credentials cannot be verified */
+  23:     NSFileProviderErrorNotAuthenticated  = -1000,
+  24: 
+  25:     /** An item already exists with the same parentItemIdentifier and filename (or with a filename differing only in case.)
+Lines 62-65:
+  62:     /**
+  63:      Returned by NSFileProviderManager if no provider could be found in the application
+  64:      */
+  65:     NSFileProviderErrorProviderNotFound FILEPROVIDER_API_AVAILABILITY_V3_IOS = -2001,
+Lines 173-185:
+ 173: 
+ 174:     /*
+ 175:      Returned by the system to indicate that there is no NSFileProviderDomain registered in the
+ 176:      system which has the same identifier that was used to construct the NSFileProviderManager
+ 177:      which made the API call.
+ 178:      */
+ 179:     NSFileProviderErrorProviderDomainNotFound FILEPROVIDER_API_AVAILABILITY_V6_0_IOS = -2013,
+ 180: 
+ 181:     /*
+ 182:      Returned by the system to indicate that the system does not have any launchable
+ 183:      `com.apple.fileprovider-nonui` application extension for this domain's app bundle.
+ 184:      */
+ 185:     NSFileProviderErrorApplicationExtensionNotFound FILEPROVIDER_API_AVAILABILITY_V6_0_IOS = -2014,
+
+[availability]
+Source: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderDefines.h
+Whole-source SHA-256: 1c9898b293b92b4f22a793d8b6bacdb31fd0e0fa1f8c4b2295f76f9653498ba3
+Lines 12-23:
+  12: // iOS API with file enumeration
+  13: #define FILEPROVIDER_API_AVAILABILITY_V2 API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
+  14: // iOS API with file enumeration and macOS API with FPFS
+  15: #define FILEPROVIDER_API_AVAILABILITY_V2_V3 API_AVAILABLE(ios(11.0), macos(11.0)) API_UNAVAILABLE(macCatalyst) API_UNAVAILABLE(watchos, tvos)
+  16: // macOS API with FPFS
+  17: #define FILEPROVIDER_API_AVAILABILITY_V3 API_AVAILABLE(macos(11.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macCatalyst)
+  18: // iOS API with FPFS
+  19: #define FILEPROVIDER_API_AVAILABILITY_V3_IOS API_AVAILABLE(macos(11.0), ios(16.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macCatalyst)
+  20: // macOS API with first revision of FPFS
+  21: #define FILEPROVIDER_API_AVAILABILITY_V3_1 API_AVAILABLE(macos(11.3)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macCatalyst)
+  22: // iOS API with first revision of FPFS
+  23: #define FILEPROVIDER_API_AVAILABILITY_V3_1_IOS API_AVAILABLE(macos(11.3), ios(16.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macCatalyst)
+
+[domain]
+Source: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.2.sdk/System/Library/Frameworks/FileProvider.framework/Headers/NSFileProviderDomain.h
+Whole-source SHA-256: c91f8c17075490a26b91ca7aa435d1752adf784133e9be50f0ca4499ddb89bb7
+Lines 117-139:
+ 117:  Initialize a new replicated NSFileProviderDomain
+ 118: 
+ 119:  The extension will be implementing NSFileProviderReplicatedExtension.
+ 120: 
+ 121:  The file provider extension implementation can pick any @c identifier as it sees
+ 122:  fit to identify the group of items. The identifier must not contain any characters from this set: [/:]
+ 123: 
+ 124:  In order to migrate a non-replicated domain to a replicated one, implementers have to make sure that they do not
+ 125:  use the default domain, and then call +[NSFileProviderManager addDomain:completionHandler:] using
+ 126:  the NSFileProviderDomain object returned by that init method.
+ 127: 
+ 128:  A domain with a specific identifier can be added multiple times; subsequent adds will update the properties
+ 129:  of the existing domain.
+ 130:  If a replicated domain is added "on top" of a non-replicated domain, the domain will be migrated to be replicated;
+ 131:  existing bookmarks will remain valid, but the (externally visible) location of items will change to reflect the replicated location.
+ 132: 
+ 133:  It is not possible to migrate the default domain in this manner (since the default domain can not be added).
+ 134:  It is recommended to migrate usage of the default domain to a domain with an explicit identifier instead.
+ 135: 
+ 136:  @param displayName a user visible string representing the group of items the
+ 137:  file provider extension is using.
+ 138:  */
+ 139: - (instancetype)initWithIdentifier:(NSFileProviderDomainIdentifier)identifier displayName:(NSString *)displayName FILEPROVIDER_API_AVAILABILITY_V3_IOS;
+
+[extension-plist]
+Source: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application Extension/File Provider Extension.xctemplate/TemplateInfo.plist
+Whole-source SHA-256: c23094695a7352c0a346d0c32bf21012458bd38f11073dc26b71b4630fe9b7d9
+Lines 33-60:
+  33:         <dict>
+  34:             <key>Identifier</key>
+  35:             <string>hasUIExtension</string>
+  36:             <key>Name</key>
+  37:             <string>Include UI Extension</string>
+  38:             <key>NotPersisted</key>
+  39:             <false/>
+  40:             <key>SortOrder</key>
+  41:             <integer>101</integer>
+  42:             <key>Type</key>
+  43:             <string>checkbox</string>
+  44:             <key>Default</key>
+  45:             <string>true</string>
+  46:             <key>Units</key>
+  47:             <dict>
+  48:                 <key>true</key>
+  49:                 <dict>
+  50:                     <key>Components</key>
+  51:                     <array>
+  52:                         <dict>
+  53:                             <key>Identifier</key>
+  54:                             <string>com.apple.dt.unit.fileprovideruiextensionios</string>
+  55:                             <key>Name</key>
+  56:                             <string>___PACKAGENAME___UI</string>
+  57:                             <key>AssociatedTargetIsSameAsIncluder</key>
+  58:                             <true/>
+  59:                         </dict>
+  60:                     </array>
+Lines 151-164:
+ 151:         <key>Info.plist:NSExtension</key>
+ 152:         <string><![CDATA[<key>NSExtension</key>
+ 153: <dict>
+ 154:     <key>NSExtensionPointIdentifier</key>
+ 155:     <string>com.apple.fileprovider-nonui</string>
+ 156:     <key>NSExtensionFileProviderDocumentGroup</key>
+ 157:     <string>group.___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___</string>
+ 158:     <key>NSExtensionPrincipalClass</key>
+ 159:     <string>___VARIABLE_moduleNamePrefixForClasses:XML___FileProviderExtension</string>
+ 160:     <key>NSExtensionFileProviderSupportsEnumeration</key>
+ 161:     <true/>
+ 162: </dict>
+ 163: ]]></string>
+ 164:         <key>___PACKAGENAMEASIDENTIFIER___.entitlements</key>
+
+[extension-swift]
+Source: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application Extension/File Provider Extension.xctemplate/FileProviderExtension.swift
+Whole-source SHA-256: 291b70a9e66f18cbd80059e367c91be31046a5d8aef5d4f1cae812244eede5da
+Lines 1-13:
+   1: //___FILEHEADER___
+   2: 
+   3: import FileProvider
+   4: 
+   5: class FileProviderExtension: NSObject, NSFileProviderReplicatedExtension {
+   6:     required init(domain: NSFileProviderDomain) {
+   7:         // TODO: The containing application must create a domain using `NSFileProviderManager.add(_:, completionHandler:)`. The system will then launch the application extension process, call `FileProviderExtension.init(domain:)` to instantiate the extension for that domain, and call methods on the instance.
+   8:         super.init()
+   9:     }
+  10:     
+  11:     func invalidate() {
+  12:         // TODO: cleanup any resources
+  13:     }
+
+[scene]
+Source: /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/Project Templates/iOS/Application/UIScene Lifecycle.xctemplate/TemplateInfo.plist
+Whole-source SHA-256: b9dae14bd3fb353bf6e5007d9c611cfe8057b7a2c9d9a73dc0254f4349a30a2f
+Lines 19-31:
+  19:             <key>UIApplicationSceneManifest</key>
+  20:             <dict>
+  21:                 <key>UIApplicationSupportsMultipleScenes</key>
+  22:                 <false/>
+  23:                 <key>UISceneConfigurations</key>
+  24:                 <dict>
+  25:                     <key>UIWindowSceneSessionRoleApplication</key>
+  26:                     <array>
+  27:                         <dict>
+  28:                             <key>UISceneConfigurationName</key>
+  29:                             <string>Default Configuration</string>
+  30:                             <key>UISceneDelegateClassName</key>
+  31:                             <string>___VARIABLE_moduleNamePrefixForClasses:XML___SceneDelegate</string>
+

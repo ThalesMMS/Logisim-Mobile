@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "source_revision": "bb63d681afac30197e1db0e3869672b94662acc9",
+  "runs": [
+    {
+      "run": "jvm-quiet-01",
+      "functional_and_identity_status": "PASS",
+      "quiet_window_status": "PENDING",
+      "reason": "Root reported possible overlap with eight javac tests in another child after this run finished. Exact compiler timestamps are not yet available in this receipt. Preserve this first run literally; do not claim absence of concurrent compilation or use it as the qualified quiet baseline.",
+      "started_utc": "2026-11-05T06:46:38.680023+00:00",
+      "finished_utc": "2026-11-05T06:46:48.671816+00:00"
+    },
+    {
+      "run": "jvm-quiet-02",
+      "functional_and_identity_status": "PASS",
+      "quiet_window_status": "COORDINATED_WITH_LIMITED_PROCESS_CENSUS",
+      "reason": "Root explicitly authorized one repetition after all Native/build owners and children were on HOLD. Two preflight censuses one second apart and before/after environment records are archived. macOS ps comm remained truncated at16 characters even with -ww; no recognizable compiler name was found, but these records cannot exclude Java or compiler processes. The HOLD handoffs support the coordinated window, not a perfectly idle host or an absolute absence of background compilation.",
+      "started_utc": "2026-11-05T06:50:33.500989+00:00",
+      "finished_utc": "2026-11-05T06:50:42.890910+00:00"
+    }
+  ],
+  "third_run": "NOT_RUN and not authorized",
+  "other_workloads": "NOT_RUN; no Native, historical corpus/SAP replay, JFR event export, physical energy or paired optimization claim"
+}

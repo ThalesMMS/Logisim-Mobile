@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "case": "sequential",
+  "status": "PASS",
+  "qualification_gate": "PARTIAL",
+  "selected_test": "EditorEndToEndTests/EditorEndToEndTests/testSap1SequentialExecution",
+  "testIdentifier": "EditorEndToEndTests/testSap1SequentialExecution()",
+  "durationSeconds": 140.001,
+  "run_id": "1b224cef7bca",
+  "pins": {
+    "appProducer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "appTestValidation": "85da031e4ed11474c2e763976392729810ef142d",
+    "uiHarness": "ba9d9682248fca28adbf5fc050f018156c7edc5c"
+  },
+  "route": "Library SAP-1 shortcut, Reset/Step/Run/Pause UI controls; no SystemOpen",
+  "results": "sequential/results.json",
+  "installedAfter": "sequential/installed-after.json",
+  "testLog": "sequential/test.log",
+  "runConfiguration": "sequential/Run.json",
+  "attachments": {
+    "final-screen": "sequential/attachments/EB3C03C6-63D4-49E1-9DAE-5155B5FE57B3.png",
+    "native-tree": "sequential/attachments/805A09DB-39D3-4975-B080-7A7A49BA13CE.txt",
+    "sap1-paused": "sequential/attachments/A0CC8AE9-84C4-4265-9EE8-1E4E2C604469.png",
+    "sap1-run-pause-observation": "sequential/attachments/0629FA90-5ED9-466B-B13C-85FD255D5CBA.txt",
+    "sap1-half-cycle-56-canvas": "sequential/attachments/83ACA99F-0CBD-48A1-8733-C5072985683A.txt",
+    "sap1-at-half-cycle-56": "sequential/attachments/5982A89F-9A30-4176-AEE6-15ABEA47151D.png",
+    "sap1-display-8": "sequential/attachments/F3DCDCFA-28AD-4A6B-B52A-AFEAAB6120FD.txt",
+    "sap1-display-0": "sequential/attachments/50EE7D77-4F97-4459-A3A5-FEE6A5065A8B.txt",
+    "geometry-editor-simulation-toolbar-overflow": "sequential/attachments/79C3F961-6243-4098-93DF-27A3BC3B5D86.txt",
+    "observed-orientation": "sequential/attachments/7DD6C6ED-4968-4453-8A50-FD698A876CDE.txt"
+  },
+  "observations": {
+    "manualHalfCycles": 56,
+    "assertCounterEvery": 8,
+    "canvasOutputSuffix": [
+      "0000",
+      "1000"
+    ],
+    "hexDisplays": [
+      {
+        "identifier": "canvas-component:import-104",
+        "digit": "0"
+      },
+      {
+        "identifier": "canvas-component:import-105",
+        "digit": "8"
+      }
+    ],
+    "runStartedAt": 56,
+    "pausedAt": 57,
+    "requestedRunMilliseconds": 1500,
+    "pauseObservationMilliseconds": 2500
+  },
+  "limits": [
+    "Selected test only; issue #36 remains partial",
+    "Simulator only; no physical device",
+    "No project XML was copied or compared by this selected case",
+    "Pause checks two counter readings around a requested 2500 ms interval, not every internal state or continuous stability",
+    "Semantic display states are not an independent pixel oracle",
+    "No other projects, Save/restart, SystemOpen or multiwindow qualified"
+  ]
+}

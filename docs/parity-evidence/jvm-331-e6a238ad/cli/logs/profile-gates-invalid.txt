@@ -1,0 +1,20 @@
+row: cli/gates
+case: profile-gates-invalid
+result: PASS
+detail: option rejected: evolution=True (exit 0), mobile=True (exit 2)
+
+=== evolution: java EvolutionStartupOracle --gates round
+exit: 0
+--- stdout (4 lines, sha256 9ffdb00fa3972fd7fe53ab4a6ad1b605ab49acaa8635118a055395be49d12a9e)
+parse=error
+gates=ansi
+locale= session=en
+template=plain
+--- stderr (1 lines, sha256 9f50c697b21383264d1c97436ca772ce3b1bafb4e16141b81ad49a711d47fc6a)
+[main] ERROR com.cburch.logisim.gui.start.Startup - Argument for --gates option must be “ANSI” or “IEC”.
+
+=== mobile: HeadlessCircuitCli --gates round --startup-settings
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 804cabacf32e4425606ce868d9a769d51d320af54443b21f99ce5e28ba29ccee)
+error=--gates must be ansi or iec.

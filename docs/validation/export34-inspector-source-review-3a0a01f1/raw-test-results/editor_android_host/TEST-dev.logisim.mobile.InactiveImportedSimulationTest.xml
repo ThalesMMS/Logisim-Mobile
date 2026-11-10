@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.logisim.mobile.InactiveImportedSimulationTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2026-11-05T06:34:24.410Z" hostname="Thaless-MacBook-Air.local" time="0.766">
+  <properties/>
+  <testcase name="catalogForegroundGateDefersNativeOpenUntilItCanInitialize" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.025"/>
+  <testcase name="inactiveSapStartupMatchesTheActiveInitialization" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.172"/>
+  <testcase name="repeatedActivationDoesNotRepeatDocumentInitialization" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.049"/>
+  <testcase name="callbackBeforeCatalogForegroundGateRetainsInitializationUntilReactivation" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.03"/>
+  <testcase name="ordinaryInactiveCommandsRemainRejectedAndNeverRunOnForeground" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.01"/>
+  <testcase name="acceptedInitializationInterruptedByBackgroundFinishesOnForeground" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.038"/>
+  <testcase name="newerDocumentSupersedesDeferredImportedInitialization" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.037"/>
+  <testcase name="initializationAndAcceptedCleanupSurviveEitherLifecycleObserverOrder" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.073"/>
+  <testcase name="rejectedInactiveCommandsCannotDiscardDeferredDocumentInitialization" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.026"/>
+  <testcase name="activeNativeImportInitializesWithoutAnotherCommand" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.03"/>
+  <testcase name="explicitInvalidationDoesNotReviveCancelledInitialization" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.026"/>
+  <testcase name="initializationCannotSmuggleClockCommandsOrInputEvents" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.028"/>
+  <testcase name="documentUndoSupersedesDeferredInitializationWithItsRestoredGraph" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.042"/>
+  <testcase name="installedComputedExampleSupersedesTheDeferredReset" classname="dev.logisim.mobile.InactiveImportedSimulationTest" time="0.178"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

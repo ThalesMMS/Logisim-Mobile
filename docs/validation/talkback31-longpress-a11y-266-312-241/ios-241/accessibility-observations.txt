@@ -1,0 +1,19 @@
+a11y-row-A: label=Select A, A, identifier=component:c1, value=Input. Low, 0., type=9, selected=false
+a11y-row-B: label=Select B, B, identifier=component:c2, value=Input. Low, 0., type=9, selected=false
+a11y-row-G: label=Select G, G, identifier=component:c3, value=AND. 1 conflicting or erroneous bit., type=9, selected=false
+a11y-row-Y: label=Select Y, Y, identifier=component:c4, value=Selected. Output. 1 undefined bit., type=9, selected=true
+a11y-terminal-Y-in: label=Start a connection at Y, in, Start a connection at Y, in, value=Input in, 1 bit. Low, 0.
+a11y-truth-edited-00: phase=edited, A=0, B=0, Y.value=Selected. Output. Low, 0.
+a11y-truth-edited-01: phase=edited, A=0, B=1, Y.value=Selected. Output. Low, 0.
+a11y-truth-edited-10: phase=edited, A=1, B=0, Y.value=Selected. Output. Low, 0.
+a11y-truth-edited-11: phase=edited, A=1, B=1, Y.value=Selected. Output. High, 1.
+a11y-truth-relaunched-00: phase=relaunched, A=0, B=0, Y.value=Selected. Output. Low, 0.
+a11y-truth-relaunched-01: phase=relaunched, A=0, B=1, Y.value=Selected. Output. Low, 0.
+a11y-truth-relaunched-10: phase=relaunched, A=1, B=0, Y.value=Selected. Output. Low, 0.
+a11y-truth-relaunched-11: phase=relaunched, A=1, B=1, Y.value=Selected. Output. High, 1.
+a11y-truth-reopened-00: phase=reopened, A=0, B=0, Y.value=Output. Low, 0.
+a11y-truth-reopened-01: phase=reopened, A=0, B=1, Y.value=Output. Low, 0.
+a11y-truth-reopened-10: phase=reopened, A=1, B=0, Y.value=Output. Low, 0.
+a11y-truth-reopened-11: phase=reopened, A=1, B=1, Y.value=Output. High, 1.
+files-selected-destination: label=Save, app=Logisim Mobile, destination=/Users/user/Library/Developer/CoreSimulator/Devices/67EB8F00-C084-4073-8742-2DADC0C2AA68/data/Containers/Data/Application/263B11DB-3798-4E5B-9F85-D844C09956D8/Documents/LogisimE2E/5faf5701d52e/main.circ
+observed-checkpoint-empty: checkpoint=empty, circuits=1, components=0, wires=0

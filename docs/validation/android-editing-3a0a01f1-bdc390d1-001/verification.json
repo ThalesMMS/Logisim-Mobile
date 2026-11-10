@@ -1,0 +1,68 @@
+{
+  "status": "FAIL_PRESERVED",
+  "inventoryEntries": 358,
+  "sdkCompleteCaptures": 42,
+  "documentChecks": {
+    "editing-empty.circ": {
+      "checkpoint": "empty",
+      "componentCount": 0,
+      "wireCount": 0,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    "editing-components.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "failure-checkpoint-36.circ": {
+      "checkpoint": "north",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "11ba7d73610a3fc8043a3a974f29bf076ea70529936a8cc2e2844e7b8f91e6d8"
+    }
+  },
+  "requestsOnly": [
+    {
+      "elapsedSeconds": 167.788970915979,
+      "utc": "2026-11-05T10:21:06.507447+00:00",
+      "request": [
+        "shell",
+        "input",
+        "tap",
+        "818",
+        "1615"
+      ]
+    },
+    {
+      "elapsedSeconds": 167.8144408329972,
+      "utc": "2026-11-05T10:21:06.532919+00:00",
+      "request": [
+        "shell",
+        "input",
+        "keyevent",
+        "4"
+      ]
+    },
+    {
+      "elapsedSeconds": 167.83958729097503,
+      "utc": "2026-11-05T10:21:06.558061+00:00",
+      "request": [
+        "shell",
+        "am",
+        "start",
+        "-W",
+        "-n",
+        "thalesmms.logisim.mobile.e2e.test/dev.logisim.mobile.documents.DocumentClipboardReaderActivity",
+        "--es",
+        "prepareCopy",
+        "2c169d739686470baf5c673c46bc1b01"
+      ]
+    }
+  ],
+  "notRun": [
+    "editing-wires-truth-table",
+    "editing-selection-history",
+    "editing-viewport-touch-parity"
+  ]
+}

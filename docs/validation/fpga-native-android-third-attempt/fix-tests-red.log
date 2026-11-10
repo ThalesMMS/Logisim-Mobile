@@ -1,0 +1,31 @@
+test_pairing_preserves_nonempty_unmasked_or_clipped_token_fields (scripts.test_android_fpga_scenarios.PairingFlowTest.test_pairing_preserves_nonempty_unmasked_or_clipped_token_fields) ... ok
+test_pairing_resolves_the_confidential_label_inside_the_native_edit_text (scripts.test_android_fpga_scenarios.PairingFlowTest.test_pairing_resolves_the_confidential_label_inside_the_native_edit_text) ... ok
+test_pairing_waits_for_the_connected_tool_card_instead_of_the_disposed_form_notice (scripts.test_android_fpga_scenarios.PairingFlowTest.test_pairing_waits_for_the_connected_tool_card_instead_of_the_disposed_form_notice) ... FAIL
+
+======================================================================
+FAIL: test_pairing_waits_for_the_connected_tool_card_instead_of_the_disposed_form_notice (scripts.test_android_fpga_scenarios.PairingFlowTest.test_pairing_waits_for_the_connected_tool_card_instead_of_the_disposed_form_notice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/test_android_fpga_scenarios.py", line 144, in test_pairing_waits_for_the_connected_tool_card_instead_of_the_disposed_form_notice
+    flow.pair()
+    ~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/android_fpga_scenarios.py", line 261, in pair
+    self.e.reveal("companion_ui_verified")
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/test_android_fpga_scenarios.py", line 142, in visible_card
+    assert key in {"additional_companion_verified", "additional_companion_operation"}, "The active panel exposes no scrollable content"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: The active panel exposes no scrollable content
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (failures=1)

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CircuitEditingTest[jvm]" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-11-05T03:55:04.958Z" hostname="Thaless-MacBook-Air.local" time="0.008">
+  <properties/>
+  <testcase name="copyingPreservesAttributesSubcircuitReferencesAndSymbolPorts[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.001"/>
+  <testcase name="deletingComponentsAndExplicitWiresIsAtomic[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.0"/>
+  <testcase name="groupMovementAndItsBoundaryConnectionsAreOneUndoStep[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.0"/>
+  <testcase name="repeatedPastesAllocateDistinctIdsAndPreserveLabelsAndGeometry[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.001"/>
+  <testcase name="emptySelectionAndClipboardDoNotCreateHistory[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.0"/>
+  <testcase name="movingUsesTheOtherElbowToAvoidAnUnrelatedNetwork[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.001"/>
+  <testcase name="movingWireKeepsItsOriginalEndsConnected[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.001"/>
+  <testcase name="unrelatedUnmarkedCrossingsRemainUnsplit[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.0"/>
+  <testcase name="changingFacingReconnectsPortsWithoutShortingInputToOutput[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.002"/>
+  <testcase name="aBranchAtTheMiddleOfAWireSplitsItAndCanBeUndoneTogether[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.0"/>
+  <testcase name="copyingAGroupKeepsInternalWiresAndExcludesExternalBranches[jvm]" classname="dev.logisim.mobile.core.CircuitEditingTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

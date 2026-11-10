@@ -1,0 +1,16 @@
+row: cli/substitute
+case: duplicate-old
+result: PASS
+detail: both reject a repeated OLD (exit 10/2)
+
+=== evolution: logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/main.circ
+exit: 10
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 eeaabdb202e9b6690097dc2fe2ef4f70ccc8e75d6c82dcbfe9ef582d8cd5b47d)
+[main] ERROR com.cburch.logisim.gui.start.Startup - Cannot substitute the same file multiple times.
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/main.circ
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 0d3e2831b7e591c70b1e8e11f08621bc332cffb2be0e79e55ffc7efadc461e62)
+error=Repeated library substitution for 'scripts/oracle/cli/fixtures/sub/lib-not.circ'.

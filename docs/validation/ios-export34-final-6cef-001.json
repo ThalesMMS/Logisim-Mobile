@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "issue": 34,
+  "platform": "iOS Simulator",
+  "status": "FAIL",
+  "caseSeconds": 390.711,
+  "exitCode": 65,
+  "sourcePin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "harnessPin": "b308ff1ba5055df4f0ad3ea81275dda1c2074f75",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+    "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "producerManifestSHA256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data",
+    "dataPathSize": 3418963968,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "lastUsedAt": "2026-11-05T02:07:11Z",
+    "isAvailable": true,
+    "logPathSize": 524288,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "state": "Booted",
+    "name": "Logisim SaveAs Beta iPad 27.0",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "physicalDevice": false,
+  "fixtureSHA256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "contractSHA256": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "visualSwiftSHA256": "d5203b7ac8938a904d85f9d196549b28a2caddd9244c7d892ba87ea162e16752",
+  "verifiedSubflows": {
+    "wholePNG": {
+      "nativeSave": "PASS",
+      "bytes": 5478460,
+      "sha256": "18912f4fedb71f1d8bea9af6f4bbf0ceef098fdf278ede921280536285145c9a",
+      "dimensions": [
+        1508,
+        908
+      ],
+      "colorSamples": "PASS",
+      "all78InkRegions": "PASS"
+    },
+    "selectedPDF": {
+      "nativeSave": "PASS",
+      "bytes": 42759,
+      "sha256": "1dff97f012a19b8cfa31f0145042c6c3f54a404498565d8b27dfcf7f727f914f",
+      "pages": 1,
+      "rasterDimensions": [
+        140,
+        100
+      ],
+      "pageMediaBoxPoints": [
+        595,
+        842
+      ],
+      "nativeCoreGraphics": "PASS",
+      "independentPopplerAndRasterSamples": "PASS"
+    },
+    "share": {
+      "nativePopover": "OBSERVED",
+      "preparedPDFEqualsVerifiedSavedPDF": true,
+      "recipientDelivery": "NOT_ATTEMPTED",
+      "cancellation": "FAIL due to wrong test target",
+      "temporaryAssetCleanup": "NOT_REACHED"
+    }
+  },
+  "cancellationEvidence": {
+    "popoverFrame": [
+      229,
+      425,
+      375,
+      359
+    ],
+    "dismissalRegionFrame": [
+      0,
+      0,
+      834,
+      1210
+    ],
+    "nativeCancelCloseButtonsInPopover": 0,
+    "backgroundEditorCloseFrame": [
+      662,
+      502,
+      63,
+      48
+    ],
+    "selectedTarget": "editor-tool-close",
+    "targetLogTimeSeconds": 374.87,
+    "reportedHitPoint": [
+      -1,
+      -1
+    ],
+    "observedResult": "The native marker disappeared, then the editor-tool-sheet existence assertion failed. The test had selected a background editor button rather than a native cancellation control.",
+    "causalityLimit": "This does not demonstrate the behavior of a correct native cancellation or spontaneous product closure; the precise synthesized event beyond the invalid reported hit point is not inferred."
+  },
+  "failure": {
+    "source": "VisualExportEndToEndTests.swift:509",
+    "message": "The editor tool must remain available after cancellation"
+  },
+  "notReached": [
+    "print preview",
+    "print staged bytes",
+    "final document XML comparison"
+  ],
+  "offlinePostflight": {
+    "status": "PASS",
+    "scope": "Rechecked the actual saved PNG, selected PDF and prepared share bytes. Does not convert the native scenario to PASS.",
+    "sha256": "7ae06eea0d91d6a82646844668fa02760b6b970e553a4f709ddfb1a1afdaa235"
+  },
+  "lease": "B25 and dedicated DerivedData explicitly returned to ios_files after terminal exit65. App95170 was terminated by teardown and portrait restored. No repeat or later Simulator action by this executor.",
+  "files": {
+    "results.json": {
+      "bytes": 27374,
+      "sha256": "e1da5082fc9575494abc4b6ccd88edfdcb1fff821f9cb0ce79d82c56a62672d9"
+    },
+    "test.log": {
+      "bytes": 168340,
+      "sha256": "420bc96d435f39425e321ce62671ce278a9ee42cbd29db36a745d45e755112d6"
+    },
+    "whole.png": {
+      "bytes": 5478460,
+      "sha256": "18912f4fedb71f1d8bea9af6f4bbf0ceef098fdf278ede921280536285145c9a"
+    },
+    "selection.pdf": {
+      "bytes": 42759,
+      "sha256": "1dff97f012a19b8cfa31f0145042c6c3f54a404498565d8b27dfcf7f727f914f"
+    },
+    "share-staged.pdf": {
+      "bytes": 42759,
+      "sha256": "1dff97f012a19b8cfa31f0145042c6c3f54a404498565d8b27dfcf7f727f914f"
+    },
+    "share-asset.txt": {
+      "bytes": 416,
+      "sha256": "511d65c5263db4895b68ba59ed0105183c2340870c162a2ee583b7ebf6e97b2d"
+    },
+    "whole-ink.txt": {
+      "bytes": 9105,
+      "sha256": "af13cb1b4f9efe1ca7deac9a218a464ed8b30d055cc8e0306f95408f2e1f37ad"
+    },
+    "share-tree.txt": {
+      "bytes": 31470,
+      "sha256": "01b74bbba94b07728449263a1e48ebdcea8ab7bcc9eede4801b36b814291cf48"
+    },
+    "share-presented.png": {
+      "bytes": 615405,
+      "sha256": "ce4eb67bef67394cbbeb4c59d375e745600139743e34d4d8432239abd86a3633"
+    },
+    "final-screen.png": {
+      "bytes": 467664,
+      "sha256": "f904e506e51377d54c8c765755ee3042c06dae70fe4bd8621b89a5f00fb1142d"
+    },
+    "final-tree.txt": {
+      "bytes": 46678,
+      "sha256": "6876acb52bc5c526a62434d7af88fcbf242e2ba144c6d12d28c97466bddca8b5"
+    },
+    "before.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    },
+    "offline-byte-postflight.json": {
+      "bytes": 35632,
+      "sha256": "7ae06eea0d91d6a82646844668fa02760b6b970e553a4f709ddfb1a1afdaa235"
+    }
+  },
+  "localEvidence": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-final-6cef-001"
+}

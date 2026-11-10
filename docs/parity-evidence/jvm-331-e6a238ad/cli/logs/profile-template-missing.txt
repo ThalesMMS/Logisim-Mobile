@@ -1,0 +1,20 @@
+row: cli/user-template
+case: profile-template-missing
+result: PASS
+detail: option rejected: evolution=True (exit 0), mobile=True (exit 2)
+
+=== evolution: java EvolutionStartupOracle -u scripts/oracle/cli/fixtures/absent.circ
+exit: 0
+--- stdout (4 lines, sha256 9d15ed483b6bfa9db750bb34fd0461b5509eca801c7712a77f85be5dbdf2eb5d)
+parse=error
+gates=ansi
+locale=en session=en
+template=custom:scripts/oracle/cli/fixtures/template.circ
+--- stderr (1 lines, sha256 d8a6532d2afdc1f454e4eb11ac13a3e8ca1d5c4cdd941c88e904b2cc0ed61d0a)
+[main] ERROR com.cburch.logisim.gui.start.Startup - Only one template allowed.
+
+=== mobile: HeadlessCircuitCli -u scripts/oracle/cli/fixtures/absent.circ --startup-settings
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 83e676b3fde0c1a74f054dab24e22c19038ac0bceda289ea02ea6122167baaa9)
+error=Invalid user template 'scripts/oracle/cli/fixtures/absent.circ': Not a regular circuit file: 'scripts/oracle/cli/fixtures/absent.circ'.

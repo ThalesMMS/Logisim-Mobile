@@ -1,0 +1,31 @@
+{
+  "base_source": "c3d7e000289115582ce901702e32268fce439bb2",
+  "original_product_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoComponentRenderer.kt",
+  "original_blob": "f187aaaf1a02381db299d68ac78226ee5900e641",
+  "patched_blob": "b8b13c4f781ff040dfeb409b01b58272322409a1",
+  "patched_sha256": "f14f4be12e0413622b1728e96201c8fe2ec1f187d2241df660f7b1ece7478ca0",
+  "source_scope": "Only MatrixKeypad raw, unpressed cells with cyan tint get black glyphs. Other paint/state/geometry/XML source is untouched. Canvas and raster/export share this renderer.",
+  "authorization": "Root limited this candidate to the confirmed raw-cyan foreground; no App draft/focus or other palette change.",
+  "independent_review": {
+    "review": "PASS_SOURCE_SCOPE",
+    "base_sha": "c3d7e000289115582ce901702e32268fce439bb2",
+    "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoComponentRenderer.kt",
+    "source_blob_sha1": "b8b13c4f781ff040dfeb409b01b58272322409a1",
+    "source_sha256": "f14f4be12e0413622b1728e96201c8fe2ec1f187d2241df660f7b1ece7478ca0",
+    "scope": "Only raw-mode, unpressed, cyan numeric legends switch white to black. Geometry/backgrounds/labels/font sizes/PMOD/pressed branches and XML remain unchanged.",
+    "ratio_old_white_cyan": 2.698066480877,
+    "ratio_new_black_cyan": 7.783351577451,
+    "unchanged_ratios": {
+      "raw_pressed_white_blue": 4.921439482135,
+      "raw_function_white_red": 4.797493526693,
+      "raw_pressed_function_white_red": 7.207414213862,
+      "pmod_white_blue": 8.135252484385,
+      "pmod_pressed_white_blue": 13.753883649365
+    },
+    "benchmark": "Opaque sRGB WCAG luminance, source integers; new pair exceeds4.5:1 normal text and3:1 large-text benchmarks without rounding.",
+    "source_note": "The shared drawIoComponent renderer also changes those raw glyph pixels in raster/export output by design; it does not change saved project attributes or XML.",
+    "validation_limits": "Read-only diff/context and arithmetic review only. No new tests, build, UI/device or Native execution. Parent owns existing focused host gates and final commit."
+  },
+  "no_new_tests": "Use existing renderer/text/geometry checks; no source-regex or new mirror tests."
+}

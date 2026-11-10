@@ -1,0 +1,20 @@
+row: cli/tty
+case: same-args-tty
+result: DIFF
+detail: stdout differs (evolution 5 lines, mobile 0 lines)
+
+=== evolution: logisim-evolution --tty table examples/and.circ
+exit: 0
+--- stdout (5 lines, sha256 af1ecc8e670ab75338d57e14ccea03bc5fb0084ad6a321d86be879f881b37840)
+A B A_AND_B
+0 0       0
+0 1       0
+1 0       0
+1 1       1
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --tty table examples/and.circ
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 04af43b74bd6ab325313a605511c924e535c5f5aff7191d102172db4496fa411)
+error=Unknown option '--tty'.

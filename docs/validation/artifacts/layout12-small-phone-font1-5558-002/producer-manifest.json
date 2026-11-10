@@ -1,0 +1,1281 @@
+{
+  "source": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "status": "PASS",
+  "tests": {
+    "core_jvm": {
+      "tests": 999,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "editor_android_host": {
+      "tests": 523,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "snapshot_junit": {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "scope": "App and test APKs from Root3a full gate; app production inputs byte-identical at5c. New snapshot helper built/tested at5c with11passed. Source protocol root unavailable is typed only by this new helper; no previous proof reattributed.",
+  "localization": 2497,
+  "files": [
+    {
+      "path": "debug_apk.apk",
+      "bytes": 16282330,
+      "sha256": "dff20e81e680ef48a198f20ffbe7374d01e8a7f7053ee165cbf7057811eb9f38"
+    },
+    {
+      "path": "e2e_apk.apk",
+      "bytes": 16298862,
+      "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+    },
+    {
+      "path": "e2e_test_apk.apk",
+      "bytes": 221322,
+      "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+    },
+    {
+      "path": "keyboard-context-ownership-fixtures-fixed.log",
+      "bytes": 18481,
+      "sha256": "02792215d819f44dc8589c6a95bcd69d6b31de6833c4c2ed71c656522f9c8d07"
+    },
+    {
+      "path": "previous-gate-failed-5da863d0.log",
+      "bytes": 25992,
+      "sha256": "e0eb597439c6e29962706be65696d1aa177eb9b08675a4fe123b8ace7fbb8165"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.AnalysisLocalizationTest.xml",
+      "bytes": 964,
+      "sha256": "33327f92be8c6664e05fe2c02c2cc7d8bde0ea999696b0ad9201b0c87550626e"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.AnnotationCircRoundTripTest.xml",
+      "bytes": 993,
+      "sha256": "24a7dd9defb6045aa78a83d6ea96c4423a7651b82701f5b778bc336dbbadb7a5"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.AnnotationEditsTest.xml",
+      "bytes": 1647,
+      "sha256": "f0a237635cb0d64899ab3e3129ff3ac83f803a560ff135a158b4e1ee64d76f77"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ArithmeticComponentsTest.xml",
+      "bytes": 773,
+      "sha256": "550e94cffa45a352a1ff43a794ed6e6157d3b75c03a3275ff910b2e527671978"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ArithmeticLogicTest.xml",
+      "bytes": 1953,
+      "sha256": "530cb8efcb4e8d517e32ec805857541f809fed3f6b2804d09cc6d9eb5cb56e1e"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircBundleCodecTest.xml",
+      "bytes": 1019,
+      "sha256": "f2dee08e4d256d843822138df413a9005788c1b03a68967e9afab19547b4c2e2"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircBundleInteroperabilityTest.xml",
+      "bytes": 931,
+      "sha256": "51bd04c2bba99e9271faf11f7479910533d2f6513fddc3452810ee69cc259d03"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircCodecTest.xml",
+      "bytes": 1688,
+      "sha256": "bd6d055bdb4cf647cbd6ac5b8314dbbcf0b3ee60cac6f99343d45f6877460127"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircComponentIdentityTest.xml",
+      "bytes": 2226,
+      "sha256": "18c7878a305115900bd9fb38bcc03c864e897c210ed26e7c821cbc988e6268e2"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircEscapingTest.xml",
+      "bytes": 770,
+      "sha256": "d6b47a71ce9b837afce2ef61ef8e418169aa6dc97d692b75c6991663a50dabfc"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircFormatProfileTest.xml",
+      "bytes": 925,
+      "sha256": "68b8f399e493b0762d8a544ced2ec7d5c077d59afb83176224542c0a25235ec3"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircLibraryCodecTest.xml",
+      "bytes": 1679,
+      "sha256": "4a547394c6fb07dabe4f953d9024f983422f40b4d1648b8e4fde72919575f258"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircProjectCodecTest.xml",
+      "bytes": 2146,
+      "sha256": "2da42382c6276e3aafbd0bb3af927a0ea0d976a48b1fc0fcdde1e347aa1976b8"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitDiagnosticsTest.xml",
+      "bytes": 2348,
+      "sha256": "d3f4205762c54fd23733f1e1abe9bb48b36f55f6b7387784b1b25407ffb208d6"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditingTest.xml",
+      "bytes": 1911,
+      "sha256": "9afad0a8d913de24b8e7705bef4d7eb1444658f8fa663b7ecf0dbc4a3a16242a"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditorTest.xml",
+      "bytes": 1174,
+      "sha256": "0b5d075296878a36b40851b1ae3a25d65d1fa60f4737d43732d280e700c07456"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitExamplesTest.xml",
+      "bytes": 754,
+      "sha256": "d3fd5ca1dd2e442ca8a74c048130d2159f2123ddae1e83efb90b30eba98ad718"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitNetworksTest.xml",
+      "bytes": 1539,
+      "sha256": "414b24a4deb279d19c75d3c5c6999a8a995994afbd74acd1f890f8579cc1e3fc"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitProjectTest.xml",
+      "bytes": 716,
+      "sha256": "3818d5392cc66aa1909fc625424ba33a6f866a1db8e60138c6d3759c5ec74a37"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitSimulatorTest.xml",
+      "bytes": 2751,
+      "sha256": "274a4e27e005380903063abb7b7aa0e0833622b7e634bc72c1183c0b1bfa6bcc"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitStatisticsTest.xml",
+      "bytes": 1982,
+      "sha256": "fb425c90994b4d0934f14c5e567c3a8422d53fc4fb50603bdf7f9de27c57bd49"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CombinationalAnalysisTest.xml",
+      "bytes": 2002,
+      "sha256": "89173ebda9718a432c3d2d563156fa906a5c1c8f5779c2433d093f0da8f755bb"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CompanionContractTest.xml",
+      "bytes": 1092,
+      "sha256": "75fd480f440176809012cb9863114ba86d8821b4eba3cb59d19e5faa62c25020"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CompanionServerIntegrationTest.xml",
+      "bytes": 1713,
+      "sha256": "ba340f6d09a314f305187f0302b37eb7997eec4e264e20c02e375d386b808159"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CompanionTclClientTest.xml",
+      "bytes": 1086,
+      "sha256": "18470e0368b870bdb3d57facab146aa6af721a5f1a1d8798a80989ed0848a5d0"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CompanionTclHttpTest.xml",
+      "bytes": 492,
+      "sha256": "5b7ccbb369a0b82dd7996e0ee846e9832effed16cc4e066a9847c704ae9ab3e1"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CompanionTelnetClientTest.xml",
+      "bytes": 2124,
+      "sha256": "16f016f4a7b7d6173d2565f4880d37eb250a2d4449be324701ac7e93fb95f13d"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CompanionTelnetHttpTest.xml",
+      "bytes": 671,
+      "sha256": "ba304a3b38f47451a252b0af94de8106ad0c5ec24fd579ee78605fe1376fb8a9"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ComponentGeometryTest.xml",
+      "bytes": 1279,
+      "sha256": "ec895cb640c1f5bd79553d93126f1db7a3a2961fb55b389d90d77f282262499a"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ComponentIdentityScopeTest.xml",
+      "bytes": 807,
+      "sha256": "a2d7c569b30330e9e11aa2af238bb1f8814bf0c9b723e1ca32c7a19b2a9b734f"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ComponentRegistryTest.xml",
+      "bytes": 1721,
+      "sha256": "59ca725023bf138a10eb16e3499cdf3ca1a74190d7fc67eaf50ba2fe7e42b75f"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.DefaultCatalogIntegrationTest.xml",
+      "bytes": 990,
+      "sha256": "8efcc0f17a7e04b4ff678a51b13cdf8ed243b289e9269cc83442f051938a3be9"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.DiagnosticNestedLocalizationTest.xml",
+      "bytes": 677,
+      "sha256": "43b0e0e9cfe94e5536c1ce8a2a5b3f44c8aa34a6f5693828311965853b71d1df"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ExternalIoComponentsTest.xml",
+      "bytes": 2028,
+      "sha256": "2fc0de0205151274dd5034c63a2796663670847faffd5ffa32073b6a87f82289"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ExternalIoRuntimeEventsTest.xml",
+      "bytes": 1107,
+      "sha256": "edf2be96eee6aed9e0e73748c46dbf57bd76de84767822a41af85a8a9bf0023b"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ExtraIoComponentsTest.xml",
+      "bytes": 1643,
+      "sha256": "c50d33474ad4b534bfaa30386a7daab8fb9cb6b24fd0b36e64c925a080c602b1"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ExtraIoExampleTest.xml",
+      "bytes": 472,
+      "sha256": "b72e77bcbe779ade7153fba6f0117b2aa7d3184e5ea6640d2b6371414f953005"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ExtraIoIntegrationTest.xml",
+      "bytes": 1255,
+      "sha256": "aa1a999849994f4b1b116557ca8e12170595c20859e2b546a7360faef3c1c80f"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ExtraIoLocalizationTest.xml",
+      "bytes": 933,
+      "sha256": "e00633fa5fb7fa4fe18223e41661468e62a509316212817e78a010bdeb4c04d6"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ExtraIoLogicTest.xml",
+      "bytes": 2207,
+      "sha256": "0d4aa5bcc821ee8de2b8128d370da2e92c5f42f70946e4f6ae40ca5d0d35d02f"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FloatingPointLibraryTest.xml",
+      "bytes": 2271,
+      "sha256": "b8e7ffd27eecb0ab474ee9325459bd44f25a0f9623847868998a2e03130dd0f7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaArchiveTest.xml",
+      "bytes": 775,
+      "sha256": "a9e10004ce6a62173acb0d2df7fd1f3a3e72e22bf2c21d3051bbbcc431b82756"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaBoardFixtureTest.xml",
+      "bytes": 913,
+      "sha256": "7a46050154cd21d3f1944e60b8f3c6ce90c0e26f3819a808bc72caffd46f97b4"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaClockDesignRulesTest.xml",
+      "bytes": 644,
+      "sha256": "5809cffaa44d3e7348ef22a60159fb819cd76ba7748e10b59945c8f4b1c95967"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaCompanionTest.xml",
+      "bytes": 781,
+      "sha256": "cf7cbf20f78d9a05cc07e6a400d4fb940abacead31dfa0e13edcddcecd9a5bd7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaHdlAdapterTest.xml",
+      "bytes": 762,
+      "sha256": "2e1624eca153c4f2a55f73e796b3943db053d278f433ee6cfc7661a68add9d65"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaLegacyPinDirectionTest.xml",
+      "bytes": 493,
+      "sha256": "725a1f232abf440e2171180ccbdf1b249c602fd6bb1c3e9898f8527d2a7075f5"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaLocalizationTest.xml",
+      "bytes": 1524,
+      "sha256": "51830667be49a234f3ebb0bb831cb06f135a782836393784e071f16b9a863b4c"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.FpgaProjectTest.xml",
+      "bytes": 2194,
+      "sha256": "b53887ba892e3febd55349593474f60fb5b03eb58c4cb77e4ce5698b141277bd"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.GatesDesktopParityTest.xml",
+      "bytes": 471,
+      "sha256": "a75adb50b3a38bcb147f06cfa16e984f001cb767cd3849057f5507bd399cc474"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.GatesLibraryTest.xml",
+      "bytes": 1636,
+      "sha256": "452264dc33b4fc6e4e428b2241409a59aed41c3c06f5731df31df8f5d85f68f5"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlCompanionTest.xml",
+      "bytes": 618,
+      "sha256": "77c842d5dfd619b49c4a456d09ccd0c3e846e917e0ab7a22c69f8576870d45a8"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlExportTest.xml",
+      "bytes": 2050,
+      "sha256": "a2bfc1b869dd104006371a9928466ee99e6f258ecd355e2da2464374f124ba05"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlImportCompanionIntegrationTest.xml",
+      "bytes": 520,
+      "sha256": "775bccd28fa2a8c153e4499fbd4ea50873faa71a4ce5b5faf5bedf6d6fba8cd9"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlImportIntegrationTest.xml",
+      "bytes": 786,
+      "sha256": "a9025881b7ab0b0f16bd87944be4b9d2b3fa25bc892bc1790e89774e4f3f8171"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlImportLocalizationTest.xml",
+      "bytes": 1047,
+      "sha256": "301fdb1863f31ea8c4b5ef51b54c8e4dcb4312f0dfa01589b4646c9ea740b038"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlImportTest.xml",
+      "bytes": 1944,
+      "sha256": "1999850b8efff20d6f8bf8e58ac8ab6e06ce5d9bfb0a4d6770d7a93aedeb4744"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlIpIntegrationTest.xml",
+      "bytes": 970,
+      "sha256": "3518536b6446356b05389272809be2786bb9cdef76345d2580fe91a15361cf76"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlIpLocalizationTest.xml",
+      "bytes": 796,
+      "sha256": "114b299f32147a2bd7ecb9fef58ed8fc1f558558ab8dd30df54284cbfd2e4cd7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlIpTest.xml",
+      "bytes": 1619,
+      "sha256": "15356ddb1185a3c31d6b2278c8d54d8423c36f1a2153c29bf0a348b1b33cb3db"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlSimulationCompanionIntegrationTest.xml",
+      "bytes": 869,
+      "sha256": "8e7e2190bb944e148c8c3573fcb7325b963f90f952396d0ff267de2149fe13bf"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HdlSimulationCompanionTest.xml",
+      "bytes": 629,
+      "sha256": "97ce6402e7a96cfb8fd6cd4a50005d7d89f321e234632293eba7869a415c7e71"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.HierarchicalDiagnosticFeedbackTest.xml",
+      "bytes": 2474,
+      "sha256": "dd26aa34f1c4cccdd8f96672200786c0f4ea0c1224f494f255f81867dfece0c1"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.IoGeometryOracleTest.xml",
+      "bytes": 472,
+      "sha256": "1b287ec6f3374d8801b91786c8efe9ec09acfb91d50dd1b01193c03a82fb842b"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.IoHeldOutputFixtureTest.xml",
+      "bytes": 489,
+      "sha256": "0d5ecf8ffae9a1dfff78e2ebacfcc1ee6bba2c119d621ee2a0bd10898f18ce11"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.IoLibraryTest.xml",
+      "bytes": 2640,
+      "sha256": "b495b8cfa6e9edb30db849967c5ebd5adaea9b58ec0dd85867362dcfd4c6c6a1"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.IoShowcaseFixtureTest.xml",
+      "bytes": 1438,
+      "sha256": "8c186f4848a66dbf88df5187b4ef4a2db4c293fec31eec923f13d0619f02de75"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.JvmTelnetTransportTest.xml",
+      "bytes": 790,
+      "sha256": "b9ec4d23a088b180833bc38053c6bf5f8440938de56b6eda573a00a65d4e8e22"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.KeypadResizeEditorTest.xml",
+      "bytes": 1238,
+      "sha256": "fcfe6532ade46ce2e5417ee9b329c2f83f9369548df847eedc25954477d76ac3"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.LogicVectorTest.xml",
+      "bytes": 1628,
+      "sha256": "40bae6a542b4a0dac80e3c09a1c8c925fc2753d96059acd69d78fe3842c3f940"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MemoryComponentsTest.xml",
+      "bytes": 892,
+      "sha256": "d9cc6d84231d67fb2ab8903bf9bdff9fa1c31e2334782639e021a6eade2b6f57"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MemoryCoreTest.xml",
+      "bytes": 1685,
+      "sha256": "de2121f0ae41b1627f2ef1d0644303fea45d342a9db3ae65b440747d66cff856"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MemoryEditorModelTest.xml",
+      "bytes": 898,
+      "sha256": "f7a38ae066307393a668f961c4eb643289b821effa740fa4a17a35446fc05224"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MemoryImageCodecTest.xml",
+      "bytes": 1653,
+      "sha256": "542a13f7ff0626179f1436ea32327957ca569dfd36f8ca57aec3f3eb6895faba"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MemoryLayoutTest.xml",
+      "bytes": 724,
+      "sha256": "573037f7d8a7a65d3478e713e78ce27692330a21738ad92b5552214faab88a8e"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MemoryLocalizationTest.xml",
+      "bytes": 1082,
+      "sha256": "af4b47a8a6ca159fcbf5d0d355f4467948e50fcd5d13cb6ba1cd9f2e521c0370"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MemorySimulationTest.xml",
+      "bytes": 1262,
+      "sha256": "cd018a9a15754afb8b86acebb9c50710ee484db34ff917448f84b041835bcd2a"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.MobileExtensionsTest.xml",
+      "bytes": 1855,
+      "sha256": "14b83e5329d5d98fd72e4e66278f64a44685156e48094e7bb52e54880570cd0f"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.Nios2CpuTest.xml",
+      "bytes": 2112,
+      "sha256": "e8d26f6b0283f3afb738fae2b5afac1d2bcbe773962d1b72cecf31968a9c639d"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.PeerComponentStateTest.xml",
+      "bytes": 918,
+      "sha256": "0263cf310859faaad4ce363486afbac56ed76fa01ed883b765bff64204ca99c6"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.PerformanceCircuitsTest.xml",
+      "bytes": 784,
+      "sha256": "a5ba10b119e11e76ccbd2aa9a6e510944406c34f4e5c304e0fe6574aa4c8c97c"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.PerformanceOracleTest.xml",
+      "bytes": 3085,
+      "sha256": "84404ead461dc0504055dcc2c812a222bcd011deffb5334b9bf2cbc358769a82"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.PlexersIntegrationTest.xml",
+      "bytes": 635,
+      "sha256": "9a98b2ad760c60226e5539715ada2d27d92f22cc5eba4e090f7504262e429143"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.PlexersLibraryTest.xml",
+      "bytes": 1631,
+      "sha256": "3eedb79318a4f2cecd05a73177036d18eaaaf4c03f080b7bdb3742b84eddc69e"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.PlexersLogicTest.xml",
+      "bytes": 2457,
+      "sha256": "00c07b24a579a25b01a4409c2d46bb17607bc99ccdacc75ce068f93b6defbfeb"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ProjectSimulatorTest.xml",
+      "bytes": 1152,
+      "sha256": "f402cc284f54ab7bfd87b840a61e772a3625425242fc3fe662d4fd8c5dd82ee8"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.RegisteredCodecNoticeTest.xml",
+      "bytes": 500,
+      "sha256": "45044046efa52ab4f5f9887e7d5aaa12bc362b5976b99175d748c9d4fdf5d52a"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.RegisteredOutputGenerationTest.xml",
+      "bytes": 1518,
+      "sha256": "90951d3b553865657e95be50dbb492d2f3c72bc874b2b4fc4c59746849e33b93"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.RegisteredSimulatorTest.xml",
+      "bytes": 1259,
+      "sha256": "03ed60b900cc37d9c0df79d603714dbed81ae3eeaab311a8a9263ac09f9f8692"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.Rv32CpuTest.xml",
+      "bytes": 1637,
+      "sha256": "b58feabe466c386b892b351a3c66fc054f9f404de4438f4f0efae462e3c18cc7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.Rv32DesktopOracleTest.xml",
+      "bytes": 477,
+      "sha256": "6b4dadf21db0332f1922b84257e7b9498076bb58a1c4e617de6034e922a25f57"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.Sap1IntegrationTest.xml",
+      "bytes": 624,
+      "sha256": "c51396eb8ae797375f09704d985c224f03300d2d1a4d86fb2d9b30d724912432"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SequentialIntegrationTest.xml",
+      "bytes": 797,
+      "sha256": "acdd8b22f0d0cb47974af436e0a218a2fbccf661aabd04e824870763c4b4a755"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SequentialLibraryTest.xml",
+      "bytes": 4183,
+      "sha256": "a80ca8dbe52732ce6bf2341f15a662045b2eb4204bd97ba2f1a515aff5fbbb1b"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SignalTraceEventTest.xml",
+      "bytes": 476,
+      "sha256": "767966770684e3b99462419f25093a1fc0b83276ba7f59a30a3367035a757069"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SignalTraceTest.xml",
+      "bytes": 1218,
+      "sha256": "0a74e1a3a33900f37ebb73f30aa9e0deccd194d1eac76791224ef42d899a35ac"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SimulationCancellationTest.xml",
+      "bytes": 496,
+      "sha256": "26bd4fe3fab7b22c7d058a76364901c63b7364ca1bb4b00ee51d53d143743889"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SimulationComponentsTest.xml",
+      "bytes": 1362,
+      "sha256": "685fb0aef3109b7bffb7d2bb9c1b885a7fecab0db9bc7b58e0619014b3990a8f"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SimulationProjectOptionsLocalizationTest.xml",
+      "bytes": 864,
+      "sha256": "836f014b84217dab4d5862fe125921e489d60068bd61732d27acff2257737e15"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SimulationProjectOptionsTest.xml",
+      "bytes": 1795,
+      "sha256": "915791035cac2fac5912a833f33e1e9c391585318bacb71f3dbc7d67fbc6a4e6"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocBusTest.xml",
+      "bytes": 1615,
+      "sha256": "c49df1ae50dc854dee5b799da6e43cd4449717da77bfc65e9e05d9ff39997ce2"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocComponentsTest.xml",
+      "bytes": 1869,
+      "sha256": "5385b1ebaed68dcc33eed8274e25e152d287e92da31d30d3cc499eadd4e7f0b8"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocCopyTest.xml",
+      "bytes": 736,
+      "sha256": "2c87a167f7aa7292d23a94f64865335b2619e689eaef3cfa75236a1d412a31db"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocEvaluationReviewTest.xml",
+      "bytes": 1378,
+      "sha256": "16fd903b9eacfbceb0bdda82f139efbbffb068870cf69eea9c4a9e7dc64e2b85"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocEvaluationTest.xml",
+      "bytes": 899,
+      "sha256": "154ea7e0c42f7d7a83ded15350d2e55829a5ed333b7d8191779b7a24200a6cb3"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocExecutableRangeTest.xml",
+      "bytes": 1065,
+      "sha256": "e0682132bfce08c8e92c3054af7d410274302f237f095f6d39da200c04ab5bb3"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocExecutableTest.xml",
+      "bytes": 729,
+      "sha256": "bc099bb3ebfdb2585a5045ad4190fed5492012df336a77ce16cdae3075d15a66"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocLocalizationTest.xml",
+      "bytes": 1214,
+      "sha256": "3a979c6dde69dc51c0fb0a637ebb17c85efaaa687a55cac3b1c5c7206ad1348a"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocProgramDesktopParityTest.xml",
+      "bytes": 991,
+      "sha256": "68c80f27048346e0c3ad4f4dfa04e8836151aacffad94790053c2e5ed4d62a2f"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SocSimulatorTest.xml",
+      "bytes": 954,
+      "sha256": "796d380971c850ff45dbe30491aa36ea40a8207feec4706f153fb398d0de76aa"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SpatialIndexTest.xml",
+      "bytes": 865,
+      "sha256": "df7db8d30b4530ece2ba548be4331509cbc55579fdfba764cdcd0a30635e66f7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.SymbolAppearanceTest.xml",
+      "bytes": 2594,
+      "sha256": "7478f46c5a35355c77aaf925099afce339fc56a511c839defefa37bf90309496"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TclClientLocalizationTest.xml",
+      "bytes": 1834,
+      "sha256": "2b2df588618498b8118b919ab1ae092c589d0d734ee361844173dbd46f6c1fc7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TclComponentsTest.xml",
+      "bytes": 2619,
+      "sha256": "314282bbef23b541ddbb68de93c160f6d6641ec52409bc565a2cda1e7ea44604"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TelnetRuntimeTest.xml",
+      "bytes": 1347,
+      "sha256": "94c957809a3ffe0abbc2fa03120fb9a202566dfc02eaf7cd542727e84d55c626"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TemporalOracleTest.xml",
+      "bytes": 879,
+      "sha256": "820f8fdf8e28de8486d02bd9a361bc367314851c9488bebdc3d01c44b0a1f33e"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TestVectorFormatTest.xml",
+      "bytes": 1941,
+      "sha256": "6682a94d98721a6e5539aaca207c3dcacb901463fcb01343fdba58f0a52ed0c2"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TestVectorQuotedLabelsTest.xml",
+      "bytes": 1985,
+      "sha256": "c637f516a400390f47fb1c53e7e2629fd486af7bdf766302659d08158db75603"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TestVectorRunnerTest.xml",
+      "bytes": 1262,
+      "sha256": "6e0c1e926be878e4cb8c2d588cd7097d1c1f9027df072387a3ff37d558cdd4e0"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TraceVectorLocalizationTest.xml",
+      "bytes": 995,
+      "sha256": "48bc1bfa9b99ad29b82a49daa84bdac7fccf790c9e93c925aff04dc83308f57b"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TtlCombinationalTest.xml",
+      "bytes": 1178,
+      "sha256": "aaa6c9e71abf55e2adeef8ddf8b3c9628c0d50eccd703edc26739266b2e9ab2d"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TtlDefinitionTest.xml",
+      "bytes": 750,
+      "sha256": "06ef482213be3d934355b18915ab4c7ff1a367976d83134403deccfeb7d08451"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TtlFixtureTest.xml",
+      "bytes": 449,
+      "sha256": "b43562d909c4446c4b02c852f1fd9bd26459ab392ad48b88bbef9eeb5dc0a487"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.TtlSequentialTest.xml",
+      "bytes": 3944,
+      "sha256": "048629be0945f248baa5a0bbfa0603d1e703cbdc9f1d301d07cdfef8bdb7a3eb"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.VideoColorCompatibilityTest.xml",
+      "bytes": 485,
+      "sha256": "fa2b7f2f60323cef733d50bc5f95108a0fc79c307b3bf8e09d9e85197e8985c7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.VideoFrameSpansTest.xml",
+      "bytes": 1040,
+      "sha256": "0de77aad4ad871a37c360682f52223a57ceea31def7f7463abc1554310d89159"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.VisualComponentSimulationTest.xml",
+      "bytes": 481,
+      "sha256": "07265df2d7972fcafd80b5073df4b1d440449d8867df4cb8cbf46f395c00fdf2"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.VisualExportTest.xml",
+      "bytes": 1446,
+      "sha256": "e8dfe0e5ea5e31b86f06aecdaf3df24d606638f9356c1e8c34d1d3d1a8ff53b2"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.VisualPngInteropTest.xml",
+      "bytes": 1052,
+      "sha256": "39b251b4295fb353c2c1032cefdbf66775043602ffbce3df49aa7b9ef7a16df8"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WireCornerEditingTest.xml",
+      "bytes": 645,
+      "sha256": "68bcc0fe7d0ccdb52dd65d22f13855e2cce8e90e2e39880a18e47f6e34a9b6a2"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WiringIntegrationTest.xml",
+      "bytes": 1557,
+      "sha256": "2fec7f9c9a5c0075ad0e2f96413cd9f84cb75a7d7d0bd26da7892992ba4d5915"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WiringLibraryTest.xml",
+      "bytes": 2096,
+      "sha256": "63957b0679bc97dee30c46988a824772f4270b4f9d3b50f35844b43517492905"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WiringValuesTest.xml",
+      "bytes": 1425,
+      "sha256": "c027c486f7a3bbfb81d83262229b4c185ef287e97949c23de700db8d73f75b0c"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceAttachmentCatalogTest.xml",
+      "bytes": 2458,
+      "sha256": "7e348dec2dc1ef1a21272c41c7610f24df52b73a7f51d82fa590daddb49cc18a"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceAttachmentsTest.xml",
+      "bytes": 1580,
+      "sha256": "1ce7050f42cff088745247622608e5923ebb73aeda18e5a3d267a25c29ae57e7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceCatalogFileTest.xml",
+      "bytes": 807,
+      "sha256": "4323bdd75c326a18ba63e66c76cc81415ad31b57f8ee8886ea4301f5b51a7561"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceCatalogTest.xml",
+      "bytes": 2366,
+      "sha256": "4b169264a83d149ff6a8ebd8a40a2c4e048dc76b23683b1a9f9e5b917c06349c"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceProjectVersionMigrationTest.xml",
+      "bytes": 700,
+      "sha256": "559dd116d4b6b42a27b2c5519aa704956ade028a830ca356900743686c0f0b55"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceRepositoryTest.xml",
+      "bytes": 1550,
+      "sha256": "7e4e767012c265197b6275d662b2c53883c66ac28c267d1b4b2b05a84978db2c"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceSessionTest.xml",
+      "bytes": 1691,
+      "sha256": "b1e03b95a752bd49bf91b208f91dc2da49e9971b9ff36195496c49a63b0ff0dd"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceStoredViewIdentityTest.xml",
+      "bytes": 2352,
+      "sha256": "503b34612ba80389aec96871fd7450d2679ed3629e4dcdc572c1c53a80a58a9a"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceUnavailableProjectTest.xml",
+      "bytes": 872,
+      "sha256": "46a88efcc115dc807e30fb500fbaee81f23a27282d06b5697708baba96e18438"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceViewRestorationTest.xml",
+      "bytes": 1142,
+      "sha256": "c749fe5f360df856a6a33d9076e809c5a98695c6e82dfa01ece94eb17ccf8c71"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.WorkspaceViewportKeyFormatTest.xml",
+      "bytes": 1301,
+      "sha256": "b17f1396bc7b7dd9116e957091f4d564ed00a6bd07ca08f392a50612582ef5e4"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.localization.CodecLocalizationTest.xml",
+      "bytes": 993,
+      "sha256": "90455dfb34e3db2efa67954e9554a66115940f76be8381d6b15bb8e1dba92659"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.localization.ComponentLocalizationTest.xml",
+      "bytes": 661,
+      "sha256": "07c15e9299a7c8a95a8db9627d7abd797bae0f00db16f7c1aa4eed4cb818f6a7"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.localization.CoreLocalizationTest.xml",
+      "bytes": 959,
+      "sha256": "883eb7f527c48fe9bc522f90993651b79b1e8b3f369ec68bd179b7157428a092"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.localization.LocalizedTextTest.xml",
+      "bytes": 1583,
+      "sha256": "f85f760311d13f95cae4c138f2f593b7616b08bf405d392227e26bd75fd0dd54"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.localization.RuntimeNoticeLocalizationTest.xml",
+      "bytes": 1031,
+      "sha256": "e54c58754e754a61c19d6e88cfc8204520d16b986020b68837ccda49bc83f16e"
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.localization.WorkspaceLocalizationTest.xml",
+      "bytes": 1023,
+      "sha256": "de218ec177b5545fa94107bc6d4e1fe1e1fd2e98db4f90ef5c6968143292aecc"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.AccessibilityContextOwnershipTest.xml",
+      "bytes": 1654,
+      "sha256": "eaae9c3a63c79a1ccc2b5fcacb6e8a9e88e6b97975e26af75d9545d476f15e03"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.AdditionalEditorToolsTest.xml",
+      "bytes": 2301,
+      "sha256": "f29039c4175479f4e229f9f7b81de7082e0fb35a3b93f7c2072947322be0730b"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.AndroidAssetFilePolicyTest.xml",
+      "bytes": 1468,
+      "sha256": "41576427a2a5667b01b8d671bd139645763960bca791515542955def6d254c7d"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.AndroidDirectoryTreeTest.xml",
+      "bytes": 3307,
+      "sha256": "99def9ef37951c2fba1fc99bae944093d52d158d483c4c2d3e973423af4facaa"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.AndroidDocumentLocalizationTest.xml",
+      "bytes": 804,
+      "sha256": "1bc172d7d8e06b24c7579d66f8ff8614fedccbac186b9b082e2902ae2d780fe4"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.AppearanceHitTestingTest.xml",
+      "bytes": 1212,
+      "sha256": "3286a4ab82147c70ffebd82e09e67000047556cf510e9a8a38403079a6181429"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.BuiltInEditorToolsTest.xml",
+      "bytes": 1510,
+      "sha256": "d0d359ffb3b4fcd1fa4b1169f154eae5047e1540142f91ee44590eb54b5c46d7"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CanvasGridPlanTest.xml",
+      "bytes": 752,
+      "sha256": "97f9c95b33f66f5d841f9586c5b379387db99617c26ff312040ef29a9c978844"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CanvasInteractionTest.xml",
+      "bytes": 1653,
+      "sha256": "485e33774a7c7711479aba91e793f1bd0bc830513dacbdae77dbf973a48a7b24"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CanvasWindowFocusTest.xml",
+      "bytes": 903,
+      "sha256": "d43eff9daa7dfdea0aaafc5b87420e663b917badb382e706b833a368628b34f2"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CanvasWireEditingTest.xml",
+      "bytes": 1188,
+      "sha256": "4dd70566e6fb0c6d126425315c5a054a4f21c73daba8be397f825d403eba988c"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CatalogReferenceRestorationTest.xml",
+      "bytes": 816,
+      "sha256": "3928efd380a597510b3159c63b73adfcc7d5bfdae0e85967d6c676076a666d55"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CatalogWorkspaceBindingTest.xml",
+      "bytes": 2869,
+      "sha256": "cb371cbd1732416a8c9ffb3f258b33eff318d216c12e1842ff6cec2f80e6ed4a"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CatalogWorkspaceRuntimeTest.xml",
+      "bytes": 1938,
+      "sha256": "834425a7e4d5366ef63ee5b0ecba848d95bfb0ebdd7851d808fa462f37b1ed44"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CircuitAccessibilityModelTest.xml",
+      "bytes": 2354,
+      "sha256": "49f37c32956216e4ec99ee66dd4c5d01d63afb9ef9dcff511fe809f416629428"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CircuitAccessibilityViewportTest.xml",
+      "bytes": 953,
+      "sha256": "68fd03240837eb2eda1574c92bf6b217c4952af1520e964da150d04f92067eb1"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CircuitDrawingTest.xml",
+      "bytes": 1346,
+      "sha256": "5c26325a805d9f547a39de916ba037daf098377cb6c30076b2ccf3b52a6d18e0"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CircuitLabelViewportTest.xml",
+      "bytes": 1225,
+      "sha256": "e5956fbd391badf7e24aa463d65cf1f83fb5df14c9829e5752c7a4b20721a900"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CircuitViewportTest.xml",
+      "bytes": 2230,
+      "sha256": "e17216d6cbf4c0892c212828c116fefed5b5cb4c2f503a271ed2e89b5e099d6b"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CompanionPairingLocalizationTest.xml",
+      "bytes": 1137,
+      "sha256": "08540223f4181f3073538c26923e526ac39966a0be42b6414d1aef38044523aa"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.DiagnosticLocalizationTest.xml",
+      "bytes": 635,
+      "sha256": "6c794d82b51e1d435797584ec77c30532daf0c89d9c8e3d009aafc2f176ed2cc"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.DiagnosticNavigationTest.xml",
+      "bytes": 804,
+      "sha256": "b0805acfab645b87f94622f0aec10e590707174b8600476279af3b5eb809a6d9"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorDipPersistenceTest.xml",
+      "bytes": 1888,
+      "sha256": "0bfa6df9ede705d4878ec846c4269027bc09e544f1696bcf9ac15742655ab178"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorDocumentsTest.xml",
+      "bytes": 1852,
+      "sha256": "ccf550cd7344c2dbe22fe175e321fcdaaba9fb14a91a9de5b5c44feba5008aed"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorExampleLoaderTest.xml",
+      "bytes": 770,
+      "sha256": "c509c951d19e2d1d2f7cd66d3ba20a7b912105591e611ad4a07cee6ef00a0ff3"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorExampleLoadingTest.xml",
+      "bytes": 642,
+      "sha256": "233cf275826cb572456e944bf3ecb8dde458d558308d34dd4e5ba9e434e630f1"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorImportLoaderTest.xml",
+      "bytes": 1052,
+      "sha256": "6e999e76d506f880c4dde58fbab7dd4a9cb69ff1bff3c18b41306c5ca146cc4f"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorImportReportTest.xml",
+      "bytes": 782,
+      "sha256": "d8e18b54b382439f5d4570e55defb0be87f15b06d2acb56b144e2cbffae211dc"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorInitializationTest.xml",
+      "bytes": 959,
+      "sha256": "ae6ad6b134046a05968a92b58b981b63a2ecee6738fa7dcc137e5c9b1c4a1804"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorInteractionGateTest.xml",
+      "bytes": 639,
+      "sha256": "9cca5e12d9e911ab9bd15bececc4f90b560f9671d9a8cd3b48d4161f3e8d3e58"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorIoInteractionGateTest.xml",
+      "bytes": 800,
+      "sha256": "4ec0704bef902eb3986a5615837710a8dcd32c65e7ecffaf225c53ae24577dbe"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorLocalizationTest.xml",
+      "bytes": 937,
+      "sha256": "7260ee568ba8cc6768a6715d70c867fb291506508f0f2fb5825ab0127cff38a9"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorPreferencesTest.xml",
+      "bytes": 1893,
+      "sha256": "3f8331c676138701adcdbe776da20613ece185cbc6f8d5f6f0c41b8f2670989f"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorProjectAccessTest.xml",
+      "bytes": 782,
+      "sha256": "1fed38978c1c8c3d37d5fa69f7a53bb72ac9760b7b653ae5acba17901f1916eb"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorRegistryIntegrationTest.xml",
+      "bytes": 517,
+      "sha256": "2a7dde1cf1bad987559fa837af6e9e102663d9d05c17dfbc0cc7a5eb3a731895"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorSearchCommandsTest.xml",
+      "bytes": 658,
+      "sha256": "5c3cdd3b2bd86c1077f21e538857dcbf109d771260daf00a4b57d0370a518e4c"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorSelectionTest.xml",
+      "bytes": 753,
+      "sha256": "29611146d38689645c1844c077d4854ad9d31440f8b578407be72ae839d4491a"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorSessionControlTest.xml",
+      "bytes": 920,
+      "sha256": "c52592241785fb7b6d3ab3ae7c6074ad24df98a29fd3ffc7d8693977954f1675"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorSimulationQueueTest.xml",
+      "bytes": 671,
+      "sha256": "63a0a2dcca0713dfe198f487feeabb18abcd62258d6285f5ae6d4055e5594cc7"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorStateTest.xml",
+      "bytes": 1007,
+      "sha256": "f0637fb10be898e867dca85d81010a64d5ee3b8850707815b5a40f798e14770c"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorToolActionsTest.xml",
+      "bytes": 1040,
+      "sha256": "da8b76edd1dc40c11b7766a3af72436adeb9a7424aa3f15924ecc953c5fbe7fc"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorToolbarLayoutTest.xml",
+      "bytes": 1323,
+      "sha256": "14fce975d08a4d80f8e333ed6ebc5dc3c5b15beb0fcc95ebd2c559359bb8fe9f"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorViewportStateTest.xml",
+      "bytes": 801,
+      "sha256": "d57f317179b1ad81ac6b1b82fd1d1864e99ecd77f1a4890f871ade573efcce3d"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorWireActionsTest.xml",
+      "bytes": 495,
+      "sha256": "7ab4e01332820878a7b34168dd4de5c8cc178a8b5704d0c0dfcd6b1d613c126b"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ExampleResetDriverTest.xml",
+      "bytes": 492,
+      "sha256": "1a31287667037c5c9a612a196b84a0e9b61444ca9743b5bad8e944d369c551ea"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ExternalIoRendererTest.xml",
+      "bytes": 1176,
+      "sha256": "de85d79dd07efd63a586f17e189e904e70fc3acdbbd9e896834cad70dca58a46"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ExternalIoRuntimeBridgeHttpTest.xml",
+      "bytes": 834,
+      "sha256": "b855e9249c91a581ef017617e3e37e2bc3c2ea88bf3429545ee1140717a6224f"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ExternalIoRuntimeBridgeTest.xml",
+      "bytes": 2989,
+      "sha256": "aef19ae637a94a18d95ac920cd39a600d766e5f368ffea3f1d17b6b1ed64fa97"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ExtraIoAudioSessionTest.xml",
+      "bytes": 1325,
+      "sha256": "abfc9eb4ea7209154ffeb9762236fd6714aa2fc2c0d2ba40038efe73796ee786"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ExtraOscilloscopeRendererTest.xml",
+      "bytes": 1182,
+      "sha256": "bc068c2530bb96f3b265350e8a8dc2d4255dd750e3d7e6dcbd2f69074c89ff39"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.FpgaClockMappingTest.xml",
+      "bytes": 755,
+      "sha256": "fc9006d29786f99f31973fc991e6ebe41d82dc4f9810b3c5187cff0b9833152f"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.FpgaCompanionSessionTest.xml",
+      "bytes": 1049,
+      "sha256": "bcbe517ba79c58df3c93f54d765d90b1f75f91e29afc54be22ea3e908de9eded"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.FpgaProgramSessionTest.xml",
+      "bytes": 1426,
+      "sha256": "daa9a840966a857ea092052eb2105683e5dcdd783c1d43454a4cbc3c4b8ba59c"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.HdlGraphExportBoundaryTest.xml",
+      "bytes": 781,
+      "sha256": "655bebb58c73f399792262849ed7db8efd285a945efb3a454063402262064bdc"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.HelpContentTest.xml",
+      "bytes": 1040,
+      "sha256": "9f3f0358d9fa8d61092628ef41f2848bdaa3ddf14551950bb1998ac0ce6ea9f0"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ImportedSimulationInitializationTest.xml",
+      "bytes": 1171,
+      "sha256": "fa04cd30e722bf3f652b7ce0c43684bd2a35e4ffec359c28dbf6326669804846"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.InactiveImportedSimulationTest.xml",
+      "bytes": 2523,
+      "sha256": "dec00c9651e70056eb0e29aa05fcecdeb06c2abf839b39f058d45b2b92cb45bd"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.IoStateDescriptionsTest.xml",
+      "bytes": 2452,
+      "sha256": "4939cade6426941773238b7a4a00f01c2bab76e4b66e256c046be0046b7509a7"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.KeyboardDraftRuntimeTest.xml",
+      "bytes": 1633,
+      "sha256": "ab574a7a4e44c03dbcceb77ea3696ac3c9c9a3b0797e60cedc73d41d330762da"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.KeyboardInputCallbackTest.xml",
+      "bytes": 1519,
+      "sha256": "8cd8a38a553bba06a0d3dc8905605c5e214924f127978ef2cf07f006788fb83b"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.KeyboardShortcutPolicyTest.xml",
+      "bytes": 1173,
+      "sha256": "cfbe479a81b310d364f5a660a578cba4d047425a36dc990868c9dacf9ce4874f"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.LegalNoticeContentTest.xml",
+      "bytes": 618,
+      "sha256": "a74fa2d9b66525f2f38b000803409193ec5ea55e75a104b822cd1d1ea5e4bf94"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.LegalNoticeLocalizationTest.xml",
+      "bytes": 632,
+      "sha256": "d467239346b9ee371959964ae40826e4c3f415a66cb562db854d58f3dfd19554"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.MemoryToolLocalizationTest.xml",
+      "bytes": 607,
+      "sha256": "25f8ccd0451de87be1dfa2f638afa3d450a7807147328e0948cef76a23025e97"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.NativeImportLifecycleTest.xml",
+      "bytes": 519,
+      "sha256": "adda11cb16e7fd34f5bc6b02d5c4101398f39f038287135fa0b4ac0792d1d2cc"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.NativeMemoryImageActionsTest.xml",
+      "bytes": 2211,
+      "sha256": "a1c13556f3a8b2a9cccb82b851f26a6b2e3b697900b3621d7b893e70bc4e9394"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PortableProjectModelTest.xml",
+      "bytes": 2436,
+      "sha256": "68f1fe6215a1d24d7cbf54f34f36d86b49371f01a5faa82d29b1af2a5344bb9b"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PortableProjectWorkspaceBridgeTest.xml",
+      "bytes": 1470,
+      "sha256": "f05877c0b7dd3382763763e276fefce95215f3ceeb7a1e91f5f38d0cdfe65b73"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PreferencesLocalizationTest.xml",
+      "bytes": 801,
+      "sha256": "5dee804050586510527f834d9aa037d0114b64b8e311924f5a8860357654304a"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PreferencesRunIsolationTest.xml",
+      "bytes": 509,
+      "sha256": "64331cceabd6b3b130547c83688aea6d4cb24f0016c62a9938a67f796730eb9f"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ProjectEditorStateTest.xml",
+      "bytes": 1286,
+      "sha256": "4965d0c85c3b1979b47869947de3937e9b70188b4fc556150e704590f10a4b94"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ProjectGraphExportPolicyTest.xml",
+      "bytes": 923,
+      "sha256": "832b3f7f5b1a683442b6365a9c7c18c7302679fba00c7cab7c3e5f6acedf2137"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ProjectManagementTest.xml",
+      "bytes": 761,
+      "sha256": "4d5307b0488a1c69c04189fbc51c654ab838bedf1476cb5320150e6eb632a61d"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ProjectNavigationTest.xml",
+      "bytes": 754,
+      "sha256": "f1384630b81fd8823d0568d67963101c36dfbd1ac02421ebac69d192cfc7ff80"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ProjectSearchTest.xml",
+      "bytes": 1025,
+      "sha256": "88eb4f7ca255bce311a17f7bc2071d71e62a58d673f005ac6aa827f9b6a77295"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PropertyEditorModelTest.xml",
+      "bytes": 1579,
+      "sha256": "90eff6c43cbd280f848da3f1710b8958967a6f98506c2c8fa986eaa86ee06f40"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PropertyLocalizationTest.xml",
+      "bytes": 786,
+      "sha256": "ffc0907dc508dd91e5a600d72e5c2ffe8ec2673b4dc84d9d499afa07f3719455"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.ReferencedCircuitEditingTest.xml",
+      "bytes": 1909,
+      "sha256": "3dd953d18ca3b74c2faf62389ea42b0223c1c73c57f23731d5c1e9ae031617ed"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.RejectedInitialDocumentTest.xml",
+      "bytes": 962,
+      "sha256": "22588222167220c532f75f1bebf771b9b792e37a17ef0a5ef79f387118c87736"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.RendererIECTest.xml",
+      "bytes": 1135,
+      "sha256": "13e673ffcaa70b9fe3b3c36b901140f885eda2ef4275d5cf022cafd4b9eaf251"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.RuntimeSimulationRequestTest.xml",
+      "bytes": 1428,
+      "sha256": "f59a67e73476cd095c264aabf8983086a4f4b6bc79790abc427065b96cd19a4b"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.SimulationEditorDriverTest.xml",
+      "bytes": 1252,
+      "sha256": "7cc15942bc51fd99bd033128bb6d59d09950ad9a26533f57ef6901bd7a7ef666"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.SimulationRunControllerTest.xml",
+      "bytes": 2391,
+      "sha256": "aa9a8ac4b9a5be6c98fed276abc1fdbb3a1b5731f7ceb399f680d2580cc4c32d"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.TraceToolEventTest.xml",
+      "bytes": 474,
+      "sha256": "d5a1e228f0ec7fac69f4167a365a074361328e894b2d85df165e8ed5dc81c3a5"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.TypedAttributeEditingTest.xml",
+      "bytes": 772,
+      "sha256": "cd25595a60c937f0c30f4cecb2d19eabb4bd6c360f9077598718b887a60509f2"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.VisualExportBackgroundTest.xml",
+      "bytes": 488,
+      "sha256": "1ca51b67198ec006e68a6418bd985d255209570aa8f5925ff6ec5af580c14d84"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.VisualExportToolsTest.xml",
+      "bytes": 1018,
+      "sha256": "df4156e1da46840a8b8984f2bfd32ff876e3f2fe11a107e46a78ba0af225dbdb"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.WorkspaceDocumentLinksTest.xml",
+      "bytes": 800,
+      "sha256": "4281c76be95cc6fa35f3a2309b404b857017a6c79709ac4acf810a876189b8ae"
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.WorldDrawingTextTest.xml",
+      "bytes": 499,
+      "sha256": "268a9da558ddd6175032b01ba223f3e1485475db573184f0c35ab64f2dd3071a"
+    },
+    {
+      "path": "raw-test-results/snapshot_junit/TEST-dev.logisim.mobile.documents.SnapshotCaptureRetryTest.xml",
+      "bytes": 1838,
+      "sha256": "8d36a2c000a638cfe3359165aa3993de509bf3725627780038c353df50ccbb5c"
+    },
+    {
+      "path": "root-unavailable-helper-5c2abc60.log",
+      "bytes": 3390,
+      "sha256": "cf48e95bab1d22fc858d5227db7c9a42db319867586ca1a07e4700df4cebb0fb"
+    },
+    {
+      "path": "snapshot_apk.apk",
+      "bytes": 965334,
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    }
+  ],
+  "app_producer_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "app_production_equivalence": {
+    "paths": [
+      "core/src/commonMain",
+      "composeApp/src/commonMain",
+      "composeApp/src/androidMain",
+      "androidApp/src/main",
+      "iosApp",
+      "build.gradle.kts",
+      "settings.gradle.kts",
+      "composeApp/build.gradle.kts",
+      "core/build.gradle.kts",
+      "androidApp/build.gradle.kts",
+      "gradle.properties",
+      "app.properties"
+    ],
+    "changed_files": []
+  }
+}

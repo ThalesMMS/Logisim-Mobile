@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "status": "FOLDER_NATIVE_ROUTE_ADMITTED_IMPORT_STILL_PENDING",
+  "nativeFolderStatus": "FAILED_BEFORE_IMPORT",
+  "nativeBundleStatus": "PASSED_SEPARATE_SCENARIO",
+  "observations": [
+    "ACTION_OPEN_DOCUMENT_TREE omits the Downloads shortcut; native roots show the device model and test provider.",
+    "The observed device-storage row matching ro.product.model opens the actual storage root, which exposes Download.",
+    "Selecting Download shows the generated fixture folders while the OS correctly refuses granting Download itself.",
+    "Admission stopped before selecting or granting the sources subfolder; no folder import/export PASS is claimed."
+  ],
+  "correction": "When the native Downloads shortcut is absent, navigate by the observed device model then the Download directory. Keep the later explicit sources-subfolder grant and permission checks unchanged.",
+  "testSelection": "--scenario portable --portable-mode folder runs only the unfinished existing group; default all retains both.",
+  "checks": {
+    "navigation": 11,
+    "portablePreparation": 10,
+    "artifactPreflight": 11,
+    "lifecycle": 5
+  },
+  "files": {
+    "group-results.json": "1717692c83518f58435ad0661ceb872d49eaaca4860ab9164a4ff51f642a1176",
+    "tree-roots-before-admission-ui.xml": "e3f119c2d5facb9d900c49245b4ae202b9202566b5d1c498c97b8a66b2fec786",
+    "tree-roots.xml": "e3f119c2d5facb9d900c49245b4ae202b9202566b5d1c498c97b8a66b2fec786",
+    "tree-roots.png": "67e076d2458ea94bc0922e54f9077a9694db26dc0461a13f4018ce58f102f69d",
+    "download-folder-after-admission.png": "0f9fbb6505be193b23db3fd084a27e3af80d8b0787c8d4c378ff5ef06092c80e",
+    "internal-storage-after-admission.png": "6797ff429ed557687ee651b1eb49e5d286837ee21ff97bbbfc5dafc07bf7c5ae",
+    "tree-roots-before-admission.png": "a53382c6ec0d181fa226834d317c565805e6195aa848bedc8feab02513d51e64",
+    "download-folder-after-admission-ui.xml": "2c9fdf7c2ffab2917001d53b39bb657373df0c30229750edb97b639e5c9d3e75",
+    "run-manifest.json": "ed9477e5561a61c831ad8435fa7068823b35dbfe34d25730bd4aec381be8d665",
+    "error.txt": "ce234d17fdf0de88fbcdfee1490f6d3eb7023f0775e562b754d1f190a8297bd0",
+    "internal-storage-after-admission-ui.xml": "786d8a8964ecdda1aa689615233cb0a4be4aea70778b1ab3667967aa589aaca0",
+    "admission.json": "f770dc45b3b892c14af8766d20ab72052ea90679324554bb84d4654270babdd0"
+  }
+}

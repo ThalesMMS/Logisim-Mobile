@@ -1,0 +1,358 @@
+{
+  "schema": 1,
+  "scope": "Metadata only: issue 34 acceptance and issue 21 source freshness. No production, schema or verifier change.",
+  "metadata_base": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "source_review_pin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "native_ios_producer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "native_android_producer": "85da031e4ed11474c2e763976392729810ef142d",
+  "native_rerun": false,
+  "inspector": {
+    "updated_source_hashes": [
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt",
+        "old_sha256": "cad5d185b7b8b423316e32e78887246508dcb4a5c5ccdf16cc014d36ecb1cb33",
+        "current_sha256": "133564a2cb23e5e58068f88e5014761b104d505ac707a0e02c573261375a98d2"
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorState.kt",
+        "old_sha256": "eb20d3d26fa4fb55248324550158e2d584ead6f9b89c4c1d100240ec8ee77f06",
+        "current_sha256": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6"
+      }
+    ],
+    "unchanged_mapped_files": 14,
+    "inspector_host_core_cases": 65,
+    "inactive_initialization_cases": 14,
+    "independent_review": "inspector-independent-review.json",
+    "unchanged_editor_state_methods": {
+      "updateSelectedAttribute": true,
+      "updateSelectedAttributes": true,
+      "updateSelectedLabel": true,
+      "change": true
+    },
+    "changed_boundaries": {
+      "App.kt": "Both Inspector layout call sites pass complete SimulationRunStatus and isEventPending; only interactive IoInputPanel branch gains a context key and those arguments. TypedPropertyInspector registry, selected component projection, onAttributes/onLabel and modifier are unchanged. Accessibility openProperties now uses the shared guard adapter; within current context it selects the same component and opens the same inspector sheet, closing activeTool. No evidence of changed invalid-value/apply/undo behavior in typed attribute path.",
+      "EditorState.kt": "Purpose tags distinguish owned document initialization from ordinary commands. updateSelectedAttribute/updateSelectedAttributes/updateSelectedLabel/change are byte-identical. Default settle remains COMMAND and same-document history restoration remains COMMAND."
+    }
+  },
+  "export": {
+    "independent_review": "export34-independent-review.json",
+    "unchanged_owning_files": [
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AdditionalEditorTools.kt",
+        "sha256": "7c94bef7e0d4036d27e83ba8550a36ae6da7def1d8377ce59511f9e3e6550284",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AnnotationRenderer.kt",
+        "sha256": "3acda65a0c3dcc08d5ba1f265530a5e9fcb302e289130a5350c96111e9d2a3e5",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitDrawing.kt",
+        "sha256": "2bee5088b249fa1d45d78b9f031d1b610dab590d5c1186071ca85a3e811cc6f2",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitVisualExportTool.kt",
+        "sha256": "acc6337016724c068f6cdf5d47d976fb6251a13361dd5a9feafc42ffdd82796f",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ClassicRenderer.kt",
+        "sha256": "b854b54c4286c5f379b237094c5700231b30055cada246418d1d42d3e5e931a2",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentAssetActions.kt",
+        "sha256": "89f11ac4eaf08f743f6df8e98573de22a1b9def579bc243794cf8bc81680b8e1",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExternalIoRenderer.kt",
+        "sha256": "ad46d6462e3e4231958c1746932032ea7306023740838fb36b67958e421cc03c",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExtraIoRenderer.kt",
+        "sha256": "c34bfaaf6867fea05c17ec55baaefaccb083d8f1f67da467e4495b75a3c36e7b",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/ExtraOscilloscopeRenderer.kt",
+        "sha256": "7f60167d8542ef4599af1dcc39ef4fe6748e17f102f554233eb84319a562152d",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/IoComponentRenderer.kt",
+        "sha256": "42498bb5c35f8621a074eef7d7fb7c7cb3b0438b2d1fc74984ecc30b60e397a6",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/PlexersRenderer.kt",
+        "sha256": "0073e493926c4308f1ccfb6f8722c34cae161c3d355b31630c95d393fd971b35",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/RendererIEC.kt",
+        "sha256": "4c93d73bc5a8683d9e9b83641a52b2e043ee6c87f639da2f0a7e4f66ffc7827b",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SocRenderer.kt",
+        "sha256": "d75ea4ccb68ffea5eb051201db8018d9c3529bcb85cb5849110f6628eef417d0",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/SymbolRenderer.kt",
+        "sha256": "7a64924e2c6a5a271150a7f0b1543f0d8778ca91913b9667d8543c1706d9b509",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/TtlRenderer.kt",
+        "sha256": "55294859acfa77b38b1a0e8e80d4708dabbe0da0bdf8514206c15ee17fa4f521",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/VisualExportTools.kt",
+        "sha256": "87aaab20804f2b4967875f43d7a654aec6a9291a52e6635fcfe5d1b95d809c44",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/VisualSceneRenderer.kt",
+        "sha256": "488cd88e56899a9902cabf6a6523f551f890642ddcc3e4aba583a905c837557e",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualExport.kt",
+        "sha256": "a10bb6f794bd4ff3353ab32c139be566795ebcb5a042c70b295a6b63fc78b8ce",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualPdf.kt",
+        "sha256": "b2cef37441aabf50388433f8505b3f0d5b952e388ea39fd7221e1236244d7fb5",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualPng.kt",
+        "sha256": "e8861ddf957dce31e0584350dabf6b58660c54a8257ae07e65a507109820a493",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "core/src/commonMain/kotlin/dev/logisim/mobile/core/VisualScene.kt",
+        "sha256": "46367f31e863b73c534c3e28f0aac45cbe1293840ab08ad6e6a9e0199f15f89f",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidAssetFilePolicy.kt",
+        "sha256": "c287ee0d95550836cb9d8ed85bbf10d638da03b697b79772cf1fea87cf5c6ef6",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidDocumentAssetActions.kt",
+        "sha256": "a9e409aa5cf8083a8149e2d28220ad392575c4239bc53a11adb03494c0f3db59",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/androidMain/kotlin/dev/logisim/mobile/AndroidPdfPrintAdapter.kt",
+        "sha256": "737fb30b26e96c706480520524204d73211fd4cc35eef2d590739a8c77361f70",
+        "equal_to_native_ios_producer": true
+      },
+      {
+        "path": "composeApp/src/iosMain/kotlin/dev/logisim/mobile/IosDocumentAssetActions.kt",
+        "sha256": "132928aacc7819a069f0fc3d5fddbfdb67f89de7a2a76ba3fd0fc09554a64412",
+        "equal_to_native_ios_producer": true
+      }
+    ],
+    "native_receipts": [
+      "docs/validation/android-export34-final-002.json",
+      "docs/validation/ios-export34-final-6cef-002.json"
+    ],
+    "promoted_keys": [
+      "visual_export",
+      "format/image-png",
+      "MenuFile/exportImage",
+      "MenuFile/print"
+    ],
+    "partial_key": "format/image-svg",
+    "format_host_core_cases": 27
+  },
+  "root_gate": {
+    "manifest": "root-gate-manifest.json",
+    "sha256": "3c50a066863e0f1a5aeecdedc4caf49fcab42ef04b7b23540a9a14857f400901",
+    "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "totals": {
+      "core_jvm": {
+        "tests": 999,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "editor_android_host": {
+        "tests": 523,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "snapshot_junit": {
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "execution_note": "JVM/Android host and four APK assemblies. 999core JVM/8snapshot reused unchanged task inputs;523host executed. iOS app built separately. Previous gate12fixture cwd failures preserved; test-only fix3a supports module and repo working directories."
+  },
+  "archived_xml": [
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitDiagnosticsTest.xml",
+      "sha256": "d3f4205762c54fd23733f1e1abe9bb48b36f55f6b7387784b1b25407ffb208d6",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditingTest.xml",
+      "sha256": "9afad0a8d913de24b8e7705bef4d7eb1444658f8fa663b7ecf0dbc4a3a16242a",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.CircuitEditorTest.xml",
+      "sha256": "0b5d075296878a36b40851b1ae3a25d65d1fa60f4737d43732d280e700c07456",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.ComponentRegistryTest.xml",
+      "sha256": "59ca725023bf138a10eb16e3499cdf3ca1a74190d7fc67eaf50ba2fe7e42b75f",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.DefaultCatalogIntegrationTest.xml",
+      "sha256": "8efcc0f17a7e04b4ff678a51b13cdf8ed243b289e9269cc83442f051938a3be9",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.KeypadResizeEditorTest.xml",
+      "sha256": "fcfe6532ade46ce2e5417ee9b329c2f83f9369548df847eedc25954477d76ac3",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.VisualExportTest.xml",
+      "sha256": "e8dfe0e5ea5e31b86f06aecdaf3df24d606638f9356c1e8c34d1d3d1a8ff53b2",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/core_jvm/TEST-dev.logisim.mobile.core.VisualPngInteropTest.xml",
+      "sha256": "39b251b4295fb353c2c1032cefdbf66775043602ffbce3df49aa7b9ef7a16df8",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.CircuitDrawingTest.xml",
+      "sha256": "5c26325a805d9f547a39de916ba037daf098377cb6c30076b2ccf3b52a6d18e0",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.EditorRegistryIntegrationTest.xml",
+      "sha256": "2a7dde1cf1bad987559fa837af6e9e102663d9d05c17dfbc0cc7a5eb3a731895",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.InactiveImportedSimulationTest.xml",
+      "sha256": "dec00c9651e70056eb0e29aa05fcecdeb06c2abf839b39f058d45b2b92cb45bd",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PropertyEditorModelTest.xml",
+      "sha256": "90eff6c43cbd280f848da3f1710b8958967a6f98506c2c8fa986eaa86ee06f40",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.PropertyLocalizationTest.xml",
+      "sha256": "ffc0907dc508dd91e5a600d72e5c2ffe8ec2673b4dc84d9d499afa07f3719455",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.TypedAttributeEditingTest.xml",
+      "sha256": "cd25595a60c937f0c30f4cecb2d19eabb4bd6c360f9077598718b887a60509f2",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.VisualExportBackgroundTest.xml",
+      "sha256": "1ca51b67198ec006e68a6418bd985d255209570aa8f5925ff6ec5af580c14d84",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.VisualExportToolsTest.xml",
+      "sha256": "df4156e1da46840a8b8984f2bfd32ff876e3f2fe11a107e46a78ba0af225dbdb",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "raw-test-results/editor_android_host/TEST-dev.logisim.mobile.WorldDrawingTextTest.xml",
+      "sha256": "268a9da558ddd6175032b01ba223f3e1485475db573184f0c35ab64f2dd3071a",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "limits": [
+    "The archived XML files are observed test reports, not a new test run.",
+    "Native proofs remain on their exact producers. Source freshness does not constitute new Native/physical/device-matrix qualification.",
+    "Only attributes and the listed issue 34 keys changed. External libraries and .lsebdl metadata are byte-for-byte unchanged."
+  ],
+  "metadata_checks": {
+    "inventory_unit_tests": 19,
+    "android_export_harness_unit_tests": 13,
+    "archived_xml_reports": 17,
+    "archived_xml_cases": 106,
+    "inventory_check": "PASS",
+    "git_diff_check": "PASS",
+    "native_rerun": false,
+    "independent_metadata_review": "inspector_delta_review approved; only attributes and five issue34 keys change; all other records preserved."
+  }
+}

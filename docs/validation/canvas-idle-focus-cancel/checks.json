@@ -1,0 +1,86 @@
+{
+  "red": {
+    "command": [
+      "python3",
+      "/tmp/logisim-gradle-serial.py",
+      "./gradlew",
+      ":composeApp:testAndroidHostTest",
+      "--tests",
+      "dev.logisim.mobile.CanvasWindowFocusTest.losingAnIdleWindowPreservesTheOpenedStatusAndDocument",
+      "--console=plain",
+      "--stacktrace"
+    ],
+    "result": "EXPECTED_FAIL",
+    "tests": 1,
+    "failures": 1,
+    "failure": "expected:<[File fixture.circ open]ed.> but was:<[Operation cancell]ed.>",
+    "source": "Behavior-preserving callback extraction and regression, without the guard; exact patch/source hashes preserved."
+  },
+  "green": {
+    "tests": 37,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": [
+      {
+        "class": "CanvasWindowFocusTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "time": "0.289"
+      },
+      {
+        "class": "CanvasInteractionTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "time": "0.004"
+      },
+      {
+        "class": "CanvasWireEditingTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "time": "0.002"
+      },
+      {
+        "class": "EditorSelectionTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "time": "0.007"
+      },
+      {
+        "class": "KeyboardShortcutPolicyTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "time": "0.003"
+      },
+      {
+        "class": "EditorIoInteractionGateTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "time": "0.044"
+      }
+    ]
+  },
+  "environment": {
+    "ANDROID_HOME": "/Users/thales/Library/Android/sdk",
+    "ANDROID_SDK_ROOT": "/Users/thales/Library/Android/sdk",
+    "JAVA_HOME": "/Users/thales/Library/Java/JavaVirtualMachines/jbr-21.0.11/Contents/Home"
+  },
+  "cache_reuse": "No worktree build directory or APK was imported. Gradle used its normal shared dependency caches; local source compilation ran.",
+  "raw_uncompressed_sha256": {
+    "red-source.patch": "a9ec6c379fbd6e4f30de8ca8000a2e868969a073e9142ff4e1d696d6769ffb93",
+    "red-host.log": "30da2bb8aa906d0abe8f07903e032fbf7f57358a848a0449f0fff033595c1b85",
+    "green-host.log": "2cc032d69d69288129894abe3bc1a1c251536dd922aba2bd3af146a6112cacc3"
+  }
+}

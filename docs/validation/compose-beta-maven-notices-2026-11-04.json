@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "candidate_source": "f739a5c697a601c7647bee75f7b8f2abb8775618",
+  "review_base": "f938ccca9172851121277b7bacf74a99abdaa70e",
+  "scope": "Resolve production Maven coordinates and refresh the existing notices generator. No compilation, application execution or release preparation.",
+  "export_command": [
+    "./gradlew",
+    "-I",
+    "scripts/legal-dependencies.init.gradle",
+    ":composeApp:exportLegalRuntimeDependencies",
+    "-PlegalOutput=outputs/version-integration-review/runtime-dependencies-resolved.json",
+    "--console=plain"
+  ],
+  "export_exit_code": 0,
+  "exported_configurations": [
+    "androidRuntimeClasspath",
+    "iosArm64CompileKlibraries",
+    "iosSimulatorArm64CompileKlibraries"
+  ],
+  "old_component_count": 233,
+  "new_component_count": 245,
+  "declared_maven_licenses": [
+    "Apache-2.0",
+    "The Apache License, Version 2.0",
+    "The Apache Software License, Version 2.0"
+  ],
+  "new_modules": [
+    "androidx.graphics:graphics-shapes",
+    "androidx.graphics:graphics-shapes-android",
+    "androidx.graphics:graphics-shapes-iosarm64",
+    "androidx.graphics:graphics-shapes-iossimulatorarm64",
+    "org.jetbrains.compose.components:components-resources",
+    "org.jetbrains.compose.components:components-resources-android",
+    "org.jetbrains.compose.components:components-resources-iosArm64",
+    "org.jetbrains.compose.components:components-resources-iosSimulatorArm64",
+    "org.jetbrains.compose.ui:ui-skiko",
+    "org.jetbrains.compose.ui:ui-skiko-iosarm64",
+    "org.jetbrains.compose.ui:ui-skiko-iossimulatorarm64"
+  ],
+  "removed_modules": [],
+  "changed_version_module_count": 124,
+  "preserved_logs": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/beta-integration-review/outputs/version-integration-review/legal-export.log",
+      "sha256": "c6203d9402d76eb5040a3341710d120f3671465d9a07d7e5fd1992b2b16957e7"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/beta-integration-review/outputs/version-integration-review/runtime-dependencies-resolved.json",
+      "sha256": "bd465b4e720a32779ea34c2e49ed584e3f4518adc6321a951960ecc76669382e"
+    }
+  ],
+  "checks": {
+    "export": "PASS: 245 records, one metadata-only task executed in 19s",
+    "generator_refresh": "PASS",
+    "generator_check": "PASS",
+    "legal_unit_tests": "PASS: 4",
+    "source_boundaries_formatting": "PASS",
+    "identity_generator_check": "PASS",
+    "android_min_target": "UNCHANGED: minSdk26, targetSdk36",
+    "ios_minimum": "UNCHANGED:16.0",
+    "distribution": "Issues62and63 verified closed/not_planned; no release step executed"
+  },
+  "native_scope": "Maven Apache metadata does not classify Skia native archives. Skiko0.156.1 native provenance is handled in a separate focused delta."
+}

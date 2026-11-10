@@ -1,0 +1,14 @@
+row: cli/new-file-format
+case: convert-hierarchy-header
+result: DIFF
+detail: written source version: evolution=5.1.0dev, mobile=3.8.0
+
+=== evolution: java EvolutionAutomationOracle convert examples/hierarchy.circ $WORK/evolution-hierarchy.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli -n examples/hierarchy.circ $WORK/mobile-hierarchy.circ
+exit: 0
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

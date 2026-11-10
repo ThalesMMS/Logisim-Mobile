@@ -1,0 +1,48 @@
+{
+  "status": "ABORTED_PRECONDITION_NO_CONTACT",
+  "serial": "emulator-5556",
+  "controller_commit": "8dcede427cd594f65704a9827276a19506c464ea",
+  "product_source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "binding_error": "unknown_bound_format: Bound record differs from the source-derived profile",
+  "real_bound_event_field": "eventTypes=TYPES_ALL_MASK",
+  "baseline_focus": {
+    "tree": "captures002/011-baseline-a-reader-on.xml",
+    "bounds": "[21,137][222,263]",
+    "visible_label": "Projects",
+    "ring": "captures002/012-baseline-a-reader-on.png",
+    "matching_reader_caption_demonstrated": false
+  },
+  "gates": {
+    "app_paused_visible": true,
+    "neutral_region_visible_clear": true,
+    "binding_helper": false,
+    "baseline_caption_qualified": false,
+    "root_lease_created": false,
+    "contact_attempted": false,
+    "passive_getevent_started": false
+  },
+  "setup_limitation": "Silent video at 55s reveals a notification permission dialog after screenshot010 and before the app launch. No notification button was pressed during this unit. Launch brought the app in front; dialog dismissal is not established. Final grant remains denied with the original public flags.",
+  "observer": {
+    "session_id": 6428,
+    "terminal_exit": 0,
+    "finish": "captures002/025-restoration-confirmed.json"
+  },
+  "screenrecord": {
+    "session_id": 52513,
+    "terminal_exit": 0,
+    "manifest": "private-video.json",
+    "duration_seconds": 185.619978,
+    "audio_streams": 0,
+    "private": true
+  },
+  "restoration": "restoration.json",
+  "lane_returned_to_root": true,
+  "qualification": {
+    "kernel": false,
+    "transport": false,
+    "reader_navigation": false,
+    "issue28": false
+  },
+  "no_new_runtime_authorized": true,
+  "lane_return_notice": "After final screenshot024 and observer6428 terminal exit0; exact message timestamp not archived."
+}

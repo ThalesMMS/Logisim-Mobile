@@ -1,0 +1,30 @@
+name: LogisimVoiceOverProbe
+options:
+  bundleIdPrefix: thalesmms.logisim.validation
+  deploymentTarget:
+    iOS: "27.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGNING_ALLOWED: NO
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  VoiceOverServiceProbeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - VoiceOverServiceProbeUITests.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: thalesmms.logisim.validation.voiceoverprobe
+        TEST_TARGET_NAME: ""
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  VoiceOverProbe:
+    build:
+      targets:
+        VoiceOverServiceProbeUITests: all
+    test:
+      targets:
+        - VoiceOverServiceProbeUITests
+      gatherCoverageData: false

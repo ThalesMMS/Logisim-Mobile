@@ -1,0 +1,104 @@
+row: cli/help
+case: help-option-spellings
+result: DIFF
+detail: Evolution spellings absent from the Mobile help text: --fpga-cable, --toplevel-circuit, -h, -l, -m, -s, -t
+
+=== evolution: logisim-evolution --help
+exit: 0
+--- stdout (63 lines, sha256 1bd3e349b9e9c5b8d890e1768a98c7dcdaea6d383c80b83e7d354ce62a3169a8)
+Logisim-evolution v5.1.0dev
+https://github.com/logisim-evolution/
+main/d58a61e0 (2026-11-07T06:09:26-0300)
+OpenJDK 64-Bit Server VM v21.0.13.0.3 (Homebrew)
+
+ usage:  Logisim-evolution [-b <file>] [--clear-prefs] [-f <args>]
+ [--fpga-cable <name>] [-g <shape>] [-h] [-l <args>] [-m <geometry>] [-n
+    <args>] [--no-splash] [-o <lang>] [-s <args>] [--save <file>] [-t
+    <format>] [--toplevel-circuit <name>] [-u <arg>] [-v] [-w <args>]
+
+           Options                               Description               
+ -b, --test-circuit <file>        Open up a circ file and start the test   
+                                   bench within it. It returns success or  
+                                   fail. Arguments: <path_to_circ>         
+ --clear-prefs                    Clear application preferences at startup.
+ -f, --test-fpga <args>           Test design implementation using         
+                                   circ_input file. The implementation     
+                                   circuit_name is the circuit choose to   
+                                   implement (FPGA_Top) and the board is   
+                                   the board name located in               
+                                   resources/logisim/boards/ without the   
+                                   “.xml” extension. The optional tick     
+                                   frequency is in Hz. The optional switch 
+                                   HDLONLY will only generate the          
+                                   HDL-description and will not perform    
+                                  synthesis, P&R, and Download. Arguments: 
+                                   <circ_input> <circuit_name> <board>     
+                                   [tick frequency] [HDLONLY]              
+ --fpga-cable <name>              Select the Intel/Altera Quartus cable for
+                                   --test-fpga using its exact name from   
+                                   quartus_pgm --list.                     
+ -g, --gates <shape>              Sets “ANSI” or “IEC” gate style.         
+ -h, --help                       Displays this argument summary help page.
+ -l, --load <args>                Load image file into all ROM/RAM with the
+                                   given label. If no label is given, it   
+                                   loads the file into all ROM/RAM         
+                                   components. May be repeated. Works with 
+                                   “--tty” only. Arguments: <file> [label] 
+ -m, --geometry <geometry>        Sets geometry for main window: Arguments:
+                                   WIDTHxHEIGHT[+X+Y]                      
+ -n, --new-file-format <args>     Open a .circ file of any version of      
+                                   Logisim and write a new one in the      
+                                   current format used in                  
+                                   Logisim-evolution. Arguments:           
+                                   <circ_input> <circ_output>              
+ --no-splash                      Hides splash screen at startup.          
+ -o, --locale <lang>              Sets locale as given as argument.        
+ -s, --substitute <args>          Substitutes library lib1 with lib2.      
+                                   Arguments: lib1 lib2.                   
+ --save <file>                    Save RAM to image file (works with       
+                                   “--tty” only).                          
+ -t, --tty <format>               Run without graphical interface.         
+                                   Argument: TTY format.                   
+ --toplevel-circuit <name>        Set main circuit to use. Arguments:      
+                                   <circuit_name>                          
+ -u, --user-template <arg>        Select template. Argument: “empty” for an
+                                   empty template, “plain” for the default 
+                                   template, or the filename of the        
+                                   template to load.                       
+ -v, --version                    Display version number and exit          
+ -w, --test-vector <args>         Test vector. Arguments: <circuit_name>   
+                                   <test_vector> <circ_file>               
+
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --help
+exit: 0
+--- stdout (27 lines, sha256 5d75152a00ef46993f44824b0839cb5a5643b23252b004f7743363d61dc48aa4)
+Usage: HeadlessCircuitCli temporal|truth-table|stats file.circ [options]
+       HeadlessCircuitCli file.circ -tty table,halt,speed,stats,tty [options]
+       HeadlessCircuitCli --test-vector CIRCUIT VECTOR_FILE file.circ [options] (alias -w)
+       HeadlessCircuitCli --test-circuit file.circ [--ticks COUNT] (alias -b)
+       HeadlessCircuitCli --new-file-format input.circ output.circ (alias -n)
+       HeadlessCircuitCli --test-fpga PROJECT CIRCUIT BOARD_XML HDLONLY --output FILE [--mapping FILE] [--hdl-language verilog|vhdl] (alias -f)
+       HeadlessCircuitCli --test-fpga PROJECT CIRCUIT BOARD_XML --companion URL --approve-build --output FILE [--mapping FILE] [--request-id ID]
+  --circuit NAME       Select a circuit instead of the project's main circuit
+  --ticks COUNT        Temporal half-cycle limit (default 10000, unlimited with -tty)
+  --load FILE [LABEL]  Load a memory image into one labeled RAM/ROM, or every remaining RAM
+  --save FILE          Save the final contents of the last reachable RAM
+  --sub OLD NEW        Use NEW for the .circ library reference OLD (repeatable, alias -sub)
+  --cancel-file FILE   Cancel when this path exists (exit 130)
+  --terminal          Feed finite ASCII stdin to Keyboard and stream TTY bytes instead of CSV
+  --tty-evolution     Match Evolution -tty table (accepts csv, tabs, binary and hex)
+  --help              Show this help
+Startup options:
+  --version             Show the application version (alias -v)
+  --clear-prefs         Reset this JVM launcher's saved preferences
+  --gates ansi|iec      Save the gate style in the launcher profile (alias -g)
+  --locale en|pt        Save the language for launcher help and notices (alias -o)
+  --user-template FILE|empty|plain
+                        Select a template for new projects (alias -u)
+  --new-project         Write a new .circ using the selected template
+  --startup-settings    Show the effective launcher profile
+  --geometry WxH        Requires a window and exits with an error on this host
+  --no-splash           Report that this host already runs without a splash
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

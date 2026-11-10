@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "scope": "One selected local other-app Files Copy/Edit/restart/conflict scenario",
+  "archivalBasePin": "1ea1b4db0ae692176e0e9b85a540b39df87300e6",
+  "runID": "5f364710641a",
+  "sourcePin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "scenario": "ExternalProviderEndToEndTests/testPeerDocumentCopyEditRestartAndConflict",
+  "nativeCaseSeconds": 274.482,
+  "counts": {
+    "totalTestCount": 1,
+    "passedTests": 1,
+    "failedTests": 0,
+    "skippedTests": 0
+  },
+  "nativeExecutionGate": "NATIVE_PASS",
+  "qualificationGate": "PARTIAL",
+  "wrapperExitCode": 0,
+  "app": {
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+    "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+  "physicalDevice": false,
+  "recordedInstallation": {
+    "mode": "REUSED_IDENTICAL",
+    "before": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/CEE032F0-DB8E-45F1-B272-991B329B6B78/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "installed": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/CEE032F0-DB8E-45F1-B272-991B329B6B78/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "independentAfter": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data/Containers/Bundle/Application/CEE032F0-DB8E-45F1-B272-991B329B6B78/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+      "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "scope": "Compared archived producer/preflight/independent-postflight identity records only; no live installed path read during archiving."
+  },
+  "nativeReceiptAttachment": "A7D4B37F-8BD1-4DA4-9BE1-18F85A6E8F48.txt",
+  "nativeReceipt": "evidence/native-peer-receipt.json",
+  "independentPostflight": "evidence/independent-postflight.json",
+  "originalResultsSHA256": "16b8f4e3feb3b07229655546c0e71a3bf99e9cacb3de76460dbb3bdaf768bef2",
+  "postflightSHA256": "6e47714e86b206e7889d668d088015d60c0a951bebf9662e1f73f36da886f660",
+  "byteChecks": {
+    "original": {
+      "bytes": 1375,
+      "sha256": "f0cd987911c1a965ca95f1a42c3287bee70ba3d08900a5d09a7d33eea0da1604"
+    },
+    "control_after": {
+      "bytes": 1375,
+      "sha256": "f0cd987911c1a965ca95f1a42c3287bee70ba3d08900a5d09a7d33eea0da1604"
+    },
+    "local_after_conflict": {
+      "bytes": 1586,
+      "sha256": "77113b1fb40fd34f87eab526654d2515a17916820f30634790d504b186f39c15"
+    },
+    "peer_after_conflict": {
+      "bytes": 1650,
+      "sha256": "a0ea1ac33f3041d3fc2a05c089a2f4d096e12f38648b71cfda3de20a793362d7"
+    }
+  },
+  "observations": [
+    {
+      "sourceBytes": 1375,
+      "sourceSha256": "f0cd987911c1a965ca95f1a42c3287bee70ba3d08900a5d09a7d33eea0da1604",
+      "stage": "copy-edited",
+      "xmlSha256": "f67433f0968fc5964a28e41253c9fbc6dda10ce0a1076c82f942f978a7699989"
+    },
+    {
+      "sourceBytes": 1583,
+      "sourceSha256": "7a2447c4aef8bd89d19d936c1e9eae43c0e4acc6d2add2fc8f9eb149e88b2b31",
+      "stage": "external-saved",
+      "xmlSha256": "7a2447c4aef8bd89d19d936c1e9eae43c0e4acc6d2add2fc8f9eb149e88b2b31"
+    },
+    {
+      "sourceBytes": 1586,
+      "sourceSha256": "77113b1fb40fd34f87eab526654d2515a17916820f30634790d504b186f39c15",
+      "stage": "bookmark-saved-after-restart",
+      "xmlSha256": "77113b1fb40fd34f87eab526654d2515a17916820f30634790d504b186f39c15"
+    },
+    {
+      "sourceBytes": 1650,
+      "sourceSha256": "a0ea1ac33f3041d3fc2a05c089a2f4d096e12f38648b71cfda3de20a793362d7",
+      "stage": "conflict-preserved",
+      "xmlSha256": "77113b1fb40fd34f87eab526654d2515a17916820f30634790d504b186f39c15"
+    }
+  ],
+  "validatedRelations": [
+    "Copy baseline equals external baseline.",
+    "First saved XML equals XML restored after terminate/launch.",
+    "Second saved XML equals local XML after the conflict.",
+    "Actual archived final peer equals the exact injected revision.",
+    "Injected revision equals second saved XML plus the exact run-specific comment.",
+    "Actual archived final control equals original raw input.",
+    "All three full-XML edit comparisons differ only in the selected input Pin label."
+  ],
+  "uiEvidence": {
+    "copyPicker": "evidence/ui/copy-native-picker.png",
+    "editPicker": "evidence/ui/edit-native-picker.png",
+    "firstSave": "evidence/ui/first-save.png",
+    "secondSave": "evidence/ui/second-save.png",
+    "conflict": "evidence/ui/conflict.png",
+    "nativeFilenameObservation": "Files exposes one Cell with identifier peer, circ and visible stem peer; the frozen navigator explicitly supports that observed extension-hiding form."
+  },
+  "executedHarnessSourceHashes": {
+    "ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+    "ExternalProviderEndToEndTests.swift": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+    "NativeFilesPeerNavigator.swift": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+    "NativeTextReplacement.swift": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3",
+    "NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+    "ObservedProjectXML.swift": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609"
+  },
+  "evidenceManifest": "minimal-artifacts.json",
+  "checksumManifest": "SHA256SUMS",
+  "offlineVerifier": "verify-archived-evidence.py",
+  "limits": [
+    "Suite qualification remains PARTIAL; one testcase is not full-app acceptance.",
+    "The peer is the Clipboard Receiver local Documents container exposed through Files, not a cloud provider or custom FileProvider extension.",
+    "The peer is preserved during Copy, then intentionally changed by two real saves and a revision injected atomically by the harness; only the control stays original at the end.",
+    "The conflict was not produced by another app UI or cloud synchronization.",
+    "Security-scope revocation, authentication revocation, Open With, phone and physical hardware are not qualified by this case.",
+    "Historical paths in reports are metadata only. Archive verification reads colocated evidence, never any live Simulator path.",
+    "No build, device, cache, registration, fixture or canonical modification was performed during archiving."
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-05T06:24:54.884358+00:00",
+  "source_revision": "bb63d681afac30197e1db0e3869672b94662acc9",
+  "worktree_dirty": false,
+  "scope": "Build and identity only; no performance benchmark JVM or Native/UI/device execution",
+  "build": "PASS, 1m59s, five tasks executed",
+  "compiled_class_count": 1255,
+  "source_count": 302,
+  "classpath_file_count": 1257,
+  "stamp": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/core/build/performance-sources.json",
+    "sha256": "07e84832b6f8d2bf6f0e67f46c208cf98f9dc8e3f4cd170f0b54b55a001b87a8"
+  },
+  "logs": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/prepare.log",
+      "bytes": 1026,
+      "sha256": "9dee5afb36235b722865012e8f6fe0c11dfc24fdbcd8d32053286cd020af095c"
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-bb63/outputs/performance/bb63d681/prepare-identity-check.log",
+      "bytes": 320,
+      "sha256": "1c9c723a63b6838627c75e96109329342028e321768a6d80740382876b533e2c"
+    }
+  ],
+  "benchmark_status": "NOT_RUN; awaiting explicit quiet-window authorization",
+  "native_status": "NOT_RUN",
+  "historical_corpus": {
+    "manifest_path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/manifest.json",
+    "manifest_sha256": "295571568422db33a280e9c0a52b322982cfa7f57c10e297fd70a788d7596f58",
+    "file_hashes_checked": [
+      {
+        "file": "independent-16.circ",
+        "bytes": 16109,
+        "sha256": "19198a15e4880baccd3d00391f257c766a8be0859daae1ca721d3d8ed7c12a31",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "independent-64.circ",
+        "bytes": 63917,
+        "sha256": "422e4af2cbe4ad04ec0aa04869166dc6d67fcbcfd4b0cdd8613487068ba383f6",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "independent-256.circ",
+        "bytes": 255620,
+        "sha256": "6093665f68ac49d62caa26c8432fa70e3b87c050720b6f9af40977d04cb98bcb",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "independent-384.circ",
+        "bytes": 384036,
+        "sha256": "6b7593a012694a5aa75989516e7d6374b442e6f9fe1b50f95ade667dab1bee67",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "independent-1024.circ",
+        "bytes": 1027311,
+        "sha256": "4e5cf7e40c9fe44d529d27045a5f24189fb007ff1e8908508d39b823b0e006e1",
+        "historical_import_status": "rejected",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "hierarchical-16.circ",
+        "bytes": 14677,
+        "sha256": "8eb0316fad1634f757f3a31d7a50ac3c082cd9ed81646400686ae93cb31c87f4",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "hierarchical-64.circ",
+        "bytes": 54037,
+        "sha256": "50a64a7f0a41be04a0e5f6c40d84175d813d5690b3f36a30ab59c43916b91b13",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "hierarchical-256.circ",
+        "bytes": 211948,
+        "sha256": "4df6ff77dea871e6aa21937394f9a9ed46de5444b0149d3cdcc8d2a5c46407aa",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "hierarchical-384.circ",
+        "bytes": 317836,
+        "sha256": "07b81291c0ade608a0998a75088b154a36d7378037771238bd1d52050aa6e631",
+        "historical_import_status": "accepted",
+        "current_runtime_replay": "NOT_RUN"
+      },
+      {
+        "file": "hierarchical-1024.circ",
+        "bytes": 848471,
+        "sha256": "ce41b16c67626d3812586990cccffb5179a1c167f1dd7946202eefc596de7455",
+        "historical_import_status": "rejected",
+        "current_runtime_replay": "NOT_RUN"
+      }
+    ]
+  },
+  "sap1": {
+    "path": "examples/sap1.circ",
+    "bytes": 47528,
+    "sha256": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac",
+    "lexical_circuits": 7,
+    "lexical_components": 156,
+    "lexical_wires": 318,
+    "current_runtime_replay": "NOT_RUN"
+  },
+  "next_run_plan": "/tmp/logisim-performance48-bb63-next-run.md"
+}

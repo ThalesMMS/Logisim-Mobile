@@ -1,0 +1,210 @@
+[
+  {
+    "event": "baseline-probe-ready",
+    "utc": "2026-11-04T21:26:37.336668+00:00",
+    "monotonicNs": 173475739212583,
+    "observerPid": 74071
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:26:38.795768+00:00",
+    "monotonicNs": 173477197943041,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "am",
+      "force-stop",
+      "thalesmms.logisim.mobile.e2e"
+    ],
+    "beforeMonotonicNs": 173475770542458,
+    "returncode": 0
+  },
+  {
+    "event": "launch-request",
+    "utc": "2026-11-04T21:26:38.796639+00:00",
+    "monotonicNs": 173477198808916,
+    "deadlineSeconds": 30
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:26:49.711602+00:00",
+    "monotonicNs": 173488113741791,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "am",
+      "start",
+      "-W",
+      "-n",
+      "thalesmms.logisim.mobile.e2e/dev.logisim.mobile.MainActivity"
+    ],
+    "beforeMonotonicNs": 173477200105666,
+    "returncode": 0
+  },
+  {
+    "event": "am-start-returned",
+    "utc": "2026-11-04T21:26:49.719566+00:00",
+    "monotonicNs": 173488121673791
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:26:52.558514+00:00",
+    "monotonicNs": 173490960616416,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "beforeMonotonicNs": 173489199292833,
+    "returncode": 0
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-04T21:26:52.560358+00:00",
+    "monotonicNs": 173490962459958,
+    "targetSeconds": 12,
+    "ready": false
+  },
+  {
+    "event": "hierarchy",
+    "utc": "2026-11-04T21:26:57.121225+00:00",
+    "monotonicNs": 173495523300666,
+    "elapsedSeconds": 18.323025875,
+    "loading": true,
+    "beforeMonotonicNs": 173488122798166
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:26:57.443133+00:00",
+    "monotonicNs": 173495845210166,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "pidof",
+      "thalesmms.logisim.mobile.e2e"
+    ],
+    "beforeMonotonicNs": 173495524218583,
+    "returncode": 0
+  },
+  {
+    "event": "sigquit-loading",
+    "utc": "2026-11-04T21:26:57.444063+00:00",
+    "monotonicNs": 173495846629833,
+    "pid": 9898,
+    "elapsedSeconds": 18.323025875
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:26:57.866255+00:00",
+    "monotonicNs": 173496268356750,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "run-as",
+      "thalesmms.logisim.mobile.e2e",
+      "kill",
+      "-3",
+      "9898"
+    ],
+    "beforeMonotonicNs": 173495847231541,
+    "returncode": 0
+  },
+  {
+    "event": "hierarchy",
+    "utc": "2026-11-04T21:27:04.622026+00:00",
+    "monotonicNs": 173503047100958,
+    "elapsedSeconds": 25.728029125,
+    "loading": true,
+    "beforeMonotonicNs": 173496475488791
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:27:11.347614+00:00",
+    "monotonicNs": 173509749638250,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "beforeMonotonicNs": 173507201155416,
+    "returncode": 0
+  },
+  {
+    "event": "screenshot",
+    "utc": "2026-11-04T21:27:11.349442+00:00",
+    "monotonicNs": 173509751442375,
+    "targetSeconds": 30,
+    "ready": false
+  },
+  {
+    "event": "hierarchy",
+    "utc": "2026-11-04T21:27:12.435333+00:00",
+    "monotonicNs": 173510837338541,
+    "elapsedSeconds": 33.637397042,
+    "loading": true,
+    "beforeMonotonicNs": 173503314414958
+  },
+  {
+    "event": "hierarchy-error",
+    "utc": "2026-11-04T21:27:20.325210+00:00",
+    "monotonicNs": 173518727171125,
+    "requestedTimeout": 7.08229466699413,
+    "beforeMonotonicNs": 173511040498666,
+    "error": "No fresh Android UI hierarchy within 7.08229466699413s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-f49e2481dda54ec996ee05b437d416fb-4.xml']' timed out after 7.082289874990238 seconds"
+  },
+  {
+    "event": "editor-timeout",
+    "utc": "2026-11-04T21:27:20.326613+00:00",
+    "monotonicNs": 173518728560666,
+    "elapsedSeconds": 41.529747667,
+    "error": "No fresh Android UI hierarchy within 7.08229466699413s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-f49e2481dda54ec996ee05b437d416fb-4.xml']' timed out after 7.082289874990238 seconds"
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:27:54.146746+00:00",
+    "monotonicNs": 173552548523625,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "run-as",
+      "thalesmms.logisim.mobile.e2e",
+      "sh",
+      "-c",
+      "'find files -type f -exec sha256sum {} \\;'"
+    ],
+    "beforeMonotonicNs": 173551658472041,
+    "returncode": 0
+  },
+  {
+    "event": "command",
+    "utc": "2026-11-04T21:27:54.308941+00:00",
+    "monotonicNs": 173552710714208,
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "dumpsys",
+      "activity",
+      "lastanr"
+    ],
+    "beforeMonotonicNs": 173552549591166,
+    "returncode": 0
+  }
+]

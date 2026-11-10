@@ -1,0 +1,192 @@
+Desktop JAR: /Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar
+Mobile JAR: /Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/core/build/libs/core-jvm.jar
+d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038  /Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar
+3121d939a28779c1f82f02303debcc76c8f963e71a34ec63af2a5c53a16ddefc  /Users/user/.t3/worktrees/logisim-mobile-dev/t3-99d5de48/core/build/libs/core-jvm.jar
+
+=== rv32: load sum-rv32.elf and step 22 instructions
+SAME rv32 elf-load: Evolution loaded=true; registers after load: evolution pc=00000000 , mobile pc=00000000 
+SAME rv32 register-view-after-load: pc and 32 registers, unknown registers as ????????
+step  1 evolution 00000000 00000093 li        ra,0         | mobile 00000000 00000093 addi
+step  2 evolution 00000004 00100113 li        sp,1         | mobile 00000004 00100113 addi
+step  3 evolution 00000008 00600193 li        gp,6         | mobile 00000008 00600193 addi
+step  4 evolution 0000000c 002080b3 add       ra,ra,sp     | mobile 0000000c 002080b3 add
+step  5 evolution 00000010 00110113 addi      sp,sp,1      | mobile 00000010 00110113 addi
+step  6 evolution 00000014 fe314ce3 blt       sp,gp,pc-8   | mobile 00000014 fe314ce3 blt
+step  7 evolution 0000000c 002080b3 add       ra,ra,sp     | mobile 0000000c 002080b3 add
+step  8 evolution 00000010 00110113 addi      sp,sp,1      | mobile 00000010 00110113 addi
+step  9 evolution 00000014 fe314ce3 blt       sp,gp,pc-8   | mobile 00000014 fe314ce3 blt
+step 10 evolution 0000000c 002080b3 add       ra,ra,sp     | mobile 0000000c 002080b3 add
+step 11 evolution 00000010 00110113 addi      sp,sp,1      | mobile 00000010 00110113 addi
+step 12 evolution 00000014 fe314ce3 blt       sp,gp,pc-8   | mobile 00000014 fe314ce3 blt
+step 13 evolution 0000000c 002080b3 add       ra,ra,sp     | mobile 0000000c 002080b3 add
+step 14 evolution 00000010 00110113 addi      sp,sp,1      | mobile 00000010 00110113 addi
+step 15 evolution 00000014 fe314ce3 blt       sp,gp,pc-8   | mobile 00000014 fe314ce3 blt
+step 16 evolution 0000000c 002080b3 add       ra,ra,sp     | mobile 0000000c 002080b3 add
+step 17 evolution 00000010 00110113 addi      sp,sp,1      | mobile 00000010 00110113 addi
+step 18 evolution 00000014 fe314ce3 blt       sp,gp,pc-8   | mobile 00000014 fe314ce3 blt
+step 19 evolution 00000018 00001237 lui       tp,1         | mobile 00000018 00001237 lui
+step 20 evolution 0000001c 00122023 sw        ra,0(tp)     | mobile 0000001c 00122023 sw
+step 21 evolution 00000020 10102023 sw        ra,256(zero) | mobile 00000020 10102023 sw
+step 22 evolution 00000024 10002283 lw        t0,256(zero) | mobile 00000024 10002283 lw
+SAME rv32 register-view-per-step: 0 of 22 steps differ (pc, x0..x31, unknown marks)
+SAME rv32 trace-pc-and-word: 0 of 22 trace rows differ in pc or instruction word
+DIFF rv32 trace-assembly-text: 22 of 22 rows differ after normalizing spaces and case (22 differ byte for byte); e.g. 'li        ra,0' vs 'addi'; 'li        sp,1' vs 'addi'; 'li        gp,6' vs 'addi'; 'add       ra,ra,sp' vs 'add'
+
+=== rv32: run with a breakpoint at 0x00000014
+[main] INFO com.cburch.logisim.gui.generic.OptionPane - Risc V IM simulator@800,20:Execution is paused due to a break point set at the current instruction.
+resume 0: evolution tick 6 pc=00000014 1=00000001 | mobile tick 6 pc=00000014 1=00000001
+[main] INFO com.cburch.logisim.gui.generic.OptionPane - Risc V IM simulator@800,20:Execution is paused due to a break point set at the current instruction.
+resume 1: evolution tick 4 pc=00000014 1=00000003 | mobile tick 4 pc=00000014 1=00000003
+[main] INFO com.cburch.logisim.gui.generic.OptionPane - Risc V IM simulator@800,20:Execution is paused due to a break point set at the current instruction.
+resume 2: evolution tick 4 pc=00000014 1=00000006 | mobile tick 4 pc=00000014 1=00000006
+SAME rv32 breakpoint-run: halts evolution [tick 6 pc=00000014 1=00000001, tick 4 pc=00000014 1=00000003, tick 4 pc=00000014 1=00000006] mobile [tick 6 pc=00000014 1=00000001, tick 4 pc=00000014 1=00000003, tick 4 pc=00000014 1=00000006]
+
+=== nios2: load sum-nios2.elf and step 22 instructions
+SAME nios2 elf-load: Evolution loaded=true; registers after load: evolution pc=00000000 , mobile pc=00000000 
+SAME nios2 register-view-after-load: pc and 32 registers, unknown registers as ????????
+step  1 evolution 00000000 00800004 movi      r2,0         | mobile 00000000 00800004 movi      r2,0
+step  2 evolution 00000004 00c00044 movi      r3,1         | mobile 00000004 00c00044 movi      r3,1
+step  3 evolution 00000008 01000184 movi      r4,6         | mobile 00000008 01000184 movi      r4,6
+step  4 evolution 0000000c 10c5883a add       r2,r2,r3     | mobile 0000000c 10c5883a add       r2,r2,r3
+step  5 evolution 00000010 18c00044 addi      r3,r3,1      | mobile 00000010 18c00044 addi      r3,r3,1
+step  6 evolution 00000014 193ffd16 blt       r3,r4,pc-8   | mobile 00000014 193ffd16 blt       r3,r4,pc-8
+step  7 evolution 0000000c 10c5883a add       r2,r2,r3     | mobile 0000000c 10c5883a add       r2,r2,r3
+step  8 evolution 00000010 18c00044 addi      r3,r3,1      | mobile 00000010 18c00044 addi      r3,r3,1
+step  9 evolution 00000014 193ffd16 blt       r3,r4,pc-8   | mobile 00000014 193ffd16 blt       r3,r4,pc-8
+step 10 evolution 0000000c 10c5883a add       r2,r2,r3     | mobile 0000000c 10c5883a add       r2,r2,r3
+step 11 evolution 00000010 18c00044 addi      r3,r3,1      | mobile 00000010 18c00044 addi      r3,r3,1
+step 12 evolution 00000014 193ffd16 blt       r3,r4,pc-8   | mobile 00000014 193ffd16 blt       r3,r4,pc-8
+step 13 evolution 0000000c 10c5883a add       r2,r2,r3     | mobile 0000000c 10c5883a add       r2,r2,r3
+step 14 evolution 00000010 18c00044 addi      r3,r3,1      | mobile 00000010 18c00044 addi      r3,r3,1
+step 15 evolution 00000014 193ffd16 blt       r3,r4,pc-8   | mobile 00000014 193ffd16 blt       r3,r4,pc-8
+step 16 evolution 0000000c 10c5883a add       r2,r2,r3     | mobile 0000000c 10c5883a add       r2,r2,r3
+step 17 evolution 00000010 18c00044 addi      r3,r3,1      | mobile 00000010 18c00044 addi      r3,r3,1
+step 18 evolution 00000014 193ffd16 blt       r3,r4,pc-8   | mobile 00000014 193ffd16 blt       r3,r4,pc-8
+step 19 evolution 00000018 01440004 movi      r5,4096      | mobile 00000018 01440004 movi      r5,4096
+step 20 evolution 0000001c 28800015 stw       r2,0(r5)     | mobile 0000001c 28800015 stw       r2,0(r5)
+step 21 evolution 00000020 00804015 stw       r2,256(zero) | mobile 00000020 00804015 stw       r2,256(zero)
+step 22 evolution 00000024 01804017 ldw       r6,256(zero) | mobile 00000024 01804017 ldw       r6,256(zero)
+SAME nios2 register-view-per-step: 0 of 22 steps differ (pc, x0..x31, unknown marks)
+SAME nios2 trace-pc-and-word: 0 of 22 trace rows differ in pc or instruction word
+SAME nios2 trace-assembly-text: 0 of 22 rows differ after normalizing spaces and case (0 differ byte for byte)
+
+=== nios2: run with a breakpoint at 0x00000014
+[main] INFO com.cburch.logisim.gui.generic.OptionPane - Nios2s simulator@800,20:Execution is paused due to a break point set at the current instruction.
+resume 0: evolution tick 6 pc=00000014 1=???????? | mobile tick 6 pc=00000014 1=????????
+[main] INFO com.cburch.logisim.gui.generic.OptionPane - Nios2s simulator@800,20:Execution is paused due to a break point set at the current instruction.
+resume 1: evolution tick 4 pc=00000014 1=???????? | mobile tick 4 pc=00000014 1=????????
+[main] INFO com.cburch.logisim.gui.generic.OptionPane - Nios2s simulator@800,20:Execution is paused due to a break point set at the current instruction.
+resume 2: evolution tick 4 pc=00000014 1=???????? | mobile tick 4 pc=00000014 1=????????
+SAME nios2 breakpoint-run: halts evolution [tick 6 pc=00000014 1=????????, tick 4 pc=00000014 1=????????, tick 4 pc=00000014 1=????????] mobile [tick 6 pc=00000014 1=????????, tick 4 pc=00000014 1=????????, tick 4 pc=00000014 1=????????]
+
+=== RV32 assembler, one statement per case
+  lui x5, 0xABCDE            same           evolution 00000000:00000013 00000004:abcde2b7 | mobile 00000000:00000013 00000004:abcde2b7
+  auipc x6, 0x12             same           evolution 00000000:00000013 00000004:00012317 | mobile 00000000:00000013 00000004:00012317
+  jal x1, start              same           evolution 00000000:00000013 00000004:ffdff0ef | mobile 00000000:00000013 00000004:ffdff0ef
+  jalr x0, 0(x1)             Mobile only    evolution rejected [line 3: Expected a register; ] | mobile 00000000:00000013 00000004:00008067
+  jalr x0, x1, 0             Evolution only evolution 00000000:00000013 00000004:00008067 | mobile rejected [line 3: soc_asm_operand_count]
+  jalr x1, x2, 8             Evolution only evolution 00000000:00000013 00000004:008100e7 | mobile rejected [line 3: soc_asm_operand_count]
+  beq x1, x2, start          same           evolution 00000000:00000013 00000004:fe208ee3 | mobile 00000000:00000013 00000004:fe208ee3
+  bne x1, x2, start          same           evolution 00000000:00000013 00000004:fe209ee3 | mobile 00000000:00000013 00000004:fe209ee3
+  blt x1, x2, start          same           evolution 00000000:00000013 00000004:fe20cee3 | mobile 00000000:00000013 00000004:fe20cee3
+  bge x1, x2, start          same           evolution 00000000:00000013 00000004:fe20dee3 | mobile 00000000:00000013 00000004:fe20dee3
+  bltu x1, x2, start         same           evolution 00000000:00000013 00000004:fe20eee3 | mobile 00000000:00000013 00000004:fe20eee3
+  bgeu x1, x2, start         same           evolution 00000000:00000013 00000004:fe20fee3 | mobile 00000000:00000013 00000004:fe20fee3
+  lb x7, -4(x2)              same           evolution 00000000:00000013 00000004:ffc10383 | mobile 00000000:00000013 00000004:ffc10383
+  lh x7, 2(x2)               same           evolution 00000000:00000013 00000004:00211383 | mobile 00000000:00000013 00000004:00211383
+  lw x7, 2044(x2)            same           evolution 00000000:00000013 00000004:7fc12383 | mobile 00000000:00000013 00000004:7fc12383
+  lbu x7, 1(x2)              same           evolution 00000000:00000013 00000004:00114383 | mobile 00000000:00000013 00000004:00114383
+  lhu x7, 2(x2)              same           evolution 00000000:00000013 00000004:00215383 | mobile 00000000:00000013 00000004:00215383
+  sb x7, -1(x2)              same           evolution 00000000:00000013 00000004:fe710fa3 | mobile 00000000:00000013 00000004:fe710fa3
+  sh x7, 2(x2)               same           evolution 00000000:00000013 00000004:00711123 | mobile 00000000:00000013 00000004:00711123
+  sw x7, -2048(x2)           same           evolution 00000000:00000013 00000004:80712023 | mobile 00000000:00000013 00000004:80712023
+  addi x8, x9, -1            same           evolution 00000000:00000013 00000004:fff48413 | mobile 00000000:00000013 00000004:fff48413
+  slti x8, x9, 5             same           evolution 00000000:00000013 00000004:0054a413 | mobile 00000000:00000013 00000004:0054a413
+  sltiu x8, x9, 5            same           evolution 00000000:00000013 00000004:0054b413 | mobile 00000000:00000013 00000004:0054b413
+  xori x8, x9, 0x7FF         same           evolution 00000000:00000013 00000004:7ff4c413 | mobile 00000000:00000013 00000004:7ff4c413
+  ori x8, x9, 1              same           evolution 00000000:00000013 00000004:0014e413 | mobile 00000000:00000013 00000004:0014e413
+  andi x8, x9, 255           same           evolution 00000000:00000013 00000004:0ff4f413 | mobile 00000000:00000013 00000004:0ff4f413
+  slli x8, x9, 31            same           evolution 00000000:00000013 00000004:01f49413 | mobile 00000000:00000013 00000004:01f49413
+  srli x8, x9, 1             same           evolution 00000000:00000013 00000004:0014d413 | mobile 00000000:00000013 00000004:0014d413
+  srai x8, x9, 7             same           evolution 00000000:00000013 00000004:4074d413 | mobile 00000000:00000013 00000004:4074d413
+  add x10, x11, x12          same           evolution 00000000:00000013 00000004:00c58533 | mobile 00000000:00000013 00000004:00c58533
+  sub x10, x11, x12          same           evolution 00000000:00000013 00000004:40c58533 | mobile 00000000:00000013 00000004:40c58533
+  sll x10, x11, x12          same           evolution 00000000:00000013 00000004:00c59533 | mobile 00000000:00000013 00000004:00c59533
+  slt x10, x11, x12          same           evolution 00000000:00000013 00000004:00c5a533 | mobile 00000000:00000013 00000004:00c5a533
+  sltu x10, x11, x12         same           evolution 00000000:00000013 00000004:00c5b533 | mobile 00000000:00000013 00000004:00c5b533
+  xor x10, x11, x12          same           evolution 00000000:00000013 00000004:00c5c533 | mobile 00000000:00000013 00000004:00c5c533
+  srl x10, x11, x12          same           evolution 00000000:00000013 00000004:00c5d533 | mobile 00000000:00000013 00000004:00c5d533
+  sra x10, x11, x12          same           evolution 00000000:00000013 00000004:40c5d533 | mobile 00000000:00000013 00000004:40c5d533
+  or x10, x11, x12           same           evolution 00000000:00000013 00000004:00c5e533 | mobile 00000000:00000013 00000004:00c5e533
+  and x10, x11, x12          same           evolution 00000000:00000013 00000004:00c5f533 | mobile 00000000:00000013 00000004:00c5f533
+  mul x10, x11, x12          same           evolution 00000000:00000013 00000004:02c58533 | mobile 00000000:00000013 00000004:02c58533
+  mulh x10, x11, x12         same           evolution 00000000:00000013 00000004:02c59533 | mobile 00000000:00000013 00000004:02c59533
+  mulhsu x10, x11, x12       same           evolution 00000000:00000013 00000004:02c5a533 | mobile 00000000:00000013 00000004:02c5a533
+  mulhu x10, x11, x12        same           evolution 00000000:00000013 00000004:02c5b533 | mobile 00000000:00000013 00000004:02c5b533
+  div x10, x11, x12          same           evolution 00000000:00000013 00000004:02c5c533 | mobile 00000000:00000013 00000004:02c5c533
+  divu x10, x11, x12         same           evolution 00000000:00000013 00000004:02c5d533 | mobile 00000000:00000013 00000004:02c5d533
+  rem x10, x11, x12          same           evolution 00000000:00000013 00000004:02c5e533 | mobile 00000000:00000013 00000004:02c5e533
+  remu x10, x11, x12         same           evolution 00000000:00000013 00000004:02c5f533 | mobile 00000000:00000013 00000004:02c5f533
+  fence                      Mobile only    evolution rejected [line 3: Unsupported asm opcode; ] | mobile 00000000:00000013 00000004:0ff0000f
+  fence.tso                  both reject    evolution rejected [line 3: Unsupported asm opcode; ] | mobile rejected [line 3: soc_asm_instruction]
+  ecall                      same           evolution 00000000:00000013 00000004:00000073 | mobile 00000000:00000013 00000004:00000073
+  ebreak                     same           evolution 00000000:00000013 00000004:00100073 | mobile 00000000:00000013 00000004:00100073
+  mret                       same           evolution 00000000:00000013 00000004:30200073 | mobile 00000000:00000013 00000004:30200073
+  csrrw x5, 0x305, x6        same           evolution 00000000:00000013 00000004:305312f3 | mobile 00000000:00000013 00000004:305312f3
+  csrrs x5, 0x300, x0        same           evolution 00000000:00000013 00000004:300022f3 | mobile 00000000:00000013 00000004:300022f3
+  csrrc x5, 0x304, x6        same           evolution 00000000:00000013 00000004:304332f3 | mobile 00000000:00000013 00000004:304332f3
+  csrrwi x5, 0x305, 3        same           evolution 00000000:00000013 00000004:3051d2f3 | mobile 00000000:00000013 00000004:3051d2f3
+  csrrsi x5, 0x300, 8        same           evolution 00000000:00000013 00000004:300462f3 | mobile 00000000:00000013 00000004:300462f3
+  csrrci x5, 0x304, 1        same           evolution 00000000:00000013 00000004:3040f2f3 | mobile 00000000:00000013 00000004:3040f2f3
+  addi sp, zero, 16          same           evolution 00000000:00000013 00000004:01000113 | mobile 00000000:00000013 00000004:01000113
+  add a0, a1, a2             same           evolution 00000000:00000013 00000004:00c58533 | mobile 00000000:00000013 00000004:00c58533
+  sw ra, 4(sp)               same           evolution 00000000:00000013 00000004:00112223 | mobile 00000000:00000013 00000004:00112223
+  addi t0, s0, 1             same           evolution 00000000:00000013 00000004:00140293 | mobile 00000000:00000013 00000004:00140293
+  addi s1, gp, 2             same           evolution 00000000:00000013 00000004:00218493 | mobile 00000000:00000013 00000004:00218493
+  addi fp, tp, 2             Mobile only    evolution rejected [line 3: Could not find a definition of this parameter; ] | mobile 00000000:00000013 00000004:00220413
+  addi t6, s11, 0            same           evolution 00000000:00000013 00000004:000d8f93 | mobile 00000000:00000013 00000004:000d8f93
+  addi x1, x0, -0x10         same           evolution 00000000:00000013 00000004:ff000093 | mobile 00000000:00000013 00000004:ff000093
+  addi x1, x0, 0b101         Mobile only    evolution rejected [line 3: Could not find a definition of this parameter; ] | mobile 00000000:00000013 00000004:00500093
+  ADDI X1, X0, 1             Mobile only    evolution rejected [line 3: Could not find a definition of this parameter; ] | mobile 00000000:00000013 00000004:00100093
+  nop                        same           evolution 00000000:00000013 00000004:00000013 | mobile 00000000:00000013 00000004:00000013
+  li x5, 42                  same           evolution 00000000:00000013 00000004:02a00293 | mobile 00000000:00000013 00000004:02a00293
+  li x5, 0x12345             both reject    evolution rejected [line 3: The immediate value is out of range; ] | mobile rejected [line 3: soc_asm_immediate]
+  mv x6, x5                  same           evolution 00000000:00000013 00000004:00028313 | mobile 00000000:00000013 00000004:00028313
+  not x7, x6                 Evolution only evolution 00000000:00000013 00000004:fff34393 | mobile rejected [line 3: soc_asm_instruction]
+  neg x7, x6                 both reject    evolution rejected [line 3: Could not find a definition of this parameter; ] | mobile rejected [line 3: soc_asm_instruction]
+  j start                    same           evolution 00000000:00000013 00000004:ffdff06f | mobile 00000000:00000013 00000004:ffdff06f
+  jr x1                      Evolution only evolution 00000000:00000013 00000004:00008067 | mobile rejected [line 3: soc_asm_instruction]
+  ret                        same           evolution 00000000:00000013 00000004:00008067 | mobile 00000000:00000013 00000004:00008067
+  beqz x1, start             same           evolution 00000000:00000013 00000004:fe008ee3 | mobile 00000000:00000013 00000004:fe008ee3
+  bnez x1, start             same           evolution 00000000:00000013 00000004:fe009ee3 | mobile 00000000:00000013 00000004:fe009ee3
+  seqz x1, x2                Evolution only evolution 00000000:00000013 00000004:00113093 | mobile rejected [line 3: soc_asm_instruction]
+  snez x1, x2                Evolution only evolution 00000000:00000013 00000004:002030b3 | mobile rejected [line 3: soc_asm_instruction]
+  call start                 both reject    evolution rejected [line 3: Could not find a definition of this parameter; ] | mobile rejected [line 3: soc_asm_instruction]
+  la x5, start               both reject    evolution rejected [line 3: Could not find a definition of this parameter; ] | mobile rejected [line 3: soc_asm_instruction]
+SAME asm statements encoded identically: 67 same, 0 different []
+DIFF asm statements accepted by both: 5 rejected by both; Evolution only [jalr x0, x1, 0, jalr x1, x2, 8, not x7, x6, jr x1, seqz x1, x2, snez x1, x2]; Mobile only [jalr x0, 0(x1), fence, addi fp, tp, 2, addi x1, x0, 0b101, ADDI X1, X0, 1]
+
+=== RV32 assembler, whole sources
+
+=== RV32 assembler: Evolution soc.util.Assembler (headless RSyntaxTextArea) vs Mobile Rv32Assembler
+source sum-program
+  evolution 00000000:00000093 00000004:00100113 00000008:00600193 0000000c:002080b3 00000010:00110113 00000014:fe314ce3 00000018:00001237 0000001c:00122023 00000020:10102023 00000024:10002283
+  mobile    00000000:00000093 00000004:00100113 00000008:00600193 0000000c:002080b3 00000010:00110113 00000014:fe314ce3 00000018:00001237 0000001c:00122023 00000020:10102023 00000024:10002283
+SAME asm sum-program: same words: 00000000:00000093 00000004:00100113 00000008:00600193 0000000c:002080b3 00000010:00110113 00000014:fe314ce3 00000018:00001237 0000001c:00122023 00000020:10102023 00000024:10002283
+source pseudo-instructions
+  evolution 00000000:00000013 00000004:02a00293 00000008:00028313 0000000c:fff34393 00000010:0040006f 00000014:00008067
+  mobile    rejected [line 4: soc_asm_instruction]
+DIFF asm pseudo-instructions: evolution 00000000:00000013 00000004:02a00293 00000008:00028313 0000000c:fff34393 00000010:0040006f 00000014:00008067 | mobile rejected [line 4: soc_asm_instruction]
+source data-directives
+  evolution 00000000:00100093 00000004:12345678
+  mobile    rejected [line 3: soc_asm_instruction]
+DIFF asm data-directives: evolution 00000000:00100093 00000004:12345678 | mobile rejected [line 3: soc_asm_instruction]
+source invalid-operand
+  evolution rejected [line 1: The immediate value is out of range; ]
+  mobile    rejected [line 1: soc_asm_immediate]
+SAME asm invalid-operand: both reject
+source unknown-mnemonic
+  evolution rejected [line 2: Could not find a definition of this parameter; ]
+  mobile    rejected [line 2: soc_asm_instruction]
+SAME asm unknown-mnemonic: both reject
+SoC debugger: 15 of 19 comparisons equal

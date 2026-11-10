@@ -1,0 +1,618 @@
+{
+ "evolution_jar_sha256": "d0b287d1695bc12f276f42b8db39af9a00e266ce0e0b53472b5aeab795a7a038",
+ "mobile_jar_sha256": "54cd741eaa2470e338680c6d622818d14791dc5d3d76eeb01d8d1464e377fb84",
+ "fixtures": {
+  "fixtures/visual-export/qualification.circ": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "fixtures/visual-export/contract.json": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "scripts/oracle/visual-export/svg-gates.circ": "8c4e36e80ec48233ef598594f6d861b84fcf2ebf84007d312446769a0fdd5d77",
+  "scripts/oracle/visual-export/wavedrom.circ": "42379d757e16fae95f80f03b458278618e223dff39d80d248d9593bc197b4991"
+ },
+ "results": [
+  {
+   "row": "format/image-gif",
+   "case": "android-whole-gif",
+   "mobile": {
+    "png": "docs/validation/artifacts/android-export34-final-002/whole.png",
+    "sha256": "467feda7339d9a710cb5d70a1c7d6efe74dc8f52a5641f230e06baa118934a4d"
+   },
+   "evolution": {
+    "file": "evolution/qualification/visual_export_qualification.gif",
+    "sha256": "eb75a73a0c71805bd4e333d02c54448aff794549185639fe88c376a9c2bf45f1"
+   },
+   "checks": [
+    {
+     "check": "regions",
+     "name": "contract",
+     "result": "PASS",
+     "detail": "78 regions parsed"
+    },
+    {
+     "check": "size",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "size",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "1503x903"
+    },
+    {
+     "check": "size",
+     "name": "frame",
+     "result": "PASS",
+     "detail": "Evolution width 1503 vs Mobile width minus its extra margin 1503"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "470 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "ink-regions",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 79 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "248 ink px outside the regions (limit 1357); fullest world cells [400,200:40, 5900,3500:39, -100,0:20, -100,3500:20, 0,-100:20]"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-red",
+     "result": "PASS",
+     "detail": "pixel (29,53) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-green",
+     "result": "PASS",
+     "detail": "pixel (52,53) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "gif",
+     "name": "evolution-palette",
+     "result": "PASS",
+     "detail": "Evolution GIF vs the same drawing as PNG: max channel error 1 (ImageIO builds an adaptive palette)"
+    },
+    {
+     "check": "gif",
+     "name": "mobile-size",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "gif",
+     "name": "mobile-quantisation",
+     "result": "PASS",
+     "detail": "max channel error R=3 G=3 B=3 (RGB 3-3-2 steps 36.4/36.4/85)"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 70 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "470 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "summary",
+     "name": "PASS",
+     "result": "0 failed checks",
+     "detail": ""
+    }
+   ],
+   "failed": []
+  },
+  {
+   "row": "format/image-jpg",
+   "case": "android-whole-jpg",
+   "mobile": {
+    "png": "docs/validation/artifacts/android-export34-final-002/whole.png",
+    "sha256": "467feda7339d9a710cb5d70a1c7d6efe74dc8f52a5641f230e06baa118934a4d"
+   },
+   "evolution": {
+    "file": "evolution/qualification/visual_export_qualification.jpg",
+    "sha256": "2d46af45e6d25a59767e615ecd7fec4b1dccbddeba17dd9ea3d225761a260778"
+   },
+   "checks": [
+    {
+     "check": "regions",
+     "name": "contract",
+     "result": "PASS",
+     "detail": "78 regions parsed"
+    },
+    {
+     "check": "size",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "size",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "1503x903"
+    },
+    {
+     "check": "size",
+     "name": "frame",
+     "result": "PASS",
+     "detail": "Evolution width 1503 vs Mobile width minus its extra margin 1503"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "470 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "ink-regions",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 34 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "246 ink px outside the regions (limit 1357); fullest world cells [5900,3500:39, 400,200:38, -100,0:20, -100,3500:20, 0,-100:20]"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-red",
+     "result": "PASS",
+     "detail": "pixel (29,53) = fb0700, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-green",
+     "result": "PASS",
+     "detail": "pixel (52,53) = 87fa7b, expected 7fff7f"
+    },
+    {
+     "check": "summary",
+     "name": "PASS",
+     "result": "0 failed checks",
+     "detail": ""
+    }
+   ],
+   "failed": []
+  },
+  {
+   "row": "format/image-gif",
+   "case": "ios-whole-gif",
+   "mobile": {
+    "png": "docs/validation/artifacts/ios-export34-final-6cef-002/whole.png",
+    "sha256": "18912f4fedb71f1d8bea9af6f4bbf0ceef098fdf278ede921280536285145c9a"
+   },
+   "evolution": {
+    "file": "evolution/qualification/visual_export_qualification.gif",
+    "sha256": "eb75a73a0c71805bd4e333d02c54448aff794549185639fe88c376a9c2bf45f1"
+   },
+   "checks": [
+    {
+     "check": "regions",
+     "name": "contract",
+     "result": "PASS",
+     "detail": "78 regions parsed"
+    },
+    {
+     "check": "size",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "size",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "1503x903"
+    },
+    {
+     "check": "size",
+     "name": "frame",
+     "result": "PASS",
+     "detail": "Evolution width 1503 vs Mobile width minus its extra margin 1503"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "469 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "ink-regions",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 79 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "248 ink px outside the regions (limit 1357); fullest world cells [400,200:40, 5900,3500:39, -100,0:20, -100,3500:20, 0,-100:20]"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-red",
+     "result": "PASS",
+     "detail": "pixel (29,53) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-green",
+     "result": "PASS",
+     "detail": "pixel (52,53) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "gif",
+     "name": "evolution-palette",
+     "result": "PASS",
+     "detail": "Evolution GIF vs the same drawing as PNG: max channel error 1 (ImageIO builds an adaptive palette)"
+    },
+    {
+     "check": "gif",
+     "name": "mobile-size",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "gif",
+     "name": "mobile-quantisation",
+     "result": "PASS",
+     "detail": "max channel error R=2 G=2 B=2 (RGB 3-3-2 steps 36.4/36.4/85)"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile-gif",
+     "result": "PASS",
+     "detail": "469 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-gif-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "summary",
+     "name": "PASS",
+     "result": "0 failed checks",
+     "detail": ""
+    }
+   ],
+   "failed": []
+  },
+  {
+   "row": "format/image-jpg",
+   "case": "ios-whole-jpg",
+   "mobile": {
+    "png": "docs/validation/artifacts/ios-export34-final-6cef-002/whole.png",
+    "sha256": "18912f4fedb71f1d8bea9af6f4bbf0ceef098fdf278ede921280536285145c9a"
+   },
+   "evolution": {
+    "file": "evolution/qualification/visual_export_qualification.jpg",
+    "sha256": "2d46af45e6d25a59767e615ecd7fec4b1dccbddeba17dd9ea3d225761a260778"
+   },
+   "checks": [
+    {
+     "check": "regions",
+     "name": "contract",
+     "result": "PASS",
+     "detail": "78 regions parsed"
+    },
+    {
+     "check": "size",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "1508x908"
+    },
+    {
+     "check": "size",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "1503x903"
+    },
+    {
+     "check": "size",
+     "name": "frame",
+     "result": "PASS",
+     "detail": "Evolution width 1503 vs Mobile width minus its extra margin 1503"
+    },
+    {
+     "check": "ink-regions",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 69 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "mobile",
+     "result": "PASS",
+     "detail": "469 ink px outside the regions (limit 1369); fullest world cells [400,200:67, 0,0:39, 0,3500:39, 5900,0:39, 5900,3500:39]"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-red",
+     "result": "PASS",
+     "detail": "pixel (32,56) = ff0000, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "mobile-green",
+     "result": "PASS",
+     "detail": "pixel (55,56) = 7fff7f, expected 7fff7f"
+    },
+    {
+     "check": "ink-regions",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "78/78 regions with ink (least 34 px)"
+    },
+    {
+     "check": "ink-outside",
+     "name": "evolution",
+     "result": "PASS",
+     "detail": "246 ink px outside the regions (limit 1357); fullest world cells [5900,3500:39, 400,200:38, -100,0:20, -100,3500:20, 0,-100:20]"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-red",
+     "result": "PASS",
+     "detail": "pixel (29,53) = fb0700, expected ff0000"
+    },
+    {
+     "check": "colour",
+     "name": "evolution-green",
+     "result": "PASS",
+     "detail": "pixel (52,53) = 87fa7b, expected 7fff7f"
+    },
+    {
+     "check": "summary",
+     "name": "PASS",
+     "result": "0 failed checks",
+     "detail": ""
+    }
+   ],
+   "failed": []
+  },
+  {
+   "row": "format/image-svg",
+   "case": "svg-gates-iec",
+   "mobile": {
+    "file": "mobile/svg-gates-iec.svg",
+    "sha256": "82df8856e1b7aedbc0035e4de93f0972efcaa24686f5fc379d13c70a4a48ade7"
+   },
+   "evolution": {
+    "file": "evolution/svg-gates-iec/main.svg",
+    "sha256": "c90b3769f64b946833014044667c70f18f336fcc06bf3a78f44b282d8d544a85"
+   },
+   "checks": [
+    {
+     "check": "wire-edges",
+     "result": "PASS",
+     "detail": "56 Evolution / 56 Mobile 10-unit edges"
+    },
+    {
+     "check": "gate-boxes",
+     "result": "PASS",
+     "detail": "Evolution [(150.0, 125.0, 50.0, 50.0), (150.0, 275.0, 50.0, 50.0), (260.0, 195.0, 60.0, 50.0), (410.0, 211.0, 20.0, 18.0)] / Mobile [(150.0, 125.0, 50.0, 50.0), (150.0, 275.0, 50.0, 50.0), (260.0, 195.0, 60.0, 50.0), (410.0, 211.0, 20.0, 18.0)]"
+    },
+    {
+     "check": "gate-symbols",
+     "result": "PASS",
+     "detail": "Evolution ['&', '1', '=1', '≥1'] / Mobile ['&', '1', '=1', '≥1']"
+    },
+    {
+     "check": "port-markers",
+     "result": "PASS",
+     "detail": "11 Evolution / 11 Mobile terminal markers"
+    },
+    {
+     "check": "negation-bubble",
+     "result": "PASS",
+     "detail": "Evolution [(434.0, 219.0, 4.5)] / Mobile [(435.0, 220.0, 5.0)] (centre tolerance 1.5)"
+    },
+    {
+     "check": "size",
+     "result": "PASS",
+     "detail": "Evolution ('370', '210') (bounds+5) / Mobile ('373', '214') (stroke-inclusive bounds + margin 5)"
+    },
+    {
+     "check": "coverage",
+     "result": "FAIL",
+     "detail": "Mobile SVG needs a complete vector scene: ansi=null iec=complete scene=null kinds=IMAGE,SUBCIRCUIT,TEXT; Evolution exports SVG for every circuit, including the ANSI fixture and qualification.circ (316c269fc4a8…, 0bac7bc61de3…)"
+    }
+   ],
+   "failed": [
+    "coverage"
+   ]
+  },
+  {
+   "row": "format/image-tikz",
+   "case": "tikz-host",
+   "evolution": {
+    "file": "evolution/qualification/visual_export_qualification.tex",
+    "sha256": "451c3ca59faf9ee92b5c276e6bfb106e9449382e1fbe79ebb38f2bccea716aa7"
+   },
+   "checks": [
+    {
+     "check": "mobile-run",
+     "result": "NOT_RUN",
+     "detail": "Mobile TikZ draws through the Compose canvas: tikz=Method setStyle in android.graphics.Paint not mocked. See https://developer.android.com/r/studio-ui/build/not-mocked for details."
+    }
+   ],
+   "failed": [
+    "mobile-run"
+   ]
+  },
+  {
+   "row": "format/image-wavedrom",
+   "case": "counter-34-half-cycles",
+   "evolution": {
+    "file": "evolution/wavedrom.json"
+   },
+   "mobile": {
+    "file": "mobile/wavedrom.json"
+   },
+   "checks": [
+    {
+     "check": "clk:name",
+     "result": "PASS",
+     "detail": "Evolution 'clk' / Mobile 'clk'"
+    },
+    {
+     "check": "clk:trailing-sample",
+     "result": "PASS",
+     "detail": "Evolution samples t=end past the last segment and appends 'x'"
+    },
+    {
+     "check": "clk:wave",
+     "result": "PASS",
+     "detail": "Evolution '01010101010101010101010101010101010' [] / Mobile '01010101010101010101010101010101010' []"
+    },
+    {
+     "check": "q:name",
+     "result": "FAIL",
+     "detail": "Evolution 'q[3..0]' / Mobile 'q'"
+    },
+    {
+     "check": "q:trailing-sample",
+     "result": "PASS",
+     "detail": "Evolution samples t=end past the last segment and appends 'x'"
+    },
+    {
+     "check": "q:wave",
+     "result": "PASS",
+     "detail": "Evolution '02.2.2.2.2.2.2.2.2.2.2.2.2.2.1.0.2.' ['0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '0001'] / Mobile '02.2.2.2.2.2.2.2.2.2.2.2.2.2.1.0.2.' ['0001', '0010', '0011', '0100', '0101', '0110', '0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '0001']"
+    },
+    {
+     "check": "carry:name",
+     "result": "PASS",
+     "detail": "Evolution 'carry' / Mobile 'carry'"
+    },
+    {
+     "check": "carry:trailing-sample",
+     "result": "PASS",
+     "detail": "Evolution samples t=end past the last segment and appends 'x'"
+    },
+    {
+     "check": "carry:wave",
+     "result": "PASS",
+     "detail": "Evolution '0............................1.0...' [] / Mobile '0............................1.0...' []"
+    },
+    {
+     "check": "open:name",
+     "result": "PASS",
+     "detail": "Evolution 'open' / Mobile 'open'"
+    },
+    {
+     "check": "open:trailing-sample",
+     "result": "PASS",
+     "detail": "Evolution samples t=end past the last segment and appends 'x'"
+    },
+    {
+     "check": "open:wave",
+     "result": "PASS",
+     "detail": "Evolution 'x..................................' [] / Mobile 'x..................................' []"
+    },
+    {
+     "check": "selection",
+     "result": "PASS",
+     "detail": "Evolution default selection also logs ['Counter(300,200)[3..0]']; Mobile logs the selected signals"
+    }
+   ],
+   "failed": [
+    "q:name"
+   ]
+  }
+ ]
+}

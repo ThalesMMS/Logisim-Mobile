@@ -1,0 +1,154 @@
+# Apple-derived declarations in Chromium PartitionAlloc
+
+Source: https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator/+/03cc513177b4340bee3dbfd46f6dd5fdded43b79/src/partition_alloc/third_party/apple_apsl/
+
+The following upstream dependency metadata and source comments are retained for attribution. No declarations are included.
+
+## Upstream dependency metadata
+
+Name: Darwin
+URL: https://github.com/apple-oss-distributions/libmalloc
+Version: 409.40.6
+Revision: 387a5a03c017801ecdfe9cbe7f8d69a9b427df68
+Update Mechanism: Static (https://crbug.com/537106252)
+Security Critical: yes
+Shipped: yes
+License: APSL-2.0
+License Android Compatible: yes
+License File: LICENSE
+
+Local Modifications:
+
+One file excerpted:
+
+malloc.h from:
+https://github.com/apple-oss-distributions/libmalloc/blob/libmalloc-409.40.6/include/malloc/malloc.h
+
+- Modified #ifdef guards.
+- Removed everything but the definition of malloc_zone_t.
+- Added a header for the definition of boolean_t.
+- Renamed _malloc_zone_t to ChromeMallocZone to avoid possible name conflicts.
+
+-------------------- DEPENDENCY DIVIDER --------------------
+
+Name: CF
+URL: https://www.opensource.apple.com/
+Version: CF-635
+Update Mechanism: Static (https://crbug.com/422324360)
+Security Critical: yes
+Shipped: yes
+License: APSL-2.0
+License File: LICENSE
+
+Local Modifications:
+
+Two files excerpted:
+
+CFRuntime.h from:
+https://www.opensource.apple.com/source/CF/CF-635/CFRuntime.h
+
+- Modified #ifdef guards.
+- Removed everything but the definition of CFRuntimeBase.
+- Renamed CFRuntimeBase to ChromeCFRuntimeBase to avoid possible name conflicts.
+
+CFBase.h from:
+https://www.opensource.apple.com/source/CF/CF-635/CFBase.c
+
+- Renamed the file to CFBase.h.
+- Added #ifdef guards.
+- Added an #include of the CFRuntime.h file.
+- Removed everything but the definition of __CFAllocator.
+- Modified the reference of CFRuntimeBase to ChromeCFRuntimeBase.
+- Renamed __CFAllocator to ChromeCFAllocatorLions to avoid possible name conflicts.
+
+
+## malloc.h retained comments
+
+Original comment at line 1:
+/*
+ * Copyright (c) 1999 Apple Computer, Inc. All rights reserved.
+ *
+ * @APPLE_LICENSE_HEADER_START@
+ *
+ * This file contains Original Code and/or Modifications of Original Code
+ * as defined in and that are subject to the Apple Public Source License
+ * Version 2.0 (the 'License'). You may not use this file except in
+ * compliance with the License. Please obtain a copy of the License at
+ * http://www.opensource.apple.com/apsl/ and read it before using this
+ * file.
+ *
+ * The Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+ * Please see the License for the specific language governing rights and
+ * limitations under the License.
+ *
+ * @APPLE_LICENSE_HEADER_END@
+ */
+
+
+## CFRuntime.h retained comments
+
+Original comment at line 1:
+/*
+ * Copyright (c) 2009 Apple Inc. All rights reserved.
+ *
+ * @APPLE_LICENSE_HEADER_START@
+ *
+ * This file contains Original Code and/or Modifications of Original Code
+ * as defined in and that are subject to the Apple Public Source License
+ * Version 2.0 (the 'License'). You may not use this file except in
+ * compliance with the License. Please obtain a copy of the License at
+ * http://www.opensource.apple.com/apsl/ and read it before using this
+ * file.
+ *
+ * The Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+ * Please see the License for the specific language governing rights and
+ * limitations under the License.
+ *
+ * @APPLE_LICENSE_HEADER_END@
+ */
+
+Original comment at line 23:
+/*	CFRuntime.h
+        Copyright (c) 1999-2009, Apple Inc. All rights reserved.
+*/
+
+
+## CFBase.h retained comments
+
+Original comment at line 1:
+/*
+ * Copyright (c) 2011 Apple Inc. All rights reserved.
+ *
+ * @APPLE_LICENSE_HEADER_START@
+ *
+ * This file contains Original Code and/or Modifications of Original Code
+ * as defined in and that are subject to the Apple Public Source License
+ * Version 2.0 (the 'License'). You may not use this file except in
+ * compliance with the License. Please obtain a copy of the License at
+ * http://www.opensource.apple.com/apsl/ and read it before using this
+ * file.
+ *
+ * The Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+ * Please see the License for the specific language governing rights and
+ * limitations under the License.
+ *
+ * @APPLE_LICENSE_HEADER_END@
+ */
+
+Original comment at line 23:
+/*	CFBase.c
+        Copyright (c) 1998-2011, Apple Inc. All rights reserved.
+        Responsibility: Christopher Kane
+*/

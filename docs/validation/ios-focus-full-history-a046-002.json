@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "status": "FOCUS_LOSS_REPRODUCED",
+  "qualification": "ALPHA_ONLY",
+  "issuesResolved": [],
+  "productSourceBefore": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "productSourceAfter": "a0462cc809f38a22fc1d41a0ab695e369231de8b",
+  "harnessSource": "4780852bf71835adb021f36dd8dd45ce66137b66",
+  "artifactBefore": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifactAfter": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-dialog-all-viewport/outputs/ios-all-dialog-a0462cc8/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "fec5a0437ff237b4f1225e9b0781039e27b4ae2ebb9e355595c366bea86f263c",
+    "bundle_tree_sha256": "cc8943c84f9bf255845acb96e60fca18941ff32eb1fda605d1541cd6d5fec318",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "artifactUnchanged": true,
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/EFC1402B-5511-40D9-8A21-359172F886AB/data",
+    "dataPathSize": 8437395456,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/EFC1402B-5511-40D9-8A21-359172F886AB",
+    "udid": "EFC1402B-5511-40D9-8A21-359172F886AB",
+    "lastUsedAt": "2026-11-04T23:06:28Z",
+    "isAvailable": true,
+    "logPathSize": 618496,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "state": "Booted",
+    "name": "iPad Pro 11-inch (M5)",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "physicalDevice": false,
+  "nativeExecution": {
+    "status": "FAIL",
+    "exit_code": 65,
+    "xcresult": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-full-history-a046-002/editor.xcresult",
+    "selection": [
+      "EditorEndToEndTests/EditorEndToEndTests/testFieldCommandAAfterFullInspectorRoundtrip",
+      "EditorEndToEndTests/EditorEndToEndTests/testApplicationCommandAAfterFullInspectorRoundtrip"
+    ]
+  },
+  "results": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-full-history-a046-002/results.json",
+  "testLog": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-full-history-a046-002/test.log",
+  "prelude": [
+    "original contract step 1: newProject",
+    "original step 2: assertDocument(empty) through the XML dialog",
+    "original step 3: INPUT at (100, 100), keyboard replacement of Find/X/Y, insertion, Explorer search (100, 100), Inspector Label E2E_IN, hide keyboard, Apply, and drag dismissal"
+  ],
+  "probe": [
+    "Tools then Explorer then Insert",
+    "tap Find",
+    "capture editing-focus snapshot",
+    "Command-A through application or field",
+    "capture editing-focus snapshot",
+    "Delete without retap or repair",
+    "QFOCUS selection check exists but was not reached"
+  ],
+  "cases": [
+    {
+      "test": "EditorEndToEndTests/testApplicationCommandAAfterFullInspectorRoundtrip()",
+      "status": "FAIL_ON_DELETE",
+      "qfocusReached": false,
+      "phases": {
+        "full-history-after-tap": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-full-history-a046-002/attachments/06F080F8-A7DD-4CCD-AB8C-5A7B7ED67CE2.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "full-history-after-empty-command-a": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-full-history-a046-002/attachments/2F641BBF-5E17-4D47-BF4D-055F78D07166.txt",
+          "keyboardFocusedLabels": [
+            "Y coordinate"
+          ]
+        }
+      }
+    },
+    {
+      "test": "EditorEndToEndTests/testFieldCommandAAfterFullInspectorRoundtrip()",
+      "status": "TIMEOUT_AFTER_OBSERVED_FOCUS_LOSS",
+      "qfocusReached": false,
+      "phases": {
+        "full-history-after-tap": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-full-history-a046-002/attachments/E4976576-12F7-4A90-AAED-8E64DEB0B239.txt",
+          "keyboardFocusedLabels": [
+            "Find a component type"
+          ]
+        },
+        "full-history-after-empty-command-a": {
+          "attachment": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-text-focus/outputs/ios-focus-full-history-a046-002/attachments/3AC0A77B-07CE-43D3-A954-C4DEE17F67CE.txt",
+          "keyboardFocusedLabels": [
+            "Y coordinate"
+          ]
+        }
+      }
+    }
+  ],
+  "observations": [
+    "Find is keyboard-focused after tap in both cases.",
+    "Y is keyboard-focused after Command-A in both cases while the target still resolves Find.",
+    "Changing the XCTest command target from field to application does not remove the failure with this history.",
+    "The field case waits 60 seconds for an animation completion notification after focus loss, then exceeds its 240-second total allowance during retries."
+  ],
+  "limits": [
+    "No callback identity was instrumented.",
+    "QFOCUS was not reached, so this run does not establish multi-character Select All behavior.",
+    "No product fix, dependency update, physical device, or 17e execution occurred."
+  ],
+  "priorMinimalReceipt": "ios-focus-a046-001.json",
+  "sourceAnalysis": "ios-compose-command-a-source.md"
+}

@@ -1,0 +1,430 @@
+{
+  "trace_title": {
+    "en": "Signal recording",
+    "pt": "Registro de sinais"
+  },
+  "trace_select_signals": {
+    "en": "Select signals",
+    "pt": "Selecionar sinais"
+  },
+  "trace_resume": {
+    "en": "Resume capture",
+    "pt": "Retomar captura"
+  },
+  "trace_pause": {
+    "en": "Pause capture",
+    "pt": "Pausar captura"
+  },
+  "trace_clear": {
+    "en": "Clear",
+    "pt": "Limpar"
+  },
+  "trace_timeline": {
+    "en": "Timeline",
+    "pt": "Cronograma"
+  },
+  "trace_table": {
+    "en": "Table",
+    "pt": "Tabela"
+  },
+  "trace_export_csv": {
+    "en": "Export CSV",
+    "pt": "Exportar CSV"
+  },
+  "trace_summary": {
+    "en": "{retained}/{capacity} samples · {dropped} discarded · {unit}",
+    "pt": "{retained}/{capacity} amostras · {dropped} descartadas · {unit}"
+  },
+  "trace_zoom_in": {
+    "en": "Zoom in time",
+    "pt": "Ampliar tempo"
+  },
+  "trace_zoom_out": {
+    "en": "Zoom out time",
+    "pt": "Reduzir tempo"
+  },
+  "trace_previous": {
+    "en": "Previous",
+    "pt": "Anterior"
+  },
+  "trace_next": {
+    "en": "Next",
+    "pt": "Seguinte"
+  },
+  "trace_all_time": {
+    "en": "Whole period",
+    "pt": "Todo o período"
+  },
+  "trace_select_help": {
+    "en": "Select components to record their values and instance paths.",
+    "pt": "Selecione componentes para registrar valores e caminhos de instância."
+  },
+  "trace_time": {
+    "en": "Time",
+    "pt": "Tempo"
+  },
+  "trace_missing": {
+    "en": "missing",
+    "pt": "ausente"
+  },
+  "trace_window": {
+    "en": "{start} to {end} {unit}. Tap for cursor A; hold for cursor B.",
+    "pt": "{start} a {end} {unit}. Toque para cursor A; pressione para cursor B."
+  },
+  "trace_cursors": {
+    "en": "Cursor A: {first} · Cursor B: {second} · distance: {distance}",
+    "pt": "Cursor A: {first} · Cursor B: {second} · diferença: {distance}"
+  },
+  "trace_cursor_a": {
+    "en": "Timeline cursor A",
+    "pt": "Cursor A do cronograma"
+  },
+  "trace_project_signals": {
+    "en": "Project signals",
+    "pt": "Sinais do projeto"
+  },
+  "trace_filter": {
+    "en": "Component or instance",
+    "pt": "Componente ou instância"
+  },
+  "trace_done": {
+    "en": "Done",
+    "pt": "Concluir"
+  },
+  "trace_signal_a11y": {
+    "en": "Signal {signal}, instance {instance}",
+    "pt": "Sinal {signal}, instância {instance}"
+  },
+  "trace_main_instance": {
+    "en": "main",
+    "pt": "principal"
+  },
+  "trace_half_cycles": {
+    "en": "half-cycles",
+    "pt": "meios-ciclos"
+  },
+  "trace_events": {
+    "en": "events",
+    "pt": "eventos"
+  },
+  "trace_nanoseconds": {
+    "en": "ns",
+    "pt": "ns"
+  },
+  "trace_export_title": {
+    "en": "Export trace CSV",
+    "pt": "Exportar registro CSV"
+  },
+  "trace_copied": {
+    "en": "Trace CSV copied.",
+    "pt": "CSV do registro copiado."
+  },
+  "trace_copy": {
+    "en": "Copy",
+    "pt": "Copiar"
+  },
+  "trace_close": {
+    "en": "Close",
+    "pt": "Fechar"
+  },
+  "trace_invalid_reference": {
+    "en": "The signal needs a component identifier.",
+    "pt": "O sinal precisa de uma identificação de componente."
+  },
+  "trace_invalid_width": {
+    "en": "Signal width must be between 1 and 64 bits.",
+    "pt": "A largura do sinal deve estar entre 1 e 64 bits."
+  },
+  "trace_invalid_window": {
+    "en": "The time window must start at zero or later and have a positive duration.",
+    "pt": "A janela deve começar em zero ou depois e ter duração positiva."
+  },
+  "trace_invalid_zoom": {
+    "en": "The zoom factor must be finite and positive.",
+    "pt": "O fator de zoom deve ser finito e positivo."
+  },
+  "trace_invalid_capacity": {
+    "en": "Trace capacity must be positive.",
+    "pt": "A capacidade do registro deve ser positiva."
+  },
+  "trace_signal_limit": {
+    "en": "Select at most {limit} signals.",
+    "pt": "Selecione no máximo {limit} sinais."
+  },
+  "trace_negative_time": {
+    "en": "The timestamp cannot be negative.",
+    "pt": "O timestamp não pode ser negativo."
+  },
+  "trace_time_backwards": {
+    "en": "Reset the trace before moving back in time.",
+    "pt": "Reinicie o traço antes de voltar no tempo."
+  },
+  "trace_duplicate_signal": {
+    "en": "The same signal was selected twice.",
+    "pt": "O mesmo sinal foi selecionado duas vezes."
+  },
+  "trace_recursive_project": {
+    "en": "A recursive project cannot be recorded.",
+    "pt": "Não é possível registrar um projeto recursivo."
+  },
+  "trace_selector_limit": {
+    "en": "The project exceeds the signal selector limit.",
+    "pt": "O projeto excede o limite de sinais do seletor."
+  },
+  "trace_unnamed_signal": {
+    "en": "{type} ({x},{y})",
+    "pt": "{type} ({x},{y})"
+  },
+  "vector_title": {
+    "en": "Test vectors",
+    "pt": "Vetores de teste"
+  },
+  "vector_file": {
+    "en": "Vector file contents",
+    "pt": "Conteúdo do arquivo de vetores"
+  },
+  "vector_file_a11y": {
+    "en": "Test vector file",
+    "pt": "Arquivo de test vectors"
+  },
+  "vector_help": {
+    "en": "Use pin names and widths, <set>/<seq>, <DC>, and <float>. Clock columns are observed; sequences advance the clock automatically.",
+    "pt": "Use nomes e larguras dos pinos, <set>/<seq>, <DC> e <float>. Clocks são observados; sequências avançam o clock automaticamente."
+  },
+  "vector_load": {
+    "en": "Load",
+    "pt": "Carregar"
+  },
+  "vector_run": {
+    "en": "Run",
+    "pt": "Executar"
+  },
+  "vector_pause": {
+    "en": "Pause",
+    "pt": "Pausar"
+  },
+  "vector_step": {
+    "en": "Step",
+    "pt": "Passo"
+  },
+  "vector_cancel": {
+    "en": "Cancel",
+    "pt": "Cancelar"
+  },
+  "vector_reset": {
+    "en": "Restart",
+    "pt": "Reiniciar"
+  },
+  "vector_export_results": {
+    "en": "Export results",
+    "pt": "Exportar resultados"
+  },
+  "vector_export_vectors": {
+    "en": "Export vectors",
+    "pt": "Exportar vetores"
+  },
+  "vector_summary": {
+    "en": "{completed}/{total} rows · {passed} passed · {failed} failed · {status}",
+    "pt": "{completed}/{total} linhas · {passed} aprovadas · {failed} falharam · {status}"
+  },
+  "vector_row_result": {
+    "en": "Line {line}, set {set}, step {sequence}: {result}",
+    "pt": "Linha {line}, conjunto {set}, etapa {sequence}: {result}"
+  },
+  "vector_pass": {
+    "en": "PASS",
+    "pt": "PASS"
+  },
+  "vector_fail": {
+    "en": "FAIL",
+    "pt": "FAIL"
+  },
+  "vector_difference": {
+    "en": "{column}: expected {expected}, observed {observed}",
+    "pt": "{column}: esperado {expected}, observado {observed}"
+  },
+  "vector_difference_oscillating": {
+    "en": "{column}: expected {expected}, observed {observed}; the circuit did not settle",
+    "pt": "{column}: esperado {expected}, observado {observed}; o circuito não estabilizou"
+  },
+  "vector_export_title": {
+    "en": "Export test",
+    "pt": "Exportar teste"
+  },
+  "vector_copied": {
+    "en": "Test copied.",
+    "pt": "Teste copiado."
+  },
+  "vector_ready": {
+    "en": "Ready",
+    "pt": "Pronto"
+  },
+  "vector_running": {
+    "en": "Running",
+    "pt": "Executando"
+  },
+  "vector_paused": {
+    "en": "Paused",
+    "pt": "Pausado"
+  },
+  "vector_completed": {
+    "en": "Completed",
+    "pt": "Concluído"
+  },
+  "vector_cancelled": {
+    "en": "Cancelled",
+    "pt": "Cancelado"
+  },
+  "vector_invalid": {
+    "en": "The test vector could not be loaded.",
+    "pt": "Não foi possível carregar o vetor de teste."
+  },
+  "vector_error_line": {
+    "en": "Line {line}: {detail}",
+    "pt": "Linha {line}: {detail}"
+  },
+  "vector_empty_file": {
+    "en": "The vector file is empty.",
+    "pt": "O arquivo de vetores está vazio."
+  },
+  "vector_duplicate_set": {
+    "en": "The <set> column is repeated.",
+    "pt": "A coluna <set> está repetida."
+  },
+  "vector_duplicate_seq": {
+    "en": "The <seq> column is repeated.",
+    "pt": "A coluna <seq> está repetida."
+  },
+  "vector_bad_column": {
+    "en": "Invalid column: {token}.",
+    "pt": "Coluna inválida: {token}."
+  },
+  "vector_bad_width": {
+    "en": "Invalid width in {token}.",
+    "pt": "Largura inválida em {token}."
+  },
+  "vector_width_range": {
+    "en": "The width of {name} must be between 1 and 64 bits.",
+    "pt": "A largura de {name} deve estar entre 1 e 64 bits."
+  },
+  "vector_duplicate_pin": {
+    "en": "The pin name {name} is repeated.",
+    "pt": "O nome de pino {name} está repetido."
+  },
+  "vector_need_pin": {
+    "en": "The header must contain at least one pin.",
+    "pt": "O cabeçalho precisa conter ao menos um pino."
+  },
+  "vector_value_count": {
+    "en": "Expected {expected} values, found {actual}.",
+    "pt": "Esperados {expected} valores, encontrados {actual}."
+  },
+  "vector_duplicate_names": {
+    "en": "There are repeated pin names.",
+    "pt": "Há nomes de pinos repetidos."
+  },
+  "vector_bad_pin_name": {
+    "en": "Invalid pin name: {name}.",
+    "pt": "Nome de pino inválido: {name}."
+  },
+  "vector_row_pins": {
+    "en": "The row does not contain all pins.",
+    "pt": "A linha não contém todos os pinos."
+  },
+  "vector_incompatible_width": {
+    "en": "Incompatible width in {name}.",
+    "pt": "Largura incompatível em {name}."
+  },
+  "vector_error_bits": {
+    "en": "The vector format cannot represent error bits.",
+    "pt": "O formato de vetores não representa bits de erro."
+  },
+  "vector_bad_decimal": {
+    "en": "Invalid decimal value in {name}: {token}.",
+    "pt": "Valor decimal inválido em {name}: {token}."
+  },
+  "vector_value_width": {
+    "en": "The value {token} does not fit the {width} bits of {name}.",
+    "pt": "O valor {token} não cabe nos {width} bits de {name}."
+  },
+  "vector_expected_digits": {
+    "en": "Expected digits in {name}.",
+    "pt": "Esperados dígitos em {name}."
+  },
+  "vector_overflow": {
+    "en": "The value {token} exceeds 64 bits in {name}.",
+    "pt": "O valor {token} excede 64 bits em {name}."
+  },
+  "vector_bad_character": {
+    "en": "Invalid character in {name}: {character}.",
+    "pt": "Caractere inválido em {name}: {character}."
+  },
+  "vector_bad_digit": {
+    "en": "Invalid base-{radix} digit in {name}: {character}.",
+    "pt": "Dígito inválido para base {radix} em {name}: {character}."
+  },
+  "vector_set_order": {
+    "en": "Sets must appear in increasing order.",
+    "pt": "Os conjuntos devem aparecer em ordem crescente."
+  },
+  "vector_seq_order": {
+    "en": "Steps in set {set} must be strictly increasing.",
+    "pt": "As etapas do conjunto {set} devem estar em ordem estritamente crescente."
+  },
+  "vector_metadata_pair": {
+    "en": "<set> and <seq> must both be zero or both be positive.",
+    "pt": "<set> e <seq> devem ser ambos zero ou ambos positivos."
+  },
+  "vector_bad_metadata": {
+    "en": "Invalid {column} value: {token}.",
+    "pt": "Valor inválido de {column}: {token}."
+  },
+  "vector_missing_circuit": {
+    "en": "Circuit not found: {circuit}.",
+    "pt": "Circuito inexistente: {circuit}."
+  },
+  "vector_unbound_column": {
+    "en": "Column {column} has no matching pin or clock in {circuit}.",
+    "pt": "A coluna {column} não corresponde a um pino ou clock em {circuit}."
+  },
+  "vector_ambiguous_column": {
+    "en": "Column {column} matches more than one component.",
+    "pt": "A coluna {column} corresponde a mais de um componente."
+  },
+  "vector_binding_width": {
+    "en": "{column} uses {actual} bits in the circuit and {expected} in the vector.",
+    "pt": "{column} usa {actual} bits no circuito e {expected} no vetor."
+  },
+  "vector_row_value_count": {
+    "en": "Line {line}: incorrect number of values.",
+    "pt": "Linha {line}: quantidade de valores incorreta."
+  },
+  "vector_input_value": {
+    "en": "Line {line}: input {column} needs an explicit value or <float>.",
+    "pt": "Linha {line}: a entrada {column} precisa de um valor explícito ou <float>."
+  },
+  "vector_row_width": {
+    "en": "Line {line}: invalid width in {column}.",
+    "pt": "Linha {line}: largura inválida em {column}."
+  },
+  "vector_input_dc_internal": {
+    "en": "Input don’t-care was rejected during binding.",
+    "pt": "A entrada indiferente foi rejeitada na vinculação."
+  },
+  "vector_row_limit": {
+    "en": "The row limit cannot be negative.",
+    "pt": "O limite de linhas não pode ser negativo."
+  },
+  "vector_unterminated_quote": {
+    "en": "The quoted pin name is not closed.",
+    "pt": "O nome de pino entre aspas não foi fechado."
+  },
+  "vector_invalid_escape": {
+    "en": "Invalid escape in a quoted pin name: {escape}.",
+    "pt": "Escape inválido em um nome de pino entre aspas: {escape}."
+  },
+  "vector_quoted_data": {
+    "en": "Quotes are only allowed around pin names in the header.",
+    "pt": "Aspas só são permitidas nos nomes dos pinos do cabeçalho."
+  }
+}

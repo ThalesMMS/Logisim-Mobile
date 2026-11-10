@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0" version="1.0">
+  <lib desc="#Soc" name="8"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="8" loc="(20,20)" name="SocBus"><a name="SocBusIdentifier" val="test-bus"/></comp>
+    <comp lib="8" loc="(20,250)" name="Socmem"><a name="SocBusSelection" val="test-bus"/></comp>
+    <comp lib="8" loc="(20,350)" name="SocPio"><a name="SocBusSelection" val="test-bus"/><a name="width" val="4"/><a name="direction" val="bidir"/><a name="genirq" val="true"/></comp>
+    <comp lib="8" loc="(20,550)" name="SocVga"><a name="SocBusSelection" val="test-bus"/></comp>
+    <comp lib="8" loc="(750,20)" name="SocDma"><a name="SocBusSelection" val="test-bus"/></comp>
+    <comp lib="8" loc="(750,250)" name="SocJtagUart"><a name="SocBusSelection" val="test-bus"/></comp>
+    <comp lib="8" loc="(1200,20)" name="Rv32im"><a name="SocBusSelection" val="test-bus"/><a name="irqWidth" val="2"/></comp>
+    <comp lib="8" loc="(1900,20)" name="Nios2"><a name="SocBusSelection" val="test-bus"/><a name="irqWidth" val="2"/></comp>
+  </circuit>
+</project>

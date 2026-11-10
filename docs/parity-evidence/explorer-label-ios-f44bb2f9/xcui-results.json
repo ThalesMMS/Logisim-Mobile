@@ -1,0 +1,158 @@
+{
+  "started": "2026-11-07T22:23:57.168648+00:00",
+  "run_id": "5556ae0c4f20",
+  "declared_baseline_sha": "f44bb2f9",
+  "alpha": false,
+  "simulator": "8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9",
+  "derived_data": "/private/tmp/t328-harness-dd",
+  "physical_device": false,
+  "native_execution_gate": "NATIVE_PASS",
+  "test_timeout_seconds": 600,
+  "qualification_gate": "PARTIAL",
+  "selected_tests": [
+    "EditorEndToEndTests/EditorEndToEndTests/testExplorerTerminalAndWireButtonsExposeTheirLabelOnce"
+  ],
+  "external_peer_preflight": "PASS",
+  "skipped_alpha_tests": [
+    "EditorEndToEndTests/VisualExportEndToEndTests/testVisualExportFieldCensus"
+  ],
+  "main_app_installation": {
+    "status": "INSTALLED_VERIFIED",
+    "before_error": {
+      "type": "CalledProcessError",
+      "message": "Command ['xcrun', 'simctl', 'get_app_container', '8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9', 'thalesmms.logisim.mobile', 'app'] returned non-zero exit status 2."
+    },
+    "installed": {
+      "path": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Bundle/Application/F14E9131-CDE3-4E85-845A-3914BD3A3A05/t328-LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "300cf7cd2ac626426d18f93fb1c37eec94102d92537d092ab3f5a77f08d8184a",
+      "bundle_tree_sha256": "c3d1a5b34101944a99598994128bae535caef8ac659d7eca939437b5bf64002b",
+      "version": "0.2.0",
+      "build": "2"
+    }
+  },
+  "artifact": {
+    "path": "/private/tmp/t328-LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "300cf7cd2ac626426d18f93fb1c37eec94102d92537d092ab3f5a77f08d8184a",
+    "bundle_tree_sha256": "c3d1a5b34101944a99598994128bae535caef8ac659d7eca939437b5bf64002b",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "device": {
+    "dataPath": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data",
+    "dataPathSize": 2320699392,
+    "logPath": "/Users/user/Library/Logs/CoreSimulator/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9",
+    "udid": "8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9",
+    "lastUsedAt": "2026-11-07T22:17:40Z",
+    "isAvailable": true,
+    "logPathSize": 184320,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+    "state": "Booted",
+    "name": "t328-iphone17",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-2"
+  },
+  "configuration": {
+    "run_id": "5556ae0c4f20",
+    "simulatorUDID": "8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9",
+    "fixtures": {
+      "cold": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/cold.circ",
+      "warm": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/warm.circ",
+      "external": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/external.circ",
+      "incompatible": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/incompatible.circ",
+      "legacyOriginal": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/legacy-original.circ",
+      "mouseMappings": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/mouse-mappings.circ",
+      "io": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/io-showcase.circ",
+      "ioHeld": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/io-held-output.circ",
+      "ioHeldTargets": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/io-held-output.targets.json",
+      "portableBundle": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/portable-projects/portable53.lsebdl",
+      "portableSources": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/portable-projects/sources",
+      "visualExport": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/visual-export-5556ae0c4f20.circ",
+      "inspector": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20/inspector-width.circ"
+    },
+    "titles": {
+      "cold": "IOS-E2E-5556ae0c4f20-cold",
+      "warm": "IOS-E2E-5556ae0c4f20-warm",
+      "external": "IOS-E2E-5556ae0c4f20-external",
+      "mouseMappings": "IOS-E2E-5556ae0c4f20-mouse-mappings",
+      "visualExport": "visual_export_qualification",
+      "inspector": "IOS-E2E-5556ae0c4f20-inspector"
+    },
+    "documents": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20",
+    "contract": "editor-actions-v1",
+    "workspace": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Library/Application Support/LogisimMobile/workspace",
+    "inspector": {
+      "label": "INSPECTOR_5556ae0c4f20",
+      "fixtureSHA256": "b06d9411b3c417d88f3a567d000c6ee0397dcc36973859974c09b96713784297"
+    },
+    "visualExport": {
+      "outputDirectory": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Documents/LogisimE2E/5556ae0c4f20",
+      "assetCacheDirectory": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/A0561A57-7B24-46BD-B448-9F46B76E1D2A/Library/Caches/LogisimAssetExports",
+      "contractJSON": "{\n  \"version\": 1,\n  \"fixture\": \"qualification.circ\",\n  \"sha256\": \"791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1\",\n  \"provenance\": {\n    \"baseFixture\": \"examples/compatibility/annotations-symbols.circ\",\n    \"baseSha256\": \"875fd74336d9ad982c81e21deb8cb9c3f2cd79f56e5159d261eaeac8c7e4b78b\",\n    \"changes\": [\n      \"main renamed\",\n      \"ungrouped labeled annotations\",\n      \"far text\",\n      \"6000x3600 wire frame\",\n      \"72 custom-symbol instances in a 12x6 grid\"\n    ]\n  },\n  \"mainCircuit\": \"visual_export_qualification\",\n  \"imageLabel\": \"EXPORT34_IMAGE\",\n  \"textLabel\": \"EXPORT34_TEXT\",\n  \"farLabel\": \"EXPORT34_FAR\",\n  \"selection\": {\n    \"componentLabel\": \"EXPORT34_IMAGE\",\n    \"objectCount\": 1,\n    \"bounds\": [\n      100,\n      200,\n      220,\n      280\n    ]\n  },\n  \"whole\": {\n    \"bounds\": [\n      -5,\n      -5,\n      6005,\n      3605\n    ],\n    \"scale\": 0.25,\n    \"margin\": 10,\n    \"transparent\": false,\n    \"png\": {\n      \"width\": 1508,\n      \"height\": 908,\n      \"samples\": [\n        {\n          \"x\": 0,\n          \"y\": 0,\n          \"argb\": \"ffffffff\"\n        },\n        {\n          \"x\": 32,\n          \"y\": 56,\n          \"argb\": \"ffff0000\"\n        },\n        {\n          \"x\": 55,\n          \"y\": 56,\n          \"argb\": \"ff7fff7f\"\n        }\n      ],\n      \"ink\": {\n        \"backgroundRGB\": [\n          255,\n          255,\n          255\n        ],\n        \"channelDifference\": 2,\n        \"regions\": [\n          {\"id\": \"text-near\", \"kind\": \"text\", \"worldBounds\": [95, 95, 260, 160], \"pixelBounds\": [27, 27, 69, 44], \"minimumInkPixels\": 5},\n          {\"id\": \"text-far\", \"kind\": \"text\", \"worldBounds\": [5695, 3295, 5900, 3345], \"pixelBounds\": [1427, 827, 1479, 840], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_000\", \"kind\": \"symbol\", \"worldBounds\": [345, 445, 455, 555], \"pixelBounds\": [90, 115, 118, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_001\", \"kind\": \"symbol\", \"worldBounds\": [795, 445, 905, 555], \"pixelBounds\": [202, 115, 230, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_002\", \"kind\": \"symbol\", \"worldBounds\": [1245, 445, 1355, 555], \"pixelBounds\": [315, 115, 343, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_003\", \"kind\": \"symbol\", \"worldBounds\": [1695, 445, 1805, 555], \"pixelBounds\": [427, 115, 455, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_004\", \"kind\": \"symbol\", \"worldBounds\": [2145, 445, 2255, 555], \"pixelBounds\": [540, 115, 568, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_005\", \"kind\": \"symbol\", \"worldBounds\": [2595, 445, 2705, 555], \"pixelBounds\": [652, 115, 680, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_006\", \"kind\": \"symbol\", \"worldBounds\": [3045, 445, 3155, 555], \"pixelBounds\": [765, 115, 793, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_007\", \"kind\": \"symbol\", \"worldBounds\": [3495, 445, 3605, 555], \"pixelBounds\": [877, 115, 905, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_008\", \"kind\": \"symbol\", \"worldBounds\": [3945, 445, 4055, 555], \"pixelBounds\": [990, 115, 1018, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_009\", \"kind\": \"symbol\", \"worldBounds\": [4395, 445, 4505, 555], \"pixelBounds\": [1102, 115, 1130, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_010\", \"kind\": \"symbol\", \"worldBounds\": [4845, 445, 4955, 555], \"pixelBounds\": [1215, 115, 1243, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_011\", \"kind\": \"symbol\", \"worldBounds\": [5295, 445, 5405, 555], \"pixelBounds\": [1327, 115, 1355, 143], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_012\", \"kind\": \"symbol\", \"worldBounds\": [345, 895, 455, 1005], \"pixelBounds\": [90, 227, 118, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_013\", \"kind\": \"symbol\", \"worldBounds\": [795, 895, 905, 1005], \"pixelBounds\": [202, 227, 230, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_014\", \"kind\": \"symbol\", \"worldBounds\": [1245, 895, 1355, 1005], \"pixelBounds\": [315, 227, 343, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_015\", \"kind\": \"symbol\", \"worldBounds\": [1695, 895, 1805, 1005], \"pixelBounds\": [427, 227, 455, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_016\", \"kind\": \"symbol\", \"worldBounds\": [2145, 895, 2255, 1005], \"pixelBounds\": [540, 227, 568, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_017\", \"kind\": \"symbol\", \"worldBounds\": [2595, 895, 2705, 1005], \"pixelBounds\": [652, 227, 680, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_018\", \"kind\": \"symbol\", \"worldBounds\": [3045, 895, 3155, 1005], \"pixelBounds\": [765, 227, 793, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_019\", \"kind\": \"symbol\", \"worldBounds\": [3495, 895, 3605, 1005], \"pixelBounds\": [877, 227, 905, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_020\", \"kind\": \"symbol\", \"worldBounds\": [3945, 895, 4055, 1005], \"pixelBounds\": [990, 227, 1018, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_021\", \"kind\": \"symbol\", \"worldBounds\": [4395, 895, 4505, 1005], \"pixelBounds\": [1102, 227, 1130, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_022\", \"kind\": \"symbol\", \"worldBounds\": [4845, 895, 4955, 1005], \"pixelBounds\": [1215, 227, 1243, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_023\", \"kind\": \"symbol\", \"worldBounds\": [5295, 895, 5405, 1005], \"pixelBounds\": [1327, 227, 1355, 255], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_024\", \"kind\": \"symbol\", \"worldBounds\": [345, 1345, 455, 1455], \"pixelBounds\": [90, 340, 118, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_025\", \"kind\": \"symbol\", \"worldBounds\": [795, 1345, 905, 1455], \"pixelBounds\": [202, 340, 230, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_026\", \"kind\": \"symbol\", \"worldBounds\": [1245, 1345, 1355, 1455], \"pixelBounds\": [315, 340, 343, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_027\", \"kind\": \"symbol\", \"worldBounds\": [1695, 1345, 1805, 1455], \"pixelBounds\": [427, 340, 455, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_028\", \"kind\": \"symbol\", \"worldBounds\": [2145, 1345, 2255, 1455], \"pixelBounds\": [540, 340, 568, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_029\", \"kind\": \"symbol\", \"worldBounds\": [2595, 1345, 2705, 1455], \"pixelBounds\": [652, 340, 680, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_030\", \"kind\": \"symbol\", \"worldBounds\": [3045, 1345, 3155, 1455], \"pixelBounds\": [765, 340, 793, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_031\", \"kind\": \"symbol\", \"worldBounds\": [3495, 1345, 3605, 1455], \"pixelBounds\": [877, 340, 905, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_032\", \"kind\": \"symbol\", \"worldBounds\": [3945, 1345, 4055, 1455], \"pixelBounds\": [990, 340, 1018, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_033\", \"kind\": \"symbol\", \"worldBounds\": [4395, 1345, 4505, 1455], \"pixelBounds\": [1102, 340, 1130, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_034\", \"kind\": \"symbol\", \"worldBounds\": [4845, 1345, 4955, 1455], \"pixelBounds\": [1215, 340, 1243, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_035\", \"kind\": \"symbol\", \"worldBounds\": [5295, 1345, 5405, 1455], \"pixelBounds\": [1327, 340, 1355, 368], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_036\", \"kind\": \"symbol\", \"worldBounds\": [345, 1795, 455, 1905], \"pixelBounds\": [90, 452, 118, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_037\", \"kind\": \"symbol\", \"worldBounds\": [795, 1795, 905, 1905], \"pixelBounds\": [202, 452, 230, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_038\", \"kind\": \"symbol\", \"worldBounds\": [1245, 1795, 1355, 1905], \"pixelBounds\": [315, 452, 343, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_039\", \"kind\": \"symbol\", \"worldBounds\": [1695, 1795, 1805, 1905], \"pixelBounds\": [427, 452, 455, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_040\", \"kind\": \"symbol\", \"worldBounds\": [2145, 1795, 2255, 1905], \"pixelBounds\": [540, 452, 568, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_041\", \"kind\": \"symbol\", \"worldBounds\": [2595, 1795, 2705, 1905], \"pixelBounds\": [652, 452, 680, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_042\", \"kind\": \"symbol\", \"worldBounds\": [3045, 1795, 3155, 1905], \"pixelBounds\": [765, 452, 793, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_043\", \"kind\": \"symbol\", \"worldBounds\": [3495, 1795, 3605, 1905], \"pixelBounds\": [877, 452, 905, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_044\", \"kind\": \"symbol\", \"worldBounds\": [3945, 1795, 4055, 1905], \"pixelBounds\": [990, 452, 1018, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_045\", \"kind\": \"symbol\", \"worldBounds\": [4395, 1795, 4505, 1905], \"pixelBounds\": [1102, 452, 1130, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_046\", \"kind\": \"symbol\", \"worldBounds\": [4845, 1795, 4955, 1905], \"pixelBounds\": [1215, 452, 1243, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_047\", \"kind\": \"symbol\", \"worldBounds\": [5295, 1795, 5405, 1905], \"pixelBounds\": [1327, 452, 1355, 480], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_048\", \"kind\": \"symbol\", \"worldBounds\": [345, 2245, 455, 2355], \"pixelBounds\": [90, 565, 118, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_049\", \"kind\": \"symbol\", \"worldBounds\": [795, 2245, 905, 2355], \"pixelBounds\": [202, 565, 230, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_050\", \"kind\": \"symbol\", \"worldBounds\": [1245, 2245, 1355, 2355], \"pixelBounds\": [315, 565, 343, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_051\", \"kind\": \"symbol\", \"worldBounds\": [1695, 2245, 1805, 2355], \"pixelBounds\": [427, 565, 455, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_052\", \"kind\": \"symbol\", \"worldBounds\": [2145, 2245, 2255, 2355], \"pixelBounds\": [540, 565, 568, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_053\", \"kind\": \"symbol\", \"worldBounds\": [2595, 2245, 2705, 2355], \"pixelBounds\": [652, 565, 680, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_054\", \"kind\": \"symbol\", \"worldBounds\": [3045, 2245, 3155, 2355], \"pixelBounds\": [765, 565, 793, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_055\", \"kind\": \"symbol\", \"worldBounds\": [3495, 2245, 3605, 2355], \"pixelBounds\": [877, 565, 905, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_056\", \"kind\": \"symbol\", \"worldBounds\": [3945, 2245, 4055, 2355], \"pixelBounds\": [990, 565, 1018, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_057\", \"kind\": \"symbol\", \"worldBounds\": [4395, 2245, 4505, 2355], \"pixelBounds\": [1102, 565, 1130, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_058\", \"kind\": \"symbol\", \"worldBounds\": [4845, 2245, 4955, 2355], \"pixelBounds\": [1215, 565, 1243, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_059\", \"kind\": \"symbol\", \"worldBounds\": [5295, 2245, 5405, 2355], \"pixelBounds\": [1327, 565, 1355, 593], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_060\", \"kind\": \"symbol\", \"worldBounds\": [345, 2695, 455, 2805], \"pixelBounds\": [90, 677, 118, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_061\", \"kind\": \"symbol\", \"worldBounds\": [795, 2695, 905, 2805], \"pixelBounds\": [202, 677, 230, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_062\", \"kind\": \"symbol\", \"worldBounds\": [1245, 2695, 1355, 2805], \"pixelBounds\": [315, 677, 343, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_063\", \"kind\": \"symbol\", \"worldBounds\": [1695, 2695, 1805, 2805], \"pixelBounds\": [427, 677, 455, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_064\", \"kind\": \"symbol\", \"worldBounds\": [2145, 2695, 2255, 2805], \"pixelBounds\": [540, 677, 568, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_065\", \"kind\": \"symbol\", \"worldBounds\": [2595, 2695, 2705, 2805], \"pixelBounds\": [652, 677, 680, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_066\", \"kind\": \"symbol\", \"worldBounds\": [3045, 2695, 3155, 2805], \"pixelBounds\": [765, 677, 793, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_067\", \"kind\": \"symbol\", \"worldBounds\": [3495, 2695, 3605, 2805], \"pixelBounds\": [877, 677, 905, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_068\", \"kind\": \"symbol\", \"worldBounds\": [3945, 2695, 4055, 2805], \"pixelBounds\": [990, 677, 1018, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_069\", \"kind\": \"symbol\", \"worldBounds\": [4395, 2695, 4505, 2805], \"pixelBounds\": [1102, 677, 1130, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_070\", \"kind\": \"symbol\", \"worldBounds\": [4845, 2695, 4955, 2805], \"pixelBounds\": [1215, 677, 1243, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"EXPORT34_CELL_071\", \"kind\": \"symbol\", \"worldBounds\": [5295, 2695, 5405, 2805], \"pixelBounds\": [1327, 677, 1355, 705], \"minimumInkPixels\": 5},\n          {\"id\": \"frame-top\", \"kind\": \"frame\", \"worldBounds\": [100, -5, 5900, 5], \"pixelBounds\": [28, 2, 1479, 5], \"minimumInkPixels\": 30},\n          {\"id\": \"frame-bottom\", \"kind\": \"frame\", \"worldBounds\": [100, 3595, 5900, 3605], \"pixelBounds\": [28, 902, 1479, 905], \"minimumInkPixels\": 30},\n          {\"id\": \"frame-left\", \"kind\": \"frame\", \"worldBounds\": [-5, 100, 5, 3500], \"pixelBounds\": [2, 28, 5, 879], \"minimumInkPixels\": 30},\n          {\"id\": \"frame-right\", \"kind\": \"frame\", \"worldBounds\": [5995, 100, 6005, 3500], \"pixelBounds\": [1502, 28, 1505, 879], \"minimumInkPixels\": 30}\n        ]\n      }\n    }\n  },\n  \"selected\": {\n    \"scale\": 1,\n    \"margin\": 10,\n    \"transparent\": false,\n    \"png\": {\n      \"width\": 140,\n      \"height\": 100,\n      \"samples\": [\n        {\n          \"x\": 0,\n          \"y\": 0,\n          \"argb\": \"ffffffff\"\n        },\n        {\n          \"x\": 20,\n          \"y\": 20,\n          \"argb\": \"ffff0000\"\n        },\n        {\n          \"x\": 120,\n          \"y\": 20,\n          \"argb\": \"ff7fff7f\"\n        }\n      ]\n    },\n    \"pdf\": {\n      \"pages\": 1,\n      \"rasterWidth\": 140,\n      \"rasterHeight\": 100,\n      \"signature\": \"%PDF-1.4\"\n    }\n  },\n  \"tolerance\": {\n    \"maximumChannelDifference\": 2,\n    \"why\": \"Independent decoders may round alpha composition by one channel unit.\"\n  },\n  \"runtimeScope\": \"Shipping editor and mounted VisualExportTool; no renderer or native-adapter fixture bypass.\",\n  \"requiresPhysicalPrinter\": false,\n  \"mainComponentCount\": 78,\n  \"wireCount\": 4,\n  \"circuitCount\": 3\n}\n",
+      "contractSHA256": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+      "fixtureSHA256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+      "sourcePin": "f44bb2f9",
+      "buildSHA256": "c3d1a5b34101944a99598994128bae535caef8ac659d7eca939437b5bf64002b"
+    }
+  },
+  "catalog": {
+    "source_root": "/Users/user/.t3/worktrees/logisim-mobile-dev/t3-4495bf58",
+    "sha256": "f1fed225a1432d6e77c18b019984b13dc6d15cb0ba7bd4213d50a057d9298b38"
+  },
+  "harness_sources": {
+    "AccessibilityUITests.swift": "98cfaba91640b263cb8b77550178bc49a8744784fe6ff4afb5ac4e1a5a26e876",
+    "ClipboardReceiverUI.swift": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+    "DestinationExportEndToEndTests.swift": "3c453ed53f32c1ff76e6eca79eb445accb28eb603c7ca97ec4e74fdc2d1128cd",
+    "DisplayPreferencesEndToEndTests.swift": "441e5a1ddad3a69b2251e39eb4de23cc9ecd6eb2647a236beaa0edbdc1e28da2",
+    "DocumentWindowRules.swift": "f458c6449f91177cb41d8143900ebb20e6cb343a812f2e04da2f14337e9fcdf6",
+    "DocumentWindowScope.swift": "7b4b7d7236013ba2761c05b6775e3b955f7bb969c597850f6a69066b23f5417a",
+    "EditorEndToEndTests.swift": "62bc769477188737aa36734cbf3fac491400cdd4420f863930388f9bb92d0cbc",
+    "ExternalProviderEndToEndTests.swift": "f3826293d44d82fc4e05bb037e0916f2d2df373b28725b5311c7ce90d62a5d79",
+    "FilesCopySource.swift": "4f72ee6deb311871723fa30cbe82b56ce021ad95ca4200f3c933a6288b90171c",
+    "FilesEndToEndTests.swift": "07bce73b86a15e0d29b2adb44cecd8f3c9802af5e6ae6d21a8c48dfdca3ddab2",
+    "FocusEndToEndTests.swift": "ff600239e03de7ac570a3f0433c371fcdf88756f9ff1768308467ec22c86c4a0",
+    "InspectorEndToEndTests.swift": "b7f7fcc7d70495583f9aa1368424b8bdae532fcc0863f749edf627ea3d151c0d",
+    "IoEndToEndTests.swift": "b54817799510e82a6de1ce97551391eed93ffdf7decfde7d7a542eaa5dfa1edc",
+    "NativeFilesCopySetup.swift": "d66ef57e43371a4b9e348f6959342abbc806cb0d9a3b779fcdbcfe2d608ab302",
+    "NativeFilesDestinationNavigator.swift": "6429a9ed3a1ce365fef78a582b08bae1ecb45cc13afd4f81d5e35d5c3228e0e3",
+    "NativeFilesPeerNavigator.swift": "d82c883f85f7bc1c9ed06d19b0e4482789a3696b25001503f2e44b45e0e6d8c7",
+    "NativeTextReplacement.swift": "3bd31ec0424e639e3b1e9f746ce0c95b634de9ef98f4dfba38c23147f4c8a44c",
+    "NativeUIHarness.swift": "96c60dfbbcacadf338e2c2ec1657050e171595f103779e64b3cbbe370cef317b",
+    "ObservedProjectXML.swift": "78efa448758c5202da8cc87d88da1a4b3133414d2d8c10e26b8b8650f7771784",
+    "PortableProjectEndToEndTests.swift": "bb7dfb3e1b3ec23933aad6ef21466429b8a0a2da48dc46602c56e31d98195dd6",
+    "PortableWorkspaceEvidence.swift": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+    "VisualExportEndToEndTests.swift": "f5c2fc51f3d8cb9df09520b5f3488f74b6f9ce94367f046f013b906f0e2bff47",
+    "XmlDialogEndToEndTests.swift": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346"
+  },
+  "build": {
+    "status": "PASS",
+    "exit_code": 0
+  },
+  "resource_preflight": "PASS",
+  "clipboard_receiver": {
+    "path": "/private/tmp/t328-harness-dd/Build/Products/Debug-iphonesimulator/ClipboardReceiver.app",
+    "bundle_id": "thalesmms.logisim.validation.clipboardreceiver",
+    "executable_sha256": "5f54e28e9902b5aa22ffdc933d918b7ddd3abd304925ca516857d13af9ae02f3",
+    "bundle_tree_sha256": "fbe107bb782a9a2c37bee47fd75bd9da68fc1feaf70e2c703295204829b18e0a",
+    "version": "1.0",
+    "build": "1"
+  },
+  "external_peer": {
+    "bundleID": "thalesmms.logisim.validation.clipboardreceiver",
+    "displayName": "Clipboard Receiver",
+    "documents": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/0BF856AC-2CA2-4BA5-9E91-61ACF2C62E6D/Documents/LogisimE2E/5556ae0c4f20",
+    "fixture": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/0BF856AC-2CA2-4BA5-9E91-61ACF2C62E6D/Documents/LogisimE2E/5556ae0c4f20/peer.circ",
+    "control": "/Users/user/Library/Developer/CoreSimulator/Devices/8BCFCCB9-7999-42FB-AA73-C7B8026C8EE9/data/Containers/Data/Application/0BF856AC-2CA2-4BA5-9E91-61ACF2C62E6D/Documents/LogisimE2E/5556ae0c4f20/control.circ",
+    "originalSHA256": "7ace1930f7838104c51bd4a49d067351b05e9e03d1192c08e82a23006b9df744"
+  },
+  "execution": {
+    "status": "PASS",
+    "exit_code": 0,
+    "xcresult": "/private/tmp/t328-xcui/editor.xcresult",
+    "selection": [
+      "EditorEndToEndTests/EditorEndToEndTests/testExplorerTerminalAndWireButtonsExposeTheirLabelOnce"
+    ]
+  },
+  "status": "PASS",
+  "finished": "2026-11-07T22:27:25.891734+00:00"
+}

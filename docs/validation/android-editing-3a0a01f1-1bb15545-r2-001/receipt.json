@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "status": "PARTIAL_PASS_FAILURE_PRESERVED",
+  "scope": "One Android editing invocation; first group passed, second failed, two not run",
+  "nativeInvocations": 1,
+  "nativeExitCode": 1,
+  "completedGroup": "editing-create-properties",
+  "completedGroupSeconds": 249.87,
+  "failedGroup": "editing-wires-truth-table",
+  "wrapperSeconds": 292.6869110839907,
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "helperProducer": "5c2abc607d3a734cf8f499c7b3690ba9ffacbc1c",
+  "harnessProducer": "1bb155453a05acca8585d5da15c182c08bda41d0",
+  "cohortLimit": "R1 used5556; R2 uses5558. This is not an isolated A/B comparison.",
+  "rawProducer": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/outputs/android-editing-3a0a01f1-1bb15545-5558-r2-001",
+  "controllerProducer": "/Users/thales/GitHub/logisim-mobile-worktrees/android35-inspector-close/outputs/android-editing-3a0a01f1-1bb15545-5558-r2-001-control",
+  "inventory": {
+    "entries": 417,
+    "bytes": 5848299,
+    "retainedRawFiles": 328,
+    "retainedControllerFiles": 74,
+    "originalLocalTars": 2
+  },
+  "publicCopyXmlExports": 6,
+  "documentChecks": {
+    "editing-empty.circ": {
+      "checkpoint": "empty",
+      "componentCount": 0,
+      "wireCount": 0,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    "editing-components.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "editing-property-north.circ": {
+      "checkpoint": "north",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    "editing-property-undo.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "editing-property-redo.circ": {
+      "checkpoint": "north",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e"
+    },
+    "editing-property-restored.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9"
+    },
+    "failure-checkpoint-44.circ": {
+      "checkpoint": "components",
+      "componentCount": 3,
+      "wireCount": 0,
+      "sha256": "9de83c3f648582feb80fec8cd27c425daf7b09871b63a2af264fdc86662ae0b2"
+    }
+  },
+  "privateCheckpoint": {
+    "file": "raw/failure-checkpoint-44.circ",
+    "checkpoint": "components",
+    "origin": "Original failure collector extracted final workspace member",
+    "postFailureCopyXml": false
+  },
+  "failureStage": [
+    "wiring_and_truth_table",
+    "connect(E2E_IN,out,E2E_NOT,in)",
+    "search(destination)",
+    "The circuit search viewport disappeared"
+  ],
+  "searchCensus": [
+    {
+      "capture": 49,
+      "viewportBounds": [
+        64,
+        689,
+        1016,
+        2273
+      ],
+      "searchBounds": [
+        64,
+        643,
+        1016,
+        811
+      ]
+    },
+    {
+      "capture": 50,
+      "viewportBounds": [
+        64,
+        689,
+        1016,
+        2273
+      ],
+      "searchBounds": null
+    }
+  ],
+  "pendingConnectionPublicText": "Connection starts at E2E_IN, out. Choose a destination terminal.",
+  "swipeRequestsOnly": [
+    {
+      "utc": "2026-11-05T10:45:08.121420+00:00",
+      "elapsedSeconds": 276.3553028339811,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "2035",
+        "540",
+        "1085",
+        "250"
+      ],
+      "cwd": null
+    },
+    {
+      "utc": "2026-11-05T10:45:10.331275+00:00",
+      "elapsedSeconds": 278.5651532500051,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "2035",
+        "540",
+        "1085",
+        "250"
+      ],
+      "cwd": null
+    },
+    {
+      "utc": "2026-11-05T10:45:11.480674+00:00",
+      "elapsedSeconds": 279.7145492499985,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "2035",
+        "540",
+        "1085",
+        "250"
+      ],
+      "cwd": null
+    },
+    {
+      "utc": "2026-11-05T10:45:16.209507+00:00",
+      "elapsedSeconds": 284.4433692919847,
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "input",
+        "swipe",
+        "540",
+        "1085",
+        "540",
+        "2035",
+        "250"
+      ],
+      "cwd": null
+    }
+  ],
+  "terminalHierarchy": "Canvas present; Explorer sheet and list tags absent",
+  "sdk": {
+    "completeCaptures": 50,
+    "pidBeforeAfterEachQuery": "29923",
+    "recoveryQualified": false,
+    "continuousPidQualified": false
+  },
+  "notRun": [
+    "editing-selection-history",
+    "editing-viewport-touch-parity"
+  ],
+  "restoration": {
+    "settingsDifferences": {},
+    "lastAnrChanged": false,
+    "readerOffBeforeAfter": true,
+    "installedApksAndSourcesUnchanged": true,
+    "cleanupOwnedE2eOnly": true,
+    "pidAfterCleanup": ""
+  },
+  "verification": {
+    "portableReplay": "verification.json",
+    "semanticNegativesAndRelocation": {
+      "testsRun": 5,
+      "log": "negative-controls.log"
+    },
+    "unpublishedTars": "local-tar-check.json",
+    "independentReview": "review.json"
+  },
+  "limits": [
+    "The first group includes its property Undo/Redo checks; the separate selection/history group did not run.",
+    "No complete connection or truth table was qualified.",
+    "Search bounds, swipe requests and terminal trees do not establish callback delivery or a dismissal cause.",
+    "R1 and R2 used different emulator cohorts; no isolated causal comparison is claimed.",
+    "The source-preparation receipt remains an unchanged historical SOURCE_PREPARED/NOT_RUN record.",
+    "Original TARs remain local; references and the necessary final member are retained."
+  ]
+}

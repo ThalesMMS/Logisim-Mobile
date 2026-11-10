@@ -1,0 +1,366 @@
+{
+  "soc_tool_title": {
+    "en": "SoC / CPUs",
+    "pt": "SoC / CPUs"
+  },
+  "soc_instance_unavailable": {
+    "en": "The selected instance is not running.",
+    "pt": "A instância selecionada não está em execução."
+  },
+  "soc_empty": {
+    "en": "Add a SoC bus, memory, peripheral or processor to the circuit.",
+    "pt": "Adicione um barramento, memória, periféricos ou processador SoC ao circuito."
+  },
+  "soc_step": {
+    "en": "Step",
+    "pt": "Passo"
+  },
+  "soc_run": {
+    "en": "Run",
+    "pt": "Executar"
+  },
+  "soc_stop": {
+    "en": "Stop",
+    "pt": "Parar"
+  },
+  "soc_clear_trace": {
+    "en": "Clear trace",
+    "pt": "Limpar trace"
+  },
+  "soc_open_elf": {
+    "en": "Open ELF",
+    "pt": "Abrir ELF"
+  },
+  "soc_clock_help": {
+    "en": "Run follows the circuit clock. Step executes one instruction and keeps the processor stopped.",
+    "pt": "Executar acompanha o clock do circuito. Passo executa uma instrução e mantém o processador parado."
+  },
+  "soc_elf_hex": {
+    "en": "ELF bytes in hexadecimal",
+    "pt": "Bytes do ELF em hexadecimal"
+  },
+  "soc_elf_hex_invalid": {
+    "en": "Enter valid hexadecimal ELF bytes.",
+    "pt": "Informe bytes hexadecimais válidos do ELF."
+  },
+  "soc_load_elf": {
+    "en": "Load ELF",
+    "pt": "Carregar ELF"
+  },
+  "soc_register_index": {
+    "en": "Register 0–31",
+    "pt": "Registrador 0–31"
+  },
+  "soc_hex_value": {
+    "en": "Hexadecimal value",
+    "pt": "Valor hexadecimal"
+  },
+  "soc_register_invalid": {
+    "en": "Enter a register from 0 to 31 and a 32-bit value.",
+    "pt": "Informe um registrador 0–31 e valor de 32 bits."
+  },
+  "soc_set_register": {
+    "en": "Set register",
+    "pt": "Alterar registrador"
+  },
+  "soc_registers": {
+    "en": "Registers",
+    "pt": "Registradores"
+  },
+  "soc_control": {
+    "en": "Control",
+    "pt": "Controle"
+  },
+  "soc_instruction_trace": {
+    "en": "Instruction trace",
+    "pt": "Trace de instruções"
+  },
+  "soc_bus_transaction": {
+    "en": "Bus transaction",
+    "pt": "Transação de barramento"
+  },
+  "soc_hex_address": {
+    "en": "Hexadecimal address",
+    "pt": "Endereço hexadecimal"
+  },
+  "soc_hex_data": {
+    "en": "Hexadecimal data",
+    "pt": "Dados hexadecimais"
+  },
+  "soc_address_invalid": {
+    "en": "Invalid address.",
+    "pt": "Endereço inválido."
+  },
+  "soc_read_word": {
+    "en": "Read 32 bits",
+    "pt": "Ler 32 bits"
+  },
+  "soc_address_data_invalid": {
+    "en": "Invalid address or data.",
+    "pt": "Endereço ou dados inválidos."
+  },
+  "soc_write_word": {
+    "en": "Write 32 bits",
+    "pt": "Gravar 32 bits"
+  },
+  "soc_stored_memory": {
+    "en": "Stored memory",
+    "pt": "Memória armazenada"
+  },
+  "soc_refresh_vga": {
+    "en": "Refresh VGA frame from memory",
+    "pt": "Atualizar quadro VGA da memória"
+  },
+  "soc_bus_trace": {
+    "en": "Bus trace",
+    "pt": "Trace do barramento"
+  },
+  "soc_stopped": {
+    "en": "Stopped",
+    "pt": "Parado"
+  },
+  "soc_running": {
+    "en": "Running",
+    "pt": "Executando"
+  },
+  "soc_pc_state": {
+    "en": "PC {pc} · {state}",
+    "pt": "PC {pc} · {state}"
+  },
+  "soc_custom_wait": {
+    "en": "Custom {number}: waiting for DONE",
+    "pt": "Custom {number}: aguardando DONE"
+  },
+  "soc_dma_state": {
+    "en": "DMA {bytes} bytes · busy {busy} · done {done} · IRQ {irq}",
+    "pt": "DMA {bytes} bytes · ocupado {busy} · concluído {done} · IRQ {irq}"
+  },
+  "component_soc_bus": {
+    "en": "SoC Bus",
+    "pt": "Barramento SoC"
+  },
+  "component_soc_memory": {
+    "en": "SoC Memory",
+    "pt": "Memória SoC"
+  },
+  "component_soc_pio": {
+    "en": "SoC PIO",
+    "pt": "PIO SoC"
+  },
+  "component_soc_vga": {
+    "en": "SoC VGA",
+    "pt": "VGA SoC"
+  },
+  "component_soc_dma": {
+    "en": "SoC DMA",
+    "pt": "DMA SoC"
+  },
+  "component_soc_jtag_uart": {
+    "en": "JTAG UART",
+    "pt": "JTAG UART"
+  },
+  "component_soc_rv32im": {
+    "en": "RV32IM Processor",
+    "pt": "Processador RV32IM"
+  },
+  "component_soc_nios2": {
+    "en": "Nios II Processor",
+    "pt": "Processador Nios II"
+  },
+  "soc_instruction_fetch": {
+    "en": "Instruction fetch: {error}",
+    "pt": "Busca de instrução: {error}"
+  },
+  "soc_data_read": {
+    "en": "Data read: {error}",
+    "pt": "Leitura de dados: {error}"
+  },
+  "soc_data_write": {
+    "en": "Data write: {error}",
+    "pt": "Gravação de dados: {error}"
+  },
+  "soc_ordering_noop": {
+    "en": "Memory ordering is a no-op in the desktop's single-threaded model.",
+    "pt": "A ordenação de memória não altera o modelo de execução sequencial do desktop."
+  },
+  "soc_environment_noop": {
+    "en": "{instruction} has no environment handler, matching the desktop model.",
+    "pt": "{instruction} não tem tratador de ambiente, conforme o modelo desktop."
+  },
+  "soc_csr_unsupported": {
+    "en": "CSR 0x{csr} is not implemented.",
+    "pt": "CSR 0x{csr} não foi implementado."
+  },
+  "soc_rv_invalid": {
+    "en": "Invalid RV32 instruction.",
+    "pt": "Instrução RV32 inválida."
+  },
+  "soc_nios_invalid": {
+    "en": "Invalid Nios II instruction.",
+    "pt": "Instrução Nios II inválida."
+  },
+  "soc_custom_done_unknown": {
+    "en": "Custom instruction DONE pin is undefined.",
+    "pt": "O pino DONE da instrução customizada está indefinido."
+  },
+  "soc_division_zero": {
+    "en": "Division by zero.",
+    "pt": "Divisão por zero."
+  },
+  "soc_control_unsupported": {
+    "en": "Control register ctl{register} is read-only or unsupported.",
+    "pt": "O registrador de controle ctl{register} é somente leitura ou não tem suporte."
+  },
+  "soc_elf_memory_load": {
+    "en": "ELF memory load: {error}",
+    "pt": "Carga do ELF na memória: {error}"
+  },
+  "soc_bus_transaction_error": {
+    "en": "Bus transaction: {error}",
+    "pt": "Transação de barramento: {error}"
+  },
+  "soc_elf_header_truncated": {
+    "en": "ELF header is truncated.",
+    "pt": "O cabeçalho ELF está truncado."
+  },
+  "soc_elf_not_elf": {
+    "en": "File is not an ELF executable.",
+    "pt": "O arquivo não é um executável ELF."
+  },
+  "soc_elf_class": {
+    "en": "Only ELF32 executables are supported.",
+    "pt": "Somente executáveis ELF32 têm suporte."
+  },
+  "soc_elf_endian": {
+    "en": "Processor requires a little-endian executable.",
+    "pt": "O processador exige um executável little-endian."
+  },
+  "soc_elf_version": {
+    "en": "Unsupported ELF identification version.",
+    "pt": "A versão de identificação ELF não tem suporte."
+  },
+  "soc_elf_not_executable": {
+    "en": "ELF file is not executable.",
+    "pt": "O arquivo ELF não é executável."
+  },
+  "soc_elf_header_invalid": {
+    "en": "Invalid ELF header.",
+    "pt": "Cabeçalho ELF inválido."
+  },
+  "soc_elf_no_headers": {
+    "en": "ELF has no valid program headers.",
+    "pt": "O ELF não possui cabeçalhos de programa válidos."
+  },
+  "soc_elf_table_truncated": {
+    "en": "ELF program header table is truncated.",
+    "pt": "A tabela de cabeçalhos de programa ELF está truncada."
+  },
+  "soc_elf_size": {
+    "en": "ELF segment file size exceeds its memory size.",
+    "pt": "O tamanho do segmento ELF no arquivo excede seu tamanho em memória."
+  },
+  "soc_elf_limit": {
+    "en": "ELF load exceeds the 64 MiB limit.",
+    "pt": "A carga ELF excede o limite de 64 MiB."
+  },
+  "soc_elf_segment_truncated": {
+    "en": "ELF loadable segment is truncated.",
+    "pt": "O segmento ELF carregável está truncado."
+  },
+  "soc_elf_address_wrap": {
+    "en": "ELF segment wraps the address space.",
+    "pt": "O segmento ELF ultrapassa o espaço de endereçamento."
+  },
+  "soc_elf_no_segments": {
+    "en": "ELF has no loadable segments.",
+    "pt": "O ELF não possui segmentos carregáveis."
+  },
+  "soc_elf_architecture": {
+    "en": "ELF architecture does not match {architecture}.",
+    "pt": "A arquitetura ELF não corresponde a {architecture}."
+  },
+  "soc_duplicate_bus": {
+    "en": "Duplicate SoC bus identifier: {id}",
+    "pt": "Identificador de barramento SoC duplicado: {id}"
+  },
+  "soc_component_identity": {
+    "en": "{label} · {id}",
+    "pt": "{label} · {id}"
+  },
+  "soc_bus_binding": {
+    "en": "Bus: {id}",
+    "pt": "Barramento: {id}"
+  },
+  "soc_register_value": {
+    "en": "{register} {value}",
+    "pt": "{register} {value}"
+  },
+  "soc_control_value": {
+    "en": "{register}  {value}",
+    "pt": "{register}  {value}"
+  },
+  "soc_instruction_entry": {
+    "en": "{pc}  {instruction}  {assembly}",
+    "pt": "{pc}  {instruction}  {assembly}"
+  },
+  "soc_memory_entry": {
+    "en": "{address}  {value}",
+    "pt": "{address}  {value}"
+  },
+  "soc_pio_state": {
+    "en": "IN {input} · OUT {output} · IRQ {irq}",
+    "pt": "IN {input} · OUT {output} · IRQ {irq}"
+  },
+  "soc_uart_state": {
+    "en": "RX {rx}/{rxCapacity} · TX {tx}/{txCapacity} · IRQ {irq}",
+    "pt": "RX {rx}/{rxCapacity} · TX {tx}/{txCapacity} · IRQ {irq}"
+  },
+  "soc_bus_entry": {
+    "en": "{sequence} {initiator} {operation} {address} → {result}",
+    "pt": "{sequence} {initiator} {operation} {address} → {result}"
+  },
+  "soc_bus_error_no_responder": {
+    "en": "No device responds at this address.",
+    "pt": "Nenhum dispositivo responde neste endereço."
+  },
+  "soc_bus_error_no_slaves": {
+    "en": "No devices are connected to the bus.",
+    "pt": "Não há dispositivos conectados ao barramento."
+  },
+  "soc_bus_error_multiple_responders": {
+    "en": "More than one device responds to the transaction.",
+    "pt": "Mais de um dispositivo responde à transação."
+  },
+  "soc_bus_error_non_atomic_read_write": {
+    "en": "A combined read/write requires an atomic transaction.",
+    "pt": "Leitura e gravação simultâneas exigem uma transação atômica."
+  },
+  "soc_bus_error_no_bus_connected": {
+    "en": "No bus is connected.",
+    "pt": "Nenhum barramento está conectado."
+  },
+  "soc_bus_error_misaligned_address": {
+    "en": "The address is misaligned or does not select a register.",
+    "pt": "O endereço está desalinhado ou não seleciona um registrador."
+  },
+  "soc_bus_error_unsupported_access": {
+    "en": "This access width is not supported.",
+    "pt": "Esta largura de acesso não tem suporte."
+  },
+  "soc_bus_error_read_only": {
+    "en": "This register is read-only.",
+    "pt": "Este registrador é somente leitura."
+  },
+  "soc_bus_error_write_only": {
+    "en": "This register is write-only.",
+    "pt": "Este registrador é somente gravação."
+  },
+  "soc_bus_error_register_not_found": {
+    "en": "This register is not available in this configuration.",
+    "pt": "Este registrador não está disponível nesta configuração."
+  },
+  "soc_memory_address_range": {
+    "en": "Memory at {address} with {bytes} bytes exceeds the 32-bit address space.",
+    "pt": "A memória em {address} com {bytes} bytes ultrapassa o espaço de endereçamento de 32 bits."
+  }
+}

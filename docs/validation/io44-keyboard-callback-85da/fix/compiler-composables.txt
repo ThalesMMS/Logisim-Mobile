@@ -1,0 +1,20 @@
+restartable skippable fun dev.logisim.mobile.DraftProbe(
+  status: SimulationRunStatus
+  draft: KeyboardInputDraft
+  run: SimulationRunController
+  stable read: Function0<IoKeyboardState>
+  stable record: Function1<String, Unit>
+)
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.logisim.mobile.IoInputPanel(
+  unstable component: CircuitComponent
+  state: ComponentState?
+  stable onEvent: Function1<IoInputEvent, Unit>
+  simulationStatus: SimulationRunStatus
+  stable isEventPending: Function1<ComponentEvent, Boolean>
+  stable modifier: Modifier? = @static <expression>
+)
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.logisim.mobile.MomentaryControl(
+  stable label: String
+  stable pressed: Boolean
+  stable setPressed: Function1<Boolean, Unit>
+)

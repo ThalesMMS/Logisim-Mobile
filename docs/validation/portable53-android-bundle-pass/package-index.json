@@ -1,0 +1,491 @@
+{
+  "schema": 1,
+  "status": "ANDROID_BUNDLE_EVIDENCE_RELOCATED_AND_VERIFIED",
+  "scope": "Bundle scenario PASS only. Native outer wrapper folder scenario FAILED; this package does not qualify folder or the whole issue53.",
+  "nativeReceipt": "portable-bundle-receipt.json",
+  "nativeReceiptSha256": "68d6c8ea3e55c05cc1ac865d9de834a298a9c6874c068d57b2bf5b5f6be05e7a",
+  "nativeBundleStatus": "PASSED",
+  "outerResults": "results.json",
+  "productSource": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "harnessSource": "bc98f9349dd326a4ba34623e3912ac6321ed1a5d",
+  "evidenceCheckoutBase": "d5327c3790094af72dfe83a0d7bbb64260853103",
+  "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+  "referenceDesktopSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "relocationChecks": {
+    "desktop": "relocation/desktop-proof.json",
+    "storage": "relocation/storage-proof.json",
+    "desktopStatus": "APP_EXPORT_ARTIFACT_VALIDATED",
+    "storageStatus": "STORAGE_SNAPSHOTS_VALIDATED",
+    "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+    "originalReportStatusesPreserved": true
+  },
+  "scenarioContractResolution": "Copied the immutable bc98 harness Git blob with manifest SHA4475d0c71c04e5d53f1eb9165ff2fc7382655a66b47c4419beae4ccef59dc0f4, rather than the different contract in the evidence-base checkout.",
+  "rawDataScope": "Only the isolated .e2e app workspace and its native DocumentsUI workflow are retained. No APK/JAR or normal app private data is copied.",
+  "sourceCodeEdits": false,
+  "deviceAccess": false,
+  "files": {
+    "README.md": {
+      "bytes": 4228,
+      "sha256": "617e7b1bc6c0826a552b206cc3ea5266cd30964bea15618b34c22815f388f4d3"
+    },
+    "artifact-provenance/triplet-manifest.json": {
+      "bytes": 2883,
+      "sha256": "955409d67d7520329ec43f7032f4a9368bee42e5a31c98c98bb4a96ff0ebfea9"
+    },
+    "build-receipt.json": {
+      "bytes": 553,
+      "sha256": "b42ae652726460c72b7d2fd1fff958707cbfb12a89c3b1b2a43d2b2a44f7c0df"
+    },
+    "concurrent-environment.json": {
+      "bytes": 955,
+      "sha256": "c57b20f79c3a6f8f320ae9d464714d9fee9badb109fe436f8160edccd10503b9"
+    },
+    "copy-chain.json": {
+      "bytes": 39672,
+      "sha256": "a506f4c7b9423400aeffcdb51a2529739b76874d16ed6c3739217ed3a39d4141"
+    },
+    "independent-review.json": {
+      "bytes": 894,
+      "sha256": "cacc2037737411900f5fbb6b071ea90a353a3d344674da2ef56c9c58082f91f1"
+    },
+    "installed-artifacts-after-partial-group.json": {
+      "bytes": 980,
+      "sha256": "690084443e20a61657b4db86bd3cf0f52f4ad7c9d5d419f0c2435d5b2b0b6da2"
+    },
+    "launch-01.txt": {
+      "bytes": 226,
+      "sha256": "bd7b70df264a2afa95cfd042dc6bf88f9bdbaa4eade26c40b50c51ec5aea2139"
+    },
+    "launch-02.txt": {
+      "bytes": 226,
+      "sha256": "2ca5b19fce15f06ea596b201d84f15d4b6dc4b98b04d3b29d7a001f4ddc3cc44"
+    },
+    "logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-after-restart.lsebdl": {
+      "bytes": 5395,
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113"
+    },
+    "logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-before-restart.lsebdl": {
+      "bytes": 5395,
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113"
+    },
+    "manifest.json": {
+      "bytes": 4202,
+      "sha256": "ed9477e5561a61c831ad8435fa7068823b35dbfe34d25730bd4aec381be8d665"
+    },
+    "original-oracles/desktop-proof.json": {
+      "bytes": 4340,
+      "sha256": "2cc37eac96a8fd877cc7be021d9d6b25fc758da5685faa2e29aef9ec9141071a"
+    },
+    "original-oracles/input-admission.json": {
+      "bytes": 12552,
+      "sha256": "dd84174c456a66d53cfea899ceba0e452d37e34a78cd67dca56d8c563a194517"
+    },
+    "original-oracles/qualification-summary.json": {
+      "bytes": 5207,
+      "sha256": "83bcf3b53c8b8e66301b83ca6ddc16b6fbb37116ada416b449c1b18dcf24a325"
+    },
+    "original-oracles/storage-proof.json": {
+      "bytes": 5192,
+      "sha256": "f62d32441408607178568878d45bd79a7db9c1ff6ec1e651def6f60bd5b13488"
+    },
+    "portable-002-bundle-imported-canvas-ui.xml": {
+      "bytes": 33015,
+      "sha256": "8e6f06304c36409a177375a2539dba6885af06e96754c3f03395d01cdefbd377"
+    },
+    "portable-002-bundle-imported-canvas.png": {
+      "bytes": 212782,
+      "sha256": "32de1fb0e714885f2cecb11f96d93d50e3466208aeeb8260d8a1755fb82e97aa"
+    },
+    "portable-004-bundle-before-restart-save-picker-ui.xml": {
+      "bytes": 11096,
+      "sha256": "e6f016fd587e93344e9a7d80915ed77e0472fa78cac056b8c1d826712fc7378f"
+    },
+    "portable-004-bundle-before-restart-save-picker.png": {
+      "bytes": 77361,
+      "sha256": "ce930d9b05c1d76f0e90287e7fd247632fff05d2c2825c0028c46d44f7e0e1b5"
+    },
+    "portable-006-bundle-before-restart-saved-ui.xml": {
+      "bytes": 10354,
+      "sha256": "5582bcefc7edc9b8b23d314777501691e7d72819cc0b4bd54de91bab28c57727"
+    },
+    "portable-006-bundle-before-restart-saved.png": {
+      "bytes": 167351,
+      "sha256": "daf31a9d9e18d243c1d012ad5a1e341ff451824227cf8e5367276756e25a52b2"
+    },
+    "portable-008-bundle-restored-canvas-ui.xml": {
+      "bytes": 33015,
+      "sha256": "8e6f06304c36409a177375a2539dba6885af06e96754c3f03395d01cdefbd377"
+    },
+    "portable-008-bundle-restored-canvas.png": {
+      "bytes": 212271,
+      "sha256": "203e17afdb15848ca2441d39b73cda1c8f76d7c4892d4ec197135c16919a7423"
+    },
+    "portable-010-bundle-after-restart-save-picker-ui.xml": {
+      "bytes": 12694,
+      "sha256": "a225c62b8d98c487ff4b81fc0a37e19d94a1a5cbcbd83705e49bfb1179e4dfe3"
+    },
+    "portable-010-bundle-after-restart-save-picker.png": {
+      "bytes": 89666,
+      "sha256": "6e0df4492c527d94fe3357f2687c8b82ad9104ce880d997c6b54721b2b8aabb9"
+    },
+    "portable-012-bundle-after-restart-saved-ui.xml": {
+      "bytes": 10354,
+      "sha256": "5582bcefc7edc9b8b23d314777501691e7d72819cc0b4bd54de91bab28c57727"
+    },
+    "portable-012-bundle-after-restart-saved.png": {
+      "bytes": 166973,
+      "sha256": "84ecab4460e6fd4dba9d88793d2024f5732d38e3cbf57998d2cc5083c0826f4e"
+    },
+    "portable-014-bundle-open-picker-ui.xml": {
+      "bytes": 16216,
+      "sha256": "839338d31eea26510d089c9686b9431c8f93ad37aa843d92513f9e007f13717c"
+    },
+    "portable-014-bundle-open-picker.png": {
+      "bytes": 116769,
+      "sha256": "bdf228770e2e872c9c3d7534a6407209da0870ef9dc9b6ee5b63f7fa4de71cca"
+    },
+    "portable-016-bundle-reopened-canvas-ui.xml": {
+      "bytes": 33077,
+      "sha256": "739055112ba999d2066abe027163a49deb2faa276023a764759fbe8c2c43282f"
+    },
+    "portable-016-bundle-reopened-canvas.png": {
+      "bytes": 215441,
+      "sha256": "6190ffc2d1883f0f67cba9bdebea11b5640c08cd6fc4a14a9d11567d8654a532"
+    },
+    "portable-bundle-after-restart-create-operation.json": {
+      "bytes": 295,
+      "sha256": "1b402714b584237eb35b5b37583d575b92a4159355d6689747deca67df11b400"
+    },
+    "portable-bundle-before-restart-create-operation.json": {
+      "bytes": 295,
+      "sha256": "8060023aaec4cec481c3fd1ee03bfc44b2d4f1e214702c63981f6310fa209e96"
+    },
+    "portable-bundle-before-workspace.json": {
+      "bytes": 671,
+      "sha256": "02211254f06b1e35ddb444d8fd0f8ffc988f53492407b3ba17668c8ceb302a72"
+    },
+    "portable-bundle-before-workspace.tar": {
+      "bytes": 14848,
+      "sha256": "22bb701705694c76173b0ce30505e6a03e9b95aca3cd278565b99c8b450d12da"
+    },
+    "portable-bundle-before.circ": {
+      "bytes": 462,
+      "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481"
+    },
+    "portable-bundle-imported-source.lsebdl": {
+      "bytes": 4763,
+      "sha256": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc"
+    },
+    "portable-bundle-imported-workspace.json": {
+      "bytes": 2309,
+      "sha256": "9b7bb44db6eea3cd086299b346bc1bdc5694434e5d7dc9ccfad107a477029b09"
+    },
+    "portable-bundle-imported-workspace.tar": {
+      "bytes": 28160,
+      "sha256": "b42bc1f0ddcd48530a9e0998b7f2ae531f5b510c4b70a9cab631c6554c38681b"
+    },
+    "portable-bundle-imported.circ": {
+      "bytes": 3884,
+      "sha256": "ce2cd8f45fdaf9e5ac6ea3a9a8c9d479692faf310b35a14f99983c06002b06c7"
+    },
+    "portable-bundle-receipt.json": {
+      "bytes": 3008,
+      "sha256": "68d6c8ea3e55c05cc1ac865d9de834a298a9c6874c068d57b2bf5b5f6be05e7a"
+    },
+    "portable-bundle-reopened-source.lsebdl": {
+      "bytes": 5395,
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113"
+    },
+    "portable-bundle-reopened-workspace.json": {
+      "bytes": 2629,
+      "sha256": "4d81a638f7ecff02525f387872d9763c2bea81bbc2f83d1a1187e62cd0724d51"
+    },
+    "portable-bundle-reopened-workspace.tar": {
+      "bytes": 49152,
+      "sha256": "23fbd900d884629ccfe1a1cc55b11e5f9dde70725dfbac97bceb9bb3f75f1999"
+    },
+    "portable-bundle-reopened.circ": {
+      "bytes": 3980,
+      "sha256": "91f0271eabab4762a7ebea671393ad38b63e8d9b9b2f8c76fd010ed9f3596940"
+    },
+    "portable-bundle-restored-source.lsebdl": {
+      "bytes": 4763,
+      "sha256": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc"
+    },
+    "portable-bundle-restored-workspace.json": {
+      "bytes": 2446,
+      "sha256": "f70ee58bb5328b5f3dc6ca1e16997b42585f89545ca1f0caf52d08c26d244c6f"
+    },
+    "portable-bundle-restored-workspace.tar": {
+      "bytes": 34304,
+      "sha256": "2cffa2f177182f69010cbbf071735d04c5203ea96fe0308e5d69304406b6e926"
+    },
+    "portable-bundle-restored.circ": {
+      "bytes": 3884,
+      "sha256": "ce2cd8f45fdaf9e5ac6ea3a9a8c9d479692faf310b35a14f99983c06002b06c7"
+    },
+    "portable-bundle-source-publication.json": {
+      "bytes": 759,
+      "sha256": "f6b128b4a56b6ce768a654f9a767111cb80c8760c2d82207428814c38ba3099b"
+    },
+    "portable-bundle-storage-roundtrip-ui.xml": {
+      "bytes": 33077,
+      "sha256": "739055112ba999d2066abe027163a49deb2faa276023a764759fbe8c2c43282f"
+    },
+    "portable-bundle-storage-roundtrip.png": {
+      "bytes": 215441,
+      "sha256": "6190ffc2d1883f0f67cba9bdebea11b5640c08cd6fc4a14a9d11567d8654a532"
+    },
+    "relocation/desktop-proof.json": {
+      "bytes": 4359,
+      "sha256": "2e4ecd9b708eb35c3a3c102d23d1123aae074e4ed3943b164ff8ee0e95b8f06c"
+    },
+    "relocation/storage-proof.json": {
+      "bytes": 5191,
+      "sha256": "e480cee75db88c2328b3d1f748605f9843cf6c37f5211e8ea652fec12605f7c5"
+    },
+    "results.json": {
+      "bytes": 318,
+      "sha256": "1717692c83518f58435ad0661ceb872d49eaaca4860ab9164a4ff51f642a1176"
+    },
+    "scenario-contract/editor-actions-v1.json": {
+      "bytes": 9467,
+      "sha256": "4475d0c71c04e5d53f1eb9165ff2fc7382655a66b47c4419beae4ccef59dc0f4"
+    },
+    "snapshots/before/workspace/catalog.lock": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "snapshots/before/workspace/catalog.previous": {
+      "bytes": 293,
+      "sha256": "4289259839c2857becc2a2307482963cc352736558bfb0f346cf94b1846892af"
+    },
+    "snapshots/before/workspace/catalog.workspace": {
+      "bytes": 296,
+      "sha256": "47596e7945e68ee138f549ae9b3d12f4bff6fe4251c5f0d4fd16c22a93a86751"
+    },
+    "snapshots/before/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+      "bytes": 1834,
+      "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+    },
+    "snapshots/before/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+      "bytes": 1934,
+      "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+    },
+    "snapshots/before/workspace/project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+      "bytes": 624,
+      "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+    },
+    "snapshots/before/workspace/project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+      "bytes": 646,
+      "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+    },
+    "snapshots/before/workspace/project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+      "bytes": 683,
+      "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+    },
+    "snapshots/before/workspace/window-36-cbe1c41a5821c8b3.workspace-link": {
+      "bytes": 110,
+      "sha256": "3248ad6c91a935e9e37fc1b1bf3320dcfb9fb4c5dd7d3c44bbb258ec9a830405"
+    },
+    "snapshots/imported/workspace/attachment-74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc.workspace": {
+      "bytes": 6383,
+      "sha256": "ec71f32c4888dba54421258c05ebded0934afeaba14e40db5a0764e29c05d82e"
+    },
+    "snapshots/imported/workspace/catalog.lock": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "snapshots/imported/workspace/catalog.previous": {
+      "bytes": 296,
+      "sha256": "47596e7945e68ee138f549ae9b3d12f4bff6fe4251c5f0d4fd16c22a93a86751"
+    },
+    "snapshots/imported/workspace/catalog.workspace": {
+      "bytes": 399,
+      "sha256": "1afb1c10b4d3694b218bb203b108da6343c6327bae15da02b6ac2f90f483be8d"
+    },
+    "snapshots/imported/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+      "bytes": 1834,
+      "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+    },
+    "snapshots/imported/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+      "bytes": 1934,
+      "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+    },
+    "snapshots/imported/workspace/project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+      "bytes": 624,
+      "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+    },
+    "snapshots/imported/workspace/project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+      "bytes": 646,
+      "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+    },
+    "snapshots/imported/workspace/project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+      "bytes": 683,
+      "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+    },
+    "snapshots/imported/workspace/project-f50f2c7e98770d5a23d939fbff31d2e7-1.workspace": {
+      "bytes": 4202,
+      "sha256": "214370d0b0e87ce517c739b8ff2d4a6ad79981ea090e0075e23c546d8e016d1d"
+    },
+    "snapshots/imported/workspace/window-36-cbe1c41a5821c8b3.workspace-link": {
+      "bytes": 110,
+      "sha256": "372fb9525f08043f5f4f1d2763933aea4e9b70e4bc4c3adb465fc99dbbaf504b"
+    },
+    "snapshots/reopened/workspace/attachment-74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc.workspace": {
+      "bytes": 6383,
+      "sha256": "ec71f32c4888dba54421258c05ebded0934afeaba14e40db5a0764e29c05d82e"
+    },
+    "snapshots/reopened/workspace/attachment-930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113.workspace": {
+      "bytes": 7227,
+      "sha256": "d38664012f5d96a83dede111008ce214a01595ea325674b8a95dff4d050ad2b6"
+    },
+    "snapshots/reopened/workspace/catalog.lock": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "snapshots/reopened/workspace/catalog.previous": {
+      "bytes": 402,
+      "sha256": "26d21f2d805bbfe142773fc4cf20fea53be4b6c4f2898e2f78ccce5ec09c4e25"
+    },
+    "snapshots/reopened/workspace/catalog.workspace": {
+      "bytes": 567,
+      "sha256": "d83e3d84a909f64280ffb7763789e8d6926b733b94a2f1c52aaeac095c436c14"
+    },
+    "snapshots/reopened/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+      "bytes": 1834,
+      "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+    },
+    "snapshots/reopened/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+      "bytes": 1934,
+      "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+    },
+    "snapshots/reopened/workspace/project-dd3f317c1a1470a930e0735d67fba6a1-1.workspace": {
+      "bytes": 4422,
+      "sha256": "0412d1841bb8611dea7f9200aedc2f65c75187ac5d362b04bd3830f02798190e"
+    },
+    "snapshots/reopened/workspace/project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+      "bytes": 624,
+      "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+    },
+    "snapshots/reopened/workspace/project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+      "bytes": 646,
+      "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+    },
+    "snapshots/reopened/workspace/project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+      "bytes": 683,
+      "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+    },
+    "snapshots/reopened/workspace/project-f50f2c7e98770d5a23d939fbff31d2e7-1.workspace": {
+      "bytes": 4202,
+      "sha256": "214370d0b0e87ce517c739b8ff2d4a6ad79981ea090e0075e23c546d8e016d1d"
+    },
+    "snapshots/reopened/workspace/project-f50f2c7e98770d5a23d939fbff31d2e7-2.workspace": {
+      "bytes": 4279,
+      "sha256": "93a94bd20e6acf582cce30de5b0a2fa4072323dd888beb8726cbff6b8c73e1d8"
+    },
+    "snapshots/reopened/workspace/window-36-cbe1c41a5821c8b3.workspace-link": {
+      "bytes": 110,
+      "sha256": "372fb9525f08043f5f4f1d2763933aea4e9b70e4bc4c3adb465fc99dbbaf504b"
+    },
+    "snapshots/reopened/workspace/window-36-f47799d22e98fb0c.workspace-link": {
+      "bytes": 110,
+      "sha256": "be5d4e676adfdb2ebdd2c4d14486dacb00f8c284441bce0e9f842032845c5779"
+    },
+    "snapshots/restarted/workspace/attachment-74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc.workspace": {
+      "bytes": 6383,
+      "sha256": "ec71f32c4888dba54421258c05ebded0934afeaba14e40db5a0764e29c05d82e"
+    },
+    "snapshots/restarted/workspace/catalog.lock": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "snapshots/restarted/workspace/catalog.previous": {
+      "bytes": 399,
+      "sha256": "1afb1c10b4d3694b218bb203b108da6343c6327bae15da02b6ac2f90f483be8d"
+    },
+    "snapshots/restarted/workspace/catalog.workspace": {
+      "bytes": 402,
+      "sha256": "26d21f2d805bbfe142773fc4cf20fea53be4b6c4f2898e2f78ccce5ec09c4e25"
+    },
+    "snapshots/restarted/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-1.workspace": {
+      "bytes": 1834,
+      "sha256": "8037dd689fad4c60d2bc4b270b4e6b0fb01b00266c59ac36811a6ef5c504e2a1"
+    },
+    "snapshots/restarted/workspace/project-9568ac1f2e34f56c95c96a3bb2615f39-2.workspace": {
+      "bytes": 1934,
+      "sha256": "bf17e84f47109522774c83cd89fa4ebfe0e64e9dd5af209a52792fb698135442"
+    },
+    "snapshots/restarted/workspace/project-ec0727d189bd01b7976af4e85f13abbb-1.workspace": {
+      "bytes": 624,
+      "sha256": "1befa0e660b6bc5a535a7be6d8d71b050a3fde015b698cb17590bb7a699c03fc"
+    },
+    "snapshots/restarted/workspace/project-ec0727d189bd01b7976af4e85f13abbb-2.workspace": {
+      "bytes": 646,
+      "sha256": "605d33db8f481f7b570c522c7c3d74bc3f3de57d7cd75d301d21e54958aa0b4f"
+    },
+    "snapshots/restarted/workspace/project-ec0727d189bd01b7976af4e85f13abbb-3.workspace": {
+      "bytes": 683,
+      "sha256": "7fade33f581c3a2368f21d7af4e03b3b4266440aa4e4ce5bef3f585e88117e72"
+    },
+    "snapshots/restarted/workspace/project-f50f2c7e98770d5a23d939fbff31d2e7-1.workspace": {
+      "bytes": 4202,
+      "sha256": "214370d0b0e87ce517c739b8ff2d4a6ad79981ea090e0075e23c546d8e016d1d"
+    },
+    "snapshots/restarted/workspace/project-f50f2c7e98770d5a23d939fbff31d2e7-2.workspace": {
+      "bytes": 4279,
+      "sha256": "93a94bd20e6acf582cce30de5b0a2fa4072323dd888beb8726cbff6b8c73e1d8"
+    },
+    "snapshots/restarted/workspace/window-36-cbe1c41a5821c8b3.workspace-link": {
+      "bytes": 110,
+      "sha256": "372fb9525f08043f5f4f1d2763933aea4e9b70e4bc4c3adb465fc99dbbaf504b"
+    },
+    "snapshots/restarted/workspace/window-36-f47799d22e98fb0c.workspace-link": {
+      "bytes": 110,
+      "sha256": "978809785622af6abb2c51badff1025156d6406f5a0f384ff22d2fdd5593a0c5"
+    },
+    "source-android_editing_scenarios.py": {
+      "bytes": 23853,
+      "sha256": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673"
+    },
+    "source-android_inspector_scenarios.py": {
+      "bytes": 8646,
+      "sha256": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c"
+    },
+    "source-android_io_showcase_scenarios.py": {
+      "bytes": 15901,
+      "sha256": "1490f9c19e44ad4b76cab0fba222be61566940a305a17c4644894347cf464272"
+    },
+    "source-android_portable_scenarios.py": {
+      "bytes": 27880,
+      "sha256": "6251368e53b0eb7f8034ae726f588716d931a947b01b1ee2b9c56b467d760ee7"
+    },
+    "source-android_ui.py": {
+      "bytes": 30935,
+      "sha256": "302246dcfc09c4010dfbbd909dca3c60596577ab2ae82b34a1d0b4718d0d00f8"
+    },
+    "source-android_visual_export34_scenarios.py": {
+      "bytes": 18149,
+      "sha256": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763"
+    },
+    "source-e2e-android.py": {
+      "bytes": 60995,
+      "sha256": "f6f87f09b07fb357bdab475522eb3dbe02558ff23b5e3e9999e5eeab0ab0c706"
+    },
+    "source-user_scenario_contract.py": {
+      "bytes": 7203,
+      "sha256": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+    }
+  },
+  "inventoryExcludes": "package-index.json itself to avoid a recursive digest",
+  "recordedAtUtc": "2026-11-05T03:04:27.204693+00:00",
+  "metadataAddendum": {
+    "file": "installed-artifacts-after-partial-group.json",
+    "sha256": "690084443e20a61657b4db86bd3cf0f52f4ad7c9d5d419f0c2435d5b2b0b6da2",
+    "packageCount": 3,
+    "sameHashesAsInstalledBefore": true,
+    "oracleInputsChanged": false,
+    "oracleRerunRequired": false,
+    "recordedAtUtc": "2026-11-05T03:08:48.374535+00:00"
+  }
+}

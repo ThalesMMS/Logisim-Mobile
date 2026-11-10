@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/android_fpga_scenarios.py", line 468, in success
+    before, archive = self.mapping(export=True)
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/android_fpga_scenarios.py", line 389, in mapping
+    self.validate(valid=False)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/android_fpga_scenarios.py", line 346, in validate
+    self.e.click("fpga_validate_mapping", scroll=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/android_editing_scenarios.py", line 208, in click
+    node = self.reveal(key, description=description, toolbar=toolbar, **arguments) if toolbar or scroll else \
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/android_editing_scenarios.py", line 202, in reveal
+    self.swipe(self.scroll_region(root, toolbar, key), horizontal=toolbar, reverse=reverse)
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-verified-host-card/scripts/android_editing_scenarios.py", line 172, in scroll_region
+    assert regions, "The active panel exposes no scrollable content"
+           ^^^^^^^
+AssertionError: The active panel exposes no scrollable content

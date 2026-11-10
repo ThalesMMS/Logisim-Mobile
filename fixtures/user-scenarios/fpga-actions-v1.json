@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "scope": "isolated-native-editor-and-real-Mac-companion",
+  "nativeExecution": "NOT_RUN",
+  "qualification": "Fixtures, pure checks and source compilation do not qualify native execution. Keep per-case Android and iOS results separate.",
+  "sourceCommit": "ab1b04cf4c396c0391b2aa9c4ad8f486f45d5d0c",
+  "fixture": "fixtures/user-scenarios/fpga-and.circ",
+  "boards": {
+    "valid": "fixtures/user-scenarios/fpga-hx1k.xml",
+    "invalidPackagePin": "fixtures/user-scenarios/fpga-hx1k-invalid-pin.xml"
+  },
+  "fixtureSha256": {
+    "fpga-and.circ": "abf81355647b0ca0f899acbb293b2862247453c94f738c2dac4c21c098c32fd9",
+    "fpga-hx1k.xml": "9570a46724aabdeca9d2c35871562716867ad09bc3d4b6c188571d8ebe282763",
+    "fpga-hx1k-invalid-pin.xml": "4a3d40cdda86f55dc043c641ef6569ebd72d3b675ee5d4832976acce9a18751f"
+  },
+  "document": {
+    "mainCircuit": "main",
+    "circuitId": "fpga-native-main",
+    "circuitCount": 1,
+    "componentCount": 4,
+    "wireCount": 3,
+    "componentIds": [
+      "fpga-a",
+      "fpga-b",
+      "fpga-and",
+      "fpga-y"
+    ],
+    "ports": [
+      {
+        "name": "p_a",
+        "componentId": "fpga-a",
+        "label": "a",
+        "direction": "INPUT",
+        "width": 1
+      },
+      {
+        "name": "p_b",
+        "componentId": "fpga-b",
+        "label": "b",
+        "direction": "INPUT",
+        "width": 1
+      },
+      {
+        "name": "p_y",
+        "componentId": "fpga-y",
+        "label": "y",
+        "direction": "OUTPUT",
+        "width": 1
+      }
+    ],
+    "wires": [
+      [
+        [
+          100,
+          80
+        ],
+        [
+          150,
+          80
+        ]
+      ],
+      [
+        [
+          100,
+          120
+        ],
+        [
+          150,
+          120
+        ]
+      ],
+      [
+        [
+          200,
+          100
+        ],
+        [
+          300,
+          100
+        ]
+      ]
+    ],
+    "truthTable": [
+      {
+        "a": 0,
+        "b": 0,
+        "y": 0
+      },
+      {
+        "a": 0,
+        "b": 1,
+        "y": 0
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "y": 0
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "y": 1
+      }
+    ]
+  },
+  "mapping": {
+    "p_a": "21",
+    "p_b": "22",
+    "p_y": "23"
+  },
+  "invalidPackagePinMapping": {
+    "p_a": "21",
+    "p_b": "22",
+    "p_y": "999"
+  },
+  "companion": {
+    "operation": "fpga-synthesize",
+    "parameters": {
+      "flow": "ice40",
+      "part": "hx1k",
+      "package": "tq144",
+      "top": "logisim_fpga_top",
+      "language": "verilog",
+      "sources": [
+        "source-0000.v",
+        "source-0001.v"
+      ]
+    },
+    "sourceModules": [
+      "c_main.v",
+      "logisim_fpga_top.v"
+    ],
+    "programmingAllowed": false,
+    "programTargets": [],
+    "sourcePolicy": "Use installed production Yosys/nextpnr-ice40/icepack through the companion. No shell commands, uploaded scripts, fake tool output, synthetic waits or hardware programming."
+  },
+  "selectors": {
+    "toolTitleKey": "fpga_title",
+    "toolSheetTag": "editor-tool-sheet",
+    "boardXmlLabelKey": "fpga_board_xml_label",
+    "readBoardKey": "fpga_read_board",
+    "validateMappingKey": "fpga_validate_mapping",
+    "rowTitle": "{port} · {localizedDirection}",
+    "connectionKey": "fpga_connection",
+    "connectionChoiceKey": "fpga_choice_label",
+    "physicalPinKey": "fpga_physical_pin",
+    "pinChoices": {
+      "p_a": "21 · A [0]",
+      "p_b": "22 · B [0]",
+      "p_y": "23 · Y [0]"
+    },
+    "ambiguityPolicy": "Resolve a fresh native tree. Require one visible matching signal row and one requested control inside that row. Never select the first global Connection or Physical pin field."
+  },
+  "dataSafety": {
+    "applicationPackage": "thalesmms.logisim.mobile.e2e",
+    "originalFixtureImmutable": true,
+    "baseline": "Actual complete UI-exported XML immediately after importing the fixture.",
+    "afterEachCase": "Close the tool and export complete XML. Require bytes identical to the observed baseline and unchanged circuit/component identities.",
+    "normalApplicationAccessAllowed": false,
+    "evidenceDirectory": "A new task-owned output directory for each attempt."
+  },
+  "scenarios": [
+    {
+      "id": "fpga-native-mapping-preflight",
+      "nativeExecution": "NOT_RUN",
+      "required": true,
+      "board": "valid",
+      "steps": [
+        {
+          "action": "importFixture"
+        },
+        {
+          "action": "exportBaseline"
+        },
+        {
+          "action": "pairRealCompanion"
+        },
+        {
+          "action": "openFpgaTool"
+        },
+        {
+          "action": "pasteBoardXml"
+        },
+        {
+          "action": "readBoard"
+        },
+        {
+          "action": "validateMapping"
+        },
+        {
+          "action": "assertPreflightRejected",
+          "diagnosticCode": "unmapped-port",
+          "signals": [
+            "p_a",
+            "p_b",
+            "p_y"
+          ],
+          "generateEnabled": false,
+          "synthesisEnabled": false
+        },
+        {
+          "action": "mapPhysicalPins",
+          "mapping": "mapping"
+        },
+        {
+          "action": "validateMapping"
+        },
+        {
+          "action": "assertMappingValid",
+          "generateEnabled": true,
+          "synthesisEnabled": true
+        },
+        {
+          "action": "exportProject",
+          "expectedFiles": [
+            "c_main.v",
+            "logisim_fpga_top.v",
+            "pins.pcf",
+            "synthesis.ys"
+          ]
+        },
+        {
+          "action": "assertDocumentUnchanged"
+        }
+      ]
+    },
+    {
+      "id": "fpga-native-real-synthesis",
+      "nativeExecution": "NOT_RUN",
+      "required": true,
+      "board": "valid",
+      "goal": "synthesis",
+      "steps": [
+        {
+          "action": "importFixture"
+        },
+        {
+          "action": "exportBaseline"
+        },
+        {
+          "action": "pairRealCompanion"
+        },
+        {
+          "action": "openFpgaTool"
+        },
+        {
+          "action": "pasteBoardXml"
+        },
+        {
+          "action": "readBoard"
+        },
+        {
+          "action": "mapPhysicalPins",
+          "mapping": "mapping"
+        },
+        {
+          "action": "prepareSynthesis"
+        },
+        {
+          "action": "preparePlan"
+        },
+        {
+          "action": "assertReviewedPlan",
+          "operation": "fpga-synthesize",
+          "goal": "synthesis"
+        },
+        {
+          "action": "executeReviewedPlan"
+        },
+        {
+          "action": "observeTerminalJob",
+          "expectedState": "succeeded"
+        },
+        {
+          "action": "assertStages",
+          "stages": [
+            "synthesize"
+          ]
+        },
+        {
+          "action": "assertArtifacts",
+          "names": [
+            "synthesized.json"
+          ],
+          "netlistTop": "logisim_fpga_top",
+          "netlistPorts": [
+            "fpga_p0_b0",
+            "fpga_p1_b0",
+            "fpga_p2_b0"
+          ]
+        },
+        {
+          "action": "assertDocumentUnchanged"
+        }
+      ],
+      "expectedOutcome": {
+        "synthesized": true,
+        "placedAndRouted": false,
+        "bitstreamGenerated": false,
+        "programmed": false,
+        "hardwareVerified": false
+      }
+    },
+    {
+      "id": "fpga-native-real-bitstream",
+      "nativeExecution": "NOT_RUN",
+      "required": false,
+      "board": "valid",
+      "goal": "bitstream",
+      "steps": [
+        {
+          "action": "importFixture"
+        },
+        {
+          "action": "exportBaseline"
+        },
+        {
+          "action": "pairRealCompanion"
+        },
+        {
+          "action": "openFpgaTool"
+        },
+        {
+          "action": "pasteBoardXml"
+        },
+        {
+          "action": "readBoard"
+        },
+        {
+          "action": "mapPhysicalPins",
+          "mapping": "mapping"
+        },
+        {
+          "action": "prepareSynthesis"
+        },
+        {
+          "action": "selectBuildGoal",
+          "goal": "bitstream"
+        },
+        {
+          "action": "preparePlan"
+        },
+        {
+          "action": "assertReviewedPlan",
+          "operation": "fpga-synthesize",
+          "goal": "bitstream"
+        },
+        {
+          "action": "executeReviewedPlan"
+        },
+        {
+          "action": "observeTerminalJob",
+          "expectedState": "succeeded"
+        },
+        {
+          "action": "assertStages",
+          "stages": [
+            "synthesize",
+            "place-route",
+            "pack"
+          ]
+        },
+        {
+          "action": "assertArtifacts",
+          "names": [
+            "synthesized.json",
+            "routed.asc",
+            "design.bin"
+          ],
+          "requireNonempty": true
+        },
+        {
+          "action": "assertDocumentUnchanged"
+        }
+      ],
+      "expectedOutcome": {
+        "synthesized": true,
+        "placedAndRouted": true,
+        "bitstreamGenerated": true,
+        "programmed": false,
+        "hardwareVerified": false
+      }
+    },
+    {
+      "id": "fpga-native-invalid-package-pin-error",
+      "nativeExecution": "NOT_RUN",
+      "required": true,
+      "board": "invalidPackagePin",
+      "goal": "bitstream",
+      "preflightExpectation": "The declared 999 pin is syntactically valid and present in the board XML. Mapping validation succeeds; the real package database rejects it during place and route.",
+      "steps": [
+        {
+          "action": "importFixture"
+        },
+        {
+          "action": "exportBaseline"
+        },
+        {
+          "action": "pairRealCompanion"
+        },
+        {
+          "action": "openFpgaTool"
+        },
+        {
+          "action": "pasteBoardXml"
+        },
+        {
+          "action": "readBoard"
+        },
+        {
+          "action": "mapPhysicalPins",
+          "mapping": "invalidPackagePinMapping"
+        },
+        {
+          "action": "validateMapping"
+        },
+        {
+          "action": "assertMappingValid"
+        },
+        {
+          "action": "prepareSynthesis"
+        },
+        {
+          "action": "selectBuildGoal",
+          "goal": "bitstream"
+        },
+        {
+          "action": "preparePlan"
+        },
+        {
+          "action": "executeReviewedPlan"
+        },
+        {
+          "action": "observeTerminalJob",
+          "expectedState": "failed"
+        },
+        {
+          "action": "assertToolError",
+          "code": "fpga-stage-failed",
+          "stage": "place-route",
+          "exitCode": "nonzero",
+          "stderrSubstring": "package does not have a pin named '999'"
+        },
+        {
+          "action": "assertDocumentUnchanged"
+        }
+      ]
+    },
+    {
+      "id": "fpga-native-cancel-real-job",
+      "nativeExecution": "NOT_RUN",
+      "required": true,
+      "board": "valid",
+      "goal": "bitstream",
+      "steps": [
+        {
+          "action": "importFixture"
+        },
+        {
+          "action": "exportBaseline"
+        },
+        {
+          "action": "pairRealCompanion"
+        },
+        {
+          "action": "openFpgaTool"
+        },
+        {
+          "action": "pasteBoardXml"
+        },
+        {
+          "action": "readBoard"
+        },
+        {
+          "action": "mapPhysicalPins",
+          "mapping": "mapping"
+        },
+        {
+          "action": "prepareSynthesis"
+        },
+        {
+          "action": "selectBuildGoal",
+          "goal": "bitstream"
+        },
+        {
+          "action": "preparePlan"
+        },
+        {
+          "action": "executeReviewedPlan"
+        },
+        {
+          "action": "observeNonterminalJob",
+          "allowedStates": [
+            "queued",
+            "running"
+          ]
+        },
+        {
+          "action": "cancelJobUsingUi"
+        },
+        {
+          "action": "observeTerminalJob",
+          "expectedState": "cancelled"
+        },
+        {
+          "action": "assertDocumentUnchanged"
+        }
+      ],
+      "cancellationPolicy": {
+        "maxSubmissions": 1,
+        "completedBeforeCancellation": "FAIL_NOT_QUALIFIED",
+        "requireSameJobId": true,
+        "requireObservedNonterminalState": true,
+        "allowedToolDelaySeconds": 0,
+        "syntheticWaitOperationAllowed": false,
+        "retryUntilCancelledAllowed": false
+      }
+    }
+  ],
+  "evidence": {
+    "keep": [
+      "source revision and app/test/helper hashes",
+      "fixture and board hashes",
+      "native action log",
+      "native trees and screenshots",
+      "complete XML baseline and final exports",
+      "request and plan IDs",
+      "actual job states and stage logs",
+      "verified artifact sizes and SHA-256",
+      "real companion tool versions and hashes"
+    ],
+    "qualificationGate": "The case needs its own actual native actions and companion receipt. Fixture parsing or direct host execution does not substitute for the app flow."
+  },
+  "remainingIssue65Gates": {
+    "issueMayClose": false,
+    "nativeExecution": "NOT_RUN",
+    "physicalBoardProgramming": "NOT_RUN",
+    "physicalBoardToolchainMatrix": "A real board/cable/toolchain combination remains required. Hardware work is deferred until the software work is complete."
+  },
+  "platformAdapters": {
+    "android": {
+      "boardImport": {
+        "transport": "native-open-document",
+        "actionKey": "fpga_import_board_file",
+        "replacesActions": [
+          "pasteBoardXml",
+          "readBoard"
+        ],
+        "sourcePolicy": "Stage a nonce-named complete XML file in Downloads, verify its bytes, and require its canonical MediaStore row to be published as XML. Require exact source bytes after the native picker and the imported board name/device in the FPGA tool before mapping.",
+        "pasteXmlNativeExecution": "NOT_RUN"
+      }
+    }
+  }
+}

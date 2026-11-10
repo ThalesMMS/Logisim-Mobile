@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "fixture": "portable53-v1",
+  "bundle": "portable53.lsebdl",
+  "directory": "sources",
+  "main": "main.circ",
+  "bundleSha256": "74659456e95e402100bc14de0db7735c3672d091c6bf2d021126d8f72ca5c0bc",
+  "sourceGraph": {
+    "main.circ": [
+      "library/bridge.circ"
+    ],
+    "library/bridge.circ": [
+      "library/cell.circ"
+    ],
+    "library/cell.circ": []
+  },
+  "localCircuitNames": [
+    "Top53",
+    "Bridge53",
+    "Cell53"
+  ],
+  "componentCount": 11,
+  "wireCount": 7,
+  "topInstances": {
+    "instance-first53": {
+      "label": "FIRST53",
+      "definition": "Bridge53",
+      "location": [
+        200,
+        100
+      ]
+    },
+    "instance-second53": {
+      "label": "SECOND53",
+      "definition": "Bridge53",
+      "location": [
+        200,
+        300
+      ]
+    }
+  },
+  "transitiveInstance": {
+    "componentId": "bridge-cell53",
+    "label": "TRANSITIVE53",
+    "definition": "Cell53"
+  },
+  "runtimeInstanceCount": 4,
+  "outputs": {
+    "out-first53": {
+      "label": "OUT_FIRST53",
+      "bits": "00001000",
+      "location": [
+        300,
+        100
+      ]
+    },
+    "out-second53": {
+      "label": "OUT_SECOND53",
+      "bits": "00000011",
+      "location": [
+        300,
+        300
+      ]
+    }
+  },
+  "opaqueBundleEntries": {
+    "readme53.txt": "37a856e1f329cc282ca3b931d3b3d4cbc1cecee04c8f74158d49eeceffe50712",
+    "library/unreferenced53.circ": "cc8c3da7dee2fa79f7e88068bb0a882b94711f760eac700ca2b04c84f452ff15"
+  },
+  "identityPolicy": "Compare component IDs literally. Root circuit ID is circuit-top53; external circuit IDs may differ between separately granted imports. Require each set of circuit IDs to remain unchanged within one workspace across export/restart/reexport.",
+  "requiredUiTargets": [
+    "android",
+    "ios"
+  ],
+  "desktopInputPolicy": "The final desktop receipt must name an artifact actually exported by each app, not the checked-in fixture.",
+  "status": "PREPARED; native UI execution is not yet recorded"
+}

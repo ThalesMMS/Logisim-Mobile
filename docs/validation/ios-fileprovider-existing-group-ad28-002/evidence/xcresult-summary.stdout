@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+        "deviceName" : "LogisimUIKitDocumentControl",
+        "modelName" : "iPad Pro 11-inch (M5)",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 0,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "FixtureBootstrap · Built with macOS 27.2",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1793863678.134,
+  "passedTests" : 0,
+  "result" : "Failed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1793863657.599,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "failed - Operation failed: NSFileProviderErrorDomain / -2001\nThe application cannot be used right now.\nNative scenario: NOT_RUN.",
+      "targetName" : "FileProviderBootstrapTests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "FileProviderBootstrapTests/testPrepareRegisterAndInspectFixtureDomain()",
+      "testIdentifierURL" : "test://com.apple.xcode/LogisimFileProviderBootstrap/FileProviderBootstrapTests/FileProviderBootstrapTests/testPrepareRegisterAndInspectFixtureDomain",
+      "testName" : "testPrepareRegisterAndInspectFixtureDomain()"
+    }
+  ],
+  "title" : "Test - FixtureBootstrap",
+  "topInsights" : [
+
+  ],
+  "totalTestCount" : 1
+}

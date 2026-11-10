@@ -1,0 +1,106 @@
+{
+  "status": "APP_EXPORT_ARTIFACT_VALIDATED",
+  "origin": "app-export",
+  "artifactPath": "/private/tmp/logisim-portable53-review/docs/validation/portable53-ios-native-pass/folder/native-evidence/export-before-restart.lsebdl",
+  "mobile": {
+    "circuitIds": {
+      "Top53": "circuit-top53",
+      "Bridge53": "library:3c856486672fce8c:circuit-bridge53",
+      "Cell53": "library:9a2bec1ebaaea193:circuit-cell53"
+    },
+    "definitions": 3,
+    "components": 11,
+    "wires": 7,
+    "runtimeInstances": 4,
+    "componentIds": {
+      "Top53": [
+        "instance-first53",
+        "instance-second53",
+        "out-first53",
+        "out-second53",
+        "source-first53",
+        "source-second53"
+      ],
+      "Bridge53": [
+        "bridge-cell53",
+        "bridge-in53",
+        "bridge-out53"
+      ],
+      "Cell53": [
+        "cell-in53",
+        "cell-out53"
+      ]
+    },
+    "topLabels": [
+      "FIRST53",
+      "SECOND53"
+    ],
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    },
+    "sourceMarkers": [
+      "bridge53",
+      "cell53",
+      "main53"
+    ],
+    "sourcePaths": {
+      "main53": "main.circ",
+      "cell53": "library/library_d57865cd03fa49d1.circ",
+      "bridge53": "library/library_8e59453ebbd98c0f.circ"
+    },
+    "zipEntries": [
+      "library/library_8e59453ebbd98c0f.circ",
+      "library/library_d57865cd03fa49d1.circ",
+      "main.circ",
+      "manifest.xml"
+    ],
+    "opaqueEntries": {},
+    "archiveSha256": "3ffe3b61443a982cf54788b18cc65da954e01684f6ae9bcf123c1d297e2fc26b"
+  },
+  "desktop": {
+    "status": "PASSED",
+    "jarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+    "definitions": [
+      "Top53",
+      "Bridge53",
+      "Cell53"
+    ],
+    "topInstances": 2,
+    "outputs": {
+      "out-first53": "00001000",
+      "out-second53": "00000011"
+    }
+  },
+  "recordedAtUtc": "2026-11-05T03:29:36.976729+00:00",
+  "sourceRevision": "0311b1ecefa928bf9a766fa4f4fc4f419bab57d2",
+  "worktreeDirty": false,
+  "oracleSourcesSha256": {
+    "scripts/portable/Portable53Oracle.kt": "ca53e5c8b4207a40887ec6dc8ff87a06c6fd5997c5ee61059498758152f73d8d",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/DocumentActions.kt": "03eab1e7e489cad53d18f26e4e8984eeddecc9fca5ced868446a555461fe9f57",
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/WorkspaceDocumentLinks.kt": "e09e9fca28c47b36f299e71b708bc3f07d2cbf69f88a2c1087147cdcd6a8ec9b",
+    "scripts/verify-portable53.py": "bd01e28d8b9b42165a67be92255f8d164a858cdd53d58020bfa0d48558a50a2f",
+    "scripts/portable_receipt_contract.py": "46785e0f07abb65c94824f09a544c2b052b6d963b9c9005a9612ab44ac234360"
+  },
+  "referenceCoreSha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+  "referenceDesktopSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+  "nativeUiStatus": "PASSED_PER_NATIVE_RECEIPT",
+  "validatedExports": [
+    {
+      "role": "artifact",
+      "path": "/private/tmp/logisim-portable53-review/docs/validation/portable53-ios-native-pass/folder/native-evidence/export-before-restart.lsebdl",
+      "sha256": "3ffe3b61443a982cf54788b18cc65da954e01684f6ae9bcf123c1d297e2fc26b",
+      "afterRestart": false,
+      "desktopChecked": true
+    },
+    {
+      "role": "peer",
+      "path": "/private/tmp/logisim-portable53-review/docs/validation/portable53-ios-native-pass/folder/native-evidence/export-after-restart.lsebdl",
+      "sha256": "3ffe3b61443a982cf54788b18cc65da954e01684f6ae9bcf123c1d297e2fc26b",
+      "afterRestart": true,
+      "desktopChecked": false
+    }
+  ],
+  "nativeUiReceipt": "/private/tmp/logisim-portable53-review/docs/validation/portable53-ios-native-pass/folder/native-evidence/ui-receipt.json",
+  "nativeUiReceiptSha256": "ffc9daddb2d319ca35dd3f4085d9445dd70b77ebe90390008df8ed52f4724da7"
+}

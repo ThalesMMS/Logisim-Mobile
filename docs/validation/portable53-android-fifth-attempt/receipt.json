@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "status": "FAILED_DURING_RESET_RELAUNCH_BEFORE_SCENARIO",
+  "nativeUiStatus": "FAILED",
+  "productSource": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "harnessSource": "6b18f144a7a83042685ef5bb335537b2058e59d6",
+  "serial": "emulator-5558",
+  "appSha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546",
+  "qualifiedExports": [],
+  "observedEvents": [
+    "23:27:04.397 am_proc_start PID16818 for MainActivity",
+    "23:27:04.419 am_kill PID16818 reason remove task",
+    "23:27:04.419 old DocumentsUI task17 removed",
+    "23:27:14.398 process start timeout for the already removed PID"
+  ],
+  "exitInfo": "USER REQUESTED / REMOVE TASK, not a new application crash stack",
+  "inference": "The initial post-reset launch overlapped cleanup of a preexisting DocumentsUI task associated with the isolated app.",
+  "correction": "Record exact isolated-app task IDs before reset; after clearing data await removal of those IDs before launching. Do not remove other tasks, wait on future tasks or widen the UI timeout. Record and validate am start output before AX.",
+  "checks": {
+    "lifecycle": 5,
+    "navigation": 9,
+    "portablePreparation": 9,
+    "artifactPreflight": 11
+  },
+  "scope": "The barrier and launch diagnostics are harness changes only; no new native pass or product change is claimed.",
+  "files": {
+    "startup-exit-diagnostic.json": "8d7dd12f5cbd3c48c8c21a188f3e948aba16d8a2fa3aad5a4aa0ece83aa07d27",
+    "concurrent-environment.json": "54b97a66089dfcbc911791dc6d4a7ecb7c0fd9d21a96e6201a0a0d039f6bdc30",
+    "terminal-tree.xml": "b80bf390fe8b21a55cbe566a56f7bedf573ecc54275d82994ddc99cf250002b9",
+    "terminal-screen.png": "f44525e0d49cc8ff9ae34fe8dc307bcd0ea6cedb3289f020a15295de844d1ed8",
+    "run-manifest.json": "b714bbdd2cb42aa3cfb14a93ebad947d1f33f4415031fbeee7def3395a97130c",
+    "error.txt": "5527e2a0375314d2c65c6d9f592a95a49c10b57a97999aa72696bf9f37a67873"
+  }
+}

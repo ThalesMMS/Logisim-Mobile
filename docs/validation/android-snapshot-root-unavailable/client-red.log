@@ -1,0 +1,46 @@
+test_unavailable_root_then_incomplete_then_complete_uses_fresh_nonces_and_same_pid (test_android_focus_snapshot.FocusSnapshotTests.test_unavailable_root_then_incomplete_then_complete_uses_fresh_nonces_and_same_pid) ... FAIL
+test_unavailable_root_retries_share_the_original_screen_deadline (test_android_focus_snapshot.FocusSnapshotTests.test_unavailable_root_retries_share_the_original_screen_deadline) ... FAIL
+test_root_wait_can_be_shorter_than_the_capture_when_preparation_consumes_budget (test_android_focus_snapshot.FocusSnapshotTests.test_root_wait_can_be_shorter_than_the_capture_when_preparation_consumes_budget) ... FAIL
+
+======================================================================
+FAIL: test_unavailable_root_then_incomplete_then_complete_uses_fresh_nonces_and_same_pid (test_android_focus_snapshot.FocusSnapshotTests.test_unavailable_root_then_incomplete_then_complete_uses_fresh_nonces_and_same_pid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/tmp4hylv77h/test_android_focus_snapshot.py", line 134, in test_unavailable_root_then_incomplete_then_complete_uses_fresh_nonces_and_same_pid
+    root = self.ui.screen(timeout=45)
+  File "/private/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/tmp4hylv77h/android_ui.py", line 99, in screen
+    root = self._screen_instrumentation(min(8, remaining), expected_pid=expected_pid,
+                                        absolute_deadline=deadline)
+  File "/private/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/tmp4hylv77h/android_ui.py", line 278, in _screen_instrumentation
+    raise AssertionError("Focus snapshot failed: " + values["snapshotError"])
+AssertionError: Focus snapshot failed: RootUnavailableException: UiAutomation returned no active root or active/focused application window root for dev.logisim.mobile.e2e before the capture retry deadline
+
+======================================================================
+FAIL: test_unavailable_root_retries_share_the_original_screen_deadline (test_android_focus_snapshot.FocusSnapshotTests.test_unavailable_root_retries_share_the_original_screen_deadline)
+----------------------------------------------------------------------
+AssertionError: Focus snapshot failed: RootUnavailableException: UiAutomation returned no active root or active/focused application window root for dev.logisim.mobile.e2e before the capture retry deadline
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/tmp4hylv77h/test_android_focus_snapshot.py", line 157, in test_unavailable_root_retries_share_the_original_screen_deadline
+    with self.assertRaisesRegex(AssertionError, 'existing hierarchy deadline'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "existing hierarchy deadline" does not match "Focus snapshot failed: RootUnavailableException: UiAutomation returned no active root or active/focused application window root for dev.logisim.mobile.e2e before the capture retry deadline"
+
+======================================================================
+FAIL: test_root_wait_can_be_shorter_than_the_capture_when_preparation_consumes_budget (test_android_focus_snapshot.FocusSnapshotTests.test_root_wait_can_be_shorter_than_the_capture_when_preparation_consumes_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/tmp4hylv77h/test_android_focus_snapshot.py", line 249, in test_root_wait_can_be_shorter_than_the_capture_when_preparation_consumes_budget
+    self.assertEqual('SnapshotRootUnavailable', type(root.exception).__name__)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'SnapshotRootUnavailable' != 'AssertionError'
+- SnapshotRootUnavailable
++ AssertionError
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (failures=3)

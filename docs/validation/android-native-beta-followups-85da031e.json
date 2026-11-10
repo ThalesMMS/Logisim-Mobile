@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "status": "MIXED_RESULTS_PRESERVED",
+  "issue": 27,
+  "fullIssueQualification": "NOT_QUALIFIED",
+  "sourceRevision": "85da031e4ed11474c2e763976392729810ef142d",
+  "productionSourceIdenticalTo": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+  "testProducerRevision": "f4f72c6de53fbd634703ed23f066af88f58d5485",
+  "testObservationPatch": "4a1658d753ca124df22a267cd1b1fe987c9bceb9",
+  "package": "thalesmms.logisim.mobile.e2e",
+  "serial": "emulator-5556",
+  "apiLevel": 35,
+  "cases": [
+    {
+      "case": "io-release",
+      "status": "PASS",
+      "qualification": "PARTIAL",
+      "caseElapsedMillis": 7839,
+      "wrapperElapsedSeconds": 12.245,
+      "documents": [
+        {
+          "file": "0-fixture.circ",
+          "bytes": 789,
+          "sha256": "44622aa7388737118aaa7650cdb69f2100ab09743b02fafbe6d7ab5439ff2026",
+          "components": 2,
+          "wires": 1
+        },
+        {
+          "file": "1-io-release-after.circ",
+          "bytes": 789,
+          "sha256": "44622aa7388737118aaa7650cdb69f2100ab09743b02fafbe6d7ab5439ff2026",
+          "components": 2,
+          "wires": 1
+        }
+      ]
+    },
+    {
+      "case": "pinch",
+      "status": "FAIL",
+      "qualification": "NOT_QUALIFIED",
+      "caseElapsedMillis": 31023,
+      "wrapperElapsedSeconds": 33.592,
+      "documents": [
+        {
+          "file": "0-fixture.circ",
+          "bytes": 1185,
+          "sha256": "e1351f37e3c2e1b3df61658111ddc0b9b22f7000f5f85420ff9146c8df1ca691",
+          "components": 3,
+          "wires": 2
+        },
+        {
+          "file": "1-pinch-before.circ",
+          "bytes": 1185,
+          "sha256": "e1351f37e3c2e1b3df61658111ddc0b9b22f7000f5f85420ff9146c8df1ca691",
+          "components": 3,
+          "wires": 2
+        }
+      ]
+    }
+  ],
+  "scope": [
+    "The io-release case passed; the pinch case failed and remains unqualified. No retry is included.",
+    "Public Android system input was synthesized on the API 35 emulator; physical touch, pen, mouse and trackpad ergonomics are not qualified.",
+    "SDK accepted pinch events do not prove delivery to or receipt by the Canvas. Pinch did not reach ratio, anchor or post-gesture XML assertions.",
+    "Each wrapper checked app/test installed hashes before and after its case. A separate read-only post-run sidecar confirms the app, test and snapshot installed hashes after both cases. The preflight records supplied artifacts and aapt2 manifests before installing only the test APK.",
+    "The post-run pidof was empty. Retained exit-info reports USER REQUESTED/FORCE STOP due to finished inst for the two latest entries; this is not classified as a crash.",
+    "No cross-boot monotonic duration or issue 48 performance claim is made.",
+    "MotionEvent eventTime uses uptimeMillis; wait summaries use elapsedRealtime. This receipt does not compare or subtract timestamps across those clocks."
+  ],
+  "rawInventory": [
+    {
+      "path": "io-release/instrumentation.txt",
+      "bytes": 56673,
+      "sha256": "6b9295023addd8bcb971b262bb70391e2889ff5bfcfbded817f07ba26b68bf5b",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/instrumentation.txt"
+    },
+    {
+      "path": "io-release/lastanr-after.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/lastanr-after.txt"
+    },
+    {
+      "path": "io-release/lastanr-before.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/lastanr-before.txt"
+    },
+    {
+      "path": "io-release/manifest.json",
+      "bytes": 96817,
+      "sha256": "ca4bbdd1b3dd434b66bd436797a7f99812d05d6ef561345037fb97ea96ad9ff8",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/manifest.json"
+    },
+    {
+      "path": "io-release/native/0-fixture.circ",
+      "bytes": 789,
+      "sha256": "44622aa7388737118aaa7650cdb69f2100ab09743b02fafbe6d7ab5439ff2026",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/native/0-fixture.circ"
+    },
+    {
+      "path": "io-release/native/1-io-release-after.circ",
+      "bytes": 789,
+      "sha256": "44622aa7388737118aaa7650cdb69f2100ab09743b02fafbe6d7ab5439ff2026",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/native/1-io-release-after.circ"
+    },
+    {
+      "path": "io-release/native/io-field-focused.png",
+      "bytes": 140961,
+      "sha256": "4e307f17c6c5b18bf7f7eb479463f009d3444fc20c02f55d9f7ea09ef06dc274",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/native/io-field-focused.png"
+    },
+    {
+      "path": "io-release/native/io-held-high.png",
+      "bytes": 230303,
+      "sha256": "172df189651602c4dc837c49606a022812d8d8a25789eec5124a28d714074024",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/native/io-held-high.png"
+    },
+    {
+      "path": "io-release/native/io-release-complete.png",
+      "bytes": 310657,
+      "sha256": "acf902e3a66e7472a36d274575f258c7e552d9c4a8d8292052f8f459af1a6507",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/native/io-release-complete.png"
+    },
+    {
+      "path": "io-release/native/io-released-before-up.png",
+      "bytes": 214554,
+      "sha256": "29a9d8aeacf8d650ef2629c4926f77ab899dbc62764f82a2bd81b000f6ca45bf",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/native/io-released-before-up.png"
+    },
+    {
+      "path": "io-release/native/result.json",
+      "bytes": 90085,
+      "sha256": "46d9bb1a5fa6158037e099a84bcf3a30a6281f3f4baae821687244e690fcd24b",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-io-release4a-r1/native/result.json"
+    },
+    {
+      "path": "pinch/instrumentation.txt",
+      "bytes": 66324,
+      "sha256": "1d226c0c5839bb8888792ed18e47169b79b5f5c9310a251fbdc64a7fe8db0304",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/instrumentation.txt"
+    },
+    {
+      "path": "pinch/lastanr-after.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/lastanr-after.txt"
+    },
+    {
+      "path": "pinch/lastanr-before.txt",
+      "bytes": 88,
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/lastanr-before.txt"
+    },
+    {
+      "path": "pinch/manifest.json",
+      "bytes": 112586,
+      "sha256": "eefa41aefa1799b0ee7b27233663757d41e2688c35e179979b86d1d4aa8781ca",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/manifest.json"
+    },
+    {
+      "path": "pinch/native/0-fixture.circ",
+      "bytes": 1185,
+      "sha256": "e1351f37e3c2e1b3df61658111ddc0b9b22f7000f5f85420ff9146c8df1ca691",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/native/0-fixture.circ"
+    },
+    {
+      "path": "pinch/native/1-pinch-before.circ",
+      "bytes": 1185,
+      "sha256": "e1351f37e3c2e1b3df61658111ddc0b9b22f7000f5f85420ff9146c8df1ca691",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/native/1-pinch-before.circ"
+    },
+    {
+      "path": "pinch/native/pinch-failure-tree.txt",
+      "bytes": 39506,
+      "sha256": "a54a842355bd2ab29e701961325a761fd8cdedf587e262ccc09f50d5a5f6ed12",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/native/pinch-failure-tree.txt"
+    },
+    {
+      "path": "pinch/native/pinch-failure.png",
+      "bytes": 231929,
+      "sha256": "4f784092e70fe1d0c95e1069a4e07547a12762138975a9d3cf42770fd40b3149",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/native/pinch-failure.png"
+    },
+    {
+      "path": "pinch/native/result.json",
+      "bytes": 104685,
+      "sha256": "23ee07bc64239bb99b1db108a96dbd9f4075608a6653b4572c22a709545a7d54",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/85da-native-pinch4a-r1/native/result.json"
+    },
+    {
+      "path": "producer/app-manifest.txt",
+      "bytes": 12401,
+      "sha256": "b0585ac444a0e85fe5e50e688a2b3cf2099506225bdf4b981e7a87c49029860d",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/app-manifest.txt"
+    },
+    {
+      "path": "producer/execution.json",
+      "bytes": 475,
+      "sha256": "0f7cc95a2a13d0d0ef3c8a74ae067be48ab3d231f4fa0b72f44c8759a2f7b56b",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/execution.json"
+    },
+    {
+      "path": "producer/installed-artifacts-after.json",
+      "bytes": 1048,
+      "sha256": "872209a05c15523bc6d12ba266acf821f4d0208b8c8d982296397669d87c741f",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/installed-artifacts-after.json"
+    },
+    {
+      "path": "producer/io-release.log",
+      "bytes": 79,
+      "sha256": "cad51a8bcaf2c45cb046294f05e093c5bd8bae2d3ffbbf07a1196c69cf1cb0b4",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/io-release.log"
+    },
+    {
+      "path": "producer/pinch.log",
+      "bytes": 74,
+      "sha256": "7bc2e60950674c6b86b93cb9d6a46d5924750917365bb8656f7b97e0b5c909a3",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/pinch.log"
+    },
+    {
+      "path": "producer/post-activity.txt",
+      "bytes": 28068,
+      "sha256": "2027d51ea6d05f841d97475b7787712fb0fb2e5c6622bc783c2db1dfd967fef1",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/post-activity.txt"
+    },
+    {
+      "path": "producer/post-exit-info.txt",
+      "bytes": 6365,
+      "sha256": "51abc2ff6c0f8795d49e32c142725834fc9b9ebc0f5c225e1f4d682674367165",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/post-exit-info.txt"
+    },
+    {
+      "path": "producer/preflight.json",
+      "bytes": 1133,
+      "sha256": "54bd1479b59fb9015feebe2bf0b9cea2ef72315343a7f1d2aa0398bd5db6e05a",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/preflight.json"
+    },
+    {
+      "path": "producer/snapshot-manifest.txt",
+      "bytes": 2055,
+      "sha256": "f7364dd411bd7969f4179a48165f990fdfee090e4830bb93e92c1bd8c2d675f4",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/snapshot-manifest.txt"
+    },
+    {
+      "path": "producer/test-manifest.txt",
+      "bytes": 5618,
+      "sha256": "2517d0b7e0fc0e2477b051616a5e0c7cd7b0b4abaeef791bfa6984c4427256a8",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-beta-input-followups/test-manifest.txt"
+    },
+    {
+      "path": "producer/test-build-receipt.json",
+      "bytes": 3616,
+      "sha256": "1db5a1b31ec623e10a3bf2bc00f5ae5ebba88fd76c9bf2d8e89dd827bdc2ab3a",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-artifacts/native-focus4a/build-receipt.json"
+    },
+    {
+      "path": "producer/test-build-aapt2-manifest.txt",
+      "bytes": 5618,
+      "sha256": "2517d0b7e0fc0e2477b051616a5e0c7cd7b0b4abaeef791bfa6984c4427256a8",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/outputs/android-artifacts/native-focus4a/aapt2-manifest.txt"
+    },
+    {
+      "path": "producer/app-artifact-manifest.json",
+      "bytes": 48521,
+      "sha256": "39352b05a197173d49b703b373239207acf1d933380234681bc994506765c36e",
+      "source": "/Users/thales/GitHub/logisim-mobile-dev/outputs/implementation/artifacts/85da031e/manifest.json"
+    },
+    {
+      "path": "source/MixedInputScenarios.kt",
+      "bytes": 63173,
+      "sha256": "ec683d6f27c4e984894083c414da54367372e5fc72fe9b31409a16cd591dc49e",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/kotlin/dev/logisim/mobile/input/MixedInputScenarios.kt"
+    },
+    {
+      "path": "source/NativeMixedInput.java",
+      "bytes": 17970,
+      "sha256": "9835a5a753ed9e486d7dd3df760d6ffa93f4ec53f8e5201fef61ece595e2544c",
+      "source": "/Users/thales/GitHub/logisim-mobile-worktrees/android-native-focus4a/androidApp/src/androidTest/java/dev/logisim/mobile/input/NativeMixedInput.java"
+    }
+  ],
+  "ioReleaseTimeline": {
+    "waitClock": "SystemClock.elapsedRealtime in MixedInputScenarios.waitFor",
+    "motionClock": "SystemClock.uptimeMillis in NativeMixedInput.eventTime; not numerically compared with waitClock",
+    "unit": "milliseconds",
+    "waitObservations": [
+      {
+        "observation": "initial output Low",
+        "at": 44765770
+      },
+      {
+        "observation": "held output High",
+        "at": 44766103
+      },
+      {
+        "observation": "Inspector label focused",
+        "at": 44767275
+      },
+      {
+        "observation": "output Low before callback returns",
+        "at": 44768552
+      },
+      {
+        "observation": "output remains Low after contact returns",
+        "at": 44768664
+      }
+    ],
+    "motionEvents": [
+      {
+        "observation": "accepted ACTION_DOWN",
+        "eventTimeMs": 44765772
+      },
+      {
+        "observation": "accepted ACTION_UP",
+        "eventTimeMs": 44768649
+      }
+    ],
+    "structuralHoldOrder": [
+      "contact emits DOWN",
+      "contact invokes whilePressed callback",
+      "callback observes High",
+      "callback focuses Inspector Label",
+      "callback observes Low and takes io-released-before-up screenshot",
+      "callback returns",
+      "contact emits UP",
+      "case observes Low after hold returns"
+    ],
+    "preUpRelationEvidence": "Synchronous contact/whilePressed call order in the archived NativeMixedInput.java and MixedInputScenarios.kt sources; not subtraction or comparison across the two clocks."
+  },
+  "pinchFailure": {
+    "caseElapsedMillis": 31023,
+    "wrapperElapsedSeconds": 33.592,
+    "nativeError": "Timed out waiting for expanding touch pinch zooms in. Last outcome: RETURNED_FALSE.",
+    "sdkMotionEvents": 17,
+    "sdkAccepted": true,
+    "canvasDeliveryObserved": "NOT_RECORDED",
+    "ratioAssertion": "NOT_REACHED",
+    "anchorAssertion": "NOT_REACHED",
+    "postGestureDocumentAssertion": "NOT_REACHED",
+    "instrumentationTerminalCode": 0,
+    "wrapperError": "Instrumentation must end once with Activity.RESULT_OK (-1)",
+    "failureAttribution": "Not determined by this receipt."
+  },
+  "archiveChecks": {
+    "rawFilesChecked": 35,
+    "rawBytesMatchOriginals": true,
+    "semanticNegativeControls": 6,
+    "independentReview": "Passed after separating uptimeMillis motion timestamps from elapsedRealtime wait summaries.",
+    "runtimeExecutedDuringPackaging": false,
+    "verificationReport": "artifacts/android-native-beta-followups-85da031e/verification.json",
+    "negativeControlReport": "artifacts/android-native-beta-followups-85da031e/negative-controls.json"
+  }
+}

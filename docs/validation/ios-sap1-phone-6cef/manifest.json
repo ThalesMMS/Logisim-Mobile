@@ -1,0 +1,686 @@
+{
+  "schema": 1,
+  "scope": "Selected SAP-1 iPhone 17e Simulator cases only",
+  "qualification_gate": "PARTIAL",
+  "pins": {
+    "appProducer": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "appTestValidation": "85da031e4ed11474c2e763976392729810ef142d",
+    "uiHarness": "ba9d9682248fca28adbf5fc050f018156c7edc5c"
+  },
+  "appFingerprint": {
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "198a06dc847cc0fd8717b7c05b06f334b8a1e701aaf63aed5a6012699be5b946",
+    "bundle_tree_sha256": "d987d43d6587c0139ff0ecddca2d4ae95c9bad66ba6cd19d29c6452214be3080"
+  },
+  "harnessGitPaths": {
+    "AccessibilityUITests.swift": "scripts/ios_accessibility_ui/AccessibilityUITests.swift",
+    "ClipboardReceiverUI.swift": "scripts/ios_e2e_ui/ClipboardReceiverUI.swift",
+    "DestinationExportEndToEndTests.swift": "scripts/ios_e2e_ui/DestinationExportEndToEndTests.swift",
+    "EditorEndToEndTests.swift": "scripts/ios_e2e_ui/EditorEndToEndTests.swift",
+    "ExternalProviderEndToEndTests.swift": "scripts/ios_e2e_ui/ExternalProviderEndToEndTests.swift",
+    "FilesEndToEndTests.swift": "scripts/ios_e2e_ui/FilesEndToEndTests.swift",
+    "InspectorEndToEndTests.swift": "scripts/ios_e2e_ui/InspectorEndToEndTests.swift",
+    "IoEndToEndTests.swift": "scripts/ios_e2e_ui/IoEndToEndTests.swift",
+    "NativeFilesDestinationNavigator.swift": "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift",
+    "NativeFilesPeerNavigator.swift": "scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift",
+    "NativeTextReplacement.swift": "scripts/ios_native_ui/NativeTextReplacement.swift",
+    "NativeUIHarness.swift": "scripts/ios_native_ui/NativeUIHarness.swift",
+    "ObservedProjectXML.swift": "scripts/ios_e2e_ui/ObservedProjectXML.swift",
+    "PortableProjectEndToEndTests.swift": "scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift",
+    "PortableWorkspaceEvidence.swift": "scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift",
+    "VisualExportEndToEndTests.swift": "scripts/ios_e2e_ui/VisualExportEndToEndTests.swift",
+    "XmlDialogEndToEndTests.swift": "scripts/ios_e2e_ui/XmlDialogEndToEndTests.swift"
+  },
+  "cases": {
+    "sequential": "sequential/receipt.json",
+    "automatic": "automatic/receipt.json"
+  },
+  "fixture": {
+    "path": "shared/app-source/examples/sap1.circ",
+    "sha256": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac",
+    "upstreamRepository": "https://github.com/ThalesMMS/SAP-1-Logisim",
+    "upstreamRevision": "ddb9dd86d601ac217157beedeb88464ee0128c87",
+    "sourcePath": "examples/sap1.circ",
+    "embeddedSourcePath": "shared/app-source/core/src/commonMain/kotlin/dev/logisim/mobile/core/BundledCircuitExamples.kt",
+    "libraryActionPath": "shared/app-source/composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt",
+    "upstreamScope": "Retained repository provenance; no new network verification",
+    "upstreamPath": "circuits/sap1.circ",
+    "offlineXmlCounts": {
+      "circuits": 7,
+      "totalComponents": 156,
+      "totalWires": 318,
+      "mainComponents": 111,
+      "mainWires": 220
+    }
+  },
+  "files": {
+    "shared/harness/AccessibilityUITests.swift": {
+      "bytes": 9886,
+      "sha256": "ca5d6c441c1270d915cfcce1bb456f200bbbf83e78af18667f5a72359293d150",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/AccessibilityUITests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_accessibility_ui/AccessibilityUITests.swift"
+      }
+    },
+    "shared/harness/ClipboardReceiverUI.swift": {
+      "bytes": 4152,
+      "sha256": "2a310f6d8017b09c855aef7e4da19161bdca424be7b1e5ac561d26f76940874b",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/ClipboardReceiverUI.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/ClipboardReceiverUI.swift"
+      }
+    },
+    "shared/harness/DestinationExportEndToEndTests.swift": {
+      "bytes": 10618,
+      "sha256": "4f7ad7381fe35eb63646794f9ef86003853d5c16842014d117b4609215b0a91a",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/DestinationExportEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/DestinationExportEndToEndTests.swift"
+      }
+    },
+    "shared/harness/EditorEndToEndTests.swift": {
+      "bytes": 33603,
+      "sha256": "df046e24e72b26919e1e2b8ae3d767a2eae3b784f5925a0d946198f11d17ed07",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/EditorEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/EditorEndToEndTests.swift"
+      }
+    },
+    "shared/harness/ExternalProviderEndToEndTests.swift": {
+      "bytes": 21823,
+      "sha256": "a0090dd3d969c18dc815cb3342b6da62634f2b47b3a8e37c6d36cecbdabca386",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/ExternalProviderEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/ExternalProviderEndToEndTests.swift"
+      }
+    },
+    "shared/harness/FilesEndToEndTests.swift": {
+      "bytes": 15320,
+      "sha256": "b9cec3bf6b3cc840d53471a00872602fcbb6ada22eaa94b08d25844d0ebd9da0",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/FilesEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/FilesEndToEndTests.swift"
+      }
+    },
+    "shared/harness/InspectorEndToEndTests.swift": {
+      "bytes": 24984,
+      "sha256": "ac8faea7e3deac9d2e55e773331190c200d61b766f92cf8401a6ad1ad30716dc",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/InspectorEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/InspectorEndToEndTests.swift"
+      }
+    },
+    "shared/harness/IoEndToEndTests.swift": {
+      "bytes": 45672,
+      "sha256": "5efeea47f0e689e23e7051acc602989d369692d8c5f1e0ffaea0bf9d404255de",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/IoEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/IoEndToEndTests.swift"
+      }
+    },
+    "shared/harness/NativeFilesDestinationNavigator.swift": {
+      "bytes": 13932,
+      "sha256": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/NativeFilesDestinationNavigator.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift"
+      }
+    },
+    "shared/harness/NativeFilesPeerNavigator.swift": {
+      "bytes": 11314,
+      "sha256": "bd6f42d8033d1bc03e719acbe2fe302ecbd88d37e96418001129125d33d6e6c5",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/NativeFilesPeerNavigator.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/NativeFilesPeerNavigator.swift"
+      }
+    },
+    "shared/harness/NativeTextReplacement.swift": {
+      "bytes": 10663,
+      "sha256": "3ab488daa2f4ea6cc1b8d903d0e704cb9c559182ba4a78332c6b98441185a0e3",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/NativeTextReplacement.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_native_ui/NativeTextReplacement.swift"
+      }
+    },
+    "shared/harness/NativeUIHarness.swift": {
+      "bytes": 14507,
+      "sha256": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/NativeUIHarness.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_native_ui/NativeUIHarness.swift"
+      }
+    },
+    "shared/harness/ObservedProjectXML.swift": {
+      "bytes": 3639,
+      "sha256": "73215a3034ac0619ed11df2e8c58866fcb5e98371cc5eca25ffd492eb72b2609",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/ObservedProjectXML.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/ObservedProjectXML.swift"
+      }
+    },
+    "shared/harness/PortableProjectEndToEndTests.swift": {
+      "bytes": 31113,
+      "sha256": "250ccd12420c011569fa68e75e895dc3781c86f46490b8a11b7ff0f551c372f5",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/PortableProjectEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/PortableProjectEndToEndTests.swift"
+      }
+    },
+    "shared/harness/PortableWorkspaceEvidence.swift": {
+      "bytes": 21374,
+      "sha256": "fad83696f0ec4b0af3abfdb6a203e3f3ae5a7e4abc273cea6b0cf1552e1c3660",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/PortableWorkspaceEvidence.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/PortableWorkspaceEvidence.swift"
+      }
+    },
+    "shared/harness/VisualExportEndToEndTests.swift": {
+      "bytes": 30809,
+      "sha256": "d5203b7ac8938a904d85f9d196549b28a2caddd9244c7d892ba87ea162e16752",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/VisualExportEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/VisualExportEndToEndTests.swift"
+      }
+    },
+    "shared/harness/XmlDialogEndToEndTests.swift": {
+      "bytes": 4995,
+      "sha256": "df445f91bcd78efecc91704740f0760d2233fc3489d2c8aab1c7139fd02df346",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/XmlDialogEndToEndTests.swift",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/ios_e2e_ui/XmlDialogEndToEndTests.swift"
+      }
+    },
+    "shared/harness/Catalog.json": {
+      "bytes": 337795,
+      "sha256": "83a6f69e2a6d530a8afff326250dcd2c09416d4deeb35187d03117b2b5f6c6ca",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/Catalog.json"
+      }
+    },
+    "shared/harness/editor-actions-v1.json": {
+      "bytes": 9468,
+      "sha256": "9a77ddc4628e87a87b3dbcbe28a46691ed15b10f22b94b70544cce9944216ec9",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/editor-actions-v1.json"
+      }
+    },
+    "shared/harness/io-actions-v1.json": {
+      "bytes": 10589,
+      "sha256": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/io-actions-v1.json"
+      }
+    },
+    "shared/harness/project.yml": {
+      "bytes": 2322,
+      "sha256": "2c389877b6766d84b8b3215f45abec477115d69b6077217617aae2827211f7cc",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/project.yml"
+      }
+    },
+    "shared/harness/TestInfo.plist": {
+      "bytes": 809,
+      "sha256": "e6cd9afed36cf415a11bf9ebc7d01cbb46455929d10064649df8f7d7f5cbbf57",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/TestInfo.plist"
+      }
+    },
+    "shared/app-source/examples/sap1.circ": {
+      "bytes": 47528,
+      "sha256": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/examples/sap1.circ",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "examples/sap1.circ"
+      }
+    },
+    "shared/app-source/examples/catalog.json": {
+      "bytes": 4432,
+      "sha256": "59e4c0e5bff8a0df1e38073ff21692b9c75d453245cde36825b799f5fd87261a",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/examples/catalog.json",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "examples/catalog.json"
+      }
+    },
+    "shared/app-source/examples/SAP-1-LICENSE.txt": {
+      "bytes": 1063,
+      "sha256": "0e91115f50ff61bbe968b2a0bc81e4dfcf1288469049a74ca2fc3a9fef4ef1e3",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/examples/SAP-1-LICENSE.txt",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "examples/SAP-1-LICENSE.txt"
+      }
+    },
+    "shared/app-source/examples/SAP-1.md": {
+      "bytes": 1755,
+      "sha256": "80c9e068adb9e9364ed08b2282b5a0d8ca73da7d19d3bc44aa0456b339b8f3fa",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/examples/SAP-1.md",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "examples/SAP-1.md"
+      }
+    },
+    "shared/app-source/examples/README.md": {
+      "bytes": 3011,
+      "sha256": "a2e39577be75847c067e55bfa8868080904cde1d02a80ea70196de658bfd9c1f",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/examples/README.md",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "examples/README.md"
+      }
+    },
+    "shared/app-source/scripts/generate_examples.py": {
+      "bytes": 2690,
+      "sha256": "9f1b115739bb7c12ff8dbaeeef80c53c7aae7ab2a05aa0229a9e470839a28117",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/scripts/generate_examples.py",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "scripts/generate_examples.py"
+      }
+    },
+    "shared/app-source/core/src/commonMain/kotlin/dev/logisim/mobile/core/BundledCircuitExamples.kt": {
+      "bytes": 65181,
+      "sha256": "e7d0b8f7ea6c339752c2b15924bca89f2e7d23eb3917e048cd15661cef9125ff",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/core/src/commonMain/kotlin/dev/logisim/mobile/core/BundledCircuitExamples.kt",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "core/src/commonMain/kotlin/dev/logisim/mobile/core/BundledCircuitExamples.kt"
+      }
+    },
+    "shared/app-source/core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitExamples.kt": {
+      "bytes": 5385,
+      "sha256": "5738480560ca6bf75bffc38333172ed4eedebfae0d10345cd9b90f4b4b5e5e46",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitExamples.kt",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitExamples.kt"
+      }
+    },
+    "shared/app-source/composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt": {
+      "bytes": 62261,
+      "sha256": "cad5d185b7b8b423316e32e78887246508dcb4a5c5ccdf16cc014d36ecb1cb33",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt"
+      }
+    },
+    "shared/app-source/composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorExampleLoader.kt": {
+      "bytes": 2154,
+      "sha256": "898d682fc757daf1ed4d506949248a204f2bb79e68b0ed31eea69171a4dec3bb",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorExampleLoader.kt",
+        "gitPin": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+        "gitPath": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorExampleLoader.kt"
+      }
+    },
+    "shared/app-artifact.json": {
+      "bytes": 7119,
+      "sha256": "6006751321c48752f5676ddaba3b6ae20cbc7f10f43f60a5000c855a1e34ac17",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-runtime-6cef0542/outputs/ios-final-runtime-6cef0542/artifact.json"
+      }
+    },
+    "shared/run-ios-e2e.py": {
+      "bytes": 24158,
+      "sha256": "90372e223b94910c2a67d83fa1dd24d0e9dfeeaa5d7faf15c98571af8597d174",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-sap1-phone-receipts/scripts/run-ios-e2e.py",
+        "gitPin": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+        "gitPath": "scripts/run-ios-e2e.py"
+      }
+    },
+    "sequential/results.json": {
+      "bytes": 27278,
+      "sha256": "74406bc52870bae8c5ac3e3b80fafce09b55a2aba9c1db32ba0ff327b6e2968a",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/results.json"
+      }
+    },
+    "sequential/installed-after.json": {
+      "bytes": 604,
+      "sha256": "11cb8ba5a4d39986c982d156d3c297ee49496014cdfc23011ce27df9837e7961",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/installed-after.json"
+      }
+    },
+    "sequential/test.log": {
+      "bytes": 103152,
+      "sha256": "24ecf24e0d1e3f09eb40f712974806020375ac782542149102c862631f382b6e",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/test.log"
+      }
+    },
+    "sequential/Run.json": {
+      "bytes": 20453,
+      "sha256": "8e05f187f28fe7f720eccef15ad7d20c15e2aafd8b6f0807f6485f8018338121",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/harness/Run.json"
+      }
+    },
+    "sequential/attachments/0629FA90-5ED9-466B-B13C-85FD255D5CBA.txt": {
+      "bytes": 25,
+      "sha256": "eacbf699b7ff3b7303d9685f656adf1778a5f0c1f6ea600c233ddcccbac78561",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/0629FA90-5ED9-466B-B13C-85FD255D5CBA.txt"
+      }
+    },
+    "sequential/attachments/50EE7D77-4F97-4459-A3A5-FEE6A5065A8B.txt": {
+      "bytes": 211,
+      "sha256": "ac53f8c8834306ad0f6f9beee4a48e2d57b7af5513fcda5a89f0f52a0152b524",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/50EE7D77-4F97-4459-A3A5-FEE6A5065A8B.txt"
+      }
+    },
+    "sequential/attachments/5982A89F-9A30-4176-AEE6-15ABEA47151D.png": {
+      "bytes": 323288,
+      "sha256": "9eb875284b4e455eae3dce64e1a6b95874a872f01de85dbdeb6918711509cbc8",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/5982A89F-9A30-4176-AEE6-15ABEA47151D.png"
+      }
+    },
+    "sequential/attachments/79C3F961-6243-4098-93DF-27A3BC3B5D86.txt": {
+      "bytes": 154,
+      "sha256": "9772527d8e41e37b67c9e458c8d5bf4af007814acd640f9f9cf0fb5c0b1c8dea",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/79C3F961-6243-4098-93DF-27A3BC3B5D86.txt"
+      }
+    },
+    "sequential/attachments/7DD6C6ED-4968-4453-8A50-FD698A876CDE.txt": {
+      "bytes": 54,
+      "sha256": "02c383300135dca61f8b8974fa27e80df4dd5478c2543eb9de1ab5fda5ae2679",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/7DD6C6ED-4968-4453-8A50-FD698A876CDE.txt"
+      }
+    },
+    "sequential/attachments/805A09DB-39D3-4975-B080-7A7A49BA13CE.txt": {
+      "bytes": 30656,
+      "sha256": "78a11de50e88cab0f3e200380349e838420fe5f180cd03ef641d8aadb0f8a53e",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/805A09DB-39D3-4975-B080-7A7A49BA13CE.txt"
+      }
+    },
+    "sequential/attachments/83ACA99F-0CBD-48A1-8733-C5072985683A.txt": {
+      "bytes": 464,
+      "sha256": "a0989755bbfa141ca901a484782b61023ab9cbd844be157e59b13d2e24b64f39",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/83ACA99F-0CBD-48A1-8733-C5072985683A.txt"
+      }
+    },
+    "sequential/attachments/A0CC8AE9-84C4-4265-9EE8-1E4E2C604469.png": {
+      "bytes": 328456,
+      "sha256": "31054541d1be458edaa0e0455ffc92865e9a1c3da209fc59d52ece22f3ea6345",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/A0CC8AE9-84C4-4265-9EE8-1E4E2C604469.png"
+      }
+    },
+    "sequential/attachments/EB3C03C6-63D4-49E1-9DAE-5155B5FE57B3.png": {
+      "bytes": 328456,
+      "sha256": "31054541d1be458edaa0e0455ffc92865e9a1c3da209fc59d52ece22f3ea6345",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/EB3C03C6-63D4-49E1-9DAE-5155B5FE57B3.png"
+      }
+    },
+    "sequential/attachments/F3DCDCFA-28AD-4A6B-B52A-AFEAAB6120FD.txt": {
+      "bytes": 211,
+      "sha256": "583cc425fb3a1c53c0b0f211ab889ce2440c37a4a519f3727c8ed969a8df60ad",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/F3DCDCFA-28AD-4A6B-B52A-AFEAAB6120FD.txt"
+      }
+    },
+    "sequential/attachments/manifest.json": {
+      "bytes": 4509,
+      "sha256": "59d2598a9e5f8e1ae680b7735342e9262988e2fee57be32f1486174a95715ff1",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-sequential-phone-001/attachments/manifest.json"
+      }
+    },
+    "sequential/receipt.json": {
+      "bytes": 2685,
+      "sha256": "96802e10d86b719a02884988a26a9fe356bba761d54f9016610353233e980aa6",
+      "origin": {
+        "kind": "derived-receipt",
+        "inputs": [
+          "sequential/results.json",
+          "sequential/test.log",
+          "sequential/Run.json",
+          "sequential/attachments/manifest.json"
+        ]
+      }
+    },
+    "automatic/results.json": {
+      "bytes": 27273,
+      "sha256": "6727727747e53ae26bd247f33936ed53300041dd0c60c510369a98ccaba9c025",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/results.json"
+      }
+    },
+    "automatic/installed-after.json": {
+      "bytes": 604,
+      "sha256": "11cb8ba5a4d39986c982d156d3c297ee49496014cdfc23011ce27df9837e7961",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/installed-after.json"
+      }
+    },
+    "automatic/test.log": {
+      "bytes": 19920,
+      "sha256": "7126d0f1fbaf8520b42f4a83807fca7cd482d9056147ab01253f38b0c0beca00",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/test.log"
+      }
+    },
+    "automatic/Run.json": {
+      "bytes": 20453,
+      "sha256": "dfdbb3f6a15e2f66439e0b45dff1e3b24d810cf53583b20e5e9e49039f5ba600",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/harness/Run.json"
+      }
+    },
+    "automatic/attachments/4507F36E-6E5C-49C5-A1A1-D1DFED0C354A.txt": {
+      "bytes": 23,
+      "sha256": "c32f51757e18f31cbd31cc9602452644d94c07f7aafba0f8ee63d0d36bb4375d",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/4507F36E-6E5C-49C5-A1A1-D1DFED0C354A.txt"
+      }
+    },
+    "automatic/attachments/5EEB3401-5653-467F-A6C1-ACE43BF3CA56.png": {
+      "bytes": 315030,
+      "sha256": "b29f86ca84367985bdd05489dc153cd9c5c99ce1704a6191f951deeaad074778",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/5EEB3401-5653-467F-A6C1-ACE43BF3CA56.png"
+      }
+    },
+    "automatic/attachments/7B050EAD-EE5F-43AF-A714-1C328DAD138E.txt": {
+      "bytes": 54,
+      "sha256": "02c383300135dca61f8b8974fa27e80df4dd5478c2543eb9de1ab5fda5ae2679",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/7B050EAD-EE5F-43AF-A714-1C328DAD138E.txt"
+      }
+    },
+    "automatic/attachments/7E4AA16D-D779-48B8-85E8-F34BBB80A34B.txt": {
+      "bytes": 6703,
+      "sha256": "6db42caee2f2601007568c733a7e5e0aad7c11d99802033d9470d2af1ea4475e",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/7E4AA16D-D779-48B8-85E8-F34BBB80A34B.txt"
+      }
+    },
+    "automatic/attachments/9E98F77C-A250-480C-AEB4-6488D06E6430.txt": {
+      "bytes": 30659,
+      "sha256": "e8a1c115f5d88e1e65233ef27bfc49d59ecb714a055a7edd365ce488b91ba98e",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/9E98F77C-A250-480C-AEB4-6488D06E6430.txt"
+      }
+    },
+    "automatic/attachments/CFC4F268-4B5D-441F-A8F6-6B07EE0CDFB4.png": {
+      "bytes": 327964,
+      "sha256": "e19e35936413d12578934134bf725411ca459af3798f7081eef5494c69bdde53",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/CFC4F268-4B5D-441F-A8F6-6B07EE0CDFB4.png"
+      }
+    },
+    "automatic/attachments/DCEDEB21-B27D-4F39-ABBA-317CDBC56946.txt": {
+      "bytes": 154,
+      "sha256": "9772527d8e41e37b67c9e458c8d5bf4af007814acd640f9f9cf0fb5c0b1c8dea",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/DCEDEB21-B27D-4F39-ABBA-317CDBC56946.txt"
+      }
+    },
+    "automatic/attachments/ED186C89-F1F5-4324-8D55-0481E683436D.png": {
+      "bytes": 327964,
+      "sha256": "e19e35936413d12578934134bf725411ca459af3798f7081eef5494c69bdde53",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/ED186C89-F1F5-4324-8D55-0481E683436D.png"
+      }
+    },
+    "automatic/attachments/manifest.json": {
+      "bytes": 3678,
+      "sha256": "9e6313f5305141bc5777dcc7a9cfd67eee1d29575a57825f02563c85968ff0fe",
+      "origin": {
+        "kind": "unchanged-original",
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-final-6cef-sap1-automatic-phone-001/attachments/manifest.json"
+      }
+    },
+    "automatic/receipt.json": {
+      "bytes": 2282,
+      "sha256": "648594e4185e921680f201415eea6655e4b11550b811a86ab642b12a002c6606",
+      "origin": {
+        "kind": "derived-receipt",
+        "inputs": [
+          "automatic/results.json",
+          "automatic/test.log",
+          "automatic/Run.json",
+          "automatic/attachments/manifest.json"
+        ]
+      }
+    },
+    ".gitattributes": {
+      "bytes": 32,
+      "sha256": "7804c4d4ef3ae861791b3a2671f8b01742205adfe13f3664538d9b5603a009b3",
+      "origin": {
+        "kind": "authored-archive-support"
+      }
+    },
+    "README.md": {
+      "bytes": 5142,
+      "sha256": "d88da2de81520fc0da8e63f74126ca029d509193ea0b53fe90aff1acad2d56d1",
+      "origin": {
+        "kind": "authored-archive-support"
+      }
+    },
+    "sequential/README.md": {
+      "bytes": 1759,
+      "sha256": "56d0da088b27fe079a452eea2764cc0c29e8023b5899fb95a040872cd20dc5d5",
+      "origin": {
+        "kind": "authored-archive-support"
+      }
+    },
+    "automatic/README.md": {
+      "bytes": 1634,
+      "sha256": "5a9ca9843fd4837d7e2747b2ea03b7094a19c0e1cb1eb38e19f6b716cf9d5ded",
+      "origin": {
+        "kind": "authored-archive-support"
+      }
+    },
+    "verify.py": {
+      "bytes": 19607,
+      "sha256": "7b5ca490c2397df16ad50bbbb3bd166f65d13870e74c6f7dadad03bc5e258311",
+      "origin": {
+        "kind": "authored-archive-support"
+      }
+    },
+    "test_verify.py": {
+      "bytes": 8229,
+      "sha256": "9c117a6f8d068e9cc6a6531e18d09dea631ab9d843482a4b0627ec7dd5ba7b4c",
+      "origin": {
+        "kind": "authored-archive-support"
+      }
+    }
+  },
+  "excluded": [
+    "xcresult directories",
+    "application/framework executables",
+    "simulator.log (166 MB / 186 MB)",
+    "build products and caches",
+    "unselected staged fixture files",
+    "duplicate full-resolution simctl last-screen.png"
+  ]
+}

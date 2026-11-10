@@ -1,0 +1,140 @@
+{
+  "commit": "2832d29b053da7026540dcc63bd62aed1d040845",
+  "root": "/var/folders/xj/y3kg38s53qs7kd1l9lsgxlyr0000gn/T/logisim53-folder-integrity-niakxx_g/docs/validation/portable53-android-folder-pass",
+  "files": 163,
+  "bytes": 3777668,
+  "sha256sums": {
+    "entries": 162,
+    "matched": 162,
+    "mismatches": [],
+    "uncovered": [
+      "SHA256SUMS"
+    ],
+    "extraneous": [],
+    "parse_errors": []
+  },
+  "copy_chain": {
+    "entries": 156,
+    "duplicates": 0,
+    "copied_match": 156,
+    "original_match": 156,
+    "original_missing": [],
+    "copy_mismatches": [],
+    "original_mismatches": [],
+    "git_sources": [
+      {
+        "path": "fixtures/user-scenarios/editor-actions-v1.json",
+        "source": "git:5cb2fead2743cbba84f0efbad51e8bca822c7f05:fixtures/user-scenarios/editor-actions-v1.json",
+        "matches": true
+      }
+    ]
+  },
+  "receipt": {
+    "status": "PASSED",
+    "hash": "ac99fccb7831d3276446a96e1681db1260bf311dc628aacb6263569589a1ccb3",
+    "hash_matches_summary": true,
+    "evidence_count": 16,
+    "missing_evidence": [],
+    "snapshot_count": 4,
+    "missing_snapshots": [],
+    "exports": [
+      {
+        "path": "logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-before-restart.lsebdl",
+        "afterRestart": false,
+        "bytes": 4905,
+        "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+        "hash_matches_receipt": true
+      },
+      {
+        "path": "logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-after-restart.lsebdl",
+        "afterRestart": true,
+        "bytes": 4905,
+        "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+        "hash_matches_receipt": true
+      }
+    ],
+    "imported": "13dc653f7acf119c9f70fe84ad1aa6a1",
+    "restarted": "13dc653f7acf119c9f70fe84ad1aa6a1",
+    "reopened": "ef5cd59f81bd8ad0e9d2a63a43b78854"
+  },
+  "snapshots": {
+    "before": {
+      "raw_files": 9,
+      "extracted_files": 9,
+      "names_match": true,
+      "bytes_match": true,
+      "unsafe_members": []
+    },
+    "imported": {
+      "raw_files": 11,
+      "extracted_files": 11,
+      "names_match": true,
+      "bytes_match": true,
+      "unsafe_members": []
+    },
+    "restarted": {
+      "raw_files": 13,
+      "extracted_files": 13,
+      "names_match": true,
+      "bytes_match": true,
+      "unsafe_members": []
+    },
+    "reopened": {
+      "raw_files": 15,
+      "extracted_files": 15,
+      "names_match": true,
+      "bytes_match": true,
+      "unsafe_members": []
+    }
+  },
+  "source_hashes": {
+    "e2e-android.py": true,
+    "android_ui.py": true,
+    "android_editing_scenarios.py": true,
+    "user_scenario_contract.py": true,
+    "android_inspector_scenarios.py": true,
+    "android_io_showcase_scenarios.py": true,
+    "android_portable_scenarios.py": true,
+    "android_visual_export34_scenarios.py": true
+  },
+  "contract_match": true,
+  "manifest_git_head": "59d5606bfe70e5a8119a387f5c4b5c2a85884c8e",
+  "manifest_harness_head": "5cb2fead2743cbba84f0efbad51e8bca822c7f05",
+  "installed_artifacts_equal": true,
+  "commit_change_count": 163,
+  "commit_only_adds_this_package": true,
+  "native_results": [
+    {
+      "scenario": "portable-folder-storage-roundtrip",
+      "status": "passed",
+      "seconds": 217.81
+    }
+  ],
+  "sources_without_copy_chain": [
+    "README.md",
+    "qualification-summary.json",
+    "relocation/desktop-after-proof.json",
+    "relocation/desktop-before-proof.json",
+    "relocation/storage-proof.json"
+  ],
+  "native_full_copy": {
+    "source_files": 84,
+    "copied_files": 84,
+    "uncopied_source_files": [],
+    "extra_copy_files": [],
+    "byte_mismatches": []
+  },
+  "old_bundle_outer_result_byte_unchanged": true,
+  "old_bundle_outer_result": [
+    {
+      "scenario": "portable-bundle-storage-roundtrip",
+      "status": "passed",
+      "seconds": 204.06
+    },
+    {
+      "scenario": "portable-folder-storage-roundtrip",
+      "status": "failed",
+      "error": "Visible control missing: {'text': 'Downloads', 'description': None, 'resource_id': None, 'prefix': False}"
+    }
+  ]
+}

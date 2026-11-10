@@ -1,0 +1,222 @@
+{
+  "external_io_title": {
+    "en": "External I/O",
+    "pt": "E/S externa"
+  },
+  "external_io_select": {
+    "en": "Select a Port I/O, RGB video, real-time clock, Telnet or Reptar component.",
+    "pt": "Selecione uma porta de E/S, vídeo RGB, relógio de tempo real, Telnet ou Reptar."
+  },
+  "external_io_instance_required": {
+    "en": "Open a running circuit instance to control its external I/O.",
+    "pt": "Abra uma instância do circuito em execução para controlar sua E/S externa."
+  },
+  "external_io_instance": {
+    "en": "Instance: {path}",
+    "pt": "Instância: {path}"
+  },
+  "external_io_root": {
+    "en": "Main circuit",
+    "pt": "Circuito principal"
+  },
+  "external_io_pin": {
+    "en": "Pin {pin}: {value}",
+    "pt": "Pino {pin}: {value}"
+  },
+  "external_io_pin_help": {
+    "en": "Tap a pin to cycle through unknown, 0 and 1. Output-only pins show the circuit value.",
+    "pt": "Toque no pino para alternar entre desconhecido, 0 e 1. Pinos somente de saída mostram o valor do circuito."
+  },
+  "external_io_set_unknown": {
+    "en": "Set all inputs to unknown",
+    "pt": "Definir todas as entradas como desconhecidas"
+  },
+  "external_io_video_size": {
+    "en": "{width} × {height} pixels",
+    "pt": "{width} × {height} pixels"
+  },
+  "external_io_video_cursor": {
+    "en": "Cursor: {x}, {y}",
+    "pt": "Cursor: {x}, {y}"
+  },
+  "external_io_video_help": {
+    "en": "The preview shows the framebuffer of this instance. Write, clock, coordinates and reset come from the circuit.",
+    "pt": "A prévia mostra o framebuffer desta instância. Escrita, clock, coordenadas e reset vêm do circuito."
+  },
+  "external_io_video_a11y": {
+    "en": "RGB framebuffer, {width} by {height} pixels, cursor {x}, {y}.",
+    "pt": "Framebuffer RGB, {width} por {height} pixels, cursor {x}, {y}."
+  },
+  "external_io_clock_sample": {
+    "en": "Captured epoch: {value} {unit}",
+    "pt": "Epoch capturado: {value} {unit}"
+  },
+  "external_io_clock_help": {
+    "en": "The display uses the timestamp captured by the simulator. Running simulation updates it; a paused simulation keeps its last sample.",
+    "pt": "A exibição usa o timestamp capturado pelo simulador. A simulação em execução o atualiza; pausada, mantém a última amostra."
+  },
+  "external_io_clock_no_sample": {
+    "en": "Advance the simulation to capture a clock sample.",
+    "pt": "Avance a simulação para capturar uma amostra do relógio."
+  },
+  "external_io_reptar_unavailable": {
+    "en": "Reptar Local Bus has no simulation implementation in desktop Logisim or mobile. Its ports and attributes remain preserved.",
+    "pt": "Reptar Local Bus não possui simulação no Logisim desktop nem no mobile. Suas portas e atributos são preservados."
+  },
+  "external_io_telnet_help": {
+    "en": "Prepare a listener on the paired host, review its port and access, then confirm. Each circuit instance has its own session.",
+    "pt": "Prepare um listener no host pareado, confira sua porta e acesso e confirme. Cada instância do circuito tem sua própria sessão."
+  },
+  "external_io_telnet_pair": {
+    "en": "Verify a host in the Companion tool before starting Telnet.",
+    "pt": "Verifique um host na ferramenta Companion antes de iniciar o Telnet."
+  },
+  "external_io_telnet_lan": {
+    "en": "Allow peers on the host network",
+    "pt": "Permitir conexões pela rede do host"
+  },
+  "external_io_telnet_lan_help": {
+    "en": "Network access also requires the companion operator to enable LAN resource listeners.",
+    "pt": "O acesso pela rede também exige que o operador do companion habilite listeners de recursos na LAN."
+  },
+  "external_io_telnet_prepare": {
+    "en": "Prepare listener",
+    "pt": "Preparar listener"
+  },
+  "external_io_telnet_review": {
+    "en": "Review listener",
+    "pt": "Conferir listener"
+  },
+  "external_io_telnet_review_values": {
+    "en": "Port {port} · access {access} · buffer {buffer} bytes · Telnet protocol {mode}",
+    "pt": "Porta {port} · acesso {access} · buffer {buffer} bytes · protocolo Telnet {mode}"
+  },
+  "external_io_telnet_loopback": {
+    "en": "host loopback",
+    "pt": "loopback do host"
+  },
+  "external_io_telnet_network": {
+    "en": "host network",
+    "pt": "rede do host"
+  },
+  "external_io_yes": {
+    "en": "on",
+    "pt": "ativado"
+  },
+  "external_io_no": {
+    "en": "off",
+    "pt": "desativado"
+  },
+  "external_io_telnet_confirm": {
+    "en": "Confirm and start listener",
+    "pt": "Confirmar e iniciar listener"
+  },
+  "external_io_telnet_retry_start": {
+    "en": "Retry the same confirmed start",
+    "pt": "Repetir o mesmo início confirmado"
+  },
+  "external_io_telnet_stop": {
+    "en": "Stop listener",
+    "pt": "Parar listener"
+  },
+  "external_io_telnet_retry": {
+    "en": "Retry session I/O",
+    "pt": "Tentar novamente a E/S da sessão"
+  },
+  "external_io_telnet_status": {
+    "en": "Session: {state}",
+    "pt": "Sessão: {state}"
+  },
+  "external_io_telnet_endpoint": {
+    "en": "Host listener: {address}:{port}",
+    "pt": "Listener no host: {address}:{port}"
+  },
+  "external_io_telnet_queues": {
+    "en": "Circuit input: {input} bytes · pending output: {output} packets",
+    "pt": "Entrada do circuito: {input} bytes · saída pendente: {output} pacotes"
+  },
+  "external_io_telnet_drops": {
+    "en": "Host discarded {input} input bytes and {output} output bytes.",
+    "pt": "O host descartou {input} bytes de entrada e {output} bytes de saída."
+  },
+  "external_io_telnet_state_stopped": {
+    "en": "stopped",
+    "pt": "parada"
+  },
+  "external_io_telnet_state_listening": {
+    "en": "waiting for peer",
+    "pt": "aguardando conexão"
+  },
+  "external_io_telnet_state_connected": {
+    "en": "connected",
+    "pt": "conectada"
+  },
+  "external_io_telnet_state_failed": {
+    "en": "interrupted",
+    "pt": "interrompida"
+  },
+  "external_io_telnet_stale_plan": {
+    "en": "The component configuration changed. Prepare a new listener before confirming.",
+    "pt": "A configuração do componente mudou. Prepare um novo listener antes de confirmar."
+  },
+  "external_io_telnet_busy": {
+    "en": "Contacting companion…",
+    "pt": "Contactando o companion…"
+  },
+  "external_io_telnet_stopped_notice": {
+    "en": "The listener was stopped.",
+    "pt": "O listener foi parado."
+  },
+  "external_io_telnet_config_changed": {
+    "en": "The listener was stopped because its circuit instance or configuration changed.",
+    "pt": "O listener foi parado porque sua instância do circuito ou configuração mudou."
+  },
+  "external_io_event_rejected": {
+    "en": "The selected circuit instance no longer accepts this input.",
+    "pt": "A instância selecionada do circuito não aceita mais esta entrada."
+  },
+  "external_io_protocol_error": {
+    "en": "Companion rejected the operation: {code}. {detail}",
+    "pt": "O companion recusou a operação: {code}. {detail}"
+  },
+  "external_io_transport_error": {
+    "en": "Communication with the companion failed: {code}. Retry the same action to preserve its identity.",
+    "pt": "A comunicação com o companion falhou: {code}. Repita a mesma ação para preservar sua identidade."
+  },
+  "external_io_action_error": {
+    "en": "External I/O failed: {detail}",
+    "pt": "A E/S externa falhou: {detail}"
+  },
+  "external_io_telnet_stopped_diagnostic": {
+    "en": "Telnet is stopped. Start it explicitly on the paired host.",
+    "pt": "Telnet está parado. Inicie a conexão explicitamente no host pareado."
+  },
+  "external_io_telnet_failure_diagnostic": {
+    "en": "Telnet: {detail}",
+    "pt": "Telnet: {detail}"
+  },
+  "external_io_telnet_buffer_diagnostic": {
+    "en": "Telnet: the output buffer is full; the byte was not sent.",
+    "pt": "Telnet: o buffer de saída está cheio; o byte não foi enviado."
+  },
+  "external_io_cleanup_failed": {
+    "en": "The host could not confirm listener shutdown. Its resource lease expires after inactivity.",
+    "pt": "O host não confirmou o encerramento do listener. Sua concessão de recurso expira após inatividade."
+  },
+  "external_io_simulation_reset": {
+    "en": "The listener was stopped after simulation reset.",
+    "pt": "O listener foi parado após o reset da simulação."
+  },
+  "external_io_event_timeout": {
+    "en": "The simulator did not apply pending network input. The listener was stopped.",
+    "pt": "O simulador não aplicou a entrada de rede pendente. O listener foi parado."
+  },
+  "external_io_cleanup_retry": {
+    "en": "Retry closing outstanding listeners",
+    "pt": "Tentar encerrar listeners pendentes"
+  },
+  "external_io_telnet_cancel_start": {
+    "en": "Resolve and cancel this start",
+    "pt": "Resolver e cancelar este início"
+  }
+}

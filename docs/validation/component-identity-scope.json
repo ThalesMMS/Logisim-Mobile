@@ -1,0 +1,49 @@
+{
+  "recordedAtUtc": "2026-11-04T19:57:44.907838+00:00",
+  "sourceBaseRevision": "5c3a9cdb",
+  "sourceSha256": {
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircuitDocument.kt": "fbdb602a488105c11278c72d4d775833bb733a47b3365d5087c0d660f445b622",
+    "core/src/commonMain/kotlin/dev/logisim/mobile/core/CircCodec.kt": "d2516b5d83822e73b34ff76ab471ecfac8910f16b5944f31cb4663b264c0c2f9"
+  },
+  "confirmedFailureBefore": {
+    "fixture": "main High instance id=a/b; main Middle instance id=a; Middle Low instance id=b; High drives1 and Low drives0",
+    "actual": [
+      "expected circuit instances=3; actual=2: {a/b=Low, a=Middle}",
+      "root a/b value=?; High should be1, Low should be0",
+      "trace references=6; distinct=4",
+      "REPRODUCED=true"
+    ]
+  },
+  "decision": "Reserve only / in local component IDs at the domain constructor and codec boundaries. Preserve Unicode, colon, dot and other XML-valid characters. Reject unsafe IDs before document replacement; do not rename them.",
+  "owningSources": {
+    "instanceQualification": "CircuitSimulator.kt:140,204; instances keyed by joined path at146 and snapshot at177",
+    "traceQualification": "SignalTrace.kt:11,177; TracePanel.kt uses reference.key for Compose item identity",
+    "externalIoResolution": "ExternalIoRuntimeBridge.kt:290 splits instance paths with /",
+    "terminalFraming": "CircuitTopology.kt:4-5,90 uses length-prefixed component and terminal identities",
+    "accessibilityFraming": "CircuitAccessibilityModel.kt:24-25 uses component length framing"
+  },
+  "proofAfter": {
+    "runner": "Kotlin 2.4.21 cached compiler plus existing reference JAR and JUnit4; no Gradle",
+    "tests": 50,
+    "failures": 0,
+    "scopeTest": "ComponentIdentityScopeTest",
+    "literalInstancePaths": [
+      "a:b.β",
+      "a",
+      "a/b.β"
+    ],
+    "literalOutputs": {
+      "a:b.β/out:β.x": "1",
+      "a/b.β/out:β.x": "0"
+    },
+    "trace": "Distinct structured references, distinct selector keys, independent recorded values [1,0]",
+    "desktopJarSha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+    "desktopOracleOutput": [
+      "PASS desktop SHA-256 0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+      "PASS desktop accepts 5 opaque component identities across 2 circuits with unchanged geometry",
+      "PASS desktop save/reload retains geometry and discards logisim-mobile-id; desktop identity persistence is not guaranteed",
+      "PASS mobile import/export retains 5 opaque component identities and desktop geometry"
+    ]
+  },
+  "scope": "Core behavior and desktop readability were executed. The integrated native app gate runs separately."
+}

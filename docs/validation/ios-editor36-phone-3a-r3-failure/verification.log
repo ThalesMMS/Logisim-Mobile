@@ -1,0 +1,24 @@
+Offline evidence-package checks. Native status remains FAIL.
+
+Command: python3 verify.py
+Exit: 0
+{
+  "status": "FAIL_PRESERVED",
+  "nativeTests": 1,
+  "failures": 1,
+  "completedSteps": 15,
+  "xmlExports": 6,
+  "nextStep": 16,
+  "headerObservations": 20,
+  "headerSkips": 7,
+  "headerTapRequests": 0,
+  "headerScrollRequests": 0
+}
+
+Command: python3 test_verify.py
+Exit: 0
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 9.511s
+
+OK

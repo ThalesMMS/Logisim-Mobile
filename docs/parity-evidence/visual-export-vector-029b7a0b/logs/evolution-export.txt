@@ -1,0 +1,56 @@
+$ perl -e alarm 180; exec @ARGV java -Djava.awt.headless=true -Djava.util.prefs.PreferencesFactory=MemoryPreferencesFactory -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmpd7fjkvk2:/Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar EvolutionVisualExport fixtures/visual-export/qualification.circ visual_export_qualification 0.25 false /Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/docs/parity-evidence/visual-export-vector-029b7a0b/evolution/qualification-raster
+exit 0
+--- stdout
+bounds	-5	-5	6011	3611
+png	1503	903	visual_export_qualification.png
+gif	1503	903	visual_export_qualification.gif
+jpg	1503	903	visual_export_qualification.jpg
+TikZ not yet supported : getClip()
+TikZ not yet supported : clipRect(int x, int y, int width, int height)
+TikZ not yet supported : setClip(Shape clip)
+tikz	1503	903	visual_export_qualification.tex
+TikZ not yet supported : getClip()
+TikZ not yet supported : clipRect(int x, int y, int width, int height)
+TikZ not yet supported : setClip(Shape clip)
+svg	1503	903	visual_export_qualification.svg
+--- stderr
+
+$ perl -e alarm 180; exec @ARGV java -Djava.awt.headless=true -Djava.util.prefs.PreferencesFactory=MemoryPreferencesFactory -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmpd7fjkvk2:/Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar EvolutionVisualExport fixtures/visual-export/qualification.circ visual_export_qualification 1 false /Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/docs/parity-evidence/visual-export-vector-029b7a0b/evolution/qualification
+exit 0
+--- stdout
+bounds	-5	-5	6011	3611
+png	6011	3611	visual_export_qualification.png
+gif	6011	3611	visual_export_qualification.gif
+jpg	6011	3611	visual_export_qualification.jpg
+TikZ not yet supported : getClip()
+TikZ not yet supported : clipRect(int x, int y, int width, int height)
+TikZ not yet supported : setClip(Shape clip)
+tikz	6011	3611	visual_export_qualification.tex
+TikZ not yet supported : getClip()
+TikZ not yet supported : clipRect(int x, int y, int width, int height)
+TikZ not yet supported : setClip(Shape clip)
+svg	6011	3611	visual_export_qualification.svg
+--- stderr
+
+$ perl -e alarm 180; exec @ARGV java -Djava.awt.headless=true -Djava.util.prefs.PreferencesFactory=MemoryPreferencesFactory -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmpd7fjkvk2:/Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar EvolutionVisualExport scripts/oracle/visual-export/svg-gates.circ main 1 false /Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/docs/parity-evidence/visual-export-vector-029b7a0b/evolution/svg-gates-ansi
+exit 0
+--- stdout
+bounds	75	120	370	210
+png	370	210	main.png
+gif	370	210	main.gif
+jpg	370	210	main.jpg
+tikz	370	210	main.tex
+svg	370	210	main.svg
+--- stderr
+
+$ perl -e alarm 180; exec @ARGV java -Djava.awt.headless=true -Djava.util.prefs.PreferencesFactory=MemoryPreferencesFactory -cp /var/folders/cn/22v8t4rn735d20w21scl19m40000gn/T/tmpd7fjkvk2:/Users/user/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar EvolutionVisualExport scripts/oracle/visual-export/svg-gates.circ main 1 false /Users/user/.t3/worktrees/logisim-mobile-dev/t3-35423c9f/docs/parity-evidence/visual-export-vector-029b7a0b/evolution/svg-gates-iec rectangular
+exit 0
+--- stdout
+bounds	75	120	370	210
+png	370	210	main.png
+gif	370	210	main.gif
+jpg	370	210	main.jpg
+tikz	370	210	main.tex
+svg	370	210	main.svg
+--- stderr
+

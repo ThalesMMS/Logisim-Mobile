@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "status": "FAIL",
+  "scope": "One authorized AD28 diagnostic Prepare/Register attempt; no Inspect, retry or successful registration.",
+  "archivalBase": "6630378c89a0c9e0a6b15ee8b6ec275a5cd1aaca",
+  "testSource": "6630378c89a0c9e0a6b15ee8b6ec275a5cd1aaca",
+  "fixtureSource": "11fc44d53b229558fbfc57b66e0b2f2d11a0037b",
+  "caseSeconds": 17.003,
+  "counts": {
+    "totalTestCount": 1,
+    "passedTests": 0,
+    "failedTests": 1,
+    "skippedTests": 0
+  },
+  "exitCode": 65,
+  "device": {
+    "udid": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+    "name": "LogisimUIKitDocumentControl",
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "runtime": {
+    "version": "27.0",
+    "buildversion": "24A434",
+    "supportedArchitectures": [
+      "arm64"
+    ]
+  },
+  "postflightSameDeviceAndIdentityRecords": true,
+  "app": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+    "executable_sha256": "93f5c45e71c1ba64b2789bae430ab117a3152260f17f950bd5d97eab656d08a8",
+    "bundle_tree_sha256": "8b2577dbe1c2f1e3233448010f82d7399b9f41d8fa52f8b4e73cc81ea1d34e2a",
+    "version": "1.0",
+    "build": "1"
+  },
+  "provider": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+    "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+    "executable_sha256": "5c7d3f12196d954902c4bb814532500e7a82bd83c55da89f2da3504302795c75",
+    "bundle_tree_sha256": "d6e6ee495cdeb2189c023d04977c0fafa0425aa4aa47083f5fb86d2e85fa0684",
+    "version": "1.0",
+    "build": "1"
+  },
+  "manifestSHA256": "bda24c74410814276f00474a689ae95508deb7330cc0eacae9f55bf54ec7388a",
+  "publicObservations": {
+    "prepare": "OBSERVED",
+    "controlAppAppGroupStorage": "OBSERVED_VIA_PUBLIC_UI_AND_BUILT_SOURCE",
+    "events": [
+      "prepare",
+      "domain.registration.requested",
+      "domain.registration.failed"
+    ],
+    "backendStateAfterFailure": {
+      "authenticationAllowed": true,
+      "backendByteCount": 552,
+      "backendSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+      "generation": 1,
+      "schemaVersion": 1
+    },
+    "errorDiagnostic": {
+      "chain": [
+        {
+          "code": -2001,
+          "domain": "NSFileProviderErrorDomain",
+          "reason": "The application cannot be used right now."
+        },
+        {
+          "code": -2014,
+          "domain": "NSFileProviderErrorDomain",
+          "reason": "The operation couldn\u2019t be completed. (NSFileProviderErrorDomain error -2014.)"
+        }
+      ],
+      "termination": "complete"
+    },
+    "diagnosticTerminationMeaning": "The bounded NSUnderlyingErrorKey traversal ended; this does not mean a complete causal diagnosis or a complete userInfo graph.",
+    "publicEvidence": "evidence/attachments/832BD07F-97F9-4923-9467-67FF79FBB3D9.txt",
+    "operationFailureEvidence": "evidence/attachments/47D5794A-6AFF-40A3-AB0C-D9CD97C215B1.txt"
+  },
+  "classification": {
+    "root": {
+      "domain": "NSFileProviderErrorDomain",
+      "code": -2001,
+      "symbol": "NSFileProviderErrorProviderNotFound"
+    },
+    "underlying": {
+      "domain": "NSFileProviderErrorDomain",
+      "code": -2014,
+      "symbol": "NSFileProviderErrorApplicationExtensionNotFound",
+      "sdkMeaning": "The system has no launchable com.apple.fileprovider-nonui application extension for this domain app bundle.",
+      "header": "NSFileProviderError.h:181\u2013185"
+    },
+    "observedCategory": "Provider discovery/launchability failure reported by the system.",
+    "underlyingCause": "UNDETERMINED",
+    "doesNotProve": [
+      "Physical absence of the embedded appex",
+      "Invalid signing or Team configuration as cause",
+      "Simulator unsupported",
+      "B25 had this same underlying code"
+    ]
+  },
+  "limits": {
+    "inspect": "NOT_REACHED",
+    "domainCount": "NOT_OBSERVED",
+    "successfulRegistration": "NOT_OBSERVED",
+    "providerExtensionExecution": "NOT_DEMONSTRATED",
+    "fetch": "NOT_RUN",
+    "authenticationDenial": "NOT_RUN",
+    "Save": "NOT_RUN",
+    "retry": "NOT_RUN",
+    "MainAppInstall": "NOT_PERFORMED_BY_RECORDED_PROCEDURE",
+    "physicalDevice": false
+  },
+  "cleanup": "Recorded termination of only the owned fixture returned exit 0; postflight reports cleanup_exit 0.",
+  "comparison": {
+    "priorArchiveOriginalCommit": "f2b4cde813727ee5d5a844cfbf7894bf071abc09",
+    "priorReference": "evidence/previous-failures-reference.json",
+    "cohortChanged": "B25 \u2192 AD28, with separate installed state.",
+    "observabilityChanged": "Fixture 48412 \u2192 11fc adds errorDiagnostic; test 628562 \u2192 663 changes provenance only.",
+    "supported": "The second B25 attempt and this AD28 attempt failed registration with root -2001 after Prepare. Only AD28 retained the underlying chain.",
+    "notSupported": "No causal A/B conclusion or retrospective -2014 classification for B25."
+  },
+  "archiveWork": "Docs-only copies, archived product/plist reads, local xcresult summary extraction and offline portable verification. No build, signing, live query, Simulator operation, source/config change or retry.",
+  "originalOutputsModified": false
+}

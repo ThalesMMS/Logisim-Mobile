@@ -1,0 +1,248 @@
+{
+  "status": "PASS",
+  "serial": "emulator-5558",
+  "source": "b06cefcc42a5c85a4f55d4ba127d4b93c2c38c5e",
+  "commands": [
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pm",
+        "path",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedUTC": "2026-11-05T07:54:42.657289+00:00",
+      "finishedUTC": "2026-11-05T07:54:42.687795+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "exec-out",
+        "cat",
+        "/data/app/~~Cl38KGSLBd0Fki3CFinFYw==/thalesmms.logisim.mobile.e2e-lOoTwv9wPMe1YoHdp2YMWA==/base.apk"
+      ],
+      "startedUTC": "2026-11-05T07:54:42.687836+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.022485+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pidof",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.029266+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.064489+00:00",
+      "exitCode": 1
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pm",
+        "path",
+        "thalesmms.logisim.mobile.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.064534+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.102283+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "exec-out",
+        "cat",
+        "/data/app/~~tRl_ABqgv8S7y0KfiAYw1g==/thalesmms.logisim.mobile.e2e.test-ONimpk0QflI1_AjQfW9t7w==/base.apk"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.102328+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.146725+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pidof",
+        "thalesmms.logisim.mobile.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.146897+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.178521+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pm",
+        "path",
+        "thalesmms.logisim.mobile.snapshot.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.178567+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.212724+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "exec-out",
+        "cat",
+        "/data/app/~~guUIbLJQu2EzAdiJhOXdog==/thalesmms.logisim.mobile.snapshot.e2e.test-7Qt1FSrSrr1NkX3P0MaSqQ==/base.apk"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.212843+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.256486+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pidof",
+        "thalesmms.logisim.mobile.snapshot.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.256805+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.275991+00:00",
+      "exitCode": 1
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "dumpsys",
+        "activity",
+        "lastanr"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.276022+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.294133+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "am",
+        "force-stop",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.294645+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.324295+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pidof",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.324327+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.344230+00:00",
+      "exitCode": 1
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "am",
+        "force-stop",
+        "thalesmms.logisim.mobile.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.344267+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.374306+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pidof",
+        "thalesmms.logisim.mobile.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.374351+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.394834+00:00",
+      "exitCode": 1
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "am",
+        "force-stop",
+        "thalesmms.logisim.mobile.snapshot.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.394864+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.418069+00:00",
+      "exitCode": 0
+    },
+    {
+      "arguments": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pidof",
+        "thalesmms.logisim.mobile.snapshot.e2e.test"
+      ],
+      "startedUTC": "2026-11-05T07:54:43.418128+00:00",
+      "finishedUTC": "2026-11-05T07:54:43.438140+00:00",
+      "exitCode": 1
+    }
+  ],
+  "readbacks": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "sha256": "c12be1b537b1e02744f057fb36372f3669df25e3385e9c2e7e4fda8a8fc1484b",
+      "expected": "c12be1b537b1e02744f057fb36372f3669df25e3385e9c2e7e4fda8a8fc1484b",
+      "pidBeforeCleanup": "",
+      "pidAfterCleanup": ""
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "sha256": "f0883691aea034441b4eda8375e424662e78e9a420e7b5f12d225f26e8d45c31",
+      "expected": "f0883691aea034441b4eda8375e424662e78e9a420e7b5f12d225f26e8d45c31",
+      "pidBeforeCleanup": "19182",
+      "pidAfterCleanup": ""
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c",
+      "expected": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c",
+      "pidBeforeCleanup": "",
+      "pidAfterCleanup": ""
+    }
+  ],
+  "lastAnrUnchangedAcrossLease": true,
+  "leaseReleased": true,
+  "finishedUTC": "2026-11-05T07:54:43.438170+00:00"
+}

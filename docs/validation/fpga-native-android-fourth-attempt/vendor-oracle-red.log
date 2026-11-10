@@ -1,0 +1,37 @@
+test_an_old_board_card_cannot_confirm_a_new_import (scripts.test_android_fpga_scenarios.BoardFileImportTest.test_an_old_board_card_cannot_confirm_a_new_import) ... ok
+test_native_file_import_confirms_complete_bytes_and_public_board_identity (scripts.test_android_fpga_scenarios.BoardFileImportTest.test_native_file_import_confirms_complete_bytes_and_public_board_identity) ... FAIL
+test_truncated_source_before_or_after_import_cannot_reach_mapping (scripts.test_android_fpga_scenarios.BoardFileImportTest.test_truncated_source_before_or_after_import_cannot_reach_mapping) ... 
+  test_truncated_source_before_or_after_import_cannot_reach_mapping (scripts.test_android_fpga_scenarios.BoardFileImportTest.test_truncated_source_before_or_after_import_cannot_reach_mapping) (read=2) ... FAIL
+
+======================================================================
+FAIL: test_native_file_import_confirms_complete_bytes_and_public_board_identity (scripts.test_android_fpga_scenarios.BoardFileImportTest.test_native_file_import_confirms_complete_bytes_and_public_board_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/test_android_fpga_scenarios.py", line 190, in test_native_file_import_confirms_complete_bytes_and_public_board_identity
+    self.assertEqual(b"unchanged-circuit", flow.load(flow.fixtures / "fpga-hx1k.xml"))
+                                           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/android_fpga_scenarios.py", line 307, in load
+    self.e.wait(imported, "the imported FPGA board identity and device", timeout=30)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/test_android_fpga_scenarios.py", line 175, in wait
+    assert result is not None, "The imported FPGA board identity was not observed"
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: The imported FPGA board identity was not observed
+
+======================================================================
+FAIL: test_truncated_source_before_or_after_import_cannot_reach_mapping (scripts.test_android_fpga_scenarios.BoardFileImportTest.test_truncated_source_before_or_after_import_cannot_reach_mapping) (read=2)
+----------------------------------------------------------------------
+AssertionError: The imported FPGA board identity was not observed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-board-file/scripts/test_android_fpga_scenarios.py", line 212, in test_truncated_source_before_or_after_import_cannot_reach_mapping
+    with self.assertRaisesRegex(AssertionError, "complete staged XML|Import changed"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "complete staged XML|Import changed" does not match "The imported FPGA board identity was not observed"
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.008s
+
+FAILED (failures=2)

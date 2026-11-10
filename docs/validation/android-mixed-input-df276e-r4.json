@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "status": "NOT_QUALIFIED",
+  "classification": "COMPOUND_READINESS_DEADLINE_EXPIRED",
+  "productPin": "df276e39e2af27fdbe26d220913657b43ee717a9",
+  "appProducerHead": "40dd9172e5775bb65232dafac3a401ee59ebf9e4",
+  "testProducerHead": "74c6e2248872e1adbbf10cdaeff399aba03f198c",
+  "appSha256": "600f656ac6cbb4661bbff880995b77a1fc240bb0607671bb96d0a010b234a834",
+  "testSha256": "d07155cae8d2d3a13448da8473821fbb547b7947377d862271a1cfbf4f01e11b",
+  "lastAnrUnchanged": true,
+  "artifactsStable": true,
+  "caseElapsedMillis": 19534,
+  "runnerElapsedSeconds": 35.288,
+  "wait": {
+    "attempts": 24,
+    "lastOutcome": "RETURNED_FALSE",
+    "lastOutcomeAtMillis": 28404316,
+    "historicalException": "java.lang.IllegalStateException: Target editor is not the focused application",
+    "historicalExceptionAttempt": 18,
+    "historicalExceptionAtMillis": 28391700,
+    "waitId": 1,
+    "description": "fresh mixed-input fixture",
+    "startedAtMillis": 28387899,
+    "elapsedMillis": 16487,
+    "startedRelativeMillis": 1075,
+    "deadlineRelativeMillis": 16075,
+    "finishedRelativeMillis": 17562,
+    "overrunMillis": 1487
+  },
+  "traceMetadata": {
+    "capacity": 128,
+    "totalRecords": 84,
+    "droppedRecords": 3,
+    "capacityDroppedRecords": 0,
+    "sizeDroppedRecords": 3,
+    "characterBudget": 49152,
+    "estimatedCharacters": 48252,
+    "firstSequence": 4,
+    "lastSequence": 84,
+    "loggingErrors": 0
+  },
+  "retainedRootOutcomes": {
+    "NO_ACCEPTED_ROOT": 16,
+    "ACCEPTED_ACTIVE_ROOT": 14
+  },
+  "retainedRootCallsites": {
+    "findTag:editor-import-report": 22,
+    "openFixture:primary-label": 6,
+    "findAction:Close|Fechar": 1,
+    "snapshot:cancel-failure": 1
+  },
+  "retainedRootReadMillis": 4455,
+  "retainedTraversalMillis": 9367,
+  "incompleteTraversalCount": 1,
+  "clickResults": [
+    {
+      "clickId": 1,
+      "callsite": "dismissImportReport:Close",
+      "rootReadSequenceAtCall": 30,
+      "emitted": true,
+      "accepted": true,
+      "error": null,
+      "startedAtMillis": 28404282,
+      "elapsedMillis": 29,
+      "kind": "action-click-result",
+      "atElapsedMillis": 28404311,
+      "waitId": 1,
+      "waitAttempt": 24,
+      "waitDescription": "fresh mixed-input fixture",
+      "sequence": 79,
+      "atRelativeMillis": 17487,
+      "afterDeadlineMillis": 1412
+    }
+  ],
+  "finalSnapshot": {
+    "nodes": 98,
+    "windowIds": {
+      "18664": 98
+    },
+    "expectedPrimaryLabel": "MI_cancel_5d1f5639_NOT",
+    "matchingNodes": [
+      {
+        "path": "0/0/0/0/0/0/0/3/3/1/1",
+        "resource-id": "canvas-component:mi-not",
+        "content-desc": "MI_cancel_5d1f5639_NOT",
+        "visible": true
+      }
+    ],
+    "hasCanvas": true,
+    "hasImportReportTag": false,
+    "missingEdgesFromRecordedChildCounts": []
+  },
+  "recordedInputEventKinds": {
+    "input-session": 1
+  },
+  "observations": [
+    "The final attempt resolved Close from a complete tree and ACTION_CLICK returned true after the existing wait deadline.",
+    "The immediate label read was still in the modal. The deadline ended without another predicate evaluation.",
+    "The later failure hierarchy contained the editor and the exact expected primary label.",
+    "The latest readiness outcome was RETURNED_FALSE. The exception recorded at attempt 18 was historical.",
+    "No pointer or keyboard gesture was injected, and the cancel scenario body did not execute."
+  ],
+  "limits": [
+    "Initial trace records 1\u20133 were omitted by the explicit serialization size budget.",
+    "Observed root/traversal costs do not identify an internal cause such as CPU, IPC, caching or a product subsystem.",
+    "This run does not establish the cause of R3, cancellation behavior, or any result on the newer 59d5606b app."
+  ],
+  "rawArtifacts": {
+    "manifest.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/manifest.json",
+      "sha256": "a09dfb460e39709b01253d196340c37f3a6cd9040ad76b1f3c9b1fbd85db51e6"
+    },
+    "native/result.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/native/result.json",
+      "sha256": "dd46f21f9f82010a381feff190f374ff1d2bb34d399f1557fe7cfb9b4e1fb6d6"
+    },
+    "native/cancel-failure-tree.txt": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/native/cancel-failure-tree.txt",
+      "sha256": "cf4fba4901e7da38ab36697460f242a85a6fef48d2e3538cc33404aace9f7b92"
+    },
+    "native/cancel-failure.png": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/native/cancel-failure.png",
+      "sha256": "48b2a183939aba4f3ceecd2ba95abbb5d89c2911adc229be31a33b0a86803e1e"
+    },
+    "lastanr-before.txt": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/lastanr-before.txt",
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1"
+    },
+    "lastanr-after.txt": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/lastanr-after.txt",
+      "sha256": "42cf4931006fd0ff42d3522af31f9346431b409aa22a793ecc16b5aedeed28a1"
+    },
+    "source-receipt.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/source-receipt.json",
+      "sha256": "9c90c2a2786acec7878b1ffeed82919ad6b1864455b17cc34215ae055de2a21a"
+    },
+    "offline-analysis/census.py": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/offline-analysis/census.py",
+      "sha256": "20cc978dfb3203c098a08a9301d800c7e284a8f5017ae08ffd0e163bd8694d6f"
+    },
+    "offline-analysis/census.json": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/offline-analysis/census.json",
+      "sha256": "2b7477f0d98f0df1a0098e4245531e06a86052dbc963cb085365227feb6c7ede"
+    },
+    "offline-analysis/timeline.tsv": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/df276e-mixed-cancel-r4-diagnostic/offline-analysis/timeline.tsv",
+      "sha256": "efa34b74906c328819670113480d1c35971fd185afacd3860daa9863819da742"
+    }
+  }
+}

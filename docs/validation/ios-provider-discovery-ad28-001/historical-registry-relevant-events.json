@@ -1,0 +1,114 @@
+[
+  {
+    "index": 2,
+    "timestamp": "2026-11-05 06:57:41.938833+0000",
+    "process": "CoreSimulatorBridge",
+    "subsystem": "com.apple.installcoordination",
+    "category": "framework",
+    "eventMessage": "+[IXPlaceholder _setEntitlementsFromBundleExecutableURL:withBundleID:client:onPlaceholder:location:error:]: Executable for thalesmms.logisim.validation.revocationfixture at RevocationFixture -- file:///Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/ had no entitlements"
+  },
+  {
+    "index": 18,
+    "timestamp": "2026-11-05 06:57:41.946209+0000",
+    "process": "CoreSimulatorBridge",
+    "subsystem": "com.apple.installcoordination",
+    "category": "framework",
+    "eventMessage": "+[IXPlaceholder _setEntitlementsFromBundleExecutableURL:withBundleID:client:onPlaceholder:location:error:]: Executable for thalesmms.logisim.validation.revocationfixture.provider at RevocationProvider -- file:///Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-error-chain/outputs/ios-fileprovider-fixture-11fc44d5/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/ had no entitlements"
+  },
+  {
+    "index": 474,
+    "timestamp": "2026-11-05 06:57:46.937745+0000",
+    "process": "pkd",
+    "subsystem": "com.apple.launchservices",
+    "category": "appinstallation",
+    "eventMessage": "LaunchServices observer: Installed plugins (\n    \"<LSPlugInKitProxy: 0x1018e0000> pluginID=thalesmms.logisim.validation.revocationfixture.provider UUID=E8471350-97AE-41DE-B670-F66B2FE4EA4B version=1.0\"\n)"
+  },
+  {
+    "index": 527,
+    "timestamp": "2026-11-05 06:57:46.955156+0000",
+    "process": "pkd",
+    "subsystem": "com.apple.PlugInKit",
+    "category": "ls",
+    "eventMessage": "[u E8471350-97AE-41DE-B670-F66B2FE4EA4B] [thalesmms.logisim.validation.revocationfixture.provider(1.0)] plugin INSTALLED; bundleID: [thalesmms.logisim.validation.revocationfixture.provider], path: [/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/F2F94231-CEFA-4635-BEEE-31BBEBBD65DF/RevocationFixture.app/PlugIns/RevocationProvider.appex], contained in [thalesmms.logisim.validation.revocationfixture]"
+  },
+  {
+    "index": 559,
+    "timestamp": "2026-11-05 06:57:46.966175+0000",
+    "process": "pkd",
+    "subsystem": "com.apple.PlugInKit",
+    "category": "discovery",
+    "eventMessage": "[d B7007BD6-680B-4D1D-B987-070BEDC27A38] [u E8471350-97AE-41DE-B670-F66B2FE4EA4B] [thalesmms.logisim.validation.revocationfixture.provider(1.0)] Created plugin"
+  },
+  {
+    "index": 560,
+    "timestamp": "2026-11-05 06:57:46.966194+0000",
+    "process": "pkd",
+    "subsystem": "com.apple.PlugInKit",
+    "category": "discovery",
+    "eventMessage": "[d B7007BD6-680B-4D1D-B987-070BEDC27A38] <[u E8471350-97AE-41DE-B670-F66B2FE4EA4B] [thalesmms.logisim.validation.revocationfixture.provider(1.0)],[d B7007BD6-680B-4D1D-B987-070BEDC27A38] [/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/F2F94231-CEFA-4635-BEEE-31BBEBBD65DF/RevocationFixture.app/PlugIns/RevocationProvider.appex]>"
+  },
+  {
+    "index": 758,
+    "timestamp": "2026-11-05 06:57:51.039725+0000",
+    "process": "fileproviderd",
+    "subsystem": "com.apple.containermanager",
+    "category": "query",
+    "eventMessage": "Query; personaid = 4294967295, type = NOPERSONA, name = <unknown>, origin [pid = 0, personaid = 0], proximate [pid = 0, personaid = 0], euid = 501, uid = 501, class = 7, identifier = [(null)](0), gidentifier = [group.thalesmms.logisim.validation.revocationfixture](1), flags = 900000002"
+  },
+  {
+    "index": 759,
+    "timestamp": "2026-11-05 06:57:51.042237+0000",
+    "process": "containermanagerd",
+    "subsystem": "com.apple.containermanager",
+    "category": "query",
+    "eventMessage": "Selected query plan; plan = <MCMCommandQueryPlanWithIdentities; identities = [<MCMContainerIdentity: 0x10385eb00; userIdentity = <501/20/501/2/501>, identifier = group.thalesmms.logisim.validation.revocationfixture, class = (7)appGroup, platform = 0, ownership = {501:20:u+rwx,g+rx,o+rx}, transient = 0>]>"
+  },
+  {
+    "index": 760,
+    "timestamp": "2026-11-05 06:57:51.046246+0000",
+    "process": "fileproviderd",
+    "subsystem": "com.apple.FileProvider",
+    "category": "default",
+    "eventMessage": "[ERROR] Error fetching group container for group.thalesmms.logisim.validation.revocationfixture: (null)"
+  },
+  {
+    "index": 761,
+    "timestamp": "2026-11-05 06:57:51.050846+0000",
+    "process": "fileproviderd",
+    "subsystem": "com.apple.FileProvider",
+    "category": "default",
+    "eventMessage": "[ERROR] Cannot deduce the provided items URL for { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/F2F94231-CEFA-4635-BEEE-31BBEBBD65DF/RevocationFixture.app/PlugIns/RevocationProvider.appex/ }"
+  },
+  {
+    "index": 762,
+    "timestamp": "2026-11-05 06:57:51.050903+0000",
+    "process": "fileproviderd",
+    "subsystem": "com.apple.FileProvider",
+    "category": "default",
+    "eventMessage": "[WARNING] Failed to create descriptor for extension { bundleID: thalesmms.logisim.validation.revocationfixture.provider, URL: file:///Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/F2F94231-CEFA-4635-BEEE-31BBEBBD65DF/RevocationFixture.app/PlugIns/RevocationProvider.appex/ }"
+  },
+  {
+    "index": 1257,
+    "timestamp": "2026-11-05 06:58:17.685790+0000",
+    "process": "containermanagerd",
+    "subsystem": "com.apple.containermanager",
+    "category": "schema",
+    "eventMessage": "[u C4A78BD1-44B3-4590-B045-A3AC1883D566:p \ud83d\udd124AF7BC79-C4A7-4F10-859F-717325DF34A9:c group.thalesmms.logisim.validation.revocationfixture(appGroup):i141285417] Successfully updated schema from (0) \u2192 (2), actions count = 3"
+  },
+  {
+    "index": 1258,
+    "timestamp": "2026-11-05 06:58:17.686337+0000",
+    "process": "containermanagerd",
+    "subsystem": "com.apple.containermanager",
+    "category": "sandbox",
+    "eventMessage": "Issuing token to pid 69225 for identifier = [group.thalesmms.logisim.validation.revocationfixture](container_class_t(rawValue: 7), path = [/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Shared/AppGroup/5076E0F2-CD1B-4A1F-9E4D-DD7A771F94F4] (extension class: com.apple.sandbox.application-group)"
+  },
+  {
+    "index": 1588,
+    "timestamp": "2026-11-05 06:58:29.893873+0000",
+    "process": "fileproviderd",
+    "subsystem": "com.apple.FileProvider",
+    "category": "default",
+    "eventMessage": "[WARNING] No provider found with identifier (null) for calling bundle thalesmms.logisim.validation.revocationfixture"
+  }
+]

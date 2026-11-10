@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "fixture": "portable53-v1",
+  "platform": "android",
+  "status": "PASSED",
+  "executedViaUi": true,
+  "scope": "native UI picker/export/restart/reopen, canvas outputs, and durable storage",
+  "desktopOracle": "required separately on these actual app exports",
+  "mode": "bundle",
+  "device": "emulator-5558",
+  "appArtifactSha256": "aefbd33fd958a32c81e35aa667b19ccc9ea96609e80107281204dbbd1a8cd546",
+  "importedProjectId": "f50f2c7e98770d5a23d939fbff31d2e7",
+  "restartedProjectId": "f50f2c7e98770d5a23d939fbff31d2e7",
+  "reopenedProjectId": "dd3f317c1a1470a930e0735d67fba6a1",
+  "catalogProjectIds": {
+    "before": [
+      "9568ac1f2e34f56c95c96a3bb2615f39",
+      "ec0727d189bd01b7976af4e85f13abbb"
+    ],
+    "imported": [
+      "9568ac1f2e34f56c95c96a3bb2615f39",
+      "ec0727d189bd01b7976af4e85f13abbb",
+      "f50f2c7e98770d5a23d939fbff31d2e7"
+    ],
+    "restarted": [
+      "9568ac1f2e34f56c95c96a3bb2615f39",
+      "ec0727d189bd01b7976af4e85f13abbb",
+      "f50f2c7e98770d5a23d939fbff31d2e7"
+    ],
+    "reopened": [
+      "9568ac1f2e34f56c95c96a3bb2615f39",
+      "dd3f317c1a1470a930e0735d67fba6a1",
+      "ec0727d189bd01b7976af4e85f13abbb",
+      "f50f2c7e98770d5a23d939fbff31d2e7"
+    ]
+  },
+  "exports": [
+    {
+      "path": "logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-before-restart.lsebdl",
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+      "afterRestart": false
+    },
+    {
+      "path": "logisim-portable53-3d9997d594f94520b9937dd29b5458d3-bundle-after-restart.lsebdl",
+      "sha256": "930cebe2bffa952f917a6c7fff5b23fceb2444ea8a05b5c969d225df35ef4113",
+      "afterRestart": true
+    }
+  ],
+  "observedWindowBeforeRestart": "15a75d05-6c54-4f8f-bd82-298bfcf30687",
+  "observedWindowAfterRestart": "a608b4d1-ee4a-406c-8fad-c077de892fcd",
+  "fixturePublication": "portable-bundle-source-publication.json",
+  "evidence": [
+    "portable-002-bundle-imported-canvas.png",
+    "portable-002-bundle-imported-canvas-ui.xml",
+    "portable-004-bundle-before-restart-save-picker.png",
+    "portable-004-bundle-before-restart-save-picker-ui.xml",
+    "portable-006-bundle-before-restart-saved.png",
+    "portable-006-bundle-before-restart-saved-ui.xml",
+    "portable-008-bundle-restored-canvas.png",
+    "portable-008-bundle-restored-canvas-ui.xml",
+    "portable-010-bundle-after-restart-save-picker.png",
+    "portable-010-bundle-after-restart-save-picker-ui.xml",
+    "portable-012-bundle-after-restart-saved.png",
+    "portable-012-bundle-after-restart-saved-ui.xml",
+    "portable-014-bundle-open-picker.png",
+    "portable-014-bundle-open-picker-ui.xml",
+    "portable-016-bundle-reopened-canvas.png",
+    "portable-016-bundle-reopened-canvas-ui.xml"
+  ],
+  "workspaceSnapshots": {
+    "before": "portable-bundle-before-workspace.tar",
+    "imported": "portable-bundle-imported-workspace.tar",
+    "restarted": "portable-bundle-restored-workspace.tar",
+    "reopened": "portable-bundle-reopened-workspace.tar"
+  }
+}

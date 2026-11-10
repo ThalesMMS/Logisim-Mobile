@@ -1,0 +1,81 @@
+[
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "run-as",
+      "thalesmms.logisim.mobile.e2e",
+      "ls",
+      "-lR",
+      "files"
+    ],
+    "beforeMonotonicNs": 173312526329875,
+    "afterMonotonicNs": 173313606549041,
+    "exitCode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "run-as",
+      "thalesmms.logisim.mobile.e2e",
+      "sh",
+      "-c",
+      "'find files -type f -exec sha256sum {} \\;'"
+    ],
+    "beforeMonotonicNs": 173313607464708,
+    "afterMonotonicNs": 173314118809916,
+    "exitCode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "input",
+      "tap",
+      "809",
+      "1983"
+    ],
+    "beforeMonotonicNs": 173314119496250,
+    "afterMonotonicNs": 173314449539958,
+    "exitCode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "shell",
+      "uiautomator",
+      "dump",
+      "/sdcard/logisim-perf-canvas.xml"
+    ],
+    "beforeMonotonicNs": 173314449558750,
+    "afterMonotonicNs": 173327085074916,
+    "exitCode": 0,
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Users/thales/Library/Android/sdk/platform-tools/adb",
+      "-s",
+      "emulator-5558",
+      "pull",
+      "/sdcard/logisim-perf-canvas.xml",
+      "outputs/performance/coldrestore-04a-20261104T212354Z/canvas.xml"
+    ],
+    "beforeMonotonicNs": 173327085901500,
+    "afterMonotonicNs": 173327269044500,
+    "exitCode": 0,
+    "stderr": "/sdcard/logisim-perf-canvas.xml: 1 file pulled, 0 skipped. 3.3 MB/s (74482 bytes in 0.022s)\n"
+  }
+]

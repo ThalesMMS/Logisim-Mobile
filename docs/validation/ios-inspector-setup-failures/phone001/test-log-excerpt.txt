@@ -1,0 +1,83 @@
+=== original test.log lines 13-18 ===
+Test Suite 'EditorEndToEndTests.xctest' started at 2026-11-05 00:56:20.091.
+Test Suite 'InspectorEndToEndTests' started at 2026-11-05 00:56:20.091.
+Test Case '-[EditorEndToEndTests.InspectorEndToEndTests testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction]' started.
+    t =     0.01s Start Test at 2026-11-05 00:56:20.102
+    t =     0.09s Set Up
+    t =     0.10s     Getting device orientation
+=== original test.log lines 31-36 ===
+    t =     8.41s     Find the Application 'thalesmms.logisim.mobile'
+    t =     8.44s Find the Application 'thalesmms.logisim.mobile'
+    t =     8.49s Added attachment named 'observed-orientation'
+    t =     8.49s Find the Application 'thalesmms.logisim.mobile'
+    t =     8.50s Get all elements bound by index for: Elements matching predicate '(label == "Create an empty circuit" OR label BEGINSWITH "Create an empty circuit, ") OR (label == "Criar circuito vazio" OR label BEGINSWITH "Criar circuito vazio, ")'
+    t =     8.51s Checking existence of `"editor-command-toolbar-menu" Any`
+=== original test.log lines 40-45 ===
+    t =     8.57s Find the Any (Element at index 0)
+    t =     8.58s Find the "Open circuits and library, Library" Button
+    t =     8.61s Tap "Open circuits and library, Library" Button
+    t =     8.61s     Wait for thalesmms.logisim.mobile to idle
+    t =     8.61s     Find the "Open circuits and library, Library" Button
+    t =     8.63s     Check for interrupting elements affecting "Open circuits and library, Library" Button
+=== original test.log lines 59-64 ===
+    t =    10.16s Find the Any (Element at index 0)
+    t =    10.17s Find the "Create an empty circuit, New" Button
+    t =    10.19s Tap "Create an empty circuit, New" Button
+    t =    10.19s     Wait for thalesmms.logisim.mobile to idle
+    t =    10.19s     Find the "Create an empty circuit, New" Button
+    t =    10.20s     Check for interrupting elements affecting "Create an empty circuit, New" Button
+=== original test.log lines 73-78 ===
+    t =    10.67s Find the Any (Element at index 0)
+    t =    10.68s Find the "Import or export circuit and project, .circ" Button
+    t =    10.71s Tap "Import or export circuit and project, .circ" Button
+    t =    10.71s     Wait for thalesmms.logisim.mobile to idle
+    t =    10.71s     Find the "Import or export circuit and project, .circ" Button
+    t =    10.73s     Check for interrupting elements affecting "Import or export circuit and project, .circ" Button
+=== original test.log lines 84-89 ===
+    t =    11.10s Find the Any (Element at index 0)
+    t =    11.12s Find the "Edit XML" Button
+    t =    11.14s Tap "Edit XML" Button
+    t =    11.14s     Wait for thalesmms.logisim.mobile to idle
+    t =    11.14s     Find the "Edit XML" Button
+    t =    11.16s     Check for interrupting elements affecting "Edit XML" Button
+=== original test.log lines 115-120 ===
+    t =    13.81s Find the "Project XML" TextView
+    t =    13.82s Find the "Project XML" TextView
+    t =    13.83s Tap "Project XML" TextView
+    t =    13.83s     Wait for thalesmms.logisim.mobile to idle
+    t =    13.83s     Find the "Project XML" TextView
+    t =    13.84s     Check for interrupting elements affecting "Project XML" TextView
+=== original test.log lines 125-130 ===
+    t =    14.77s Find the "Project XML" TextView
+    t =    14.79s Find the "Project XML" TextView
+    t =    14.83s Press "Project XML" TextView for 1.0 seconds
+    t =    14.83s     Wait for thalesmms.logisim.mobile to idle
+    t =    15.00s     Find the "Project XML" TextView
+    t =    15.01s     Check for interrupting elements affecting "Project XML" TextView
+=== original test.log lines 251-256 ===
+    t =    27.50s     Capturing element debug description
+    t =    27.51s         Requesting snapshot of accessibility hierarchy for app with pid 56191
+    t =    27.63s Added attachment named 'native-text-replacement-selection-menu-missing'
+    t =    27.63s Requesting snapshot of accessibility hierarchy for app with pid 56191
+    t =    27.65s Find: Descendants matching type TextView
+    t =    27.65s Find: Element at index 0
+=== original test.log lines 261-279 ===
+    t =    27.73s Find: Descendants matching type TextView
+    t =    27.73s Requesting snapshot of accessibility hierarchy for app with pid 56191
+    t =    27.76s Added attachment named 'native-text-replacement-selection-menu-missing-field'
+    t =    27.76s Requesting snapshot of accessibility hierarchy for app with pid 56191
+    t =    27.87s Requesting snapshot of accessibility hierarchy for app with pid 56191
+    t =    27.89s Added attachment named 'native-text-replacement-selection-menu-missing-tree'
+/Users/thales/GitHub/logisim-mobile-worktrees/ios-final-e2e/outputs/ios-a-4ab8-inspector-phone-001/harness/NativeTextReplacement.swift:127: error: -[EditorEndToEndTests.InspectorEndToEndTests testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction] : failed - The native editing menu must expose Select All or an enabled Cut and Copy pair.
+    t =    27.99s Tear Down
+    t =    27.99s     Requesting snapshot of accessibility hierarchy for app with pid 56191
+    t =    28.10s     Requesting snapshot of accessibility hierarchy for app with pid 56191
+    t =    28.13s     Added attachment named 'native-tree'
+    t =    28.20s     Added attachment named 'final-screen'
+    t =    28.20s     Terminate thalesmms.logisim.mobile:56191
+    t =    29.29s     Setting device orientation to Portrait
+    t =    29.30s         Wait for com.apple.springboard to idle
+Test Case '-[EditorEndToEndTests.InspectorEndToEndTests testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction]' failed (29.364 seconds).
+Test Suite 'InspectorEndToEndTests' failed at 2026-11-05 00:56:49.466.
+	 Executed 1 test, with 1 failure (0 unexpected) in 29.364 (29.375) seconds
+Test Suite 'EditorEndToEndTests.xctest' failed at 2026-11-05 00:56:49.469.

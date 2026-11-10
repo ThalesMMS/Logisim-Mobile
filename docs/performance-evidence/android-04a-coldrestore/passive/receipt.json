@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "04a0b34a38689932a3f3aaed7f4ea5cb6b63c8db",
+  "sourceAttestation": "The operator declares the installed artifact's producing revision.",
+  "startedAt": "2026-11-04T21:26:34.107055+00:00",
+  "observerSha256": "f42ce56ccae63f60b9f6d0c3e42f6933314b954bbb57aab53f38e3ae3886a3f5",
+  "arguments": {
+    "adb": "/Users/thales/Library/Android/sdk/platform-tools/adb",
+    "serial": "emulator-5558",
+    "package": "thalesmms.logisim.mobile.e2e",
+    "source_revision": "04a0b34a38689932a3f3aaed7f4ea5cb6b63c8db",
+    "expected_apk_sha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3",
+    "initial_pid": 8880,
+    "seconds": 75.0,
+    "interval": 1,
+    "output": "/Users/thales/GitHub/logisim-mobile-worktrees/performance-coldrestore-04a/outputs/performance/coldrestore-04a-20261104T212354Z/passive"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pm",
+        "path",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedMonotonicNs": 173472510691958,
+      "durationNs": 236502333,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "sha256sum",
+        "/data/app/~~WjQC1sX_jQRCR-CbT8SolA==/thalesmms.logisim.mobile.e2e-zJ5tQEb8B3u6MlVzS4U7vg==/base.apk"
+      ],
+      "startedMonotonicNs": 173472747484041,
+      "durationNs": 267236834,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pidof",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedMonotonicNs": 173473014877041,
+      "durationNs": 197792459,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "id"
+      ],
+      "startedMonotonicNs": 173473212707375,
+      "durationNs": 165038625,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "date",
+        "+%s"
+      ],
+      "startedMonotonicNs": 173473377781666,
+      "durationNs": 118256209,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173473511657041,
+      "durationNs": 2140947542,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173475654272708,
+      "durationNs": 5975002542,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173481631109333,
+      "durationNs": 1046385833,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173482678882916,
+      "durationNs": 2448693917,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173485128799875,
+      "durationNs": 727215208,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173486130138875,
+      "durationNs": 762288375,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173487134910166,
+      "durationNs": 568378667,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173488140122166,
+      "durationNs": 3360313459,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173491503898875,
+      "durationNs": 5800738208,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173497310399958,
+      "durationNs": 4149182583,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173501461050458,
+      "durationNs": 8503384875,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173509965712208,
+      "durationNs": 7584407792,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173517553253791,
+      "durationNs": 5568459125,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173523123374125,
+      "durationNs": 2889530875,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173526020913083,
+      "durationNs": 3727400292,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173529749765833,
+      "durationNs": 3865581417,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173533616564208,
+      "durationNs": 4228663167,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173537847065958,
+      "durationNs": 5392276917,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173543240707208,
+      "durationNs": 4298910750,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "run-as",
+        "thalesmms.logisim.mobile.e2e",
+        "sh",
+        "-c",
+        "'pids=$(pidof thalesmms.logisim.mobile.e2e); echo PIDS:$pids\nfor p in $pids; do\n echo PROCESS:$p; cat /proc/$p/stat; cat /proc/$p/io; cat /proc/$p/status\n for t in /proc/$p/task/*; do echo THREAD:$t; cat \"$t/stat\"; cat \"$t/wchan\"; echo; done\ndone'"
+      ],
+      "startedMonotonicNs": 173547545293000,
+      "durationNs": 3657933541,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "pm",
+        "path",
+        "thalesmms.logisim.mobile.e2e"
+      ],
+      "startedMonotonicNs": 173551204321750,
+      "durationNs": 225922583,
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/Users/thales/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5558",
+        "shell",
+        "sha256sum",
+        "/data/app/~~WjQC1sX_jQRCR-CbT8SolA==/thalesmms.logisim.mobile.e2e-zJ5tQEb8B3u6MlVzS4U7vg==/base.apk"
+      ],
+      "startedMonotonicNs": 173551430357416,
+      "durationNs": 200942625,
+      "exitCode": 0
+    }
+  ],
+  "scope": "Passive process/thread diagnostics, not an app readiness assertion or device budget.",
+  "apkBefore": {
+    "path": "/data/app/~~WjQC1sX_jQRCR-CbT8SolA==/thalesmms.logisim.mobile.e2e-zJ5tQEb8B3u6MlVzS4U7vg==/base.apk",
+    "sha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3"
+  },
+  "appIdentity": "uid=10207(u0_a207) gid=10207(u0_a207) groups=10207(u0_a207),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs),50207(all_a207) context=u:r:runas_app:s0:c207,c256,c512,c768",
+  "deviceClock": "1793827594",
+  "hostLoad": "18:26  up 2 days, 16:07, 1 user, load averages: 181.85 120.85 62.73",
+  "samples": 20,
+  "apkAfter": {
+    "path": "/data/app/~~WjQC1sX_jQRCR-CbT8SolA==/thalesmms.logisim.mobile.e2e-zJ5tQEb8B3u6MlVzS4U7vg==/base.apk",
+    "sha256": "e93a285e3294f91f971a0cc9c80b1f2cd51dc29fa0bdf7989a8ca3f2c38bb5c3"
+  },
+  "status": "captured",
+  "finishedAt": "2026-11-04T21:27:53.229596+00:00"
+}

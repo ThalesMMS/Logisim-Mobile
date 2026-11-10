@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/><lib name="1" desc="#Gates"/>
+  <main name="Hierarchy"/>
+  <circuit name="Hierarchy">
+    <comp lib="0" name="Pin" loc="(100,140)"><a name="label" val="A"/><a name="appearance" val="classic"/></comp>
+    <comp name="Inversor" loc="(300,140)"/>
+    <comp lib="0" name="Pin" loc="(420,140)"><a name="label" val="Y"/><a name="type" val="output"/><a name="appearance" val="classic"/></comp>
+    <wire from="(100,140)" to="(260,140)"/><wire from="(300,140)" to="(420,140)"/>
+  </circuit>
+  <circuit name="Inversor">
+    <a name="appearance" val="custom"/>
+    <appear><rect x="50" y="50" width="40" height="40"/><text x="70" y="75" font-size="12">NOT</text><circ-port dir="in" pin="100,100" x="50" y="70"/><circ-port dir="out" pin="300,100" x="90" y="70"/><circ-anchor facing="east" x="90" y="70"/></appear>
+    <comp lib="0" name="Pin" loc="(100,100)"><a name="label" val="Entrada"/><a name="appearance" val="classic"/></comp>
+    <comp lib="1" name="NOT Gate" loc="(230,100)"><a name="size" val="30"/></comp>
+    <comp lib="0" name="Pin" loc="(300,100)"><a name="label" val="Y"/><a name="type" val="output"/><a name="appearance" val="classic"/></comp>
+    <wire from="(100,100)" to="(200,100)"/><wire from="(230,100)" to="(300,100)"/>
+  </circuit>
+</project>

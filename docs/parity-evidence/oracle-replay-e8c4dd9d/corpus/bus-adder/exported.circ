@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="3.8.0" version="1.0">
+  <lib name="0" desc="#Wiring"/>
+  <lib name="1" desc="#Arithmetic"/>
+  <main name="BusAdder"/>
+  <circuit name="BusAdder" id="BusAdder">
+    <comp lib="0" name="Pin" loc="(100,120)" logisim-mobile-id="import-1">
+      <a name="label" val="A"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="0" name="Pin" loc="(100,220)" logisim-mobile-id="import-2">
+      <a name="label" val="B"/>
+      <a name="width" val="8"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="1" name="Adder" loc="(300,160)" logisim-mobile-id="import-3">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" name="Pin" loc="(420,160)" logisim-mobile-id="import-4">
+      <a name="label" val="S"/>
+      <a name="width" val="8"/>
+      <a name="type" val="output"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <comp lib="0" name="Pin" loc="(420,260)" logisim-mobile-id="import-5">
+      <a name="label" val="Carry"/>
+      <a name="type" val="output"/>
+      <a name="appearance" val="classic"/>
+    </comp>
+    <wire from="(100,120)" to="(240,120)"/>
+    <wire from="(240,120)" to="(240,150)"/>
+    <wire from="(240,150)" to="(260,150)"/>
+    <wire from="(100,220)" to="(220,220)"/>
+    <wire from="(220,220)" to="(220,170)"/>
+    <wire from="(220,170)" to="(260,170)"/>
+    <wire from="(300,160)" to="(420,160)"/>
+    <wire from="(280,180)" to="(280,260)"/>
+    <wire from="(280,260)" to="(420,260)"/>
+  </circuit>
+</project>

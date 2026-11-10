@@ -1,0 +1,7 @@
+{
+  "stage": "xcodegen prepare",
+  "status": "FAIL",
+  "cause": "The requested output parent directory did not exist; xcodegen could not copy its temporary XcodeGen project there. The subsequent redirected xcodebuild command could not open its log, so no build or runtime started.",
+  "correction": "Create the parent directory before invoking xcodegen.",
+  "runtime_status": "NOT_RUN"
+}

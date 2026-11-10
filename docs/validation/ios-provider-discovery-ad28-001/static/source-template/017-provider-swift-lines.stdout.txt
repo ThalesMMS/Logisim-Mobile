@@ -1,0 +1,257 @@
+     1	import CryptoKit
+     2	import FileProvider
+     3	import Foundation
+     4	
+     5	@available(iOS 16.0, *)
+     6	final class RevocationFileProvider: NSObject, NSFileProviderReplicatedExtension {
+     7	    private typealias ItemResult = (NSFileProviderItem?, Error?)
+     8	    private typealias FetchResult = (URL?, NSFileProviderItem?, Error?)
+     9	    private typealias MutationResult = (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?)
+    10	    private let domain: NSFileProviderDomain
+    11	    private let storeResult: Result<FixtureStore, Error>
+    12	    private let manager: NSFileProviderManager?
+    13	    private let queue = DispatchQueue(label: "dev.logisim.validation.revocation-provider", qos: .utility, attributes: .concurrent)
+    14	    private let lock = NSLock()
+    15	    private var invalidated = false
+    16	    private var fileIdentifier: NSFileProviderItemIdentifier {
+    17	        NSFileProviderItemIdentifier(rawValue: FixtureConfiguration.itemIdentifier)
+    18	    }
+    19	
+    20	    required init(domain: NSFileProviderDomain) {
+    21	        self.domain = domain
+    22	        manager = NSFileProviderManager(for: domain)
+    23	        if domain.identifier.rawValue == FixtureConfiguration.domainIdentifier {
+    24	            storeResult = Result { try FixtureStore() }
+    25	        } else {
+    26	            storeResult = .failure(RevocationProviderError.unsupported("The fixture only serves its own registered domain."))
+    27	        }
+    28	        super.init()
+    29	        record("provider.initialized")
+    30	    }
+    31	
+    32	    func invalidate() {
+    33	        lock.lock()
+    34	        invalidated = true
+    35	        lock.unlock()
+    36	        record("provider.invalidated")
+    37	    }
+    38	
+    39	    func enumerator(for containerItemIdentifier: NSFileProviderItemIdentifier,
+    40	                    request: NSFileProviderRequest) throws -> NSFileProviderEnumerator {
+    41	        let store = try activeStore()
+    42	        guard containerItemIdentifier != .trashContainer else {
+    43	            throw RevocationProviderError.unsupported("The fixture does not support trash.")
+    44	        }
+    45	        guard [.rootContainer, .workingSet, fileIdentifier].contains(containerItemIdentifier) else {
+    46	            throw RevocationProviderError.missing(containerItemIdentifier)
+    47	        }
+    48	        try store.record("provider.enumerator.created", itemIdentifier: containerItemIdentifier.rawValue,
+    49	                         details: ["domain": domain.identifier.rawValue])
+    50	        return RevocationProviderEnumerator(store: store, container: containerItemIdentifier,
+    51	                                             domainIdentifier: domain.identifier.rawValue)
+    52	    }
+    53	
+    54	    func item(for identifier: NSFileProviderItemIdentifier, request: NSFileProviderRequest,
+    55	              completionHandler: @escaping (NSFileProviderItem?, Error?) -> Void) -> Progress {
+    56	        perform("provider.item", identifier: identifier, failure: { error -> ItemResult in (nil, error) },
+    57	                completion: { completionHandler($0.0, $0.1) }) { _ in
+    58	            let state = try self.activeStore().snapshot()
+    59	            guard identifier == .rootContainer || identifier == self.fileIdentifier else {
+    60	                throw RevocationProviderError.missing(identifier)
+    61	            }
+    62	            // Authentication changes do not announce a deletion or remove the file's write association.
+    63	            return (RevocationProviderItem(identifier: identifier, state: state), nil)
+    64	        }
+    65	    }
+    66	
+    67	    func fetchContents(for itemIdentifier: NSFileProviderItemIdentifier, version requestedVersion: NSFileProviderItemVersion?,
+    68	                       request: NSFileProviderRequest,
+    69	                       completionHandler: @escaping (URL?, NSFileProviderItem?, Error?) -> Void) -> Progress {
+    70	        perform("provider.fetch", identifier: itemIdentifier, failure: { error -> FetchResult in (nil, nil, error) },
+    71	                completion: { completionHandler($0.0, $0.1, $0.2) }, discard: { result in
+    72	                    if let url = result.0 { try? FileManager.default.removeItem(at: url) }
+    73	                }) { _ in
+    74	            let store = try self.activeStore()
+    75	            guard itemIdentifier == self.fileIdentifier else {
+    76	                throw itemIdentifier == .rootContainer
+    77	                    ? RevocationProviderError.unsupported("The root folder has no downloadable file content.")
+    78	                    : RevocationProviderError.missing(itemIdentifier)
+    79	            }
+    80	            let state = try store.snapshot()
+    81	            guard state.authenticationAllowed else { throw FixtureStore.authenticationError() }
+    82	            let item = RevocationProviderItem(identifier: itemIdentifier, state: state)
+    83	            if let requestedVersion,
+    84	               requestedVersion.contentVersion != item.itemVersion.contentVersion ||
+    85	                requestedVersion.metadataVersion != item.itemVersion.metadataVersion {
+    86	                throw RevocationProviderError.unsupported("The requested fixture version is no longer current.")
+    87	            }
+    88	            guard let manager = self.manager else {
+    89	                throw RevocationProviderError.unsupported("No FileProvider manager is available for the fixture domain.")
+    90	            }
+    91	            // The store rechecks authentication under its cross-process lock before making this copy.
+    92	            let intermediate = try store.temporaryBackendCopy()
+    93	            defer { try? FileManager.default.removeItem(at: intermediate) }
+    94	            let directory = try manager.temporaryDirectoryURL()
+    95	            let destination = directory.appendingPathComponent(UUID().uuidString + ".circ")
+    96	            var handedToSystem = false
+    97	            defer { if !handedToSystem { try? FileManager.default.removeItem(at: destination) } }
+    98	            try FileManager.default.copyItem(at: intermediate, to: destination)
+    99	            let bytes = try Data(contentsOf: destination)
+   100	            let actualSHA = SHA256.hash(data: bytes).map { String(format: "%02x", $0) }.joined()
+   101	            let current = try store.snapshot()
+   102	            guard current.authenticationAllowed else { throw FixtureStore.authenticationError() }
+   103	            guard actualSHA == state.backendSHA256, current.backendSHA256 == state.backendSHA256,
+   104	                  bytes.count == state.backendByteCount else { throw RevocationProviderError.changed() }
+   105	            handedToSystem = true
+   106	            return (destination, item, nil)
+   107	        }
+   108	    }
+   109	
+   110	    func createItem(basedOn itemTemplate: NSFileProviderItem, fields: NSFileProviderItemFields,
+   111	                    contents: URL?, options: NSFileProviderCreateItemOptions, request: NSFileProviderRequest,
+   112	                    completionHandler: @escaping (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?) -> Void) -> Progress {
+   113	        perform("provider.create", identifier: itemTemplate.itemIdentifier, failure: { error -> MutationResult in (nil, fields, false, error) },
+   114	                completion: { completionHandler($0.0, $0.1, $0.2, $0.3) }) { _ in
+   115	            throw RevocationProviderError.unsupported("The fixture exposes one existing file and does not create items.")
+   116	        }
+   117	    }
+   118	
+   119	    func modifyItem(_ item: NSFileProviderItem, baseVersion: NSFileProviderItemVersion,
+   120	                    changedFields: NSFileProviderItemFields, contents newContents: URL?,
+   121	                    options: NSFileProviderModifyItemOptions, request: NSFileProviderRequest,
+   122	                    completionHandler: @escaping (NSFileProviderItem?, NSFileProviderItemFields, Bool, Error?) -> Void) -> Progress {
+   123	        let identifier = item.itemIdentifier
+   124	        return perform("provider.modify", identifier: identifier, failure: { error -> MutationResult in (nil, changedFields, false, error) },
+   125	                       completion: { completionHandler($0.0, $0.1, $0.2, $0.3) }) { beginCommit in
+   126	            let store = try self.activeStore()
+   127	            guard identifier == self.fileIdentifier else {
+   128	                throw RevocationProviderError.unsupported("Only the existing fixture file's content can be changed.")
+   129	            }
+   130	            let state = try store.snapshot()
+   131	            guard state.authenticationAllowed else { throw FixtureStore.authenticationError() }
+   132	            guard changedFields.contains(.contents), let newContents else {
+   133	                throw RevocationProviderError.unsupported("The fixture does not commit metadata-only changes.")
+   134	            }
+   135	            guard !changedFields.contains(.filename), !changedFields.contains(.parentItemIdentifier),
+   136	                  item.filename == FixtureConfiguration.filename, item.parentItemIdentifier == .rootContainer else {
+   137	                throw RevocationProviderError.unsupported("The fixture cannot be renamed or moved.")
+   138	            }
+   139	            guard let expectedSHA = String(data: baseVersion.contentVersion, encoding: .utf8),
+   140	                  expectedSHA == state.backendSHA256 else { throw RevocationProviderError.changed() }
+   141	            guard newContents.isFileURL else { throw RevocationProviderError.unsupported("An upload must be a local regular file.") }
+   142	            let attributes = try newContents.resourceValues(forKeys: [.isRegularFileKey, .isSymbolicLinkKey, .fileSizeKey])
+   143	            guard attributes.isRegularFile == true, attributes.isSymbolicLink != true,
+   144	                  let size = attributes.fileSize, size >= 0, size <= 1024 * 1024 else {
+   145	                throw RevocationProviderError.unsupported("Fixture uploads must be regular files no larger than one MiB.")
+   146	            }
+   147	            let bytes = try Data(contentsOf: newContents)
+   148	            try beginCommit()
+   149	            let updated = try store.replaceBackend(bytes, expectedSHA256: expectedSHA)
+   150	            let remaining = changedFields.subtracting(.contents)
+   151	            return (RevocationProviderItem(identifier: identifier, state: updated), remaining, false, nil)
+   152	        }
+   153	    }
+   154	
+   155	    func deleteItem(identifier: NSFileProviderItemIdentifier, baseVersion: NSFileProviderItemVersion,
+   156	                    options: NSFileProviderDeleteItemOptions, request: NSFileProviderRequest,
+   157	                    completionHandler: @escaping (Error?) -> Void) -> Progress {
+   158	        perform("provider.delete", identifier: identifier, failure: { error -> Error? in error }, completion: completionHandler) { _ in
+   159	            throw RevocationProviderError.unsupported("The fixture does not delete its backend item.")
+   160	        }
+   161	    }
+   162	
+   163	    private func activeStore() throws -> FixtureStore {
+   164	        lock.lock()
+   165	        let stopped = invalidated
+   166	        lock.unlock()
+   167	        guard !stopped else { throw RevocationProviderError.cancelled() }
+   168	        return try storeResult.get()
+   169	    }
+   170	
+   171	    private func perform<Value>(_ kind: String, identifier: NSFileProviderItemIdentifier,
+   172	                                failure: @escaping (Error) -> Value, completion: @escaping (Value) -> Void,
+   173	                                discard: @escaping (Value) -> Void = { _ in },
+   174	                                work: @escaping (_ beginCommit: () throws -> Void) throws -> Value) -> Progress {
+   175	        let progress = Progress(totalUnitCount: 1)
+   176	        progress.isCancellable = true
+   177	        let reply = RevocationProviderReply(progress: progress, completion: completion)
+   178	        let requestID = UUID().uuidString
+   179	        let details = ["requestID": requestID]
+   180	        record(kind + ".started", identifier: identifier, details: details)
+   181	        progress.cancellationHandler = {
+   182	            let error = RevocationProviderError.cancelled()
+   183	            _ = reply.cancel(failure(error)) { self.record(kind + ".cancelled", identifier: identifier, details: details, error: error) }
+   184	        }
+   185	        queue.async {
+   186	            guard !progress.isCancelled else { return }
+   187	            do {
+   188	                let value = try work { try reply.beginCommit() }
+   189	                if !reply.finish(value, beforeDelivery: { self.record(kind + ".completed", identifier: identifier, details: details) }) {
+   190	                    discard(value)
+   191	                }
+   192	            } catch {
+   193	                let error = error as NSError
+   194	                let suffix = error.domain == NSFileProviderErrorDomain && error.code == NSFileProviderError.notAuthenticated.rawValue
+   195	                    ? ".denied" : ".failed"
+   196	                _ = reply.finish(failure(error)) { self.record(kind + suffix, identifier: identifier, details: details, error: error) }
+   197	            }
+   198	        }
+   199	        return progress
+   200	    }
+   201	
+   202	    private func record(_ kind: String, identifier: NSFileProviderItemIdentifier? = nil,
+   203	                        details: [String: String] = [:], error: NSError? = nil) {
+   204	        do {
+   205	            try storeResult.get().record(kind, itemIdentifier: identifier?.rawValue,
+   206	                                         details: details.merging(["domain": domain.identifier.rawValue]) { _, new in new }, error: error)
+   207	        } catch { NSLog("Revocation fixture could not record provider event: %@", String(describing: error)) }
+   208	    }
+   209	}
+   210	
+   211	/// Cancellation and an I/O completion can race, but only one result reaches FileProvider.
+   212	private final class RevocationProviderReply<Value> {
+   213	    private let lock = NSLock()
+   214	    private var finished = false
+   215	    private var commitStarted = false
+   216	    private weak var progress: Progress?
+   217	    private let completion: (Value) -> Void
+   218	
+   219	    init(progress: Progress, completion: @escaping (Value) -> Void) {
+   220	        self.progress = progress
+   221	        self.completion = completion
+   222	    }
+   223	
+   224	    func beginCommit() throws {
+   225	        lock.lock()
+   226	        defer { lock.unlock() }
+   227	        guard !finished else { throw RevocationProviderError.cancelled() }
+   228	        commitStarted = true
+   229	    }
+   230	
+   231	    @discardableResult func cancel(_ value: Value, beforeDelivery: () -> Void = {}) -> Bool {
+   232	        guard claimCompletion(cancellation: true) else { return false }
+   233	        deliver(value, beforeDelivery: beforeDelivery)
+   234	        return true
+   235	    }
+   236	
+   237	    @discardableResult func finish(_ value: Value, beforeDelivery: () -> Void = {}) -> Bool {
+   238	        guard claimCompletion(cancellation: false) else { return false }
+   239	        deliver(value, beforeDelivery: beforeDelivery)
+   240	        return true
+   241	    }
+   242	
+   243	    private func claimCompletion(cancellation: Bool) -> Bool {
+   244	        lock.lock()
+   245	        defer { lock.unlock() }
+   246	        guard !finished, !cancellation || !commitStarted else { return false }
+   247	        finished = true
+   248	        return true
+   249	    }
+   250	
+   251	    private func deliver(_ value: Value, beforeDelivery: () -> Void) {
+   252	        progress?.cancellationHandler = nil
+   253	        progress?.completedUnitCount = 1
+   254	        beforeDelivery()
+   255	        completion(value)
+   256	    }
+   257	}

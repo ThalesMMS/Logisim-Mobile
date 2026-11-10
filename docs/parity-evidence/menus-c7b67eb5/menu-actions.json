@@ -1,0 +1,291 @@
+{
+  "edit-addCtrl": {
+    "result": "SAME"
+  },
+  "edit-clearHistory": {
+    "result": "SAME"
+  },
+  "edit-cut": {
+    "result": "SAME"
+  },
+  "edit-dup": {
+    "result": "SAME"
+  },
+  "edit-lower": {
+    "result": "SAME"
+  },
+  "edit-lowerBottom": {
+    "result": "SAME"
+  },
+  "edit-raise": {
+    "result": "SAME"
+  },
+  "edit-raiseTop": {
+    "result": "SAME"
+  },
+  "edit-redoHistory": {
+    "result": "SAME"
+  },
+  "edit-remCtrl": {
+    "result": "SAME"
+  },
+  "edit-undoHistory": {
+    "result": "SAME"
+  },
+  "file-merge": {
+    "result": "SAME"
+  },
+  "file-newi": {
+    "result": "DIFF",
+    "diff": [
+      "--- evolution",
+      "+++ mobile",
+      "@@ -21,3 +21,3 @@",
+      "     <a name=\"gateUndefined\" val=\"ignore\" />",
+      "-    <a name=\"simlimit\" val=\"1000\" />",
+      "+    <a name=\"simlimit\" val=\"256\" />",
+      "     <a name=\"simrand\" val=\"0\" />"
+    ],
+    "accepted": "mobile-default-simlimit: EditorState.newDocument() without a template stores simlimit=256 (Mobile default, 2cd60d48, #157); Evolution's plain template stores 1000. File > New with the Evolution template is compared by creation-defaults"
+  },
+  "file-open": {
+    "result": "SAME"
+  },
+  "file-save": {
+    "result": "SAME"
+  },
+  "file-saveAs": {
+    "result": "SAME"
+  },
+  "project-addCircuit": {
+    "result": "SAME"
+  },
+  "project-addVhdl": {
+    "result": "SAME"
+  },
+  "project-appearance": {
+    "result": "SAME"
+  },
+  "project-importVhdl": {
+    "result": "SAME"
+  },
+  "project-loadBuiltin": {
+    "result": "SAME"
+  },
+  "project-loadLogisim": {
+    "result": "DIFF",
+    "diff": [
+      "--- evolution",
+      "+++ mobile",
+      "@@ -13,3 +13,2 @@",
+      "   <lib desc=\"#Base\" name=\"7\" />",
+      "-  <lib desc=\"file#library.circ\" name=\"8\" />",
+      "   <main name=\"main\" />",
+      "@@ -101,2 +100,17 @@",
+      "   </circuit>",
+      "+  <circuit name=\"inverter\">",
+      "+    <a name=\"circuit\" val=\"inverter\" />",
+      "+    <comp lib=\"0\" loc=\"(100,100)\" name=\"Pin\">",
+      "+      <a name=\"appearance\" val=\"classic\" />",
+      "+      <a name=\"label\" val=\"X\" />",
+      "+    </comp>",
+      "+    <comp lib=\"0\" loc=\"(300,100)\" name=\"Pin\">",
+      "+      <a name=\"appearance\" val=\"classic\" />",
+      "+      <a name=\"label\" val=\"Y\" />",
+      "+      <a name=\"type\" val=\"output\" />",
+      "+    </comp>",
+      "+    <comp lib=\"1\" loc=\"(230,100)\" name=\"NOT Gate\" />",
+      "+    <wire from=\"(100,100)\" to=\"(200,100)\" />",
+      "+    <wire from=\"(230,100)\" to=\"(300,100)\" />",
+      "+  </circuit>",
+      " </project>"
+    ],
+    "accepted": "embedded-library: Mobile copies the library's circuits into the project (marked logisim-mobile-library-id) instead of a relative file# reference, so documents stay self-contained on Android and iOS"
+  },
+  "project-moveDown": {
+    "result": "SAME"
+  },
+  "project-moveUp": {
+    "result": "SAME"
+  },
+  "project-options": {
+    "result": "SAME"
+  },
+  "project-remove": {
+    "result": "SAME"
+  },
+  "project-revertAppearance": {
+    "result": "DIFF",
+    "diff": [
+      "--- evolution",
+      "+++ mobile",
+      "@@ -43,3 +43,3 @@",
+      "     <wire from=\"(100,140)\" to=\"(260,140)\" />",
+      "-    <wire from=\"(100,180)\" to=\"(260,180)\" />",
+      "+    <wire from=\"(100,180)\" to=\"(300,180)\" />",
+      "     <wire from=\"(250,300)\" to=\"(370,300)\" />",
+      "@@ -48,3 +48,2 @@",
+      "   <circuit name=\"half\">",
+      "-    <a name=\"appearance\" val=\"custom\" />",
+      "     <a name=\"circuit\" val=\"half\" />"
+    ],
+    "accepted": "evolution-noop: RevertAppearanceAction in d58a61e0 only records the drawing (setDefaultAppearance is commented out since 6dce9c7f8); Mobile restores the default appearance"
+  },
+  "project-setAsMain": {
+    "result": "SAME"
+  },
+  "project-unload": {
+    "result": "SAME"
+  },
+  "sim-tickFreq": {
+    "result": "SAME"
+  },
+  "state:analyze.minimal.C": {
+    "result": "SAME",
+    "evolution": "A⋅B",
+    "mobile": "(A & B)"
+  },
+  "state:analyze.minimal.S": {
+    "result": "SAME",
+    "evolution": "~A⋅B+A⋅~B",
+    "mobile": "((!A & B) | (A & !B))"
+  },
+  "state:analyze.table": {
+    "result": "SAME",
+    "evolution": "00->00 01->10 10->10 11->01",
+    "mobile": "00->00 01->10 10->10 11->01"
+  },
+  "state:analyze.vars": {
+    "result": "SAME",
+    "evolution": "[A, B]->[S, C]",
+    "mobile": "[A, B]->[S, C]"
+  },
+  "state:edit-clearHistory.after": {
+    "result": "SAME",
+    "evolution": "0/0",
+    "mobile": "0/0"
+  },
+  "state:edit-dup.offset": {
+    "result": "SAME",
+    "evolution": "10,10",
+    "mobile": "10,10"
+  },
+  "state:edit-redoHistory.after": {
+    "result": "SAME",
+    "evolution": "2/1",
+    "mobile": "2/1"
+  },
+  "state:edit-redoHistory.entries": {
+    "result": "SAME",
+    "evolution": "3",
+    "mobile": "3"
+  },
+  "state:edit-undoHistory.after": {
+    "result": "SAME",
+    "evolution": "1/2",
+    "mobile": "1/2"
+  },
+  "state:edit-undoHistory.entries": {
+    "result": "SAME",
+    "evolution": "3",
+    "mobile": "3"
+  },
+  "state:file-extractRunProj": {
+    "result": "SAME",
+    "evolution": "main=Top53 circuits=[Bridge53, Cell53, Top53] OUT_FIRST53=00001000 OUT_SECOND53=00000011",
+    "mobile": "main=Top53 circuits=[Bridge53, Cell53, Top53] OUT_FIRST53=00001000 OUT_SECOND53=00000011"
+  },
+  "state:file-openRecent": {
+    "result": "SAME",
+    "evolution": "r03 r12 r11 r10 r09 r08 r07 r06 r05 r04",
+    "mobile": "r03 r12 r11 r10 r09 r08 r07 r06 r05 r04"
+  },
+  "state:sim-downState": {
+    "result": "SAME",
+    "evolution": "stage clk=0 q=1",
+    "mobile": "stage clk=0 q=1"
+  },
+  "state:sim-log.Clock(100,450)": {
+    "result": "SAME",
+    "evolution": "0,1,0,1,0",
+    "mobile": "0,1,0,1,0"
+  },
+  "state:sim-log.D Flip-Flop(300,400)": {
+    "result": "SAME",
+    "evolution": "0,1,0",
+    "mobile": "0,1,0"
+  },
+  "state:sim-log.defaultSignals": {
+    "result": "DIFF",
+    "evolution": "Clock(100,450),D Flip-Flop(300,400),q0",
+    "mobile": "",
+    "accepted": "empty-selection: Evolution's Logging window starts with the top-level clock, pins and loggable components; Mobile's trace panel starts empty and offers the same signals"
+  },
+  "state:sim-log.q0": {
+    "result": "SAME",
+    "evolution": "0,1,0",
+    "mobile": "0,1,0"
+  },
+  "state:sim-reset": {
+    "result": "SAME",
+    "evolution": "clk=0 q0=0 nq0=1 q1=0",
+    "mobile": "clk=0 q0=0 nq0=1 q1=0"
+  },
+  "state:sim-step": {
+    "result": "SAME",
+    "evolution": "a=1 n1=1 n2=0 n3=1 | a=1 n1=0 n2=0 n3=1 | a=1 n1=0 n2=1 n3=1 | a=1 n1=0 n2=1 n3=0 | a=1 n1=0 n2=1 n3=0",
+    "mobile": "a=1 n1=1 n2=0 n3=1 | a=1 n1=0 n2=0 n3=1 | a=1 n1=0 n2=1 n3=1 | a=1 n1=0 n2=1 n3=0 | a=1 n1=0 n2=1 n3=0"
+  },
+  "state:sim-tickFreq.choices": {
+    "result": "DIFF",
+    "evolution": "[2048000.0, 1024000.0, 512000.0, 256000.0, 128000.0, 64000.0, 32000.0, 16000.0, 8000.0, 4000.0, 2000.0, 1000.0, 512.0, 256.0, 128.0, 64.0, 32.0, 16.0, 8.0, 4.0, 2.0, 1.0, 0.5, 0.25]",
+    "mobile": "[1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0]",
+    "accepted": "frequency-menu: Mobile's Simulate menu offers 1-64 Hz; the Simulation options panel accepts any positive frequency"
+  },
+  "state:sim-tickFull": {
+    "result": "SAME",
+    "evolution": "clk=0 q0=1 nq0=0 q1=1 | clk=0 q0=0 nq0=1 q1=0 | clk=0 q0=1 nq0=0 q1=0",
+    "mobile": "clk=0 q0=1 nq0=0 q1=1 | clk=0 q0=0 nq0=1 q1=0 | clk=0 q0=1 nq0=0 q1=0"
+  },
+  "state:sim-tickHalf": {
+    "result": "SAME",
+    "evolution": "clk=0 q0=0 nq0=1 q1=0 | clk=1 q0=1 nq0=0 q1=0 | clk=0 q0=1 nq0=0 q1=0 | clk=1 q0=0 nq0=1 q1=1 | clk=0 q0=0 nq0=1 q1=1",
+    "mobile": "clk=0 q0=0 nq0=1 q1=0 | clk=1 q0=1 nq0=0 q1=0 | clk=0 q0=1 nq0=0 q1=0 | clk=1 q0=0 nq0=1 q1=1 | clk=0 q0=0 nq0=1 q1=1"
+  },
+  "state:sim-ticksEnabled": {
+    "result": "SAME",
+    "evolution": "ticks=4 clk=0 q0=0 nq0=1 q1=1",
+    "mobile": "ticks=4 clk=0 q0=0 nq0=1 q1=1"
+  },
+  "state:sim-ticksEnabled.period_ms": {
+    "result": "DIFF",
+    "evolution": "15.625",
+    "mobile": "16",
+    "accepted": "timer-resolution: Mobile schedules automatic ticks in whole milliseconds (16 ms at 64 Hz), Evolution in nanoseconds (15.625 ms)"
+  },
+  "state:sim-upState": {
+    "result": "SAME",
+    "evolution": "main clk=0 q0=1 nq0=0 q1=1",
+    "mobile": "main clk=0 q0=1 nq0=0 q1=1"
+  },
+  "state:stats.rows": {
+    "result": "SAME",
+    "evolution": "AND Gate@Gates=1/2/2 NOT Gate@Gates=1/1/1 Pin@Wiring=3/7/7 XOR Gate@Gates=0/1/1 half@project=1/1/1",
+    "mobile": "AND Gate@Gates=1/2/2 NOT Gate@Gates=1/1/1 Pin@Wiring=3/7/7 XOR Gate@Gates=0/1/1 half@project=1/1/1"
+  },
+  "state:stats.totals": {
+    "result": "SAME",
+    "evolution": "5/11/11 6/12/12",
+    "mobile": "5/11/11 6/12/12"
+  },
+  "state:test.rows": {
+    "result": "SAME",
+    "evolution": "1:pass 2:pass 3:pass 4:pass 5:fail",
+    "mobile": "1:pass 2:pass 3:pass 4:pass 5:fail"
+  },
+  "state:test.totals": {
+    "result": "SAME",
+    "evolution": "4/1",
+    "mobile": "4/1"
+  }
+}

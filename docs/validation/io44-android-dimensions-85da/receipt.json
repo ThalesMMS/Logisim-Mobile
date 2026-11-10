@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "scope": "io44-android-dimensions-retained-native-run",
+  "claim": {
+    "case": "dimensions",
+    "caseStatus": "passed",
+    "issue44": "partial",
+    "allIssue44CasesPassed": false,
+    "iosExecution": "not-inferred",
+    "physicalHardware": "not-inferred",
+    "visualParity": "not-inferred"
+  },
+  "originalRun": {
+    "directory": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/85da031e-io-dimensions-a32d3302",
+    "name": "85da031e-io-dimensions-a32d3302",
+    "executorPin": "a32d33020f1508276ebe9ed6fa83f0dfc4d50d4d",
+    "producerPin": "85da031e4ed11474c2e763976392729810ef142d",
+    "productionSourceIdenticalTo": "6cef05429cf66be23569aaebc3c72950cf3fe53a",
+    "durationSeconds": 582.02
+  },
+  "auditBasePin": "5cb2fead2743cbba84f0efbad51e8bca822c7f05",
+  "oracleInputs": {
+    "examples/io-showcase.circ": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+    "examples/io-showcase.targets.json": "4917b9e3bf386cdc555ae544725e9ee2f420beac1462a5a88e0c27d1d6e0cf15",
+    "fixtures/user-scenarios/io-actions-v1.json": "8939f027d22e20173fa575eb17eb19508bb8a440039574be11902f5030f92cfb",
+    "scripts/io_showcase_contract.py": "864466003e75aa6747adb7d5beb0ee7f8cf27fdc9b59ee16a2759ac889d543f7",
+    "fixtures/user-scenarios/editor-actions-v1.json": "4475d0c71c04e5d53f1eb9165ff2fc7382655a66b47c4419beae4ccef59dc0f4"
+  },
+  "artifacts": {
+    "evidence/build-receipt.json": "268a6cbe5ca1890a7ac5bbbea6643529139dc671b4ec8c4a31da9a04d852ae49",
+    "evidence/independent-provenance.json": "7e59684c62decc8285356e4357f5e1c3341eb11cc21643f23f96c00f427db266",
+    "evidence/io-baseline.circ": "a2595e0ec949702685cf0465485e430b0491b1d8b31daf3350abe5f3697b55b9",
+    "evidence/io-dimension-io_dot_matrix-matrixrows-ui.xml": "a935aabd445964bbfad5ccbffda9f8a21318d6d35781834187565cba5edc0f7b",
+    "evidence/io-dimension-io_dot_matrix-matrixrows.circ": "9670705c81e92fc5b004ccd20b0084652afa5926e5db598e7d385b0acceae13c",
+    "evidence/io-dimension-io_keypad-size-ui.xml": "f4db80d3ee8bee0a6f7f171a82d9aa3983f26256912cbc63015e235b2cebecaa",
+    "evidence/io-dimension-io_keypad-size.circ": "9e0aed23df2b0805540a1b5d25a24f95f4bb1eafcb8b48839a94f348d23db981",
+    "evidence/io-dimension-io_ledbar-height-ui.xml": "32524c617a0751e380e1348402b0414afb9ea0d2bb893b7cbccf92af579b7360",
+    "evidence/io-dimension-io_ledbar-height.circ": "35a4ec0ea34753c0a56fb47d7f104abb9b84db2456d0a9b3701aadb604ddcc10",
+    "evidence/io-dimension-io_tty-cols-ui.xml": "3fda2db83faeab9ccb4fd3a486e8920a3fef3ef5e6d952ddc496acf82fa6aacf",
+    "evidence/io-dimension-io_tty-cols.circ": "238e519129195ba269cf32498f931768d37e5e3e79b78437f68a778211df3bff",
+    "evidence/io-dimension-io_tty-rows-ui.xml": "0520651f538c3c3849674bc1d0cfd4d25a57a053b06164bd8bebe207a36ce087",
+    "evidence/io-dimension-io_tty-rows.circ": "c3640bca821a59ebb663d871c7a68ff84faa1c78c00c512a29e10e13ac8d926e",
+    "evidence/io-dimensions-restored-ui.xml": "ed9d5d57fda98fadff5295be457f44c9baa7384deb407c0720e05787d9bd5d00",
+    "evidence/io-dimensions-restored.circ": "09aea7d4dde9b89aff49309dc21c2708613ece1b2616de17e83a4005fface43a",
+    "evidence/io-restored-io_dot_matrix-matrixrows-ui.xml": "a26fafda1f33b0689719be15d015990395d9f254dbd33e130c34328252e31ec5",
+    "evidence/io-restored-io_dot_matrix-matrixrows.circ": "5515e7fce454a2874058fed9dad2192e6394805b1a2ddb279fb6e805827375d4",
+    "evidence/io-restored-io_keypad-size-ui.xml": "ed9d5d57fda98fadff5295be457f44c9baa7384deb407c0720e05787d9bd5d00",
+    "evidence/io-restored-io_keypad-size.circ": "09aea7d4dde9b89aff49309dc21c2708613ece1b2616de17e83a4005fface43a",
+    "evidence/io-restored-io_ledbar-height-ui.xml": "5a0bf82c16f6c3751192e220449b232cf6b94c308b9fc5c21c37aeaa1d8febc8",
+    "evidence/io-restored-io_ledbar-height.circ": "5515e7fce454a2874058fed9dad2192e6394805b1a2ddb279fb6e805827375d4",
+    "evidence/io-restored-io_tty-cols-ui.xml": "6bf7b7225ede04a6f40b4805d54dd8133ed30b537ab619624ef06765a91d2549",
+    "evidence/io-restored-io_tty-cols.circ": "5515e7fce454a2874058fed9dad2192e6394805b1a2ddb279fb6e805827375d4",
+    "evidence/io-restored-io_tty-rows-ui.xml": "421d9b0b2b68e397bd76f0fb9d4f046ca2afc4bb21209b59427578f41c626c52",
+    "evidence/io-restored-io_tty-rows.circ": "5515e7fce454a2874058fed9dad2192e6394805b1a2ddb279fb6e805827375d4",
+    "evidence/io-showcase-observations.json": "05dbbd63ac34c9a3d7014f9528119e6fcc318cded4137395668461b3fb188527",
+    "evidence/manifest.json": "bc4a8ed8f0269cd9afd492eb7f69486926b7948d5dc64758b323e5fd19c8c348",
+    "evidence/results.json": "20f8a6f77c39583d97c18e7220e4b001947b4f4a24b40db3859b50dbb52a8382",
+    "evidence/source-android_editing_scenarios.py": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673",
+    "evidence/source-android_inspector_scenarios.py": "74e686a0448e4e6c29729f19cbf04c67922368bab65ebb69a7d238004582f40c",
+    "evidence/source-android_io_showcase_scenarios.py": "4aa42d7f7d3bd95922cef3cf9609db9dc1d57d77a701619a5e90c71a59c983e8",
+    "evidence/source-android_portable_scenarios.py": "6e5888e73ddb558d038f22c45b517e182a46a991f43d878427a65f724ee5c7b4",
+    "evidence/source-android_ui.py": "5a0fe68103eea25ecdf5111107035389af3a1a139b49acb02cdb7b11fb6a5e86",
+    "evidence/source-android_visual_export34_scenarios.py": "aa2c353709fd35398f39a32592a4e8b1a2029a21e042702678b14b772a036763",
+    "evidence/source-e2e-android.py": "3b3774877f1dd6e7c64170befd248b753fbe61f4b2692d54f328e60fab077ae2",
+    "evidence/source-user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb"
+  },
+  "knownOtherAttempts": [
+    {
+      "case": "pointer-controls",
+      "run": "85da031e-io-independent-a32d3302",
+      "status": "failed",
+      "cause": "open"
+    },
+    {
+      "case": "keyboard-tty",
+      "run": "85da031e-io-keyboard-a32d3302",
+      "status": "failed",
+      "cause": "open"
+    }
+  ],
+  "limitations": [
+    "Dimensions only; no overall issue44 completion.",
+    "Retained native owner execution audited offline; no device command was issued by this auditor.",
+    "The XML files came from the public Copy XML flow in the frozen executor; paired hierarchies were captured after that export, not while clipboard data was visible.",
+    "scenarioContractSha256 in the original manifest identifies editor-actions-v1.json, not io-actions-v1.json.",
+    "Original screenshots and focused input snapshots remain in the raw directory; no raster UI parity is asserted by this bundle."
+  ]
+}

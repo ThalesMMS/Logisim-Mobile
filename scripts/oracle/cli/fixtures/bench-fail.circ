@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <main name="main"/>
+  <circuit name="main"/>
+  <circuit name="logisim_test_verif">
+    <comp lib="0" loc="(100,100)" name="Clock"/>
+    <comp lib="0" loc="(200,100)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="label" val="test_bench_done_o"/></comp>
+    <wire from="(100,100)" to="(200,100)"/>
+    <comp lib="0" loc="(100,200)" name="Constant"><a name="value" val="0x0"/></comp>
+    <comp lib="0" loc="(200,200)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="label" val="test_bench_ok_o"/></comp>
+    <wire from="(100,200)" to="(200,200)"/>
+  </circuit>
+</project>

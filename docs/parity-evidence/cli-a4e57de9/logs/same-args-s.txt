@@ -1,0 +1,10 @@
+row: cli/substitute
+case: same-args-s
+result: DIFF
+detail: Mobile accepts Evolution's '-s'
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ
+exit: 2
+--- stdout (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+--- stderr (1 lines, sha256 cd08b683bc603486ada577ae6f8c058e5d6c27327aafffc1e83e153d3791adcd)
+error=Unknown option '-s'.

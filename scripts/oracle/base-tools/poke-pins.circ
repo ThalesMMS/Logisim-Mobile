@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="0" loc="(100,100)" name="Pin">
+      <a name="label" val="p1"/>
+    </comp>
+    <comp lib="0" loc="(100,200)" name="Pin">
+      <a name="behavior" val="tristate"/>
+      <a name="label" val="t1"/>
+    </comp>
+    <comp lib="0" loc="(100,300)" name="Pin">
+      <a name="label" val="b4"/>
+      <a name="radix" val="2"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(100,400)" name="Pin">
+      <a name="label" val="h8"/>
+      <a name="radix" val="16"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(100,500)" name="Pin">
+      <a name="behavior" val="tristate"/>
+      <a name="label" val="t3"/>
+      <a name="radix" val="2"/>
+      <a name="width" val="3"/>
+    </comp>
+  </circuit>
+</project>

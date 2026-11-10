@@ -1,0 +1,54 @@
+{
+  "status": "INPUTS_ADMITTED",
+  "nativeReceiptSha256": "ac99fccb7831d3276446a96e1681db1260bf311dc628aacb6263569589a1ccb3",
+  "referenceJarsSha256": {
+    "core-jvm.jar": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+    "desktop.jar": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01"
+  },
+  "archives": [
+    {
+      "stage": "before",
+      "file": "portable-folder-before-workspace.tar",
+      "bytes": 14848,
+      "sha256": "84156a94de5180cd1c64e1ed39ae7d355859c1d7741f7fbeebe81b8b6dbd2bd6",
+      "extractedFiles": 9
+    },
+    {
+      "stage": "imported",
+      "file": "portable-folder-imported-workspace.tar",
+      "bytes": 28160,
+      "sha256": "9d070b279f6990c8d5a9216c8eaacceeaa46c4fb457b7eebb6dcbdebd428639c",
+      "extractedFiles": 11
+    },
+    {
+      "stage": "restarted",
+      "file": "portable-folder-restored-workspace.tar",
+      "bytes": 34304,
+      "sha256": "ff7d3532e843771ef2ed4b1d0cc9084886c99636da4396d3a653eb697470351a",
+      "extractedFiles": 13
+    },
+    {
+      "stage": "reopened",
+      "file": "portable-folder-reopened-workspace.tar",
+      "bytes": 48128,
+      "sha256": "20d8d456cb93d7842e1e446246db163e5e6994bfe7435c594309b1fcfe05e8f1",
+      "extractedFiles": 15
+    }
+  ],
+  "exports": [
+    {
+      "file": "logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-before-restart.lsebdl",
+      "afterRestart": false,
+      "bytes": 4905,
+      "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+      "zipCrcsValid": true
+    },
+    {
+      "file": "logisim-portable53-f5fa1770c8a64097b7a8a81f25949e02-folder-after-restart.lsebdl",
+      "afterRestart": true,
+      "bytes": 4905,
+      "sha256": "7c0c1b4a4572a29c14273d8dd676afe43ef70f41e144c73ca4d26142b1a5c8bd",
+      "zipCrcsValid": true
+    }
+  ]
+}

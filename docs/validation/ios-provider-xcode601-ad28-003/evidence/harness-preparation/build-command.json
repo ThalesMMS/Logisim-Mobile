@@ -1,0 +1,22 @@
+{
+  "command": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "xcodebuild",
+    "-project",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-xcode-601/outputs/ios-provider-xcode601-bootstrap-preparation-001/harness/LogisimFileProviderBootstrap.xcodeproj",
+    "-scheme",
+    "FixtureBootstrap",
+    "-destination",
+    "platform=iOS Simulator,id=AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+    "-derivedDataPath",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-fileprovider-bootstrap-xcode-601/outputs/ios-provider-xcode601-bootstrap-preparation-001/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "build-for-testing"
+  ],
+  "nativeExecution": "NOT_RUN",
+  "scope": "Standalone bootstrap harness only; no fixture installation or launch",
+  "startedUTC": "2026-11-05T08:42:55.950633+00:00",
+  "exitCode": 0,
+  "finishedUTC": "2026-11-05T08:43:02.249735+00:00"
+}

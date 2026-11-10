@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 1,
+  "runID": "a26a02940003",
+  "startedUTC": "2026-11-05T11:11:25.272139+00:00",
+  "status": "FAIL",
+  "native_execution_gate": "NATIVE_INCOMPLETE",
+  "test_execution_gate": "NATIVE_INCOMPLETE",
+  "qualification_gate": "NOT_QUALIFIED",
+  "physicalDevice": false,
+  "selectedTests": [
+    "ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject"
+  ],
+  "rootLease": {
+    "file": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-003-root-lease.json",
+    "sha256": "71f963c185c057203d6dabe5a7a562dc50f7b99fcf6aa9c13135e026e389f2ea",
+    "review": {
+      "schemaVersion": 1,
+      "authority": "ROOT",
+      "nativeAuthorized": true,
+      "scope": "LOCAL_SIMULATOR_MAIN_PLUS_PROVIDER",
+      "operation": "MAIN_PLUS_PROVIDER_AUTH_AFTER_GRANT",
+      "leaseID": "ROOT-ios-provider-auth-ad28-a26a02940003-20261105",
+      "recordedUTC": "2026-11-05T11:11:25.186634+00:00",
+      "simulatorUDID": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "runID": "a26a02940003",
+      "outputDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-003",
+      "selector": "ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject",
+      "main": {
+        "bundleID": "thalesmms.logisim.mobile",
+        "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+        "artifactManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+        "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+        "executableSHA256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48"
+      },
+      "fixture": {
+        "bundleID": "thalesmms.logisim.validation.revocationfixture",
+        "providerBundleID": "thalesmms.logisim.validation.revocationfixture.provider",
+        "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+        "artifactManifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+        "appTreeSHA256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+        "providerTreeSHA256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+        "entitlementReviewSHA256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+      },
+      "harnessCommit": "ed594596d7d1db2985194c02cad75fea090370bd",
+      "harnessSources": {
+        "scripts/run-ios-provider-auth.py": "3089693e942d62d79cefdc0f368a4559a426a18fb17ca9b730caf3ab4b88fbca",
+        "scripts/run-ios-accessibility.py": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+        "scripts/ios_provider_auth_ui/project.yml": "80acd9197b77f7585f3bb25c871af70b809c7aaf93354d6e4a0606374df545ed",
+        "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+        "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+        "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "07309fa9e17ee4cc8f9badf39ba97021d4df96eab6266fb88c2ab38aac385211",
+        "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "03dbb7c49cbd152696695af9230b241ed20e5223afda0e92578a9bb854eecfdd",
+        "scripts/ios_provider_auth_ui/ProviderFixtureController.swift": "093f3267b29fe8e75fa12d21e50f906d5f6492b8bdd1d888cb422fd2f55504a2",
+        "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift": "43089a5048743718dbee58d5baecfef9fe7659949f0b1eb73a131663839b211f",
+        "scripts/ios_provider_auth_ui/ProvenanceMainArtifact.json": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+        "scripts/ios_provider_auth_ui/ProvenanceSignedFixture.json": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+        "scripts/ios_provider_auth_ui/ProvenanceArtifactReview.json": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+      },
+      "testTimeoutSeconds": 1200,
+      "singleAttempt": true,
+      "authorizationNotes": [
+        "Root reviewed and approved ed594 activation guard, 46 host checks and six-source SDK typecheck; authorized one auth003.",
+        "One Turn On tap for the exact fixture alert is authorized Files setup; no global handler or retry.",
+        "Absent alert must follow the normal native provider heading. Fetch/upload proofs are mandatory before denial.",
+        "Keep exact Main3a and fixture601; no Prepare, registration, reset, refresh or reinstall of fixture.",
+        "Public Allow cleanup and three bundle fingerprints required. Shared lock covers harness build only; test is direct.",
+        "No source mutation during Native; no fallback, SystemOpen, clipboard or framework build."
+      ]
+    }
+  },
+  "nativeOperationAuthorizedByCurrentArtifactReview": false,
+  "preflight": {
+    "main": {
+      "bundleID": "thalesmms.logisim.mobile",
+      "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "artifactManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+      "executableSHA256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48"
+    },
+    "fixture": {
+      "bundleID": "thalesmms.logisim.validation.revocationfixture",
+      "providerBundleID": "thalesmms.logisim.validation.revocationfixture.provider",
+      "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+      "artifactManifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "appTreeSHA256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+      "providerTreeSHA256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+      "entitlementReviewSHA256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    },
+    "artifactPaths": {
+      "main": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+      "fixture": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+      "provider": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex"
+    },
+    "catalogRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1",
+    "identities": {
+      "Main": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+        "bundle_id": "thalesmms.logisim.mobile",
+        "executable_sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+        "bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+        "version": "0.2.0",
+        "build": "2"
+      },
+      "App": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app",
+        "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+        "executable_sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+        "bundle_tree_sha256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+        "version": "1.0",
+        "build": "1"
+      },
+      "Provider": {
+        "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+        "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+        "executable_sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+        "bundle_tree_sha256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+        "version": "1.0",
+        "build": "1"
+      }
+    },
+    "staticEvidence": {
+      "fixtureSimulatorSections": {
+        "App": {
+          "bundleIdentifier": "thalesmms.logisim.validation.revocationfixture",
+          "images": [
+            {
+              "image": "main",
+              "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture",
+              "bytes": 40448,
+              "sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+              "sections": {
+                "__entitlements": {
+                  "fileOffset": 13124,
+                  "bytes": 440,
+                  "sha256": "279c91edc22ba362aeb82088100a50ce07e0b8710de79a13eea38a1737898d10",
+                  "path": "App-main-__entitlements.bin"
+                },
+                "__ents_der": {
+                  "fileOffset": 13564,
+                  "bytes": 191,
+                  "sha256": "65b1e6a3efe8427d4fa9c133701e5c0bc6294b51e57d1981a706ebf1c696cc96",
+                  "path": "App-main-__ents_der.bin"
+                }
+              }
+            },
+            {
+              "image": "debug-dylib",
+              "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/RevocationFixture.debug.dylib",
+              "bytes": 424848,
+              "sha256": "e153a3ba8e4436df331bf4103cc8fccb94d00a868147baa897114a75c634f66c",
+              "sections": {}
+            }
+          ],
+          "sectionOwners": [
+            "main"
+          ],
+          "nativeExecution": "NOT_RUN",
+          "generatedEntitlementsReview": "REQUIRED_BEFORE_NATIVE",
+          "simulatedEntitlements": {
+            "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture",
+            "com.apple.security.application-groups": [
+              "group.thalesmms.logisim.validation.revocationfixture"
+            ]
+          },
+          "generatedAdditionalKeys": {
+            "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture"
+          },
+          "mainHasSectionPair": true,
+          "codeSignatureEntitlements": {}
+        },
+        "Provider": {
+          "bundleIdentifier": "thalesmms.logisim.validation.revocationfixture.provider",
+          "images": [
+            {
+              "image": "main",
+              "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider",
+              "bytes": 37840,
+              "sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+              "sections": {
+                "__entitlements": {
+                  "fileOffset": 10018,
+                  "bytes": 449,
+                  "sha256": "db38978790025ed2c514445b0dcb62286331f01cb5a580982c12def85896118a",
+                  "path": "Provider-main-__entitlements.bin"
+                },
+                "__ents_der": {
+                  "fileOffset": 10467,
+                  "bytes": 200,
+                  "sha256": "6dd8ac249508fe2e9e1aef11c16b43774d0bf00cfca0a04080a1fb74415226a3",
+                  "path": "Provider-main-__ents_der.bin"
+                }
+              }
+            },
+            {
+              "image": "debug-dylib",
+              "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-xcode-signing/outputs/ios-fileprovider-fixture-601cc373/artifact/DerivedData/Build/Products/Debug-iphonesimulator/RevocationFixture.app/PlugIns/RevocationProvider.appex/RevocationProvider.debug.dylib",
+              "bytes": 529840,
+              "sha256": "d1451a1b5b2926e9fc105a06cc90ba4cd86450792053032fa73e37489c96df7b",
+              "sections": {}
+            }
+          ],
+          "sectionOwners": [
+            "main"
+          ],
+          "nativeExecution": "NOT_RUN",
+          "generatedEntitlementsReview": "REQUIRED_BEFORE_NATIVE",
+          "simulatedEntitlements": {
+            "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture.provider",
+            "com.apple.security.application-groups": [
+              "group.thalesmms.logisim.validation.revocationfixture"
+            ]
+          },
+          "generatedAdditionalKeys": {
+            "application-identifier": "P4VGX44GD8.thalesmms.logisim.validation.revocationfixture.provider"
+          },
+          "mainHasSectionPair": true,
+          "codeSignatureEntitlements": {}
+        }
+      },
+      "mainSimulatorSections": {
+        "LogisimMobile": {},
+        "LogisimMobile.debug.dylib": {},
+        "__preview.dylib": {}
+      },
+      "mainCodeSignatureEntitlements": {}
+    }
+  },
+  "harness": {
+    "commit": "ed594596d7d1db2985194c02cad75fea090370bd",
+    "dirty": false,
+    "status": "",
+    "sources": {
+      "scripts/run-ios-provider-auth.py": "3089693e942d62d79cefdc0f368a4559a426a18fb17ca9b730caf3ab4b88fbca",
+      "scripts/run-ios-accessibility.py": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+      "scripts/ios_provider_auth_ui/project.yml": "80acd9197b77f7585f3bb25c871af70b809c7aaf93354d6e4a0606374df545ed",
+      "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "07309fa9e17ee4cc8f9badf39ba97021d4df96eab6266fb88c2ab38aac385211",
+      "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "03dbb7c49cbd152696695af9230b241ed20e5223afda0e92578a9bb854eecfdd",
+      "scripts/ios_provider_auth_ui/ProviderFixtureController.swift": "093f3267b29fe8e75fa12d21e50f906d5f6492b8bdd1d888cb422fd2f55504a2",
+      "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift": "43089a5048743718dbee58d5baecfef9fe7659949f0b1eb73a131663839b211f",
+      "scripts/ios_provider_auth_ui/ProvenanceMainArtifact.json": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "scripts/ios_provider_auth_ui/ProvenanceSignedFixture.json": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "scripts/ios_provider_auth_ui/ProvenanceArtifactReview.json": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    }
+  },
+  "configuration": {
+    "schemaVersion": 1,
+    "runID": "a26a02940003",
+    "receiptDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-003/receipts/a26a02940003",
+    "simulatorUDID": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+    "main": {
+      "bundleID": "thalesmms.logisim.mobile",
+      "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+      "artifactManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+      "executableSHA256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48"
+    },
+    "fixture": {
+      "bundleID": "thalesmms.logisim.validation.revocationfixture",
+      "providerBundleID": "thalesmms.logisim.validation.revocationfixture.provider",
+      "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+      "artifactManifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "appTreeSHA256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+      "providerTreeSHA256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+      "entitlementReviewSHA256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    },
+    "fileName": "revocation.circ",
+    "providerDisplayName": "Logisim Revocation Fixture",
+    "initialSHA256": "54c247e7241ee56e77fdb1958ac3a6945b4e5c7a63b59c90a0d20ba9ae362d88",
+    "inputLabel": "REVOCATION_INPUT",
+    "rootLease": {
+      "schemaVersion": 1,
+      "authority": "ROOT",
+      "nativeAuthorized": true,
+      "scope": "LOCAL_SIMULATOR_MAIN_PLUS_PROVIDER",
+      "operation": "MAIN_PLUS_PROVIDER_AUTH_AFTER_GRANT",
+      "leaseID": "ROOT-ios-provider-auth-ad28-a26a02940003-20261105",
+      "recordedUTC": "2026-11-05T11:11:25.186634+00:00",
+      "simulatorUDID": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+      "runID": "a26a02940003",
+      "outputDirectory": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-003",
+      "selector": "ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject",
+      "main": {
+        "bundleID": "thalesmms.logisim.mobile",
+        "source": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+        "artifactManifestSHA256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+        "bundleTreeSHA256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+        "executableSHA256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48"
+      },
+      "fixture": {
+        "bundleID": "thalesmms.logisim.validation.revocationfixture",
+        "providerBundleID": "thalesmms.logisim.validation.revocationfixture.provider",
+        "source": "601cc3733be5aafe4e4d6ef5b565ffb337eeb1cd",
+        "artifactManifestSHA256": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+        "appTreeSHA256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+        "providerTreeSHA256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+        "entitlementReviewSHA256": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+      },
+      "harnessCommit": "ed594596d7d1db2985194c02cad75fea090370bd",
+      "harnessSources": {
+        "scripts/run-ios-provider-auth.py": "3089693e942d62d79cefdc0f368a4559a426a18fb17ca9b730caf3ab4b88fbca",
+        "scripts/run-ios-accessibility.py": "5ae8ee53a34bb3cbee36d4631f2d4b1f2a0dad9e9fa24f957f3c5fc739f1778e",
+        "scripts/ios_provider_auth_ui/project.yml": "80acd9197b77f7585f3bb25c871af70b809c7aaf93354d6e4a0606374df545ed",
+        "scripts/ios_native_ui/NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+        "scripts/ios_e2e_ui/NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+        "scripts/ios_provider_auth_ui/ProviderAuthenticationEndToEndTests.swift": "07309fa9e17ee4cc8f9badf39ba97021d4df96eab6266fb88c2ab38aac385211",
+        "scripts/ios_provider_auth_ui/ProviderAuthenticationOracle.swift": "03dbb7c49cbd152696695af9230b241ed20e5223afda0e92578a9bb854eecfdd",
+        "scripts/ios_provider_auth_ui/ProviderFixtureController.swift": "093f3267b29fe8e75fa12d21e50f906d5f6492b8bdd1d888cb422fd2f55504a2",
+        "scripts/ios_provider_auth_ui/ProviderFilesNavigator.swift": "43089a5048743718dbee58d5baecfef9fe7659949f0b1eb73a131663839b211f",
+        "scripts/ios_provider_auth_ui/ProvenanceMainArtifact.json": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+        "scripts/ios_provider_auth_ui/ProvenanceSignedFixture.json": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+        "scripts/ios_provider_auth_ui/ProvenanceArtifactReview.json": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+      },
+      "testTimeoutSeconds": 1200,
+      "singleAttempt": true,
+      "authorizationNotes": [
+        "Root reviewed and approved ed594 activation guard, 46 host checks and six-source SDK typecheck; authorized one auth003.",
+        "One Turn On tap for the exact fixture alert is authorized Files setup; no global handler or retry.",
+        "Absent alert must follow the normal native provider heading. Fetch/upload proofs are mandatory before denial.",
+        "Keep exact Main3a and fixture601; no Prepare, registration, reset, refresh or reinstall of fixture.",
+        "Public Allow cleanup and three bundle fingerprints required. Shared lock covers harness build only; test is direct.",
+        "No source mutation during Native; no fallback, SystemOpen, clipboard or framework build."
+      ]
+    }
+  },
+  "staged": {
+    "sources": {
+      "NativeUIHarness.swift": "a76b9aa970da7bc86f86618c7ff1e563fdd4c793d952a04f6c31e685f1e25379",
+      "NativeFilesDestinationNavigator.swift": "b800aed9a8d7a007260d4baf2885dde87693d40f65368be232db3d158a0d7c46",
+      "ProviderAuthenticationEndToEndTests.swift": "07309fa9e17ee4cc8f9badf39ba97021d4df96eab6266fb88c2ab38aac385211",
+      "ProviderAuthenticationOracle.swift": "03dbb7c49cbd152696695af9230b241ed20e5223afda0e92578a9bb854eecfdd",
+      "ProviderFixtureController.swift": "093f3267b29fe8e75fa12d21e50f906d5f6492b8bdd1d888cb422fd2f55504a2",
+      "ProviderFilesNavigator.swift": "43089a5048743718dbee58d5baecfef9fe7659949f0b1eb73a131663839b211f"
+    },
+    "resources": {
+      "Catalog.json": "bd975f80471c29bdd2407bd7231a093f6862842c2437b18a0c4f8c9bdc9305ea",
+      "Run.json": "9b8027bb1109966a30c0f0d783ec9d58fe2d11a2a0e199f82a624c0b2cc2e419",
+      "ProvenanceMainArtifact.json": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+      "ProvenanceSignedFixture.json": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+      "ProvenanceArtifactReview.json": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+    }
+  },
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data",
+    "dataPathSize": 2694475776,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+    "udid": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+    "lastUsedAt": "2026-11-05T04:37:00Z",
+    "isAvailable": true,
+    "logPathSize": 602112,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "state": "Booted",
+    "name": "LogisimUIKitDocumentControl",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "installedBeforeTest": {
+    "Main": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/BD2C1577-4E08-4506-BDF1-0B43DDBC961F/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+      "bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "App": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app",
+      "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+      "executable_sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+      "bundle_tree_sha256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+      "version": "1.0",
+      "build": "1"
+    },
+    "Provider": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+      "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+      "executable_sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+      "bundle_tree_sha256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+      "version": "1.0",
+      "build": "1"
+    }
+  },
+  "installationContextChange": {
+    "main": "REUSED_EXACT_INSTALLED_MAIN",
+    "fixture": "REUSED_EXACT_REGISTERED_FIXTURE",
+    "fixtureInstalledOrRefreshed": false,
+    "context": "Main+Provider; this is no longer the previous UIKit-only fixture context."
+  },
+  "buildSerialization": {
+    "wrapper": "/tmp/logisim-gradle-serial.py",
+    "sha256": "61fb2ff0e8e1969b80c2880424683834a5dcd3cdcf79450a40dba15dc4f6471b",
+    "retained": "BuildSerializationWrapper.py",
+    "lock": "/tmp/logisim-gradle.lock",
+    "scope": "BUILD_FOR_TESTING_ONLY",
+    "wrapperProcessCompleted": true,
+    "interruptionDeferred": false,
+    "exitCode": 0
+  },
+  "bundledResources": {
+    "Catalog.json": "bd975f80471c29bdd2407bd7231a093f6862842c2437b18a0c4f8c9bdc9305ea",
+    "Run.json": "9b8027bb1109966a30c0f0d783ec9d58fe2d11a2a0e199f82a624c0b2cc2e419",
+    "ProvenanceMainArtifact.json": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+    "ProvenanceSignedFixture.json": "c2e976f7ed41dfa60fcd48ef8a4e8defcaadbb7f8042ebd08669dbdf4b778159",
+    "ProvenanceArtifactReview.json": "254c199cefd0f1659825d8c81bae5ea1504735265314ddeea33bbd3ff22a8ae8"
+  },
+  "execution": {
+    "exitCode": 65,
+    "selector": "ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject",
+    "xcresult": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-provider-auth-source/outputs/ios-provider-auth-ad28-003/auth.xcresult"
+  },
+  "testSummary": {
+    "devicesAndConfigurations": [
+      {
+        "device": {
+          "architecture": "arm64",
+          "deviceId": "AD28C68F-21D3-4FA6-BCD7-383AE2A1D372",
+          "deviceName": "LogisimUIKitDocumentControl",
+          "modelName": "iPad Pro 11-inch (M5)",
+          "osBuildNumber": "24A434",
+          "osVersion": "27.0",
+          "platform": "iOS Simulator"
+        },
+        "expectedFailures": 0,
+        "failedTests": 1,
+        "passedTests": 0,
+        "skippedTests": 0,
+        "testPlanConfiguration": {
+          "configurationId": "1",
+          "configurationName": "Test Scheme Action"
+        }
+      }
+    ],
+    "environmentDescription": "ProviderAuthenticationHarness · Built with macOS 27.2",
+    "expectedFailures": 0,
+    "failedTests": 1,
+    "finishTime": 1793877263.84,
+    "passedTests": 0,
+    "result": "Failed",
+    "runtimeWarnings": [],
+    "skippedTests": 0,
+    "startTime": 1793877093.808,
+    "statistics": [],
+    "testFailures": [
+      {
+        "failureText": "Failed to get matching snapshot: No matches found for Descendants matching type NavigationBar from input {(\n    Application, pid: 7707, label: 'Logisim Mobile'\n)}",
+        "targetName": "ProviderAuthenticationEndToEndTests",
+        "testIdentifier": 1,
+        "testIdentifierString": "ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject()",
+        "testIdentifierURL": "test://com.apple.xcode/LogisimProviderAuthenticationHarness/ProviderAuthenticationEndToEndTests/ProviderAuthenticationEndToEndTests/testAuthenticationDenialAfterGrantPreservesProject",
+        "testName": "testAuthenticationDenialAfterGrantPreservesProject()"
+      }
+    ],
+    "title": "Test - ProviderAuthenticationHarness",
+    "topInsights": [],
+    "totalTestCount": 1
+  },
+  "installedAfterTest": {
+    "Main": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/BD2C1577-4E08-4506-BDF1-0B43DDBC961F/LogisimMobile.app",
+      "bundle_id": "thalesmms.logisim.mobile",
+      "executable_sha256": "72f025668535a86c479eda81c2bbcba9fb65e0f1cef29598d869dd78c4977d48",
+      "bundle_tree_sha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+      "version": "0.2.0",
+      "build": "2"
+    },
+    "App": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app",
+      "bundle_id": "thalesmms.logisim.validation.revocationfixture",
+      "executable_sha256": "39480047426a291e21ca98998e8a7cb4718a021d4ea1f921c9f339ca748a9b49",
+      "bundle_tree_sha256": "e24e3fb58b07439ba1f9e50e955c76db72509dbf07ba0d8ea19ecce7f3f038d5",
+      "version": "1.0",
+      "build": "1"
+    },
+    "Provider": {
+      "path": "/Users/thales/Library/Developer/CoreSimulator/Devices/AD28C68F-21D3-4FA6-BCD7-383AE2A1D372/data/Containers/Bundle/Application/2E4D18C9-A2BA-4D0F-A920-48DF34906103/RevocationFixture.app/PlugIns/RevocationProvider.appex",
+      "bundle_id": "thalesmms.logisim.validation.revocationfixture.provider",
+      "executable_sha256": "8174906909373b28923998e19c18e8228f1e049fb875c585b6a3e1e1b3f6e393",
+      "bundle_tree_sha256": "e91733f45ac08a55374bce04083b333004ae4eda1d7bd83f758f84956ecc9f7f",
+      "version": "1.0",
+      "build": "1"
+    }
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "Exactly one passing auth case is required"
+  },
+  "finishedUTC": "2026-11-05T11:14:24.914317+00:00"
+}

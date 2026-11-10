@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project source="5.1.0" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#BFH-Praktika" name="1"/>
+  <main name="BFH_converters"/>
+  <circuit name="BFH_converters">
+    <comp lib="0" loc="(80,160)" name="Constant">
+      <a name="width" val="9"/><a name="value" val="0x141"/>
+    </comp>
+    <comp lib="1" loc="(200,160)" name="Binary_to_BCD_converter"><a name="binvalue" val="9"/></comp>
+    <comp lib="0" loc="(320,100)" name="Pin"><a name="type" val="output"/><a name="width" val="4"/><a name="label" val="ones"/></comp>
+    <comp lib="0" loc="(260,100)" name="Pin"><a name="type" val="output"/><a name="width" val="4"/><a name="label" val="tens"/></comp>
+    <comp lib="0" loc="(200,100)" name="Pin"><a name="type" val="output"/><a name="width" val="4"/><a name="label" val="hundreds"/></comp>
+    <comp lib="1" loc="(480,80)" name="BCD_to_7_Segment_decoder"/>
+    <comp lib="0" loc="(500,40)" name="Pin"><a name="type" val="output"/><a name="label" val="segment_a"/></comp>
+    <comp lib="0" loc="(540,80)" name="Pin"><a name="type" val="output"/><a name="label" val="segment_b"/></comp>
+    <comp lib="0" loc="(540,140)" name="Pin"><a name="type" val="output"/><a name="label" val="segment_c"/></comp>
+    <comp lib="0" loc="(540,200)" name="Pin"><a name="type" val="output"/><a name="label" val="segment_d"/></comp>
+    <comp lib="0" loc="(440,140)" name="Pin"><a name="type" val="output"/><a name="label" val="segment_e"/></comp>
+    <comp lib="0" loc="(490,40)" name="Pin"><a name="type" val="output"/><a name="label" val="segment_f"/></comp>
+    <comp lib="0" loc="(440,80)" name="Pin"><a name="type" val="output"/><a name="label" val="segment_g"/></comp>
+    <wire from="(80,160)" to="(170,160)"/>
+    <wire from="(320,140)" to="(320,100)"/>
+    <wire from="(260,140)" to="(260,100)"/>
+    <wire from="(200,140)" to="(200,100)"/>
+    <wire from="(320,140)" to="(380,140)"/>
+    <wire from="(380,140)" to="(380,160)"/>
+    <wire from="(380,160)" to="(490,160)"/>
+    <wire from="(500,80)" to="(500,40)"/>
+    <wire from="(510,80)" to="(540,80)"/>
+    <wire from="(500,140)" to="(540,140)"/>
+    <wire from="(490,140)" to="(490,150)"/>
+    <wire from="(490,150)" to="(540,150)"/>
+    <wire from="(540,150)" to="(540,200)"/>
+    <wire from="(480,140)" to="(440,140)"/>
+    <wire from="(490,80)" to="(490,40)"/>
+    <wire from="(480,80)" to="(440,80)"/>
+  </circuit>
+</project>

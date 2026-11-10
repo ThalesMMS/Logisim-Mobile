@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.1.0dev" version="1.0">
+  <lib desc="#Wiring" name="0"/>
+  <main name="cell"/>
+  <circuit name="cell">
+    <comp lib="0" loc="(100,100)" name="Pin"><a name="type" val="input"/><a name="label" val="a"/></comp>
+    <comp lib="0" loc="(300,100)" name="Pin"><a name="type" val="output"/><a name="facing" val="west"/><a name="label" val="y"/></comp>
+    <wire from="(100,100)" to="(300,100)"/>
+  </circuit>
+</project>

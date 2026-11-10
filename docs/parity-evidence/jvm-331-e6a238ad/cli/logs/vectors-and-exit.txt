@@ -1,0 +1,35 @@
+row: cli/test-vector
+case: vectors-and-exit
+result: DIFF
+detail: exit evolution=0 (Startup.run exits 0 after -w), mobile=1
+
+=== evolution: java EvolutionAutomationOracle vector $WORK/vectors/and.circ AND scripts/oracle/vectors/and.txt
+exit: 0
+--- stdout (13 lines, sha256 59de8a32583377d2ea00938e39f54239056ec4c9f10c947ffb072e84e229dd6d)
+Loading test vector “scripts/oracle/vectors/and.txt”…
+Running 8 vectors…
+1 2 3 4 5 
+  Y = 1 (expected 0)
+6 7 
+  Y = E (expected U)
+8 
+Passed: 6, Failed: 2
+--- stderr (3 lines, sha256 227c4cb05d8cfd60ff40c67a8db6fb7c5a439e8e295ce4d2f3c4f9cadc14120e)
+Error on test vector 5 (line 6):
+Error on test vector 7 (line 8):
+failed=2
+
+=== mobile: HeadlessCircuitCli -w AND scripts/oracle/vectors/and.txt $WORK/vectors/and.circ
+exit: 1
+--- stdout (9 lines, sha256 cf38c22c16f90eb24a6bd2525ff4c85c8e32545dd78236f50f7fc49443342c86)
+circuit,row,line,set,seq,result,"A[1] expected","A[1] observed","B[1] expected","B[1] observed","Y[1] expected","Y[1] observed",differences
+"AND",1,2,0,0,PASS,"0",0,"0",0,"0",0,""
+"AND",2,3,0,0,PASS,"0",0,"1",1,"0",0,""
+"AND",3,4,0,0,PASS,"1",1,"0",0,"0",0,""
+"AND",4,5,0,0,PASS,"1",1,"1",1,"1",1,""
+"AND",5,6,0,0,FAIL,"1",1,"1",1,"0",1,"Y: 0 != 1"
+"AND",6,7,0,0,PASS,"<float>",?,"0",0,"0",0,""
+"AND",7,8,0,0,FAIL,"<float>",?,"1",1,"?",E,"Y: ? != E"
+"AND",8,9,0,0,PASS,"<float>",?,"1",1,"<DC>",E,""
+--- stderr (1 lines, sha256 97b78531dfc0cd7c68c66351f6d81af0499afe2ec51435477553f69f28de14e9)
+status=test-vector passed=6 failed=2

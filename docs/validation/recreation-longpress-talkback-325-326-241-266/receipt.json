@@ -1,0 +1,50 @@
+{
+  "schema": "logisim-mobile.validation-receipt.v1",
+  "issues": [325, 326, 241, 266],
+  "evolution_revision": "d58a61e0",
+  "tested_tree": "4b80bfdd55530e636160e19694394397639a8a8e",
+  "tested_tree_note": "Branch rebased on origin/main fb180b4b; the pushed commits differ only in this receipt.",
+  "artifacts": {
+    "app_e2e_apk_sha256": "945a17ab6ccec2d4d7940050f453fac50714a6d8c37ad2ed21db4655aa0dbe11",
+    "android_test_apk_sha256": "c9b18249db7c5b2a12946ec9b6291e30856ecaf9b22b17c1d6abf6c2b5db1bae"
+  },
+  "kotlin_tests": {
+    "command": ":composeApp:testAndroidHostTest --tests ImportReportDismissalsTest EditorImportReportTest CatalogWorkspaceBindingTest CircuitAccessibilityModelTest",
+    "result": "45 tests, 0 failures, 0 skipped"
+  },
+  "325_import_report_recreation": {
+    "device": "emulator-5554, AVD logisim35, Android 15 API 35 google_apis arm64, 1080x2400 420dpi, en-US",
+    "app_sha256": "e966f3def29d824cd33c12e064c5998e49547986fe94626b879476ec1acc72b1 (8bc23259, same product code as 4b80bfdd before rebase)",
+    "steps": "fixtures/user-scenarios/layout12/layout12.circ opened through ACTION_VIEW from the test fixture provider; report (Evolution 5.1.0-dev, version-defaults) closed; font_scale 1.3, wm density 480 and reset, uimode night yes/no; report reopened from File > Import report; font_scale 1.0",
+    "result": "PASS. Closed report absent in 4 reads after font_scale 1.3 and after density/theme changes (WindowManager logged activity relaunches); files/workspace listing unchanged. Report reopened from the menu remained visible with 'Rule: version-defaults' in 3 reads after font_scale 1.0.",
+    "limits": "XML export not repeated through e2e-android.py --scenario layout12: the runner's export_xml step fails on current main ('The action_copy action could not be reached by scrolling'), reported on #239."
+  },
+  "326_long_press_menu": {
+    "root_cause": "CircuitAccessibilityContext was unstable; under strong skipping remember(accessibilityContext) compared by identity and the editor builds a new context on each recomposition, so the long-press selection replaced the menu state holder. Instrumented logcat at 157a6243 showed a new holder hash on every composition and the gesture writing to a stale one.",
+    "scenarios": [
+      {"command": "scripts/run-android-mixed-input.py --case longpress", "serial": "emulator-5554 (logisim35)", "result": "PASS", "longPressTipShown": true, "longPressTip": "MI_longpress_f803a4bd_NOT"},
+      {"command": "scripts/android_display_preferences_proof.py --only 312", "serial": "emulator-5554 (logisim35)", "result": "PASS", "step": "02-312-long-press-menu", "longPressTipShown": true}
+    ],
+    "runner_note": "The mixed-input runner now reaches folded toolbar rows and the compact drill-down menu. The 'context' (mouse) case still stops later in undoOnCanvas ('Select mode and visible anchor before Undo'), a runner step outside this change."
+  },
+  "241_talkback": {
+    "device": "emulator-5556, AVD logisim35play, Android 15 API 35 google_apis_playstore arm64 r09, en-US app and system",
+    "talkback": "15.0.0.639625893, touch exploration on; gestures through the emulator gRPC sendTouch, 127.0.0.1:8556 with token",
+    "scenarios": [
+      {"name": "Open circuits and library > Open instance Acumulador, path main / Acumulador (SAP-1 example)", "result": "PASS", "observed": "status 'Instance main / Acumulador · Acumulador.'; TalkBack focus on 'Open circuits and library' at 1 s and 5 s"},
+      {"name": "Signals sheet in compact height (landscape 2400x1080), closed by double tap on the drag handle", "result": "PASS", "observed": "TalkBack focus on 'Signals' at 1 s and 5 s"},
+      {"name": "Signals sheet closed by double tap on the scrim ('Close sheet')", "result": "PASS", "observed": "TalkBack focus on 'Signals' at 5 s; saved revision unchanged (4)"}
+    ],
+    "restoration": "enabled_accessibility_services=null, accessibility_enabled=0, touch_exploration_enabled=0, rotation restored"
+  },
+  "266_api26_32_talkback": {
+    "status": "NOT_RUN - prerequisite missing",
+    "attempts": [
+      "system-images;android-32;google_apis_playstore;arm64-v8a r04 (SE1B.240122.005): no TalkBack package installed",
+      "system-images;android-31;google_apis_playstore;arm64-v8a r09: no TalkBack (earlier run)",
+      "github.com/google/talkback 229212fd (TfPu_release_16_2, minSdk 26) built with Gradle 8.14.3, JDK 21 and NDK 27.2 (ndkVersion overridden locally): installs on API 31 but crashes in TalkBackService.onServiceConnected with NoSuchMethodError Collectors.toUnmodifiableSet (Java 10 API absent on Android 12)",
+      "release 15_1 (26a27dc0) uses the same call; release 14_1 (dcddeddc) does not, but needs AGP 4.2.2, which cannot run on the JDK 21/25 installed here"
+    ],
+    "resume_condition": "A JDK 11 toolchain to build TalkBack 14_1 from source, a Google test account for the Play Store on the API 31 Play AVD, or an API 26-32 image that ships Android Accessibility Suite"
+  }
+}

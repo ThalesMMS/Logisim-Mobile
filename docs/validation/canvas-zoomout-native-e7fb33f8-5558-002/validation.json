@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "status": "ARCHIVE_VERIFIED",
+  "nativeStatus": "FAIL",
+  "qualification": "NOT_QUALIFIED",
+  "nativeCalls": 1,
+  "cancelledPreparationNativeCalls": 0,
+  "inputs": 185,
+  "inputGroups": {
+    "cancelled001": 2,
+    "native002": 172,
+    "offlineAnalysis": 11
+  },
+  "rawBytes": 1743295,
+  "archiveBytes": 1120678,
+  "caseMillis": 10854,
+  "acceptedPinchMotionEvents": 17,
+  "zoomObservation": {
+    "groups": 4,
+    "records": 117,
+    "recordBytes": 28298,
+    "pollsPerGroup": [
+      1,
+      1,
+      1,
+      102
+    ],
+    "incomplete": false
+  },
+  "canvasTrace": {
+    "inputTotal": 34,
+    "inputDropped": 0,
+    "stateTotal": 198,
+    "stateRetained": 192,
+    "stateDropped": 6,
+    "missingGlobalSequences": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "firstRetainedFixtureStateSequence": 13,
+    "globallyComplete": false
+  },
+  "offlineTests": {
+    "passed": 5,
+    "cases": [
+      "portable verification without origin paths",
+      "raw tamper rejected",
+      "rehashed Native success rejected",
+      "rehashed hidden state loss rejected",
+      "rehashed duplicate poll ordinal rejected"
+    ]
+  },
+  "independentReview": {
+    "reviewer": "/root/merge_backlog_catalog/test_apk_dependency_audit",
+    "decision": "APPROVED",
+    "scope": "Read-only comparison of all 185 archive inputs with their origins, failure and handoff boundaries, exact offline-analysis selection, archive verification and five pure tests",
+    "indexSha256": "9aa044170771a3d2e72ca90891f48cbba80a7812aa1a1e37ce544b92205a131e",
+    "verifierSha256": "6f276d159f0efbbd48f00298c1eb2aa1e72788d00a04122973ecc1db96e4da09",
+    "readmeSha256": "277d5829e787892cb92fcd3b265e5dfaa3ed824e9c757a60658f80c8948e3a04"
+  },
+  "limits": [
+    "The literal ratio-assertion operands were not serialized.",
+    "Post-ratio document export and the subsequent anchor assertion were not reached.",
+    "The modeled 7.5-pixel displacement is a prediction for that unexecuted assertion.",
+    "The global Canvas state trace has six missing records.",
+    "No before PNG supports a visual doubling comparison.",
+    "Handoff observations describe the recorded handoff, not later emulator state.",
+    "No device query, Native run, build, copied driver or replay probe was executed by this archive task."
+  ]
+}

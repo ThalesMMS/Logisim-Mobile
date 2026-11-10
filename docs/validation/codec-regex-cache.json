@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "baseline_revision": "48ee36c",
+  "source_sha256": {
+    "baseline": "7eaeb39d6bedcc3c100d9ee15e262beabc35cdb83fe48872fc426af0d2500b40",
+    "cached": "41acda97657dda35ac7ff3b8ae9ba1144ef0a6587ca4bd85f5c46efe5750262e"
+  },
+  "reference_jar_sha256": "eb2b9a3719da1fe6c6a2ea5c546986ee0ada4f910463c3386d1d72124442af34",
+  "runtime": "JVM",
+  "java": "openjdk version \"21.0.11\" 2026-04-21",
+  "iterations": 31,
+  "warmups": 31,
+  "execution_order": [
+    "baseline",
+    "cached",
+    "cached",
+    "baseline"
+  ],
+  "hot_method_regex_constructors": {
+    "baseline": {
+      "parsePoint": 1,
+      "appendAttribute": 1
+    },
+    "cached": {
+      "parsePoint": 0,
+      "appendAttribute": 0
+    }
+  },
+  "artifacts": [
+    [
+      "sap1",
+      "7",
+      "156",
+      "318",
+      "da28b60f0e5ca65daafd3d35e20ac1e77a443b341b176397476cc82147c3febf"
+    ],
+    [
+      "large2048",
+      "1",
+      "2048",
+      "2048",
+      "d22bba339e4747c3ab4705d119214c0ff2921571e2bbb97d9e4605bc4539959a"
+    ]
+  ],
+  "grammar_cases": 23,
+  "results": [
+    {
+      "variant": "baseline",
+      "case": "sap1",
+      "phase": "import",
+      "wall_median_ns": 3079708,
+      "cpu_median_ns": 3018000,
+      "allocated_median_bytes": 4814544
+    },
+    {
+      "variant": "baseline",
+      "case": "sap1",
+      "phase": "export",
+      "wall_median_ns": 873084,
+      "cpu_median_ns": 870000,
+      "allocated_median_bytes": 4793280
+    },
+    {
+      "variant": "baseline",
+      "case": "large2048",
+      "phase": "import",
+      "wall_median_ns": 7133833,
+      "cpu_median_ns": 6904000,
+      "allocated_median_bytes": 21107936
+    },
+    {
+      "variant": "baseline",
+      "case": "large2048",
+      "phase": "export",
+      "wall_median_ns": 4050083,
+      "cpu_median_ns": 3940000,
+      "allocated_median_bytes": 24502352
+    },
+    {
+      "variant": "cached",
+      "case": "sap1",
+      "phase": "import",
+      "wall_median_ns": 2640125,
+      "cpu_median_ns": 2636000,
+      "allocated_median_bytes": 3864816
+    },
+    {
+      "variant": "cached",
+      "case": "sap1",
+      "phase": "export",
+      "wall_median_ns": 940209,
+      "cpu_median_ns": 941000,
+      "allocated_median_bytes": 1909232
+    },
+    {
+      "variant": "cached",
+      "case": "large2048",
+      "phase": "import",
+      "wall_median_ns": 5588875,
+      "cpu_median_ns": 5441000,
+      "allocated_median_bytes": 13669728
+    },
+    {
+      "variant": "cached",
+      "case": "large2048",
+      "phase": "export",
+      "wall_median_ns": 1767375,
+      "cpu_median_ns": 1746000,
+      "allocated_median_bytes": 9831512
+    },
+    {
+      "variant": "cached",
+      "case": "sap1",
+      "phase": "import",
+      "wall_median_ns": 2472750,
+      "cpu_median_ns": 2433000,
+      "allocated_median_bytes": 3864816
+    },
+    {
+      "variant": "cached",
+      "case": "sap1",
+      "phase": "export",
+      "wall_median_ns": 859416,
+      "cpu_median_ns": 851000,
+      "allocated_median_bytes": 1909232
+    },
+    {
+      "variant": "cached",
+      "case": "large2048",
+      "phase": "import",
+      "wall_median_ns": 4890708,
+      "cpu_median_ns": 4873000,
+      "allocated_median_bytes": 13669728
+    },
+    {
+      "variant": "cached",
+      "case": "large2048",
+      "phase": "export",
+      "wall_median_ns": 1720000,
+      "cpu_median_ns": 1709000,
+      "allocated_median_bytes": 9831512
+    },
+    {
+      "variant": "baseline",
+      "case": "sap1",
+      "phase": "import",
+      "wall_median_ns": 2365083,
+      "cpu_median_ns": 2337000,
+      "allocated_median_bytes": 4830400
+    },
+    {
+      "variant": "baseline",
+      "case": "sap1",
+      "phase": "export",
+      "wall_median_ns": 917583,
+      "cpu_median_ns": 919000,
+      "allocated_median_bytes": 4841616
+    },
+    {
+      "variant": "baseline",
+      "case": "large2048",
+      "phase": "import",
+      "wall_median_ns": 5977458,
+      "cpu_median_ns": 5724000,
+      "allocated_median_bytes": 21124280
+    },
+    {
+      "variant": "baseline",
+      "case": "large2048",
+      "phase": "export",
+      "wall_median_ns": 2550875,
+      "cpu_median_ns": 2552000,
+      "allocated_median_bytes": 24502352
+    }
+  ],
+  "limitation": "JVM measurements; Android ANR must be rechecked on the device after integration."
+}

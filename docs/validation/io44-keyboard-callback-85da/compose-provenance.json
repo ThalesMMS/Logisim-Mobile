@@ -1,0 +1,136 @@
+{
+  "scope": "source-and-bytecode-framework-boundary-investigation",
+  "hostReproductionExecution": "NOT_RUN_BY_THIS_AGENT",
+  "nativeExecution": "NOT_RUN_BY_THIS_AGENT",
+  "producer": {
+    "manifest": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/85da031e-io-keyboard-a32d3302/manifest.json",
+    "manifestSha256": "b0a281f2442aa45064fcfb824d48f3e89803937ca1ed7543592def58295d1c17",
+    "gitHead": "85da031e4ed11474c2e763976392729810ef142d",
+    "apk": "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/outputs/android-e2e/artifacts-85da031e-5556/androidApp-e2e.apk",
+    "expectedApkSha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+    "actualApkSha256": "67e81d691beb3830cf49325c81ccffca9b66f2bf8aa98fdc46c9ee7d1f9e5e2c",
+    "deviceApi": "35",
+    "deviceFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+    "packagedComposeVersions": {
+      "META-INF/androidx.compose.foundation_foundation-layout.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.foundation_foundation.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.runtime_runtime-annotation.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.runtime_runtime-retain.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.runtime_runtime-saveable.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.runtime_runtime.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.ui_ui-geometry.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.ui_ui-graphics.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.ui_ui-text.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.ui_ui-unit.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.ui_ui-util.version": "1.13.0-beta02",
+      "META-INF/androidx.compose.ui_ui.version": "1.13.0-beta02"
+    }
+  },
+  "binaryDependencies": [
+    {
+      "role": "ui-text cached Android binary",
+      "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/androidx.compose.ui/ui-text-android/1.13.0-beta02/7b2186bea8936b0cd598e921b39070a033cace93/ui-text.aar",
+      "sha256": "8d2bf03a19dbb47cd65e2cdcc360c35ede08e56981f7dc2b894a8f1f2260a6b4",
+      "version": "1.13.0-beta02"
+    },
+    {
+      "role": "foundation cached Android binary",
+      "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/androidx.compose.foundation/foundation-android/1.13.0-beta02/4dd8eb1dc0aafa67d4d7fddaff9d374b8d6f773/foundation.aar",
+      "sha256": "ef2b56844de7a0fb5f35bd3a817276202174b98af5bed5de1c808a491112e4d4",
+      "version": "1.13.0-beta02"
+    }
+  ],
+  "composeCompilerPlugin": {
+    "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compose-compiler-plugin-embeddable/2.4.21/dd3cf05b1c6bfaf6c82869e1a0e5cf00df6b26b1/kotlin-compose-compiler-plugin-embeddable-2.4.21.jar",
+    "version": "2.4.21",
+    "sha256": "634f5c17bed5854548208f2901071f2ead5993ffad25b34fea1668ee9e314b53"
+  },
+  "officialSources": [
+    {
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-text-android/1.13.0-beta02/ui-text-android-1.13.0-beta02-sources.jar",
+      "path": "/tmp/logisim-keyboard-compose-boundary/ui-text-android-sources.jar",
+      "sha256": "4588bd1e16ae29759716fd7d376af351f8db05dc37d3c21821c2f941a6c42705"
+    },
+    {
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/foundation/foundation-android/1.13.0-beta02/foundation-android-1.13.0-beta02-sources.jar",
+      "path": "/tmp/logisim-keyboard-compose-boundary/foundation-android-sources.jar",
+      "sha256": "67329f7d0cdd3ed7f63c031cbd86943f1dbcbd55c16dacdf5a99c31bbf36a17c"
+    },
+    {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/android-15.0.0_r1/services/core/java/com/android/server/input/InputShellCommand.java",
+      "path": "/tmp/logisim-keyboard-compose-boundary/AOSP15-InputShellCommand.java",
+      "sha256": "f4bb437cb03fc8bf12d53abbdeb2eb3fcbba9911cb39a16d13fae84bfc5889c4",
+      "qualification": "Pinned AOSP Android15 reference for the API35 run; not a dump of the emulator binary."
+    }
+  ],
+  "archivedFiles": [
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/AOSP15-InputShellCommand.java",
+      "sha256": "f4bb437cb03fc8bf12d53abbdeb2eb3fcbba9911cb39a16d13fae84bfc5889c4"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/BasicTextField.kt",
+      "sha256": "f36ddc7f7de4e1e66a714cc6da7045846c4d263fbe9925f353b8527e54326bd9"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/CoreTextField-bytecode.txt",
+      "sha256": "fda6e7be954bb23a0eb2918f9aaab834f136b61a3d83d417a0fd5b310cdf7ba8"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/CoreTextField.kt",
+      "sha256": "e57bd355b980774c81fd93daaedeb33d6b337e3fb673bae673ee86cc30b5ccfb"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/EditProcessor-bytecode.txt",
+      "sha256": "e188de2470f5b3a217aacab5ca1432df5ef2d782e645b53ada7357ecc2db0d66"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/EditProcessor.kt",
+      "sha256": "7e46b358d3d040e3204b2e6bd464e88881810a480575249a5b4029eda65fe052"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/IoInputPanel-85da.kt",
+      "sha256": "f6490d9a6333fb7db49e84372b6cd539bab306530a4626cacdad5b96a5feba28"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/LegacyTextFieldState-bytecode.txt",
+      "sha256": "1fbec978ebd295a51980729c36bb4c58cb5cb93ec43ba233cea1127d560c8ab2"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/TextFieldDelegate.kt",
+      "sha256": "49e1914532bd681873f863f11c1330cd956f9acd670d4c397fde9ac3210da574"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/TextFieldKeyInput.android.kt",
+      "sha256": "d28a80f80aab07b744cfb70769794a49434fca4407663f2c931fc3583d1c20dd"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/TextFieldKeyInput.kt",
+      "sha256": "99c12fbe0576c4c4dc1ac106b3864f80fe7cdf29743c20e72739386097dd1de5"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/composeApp-build-85da.gradle.kts",
+      "sha256": "c4cfa202b8202fbb7a9fa2112bda9396d0df8c21c6c3d2261881806fcab6649a"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/foundation-android-sources.jar",
+      "sha256": "67329f7d0cdd3ed7f63c031cbd86943f1dbcbd55c16dacdf5a99c31bbf36a17c"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/foundation-classes.jar",
+      "sha256": "7e54320ae6407da6e8a4ac7eb7b1803cba9499669914630be561beadb6815e6d"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/root-build-85da.gradle.kts",
+      "sha256": "80468beb3279a48249a147ec475ea6c4f14af7a31b01644f781ca82b0bd42cc1"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/ui-text-android-sources.jar",
+      "sha256": "4588bd1e16ae29759716fd7d376af351f8db05dc37d3c21821c2f941a6c42705"
+    },
+    {
+      "path": "/tmp/logisim-keyboard-compose-boundary/ui-text-classes.jar",
+      "sha256": "6786988db56d39c82f8001d356337aaf47a8804f5b0aaca4b3074122728cb3c3"
+    }
+  ]
+}

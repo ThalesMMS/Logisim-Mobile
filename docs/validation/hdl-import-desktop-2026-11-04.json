@@ -1,0 +1,1259 @@
+{
+  "startedAt": "2026-11-04T21:07:27.386776+00:00",
+  "mode": "existing-production-jars-no-gradle",
+  "sourceHead": "f72c8b138a2417b6beb8bb80ed3f4101171fbbbb",
+  "coreProductionTrees": {
+    "core/src/commonMain": "54f4a6704b33318b0de015450f778ec52b05d36a",
+    "core/src/jvmMain": "5dd9cdc0ed35d47c83048d6fd836a5337ecb2839"
+  },
+  "artifactsBefore": {
+    "mobile": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar",
+      "sha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+      "size": 2827137
+    },
+    "desktop": {
+      "path": "/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+      "sha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+      "size": 54840201
+    },
+    "stdlib": {
+      "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+      "sha256": "bd8250210584cb659847dce9cda660f8e9906e5def7fbebcea93dc6dcb6a88a3",
+      "size": 1853315
+    }
+  },
+  "commands": [
+    {
+      "name": "version-java",
+      "argv": [
+        "/usr/bin/java",
+        "-version"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-javac",
+      "argv": [
+        "/usr/bin/javac",
+        "-version"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-yosys",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-V"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-iverilog",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-V"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "version-vvp",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "-V"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "compile-mobile",
+      "argv": [
+        "/usr/bin/javac",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "-d",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/scripts/oracle/hdl-import/HdlImportMobileOracle.java"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "compile-desktop",
+      "argv": [
+        "/usr/bin/javac",
+        "-cp",
+        "/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "-d",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/scripts/oracle/hdl-import/HdlImportDesktopOracle.java"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-request",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "VERILOG",
+        "hierarchy",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/uploads",
+        "",
+        "hierarchy.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/job/outputs/netlist.json",
+        "hierarchy",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/uploads",
+        "hierarchy.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-repeat-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/job/outputs/netlist.json",
+        "hierarchy",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/repeated.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/uploads",
+        "hierarchy.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-roundtrip",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/uploads",
+        "-o",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/reference.vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/uploads/hierarchy.v",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-mobile",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/imported.circ",
+        "hdl_hierarchy",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "hierarchy-desktop",
+      "argv": [
+        "/usr/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/imported.circ",
+        "hdl_hierarchy",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-request",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "VERILOG",
+        "gates",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/uploads",
+        "",
+        "gates.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/job/outputs/netlist.json",
+        "gates",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/uploads",
+        "gates.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-repeat-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/job/outputs/netlist.json",
+        "gates",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/repeated.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/uploads",
+        "gates.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-roundtrip",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/uploads",
+        "-o",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/reference.vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/uploads/gates.v",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-mobile",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/imported.circ",
+        "hdl_gates",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "gates-desktop",
+      "argv": [
+        "/usr/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/imported.circ",
+        "hdl_gates",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-request",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "VERILOG",
+        "macros",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/uploads",
+        "MASK=2",
+        "macros.v",
+        "constants.vh"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/job/outputs/netlist.json",
+        "macros",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/uploads",
+        "macros.v",
+        "constants.vh"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-repeat-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/job/outputs/netlist.json",
+        "macros",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/repeated.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/uploads",
+        "macros.v",
+        "constants.vh"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-roundtrip",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/uploads",
+        "-DMASK=2",
+        "-o",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/reference.vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/uploads/macros.v",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-mobile",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/imported.circ",
+        "hdl_macros",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "macros-desktop",
+      "argv": [
+        "/usr/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/imported.circ",
+        "hdl_macros",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-request",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "request",
+        "BLIF",
+        "and_gate",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/uploads",
+        "",
+        "and_gate.blif"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/job/outputs/netlist.json",
+        "and_gate",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/uploads",
+        "and_gate.blif"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-repeat-import",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "import",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/job/outputs/netlist.json",
+        "and_gate",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/repeated.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/uploads",
+        "and_gate.blif"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-roundtrip",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "roundtrip",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/imported.circ",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/roundtrip.circ"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-blif-reference",
+      "argv": [
+        "/opt/homebrew/bin/yosys",
+        "-Q",
+        "-T",
+        "-s",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/reference.ys"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-compile-reference",
+      "argv": [
+        "/opt/homebrew/bin/iverilog",
+        "-g2012",
+        "-s",
+        "testbench",
+        "-I",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/uploads",
+        "-o",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/reference.vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/original-blif.v",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/testbench.v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-reference",
+      "argv": [
+        "/opt/homebrew/bin/vvp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/reference.vvp"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-mobile",
+      "argv": [
+        "/usr/bin/java",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar:/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+        "HdlImportMobileOracle",
+        "observe",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/imported.circ",
+        "hdl_and_gate",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "blif-and-desktop",
+      "argv": [
+        "/usr/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/imported.circ",
+        "hdl_and_gate",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/vectors.txt"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "negative-mutated-nand-desktop",
+      "argv": [
+        "/usr/bin/java",
+        "-Djava.awt.headless=true",
+        "-cp",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/classes:/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+        "HdlImportDesktopOracle",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/mutated-nand.circ",
+        "hdl_and_gate",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/vectors.txt"
+      ],
+      "returncode": 0
+    }
+  ],
+  "cases": [
+    {
+      "name": "hierarchy",
+      "format": "verilog",
+      "parameters": {
+        "defines": [],
+        "format": "verilog",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "logic",
+        "sourceNames": [
+          "hierarchy.v"
+        ],
+        "top": "hierarchy",
+        "undefined": "error"
+      },
+      "moduleMap": {
+        "hierarchy": "hdl_hierarchy",
+        "leaf": "hdl_leaf"
+      },
+      "rows": 4,
+      "structure": [
+        "C\thdl_hierarchy",
+        "C\thdl_leaf",
+        "G\thdl_leaf\tXOR Gate\t1500\t100\t1\t2\t50\teast",
+        "H\thdl_hierarchy\thdl_leaf\t1500\t100",
+        "P\thdl_hierarchy\ta\tINPUT\t1\t40\t80\teast",
+        "P\thdl_hierarchy\tb\tINPUT\t1\t40\t190\teast",
+        "P\thdl_hierarchy\ty\tOUTPUT\t1\t1100\t80\twest",
+        "P\thdl_leaf\ta\tINPUT\t1\t40\t80\teast",
+        "P\thdl_leaf\tb\tINPUT\t1\t40\t190\teast",
+        "P\thdl_leaf\ty\tOUTPUT\t1\t1100\t80\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t0\t0\t0",
+        "V\t1\tPASS\t0\t1\t1",
+        "V\t2\tPASS\t1\t0\t1",
+        "V\t3\tPASS\t1\t1\t0"
+      ],
+      "inputs": [
+        {
+          "path": "hierarchy/uploads/hierarchy.v",
+          "sha256": "b16a8ef5d070b30ea92e364fbffab7588420c5720358f6c7a53d3fd90940db85",
+          "size": 152
+        }
+      ],
+      "netlist": {
+        "path": "hierarchy/job/outputs/netlist.json",
+        "sha256": "68263645d11f3981d880dd645166c4ec882e6d3d6839e63c5ca067dd18441325",
+        "size": 2894
+      },
+      "circuit": {
+        "path": "hierarchy/imported.circ",
+        "sha256": "ea7b382d18305137617dba77824c206537dfb06cbdf269ade094bbda915c9408",
+        "size": 6265
+      },
+      "vectors": {
+        "path": "hierarchy/vectors.txt",
+        "sha256": "1b5e36e7a3c65ad3bd65b5222efdb12def49bc925c337cf995206754413ce30d",
+        "size": 30
+      },
+      "desktop": {
+        "path": "hierarchy-desktop.stdout",
+        "sha256": "23bec4b8820c9d78a5c85960e191e77ac6cc0ff5ca2ead8fabf84e3fe6af4a20",
+        "size": 377
+      },
+      "mobile": {
+        "path": "hierarchy-mobile.stdout",
+        "sha256": "4579352e0172720686a4dcd0bb5c4167251ac779c44d872e11bc1315bdb97695",
+        "size": 377
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "hierarchy/job/mobile_import.ys",
+        "sha256": "996670e5de83ebe5dae140cd9547f72ba584ae16cb8b8bfb64afb40320676967",
+        "size": 207
+      },
+      "synthesisLogs": [
+        {
+          "path": "hierarchy/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "hierarchy/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "hierarchy/job/command-1.stdout",
+          "sha256": "5ae45305eaa849118b7184f186f8f2d3192836a41d271e8e2acc1117592efede",
+          "size": 13786
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true,
+      "referenceObservations": [
+        "R\t0\t0",
+        "R\t1\t1",
+        "R\t2\t1",
+        "R\t3\t0",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/hierarchy/testbench.v:23: $finish called at 4 (1s)"
+      ]
+    },
+    {
+      "name": "gates",
+      "format": "verilog",
+      "parameters": {
+        "defines": [],
+        "format": "verilog",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "logic",
+        "sourceNames": [
+          "gates.v"
+        ],
+        "top": "gates",
+        "undefined": "error"
+      },
+      "moduleMap": {
+        "gates": "hdl_gates"
+      },
+      "rows": 32,
+      "structure": [
+        "C\thdl_gates",
+        "G\thdl_gates\tAND Gate\t1500\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tAND Gate\t2340\t300\t1\t2\t50\teast",
+        "G\thdl_gates\tAND Gate\t2340\t400\t1\t2\t50\teast",
+        "G\thdl_gates\tAND Gate\t2760\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tAND Gate\t3600\t300\t1\t2\t50\teast",
+        "G\thdl_gates\tAND Gate\t3600\t400\t1\t2\t50\teast",
+        "G\thdl_gates\tNOT Gate\t2340\t200\t1\t-\t30\teast",
+        "G\thdl_gates\tNOT Gate\t3600\t200\t1\t-\t30\teast",
+        "G\thdl_gates\tOR Gate\t2340\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tOR Gate\t3600\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tXOR Gate\t1920\t100\t1\t2\t50\teast",
+        "G\thdl_gates\tXOR Gate\t3180\t100\t1\t2\t50\teast",
+        "P\thdl_gates\ta\tINPUT\t2\t40\t80\teast",
+        "P\thdl_gates\tand_y\tOUTPUT\t2\t1100\t80\twest",
+        "P\thdl_gates\tb\tINPUT\t2\t40\t200\teast",
+        "P\thdl_gates\tmux_y\tOUTPUT\t2\t1100\t320\twest",
+        "P\thdl_gates\tselect\tINPUT\t1\t40\t320\teast",
+        "P\thdl_gates\txor_y\tOUTPUT\t2\t1100\t200\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t00\t00\t0\t00\t00\t00",
+        "V\t1\tPASS\t00\t00\t1\t00\t00\t00",
+        "V\t2\tPASS\t00\t01\t0\t00\t01\t00",
+        "V\t3\tPASS\t00\t01\t1\t00\t01\t01",
+        "V\t4\tPASS\t00\t10\t0\t00\t10\t00",
+        "V\t5\tPASS\t00\t10\t1\t00\t10\t10",
+        "V\t6\tPASS\t00\t11\t0\t00\t11\t00",
+        "V\t7\tPASS\t00\t11\t1\t00\t11\t11",
+        "V\t8\tPASS\t01\t00\t0\t00\t01\t01",
+        "V\t9\tPASS\t01\t00\t1\t00\t01\t00",
+        "V\t10\tPASS\t01\t01\t0\t01\t00\t01",
+        "V\t11\tPASS\t01\t01\t1\t01\t00\t01",
+        "V\t12\tPASS\t01\t10\t0\t00\t11\t01",
+        "V\t13\tPASS\t01\t10\t1\t00\t11\t10",
+        "V\t14\tPASS\t01\t11\t0\t01\t10\t01",
+        "V\t15\tPASS\t01\t11\t1\t01\t10\t11",
+        "V\t16\tPASS\t10\t00\t0\t00\t10\t10",
+        "V\t17\tPASS\t10\t00\t1\t00\t10\t00",
+        "V\t18\tPASS\t10\t01\t0\t00\t11\t10",
+        "V\t19\tPASS\t10\t01\t1\t00\t11\t01",
+        "V\t20\tPASS\t10\t10\t0\t10\t00\t10",
+        "V\t21\tPASS\t10\t10\t1\t10\t00\t10",
+        "V\t22\tPASS\t10\t11\t0\t10\t01\t10",
+        "V\t23\tPASS\t10\t11\t1\t10\t01\t11",
+        "V\t24\tPASS\t11\t00\t0\t00\t11\t11",
+        "V\t25\tPASS\t11\t00\t1\t00\t11\t00",
+        "V\t26\tPASS\t11\t01\t0\t01\t10\t11",
+        "V\t27\tPASS\t11\t01\t1\t01\t10\t01",
+        "V\t28\tPASS\t11\t10\t0\t10\t01\t11",
+        "V\t29\tPASS\t11\t10\t1\t10\t01\t10",
+        "V\t30\tPASS\t11\t11\t0\t11\t00\t11",
+        "V\t31\tPASS\t11\t11\t1\t11\t00\t11"
+      ],
+      "inputs": [
+        {
+          "path": "gates/uploads/gates.v",
+          "sha256": "6427354d182a89b8a3e665c96fb4ac62d9bda506adcdf4b5b7309160fc748ff8",
+          "size": 184
+        }
+      ],
+      "netlist": {
+        "path": "gates/job/outputs/netlist.json",
+        "sha256": "cdb06adbf48fdcc25b806eab55556718690779a894398a847da9fdd22b361393",
+        "size": 4394
+      },
+      "circuit": {
+        "path": "gates/imported.circ",
+        "sha256": "d187e47a558ace08e0a774c5b63c00f9da427a6602ff4f1a935dfc2782041d47",
+        "size": 18583
+      },
+      "vectors": {
+        "path": "gates/vectors.txt",
+        "sha256": "bd22e186f51c8a2a5d84ac8f85e07d33f0d1120f7ab9bf5346e619cf17442448",
+        "size": 588
+      },
+      "desktop": {
+        "path": "gates-desktop.stdout",
+        "sha256": "cb99e696752edfae8dd9ce97dd42920bfbf424564c1b2bc27487e6ed945de54d",
+        "size": 1596
+      },
+      "mobile": {
+        "path": "gates-mobile.stdout",
+        "sha256": "f00ca3ef92d9ba6b026f0008ada3ad62f9587825dc942d3a4ed7025c93a16c7f",
+        "size": 1596
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "gates/job/mobile_import.ys",
+        "sha256": "16afa69bbf3a2afb6aaf55085e6131ada1bac0a44b24cd5ba1dc59e3e34f047b",
+        "size": 199
+      },
+      "synthesisLogs": [
+        {
+          "path": "gates/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "gates/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "gates/job/command-1.stdout",
+          "sha256": "6a0c2bef974557871599b9a04ac921024abec82b9bdbf3afd3a8269adcced47d",
+          "size": 11481
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true,
+      "referenceObservations": [
+        "R\t0\t00\t00\t00",
+        "R\t1\t00\t00\t00",
+        "R\t2\t00\t01\t00",
+        "R\t3\t00\t01\t01",
+        "R\t4\t00\t10\t00",
+        "R\t5\t00\t10\t10",
+        "R\t6\t00\t11\t00",
+        "R\t7\t00\t11\t11",
+        "R\t8\t00\t01\t01",
+        "R\t9\t00\t01\t00",
+        "R\t10\t01\t00\t01",
+        "R\t11\t01\t00\t01",
+        "R\t12\t00\t11\t01",
+        "R\t13\t00\t11\t10",
+        "R\t14\t01\t10\t01",
+        "R\t15\t01\t10\t11",
+        "R\t16\t00\t10\t10",
+        "R\t17\t00\t10\t00",
+        "R\t18\t00\t11\t10",
+        "R\t19\t00\t11\t01",
+        "R\t20\t10\t00\t10",
+        "R\t21\t10\t00\t10",
+        "R\t22\t10\t01\t10",
+        "R\t23\t10\t01\t11",
+        "R\t24\t00\t11\t11",
+        "R\t25\t00\t11\t00",
+        "R\t26\t01\t10\t11",
+        "R\t27\t01\t10\t01",
+        "R\t28\t10\t01\t11",
+        "R\t29\t10\t01\t10",
+        "R\t30\t11\t00\t11",
+        "R\t31\t11\t00\t11",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/gates/testbench.v:170: $finish called at 32 (1s)"
+      ]
+    },
+    {
+      "name": "macros",
+      "format": "verilog",
+      "parameters": {
+        "defines": [
+          "MASK=2"
+        ],
+        "format": "verilog",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "logic",
+        "sourceNames": [
+          "macros.v"
+        ],
+        "top": "macros",
+        "undefined": "error"
+      },
+      "moduleMap": {
+        "macros": "hdl_macros"
+      },
+      "rows": 4,
+      "structure": [
+        "C\thdl_macros",
+        "G\thdl_macros\tNOT Gate\t1500\t100\t1\t-\t30\teast",
+        "P\thdl_macros\ta\tINPUT\t2\t40\t80\teast",
+        "P\thdl_macros\ty\tOUTPUT\t2\t1100\t80\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t00\t10",
+        "V\t1\tPASS\t01\t11",
+        "V\t2\tPASS\t10\t00",
+        "V\t3\tPASS\t11\t01"
+      ],
+      "inputs": [
+        {
+          "path": "macros/uploads/macros.v",
+          "sha256": "0b5cb0fbd5425fc0cb71ab8fb39a503bdadbfbf96b585a53419b1fca7e456624",
+          "size": 118
+        },
+        {
+          "path": "macros/uploads/constants.vh",
+          "sha256": "16ac11b952e609380ac98e301f4ca2543d8cdcc8d746285648438f67839bcf01",
+          "size": 37
+        }
+      ],
+      "netlist": {
+        "path": "macros/job/outputs/netlist.json",
+        "sha256": "e7d67618dff6c05f97f19ab9121bb7207b15e4808d51cd755cd5a8c5544c238f",
+        "size": 1211
+      },
+      "circuit": {
+        "path": "macros/imported.circ",
+        "sha256": "9f97b8421ac2c273713a54b4161f52b2008df303287cb591fc1216979ed0c1bc",
+        "size": 3830
+      },
+      "vectors": {
+        "path": "macros/vectors.txt",
+        "sha256": "6e2f5a330df4508aaa2c176331e31107b2313c3ebd96aa6f65eeb666450fea91",
+        "size": 34
+      },
+      "desktop": {
+        "path": "macros-desktop.stdout",
+        "sha256": "9c7a614797a13e571af943d63ed2fd6e50cf54abd72565784c6690052ef8cb35",
+        "size": 187
+      },
+      "mobile": {
+        "path": "macros-mobile.stdout",
+        "sha256": "0a167f279379261b110aecbb147be73cd5ac87682dbb60cce418a3ea42558bc5",
+        "size": 187
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "macros/job/mobile_import.ys",
+        "sha256": "2095f2e3a055091424ae321200ae3c5868b9f5c29319277882654111d2e8a1d2",
+        "size": 210
+      },
+      "synthesisLogs": [
+        {
+          "path": "macros/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "macros/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "macros/job/command-1.stdout",
+          "sha256": "07b0c488d8c10c613d2eb7e61142c1824421018cef60712661425905108fba4c",
+          "size": 11125
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true,
+      "referenceObservations": [
+        "R\t0\t10",
+        "R\t1\t11",
+        "R\t2\t00",
+        "R\t3\t01",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/macros/testbench.v:18: $finish called at 4 (1s)"
+      ]
+    },
+    {
+      "name": "blif-and",
+      "format": "blif",
+      "parameters": {
+        "defines": [],
+        "format": "blif",
+        "includes": [
+          "."
+        ],
+        "memoryPolicy": "logic",
+        "sourceNames": [
+          "and_gate.blif"
+        ],
+        "top": "and_gate",
+        "undefined": "error"
+      },
+      "moduleMap": {
+        "and_gate": "hdl_and_gate"
+      },
+      "rows": 4,
+      "structure": [
+        "C\thdl_and_gate",
+        "G\thdl_and_gate\tAND Gate\t1500\t100\t1\t2\t50\teast",
+        "P\thdl_and_gate\ta\tINPUT\t1\t40\t80\teast",
+        "P\thdl_and_gate\tb\tINPUT\t1\t40\t190\teast",
+        "P\thdl_and_gate\ty\tOUTPUT\t1\t1100\t80\twest"
+      ],
+      "observations": [
+        "V\t0\tPASS\t0\t0\t0",
+        "V\t1\tPASS\t0\t1\t0",
+        "V\t2\tPASS\t1\t0\t0",
+        "V\t3\tPASS\t1\t1\t1"
+      ],
+      "inputs": [
+        {
+          "path": "blif-and/uploads/and_gate.blif",
+          "sha256": "04fccdd504e76cfe2dc5e922bd68e55cdb4de338ce9d7dc23a6476802437c724",
+          "size": 62
+        }
+      ],
+      "netlist": {
+        "path": "blif-and/job/outputs/netlist.json",
+        "sha256": "2184546b5bd25c90eeaeb45173a65e08079200772843891919b64add0744e06f",
+        "size": 1334
+      },
+      "circuit": {
+        "path": "blif-and/imported.circ",
+        "sha256": "3414e74d1556653c184ff840ac9d9d0453f69901fda6e2174c7798c3677fede5",
+        "size": 3315
+      },
+      "vectors": {
+        "path": "blif-and/vectors.txt",
+        "sha256": "131e8515e5cf6d8ea2e2453eaf27aca6cdf32dce22312ae9ea2e19ce24828e66",
+        "size": 30
+      },
+      "desktop": {
+        "path": "blif-and-desktop.stdout",
+        "sha256": "02b58e58c297f92fc587d1d3ce1f1c65e2bfd8d83464fcdec41acc071fa18a34",
+        "size": 232
+      },
+      "mobile": {
+        "path": "blif-and-mobile.stdout",
+        "sha256": "0d28f33357e0ef9bc02ed8b750fba0cba1c507ca8e5835b2a446a162bfbce87b",
+        "size": 232
+      },
+      "synthesisCommands": [
+        {
+          "argv": [
+            "/opt/homebrew/bin/yosys",
+            "-Q",
+            "-T",
+            "-s",
+            "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/job/mobile_import.ys"
+          ],
+          "timeout_seconds": 30
+        }
+      ],
+      "synthesisScript": {
+        "path": "blif-and/job/mobile_import.ys",
+        "sha256": "f4c8c8aa1a3845e9023fd0ecb53219ed3f38aef5f6031d32bf6a958959ad09c4",
+        "size": 247
+      },
+      "synthesisLogs": [
+        {
+          "path": "blif-and/job/command-1.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "blif-and/job/command-1.stdin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "path": "blif-and/job/command-1.stdout",
+          "sha256": "d1b2c270d72f3b0d66758f7a0f61f05b0d3a62f18503ca2dd39970004eaca3f6",
+          "size": 13126
+        }
+      ],
+      "reproducible": true,
+      "sourceArchiveExactBeforeAndAfterRoundtrip": true,
+      "referenceObservations": [
+        "R\t0\t0",
+        "R\t1\t0",
+        "R\t2\t0",
+        "R\t3\t1",
+        "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-desktop-oracle/blif-and/testbench.v:23: $finish called at 4 (1s)"
+      ]
+    }
+  ],
+  "tools": {
+    "java": {
+      "path": "/usr/bin/java",
+      "sha256": "1dddd396385d905cb14fa5cc36a94d84ca760c63b576e754ae4503ec9eb7bb5f",
+      "version": "openjdk version \"21.0.11\" 2026-04-21\nOpenJDK Runtime Environment JBR-21.0.11+10-1163.116-nomod (build 21.0.11+10-b1163.116)\nOpenJDK 64-Bit Server VM JBR-21.0.11+10-1163.116-nomod (build 21.0.11+10-b1163.116, mixed mode, sharing)"
+    },
+    "javac": {
+      "path": "/usr/bin/javac",
+      "sha256": "1dddd396385d905cb14fa5cc36a94d84ca760c63b576e754ae4503ec9eb7bb5f",
+      "version": "javac 21.0.11"
+    },
+    "yosys": {
+      "path": "/opt/homebrew/bin/yosys",
+      "sha256": "435b1d43de6985eeaad8330b0636d0f7bb1143311fd27382bf258d04fb2873c4",
+      "version": "Yosys 0.70+post (git sha1 0c11ea098be065e585a90a06e7b7da49936cf231, Release, AppleClang clang++ 21.0.0.21000334)"
+    },
+    "iverilog": {
+      "path": "/opt/homebrew/bin/iverilog",
+      "sha256": "f096dc24502eee84794f504c0d9f138e8a0af66bed6224648fdac18f92998714",
+      "version": "Icarus Verilog version 13.0 (stable) (v13_0)\n\nCopyright (c) 2000-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 13.0 (stable) (v13_0)\n\nCopyright (c) 1999-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 13.0 (stable) (v13_0)\n\nCopyright (c) 1998-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 13.0 (stable) (v13_0)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+    },
+    "vvp": {
+      "path": "/opt/homebrew/bin/vvp",
+      "sha256": "8f78af004c84b691f62f8675f986eac8d4e36d69c1c04a2252938c5710b56b97",
+      "version": "Icarus Verilog runtime version 13.0 (stable) (v13_0)\n\nCopyright (c) 2001-2026 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+    }
+  },
+  "sourceFiles": [
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/scripts/oracle/hdl-import/run.py",
+      "sha256": "1a62c8b1dc923e0bbcb6421f4e67898a27103acee47fb84fad99471f4c529879",
+      "size": 18160
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/scripts/oracle/hdl-import/HdlImportMobileOracle.java",
+      "sha256": "541cdb7056a310d27367fb21f31e5eae1f747a4c871fa9e79c5672e3267572c7",
+      "size": 6317
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/scripts/oracle/hdl-import/HdlImportDesktopOracle.java",
+      "sha256": "475fff0769967a6c2eb48ad9ef23aac1fb974a1e0cdb7b1a8d1bbc34e115b08e",
+      "size": 6772
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/companion/hdl_import.py",
+      "sha256": "1737a42ebd12a36eb3cefddbb6e113771b632d9d58394ea87d988a600f9ea526",
+      "size": 10451
+    },
+    {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/companion/hdl_import_cells.v",
+      "sha256": "26204296f2c82126f8ad908163ed67e17992d5ea1c22938382f69d9f20c26e7c",
+      "size": 1377
+    }
+  ],
+  "falseControls": [
+    {
+      "name": "changed-hierarchy",
+      "rejected": true,
+      "reason": "Circuit, pin attributes, gates or hierarchy differ"
+    },
+    {
+      "name": "changed-pin-width",
+      "rejected": true,
+      "reason": "Circuit, pin attributes, gates or hierarchy differ"
+    },
+    {
+      "name": "missing-source-archive",
+      "rejected": true,
+      "reason": "Source archive file inventory differs from explicit inputs"
+    },
+    {
+      "name": "actual-desktop-nand-mutation",
+      "rejected": true,
+      "reason": "Circuit, pin attributes, gates or hierarchy differ",
+      "observedFailedRows": 4,
+      "output": {
+        "path": "negative-mutated-nand-desktop.stdout",
+        "sha256": "99f42b2f6aa6e7ae569cfee3d2dfea94dc4a25508621cbb1859fa91f832be666",
+        "size": 233
+      }
+    },
+    {
+      "name": "actual-desktop-nand-truth-table",
+      "rejected": true,
+      "reason": "Observed truth tables differ or omit rows"
+    }
+  ],
+  "status": "PASS",
+  "rowsCompared": 44,
+  "artifactsAfter": {
+    "mobile": {
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar",
+      "sha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+      "size": 2827137
+    },
+    "desktop": {
+      "path": "/Users/thales/GitHub/logisim-evolution/build/libs/logisim-evolution-5.1.0dev-all.jar",
+      "sha256": "0f5af2768ae804c79923e942929e19e5e6ff5e9f125fa4c88ecfb09239e09c01",
+      "size": 54840201
+    },
+    "stdlib": {
+      "path": "/Users/thales/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.21/c343e135bd1e7dd94b7ed76b4159068d888d09db/kotlin-stdlib-2.4.21.jar",
+      "sha256": "bd8250210584cb659847dce9cda660f8e9906e5def7fbebcea93dc6dcb6a88a3",
+      "size": 1853315
+    }
+  },
+  "artifactsUnchanged": true,
+  "finishedAt": "2026-11-04T21:08:18.520003+00:00",
+  "producer": {
+    "producerCommit": "f72c8b138a2417b6beb8bb80ed3f4101171fbbbb",
+    "jarPath": "/Users/thales/GitHub/logisim-mobile-worktrees/hdl-import-desktop-oracle/outputs/hdl-import-producer-f72c8b13/core-jvm.jar",
+    "sha256": "7d16a8519f19e033f7ad3350b97402abf492270747b51ed725a9237228f64e20",
+    "sourceTrees": {
+      "core/src/commonMain": "54f4a6704b33318b0de015450f778ec52b05d36a",
+      "core/src/jvmMain": "5dd9cdc0ed35d47c83048d6fd836a5337ecb2839"
+    },
+    "tests": [
+      {
+        "suite": "HdlImportTest",
+        "tests": "11",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "suite": "HdlImportIntegrationTest",
+        "tests": "3",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "suite": "HdlImportCompanionIntegrationTest",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      }
+    ]
+  },
+  "buildCommand": "ANDROID_HOME=/Users/thales/Library/Android/sdk python3 /tmp/logisim-gradle-serial.py ./gradlew :core:jvmTest --tests dev.logisim.mobile.core.HdlImportTest --tests dev.logisim.mobile.core.HdlImportIntegrationTest --tests dev.logisim.mobile.core.HdlImportCompanionIntegrationTest :core:jvmJar -Pkotlin.incremental=false --console=plain",
+  "buildLogSha256": "b936271610911aeaaef704cbbefd2ee0c208ef26d22970c9e590519f92ab3ec6",
+  "fixCommits": [
+    "f44f4c49",
+    "1bd5b30d",
+    "f72c8b138a2417b6beb8bb80ed3f4101171fbbbb"
+  ],
+  "scope": {
+    "domain": "exhaustive binary combinational samples of four checked-in fixtures",
+    "attributes": "circuit inventory, hierarchy, P labels/directions/widths/locations/facing and G type/width/inputs/size/facing",
+    "notCovered": [
+      "sequential timing",
+      "X/Z equivalence",
+      "all component attributes",
+      "mobile UI/device interaction",
+      "OS sandbox"
+    ],
+    "desktopResave": "Unknown custom source archive options are discarded when the desktop saves the file again."
+  },
+  "preFixFailure": {
+    "mobileJarSha256": "01073771c0c7643efa38d7b25d8c6905d31651f27538e9a6a8f4cd82a75720c4",
+    "desktopLoadError": "Invalid node in logisim file: hdl-source",
+    "secondRootCause": "circ-port lacked dir and width; desktop attempted legacy width parsing and failed to bind ports",
+    "artifacts": "outputs/hdl-import-desktop-oracle-before-fix",
+    "diagnosticTransformedCopiesExcludedFromPassingReceipt": true
+  }
+}

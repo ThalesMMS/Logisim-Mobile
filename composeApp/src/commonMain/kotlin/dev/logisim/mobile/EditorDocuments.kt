@@ -1,0 +1,117 @@
+package dev.logisim.mobile
+
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import dev.logisim.mobile.core.OriginalCircExport
+import dev.logisim.mobile.core.localization.LocalizedArgumentException
+import dev.logisim.mobile.core.localization.Messages
+import dev.logisim.mobile.core.localization.LocalizedText
+import dev.logisim.mobile.core.localization.message
+import dev.logisim.mobile.core.localization.systemAppLanguage
+
+internal class EditorDocuments(
+    private val state: EditorState,
+    private val actions: DocumentActions,
+    private val importDocument: (DocumentContent, isCurrent: () -> Boolean, onComplete: (Boolean) -> Unit) -> Unit = { content, current, complete ->
+        complete(current() && actions.commitOpen(content.reference) {
+            state.importXml(content.text, LocalizedText.literal(content.reference.name))
+        })
+    },
+) {
+    private var attachmentGeneration = 0L
+    private var referenceRevision by mutableStateOf(0)
+    val reference: DocumentReference? get() {
+        referenceRevision
+        return actions.currentReference
+    }
+
+    val canEditInPlace: Boolean get() = actions.supportsEditInPlace
+    val canSave: Boolean get() = state.documentWritable && canEditInPlace && reference?.let { it.writable && it.mode == DocumentOpenMode.EDIT_IN_PLACE } == true
+    val canShareOriginalCopy: Boolean get() =
+        state.projectAccess.graphAvailable && OriginalCircExport.supports(state.project)
+
+    fun attach() {
+        val generation = ++attachmentGeneration
+        state.onProjectReplaced = ::unlink
+        actions.setOpenHandler { result ->
+            when (result) {
+                is DocumentOpenResult.Opened -> importDocument(result.content, { generation == attachmentGeneration }) { accepted ->
+                    if (accepted && generation == attachmentGeneration && state.interactionsEnabled) {
+                        retain(result.content.reference.takeIf { it.mode == DocumentOpenMode.EDIT_IN_PLACE })
+                        state.reportStatus(result.notice ?: message(Messages.StatusFileOpened, "name" to result.content.reference.name))
+                    }
+                }
+                is DocumentOpenResult.Failure -> state.reportError(result.notice)
+                DocumentOpenResult.Cancelled -> Unit
+            }
+        }
+    }
+
+    fun detach() {
+        attachmentGeneration++
+        actions.setOpenHandler(null)
+        state.onProjectReplaced = {}
+    }
+
+    fun openCopy() = actions.open(DocumentOpenMode.IMPORT_COPY)
+    fun editFile() = actions.open(DocumentOpenMode.EDIT_IN_PLACE)
+    fun saveAs() {
+        val identity = state.documentIdentity
+        actions.create(suggestedName(), state.saveXml()) { written(it, identity) }
+    }
+    fun save() {
+        val current = reference ?: return
+        if (canSave) {
+            val identity = state.documentIdentity
+            actions.save(current, state.saveXml()) { written(it, identity) }
+        }
+    }
+    fun share() = shareXml(suggestedName(), state.saveXml())
+
+    fun shareOriginalCopy() {
+        if (!canShareOriginalCopy) return
+        val xml = try {
+            OriginalCircExport.write(state.project, state.componentRegistry)
+        } catch (error: LocalizedArgumentException) {
+            state.reportError(error.text)
+            return
+        }
+        shareXml(suggestedName().removeSuffix(".circ") + "-2.7.1.circ", xml)
+    }
+
+    private fun shareXml(name: String, xml: String) = actions.share(name, xml) { result ->
+        when (result) {
+            is DocumentShareResult.Failure -> state.reportError(result.notice)
+            DocumentShareResult.Presented -> state.reportStatus(message(Messages.StatusSharePrompt))
+            DocumentShareResult.Cancelled -> Unit
+        }
+    }
+
+    private fun written(result: DocumentWriteResult, identity: Long) {
+        if (identity != state.documentIdentity) return
+        when (result) {
+            is DocumentWriteResult.Saved -> {
+                retain(result.reference)
+                state.reportStatus(result.notice ?: message(Messages.StatusFileSaved, "name" to result.reference.name))
+            }
+            is DocumentWriteResult.Conflict -> state.reportError(
+                message(Messages.ErrorFileConflict),
+            )
+            is DocumentWriteResult.Failure -> state.reportError(result.notice)
+            DocumentWriteResult.Cancelled -> Unit
+        }
+    }
+
+    private fun unlink() {
+        retain(null)
+    }
+
+    private fun retain(reference: DocumentReference?) {
+        actions.retain(reference)
+        referenceRevision++
+    }
+
+    private fun suggestedName() = state.project.mainCircuitName
+        .replace(Regex("[\\/:*?\"<>|]"), "_").ifBlank { message(Messages.FileDefaultName).resolve(systemAppLanguage()) } + ".circ"
+}

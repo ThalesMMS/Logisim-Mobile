@@ -1,0 +1,212 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "source_pin": "29942df31947a38f9656dcc0e414c5ec457c0fc1",
+  "created_utc": "2026-11-05T09:56:35.038680+00:00",
+  "scope": "Prepare core test classes, then at most one functional historical replay. No benchmark or JFR/Native.",
+  "original_inputs_before": [
+    {
+      "name": "corpus/manifest.json",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/manifest.json",
+      "bytes": 82126,
+      "sha256": "295571568422db33a280e9c0a52b322982cfa7f57c10e297fd70a788d7596f58"
+    },
+    {
+      "name": "corpus/independent-16.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-16.circ",
+      "bytes": 16109,
+      "sha256": "19198a15e4880baccd3d00391f257c766a8be0859daae1ca721d3d8ed7c12a31"
+    },
+    {
+      "name": "corpus/independent-64.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-64.circ",
+      "bytes": 63917,
+      "sha256": "422e4af2cbe4ad04ec0aa04869166dc6d67fcbcfd4b0cdd8613487068ba383f6"
+    },
+    {
+      "name": "corpus/independent-256.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-256.circ",
+      "bytes": 255620,
+      "sha256": "6093665f68ac49d62caa26c8432fa70e3b87c050720b6f9af40977d04cb98bcb"
+    },
+    {
+      "name": "corpus/independent-384.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-384.circ",
+      "bytes": 384036,
+      "sha256": "6b7593a012694a5aa75989516e7d6374b442e6f9fe1b50f95ade667dab1bee67"
+    },
+    {
+      "name": "corpus/independent-1024.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-1024.circ",
+      "bytes": 1027311,
+      "sha256": "4e5cf7e40c9fe44d529d27045a5f24189fb007ff1e8908508d39b823b0e006e1"
+    },
+    {
+      "name": "corpus/hierarchical-16.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-16.circ",
+      "bytes": 14677,
+      "sha256": "8eb0316fad1634f757f3a31d7a50ac3c082cd9ed81646400686ae93cb31c87f4"
+    },
+    {
+      "name": "corpus/hierarchical-64.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-64.circ",
+      "bytes": 54037,
+      "sha256": "50a64a7f0a41be04a0e5f6c40d84175d813d5690b3f36a30ab59c43916b91b13"
+    },
+    {
+      "name": "corpus/hierarchical-256.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-256.circ",
+      "bytes": 211948,
+      "sha256": "4df6ff77dea871e6aa21937394f9a9ed46de5444b0149d3cdcc8d2a5c46407aa"
+    },
+    {
+      "name": "corpus/hierarchical-384.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-384.circ",
+      "bytes": 317836,
+      "sha256": "07b81291c0ade608a0998a75088b154a36d7378037771238bd1d52050aa6e631"
+    },
+    {
+      "name": "corpus/hierarchical-1024.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-1024.circ",
+      "bytes": 848471,
+      "sha256": "ce41b16c67626d3812586990cccffb5179a1c167f1dd7946202eefc596de7455"
+    },
+    {
+      "name": "sap1.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-corpus-replay/examples/sap1.circ",
+      "bytes": 47528,
+      "sha256": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac"
+    }
+  ],
+  "prepare_argv": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "python3",
+    "scripts/benchmark-circuits.py",
+    "--prepare-only",
+    "--no-incremental"
+  ],
+  "prepare_status": "PASS",
+  "prepare_log_sha256": "406b3aeab24137f68af8954592ab5462dbd05a3262f150fd81c76e0c849f4bfb",
+  "stamp_before": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-corpus-replay/core/build/performance-sources.json",
+    "sha256": "4b463e001d5cb05005cf1c21c43f2982592b3c2f4a1e9dd4ee0241a56f68126a",
+    "source_files": 305,
+    "classes": 1256,
+    "classpath_files": 1258
+  },
+  "replay_argv": [
+    "python3",
+    "/tmp/logisim-gradle-serial.py",
+    "python3",
+    "scripts/benchmark-circuits.py",
+    "--workload",
+    "replay",
+    "--input-manifest",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/manifest.json",
+    "--sap-input",
+    "examples/sap1.circ",
+    "--skip-build",
+    "--output",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-corpus-replay/outputs/performance/historical-replay-29942df3-001/replay.json"
+  ],
+  "replay_started_utc": "2026-11-05T10:00:07.731197+00:00",
+  "functional_replay_invocations": 1,
+  "replay_returncode": 0,
+  "replay_finished_utc": "2026-11-05T10:00:11.431559+00:00",
+  "original_inputs_after": [
+    {
+      "name": "corpus/manifest.json",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/manifest.json",
+      "bytes": 82126,
+      "sha256": "295571568422db33a280e9c0a52b322982cfa7f57c10e297fd70a788d7596f58"
+    },
+    {
+      "name": "corpus/independent-16.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-16.circ",
+      "bytes": 16109,
+      "sha256": "19198a15e4880baccd3d00391f257c766a8be0859daae1ca721d3d8ed7c12a31"
+    },
+    {
+      "name": "corpus/independent-64.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-64.circ",
+      "bytes": 63917,
+      "sha256": "422e4af2cbe4ad04ec0aa04869166dc6d67fcbcfd4b0cdd8613487068ba383f6"
+    },
+    {
+      "name": "corpus/independent-256.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-256.circ",
+      "bytes": 255620,
+      "sha256": "6093665f68ac49d62caa26c8432fa70e3b87c050720b6f9af40977d04cb98bcb"
+    },
+    {
+      "name": "corpus/independent-384.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-384.circ",
+      "bytes": 384036,
+      "sha256": "6b7593a012694a5aa75989516e7d6374b442e6f9fe1b50f95ade667dab1bee67"
+    },
+    {
+      "name": "corpus/independent-1024.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/independent-1024.circ",
+      "bytes": 1027311,
+      "sha256": "4e5cf7e40c9fe44d529d27045a5f24189fb007ff1e8908508d39b823b0e006e1"
+    },
+    {
+      "name": "corpus/hierarchical-16.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-16.circ",
+      "bytes": 14677,
+      "sha256": "8eb0316fad1634f757f3a31d7a50ac3c082cd9ed81646400686ae93cb31c87f4"
+    },
+    {
+      "name": "corpus/hierarchical-64.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-64.circ",
+      "bytes": 54037,
+      "sha256": "50a64a7f0a41be04a0e5f6c40d84175d813d5690b3f36a30ab59c43916b91b13"
+    },
+    {
+      "name": "corpus/hierarchical-256.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-256.circ",
+      "bytes": 211948,
+      "sha256": "4df6ff77dea871e6aa21937394f9a9ed46de5444b0149d3cdcc8d2a5c46407aa"
+    },
+    {
+      "name": "corpus/hierarchical-384.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-384.circ",
+      "bytes": 317836,
+      "sha256": "07b81291c0ade608a0998a75088b154a36d7378037771238bd1d52050aa6e631"
+    },
+    {
+      "name": "corpus/hierarchical-1024.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance/outputs/performance/mobile-corpus-v2-complete/hierarchical-1024.circ",
+      "bytes": 848471,
+      "sha256": "ce41b16c67626d3812586990cccffb5179a1c167f1dd7946202eefc596de7455"
+    },
+    {
+      "name": "sap1.circ",
+      "path": "/Users/thales/GitHub/logisim-mobile-worktrees/performance48-corpus-replay/examples/sap1.circ",
+      "bytes": 47528,
+      "sha256": "2103aae7364ef6bc96f8620d39e7223ce6e561b4cf51021e72a2e4479c962aac"
+    }
+  ],
+  "original_inputs_unchanged": true,
+  "stamp_after_sha256": "4b463e001d5cb05005cf1c21c43f2982592b3c2f4a1e9dd4ee0241a56f68126a",
+  "source_after": "29942df31947a38f9656dcc0e414c5ec457c0fc1",
+  "worktree_after_dirty": false,
+  "outputs": [
+    {
+      "file": "replay.json",
+      "bytes": 437516,
+      "sha256": "7de03d3c100a0effd45301ea044a7cbd0bb44f39f41794c5a5ad5114c01b80dd"
+    },
+    {
+      "file": "replay.log",
+      "bytes": 309,
+      "sha256": "7184f5413f789a5ed19a063e40efb59590c9b80287d2f4bb0619dd5c92cc6eb8"
+    },
+    {
+      "file": "prepare.log",
+      "bytes": 1032,
+      "sha256": "406b3aeab24137f68af8954592ab5462dbd05a3262f150fd81c76e0c849f4bfb"
+    }
+  ]
+}

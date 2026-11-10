@@ -1,0 +1,20 @@
+row: cli/substitute
+case: absolute-old-path
+result: PASS
+detail: stdout and exit class equal
+
+=== evolution: logisim-evolution -t table -s scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ
+exit: 0
+--- stdout (3 lines, sha256 c801cccd084cdaa79ad070a3cc43dbd7c8f7f01030702323334f8ac885d99237)
+A Y
+0 0
+1 1
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+
+=== mobile: HeadlessCircuitCli --tty-evolution -tty table -sub scripts/oracle/cli/fixtures/sub/lib-not.circ scripts/oracle/cli/fixtures/sub/lib-buf.circ scripts/oracle/cli/fixtures/sub/main.circ
+exit: 0
+--- stdout (3 lines, sha256 c801cccd084cdaa79ad070a3cc43dbd7c8f7f01030702323334f8ac885d99237)
+A Y
+0 0
+1 1
+--- stderr (0 lines, sha256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)

@@ -1,0 +1,32 @@
+test_after_sdk_captured_state_is_parsed_without_reader_acceptance (test_captured_binding.CapturedBindingTests.test_after_sdk_captured_state_is_parsed_without_reader_acceptance) ... ERROR
+test_before_sdk_captured_state_is_parsed_without_reader_acceptance (test_captured_binding.CapturedBindingTests.test_before_sdk_captured_state_is_parsed_without_reader_acceptance) ... ERROR
+test_captured_state_without_touch_exploration_is_rejected (test_captured_binding.CapturedBindingTests.test_captured_state_without_touch_exploration_is_rejected) ... ok
+
+======================================================================
+ERROR: test_after_sdk_captured_state_is_parsed_without_reader_acceptance (test_captured_binding.CapturedBindingTests.test_after_sdk_captured_state_is_parsed_without_reader_acceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/test_captured_binding.py", line 30, in test_after_sdk_captured_state_is_parsed_without_reader_acceptance
+    result = check_cross_evidence(*captured("baseline-after-sdk"), system_server_pid=PID_CAPTURED_BEFORE_AND_AFTER)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/check_binding.py", line 186, in check_cross_evidence
+    accessibility = check_accessibility_state(accessibility_dump, user_id=user_id)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/check_binding.py", line 177, in check_accessibility_state
+    raise BindingError("unknown_bound_format", "Bound record differs from the source-derived profile")
+check_binding.BindingError: Bound record differs from the source-derived profile
+
+======================================================================
+ERROR: test_before_sdk_captured_state_is_parsed_without_reader_acceptance (test_captured_binding.CapturedBindingTests.test_before_sdk_captured_state_is_parsed_without_reader_acceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/test_captured_binding.py", line 21, in test_before_sdk_captured_state_is_parsed_without_reader_acceptance
+    result = check_cross_evidence(*captured("baseline-before-sdk"), system_server_pid=PID_CAPTURED_BEFORE_AND_AFTER)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/check_binding.py", line 186, in check_cross_evidence
+    accessibility = check_accessibility_state(accessibility_dump, user_id=user_id)
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/accessibility28-reader-plan/docs/validation/accessibility-reader-3a0a01f1/android-console-binding-correction-001/check_binding.py", line 177, in check_accessibility_state
+    raise BindingError("unknown_bound_format", "Bound record differs from the source-derived profile")
+check_binding.BindingError: Bound record differs from the source-derived profile
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+FAILED (errors=2)

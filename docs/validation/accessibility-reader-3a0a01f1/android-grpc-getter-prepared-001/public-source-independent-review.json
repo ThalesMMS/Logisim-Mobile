@@ -1,0 +1,14 @@
+{
+  "reviewer": "/root/accessibility28/grpc_discovery_sources/touch_identifier_review",
+  "scope": "Independent public-source getter/auth review only; no local runtime",
+  "findings_confirmed": [
+    "avd grpc getter uses active_port to qemu_grpc_port and does not start service",
+    "avd getter is in the preauth command table",
+    "top-level grpc starts service and is not a substitute",
+    "official discovery parser reads every INI value",
+    "official JWT helper writes a new public JWK and creates a new signer"
+  ],
+  "accepted_correction": "Split the full-INI parser citation to emulator_discovery.py53\u201363 from channel/default/mode citation in emulator_description.py40\u201385.",
+  "report_sha256": "6c7fd6bc2ac29055c1b6b4437578ddeae78b35a7e786b8af421acf7e22411f48",
+  "result": "PASS_SOURCE_REVIEW_ONLY"
+}

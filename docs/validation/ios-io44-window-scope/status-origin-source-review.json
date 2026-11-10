@@ -1,0 +1,52 @@
+{
+  "scope": "Read-only source proof for transient status and persistent import origin; no product execution.",
+  "sourcePin": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "decision": "The final identity gate reads the existing import report, not the transient opened-file status.",
+  "files": {
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorState.kt": {
+      "sha256": "47c8de361e33e19ec92ff5a52a42bb3d8291753fb0600b1acaa0a3ae20e95fd6",
+      "excerpts": [
+        {
+          "firstLine": 149,
+          "lastLine": 156,
+          "source": "    var importReport by mutableStateOf(initialImportReport ?: (initialImport as? CircProjectImportResult.Success)?.let { EditorImportReport.from(it) })\n        private set\n    var importReportVisible by mutableStateOf(initialImportReport?.showOnOpen ?:\n        ((initialImport as? CircProjectImportResult.Success)?.migrations?.isNotEmpty() == true))\n        private set\n    val importError: String? get() = importErrorText?.resolve(AppLanguage.PORTUGUESE)\n    fun showImportReport() { importReportVisible = importReport != null }\n    fun dismissImportReport() { importReportVisible = false; importReport = importReport?.copy(showOnOpen = false) }"
+        },
+        {
+          "firstLine": 251,
+          "lastLine": 258,
+          "source": "\n    fun selectComponent(id: String?) {\n        val component = document.components.firstOrNull { it.id == id }\n        selectedId = component?.id\n        selectedIds = component?.let { setOf(it.id) } ?: emptySet()\n        selectedWires = emptySet()\n        if (component != null) statusText = message(Messages.StatusComponentSelected, \"name\" to component.displayText())\n    }"
+        },
+        {
+          "firstLine": 519,
+          "lastLine": 531,
+          "source": "    fun updateSelectedAttributes(updates: Map<String, String>) {\n        if (!ensureDocumentWritable()) return\n        val selected = selectedComponents()\n        if (selected.isEmpty()) return\n        try {\n            for (name in updates.keys) require(selected.all { component ->\n                componentRegistry.definition(component.kind)?.schema?.keys?.any { it.name == name } == true\n            }) { \"A propriedade $name n\u00e3o pode ser editada nesta sele\u00e7\u00e3o.\" }\n            val replacements = selected.associate { it.id to componentRegistry.reconfigure(it, updates) }\n            if (change { editor.updateComponents(replacements) }) statusText = message(Messages.StatusPropertyUpdated)\n        } catch (error: IllegalArgumentException) {\n            statusText = error.localizedDescription(message(Messages.ErrorPropertyValue))\n        }"
+        },
+        {
+          "firstLine": 937,
+          "lastLine": 969,
+          "source": "    private fun change(action: () -> Unit): Boolean {\n        val before = snapshot()\n        val previous = document\n        val next = try {\n            action()\n            AppearanceEdits.reconcileCircuit(before.project, previous, editor.document)\n        } catch (failure: Throwable) {\n            editor = CircuitEditor(previous, componentRegistry)\n            if (failure !is IllegalArgumentException) throw failure\n            statusText = failure.localizedDescription(message(Messages.ErrorProjectEdit))\n            return false\n        }\n        if (next != before.project) {\n            onSimulationInvalidated()\n            past.addLast(before)\n            trimHistory()\n            future.clear()\n            project = next\n            document = next.circuits.first { it.id == previous.id }\n            editor = CircuitEditor(document, componentRegistry)\n            val inputIds = inputIds(project.mainCircuit)\n            drives = drives.filterKeys { it in inputIds }\n            vectorDrives = vectorDrives.filterKeys { it in inputIds }\n            settleProject()\n            pendingWire = null\n            revision++\n        }\n        updateHistoryAvailability()\n        return true\n    }\n\n    private fun settleProject(purpose: SimulationRequestPurpose = SimulationRequestPurpose.COMMAND) {\n        if (!documentWritable) { projectSimulation = SimulationState(); showActiveSimulation(); return }"
+        }
+      ]
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt": {
+      "sha256": "133564a2cb23e5e58068f88e5014761b104d505ac707a0e02c573261375a98d2",
+      "excerpts": [
+        {
+          "firstLine": 400,
+          "lastLine": 408,
+          "source": "                            runController.pause(); toolMenu = true\n                        })\n                        add(EditorToolbarAction(\"preferences\", strings(Messages.PreferencesTitle)) { runController.pause(); preferencesSheet = true })\n                        if (state.importReport != null) add(EditorToolbarAction(\"import-report\", strings(\"import_report_title\"), onClick = state::showImportReport))\n                        add(EditorToolbarAction(\"help\", \"?\", strings(Messages.A11yOpenHelp)) { helpDialog = true })\n                    }, tag = \"editor-project-toolbar\", title = strings(Messages.ProjectToolsTitle), leading = {\n                        Text(\"${strings(Messages.AppName)}  ${state.document.name}\", fontSize = 14.sp,\n                            modifier = Modifier.fillMaxWidth(), maxLines = 1, overflow = TextOverflow.Ellipsis)\n                    })"
+        }
+      ]
+    },
+    "composeApp/src/commonMain/kotlin/dev/logisim/mobile/EditorDocuments.kt": {
+      "sha256": "8b4958d5db69b6f9a833e048d19a719862d6f441802231d676a8bbb4feff8038",
+      "excerpts": [
+        {
+          "firstLine": 31,
+          "lastLine": 40,
+          "source": "        val generation = ++attachmentGeneration\n        state.onProjectReplaced = ::unlink\n        actions.setOpenHandler { result ->\n            when (result) {\n                is DocumentOpenResult.Opened -> importDocument(result.content, { generation == attachmentGeneration }) { accepted ->\n                    if (accepted && generation == attachmentGeneration) {\n                        retain(result.content.reference.takeIf { it.mode == DocumentOpenMode.EDIT_IN_PLACE })\n                        state.reportStatus(message(Messages.StatusFileOpened, \"name\" to result.content.reference.name))\n                    }\n                }"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reviewer": "/root/accessibility28/grpc_discovery_sources/touch_identifier_review",
+  "reviewed_utc": "2026-11-05T10:47:07.756235+00:00",
+  "result": "PASS_PUBLIC_SOURCE_TUPLE_REVIEW_ONLY",
+  "scope": "Independent offline review of the frozen report against five already copied public source files. No emulator/device/getter/input event, credentials, arguments, environment, build, module execution or network operation.",
+  "report": {
+    "path": "/tmp/logisim-console-tuples-public-sources/report.md",
+    "bytes": 4187,
+    "sha256": "c32bff7daf3d4668d6223f843ad98b060d8dad6be49ecb72af492fc30d7bb686",
+    "matches_author_frozen_hash": true
+  },
+  "source_manifest": {
+    "path": "/tmp/logisim-console-tuples-public-sources/source-manifest.json",
+    "sha256": "fc2e4b940708f53e5af95e3a6975b6030f7d579968d245efa31f1142335de47a",
+    "source_commit": "686efa16baf59d776cadc3f975d12570fe44bbb9",
+    "verified_public_source_files": 5,
+    "all_sizes_and_sha256_match": true
+  },
+  "accepted_corrections": [
+    "Console token delimiters are stated precisely as space/tab.",
+    "Agent callback binding citation is corrected to lines152\u2013166; generic routing is lines73\u201396."
+  ],
+  "checks": [
+    {
+      "claim": "Canonical numeric3:57:-1 parses as EV_ABS/ABS_MT_TRACKING_ID/value-1 using strtol base0 and signed integer conversion",
+      "result": "CONFIRMED",
+      "sources": [
+        "hw-events.c142-202",
+        "hw-events.h535-546"
+      ]
+    },
+    {
+      "claim": "Each token is parsed before that token is forwarded; earlier successful tokens are dispatched before a later parse error, without pre-validation of the whole batch or rollback",
+      "result": "CONFIRMED",
+      "sources": [
+        "console.cpp2145-2196"
+      ]
+    },
+    {
+      "claim": "The parser accepts missing later fields with defaults and can ignore a suffix after a further colon; there is no errno/overflow/guest-capability enforcement, and the console buffer truncates long tokens",
+      "result": "CONFIRMED",
+      "sources": [
+        "hw-events.c153-202",
+        "console.cpp2154-2170"
+      ]
+    },
+    {
+      "claim": "Generic routing uses the VirtioInput feature gate and falls back to goldfish only when not marked sent",
+      "result": "CONFIRMED",
+      "sources": [
+        "qemu-user-event-agent-impl.c79-96",
+        "qemu-user-event-agent-impl.c152-166"
+      ]
+    },
+    {
+      "claim": "Display0 indexes array0 populated by instance/config1 named virtio_input_multi_touch_1",
+      "result": "CONFIRMED_SOURCE_MAPPING_ONLY",
+      "sources": [
+        "virtio-input-multi-touch.c38-50",
+        "virtio-input-multi-touch.c140-145",
+        "virtio-input-multi-touch.c317-325",
+        "virtio-input-multi-touch.c398-414"
+      ]
+    },
+    {
+      "claim": "Supported-type return1 is outside if(vinput), so it can suppress fallback without a virtio_input_send call; acknowledgments do not prove kernel delivery",
+      "result": "CONFIRMED",
+      "sources": [
+        "virtio-input-multi-touch.c398-414",
+        "qemu-user-event-agent-impl.c79-89"
+      ]
+    }
+  ],
+  "limits": [
+    "No installed Emulator binary, live backend flag or actual kernel delivery was verified.",
+    "A separate authorized passive trace must prove the complete frame/release sequence on the observed device.",
+    "A kernel trace alone would not establish TalkBack recognition.",
+    "This receipt does not qualify a wrapper implementation or authorize input."
+  ],
+  "files_modified": [
+    "This new independent-review.json only; report, source copies and repositories were not edited."
+  ]
+}

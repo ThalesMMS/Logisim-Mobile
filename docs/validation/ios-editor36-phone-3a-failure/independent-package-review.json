@@ -1,0 +1,150 @@
+{
+  "status": "FAIL_PRESERVED",
+  "reviewScope": "Offline raw/source/screenshot only. No live Simulator or rerun.",
+  "case": "EditorEndToEndTests/EditorEndToEndTests/testEditingConnectionsHistoryAndViewport",
+  "appProducer": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "harnessSource": "ba9d9682248fca28adbf5fc050f018156c7edc5c",
+  "nativeDurationSeconds": 377.055,
+  "nativeTests": 1,
+  "nativeFailures": 1,
+  "wrapperExitCode": 65,
+  "facts": [
+    "Contract steps1–15 completed; step16 first connectPorts began293.20s.",
+    "Source terminal E2E_IN/out was tapped317.51s; Components button tapped320.08s.",
+    "The list was repeatedly found while the subsequent search control lookup found no reachable match, through369.27s.",
+    "Search reveal emitted12 upward drags from(195,778) to(195,190), then one downward drag370.45s from(195,190) to(195,778).",
+    "After that last drag, reading the list frame failed at NativeUIHarness.swift82; final native tree and screenshot show normal editor with no Explorer/sheet/search.",
+    "No negative/off-app hit point is retained for the source-port or Components taps; no such cause is proven.",
+    "Completion terminal E2E_NOT/in was never reached, and no completed wire or signal1→0→1 is qualified.",
+    "Source AccessibleConnectionSession.choose stores a pending start without calling actions.connect; connect is called only on a subsequent target choice.",
+    "Source App uses a gesture-enabled ModalBottomSheet with onDismissRequest setting activeTool=null."
+  ],
+  "inferences": [
+    "The ordering is consistent with the final downward reveal gesture dismissing the ModalBottomSheet; this is a source-supported hypothesis, not a motion-consumption/gesture-callback measurement.",
+    "The retained evidence does not prove a product connection-engine failure or an immediate close after the start-port tap."
+  ],
+  "suggestedNextInvestigation": "Distinguish overscroll/nested sheet dismissal from an accessibility lookup issue using bounded diagnostic evidence before selecting a harness or product fix. No change or retry made by reviewer.",
+  "sources": {
+    "sheet": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/App.kt:613",
+    "searchAndList": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/AccessibleCircuitExplorer.kt:149",
+    "session": "composeApp/src/commonMain/kotlin/dev/logisim/mobile/CircuitAccessibilityModel.kt:188",
+    "driverSearch": "scripts/ios_e2e_ui/EditorEndToEndTests.swift:252",
+    "revealFrame": "scripts/ios_native_ui/NativeUIHarness.swift:82"
+  },
+  "raw": {
+    "test.log": {
+      "bytes": 258607,
+      "sha256": "f3af88d750c1bedcaa28c0f321f2e0b2b675ba69e23a3e214fe5d2234107cd4c"
+    },
+    "attachments/903D7244-7DCB-43FC-A5AC-D8618D226CD4.txt": {
+      "bytes": 7218,
+      "sha256": "f518b42eab71fad685b460926a880ac093962dfceca33b072a7a94881d96a1ad"
+    },
+    "attachments/3195E98F-656E-474E-8237-19B4BE545F75.png": {
+      "bytes": 191745,
+      "sha256": "9ca41fe49a34153a209930d2da11305542cf046bd5ddbd190adee53fdd6f3a95"
+    }
+  },
+  "logAnchors": [
+    {
+      "line": 2776,
+      "text": "t =   293.20s contract step 16: connectPorts"
+    },
+    {
+      "line": 2966,
+      "text": "t =   317.51s     Tap \"port:2:c1:out\" Button"
+    },
+    {
+      "line": 2984,
+      "text": "t =   320.08s     Tap \"Components\" Button"
+    },
+    {
+      "line": 3282,
+      "text": "t =   369.27s     Find the \"a11y-circuit-list\" Other"
+    },
+    {
+      "line": 3294,
+      "text": "t =   370.45s     Press Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 190.0) for 0.1 seconds, then drag to Application 'thalesmms.logisim.mobile'[0.00, 0.00] -> (195.0, 778.0) with velocity of 250.00 pixels per second, and then hold for 0.1 seconds"
+    },
+    {
+      "line": 3313,
+      "text": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-3a/outputs/ios-editor36-phone-3a-001/harness/NativeUIHarness.swift:82: error: -[EditorEndToEndTests.EditorEndToEndTests testEditingConnectionsHistoryAndViewport] : Failed to get matching snapshot: No matches found for first query match sequence: `Descendants matching type Any` -> `Elements matching predicate '\"a11y-circuit-list\" IN identifiers'`, given input App element pid: 76016"
+    }
+  ],
+  "validatedCompletedPrefix": {
+    "steps": 15,
+    "fullXmlSnapshots": 6,
+    "entries": [
+      {
+        "step": 2,
+        "checkpoint": "empty",
+        "bytes": 462,
+        "sha256": "c9ae3bb10cf2ea2b72180e899ee0c18c991ae20f26684fad55756eaab78dd481",
+        "file": "attachments/A5E5E757-064C-4F32-8A9F-C6846B7CCD23.xml"
+      },
+      {
+        "step": 7,
+        "checkpoint": "components",
+        "bytes": 1708,
+        "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9",
+        "file": "attachments/2BB570A0-0F5B-411A-902E-6A4C69C4029A.xml"
+      },
+      {
+        "step": 9,
+        "checkpoint": "north",
+        "bytes": 1709,
+        "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e",
+        "file": "attachments/59F9B851-2E17-4DB0-AF15-F4195E82E88E.xml"
+      },
+      {
+        "step": 11,
+        "checkpoint": "components",
+        "bytes": 1708,
+        "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9",
+        "file": "attachments/0BDD1C2E-7C41-49D9-A1E5-08FD75DD3EBA.xml"
+      },
+      {
+        "step": 13,
+        "checkpoint": "north",
+        "bytes": 1709,
+        "sha256": "5acc9b6d2200c8b6084fd825f9037521cae4fc155ecf0917ef791af4ad06582e",
+        "file": "attachments/9B67EF91-C86F-4F2D-940E-626D846ACE18.xml"
+      },
+      {
+        "step": 15,
+        "checkpoint": "components",
+        "bytes": 1708,
+        "sha256": "049e8daa354dd0ed76a918b6358845c46ec23fbc7082019e3926bb2380d4d9b9",
+        "file": "attachments/57A69675-DBD6-47EC-A908-B250A14DDEF7.xml"
+      }
+    ],
+    "copies": "NOT_REACHED",
+    "wires": "NOT_REACHED",
+    "zoom": "NOT_REACHED",
+    "nativeSignalSequence": "NOT_REACHED"
+  },
+  "packagingReview": {
+    "status": "PASS",
+    "archiveMembers": 624,
+    "allMembersComparedToSourceBytes": true,
+    "archivedAttachments": 577,
+    "nativeAttachmentsIncludingLocalVideo": 578,
+    "localOnlyFilesHashChecked": 3,
+    "preparedSwiftHashesMatched": 17,
+    "derivedFramesHashChecked": 4,
+    "framesViewed": [
+      319,
+      321,
+      369,
+      372
+    ],
+    "mediaTimeLimit": "Requested media offsets are not independently synchronized event timestamps.",
+    "observations": [
+      "Media319/321 display pending connection notice for E2E_IN/out and Cancel connection; Search is above visible list content.",
+      "Media369 shows the end of the E2E_IN card with Connect and Connections actions.",
+      "Media372 shows Search visible again and sheet displaced lower than in321.",
+      "Final native screenshot shows editor without sheet."
+    ],
+    "inferenceLimit": "These observations strengthen the sheet-scroll/dismissal hypothesis but do not identify nested-scroll consumption or a dismissal callback."
+  }
+}

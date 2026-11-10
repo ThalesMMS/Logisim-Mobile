@@ -1,0 +1,106 @@
+{
+  "assessment": "APPROVED_NO_BLOCKERS",
+  "scope": "Offline final discriminants and README only. No source changes, app execution, device access or new behavioral patch.",
+  "files": {
+    "census.py": "434d646bc3f1bdc611c21509f62ac85b9c1080e15426757ed10081cfb0b76e5e",
+    "test_census.py": "302f77b67f9b6deb90dfbd4bc47e0b5c861db904466af9f05a2b66aa84de7e29",
+    "README.md": "2351c8108401c489dcea7569db9984a6c96b5dc8b72b489c98ac4625745fd71c",
+    "census.json": "8ecba6ca3d57f3ba93c6384fb705ef7491cdfe65cc714e5fc111246837a09da6",
+    "census.md": "9dce94862242647721c92cf8358194954f29b033da416142db297b68333eb0fc",
+    "source-index.json": "c1b304f2eaa9bdcd274279dbf2cfab02b82b72e277fbdbdba36cce429deb1dce"
+  },
+  "checks": {
+    "archiveTests": 9,
+    "packageAndNativeOutputReplay": "identical",
+    "generatedJSONandMarkdown": "identical",
+    "independentCounterexamples": [
+      "None/NaN/Inf reject the entire attachment group",
+      "absent timestamp survives collect as None and prevents association",
+      "missing early attachment never shifts later measurements",
+      "missing final tree remains unknown in JSON and Markdown"
+    ]
+  },
+  "actors": {
+    "R1": {
+      "failure": {
+        "step": 16,
+        "actorBeingQueried": "Search",
+        "message": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-phone-3a/outputs/ios-editor36-phone-3a-001/harness/NativeUIHarness.swift:82: error: -[EditorEndToEndTests.EditorEndToEndTests testEditingConnectionsHistoryAndViewport] : Failed to get matching snapshot: No matches found for first query match sequence: `Descendants matching type Any` -> `Elements matching predicate '\"a11y-circuit-list\" IN identifiers'`, given input App element pid: 76016"
+      },
+      "counts": {
+        "Components": {
+          "queries": 2,
+          "taps": 2,
+          "drags": 0
+        },
+        "Search": {
+          "queries": 14,
+          "taps": 1,
+          "drags": 13
+        },
+        "Ports": {
+          "queries": 1,
+          "taps": 1,
+          "drags": 0
+        },
+        "Start": {
+          "queries": 2,
+          "taps": 1,
+          "drags": 1
+        },
+        "Complete": {
+          "queries": 0,
+          "taps": 0,
+          "drags": 0
+        }
+      }
+    },
+    "R2": {
+      "failure": {
+        "step": 17,
+        "actorBeingQueried": "Components",
+        "message": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-editor36-search-reveal/outputs/ios-editor36-phone-3a-002/harness/NativeUIHarness.swift:118: error: -[EditorEndToEndTests.EditorEndToEndTests testEditingConnectionsHistoryAndViewport] : Failed to get matching snapshot: No matches found for first query match sequence: `Descendants matching type Any` -> `Elements matching predicate '\"a11y-circuit-list\" IN identifiers'`, given input App element pid: 4675"
+      },
+      "counts": {
+        "Components": {
+          "queries": 16,
+          "taps": 3,
+          "drags": 13
+        },
+        "Search": {
+          "queries": 8,
+          "taps": 3,
+          "drags": 1
+        },
+        "Ports": {
+          "queries": 4,
+          "taps": 3,
+          "drags": 1
+        },
+        "Start": {
+          "queries": 4,
+          "taps": 2,
+          "drags": 2
+        },
+        "Complete": {
+          "queries": 2,
+          "taps": 1,
+          "drags": 1
+        }
+      }
+    }
+  },
+  "resolvedFindings": [
+    "No later geometry is reassigned after an earlier attachment is missing.",
+    "Viewport-only evidence does not establish field visibility.",
+    "Absent or nonfinite attachment timestamps keep the group unknown.",
+    "Missing final trees no longer imply observed sheet/list absence."
+  ],
+  "limits": [
+    "XCTest queries, taps and drags are requests rather than proof of delivery or consumption.",
+    "Native selected-state and per-action input-region readback were not retained.",
+    "Final absence does not identify a dismissal callback or its time.",
+    "R1 and R2 use different harness bases; result differences are not isolated causal evidence.",
+    "No full Editor62 pass is established."
+  ]
+}

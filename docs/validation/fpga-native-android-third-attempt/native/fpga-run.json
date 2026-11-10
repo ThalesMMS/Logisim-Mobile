@@ -1,0 +1,108 @@
+{
+  "started": "2026-11-05T07:09:58.925148+00:00",
+  "status": "FAIL",
+  "nativeExecutionGate": "NATIVE_FAIL",
+  "qualificationGate": "NOT_QUALIFIED",
+  "physicalHardware": false,
+  "programmingEnabled": false,
+  "selectedCases": [
+    "synthesis",
+    "tool-error",
+    "cancel"
+  ],
+  "harnessSource": "5912ff5029d5f4aabecd175112bfc386d8c5337b",
+  "catalogRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/fpga-native-catalog-3a0a01f1",
+  "serial": "emulator-5558",
+  "sources": {
+    "scripts/run-android-fpga.py": "488f90f0a079a6050a933579827f20496e69b389aac077873d7ae7d040559f88",
+    "scripts/android_fpga_scenarios.py": "83187b033a4e81b3b8de4f5fa3d3fb75c6837cf96aa2d9893e81a7ea0d4cc829",
+    "scripts/fpga_native_companion.py": "f03cc488316c0d85f17f86cb8dbfd6f146cf164ab5b30950aebef211fc315c06",
+    "scripts/e2e-android.py": "73268b15ef623f7608ef1ab8eabc1c51f2a9dd49e3c4e329b40c86c97f6795c9",
+    "scripts/android_ui.py": "8afbbc3514a2dcc33939f4c7a4bc9ec1674b54c2eb4610a5764336238057a634",
+    "scripts/android_editing_scenarios.py": "0b97319487924cf371eec29b8f0b9c7ec7a553230ea5ebd9149ff5d041556673",
+    "scripts/user_scenario_contract.py": "858dc5e43c70a28898afaa16341b786b203696153cc33c2e43c8314a4572c9eb",
+    "fixtures/user-scenarios/fpga-actions-v1.json": "aa65bc09902f366308af9572ce80cbe83cb69eef238264d68fe2baa8ea6ccb80",
+    "fixtures/user-scenarios/fpga-and.circ": "abf81355647b0ca0f899acbb293b2862247453c94f738c2dac4c21c098c32fd9",
+    "fixtures/user-scenarios/fpga-hx1k.xml": "9570a46724aabdeca9d2c35871562716867ad09bc3d4b6c188571d8ebe282763",
+    "fixtures/user-scenarios/fpga-hx1k-invalid-pin.xml": "4a3d40cdda86f55dc043c641ef6569ebd72d3b675ee5d4832976acce9a18751f"
+  },
+  "artifactSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "apkIdentities": {
+    "app": {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "instrumentations": []
+    },
+    "test": {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.DocumentIntegrationInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.e2e"
+        }
+      ]
+    },
+    "snapshot": {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "instrumentations": [
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        },
+        {
+          "name": "dev.logisim.mobile.documents.UiSnapshotSeriesInstrumentation",
+          "targetPackage": "thalesmms.logisim.mobile.snapshot.e2e.test"
+        }
+      ]
+    }
+  },
+  "installedBefore": [
+    {
+      "package": "thalesmms.logisim.mobile.e2e",
+      "path": "/data/app/~~DI5Xx3ycM8eXJDhxo-Pwng==/thalesmms.logisim.mobile.e2e-_FjoI-UubosUN9hst1Uh6A==/base.apk",
+      "sha256": "10e2b026ad2a398d86a50d12cdb9499b6a03fb89c507cc8a219143f917956973"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.e2e.test",
+      "path": "/data/app/~~Kf20Kd3fVTKxVzoMQdhhKw==/thalesmms.logisim.mobile.e2e.test-KUsE5O7LspOtWenTCXCyOA==/base.apk",
+      "sha256": "19ab4b9d97f740464e77a6754c8afcf3c1b80d86054f30a28af20ce472f0aa2b"
+    },
+    {
+      "package": "thalesmms.logisim.mobile.snapshot.e2e.test",
+      "path": "/data/app/~~VOvHeBeNjZpUBP_oVvY0AQ==/thalesmms.logisim.mobile.snapshot.e2e.test-c1FG3OnCtJK7f-MAo4nvbw==/base.apk",
+      "sha256": "504cbdf78311ede3955cefc748b29e76b3f5f600aa5de25e5974660e9dab3d3c"
+    }
+  ],
+  "deviceFingerprint": "google/sdk_gphone64_arm64/emu64a:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+  "systemLocales": "en-US",
+  "reversePort": 53178,
+  "error": {
+    "type": "AssertionError",
+    "message": "The active panel exposes no scrollable content"
+  },
+  "companionAudit": {
+    "host": "127.0.0.1",
+    "endpoint": "http://127.0.0.1:53178",
+    "operations": [
+      "fpga-synthesize"
+    ],
+    "programmingRegistered": false,
+    "tools": {
+      "yosys": {
+        "path": "/opt/homebrew/Cellar/yosys/0.70/bin/yosys",
+        "sha256": "435b1d43de6985eeaad8330b0636d0f7bb1143311fd27382bf258d04fb2873c4"
+      },
+      "nextpnr-ice40": {
+        "path": "/opt/homebrew/Cellar/nextpnr-ice40/0.11.1_2/bin/nextpnr-ice40",
+        "sha256": "26e1963d2242ae49cc859275aff91e2df05acbf1541c1da3c1e3df2d37b55ccd"
+      },
+      "icepack": {
+        "path": "/opt/homebrew/Cellar/icestorm/1.1_1/bin/icepack",
+        "sha256": "0f85ee7f182b0305eb5091b2829b56ddd53dfe478790be518713e4fb8efbe112"
+      }
+    },
+    "requests": [],
+    "events": [],
+    "jobs": []
+  },
+  "finished": "2026-11-05T07:10:23.500494+00:00"
+}

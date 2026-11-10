@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 660, in run
+    action()
+    ~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_portable_scenarios.py", line 472, in folder
+    self.s.choose_downloads()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/e2e-android.py", line 763, in choose_downloads
+    downloads = self.ui.find(roots[0], text="Downloads")
+  File "/Users/thales/GitHub/logisim-mobile-worktrees/android-e2e-df276e/scripts/android_ui.py", line 196, in find
+    raise UiNodeNotFound(f"Visible control missing: {selector}")
+android_ui.UiNodeNotFound: Visible control missing: {'text': 'Downloads', 'description': None, 'resource_id': None, 'prefix': False}

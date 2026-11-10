@@ -1,0 +1,128 @@
+{
+  "simulator": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+  "artifactManifest": "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/artifact.json",
+  "artifactManifestSha256": "7e83088f9d1ccee3c268e9dec954db9c351b47db9cd01b9fb652e8f1235b7b76",
+  "appSource": "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+  "appBundleTreeSha256": "813f1b2f05a28af4b593c8acf2c57d13257107ddb9ddcb9e38b35f2822a1d0ef",
+  "catalogCount": 2497,
+  "selectedTests": [
+    "EditorEndToEndTests/IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDimensionChangesRemainExportable",
+    "EditorEndToEndTests/IoEndToEndTests/testIoMomentaryControlsAndJoystick",
+    "EditorEndToEndTests/IoEndToEndTests/testIoKeyboardTtyAndCapacity"
+  ],
+  "timeoutSeconds": 600,
+  "postflight": {
+    "expectedFullXmlCheckpoints": 18,
+    "countsByTest": {
+      "testIoDisplaySignalsAndNativeDrawing": 2,
+      "testIoDimensionChangesRemainExportable": 12,
+      "testIoMomentaryControlsAndJoystick": 2,
+      "testIoKeyboardTtyAndCapacity": 2
+    },
+    "pairing": "testcase identity + original attachment name + corresponding io-checkpoint metadata; never pair repeated basenames globally",
+    "oracle": "scripts/io_showcase_contract.py for every full XML (54 components, all attributes and terminal partition); retain failure or missing exports",
+    "nativeVisualReview": [
+      "7 display transitions",
+      "TTY A / AB / A / empty",
+      "dimension drawing captures",
+      "pointer during-touch frames paired with recorded native ROI/API times; visual scope only"
+    ]
+  },
+  "status": "SOURCE_ONLY_PLAN_NO_LEASE_NO_NATIVE_EXECUTION",
+  "requires": "Root review, complete source integration and freeze, fresh artifact preflight, and an explicit simulator lease. B25 is only a proposed target.",
+  "argvAfterAdmission": [
+    "python3",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-import-copy/scripts/run-ios-e2e.py",
+    "--io-setup",
+    "files-copy",
+    "--simulator",
+    "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "--bundle-id",
+    "thalesmms.logisim.mobile",
+    "--baseline-sha",
+    "3a0a01f1af05dd3fea75d5a1499c762d039c478a",
+    "--catalog-root",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1",
+    "--app",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/mobile-final-keyboard-ownership-3a0a01f1/outputs/mobile-final-keyboard-ownership-3a0a01f1/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "--output",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-import-copy/outputs/ios-3a0a01f1-io44-files-copy-b25-r3-001",
+    "--derived-data",
+    "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-import-copy/outputs/ios-3a0a01f1-io44-files-copy-b25-r3-001/DerivedData",
+    "--test-timeout",
+    "600",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDisplaySignalsAndNativeDrawing",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoDimensionChangesRemainExportable",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoMomentaryControlsAndJoystick",
+    "--only-testing",
+    "EditorEndToEndTests/IoEndToEndTests/testIoKeyboardTtyAndCapacity"
+  ],
+  "productRebuild": false,
+  "alpha": false,
+  "retry": false,
+  "scope": "Four selected IO44 methods only; not all of issue 44.",
+  "passiveVideo": "Optional visual auxiliary only. No hold/clock qualification is inferred.",
+  "expectedScopeReceipts": [
+    "unique exact current filename Window admission per case",
+    "same retained Window + unique XML modal after clipboard return",
+    "same admitted XML Close target tree/frame before its single tap",
+    "positive editor with XML modal absent in the retained Window",
+    "fixed action reopening that Window's import report, exact canonical source origin, same report Close once",
+    "positive editor with XML and import report absent after origin verification"
+  ],
+  "stopConditions": [
+    "Ambiguous, vanished, or nonce-mismatched window fails that case without fallback or retap.",
+    "An infrastructure abort stops the call and preserves raw artifacts."
+  ],
+  "unchanged": [
+    "all 19 literal baseline probes",
+    "full XML attributes and terminal connectivity oracle",
+    "default 600 second timeout",
+    "production app 3a",
+    "original four failures and their raw artifacts"
+  ],
+  "additionalIdentityActions": {
+    "frequency": "Always after each scoped XML return, before checkpoint metadata can be emitted.",
+    "actions": [
+      "Open existing import_report_title in the retained Window",
+      "Require one import report with one exact current filename origin",
+      "Record and recheck the same reachable Close and origin",
+      "Tap that report Close once",
+      "Require a positive editor and both modals absent"
+    ],
+    "reportReadyTimeoutSeconds": 10,
+    "reportCloseTimeoutSeconds": 10,
+    "fallback": false,
+    "systemOpenAdded": false,
+    "featureOraclesChanged": false
+  },
+  "setup": "Explicit Files Import Copy from the separate receiver; no System Open and no failure fallback.",
+  "harnessRoot": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-io-import-copy",
+  "sourceOnlyReceipt": "receipt.json",
+  "unchangedCaseBodies": {
+    "testIoDisplaySignalsAndNativeDrawing": "54fd4b6a547cb459b56968c89d3383415cb3d37afc977e9014ec5e34bad10ada",
+    "testIoDimensionChangesRemainExportable": "15fe7199ad4a8c6baf5e10d3753b8c1fc2d20cbb8269e8b40c16bb89dc63ce60",
+    "testIoMomentaryControlsAndJoystick": "619eb28f31952b82a465a3dd4a5a5ff22ef6a7fc9dc52267d875b96b354eb4eb",
+    "testIoKeyboardTtyAndCapacity": "c5db5ce8f2e054d68ab39bbbda34bfcd11e3974153fd8ea9dd5ba1ed8f425b5d"
+  },
+  "preservePriorEvidence": {
+    "R1FourFailures": "c11cbbaf2764d91240081df359a86d5e55e8a285",
+    "R2SystemAbort": "b89b8190fcec2bd4941fd6540a3423395f3e06d4"
+  },
+  "setupSequence": [
+    "Validate and stage the exact approved fixture in the receiver Documents/LogisimE2E/runID.",
+    "Require one public existing editor window for bootstrap; fail before touching Files if ambiguous.",
+    "In that window open Files, then Import Copy.",
+    "Use unchanged NativeFilesPeerNavigator to observe the receiver/run directory and unique UUID filename selection.",
+    "Require unchanged source bytes after picker dismissal.",
+    "Admit exactly one Window for the filename, with exact import-report origin required initially.",
+    "Use the unchanged Event Step and all 19 literal baseline probes.",
+    "Execute the same selected method bodies and 18 full-XML checkpoint oracles."
+  ],
+  "qualification": "This is a different declared setup. It does not prove or fix Open With issue26, nor qualify IO44 before runtime.",
+  "harnessSourceIdentity": "Source hashes in receipt.json, following Python staging commit b8a666aa and base0732f74f. A fresh integration freeze is required."
+}

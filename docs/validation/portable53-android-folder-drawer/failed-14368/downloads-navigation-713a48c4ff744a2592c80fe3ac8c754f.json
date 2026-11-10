@@ -1,0 +1,155 @@
+{
+  "transitionLimitSeconds": 30,
+  "totalLimitSeconds": 90,
+  "maximumActions": 3,
+  "events": [
+    {
+      "seconds": 0.0,
+      "phase": "presentation",
+      "kind": "start"
+    },
+    {
+      "seconds": 3.6203,
+      "phase": "presentation",
+      "kind": "screen",
+      "querySeconds": 3.6202,
+      "timeoutSeconds": 30.0
+    },
+    {
+      "seconds": 3.6203,
+      "phase": "roots-open",
+      "kind": "tap",
+      "action": 1,
+      "text": "",
+      "description": "Show roots",
+      "resourceId": ""
+    },
+    {
+      "seconds": 3.6513,
+      "phase": "roots-open",
+      "kind": "tap-finished",
+      "actionSeconds": 0.031
+    },
+    {
+      "seconds": 6.4757,
+      "phase": "roots-open",
+      "kind": "screen",
+      "querySeconds": 2.8244,
+      "timeoutSeconds": 29.969
+    },
+    {
+      "seconds": 6.4758,
+      "phase": "location-content",
+      "kind": "tap",
+      "action": 2,
+      "text": "Downloads",
+      "description": "",
+      "resourceId": "android:id/title"
+    },
+    {
+      "seconds": 6.5177,
+      "phase": "location-content",
+      "kind": "tap-finished",
+      "actionSeconds": 0.0419
+    },
+    {
+      "seconds": 8.7242,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.2064,
+      "timeoutSeconds": 29.958
+    },
+    {
+      "seconds": 12.2362,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 3.3024,
+      "timeoutSeconds": 27.542
+    },
+    {
+      "seconds": 14.4838,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0425,
+      "timeoutSeconds": 24.0345
+    },
+    {
+      "seconds": 16.7685,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0796,
+      "timeoutSeconds": 21.7868
+    },
+    {
+      "seconds": 19.0031,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0306,
+      "timeoutSeconds": 19.5033
+    },
+    {
+      "seconds": 21.2557,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0408,
+      "timeoutSeconds": 17.2609
+    },
+    {
+      "seconds": 23.543,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0776,
+      "timeoutSeconds": 15.0105
+    },
+    {
+      "seconds": 25.8008,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0521,
+      "timeoutSeconds": 12.7271
+    },
+    {
+      "seconds": 28.0516,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0451,
+      "timeoutSeconds": 10.4693
+    },
+    {
+      "seconds": 30.3041,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0468,
+      "timeoutSeconds": 8.2185
+    },
+    {
+      "seconds": 32.5664,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0582,
+      "timeoutSeconds": 5.9676
+    },
+    {
+      "seconds": 34.8037,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 2.0272,
+      "timeoutSeconds": 3.6993
+    },
+    {
+      "seconds": 36.5346,
+      "phase": "location-content",
+      "kind": "screen",
+      "querySeconds": 1.5277,
+      "timeoutSeconds": 1.4689
+    },
+    {
+      "seconds": 36.5346,
+      "phase": "location-content",
+      "kind": "finish",
+      "actions": 2
+    }
+  ],
+  "status": "FAILED",
+  "error": "No fresh Android UI hierarchy within 1.4688992500014137s: Command '['/Users/thales/Library/Android/sdk/platform-tools/adb', '-s', 'emulator-5558', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/logisim-e2e-a0fc665e4ca24756ae4636a8e29e7282-99.xml']' timed out after 1.46889087499585 seconds"
+}

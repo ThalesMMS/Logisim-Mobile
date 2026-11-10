@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "issue": 34,
+  "scope": "Read-only native field census, not export qualification",
+  "status": "ALPHA_ONLY",
+  "nativeExecution": "NATIVE_PASS",
+  "testSeconds": 29.436,
+  "exitCode": 0,
+  "testCase": "VisualExportEndToEndTests.testVisualExportFieldCensus",
+  "harnessPin": "29ccce445724dfab9463f8abfaafdf1dd138d58b",
+  "sourcePin": "b9bd71ae49e562661ee114b248e342a02ed29508",
+  "artifact": {
+    "path": "/Users/thales/GitHub/logisim-mobile-worktrees/ios-focus-beta-experiment/outputs/ios-focus-beta-52c7ce8f/DerivedData/Build/Products/Debug-iphonesimulator/LogisimMobile.app",
+    "bundle_id": "thalesmms.logisim.mobile",
+    "executable_sha256": "0f0c7eb6784f4b77f3ebe9778fa4a7bf8a236a87731a05733bb97130f50b7867",
+    "bundle_tree_sha256": "0b661a20fbd34e2e3d5e82096155a5db4ea0ca6067054e54d214bbe37f0a5d93",
+    "version": "0.2.0",
+    "build": "2"
+  },
+  "device": {
+    "dataPath": "/Users/thales/Library/Developer/CoreSimulator/Devices/B25F12A5-62D8-4E9E-964E-96519DB6FB69/data",
+    "dataPathSize": 2801680384,
+    "logPath": "/Users/thales/Library/Logs/CoreSimulator/B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "udid": "B25F12A5-62D8-4E9E-964E-96519DB6FB69",
+    "lastUsedAt": "2026-11-05T02:07:11Z",
+    "isAvailable": true,
+    "logPathSize": 323584,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+    "state": "Booted",
+    "name": "Logisim SaveAs Beta iPad 27.0",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-0"
+  },
+  "visualSwiftSHA256": "90bbb48c720bd8afe123c254b7cf9a4bf61af3f78cde77788ebb2294bf848fc6",
+  "fixtureSHA256": "791508747474976204e73586a944caa1b0054801d7ab3306f6a02db7033f59d1",
+  "contractSHA256": "4724c4e02540d4321d3af86203ee86897910a641e3b926343245cb7ac86c72a7",
+  "observed": {
+    "applicationFrame": [
+      0,
+      0,
+      834,
+      1210
+    ],
+    "tagMarkerFrame": [
+      97,
+      0,
+      640,
+      768
+    ],
+    "tagMarkerHasEditableDescendants": false,
+    "tagMarkerCanonicalLabelMatches": 0,
+    "realContentOtherFrame": [
+      109,
+      550,
+      616,
+      628
+    ],
+    "applicationEditableCount": 3,
+    "applicationCanonicalLabelMatches": 2,
+    "fields": [
+      {
+        "label": "File name",
+        "role": "TextView",
+        "value": "visual_export_qualification",
+        "frame": [
+          121,
+          730,
+          592,
+          64
+        ],
+        "hittable": true
+      },
+      {
+        "label": "Scale",
+        "role": "TextView",
+        "value": "1",
+        "frame": [
+          121,
+          802,
+          292,
+          64
+        ],
+        "hittable": true
+      },
+      {
+        "label": "Margin",
+        "role": "TextView",
+        "value": "10",
+        "frame": [
+          421,
+          802,
+          292,
+          64
+        ],
+        "hittable": true
+      }
+    ],
+    "ancestry": "The tagged marker is an empty sibling of the actual sheet elements. The content Other contains the heading and three editable controls.",
+    "baseline": "Public app.launch and normal fixture-open setup presented the app after the prior Notification Center state; no inferred dismiss gesture was performed."
+  },
+  "conclusion": "The prior scoped reveal could not find these fields because its marker had no descendants and described a local, displaced rectangle. Canonical labels and field hittability were correct in this census.",
+  "limits": "No text replacement, export, save, PNG/PDF output, share or print action was performed. The previous qualifying attempt remains FAIL. This alpha pass cannot qualify issue34.",
+  "lease": "B25/cache explicitly returned to ios_files after exit0; no subsequent Simulator actions by this executor.",
+  "files": {
+    "results.json": {
+      "bytes": 26791,
+      "sha256": "687f79650e1996b7db064c3a5068bc4bb84231a734bf3c444aa5b7f784e58721"
+    },
+    "test.log": {
+      "bytes": 18627,
+      "sha256": "430a014716f79bfce9730979302ce998d581631d2f983b5bd8279fbfeaca3f08"
+    },
+    "field-census.txt": {
+      "bytes": 596,
+      "sha256": "3ec7c012a79d73fc7d8bf312428dbb42b2079f39b7835a4a4a2770a43aa793d4"
+    },
+    "panel-tree.txt": {
+      "bytes": 36778,
+      "sha256": "d7fce30f3c57bd5d4ee2d83c959b1ef64294b34d06aa748aa0bc22ecd2fa745d"
+    },
+    "panel-before-input.png": {
+      "bytes": 384901,
+      "sha256": "609aeac2235dd99a4c0d25e1e8a6ed2c761c36b92f179fb47ede5d6d8d383880"
+    },
+    "visual-census-before.circ": {
+      "bytes": 15809,
+      "sha256": "85d27df58497fdf252feadf9b6e854bb9d05996a7d8f0893f50c23e0c2e466d4"
+    }
+  },
+  "localEvidence": "/Users/thales/GitHub/logisim-mobile-worktrees/export34-native/outputs/ios-export34-beta-field-census-001"
+}
