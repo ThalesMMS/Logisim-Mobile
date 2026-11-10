@@ -2,6 +2,8 @@
 
 Logisim Mobile is a port of Logisim Evolution to Android and iOS built with Kotlin Multiplatform and Compose Multiplatform. The shared Kotlin engine imports and runs the [SAP-1 project](examples/SAP-1.md), whose program calculates `2 + 3 + 4 - 1 = 8`. Compatibility is limited to the subset documented in the [parity matrix](docs/parity.md).
 
+![Logisim Mobile's iPad interface showing a digital circuit in the editor](docs/images/logisim-mobile-ipad.jpg)
+
 The editor shares its canvas, library, inspector, and simulation controls across platforms. It uses side panels in wide windows and bottom panels on phones. The [editor guide](docs/parity-guide.md) describes the controls and how to run the example.
 
 The SAP-1 example produced `08` when run through the app on an Android API 35 emulator and an 11-inch iPad Pro (M5) simulator running iOS 27.0. The [validation record](docs/validation.md) covers the tests, builds, and scope of that validation.
