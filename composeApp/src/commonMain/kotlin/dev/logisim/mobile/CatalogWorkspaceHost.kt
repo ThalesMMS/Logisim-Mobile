@@ -32,6 +32,7 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
@@ -52,6 +53,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import dev.logisim.mobile.core.ComponentCatalog
 import dev.logisim.mobile.core.ComponentRegistry
 import dev.logisim.mobile.core.MobileExtensionCatalog
+import dev.logisim.mobile.core.WorkspaceCatalogRepository
 import dev.logisim.mobile.core.WorkspaceCatalogStorage
 import dev.logisim.mobile.core.WorkspaceProjectId
 import dev.logisim.mobile.core.localization.AppLanguage
@@ -59,9 +61,11 @@ import dev.logisim.mobile.core.localization.Messages
 import dev.logisim.mobile.core.localization.systemAppLanguage
 import dev.logisim.mobile.localization.AppLocaleProvider
 import dev.logisim.mobile.localization.rememberLocalizer
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.withContext
 
 /** Each native scene passes its own window ID while sharing the transactional catalog storage. */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -81,16 +85,53 @@ fun CatalogWorkspaceHost(
     registry: ComponentRegistry = ComponentCatalog.registry,
 ) {
     val confirmed by rememberUpdatedState(onExternalWorkspaceSaved)
-    var effectiveLanguage by remember(language, preferencesStorage) {
-        val savedLocale = preferencesStorage?.let { EditorPreferencesRepository(it).load().preferences.locale }
-        mutableStateOf(if (savedLocale == null || savedLocale == EditorLocale.SYSTEM) {
-            language
-        } else {
-            AppLanguage.fromTag(savedLocale.tag)
-        })
+    val preferencesRepository = remember(preferencesStorage) { preferencesStorage?.let(::EditorPreferencesRepository) }
+    val initialPreferences = remember(preferencesRepository) { preferencesRepository?.load() }
+    var effectiveLanguage by remember(language, preferencesRepository) {
+        mutableStateOf(initialPreferences?.preferences?.locale?.language ?: language)
     }
-    var themeMode by remember(preferencesStorage) {
-        mutableStateOf(preferencesStorage?.let { EditorPreferencesRepository(it).load().preferences.themeMode } ?: EditorThemeMode.SYSTEM)
+    var themeMode by remember(preferencesRepository) {
+        mutableStateOf(initialPreferences?.preferences?.themeMode ?: EditorThemeMode.SYSTEM)
+    }
+    var themeSetupComplete by remember(preferencesRepository) { mutableStateOf(false) }
+    if (!themeSetupComplete && preferencesRepository != null &&
+        initialPreferences?.hasNoStoredPreferences == true && legacyXml == null
+    ) {
+        // The workspace bootstraps a catalog even on an untouched install. Check before starting it
+        // so upgrades skip the chooser, and quitting before confirming still counts as first launch.
+        val newWorkspace by produceState<Boolean?>(null, storage) {
+            value = withContext(Dispatchers.Default) {
+                runCatching {
+                    storage.withExclusiveAccess {
+                        storage.listNames().none {
+                            it == WorkspaceCatalogRepository.CATALOG_FILE || it == WorkspaceCatalogRepository.BACKUP_FILE
+                        }
+                    }
+                }.getOrDefault(false)
+            }
+        }
+        if (newWorkspace != false) {
+            AppLocaleProvider(effectiveLanguage) {
+                if (newWorkspace == true) {
+                    FirstLaunchThemeScreen { chosenMode ->
+                        // A second scene can finish setup while this one still shows the chooser.
+                        val latest = preferencesRepository.load()
+                        val selected = if (latest.hasNoStoredPreferences) chosenMode else latest.preferences.themeMode
+                        val result = if (latest.hasNoStoredPreferences || !latest.canPersist) {
+                            preferencesRepository.save(latest.preferences.copy(themeMode = selected))
+                        } else PreferencesSaveResult.Success
+                        if (result == PreferencesSaveResult.Success) {
+                            themeMode = selected
+                            themeSetupComplete = true
+                        }
+                        result
+                    }
+                } else {
+                    LogisimTheme(themeMode.resolveDark()) { WorkspaceLoading() }
+                }
+            }
+            return
+        }
     }
     var runtimeState by remember(storage, windowId, registry) { mutableStateOf(CatalogWorkspaceRuntimeState()) }
     var extensionCatalog by remember(storage, windowId, registry) { mutableStateOf(MobileExtensionCatalog(registry)) }
@@ -150,12 +191,7 @@ fun CatalogWorkspaceHost(
         LogisimTheme(themeMode.resolveDark()) {
             Surface(color = ChromeColors.Bar) {
                 if (state == null) {
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            CircularProgressIndicator()
-                            Text(strings("editor_loading_project"), Modifier.padding(top = 12.dp))
-                        }
-                    }
+                    WorkspaceLoading()
                 } else {
                     val topInset = if (openIds.size > 1) Modifier.windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Top))
                         else Modifier
@@ -318,6 +354,17 @@ fun CatalogWorkspaceHost(
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun WorkspaceLoading() {
+    val strings = rememberLocalizer()
+    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            CircularProgressIndicator()
+            Text(strings("editor_loading_project"), Modifier.padding(top = 12.dp))
         }
     }
 }

@@ -20,15 +20,25 @@ class NativeUIHarness: XCTestCase {
         originalOrientation = XCUIDevice.shared.orientation
         app = XCUIApplication(bundleIdentifier: identifier)
         app.launch()
-        try waitForEditorStartup()
+        try waitForEditorStartup(completeFirstLaunch: true)
     }
 
-    func waitForEditorStartup() throws {
+    func waitForEditorStartup(completeFirstLaunch: Bool = false) throws {
+        let themeChooser = identified("first-launch-theme")
         let ready = XCTNSPredicateExpectation(predicate: NSPredicate { [unowned self] _, _ in
-            self.identified("editor-import-report").exists || self.identified("editor-project-toolbar").exists ||
+            (completeFirstLaunch && themeChooser.exists) || self.identified("editor-import-report").exists ||
+                self.identified("editor-project-toolbar").exists ||
                 self.identified("editor-command-toolbar").exists
         }, object: app)
         XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 20), .completed, "The editor must finish its startup load")
+        if completeFirstLaunch && themeChooser.exists {
+            let continueButton = identified("first-launch-theme-continue")
+            for _ in 0..<4 where !continueButton.isHittable { themeChooser.swipeUp() }
+            XCTAssertTrue(continueButton.isHittable, "The initial theme choice must be confirmable")
+            continueButton.tap()
+            try waitForEditorStartup()
+            return
+        }
         try closeImportReportIfPresented()
     }
 

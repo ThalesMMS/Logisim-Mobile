@@ -53,6 +53,15 @@ REPORT_PT = """<hierarchy rotation="0">
   </node>
 </hierarchy>"""
 
+THEME_CHOOSER = """<hierarchy rotation="0">
+  <node package="thalesmms.logisim.mobile.e2e" resource-id="first-launch-theme" bounds="[20,100][400,700]">
+    <node package="thalesmms.logisim.mobile.e2e" resource-id="first-launch-theme-system" text="Sistema"
+          checkable="true" checked="true" clickable="true" bounds="[40,180][380,240]"/>
+    <node package="thalesmms.logisim.mobile.e2e" resource-id="first-launch-theme-continue" text="Continuar"
+          clickable="true" bounds="[270,610][380,660]"/>
+  </node>
+</hierarchy>"""
+
 EDITOR_WITH_REPORT_CAPTION = """<hierarchy rotation="0">
   <node bounds="[0,0][420,800]">
     <node resource-id="editor-project-toolbar" scrollable="true" bounds="[0,20][420,70]">
@@ -142,7 +151,7 @@ class FakeAndroidUi(RUNNER.AndroidUi):
         self.captures.append((name, root))
         self.events.append(("capture", name))
 
-    def tap(self, node):
+    def tap(self, node, *, timeout=30):
         self.taps.append(node)
         self.events.append(("tap", node.get("text")))
 
@@ -346,6 +355,24 @@ class ImportReportBoundaryTests(unittest.TestCase):
         root = ET.fromstring(SIMULATION_OVERFLOW)
         ui = QueuedAndroidUi([root])
         self.assertIs(root, RUNNER.Scenarios(ui).wait_editor())
+        self.assertEqual([], ui.events)
+
+    def test_fresh_setup_confirms_system_then_acknowledges_the_import_report(self):
+        chooser = ET.fromstring(THEME_CHOOSER)
+        report = ET.fromstring(REPORT_PT)
+        editor = ET.fromstring(SIMULATION_OVERFLOW)
+        ui = QueuedAndroidUi([chooser, chooser, chooser, report, report, editor])
+        with patch.object(RUNNER.time, "sleep"):
+            self.assertIs(editor, RUNNER.Scenarios(ui).wait_editor(complete_first_launch=True))
+        self.assertEqual([("tap", "Sistema"), ("tap", "Continuar"),
+                          ("capture", "import-report-1"), ("tap", "Fechar")], ui.events)
+        self.assertEqual([], ui.roots)
+
+    def test_editor_wait_outside_fresh_setup_does_not_confirm_the_theme(self):
+        editor = ET.fromstring(SIMULATION_OVERFLOW)
+        ui = QueuedAndroidUi([ET.fromstring(THEME_CHOOSER), editor])
+        with patch.object(RUNNER.time, "sleep"):
+            self.assertIs(editor, RUNNER.Scenarios(ui).wait_editor())
         self.assertEqual([], ui.events)
 
 

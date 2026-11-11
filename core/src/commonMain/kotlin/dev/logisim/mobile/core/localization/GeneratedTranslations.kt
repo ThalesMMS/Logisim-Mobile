@@ -1414,6 +1414,10 @@ private object TranslationDe {
         "extra_io_timer_output" to MessageForms(other = "Ausgang: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "Der NE555 benötigt einen Widerstand von 1.000 bis 10.000.000 Ω und eine Kapazität von 10 bis 1.000 µF."),
         "file_default_name" to MessageForms(other = "Schaltung"),
+        "first_launch_theme_continue" to MessageForms(other = "Weiter"),
+        "first_launch_theme_description" to MessageForms(other = "Das Design lässt sich später in den Einstellungen ändern."),
+        "first_launch_theme_system" to MessageForms(other = "Systemeinstellung"),
+        "first_launch_theme_title" to MessageForms(other = "Design auswählen"),
         "fpga_active_high" to MessageForms(other = "High-aktiv"),
         "fpga_active_low" to MessageForms(other = "Low-aktiv"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Vor dem Vorbereiten eines FPGA-Projekts die Fehler beim HDL-Export beheben."),
@@ -1493,13 +1497,13 @@ private object TranslationDe {
         "fpga_companion_programmed" to MessageForms(other = "Platine programmiert"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "Quartus-Builds auf dem Companion erfordern ein unterstütztes Geräteprofil."),
         "fpga_companion_retry_status" to MessageForms(other = "Status erneut abfragen"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Plan prüfen"),
         "fpga_companion_selected_goal" to MessageForms(other = "Ausgewählt: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "Das Ziel oder das Projekt hat sich geändert. Vor der Ausführung einen neuen Plan vorbereiten."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Abgebrochen"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Fehlgeschlagen"),
         "fpga_companion_state_queued" to MessageForms(other = "In der Warteschlange"),
         "fpga_companion_state_running" to MessageForms(other = "Läuft"),
@@ -1596,13 +1600,13 @@ private object TranslationDe {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Bidirektional"),
         "fpga_direction_input" to MessageForms(other = "Eingang"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Ausgang"),
         "fpga_display_clock_required" to MessageForms(other = "Eine Multiplexanzeige benötigt einen gültigen Platinentakt von mindestens 1 kHz."),
         "fpga_display_pin_conflict" to MessageForms(other = "Pin {pin} ist bereits belegt und kann die Multiplexanzeige nicht zusätzlich ansteuern."),
         "fpga_duplicate_display_channel" to MessageForms(other = "Anzeigekanal {channel} ist bereits zugewiesen."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Low-aktiv"),
         "fpga_editor_add_resource" to MessageForms(other = "Ressource hinzufügen"),
@@ -1699,13 +1703,13 @@ private object TranslationDe {
         "fpga_program_invalid_import" to MessageForms(other = "Wählen Sie eine nicht leere .sof-Datei bis 8 MiB oder eine nicht leere .bit-, .bin-, .fs-, .pof- oder .jed-Datei bis 4 MiB."),
         "fpga_program_mode" to MessageForms(other = "Programmiermodus"),
         "fpga_program_mode_flash" to MessageForms(other = "Dauerhaft (Flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Temporär (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "Auf diesem Host sind keine Programmierziele verfügbar."),
         "fpga_program_prepare" to MessageForms(other = "Programmieranforderung prüfen"),
         "fpga_program_reported" to MessageForms(other = "Programmiergerät meldet Erfolg: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Diese Anforderung prüfen, bevor die angeschlossene Platine programmiert wird."),
         "fpga_program_review_target" to MessageForms(other = "Platine und Kabel: {target}"),
         "fpga_program_selected" to MessageForms(other = "Ausgewählt: {target}"),
@@ -1802,13 +1806,13 @@ private object TranslationDe {
         "hdl_import_module_missing" to MessageForms(other = "Modul {module} fehlt."),
         "hdl_import_modules_limit" to MessageForms(other = "Das Syntheseergebnis muss 1 bis 512 Module enthalten."),
         "hdl_import_modules_missing" to MessageForms(other = "Das Syntheseergebnis enthält keine Module."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Ungültige HDL-Netzkennung."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "HDL-Netzkennungen dürfen nicht negativ sein."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Ungültige Synthese-Netzliste."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Ein Registerstartwert ungleich null erfordert einen Entwurf mit Reset: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "Ungültige Anschlussrichtung in {module}.{port}."),
         "hdl_import_ports_limit" to MessageForms(other = "Das Modul {module} hat mehr als 256 Anschlüsse."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Rekursive HDL-Hierarchie: {module}."),
@@ -1905,13 +1909,13 @@ private object TranslationDe {
         "hdl_tools_import_cancel" to MessageForms(other = "Synthese abbrechen"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "Der Vorgang konnte nicht abgebrochen werden."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Abbruch angefordert."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Import abgebrochen."),
         "hdl_tools_import_confirm" to MessageForms(other = "Ausführung auf dem Mac bestätigen"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Den Companion in den Projektwerkzeugen verbinden."),
         "hdl_tools_import_defines" to MessageForms(other = "Definitionen, durch Kommas getrennt"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Auf dem Mac-Companion synthetisieren und das Ergebnis in bearbeitbare Schaltungen umwandeln. Quelldateien, Include-Dateien und Speicherdaten mit einfachen Dateinamen hinzufügen."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Relativer Dateipfad"),
@@ -2008,13 +2012,13 @@ private object TranslationDe {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "Der Simulator hat die Sitzung nicht angenommen."),
         "hdl_tools_sim_started" to MessageForms(other = "Sitzung gestartet. Die aktuellen Signale abtasten, um die ersten Ausgangswerte zu erhalten."),
         "hdl_tools_sim_starting" to MessageForms(other = "Prüfung und Elaborierung auf dem Mac laufen…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Status: {status} · Simulator {time} ns · Sitzung {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Sitzung angehalten. Die Ausgänge warten auf einen ausdrücklich angeforderten Neustart."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "Die Sitzung hat das Limit von 1 ms erreicht. Die Sitzung zurücksetzen."),
         "hdl_tools_sim_title" to MessageForms(other = "HDL-IP-Kosimulation"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Warten, bis der Simulator die Sitzung annimmt, oder eine neue Sitzung starten."),
         "hdl_tools_sim_waiting" to MessageForms(other = "Warten auf den Companion. Beim Abbrechen werden die Sitzung und ausstehende Antworten verworfen."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "Warten auf eine Abtastung bei {time} ns…"),
@@ -2111,13 +2115,13 @@ private object TranslationDe {
         "help_support_editing_title" to MessageForms(other = "Bearbeitung und Navigation"),
         "help_support_simulation_description" to MessageForms(other = "Deterministische Ereignisse, Hierarchie, Diagnose, Testvektoren, Analyse und Aufzeichnungen werden einzeln erfasst. Die Beispiele testen nur die jeweils angegebenen Eingabefolgen."),
         "help_support_simulation_title" to MessageForms(other = "Simulation und Überprüfung"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Simulatortests, Tests mit Screenreadern, Messungen an großen Schaltungen und signierte Veröffentlichungen sind separate Prüfschritte. Ein kompilierter Build belegt das Verhalten auf physischer Hardware nicht."),
         "help_support_validation_title" to MessageForms(other = "Plattformen und Veröffentlichungen"),
         "help_title" to MessageForms(other = "Hilfe und Beispiele"),
         "help_tool_unavailable" to MessageForms(other = "Dieses Werkzeug ist in diesem Build nicht verfügbar."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Referenzszenario testen"),
         "history_add_component" to MessageForms(other = "{name} hinzufügen"),
         "history_connect_wire" to MessageForms(other = "Leitung verbinden"),
@@ -2214,13 +2218,13 @@ private object TranslationDe {
         "io_state_tty_full_row" to MessageForms(other = "Zeilen: {rows}. Spalten: {columns}. Die aktuelle Zeile {row} ist voll. Das nächste druckbare Zeichen beginnt eine neue Zeile. Text: {text}"),
         "io_state_unavailable" to MessageForms(other = "Der E/A-Zustand ist nicht verfügbar."),
         "io_state_white" to MessageForms(other = "weiß"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "gelb"),
         "io_switch_off" to MessageForms(other = "aus"),
         "io_switch_on" to MessageForms(other = "ein"),
         "ios_access_expired" to MessageForms(other = "Der Dateizugriff ist abgelaufen. Die Datei erneut in der App „Dateien“ öffnen."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Ein anderer Datei- oder Druckvorgang ist noch geöffnet."),
         "ios_asset_export_failed" to MessageForms(other = "Die Datei konnte nicht vorbereitet oder exportiert werden."),
         "ios_asset_file_url_required" to MessageForms(other = "Es lassen sich nur lokale Dokumente oder Dokumente von Anbietern in der App „Dateien“ öffnen."),
@@ -2317,13 +2321,13 @@ private object TranslationDe {
         "legal_button" to MessageForms(other = "Lizenzen"),
         "legal_button_description" to MessageForms(other = "Lizenzen, Namensnennung und Quellcode"),
         "legal_introduction" to MessageForms(other = "Freie Software unter der GPLv3. Ohne Gewährleistung. Die Rechte und Hinweise zu den einzelnen Komponenten sind unten aufgeführt."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Quellcode und Build-Anleitung öffnen"),
         "legal_title" to MessageForms(other = "Lizenzen und Namensnennung"),
         "library_annotations" to MessageForms(other = "Anmerkungen"),
         "library_arithmetic" to MessageForms(other = "Arithmetik"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Zusätzliche Komponenten"),
         "library_float" to MessageForms(other = "Gleitkommaarithmetik"),
         "library_gates" to MessageForms(other = "Gatter"),
@@ -2420,13 +2424,13 @@ private object TranslationDe {
         "memory_format_binary_big" to MessageForms(other = "Binärdaten, Big Endian"),
         "memory_format_binary_little" to MessageForms(other = "Binärdaten, Little Endian"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "Anzeigen"),
@@ -2523,13 +2527,13 @@ private object TranslationDe {
         "portable_bundle_open_failed" to MessageForms(other = "Dieses Projektpaket konnte nicht geöffnet werden."),
         "portable_bundle_too_large" to MessageForms(other = "Dieses Projektpaket überschreitet die zulässige Größe."),
         "portable_cancel_directory" to MessageForms(other = "Ordnerimport abbrechen"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Die .circ-Hauptdatei in {folder} auswählen."),
         "portable_copy_not_opened" to MessageForms(other = "Die Kopie im Arbeitsbereich konnte nicht geöffnet werden. Das aktuelle Dokument blieb erhalten."),
         "portable_description" to MessageForms(other = "Ein Projektpaket oder ein Projekt in einem ausgewählten Ordner öffnen. Der Editor legt im Arbeitsbereich eine neue Kopie mit den Quelldateien an."),
         "portable_directory_changed" to MessageForms(other = "Eine Projektquelle wurde beim Import geändert. Den Ordner erneut öffnen, um eine konsistente Kopie zu erstellen."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "Dieser Ordner enthält keine .circ-Dateien."),
         "portable_directory_file_invalid" to MessageForms(other = "Eine .circ-Projektdatei auswählen."),
         "portable_directory_file_missing" to MessageForms(other = "Die ausgewählte Projektdatei ist nicht mehr verfügbar."),
@@ -2626,13 +2630,13 @@ private object TranslationDe {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Unterdrücke Warnungen über offene Eingänge im Entwurfsregel-Prüfbericht."),
         "preferences_fpga_title" to MessageForms(other = "FPGA Commander-Einstellungen"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "VHDL-Schlüsselwörter groß schreiben"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Eine positive, endliche Zahl eingeben."),
         "preferences_frequency_invalid" to MessageForms(other = "Die Standardfrequenz muss positiv und endlich sein."),
         "preferences_frequency_scope" to MessageForms(other = "Die Frequenz des geöffneten Projekts bleibt unverändert."),
         "preferences_gate_shapes" to MessageForms(other = "Gattersymbole"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Diese Einstellungen gelten für den Benutzer. Die Simulationsoptionen gehören zum Projekt."),
         "preferences_hexadecimal" to MessageForms(other = "Hexadezimal"),
         "preferences_hide_shortcuts" to MessageForms(other = "Tastenkürzel für Befehle ausblenden"),
@@ -2729,13 +2733,13 @@ private object TranslationDe {
         "project_toolbar_remove" to MessageForms(other = "{name} entfernen"),
         "project_toolbar_separator" to MessageForms(other = "Trenner"),
         "project_toolbar_title" to MessageForms(other = "Projektwerkzeugleiste"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (nicht verfügbar)"),
         "project_tools_title" to MessageForms(other = "Projektwerkzeuge"),
         "project_wire_count" to MessageForms(one = "{count} Leitung", other = "{count} Leitungen"),
         "project_xml_help" to MessageForms(other = "Das XML kopieren, um das Projekt zu speichern, oder den Inhalt einer .circ-Datei einfügen, um alle Schaltungen zu importieren."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "Projekt-XML"),
         "project_xml_title" to MessageForms(other = ".circ-Projekt"),
         "property_bits" to MessageForms(other = "Bits"),
@@ -2832,13 +2836,13 @@ private object TranslationDe {
         "soc_asm_address" to MessageForms(other = "Erwartet werden ein Offset und ein Basisregister, zum Beispiel 0(sp). Gefunden: {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Das Programm überschreitet den Adressraum der CPU."),
         "soc_asm_alignment" to MessageForms(other = "Die Ladeadresse muss ein Vielfaches von vier sein."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Doppelte Beschriftung: {value}."),
         "soc_asm_empty" to MessageForms(other = "Mindestens einen Befehl oder ein Datenwort eingeben."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "An die CPU-Resetadresse 0x{address} laden."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Assembler ausblenden"),
         "soc_asm_immediate" to MessageForms(other = "Ungültiger, außerhalb des Wertebereichs liegender oder nicht ausgerichteter Direktwert: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Nicht unterstützter Befehl oder nicht unterstützte Direktive: {value}."),
@@ -2935,13 +2939,13 @@ private object TranslationDe {
         "soc_load_elf" to MessageForms(other = "ELF-Datei laden"),
         "soc_memory_address_range" to MessageForms(other = "Der Speicherbereich ab {address} mit {bytes} Byte überschreitet den 32-Bit-Adressraum."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Speicherbelegung ausblenden"),
         "soc_memory_map_plic" to MessageForms(other = "RISC-V-Interruptcontroller (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Speicherbelegung anzeigen"),
         "soc_memory_map_title" to MessageForms(other = "Speicherbelegung des Busses"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Nicht zugeordnet"),
         "soc_nios_invalid" to MessageForms(other = "Ungültiger Nios-II-Befehl."),
         "soc_open_elf" to MessageForms(other = "ELF-Datei öffnen"),
@@ -3038,13 +3042,13 @@ private object TranslationDe {
         "tcl_cancel" to MessageForms(other = "Abbrechen"),
         "tcl_client_error_clock_required" to MessageForms(other = "Tcl-Komponenten benötigen den einbitigen Eingang sysclk_i."),
         "tcl_client_error_executor_failed" to MessageForms(other = "Die Tcl-Ausführung ist fehlgeschlagen."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Die Tcl-Wiedergabe benötigt 1 bis {limit} Eingabe-Frames. Empfangen: {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Tcl-Eingabe-Frames müssen zur deklarierten Komponentenschnittstelle passen."),
         "tcl_client_error_host_grant" to MessageForms(other = "Der ausgewählte Companion erlaubt {operation} nicht oder findet tclsh nicht."),
         "tcl_client_error_host_required" to MessageForms(other = "Vor der Tcl-Ausführung einen verfügbaren Companion auswählen."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Die Tcl-Antwort enthält ungültige Logikbits für {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "Die Tcl-Antwort stimmt nicht mit der Ausgangsschnittstelle überein."),
         "tcl_client_error_plan_required" to MessageForms(other = "Der Companion verlangt für diesen Vorgang eine separate Plangenehmigung."),
@@ -3141,13 +3145,13 @@ private object TranslationDe {
         "trace_file_resume" to MessageForms(other = "Dateiaufzeichnung fortsetzen"),
         "trace_file_signals_changed" to MessageForms(other = "Die Signalauswahl hat sich geändert. Die Dateiaufzeichnung wurde beendet."),
         "trace_file_start" to MessageForms(other = "TSV-Aufzeichnung starten"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Dateiaufzeichnung beenden"),
         "trace_file_stopping" to MessageForms(other = "Aufzeichnung in {name} wird abgeschlossen"),
         "trace_file_unavailable" to MessageForms(other = "In dieser Umgebung ist keine Dateiaufzeichnung verfügbar."),
         "trace_file_write_failed" to MessageForms(other = "Die Signaldatei konnte nicht geschrieben werden. Die Aufzeichnung wurde beendet."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Komponente oder Instanz"),
         "trace_half_cycles" to MessageForms(other = "Halbzyklen"),
         "trace_invalid_capacity" to MessageForms(other = "Die Kapazität der Aufzeichnung muss positiv sein."),
@@ -3244,13 +3248,13 @@ private object TranslationDe {
         "vector_set_order" to MessageForms(other = "Die Sätze müssen in aufsteigender Reihenfolge stehen."),
         "vector_step" to MessageForms(other = "Einzelschritt"),
         "vector_summary" to MessageForms(other = "{completed}/{total} Zeilen · {passed} bestanden · {failed} fehlgeschlagen · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Testvektoren"),
         "vector_unbound_column" to MessageForms(other = "Spalte {column} hat in {circuit} keinen passenden Pin und keinen passenden Taktgeber."),
         "vector_unterminated_quote" to MessageForms(other = "Beim Pin-Namen fehlt das schließende Anführungszeichen."),
         "vector_value_count" to MessageForms(other = "{expected} Werte erwartet, {actual} gefunden."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "Der Wert {token} passt nicht in die {width} Bit von {name}."),
         "vector_width_range" to MessageForms(other = "Die Bitbreite von {name} muss zwischen 1 und 64 liegen."),
         "visual_export_action_unavailable" to MessageForms(other = "Diese Exportaktion ist auf diesem Gerät nicht verfügbar."),
@@ -3347,13 +3351,13 @@ private object TranslationDe {
         "workspace_read_only_original" to MessageForms(other = "Original erhalten · schreibgeschützt"),
         "workspace_recent_copy" to MessageForms(other = "Kopie im Arbeitsbereich"),
         "workspace_recent_original" to MessageForms(other = "Original vom Dateianbieter"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Wiederhergestelltes Projekt"),
         "workspace_reload_saved" to MessageForms(other = "Gespeichertes Projekt neu laden"),
         "workspace_rename_project" to MessageForms(other = "Projekt umbenennen"),
         "workspace_restore" to MessageForms(other = "Wiederherstellen"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Erneut öffnen"),
         "workspace_retry_save" to MessageForms(other = "Erneut speichern"),
         "workspace_revision" to MessageForms(other = "Revision {revision} · {id}"),
@@ -4776,6 +4780,10 @@ private object TranslationEl {
         "extra_io_timer_output" to MessageForms(other = "Έξοδος: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "Ο NE555 απαιτεί αντίσταση από 1.000 έως 10.000.000 Ω και χωρητικότητα από 10 έως 1.000 µF."),
         "file_default_name" to MessageForms(other = "κύκλωμα"),
+        "first_launch_theme_continue" to MessageForms(other = "Συνέχεια"),
+        "first_launch_theme_description" to MessageForms(other = "Μπορείτε να αλλάξετε το θέμα αργότερα στις Προτιμήσεις."),
+        "first_launch_theme_system" to MessageForms(other = "Σύστημα"),
+        "first_launch_theme_title" to MessageForms(other = "Επιλέξτε θέμα"),
         "fpga_active_high" to MessageForms(other = "ενεργό σε υψηλή στάθμη"),
         "fpga_active_low" to MessageForms(other = "ενεργό σε χαμηλή στάθμη"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Διορθώστε τα σφάλματα εξαγωγής HDL πριν προετοιμάσετε έργο FPGA."),
@@ -4855,13 +4863,13 @@ private object TranslationEl {
         "fpga_companion_programmed" to MessageForms(other = "Η πλακέτα προγραμματίστηκε"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "Η μεταγλώττιση Quartus μέσω του Companion απαιτεί υποστηριζόμενο προφίλ συσκευής."),
         "fpga_companion_retry_status" to MessageForms(other = "Νέος έλεγχος κατάστασης"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Έλεγχος σχεδίου"),
         "fpga_companion_selected_goal" to MessageForms(other = "Επιλέχθηκε: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "Ο στόχος ή το έργο άλλαξε. Προετοιμάστε νέο σχέδιο πριν από την εκτέλεση."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Ακυρώθηκε"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Απέτυχε"),
         "fpga_companion_state_queued" to MessageForms(other = "Σε αναμονή"),
         "fpga_companion_state_running" to MessageForms(other = "Εκτελείται"),
@@ -4958,13 +4966,13 @@ private object TranslationEl {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Αμφίδρομη"),
         "fpga_direction_input" to MessageForms(other = "Είσοδος"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Έξοδος"),
         "fpga_display_clock_required" to MessageForms(other = "Μια οθόνη με πολυπλεξία χρειάζεται έγκυρο ρολόι πλακέτας με συχνότητα τουλάχιστον 1 kHz."),
         "fpga_display_pin_conflict" to MessageForms(other = "Η ακίδα {pin} χρησιμοποιείται ήδη και δεν μπορεί να οδηγήσει και την οθόνη με πολυπλεξία."),
         "fpga_duplicate_display_channel" to MessageForms(other = "Το κανάλι οθόνης {channel} έχει ήδη αντιστοιχιστεί."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Ενεργό σε χαμηλή στάθμη"),
         "fpga_editor_add_resource" to MessageForms(other = "Προσθήκη πόρου"),
@@ -5061,13 +5069,13 @@ private object TranslationEl {
         "fpga_program_invalid_import" to MessageForms(other = "Επιλέξτε ένα μη κενό αρχείο .sof έως 8 MiB ή ένα μη κενό αρχείο .bit, .bin, .fs, .pof ή .jed έως 4 MiB."),
         "fpga_program_mode" to MessageForms(other = "Λειτουργία προγραμματισμού"),
         "fpga_program_mode_flash" to MessageForms(other = "Μόνιμη (flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Προσωρινή (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "Δεν υπάρχουν διαθέσιμοι στόχοι προγραμματισμού σε αυτόν τον υπολογιστή."),
         "fpga_program_prepare" to MessageForms(other = "Έλεγχος αιτήματος προγραμματισμού"),
         "fpga_program_reported" to MessageForms(other = "Η συσκευή προγραμματισμού ανέφερε επιτυχία: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Ελέγξτε αυτό το αίτημα πριν προγραμματίσετε τη συνδεδεμένη πλακέτα."),
         "fpga_program_review_target" to MessageForms(other = "Πλακέτα και καλώδιο: {target}"),
         "fpga_program_selected" to MessageForms(other = "Επιλέχθηκε: {target}"),
@@ -5164,13 +5172,13 @@ private object TranslationEl {
         "hdl_import_module_missing" to MessageForms(other = "Λείπει η μονάδα {module}."),
         "hdl_import_modules_limit" to MessageForms(other = "Το αποτέλεσμα της σύνθεσης πρέπει να περιέχει από 1 έως 512 μονάδες."),
         "hdl_import_modules_missing" to MessageForms(other = "Το αποτέλεσμα της σύνθεσης δεν περιέχει μονάδες."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Μη έγκυρο αναγνωριστικό δικτύου HDL."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "Τα αναγνωριστικά δικτύων HDL πρέπει να είναι μη αρνητικά."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Μη έγκυρη λίστα διασυνδέσεων σύνθεσης."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Για μη μηδενική αρχικοποίηση καταχωρητή απαιτείται σχεδίαση με σήμα επαναφοράς: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "Μη έγκυρη κατεύθυνση θύρας στο {module}.{port}."),
         "hdl_import_ports_limit" to MessageForms(other = "Η μονάδα {module} υπερβαίνει τις 256 θύρες."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Αναδρομική ιεραρχία HDL: {module}."),
@@ -5267,13 +5275,13 @@ private object TranslationEl {
         "hdl_tools_import_cancel" to MessageForms(other = "Ακύρωση σύνθεσης"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "Δεν ήταν δυνατή η ακύρωση."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Ζητήθηκε ακύρωση."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Η εισαγωγή ακυρώθηκε."),
         "hdl_tools_import_confirm" to MessageForms(other = "Επιβεβαίωση εκτέλεσης στο Mac"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Συνδέστε το Companion από τα εργαλεία έργου."),
         "hdl_tools_import_defines" to MessageForms(other = "Ορισμοί χωρισμένοι με κόμμα"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Εκτελέστε σύνθεση στο Companion του Mac και μετατρέψτε το αποτέλεσμα σε επεξεργάσιμα κυκλώματα. Προσθέστε πηγαία αρχεία, αρχεία συμπερίληψης και δεδομένα μνήμης με απλά ονόματα αρχείων."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Σχετική διαδρομή αρχείου"),
@@ -5370,13 +5378,13 @@ private object TranslationEl {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "Ο προσομοιωτής δεν δέχτηκε τη συνεδρία."),
         "hdl_tools_sim_started" to MessageForms(other = "Η συνεδρία ξεκίνησε. Κάντε δειγματοληψία των τρεχόντων σημάτων για να λάβετε τις πρώτες εξόδους."),
         "hdl_tools_sim_starting" to MessageForms(other = "Έλεγχος και ανάπτυξη ιεραρχίας στο Mac…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Κατάσταση: {status} · προσομοιωτής {time} ns · συνεδρία {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Η συνεδρία σταμάτησε. Για να ενημερωθούν ξανά οι έξοδοι, ξεκινήστε νέα συνεδρία."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "Η συνεδρία έφτασε στο όριο του 1 ms. Επαναφέρετε τη συνεδρία."),
         "hdl_tools_sim_title" to MessageForms(other = "Συμπροσομοίωση HDL-IP"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Περιμένετε να δεχτεί ο προσομοιωτής τη συνεδρία ή ξεκινήστε άλλη."),
         "hdl_tools_sim_waiting" to MessageForms(other = "Αναμονή απάντησης από το Companion. Η ακύρωση απορρίπτει τη συνεδρία και τις εκκρεμείς απαντήσεις."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "Αναμονή δείγματος στα {time} ns…"),
@@ -5473,13 +5481,13 @@ private object TranslationEl {
         "help_support_editing_title" to MessageForms(other = "Επεξεργασία και περιήγηση"),
         "help_support_simulation_description" to MessageForms(other = "Τα ντετερμινιστικά συμβάντα, η ιεραρχία, τα διαγνωστικά, τα διανύσματα δοκιμής, η ανάλυση και οι καταγραφές παρακολουθούνται ανεξάρτητα. Τα παραδείγματα δοκιμάζουν μόνο τις δηλωμένες ακολουθίες εισόδων."),
         "help_support_simulation_title" to MessageForms(other = "Προσομοίωση και επαλήθευση"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Οι δοκιμές σε προσομοιωτή συσκευής, τα προγράμματα ανάγνωσης οθόνης, οι μετρήσεις σε μεγάλα κυκλώματα και οι υπογεγραμμένες εκδόσεις ελέγχονται χωριστά. Μια μεταγλωττισμένη έκδοση δεν αποδεικνύει τη συμπεριφορά σε πραγματικό υλικό."),
         "help_support_validation_title" to MessageForms(other = "Πλατφόρμες και εκδόσεις"),
         "help_title" to MessageForms(other = "Βοήθεια και παραδείγματα"),
         "help_tool_unavailable" to MessageForms(other = "Αυτό το εργαλείο δεν είναι διαθέσιμο σε αυτήν την έκδοση."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Δοκιμή σεναρίου αναφοράς"),
         "history_add_component" to MessageForms(other = "Προσθήκη {name}"),
         "history_connect_wire" to MessageForms(other = "Σύνδεση καλωδίου"),
@@ -5576,13 +5584,13 @@ private object TranslationEl {
         "io_state_tty_full_row" to MessageForms(other = "Γραμμές: {rows}. Στήλες: {columns}. Η τρέχουσα γραμμή {row} είναι γεμάτη. Ο επόμενος εκτυπώσιμος χαρακτήρας ξεκινά νέα γραμμή. Κείμενο: {text}"),
         "io_state_unavailable" to MessageForms(other = "Η κατάσταση εισόδου/εξόδου δεν είναι διαθέσιμη."),
         "io_state_white" to MessageForms(other = "λευκό"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "κίτρινο"),
         "io_switch_off" to MessageForms(other = "ανενεργός"),
         "io_switch_on" to MessageForms(other = "ενεργός"),
         "ios_access_expired" to MessageForms(other = "Η πρόσβαση στο αρχείο έληξε. Ανοίξτε το ξανά από τα Αρχεία."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Μια άλλη ενέργεια αρχείου ή εκτύπωσης παραμένει ανοιχτή."),
         "ios_asset_export_failed" to MessageForms(other = "Δεν ήταν δυνατή η προετοιμασία ή η εξαγωγή του αρχείου."),
         "ios_asset_file_url_required" to MessageForms(other = "Μπορούν να ανοίξουν μόνο τοπικά έγγραφα ή έγγραφα από πάροχο των Αρχείων."),
@@ -5679,13 +5687,13 @@ private object TranslationEl {
         "legal_button" to MessageForms(other = "Άδειες χρήσης"),
         "legal_button_description" to MessageForms(other = "Άδειες χρήσης, αναφορά δημιουργών και πηγαίος κώδικας"),
         "legal_introduction" to MessageForms(other = "Ελεύθερο λογισμικό υπό την άδεια GPLv3. Χωρίς εγγύηση. Τα δικαιώματα και οι γνωστοποιήσεις για κάθε στοιχείο παρατίθενται παρακάτω."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Άνοιγμα πηγαίου κώδικα και οδηγιών μεταγλώττισης"),
         "legal_title" to MessageForms(other = "Άδειες χρήσης και αναφορά δημιουργών"),
         "library_annotations" to MessageForms(other = "Σχόλια"),
         "library_arithmetic" to MessageForms(other = "Αριθμητικά"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Πρόσθετα εξαρτήματα"),
         "library_float" to MessageForms(other = "Αριθμητική κινητής υποδιαστολής"),
         "library_gates" to MessageForms(other = "Πύλες"),
@@ -5782,13 +5790,13 @@ private object TranslationEl {
         "memory_format_binary_big" to MessageForms(other = "Δυαδικά δεδομένα, big-endian"),
         "memory_format_binary_little" to MessageForms(other = "Δυαδικά δεδομένα, little-endian"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "Μετάβαση"),
@@ -5885,13 +5893,13 @@ private object TranslationEl {
         "portable_bundle_open_failed" to MessageForms(other = "Δεν ήταν δυνατό να ανοίξει αυτό το πακέτο έργου."),
         "portable_bundle_too_large" to MessageForms(other = "Αυτό το πακέτο έργου υπερβαίνει το όριο μεγέθους."),
         "portable_cancel_directory" to MessageForms(other = "Ακύρωση εισαγωγής φακέλου"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Επιλέξτε το κύριο αρχείο .circ στον φάκελο {folder}."),
         "portable_copy_not_opened" to MessageForms(other = "Δεν ήταν δυνατό να ανοίξει το αντίγραφο του χώρου εργασίας. Το τρέχον έγγραφο διατηρήθηκε."),
         "portable_description" to MessageForms(other = "Ανοίξτε ένα πακέτο ή ένα έργο μέσα σε φάκελο που επιλέγετε. Ο επεξεργαστής δημιουργεί νέο αντίγραφο στον χώρο εργασίας μαζί με τα πηγαία αρχεία του."),
         "portable_directory_changed" to MessageForms(other = "Ένα πηγαίο αρχείο του έργου άλλαξε κατά την εισαγωγή. Ανοίξτε ξανά τον φάκελο για να δημιουργηθεί συνεπές αντίγραφο."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "Αυτός ο φάκελος δεν περιέχει αρχεία .circ."),
         "portable_directory_file_invalid" to MessageForms(other = "Επιλέξτε αρχείο έργου .circ."),
         "portable_directory_file_missing" to MessageForms(other = "Το επιλεγμένο αρχείο έργου δεν είναι πλέον διαθέσιμο."),
@@ -5988,13 +5996,13 @@ private object TranslationEl {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Απόκρυψη προειδοποιήσεων ανοιχτών εισόδων στην αναφορά ελέγχου κανόνων σχεδίασης."),
         "preferences_fpga_title" to MessageForms(other = "FPGA Commander"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "Κεφαλαία γράμματα στις λέξεις-κλειδιά VHDL"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Χρησιμοποιήστε θετικό, πεπερασμένο αριθμό."),
         "preferences_frequency_invalid" to MessageForms(other = "Η προεπιλεγμένη συχνότητα πρέπει να είναι θετική και πεπερασμένη."),
         "preferences_frequency_scope" to MessageForms(other = "Η συχνότητα του ανοιχτού έργου δεν αλλάζει."),
         "preferences_gate_shapes" to MessageForms(other = "Σύμβολα πυλών"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Αυτές οι ρυθμίσεις είναι προσωπικές. Οι επιλογές προσομοίωσης ανήκουν στο έργο."),
         "preferences_hexadecimal" to MessageForms(other = "Δεκαεξαδικό"),
         "preferences_hide_shortcuts" to MessageForms(other = "Απόκρυψη συντομεύσεων εντολών"),
@@ -6091,13 +6099,13 @@ private object TranslationEl {
         "project_toolbar_remove" to MessageForms(other = "Κατάργηση {name}"),
         "project_toolbar_separator" to MessageForms(other = "Διαχωριστικό"),
         "project_toolbar_title" to MessageForms(other = "Γραμμή εργαλείων έργου"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (μη διαθέσιμο)"),
         "project_tools_title" to MessageForms(other = "Εργαλεία έργου"),
         "project_wire_count" to MessageForms(one = "{count} καλώδιο", other = "{count} καλώδια"),
         "project_xml_help" to MessageForms(other = "Αντιγράψτε το XML για να αποθηκεύσετε το έργο ή επικολλήστε το περιεχόμενο ενός αρχείου .circ για να εισαγάγετε όλα τα κυκλώματα."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "XML έργου"),
         "project_xml_title" to MessageForms(other = "Έργο .circ"),
         "property_bits" to MessageForms(other = "Bit"),
@@ -6194,13 +6202,13 @@ private object TranslationEl {
         "soc_asm_address" to MessageForms(other = "Αναμενόταν μετατόπιση και καταχωρητής βάσης, για παράδειγμα 0(sp). Βρέθηκε: {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Το πρόγραμμα υπερβαίνει τον χώρο διευθύνσεων της CPU."),
         "soc_asm_alignment" to MessageForms(other = "Η διεύθυνση φόρτωσης πρέπει να είναι πολλαπλάσιο του τέσσερα."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Διπλή ετικέτα: {value}."),
         "soc_asm_empty" to MessageForms(other = "Εισαγάγετε τουλάχιστον μία εντολή ή λέξη."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Φόρτωση στη διεύθυνση επαναφοράς της CPU 0x{address}."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Απόκρυψη συμβολομεταφραστή"),
         "soc_asm_immediate" to MessageForms(other = "Άμεση τιμή μη έγκυρη, εκτός ορίων ή χωρίς ευθυγράμμιση: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Μη υποστηριζόμενη εντολή ή οδηγία: {value}."),
@@ -6297,13 +6305,13 @@ private object TranslationEl {
         "soc_load_elf" to MessageForms(other = "Φόρτωση ELF"),
         "soc_memory_address_range" to MessageForms(other = "Η μνήμη στη διεύθυνση {address}, με μέγεθος {bytes} byte, υπερβαίνει τον χώρο διευθύνσεων των 32 bit."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Απόκρυψη χάρτη μνήμης"),
         "soc_memory_map_plic" to MessageForms(other = "Ελεγκτής διακοπών RISC-V (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Εμφάνιση χάρτη μνήμης"),
         "soc_memory_map_title" to MessageForms(other = "Χάρτης μνήμης διαύλου"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Χωρίς αντιστοίχιση"),
         "soc_nios_invalid" to MessageForms(other = "Μη έγκυρη εντολή Nios II."),
         "soc_open_elf" to MessageForms(other = "Άνοιγμα ELF"),
@@ -6400,13 +6408,13 @@ private object TranslationEl {
         "tcl_cancel" to MessageForms(other = "Ακύρωση"),
         "tcl_client_error_clock_required" to MessageForms(other = "Τα εξαρτήματα Tcl απαιτούν την είσοδο sysclk_i του ενός bit."),
         "tcl_client_error_executor_failed" to MessageForms(other = "Ο εκτελεστής Tcl απέτυχε."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Η επανάληψη Tcl απαιτεί από 1 έως {limit} πλαίσια εισόδου. Ελήφθησαν {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Τα πλαίσια εισόδου Tcl πρέπει να συμφωνούν με τη δηλωμένη διεπαφή του εξαρτήματος."),
         "tcl_client_error_host_grant" to MessageForms(other = "Το επιλεγμένο Companion δεν επιτρέπει την ενέργεια {operation} ή δεν βρίσκει το tclsh."),
         "tcl_client_error_host_required" to MessageForms(other = "Επιλέξτε διαθέσιμο Companion πριν εκτελέσετε Tcl."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Η απάντηση Tcl περιέχει μη έγκυρα λογικά bit για τη θύρα {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "Η απάντηση Tcl δεν συμφωνεί με τη διεπαφή εξόδου."),
         "tcl_client_error_plan_required" to MessageForms(other = "Το Companion απαιτεί ξεχωριστή έγκριση σχεδίου για αυτή την ενέργεια."),
@@ -6503,13 +6511,13 @@ private object TranslationEl {
         "trace_file_resume" to MessageForms(other = "Συνέχιση καταγραφής σε αρχείο"),
         "trace_file_signals_changed" to MessageForms(other = "Η επιλογή σημάτων άλλαξε. Η καταγραφή σε αρχείο σταμάτησε."),
         "trace_file_start" to MessageForms(other = "Καταγραφή σε αρχείο TSV"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Διακοπή καταγραφής σε αρχείο"),
         "trace_file_stopping" to MessageForms(other = "Ολοκλήρωση του {name}"),
         "trace_file_unavailable" to MessageForms(other = "Η καταγραφή σε αρχείο δεν είναι διαθέσιμη σε αυτό το περιβάλλον."),
         "trace_file_write_failed" to MessageForms(other = "Δεν ήταν δυνατή η εγγραφή του αρχείου σημάτων. Η καταγραφή σταμάτησε."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Εξάρτημα ή στιγμιότυπο"),
         "trace_half_cycles" to MessageForms(other = "ημιπερίοδοι"),
         "trace_invalid_capacity" to MessageForms(other = "Η χωρητικότητα της καταγραφής πρέπει να είναι θετική."),
@@ -6606,13 +6614,13 @@ private object TranslationEl {
         "vector_set_order" to MessageForms(other = "Τα σύνολα πρέπει να εμφανίζονται σε αύξουσα σειρά."),
         "vector_step" to MessageForms(other = "Βήμα"),
         "vector_summary" to MessageForms(other = "Γραμμές: {completed}/{total} · επιτυχίες: {passed} · αποτυχίες: {failed} · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Διανύσματα δοκιμής"),
         "vector_unbound_column" to MessageForms(other = "Η στήλη {column} δεν έχει αντίστοιχη ακίδα ή ρολόι στο κύκλωμα {circuit}."),
         "vector_unterminated_quote" to MessageForms(other = "Λείπει το εισαγωγικό που κλείνει το όνομα ακίδας."),
         "vector_value_count" to MessageForms(other = "Αναμένονταν {expected} τιμές, βρέθηκαν {actual}."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "Η τιμή {token} δεν χωρά στα {width} bit του {name}."),
         "vector_width_range" to MessageForms(other = "Το πλάτος του {name} πρέπει να είναι από 1 έως 64 bit."),
         "visual_export_action_unavailable" to MessageForms(other = "Αυτή η ενέργεια εξαγωγής δεν είναι διαθέσιμη στη συσκευή."),
@@ -6709,13 +6717,13 @@ private object TranslationEl {
         "workspace_read_only_original" to MessageForms(other = "Το πρωτότυπο διατηρήθηκε · μόνο για ανάγνωση"),
         "workspace_recent_copy" to MessageForms(other = "Αντίγραφο στον χώρο εργασίας"),
         "workspace_recent_original" to MessageForms(other = "Πρωτότυπο από τον πάροχο αρχείων"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Ανακτημένο έργο"),
         "workspace_reload_saved" to MessageForms(other = "Επαναφόρτωση αποθηκευμένου έργου"),
         "workspace_rename_project" to MessageForms(other = "Μετονομασία έργου"),
         "workspace_restore" to MessageForms(other = "Επαναφορά"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Νέα προσπάθεια ανοίγματος"),
         "workspace_retry_save" to MessageForms(other = "Νέα προσπάθεια αποθήκευσης"),
         "workspace_revision" to MessageForms(other = "Αναθεώρηση {revision} · {id}"),
@@ -8138,6 +8146,10 @@ private object TranslationEs {
         "extra_io_timer_output" to MessageForms(other = "Salida: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "El NE555 requiere una resistencia de 1000 a 10 000 000 Ω y una capacitancia de 10 a 1000 µF."),
         "file_default_name" to MessageForms(other = "circuito"),
+        "first_launch_theme_continue" to MessageForms(other = "Continuar"),
+        "first_launch_theme_description" to MessageForms(other = "Puedes cambiar el tema más adelante en Ajustes."),
+        "first_launch_theme_system" to MessageForms(other = "Sistema"),
+        "first_launch_theme_title" to MessageForms(other = "Elige un tema"),
         "fpga_active_high" to MessageForms(other = "activo en alto"),
         "fpga_active_low" to MessageForms(other = "activo en bajo"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Corrige los errores de exportación HDL antes de preparar un proyecto FPGA."),
@@ -8217,13 +8229,13 @@ private object TranslationEs {
         "fpga_companion_programmed" to MessageForms(other = "Placa programada"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "La compilación con Quartus en el servicio auxiliar requiere un perfil de dispositivo compatible."),
         "fpga_companion_retry_status" to MessageForms(other = "Volver a consultar el estado"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Revisar plan"),
         "fpga_companion_selected_goal" to MessageForms(other = "Objetivo seleccionado: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "Cambió el objetivo o el proyecto. Prepara otro plan antes de ejecutar."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Cancelada"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Fallida"),
         "fpga_companion_state_queued" to MessageForms(other = "En cola"),
         "fpga_companion_state_running" to MessageForms(other = "En ejecución"),
@@ -8320,13 +8332,13 @@ private object TranslationEs {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Bidireccional"),
         "fpga_direction_input" to MessageForms(other = "Entrada"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Salida"),
         "fpga_display_clock_required" to MessageForms(other = "Un display multiplexado necesita un reloj de placa válido de al menos 1 kHz."),
         "fpga_display_pin_conflict" to MessageForms(other = "El pin {pin} ya está en uso y no puede controlar también el display multiplexado."),
         "fpga_duplicate_display_channel" to MessageForms(other = "El canal {channel} del display ya está asignado."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Activo en bajo"),
         "fpga_editor_add_resource" to MessageForms(other = "Añadir recurso"),
@@ -8423,13 +8435,13 @@ private object TranslationEs {
         "fpga_program_invalid_import" to MessageForms(other = "Elige un archivo .sof no vacío de hasta 8 MiB o un archivo .bit, .bin, .fs, .pof o .jed no vacío de hasta 4 MiB."),
         "fpga_program_mode" to MessageForms(other = "Modo de programación"),
         "fpga_program_mode_flash" to MessageForms(other = "Persistente (flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Temporal (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "No hay destinos de programación disponibles en este equipo."),
         "fpga_program_prepare" to MessageForms(other = "Revisar la solicitud de programación"),
         "fpga_program_reported" to MessageForms(other = "Éxito informado por el programador: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Revisa esta solicitud antes de programar la placa conectada."),
         "fpga_program_review_target" to MessageForms(other = "Placa y cable: {target}"),
         "fpga_program_selected" to MessageForms(other = "Destino seleccionado: {target}"),
@@ -8526,13 +8538,13 @@ private object TranslationEs {
         "hdl_import_module_missing" to MessageForms(other = "Falta el módulo {module}."),
         "hdl_import_modules_limit" to MessageForms(other = "El resultado de síntesis debe contener entre 1 y 512 módulos."),
         "hdl_import_modules_missing" to MessageForms(other = "El resultado de síntesis no contiene módulos."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "El identificador de red HDL no es válido."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "Los identificadores de red HDL deben ser mayores o iguales a cero."),
         "hdl_import_netlist_invalid" to MessageForms(other = "La lista de conexiones de síntesis no es válida."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "La inicialización de registros con valores distintos de cero requiere un diseño con reinicio: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "La dirección del puerto {module}.{port} no es válida."),
         "hdl_import_ports_limit" to MessageForms(other = "El módulo {module} supera los 256 puertos."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Jerarquía HDL recursiva en el módulo {module}."),
@@ -8629,13 +8641,13 @@ private object TranslationEs {
         "hdl_tools_import_cancel" to MessageForms(other = "Cancelar síntesis"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "No se pudo cancelar."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Se solicitó la cancelación."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Se canceló la importación."),
         "hdl_tools_import_confirm" to MessageForms(other = "Confirmar la ejecución en el Mac"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Conecta el servicio auxiliar desde las herramientas del proyecto."),
         "hdl_tools_import_defines" to MessageForms(other = "Definiciones separadas por comas"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Sintetiza con el servicio auxiliar del Mac y convierte el resultado en circuitos editables. Añade archivos fuente, archivos de inclusión y datos de memoria con nombres sin ruta."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Ruta relativa del archivo"),
@@ -8732,13 +8744,13 @@ private object TranslationEs {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "El simulador no aceptó la sesión."),
         "hdl_tools_sim_started" to MessageForms(other = "Se inició la sesión. Toma una muestra de las señales actuales para recibir las primeras salidas."),
         "hdl_tools_sim_starting" to MessageForms(other = "Validando y elaborando en el Mac…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Estado: {status} · simulador {time} ns · sesión {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Se detuvo la sesión. Las salidas quedan a la espera de que inicies otra sesión de forma explícita."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "La sesión alcanzó su límite de 1 ms. Reinicia la sesión."),
         "hdl_tools_sim_title" to MessageForms(other = "Cosimulación HDL-IP"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Espera a que el simulador acepte la sesión o inicia otra."),
         "hdl_tools_sim_waiting" to MessageForms(other = "Esperando al servicio auxiliar. Si cancelas, se descartan la sesión y las respuestas pendientes."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "Esperando una muestra en {time} ns…"),
@@ -8835,13 +8847,13 @@ private object TranslationEs {
         "help_support_editing_title" to MessageForms(other = "Edición y navegación"),
         "help_support_simulation_description" to MessageForms(other = "Los eventos deterministas, la jerarquía, los diagnósticos, los vectores de prueba, el análisis y las trazas se evalúan por separado. Los ejemplos solo prueban las secuencias de entrada declaradas."),
         "help_support_simulation_title" to MessageForms(other = "Simulación y verificación"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Las pruebas en simulador, los lectores de pantalla, las mediciones con circuitos grandes y las versiones firmadas se verifican por separado. Una compilación no demuestra cómo funciona el hardware físico."),
         "help_support_validation_title" to MessageForms(other = "Plataformas y versiones"),
         "help_title" to MessageForms(other = "Ayuda y ejemplos"),
         "help_tool_unavailable" to MessageForms(other = "Esta herramienta no está disponible en esta compilación."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Probar el escenario de referencia"),
         "history_add_component" to MessageForms(other = "Añadir {name}"),
         "history_connect_wire" to MessageForms(other = "Conectar cable"),
@@ -8938,13 +8950,13 @@ private object TranslationEs {
         "io_state_tty_full_row" to MessageForms(other = "Filas: {rows}. Columnas: {columns}. La fila actual {row} está llena. El próximo carácter imprimible inicia otra fila. Texto: {text}"),
         "io_state_unavailable" to MessageForms(other = "El estado de entrada/salida no está disponible."),
         "io_state_white" to MessageForms(other = "blanco"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "amarillo"),
         "io_switch_off" to MessageForms(other = "desactivado"),
         "io_switch_on" to MessageForms(other = "activado"),
         "ios_access_expired" to MessageForms(other = "Caducó el acceso al archivo. Vuelve a abrirlo desde Archivos."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Sigue abierta otra operación de archivo o de impresión."),
         "ios_asset_export_failed" to MessageForms(other = "No se pudo preparar o exportar el archivo."),
         "ios_asset_file_url_required" to MessageForms(other = "Solo se pueden abrir documentos locales o de un proveedor de Archivos."),
@@ -9041,13 +9053,13 @@ private object TranslationEs {
         "legal_button" to MessageForms(other = "Licencias"),
         "legal_button_description" to MessageForms(other = "Licencias, atribución y código fuente"),
         "legal_introduction" to MessageForms(other = "Software libre bajo la GPLv3. Sin garantía. Los derechos y avisos de cada componente se indican a continuación."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Abrir el código fuente y las instrucciones de compilación"),
         "legal_title" to MessageForms(other = "Licencias y atribución"),
         "library_annotations" to MessageForms(other = "Anotaciones"),
         "library_arithmetic" to MessageForms(other = "Aritmética"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Componentes adicionales"),
         "library_float" to MessageForms(other = "Aritmética de coma flotante"),
         "library_gates" to MessageForms(other = "Puertas"),
@@ -9144,13 +9156,13 @@ private object TranslationEs {
         "memory_format_binary_big" to MessageForms(other = "Datos binarios, big-endian"),
         "memory_format_binary_little" to MessageForms(other = "Datos binarios, little-endian"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "Ir"),
@@ -9247,13 +9259,13 @@ private object TranslationEs {
         "portable_bundle_open_failed" to MessageForms(other = "No se pudo abrir este paquete de proyecto."),
         "portable_bundle_too_large" to MessageForms(other = "Este paquete de proyecto supera el límite de tamaño."),
         "portable_cancel_directory" to MessageForms(other = "Cancelar la importación de la carpeta"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Elige el archivo .circ principal en {folder}."),
         "portable_copy_not_opened" to MessageForms(other = "No se pudo abrir la copia del espacio de trabajo. Se conservó el documento actual."),
         "portable_description" to MessageForms(other = "Abre un paquete o selecciona una carpeta para abrir el proyecto que contiene. El editor crea una copia en el espacio de trabajo con sus archivos fuente."),
         "portable_directory_changed" to MessageForms(other = "Un archivo de origen del proyecto cambió durante la importación. Vuelve a abrir la carpeta para obtener una copia coherente."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "Esta carpeta no contiene archivos .circ."),
         "portable_directory_file_invalid" to MessageForms(other = "Elige un archivo de proyecto .circ."),
         "portable_directory_file_missing" to MessageForms(other = "El archivo de proyecto seleccionado ya no está disponible."),
@@ -9350,13 +9362,13 @@ private object TranslationEs {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Suprimir las advertencias de entradas abiertas en el informe de verificación de reglas de diseño."),
         "preferences_fpga_title" to MessageForms(other = "Ajustes de FPGA Commander"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "Usar mayúsculas en las palabras clave VHDL"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Usa un número positivo y finito."),
         "preferences_frequency_invalid" to MessageForms(other = "La frecuencia predeterminada debe ser positiva y finita."),
         "preferences_frequency_scope" to MessageForms(other = "La frecuencia del proyecto abierto se mantiene."),
         "preferences_gate_shapes" to MessageForms(other = "Símbolos de las puertas"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Estos ajustes son personales. Las opciones de simulación se guardan con el proyecto."),
         "preferences_hexadecimal" to MessageForms(other = "Hexadecimal"),
         "preferences_hide_shortcuts" to MessageForms(other = "Ocultar atajos de comandos"),
@@ -9453,13 +9465,13 @@ private object TranslationEs {
         "project_toolbar_remove" to MessageForms(other = "Eliminar {name}"),
         "project_toolbar_separator" to MessageForms(other = "Separador"),
         "project_toolbar_title" to MessageForms(other = "Barra de herramientas del proyecto"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (no disponible)"),
         "project_tools_title" to MessageForms(other = "Herramientas del proyecto"),
         "project_wire_count" to MessageForms(one = "{count} cable", many = "{count} cables", other = "{count} cables"),
         "project_xml_help" to MessageForms(other = "Copia el XML para guardar el proyecto o pega el contenido de un archivo .circ para importar todos sus circuitos."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "XML del proyecto"),
         "project_xml_title" to MessageForms(other = "Proyecto .circ"),
         "property_bits" to MessageForms(other = "Bits"),
@@ -9556,13 +9568,13 @@ private object TranslationEs {
         "soc_asm_address" to MessageForms(other = "Se esperaba un desplazamiento y un registro base, por ejemplo, 0(sp). Se encontró {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "El programa rebasa el espacio de direcciones de la CPU."),
         "soc_asm_alignment" to MessageForms(other = "La dirección de carga debe ser múltiplo de cuatro."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Etiqueta duplicada: {value}."),
         "soc_asm_empty" to MessageForms(other = "Introduce al menos una instrucción o palabra."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Carga el programa en la dirección de reinicio de la CPU 0x{address}."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Ocultar ensamblador"),
         "soc_asm_immediate" to MessageForms(other = "Operando inmediato no válido, fuera de rango o desalineado: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Instrucción o directiva no compatible: {value}."),
@@ -9659,13 +9671,13 @@ private object TranslationEs {
         "soc_load_elf" to MessageForms(other = "Cargar ELF"),
         "soc_memory_address_range" to MessageForms(other = "La memoria en {address}, de {bytes} bytes, rebasa el espacio de direcciones de 32 bits."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Ocultar mapa de memoria"),
         "soc_memory_map_plic" to MessageForms(other = "Controlador de interrupciones RISC-V (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Mostrar mapa de memoria"),
         "soc_memory_map_title" to MessageForms(other = "Mapa de memoria del bus"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Sin asignar"),
         "soc_nios_invalid" to MessageForms(other = "La instrucción Nios II no es válida."),
         "soc_open_elf" to MessageForms(other = "Abrir ELF"),
@@ -9762,13 +9774,13 @@ private object TranslationEs {
         "tcl_cancel" to MessageForms(other = "Cancelar"),
         "tcl_client_error_clock_required" to MessageForms(other = "Los componentes Tcl necesitan la entrada de un bit sysclk_i."),
         "tcl_client_error_executor_failed" to MessageForms(other = "Falló el ejecutor de Tcl."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "La reproducción Tcl requiere entre 1 y {limit} tramas de entrada. Se recibieron {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Las tramas de entrada Tcl deben coincidir con la interfaz declarada del componente."),
         "tcl_client_error_host_grant" to MessageForms(other = "El servicio auxiliar seleccionado no permite {operation} o no encuentra tclsh."),
         "tcl_client_error_host_required" to MessageForms(other = "Selecciona un servicio auxiliar disponible antes de ejecutar Tcl."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "La respuesta Tcl contiene bits lógicos no válidos para {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "La respuesta Tcl no coincide con la interfaz de salida."),
         "tcl_client_error_plan_required" to MessageForms(other = "El servicio auxiliar requiere una aprobación de plan independiente para esta operación."),
@@ -9865,13 +9877,13 @@ private object TranslationEs {
         "trace_file_resume" to MessageForms(other = "Reanudar el registro en archivo"),
         "trace_file_signals_changed" to MessageForms(other = "Cambió la selección de señales. Se detuvo el registro."),
         "trace_file_start" to MessageForms(other = "Registrar en un archivo TSV"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Detener el registro en archivo"),
         "trace_file_stopping" to MessageForms(other = "Finalizando {name}"),
         "trace_file_unavailable" to MessageForms(other = "El registro en archivo no está disponible en este entorno."),
         "trace_file_write_failed" to MessageForms(other = "No se pudo escribir el archivo de señales. Se detuvo el registro."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Componente o instancia"),
         "trace_half_cycles" to MessageForms(other = "semiciclos"),
         "trace_invalid_capacity" to MessageForms(other = "La capacidad de la traza debe ser positiva."),
@@ -9968,13 +9980,13 @@ private object TranslationEs {
         "vector_set_order" to MessageForms(other = "Los conjuntos deben aparecer en orden creciente."),
         "vector_step" to MessageForms(other = "Avanzar un paso"),
         "vector_summary" to MessageForms(other = "{completed}/{total} filas · {passed} correctas · {failed} con fallos · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Vectores de prueba"),
         "vector_unbound_column" to MessageForms(other = "Ningún pin ni reloj de {circuit} coincide con la columna {column}."),
         "vector_unterminated_quote" to MessageForms(other = "Faltan las comillas de cierre del nombre del pin."),
         "vector_value_count" to MessageForms(other = "Se esperaban {expected} valores y se encontraron {actual}."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "El valor {token} no cabe en {name}, cuyo ancho en bits es {width}."),
         "vector_width_range" to MessageForms(other = "El ancho de {name} debe estar entre 1 y 64 bits."),
         "visual_export_action_unavailable" to MessageForms(other = "Esta acción de exportación no está disponible en este dispositivo."),
@@ -10071,13 +10083,13 @@ private object TranslationEs {
         "workspace_read_only_original" to MessageForms(other = "Original conservado · solo lectura"),
         "workspace_recent_copy" to MessageForms(other = "Copia del espacio de trabajo"),
         "workspace_recent_original" to MessageForms(other = "Original del proveedor de archivos"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Proyecto recuperado"),
         "workspace_reload_saved" to MessageForms(other = "Volver a cargar el proyecto guardado"),
         "workspace_rename_project" to MessageForms(other = "Cambiar el nombre del proyecto"),
         "workspace_restore" to MessageForms(other = "Restaurar"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Volver a intentar abrir"),
         "workspace_retry_save" to MessageForms(other = "Volver a intentar guardar"),
         "workspace_revision" to MessageForms(other = "Revisión {revision} · {id}"),
@@ -11500,6 +11512,10 @@ private object TranslationFr {
         "extra_io_timer_output" to MessageForms(other = "Sortie : {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "Le NE555 nécessite une résistance de 1 000 à 10 000 000 Ω et une capacité de 10 à 1 000 µF."),
         "file_default_name" to MessageForms(other = "circuit"),
+        "first_launch_theme_continue" to MessageForms(other = "Continuer"),
+        "first_launch_theme_description" to MessageForms(other = "Vous pourrez changer de thème plus tard dans les préférences."),
+        "first_launch_theme_system" to MessageForms(other = "Système"),
+        "first_launch_theme_title" to MessageForms(other = "Choisissez un thème"),
         "fpga_active_high" to MessageForms(other = "actif à l’état haut"),
         "fpga_active_low" to MessageForms(other = "actif à l’état bas"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Corrigez les erreurs d’exportation HDL avant de préparer un projet FPGA."),
@@ -11579,13 +11595,13 @@ private object TranslationFr {
         "fpga_companion_programmed" to MessageForms(other = "Carte programmée"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "La compilation Quartus sur l’hôte Companion nécessite un profil de composant pris en charge."),
         "fpga_companion_retry_status" to MessageForms(other = "Réessayer de vérifier l’état"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Vérifier le plan"),
         "fpga_companion_selected_goal" to MessageForms(other = "Sélection : {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "L’objectif ou le projet a changé. Préparez un nouveau plan avant de l’exécuter."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Annulée"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Échec"),
         "fpga_companion_state_queued" to MessageForms(other = "En attente"),
         "fpga_companion_state_running" to MessageForms(other = "En cours"),
@@ -11682,13 +11698,13 @@ private object TranslationFr {
         "fpga_diagnostic" to MessageForms(other = "{code} : {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Bidirectionnel"),
         "fpga_direction_input" to MessageForms(other = "Entrée"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Sortie"),
         "fpga_display_clock_required" to MessageForms(other = "Un afficheur multiplexé nécessite une horloge de carte valide d’au moins 1 kHz."),
         "fpga_display_pin_conflict" to MessageForms(other = "La broche {pin} est déjà utilisée et ne peut pas aussi piloter l’afficheur multiplexé."),
         "fpga_duplicate_display_channel" to MessageForms(other = "Le canal {channel} de l’afficheur est déjà affecté."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Actif à l’état bas"),
         "fpga_editor_add_resource" to MessageForms(other = "Ajouter une ressource"),
@@ -11785,13 +11801,13 @@ private object TranslationFr {
         "fpga_program_invalid_import" to MessageForms(other = "Choisissez un fichier .sof non vide de 8 Mio maximum ou un fichier .bit, .bin, .fs, .pof ou .jed non vide de 4 Mio maximum."),
         "fpga_program_mode" to MessageForms(other = "Mode de programmation"),
         "fpga_program_mode_flash" to MessageForms(other = "Persistant (flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Temporaire (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "Aucune cible de programmation disponible sur cet hôte."),
         "fpga_program_prepare" to MessageForms(other = "Vérifier la demande de programmation"),
         "fpga_program_reported" to MessageForms(other = "Réussite signalée par le programmateur : {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Vérifiez cette demande avant de programmer la carte connectée."),
         "fpga_program_review_target" to MessageForms(other = "Carte et câble : {target}"),
         "fpga_program_selected" to MessageForms(other = "Cible sélectionnée : {target}"),
@@ -11888,13 +11904,13 @@ private object TranslationFr {
         "hdl_import_module_missing" to MessageForms(other = "Module {module} introuvable."),
         "hdl_import_modules_limit" to MessageForms(other = "Le résultat de la synthèse doit contenir entre 1 et 512 modules."),
         "hdl_import_modules_missing" to MessageForms(other = "Le résultat de la synthèse ne contient aucun module."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Identifiant de réseau HDL invalide."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "Les identifiants de réseaux HDL doivent être positifs ou nuls."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Netlist de synthèse invalide."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Une valeur initiale non nulle pour le registre nécessite une conception avec réinitialisation : {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "Sens de port invalide dans {module}.{port}."),
         "hdl_import_ports_limit" to MessageForms(other = "Le module {module} dépasse la limite de 256 ports."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Hiérarchie HDL récursive : {module}."),
@@ -11991,13 +12007,13 @@ private object TranslationFr {
         "hdl_tools_import_cancel" to MessageForms(other = "Annuler la synthèse"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "Impossible d’annuler."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Annulation demandée."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Importation annulée."),
         "hdl_tools_import_confirm" to MessageForms(other = "Confirmer l’exécution sur le Mac"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Connectez le Companion dans les outils du projet."),
         "hdl_tools_import_defines" to MessageForms(other = "Définitions séparées par des virgules"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Lancez la synthèse sur le Companion du Mac, puis convertissez le résultat en circuits modifiables. Ajoutez les fichiers sources, les fichiers à inclure et les données de mémoire avec des noms de fichiers simples."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location} : {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Chemin relatif du fichier"),
@@ -12094,13 +12110,13 @@ private object TranslationFr {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "Le simulateur a refusé la session."),
         "hdl_tools_sim_started" to MessageForms(other = "Session démarrée. Échantillonnez les signaux actuels pour recevoir les premières valeurs de sortie."),
         "hdl_tools_sim_starting" to MessageForms(other = "Validation et élaboration sur le Mac…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "État : {status} · simulateur {time} ns · session {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Session arrêtée. Les sorties attendent un nouveau démarrage explicite."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "La session a atteint sa limite de 1 ms. Réinitialisez-la."),
         "hdl_tools_sim_title" to MessageForms(other = "Cosimulation HDL-IP"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Attendez que le simulateur accepte la session ou démarrez-en une autre."),
         "hdl_tools_sim_waiting" to MessageForms(other = "En attente du Companion. L’annulation abandonne la session et les réponses en attente."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "En attente d’un échantillon à {time} ns…"),
@@ -12197,13 +12213,13 @@ private object TranslationFr {
         "help_support_editing_title" to MessageForms(other = "Édition et navigation"),
         "help_support_simulation_description" to MessageForms(other = "Les événements déterministes, la hiérarchie, les diagnostics, les vecteurs de test, l’analyse et les traces sont suivis séparément. Les exemples testent uniquement les séquences d’entrée qu’ils déclarent."),
         "help_support_simulation_title" to MessageForms(other = "Simulation et vérification"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Les tests sur simulateur, les lecteurs d’écran, les mesures sur de grands circuits et les versions signées font l’objet de validations distinctes. La compilation ne confirme pas le comportement du matériel physique."),
         "help_support_validation_title" to MessageForms(other = "Plateformes et versions"),
         "help_title" to MessageForms(other = "Aide et exemples"),
         "help_tool_unavailable" to MessageForms(other = "Cet outil est indisponible dans cette version."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Tester le scénario de référence"),
         "history_add_component" to MessageForms(other = "Ajouter {name}"),
         "history_connect_wire" to MessageForms(other = "Connecter le fil"),
@@ -12300,13 +12316,13 @@ private object TranslationFr {
         "io_state_tty_full_row" to MessageForms(other = "Lignes : {rows}, colonnes : {columns}. La ligne actuelle {row} est pleine. Le prochain caractère imprimable commencera une nouvelle ligne. Texte : {text}"),
         "io_state_unavailable" to MessageForms(other = "L’état des E/S est indisponible."),
         "io_state_white" to MessageForms(other = "blanc"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "jaune"),
         "io_switch_off" to MessageForms(other = "désactivé"),
         "io_switch_on" to MessageForms(other = "activé"),
         "ios_access_expired" to MessageForms(other = "L’accès au fichier a expiré. Ouvrez de nouveau le fichier dans l’app Fichiers."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Une autre opération sur un fichier ou une impression est toujours ouverte."),
         "ios_asset_export_failed" to MessageForms(other = "Impossible de préparer ou d’exporter le fichier."),
         "ios_asset_file_url_required" to MessageForms(other = "Seuls les documents locaux ou provenant d’un fournisseur de l’app Fichiers peuvent être ouverts."),
@@ -12403,13 +12419,13 @@ private object TranslationFr {
         "legal_button" to MessageForms(other = "Licences"),
         "legal_button_description" to MessageForms(other = "Licences, attribution et code source"),
         "legal_introduction" to MessageForms(other = "Logiciel libre sous GPLv3. Sans garantie. Les droits et mentions applicables à chaque composant figurent ci-dessous."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Ouvrir le code source et les instructions de compilation"),
         "legal_title" to MessageForms(other = "Licences et attribution"),
         "library_annotations" to MessageForms(other = "Annotations"),
         "library_arithmetic" to MessageForms(other = "Arithmétique"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Composants supplémentaires"),
         "library_float" to MessageForms(other = "Arithmétique en virgule flottante"),
         "library_gates" to MessageForms(other = "Portes logiques"),
@@ -12506,13 +12522,13 @@ private object TranslationFr {
         "memory_format_binary_big" to MessageForms(other = "Données binaires, octet de poids fort en premier"),
         "memory_format_binary_little" to MessageForms(other = "Données binaires, octet de poids faible en premier"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "Aller à l’adresse"),
@@ -12609,13 +12625,13 @@ private object TranslationFr {
         "portable_bundle_open_failed" to MessageForms(other = "Impossible d’ouvrir cette archive de projet."),
         "portable_bundle_too_large" to MessageForms(other = "Cette archive de projet dépasse la taille maximale."),
         "portable_cancel_directory" to MessageForms(other = "Annuler l’importation du dossier"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Choisissez le fichier .circ principal dans {folder}."),
         "portable_copy_not_opened" to MessageForms(other = "Impossible d’ouvrir la copie de l’espace de travail. Votre document actuel a été conservé."),
         "portable_description" to MessageForms(other = "Ouvrez une archive ou un projet dans le dossier de votre choix. L’éditeur crée une copie dans l’espace de travail avec les fichiers sources."),
         "portable_directory_changed" to MessageForms(other = "Une source du projet a changé pendant l’importation. Rouvrez le dossier pour obtenir une copie cohérente."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "Ce dossier ne contient aucun fichier .circ."),
         "portable_directory_file_invalid" to MessageForms(other = "Choisissez un fichier de projet .circ."),
         "portable_directory_file_missing" to MessageForms(other = "Le fichier de projet sélectionné n’est plus disponible."),
@@ -12712,13 +12728,13 @@ private object TranslationFr {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Supprimez les avertissements d’entrée ouverte dans le rapport de vérification des règles de conception."),
         "preferences_fpga_title" to MessageForms(other = "FPGA Commander paramètres"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "Écrivez les mots-clés VHDL en majuscules"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Utilisez un nombre positif et fini."),
         "preferences_frequency_invalid" to MessageForms(other = "La fréquence par défaut doit être positive et finie."),
         "preferences_frequency_scope" to MessageForms(other = "Ce réglage laisse la fréquence du projet ouvert inchangée."),
         "preferences_gate_shapes" to MessageForms(other = "Symboles des portes"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Ces réglages sont personnels. Les options de simulation sont propres au projet."),
         "preferences_hexadecimal" to MessageForms(other = "Hexadécimal"),
         "preferences_hide_shortcuts" to MessageForms(other = "Masquer les raccourcis des commandes"),
@@ -12815,13 +12831,13 @@ private object TranslationFr {
         "project_toolbar_remove" to MessageForms(other = "Supprimer {name}"),
         "project_toolbar_separator" to MessageForms(other = "Séparateur"),
         "project_toolbar_title" to MessageForms(other = "Barre d’outils du projet"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (indisponible)"),
         "project_tools_title" to MessageForms(other = "Outils du projet"),
         "project_wire_count" to MessageForms(one = "{count} fil", many = "{count} fils", other = "{count} fils"),
         "project_xml_help" to MessageForms(other = "Copiez le XML pour conserver le projet ou collez le contenu d’un fichier .circ pour importer tous ses circuits."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "XML du projet"),
         "project_xml_title" to MessageForms(other = "Projet .circ"),
         "property_bits" to MessageForms(other = "Bits"),
@@ -12918,13 +12934,13 @@ private object TranslationFr {
         "soc_asm_address" to MessageForms(other = "Un décalage et un registre de base sont attendus, par exemple 0(sp). Valeur reçue : {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Le programme dépasse l’espace d’adressage du processeur."),
         "soc_asm_alignment" to MessageForms(other = "L’adresse de chargement doit être un multiple de quatre."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Étiquette en double : {value}."),
         "soc_asm_empty" to MessageForms(other = "Saisissez au moins une instruction ou un mot."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Charger à l’adresse de réinitialisation du processeur 0x{address}."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Masquer l’assembleur"),
         "soc_asm_immediate" to MessageForms(other = "Valeur immédiate invalide, hors limites ou mal alignée : {value}."),
         "soc_asm_instruction" to MessageForms(other = "Instruction ou directive non prise en charge : {value}."),
@@ -13021,13 +13037,13 @@ private object TranslationFr {
         "soc_load_elf" to MessageForms(other = "Charger le fichier ELF"),
         "soc_memory_address_range" to MessageForms(other = "La mémoire de {bytes} octets à l’adresse {address} dépasse l’espace d’adressage de 32 bits."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Masquer le plan d’adressage"),
         "soc_memory_map_plic" to MessageForms(other = "Contrôleur d’interruptions RISC-V (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Afficher le plan d’adressage"),
         "soc_memory_map_title" to MessageForms(other = "Plan d’adressage du bus"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Non mappé"),
         "soc_nios_invalid" to MessageForms(other = "Instruction Nios II invalide."),
         "soc_open_elf" to MessageForms(other = "Ouvrir un fichier ELF"),
@@ -13124,13 +13140,13 @@ private object TranslationFr {
         "tcl_cancel" to MessageForms(other = "Annuler"),
         "tcl_client_error_clock_required" to MessageForms(other = "Les composants Tcl nécessitent l’entrée sysclk_i d’un bit."),
         "tcl_client_error_executor_failed" to MessageForms(other = "L’exécution du moteur Tcl a échoué."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "La relecture Tcl exige entre 1 et {limit} trames d’entrée. Nombre de trames reçues : {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Les trames d’entrée Tcl doivent correspondre à l’interface déclarée du composant."),
         "tcl_client_error_host_grant" to MessageForms(other = "Le Companion sélectionné n’autorise pas {operation} ou ne trouve pas tclsh."),
         "tcl_client_error_host_required" to MessageForms(other = "Sélectionnez un Companion disponible avant d’exécuter Tcl."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "La réponse Tcl contient des bits logiques invalides pour {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "La réponse Tcl ne correspond pas à l’interface de sortie."),
         "tcl_client_error_plan_required" to MessageForms(other = "Le Companion exige une approbation distincte du plan pour cette opération."),
@@ -13227,13 +13243,13 @@ private object TranslationFr {
         "trace_file_resume" to MessageForms(other = "Reprendre l’enregistrement sur fichier"),
         "trace_file_signals_changed" to MessageForms(other = "La sélection de signaux a changé. L’enregistrement sur fichier s’est arrêté."),
         "trace_file_start" to MessageForms(other = "Enregistrer dans un fichier TSV"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Arrêter l’enregistrement sur fichier"),
         "trace_file_stopping" to MessageForms(other = "Finalisation de {name}"),
         "trace_file_unavailable" to MessageForms(other = "L’enregistrement dans un fichier est indisponible dans cet environnement."),
         "trace_file_write_failed" to MessageForms(other = "Impossible d’écrire le fichier de signaux. L’enregistrement s’est arrêté."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Composant ou instance"),
         "trace_half_cycles" to MessageForms(other = "demi-cycles"),
         "trace_invalid_capacity" to MessageForms(other = "La capacité de la trace doit être positive."),
@@ -13330,13 +13346,13 @@ private object TranslationFr {
         "vector_set_order" to MessageForms(other = "Les séries doivent apparaître dans l’ordre croissant."),
         "vector_step" to MessageForms(other = "Pas"),
         "vector_summary" to MessageForms(other = "{completed}/{total} lignes · réussites : {passed} · échecs : {failed} · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Vecteurs de test"),
         "vector_unbound_column" to MessageForms(other = "Aucune broche ni horloge de {circuit} ne correspond à la colonne {column}."),
         "vector_unterminated_quote" to MessageForms(other = "Il manque le guillemet fermant du nom de broche."),
         "vector_value_count" to MessageForms(other = "Nombre de valeurs attendu : {expected}. Nombre trouvé : {actual}."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "La valeur {token} ne tient pas sur les {width} bits de {name}."),
         "vector_width_range" to MessageForms(other = "La largeur de {name} doit être comprise entre 1 et 64 bits."),
         "visual_export_action_unavailable" to MessageForms(other = "Cette action d’exportation est indisponible sur cet appareil."),
@@ -13433,13 +13449,13 @@ private object TranslationFr {
         "workspace_read_only_original" to MessageForms(other = "Original conservé · lecture seule"),
         "workspace_recent_copy" to MessageForms(other = "Copie de l’espace de travail"),
         "workspace_recent_original" to MessageForms(other = "Original du fournisseur de fichiers"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Projet récupéré"),
         "workspace_reload_saved" to MessageForms(other = "Recharger le projet enregistré"),
         "workspace_rename_project" to MessageForms(other = "Renommer le projet"),
         "workspace_restore" to MessageForms(other = "Restaurer"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Réessayer d’ouvrir"),
         "workspace_retry_save" to MessageForms(other = "Réessayer d’enregistrer"),
         "workspace_revision" to MessageForms(other = "Révision {revision} · {id}"),
@@ -14862,6 +14878,10 @@ private object TranslationIt {
         "extra_io_timer_output" to MessageForms(other = "Uscita: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "NE555 richiede una resistenza da 1.000 a 10.000.000 Ω e una capacità da 10 a 1.000 µF."),
         "file_default_name" to MessageForms(other = "circuito"),
+        "first_launch_theme_continue" to MessageForms(other = "Continua"),
+        "first_launch_theme_description" to MessageForms(other = "Puoi cambiare il tema in seguito nelle preferenze."),
+        "first_launch_theme_system" to MessageForms(other = "Sistema"),
+        "first_launch_theme_title" to MessageForms(other = "Scegli un tema"),
         "fpga_active_high" to MessageForms(other = "attivo alto"),
         "fpga_active_low" to MessageForms(other = "attivo basso"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Correggi gli errori di esportazione HDL prima di preparare un progetto FPGA."),
@@ -14941,13 +14961,13 @@ private object TranslationIt {
         "fpga_companion_programmed" to MessageForms(other = "Scheda programmata"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "La compilazione Quartus su Companion richiede un profilo dispositivo supportato."),
         "fpga_companion_retry_status" to MessageForms(other = "Controlla di nuovo lo stato"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Controlla il piano"),
         "fpga_companion_selected_goal" to MessageForms(other = "Obiettivo selezionato: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "L'obiettivo o il progetto è cambiato. Prepara un nuovo piano prima di eseguirlo."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Annullata"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Non riuscita"),
         "fpga_companion_state_queued" to MessageForms(other = "In coda"),
         "fpga_companion_state_running" to MessageForms(other = "In esecuzione"),
@@ -15044,13 +15064,13 @@ private object TranslationIt {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Bidirezionale"),
         "fpga_direction_input" to MessageForms(other = "Ingresso"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Uscita"),
         "fpga_display_clock_required" to MessageForms(other = "Un display multiplexato richiede un clock della scheda valido di almeno 1 kHz."),
         "fpga_display_pin_conflict" to MessageForms(other = "Il pin {pin} è già in uso e non può pilotare anche il display multiplexato."),
         "fpga_duplicate_display_channel" to MessageForms(other = "Il canale {channel} del display è già assegnato."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Attivo a livello basso"),
         "fpga_editor_add_resource" to MessageForms(other = "Aggiungi risorsa"),
@@ -15147,13 +15167,13 @@ private object TranslationIt {
         "fpga_program_invalid_import" to MessageForms(other = "Scegli un file .sof non vuoto fino a 8 MiB oppure un file .bit, .bin, .fs, .pof o .jed non vuoto fino a 4 MiB."),
         "fpga_program_mode" to MessageForms(other = "Modalità di programmazione"),
         "fpga_program_mode_flash" to MessageForms(other = "Persistente (flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Temporanea (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "Nessuna destinazione di programmazione disponibile su questo host."),
         "fpga_program_prepare" to MessageForms(other = "Controlla la richiesta di programmazione"),
         "fpga_program_reported" to MessageForms(other = "Esito positivo segnalato dal programmatore: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Controlla questa richiesta prima di programmare la scheda collegata."),
         "fpga_program_review_target" to MessageForms(other = "Scheda e cavo: {target}"),
         "fpga_program_selected" to MessageForms(other = "Destinazione selezionata: {target}"),
@@ -15250,13 +15270,13 @@ private object TranslationIt {
         "hdl_import_module_missing" to MessageForms(other = "Manca il modulo {module}."),
         "hdl_import_modules_limit" to MessageForms(other = "Il risultato della sintesi deve contenere da 1 a 512 moduli."),
         "hdl_import_modules_missing" to MessageForms(other = "Il risultato della sintesi non contiene moduli."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Identificativo della rete HDL non valido."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "Gli identificativi delle reti HDL devono essere non negativi."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Netlist di sintesi non valida."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Per inizializzare un registro a un valore diverso da zero serve un progetto con reset: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "Direzione non valida per la porta {module}.{port}."),
         "hdl_import_ports_limit" to MessageForms(other = "Il modulo {module} supera il limite di 256 porte."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Gerarchia HDL ricorsiva: {module}."),
@@ -15353,13 +15373,13 @@ private object TranslationIt {
         "hdl_tools_import_cancel" to MessageForms(other = "Annulla sintesi"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "Impossibile annullare."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Annullamento richiesto."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Importazione annullata."),
         "hdl_tools_import_confirm" to MessageForms(other = "Conferma esecuzione sul Mac"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Connetti Companion dagli strumenti del progetto."),
         "hdl_tools_import_defines" to MessageForms(other = "Definizioni separate da virgole"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Esegui la sintesi con Companion sul Mac e converti il risultato in circuiti modificabili. Aggiungi sorgenti, file da includere e dati di memoria usando semplici nomi di file."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Percorso relativo del file"),
@@ -15456,13 +15476,13 @@ private object TranslationIt {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "Il simulatore non ha accettato la sessione."),
         "hdl_tools_sim_started" to MessageForms(other = "Sessione avviata. Campiona i segnali attuali per ricevere i primi valori di uscita."),
         "hdl_tools_sim_starting" to MessageForms(other = "Convalida ed elaborazione sul Mac…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Stato: {status} · simulatore {time} ns · sessione {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Sessione interrotta. Per aggiornare le uscite, avvia esplicitamente una nuova sessione."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "La sessione ha raggiunto il limite di 1 ms. Reimposta la sessione."),
         "hdl_tools_sim_title" to MessageForms(other = "Cosimulazione HDL-IP"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Attendi che il simulatore accetti la sessione o avviane un'altra."),
         "hdl_tools_sim_waiting" to MessageForms(other = "In attesa di Companion. Se annulli, la sessione e le risposte in sospeso vengono scartate."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "In attesa di un campione a {time} ns…"),
@@ -15559,13 +15579,13 @@ private object TranslationIt {
         "help_support_editing_title" to MessageForms(other = "Modifica e navigazione"),
         "help_support_simulation_description" to MessageForms(other = "Eventi deterministici, gerarchia, diagnostica, vettori di test, analisi e tracce vengono verificati separatamente. Gli esempi verificano solo le sequenze di ingresso dichiarate."),
         "help_support_simulation_title" to MessageForms(other = "Simulazione e verifica"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "I test sui simulatori, gli strumenti di lettura per l'accessibilità, le misure su circuiti grandi e le versioni firmate richiedono verifiche separate. Una build compilata non dimostra il comportamento dell'hardware fisico."),
         "help_support_validation_title" to MessageForms(other = "Piattaforme e versioni"),
         "help_title" to MessageForms(other = "Aiuto ed esempi"),
         "help_tool_unavailable" to MessageForms(other = "Questo strumento non è disponibile in questa build."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Verifica lo scenario di riferimento"),
         "history_add_component" to MessageForms(other = "Aggiungi {name}"),
         "history_connect_wire" to MessageForms(other = "Collega filo"),
@@ -15662,13 +15682,13 @@ private object TranslationIt {
         "io_state_tty_full_row" to MessageForms(other = "Righe: {rows}. Colonne: {columns}. La riga attuale {row} è piena. Il prossimo carattere stampabile inizia una nuova riga. Testo: {text}"),
         "io_state_unavailable" to MessageForms(other = "Stato I/O non disponibile."),
         "io_state_white" to MessageForms(other = "bianco"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "giallo"),
         "io_switch_off" to MessageForms(other = "spento"),
         "io_switch_on" to MessageForms(other = "acceso"),
         "ios_access_expired" to MessageForms(other = "L'accesso al file è scaduto. Riaprilo dall'app File."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "È ancora aperta un'altra operazione su file o di stampa."),
         "ios_asset_export_failed" to MessageForms(other = "Impossibile preparare o esportare il file."),
         "ios_asset_file_url_required" to MessageForms(other = "Si possono aprire solo documenti locali o forniti dall'app File."),
@@ -15765,13 +15785,13 @@ private object TranslationIt {
         "legal_button" to MessageForms(other = "Licenze"),
         "legal_button_description" to MessageForms(other = "Licenze, attribuzioni e codice sorgente"),
         "legal_introduction" to MessageForms(other = "Software libero con licenza GPLv3. Nessuna garanzia. I diritti e gli avvisi relativi a ogni componente sono elencati qui sotto."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Apri codice sorgente e istruzioni di compilazione"),
         "legal_title" to MessageForms(other = "Licenze e attribuzioni"),
         "library_annotations" to MessageForms(other = "Annotazioni"),
         "library_arithmetic" to MessageForms(other = "Aritmetica"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Componenti aggiuntivi"),
         "library_float" to MessageForms(other = "Aritmetica in virgola mobile"),
         "library_gates" to MessageForms(other = "Porte"),
@@ -15868,13 +15888,13 @@ private object TranslationIt {
         "memory_format_binary_big" to MessageForms(other = "Dati binari, big-endian"),
         "memory_format_binary_little" to MessageForms(other = "Dati binari, little-endian"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "Vai"),
@@ -15971,13 +15991,13 @@ private object TranslationIt {
         "portable_bundle_open_failed" to MessageForms(other = "Impossibile aprire l'archivio del progetto."),
         "portable_bundle_too_large" to MessageForms(other = "L'archivio del progetto supera il limite di dimensione."),
         "portable_cancel_directory" to MessageForms(other = "Annulla importazione della cartella"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Scegli il file .circ principale in {folder}."),
         "portable_copy_not_opened" to MessageForms(other = "Impossibile aprire la copia nel catalogo dei progetti. Il documento attuale è rimasto intatto."),
         "portable_description" to MessageForms(other = "Apri un archivio o un progetto in una cartella che scegli. L'editor crea una nuova copia nel catalogo dei progetti con i relativi file sorgente."),
         "portable_directory_changed" to MessageForms(other = "Un sorgente del progetto è cambiato durante l'importazione. Riapri la cartella per ottenere una copia coerente."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "Questa cartella non contiene file .circ."),
         "portable_directory_file_invalid" to MessageForms(other = "Scegli un file di progetto .circ."),
         "portable_directory_file_missing" to MessageForms(other = "Il file di progetto selezionato non è più disponibile."),
@@ -16074,13 +16094,13 @@ private object TranslationIt {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Sopprimi gli avvisi di ingressi aperti nel rapporto di verifica delle regole di progetto."),
         "preferences_fpga_title" to MessageForms(other = "Impostazioni di FPGA Commander"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "Usa il maiuscolo per le parole chiave VHDL"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Usa un numero positivo e finito."),
         "preferences_frequency_invalid" to MessageForms(other = "La frequenza predefinita deve essere positiva e finita."),
         "preferences_frequency_scope" to MessageForms(other = "La frequenza del progetto aperto non cambia."),
         "preferences_gate_shapes" to MessageForms(other = "Simboli delle porte"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Queste impostazioni sono personali. Le opzioni di simulazione appartengono al progetto."),
         "preferences_hexadecimal" to MessageForms(other = "Esadecimale"),
         "preferences_hide_shortcuts" to MessageForms(other = "Nascondi le scorciatoie dei comandi"),
@@ -16177,13 +16197,13 @@ private object TranslationIt {
         "project_toolbar_remove" to MessageForms(other = "Rimuovi {name}"),
         "project_toolbar_separator" to MessageForms(other = "Separatore"),
         "project_toolbar_title" to MessageForms(other = "Barra degli strumenti del progetto"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (non disponibile)"),
         "project_tools_title" to MessageForms(other = "Strumenti del progetto"),
         "project_wire_count" to MessageForms(one = "{count} filo", many = "{count} fili", other = "{count} fili"),
         "project_xml_help" to MessageForms(other = "Copia l'XML per salvare il progetto oppure incolla il contenuto di un file .circ per importarne tutti i circuiti."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "XML del progetto"),
         "project_xml_title" to MessageForms(other = "Progetto .circ"),
         "property_bits" to MessageForms(other = "Bit"),
@@ -16280,13 +16300,13 @@ private object TranslationIt {
         "soc_asm_address" to MessageForms(other = "Sono richiesti un offset e un registro base, ad esempio 0(sp). Valore trovato: {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Il programma supera lo spazio di indirizzamento della CPU."),
         "soc_asm_alignment" to MessageForms(other = "L’indirizzo di caricamento deve essere un multiplo di quattro."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Etichetta duplicata: {value}."),
         "soc_asm_empty" to MessageForms(other = "Inserisci almeno una istruzione o una parola."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Carica all’indirizzo di reset della CPU 0x{address}."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Nascondi assemblatore"),
         "soc_asm_immediate" to MessageForms(other = "Valore immediato non valido, fuori intervallo o non allineato: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Istruzione o direttiva non supportata: {value}."),
@@ -16383,13 +16403,13 @@ private object TranslationIt {
         "soc_load_elf" to MessageForms(other = "Carica ELF"),
         "soc_memory_address_range" to MessageForms(other = "La memoria all'indirizzo {address}, con {bytes} byte, supera lo spazio di indirizzamento a 32 bit."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Nascondi mappa della memoria"),
         "soc_memory_map_plic" to MessageForms(other = "Controller di interrupt RISC-V (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Mostra mappa della memoria"),
         "soc_memory_map_title" to MessageForms(other = "Mappa della memoria del bus"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Non mappato"),
         "soc_nios_invalid" to MessageForms(other = "Istruzione Nios II non valida."),
         "soc_open_elf" to MessageForms(other = "Apri ELF"),
@@ -16486,13 +16506,13 @@ private object TranslationIt {
         "tcl_cancel" to MessageForms(other = "Annulla"),
         "tcl_client_error_clock_required" to MessageForms(other = "I componenti Tcl richiedono l'ingresso sysclk_i a un bit."),
         "tcl_client_error_executor_failed" to MessageForms(other = "Il programma di esecuzione Tcl ha restituito un errore."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "La riesecuzione Tcl richiede da 1 a {limit} frame in ingresso. Ricevuti: {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "I frame in ingresso di Tcl devono corrispondere all'interfaccia dichiarata del componente."),
         "tcl_client_error_host_grant" to MessageForms(other = "L'host Companion selezionato non consente {operation} o non trova tclsh."),
         "tcl_client_error_host_required" to MessageForms(other = "Seleziona un host Companion disponibile prima di eseguire Tcl."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "La risposta Tcl contiene bit logici non validi per {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "La risposta Tcl non corrisponde all'interfaccia di uscita."),
         "tcl_client_error_plan_required" to MessageForms(other = "Companion richiede un'approvazione separata del piano per questa operazione."),
@@ -16589,13 +16609,13 @@ private object TranslationIt {
         "trace_file_resume" to MessageForms(other = "Riprendi registrazione su file"),
         "trace_file_signals_changed" to MessageForms(other = "La selezione dei segnali è cambiata. Registrazione su file interrotta."),
         "trace_file_start" to MessageForms(other = "Registra su file TSV"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Interrompi registrazione su file"),
         "trace_file_stopping" to MessageForms(other = "Completamento di {name}"),
         "trace_file_unavailable" to MessageForms(other = "La registrazione su file non è disponibile in questo ambiente."),
         "trace_file_write_failed" to MessageForms(other = "Impossibile scrivere il file dei segnali. Registrazione interrotta."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Componente o istanza"),
         "trace_half_cycles" to MessageForms(other = "semicicli"),
         "trace_invalid_capacity" to MessageForms(other = "La capacità della traccia deve essere positiva."),
@@ -16692,13 +16712,13 @@ private object TranslationIt {
         "vector_set_order" to MessageForms(other = "I gruppi devono comparire in ordine crescente."),
         "vector_step" to MessageForms(other = "Passo"),
         "vector_summary" to MessageForms(other = "{completed}/{total} righe · {passed} superate · {failed} non superate · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Vettori di test"),
         "vector_unbound_column" to MessageForms(other = "Nessun pin o clock in {circuit} corrisponde alla colonna {column}."),
         "vector_unterminated_quote" to MessageForms(other = "Mancano le virgolette di chiusura nel nome del pin."),
         "vector_value_count" to MessageForms(other = "Valori attesi: {expected}. Valori trovati: {actual}."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "Il valore {token} non è rappresentabile con i {width} bit di {name}."),
         "vector_width_range" to MessageForms(other = "La larghezza di {name} deve essere compresa tra 1 e 64 bit."),
         "visual_export_action_unavailable" to MessageForms(other = "Questa azione di esportazione non è disponibile sul dispositivo."),
@@ -16795,13 +16815,13 @@ private object TranslationIt {
         "workspace_read_only_original" to MessageForms(other = "Originale conservato · sola lettura"),
         "workspace_recent_copy" to MessageForms(other = "Copia nel catalogo dei progetti"),
         "workspace_recent_original" to MessageForms(other = "Originale del provider di file"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Progetto recuperato"),
         "workspace_reload_saved" to MessageForms(other = "Ricarica il progetto salvato"),
         "workspace_rename_project" to MessageForms(other = "Rinomina progetto"),
         "workspace_restore" to MessageForms(other = "Ripristina"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Riprova ad aprire"),
         "workspace_retry_save" to MessageForms(other = "Riprova a salvare"),
         "workspace_revision" to MessageForms(other = "Revisione {revision} · {id}"),
@@ -18224,6 +18244,10 @@ private object TranslationJa {
         "extra_io_timer_output" to MessageForms(other = "出力：{value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "NE555 には 1,000～10,000,000 Ω の抵抗と 10～1,000 µF の静電容量が必要です。"),
         "file_default_name" to MessageForms(other = "回路"),
+        "first_launch_theme_continue" to MessageForms(other = "続ける"),
+        "first_launch_theme_description" to MessageForms(other = "テーマは後で環境設定から変更できます。"),
+        "first_launch_theme_system" to MessageForms(other = "システム"),
+        "first_launch_theme_title" to MessageForms(other = "テーマを選択"),
         "fpga_active_high" to MessageForms(other = "アクティブハイ"),
         "fpga_active_low" to MessageForms(other = "アクティブロー"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "FPGA プロジェクトを準備する前に、HDL エクスポートのエラーを修正してください。"),
@@ -18303,13 +18327,13 @@ private object TranslationJa {
         "fpga_companion_programmed" to MessageForms(other = "ボードに書き込み済み"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "Companion での Quartus ビルドには、対応するデバイスプロファイルが必要です。"),
         "fpga_companion_retry_status" to MessageForms(other = "状態を再確認"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "実行計画を確認"),
         "fpga_companion_selected_goal" to MessageForms(other = "選択済み：{goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "目的またはプロジェクトが変更されました。実行する前に、新しい実行計画を準備してください。"),
         "fpga_companion_state_cancelled" to MessageForms(other = "キャンセル済み"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "失敗"),
         "fpga_companion_state_queued" to MessageForms(other = "待機中"),
         "fpga_companion_state_running" to MessageForms(other = "実行中"),
@@ -18406,13 +18430,13 @@ private object TranslationJa {
         "fpga_diagnostic" to MessageForms(other = "{code}：{detail}"),
         "fpga_direction_inout" to MessageForms(other = "双方向"),
         "fpga_direction_input" to MessageForms(other = "入力"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "出力"),
         "fpga_display_clock_required" to MessageForms(other = "走査式表示器には、1 kHz 以上の有効なボードクロックが必要です。"),
         "fpga_display_pin_conflict" to MessageForms(other = "ピン {pin} はすでに使用されているため、走査式表示器の駆動には使用できません。"),
         "fpga_duplicate_display_channel" to MessageForms(other = "表示器のチャンネル {channel} はすでに割り当てられています。"),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "アクティブロー"),
         "fpga_editor_add_resource" to MessageForms(other = "リソースを追加"),
@@ -18509,13 +18533,13 @@ private object TranslationJa {
         "fpga_program_invalid_import" to MessageForms(other = "空ではない 8 MiB 以下の .sof ファイル、または空ではない 4 MiB 以下の .bit、.bin、.fs、.pof、.jed ファイルを選択してください。"),
         "fpga_program_mode" to MessageForms(other = "書き込みモード"),
         "fpga_program_mode_flash" to MessageForms(other = "永続（フラッシュ）"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "一時（RAM）"),
         "fpga_program_no_targets" to MessageForms(other = "このホストには利用可能な書き込み先がありません。"),
         "fpga_program_prepare" to MessageForms(other = "書き込み要求を確認"),
         "fpga_program_reported" to MessageForms(other = "書き込みツールが成功を報告：{value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "接続されたボードに書き込む前に、この要求を確認してください。"),
         "fpga_program_review_target" to MessageForms(other = "ボードとケーブル：{target}"),
         "fpga_program_selected" to MessageForms(other = "選択済み：{target}"),
@@ -18612,13 +18636,13 @@ private object TranslationJa {
         "hdl_import_module_missing" to MessageForms(other = "モジュール {module} が見つかりません。"),
         "hdl_import_modules_limit" to MessageForms(other = "論理合成結果には 1～512 個のモジュールが必要です。"),
         "hdl_import_modules_missing" to MessageForms(other = "論理合成結果にモジュールがありません。"),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "HDL ネットの識別子が無効です。"),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "HDL ネットの識別子には 0 以上の値を指定してください。"),
         "hdl_import_netlist_invalid" to MessageForms(other = "論理合成後のネットリストが無効です。"),
         "hdl_import_nonzero_initialization" to MessageForms(other = "レジスタ {module}.{net} を 0 以外で初期化するには、リセットを使う設計にしてください。"),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "{module}.{port} のポート方向が無効です。"),
         "hdl_import_ports_limit" to MessageForms(other = "モジュール {module} のポート数が 256 を超えています。"),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "HDL の階層が再帰的です：{module}。"),
@@ -18715,13 +18739,13 @@ private object TranslationJa {
         "hdl_tools_import_cancel" to MessageForms(other = "論理合成をキャンセル"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "キャンセルできませんでした。"),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "キャンセルを要求しました。"),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "インポートをキャンセルしました。"),
         "hdl_tools_import_confirm" to MessageForms(other = "Mac での実行を確定"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "プロジェクトのツールから Companion に接続してください。"),
         "hdl_tools_import_defines" to MessageForms(other = "定義（コンマ区切り）"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Mac の Companion で論理合成し、結果を編集可能な回路に変換します。ソースファイル、インクルード、メモリデータを追加する際は、パスを含まないファイル名を指定してください。"),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}：{detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "ファイルの相対パス"),
@@ -18818,13 +18842,13 @@ private object TranslationJa {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "シミュレーターがセッションを受け付けませんでした。"),
         "hdl_tools_sim_started" to MessageForms(other = "セッションを開始しました。最初の出力を受け取るには、現在の信号をサンプリングしてください。"),
         "hdl_tools_sim_starting" to MessageForms(other = "Mac で検証とエラボレーションを実行しています…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "状態：{status} · シミュレーター {time} ns · セッション {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "セッションを停止しました。出力を再開するには、セッションを明示的に開始してください。"),
         "hdl_tools_sim_time_limit" to MessageForms(other = "セッションが上限の 1 ms に達しました。セッションをリセットしてください。"),
         "hdl_tools_sim_title" to MessageForms(other = "HDL-IP 協調シミュレーション"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "シミュレーターがセッションを受け付けるまで待つか、新しいセッションを開始してください。"),
         "hdl_tools_sim_waiting" to MessageForms(other = "Companion からの応答を待っています。キャンセルするとセッションと保留中の応答が破棄されます。"),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "{time} ns のサンプルを待っています…"),
@@ -18921,13 +18945,13 @@ private object TranslationJa {
         "help_support_editing_title" to MessageForms(other = "編集とナビゲーション"),
         "help_support_simulation_description" to MessageForms(other = "決定的なイベント処理、回路階層、診断、テストベクター、解析、トレースはそれぞれ別に管理されています。サンプルのテスト範囲は、そのサンプルに指定された入力シーケンスです。"),
         "help_support_simulation_title" to MessageForms(other = "シミュレーションと検証"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "シミュレーターでのテスト、スクリーンリーダーでの確認、大規模回路の測定、署名済みリリースは、それぞれ別に検証します。ビルドが成功しても、実機での動作が確認されたことにはなりません。"),
         "help_support_validation_title" to MessageForms(other = "プラットフォームとリリース"),
         "help_title" to MessageForms(other = "ヘルプとサンプル"),
         "help_tool_unavailable" to MessageForms(other = "このビルドでは、このツールを利用できません。"),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "参照シナリオをテスト"),
         "history_add_component" to MessageForms(other = "{name}を追加する"),
         "history_connect_wire" to MessageForms(other = "配線を接続"),
@@ -19024,13 +19048,13 @@ private object TranslationJa {
         "io_state_tty_full_row" to MessageForms(other = "{rows} 行 {columns} 列。現在の {row} 行目はいっぱいです。次の表示可能な文字は新しい行の先頭に入ります。テキスト：{text}"),
         "io_state_unavailable" to MessageForms(other = "I/O の状態を取得できません。"),
         "io_state_white" to MessageForms(other = "白"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "黄"),
         "io_switch_off" to MessageForms(other = "オフ"),
         "io_switch_on" to MessageForms(other = "オン"),
         "ios_access_expired" to MessageForms(other = "ファイルへのアクセス権が期限切れです。「ファイル」アプリで開き直してください。"),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "別のファイル操作または印刷操作が進行中です。"),
         "ios_asset_export_failed" to MessageForms(other = "ファイルを準備またはエクスポートできませんでした。"),
         "ios_asset_file_url_required" to MessageForms(other = "ローカルにあるドキュメントか、「ファイル」のプロバイダのドキュメントのみ開けます。"),
@@ -19127,13 +19151,13 @@ private object TranslationJa {
         "legal_button" to MessageForms(other = "ライセンス"),
         "legal_button_description" to MessageForms(other = "ライセンス、クレジット、ソースコード"),
         "legal_introduction" to MessageForms(other = "GPLv3 に基づく自由ソフトウェアです。無保証です。各コンポーネントの権利と告知を以下に記載します。"),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "ソースコードとビルド手順を開く"),
         "legal_title" to MessageForms(other = "ライセンスとクレジット"),
         "library_annotations" to MessageForms(other = "注釈"),
         "library_arithmetic" to MessageForms(other = "算術"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "追加部品"),
         "library_float" to MessageForms(other = "浮動小数点演算"),
         "library_gates" to MessageForms(other = "回路"),
@@ -19230,13 +19254,13 @@ private object TranslationJa {
         "memory_format_binary_big" to MessageForms(other = "バイナリデータ（ビッグエンディアン）"),
         "memory_format_binary_little" to MessageForms(other = "バイナリデータ（リトルエンディアン）"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "移動"),
@@ -19333,13 +19357,13 @@ private object TranslationJa {
         "portable_bundle_open_failed" to MessageForms(other = "このプロジェクトバンドルを開けませんでした。"),
         "portable_bundle_too_large" to MessageForms(other = "プロジェクトバンドルのサイズが上限を超えています。"),
         "portable_cancel_directory" to MessageForms(other = "フォルダーのインポートをキャンセル"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "{folder} にあるメインの .circ ファイルを選択してください。"),
         "portable_copy_not_opened" to MessageForms(other = "保存領域のコピーを開けませんでした。現在のドキュメントは保持されています。"),
         "portable_description" to MessageForms(other = "バンドル、または選択したフォルダー内のプロジェクトを開きます。エディターはソースファイルも含めて、保存領域に新しいコピーを作成します。"),
         "portable_directory_changed" to MessageForms(other = "インポート中にプロジェクトのソースが変更されました。整合性のあるコピーを作成するには、フォルダーを開き直してください。"),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "このフォルダーに .circ ファイルがありません。"),
         "portable_directory_file_invalid" to MessageForms(other = ".circ プロジェクトファイルを選択してください。"),
         "portable_directory_file_missing" to MessageForms(other = "選択したプロジェクトファイルは利用できなくなりました。"),
@@ -19436,13 +19460,13 @@ private object TranslationJa {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "デザイン・ルール・チェック・レポートでオープン入力の警告を抑制します。"),
         "preferences_fpga_title" to MessageForms(other = "FPGA コマンダー設定"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "VHDL キーワードを大文字にする"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "有限の正の数を入力してください。"),
         "preferences_frequency_invalid" to MessageForms(other = "既定の周波数には有限の正の数を指定してください。"),
         "preferences_frequency_scope" to MessageForms(other = "開いているプロジェクトの周波数は変わりません。"),
         "preferences_gate_shapes" to MessageForms(other = "ゲートの記号"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "これらの設定はユーザーごとに保存されます。シミュレーションのオプションはプロジェクトごとに設定します。"),
         "preferences_hexadecimal" to MessageForms(other = "16進数"),
         "preferences_hide_shortcuts" to MessageForms(other = "コマンドのショートカットを非表示"),
@@ -19539,13 +19563,13 @@ private object TranslationJa {
         "project_toolbar_remove" to MessageForms(other = "{name}の削除"),
         "project_toolbar_separator" to MessageForms(other = "区切り線"),
         "project_toolbar_title" to MessageForms(other = "プロジェクトのツールバー"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name}（利用不可）"),
         "project_tools_title" to MessageForms(other = "プロジェクトのツール"),
         "project_wire_count" to MessageForms(other = "配線 {count} 本"),
         "project_xml_help" to MessageForms(other = "プロジェクトを保存するには XML をコピーします。すべての回路をインポートするには .circ ファイルの内容を貼り付けます。"),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "プロジェクトの XML"),
         "project_xml_title" to MessageForms(other = "プロジェクトの .circ"),
         "property_bits" to MessageForms(other = "ビット数"),
@@ -19642,13 +19666,13 @@ private object TranslationJa {
         "soc_asm_address" to MessageForms(other = "0(sp) のようにオフセットとベースレジスタを指定してください。入力値：{value}。"),
         "soc_asm_address_wrap" to MessageForms(other = "プログラムが CPU のアドレス空間を超えています。"),
         "soc_asm_alignment" to MessageForms(other = "読み込み先のアドレスは 4 の倍数にしてください。"),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "ラベルが重複しています：{value}。"),
         "soc_asm_empty" to MessageForms(other = "命令またはワードを少なくとも 1 つ入力してください。"),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "CPU のリセットアドレス 0x{address} に読み込みます。"),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "アセンブラーを非表示"),
         "soc_asm_immediate" to MessageForms(other = "即値が無効か、範囲外か、境界に揃っていません：{value}。"),
         "soc_asm_instruction" to MessageForms(other = "対応していない命令またはディレクティブです：{value}。"),
@@ -19745,13 +19769,13 @@ private object TranslationJa {
         "soc_load_elf" to MessageForms(other = "ELF を読み込む"),
         "soc_memory_address_range" to MessageForms(other = "アドレス {address} から {bytes} バイトのメモリ領域が 32 ビットのアドレス空間を超えています。"),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "メモリマップを非表示"),
         "soc_memory_map_plic" to MessageForms(other = "RISC-V 割り込みコントローラー（PLIC）"),
         "soc_memory_map_show" to MessageForms(other = "メモリマップを表示"),
         "soc_memory_map_title" to MessageForms(other = "バスのメモリマップ"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "未割り当て"),
         "soc_nios_invalid" to MessageForms(other = "Nios II の命令が無効です。"),
         "soc_open_elf" to MessageForms(other = "ELF を開く"),
@@ -19848,13 +19872,13 @@ private object TranslationJa {
         "tcl_cancel" to MessageForms(other = "キャンセル"),
         "tcl_client_error_clock_required" to MessageForms(other = "Tcl 部品には 1 ビットの入力 sysclk_i が必要です。"),
         "tcl_client_error_executor_failed" to MessageForms(other = "Tcl の実行処理に失敗しました。"),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Tcl の再生には 1～{limit} 個の入力フレームが必要です。受け取ったフレーム数は {count} 個です。"),
         "tcl_client_error_frame_interface" to MessageForms(other = "Tcl の入力フレームは宣言された部品のインターフェースと一致している必要があります。"),
         "tcl_client_error_host_grant" to MessageForms(other = "選択した Companion は {operation} を許可していないか、tclsh を見つけられません。"),
         "tcl_client_error_host_required" to MessageForms(other = "Tcl を実行する前に、利用可能な Companion を選択してください。"),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Tcl の応答に、ポート {port} の無効な論理ビットが含まれています。"),
         "tcl_client_error_output_interface" to MessageForms(other = "Tcl の応答が出力インターフェースと一致しません。"),
         "tcl_client_error_plan_required" to MessageForms(other = "この操作には、Companion で別途実行計画を承認する必要があります。"),
@@ -19951,13 +19975,13 @@ private object TranslationJa {
         "trace_file_resume" to MessageForms(other = "ファイルへの記録を再開"),
         "trace_file_signals_changed" to MessageForms(other = "選択した信号が変わったため、ファイルへの記録を停止しました。"),
         "trace_file_start" to MessageForms(other = "TSV ファイルに記録"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "ファイルへの記録を停止"),
         "trace_file_stopping" to MessageForms(other = "{name} への記録を終了しています"),
         "trace_file_unavailable" to MessageForms(other = "この環境ではファイルへの記録を利用できません。"),
         "trace_file_write_failed" to MessageForms(other = "信号ファイルに書き込めなかったため、記録を停止しました。"),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "部品またはインスタンス"),
         "trace_half_cycles" to MessageForms(other = "半サイクル"),
         "trace_invalid_capacity" to MessageForms(other = "トレースの容量には正の値を指定してください。"),
@@ -20054,13 +20078,13 @@ private object TranslationJa {
         "vector_set_order" to MessageForms(other = "セットは昇順に並べてください。"),
         "vector_step" to MessageForms(other = "ステップ"),
         "vector_summary" to MessageForms(other = "{completed}/{total} 行 · 合格 {passed} · 不合格 {failed} · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "テストベクター"),
         "vector_unbound_column" to MessageForms(other = "列 {column} に対応するピンまたはクロックが回路 {circuit} にありません。"),
         "vector_unterminated_quote" to MessageForms(other = "ピン名を囲む引用符が閉じられていません。"),
         "vector_value_count" to MessageForms(other = "必要な値は {expected} 個ですが、{actual} 個が見つかりました。"),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "値 {token} が {name} の {width} ビットに収まりません。"),
         "vector_width_range" to MessageForms(other = "{name} の幅は 1～64 ビットにしてください。"),
         "visual_export_action_unavailable" to MessageForms(other = "このデバイスでは、このエクスポート操作を利用できません。"),
@@ -20157,13 +20181,13 @@ private object TranslationJa {
         "workspace_read_only_original" to MessageForms(other = "元のファイルを保持 · 読み取り専用"),
         "workspace_recent_copy" to MessageForms(other = "保存領域のコピー"),
         "workspace_recent_original" to MessageForms(other = "ファイルプロバイダの元のファイル"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "復元したプロジェクト"),
         "workspace_reload_saved" to MessageForms(other = "保存済みのプロジェクトを再読み込み"),
         "workspace_rename_project" to MessageForms(other = "プロジェクト名を変更"),
         "workspace_restore" to MessageForms(other = "復元"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "もう一度開く"),
         "workspace_retry_save" to MessageForms(other = "もう一度保存"),
         "workspace_revision" to MessageForms(other = "リビジョン {revision} · {id}"),
@@ -21586,6 +21610,10 @@ private object TranslationNl {
         "extra_io_timer_output" to MessageForms(other = "Uitvoer: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "De NE555 vereist een weerstand van 1.000 tot 10.000.000 Ω en een capaciteit van 10 tot 1.000 µF."),
         "file_default_name" to MessageForms(other = "circuit"),
+        "first_launch_theme_continue" to MessageForms(other = "Doorgaan"),
+        "first_launch_theme_description" to MessageForms(other = "Je kunt het thema later wijzigen in Voorkeuren."),
+        "first_launch_theme_system" to MessageForms(other = "Systeem"),
+        "first_launch_theme_title" to MessageForms(other = "Kies een thema"),
         "fpga_active_high" to MessageForms(other = "actief hoog"),
         "fpga_active_low" to MessageForms(other = "actief laag"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Los de HDL-exportfouten op voordat je een FPGA-project voorbereidt."),
@@ -21665,13 +21693,13 @@ private object TranslationNl {
         "fpga_companion_programmed" to MessageForms(other = "Bord geprogrammeerd"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "Quartus-builds op de Companion-host vereisen een ondersteund apparaatprofiel."),
         "fpga_companion_retry_status" to MessageForms(other = "Status opnieuw opvragen"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Plan controleren"),
         "fpga_companion_selected_goal" to MessageForms(other = "Geselecteerd: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "Het doel of project is gewijzigd. Bereid een nieuw plan voor voordat je het uitvoert."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Geannuleerd"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Mislukt"),
         "fpga_companion_state_queued" to MessageForms(other = "In wachtrij"),
         "fpga_companion_state_running" to MessageForms(other = "In uitvoering"),
@@ -21768,13 +21796,13 @@ private object TranslationNl {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Bidirectioneel"),
         "fpga_direction_input" to MessageForms(other = "Invoer"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Uitvoer"),
         "fpga_display_clock_required" to MessageForms(other = "Een gemultiplext display vereist een geldige bordklok van ten minste 1 kHz."),
         "fpga_display_pin_conflict" to MessageForms(other = "Pin {pin} is al in gebruik en kan het gemultiplexte display niet ook aansturen."),
         "fpga_duplicate_display_channel" to MessageForms(other = "Displaykanaal {channel} is al toegewezen."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Actief laag"),
         "fpga_editor_add_resource" to MessageForms(other = "I/O-onderdeel toevoegen"),
@@ -21871,13 +21899,13 @@ private object TranslationNl {
         "fpga_program_invalid_import" to MessageForms(other = "Kies een niet-leeg .sof-bestand van maximaal 8 MiB of een niet-leeg .bit-, .bin-, .fs-, .pof- of .jed-bestand van maximaal 4 MiB."),
         "fpga_program_mode" to MessageForms(other = "Programmeermodus"),
         "fpga_program_mode_flash" to MessageForms(other = "Blijvend (flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Tijdelijk (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "Er zijn geen programmeerdoelen beschikbaar op deze host."),
         "fpga_program_prepare" to MessageForms(other = "Programmeeraanvraag controleren"),
         "fpga_program_reported" to MessageForms(other = "Programmeertool meldt succes: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Controleer deze aanvraag voordat je het aangesloten bord programmeert."),
         "fpga_program_review_target" to MessageForms(other = "Bord en kabel: {target}"),
         "fpga_program_selected" to MessageForms(other = "Geselecteerd: {target}"),
@@ -21974,13 +22002,13 @@ private object TranslationNl {
         "hdl_import_module_missing" to MessageForms(other = "Module ontbreekt: {module}."),
         "hdl_import_modules_limit" to MessageForms(other = "Het syntheseresultaat moet 1 tot 512 modules bevatten."),
         "hdl_import_modules_missing" to MessageForms(other = "Het syntheseresultaat bevat geen modules."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Ongeldig HDL-net-ID."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "HDL-net-ID’s mogen niet negatief zijn."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Ongeldige synthesenetlist."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Een register met een beginwaarde anders dan nul vereist een ontwerp met reset: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "Ongeldige poortrichting in {module}.{port}."),
         "hdl_import_ports_limit" to MessageForms(other = "Module {module} heeft meer dan 256 poorten."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Recursieve HDL-hiërarchie: {module}."),
@@ -22077,13 +22105,13 @@ private object TranslationNl {
         "hdl_tools_import_cancel" to MessageForms(other = "Synthese annuleren"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "Annuleren is mislukt."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Annulering aangevraagd."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Import geannuleerd."),
         "hdl_tools_import_confirm" to MessageForms(other = "Uitvoering op de Mac bevestigen"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Maak verbinding met Companion via Projectgereedschap."),
         "hdl_tools_import_defines" to MessageForms(other = "Defines, gescheiden door komma’s"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Voer de synthese uit met Companion op de Mac en zet het resultaat om in bewerkbare circuits. Voeg bronbestanden, include-bestanden en geheugengegevens toe met eenvoudige bestandsnamen."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Relatief bestandspad"),
@@ -22180,13 +22208,13 @@ private object TranslationNl {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "De simulator heeft de sessie geweigerd."),
         "hdl_tools_sim_started" to MessageForms(other = "Sessie gestart. Bemonster de huidige signalen om de eerste uitgangswaarden te ontvangen."),
         "hdl_tools_sim_starting" to MessageForms(other = "Valideren en elaboreren op de Mac…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Status: {status} · simulator {time} ns · sessie {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Sessie gestopt. De uitgangswaarden worden pas weer bijgewerkt als je een nieuwe sessie start."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "De sessie heeft de limiet van 1 ms bereikt. Reset de sessie."),
         "hdl_tools_sim_title" to MessageForms(other = "HDL-IP-cosimulatie"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Wacht tot de simulator de sessie accepteert of start een nieuwe sessie."),
         "hdl_tools_sim_waiting" to MessageForms(other = "Wachten op Companion. Bij annuleren worden de sessie en openstaande antwoorden verworpen."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "Wachten op een meting op {time} ns…"),
@@ -22283,13 +22311,13 @@ private object TranslationNl {
         "help_support_editing_title" to MessageForms(other = "Bewerken en navigeren"),
         "help_support_simulation_description" to MessageForms(other = "Deterministische gebeurtenissen, hiërarchie, diagnostiek, testvectoren, analyse en signaalregistraties worden afzonderlijk bijgehouden. Voorbeelden testen alleen hun opgegeven invoerreeksen."),
         "help_support_simulation_title" to MessageForms(other = "Simulatie en verificatie"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Simulatortests, schermlezers, metingen aan grote circuits en ondertekende releases worden afzonderlijk gecontroleerd. Een geslaagde compilatie bewijst geen werking op fysieke hardware."),
         "help_support_validation_title" to MessageForms(other = "Platforms en releases"),
         "help_title" to MessageForms(other = "Help en voorbeelden"),
         "help_tool_unavailable" to MessageForms(other = "Dit gereedschap is niet beschikbaar in deze build."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Referentiescenario testen"),
         "history_add_component" to MessageForms(other = "{name} toevoegen"),
         "history_connect_wire" to MessageForms(other = "Draad aansluiten"),
@@ -22386,13 +22414,13 @@ private object TranslationNl {
         "io_state_tty_full_row" to MessageForms(other = "Rijen: {rows}. Kolommen: {columns}. Rij {row} is vol. Het volgende afdrukbare teken begint op een nieuwe rij. Tekst: {text}"),
         "io_state_unavailable" to MessageForms(other = "De I/O-toestand is niet beschikbaar."),
         "io_state_white" to MessageForms(other = "wit"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "geel"),
         "io_switch_off" to MessageForms(other = "uit"),
         "io_switch_on" to MessageForms(other = "aan"),
         "ios_access_expired" to MessageForms(other = "De toegang tot het bestand is verlopen. Open het opnieuw vanuit Bestanden."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Er is nog een andere bestands- of afdrukbewerking geopend."),
         "ios_asset_export_failed" to MessageForms(other = "Het bestand kon niet worden voorbereid of geëxporteerd."),
         "ios_asset_file_url_required" to MessageForms(other = "Je kunt alleen lokale documenten of documenten van een aanbieder in Bestanden openen."),
@@ -22489,13 +22517,13 @@ private object TranslationNl {
         "legal_button" to MessageForms(other = "Licenties"),
         "legal_button_description" to MessageForms(other = "Licenties, naamsvermelding en broncode"),
         "legal_introduction" to MessageForms(other = "Vrije software onder GPLv3. Geen garantie. Hieronder staan de rechten en kennisgevingen per component."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Broncode en bouwinstructies openen"),
         "legal_title" to MessageForms(other = "Licenties en naamsvermelding"),
         "library_annotations" to MessageForms(other = "Annotaties"),
         "library_arithmetic" to MessageForms(other = "Rekenen"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Extra componenten"),
         "library_float" to MessageForms(other = "Drijvendekommaberekeningen"),
         "library_gates" to MessageForms(other = "Poorten"),
@@ -22592,13 +22620,13 @@ private object TranslationNl {
         "memory_format_binary_big" to MessageForms(other = "Binaire gegevens, big-endian"),
         "memory_format_binary_little" to MessageForms(other = "Binaire gegevens, little-endian"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "Ga"),
@@ -22695,13 +22723,13 @@ private object TranslationNl {
         "portable_bundle_open_failed" to MessageForms(other = "Dit projectpakket kon niet worden geopend."),
         "portable_bundle_too_large" to MessageForms(other = "Dit projectpakket overschrijdt de maximale grootte."),
         "portable_cancel_directory" to MessageForms(other = "Mapimport annuleren"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Kies het .circ-hoofdbestand in {folder}."),
         "portable_copy_not_opened" to MessageForms(other = "De projectkopie kon niet worden geopend. Je huidige document is behouden."),
         "portable_description" to MessageForms(other = "Open een pakket of een project in een map naar keuze. De editor maakt een nieuwe projectkopie met de bronbestanden."),
         "portable_directory_changed" to MessageForms(other = "Een bronbestand van het project is tijdens de import gewijzigd. Open de map opnieuw om een consistente kopie te maken."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "Deze map bevat geen .circ-bestanden."),
         "portable_directory_file_invalid" to MessageForms(other = "Kies een .circ-projectbestand."),
         "portable_directory_file_missing" to MessageForms(other = "Het geselecteerde projectbestand is niet meer beschikbaar."),
@@ -22798,13 +22826,13 @@ private object TranslationNl {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Negeer open input waarschuwingen in het rapport van de ontwerp controle."),
         "preferences_fpga_title" to MessageForms(other = "FPGA Commander"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "Gebruik hoofdletters voor de VHDL commandos"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Gebruik een positief, eindig getal."),
         "preferences_frequency_invalid" to MessageForms(other = "De standaardfrequentie moet positief en eindig zijn."),
         "preferences_frequency_scope" to MessageForms(other = "De frequentie van het geopende project blijft gelijk."),
         "preferences_gate_shapes" to MessageForms(other = "Poortsymbolen"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Deze instellingen zijn persoonlijk. De simulatieopties horen bij het project."),
         "preferences_hexadecimal" to MessageForms(other = "Hexadecimaal"),
         "preferences_hide_shortcuts" to MessageForms(other = "Sneltoetsen voor opdrachten verbergen"),
@@ -22901,13 +22929,13 @@ private object TranslationNl {
         "project_toolbar_remove" to MessageForms(other = "Verwijder {name}"),
         "project_toolbar_separator" to MessageForms(other = "Scheidingsteken"),
         "project_toolbar_title" to MessageForms(other = "Projectwerkbalk"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (niet beschikbaar)"),
         "project_tools_title" to MessageForms(other = "Projectgereedschap"),
         "project_wire_count" to MessageForms(one = "{count} draad", other = "{count} draden"),
         "project_xml_help" to MessageForms(other = "Kopieer de XML om het project te bewaren, of plak de inhoud van een .circ-bestand om alle circuits te importeren."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "Project-XML"),
         "project_xml_title" to MessageForms(other = ".circ-project"),
         "property_bits" to MessageForms(other = "Bits"),
@@ -23004,13 +23032,13 @@ private object TranslationNl {
         "soc_asm_address" to MessageForms(other = "Een offset en een basisregister werden verwacht, bijvoorbeeld 0(sp). Aangetroffen: {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Het programma past niet binnen de adresruimte van de processor."),
         "soc_asm_alignment" to MessageForms(other = "Het laadadres moet een veelvoud van vier zijn."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Dubbel label: {value}."),
         "soc_asm_empty" to MessageForms(other = "Voer minstens één instructie of woord in."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Laden op het resetadres van de processor: 0x{address}."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Assembler verbergen"),
         "soc_asm_immediate" to MessageForms(other = "Ongeldige, niet-uitgelijnde of buiten bereik liggende directe waarde: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Niet-ondersteunde instructie of richtlijn: {value}."),
@@ -23107,13 +23135,13 @@ private object TranslationNl {
         "soc_load_elf" to MessageForms(other = "ELF laden"),
         "soc_memory_address_range" to MessageForms(other = "Het geheugen op {address} met {bytes} bytes valt buiten de 32-bits adresruimte."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Geheugenindeling verbergen"),
         "soc_memory_map_plic" to MessageForms(other = "RISC-V-interruptcontroller (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Geheugenindeling tonen"),
         "soc_memory_map_title" to MessageForms(other = "Geheugenindeling van de bus"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Niet toegewezen"),
         "soc_nios_invalid" to MessageForms(other = "Ongeldige Nios II-instructie."),
         "soc_open_elf" to MessageForms(other = "ELF openen"),
@@ -23210,13 +23238,13 @@ private object TranslationNl {
         "tcl_cancel" to MessageForms(other = "Annuleren"),
         "tcl_client_error_clock_required" to MessageForms(other = "Tcl-componenten vereisen een ingang sysclk_i van één bit."),
         "tcl_client_error_executor_failed" to MessageForms(other = "De Tcl-uitvoerder kon de opdracht niet uitvoeren."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Voor het opnieuw afspelen van Tcl zijn 1 tot {limit} invoerframes nodig. Ontvangen: {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Tcl-invoerframes moeten overeenkomen met de opgegeven componentinterface."),
         "tcl_client_error_host_grant" to MessageForms(other = "De geselecteerde Companion-host staat {operation} niet toe of kan tclsh niet vinden."),
         "tcl_client_error_host_required" to MessageForms(other = "Selecteer een beschikbare Companion-host voordat je Tcl uitvoert."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Het Tcl-antwoord bevat ongeldige logische bits voor {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "Het Tcl-antwoord komt niet overeen met de uitvoerinterface."),
         "tcl_client_error_plan_required" to MessageForms(other = "Companion vereist voor deze bewerking een afzonderlijke goedkeuring van het plan."),
@@ -23313,13 +23341,13 @@ private object TranslationNl {
         "trace_file_resume" to MessageForms(other = "Bestandsregistratie hervatten"),
         "trace_file_signals_changed" to MessageForms(other = "De signaalselectie is gewijzigd. De bestandsregistratie is gestopt."),
         "trace_file_start" to MessageForms(other = "Registreren in TSV-bestand"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Bestandsregistratie stoppen"),
         "trace_file_stopping" to MessageForms(other = "{name} afronden"),
         "trace_file_unavailable" to MessageForms(other = "Registratie naar een bestand is niet beschikbaar in deze omgeving."),
         "trace_file_write_failed" to MessageForms(other = "Het signaalbestand kon niet worden geschreven. De registratie is gestopt."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Component of instantie"),
         "trace_half_cycles" to MessageForms(other = "halve cycli"),
         "trace_invalid_capacity" to MessageForms(other = "De registratiecapaciteit moet positief zijn."),
@@ -23416,13 +23444,13 @@ private object TranslationNl {
         "vector_set_order" to MessageForms(other = "Sets moeten in oplopende volgorde staan."),
         "vector_step" to MessageForms(other = "Stap"),
         "vector_summary" to MessageForms(other = "{completed}/{total} rijen · {passed} geslaagd · {failed} mislukt · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Testvectoren"),
         "vector_unbound_column" to MessageForms(other = "Kolom {column} komt niet overeen met een pin of klok in {circuit}."),
         "vector_unterminated_quote" to MessageForms(other = "Het afsluitende aanhalingsteken bij de pinnaam ontbreekt."),
         "vector_value_count" to MessageForms(other = "{expected} waarden verwacht, {actual} gevonden."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "De waarde {token} past niet in de {width} bits van {name}."),
         "vector_width_range" to MessageForms(other = "De bitbreedte van {name} moet tussen 1 en 64 bits liggen."),
         "visual_export_action_unavailable" to MessageForms(other = "Deze exportactie is niet beschikbaar op dit apparaat."),
@@ -23519,13 +23547,13 @@ private object TranslationNl {
         "workspace_read_only_original" to MessageForms(other = "Origineel behouden · alleen-lezen"),
         "workspace_recent_copy" to MessageForms(other = "Kopie in de werkruimte"),
         "workspace_recent_original" to MessageForms(other = "Origineel van de bestandsaanbieder"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Hersteld project"),
         "workspace_reload_saved" to MessageForms(other = "Opgeslagen project opnieuw laden"),
         "workspace_rename_project" to MessageForms(other = "Projectnaam wijzigen"),
         "workspace_restore" to MessageForms(other = "Terugzetten"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Opnieuw proberen te openen"),
         "workspace_retry_save" to MessageForms(other = "Opnieuw proberen op te slaan"),
         "workspace_revision" to MessageForms(other = "Revisie {revision} · {id}"),
@@ -24948,6 +24976,10 @@ private object TranslationPl {
         "extra_io_timer_output" to MessageForms(other = "Wyjście: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "NE555 wymaga rezystancji od 1000 do 10 000 000 Ω i pojemności od 10 do 1000 µF."),
         "file_default_name" to MessageForms(other = "obwód"),
+        "first_launch_theme_continue" to MessageForms(other = "Dalej"),
+        "first_launch_theme_description" to MessageForms(other = "Motyw możesz później zmienić w preferencjach."),
+        "first_launch_theme_system" to MessageForms(other = "Systemowy"),
+        "first_launch_theme_title" to MessageForms(other = "Wybierz motyw"),
         "fpga_active_high" to MessageForms(other = "aktywny w stanie wysokim"),
         "fpga_active_low" to MessageForms(other = "aktywny w stanie niskim"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Popraw błędy eksportu HDL przed przygotowaniem projektu FPGA."),
@@ -25027,13 +25059,13 @@ private object TranslationPl {
         "fpga_companion_programmed" to MessageForms(other = "Zaprogramowano płytkę"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "Kompilacja Quartus na hoście Companion wymaga obsługiwanego profilu układu."),
         "fpga_companion_retry_status" to MessageForms(other = "Sprawdź stan ponownie"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Sprawdź plan"),
         "fpga_companion_selected_goal" to MessageForms(other = "Wybrany cel: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "Cel lub projekt się zmienił. Przed uruchomieniem przygotuj nowy plan."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Anulowano"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Niepowodzenie"),
         "fpga_companion_state_queued" to MessageForms(other = "W kolejce"),
         "fpga_companion_state_running" to MessageForms(other = "W toku"),
@@ -25130,13 +25162,13 @@ private object TranslationPl {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Dwukierunkowe"),
         "fpga_direction_input" to MessageForms(other = "Wejście"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Wyjście"),
         "fpga_display_clock_required" to MessageForms(other = "Wyświetlacz multipleksowany wymaga prawidłowego zegara płytki o częstotliwości co najmniej 1 kHz."),
         "fpga_display_pin_conflict" to MessageForms(other = "Pin {pin} jest już używany i nie może jednocześnie sterować wyświetlaczem multipleksowanym."),
         "fpga_duplicate_display_channel" to MessageForms(other = "Kanał wyświetlacza {channel} jest już przypisany."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Aktywny w stanie niskim"),
         "fpga_editor_add_resource" to MessageForms(other = "Dodaj zasób"),
@@ -25233,13 +25265,13 @@ private object TranslationPl {
         "fpga_program_invalid_import" to MessageForms(other = "Wybierz niepusty plik .sof o rozmiarze do 8 MiB albo niepusty plik .bit, .bin, .fs, .pof lub .jed o rozmiarze do 4 MiB."),
         "fpga_program_mode" to MessageForms(other = "Tryb programowania"),
         "fpga_program_mode_flash" to MessageForms(other = "Trwały (flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Tymczasowy (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "Ten host nie udostępnia żadnych celów programowania."),
         "fpga_program_prepare" to MessageForms(other = "Sprawdź żądanie programowania"),
         "fpga_program_reported" to MessageForms(other = "Programator zgłosił powodzenie: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Sprawdź to żądanie przed zaprogramowaniem podłączonej płytki."),
         "fpga_program_review_target" to MessageForms(other = "Płytka i kabel: {target}"),
         "fpga_program_selected" to MessageForms(other = "Wybrany cel: {target}"),
@@ -25336,13 +25368,13 @@ private object TranslationPl {
         "hdl_import_module_missing" to MessageForms(other = "Brak modułu {module}."),
         "hdl_import_modules_limit" to MessageForms(other = "Wynik syntezy musi zawierać od 1 do 512 modułów."),
         "hdl_import_modules_missing" to MessageForms(other = "Wynik syntezy nie zawiera modułów."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Nieprawidłowy identyfikator sieci połączeń HDL."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "Identyfikatory sieci połączeń HDL muszą być nieujemne."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Nieprawidłowa lista połączeń po syntezie."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Inicjalizacja rejestru wartością niezerową wymaga układu z resetem: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "Nieprawidłowy kierunek portu {module}.{port}."),
         "hdl_import_ports_limit" to MessageForms(other = "Moduł {module} przekracza limit 256 portów."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Rekurencyjna hierarchia HDL: {module}."),
@@ -25439,13 +25471,13 @@ private object TranslationPl {
         "hdl_tools_import_cancel" to MessageForms(other = "Anuluj syntezę"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "Nie udało się anulować."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Zażądano anulowania."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Anulowano import."),
         "hdl_tools_import_confirm" to MessageForms(other = "Potwierdź wykonanie na Macu"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Połącz się z Companion w narzędziach projektu."),
         "hdl_tools_import_defines" to MessageForms(other = "Definicje oddzielone przecinkami"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Wykonaj syntezę w Companion na Macu i przekształć wynik w edytowalne obwody. Dodawaj źródła, pliki dołączane i dane pamięci, podając same nazwy plików."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Względna ścieżka pliku"),
@@ -25542,13 +25574,13 @@ private object TranslationPl {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "Symulator odrzucił sesję."),
         "hdl_tools_sim_started" to MessageForms(other = "Rozpoczęto sesję. Pobierz próbkę bieżących sygnałów, aby otrzymać pierwsze wartości wyjściowe."),
         "hdl_tools_sim_starting" to MessageForms(other = "Sprawdzanie i rozwijanie hierarchii na Macu…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Stan: {status} · symulator {time} ns · sesja {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Zatrzymano sesję. Aby ponownie uzyskać wartości wyjściowe, ręcznie uruchom nową sesję."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "Sesja osiągnęła limit 1 ms. Zresetuj sesję."),
         "hdl_tools_sim_title" to MessageForms(other = "Współsymulacja HDL-IP"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Poczekaj, aż symulator zaakceptuje sesję, lub rozpocznij kolejną."),
         "hdl_tools_sim_waiting" to MessageForms(other = "Oczekiwanie na Companion. Anulowanie odrzuci sesję i oczekujące odpowiedzi."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "Oczekiwanie na próbkę dla czasu {time} ns…"),
@@ -25645,13 +25677,13 @@ private object TranslationPl {
         "help_support_editing_title" to MessageForms(other = "Edycja i nawigacja"),
         "help_support_simulation_description" to MessageForms(other = "Zdarzenia deterministyczne, hierarchia, diagnostyka, wektory testowe, analiza i przebiegi są śledzone oddzielnie. Przykłady sprawdzają wyłącznie zadeklarowane sekwencje wejściowe."),
         "help_support_simulation_title" to MessageForms(other = "Symulacja i weryfikacja"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Testy w symulatorze, czytniki ekranu, pomiary dużych obwodów i podpisane wydania sprawdza się osobno. Pomyślna kompilacja nie potwierdza działania na rzeczywistym sprzęcie."),
         "help_support_validation_title" to MessageForms(other = "Platformy i wydania"),
         "help_title" to MessageForms(other = "Pomoc i przykłady"),
         "help_tool_unavailable" to MessageForms(other = "To narzędzie jest niedostępne w tej kompilacji."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Przetestuj scenariusz referencyjny"),
         "history_add_component" to MessageForms(other = "Dodaj {name}"),
         "history_connect_wire" to MessageForms(other = "Podłącz przewód"),
@@ -25748,13 +25780,13 @@ private object TranslationPl {
         "io_state_tty_full_row" to MessageForms(other = "Wiersze: {rows}, kolumny: {columns}. Bieżący wiersz {row} jest pełny. Następny znak drukowalny rozpocznie nowy wiersz. Tekst: {text}"),
         "io_state_unavailable" to MessageForms(other = "Stan wejść i wyjść jest niedostępny."),
         "io_state_white" to MessageForms(other = "biały"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "żółty"),
         "io_switch_off" to MessageForms(other = "wyłączony"),
         "io_switch_on" to MessageForms(other = "włączony"),
         "ios_access_expired" to MessageForms(other = "Dostęp do pliku wygasł. Otwórz go ponownie w aplikacji Pliki."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Inna operacja na pliku lub drukowanie nadal trwa."),
         "ios_asset_export_failed" to MessageForms(other = "Nie udało się przygotować lub wyeksportować pliku."),
         "ios_asset_file_url_required" to MessageForms(other = "Można otwierać tylko dokumenty lokalne lub udostępnione przez dostawcę w aplikacji Pliki."),
@@ -25851,13 +25883,13 @@ private object TranslationPl {
         "legal_button" to MessageForms(other = "Licencje"),
         "legal_button_description" to MessageForms(other = "Licencje, informacje o autorstwie i kod źródłowy"),
         "legal_introduction" to MessageForms(other = "Wolne oprogramowanie na licencji GPLv3. Bez gwarancji. Poniżej wymieniono prawa i informacje dotyczące poszczególnych komponentów."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Otwórz kod źródłowy i instrukcje kompilacji"),
         "legal_title" to MessageForms(other = "Licencje i informacje o autorstwie"),
         "library_annotations" to MessageForms(other = "Adnotacje"),
         "library_arithmetic" to MessageForms(other = "Arytmetyka"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Dodatkowe komponenty"),
         "library_float" to MessageForms(other = "Arytmetyka zmiennoprzecinkowa"),
         "library_gates" to MessageForms(other = "Bramki"),
@@ -25954,13 +25986,13 @@ private object TranslationPl {
         "memory_format_binary_big" to MessageForms(other = "Dane binarne, big-endian"),
         "memory_format_binary_little" to MessageForms(other = "Dane binarne, little-endian"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 hex bytes addressed big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 hex bytes addressed little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 hex bytes plain big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 hex bytes plain little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 hex words addressed"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 hex words plain"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw"),
         "memory_go" to MessageForms(other = "Przejdź"),
@@ -26057,13 +26089,13 @@ private object TranslationPl {
         "portable_bundle_open_failed" to MessageForms(other = "Nie udało się otworzyć tego pakietu projektu."),
         "portable_bundle_too_large" to MessageForms(other = "Ten pakiet projektu przekracza limit rozmiaru."),
         "portable_cancel_directory" to MessageForms(other = "Anuluj import folderu"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Wybierz główny plik .circ w folderze {folder}."),
         "portable_copy_not_opened" to MessageForms(other = "Nie udało się otworzyć kopii w obszarze roboczym. Zachowano bieżący dokument."),
         "portable_description" to MessageForms(other = "Otwórz pakiet lub projekt w wybranym folderze. Edytor utworzy nową kopię w obszarze roboczym razem z plikami źródłowymi."),
         "portable_directory_changed" to MessageForms(other = "Źródło projektu zmieniło się podczas importu. Otwórz folder ponownie, aby utworzyć spójną kopię."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "W tym folderze nie ma plików .circ."),
         "portable_directory_file_invalid" to MessageForms(other = "Wybierz plik projektu .circ."),
         "portable_directory_file_missing" to MessageForms(other = "Wybrany plik projektu nie jest już dostępny."),
@@ -26160,13 +26192,13 @@ private object TranslationPl {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Pomijaj ostrzeżeia o otwartych wejściach."),
         "preferences_fpga_title" to MessageForms(other = "Commander FPGA"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "Zapisuj słowa kluczowe VHDL wielkimi literami"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Wpisz dodatnią, skończoną liczbę."),
         "preferences_frequency_invalid" to MessageForms(other = "Domyślna częstotliwość musi być dodatnia i skończona."),
         "preferences_frequency_scope" to MessageForms(other = "To ustawienie nie zmienia częstotliwości otwartego projektu."),
         "preferences_gate_shapes" to MessageForms(other = "Symbole bramek"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Te ustawienia są osobiste. Opcje symulacji zapisuje się w projekcie."),
         "preferences_hexadecimal" to MessageForms(other = "Szesnastkowa"),
         "preferences_hide_shortcuts" to MessageForms(other = "Ukryj skróty poleceń"),
@@ -26263,13 +26295,13 @@ private object TranslationPl {
         "project_toolbar_remove" to MessageForms(other = "Usuń {name}"),
         "project_toolbar_separator" to MessageForms(other = "Separator"),
         "project_toolbar_title" to MessageForms(other = "Pasek narzędzi projektu"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (niedostępne)"),
         "project_tools_title" to MessageForms(other = "Narzędzia projektu"),
         "project_wire_count" to MessageForms(one = "{count} przewód", few = "{count} przewody", many = "{count} przewodów", other = "{count} przewodu"),
         "project_xml_help" to MessageForms(other = "Skopiuj XML, aby zapisać projekt, lub wklej zawartość pliku .circ, aby zaimportować wszystkie obwody."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "XML projektu"),
         "project_xml_title" to MessageForms(other = "Projekt .circ"),
         "property_bits" to MessageForms(other = "Bity"),
@@ -26366,13 +26398,13 @@ private object TranslationPl {
         "soc_asm_address" to MessageForms(other = "Oczekiwano przesunięcia i rejestru bazowego, na przykład 0(sp). Otrzymano: {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Program wykracza poza przestrzeń adresową procesora."),
         "soc_asm_alignment" to MessageForms(other = "Adres ładowania musi być wielokrotnością czterech."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Powtórzona etykieta: {value}."),
         "soc_asm_empty" to MessageForms(other = "Wpisz co najmniej jedną instrukcję lub słowo danych."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Wczytaj pod adres resetu procesora 0x{address}."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Ukryj asembler"),
         "soc_asm_immediate" to MessageForms(other = "Nieprawidłowa, niewyrównana lub wykraczająca poza zakres wartość natychmiastowa: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Nieobsługiwana instrukcja lub dyrektywa: {value}."),
@@ -26469,13 +26501,13 @@ private object TranslationPl {
         "soc_load_elf" to MessageForms(other = "Wczytaj ELF"),
         "soc_memory_address_range" to MessageForms(other = "Pamięć od adresu {address} o rozmiarze {bytes} B wykracza poza 32-bitową przestrzeń adresową."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Ukryj mapę pamięci"),
         "soc_memory_map_plic" to MessageForms(other = "Kontroler przerwań RISC-V (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Pokaż mapę pamięci"),
         "soc_memory_map_title" to MessageForms(other = "Mapa pamięci magistrali"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Bez przypisania"),
         "soc_nios_invalid" to MessageForms(other = "Nieprawidłowa instrukcja Nios II."),
         "soc_open_elf" to MessageForms(other = "Otwórz ELF"),
@@ -26572,13 +26604,13 @@ private object TranslationPl {
         "tcl_cancel" to MessageForms(other = "Anuluj"),
         "tcl_client_error_clock_required" to MessageForms(other = "Komponenty Tcl wymagają jednobitowego wejścia sysclk_i."),
         "tcl_client_error_executor_failed" to MessageForms(other = "Proces wykonujący Tcl zakończył się błędem."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Odtwarzanie Tcl wymaga od 1 do {limit} ramek wejściowych. Odebrano: {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Ramki wejściowe Tcl muszą odpowiadać zadeklarowanemu interfejsowi komponentu."),
         "tcl_client_error_host_grant" to MessageForms(other = "Wybrany host Companion nie zezwala na {operation} lub nie może znaleźć tclsh."),
         "tcl_client_error_host_required" to MessageForms(other = "Przed uruchomieniem Tcl wybierz dostępny host Companion."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Odpowiedź Tcl zawiera nieprawidłowe bity logiczne dla portu {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "Odpowiedź Tcl nie odpowiada interfejsowi wyjściowemu."),
         "tcl_client_error_plan_required" to MessageForms(other = "Companion wymaga oddzielnego zatwierdzenia planu tej operacji."),
@@ -26675,13 +26707,13 @@ private object TranslationPl {
         "trace_file_resume" to MessageForms(other = "Wznów zapis do pliku"),
         "trace_file_signals_changed" to MessageForms(other = "Zaznaczenie sygnałów się zmieniło. Zatrzymano zapis do pliku."),
         "trace_file_start" to MessageForms(other = "Zapisuj do pliku TSV"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Zatrzymaj zapis do pliku"),
         "trace_file_stopping" to MessageForms(other = "Kończenie zapisu do {name}"),
         "trace_file_unavailable" to MessageForms(other = "Zapis do pliku jest niedostępny w tym środowisku."),
         "trace_file_write_failed" to MessageForms(other = "Nie udało się zapisać pliku sygnałów. Rejestrację zatrzymano."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Komponent lub instancja"),
         "trace_half_cycles" to MessageForms(other = "półcykle"),
         "trace_invalid_capacity" to MessageForms(other = "Pojemność rejestracji musi być dodatnia."),
@@ -26778,13 +26810,13 @@ private object TranslationPl {
         "vector_set_order" to MessageForms(other = "Zestawy muszą występować w kolejności rosnącej."),
         "vector_step" to MessageForms(other = "Krok"),
         "vector_summary" to MessageForms(other = "Wiersze: {completed}/{total} · zaliczone: {passed} · niezaliczone: {failed} · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Wektory testowe"),
         "vector_unbound_column" to MessageForms(other = "Kolumna {column} nie ma odpowiadającego wyprowadzenia ani zegara w obwodzie {circuit}."),
         "vector_unterminated_quote" to MessageForms(other = "Brak cudzysłowu zamykającego nazwę wyprowadzenia."),
         "vector_value_count" to MessageForms(other = "Oczekiwana liczba wartości: {expected}. Znaleziono: {actual}."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "Wartość {token} nie mieści się w {name}. Dostępna liczba bitów: {width}."),
         "vector_width_range" to MessageForms(other = "Szerokość {name} musi wynosić od 1 do 64 bitów."),
         "visual_export_action_unavailable" to MessageForms(other = "Ta opcja eksportu jest niedostępna na tym urządzeniu."),
@@ -26881,13 +26913,13 @@ private object TranslationPl {
         "workspace_read_only_original" to MessageForms(other = "Zachowano oryginał · tylko do odczytu"),
         "workspace_recent_copy" to MessageForms(other = "Kopia w obszarze roboczym"),
         "workspace_recent_original" to MessageForms(other = "Oryginał od dostawcy plików"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Odzyskany projekt"),
         "workspace_reload_saved" to MessageForms(other = "Wczytaj ponownie zapisany projekt"),
         "workspace_rename_project" to MessageForms(other = "Zmień nazwę projektu"),
         "workspace_restore" to MessageForms(other = "Przywróć"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Spróbuj otworzyć ponownie"),
         "workspace_retry_save" to MessageForms(other = "Ponów zapis"),
         "workspace_revision" to MessageForms(other = "Wersja {revision} · {id}"),
@@ -28310,6 +28342,10 @@ private object TranslationRu {
         "extra_io_timer_output" to MessageForms(other = "Выход: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "Для NE555 нужно сопротивление от 1 000 до 10 000 000 Ом и ёмкость от 10 до 1 000 мкФ."),
         "file_default_name" to MessageForms(other = "схема"),
+        "first_launch_theme_continue" to MessageForms(other = "Продолжить"),
+        "first_launch_theme_description" to MessageForms(other = "Тему можно изменить позже в настройках."),
+        "first_launch_theme_system" to MessageForms(other = "Системная"),
+        "first_launch_theme_title" to MessageForms(other = "Выберите тему"),
         "fpga_active_high" to MessageForms(other = "активный высокий уровень"),
         "fpga_active_low" to MessageForms(other = "активный низкий уровень"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "Исправьте ошибки экспорта HDL перед подготовкой проекта ПЛИС."),
@@ -28389,13 +28425,13 @@ private object TranslationRu {
         "fpga_companion_programmed" to MessageForms(other = "Плата запрограммирована"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "Для сборки в Quartus через Companion нужен поддерживаемый профиль устройства."),
         "fpga_companion_retry_status" to MessageForms(other = "Повторить запрос состояния"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Проверить план"),
         "fpga_companion_selected_goal" to MessageForms(other = "Выбрано: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "Цель или проект изменились. Перед запуском подготовьте новый план."),
         "fpga_companion_state_cancelled" to MessageForms(other = "Отменено"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Ошибка"),
         "fpga_companion_state_queued" to MessageForms(other = "В очереди"),
         "fpga_companion_state_running" to MessageForms(other = "Выполняется"),
@@ -28492,13 +28528,13 @@ private object TranslationRu {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Двунаправленный"),
         "fpga_direction_input" to MessageForms(other = "Вход"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Выход"),
         "fpga_display_clock_required" to MessageForms(other = "Мультиплексируемому индикатору нужен тактовый сигнал платы с частотой не менее 1 кГц."),
         "fpga_display_pin_conflict" to MessageForms(other = "Вывод {pin} уже занят и не может одновременно управлять мультиплексируемым индикатором."),
         "fpga_duplicate_display_channel" to MessageForms(other = "Канал индикатора {channel} уже назначен."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Активный низкий уровень"),
         "fpga_editor_add_resource" to MessageForms(other = "Добавить ресурс"),
@@ -28595,13 +28631,13 @@ private object TranslationRu {
         "fpga_program_invalid_import" to MessageForms(other = "Выберите непустой файл .sof размером до 8 МиБ или непустой файл .bit, .bin, .fs, .pof или .jed размером до 4 МиБ."),
         "fpga_program_mode" to MessageForms(other = "Режим программирования"),
         "fpga_program_mode_flash" to MessageForms(other = "Постоянный (флеш-память)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Временный (ОЗУ)"),
         "fpga_program_no_targets" to MessageForms(other = "На этом хосте нет доступных целей для программирования."),
         "fpga_program_prepare" to MessageForms(other = "Проверить запрос на программирование"),
         "fpga_program_reported" to MessageForms(other = "Успех по данным программатора: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Проверьте этот запрос перед программированием подключённой платы."),
         "fpga_program_review_target" to MessageForms(other = "Плата и кабель: {target}"),
         "fpga_program_selected" to MessageForms(other = "Выбрано: {target}"),
@@ -28698,13 +28734,13 @@ private object TranslationRu {
         "hdl_import_module_missing" to MessageForms(other = "Модуль {module} отсутствует."),
         "hdl_import_modules_limit" to MessageForms(other = "Результат синтеза должен содержать от 1 до 512 модулей."),
         "hdl_import_modules_missing" to MessageForms(other = "Результат синтеза не содержит модулей."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Недопустимый идентификатор цепи HDL."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "Идентификаторы цепей HDL должны быть неотрицательными."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Недопустимый список соединений после синтеза."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Для инициализации регистра ненулевым значением используйте схему со сбросом: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "Недопустимое направление порта {module}.{port}."),
         "hdl_import_ports_limit" to MessageForms(other = "В модуле {module} более 256 портов."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Рекурсивная иерархия HDL: {module}."),
@@ -28801,13 +28837,13 @@ private object TranslationRu {
         "hdl_tools_import_cancel" to MessageForms(other = "Отменить синтез"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "Не удалось отменить синтез."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "Отправлен запрос на отмену."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "Импорт отменён."),
         "hdl_tools_import_confirm" to MessageForms(other = "Подтвердить запуск на Mac"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Подключите Companion в инструментах проекта."),
         "hdl_tools_import_defines" to MessageForms(other = "Определения через запятую"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Выполните синтез с помощью Companion на Mac и преобразуйте результат в редактируемые схемы. Добавляйте исходные файлы, включаемые файлы и данные памяти, указывая простые имена файлов."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Относительный путь к файлу"),
@@ -28904,13 +28940,13 @@ private object TranslationRu {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "Симулятор отклонил сеанс."),
         "hdl_tools_sim_started" to MessageForms(other = "Сеанс запущен. Снимите текущие значения сигналов, чтобы получить первые значения на выходах."),
         "hdl_tools_sim_starting" to MessageForms(other = "Проверка и развёртывание модели на Mac…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Состояние: {status} · симулятор {time} нс · сеанс {sessionTime} нс"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Сеанс остановлен. Обновление выходов возобновится только после явного запуска."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "Сеанс достиг предела в 1 мс. Сбросьте сеанс."),
         "hdl_tools_sim_title" to MessageForms(other = "Совместное моделирование HDL-IP"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Дождитесь, пока симулятор примет сеанс, или начните новый сеанс."),
         "hdl_tools_sim_waiting" to MessageForms(other = "Ожидание ответа от Companion. Отмена завершит сеанс и отбросит ожидаемые ответы."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "Ожидание снимка для времени {time} нс…"),
@@ -29007,13 +29043,13 @@ private object TranslationRu {
         "help_support_editing_title" to MessageForms(other = "Редактирование и навигация"),
         "help_support_simulation_description" to MessageForms(other = "Детерминированные события, иерархия, диагностика, тестовые векторы, анализ и запись сигналов проверяются отдельно. Примеры проверяют только указанные в них последовательности входов."),
         "help_support_simulation_title" to MessageForms(other = "Моделирование и проверка"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Проверки в симуляторе устройства, проверки со средствами чтения с экрана, измерения на больших схемах и выпуск подписанных сборок — отдельные этапы. Успешная компиляция сама по себе не подтверждает работу на физическом оборудовании."),
         "help_support_validation_title" to MessageForms(other = "Платформы и выпуски"),
         "help_title" to MessageForms(other = "Справка и примеры"),
         "help_tool_unavailable" to MessageForms(other = "Этот инструмент недоступен в данной сборке."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Проверить контрольный сценарий"),
         "history_add_component" to MessageForms(other = "Добавить {name}"),
         "history_connect_wire" to MessageForms(other = "Подключить провод"),
@@ -29110,13 +29146,13 @@ private object TranslationRu {
         "io_state_tty_full_row" to MessageForms(other = "Строк: {rows}. Столбцов: {columns}. Текущая строка {row} заполнена. Следующий печатный символ начнёт новую строку. Текст: {text}"),
         "io_state_unavailable" to MessageForms(other = "Состояние ввода-вывода недоступно."),
         "io_state_white" to MessageForms(other = "белый"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "жёлтый"),
         "io_switch_off" to MessageForms(other = "выключен"),
         "io_switch_on" to MessageForms(other = "включён"),
         "ios_access_expired" to MessageForms(other = "Срок доступа к файлу истёк. Откройте его заново в приложении «Файлы»."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Другая операция с файлом или печатью ещё открыта."),
         "ios_asset_export_failed" to MessageForms(other = "Не удалось подготовить или экспортировать файл."),
         "ios_asset_file_url_required" to MessageForms(other = "Можно открывать только локальные документы или документы поставщиков приложения «Файлы»."),
@@ -29213,13 +29249,13 @@ private object TranslationRu {
         "legal_button" to MessageForms(other = "Лицензии"),
         "legal_button_description" to MessageForms(other = "Лицензии, сведения об авторах и исходный код"),
         "legal_introduction" to MessageForms(other = "Свободное программное обеспечение по лицензии GPLv3. Предоставляется без гарантий. Права и уведомления для каждого компонента перечислены ниже."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Открыть исходный код и инструкции по сборке"),
         "legal_title" to MessageForms(other = "Лицензии и сведения об авторах"),
         "library_annotations" to MessageForms(other = "Аннотации"),
         "library_arithmetic" to MessageForms(other = "Арифметика"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Дополнительные компоненты"),
         "library_float" to MessageForms(other = "Арифметика с плавающей точкой"),
         "library_gates" to MessageForms(other = "Элементы"),
@@ -29316,13 +29352,13 @@ private object TranslationRu {
         "memory_format_binary_big" to MessageForms(other = "Двоичные данные (big-endian)"),
         "memory_format_binary_little" to MessageForms(other = "Двоичные данные (little-endian)"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 шестнадцатеричные байты с адресами, big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 шестнадцатеричные байты с адресами, little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 шестнадцатеричные байты без адресов, big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 шестнадцатеричные байты без адресов, little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 шестнадцатеричные слова с адресами"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 шестнадцатеричные слова без адресов"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw (шестнадцатеричные слова, кодирование серий)"),
         "memory_go" to MessageForms(other = "Перейти"),
@@ -29419,13 +29455,13 @@ private object TranslationRu {
         "portable_bundle_open_failed" to MessageForms(other = "Не удалось открыть пакет проекта."),
         "portable_bundle_too_large" to MessageForms(other = "Размер пакета проекта превышает допустимый предел."),
         "portable_cancel_directory" to MessageForms(other = "Отменить импорт папки"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "Выберите главный файл .circ в папке {folder}."),
         "portable_copy_not_opened" to MessageForms(other = "Не удалось открыть копию в рабочем пространстве. Текущий документ сохранён."),
         "portable_description" to MessageForms(other = "Откройте пакет или проект из выбранной папки. Редактор создаст в рабочем пространстве копию проекта с исходными файлами."),
         "portable_directory_changed" to MessageForms(other = "Один из исходных файлов проекта изменился во время импорта. Откройте папку заново, чтобы создать согласованную копию."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "В этой папке нет файлов .circ."),
         "portable_directory_file_invalid" to MessageForms(other = "Выберите файл проекта .circ."),
         "portable_directory_file_missing" to MessageForms(other = "Выбранный файл проекта больше недоступен."),
@@ -29522,13 +29558,13 @@ private object TranslationRu {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Скрывать предупреждения о неподключенных входах в отчёте DRC"),
         "preferences_fpga_title" to MessageForms(other = "Настройки ПЛИС"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "Ключевые слова VHDL в верхнем регистре"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Введите положительное конечное число."),
         "preferences_frequency_invalid" to MessageForms(other = "Частота по умолчанию должна быть положительным конечным числом."),
         "preferences_frequency_scope" to MessageForms(other = "Частота в открытом проекте не меняется."),
         "preferences_gate_shapes" to MessageForms(other = "Обозначения логических элементов"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Это личные настройки. Параметры моделирования сохраняются в проекте."),
         "preferences_hexadecimal" to MessageForms(other = "Шестнадцатеричное"),
         "preferences_hide_shortcuts" to MessageForms(other = "Скрыть сочетания клавиш для команд"),
@@ -29625,13 +29661,13 @@ private object TranslationRu {
         "project_toolbar_remove" to MessageForms(other = "Удалить {name}"),
         "project_toolbar_separator" to MessageForms(other = "Разделитель"),
         "project_toolbar_title" to MessageForms(other = "Панель инструментов проекта"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (недоступен)"),
         "project_tools_title" to MessageForms(other = "Инструменты проекта"),
         "project_wire_count" to MessageForms(one = "{count} провод", few = "{count} провода", many = "{count} проводов", other = "{count} провода"),
         "project_xml_help" to MessageForms(other = "Скопируйте XML, чтобы сохранить проект, или вставьте содержимое файла .circ, чтобы импортировать все схемы."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "XML проекта"),
         "project_xml_title" to MessageForms(other = "Проект .circ"),
         "property_bits" to MessageForms(other = "Разрядность"),
@@ -29728,13 +29764,13 @@ private object TranslationRu {
         "soc_asm_address" to MessageForms(other = "Ожидаются смещение и базовый регистр, например 0(sp). Получено: {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Программа выходит за пределы адресного пространства процессора."),
         "soc_asm_alignment" to MessageForms(other = "Адрес загрузки должен быть кратен четырём."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Повторяющаяся метка: {value}."),
         "soc_asm_empty" to MessageForms(other = "Введите хотя бы одну инструкцию или одно слово."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Загрузка по адресу сброса процессора 0x{address}."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Скрыть ассемблер"),
         "soc_asm_immediate" to MessageForms(other = "Недопустимое, выходящее за допустимый диапазон или невыровненное непосредственное значение: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Неподдерживаемая инструкция или директива: {value}."),
@@ -29831,13 +29867,13 @@ private object TranslationRu {
         "soc_load_elf" to MessageForms(other = "Загрузить ELF"),
         "soc_memory_address_range" to MessageForms(other = "Область памяти по адресу {address} размером {bytes} байт выходит за пределы 32-битного адресного пространства."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Скрыть карту памяти"),
         "soc_memory_map_plic" to MessageForms(other = "Контроллер прерываний RISC-V (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Показать карту памяти"),
         "soc_memory_map_title" to MessageForms(other = "Карта памяти шины"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Не отображено"),
         "soc_nios_invalid" to MessageForms(other = "Недопустимая инструкция Nios II."),
         "soc_open_elf" to MessageForms(other = "Открыть ELF"),
@@ -29934,13 +29970,13 @@ private object TranslationRu {
         "tcl_cancel" to MessageForms(other = "Отмена"),
         "tcl_client_error_clock_required" to MessageForms(other = "Компонентам Tcl нужен однобитовый вход sysclk_i."),
         "tcl_client_error_executor_failed" to MessageForms(other = "Средство выполнения Tcl завершилось ошибкой."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Для воспроизведения Tcl нужно от 1 до {limit} входных кадров. Получено: {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Входные кадры Tcl должны соответствовать объявленному интерфейсу компонента."),
         "tcl_client_error_host_grant" to MessageForms(other = "Выбранный Companion не разрешает {operation} или не находит tclsh."),
         "tcl_client_error_host_required" to MessageForms(other = "Перед запуском Tcl выберите доступный Companion."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Ответ Tcl содержит недопустимые логические разряды для {port}."),
         "tcl_client_error_output_interface" to MessageForms(other = "Ответ Tcl не соответствует интерфейсу выходов."),
         "tcl_client_error_plan_required" to MessageForms(other = "Companion требует отдельного подтверждения плана для этой операции."),
@@ -30037,13 +30073,13 @@ private object TranslationRu {
         "trace_file_resume" to MessageForms(other = "Возобновить запись в файл"),
         "trace_file_signals_changed" to MessageForms(other = "Набор выбранных сигналов изменился. Запись в файл остановлена."),
         "trace_file_start" to MessageForms(other = "Начать запись в TSV"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Остановить запись в файл"),
         "trace_file_stopping" to MessageForms(other = "Завершение записи в {name}"),
         "trace_file_unavailable" to MessageForms(other = "Запись в файл недоступна в этой среде."),
         "trace_file_write_failed" to MessageForms(other = "Не удалось записать файл сигналов. Запись остановлена."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Компонент или экземпляр"),
         "trace_half_cycles" to MessageForms(other = "полутакты"),
         "trace_invalid_capacity" to MessageForms(other = "Ёмкость буфера записи должна быть положительной."),
@@ -30140,13 +30176,13 @@ private object TranslationRu {
         "vector_set_order" to MessageForms(other = "Наборы должны идти в порядке возрастания."),
         "vector_step" to MessageForms(other = "Шаг"),
         "vector_summary" to MessageForms(other = "Строки: {completed}/{total} · пройдено: {passed} · ошибок: {failed} · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Тестовые векторы"),
         "vector_unbound_column" to MessageForms(other = "В схеме {circuit} нет вывода или тактового генератора для столбца {column}."),
         "vector_unterminated_quote" to MessageForms(other = "Нет закрывающей кавычки в имени вывода."),
         "vector_value_count" to MessageForms(other = "Ожидалось значений: {expected}. Найдено: {actual}."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "Значение {token} не помещается в {width} бит вывода {name}."),
         "vector_width_range" to MessageForms(other = "Разрядность {name} должна быть от 1 до 64 бит."),
         "visual_export_action_unavailable" to MessageForms(other = "Это действие экспорта недоступно на данном устройстве."),
@@ -30243,13 +30279,13 @@ private object TranslationRu {
         "workspace_read_only_original" to MessageForms(other = "Оригинал сохранён · только чтение"),
         "workspace_recent_copy" to MessageForms(other = "Копия в рабочей области"),
         "workspace_recent_original" to MessageForms(other = "Оригинал от поставщика файлов"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Восстановленный проект"),
         "workspace_reload_saved" to MessageForms(other = "Заново открыть сохранённый проект"),
         "workspace_rename_project" to MessageForms(other = "Переименовать проект"),
         "workspace_restore" to MessageForms(other = "Восстановить"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Повторить открытие"),
         "workspace_retry_save" to MessageForms(other = "Повторить сохранение"),
         "workspace_revision" to MessageForms(other = "Ревизия {revision} · {id}"),
@@ -31672,6 +31708,10 @@ private object TranslationTr {
         "extra_io_timer_output" to MessageForms(other = "Çıkış: {value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "NE555, 1.000 ile 10.000.000 Ω arasında direnç ve 10 ile 1.000 µF arasında kapasitans gerektirir."),
         "file_default_name" to MessageForms(other = "devre"),
+        "first_launch_theme_continue" to MessageForms(other = "Devam et"),
+        "first_launch_theme_description" to MessageForms(other = "Temayı daha sonra Tercihler bölümünden değiştirebilirsiniz."),
+        "first_launch_theme_system" to MessageForms(other = "Sistem"),
+        "first_launch_theme_title" to MessageForms(other = "Bir tema seçin"),
         "fpga_active_high" to MessageForms(other = "yüksek seviyede etkin"),
         "fpga_active_low" to MessageForms(other = "düşük seviyede etkin"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "FPGA projesini hazırlamadan önce HDL dışa aktarma hatalarını düzeltin."),
@@ -31751,13 +31791,13 @@ private object TranslationTr {
         "fpga_companion_programmed" to MessageForms(other = "Kart programlandı"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "Companion ile Quartus derlemesi için desteklenen bir aygıt profili gerekir."),
         "fpga_companion_retry_status" to MessageForms(other = "Durumu Yeniden Sorgula"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "Planı İncele"),
         "fpga_companion_selected_goal" to MessageForms(other = "Seçilen hedef: {goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "Hedef veya proje değişti. Yürütmeden önce yeni bir plan hazırlayın."),
         "fpga_companion_state_cancelled" to MessageForms(other = "İptal edildi"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "Başarısız"),
         "fpga_companion_state_queued" to MessageForms(other = "Sırada"),
         "fpga_companion_state_running" to MessageForms(other = "Sürüyor"),
@@ -31854,13 +31894,13 @@ private object TranslationTr {
         "fpga_diagnostic" to MessageForms(other = "{code}: {detail}"),
         "fpga_direction_inout" to MessageForms(other = "Çift yönlü"),
         "fpga_direction_input" to MessageForms(other = "Giriş"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "Çıkış"),
         "fpga_display_clock_required" to MessageForms(other = "Çoklamalı ekran için en az 1 kHz frekansında geçerli bir kart saat sinyali gerekir."),
         "fpga_display_pin_conflict" to MessageForms(other = "{pin} pini zaten kullanımda ve çoklamalı ekranı da süremez."),
         "fpga_duplicate_display_channel" to MessageForms(other = "{channel} ekran kanalı zaten eşlenmiş."),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "Düşük Seviyede Etkin"),
         "fpga_editor_add_resource" to MessageForms(other = "Kaynak Ekle"),
@@ -31957,13 +31997,13 @@ private object TranslationTr {
         "fpga_program_invalid_import" to MessageForms(other = "Boş olmayan, en fazla 8 MiB boyutunda bir .sof dosyası veya en fazla 4 MiB boyutunda bir .bit, .bin, .fs, .pof ya da .jed dosyası seçin."),
         "fpga_program_mode" to MessageForms(other = "Programlama Modu"),
         "fpga_program_mode_flash" to MessageForms(other = "Kalıcı (Flash)"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "Geçici (RAM)"),
         "fpga_program_no_targets" to MessageForms(other = "Bu sunucuda programlanabilecek hedef yok."),
         "fpga_program_prepare" to MessageForms(other = "Programlama İsteğini İncele"),
         "fpga_program_reported" to MessageForms(other = "Programlama aracının bildirdiği başarı: {value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "Bağlı kartı programlamadan önce bu isteği inceleyin."),
         "fpga_program_review_target" to MessageForms(other = "Kart ve kablo: {target}"),
         "fpga_program_selected" to MessageForms(other = "Seçilen hedef: {target}"),
@@ -32060,13 +32100,13 @@ private object TranslationTr {
         "hdl_import_module_missing" to MessageForms(other = "Modül eksik: {module}."),
         "hdl_import_modules_limit" to MessageForms(other = "Sentez sonucu 1 ile 512 arasında modül içermeli."),
         "hdl_import_modules_missing" to MessageForms(other = "Sentez sonucunda modül yok."),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "Geçersiz HDL ağ tanımlayıcısı."),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "HDL ağ tanımlayıcıları negatif olamaz."),
         "hdl_import_netlist_invalid" to MessageForms(other = "Sentez ağ listesi geçersiz."),
         "hdl_import_nonzero_initialization" to MessageForms(other = "Yazmaçları sıfırdan farklı değerlerle başlatmak için sıfırlama sinyali kullanan bir tasarım gerekir: {module}.{net}."),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "{module}.{port} portunun yönü geçersiz."),
         "hdl_import_ports_limit" to MessageForms(other = "{module} modülü 256 port sınırını aşıyor."),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "Özyinelemeli HDL hiyerarşisi: {module}."),
@@ -32163,13 +32203,13 @@ private object TranslationTr {
         "hdl_tools_import_cancel" to MessageForms(other = "Sentezi İptal Et"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "İptal edilemedi."),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "İptal istendi."),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "İçe aktarma iptal edildi."),
         "hdl_tools_import_confirm" to MessageForms(other = "Mac'te Yürütmeyi Onayla"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "Proje araçlarından Companion bağlantısını kurun."),
         "hdl_tools_import_defines" to MessageForms(other = "Virgülle ayrılmış makro tanımları"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "Sentezi Mac'teki Companion sunucusunda çalıştırın ve sonucu düzenlenebilir devrelere dönüştürün. Kaynak dosyalarını, include dosyalarını ve bellek verilerini basit dosya adlarıyla ekleyin."),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}: {detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "Göreli dosya yolu"),
@@ -32266,13 +32306,13 @@ private object TranslationTr {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "Simülatör oturumu kabul etmedi."),
         "hdl_tools_sim_started" to MessageForms(other = "Oturum başladı. İlk çıkışları almak için geçerli sinyalleri örnekleyin."),
         "hdl_tools_sim_starting" to MessageForms(other = "Mac'te doğrulanıyor ve tasarım ayrıntılandırılıyor…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "Durum: {status} · Simülatör: {time} ns · Oturum: {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "Oturum durduruldu. Çıkışları almak için yeni bir oturum başlatın."),
         "hdl_tools_sim_time_limit" to MessageForms(other = "Oturum 1 ms sınırına ulaştı. Oturumu sıfırlayın."),
         "hdl_tools_sim_title" to MessageForms(other = "HDL-IP Ortak Simülasyonu"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "Simülatörün oturumu kabul etmesini bekleyin veya yeni bir oturum başlatın."),
         "hdl_tools_sim_waiting" to MessageForms(other = "Companion yanıtı bekleniyor. İptal ederseniz oturum ve bekleyen yanıtlar atılır."),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "{time} ns anındaki örnek bekleniyor…"),
@@ -32369,13 +32409,13 @@ private object TranslationTr {
         "help_support_editing_title" to MessageForms(other = "Düzenleme ve Gezinme"),
         "help_support_simulation_description" to MessageForms(other = "Belirlenimci olaylar, hiyerarşi, tanılama, test vektörleri, analiz ve sinyal kayıtları ayrı ayrı izlenir. Örnekler yalnızca belirtilen giriş dizilerini sınar."),
         "help_support_simulation_title" to MessageForms(other = "Simülasyon ve Doğrulama"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "Simülatör testleri, erişilebilirlik okuyucuları, büyük devre ölçümleri ve imzalı sürümler ayrı doğrulama aşamalarıdır. Derlemenin başarılı olması, fiziksel donanımda beklenen davranışın görüldüğünü kanıtlamaz."),
         "help_support_validation_title" to MessageForms(other = "Platformlar ve Sürümler"),
         "help_title" to MessageForms(other = "Yardım ve Örnekler"),
         "help_tool_unavailable" to MessageForms(other = "Bu araç bu derlemede kullanılamıyor."),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "Referans Senaryosunu Sına"),
         "history_add_component" to MessageForms(other = "{name} ekle"),
         "history_connect_wire" to MessageForms(other = "Kabloyu Bağla"),
@@ -32472,13 +32512,13 @@ private object TranslationTr {
         "io_state_tty_full_row" to MessageForms(other = "Satır: {rows}. Sütun: {columns}. Geçerli {row}. satır dolu. Sonraki yazdırılabilir karakter yeni bir satır başlatır. Metin: {text}"),
         "io_state_unavailable" to MessageForms(other = "G/Ç durumu kullanılamıyor."),
         "io_state_white" to MessageForms(other = "beyaz"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "sarı"),
         "io_switch_off" to MessageForms(other = "kapalı"),
         "io_switch_on" to MessageForms(other = "açık"),
         "ios_access_expired" to MessageForms(other = "Dosyaya erişimin süresi doldu. Dosyayı Dosyalar uygulamasından yeniden açın."),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "Başka bir dosya veya yazdırma işlemi hâlâ açık."),
         "ios_asset_export_failed" to MessageForms(other = "Dosya hazırlanamadı veya dışa aktarılamadı."),
         "ios_asset_file_url_required" to MessageForms(other = "Yalnızca yerel belgeler veya Dosyalar uygulamasındaki sağlayıcı belgeleri açılabilir."),
@@ -32575,13 +32615,13 @@ private object TranslationTr {
         "legal_button" to MessageForms(other = "Lisanslar"),
         "legal_button_description" to MessageForms(other = "Lisanslar, atıflar ve kaynak kodu"),
         "legal_introduction" to MessageForms(other = "GPLv3 lisansı altında özgür yazılım. Garanti verilmez. Her bileşene ilişkin haklar ve bildirimler aşağıda listelenmiştir."),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "Kaynak Kodunu ve Derleme Talimatlarını Aç"),
         "legal_title" to MessageForms(other = "Lisanslar ve Atıflar"),
         "library_annotations" to MessageForms(other = "Ek Açıklamalar"),
         "library_arithmetic" to MessageForms(other = "Aritmetik"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "Ek Bileşenler"),
         "library_float" to MessageForms(other = "Kayan Noktalı Aritmetik"),
         "library_gates" to MessageForms(other = "Mantık Kapıları"),
@@ -32678,13 +32718,13 @@ private object TranslationTr {
         "memory_format_binary_big" to MessageForms(other = "İkili veri (big-endian)"),
         "memory_format_binary_little" to MessageForms(other = "İkili veri (little-endian)"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 adresli onaltılık baytlar, big-endian"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 adresli onaltılık baytlar, little-endian"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 adressiz onaltılık baytlar, big-endian"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 adressiz onaltılık baytlar, little-endian"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 adresli onaltılık sözcükler"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 adressiz onaltılık sözcükler"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw (RLE kodlu onaltılık sözcükler)"),
         "memory_go" to MessageForms(other = "Git"),
@@ -32781,13 +32821,13 @@ private object TranslationTr {
         "portable_bundle_open_failed" to MessageForms(other = "Bu proje paketi açılamadı."),
         "portable_bundle_too_large" to MessageForms(other = "Bu proje paketi boyut sınırını aşıyor."),
         "portable_cancel_directory" to MessageForms(other = "Klasör İçe Aktarmayı İptal Et"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "{folder} klasöründeki ana .circ dosyasını seçin."),
         "portable_copy_not_opened" to MessageForms(other = "Çalışma alanındaki kopya açılamadı. Geçerli belge korundu."),
         "portable_description" to MessageForms(other = "Bir paket veya seçtiğiniz klasördeki bir projeyi açın. Düzenleyici, kaynak dosyalarla birlikte çalışma alanında yeni bir kopya oluşturur."),
         "portable_directory_changed" to MessageForms(other = "İçe aktarma sırasında bir proje kaynağı değişti. Tutarlı bir kopya almak için klasörü yeniden açın."),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "Bu klasörde .circ dosyası yok."),
         "portable_directory_file_invalid" to MessageForms(other = "Bir .circ proje dosyası seçin."),
         "portable_directory_file_missing" to MessageForms(other = "Seçilen proje dosyası artık kullanılamıyor."),
@@ -32884,13 +32924,13 @@ private object TranslationTr {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "Tasarım kuralları kontrol raporunda açık giriş uyarılarını gizle."),
         "preferences_fpga_title" to MessageForms(other = "FPGA Komutanı"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "VHDL anahtar kelimeleri için büyük harf kullanın"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "Pozitif ve sonlu bir sayı kullanın."),
         "preferences_frequency_invalid" to MessageForms(other = "Varsayılan frekans pozitif ve sonlu olmalı."),
         "preferences_frequency_scope" to MessageForms(other = "Açık projenin frekansı değişmez."),
         "preferences_gate_shapes" to MessageForms(other = "Kapı Sembolleri"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "Bu ayarlar kişiseldir. Simülasyon seçenekleri projeye aittir."),
         "preferences_hexadecimal" to MessageForms(other = "Onaltılık (Hexadecimal)"),
         "preferences_hide_shortcuts" to MessageForms(other = "Komut kısayollarını gizle"),
@@ -32987,13 +33027,13 @@ private object TranslationTr {
         "project_toolbar_remove" to MessageForms(other = "{name}'ı kaldır"),
         "project_toolbar_separator" to MessageForms(other = "Ayırıcı"),
         "project_toolbar_title" to MessageForms(other = "Proje Araç Çubuğu"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name} (kullanılamıyor)"),
         "project_tools_title" to MessageForms(other = "Proje Araçları"),
         "project_wire_count" to MessageForms(one = "{count} kablo", other = "{count} kablo"),
         "project_xml_help" to MessageForms(other = "Projeyi kaydetmek için XML'i kopyalayın. Tüm devreleri içe aktarmak için bir .circ dosyasının içeriğini yapıştırın."),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "Proje XML'i"),
         "project_xml_title" to MessageForms(other = ".circ Projesi"),
         "property_bits" to MessageForms(other = "Bitler"),
@@ -33090,13 +33130,13 @@ private object TranslationTr {
         "soc_asm_address" to MessageForms(other = "0(sp) örneğindeki gibi bir uzaklık ve taban yazmacı bekleniyordu. Bulunan: {value}."),
         "soc_asm_address_wrap" to MessageForms(other = "Program işlemcinin adres alanını aşıyor."),
         "soc_asm_alignment" to MessageForms(other = "Yükleme adresi dördün katı olmalı."),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "Yinelenen etiket: {value}."),
         "soc_asm_empty" to MessageForms(other = "En az bir komut veya sözcük girin."),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "Programı işlemcinin 0x{address} sıfırlama adresine yükler."),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "Assembler’ı Gizle"),
         "soc_asm_immediate" to MessageForms(other = "Doğrudan değer geçersiz, aralık dışında veya hizasız: {value}."),
         "soc_asm_instruction" to MessageForms(other = "Desteklenmeyen komut veya yönerge: {value}."),
@@ -33193,13 +33233,13 @@ private object TranslationTr {
         "soc_load_elf" to MessageForms(other = "ELF Yükle"),
         "soc_memory_address_range" to MessageForms(other = "{address} adresindeki {bytes} baytlık bellek, 32 bitlik adres alanını aşıyor."),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "Bellek Haritasını Gizle"),
         "soc_memory_map_plic" to MessageForms(other = "RISC-V Kesme Denetleyicisi (PLIC)"),
         "soc_memory_map_show" to MessageForms(other = "Bellek Haritasını Göster"),
         "soc_memory_map_title" to MessageForms(other = "Veri Yolu Bellek Haritası"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "Eşlenmemiş"),
         "soc_nios_invalid" to MessageForms(other = "Geçersiz Nios II komutu."),
         "soc_open_elf" to MessageForms(other = "ELF Aç"),
@@ -33296,13 +33336,13 @@ private object TranslationTr {
         "tcl_cancel" to MessageForms(other = "İptal"),
         "tcl_client_error_clock_required" to MessageForms(other = "Tcl bileşenleri tek bitlik sysclk_i girişini gerektirir."),
         "tcl_client_error_executor_failed" to MessageForms(other = "Tcl yürütücüsü başarısız oldu."),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Tcl yeniden yürütmesi 1 ile {limit} arasında giriş çerçevesi gerektirir. Alınan çerçeve sayısı: {count}."),
         "tcl_client_error_frame_interface" to MessageForms(other = "Tcl giriş çerçeveleri, bileşenin tanımlı arayüzüyle uyuşmalı."),
         "tcl_client_error_host_grant" to MessageForms(other = "Seçilen Companion sunucusu {operation} işlemine izin vermiyor veya tclsh aracını bulamıyor."),
         "tcl_client_error_host_required" to MessageForms(other = "Tcl'yi çalıştırmadan önce kullanılabilir bir Companion sunucusu seçin."),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Tcl yanıtında {port} portu için geçersiz mantık bitleri var."),
         "tcl_client_error_output_interface" to MessageForms(other = "Tcl yanıtı çıkış arayüzüyle uyuşmuyor."),
         "tcl_client_error_plan_required" to MessageForms(other = "Companion bu işlem için ayrı bir plan onayı gerektiriyor."),
@@ -33399,13 +33439,13 @@ private object TranslationTr {
         "trace_file_resume" to MessageForms(other = "Dosya Kaydına Devam Et"),
         "trace_file_signals_changed" to MessageForms(other = "Seçili sinyaller değişti. Dosya kaydı durduruldu."),
         "trace_file_start" to MessageForms(other = "TSV Dosyasına Kaydet"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "Dosya Kaydını Durdur"),
         "trace_file_stopping" to MessageForms(other = "{name} dosyasının kaydı tamamlanıyor…"),
         "trace_file_unavailable" to MessageForms(other = "Bu ortamda dosyaya kayıt yapılamıyor."),
         "trace_file_write_failed" to MessageForms(other = "Sinyal dosyası yazılamadı. Kayıt durduruldu."),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "Bileşen veya Devre Örneği"),
         "trace_half_cycles" to MessageForms(other = "yarım döngü"),
         "trace_invalid_capacity" to MessageForms(other = "Kayıt kapasitesi pozitif olmalı."),
@@ -33502,13 +33542,13 @@ private object TranslationTr {
         "vector_set_order" to MessageForms(other = "Kümeler artan sırada olmalı."),
         "vector_step" to MessageForms(other = "İlerle"),
         "vector_summary" to MessageForms(other = "{completed}/{total} satır · {passed} başarılı · {failed} başarısız · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "Test Vektörleri"),
         "vector_unbound_column" to MessageForms(other = "{column} sütunu, {circuit} devresindeki hiçbir pine veya saat sinyaline karşılık gelmiyor."),
         "vector_unterminated_quote" to MessageForms(other = "Pin adının kapanış tırnağı eksik."),
         "vector_value_count" to MessageForms(other = "{expected} değer bekleniyordu, {actual} değer bulundu."),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "{token} değeri, {name} için ayrılan {width} bit genişliğine sığmıyor."),
         "vector_width_range" to MessageForms(other = "{name} genişliği 1 ile 64 bit arasında olmalı."),
         "visual_export_action_unavailable" to MessageForms(other = "Bu cihazda söz konusu dışa aktarma işlemi kullanılamıyor."),
@@ -33605,13 +33645,13 @@ private object TranslationTr {
         "workspace_read_only_original" to MessageForms(other = "Özgün dosya korundu · salt okunur"),
         "workspace_recent_copy" to MessageForms(other = "Çalışma alanındaki kopya"),
         "workspace_recent_original" to MessageForms(other = "Dosya sağlayıcısındaki özgün dosya"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "Kurtarılan Proje"),
         "workspace_reload_saved" to MessageForms(other = "Kayıtlı Projeyi Yeniden Yükle"),
         "workspace_rename_project" to MessageForms(other = "Projeyi Yeniden Adlandır"),
         "workspace_restore" to MessageForms(other = "Geri Yükle"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "Açmayı Yeniden Dene"),
         "workspace_retry_save" to MessageForms(other = "Kaydetmeyi Yeniden Dene"),
         "workspace_revision" to MessageForms(other = "Revizyon {revision} · {id}"),
@@ -35034,6 +35074,10 @@ private object TranslationZh {
         "extra_io_timer_output" to MessageForms(other = "输出：{value}"),
         "extra_io_timer_parameters_invalid" to MessageForms(other = "NE555 要求电阻为 1,000 至 10,000,000 Ω，电容为 10 至 1,000 µF。"),
         "file_default_name" to MessageForms(other = "电路"),
+        "first_launch_theme_continue" to MessageForms(other = "继续"),
+        "first_launch_theme_description" to MessageForms(other = "之后可以在首选项中更改主题。"),
+        "first_launch_theme_system" to MessageForms(other = "跟随系统"),
+        "first_launch_theme_title" to MessageForms(other = "选择主题"),
         "fpga_active_high" to MessageForms(other = "高电平有效"),
         "fpga_active_low" to MessageForms(other = "低电平有效"),
         "fpga_adapter_failed_hdl" to MessageForms(other = "请先修复 HDL 导出错误，再准备 FPGA 项目。"),
@@ -35113,13 +35157,13 @@ private object TranslationZh {
         "fpga_companion_programmed" to MessageForms(other = "已完成板卡编程"),
         "fpga_companion_quartus_profile_only" to MessageForms(other = "配套服务的 Quartus 构建需要受支持的器件配置。"),
         "fpga_companion_retry_status" to MessageForms(other = "重试状态查询"),
+    )
+
+    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_review" to MessageForms(other = "审核方案"),
         "fpga_companion_selected_goal" to MessageForms(other = "已选择：{goal}"),
         "fpga_companion_stale_review" to MessageForms(other = "目标或项目已更改。执行前请重新准备方案。"),
         "fpga_companion_state_cancelled" to MessageForms(other = "已取消"),
-    )
-
-    private fun part14(): Map<String, MessageForms> = mapOf(
         "fpga_companion_state_failed" to MessageForms(other = "失败"),
         "fpga_companion_state_queued" to MessageForms(other = "已排队"),
         "fpga_companion_state_running" to MessageForms(other = "正在运行"),
@@ -35216,13 +35260,13 @@ private object TranslationZh {
         "fpga_diagnostic" to MessageForms(other = "{code}：{detail}"),
         "fpga_direction_inout" to MessageForms(other = "双向"),
         "fpga_direction_input" to MessageForms(other = "输入"),
+    )
+
+    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_direction_output" to MessageForms(other = "输出"),
         "fpga_display_clock_required" to MessageForms(other = "扫描显示器需要至少 1 kHz 的有效板卡时钟。"),
         "fpga_display_pin_conflict" to MessageForms(other = "引脚 {pin} 已被占用，无法同时驱动扫描显示器。"),
         "fpga_duplicate_display_channel" to MessageForms(other = "显示通道 {channel} 已映射。"),
-    )
-
-    private fun part15(): Map<String, MessageForms> = mapOf(
         "fpga_ecp5_flow" to MessageForms(other = "ECP5 · Yosys / nextpnr"),
         "fpga_editor_active_low" to MessageForms(other = "低电平有效"),
         "fpga_editor_add_resource" to MessageForms(other = "添加资源"),
@@ -35319,13 +35363,13 @@ private object TranslationZh {
         "fpga_program_invalid_import" to MessageForms(other = "请选择不超过 8 MiB 的非空 .sof 文件，或不超过 4 MiB 的非空 .bit、.bin、.fs、.pof 或 .jed 文件。"),
         "fpga_program_mode" to MessageForms(other = "编程模式"),
         "fpga_program_mode_flash" to MessageForms(other = "持久（Flash）"),
+    )
+
+    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_mode_ram" to MessageForms(other = "临时（RAM）"),
         "fpga_program_no_targets" to MessageForms(other = "此主机上没有可用的编程目标。"),
         "fpga_program_prepare" to MessageForms(other = "审核编程请求"),
         "fpga_program_reported" to MessageForms(other = "编程器报告成功：{value}"),
-    )
-
-    private fun part16(): Map<String, MessageForms> = mapOf(
         "fpga_program_review" to MessageForms(other = "对连接的板卡编程前，请审核此请求。"),
         "fpga_program_review_target" to MessageForms(other = "板卡和线缆：{target}"),
         "fpga_program_selected" to MessageForms(other = "已选择：{target}"),
@@ -35422,13 +35466,13 @@ private object TranslationZh {
         "hdl_import_module_missing" to MessageForms(other = "缺少模块 {module}。"),
         "hdl_import_modules_limit" to MessageForms(other = "综合结果必须包含 1 到 512 个模块。"),
         "hdl_import_modules_missing" to MessageForms(other = "综合结果不含任何模块。"),
+    )
+
+    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_net_identifier_invalid" to MessageForms(other = "HDL 网络标识符无效。"),
         "hdl_import_net_identifier_nonnegative" to MessageForms(other = "HDL 网络标识符必须为非负数。"),
         "hdl_import_netlist_invalid" to MessageForms(other = "综合网表无效。"),
         "hdl_import_nonzero_initialization" to MessageForms(other = "寄存器非零初始化需要通过复位实现：{module}.{net}。"),
-    )
-
-    private fun part17(): Map<String, MessageForms> = mapOf(
         "hdl_import_port_direction" to MessageForms(other = "{module}.{port} 的端口方向无效。"),
         "hdl_import_ports_limit" to MessageForms(other = "模块 {module} 的端口数超过 256 个。"),
         "hdl_import_recursive_hierarchy" to MessageForms(other = "HDL 层次结构中存在循环引用：{module}。"),
@@ -35525,13 +35569,13 @@ private object TranslationZh {
         "hdl_tools_import_cancel" to MessageForms(other = "取消综合"),
         "hdl_tools_import_cancel_failed" to MessageForms(other = "无法取消。"),
         "hdl_tools_import_cancel_requested" to MessageForms(other = "已请求取消。"),
+    )
+
+    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_cancelled" to MessageForms(other = "已取消导入。"),
         "hdl_tools_import_confirm" to MessageForms(other = "确认在 Mac 上执行"),
         "hdl_tools_import_connect_companion" to MessageForms(other = "请在项目工具中连接配套服务。"),
         "hdl_tools_import_defines" to MessageForms(other = "宏定义，用逗号分隔"),
-    )
-
-    private fun part18(): Map<String, MessageForms> = mapOf(
         "hdl_tools_import_description" to MessageForms(other = "在 Mac 的配套服务上综合，再将结果转换成可编辑电路。添加源文件、包含文件和存储器数据时，请使用不带目录的文件名。"),
         "hdl_tools_import_diagnostic" to MessageForms(other = "{code}{location}：{detail}"),
         "hdl_tools_import_file_name" to MessageForms(other = "相对文件路径"),
@@ -35628,13 +35672,13 @@ private object TranslationZh {
         "hdl_tools_sim_start_rejected" to MessageForms(other = "仿真器未接受此会话。"),
         "hdl_tools_sim_started" to MessageForms(other = "会话已启动。请采样当前信号以获取首次输出。"),
         "hdl_tools_sim_starting" to MessageForms(other = "正在 Mac 上验证并展开 HDL 设计…"),
+    )
+
+    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_status" to MessageForms(other = "状态：{status} · 仿真器 {time} ns · 会话 {sessionTime} ns"),
         "hdl_tools_sim_stopped" to MessageForms(other = "会话已停止。请重新启动会话以获取输出。"),
         "hdl_tools_sim_time_limit" to MessageForms(other = "会话已达到 1 ms 的时间上限。请重置会话。"),
         "hdl_tools_sim_title" to MessageForms(other = "HDL-IP 协同仿真"),
-    )
-
-    private fun part19(): Map<String, MessageForms> = mapOf(
         "hdl_tools_sim_wait_for_engine" to MessageForms(other = "请等待仿真器接受会话，或启动新会话。"),
         "hdl_tools_sim_waiting" to MessageForms(other = "正在等待配套服务。取消会丢弃会话和尚未处理的响应。"),
         "hdl_tools_sim_waiting_sample" to MessageForms(other = "正在等待 {time} ns 时的采样结果…"),
@@ -35731,13 +35775,13 @@ private object TranslationZh {
         "help_support_editing_title" to MessageForms(other = "编辑和导航"),
         "help_support_simulation_description" to MessageForms(other = "确定性事件、层次结构、诊断、测试向量、分析和信号记录分别跟踪。示例只测试它们声明的输入序列。"),
         "help_support_simulation_title" to MessageForms(other = "仿真和验证"),
+    )
+
+    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_support_validation_description" to MessageForms(other = "模拟器测试、无障碍屏幕阅读器、大型电路测量和签名发布需分别验证。构建成功无法证明实体硬件的行为。"),
         "help_support_validation_title" to MessageForms(other = "平台和发布版本"),
         "help_title" to MessageForms(other = "帮助和示例"),
         "help_tool_unavailable" to MessageForms(other = "此版本中没有此工具。"),
-    )
-
-    private fun part20(): Map<String, MessageForms> = mapOf(
         "help_verify_reference" to MessageForms(other = "测试参考场景"),
         "history_add_component" to MessageForms(other = "添加{name}"),
         "history_connect_wire" to MessageForms(other = "连接导线"),
@@ -35834,13 +35878,13 @@ private object TranslationZh {
         "io_state_tty_full_row" to MessageForms(other = "{rows} 行，{columns} 列。当前第 {row} 行已满，下一个可打印字符将另起一行。文本：{text}"),
         "io_state_unavailable" to MessageForms(other = "I/O 状态不可用。"),
         "io_state_white" to MessageForms(other = "白色"),
+    )
+
+    private fun part21(): Map<String, MessageForms> = mapOf(
         "io_state_yellow" to MessageForms(other = "黄色"),
         "io_switch_off" to MessageForms(other = "关"),
         "io_switch_on" to MessageForms(other = "开"),
         "ios_access_expired" to MessageForms(other = "文件访问权限已过期。请从“文件”App 重新打开此文件。"),
-    )
-
-    private fun part21(): Map<String, MessageForms> = mapOf(
         "ios_asset_busy" to MessageForms(other = "还有文件或打印操作正在进行。"),
         "ios_asset_export_failed" to MessageForms(other = "无法准备或导出此文件。"),
         "ios_asset_file_url_required" to MessageForms(other = "只能打开本地文档或“文件”App 中提供的文档。"),
@@ -35937,13 +35981,13 @@ private object TranslationZh {
         "legal_button" to MessageForms(other = "许可证"),
         "legal_button_description" to MessageForms(other = "许可证、署名和源代码"),
         "legal_introduction" to MessageForms(other = "本软件是按 GPLv3 许可发布的自由软件。不提供担保。以下列出各组件的权利和声明。"),
+    )
+
+    private fun part22(): Map<String, MessageForms> = mapOf(
         "legal_source_action" to MessageForms(other = "打开源代码和构建说明"),
         "legal_title" to MessageForms(other = "许可证和署名"),
         "library_annotations" to MessageForms(other = "标注"),
         "library_arithmetic" to MessageForms(other = "运算器"),
-    )
-
-    private fun part22(): Map<String, MessageForms> = mapOf(
         "library_extra" to MessageForms(other = "其他组件"),
         "library_float" to MessageForms(other = "浮点运算"),
         "library_gates" to MessageForms(other = "逻辑门"),
@@ -36040,13 +36084,13 @@ private object TranslationZh {
         "memory_format_binary_big" to MessageForms(other = "二进制数据，大端序"),
         "memory_format_binary_little" to MessageForms(other = "二进制数据，小端序"),
         "memory_format_hex_bytes_addressed_big" to MessageForms(other = "v3.0 十六进制字节，带地址，大端序"),
+    )
+
+    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_bytes_addressed_little" to MessageForms(other = "v3.0 十六进制字节，带地址，小端序"),
         "memory_format_hex_bytes_plain_big" to MessageForms(other = "v3.0 十六进制字节，纯数据，大端序"),
         "memory_format_hex_bytes_plain_little" to MessageForms(other = "v3.0 十六进制字节，纯数据，小端序"),
         "memory_format_hex_words_addressed" to MessageForms(other = "v3.0 十六进制字，带地址"),
-    )
-
-    private fun part23(): Map<String, MessageForms> = mapOf(
         "memory_format_hex_words_plain" to MessageForms(other = "v3.0 十六进制字，纯数据"),
         "memory_format_raw" to MessageForms(other = "v2.0 raw（十六进制字，游程编码）"),
         "memory_go" to MessageForms(other = "跳转"),
@@ -36143,13 +36187,13 @@ private object TranslationZh {
         "portable_bundle_open_failed" to MessageForms(other = "无法打开此项目包。"),
         "portable_bundle_too_large" to MessageForms(other = "此项目包超出大小上限。"),
         "portable_cancel_directory" to MessageForms(other = "取消导入文件夹"),
+    )
+
+    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_choose_main" to MessageForms(other = "请选择 {folder} 中的主 .circ 文件。"),
         "portable_copy_not_opened" to MessageForms(other = "无法打开工作区中的副本。已保留当前文档。"),
         "portable_description" to MessageForms(other = "打开项目包或指定文件夹中的项目。编辑器会在工作区创建新副本，并保留源文件。"),
         "portable_directory_changed" to MessageForms(other = "导入期间有项目源文件发生变化。请重新打开文件夹，以获取内容一致的副本。"),
-    )
-
-    private fun part24(): Map<String, MessageForms> = mapOf(
         "portable_directory_empty" to MessageForms(other = "此文件夹中没有 .circ 文件。"),
         "portable_directory_file_invalid" to MessageForms(other = "请选择 .circ 项目文件。"),
         "portable_directory_file_missing" to MessageForms(other = "所选项目文件已不可用。"),
@@ -36246,13 +36290,13 @@ private object TranslationZh {
         "preferences_fpga_suppress_open_pins" to MessageForms(other = "在 DRC 报告中忽略悬空输入警告"),
         "preferences_fpga_title" to MessageForms(other = "FPGA Commander 设置"),
         "preferences_fpga_vhdl_upper_case" to MessageForms(other = "VHDL 关键字使用大写"),
+    )
+
+    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_frequency_hint" to MessageForms(other = "请输入大于零的有限数值。"),
         "preferences_frequency_invalid" to MessageForms(other = "默认频率必须是大于零的有限数值。"),
         "preferences_frequency_scope" to MessageForms(other = "此设置不会更改当前打开项目的频率。"),
         "preferences_gate_shapes" to MessageForms(other = "逻辑门符号"),
-    )
-
-    private fun part25(): Map<String, MessageForms> = mapOf(
         "preferences_help" to MessageForms(other = "这些设置只影响你的编辑器。仿真选项保存在项目中。"),
         "preferences_hexadecimal" to MessageForms(other = "十六进制"),
         "preferences_hide_shortcuts" to MessageForms(other = "隐藏命令快捷键"),
@@ -36349,13 +36393,13 @@ private object TranslationZh {
         "project_toolbar_remove" to MessageForms(other = "移除{name}"),
         "project_toolbar_separator" to MessageForms(other = "分隔符"),
         "project_toolbar_title" to MessageForms(other = "项目工具栏"),
+    )
+
+    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_toolbar_unavailable" to MessageForms(other = "{name}（不可用）"),
         "project_tools_title" to MessageForms(other = "项目工具"),
         "project_wire_count" to MessageForms(other = "{count} 段导线"),
         "project_xml_help" to MessageForms(other = "复制 XML 可保存项目，粘贴 .circ 文件的内容可导入其中的全部电路。"),
-    )
-
-    private fun part26(): Map<String, MessageForms> = mapOf(
         "project_xml_label" to MessageForms(other = "项目 XML"),
         "project_xml_title" to MessageForms(other = ".circ 项目"),
         "property_bits" to MessageForms(other = "位数"),
@@ -36452,13 +36496,13 @@ private object TranslationZh {
         "soc_asm_address" to MessageForms(other = "应使用偏移量和基址寄存器，例如 0(sp)。实际值：{value}。"),
         "soc_asm_address_wrap" to MessageForms(other = "程序超出 CPU 地址空间。"),
         "soc_asm_alignment" to MessageForms(other = "加载地址必须是 4 的倍数。"),
+    )
+
+    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_duplicate_label" to MessageForms(other = "标签重复：{value}。"),
         "soc_asm_empty" to MessageForms(other = "请至少输入一条指令或一个字。"),
         "soc_asm_example" to MessageForms(other = "addi x5, x0, 7"),
         "soc_asm_help" to MessageForms(other = "加载到 CPU 复位地址 0x{address}。"),
-    )
-
-    private fun part27(): Map<String, MessageForms> = mapOf(
         "soc_asm_hide" to MessageForms(other = "隐藏汇编器"),
         "soc_asm_immediate" to MessageForms(other = "立即数无效、超出范围或未对齐：{value}。"),
         "soc_asm_instruction" to MessageForms(other = "不支持的指令或汇编伪指令：{value}。"),
@@ -36555,13 +36599,13 @@ private object TranslationZh {
         "soc_load_elf" to MessageForms(other = "加载 ELF"),
         "soc_memory_address_range" to MessageForms(other = "从 {address} 开始的 {bytes} 字节存储器超出 32 位地址空间。"),
         "soc_memory_entry" to MessageForms(other = "{address}  {value}"),
+    )
+
+    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_hide" to MessageForms(other = "隐藏存储器映射"),
         "soc_memory_map_plic" to MessageForms(other = "RISC-V 中断控制器（PLIC）"),
         "soc_memory_map_show" to MessageForms(other = "显示存储器映射"),
         "soc_memory_map_title" to MessageForms(other = "总线存储器映射"),
-    )
-
-    private fun part28(): Map<String, MessageForms> = mapOf(
         "soc_memory_map_unmapped" to MessageForms(other = "未映射"),
         "soc_nios_invalid" to MessageForms(other = "Nios II 指令无效。"),
         "soc_open_elf" to MessageForms(other = "打开 ELF"),
@@ -36658,13 +36702,13 @@ private object TranslationZh {
         "tcl_cancel" to MessageForms(other = "取消"),
         "tcl_client_error_clock_required" to MessageForms(other = "Tcl 组件需要单比特输入 sysclk_i。"),
         "tcl_client_error_executor_failed" to MessageForms(other = "Tcl 执行器发生错误。"),
+    )
+
+    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_frame_count" to MessageForms(other = "Tcl 重放需要 1 至 {limit} 个输入帧，实际收到 {count} 个。"),
         "tcl_client_error_frame_interface" to MessageForms(other = "Tcl 输入帧必须与组件声明的接口一致。"),
         "tcl_client_error_host_grant" to MessageForms(other = "选定的配套服务不允许 {operation}，或找不到 tclsh。"),
         "tcl_client_error_host_required" to MessageForms(other = "运行 Tcl 前请选择可用的配套服务。"),
-    )
-
-    private fun part29(): Map<String, MessageForms> = mapOf(
         "tcl_client_error_output_bits" to MessageForms(other = "Tcl 响应中 {port} 的逻辑位无效。"),
         "tcl_client_error_output_interface" to MessageForms(other = "Tcl 响应与输出接口不匹配。"),
         "tcl_client_error_plan_required" to MessageForms(other = "配套服务要求单独批准此操作的方案。"),
@@ -36761,13 +36805,13 @@ private object TranslationZh {
         "trace_file_resume" to MessageForms(other = "继续文件记录"),
         "trace_file_signals_changed" to MessageForms(other = "选定信号已更改。文件记录已停止。"),
         "trace_file_start" to MessageForms(other = "记录到 TSV 文件"),
+    )
+
+    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_file_stop" to MessageForms(other = "停止文件记录"),
         "trace_file_stopping" to MessageForms(other = "正在完成 {name} 的记录"),
         "trace_file_unavailable" to MessageForms(other = "当前环境不支持文件记录。"),
         "trace_file_write_failed" to MessageForms(other = "无法写入信号文件。记录已停止。"),
-    )
-
-    private fun part30(): Map<String, MessageForms> = mapOf(
         "trace_filter" to MessageForms(other = "组件或实例"),
         "trace_half_cycles" to MessageForms(other = "半周期"),
         "trace_invalid_capacity" to MessageForms(other = "记录容量必须大于零。"),
@@ -36864,13 +36908,13 @@ private object TranslationZh {
         "vector_set_order" to MessageForms(other = "集合必须按递增顺序排列。"),
         "vector_step" to MessageForms(other = "单步"),
         "vector_summary" to MessageForms(other = "{completed}/{total} 行 · {passed} 行通过 · {failed} 行失败 · {status}"),
+    )
+
+    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_title" to MessageForms(other = "测试向量"),
         "vector_unbound_column" to MessageForms(other = "电路 {circuit} 中没有与列 {column} 匹配的引脚或时钟。"),
         "vector_unterminated_quote" to MessageForms(other = "引脚名称的引号未闭合。"),
         "vector_value_count" to MessageForms(other = "预期有 {expected} 个值，实际有 {actual} 个。"),
-    )
-
-    private fun part31(): Map<String, MessageForms> = mapOf(
         "vector_value_width" to MessageForms(other = "数值 {token} 无法用 {name} 的 {width} 位表示。"),
         "vector_width_range" to MessageForms(other = "{name} 的位宽必须介于 1 和 64 位之间。"),
         "visual_export_action_unavailable" to MessageForms(other = "此设备不支持该导出操作。"),
@@ -36967,13 +37011,13 @@ private object TranslationZh {
         "workspace_read_only_original" to MessageForms(other = "已保留原件 · 只读"),
         "workspace_recent_copy" to MessageForms(other = "工作区中的副本"),
         "workspace_recent_original" to MessageForms(other = "来自文件提供方的原始文件"),
+    )
+
+    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_recovered_project" to MessageForms(other = "恢复的项目"),
         "workspace_reload_saved" to MessageForms(other = "重新加载已保存的项目"),
         "workspace_rename_project" to MessageForms(other = "重命名项目"),
         "workspace_restore" to MessageForms(other = "还原"),
-    )
-
-    private fun part32(): Map<String, MessageForms> = mapOf(
         "workspace_retry_open" to MessageForms(other = "重试打开"),
         "workspace_retry_save" to MessageForms(other = "重试保存"),
         "workspace_revision" to MessageForms(other = "修订版 {revision} · {id}"),

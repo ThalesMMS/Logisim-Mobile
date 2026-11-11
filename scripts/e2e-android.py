@@ -237,11 +237,26 @@ class Scenarios:
                 time.sleep(0.2)
         raise AssertionError(f"The {key} control did not appear within {timeout}s")
 
-    def wait_editor(self, *, timeout=30):
+    def wait_editor(self, *, timeout=30, complete_first_launch=False):
         """Observe editor readiness without opening an overflow as a side effect."""
         deadline = time.monotonic() + timeout
+        theme_steps = iter(("first-launch-theme-system", "first-launch-theme-continue"))
+        theme_step = next(theme_steps)
         while time.monotonic() < deadline:
             root = self.ui.screen(timeout=max(0.1, deadline - time.monotonic()))
+            if complete_first_launch and self.ui.tagged(root, "first-launch-theme") is not None:
+                if theme_step is not None:
+                    system = self.ui.tagged(root, "first-launch-theme-system")
+                    control = system if theme_step == "first-launch-theme-system" else self.ui.tagged(root, theme_step)
+                    if (system is not None and control is not None and control.get("enabled") != "false"
+                            and self.ui.visible_node(root, control)):
+                        if control is not system and system.get("checkable") == "true":
+                            assert "true" in (system.get("checked"), system.get("selected")), \
+                                "System is not selected in the first-launch theme chooser"
+                        self.ui.tap(control, timeout=max(0.1, deadline - time.monotonic()))
+                        theme_step = next(theme_steps, None)
+                time.sleep(0.2)
+                continue
             if self.acknowledge_import_report(root, timeout=max(0.1, deadline - time.monotonic())):
                 continue
             if any(self.ui.tagged(root, toolbar + "-menu") is not None
@@ -762,13 +777,12 @@ class Scenarios:
         finally:
             (self.ui.output / "results.json").write_text(json.dumps(self.results, indent=2) + "\n")
 
-    def launch(self):
+    def launch(self, *, complete_first_launch=False):
         launched = self.ui.adb("shell", "am", "start", "-W", "-n", f"{self.ui.package}/dev.logisim.mobile.MainActivity")
         self.launch_count = getattr(self, "launch_count", 0) + 1
         (self.ui.output / f"launch-{self.launch_count:02d}.txt").write_text(launched)
         assert re.search(r"^Status: ok\s*$", launched, re.MULTILINE), "The isolated app did not complete am start successfully"
-        # A first launch also acknowledges and captures the example's import report.
-        self.wait_editor(timeout=60)
+        self.wait_editor(timeout=60, complete_first_launch=complete_first_launch)
 
     def fixture(self, content):
         test_package = self.ui.package + ".test"
@@ -1420,7 +1434,7 @@ def main():
             command = f"run-as {shlex.quote(package)} sh -c {shlex.quote('mkdir -p shared_prefs' + chr(10) + 'cat > shared_prefs/editor-preferences.xml')}"
             subprocess.run([adb, "-s", args.serial, "shell", command],
                            input=ET.tostring(preferences, encoding="utf-8", xml_declaration=True), check=True, timeout=15)
-        scenarios.launch()
+        scenarios.launch(complete_first_launch=True)
         if args.language:
             expected = scenarios.catalog["a11y_canvas"][args.language].split("{outputs}", 1)[0]
             assert scenarios.canvas().get("content-desc", "").startswith(expected), "The app did not apply the requested language preference"

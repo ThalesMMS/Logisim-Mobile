@@ -217,6 +217,7 @@ data class EditorPreferencesLoad(
     val notices: List<LocalizedText> = emptyList(),
     val migratedFromVersion: Int? = null,
     val canPersist: Boolean = true,
+    val hasNoStoredPreferences: Boolean = false,
 ) {
     val diagnostics: List<String> get() = notices.map { it.resolve(AppLanguage.PORTUGUESE) }
 }
@@ -494,7 +495,10 @@ class EditorPreferencesRepository(private val storage: PreferencesStorage) {
 
     fun load(): EditorPreferencesLoad = try {
         loaded = true
-        EditorPreferencesCodec.read(storage.load()).also { writable = it.canPersist }
+        val serialized = storage.load()
+        val result = if (serialized == null) EditorPreferencesLoad(hasNoStoredPreferences = true)
+            else EditorPreferencesCodec.read(serialized)
+        result.also { writable = it.canPersist }
     } catch (error: Exception) {
         writable = false
         EditorPreferencesLoad(notices = listOf(message(Messages.PreferencesReadFailed, "reason" to error.localizedDescription(LocalizedText.literal("")))), canPersist = false)
