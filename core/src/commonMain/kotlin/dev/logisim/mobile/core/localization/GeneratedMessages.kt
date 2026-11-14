@@ -2,14 +2,15 @@
 package dev.logisim.mobile.core.localization
 
 object Messages {
+    const val A11yButtonPress = "a11y_button_press"
     const val A11yCanvas = "a11y_canvas"
     const val A11yCanvasRunningSnapshot = "a11y_canvas_running_snapshot"
-    const val A11yChangeFrequency = "a11y_change_frequency"
     const val A11yCopySelection = "a11y_copy_selection"
     const val A11yCutSelection = "a11y_cut_selection"
     const val A11yDeleteSelection = "a11y_delete_selection"
     const val A11yDirection = "a11y_direction"
     const val A11yDuplicateSelection = "a11y_duplicate_selection"
+    const val A11yEditInputValue = "a11y_edit_input_value"
     const val A11yErrorBitCount = "a11y_error_bit_count"
     const val A11yExplorerActivate = "a11y_explorer_activate"
     const val A11yExplorerAuto = "a11y_explorer_auto"
@@ -58,6 +59,7 @@ object Messages {
     const val A11yExplorerTitle = "a11y_explorer_title"
     const val A11yExplorerUnconnected = "a11y_explorer_unconnected"
     const val A11yExplorerUnnamedComponent = "a11y_explorer_unnamed_component"
+    const val A11yExplorerUnnamedComponentAt = "a11y_explorer_unnamed_component_at"
     const val A11yExplorerWire = "a11y_explorer_wire"
     const val A11yExplorerWireConnects = "a11y_explorer_wire_connects"
     const val A11yExplorerWireConnectsMore = "a11y_explorer_wire_connects_more"
@@ -66,16 +68,31 @@ object Messages {
     const val A11yFit = "a11y_fit"
     const val A11yFitCircuit = "a11y_fit_circuit"
     const val A11yFitSelection = "a11y_fit_selection"
+    const val A11yFpgaTools = "a11y_fpga_tools"
     const val A11yImportExportProject = "a11y_import_export_project"
+    const val A11yInputBit = "a11y_input_bit"
+    const val A11yInputChooseBit = "a11y_input_choose_bit"
+    const val A11yInputSetValue = "a11y_input_set_value"
+    const val A11yInputToggleBit = "a11y_input_toggle_bit"
+    const val A11yInputToggleLowBit = "a11y_input_toggle_low_bit"
+    const val A11yInsertBelowSelected = "a11y_insert_below_selected"
     const val A11yInsertComponent = "a11y_insert_component"
+    const val A11yInsertCustom = "a11y_insert_custom"
+    const val A11yInsertNextFree = "a11y_insert_next_free"
+    const val A11yInsertNoFreePosition = "a11y_insert_no_free_position"
+    const val A11yInsertPosition = "a11y_insert_position"
+    const val A11yInsertRightOfSelected = "a11y_insert_right_of_selected"
     const val A11yInspectorCollapse = "a11y_inspector_collapse"
     const val A11yInspectorDismiss = "a11y_inspector_dismiss"
     const val A11yInspectorExpand = "a11y_inspector_expand"
     const val A11yInspectorHandle = "a11y_inspector_handle"
+    const val A11yIoOpenControls = "a11y_io_open_controls"
     const val A11yLibrary = "a11y_library"
     const val A11yLiveView = "a11y_live_view"
     const val A11yLoadAnd = "a11y_load_and"
+    const val A11yLoadExample = "a11y_load_example"
     const val A11yLoadSap1 = "a11y_load_sap1"
+    const val A11yMainCircuit = "a11y_main_circuit"
     const val A11yManageCircuit = "a11y_manage_circuit"
     const val A11yNewCircuit = "a11y_new_circuit"
     const val A11yOpenCircuit = "a11y_open_circuit"
@@ -83,6 +100,7 @@ object Messages {
     const val A11yOpenHelp = "a11y_open_help"
     const val A11yOpenInstance = "a11y_open_instance"
     const val A11yOpenLibrary = "a11y_open_library"
+    const val A11yOpenMainDefinition = "a11y_open_main_definition"
     const val A11yOpenMenu = "a11y_open_menu"
     const val A11yOpenProjects = "a11y_open_projects"
     const val A11yOpenProperties = "a11y_open_properties"
@@ -91,6 +109,7 @@ object Messages {
     const val A11yProjectFiles = "a11y_project_files"
     const val A11yProjectTools = "a11y_project_tools"
     const val A11yRecursiveReference = "a11y_recursive_reference"
+    const val A11yRedoAction = "a11y_redo_action"
     const val A11yResetSimulation = "a11y_reset_simulation"
     const val A11yRunCommand = "a11y_run_command"
     const val A11ySearchAll = "a11y_search_all"
@@ -103,14 +122,19 @@ object Messages {
     const val A11yShowComponents = "a11y_show_components"
     const val A11yShowTree = "a11y_show_tree"
     const val A11ySignal = "a11y_signal"
-    const val A11ySimulationEventStep = "a11y_simulation_event_step"
+    const val A11ySignalReveal = "a11y_signal_reveal"
+    const val A11ySimulationResetUndo = "a11y_simulation_reset_undo"
     const val A11ySimulationWarning = "a11y_simulation_warning"
     const val A11ySimulationWarningCount = "a11y_simulation_warning_count"
-    const val A11yStepClock = "a11y_step_clock"
+    const val A11ySimulationWarningShow = "a11y_simulation_warning_show"
+    const val A11yStateCollapsed = "a11y_state_collapsed"
+    const val A11yStateExpanded = "a11y_state_expanded"
+    const val A11ySwitchCircuit = "a11y_switch_circuit"
     const val A11yToggleExplorer = "a11y_toggle_explorer"
     const val A11yToggleInput = "a11y_toggle_input"
     const val A11yToolbarLess = "a11y_toolbar_less"
     const val A11yToolbarMore = "a11y_toolbar_more"
+    const val A11yUndoAction = "a11y_undo_action"
     const val A11yUnknownBitCount = "a11y_unknown_bit_count"
     const val A11yValueError = "a11y_value_error"
     const val A11yValueHigh = "a11y_value_high"
@@ -131,6 +155,7 @@ object Messages {
     const val ActionClearHistory = "action_clear_history"
     const val ActionClose = "action_close"
     const val ActionCopy = "action_copy"
+    const val ActionCreate = "action_create"
     const val ActionCut = "action_cut"
     const val ActionDelete = "action_delete"
     const val ActionDeleteCircuit = "action_delete_circuit"
@@ -156,11 +181,11 @@ object Messages {
     const val ActionMoveDown = "action_move_down"
     const val ActionMoveUp = "action_move_up"
     const val ActionNew = "action_new"
-    const val ActionNewCircuit = "action_new_circuit"
     const val ActionOk = "action_ok"
     const val ActionOpen = "action_open"
     const val ActionPaste = "action_paste"
     const val ActionPause = "action_pause"
+    const val ActionPokeTool = "action_poke_tool"
     const val ActionPrinterView = "action_printer_view"
     const val ActionProperties = "action_properties"
     const val ActionRedo = "action_redo"
@@ -171,6 +196,7 @@ object Messages {
     const val ActionSave = "action_save"
     const val ActionSaveAs = "action_save_as"
     const val ActionSaveFile = "action_save_file"
+    const val ActionSaveFilePicker = "action_save_file_picker"
     const val ActionSearch = "action_search"
     const val ActionSelect = "action_select"
     const val ActionSelectAll = "action_select_all"
@@ -178,7 +204,6 @@ object Messages {
     const val ActionShare = "action_share"
     const val ActionShareOriginalCirc = "action_share_original_circ"
     const val ActionShowAttributes = "action_show_attributes"
-    const val ActionSimulate = "action_simulate"
     const val ActionSplitWireHere = "action_split_wire_here"
     const val ActionStep = "action_step"
     const val ActionTools = "action_tools"
@@ -189,12 +214,10 @@ object Messages {
     const val ActionZoomExact = "action_zoom_exact"
     const val ActionZoomIn = "action_zoom_in"
     const val ActionZoomOut = "action_zoom_out"
-    const val ActiveLibraryAddBuiltin = "active_library_add_builtin"
     const val ActiveLibraryBuiltinTitle = "active_library_builtin_title"
     const val ActiveLibraryDependency = "active_library_dependency"
     const val ActiveLibraryDescription = "active_library_description"
     const val ActiveLibraryFileType = "active_library_file_type"
-    const val ActiveLibraryHideBuiltin = "active_library_hide_builtin"
     const val ActiveLibraryInUse = "active_library_in_use"
     const val ActiveLibraryLoad = "active_library_load"
     const val ActiveLibraryLoadFailed = "active_library_load_failed"
@@ -204,7 +227,6 @@ object Messages {
     const val ActiveLibraryReload = "active_library_reload"
     const val ActiveLibraryReloadIncompatible = "active_library_reload_incompatible"
     const val ActiveLibraryReloaded = "active_library_reloaded"
-    const val ActiveLibraryShowBuiltin = "active_library_show_builtin"
     const val ActiveLibraryUnload = "active_library_unload"
     const val ActiveLibraryUnloaded = "active_library_unloaded"
     const val ActiveLibraryUseManager = "active_library_use_manager"
@@ -213,7 +235,7 @@ object Messages {
     const val AdditionalCompanionDisabled = "additional_companion_disabled"
     const val AdditionalCompanionDisconnect = "additional_companion_disconnect"
     const val AdditionalCompanionOperation = "additional_companion_operation"
-    const val AdditionalCompanionProtocol = "additional_companion_protocol"
+    const val AdditionalCompanionProtocolLimit = "additional_companion_protocol_limit"
     const val AdditionalCompanionTitle = "additional_companion_title"
     const val AdditionalCompanionToolsMissing = "additional_companion_tools_missing"
     const val AdditionalCompanionVerified = "additional_companion_verified"
@@ -222,19 +244,29 @@ object Messages {
     const val AdditionalFpgaBoardUtf8 = "additional_fpga_board_utf8"
     const val AdditionalFpgaOriginalHost = "additional_fpga_original_host"
     const val AdditionalLegalTitle = "additional_legal_title"
-    const val AnalysisA11yInputCell = "analysis_a11y_input_cell"
-    const val AnalysisA11yKarnaughCell = "analysis_a11y_karnaugh_cell"
-    const val AnalysisA11yTableCell = "analysis_a11y_table_cell"
+    const val AnalysisA11yChangeValue = "analysis_a11y_change_value"
+    const val AnalysisA11yInputRowCell = "analysis_a11y_input_row_cell"
+    const val AnalysisA11yMarkCorner = "analysis_a11y_mark_corner"
+    const val AnalysisA11yOutputCell = "analysis_a11y_output_cell"
+    const val AnalysisAddInputAfter = "analysis_add_input_after"
+    const val AnalysisAddInputBefore = "analysis_add_input_before"
+    const val AnalysisAddOutputAfter = "analysis_add_output_after"
+    const val AnalysisAddOutputBefore = "analysis_add_output_before"
     const val AnalysisAssignmentHelp = "analysis_assignment_help"
     const val AnalysisAssignmentRequired = "analysis_assignment_required"
+    const val AnalysisBadVariableName = "analysis_bad_variable_name"
     const val AnalysisCancelled = "analysis_cancelled"
     const val AnalysisCircuitFailed = "analysis_circuit_failed"
     const val AnalysisClipboardDimensions = "analysis_clipboard_dimensions"
     const val AnalysisClipboardSymbols = "analysis_clipboard_symbols"
     const val AnalysisColumnPosition = "analysis_column_position"
     const val AnalysisComponentLimit = "analysis_component_limit"
+    const val AnalysisCopiedRows = "analysis_copied_rows"
+    const val AnalysisCopyExpressions = "analysis_copy_expressions"
     const val AnalysisCopyTsv = "analysis_copy_tsv"
     const val AnalysisCreated = "analysis_created"
+    const val AnalysisDeleteInput = "analysis_delete_input"
+    const val AnalysisDeleteOutput = "analysis_delete_output"
     const val AnalysisDestination = "analysis_destination"
     const val AnalysisDestinationChanged = "analysis_destination_changed"
     const val AnalysisDestinationContinue = "analysis_destination_continue"
@@ -247,6 +279,8 @@ object Messages {
     const val AnalysisDestinationReplaced = "analysis_destination_replaced"
     const val AnalysisDistinctOutputs = "analysis_distinct_outputs"
     const val AnalysisDistinctPins = "analysis_distinct_pins"
+    const val AnalysisDontCareName = "analysis_dont_care_name"
+    const val AnalysisDontCareValue = "analysis_dont_care_value"
     const val AnalysisEditInputColumn = "analysis_edit_input_column"
     const val AnalysisEditOutputColumn = "analysis_edit_output_column"
     const val AnalysisEmptyName = "analysis_empty_name"
@@ -258,8 +292,18 @@ object Messages {
     const val AnalysisExpressionComplexity = "analysis_expression_complexity"
     const val AnalysisExpressionLength = "analysis_expression_length"
     const val AnalysisExpressions = "analysis_expressions"
+    const val AnalysisExpressionsApply = "analysis_expressions_apply"
+    const val AnalysisExpressionsCopied = "analysis_expressions_copied"
+    const val AnalysisExpressionsMergeHelp = "analysis_expressions_merge_help"
+    const val AnalysisExpressionsPaged = "analysis_expressions_paged"
+    const val AnalysisExpressionsReset = "analysis_expressions_reset"
     const val AnalysisExpressionsTable = "analysis_expressions_table"
+    const val AnalysisExpressionsTooLarge = "analysis_expressions_too_large"
+    const val AnalysisExpressionsTooLong = "analysis_expressions_too_long"
     const val AnalysisFailed = "analysis_failed"
+    const val AnalysisFillBlock = "analysis_fill_block"
+    const val AnalysisFillBlockDescription = "analysis_fill_block_description"
+    const val AnalysisFormsUpdating = "analysis_forms_updating"
     const val AnalysisGenerate = "analysis_generate"
     const val AnalysisGeneratedMismatch = "analysis_generated_mismatch"
     const val AnalysisGeneratedName = "analysis_generated_name"
@@ -267,27 +311,45 @@ object Messages {
     const val AnalysisInputBitsLimit = "analysis_input_bits_limit"
     const val AnalysisInputList = "analysis_input_list"
     const val AnalysisInputUndefined = "analysis_input_undefined"
+    const val AnalysisInsertAnd = "analysis_insert_and"
+    const val AnalysisInsertClose = "analysis_insert_close"
+    const val AnalysisInsertNot = "analysis_insert_not"
+    const val AnalysisInsertOpen = "analysis_insert_open"
+    const val AnalysisInsertOr = "analysis_insert_or"
+    const val AnalysisInsertValue = "analysis_insert_value"
+    const val AnalysisInsertXor = "analysis_insert_xor"
     const val AnalysisInvalidBusIndex = "analysis_invalid_bus_index"
     const val AnalysisInvalidSymbol = "analysis_invalid_symbol"
     const val AnalysisKarnaugh = "analysis_karnaugh"
     const val AnalysisKarnaughAxes = "analysis_karnaugh_axes"
     const val AnalysisKarnaughLimit = "analysis_karnaugh_limit"
-    const val AnalysisKarnaughReduce = "analysis_karnaugh_reduce"
+    const val AnalysisKarnaughOutput = "analysis_karnaugh_output"
+    const val AnalysisKarnaughReduceDelete = "analysis_karnaugh_reduce_delete"
     const val AnalysisKmapGroups = "analysis_kmap_groups"
     const val AnalysisKmapLined = "analysis_kmap_lined"
     const val AnalysisKmapNumbered = "analysis_kmap_numbered"
     const val AnalysisKmapStyle = "analysis_kmap_style"
     const val AnalysisLimitsHelp = "analysis_limits_help"
+    const val AnalysisLimitsInfo = "analysis_limits_info"
     const val AnalysisMaxInputs = "analysis_max_inputs"
     const val AnalysisMaxOutputs = "analysis_max_outputs"
     const val AnalysisMinimizationLimit = "analysis_minimization_limit"
+    const val AnalysisMinimizedTitle = "analysis_minimized_title"
     const val AnalysisMissingCircuit = "analysis_missing_circuit"
     const val AnalysisMissingClose = "analysis_missing_close"
+    const val AnalysisMoreActions = "analysis_more_actions"
+    const val AnalysisMoveFirst = "analysis_move_first"
+    const val AnalysisMoveLast = "analysis_move_last"
+    const val AnalysisMoveLeft = "analysis_move_left"
+    const val AnalysisMoveRight = "analysis_move_right"
     const val AnalysisNandOnly = "analysis_nand_only"
+    const val AnalysisNewTable = "analysis_new_table"
     const val AnalysisOperationLimit = "analysis_operation_limit"
     const val AnalysisOutputBitsLimit = "analysis_output_bits_limit"
+    const val AnalysisOutputIsInput = "analysis_output_is_input"
     const val AnalysisOutputList = "analysis_output_list"
     const val AnalysisOutputRange = "analysis_output_range"
+    const val AnalysisOutputSelect = "analysis_output_select"
     const val AnalysisPageGo = "analysis_page_go"
     const val AnalysisPageNext = "analysis_page_next"
     const val AnalysisPageNumber = "analysis_page_number"
@@ -298,6 +360,10 @@ object Messages {
     const val AnalysisPos = "analysis_pos"
     const val AnalysisReadCircuit = "analysis_read_circuit"
     const val AnalysisRecursiveCircuit = "analysis_recursive_circuit"
+    const val AnalysisRedo = "analysis_redo"
+    const val AnalysisReplaceConfirm = "analysis_replace_confirm"
+    const val AnalysisReplaceMessage = "analysis_replace_message"
+    const val AnalysisReplaceTitle = "analysis_replace_title"
     const val AnalysisRowOutputsRequired = "analysis_row_outputs_required"
     const val AnalysisRowsRequired = "analysis_rows_required"
     const val AnalysisSelectBlock = "analysis_select_block"
@@ -308,16 +374,21 @@ object Messages {
     const val AnalysisTableFileInvalid = "analysis_table_file_invalid"
     const val AnalysisTableFileInvalidLine = "analysis_table_file_invalid_line"
     const val AnalysisTableHelp = "analysis_table_help"
+    const val AnalysisTableHelpSets = "analysis_table_help_sets"
     const val AnalysisTableInputsLimit = "analysis_table_inputs_limit"
+    const val AnalysisTapModeCycle = "analysis_tap_mode_cycle"
+    const val AnalysisTapModeValue = "analysis_tap_mode_value"
     const val AnalysisTemporalCircuit = "analysis_temporal_circuit"
     const val AnalysisTitle = "analysis_title"
     const val AnalysisUndeclaredInputs = "analysis_undeclared_inputs"
     const val AnalysisUndefinedOutput = "analysis_undefined_output"
+    const val AnalysisUndo = "analysis_undo"
     const val AnalysisUnexpectedSymbol = "analysis_unexpected_symbol"
     const val AnalysisUniqueInputs = "analysis_unique_inputs"
     const val AnalysisUniqueOutputs = "analysis_unique_outputs"
     const val AnalysisUnlistedVariables = "analysis_unlisted_variables"
     const val AnalysisUnterminatedName = "analysis_unterminated_name"
+    const val AnalysisUseAsExpressions = "analysis_use_as_expressions"
     const val AndroidActionExport = "android_action_export"
     const val AndroidActionOpen = "android_action_open"
     const val AndroidActionPrepare = "android_action_prepare"
@@ -387,6 +458,8 @@ object Messages {
     const val AndroidPreferencesSaveFailed = "android_preferences_save_failed"
     const val AndroidWorkspaceLoading = "android_workspace_loading"
     const val AndroidWorkspaceOpenFailed = "android_workspace_open_failed"
+    const val AnnotationAlignmentHorizontal = "annotation_alignment_horizontal"
+    const val AnnotationAlignmentVertical = "annotation_alignment_vertical"
     const val AnnotationAttribution = "annotation_attribution"
     const val AnnotationBack = "annotation_back"
     const val AnnotationBackward = "annotation_backward"
@@ -394,7 +467,6 @@ object Messages {
     const val AnnotationBottom = "annotation_bottom"
     const val AnnotationCenter = "annotation_center"
     const val AnnotationChooseImage = "annotation_choose_image"
-    const val AnnotationColor = "annotation_color"
     const val AnnotationConnectionLoss = "annotation_connection_loss"
     const val AnnotationCover = "annotation_cover"
     const val AnnotationDistribute = "annotation_distribute"
@@ -420,6 +492,7 @@ object Messages {
     const val AnnotationImageFormat = "annotation_image_format"
     const val AnnotationImageIncomplete = "annotation_image_incomplete"
     const val AnnotationImageLimit = "annotation_image_limit"
+    const val AnnotationImageScale = "annotation_image_scale"
     const val AnnotationImageUri = "annotation_image_uri"
     const val AnnotationInsertText = "annotation_insert_text"
     const val AnnotationInvalidColor = "annotation_invalid_color"
@@ -437,6 +510,8 @@ object Messages {
     const val AnnotationOrganize = "annotation_organize"
     const val AnnotationPickerUnavailable = "annotation_picker_unavailable"
     const val AnnotationPngHeader = "annotation_png_header"
+    const val AnnotationPositionHint = "annotation_position_hint"
+    const val AnnotationPositionViewHint = "annotation_position_view_hint"
     const val AnnotationPreview = "annotation_preview"
     const val AnnotationSaved = "annotation_saved"
     const val AnnotationSelectThree = "annotation_select_three"
@@ -444,6 +519,7 @@ object Messages {
     const val AnnotationStart = "annotation_start"
     const val AnnotationStretch = "annotation_stretch"
     const val AnnotationText = "annotation_text"
+    const val AnnotationTextColor = "annotation_text_color"
     const val AnnotationTitle = "annotation_title"
     const val AnnotationTop = "annotation_top"
     const val AnnotationUngroup = "annotation_ungroup"
@@ -453,21 +529,32 @@ object Messages {
     const val AnnotationWidth = "annotation_width"
     const val AppName = "app_name"
     const val AppearanceAddVertex = "appearance_add_vertex"
+    const val AppearanceAlignBaseline = "appearance_align_baseline"
+    const val AppearanceAlignBottom = "appearance_align_bottom"
+    const val AppearanceAlignCenter = "appearance_align_center"
+    const val AppearanceAlignLeft = "appearance_align_left"
+    const val AppearanceAlignMiddle = "appearance_align_middle"
+    const val AppearanceAlignRight = "appearance_align_right"
+    const val AppearanceAlignTop = "appearance_align_top"
     const val AppearanceAllPins = "appearance_all_pins"
     const val AppearanceAnchor = "appearance_anchor"
     const val AppearanceApply = "appearance_apply"
     const val AppearanceAttributes = "appearance_attributes"
     const val AppearanceBold = "appearance_bold"
     const val AppearanceClassic = "appearance_classic"
+    const val AppearanceClassicConfirm = "appearance_classic_confirm"
     const val AppearanceConnectionLoss = "appearance_connection_loss"
     const val AppearanceCoordinateLimit = "appearance_coordinate_limit"
     const val AppearanceCurveControl = "appearance_curve_control"
     const val AppearanceCurveEnd = "appearance_curve_end"
     const val AppearanceCurveStart = "appearance_curve_start"
+    const val AppearanceDiscardTitle = "appearance_discard_title"
     const val AppearanceDuplicatePin = "appearance_duplicate_pin"
     const val AppearanceEast = "appearance_east"
     const val AppearanceEllipse = "appearance_ellipse"
+    const val AppearanceFacing = "appearance_facing"
     const val AppearanceFillEnabled = "appearance_fill_enabled"
+    const val AppearanceHalign = "appearance_halign"
     const val AppearanceHelp = "appearance_help"
     const val AppearanceImageDimensions = "appearance_image_dimensions"
     const val AppearanceIncompletePath = "appearance_incomplete_path"
@@ -488,14 +575,23 @@ object Messages {
     const val AppearanceMissingShape = "appearance_missing_shape"
     const val AppearanceMultiSelect = "appearance_multi_select"
     const val AppearanceNorth = "appearance_north"
+    const val AppearanceNotApplied = "appearance_not_applied"
     const val AppearanceObjects = "appearance_objects"
     const val AppearanceOpaque = "appearance_opaque"
+    const val AppearancePath = "appearance_path"
     const val AppearancePinDirection = "appearance_pin_direction"
     const val AppearancePinMismatch = "appearance_pin_mismatch"
     const val AppearancePolygon = "appearance_polygon"
+    const val AppearancePolyline = "appearance_polyline"
     const val AppearancePortCollision = "appearance_port_collision"
+    const val AppearancePortInput = "appearance_port_input"
+    const val AppearancePortInputBits = "appearance_port_input_bits"
+    const val AppearancePortMissing = "appearance_port_missing"
+    const val AppearancePortOutput = "appearance_port_output"
+    const val AppearancePortOutputBits = "appearance_port_output_bits"
     const val AppearancePorts = "appearance_ports"
     const val AppearancePreview = "appearance_preview"
+    const val AppearancePropertyCornerRadius = "appearance_property_corner_radius"
     const val AppearancePropertyCx = "appearance_property_cx"
     const val AppearancePropertyCy = "appearance_property_cy"
     const val AppearancePropertyD = "appearance_property_d"
@@ -521,16 +617,23 @@ object Messages {
     const val AppearanceRectangle = "appearance_rectangle"
     const val AppearanceRemoveObject = "appearance_remove_object"
     const val AppearanceRemoveVertex = "appearance_remove_vertex"
+    const val AppearanceResetConfirm = "appearance_reset_confirm"
     const val AppearanceResetDraft = "appearance_reset_draft"
     const val AppearanceSaved = "appearance_saved"
+    const val AppearanceShapeName = "appearance_shape_name"
+    const val AppearanceShapeOther = "appearance_shape_other"
+    const val AppearanceShapeText = "appearance_shape_text"
     const val AppearanceSouth = "appearance_south"
+    const val AppearanceStepDecrease = "appearance_step_decrease"
+    const val AppearanceStepIncrease = "appearance_step_increase"
     const val AppearanceStrokeEnabled = "appearance_stroke_enabled"
     const val AppearanceSvgColor = "appearance_svg_color"
     const val AppearanceTitle = "appearance_title"
+    const val AppearanceUnapplied = "appearance_unapplied"
     const val AppearanceUndoDraft = "appearance_undo_draft"
     const val AppearanceUniqueAnchor = "appearance_unique_anchor"
     const val AppearanceUnsupportedPath = "appearance_unsupported_path"
-    const val AppearanceUpdateObject = "appearance_update_object"
+    const val AppearanceValign = "appearance_valign"
     const val AppearanceVertex = "appearance_vertex"
     const val AppearanceWest = "appearance_west"
     const val AssemblyViewerAddress = "assembly_viewer_address"
@@ -548,47 +651,80 @@ object Messages {
     const val AttributeLabel2rext = "attribute_label_2rext"
     const val AttributeLabelActive = "attribute_label_active"
     const val AttributeLabelAddrwidth = "attribute_label_addrwidth"
+    const val AttributeLabelAnd = "attribute_label_and"
+    const val AttributeLabelAppear = "attribute_label_appear"
     const val AttributeLabelAppearance = "attribute_label_appearance"
     const val AttributeLabelAsyncread = "attribute_label_asyncread"
+    const val AttributeLabelAttribution = "attribute_label_attribution"
     const val AttributeLabelBehavior = "attribute_label_behavior"
+    const val AttributeLabelBg = "attribute_label_bg"
+    const val AttributeLabelBinvalue = "attribute_label_binvalue"
+    const val AttributeLabelBipolar = "attribute_label_bipolar"
+    const val AttributeLabelBitN = "attribute_label_bit_n"
     const val AttributeLabelBits = "attribute_label_bits"
+    const val AttributeLabelBorderColor = "attribute_label_border_color"
+    const val AttributeLabelBreakvector = "attribute_label_breakvector"
+    const val AttributeLabelBufferaddress = "attribute_label_bufferaddress"
     const val AttributeLabelBuflen = "attribute_label_buflen"
+    const val AttributeLabelBurstsize = "attribute_label_burstsize"
     const val AttributeLabelBus = "attribute_label_bus"
     const val AttributeLabelBusside = "attribute_label_busside"
     const val AttributeLabelByteenables = "attribute_label_byteenables"
+    const val AttributeLabelC1 = "attribute_label_c1"
+    const val AttributeLabelCapturetype = "attribute_label_capturetype"
+    const val AttributeLabelChannel = "attribute_label_channel"
     const val AttributeLabelClear = "attribute_label_clear"
     const val AttributeLabelClearpin = "attribute_label_clearpin"
     const val AttributeLabelClock = "attribute_label_clock"
     const val AttributeLabelColor = "attribute_label_color"
+    const val AttributeLabelColorModel = "attribute_label_color_model"
     const val AttributeLabelCols = "attribute_label_cols"
     const val AttributeLabelColumns = "attribute_label_columns"
+    const val AttributeLabelContent = "attribute_label_content"
     const val AttributeLabelContents = "attribute_label_contents"
     const val AttributeLabelControl = "attribute_label_control"
+    const val AttributeLabelCursor = "attribute_label_cursor"
     const val AttributeLabelDatabus = "attribute_label_databus"
     const val AttributeLabelDatawidth = "attribute_label_datawidth"
     const val AttributeLabelDecimalpoint = "attribute_label_decimalpoint"
     const val AttributeLabelDirection = "attribute_label_direction"
     const val AttributeLabelDisabled = "attribute_label_disabled"
+    const val AttributeLabelDisplaySize = "attribute_label_display_size"
+    const val AttributeLabelDisplaymode = "attribute_label_displaymode"
+    const val AttributeLabelDmadstbus = "attribute_label_dmadstbus"
+    const val AttributeLabelDmasrcbus = "attribute_label_dmasrcbus"
     const val AttributeLabelDotshape = "attribute_label_dotshape"
     const val AttributeLabelEnable = "attribute_label_enable"
     const val AttributeLabelEnabled = "attribute_label_enabled"
     const val AttributeLabelEnables = "attribute_label_enables"
+    const val AttributeLabelExceptionvector = "attribute_label_exceptionvector"
     const val AttributeLabelFacing = "attribute_label_facing"
     const val AttributeLabelFanout = "attribute_label_fanout"
+    const val AttributeLabelFilepath = "attribute_label_filepath"
+    const val AttributeLabelFont = "attribute_label_font"
     const val AttributeLabelFpwidth = "attribute_label_fpwidth"
     const val AttributeLabelFpwidthin = "attribute_label_fpwidthin"
     const val AttributeLabelFpwidthout = "attribute_label_fpwidthout"
+    const val AttributeLabelFreqMeasure = "attribute_label_freq_measure"
+    const val AttributeLabelFrontlines = "attribute_label_frontlines"
     const val AttributeLabelGain = "attribute_label_gain"
+    const val AttributeLabelGenirq = "attribute_label_genirq"
     const val AttributeLabelGroup = "attribute_label_group"
+    const val AttributeLabelHalign = "attribute_label_halign"
     const val AttributeLabelHeight = "attribute_label_height"
     const val AttributeLabelHighduration = "attribute_label_highduration"
+    const val AttributeLabelImage = "attribute_label_image"
     const val AttributeLabelInWidth = "attribute_label_in_width"
     const val AttributeLabelIncoming = "attribute_label_incoming"
     const val AttributeLabelInitial = "attribute_label_initial"
     const val AttributeLabelInput = "attribute_label_input"
     const val AttributeLabelInputmode = "attribute_label_inputmode"
     const val AttributeLabelInputs = "attribute_label_inputs"
+    const val AttributeLabelInputscaptbit = "attribute_label_inputscaptbit"
+    const val AttributeLabelInputssynccapt = "attribute_label_inputssynccapt"
     const val AttributeLabelInputtype = "attribute_label_inputtype"
+    const val AttributeLabelIrqtype = "attribute_label_irqtype"
+    const val AttributeLabelIrqwidth = "attribute_label_irqwidth"
     const val AttributeLabelKeyalabel = "attribute_label_keyalabel"
     const val AttributeLabelKeyblabel = "attribute_label_keyblabel"
     const val AttributeLabelKeyclabel = "attribute_label_keyclabel"
@@ -600,55 +736,302 @@ object Messages {
     const val AttributeLabelLabelfont = "attribute_label_labelfont"
     const val AttributeLabelLabelloc = "attribute_label_labelloc"
     const val AttributeLabelLabelvisible = "attribute_label_labelvisible"
+    const val AttributeLabelLength = "attribute_label_length"
+    const val AttributeLabelLicense = "attribute_label_license"
     const val AttributeLabelLine = "attribute_label_line"
     const val AttributeLabelLowduration = "attribute_label_lowduration"
     const val AttributeLabelMatrixcols = "attribute_label_matrixcols"
     const val AttributeLabelMatrixrows = "attribute_label_matrixrows"
     const val AttributeLabelMax = "attribute_label_max"
+    const val AttributeLabelMemsize = "attribute_label_memsize"
     const val AttributeLabelMin = "attribute_label_min"
     const val AttributeLabelMisaligned = "attribute_label_misaligned"
     const val AttributeLabelMode = "attribute_label_mode"
     const val AttributeLabelMultiplymode = "attribute_label_multiplymode"
+    const val AttributeLabelNegateN = "attribute_label_negate_n"
     const val AttributeLabelNote = "attribute_label_note"
+    const val AttributeLabelNstate = "attribute_label_nstate"
     const val AttributeLabelNumber = "attribute_label_number"
     const val AttributeLabelOffcolor = "attribute_label_offcolor"
+    const val AttributeLabelOnColor = "attribute_label_on_color"
+    const val AttributeLabelOngoal = "attribute_label_ongoal"
     const val AttributeLabelOut = "attribute_label_out"
     const val AttributeLabelOutWidth = "attribute_label_out_width"
+    const val AttributeLabelOutputbitsetclear = "attribute_label_outputbitsetclear"
+    const val AttributeLabelOutputresetvalue = "attribute_label_outputresetvalue"
+    const val AttributeLabelOutputs = "attribute_label_outputs"
+    const val AttributeLabelParallel = "attribute_label_parallel"
     const val AttributeLabelPersist = "attribute_label_persist"
     const val AttributeLabelPhaseoffset = "attribute_label_phaseoffset"
+    const val AttributeLabelPinCount = "attribute_label_pin_count"
+    const val AttributeLabelPixelWidth = "attribute_label_pixel_width"
+    const val AttributeLabelPlicbaseaddress = "attribute_label_plicbaseaddress"
+    const val AttributeLabelPorhighduration = "attribute_label_porhighduration"
     const val AttributeLabelPorsize = "attribute_label_porsize"
+    const val AttributeLabelPort = "attribute_label_port"
+    const val AttributeLabelPortType = "attribute_label_port_type"
     const val AttributeLabelPortio = "attribute_label_portio"
+    const val AttributeLabelPortransition = "attribute_label_portransition"
     const val AttributeLabelPositions = "attribute_label_positions"
     const val AttributeLabelPress = "attribute_label_press"
     const val AttributeLabelPull = "attribute_label_pull"
+    const val AttributeLabelR1 = "attribute_label_r1"
     const val AttributeLabelRadix = "attribute_label_radix"
     const val AttributeLabelReadbehav = "attribute_label_readbehav"
+    const val AttributeLabelReadfifosize = "attribute_label_readfifosize"
+    const val AttributeLabelReadthreshold = "attribute_label_readthreshold"
     const val AttributeLabelRelease = "attribute_label_release"
+    const val AttributeLabelReset = "attribute_label_reset"
     const val AttributeLabelResetbehavior = "attribute_label_resetbehavior"
+    const val AttributeLabelResetvector = "attribute_label_resetvector"
+    const val AttributeLabelReversecolor = "attribute_label_reversecolor"
     const val AttributeLabelRows = "attribute_label_rows"
+    const val AttributeLabelScale = "attribute_label_scale"
+    const val AttributeLabelSeed = "attribute_label_seed"
+    const val AttributeLabelSegments = "attribute_label_segments"
     const val AttributeLabelSelect = "attribute_label_select"
+    const val AttributeLabelSelectActiveLevel = "attribute_label_select_active_level"
     const val AttributeLabelSelloc = "attribute_label_selloc"
     const val AttributeLabelShift = "attribute_label_shift"
+    const val AttributeLabelShowclock = "attribute_label_showclock"
     const val AttributeLabelShowinternalstructure = "attribute_label_showinternalstructure"
     const val AttributeLabelSize = "attribute_label_size"
+    const val AttributeLabelSmoothLevel = "attribute_label_smooth_level"
+    const val AttributeLabelSmoothWidth = "attribute_label_smooth_width"
+    const val AttributeLabelSocbusidentifier = "attribute_label_socbusidentifier"
+    const val AttributeLabelSocbusselection = "attribute_label_socbusselection"
+    const val AttributeLabelSoft1024x768 = "attribute_label_soft1024x768"
+    const val AttributeLabelSoft160x120 = "attribute_label_soft160x120"
+    const val AttributeLabelSoft320x240 = "attribute_label_soft320x240"
+    const val AttributeLabelSoft640x480 = "attribute_label_soft640x480"
+    const val AttributeLabelSoft800x600 = "attribute_label_soft800x600"
     const val AttributeLabelSpacing = "attribute_label_spacing"
+    const val AttributeLabelStartaddress = "attribute_label_startaddress"
     const val AttributeLabelState = "attribute_label_state"
+    const val AttributeLabelStatevisible = "attribute_label_statevisible"
     const val AttributeLabelTable = "attribute_label_table"
+    const val AttributeLabelTelnetmode = "attribute_label_telnetmode"
+    const val AttributeLabelText = "attribute_label_text"
+    const val AttributeLabelTimetype = "attribute_label_timetype"
+    const val AttributeLabelTracesize = "attribute_label_tracesize"
+    const val AttributeLabelTracevisible = "attribute_label_tracevisible"
     const val AttributeLabelTrigger = "attribute_label_trigger"
     const val AttributeLabelTristate = "attribute_label_tristate"
     const val AttributeLabelType = "attribute_label_type"
+    const val AttributeLabelValign = "attribute_label_valign"
     const val AttributeLabelValue = "attribute_label_value"
     const val AttributeLabelVccgndports = "attribute_label_vccgndports"
+    const val AttributeLabelVolWidth = "attribute_label_vol_width"
+    const val AttributeLabelWaveform = "attribute_label_waveform"
     const val AttributeLabelWidth = "attribute_label_width"
+    const val AttributeLabelWritefifosize = "attribute_label_writefifosize"
+    const val AttributeLabelWritethreshold = "attribute_label_writethreshold"
     const val AttributeLabelXor = "attribute_label_xor"
     const val AttributeNameRequired = "attribute_name_required"
+    const val AttributeOptionAppearCenter = "attribute_option_appear_center"
+    const val AttributeOptionAppearLeft = "attribute_option_appear_left"
+    const val AttributeOptionAppearLegacy = "attribute_option_appear_legacy"
+    const val AttributeOptionAppearRight = "attribute_option_appear_right"
+    const val AttributeOptionAppearanceClassic = "attribute_option_appearance_classic"
+    const val AttributeOptionAppearanceEvolution = "attribute_option_appearance_evolution"
+    const val AttributeOptionAppearanceFpga = "attribute_option_appearance_fpga"
+    const val AttributeOptionAppearanceLogisimEvolution = "attribute_option_appearance_logisim_evolution"
+    const val AttributeOptionAppearanceNewpins = "attribute_option_appearance_newpins"
+    const val AttributeOptionBehaviorPulldown = "attribute_option_behavior_pulldown"
+    const val AttributeOptionBehaviorPullup = "attribute_option_behavior_pullup"
+    const val AttributeOptionBehaviorSimple = "attribute_option_behavior_simple"
+    const val AttributeOptionBehaviorTristate = "attribute_option_behavior_tristate"
+    const val AttributeOptionByteenablesByteenables = "attribute_option_byteenables_byteenables"
+    const val AttributeOptionByteenablesNobyteenables = "attribute_option_byteenables_nobyteenables"
+    const val AttributeOptionCapturetypeAny = "attribute_option_capturetype_any"
+    const val AttributeOptionCapturetypeFalling = "attribute_option_capturetype_falling"
+    const val AttributeOptionCapturetypeRising = "attribute_option_capturetype_rising"
+    const val AttributeOptionColor444Rgb12Bit = "attribute_option_color_444_rgb_12_bit"
+    const val AttributeOptionColor555Rgb15Bit = "attribute_option_color_555_rgb_15_bit"
+    const val AttributeOptionColor565Rgb16Bit = "attribute_option_color_565_rgb_16_bit"
+    const val AttributeOptionColor888Rgb24Bit = "attribute_option_color_888_rgb_24_bit"
+    const val AttributeOptionColor8ColorRgb3Bit = "attribute_option_color_8_color_rgb_3_bit"
+    const val AttributeOptionColorAtari26007Bit = "attribute_option_color_atari_2600_7_bit"
+    const val AttributeOptionColorGrayscale4Bit = "attribute_option_color_grayscale_4_bit"
+    const val AttributeOptionColorVga2568Bit = "attribute_option_color_vga256_8_bit"
+    const val AttributeOptionColorXterm164Bit = "attribute_option_color_xterm16_4_bit"
+    const val AttributeOptionColorXterm2568Bit = "attribute_option_color_xterm256_8_bit"
+    const val AttributeOptionControlLeft = "attribute_option_control_left"
+    const val AttributeOptionControlRight = "attribute_option_control_right"
+    const val AttributeOptionCursorBlinkingDot = "attribute_option_cursor_blinking_dot"
+    const val AttributeOptionCursorNoCursor = "attribute_option_cursor_no_cursor"
+    const val AttributeOptionDatabusBibus = "attribute_option_databus_bibus"
+    const val AttributeOptionDatabusBibuscontrolled = "attribute_option_databus_bibuscontrolled"
+    const val AttributeOptionDatabusBidir = "attribute_option_databus_bidir"
+    const val AttributeOptionDirectionBidir = "attribute_option_direction_bidir"
+    const val AttributeOptionDirectionInout = "attribute_option_direction_inout"
+    const val AttributeOptionDirectionInputonly = "attribute_option_direction_inputonly"
+    const val AttributeOptionDirectionIomultienable = "attribute_option_direction_iomultienable"
+    const val AttributeOptionDirectionIosingleenable = "attribute_option_direction_iosingleenable"
+    const val AttributeOptionDirectionLeftToRight = "attribute_option_direction_left_to_right"
+    const val AttributeOptionDirectionOnlyinput = "attribute_option_direction_onlyinput"
+    const val AttributeOptionDirectionOnlyoutput = "attribute_option_direction_onlyoutput"
+    const val AttributeOptionDirectionOutputonly = "attribute_option_direction_outputonly"
+    const val AttributeOptionDirectionRightToLeft = "attribute_option_direction_right_to_left"
+    const val AttributeOptionDisabled0 = "attribute_option_disabled_0"
+    const val AttributeOptionDisabledZ = "attribute_option_disabled_z"
+    const val AttributeOptionDisplaymode1024x768 = "attribute_option_displaymode_1024x768"
+    const val AttributeOptionDisplaymode160x120 = "attribute_option_displaymode_160x120"
+    const val AttributeOptionDisplaymode320x240 = "attribute_option_displaymode_320x240"
+    const val AttributeOptionDisplaymode640x480 = "attribute_option_displaymode_640x480"
+    const val AttributeOptionDisplaymode800x600 = "attribute_option_displaymode_800x600"
+    const val AttributeOptionDotshapeCircle = "attribute_option_dotshape_circle"
+    const val AttributeOptionDotshapeClustersegment = "attribute_option_dotshape_clustersegment"
+    const val AttributeOptionDotshapeSquare = "attribute_option_dotshape_square"
+    const val AttributeOptionEnablesByte = "attribute_option_enables_byte"
+    const val AttributeOptionEnablesLine = "attribute_option_enables_line"
+    const val AttributeOptionFreqMeasureDhz = "attribute_option_freq_measure_dhz"
+    const val AttributeOptionFreqMeasureHz = "attribute_option_freq_measure_hz"
+    const val AttributeOptionFrontlinesBoth = "attribute_option_frontlines_both"
+    const val AttributeOptionFrontlinesFalling = "attribute_option_frontlines_falling"
+    const val AttributeOptionFrontlinesNo = "attribute_option_frontlines_no"
+    const val AttributeOptionFrontlinesRising = "attribute_option_frontlines_rising"
+    const val AttributeOptionHalignCenter = "attribute_option_halign_center"
+    const val AttributeOptionHalignLeft = "attribute_option_halign_left"
+    const val AttributeOptionHalignRight = "attribute_option_halign_right"
+    const val AttributeOptionInputmodeBus = "attribute_option_inputmode_bus"
+    const val AttributeOptionInputmodeSeparate = "attribute_option_inputmode_separate"
+    const val AttributeOptionInputtypeColumn = "attribute_option_inputtype_column"
+    const val AttributeOptionInputtypeRow = "attribute_option_inputtype_row"
+    const val AttributeOptionInputtypeSelect = "attribute_option_inputtype_select"
+    const val AttributeOptionIrqtypeEdge = "attribute_option_irqtype_edge"
+    const val AttributeOptionIrqtypeLevel = "attribute_option_irqtype_level"
+    const val AttributeOptionLabellocCenter = "attribute_option_labelloc_center"
+    const val AttributeOptionLabellocEast = "attribute_option_labelloc_east"
+    const val AttributeOptionLabellocNorth = "attribute_option_labelloc_north"
+    const val AttributeOptionLabellocSouth = "attribute_option_labelloc_south"
+    const val AttributeOptionLabellocWest = "attribute_option_labelloc_west"
+    const val AttributeOptionLineDual = "attribute_option_line_dual"
+    const val AttributeOptionLineOcto = "attribute_option_line_octo"
+    const val AttributeOptionLineQuad = "attribute_option_line_quad"
+    const val AttributeOptionLineSingle = "attribute_option_line_single"
+    const val AttributeOptionMode1in2out = "attribute_option_mode_1in2out"
+    const val AttributeOptionMode2in1out = "attribute_option_mode_2in1out"
+    const val AttributeOptionModeArb = "attribute_option_mode_arb"
+    const val AttributeOptionModeAstable = "attribute_option_mode_astable"
+    const val AttributeOptionModeCeil = "attribute_option_mode_ceil"
+    const val AttributeOptionModeExp = "attribute_option_mode_exp"
+    const val AttributeOptionModeExpm1 = "attribute_option_mode_expm1"
+    const val AttributeOptionModeFloor = "attribute_option_mode_floor"
+    const val AttributeOptionModeLog = "attribute_option_mode_log"
+    const val AttributeOptionModeLog10 = "attribute_option_mode_log10"
+    const val AttributeOptionModeLog1p = "attribute_option_mode_log1p"
+    const val AttributeOptionModeLogxy = "attribute_option_mode_logxy"
+    const val AttributeOptionModeMonostable = "attribute_option_mode_monostable"
+    const val AttributeOptionModePmodKypd = "attribute_option_mode_pmod_kypd"
+    const val AttributeOptionModeRaw = "attribute_option_mode_raw"
+    const val AttributeOptionModeRint = "attribute_option_mode_rint"
+    const val AttributeOptionModeRound = "attribute_option_mode_round"
+    const val AttributeOptionModeSignedunsigned = "attribute_option_mode_signedunsigned"
+    const val AttributeOptionModeTruncate = "attribute_option_mode_truncate"
+    const val AttributeOptionModeTwoscomplement = "attribute_option_mode_twoscomplement"
+    const val AttributeOptionModeUnsigned = "attribute_option_mode_unsigned"
+    const val AttributeOptionMultiplymodeFusedmultiplyadd = "attribute_option_multiplymode_fusedmultiplyadd"
+    const val AttributeOptionMultiplymodeMultiply = "attribute_option_multiplymode_multiply"
+    const val AttributeOptionOngoalContinue = "attribute_option_ongoal_continue"
+    const val AttributeOptionOngoalLoad = "attribute_option_ongoal_load"
+    const val AttributeOptionOngoalStay = "attribute_option_ongoal_stay"
+    const val AttributeOptionOngoalWrap = "attribute_option_ongoal_wrap"
+    const val AttributeOptionOut01 = "attribute_option_out_01"
+    const val AttributeOptionOut0z = "attribute_option_out_0z"
+    const val AttributeOptionOutZ1 = "attribute_option_out_z1"
+    const val AttributeOptionPorsize1 = "attribute_option_porsize_1"
+    const val AttributeOptionPorsize2 = "attribute_option_porsize_2"
+    const val AttributeOptionPorsize3 = "attribute_option_porsize_3"
+    const val AttributeOptionPortransition1 = "attribute_option_portransition_1"
+    const val AttributeOptionPortransition2 = "attribute_option_portransition_2"
+    const val AttributeOptionPressActive = "attribute_option_press_active"
+    const val AttributeOptionPressPassive = "attribute_option_press_passive"
+    const val AttributeOptionPull0 = "attribute_option_pull_0"
+    const val AttributeOptionPull1 = "attribute_option_pull_1"
+    const val AttributeOptionPullX = "attribute_option_pull_x"
+    const val AttributeOptionRadix10signed = "attribute_option_radix_10signed"
+    const val AttributeOptionRadix10unsigned = "attribute_option_radix_10unsigned"
+    const val AttributeOptionRadix16 = "attribute_option_radix_16"
+    const val AttributeOptionRadix2 = "attribute_option_radix_2"
+    const val AttributeOptionRadix8 = "attribute_option_radix_8"
+    const val AttributeOptionRadixFloat = "attribute_option_radix_float"
+    const val AttributeOptionReadbehavRaw = "attribute_option_readbehav_raw"
+    const val AttributeOptionReadbehavWar = "attribute_option_readbehav_war"
+    const val AttributeOptionResetAsynchronous = "attribute_option_reset_asynchronous"
+    const val AttributeOptionResetSynchronous = "attribute_option_reset_synchronous"
+    const val AttributeOptionResetbehaviorClosed = "attribute_option_resetbehavior_closed"
+    const val AttributeOptionResetbehaviorLast = "attribute_option_resetbehavior_last"
+    const val AttributeOptionResetbehaviorOpen = "attribute_option_resetbehavior_open"
+    const val AttributeOptionScaleCover = "attribute_option_scale_cover"
+    const val AttributeOptionScaleFit = "attribute_option_scale_fit"
+    const val AttributeOptionScaleStretch = "attribute_option_scale_stretch"
+    const val AttributeOptionSelectHigh = "attribute_option_select_high"
+    const val AttributeOptionSelectLow = "attribute_option_select_low"
+    const val AttributeOptionSellocBl = "attribute_option_selloc_bl"
+    const val AttributeOptionSellocTr = "attribute_option_selloc_tr"
+    const val AttributeOptionShiftAr = "attribute_option_shift_ar"
+    const val AttributeOptionShiftLl = "attribute_option_shift_ll"
+    const val AttributeOptionShiftLr = "attribute_option_shift_lr"
+    const val AttributeOptionShiftRl = "attribute_option_shift_rl"
+    const val AttributeOptionShiftRr = "attribute_option_shift_rr"
+    const val AttributeOptionSize20 = "attribute_option_size_20"
+    const val AttributeOptionSize30 = "attribute_option_size_30"
+    const val AttributeOptionSize30Wide = "attribute_option_size_30_wide"
+    const val AttributeOptionSize40 = "attribute_option_size_40"
+    const val AttributeOptionSize50 = "attribute_option_size_50"
+    const val AttributeOptionSize70 = "attribute_option_size_70"
+    const val AttributeOptionSizeLarge = "attribute_option_size_large"
+    const val AttributeOptionSizeNormal = "attribute_option_size_normal"
+    const val AttributeOptionTimetype1 = "attribute_option_timetype_1"
+    const val AttributeOptionTimetype2 = "attribute_option_timetype_2"
+    const val AttributeOptionTriggerFalling = "attribute_option_trigger_falling"
+    const val AttributeOptionTriggerHigh = "attribute_option_trigger_high"
+    const val AttributeOptionTriggerLow = "attribute_option_trigger_low"
+    const val AttributeOptionTriggerRising = "attribute_option_trigger_rising"
+    const val AttributeOptionTypeArc = "attribute_option_type_arc"
+    const val AttributeOptionTypeHigh0 = "attribute_option_type_high0"
+    const val AttributeOptionTypeHigh1 = "attribute_option_type_high1"
+    const val AttributeOptionTypeHyp = "attribute_option_type_hyp"
+    const val AttributeOptionTypeInput = "attribute_option_type_input"
+    const val AttributeOptionTypeLow0 = "attribute_option_type_low0"
+    const val AttributeOptionTypeLow1 = "attribute_option_type_low1"
+    const val AttributeOptionTypeN = "attribute_option_type_n"
+    const val AttributeOptionTypeNonvolatile = "attribute_option_type_nonvolatile"
+    const val AttributeOptionTypeOne = "attribute_option_type_one"
+    const val AttributeOptionTypeOutput = "attribute_option_type_output"
+    const val AttributeOptionTypeP = "attribute_option_type_p"
+    const val AttributeOptionTypeSign = "attribute_option_type_sign"
+    const val AttributeOptionTypeTrig = "attribute_option_type_trig"
+    const val AttributeOptionTypeVolatile = "attribute_option_type_volatile"
+    const val AttributeOptionTypeZero = "attribute_option_type_zero"
+    const val AttributeOptionValignBase = "attribute_option_valign_base"
+    const val AttributeOptionValignBottom = "attribute_option_valign_bottom"
+    const val AttributeOptionValignCenter = "attribute_option_valign_center"
+    const val AttributeOptionValignTop = "attribute_option_valign_top"
+    const val AttributeOptionWaveformNoise = "attribute_option_waveform_noise"
+    const val AttributeOptionWaveformSawtooth = "attribute_option_waveform_sawtooth"
+    const val AttributeOptionWaveformSine = "attribute_option_waveform_sine"
+    const val AttributeOptionWaveformSquare = "attribute_option_waveform_square"
+    const val AttributeOptionWaveformTriangle = "attribute_option_waveform_triangle"
+    const val AttributeOptionXor1 = "attribute_option_xor_1"
+    const val AttributeOptionXorOdd = "attribute_option_xor_odd"
     const val AttributeRawInvalid = "attribute_raw_invalid"
     const val AttributeSchemaDuplicate = "attribute_schema_duplicate"
     const val AttributeUndeclared = "attribute_undeclared"
     const val AttributeValueInvalid = "attribute_value_invalid"
+    const val ByteSizeBytes = "byte_size_bytes"
+    const val ByteSizeKib = "byte_size_kib"
+    const val ByteSizeKibFraction = "byte_size_kib_fraction"
+    const val ByteSizeMib = "byte_size_mib"
+    const val ByteSizeMibFraction = "byte_size_mib_fraction"
     const val CanvasComponentTip = "canvas_component_tip"
     const val CanvasWidthError = "canvas_width_error"
     const val CircuitPropertiesTitle = "circuit_properties_title"
+    const val CircuitRemoveErrorTitle = "circuit_remove_error_title"
+    const val CircuitRemoveLastError = "circuit_remove_last_error"
+    const val CircuitRemoveMainError = "circuit_remove_main_error"
+    const val CircuitRemoveUsedError = "circuit_remove_used_error"
     const val CodecAppearanceAnchorInvalid = "codec_appearance_anchor_invalid"
     const val CodecAppearancePinMissing = "codec_appearance_pin_missing"
     const val CodecAppearancePinsInvalid = "codec_appearance_pins_invalid"
@@ -802,7 +1185,68 @@ object Messages {
     const val CodecZipSplitUnsupported = "codec_zip_split_unsupported"
     const val CodecZipSymlinkUnsupported = "codec_zip_symlink_unsupported"
     const val CodecZipTruncated = "codec_zip_truncated"
+    const val ColorHexHint = "color_hex_hint"
+    const val ColorNameAmber = "color_name_amber"
+    const val ColorNameBlack = "color_name_black"
+    const val ColorNameBlue = "color_name_blue"
+    const val ColorNameBrown = "color_name_brown"
+    const val ColorNameCyan = "color_name_cyan"
+    const val ColorNameDarkGray = "color_name_dark_gray"
+    const val ColorNameDarkGreen = "color_name_dark_green"
+    const val ColorNameGray = "color_name_gray"
+    const val ColorNameGreen = "color_name_green"
+    const val ColorNameIndigo = "color_name_indigo"
+    const val ColorNameLightGray = "color_name_light_gray"
+    const val ColorNameMagenta = "color_name_magenta"
+    const val ColorNameNavy = "color_name_navy"
+    const val ColorNameOrange = "color_name_orange"
+    const val ColorNamePink = "color_name_pink"
+    const val ColorNamePurple = "color_name_purple"
+    const val ColorNameRed = "color_name_red"
+    const val ColorNameTeal = "color_name_teal"
+    const val ColorNameViolet = "color_name_violet"
+    const val ColorNameWhite = "color_name_white"
+    const val ColorNameYellow = "color_name_yellow"
+    const val ColorPickerAdvanced = "color_picker_advanced"
+    const val ColorPickerAlpha = "color_picker_alpha"
+    const val ColorPickerCurrent = "color_picker_current"
+    const val ColorPickerDefault = "color_picker_default"
+    const val ColorPickerHue = "color_picker_hue"
+    const val ColorPickerMaterial = "color_picker_material"
+    const val ColorPickerRestoreDefault = "color_picker_restore_default"
+    const val ColorPickerSaturation = "color_picker_saturation"
+    const val ColorPickerValue = "color_picker_value"
+    const val ColorStateCustom = "color_state_custom"
+    const val ColorStateDefault = "color_state_default"
+    const val ColorSwatchDescription = "color_swatch_description"
     const val CommandsHeading = "commands_heading"
+    const val CompanionOperationFpgaIseBuild = "companion_operation_fpga_ise_build"
+    const val CompanionOperationFpgaIseCpldBuild = "companion_operation_fpga_ise_cpld_build"
+    const val CompanionOperationFpgaProgram = "companion_operation_fpga_program"
+    const val CompanionOperationFpgaQuartusBuild = "companion_operation_fpga_quartus_build"
+    const val CompanionOperationFpgaSynthesize = "companion_operation_fpga_synthesize"
+    const val CompanionOperationFpgaVivadoBuild = "companion_operation_fpga_vivado_build"
+    const val CompanionOperationHdlCancel = "companion_operation_hdl_cancel"
+    const val CompanionOperationHdlReset = "companion_operation_hdl_reset"
+    const val CompanionOperationHdlStart = "companion_operation_hdl_start"
+    const val CompanionOperationHdlStep = "companion_operation_hdl_step"
+    const val CompanionOperationHdlValidate = "companion_operation_hdl_validate"
+    const val CompanionOperationJarLive = "companion_operation_jar_live"
+    const val CompanionOperationJarRun = "companion_operation_jar_run"
+    const val CompanionOperationTclRun = "companion_operation_tcl_run"
+    const val CompanionOperationTclStep = "companion_operation_tcl_step"
+    const val CompanionOperationTclTimedRun = "companion_operation_tcl_timed_run"
+    const val CompanionOperationTclTimedStep = "companion_operation_tcl_timed_step"
+    const val CompanionOperationTclTkLive = "companion_operation_tcl_tk_live"
+    const val CompanionOperationTclTkRun = "companion_operation_tcl_tk_run"
+    const val CompanionOperationTelnetPoll = "companion_operation_telnet_poll"
+    const val CompanionOperationTelnetResize = "companion_operation_telnet_resize"
+    const val CompanionOperationTelnetSend = "companion_operation_telnet_send"
+    const val CompanionOperationTelnetStart = "companion_operation_telnet_start"
+    const val CompanionOperationTelnetStop = "companion_operation_telnet_stop"
+    const val CompanionOperationVerifyInputs = "companion_operation_verify_inputs"
+    const val CompanionOperationYosysImport = "companion_operation_yosys_import"
+    const val CompanionRecentHosts = "companion_recent_hosts"
     const val CompanionUiAddress = "companion_ui_address"
     const val CompanionUiCapabilities = "companion_ui_capabilities"
     const val CompanionUiConnectionFailed = "companion_ui_connection_failed"
@@ -1055,6 +1499,9 @@ object Messages {
     const val ComponentXor = "component_xor"
     const val ConfirmClearHistory = "confirm_clear_history"
     const val ConfirmDeleteCircuit = "confirm_delete_circuit"
+    const val ConfirmDiscard = "confirm_discard"
+    const val ConfirmRemove = "confirm_remove"
+    const val ConfirmRestore = "confirm_restore"
     const val CoreEditorConnectedTerminal = "core_editor_connected_terminal"
     const val CoreEditorGroupConnections = "core_editor_group_connections"
     const val CoreEditorGroupIds = "core_editor_group_ids"
@@ -1115,10 +1562,12 @@ object Messages {
     const val DirectionWest = "direction_west"
     const val DocumentReadOnlyOriginal = "document_read_only_original"
     const val DocumentReadOnlyPreserved = "document_read_only_preserved"
-    const val EditorHelpEditing = "editor_help_editing"
+    const val EditCantRedo = "edit_cant_redo"
+    const val EditCantUndo = "edit_cant_undo"
+    const val EditRedoItem = "edit_redo_item"
+    const val EditUndoItem = "edit_undo_item"
     const val EditorHelpFiles = "editor_help_files"
     const val EditorHelpLibrary = "editor_help_library"
-    const val EditorHelpSimulation = "editor_help_simulation"
     const val EditorHelpTitle = "editor_help_title"
     const val EditorHelpViewport = "editor_help_viewport"
     const val EditorImportDiscarded = "editor_import_discarded"
@@ -1192,6 +1641,17 @@ object Messages {
     const val EvolutionNameRenamedOnLoad = "evolution_name_renamed_on_load"
     const val EvolutionNameStartsWithDigit = "evolution_name_starts_with_digit"
     const val EvolutionNameVhdlKeyword = "evolution_name_vhdl_keyword"
+    const val ExtensionCapabilityCompanionJar = "extension_capability_companion_jar"
+    const val ExtensionCapabilityCompanionJarDescription = "extension_capability_companion_jar_description"
+    const val ExtensionCapabilityCompanionTcl = "extension_capability_companion_tcl"
+    const val ExtensionCapabilityCompanionTclDescription = "extension_capability_companion_tcl_description"
+    const val ExtensionCapabilityCustomRendering = "extension_capability_custom_rendering"
+    const val ExtensionCapabilityCustomRenderingDescription = "extension_capability_custom_rendering_description"
+    const val ExtensionCapabilityDenied = "extension_capability_denied"
+    const val ExtensionCapabilityPureLogic = "extension_capability_pure_logic"
+    const val ExtensionCapabilityPureLogicDescription = "extension_capability_pure_logic_description"
+    const val ExtensionCapabilityStatefulLogic = "extension_capability_stateful_logic"
+    const val ExtensionCapabilityStatefulLogicDescription = "extension_capability_stateful_logic_description"
     const val ExtensionsAccept = "extensions_accept"
     const val ExtensionsAcceptA11y = "extensions_accept_a11y"
     const val ExtensionsApiHeading = "extensions_api_heading"
@@ -1199,7 +1659,7 @@ object Messages {
     const val ExtensionsBindAction = "extensions_bind_action"
     const val ExtensionsBound = "extensions_bound"
     const val ExtensionsBoundAction = "extensions_bound_action"
-    const val ExtensionsCapabilities = "extensions_capabilities"
+    const val ExtensionsCapabilitiesHeading = "extensions_capabilities_heading"
     const val ExtensionsComponents = "extensions_components"
     const val ExtensionsErrorApi = "extensions_error_api"
     const val ExtensionsErrorApproval = "extensions_error_approval"
@@ -1221,6 +1681,7 @@ object Messages {
     const val ExtensionsNoneExternal = "extensions_none_external"
     const val ExtensionsOriginalXml = "extensions_original_xml"
     const val ExtensionsPolicy = "extensions_policy"
+    const val ExtensionsPrivilegesNote = "extensions_privileges_note"
     const val ExtensionsProvider = "extensions_provider"
     const val ExtensionsRegistered = "extensions_registered"
     const val ExtensionsReview = "extensions_review"
@@ -1302,11 +1763,16 @@ object Messages {
     const val ExtraIoPlaConnectionsInvalid = "extra_io_pla_connections_invalid"
     const val ExtraIoPlaContentsExceeded = "extra_io_pla_contents_exceeded"
     const val ExtraIoPlaDimensionsInvalid = "extra_io_pla_dimensions_invalid"
+    const val ExtraIoPlaDirect = "extra_io_pla_direct"
+    const val ExtraIoPlaInputCell = "extra_io_pla_input_cell"
     const val ExtraIoPlaLiteralEditInvalid = "extra_io_pla_literal_edit_invalid"
     const val ExtraIoPlaLiteralsInvalid = "extra_io_pla_literals_invalid"
+    const val ExtraIoPlaNegated = "extra_io_pla_negated"
+    const val ExtraIoPlaOutputCell = "extra_io_pla_output_cell"
     const val ExtraIoPlaRepeatInvalid = "extra_io_pla_repeat_invalid"
     const val ExtraIoPlaTerm = "extra_io_pla_term"
     const val ExtraIoPlaTitle = "extra_io_pla_title"
+    const val ExtraIoPlaUnused = "extra_io_pla_unused"
     const val ExtraIoPlaValueInvalid = "extra_io_pla_value_invalid"
     const val ExtraIoScopeDimensionsInvalid = "extra_io_scope_dimensions_invalid"
     const val ExtraIoScopeInputsInvalid = "extra_io_scope_inputs_invalid"
@@ -1323,6 +1789,16 @@ object Messages {
     const val FirstLaunchThemeDescription = "first_launch_theme_description"
     const val FirstLaunchThemeSystem = "first_launch_theme_system"
     const val FirstLaunchThemeTitle = "first_launch_theme_title"
+    const val FontCustomFamily = "font_custom_family"
+    const val FontFamily = "font_family"
+    const val FontSize = "font_size"
+    const val FontSizeDecrease = "font_size_decrease"
+    const val FontSizeIncrease = "font_size_increase"
+    const val FontStyle = "font_style"
+    const val FontStyleBold = "font_style_bold"
+    const val FontStyleBoldItalic = "font_style_bold_italic"
+    const val FontStyleItalic = "font_style_italic"
+    const val FontStylePlain = "font_style_plain"
     const val FpgaActiveHigh = "fpga_active_high"
     const val FpgaActiveLow = "fpga_active_low"
     const val FpgaAdapterFailedHdl = "fpga_adapter_failed_hdl"
@@ -1330,20 +1806,21 @@ object Messages {
     const val FpgaArchiveInvalidFiles = "fpga_archive_invalid_files"
     const val FpgaArchiveInvalidPath = "fpga_archive_invalid_path"
     const val FpgaArchiveSizeLimit = "fpga_archive_size_limit"
+    const val FpgaBlockerClockFrequency = "fpga_blocker_clock_frequency"
+    const val FpgaBlockerClockScale = "fpga_blocker_clock_scale"
     const val FpgaBoardCatalog = "fpga_board_catalog"
     const val FpgaBoardCatalogChoose = "fpga_board_catalog_choose"
     const val FpgaBoardCatalogExternal = "fpga_board_catalog_external"
     const val FpgaBoardCatalogFailed = "fpga_board_catalog_failed"
+    const val FpgaBoardCatalogLoading = "fpga_board_catalog_loading"
     const val FpgaBoardCatalogRemove = "fpga_board_catalog_remove"
+    const val FpgaBoardCatalogRemoved = "fpga_board_catalog_removed"
     const val FpgaBoardClock = "fpga_board_clock"
-    const val FpgaBoardMapBack = "fpga_board_map_back"
     const val FpgaBoardMapClose = "fpga_board_map_close"
     const val FpgaBoardMapOpen = "fpga_board_map_open"
     const val FpgaBoardMapPin = "fpga_board_map_pin"
     const val FpgaBoardMapResource = "fpga_board_map_resource"
     const val FpgaBoardMapResourcePins = "fpga_board_map_resource_pins"
-    const val FpgaBoardMapResourceTitle = "fpga_board_map_resource_title"
-    const val FpgaBoardMapTitle = "fpga_board_map_title"
     const val FpgaBoardPictureInvalid = "fpga_board_picture_invalid"
     const val FpgaBoardPins = "fpga_board_pins"
     const val FpgaBoardXmlLabel = "fpga_board_xml_label"
@@ -1352,6 +1829,7 @@ object Messages {
     const val FpgaChooseCompatiblePin = "fpga_choose_compatible_pin"
     const val FpgaCircuitDrcClear = "fpga_circuit_drc_clear"
     const val FpgaCircuitDrcHeading = "fpga_circuit_drc_heading"
+    const val FpgaClockCustomPin = "fpga_clock_custom_pin"
     const val FpgaClockDerived = "fpga_clock_derived"
     const val FpgaClockDerivedFrequency = "fpga_clock_derived_frequency"
     const val FpgaClockDirect = "fpga_clock_direct"
@@ -1373,6 +1851,7 @@ object Messages {
     const val FpgaCompanionBuild = "fpga_companion_build"
     const val FpgaCompanionCancel = "fpga_companion_cancel"
     const val FpgaCompanionContacting = "fpga_companion_contacting"
+    const val FpgaCompanionElapsed = "fpga_companion_elapsed"
     const val FpgaCompanionErrorDetail = "fpga_companion_error_detail"
     const val FpgaCompanionExecute = "fpga_companion_execute"
     const val FpgaCompanionExpiry = "fpga_companion_expiry"
@@ -1387,6 +1866,7 @@ object Messages {
     const val FpgaCompanionJedecGenerated = "fpga_companion_jedec_generated"
     const val FpgaCompanionJob = "fpga_companion_job"
     const val FpgaCompanionJobStatus = "fpga_companion_job_status"
+    const val FpgaCompanionLatestLog = "fpga_companion_latest_log"
     const val FpgaCompanionLogEntry = "fpga_companion_log_entry"
     const val FpgaCompanionLogLimits = "fpga_companion_log_limits"
     const val FpgaCompanionLogs = "fpga_companion_logs"
@@ -1396,6 +1876,7 @@ object Messages {
     const val FpgaCompanionNoProgramming = "fpga_companion_no_programming"
     const val FpgaCompanionOperation = "fpga_companion_operation"
     const val FpgaCompanionOutcomeFlag = "fpga_companion_outcome_flag"
+    const val FpgaCompanionParameterRow = "fpga_companion_parameter_row"
     const val FpgaCompanionPlacedAndRouted = "fpga_companion_placed_and_routed"
     const val FpgaCompanionPrepare = "fpga_companion_prepare"
     const val FpgaCompanionPrepareExplanation = "fpga_companion_prepare_explanation"
@@ -1410,7 +1891,9 @@ object Messages {
     const val FpgaCompanionStateQueued = "fpga_companion_state_queued"
     const val FpgaCompanionStateRunning = "fpga_companion_state_running"
     const val FpgaCompanionStateSucceeded = "fpga_companion_state_succeeded"
+    const val FpgaCompanionStatusResumed = "fpga_companion_status_resumed"
     const val FpgaCompanionSynthesized = "fpga_companion_synthesized"
+    const val FpgaCompanionTechnicalDetails = "fpga_companion_technical_details"
     const val FpgaCompanionTitle = "fpga_companion_title"
     const val FpgaCompanionTransportError = "fpga_companion_transport_error"
     const val FpgaCompanionUnsupportedFlow = "fpga_companion_unsupported_flow"
@@ -1509,18 +1992,38 @@ object Messages {
     const val FpgaEcp5Flow = "fpga_ecp5_flow"
     const val FpgaEditorActiveLow = "fpga_editor_active_low"
     const val FpgaEditorAddResource = "fpga_editor_add_resource"
+    const val FpgaEditorArrayColumns = "fpga_editor_array_columns"
+    const val FpgaEditorArrayMode = "fpga_editor_array_mode"
+    const val FpgaEditorArrayRows = "fpga_editor_array_rows"
     const val FpgaEditorBoardName = "fpga_editor_board_name"
     const val FpgaEditorChooseImage = "fpga_editor_choose_image"
     const val FpgaEditorClock = "fpga_editor_clock"
-    const val FpgaEditorClockFrequency = "fpga_editor_clock_frequency"
     const val FpgaEditorClockPin = "fpga_editor_clock_pin"
+    const val FpgaEditorDecodedBits = "fpga_editor_decoded_bits"
+    const val FpgaEditorDefault = "fpga_editor_default"
     const val FpgaEditorDevice = "fpga_editor_device"
+    const val FpgaEditorDigits = "fpga_editor_digits"
+    const val FpgaEditorDiscard = "fpga_editor_discard"
+    const val FpgaEditorDiscardText = "fpga_editor_discard_text"
+    const val FpgaEditorDiscardTitle = "fpga_editor_discard_title"
     const val FpgaEditorDisplayConfiguration = "fpga_editor_display_configuration"
+    const val FpgaEditorDisplayPinCount = "fpga_editor_display_pin_count"
+    const val FpgaEditorDisplayPins = "fpga_editor_display_pins"
+    const val FpgaEditorDragMode = "fpga_editor_drag_mode"
     const val FpgaEditorDrive = "fpga_editor_drive"
+    const val FpgaEditorDriveValue = "fpga_editor_drive_value"
     const val FpgaEditorEditBoard = "fpga_editor_edit_board"
+    const val FpgaEditorExactPosition = "fpga_editor_exact_position"
     const val FpgaEditorFamily = "fpga_editor_family"
     const val FpgaEditorFlashName = "fpga_editor_flash_name"
     const val FpgaEditorFlashPosition = "fpga_editor_flash_position"
+    const val FpgaEditorFrequency = "fpga_editor_frequency"
+    const val FpgaEditorFrequencyHz = "fpga_editor_frequency_hz"
+    const val FpgaEditorFrequencyInvalid = "fpga_editor_frequency_invalid"
+    const val FpgaEditorFrequencyUnit = "fpga_editor_frequency_unit"
+    const val FpgaEditorFromFile = "fpga_editor_from_file"
+    const val FpgaEditorGrowHeight = "fpga_editor_grow_height"
+    const val FpgaEditorGrowWidth = "fpga_editor_grow_width"
     const val FpgaEditorInoutPins = "fpga_editor_inout_pins"
     const val FpgaEditorInputPins = "fpga_editor_input_pins"
     const val FpgaEditorInvalidBoardName = "fpga_editor_invalid_board_name"
@@ -1529,32 +2032,110 @@ object Messages {
     const val FpgaEditorInvalidResourceType = "fpga_editor_invalid_resource_type"
     const val FpgaEditorIoStandard = "fpga_editor_io_standard"
     const val FpgaEditorJtag = "fpga_editor_jtag"
+    const val FpgaEditorKeepEditing = "fpga_editor_keep_editing"
+    const val FpgaEditorKeepFirstPins = "fpga_editor_keep_first_pins"
+    const val FpgaEditorModeLedColumns = "fpga_editor_mode_led_columns"
+    const val FpgaEditorModeLedDefault = "fpga_editor_mode_led_default"
+    const val FpgaEditorModeLedRows = "fpga_editor_mode_led_rows"
+    const val FpgaEditorModeRgbColumns = "fpga_editor_mode_rgb_columns"
+    const val FpgaEditorModeRgbDefault = "fpga_editor_mode_rgb_default"
+    const val FpgaEditorModeRgbRows = "fpga_editor_mode_rgb_rows"
+    const val FpgaEditorModeSegDecoded = "fpga_editor_mode_seg_decoded"
+    const val FpgaEditorModeSegHigh = "fpga_editor_mode_seg_high"
+    const val FpgaEditorModeSegLow = "fpga_editor_mode_seg_low"
+    const val FpgaEditorMoveDown = "fpga_editor_move_down"
+    const val FpgaEditorMoveLeft = "fpga_editor_move_left"
+    const val FpgaEditorMoveRight = "fpga_editor_move_right"
+    const val FpgaEditorMoveUp = "fpga_editor_move_up"
     const val FpgaEditorNewBoard = "fpga_editor_new_board"
+    const val FpgaEditorNewResourceType = "fpga_editor_new_resource_type"
+    const val FpgaEditorOrientation = "fpga_editor_orientation"
     const val FpgaEditorOutputPins = "fpga_editor_output_pins"
+    const val FpgaEditorOverlap = "fpga_editor_overlap"
     const val FpgaEditorPackage = "fpga_editor_package"
     const val FpgaEditorPart = "fpga_editor_part"
     const val FpgaEditorPicture = "fpga_editor_picture"
+    const val FpgaEditorPinCount = "fpga_editor_pin_count"
+    const val FpgaEditorPinCountMismatch = "fpga_editor_pin_count_mismatch"
+    const val FpgaEditorPinDuplicate = "fpga_editor_pin_duplicate"
+    const val FpgaEditorPinInvalid = "fpga_editor_pin_invalid"
+    const val FpgaEditorPinN = "fpga_editor_pin_n"
+    const val FpgaEditorPinRequired = "fpga_editor_pin_required"
+    const val FpgaEditorPinSingle = "fpga_editor_pin_single"
+    const val FpgaEditorPinsNotUsed = "fpga_editor_pins_not_used"
+    const val FpgaEditorPreviewHelp = "fpga_editor_preview_help"
+    const val FpgaEditorPreviewHelpSelect = "fpga_editor_preview_help_select"
+    const val FpgaEditorPreviewSelected = "fpga_editor_preview_selected"
     const val FpgaEditorPull = "fpga_editor_pull"
     const val FpgaEditorPullDown = "fpga_editor_pull_down"
     const val FpgaEditorPullFloat = "fpga_editor_pull_float"
     const val FpgaEditorPullUp = "fpga_editor_pull_up"
+    const val FpgaEditorRectChanged = "fpga_editor_rect_changed"
+    const val FpgaEditorRectHeight = "fpga_editor_rect_height"
+    const val FpgaEditorRectNumbers = "fpga_editor_rect_numbers"
+    const val FpgaEditorRectOutside = "fpga_editor_rect_outside"
+    const val FpgaEditorRectReadout = "fpga_editor_rect_readout"
+    const val FpgaEditorRectSize = "fpga_editor_rect_size"
+    const val FpgaEditorRectWidth = "fpga_editor_rect_width"
+    const val FpgaEditorRectX = "fpga_editor_rect_x"
+    const val FpgaEditorRectY = "fpga_editor_rect_y"
     const val FpgaEditorRectangle = "fpga_editor_rectangle"
     const val FpgaEditorRemoveResource = "fpga_editor_remove_resource"
     const val FpgaEditorResourceElectrical = "fpga_editor_resource_electrical"
+    const val FpgaEditorResourceError = "fpga_editor_resource_error"
+    const val FpgaEditorResourceHasErrors = "fpga_editor_resource_has_errors"
     const val FpgaEditorResourceLabel = "fpga_editor_resource_label"
+    const val FpgaEditorResourceName = "fpga_editor_resource_name"
     const val FpgaEditorResourcePins = "fpga_editor_resource_pins"
     const val FpgaEditorResourceRectangle = "fpga_editor_resource_rectangle"
+    const val FpgaEditorResourceRemoved = "fpga_editor_resource_removed"
     const val FpgaEditorResourceType = "fpga_editor_resource_type"
     const val FpgaEditorResources = "fpga_editor_resources"
+    const val FpgaEditorRgbBlue = "fpga_editor_rgb_blue"
+    const val FpgaEditorRgbGreen = "fpga_editor_rgb_green"
+    const val FpgaEditorRgbRed = "fpga_editor_rgb_red"
     const val FpgaEditorRotation = "fpga_editor_rotation"
+    const val FpgaEditorRotationDip180 = "fpga_editor_rotation_dip_180"
+    const val FpgaEditorRotationDipCcw90 = "fpga_editor_rotation_dip_ccw90"
+    const val FpgaEditorRotationDipCw90 = "fpga_editor_rotation_dip_cw90"
+    const val FpgaEditorRotationDipZero = "fpga_editor_rotation_dip_zero"
+    const val FpgaEditorRotationLed180 = "fpga_editor_rotation_led_180"
+    const val FpgaEditorRotationLedCcw90 = "fpga_editor_rotation_led_ccw90"
+    const val FpgaEditorRotationLedCw90 = "fpga_editor_rotation_led_cw90"
+    const val FpgaEditorRotationLedZero = "fpga_editor_rotation_led_zero"
+    const val FpgaEditorRotationSeg180 = "fpga_editor_rotation_seg_180"
+    const val FpgaEditorRotationSegCcw90 = "fpga_editor_rotation_seg_ccw90"
+    const val FpgaEditorRotationSegCw90 = "fpga_editor_rotation_seg_cw90"
+    const val FpgaEditorRotationSegZero = "fpga_editor_rotation_seg_zero"
+    const val FpgaEditorSaveBlocked = "fpga_editor_save_blocked"
     const val FpgaEditorSaveBoard = "fpga_editor_save_board"
     const val FpgaEditorSaveFailed = "fpga_editor_save_failed"
+    const val FpgaEditorSectionBidirectional = "fpga_editor_section_bidirectional"
+    const val FpgaEditorSectionInputs = "fpga_editor_section_inputs"
+    const val FpgaEditorSectionOutputs = "fpga_editor_section_outputs"
+    const val FpgaEditorSegment = "fpga_editor_segment"
+    const val FpgaEditorSegmentDp = "fpga_editor_segment_dp"
     const val FpgaEditorSelectResource = "fpga_editor_select_resource"
+    const val FpgaEditorShrinkHeight = "fpga_editor_shrink_height"
+    const val FpgaEditorShrinkWidth = "fpga_editor_shrink_width"
     const val FpgaEditorSpeed = "fpga_editor_speed"
+    const val FpgaEditorSwitchN = "fpga_editor_switch_n"
+    const val FpgaEditorUndo = "fpga_editor_undo"
     const val FpgaEditorUnusedPull = "fpga_editor_unused_pull"
     const val FpgaEditorUsbtmc = "fpga_editor_usbtmc"
+    const val FpgaEditorValueNotSupported = "fpga_editor_value_not_supported"
     const val FpgaEditorVendor = "fpga_editor_vendor"
+    const val FpgaEditorWholeNumber = "fpga_editor_whole_number"
     const val FpgaExportProject = "fpga_export_project"
+    const val FpgaFailureConfirmationRequired = "fpga_failure_confirmation_required"
+    const val FpgaFailureDetails = "fpga_failure_details"
+    const val FpgaFailureFlashNotAllowed = "fpga_failure_flash_not_allowed"
+    const val FpgaFailureInvalidArtifact = "fpga_failure_invalid_artifact"
+    const val FpgaFailureInvalidJob = "fpga_failure_invalid_job"
+    const val FpgaFailureInvalidPlan = "fpga_failure_invalid_plan"
+    const val FpgaFailureInvalidResponse = "fpga_failure_invalid_response"
+    const val FpgaFailureInvalidResult = "fpga_failure_invalid_result"
+    const val FpgaFailurePartMismatch = "fpga_failure_part_mismatch"
     const val FpgaFilterPins = "fpga_filter_pins"
     const val FpgaFlow = "fpga_flow"
     const val FpgaHdlDiagnosticsHeading = "fpga_hdl_diagnostics_heading"
@@ -1564,9 +2145,17 @@ object Messages {
     const val FpgaImportBoardFile = "fpga_import_board_file"
     const val FpgaInvalidDisplayChannel = "fpga_invalid_display_channel"
     const val FpgaIseFlow = "fpga_ise_flow"
+    const val FpgaMapAutoLoadFailed = "fpga_map_auto_load_failed"
+    const val FpgaMapAutoLoaded = "fpga_map_auto_loaded"
     const val FpgaMapImport = "fpga_map_import"
     const val FpgaMapInvalid = "fpga_map_invalid"
+    const val FpgaMapReplaceConfirm = "fpga_map_replace_confirm"
+    const val FpgaMapReplaceNewBits = "fpga_map_replace_new_bits"
+    const val FpgaMapReplaceSavedBits = "fpga_map_replace_saved_bits"
+    const val FpgaMapReplaceTitle = "fpga_map_replace_title"
+    const val FpgaMapReplaceUnreadable = "fpga_map_replace_unreadable"
     const val FpgaMapRestore = "fpga_map_restore"
+    const val FpgaMapRevert = "fpga_map_revert"
     const val FpgaMapSave = "fpga_map_save"
     const val FpgaMapSaveFailed = "fpga_map_save_failed"
     const val FpgaMapSaved = "fpga_map_saved"
@@ -1574,24 +2163,78 @@ object Messages {
     const val FpgaMapWrongCircuit = "fpga_map_wrong_circuit"
     const val FpgaMapWrongPin = "fpga_map_wrong_pin"
     const val FpgaMapWrongSignal = "fpga_map_wrong_signal"
+    const val FpgaMappingLoadingCatalog = "fpga_mapping_loading_catalog"
     const val FpgaMappingProblems = "fpga_mapping_problems"
+    const val FpgaMappingSummary = "fpga_mapping_summary"
     const val FpgaMappingValid = "fpga_mapping_valid"
+    const val FpgaMoreProblems = "fpga_more_problems"
     const val FpgaNoCompatiblePin = "fpga_no_compatible_pin"
     const val FpgaNoHdl = "fpga_no_hdl"
+    const val FpgaNoProblems = "fpga_no_problems"
     const val FpgaOpen = "fpga_open"
+    const val FpgaOperationIseBuild = "fpga_operation_ise_build"
+    const val FpgaOperationIseCpldBuild = "fpga_operation_ise_cpld_build"
+    const val FpgaOperationProgram = "fpga_operation_program"
+    const val FpgaOperationQuartusBuild = "fpga_operation_quartus_build"
+    const val FpgaOperationSynthesize = "fpga_operation_synthesize"
+    const val FpgaParameterBinarySof = "fpga_parameter_binary_sof"
+    const val FpgaParameterBitstream = "fpga_parameter_bitstream"
+    const val FpgaParameterBoard = "fpga_parameter_board"
+    const val FpgaParameterConstraint = "fpga_parameter_constraint"
+    const val FpgaParameterFamily = "fpga_parameter_family"
+    const val FpgaParameterFlash = "fpga_parameter_flash"
+    const val FpgaParameterFlow = "fpga_parameter_flow"
+    const val FpgaParameterGoal = "fpga_parameter_goal"
+    const val FpgaParameterLanguage = "fpga_parameter_language"
+    const val FpgaParameterPackage = "fpga_parameter_package"
+    const val FpgaParameterPart = "fpga_parameter_part"
+    const val FpgaParameterSources = "fpga_parameter_sources"
+    const val FpgaParameterTarget = "fpga_parameter_target"
+    const val FpgaParameterTop = "fpga_parameter_top"
     const val FpgaPasteBoardXml = "fpga_paste_board_xml"
     const val FpgaPhysicalPin = "fpga_physical_pin"
     const val FpgaPhysicalSignals = "fpga_physical_signals"
-    const val FpgaPinDiagnosticsHeading = "fpga_pin_diagnostics_heading"
+    const val FpgaPinChange = "fpga_pin_change"
+    const val FpgaPinClear = "fpga_pin_clear"
+    const val FpgaPinNotChosen = "fpga_pin_not_chosen"
+    const val FpgaPinPickerCandidate = "fpga_pin_picker_candidate"
+    const val FpgaPinPickerCandidateUsed = "fpga_pin_picker_candidate_used"
+    const val FpgaPinPickerChoosePin = "fpga_pin_picker_choose_pin"
+    const val FpgaPinPickerHint = "fpga_pin_picker_hint"
+    const val FpgaPinPickerProgress = "fpga_pin_picker_progress"
+    const val FpgaPinPickerReplaces = "fpga_pin_picker_replaces"
+    const val FpgaPinPickerStart = "fpga_pin_picker_start"
+    const val FpgaPinPickerStartValue = "fpga_pin_picker_start_value"
+    const val FpgaPinPickerTabBoard = "fpga_pin_picker_tab_board"
+    const val FpgaPinPickerTabList = "fpga_pin_picker_tab_list"
+    const val FpgaPinPickerTitle = "fpga_pin_picker_title"
+    const val FpgaPinPickerUse = "fpga_pin_picker_use"
+    const val FpgaPinPickerUseDisabled = "fpga_pin_picker_use_disabled"
+    const val FpgaPinPickerUsePort = "fpga_pin_picker_use_port"
+    const val FpgaPinPickerUseRun = "fpga_pin_picker_use_run"
+    const val FpgaPinPickerZoomFit = "fpga_pin_picker_zoom_fit"
+    const val FpgaPinPickerZoomIn = "fpga_pin_picker_zoom_in"
+    const val FpgaPinPickerZoomOut = "fpga_pin_picker_zoom_out"
+    const val FpgaPinPickerZoomValue = "fpga_pin_picker_zoom_value"
+    const val FpgaPinSummary = "fpga_pin_summary"
+    const val FpgaPinSummaryUnknown = "fpga_pin_summary_unknown"
+    const val FpgaPinUsedElsewhere = "fpga_pin_used_elsewhere"
+    const val FpgaPortChoosePins = "fpga_port_choose_pins"
+    const val FpgaPortCollapsed = "fpga_port_collapsed"
+    const val FpgaPortExpanded = "fpga_port_expanded"
+    const val FpgaPortMapWhole = "fpga_port_map_whole"
+    const val FpgaPortSummary = "fpga_port_summary"
+    const val FpgaPortUnmap = "fpga_port_unmap"
+    const val FpgaPortUnmapped = "fpga_port_unmapped"
     const val FpgaPrepareSynthesis = "fpga_prepare_synthesis"
     const val FpgaPrepareVendorBuild = "fpga_prepare_vendor_build"
+    const val FpgaProblemsHeading = "fpga_problems_heading"
     const val FpgaProgramChainPosition = "fpga_program_chain_position"
     const val FpgaProgramConfirm = "fpga_program_confirm"
     const val FpgaProgramConfirmFlash = "fpga_program_confirm_flash"
     const val FpgaProgramCpldConfirm = "fpga_program_cpld_confirm"
     const val FpgaProgramCpldHelp = "fpga_program_cpld_help"
     const val FpgaProgramDiscard = "fpga_program_discard"
-    const val FpgaProgramFailure = "fpga_program_failure"
     const val FpgaProgramFlashChainPosition = "fpga_program_flash_chain_position"
     const val FpgaProgramFlashDevice = "fpga_program_flash_device"
     const val FpgaProgramFlashUnverified = "fpga_program_flash_unverified"
@@ -1600,27 +2243,56 @@ object Messages {
     const val FpgaProgramImport = "fpga_program_import"
     const val FpgaProgramImportedName = "fpga_program_imported_name"
     const val FpgaProgramInvalidImport = "fpga_program_invalid_import"
+    const val FpgaProgramLargeSofRamOnly = "fpga_program_large_sof_ram_only"
     const val FpgaProgramMode = "fpga_program_mode"
     const val FpgaProgramModeFlash = "fpga_program_mode_flash"
     const val FpgaProgramModeRam = "fpga_program_mode_ram"
     const val FpgaProgramNoTargets = "fpga_program_no_targets"
+    const val FpgaProgramPollingNote = "fpga_program_polling_note"
     const val FpgaProgramPrepare = "fpga_program_prepare"
     const val FpgaProgramReported = "fpga_program_reported"
     const val FpgaProgramReview = "fpga_program_review"
     const val FpgaProgramReviewTarget = "fpga_program_review_target"
-    const val FpgaProgramSelected = "fpga_program_selected"
     const val FpgaProgramTargetProfile = "fpga_program_target_profile"
     const val FpgaProgramTargetUnavailable = "fpga_program_target_unavailable"
+    const val FpgaProgramTargetUnavailableNow = "fpga_program_target_unavailable_now"
     const val FpgaProgramTitle = "fpga_program_title"
     const val FpgaQuartusExport = "fpga_quartus_export"
     const val FpgaReadBoard = "fpga_read_board"
-    const val FpgaRefinePinFilter = "fpga_refine_pin_filter"
+    const val FpgaResourceTypeButton = "fpga_resource_type_button"
+    const val FpgaResourceTypeDipswitch = "fpga_resource_type_dipswitch"
+    const val FpgaResourceTypeLed = "fpga_resource_type_led"
+    const val FpgaResourceTypeLedarray = "fpga_resource_type_ledarray"
+    const val FpgaResourceTypeLocalbus = "fpga_resource_type_localbus"
+    const val FpgaResourceTypePin = "fpga_resource_type_pin"
+    const val FpgaResourceTypePortio = "fpga_resource_type_portio"
+    const val FpgaResourceTypeRgbled = "fpga_resource_type_rgbled"
+    const val FpgaResourceTypeSevensegment = "fpga_resource_type_sevensegment"
+    const val FpgaResourceTypeSevensegmentnodp = "fpga_resource_type_sevensegmentnodp"
+    const val FpgaResourceTypeSevensegmentscanning = "fpga_resource_type_sevensegmentscanning"
+    const val FpgaScanBlue = "fpga_scan_blue"
     const val FpgaScanChannel = "fpga_scan_channel"
-    const val FpgaScanChannelRange = "fpga_scan_channel_range"
+    const val FpgaScanColor = "fpga_scan_color"
+    const val FpgaScanColumn = "fpga_scan_column"
+    const val FpgaScanColumnValue = "fpga_scan_column_value"
+    const val FpgaScanDigit = "fpga_scan_digit"
+    const val FpgaScanDigitValue = "fpga_scan_digit_value"
     const val FpgaScanDisplay = "fpga_scan_display"
+    const val FpgaScanDisplayNumbered = "fpga_scan_display_numbered"
+    const val FpgaScanGreen = "fpga_scan_green"
     const val FpgaScanMapBus = "fpga_scan_map_bus"
+    const val FpgaScanRed = "fpga_scan_red"
+    const val FpgaScanRow = "fpga_scan_row"
+    const val FpgaScanRowValue = "fpga_scan_row_value"
+    const val FpgaScanSegment = "fpga_scan_segment"
+    const val FpgaScanSegmentValue = "fpga_scan_segment_value"
+    const val FpgaScanSummary = "fpga_scan_summary"
+    const val FpgaScanTypeLedArray = "fpga_scan_type_led_array"
+    const val FpgaScanTypeSevenSegment = "fpga_scan_type_seven_segment"
+    const val FpgaScanUnset = "fpga_scan_unset"
     const val FpgaSelectedPin = "fpga_selected_pin"
     const val FpgaSetupIntro = "fpga_setup_intro"
+    const val FpgaShowProblems = "fpga_show_problems"
     const val FpgaSignalClock = "fpga_signal_clock"
     const val FpgaSynthesisIntro = "fpga_synthesis_intro"
     const val FpgaTickEffective = "fpga_tick_effective"
@@ -1628,11 +2300,28 @@ object Messages {
     const val FpgaTickFrequencyInvalid = "fpga_tick_frequency_invalid"
     const val FpgaTickNoOscillator = "fpga_tick_no_oscillator"
     const val FpgaTickPhysicalMap = "fpga_tick_physical_map"
+    const val FpgaTickPresetCustom = "fpga_tick_preset_custom"
+    const val FpgaTickPresets = "fpga_tick_presets"
     const val FpgaTitle = "fpga_title"
+    const val FpgaTransportIse = "fpga_transport_ise"
+    const val FpgaTransportIseCpld = "fpga_transport_ise_cpld"
+    const val FpgaTransportOpenfpgaloader = "fpga_transport_openfpgaloader"
+    const val FpgaTransportQuartus = "fpga_transport_quartus"
+    const val FpgaTransportQuartusCpld = "fpga_transport_quartus_cpld"
+    const val FpgaUnmapAll = "fpga_unmap_all"
+    const val FpgaUnmapAllConfirm = "fpga_unmap_all_confirm"
+    const val FpgaUnmapAllText = "fpga_unmap_all_text"
+    const val FpgaUnmapAllTitle = "fpga_unmap_all_title"
     const val FpgaUnmapped = "fpga_unmapped"
+    const val FpgaUnmappedBits = "fpga_unmapped_bits"
     const val FpgaUseClock = "fpga_use_clock"
     const val FpgaValidateMapping = "fpga_validate_mapping"
+    const val FpgaVendorAltera = "fpga_vendor_altera"
+    const val FpgaVendorOpenFpga = "fpga_vendor_open_fpga"
     const val FpgaVendorUnavailable = "fpga_vendor_unavailable"
+    const val FpgaVendorUnknown = "fpga_vendor_unknown"
+    const val FpgaVendorVivado = "fpga_vendor_vivado"
+    const val FpgaVendorXilinx = "fpga_vendor_xilinx"
     const val FpgaVivadoExport = "fpga_vivado_export"
     const val GatesPlaRowInvalid = "gates_pla_row_invalid"
     const val GatesPlaRowWidth = "gates_pla_row_width"
@@ -1655,6 +2344,7 @@ object Messages {
     const val HdlDiagnosticUndrivenOutput = "hdl_diagnostic_undriven_output"
     const val HdlDiagnosticUnsupportedComponent = "hdl_diagnostic_unsupported_component"
     const val HdlDiagnosticUnsupportedConfiguration = "hdl_diagnostic_unsupported_configuration"
+    const val HdlExportFile = "hdl_export_file"
     const val HdlFixErrors = "hdl_fix_errors"
     const val HdlImportArtifactFormat = "hdl_import_artifact_format"
     const val HdlImportArtifactInvalid = "hdl_import_artifact_invalid"
@@ -1808,12 +2498,17 @@ object Messages {
     const val HdlToolsImportDefines = "hdl_tools_import_defines"
     const val HdlToolsImportDescription = "hdl_tools_import_description"
     const val HdlToolsImportDiagnostic = "hdl_tools_import_diagnostic"
+    const val HdlToolsImportDiscardConfirm = "hdl_tools_import_discard_confirm"
+    const val HdlToolsImportDiscardMessage = "hdl_tools_import_discard_message"
+    const val HdlToolsImportDiscardTitle = "hdl_tools_import_discard_title"
+    const val HdlToolsImportEditing = "hdl_tools_import_editing"
     const val HdlToolsImportFileName = "hdl_tools_import_file_name"
-    const val HdlToolsImportFormat = "hdl_tools_import_format"
+    const val HdlToolsImportFormatLabel = "hdl_tools_import_format_label"
     const val HdlToolsImportImportedCount = "hdl_tools_import_imported_count"
     const val HdlToolsImportInvalidFile = "hdl_tools_import_invalid_file"
-    const val HdlToolsImportMemoryExpand = "hdl_tools_import_memory_expand"
-    const val HdlToolsImportMemoryPolicy = "hdl_tools_import_memory_policy"
+    const val HdlToolsImportMemoryExpandOption = "hdl_tools_import_memory_expand_option"
+    const val HdlToolsImportMemoryLabel = "hdl_tools_import_memory_label"
+    const val HdlToolsImportMemoryNativeOption = "hdl_tools_import_memory_native_option"
     const val HdlToolsImportPickFile = "hdl_tools_import_pick_file"
     const val HdlToolsImportPickerDirectory = "hdl_tools_import_picker_directory"
     const val HdlToolsImportPlan = "hdl_tools_import_plan"
@@ -1825,6 +2520,10 @@ object Messages {
     const val HdlToolsImportProviderError = "hdl_tools_import_provider_error"
     const val HdlToolsImportProviderLogs = "hdl_tools_import_provider_logs"
     const val HdlToolsImportRemoveFile = "hdl_tools_import_remove_file"
+    const val HdlToolsImportReplaceConfirm = "hdl_tools_import_replace_confirm"
+    const val HdlToolsImportReplaceMessage = "hdl_tools_import_replace_message"
+    const val HdlToolsImportReplacePickedMessage = "hdl_tools_import_replace_picked_message"
+    const val HdlToolsImportReplaceTitle = "hdl_tools_import_replace_title"
     const val HdlToolsImportReviewPlan = "hdl_tools_import_review_plan"
     const val HdlToolsImportSource = "hdl_tools_import_source"
     const val HdlToolsImportSourceUtf8 = "hdl_tools_import_source_utf8"
@@ -1833,14 +2532,14 @@ object Messages {
     const val HdlToolsImportSynthesizing = "hdl_tools_import_synthesizing"
     const val HdlToolsImportTitle = "hdl_tools_import_title"
     const val HdlToolsImportTop = "hdl_tools_import_top"
-    const val HdlToolsImportUndefined = "hdl_tools_import_undefined"
-    const val HdlToolsImportUndefinedOne = "hdl_tools_import_undefined_one"
-    const val HdlToolsImportUndefinedReject = "hdl_tools_import_undefined_reject"
-    const val HdlToolsImportUndefinedZero = "hdl_tools_import_undefined_zero"
+    const val HdlToolsImportUndefinedLabel = "hdl_tools_import_undefined_label"
+    const val HdlToolsImportUndefinedOneOption = "hdl_tools_import_undefined_one_option"
+    const val HdlToolsImportUndefinedRejectOption = "hdl_tools_import_undefined_reject_option"
+    const val HdlToolsImportUndefinedZeroOption = "hdl_tools_import_undefined_zero_option"
     const val HdlToolsSimAdvanceLabel = "hdl_tools_sim_advance_label"
     const val HdlToolsSimAdvanceRange = "hdl_tools_sim_advance_range"
     const val HdlToolsSimApplySource = "hdl_tools_sim_apply_source"
-    const val HdlToolsSimBackendSelected = "hdl_tools_sim_backend_selected"
+    const val HdlToolsSimBackendLabel = "hdl_tools_sim_backend_label"
     const val HdlToolsSimBits = "hdl_tools_sim_bits"
     const val HdlToolsSimCancel = "hdl_tools_sim_cancel"
     const val HdlToolsSimComponentRemoved = "hdl_tools_sim_component_removed"
@@ -1855,6 +2554,19 @@ object Messages {
     const val HdlToolsSimEngineReset = "hdl_tools_sim_engine_reset"
     const val HdlToolsSimEngineSessionChanged = "hdl_tools_sim_engine_session_changed"
     const val HdlToolsSimFailed = "hdl_tools_sim_failed"
+    const val HdlToolsSimGenericDefault = "hdl_tools_sim_generic_default"
+    const val HdlToolsSimGenericDefaultOption = "hdl_tools_sim_generic_default_option"
+    const val HdlToolsSimGenericInvalidInteger = "hdl_tools_sim_generic_invalid_integer"
+    const val HdlToolsSimGenericInvalidNatural = "hdl_tools_sim_generic_invalid_natural"
+    const val HdlToolsSimGenericInvalidPositive = "hdl_tools_sim_generic_invalid_positive"
+    const val HdlToolsSimGenericLabel = "hdl_tools_sim_generic_label"
+    const val HdlToolsSimGenericTimeRange = "hdl_tools_sim_generic_time_range"
+    const val HdlToolsSimGenericUnit = "hdl_tools_sim_generic_unit"
+    const val HdlToolsSimGenericsAsFields = "hdl_tools_sim_generics_as_fields"
+    const val HdlToolsSimGenericsAsText = "hdl_tools_sim_generics_as_text"
+    const val HdlToolsSimGenericsExtra = "hdl_tools_sim_generics_extra"
+    const val HdlToolsSimGenericsHeading = "hdl_tools_sim_generics_heading"
+    const val HdlToolsSimGenericsHelp = "hdl_tools_sim_generics_help"
     const val HdlToolsSimGenericsLabel = "hdl_tools_sim_generics_label"
     const val HdlToolsSimIncompatibleTime = "hdl_tools_sim_incompatible_time"
     const val HdlToolsSimInout = "hdl_tools_sim_inout"
@@ -1912,7 +2624,6 @@ object Messages {
     const val HdlToolsSimWrongOperation = "hdl_tools_sim_wrong_operation"
     const val HdlTopModule = "hdl_top_module"
     const val HelpBuild = "help_build"
-    const val HelpCancel = "help_cancel"
     const val HelpCheckingExample = "help_checking_example"
     const val HelpCompatibility = "help_compatibility"
     const val HelpConfirmOpen = "help_confirm_open"
@@ -1971,12 +2682,13 @@ object Messages {
     const val HelpGuideSimulationStep4 = "help_guide_simulation_step_4"
     const val HelpGuideSimulationTitle = "help_guide_simulation_title"
     const val HelpGuides = "help_guides"
+    const val HelpIssueLink = "help_issue_link"
+    const val HelpIssueLinkDescription = "help_issue_link_description"
     const val HelpKnownLimits = "help_known_limits"
     const val HelpLibraryCount = "help_library_count"
     const val HelpLinkFailed = "help_link_failed"
     const val HelpOfflineGuide = "help_offline_guide"
     const val HelpOnlineGuide = "help_online_guide"
-    const val HelpOpenCopyExplanation = "help_open_copy_explanation"
     const val HelpOpenExample = "help_open_example"
     const val HelpOpenParity = "help_open_parity"
     const val HelpOpenProperties = "help_open_properties"
@@ -2018,31 +2730,85 @@ object Messages {
     const val HistoryImportProject = "history_import_project"
     const val HistoryMoveWire = "history_move_wire"
     const val HistoryRedo = "history_redo"
+    const val HistoryRotateComponent = "history_rotate_component"
+    const val HistoryRotateSelection = "history_rotate_selection"
     const val HistorySplitWire = "history_split_wire"
     const val HistoryUndo = "history_undo"
     const val ImportReportCircuit = "import_report_circuit"
-    const val ImportReportComponents = "import_report_components"
+    const val ImportReportComponent = "import_report_component"
+    const val ImportReportComponentLabeled = "import_report_component_labeled"
+    const val ImportReportComponentMissing = "import_report_component_missing"
+    const val ImportReportDetails = "import_report_details"
+    const val ImportReportDetailsA11y = "import_report_details_a11y"
+    const val ImportReportMore = "import_report_more"
     const val ImportReportNoChanges = "import_report_no_changes"
     const val ImportReportOrigin = "import_report_origin"
     const val ImportReportRepeated = "import_report_repeated"
-    const val ImportReportRule = "import_report_rule"
+    const val ImportReportRuleEvolutionCircuitRenamed = "import_report_rule_evolution_circuit_renamed"
+    const val ImportReportRuleEvolutionLabelRenamed = "import_report_rule_evolution_label_renamed"
+    const val ImportReportRuleFloatingPointLibrary = "import_report_rule_floating_point_library"
+    const val ImportReportRuleLegacyProjectConverted = "import_report_rule_legacy_project_converted"
+    const val ImportReportRuleOther = "import_report_rule_other"
+    const val ImportReportRuleSimulationNoisePreserved = "import_report_rule_simulation_noise_preserved"
+    const val ImportReportRuleVersionDefaults = "import_report_rule_version_defaults"
+    const val ImportReportShow = "import_report_show"
+    const val ImportReportShowA11y = "import_report_show_a11y"
     const val ImportReportSource = "import_report_source"
+    const val ImportReportStatus = "import_report_status"
+    const val ImportReportStatusFile = "import_report_status_file"
+    const val ImportReportStatusImported = "import_report_status_imported"
     const val ImportReportTitle = "import_report_title"
-    const val InputBits = "input_bits"
-    const val InputNumberFormat = "input_number_format"
-    const val InputValueTitle = "input_value_title"
+    const val InputValueDialogTitle = "input_value_dialog_title"
+    const val InputValueErrorBinary = "input_value_error_binary"
+    const val InputValueErrorBinaryUnknown = "input_value_error_binary_unknown"
+    const val InputValueErrorDecimal = "input_value_error_decimal"
+    const val InputValueErrorEmpty = "input_value_error_empty"
+    const val InputValueErrorFloat = "input_value_error_float"
+    const val InputValueErrorHexadecimal = "input_value_error_hexadecimal"
+    const val InputValueErrorOctal = "input_value_error_octal"
+    const val InputValueErrorRange = "input_value_error_range"
+    const val InputValueErrorUnknownSimple = "input_value_error_unknown_simple"
+    const val InputValueField = "input_value_field"
+    const val InputValueFloatHint = "input_value_float_hint"
+    const val InputValueFloatHintUnknown = "input_value_float_hint_unknown"
+    const val InputValueRange = "input_value_range"
+    const val InputValueRangeUnknown = "input_value_range_unknown"
+    const val InputValueUnknownUnsupported = "input_value_unknown_unsupported"
+    const val InspectorBooleanNo = "inspector_boolean_no"
+    const val InspectorBooleanYes = "inspector_boolean_yes"
+    const val InspectorChooseValue = "inspector_choose_value"
+    const val InspectorClearForAll = "inspector_clear_for_all"
     const val InspectorComponentCount = "inspector_component_count"
     const val InspectorDisabled = "inspector_disabled"
     const val InspectorEdit = "inspector_edit"
+    const val InspectorEditAsText = "inspector_edit_as_text"
+    const val InspectorEditAsTextDescription = "inspector_edit_as_text_description"
     const val InspectorEnabled = "inspector_enabled"
+    const val InspectorHintCapacitance = "inspector_hint_capacitance"
+    const val InspectorHintHexDigits = "inspector_hint_hex_digits"
+    const val InspectorHintIntegerPrefixes = "inspector_hint_integer_prefixes"
+    const val InspectorHintRange = "inspector_hint_range"
+    const val InspectorHintResistance = "inspector_hint_resistance"
+    const val InspectorLabelDraftDiscarded = "inspector_label_draft_discarded"
     const val InspectorMixedLabels = "inspector_mixed_labels"
     const val InspectorMixedValues = "inspector_mixed_values"
+    const val InspectorMultiEditStatus = "inspector_multi_edit_status"
+    const val InspectorMultiEditUndo = "inspector_multi_edit_undo"
     const val InspectorNotEditable = "inspector_not_editable"
+    const val InspectorOpenTool = "inspector_open_tool"
+    const val InspectorPresets = "inspector_presets"
     const val InspectorReadOnly = "inspector_read_only"
     const val InspectorSelectHint = "inspector_select_hint"
     const val InspectorSelectRequired = "inspector_select_required"
+    const val InspectorSummaryEmpty = "inspector_summary_empty"
+    const val InspectorSummaryImage = "inspector_summary_image"
+    const val InspectorSummaryLines = "inspector_summary_lines"
+    const val InspectorSummaryMatrix = "inspector_summary_matrix"
+    const val InspectorSummaryMemory = "inspector_summary_memory"
     const val InspectorUnknownKinds = "inspector_unknown_kinds"
+    const val InspectorValidating = "inspector_validating"
     const val InspectorValueInvalid = "inspector_value_invalid"
+    const val InspectorValueInvalidRange = "inspector_value_invalid_range"
     const val InspectorValueInvalidShort = "inspector_value_invalid_short"
     const val IoA11yButton = "io_a11y_button"
     const val IoA11yJoystick = "io_a11y_joystick"
@@ -2058,6 +2824,18 @@ object Messages {
     const val IoControlMatrixKeypad = "io_control_matrix_keypad"
     const val IoEnd = "io_end"
     const val IoHome = "io_home"
+    const val IoJoystickAxisValue = "io_joystick_axis_value"
+    const val IoJoystickAxisX = "io_joystick_axis_x"
+    const val IoJoystickAxisY = "io_joystick_axis_y"
+    const val IoJoystickDown = "io_joystick_down"
+    const val IoJoystickDownLeft = "io_joystick_down_left"
+    const val IoJoystickDownRight = "io_joystick_down_right"
+    const val IoJoystickHelp = "io_joystick_help"
+    const val IoJoystickLeft = "io_joystick_left"
+    const val IoJoystickRight = "io_joystick_right"
+    const val IoJoystickUp = "io_joystick_up"
+    const val IoJoystickUpLeft = "io_joystick_up_left"
+    const val IoJoystickUpRight = "io_joystick_up_right"
     const val IoKeyboardCapacity = "io_keyboard_capacity"
     const val IoStateBackspace = "io_state_backspace"
     const val IoStateBlack = "io_state_black"
@@ -2163,6 +2941,10 @@ object Messages {
     const val JarLiveRetired = "jar_live_retired"
     const val JarLiveWaiting = "jar_live_waiting"
     const val JarToolApproval = "jar_tool_approval"
+    const val JarToolBitError = "jar_tool_bit_error"
+    const val JarToolBitOption = "jar_tool_bit_option"
+    const val JarToolBitUnknown = "jar_tool_bit_unknown"
+    const val JarToolBitsNeeded = "jar_tool_bits_needed"
     const val JarToolCancel = "jar_tool_cancel"
     const val JarToolCancelled = "jar_tool_cancelled"
     const val JarToolClass = "jar_tool_class"
@@ -2171,6 +2953,7 @@ object Messages {
     const val JarToolFailed = "jar_tool_failed"
     const val JarToolFrames = "jar_tool_frames"
     const val JarToolFramesHelp = "jar_tool_frames_help"
+    const val JarToolHexValue = "jar_tool_hex_value"
     const val JarToolHostDenied = "jar_tool_host_denied"
     const val JarToolInput = "jar_tool_input"
     const val JarToolLiveHelp = "jar_tool_live_help"
@@ -2207,17 +2990,26 @@ object Messages {
     const val LegalTitle = "legal_title"
     const val LibraryAnnotations = "library_annotations"
     const val LibraryArithmetic = "library_arithmetic"
+    const val LibraryBfh = "library_bfh"
     const val LibraryExtra = "library_extra"
+    const val LibraryFilter = "library_filter"
+    const val LibraryFilterClear = "library_filter_clear"
+    const val LibraryFilterEmpty = "library_filter_empty"
     const val LibraryFloat = "library_float"
     const val LibraryGates = "library_gates"
+    const val LibraryHdlIp = "library_hdl_ip"
     const val LibraryIo = "library_io"
     const val LibraryMemory = "library_memory"
     const val LibraryPlexers = "library_plexers"
+    const val LibraryRecent = "library_recent"
+    const val LibrarySoc = "library_soc"
+    const val LibraryTcl = "library_tcl"
     const val LibraryTtl = "library_ttl"
     const val LibraryWiring = "library_wiring"
     const val MatrixPlaceBaseLabel = "matrix_place_base_label"
     const val MatrixPlaceChooseOrigin = "matrix_place_choose_origin"
     const val MatrixPlaceColumns = "matrix_place_columns"
+    const val MatrixPlaceConfirm = "matrix_place_confirm"
     const val MatrixPlaceDx = "matrix_place_dx"
     const val MatrixPlaceDy = "matrix_place_dy"
     const val MatrixPlaceInserted = "matrix_place_inserted"
@@ -2227,6 +3019,7 @@ object Messages {
     const val MatrixPlaceSpacingHint = "matrix_place_spacing_hint"
     const val MatrixPlaceTitle = "matrix_place_title"
     const val MemoryA11yCell = "memory_a11y_cell"
+    const val MemoryAddressHex = "memory_address_hex"
     const val MemoryApply = "memory_apply"
     const val MemoryApplyRamHint = "memory_apply_ram_hint"
     const val MemoryApplyRomHint = "memory_apply_rom_hint"
@@ -2236,6 +3029,7 @@ object Messages {
     const val MemoryChange = "memory_change"
     const val MemoryClearContents = "memory_clear_contents"
     const val MemoryClearContentsConfirm = "memory_clear_contents_confirm"
+    const val MemoryClearSelection = "memory_clear_selection"
     const val MemoryClose = "memory_close"
     const val MemoryCodecAddress = "memory_codec_address"
     const val MemoryCodecAddressedLine = "memory_codec_addressed_line"
@@ -2276,6 +3070,11 @@ object Messages {
     const val MemoryCopy = "memory_copy"
     const val MemoryCopySelection = "memory_copy_selection"
     const val MemoryDimensions = "memory_dimensions"
+    const val MemoryDiscardChanges = "memory_discard_changes"
+    const val MemoryDraftConflict = "memory_draft_conflict"
+    const val MemoryDraftConflictImage = "memory_draft_conflict_image"
+    const val MemoryDraftRestore = "memory_draft_restore"
+    const val MemoryEditWord = "memory_edit_word"
     const val MemoryErrorAddress = "memory_error_address"
     const val MemoryErrorAddressBits = "memory_error_address_bits"
     const val MemoryErrorAddressRange = "memory_error_address_range"
@@ -2298,39 +3097,78 @@ object Messages {
     const val MemoryErrorValueWidth = "memory_error_value_width"
     const val MemoryExchange = "memory_exchange"
     const val MemoryFill = "memory_fill"
+    const val MemoryFormatAddressed = "memory_format_addressed"
     const val MemoryFormatAsciiBig = "memory_format_ascii_big"
     const val MemoryFormatAsciiLittle = "memory_format_ascii_little"
+    const val MemoryFormatBigEndian = "memory_format_big_endian"
     const val MemoryFormatBinaryBig = "memory_format_binary_big"
     const val MemoryFormatBinaryLittle = "memory_format_binary_little"
+    const val MemoryFormatBytes = "memory_format_bytes"
+    const val MemoryFormatChoosePrompt = "memory_format_choose_prompt"
+    const val MemoryFormatChooseTitle = "memory_format_choose_title"
+    const val MemoryFormatFamilyAscii = "memory_format_family_ascii"
+    const val MemoryFormatFamilyBinary = "memory_format_family_binary"
+    const val MemoryFormatFamilyHex = "memory_format_family_hex"
+    const val MemoryFormatGroupByteOrder = "memory_format_group_byte_order"
+    const val MemoryFormatGroupStyle = "memory_format_group_style"
+    const val MemoryFormatGroupUnit = "memory_format_group_unit"
     const val MemoryFormatHexBytesAddressedBig = "memory_format_hex_bytes_addressed_big"
     const val MemoryFormatHexBytesAddressedLittle = "memory_format_hex_bytes_addressed_little"
     const val MemoryFormatHexBytesPlainBig = "memory_format_hex_bytes_plain_big"
     const val MemoryFormatHexBytesPlainLittle = "memory_format_hex_bytes_plain_little"
     const val MemoryFormatHexWordsAddressed = "memory_format_hex_words_addressed"
     const val MemoryFormatHexWordsPlain = "memory_format_hex_words_plain"
+    const val MemoryFormatLabel = "memory_format_label"
+    const val MemoryFormatLittleEndian = "memory_format_little_endian"
+    const val MemoryFormatLoad = "memory_format_load"
+    const val MemoryFormatOptionA11y = "memory_format_option_a11y"
+    const val MemoryFormatPlain = "memory_format_plain"
     const val MemoryFormatRaw = "memory_format_raw"
+    const val MemoryFormatWords = "memory_format_words"
     const val MemoryGo = "memory_go"
+    const val MemoryGoToAddress = "memory_go_to_address"
     const val MemoryImageContents = "memory_image_contents"
     const val MemoryImageTitle = "memory_image_title"
     const val MemoryImportText = "memory_import_text"
     const val MemoryNextPage = "memory_next_page"
+    const val MemoryOpenAutoHint = "memory_open_auto_hint"
     const val MemoryOpenFile = "memory_open_file"
-    const val MemoryPasteValues = "memory_paste_values"
+    const val MemoryPageRange = "memory_page_range"
+    const val MemoryPageRangeA11y = "memory_page_range_a11y"
+    const val MemoryPasteAt = "memory_paste_at"
     const val MemoryPreviousPage = "memory_previous_page"
+    const val MemoryRadixBin = "memory_radix_bin"
+    const val MemoryRadixBinary = "memory_radix_binary"
+    const val MemoryRadixDec = "memory_radix_dec"
+    const val MemoryRadixDecimal = "memory_radix_decimal"
+    const val MemoryRadixHex = "memory_radix_hex"
+    const val MemoryRadixHexadecimal = "memory_radix_hexadecimal"
+    const val MemoryRadixLabel = "memory_radix_label"
+    const val MemoryRadixOct = "memory_radix_oct"
+    const val MemoryRadixOctal = "memory_radix_octal"
     const val MemoryRamContents = "memory_ram_contents"
+    const val MemoryRangeEndHex = "memory_range_end_hex"
     const val MemoryRomContents = "memory_rom_contents"
     const val MemoryRuntimeContentsInvalid = "memory_runtime_contents_invalid"
     const val MemoryRuntimeDualWriteCollision = "memory_runtime_dual_write_collision"
     const val MemoryRuntimeImageWidthMismatch = "memory_runtime_image_width_mismatch"
     const val MemoryRuntimeRomDocumentEdit = "memory_runtime_rom_document_edit"
     const val MemorySaveFile = "memory_save_file"
+    const val MemorySelectExtend = "memory_select_extend"
     const val MemorySelectRange = "memory_select_range"
-    const val MemorySelectionEnd = "memory_selection_end"
+    const val MemorySelectStart = "memory_select_start"
+    const val MemorySelectionExtending = "memory_selection_extending"
+    const val MemorySelectionExtendingSummary = "memory_selection_extending_summary"
+    const val MemorySelectionHint = "memory_selection_hint"
+    const val MemorySelectionRange = "memory_selection_range"
     const val MemorySelectionValue = "memory_selection_value"
     const val MemoryStartAddress = "memory_start_address"
+    const val MemoryToolChoose = "memory_tool_choose"
     const val MemoryToolDimensions = "memory_tool_dimensions"
-    const val MemoryToolEdit = "memory_tool_edit"
     const val MemoryToolInvalid = "memory_tool_invalid"
+    const val MemoryToolLabelledDetail = "memory_tool_labelled_detail"
+    const val MemoryToolLocation = "memory_tool_location"
+    const val MemoryToolNone = "memory_tool_none"
     const val MemoryToolNotApplied = "memory_tool_not_applied"
     const val MemoryToolNotMemory = "memory_tool_not_memory"
     const val MemoryToolRamUpdated = "memory_tool_ram_updated"
@@ -2339,26 +3177,28 @@ object Messages {
     const val MemoryToolSessionUnavailable = "memory_tool_session_unavailable"
     const val MemoryToolTitle = "memory_tool_title"
     const val MemoryToolUnavailable = "memory_tool_unavailable"
+    const val MemoryUnappliedChanges = "memory_unapplied_changes"
     const val MemoryValueRadix = "memory_value_radix"
     const val MemoryWordBits = "memory_word_bits"
+    const val MemoryWordNext = "memory_word_next"
+    const val MemoryWordPrevious = "memory_word_previous"
     const val MenuBack = "menu_back"
     const val MenuEdit = "menu_edit"
     const val MenuExample = "menu_example"
     const val MenuFile = "menu_file"
     const val MenuFindAction = "menu_find_action"
+    const val MenuFpga = "menu_fpga"
     const val MenuHelp = "menu_help"
     const val MenuImportExportCirc = "menu_import_export_circ"
+    const val MenuOpenExample = "menu_open_example"
     const val MenuPause = "menu_pause"
     const val MenuPreferences = "menu_preferences"
     const val MenuProject = "menu_project"
     const val MenuProjects = "menu_projects"
-    const val MenuResetSimulation = "menu_reset_simulation"
     const val MenuRun = "menu_run"
     const val MenuSimulate = "menu_simulate"
     const val MenuSimulationOptions = "menu_simulation_options"
-    const val MenuStepEvent = "menu_step_event"
     const val MenuTickCycle = "menu_tick_cycle"
-    const val MenuTickFrequency = "menu_tick_frequency"
     const val MenuTickOnce = "menu_tick_once"
     const val MenuView = "menu_view"
     const val MenuWarnings = "menu_warnings"
@@ -2368,6 +3208,7 @@ object Messages {
     const val MouseMappingMenu = "mouse_mapping_menu"
     const val MouseMappingMiddle = "mouse_mapping_middle"
     const val MouseMappingPrimary = "mouse_mapping_primary"
+    const val MouseMappingRemove = "mouse_mapping_remove"
     const val MouseMappingRow = "mouse_mapping_row"
     const val MouseMappingSecondary = "mouse_mapping_secondary"
     const val MouseMappingText = "mouse_mapping_text"
@@ -2381,6 +3222,7 @@ object Messages {
     const val OriginalCircExportHexPointConflict = "original_circ_export_hex_point_conflict"
     const val OriginalCircExportMultiplierIncompatible = "original_circ_export_multiplier_incompatible"
     const val OriginalCircExportSourceRequired = "original_circ_export_source_required"
+    const val PastePreviewConfirm = "paste_preview_confirm"
     const val PlaExportButton = "pla_export_button"
     const val PlaFileNoData = "pla_file_no_data"
     const val PlaFileOpenError = "pla_file_open_error"
@@ -2398,6 +3240,14 @@ object Messages {
     const val PlacementAutoLabelHint = "placement_auto_label_hint"
     const val PlacementAutoLabelInvalid = "placement_auto_label_invalid"
     const val PlacementAutoLabelStart = "placement_auto_label_start"
+    const val PlacementStepperDecrease = "placement_stepper_decrease"
+    const val PlacementStepperIncrease = "placement_stepper_increase"
+    const val PlacementToolAttributes = "placement_tool_attributes"
+    const val PlacementToolAttributesHint = "placement_tool_attributes_hint"
+    const val PlacementToolAttributesShort = "placement_tool_attributes_short"
+    const val PlacementToolAttributesTitle = "placement_tool_attributes_title"
+    const val PlacementToolFacing = "placement_tool_facing"
+    const val PlacementToolStrip = "placement_tool_strip"
     const val PortableBundleExportFailed = "portable_bundle_export_failed"
     const val PortableBundleExtraCollision = "portable_bundle_extra_collision"
     const val PortableBundleOpenFailed = "portable_bundle_open_failed"
@@ -2439,6 +3289,7 @@ object Messages {
     const val PreferencesAppearanceShowGrid = "preferences_appearance_show_grid"
     const val PreferencesAttributeHalo = "preferences_attribute_halo"
     const val PreferencesBinary = "preferences_binary"
+    const val PreferencesChoiceChange = "preferences_choice_change"
     const val PreferencesChoiceDescription = "preferences_choice_description"
     const val PreferencesColorCanvas = "preferences_color_canvas"
     const val PreferencesColorClockFrequency = "preferences_color_clock_frequency"
@@ -2461,7 +3312,6 @@ object Messages {
     const val PreferencesColorKmapCellText = "preferences_color_kmap_cell_text"
     const val PreferencesColorKmapGroup = "preferences_color_kmap_group"
     const val PreferencesColorRestore = "preferences_color_restore"
-    const val PreferencesColorRole = "preferences_color_role"
     const val PreferencesColorSignalBus = "preferences_color_signal_bus"
     const val PreferencesColorSignalError = "preferences_color_signal_error"
     const val PreferencesColorSignalFloating = "preferences_color_signal_floating"
@@ -2479,7 +3329,18 @@ object Messages {
     const val PreferencesColorWidthErrorCaption = "preferences_color_width_error_caption"
     const val PreferencesColorWidthErrorHighlight = "preferences_color_width_error_highlight"
     const val PreferencesColors = "preferences_colors"
-    const val PreferencesColorsRestore = "preferences_colors_restore"
+    const val PreferencesColorsGroupAnalysis = "preferences_colors_group_analysis"
+    const val PreferencesColorsGroupCanvas = "preferences_colors_group_canvas"
+    const val PreferencesColorsGroupFpga = "preferences_colors_group_fpga"
+    const val PreferencesColorsGroupKmap = "preferences_colors_group_kmap"
+    const val PreferencesColorsGroupSignals = "preferences_colors_group_signals"
+    const val PreferencesColorsGroupText = "preferences_colors_group_text"
+    const val PreferencesColorsHelp = "preferences_colors_help"
+    const val PreferencesColorsRestoreConfirmDark = "preferences_colors_restore_confirm_dark"
+    const val PreferencesColorsRestoreConfirmLight = "preferences_colors_restore_confirm_light"
+    const val PreferencesColorsRestoreConfirmLightPlain = "preferences_colors_restore_confirm_light_plain"
+    const val PreferencesColorsRestoreConfirmTitle = "preferences_colors_restore_confirm_title"
+    const val PreferencesColorsRestoreTheme = "preferences_colors_restore_theme"
     const val PreferencesColorsThemeDark = "preferences_colors_theme_dark"
     const val PreferencesColorsThemeLight = "preferences_colors_theme_light"
     const val PreferencesComponentTips = "preferences_component_tips"
@@ -2489,6 +3350,7 @@ object Messages {
     const val PreferencesCreationScope = "preferences_creation_scope"
     const val PreferencesDefaultAppearance = "preferences_default_appearance"
     const val PreferencesDefaultFrequency = "preferences_default_frequency"
+    const val PreferencesDefaultTickFrequency = "preferences_default_tick_frequency"
     const val PreferencesDin40700 = "preferences_din40700"
     const val PreferencesDontCareChar = "preferences_dont_care_char"
     const val PreferencesEditorTheme = "preferences_editor_theme"
@@ -2503,7 +3365,6 @@ object Messages {
     const val PreferencesFpgaSuppressOpenPins = "preferences_fpga_suppress_open_pins"
     const val PreferencesFpgaTitle = "preferences_fpga_title"
     const val PreferencesFpgaVhdlUpperCase = "preferences_fpga_vhdl_upper_case"
-    const val PreferencesFrequencyHint = "preferences_frequency_hint"
     const val PreferencesFrequencyInvalid = "preferences_frequency_invalid"
     const val PreferencesFrequencyScope = "preferences_frequency_scope"
     const val PreferencesGateShapes = "preferences_gate_shapes"
@@ -2530,11 +3391,19 @@ object Messages {
     const val PreferencesReadFailed = "preferences_read_failed"
     const val PreferencesRemoveUnusedLibraries = "preferences_remove_unused_libraries"
     const val PreferencesRestoreDefaults = "preferences_restore_defaults"
+    const val PreferencesRestoreDefaultsConfirm = "preferences_restore_defaults_confirm"
+    const val PreferencesRestoreDefaultsTitle = "preferences_restore_defaults_title"
     const val PreferencesRestoreShortcuts = "preferences_restore_shortcuts"
     const val PreferencesSaveFailed = "preferences_save_failed"
     const val PreferencesSavedInvalid = "preferences_saved_invalid"
     const val PreferencesSearchDoubleShift = "preferences_search_double_shift"
+    const val PreferencesSectionCollapsed = "preferences_section_collapsed"
+    const val PreferencesSectionEditing = "preferences_section_editing"
+    const val PreferencesSectionExpanded = "preferences_section_expanded"
+    const val PreferencesSectionInternational = "preferences_section_international"
     const val PreferencesSectionLayout = "preferences_section_layout"
+    const val PreferencesSectionSimulation = "preferences_section_simulation"
+    const val PreferencesSectionWindow = "preferences_section_window"
     const val PreferencesShortcutClear = "preferences_shortcut_clear"
     const val PreferencesShortcutConflict = "preferences_shortcut_conflict"
     const val PreferencesShortcutInputHelp = "preferences_shortcut_input_help"
@@ -2571,6 +3440,7 @@ object Messages {
     const val PreferencesWirePokeNoSecondRadix = "preferences_wire_poke_no_second_radix"
     const val PreferencesWirePokePrimaryRadix = "preferences_wire_poke_primary_radix"
     const val PreferencesWirePokeSecondaryRadix = "preferences_wire_poke_secondary_radix"
+    const val ProjectAddCircuit = "project_add_circuit"
     const val ProjectCircuitCount = "project_circuit_count"
     const val ProjectComponentCount = "project_component_count"
     const val ProjectComponentsHeading = "project_components_heading"
@@ -2579,15 +3449,31 @@ object Messages {
     const val ProjectGraphUnavailable = "project_graph_unavailable"
     const val ProjectImportFailed = "project_import_failed"
     const val ProjectMergeChoose = "project_merge_choose"
+    const val ProjectMergeConflicts = "project_merge_conflicts"
+    const val ProjectMergeDone = "project_merge_done"
+    const val ProjectMergeDoneRenamed = "project_merge_done_renamed"
     const val ProjectMergeFailed = "project_merge_failed"
+    const val ProjectMergeFile = "project_merge_file"
+    const val ProjectMergeRename = "project_merge_rename"
     const val ProjectMergeSelection = "project_merge_selection"
+    const val ProjectMergeSummary = "project_merge_summary"
     const val ProjectMergeTitle = "project_merge_title"
+    const val ProjectMergeUses = "project_merge_uses"
+    const val ProjectMoveCircuitDown = "project_move_circuit_down"
+    const val ProjectMoveCircuitUp = "project_move_circuit_up"
+    const val ProjectRemoveCircuit = "project_remove_circuit"
+    const val ProjectSetMainCircuit = "project_set_main_circuit"
     const val ProjectTemplateChoose = "project_template_choose"
     const val ProjectTemplateCustom = "project_template_custom"
     const val ProjectTemplateEmpty = "project_template_empty"
     const val ProjectTemplatePlain = "project_template_plain"
     const val ProjectTemplateReadFailed = "project_template_read_failed"
     const val ProjectTemplateRemove = "project_template_remove"
+    const val ProjectTemplateRemoveSelected = "project_template_remove_selected"
+    const val ProjectTemplateRemoveSelectedNamed = "project_template_remove_selected_named"
+    const val ProjectTemplateRemoveTitle = "project_template_remove_title"
+    const val ProjectTemplateRemoveUnselected = "project_template_remove_unselected"
+    const val ProjectTemplateRemoveUnselectedNamed = "project_template_remove_unselected_named"
     const val ProjectTemplateSaveFailed = "project_template_save_failed"
     const val ProjectTemplateSize = "project_template_size"
     const val ProjectTemplateStarted = "project_template_started"
@@ -2598,7 +3484,15 @@ object Messages {
     const val ProjectToolbarAddTool = "project_toolbar_add_tool"
     const val ProjectToolbarEmpty = "project_toolbar_empty"
     const val ProjectToolbarFind = "project_toolbar_find"
+    const val ProjectToolbarGroupCircuits = "project_toolbar_group_circuits"
+    const val ProjectToolbarGroupTools = "project_toolbar_group_tools"
+    const val ProjectToolbarInsertSeparatorAfter = "project_toolbar_insert_separator_after"
+    const val ProjectToolbarInsertToolAfter = "project_toolbar_insert_tool_after"
+    const val ProjectToolbarInsertingAfter = "project_toolbar_inserting_after"
+    const val ProjectToolbarMore = "project_toolbar_more"
+    const val ProjectToolbarMoveBottom = "project_toolbar_move_bottom"
     const val ProjectToolbarMoveDown = "project_toolbar_move_down"
+    const val ProjectToolbarMoveTop = "project_toolbar_move_top"
     const val ProjectToolbarMoveUp = "project_toolbar_move_up"
     const val ProjectToolbarRemove = "project_toolbar_remove"
     const val ProjectToolbarSeparator = "project_toolbar_separator"
@@ -2637,7 +3531,14 @@ object Messages {
     const val SearchRunning = "search_running"
     const val SearchSap1Command = "search_sap1_command"
     const val SearchTickCommand = "search_tick_command"
+    const val SelectionAddShort = "selection_add_short"
+    const val SelectionAddToggle = "selection_add_toggle"
+    const val SelectionAddingChip = "selection_adding_chip"
+    const val SelectionAddingStop = "selection_adding_stop"
     const val SelectionHeading = "selection_heading"
+    const val SequentialPokeCurrent = "sequential_poke_current"
+    const val SequentialPokeTitle = "sequential_poke_title"
+    const val SequentialPokeTitleStage = "sequential_poke_title_stage"
     const val SharedVhdlCreate = "shared_vhdl_create"
     const val SharedVhdlEdit = "shared_vhdl_edit"
     const val SharedVhdlEntityName = "shared_vhdl_entity_name"
@@ -2646,6 +3547,10 @@ object Messages {
     const val SharedVhdlMissing = "shared_vhdl_missing"
     const val SharedVhdlNameConflict = "shared_vhdl_name_conflict"
     const val SharedVhdlSaved = "shared_vhdl_saved"
+    const val SheetDiscardText = "sheet_discard_text"
+    const val SheetDiscardTitle = "sheet_discard_title"
+    const val SheetKeepEditing = "sheet_keep_editing"
+    const val SheetPropertiesOf = "sheet_properties_of"
     const val ShortcutAddToolRotate = "shortcut_add_tool_rotate"
     const val ShortcutAutoLabelHide = "shortcut_auto_label_hide"
     const val ShortcutAutoLabelSelfNumberedStop = "shortcut_auto_label_self_numbered_stop"
@@ -2663,10 +3568,15 @@ object Messages {
     const val ShortcutProjMoveUp = "shortcut_proj_move_up"
     const val ShortcutToolSelect = "shortcut_tool_select"
     const val ShortcutWindowClose = "shortcut_window_close"
+    const val SignalsEmpty = "signals_empty"
     const val SignalsHeading = "signals_heading"
     const val SimulationAutomaticTicks = "simulation_automatic_ticks"
+    const val SimulationControlAutoTick = "simulation_control_auto_tick"
+    const val SimulationControlStepEvent = "simulation_control_step_event"
+    const val SimulationControlTickFull = "simulation_control_tick_full"
+    const val SimulationControlTickHalf = "simulation_control_tick_half"
+    const val SimulationControlsTitle = "simulation_controls_title"
     const val SimulationEventStep = "simulation_event_step"
-    const val SimulationFrequency = "simulation_frequency"
     const val SimulationInsertMode = "simulation_insert_mode"
     const val SimulationMeasuredTickRate = "simulation_measured_tick_rate"
     const val SimulationOptionsApply = "simulation_options_apply"
@@ -2678,10 +3588,8 @@ object Messages {
     const val SimulationOptionsErrorPositiveLimit = "simulation_options_error_positive_limit"
     const val SimulationOptionsErrorValue = "simulation_options_error_value"
     const val SimulationOptionsErrorXmlOpening = "simulation_options_error_xml_opening"
-    const val SimulationOptionsFrequency = "simulation_options_frequency"
     const val SimulationOptionsImportInvalid = "simulation_options_import_invalid"
     const val SimulationOptionsMemoryUnknown = "simulation_options_memory_unknown"
-    const val SimulationOptionsPositiveFrequency = "simulation_options_positive_frequency"
     const val SimulationOptionsPositiveInteger = "simulation_options_positive_integer"
     const val SimulationOptionsPropagationLimit = "simulation_options_propagation_limit"
     const val SimulationOptionsRestoreDefaults = "simulation_options_restore_defaults"
@@ -2690,10 +3598,18 @@ object Messages {
     const val SimulationOptionsUndefinedIgnore = "simulation_options_undefined_ignore"
     const val SimulationOptionsUndefinedInputs = "simulation_options_undefined_inputs"
     const val SimulationOutputValue = "simulation_output_value"
+    const val SimulationPausedOutsideMain = "simulation_paused_outside_main"
+    const val SimulationResetUndone = "simulation_reset_undone"
     const val SimulationSignalValue = "simulation_signal_value"
     const val SimulationSteps = "simulation_steps"
+    const val SimulationTickFrequency = "simulation_tick_frequency"
+    const val SimulationTickFrequencyCustom = "simulation_tick_frequency_custom"
+    const val SimulationTickFrequencyValue = "simulation_tick_frequency_value"
+    const val SimulationTicks = "simulation_ticks"
     const val SimulationUnsettled = "simulation_unsettled"
     const val SimulationWarningCount = "simulation_warning_count"
+    const val SimulationWarningShow = "simulation_warning_show"
+    const val SimulationWarningSourceGone = "simulation_warning_source_gone"
     const val SimulationWarningsExplanation = "simulation_warnings_explanation"
     const val SimulationWarningsTitle = "simulation_warnings_title"
     const val SocAccessByte = "soc_access_byte"
@@ -2739,12 +3655,16 @@ object Messages {
     const val SocBusErrorRegisterNotFound = "soc_bus_error_register_not_found"
     const val SocBusErrorUnsupportedAccess = "soc_bus_error_unsupported_access"
     const val SocBusErrorWriteOnly = "soc_bus_error_write_only"
+    const val SocBusManualResult = "soc_bus_manual_result"
+    const val SocBusNoTrace = "soc_bus_no_trace"
+    const val SocBusNotConnected = "soc_bus_not_connected"
+    const val SocBusOptionUnlabeled = "soc_bus_option_unlabeled"
     const val SocBusTrace = "soc_bus_trace"
     const val SocBusTraceCompare = "soc_bus_trace_compare"
     const val SocBusTraceEmpty = "soc_bus_trace_empty"
-    const val SocBusTraceLocalPath = "soc_bus_trace_local_path"
+    const val SocBusTraceLocalView = "soc_bus_trace_local_view"
     const val SocBusTraceNoAccess = "soc_bus_trace_no_access"
-    const val SocBusTracePath = "soc_bus_trace_path"
+    const val SocBusTracePathNumbered = "soc_bus_trace_path_numbered"
     const val SocBusTraceRead = "soc_bus_trace_read"
     const val SocBusTraceReadWrite = "soc_bus_trace_read_write"
     const val SocBusTraceRequest = "soc_bus_trace_request"
@@ -2758,6 +3678,7 @@ object Messages {
     const val SocBusTransactionError = "soc_bus_transaction_error"
     const val SocClearTrace = "soc_clear_trace"
     const val SocClockHelp = "soc_clock_help"
+    const val SocComponentChipPosition = "soc_component_chip_position"
     const val SocComponentIdentity = "soc_component_identity"
     const val SocControl = "soc_control"
     const val SocControlUnsupported = "soc_control_unsupported"
@@ -2796,6 +3717,7 @@ object Messages {
     const val SocHexAddress = "soc_hex_address"
     const val SocHexData = "soc_hex_data"
     const val SocHexValue = "soc_hex_value"
+    const val SocHexValueInvalid = "soc_hex_value_invalid"
     const val SocInstanceUnavailable = "soc_instance_unavailable"
     const val SocInstructionEntry = "soc_instruction_entry"
     const val SocInstructionFetch = "soc_instruction_fetch"
@@ -2803,6 +3725,7 @@ object Messages {
     const val SocLoadElf = "soc_load_elf"
     const val SocMemoryAddressRange = "soc_memory_address_range"
     const val SocMemoryEntry = "soc_memory_entry"
+    const val SocMemoryMapDeviceOf = "soc_memory_map_device_of"
     const val SocMemoryMapHide = "soc_memory_map_hide"
     const val SocMemoryMapPlic = "soc_memory_map_plic"
     const val SocMemoryMapShow = "soc_memory_map_show"
@@ -2825,7 +3748,7 @@ object Messages {
     const val SocProgramShow = "soc_program_show"
     const val SocRead = "soc_read"
     const val SocRefreshVga = "soc_refresh_vga"
-    const val SocRegisterIndex = "soc_register_index"
+    const val SocRegisterChoice = "soc_register_choice"
     const val SocRegisterInvalid = "soc_register_invalid"
     const val SocRegisterValue = "soc_register_value"
     const val SocRegisters = "soc_registers"
@@ -2840,6 +3763,9 @@ object Messages {
     const val SocToolTitle = "soc_tool_title"
     const val SocUartState = "soc_uart_state"
     const val SocWrite = "soc_write"
+    const val SplitterBitNone = "splitter_bit_none"
+    const val SplitterBitOutput = "splitter_bit_output"
+    const val StatusAdditiveTouch = "status_additive_touch"
     const val StatusAndLoaded = "status_and_loaded"
     const val StatusCircuitCreated = "status_circuit_created"
     const val StatusCircuitDeleted = "status_circuit_deleted"
@@ -2856,7 +3782,7 @@ object Messages {
     const val StatusComponentsSelected = "status_components_selected"
     const val StatusConnectionCancelled = "status_connection_cancelled"
     const val StatusCopyHint = "status_copy_hint"
-    const val StatusEditTool = "status_edit_tool"
+    const val StatusEditToolTouch = "status_edit_tool_touch"
     const val StatusEmptyCircuit = "status_empty_circuit"
     const val StatusExampleLoaded = "status_example_loaded"
     const val StatusFileOpened = "status_file_opened"
@@ -2865,6 +3791,11 @@ object Messages {
     const val StatusInputValue = "status_input_value"
     const val StatusInstanceSelected = "status_instance_selected"
     const val StatusInteract = "status_interact"
+    const val StatusIoControlsInstance = "status_io_controls_instance"
+    const val StatusLineCollapse = "status_line_collapse"
+    const val StatusLineCollapsed = "status_line_collapsed"
+    const val StatusLineExpand = "status_line_expand"
+    const val StatusLineExpanded = "status_line_expanded"
     const val StatusMainCircuit = "status_main_circuit"
     const val StatusMove = "status_move"
     const val StatusMoveCancelled = "status_move_cancelled"
@@ -2874,8 +3805,8 @@ object Messages {
     const val StatusProjectImported = "status_project_imported"
     const val StatusPropertyUpdated = "status_property_updated"
     const val StatusSap1Loaded = "status_sap1_loaded"
-    const val StatusSelect = "status_select"
     const val StatusSelectDestination = "status_select_destination"
+    const val StatusSelectTouch = "status_select_touch"
     const val StatusSelectionCounts = "status_selection_counts"
     const val StatusSelectionMoved = "status_selection_moved"
     const val StatusSelectionRemoved = "status_selection_removed"
@@ -2884,11 +3815,11 @@ object Messages {
     const val StatusStorageRecovered = "status_storage_recovered"
     const val StatusSubcircuitInput = "status_subcircuit_input"
     const val StatusSubcircuitInterfaceLocked = "status_subcircuit_interface_locked"
-    const val StatusWire = "status_wire"
     const val StatusWireConnected = "status_wire_connected"
     const val StatusWireCornerMoved = "status_wire_corner_moved"
     const val StatusWireSelected = "status_wire_selected"
     const val StatusWireSplit = "status_wire_split"
+    const val StatusWireTouch = "status_wire_touch"
     const val SubcircuitDebugBanner = "subcircuit_debug_banner"
     const val SubcircuitDebugConfirmation = "subcircuit_debug_confirmation"
     const val SubcircuitDebugCreate = "subcircuit_debug_create"
@@ -2924,7 +3855,7 @@ object Messages {
     const val TclClientErrorStepObject = "tcl_client_error_step_object"
     const val TclClientErrorTotalSize = "tcl_client_error_total_size"
     const val TclComponentHeading = "tcl_component_heading"
-    const val TclComponentPath = "tcl_component_path"
+    const val TclComponentOriginalFile = "tcl_component_original_file"
     const val TclComponentStart = "tcl_component_start"
     const val TclComponentState = "tcl_component_state"
     const val TclComponentStop = "tcl_component_stop"
@@ -2975,14 +3906,34 @@ object Messages {
     const val TclTkPreviewTitle = "tcl_tk_preview_title"
     const val TclTkSendKey = "tcl_tk_send_key"
     const val TclTkSendReturn = "tcl_tk_send_return"
+    const val TimeDaysAgo = "time_days_ago"
+    const val TimeHoursAgo = "time_hours_ago"
+    const val TimeJustNow = "time_just_now"
+    const val TimeMinutesAgo = "time_minutes_ago"
+    const val TimeMonthsAgo = "time_months_ago"
+    const val TimeYearsAgo = "time_years_ago"
+    const val ToolSheetNoticeDismiss = "tool_sheet_notice_dismiss"
     const val ToolbarToolsTitle = "toolbar_tools_title"
+    const val TouchHelpEditing = "touch_help_editing"
+    const val TouchHelpLibrary = "touch_help_library"
+    const val TouchHelpSimulation = "touch_help_simulation"
+    const val TouchHelpViewport = "touch_help_viewport"
+    const val TraceActionCursorAAtB = "trace_action_cursor_a_at_b"
+    const val TraceActionCursorBAtA = "trace_action_cursor_b_at_a"
     const val TraceAddRamCell = "trace_add_ram_cell"
+    const val TraceAddRamCells = "trace_add_ram_cells"
     const val TraceAllTime = "trace_all_time"
     const val TraceClear = "trace_clear"
+    const val TraceClearConfirmText = "trace_clear_confirm_text"
+    const val TraceClearConfirmTitle = "trace_clear_confirm_title"
     const val TraceClose = "trace_close"
     const val TraceCopied = "trace_copied"
     const val TraceCopy = "trace_copy"
     const val TraceCursorA = "trace_cursor_a"
+    const val TraceCursorB = "trace_cursor_b"
+    const val TraceCursorTarget = "trace_cursor_target"
+    const val TraceCursorTargetA = "trace_cursor_target_a"
+    const val TraceCursorTargetB = "trace_cursor_target_b"
     const val TraceCursors = "trace_cursors"
     const val TraceDone = "trace_done"
     const val TraceDuplicateSignal = "trace_duplicate_signal"
@@ -2992,6 +3943,8 @@ object Messages {
     const val TraceExportWaveDrom = "trace_export_wave_drom"
     const val TraceFileAppend = "trace_file_append"
     const val TraceFileClockReset = "trace_file_clock_reset"
+    const val TraceFileFormat = "trace_file_format"
+    const val TraceFileFormatTimestamped = "trace_file_format_timestamped"
     const val TraceFileHeader = "trace_file_header"
     const val TraceFileLogisim271 = "trace_file_logisim_2_7_1"
     const val TraceFilePause = "trace_file_pause"
@@ -3023,26 +3976,40 @@ object Messages {
     const val TraceNext = "trace_next"
     const val TraceOrderSignals = "trace_order_signals"
     const val TracePause = "trace_pause"
+    const val TracePickerEmpty = "trace_picker_empty"
     const val TracePrevious = "trace_previous"
     const val TraceProjectSignals = "trace_project_signals"
-    const val TraceRamAddress = "trace_ram_address"
-    const val TraceRamAddressRange = "trace_ram_address_range"
+    const val TraceRamCells = "trace_ram_cells"
+    const val TraceRamCellsAdds = "trace_ram_cells_adds"
+    const val TraceRamCellsHelp = "trace_ram_cells_help"
+    const val TraceRamCellsInvalid = "trace_ram_cells_invalid"
+    const val TraceRamCellsOutOfRange = "trace_ram_cells_out_of_range"
+    const val TraceRamCellsSkipped = "trace_ram_cells_skipped"
     const val TraceRecursiveProject = "trace_recursive_project"
     const val TraceResume = "trace_resume"
     const val TraceSelectHelp = "trace_select_help"
     const val TraceSelectSignals = "trace_select_signals"
     const val TraceSelectorLimit = "trace_selector_limit"
+    const val TraceShowAllComponents = "trace_show_all_components"
     const val TraceSignalA11y = "trace_signal_a11y"
     const val TraceSignalLimit = "trace_signal_limit"
+    const val TraceSignalNumbered = "trace_signal_numbered"
     const val TraceSummary = "trace_summary"
     const val TraceTable = "trace_table"
+    const val TraceTableCellA11y = "trace_table_cell_a11y"
+    const val TraceTableCellSeparator = "trace_table_cell_separator"
+    const val TraceTableRowA11y = "trace_table_row_a11y"
     const val TraceTime = "trace_time"
     const val TraceTimeBackwards = "trace_time_backwards"
     const val TraceTimeline = "trace_timeline"
     const val TraceTitle = "trace_title"
     const val TraceUnnamedSignal = "trace_unnamed_signal"
     const val TraceWaveDromCopied = "trace_wave_drom_copied"
+    const val TraceWaveforms = "trace_waveforms"
+    const val TraceWaveformsState = "trace_waveforms_state"
     const val TraceWindow = "trace_window"
+    const val TraceWindowGesturesA = "trace_window_gestures_a"
+    const val TraceWindowGesturesB = "trace_window_gestures_b"
     const val TraceZoomIn = "trace_zoom_in"
     const val TraceZoomOut = "trace_zoom_out"
     const val Untitled = "untitled"
@@ -3057,6 +4024,8 @@ object Messages {
     const val VectorBindingWidth = "vector_binding_width"
     const val VectorCancel = "vector_cancel"
     const val VectorCancelled = "vector_cancelled"
+    const val VectorCheck = "vector_check"
+    const val VectorCircuit = "vector_circuit"
     const val VectorCompleted = "vector_completed"
     const val VectorCopied = "vector_copied"
     const val VectorDifference = "vector_difference"
@@ -3075,22 +4044,28 @@ object Messages {
     const val VectorFail = "vector_fail"
     const val VectorFile = "vector_file"
     const val VectorFileA11y = "vector_file_a11y"
+    const val VectorFileOpenFailed = "vector_file_open_failed"
+    const val VectorFileOpened = "vector_file_opened"
+    const val VectorFileUtf8 = "vector_file_utf8"
     const val VectorHelp = "vector_help"
     const val VectorIncompatibleWidth = "vector_incompatible_width"
     const val VectorInputDcInternal = "vector_input_dc_internal"
     const val VectorInputValue = "vector_input_value"
     const val VectorInvalid = "vector_invalid"
     const val VectorInvalidEscape = "vector_invalid_escape"
-    const val VectorLoad = "vector_load"
     const val VectorMetadataPair = "vector_metadata_pair"
     const val VectorMissingCircuit = "vector_missing_circuit"
     const val VectorNeedPin = "vector_need_pin"
+    const val VectorOpenFile = "vector_open_file"
     const val VectorOverflow = "vector_overflow"
     const val VectorPass = "vector_pass"
     const val VectorPause = "vector_pause"
     const val VectorPaused = "vector_paused"
     const val VectorQuotedData = "vector_quoted_data"
     const val VectorReady = "vector_ready"
+    const val VectorReplaceConfirm = "vector_replace_confirm"
+    const val VectorReplaceText = "vector_replace_text"
+    const val VectorReplaceTitle = "vector_replace_title"
     const val VectorReset = "vector_reset"
     const val VectorRowLimit = "vector_row_limit"
     const val VectorRowPins = "vector_row_pins"
@@ -3132,6 +4107,7 @@ object Messages {
     const val VisualExportInvalidMargin = "visual_export_invalid_margin"
     const val VisualExportInvalidScale = "visual_export_invalid_scale"
     const val VisualExportMargin = "visual_export_margin"
+    const val VisualExportOutputSize = "visual_export_output_size"
     const val VisualExportPdfHeader = "visual_export_pdf_header"
     const val VisualExportPdfHeaderHelp = "visual_export_pdf_header_help"
     const val VisualExportPdfHelp = "visual_export_pdf_help"
@@ -3146,6 +4122,9 @@ object Messages {
     const val VisualExportSave = "visual_export_save"
     const val VisualExportSaved = "visual_export_saved"
     const val VisualExportScale = "visual_export_scale"
+    const val VisualExportScaleHelp = "visual_export_scale_help"
+    const val VisualExportScaleSlider = "visual_export_scale_slider"
+    const val VisualExportScaleValue = "visual_export_scale_value"
     const val VisualExportSelectObjects = "visual_export_select_objects"
     const val VisualExportSelection = "visual_export_selection"
     const val VisualExportShare = "visual_export_share"
@@ -3154,25 +4133,46 @@ object Messages {
     const val VisualExportTitle = "visual_export_title"
     const val VisualExportTransparent = "visual_export_transparent"
     const val VisualExportUnknownError = "visual_export_unknown_error"
-    const val WorkspaceA11yShowTrash = "workspace_a11y_show_trash"
+    const val WorkspaceA11yCloseTab = "workspace_a11y_close_tab"
     const val WorkspaceAttachmentAccess = "workspace_attachment_access"
     const val WorkspaceAttachmentCorrupt = "workspace_attachment_corrupt"
     const val WorkspaceAttachmentInvalid = "workspace_attachment_invalid"
     const val WorkspaceAttachmentLimit = "workspace_attachment_limit"
     const val WorkspaceAttachmentMissing = "workspace_attachment_missing"
+    const val WorkspaceBannerReload = "workspace_banner_reload"
+    const val WorkspaceBannerRetry = "workspace_banner_retry"
+    const val WorkspaceBannerSaveCopy = "workspace_banner_save_copy"
     const val WorkspaceCatalogRecovered = "workspace_catalog_recovered"
+    const val WorkspaceCloseChangedExplanation = "workspace_close_changed_explanation"
+    const val WorkspaceCloseDontSaveToFile = "workspace_close_dont_save_to_file"
+    const val WorkspaceCloseKeepChanges = "workspace_close_keep_changes"
+    const val WorkspaceCloseLinkedExplanation = "workspace_close_linked_explanation"
+    const val WorkspaceCloseLinkedUnconfirmedExplanation = "workspace_close_linked_unconfirmed_explanation"
     const val WorkspaceCloseNamedSession = "workspace_close_named_session"
+    const val WorkspaceCloseRevertToOpened = "workspace_close_revert_to_opened"
+    const val WorkspaceCloseSaveToFile = "workspace_close_save_to_file"
     const val WorkspaceCloseSession = "workspace_close_session"
-    const val WorkspaceCloseSessionConfirmation = "workspace_close_session_confirmation"
+    const val WorkspaceCloseUnsavedExplanation = "workspace_close_unsaved_explanation"
     const val WorkspaceConflictChanged = "workspace_conflict_changed"
     const val WorkspaceConflictRemoved = "workspace_conflict_removed"
     const val WorkspaceConflictRevision = "workspace_conflict_revision"
     const val WorkspaceConflictSaved = "workspace_conflict_saved"
     const val WorkspaceCopyName = "workspace_copy_name"
     const val WorkspaceCopyNotOpened = "workspace_copy_not_opened"
-    const val WorkspaceDiscardPending = "workspace_discard_pending"
+    const val WorkspaceCreate = "workspace_create"
+    const val WorkspaceCurrentlyOpen = "workspace_currently_open"
+    const val WorkspaceDeletePermanently = "workspace_delete_permanently"
+    const val WorkspaceDeletePermanentlyExplanation = "workspace_delete_permanently_explanation"
+    const val WorkspaceDeletePermanentlyTitle = "workspace_delete_permanently_title"
+    const val WorkspaceDeletedPermanently = "workspace_deleted_permanently"
+    const val WorkspaceDismissNotice = "workspace_dismiss_notice"
     const val WorkspaceDocumentUnavailable = "workspace_document_unavailable"
+    const val WorkspaceEdited = "workspace_edited"
+    const val WorkspaceEditedWithId = "workspace_edited_with_id"
     const val WorkspaceEmpty = "workspace_empty"
+    const val WorkspaceEmptyTrash = "workspace_empty_trash"
+    const val WorkspaceEmptyTrashExplanation = "workspace_empty_trash_explanation"
+    const val WorkspaceEmptyTrashTitle = "workspace_empty_trash_title"
     const val WorkspaceErrorAccess = "workspace_error_access"
     const val WorkspaceErrorCatalogLimit = "workspace_error_catalog_limit"
     const val WorkspaceErrorDocument = "workspace_error_document"
@@ -3190,43 +4190,71 @@ object Messages {
     const val WorkspaceErrorViewLimit = "workspace_error_view_limit"
     const val WorkspaceExternalLinkMismatch = "workspace_external_link_mismatch"
     const val WorkspaceExternalLinkUnreadable = "workspace_external_link_unreadable"
+    const val WorkspaceImportedProject = "workspace_imported_project"
     const val WorkspaceMigrated = "workspace_migrated"
+    const val WorkspaceMoreActionsNamed = "workspace_more_actions_named"
     const val WorkspaceMoveToTrash = "workspace_move_to_trash"
+    const val WorkspaceMovedToTrash = "workspace_moved_to_trash"
     const val WorkspaceName = "workspace_name"
     const val WorkspaceNewProject = "workspace_new_project"
+    const val WorkspaceNoProjectExplanation = "workspace_no_project_explanation"
+    const val WorkspaceNoProjectTitle = "workspace_no_project_title"
     const val WorkspaceNoRecentFiles = "workspace_no_recent_files"
+    const val WorkspaceNotSaved = "workspace_not_saved"
+    const val WorkspaceNotSavedToFile = "workspace_not_saved_to_file"
+    const val WorkspaceNotSavedToItsFile = "workspace_not_saved_to_its_file"
+    const val WorkspaceOpenNamed = "workspace_open_named"
     const val WorkspaceOpenOriginal = "workspace_open_original"
-    const val WorkspaceOpenProject = "workspace_open_project"
     const val WorkspaceOpenRecent = "workspace_open_recent"
+    const val WorkspaceOpenedHoursAgo = "workspace_opened_hours_ago"
+    const val WorkspaceOpenedJustNow = "workspace_opened_just_now"
+    const val WorkspaceOpenedMinutesAgo = "workspace_opened_minutes_ago"
     const val WorkspaceProjects = "workspace_projects"
     const val WorkspaceReadOnly = "workspace_read_only"
     const val WorkspaceReadOnlyOriginal = "workspace_read_only_original"
     const val WorkspaceRecentCopy = "workspace_recent_copy"
     const val WorkspaceRecentOriginal = "workspace_recent_original"
     const val WorkspaceRecoveredProject = "workspace_recovered_project"
-    const val WorkspaceReloadSaved = "workspace_reload_saved"
+    const val WorkspaceRemoveRecent = "workspace_remove_recent"
     const val WorkspaceRenameProject = "workspace_rename_project"
     const val WorkspaceRestore = "workspace_restore"
     const val WorkspaceRetryOpen = "workspace_retry_open"
-    const val WorkspaceRetrySave = "workspace_retry_save"
-    const val WorkspaceRevision = "workspace_revision"
+    const val WorkspaceReverted = "workspace_reverted"
     const val WorkspaceRevisionRecovered = "workspace_revision_recovered"
-    const val WorkspaceSaveLocalCopy = "workspace_save_local_copy"
+    const val WorkspaceSaveFailed = "workspace_save_failed"
+    const val WorkspaceSavedElsewhere = "workspace_saved_elsewhere"
     const val WorkspaceSavedRevision = "workspace_saved_revision"
+    const val WorkspaceSavedStatus = "workspace_saved_status"
+    const val WorkspaceSavedToFile = "workspace_saved_to_file"
+    const val WorkspaceSavedToItsFile = "workspace_saved_to_its_file"
     const val WorkspaceSaving = "workspace_saving"
     const val WorkspaceShowTrash = "workspace_show_trash"
     const val WorkspaceSourceNotCommitted = "workspace_source_not_committed"
     const val WorkspaceSourceNotCurrent = "workspace_source_not_current"
+    const val WorkspaceTabChanged = "workspace_tab_changed"
+    const val WorkspaceTabCreated = "workspace_tab_created"
+    const val WorkspaceTabDisambiguated = "workspace_tab_disambiguated"
     const val WorkspaceTitle = "workspace_title"
+    const val WorkspaceTrashEmptied = "workspace_trash_emptied"
     const val WorkspaceTrashEmpty = "workspace_trash_empty"
+    const val WorkspaceUndo = "workspace_undo"
+    const val WorkspaceUndoFailed = "workspace_undo_failed"
     const val WorkspaceUnsavedChanges = "workspace_unsaved_changes"
     const val WorkspaceUnsavedDraft = "workspace_unsaved_draft"
+    const val WorkspaceUntitledProject = "workspace_untitled_project"
     const val WorkspaceViewIdentityRecovered = "workspace_view_identity_recovered"
     const val XmlEdit = "xml_edit"
+    const val XmlImportCopyHint = "xml_import_copy_hint"
+    const val XmlImportUnchanged = "xml_import_unchanged"
     const val XmlLargeHelp = "xml_large_help"
+    const val XmlPasteEmpty = "xml_paste_empty"
     const val XmlPreviewSize = "xml_preview_size"
+    const val XmlUndoPaste = "xml_undo_paste"
+    const val ZoomCustom = "zoom_custom"
     const val ZoomPercent = "zoom_percent"
     const val ZoomPercentRange = "zoom_percent_range"
+    const val ZoomPresetPercent = "zoom_preset_percent"
+    const val ZoomReset = "zoom_reset"
     const val ZoomSlider = "zoom_slider"
     const val ZoomTitle = "zoom_title"
 }
@@ -3265,19 +4293,30 @@ internal val appMessageCatalog: Map<String, MessageTemplate> = buildMap {
     putAll(messageCatalogPart30())
     putAll(messageCatalogPart31())
     putAll(messageCatalogPart32())
+    putAll(messageCatalogPart33())
+    putAll(messageCatalogPart34())
+    putAll(messageCatalogPart35())
+    putAll(messageCatalogPart36())
+    putAll(messageCatalogPart37())
+    putAll(messageCatalogPart38())
+    putAll(messageCatalogPart39())
+    putAll(messageCatalogPart40())
+    putAll(messageCatalogPart41())
+    putAll(messageCatalogPart42())
 }
 
 private fun messageCatalogPart0(): Map<String, MessageTemplate> = mapOf(
+    "a11y_button_press" to MessageTemplate(english = MessageForms(other = "Press {name}"), portuguese = MessageForms(other = "Pressionar {name}")),
     "a11y_canvas" to MessageTemplate(english = MessageForms(other = "Circuit area. {outputs}. Use two fingers to zoom and pan."), portuguese = MessageForms(other = "Área do circuito. {outputs}. Use dois dedos para ampliar e deslocar.")),
     "a11y_canvas_running_snapshot" to MessageTemplate(english = MessageForms(other = "Simulation running. Captured reading: {value}"), portuguese = MessageForms(other = "Simulação em execução. Leitura capturada: {value}")),
-    "a11y_change_frequency" to MessageTemplate(english = MessageForms(other = "Change step frequency"), portuguese = MessageForms(other = "Alterar frequência dos passos")),
     "a11y_copy_selection" to MessageTemplate(english = MessageForms(other = "Copy selection"), portuguese = MessageForms(other = "Copiar seleção")),
     "a11y_cut_selection" to MessageTemplate(english = MessageForms(other = "Cut selection"), portuguese = MessageForms(other = "Recortar seleção")),
-    "a11y_delete_selection" to MessageTemplate(english = MessageForms(other = "Delete selection"), portuguese = MessageForms(other = "Excluir seleção")),
+    "a11y_delete_selection" to MessageTemplate(english = MessageForms(other = "Delete selection"), portuguese = MessageForms(other = "Apagar seleção")),
     "a11y_direction" to MessageTemplate(english = MessageForms(other = "Direction {name}"), portuguese = MessageForms(other = "Orientação {name}")),
     "a11y_duplicate_selection" to MessageTemplate(english = MessageForms(other = "Duplicate selection"), portuguese = MessageForms(other = "Duplicar seleção")),
+    "a11y_edit_input_value" to MessageTemplate(english = MessageForms(other = "Edit value of {name}: {value}"), portuguese = MessageForms(other = "Editar o valor de {name}: {value}")),
     "a11y_error_bit_count" to MessageTemplate(english = MessageForms(one = "{count} error bit", other = "{count} error bits"), portuguese = MessageForms(one = "{count} bit com erro", other = "{count} bits com erro")),
-    "a11y_explorer_activate" to MessageTemplate(english = MessageForms(other = "Activate {name}"), portuguese = MessageForms(other = "Acionar {name}")),
+    "a11y_explorer_activate" to MessageTemplate(english = MessageForms(other = "Toggle {name}"), portuguese = MessageForms(other = "Alternar {name}")),
     "a11y_explorer_auto" to MessageTemplate(english = MessageForms(other = "Update values automatically"), portuguese = MessageForms(other = "Atualizar valores automaticamente")),
     "a11y_explorer_cancel_connection" to MessageTemplate(english = MessageForms(other = "Cancel connection"), portuguese = MessageForms(other = "Cancelar ligação")),
     "a11y_explorer_captured" to MessageTemplate(english = MessageForms(other = "Values captured at half-cycle {ticks}."), portuguese = MessageForms(other = "Valores capturados no meio-ciclo {ticks}.")),
@@ -3324,6 +4363,7 @@ private fun messageCatalogPart0(): Map<String, MessageTemplate> = mapOf(
     "a11y_explorer_title" to MessageTemplate(english = MessageForms(other = "Circuit explorer"), portuguese = MessageForms(other = "Explorador do circuito")),
     "a11y_explorer_unconnected" to MessageTemplate(english = MessageForms(other = "Not connected."), portuguese = MessageForms(other = "Sem ligação.")),
     "a11y_explorer_unnamed_component" to MessageTemplate(english = MessageForms(other = "{kind} ({x}, {y}), {id}"), portuguese = MessageForms(other = "{kind} ({x}, {y}), {id}")),
+    "a11y_explorer_unnamed_component_at" to MessageTemplate(english = MessageForms(other = "{kind} ({x}, {y})"), portuguese = MessageForms(other = "{kind} ({x}, {y})")),
     "a11y_explorer_wire" to MessageTemplate(english = MessageForms(other = "Wire {index}, from {x1}, {y1} to {x2}, {y2}"), portuguese = MessageForms(other = "Fio {index}, de {x1}, {y1} até {x2}, {y2}")),
     "a11y_explorer_wire_connects" to MessageTemplate(english = MessageForms(other = "Connects {ports}."), portuguese = MessageForms(other = "Liga {ports}.")),
     "a11y_explorer_wire_connects_more" to MessageTemplate(english = MessageForms(other = "Connects {ports} and {count} more."), portuguese = MessageForms(other = "Liga {ports} e mais {count}.")),
@@ -3332,24 +4372,43 @@ private fun messageCatalogPart0(): Map<String, MessageTemplate> = mapOf(
     "a11y_fit" to MessageTemplate(english = MessageForms(other = "Fit circuit"), portuguese = MessageForms(other = "Enquadrar circuito")),
     "a11y_fit_circuit" to MessageTemplate(english = MessageForms(other = "Fit the entire circuit"), portuguese = MessageForms(other = "Enquadrar todo o circuito")),
     "a11y_fit_selection" to MessageTemplate(english = MessageForms(other = "Fit selected components and wires"), portuguese = MessageForms(other = "Enquadrar componentes e fios selecionados")),
+    "a11y_fpga_tools" to MessageTemplate(english = MessageForms(other = "Open FPGA and HDL tools"), portuguese = MessageForms(other = "Abrir ferramentas de FPGA e HDL")),
     "a11y_import_export_project" to MessageTemplate(english = MessageForms(other = "Import or export circuit and project"), portuguese = MessageForms(other = "Importar ou exportar circuito e projeto")),
+    "a11y_input_bit" to MessageTemplate(english = MessageForms(other = "Bit {bit}: {value}"), portuguese = MessageForms(other = "Bit {bit}: {value}")),
+    "a11y_input_choose_bit" to MessageTemplate(english = MessageForms(other = "Bit of {name} to toggle"), portuguese = MessageForms(other = "Bit de {name} a alternar")),
+    "a11y_input_set_value" to MessageTemplate(english = MessageForms(other = "Set value of {name}…"), portuguese = MessageForms(other = "Definir valor de {name}…")),
+    "a11y_input_toggle_bit" to MessageTemplate(english = MessageForms(other = "Toggle a bit of {name}…"), portuguese = MessageForms(other = "Alternar um bit de {name}…")),
+    "a11y_input_toggle_low_bit" to MessageTemplate(english = MessageForms(other = "Toggle bit 0 of {name}"), portuguese = MessageForms(other = "Alternar o bit 0 de {name}")),
+    "a11y_insert_below_selected" to MessageTemplate(english = MessageForms(other = "Below the selected component"), portuguese = MessageForms(other = "Abaixo do componente selecionado")),
     "a11y_insert_component" to MessageTemplate(english = MessageForms(other = "Insert {name}"), portuguese = MessageForms(other = "Inserir {name}")),
+    "a11y_insert_custom" to MessageTemplate(english = MessageForms(other = "Custom coordinates"), portuguese = MessageForms(other = "Coordenadas personalizadas")),
+    "a11y_insert_next_free" to MessageTemplate(english = MessageForms(other = "Next free spot"), portuguese = MessageForms(other = "Próximo espaço livre")),
+    "a11y_insert_no_free_position" to MessageTemplate(english = MessageForms(other = "No free position found nearby. Choose another position or Custom coordinates."), portuguese = MessageForms(other = "Nenhuma posição livre encontrada por perto. Escolha outra posição ou Coordenadas personalizadas.")),
+    "a11y_insert_position" to MessageTemplate(english = MessageForms(other = "Position"), portuguese = MessageForms(other = "Posição")),
+    "a11y_insert_right_of_selected" to MessageTemplate(english = MessageForms(other = "Right of the selected component"), portuguese = MessageForms(other = "À direita do componente selecionado")),
     "a11y_inspector_collapse" to MessageTemplate(english = MessageForms(other = "Collapse properties panel"), portuguese = MessageForms(other = "Recolher painel de propriedades")),
     "a11y_inspector_dismiss" to MessageTemplate(english = MessageForms(other = "Close properties panel"), portuguese = MessageForms(other = "Fechar painel de propriedades")),
     "a11y_inspector_expand" to MessageTemplate(english = MessageForms(other = "Expand properties panel"), portuguese = MessageForms(other = "Expandir painel de propriedades")),
     "a11y_inspector_handle" to MessageTemplate(english = MessageForms(other = "Properties panel controls"), portuguese = MessageForms(other = "Controles do painel de propriedades")),
+    "a11y_io_open_controls" to MessageTemplate(english = MessageForms(other = "Open controls for {name}"), portuguese = MessageForms(other = "Abrir controles de {name}")),
     "a11y_library" to MessageTemplate(english = MessageForms(other = "Component and circuit library"), portuguese = MessageForms(other = "Biblioteca de componentes e circuitos")),
     "a11y_live_view" to MessageTemplate(english = MessageForms(other = "Show the current simulation values"), portuguese = MessageForms(other = "Exibir os valores atuais da simulação")),
     "a11y_load_and" to MessageTemplate(english = MessageForms(other = "Load AND example"), portuguese = MessageForms(other = "Carregar exemplo AND")),
+    "a11y_load_example" to MessageTemplate(english = MessageForms(other = "Load example {name}"), portuguese = MessageForms(other = "Carregar exemplo {name}")),
     "a11y_load_sap1" to MessageTemplate(english = MessageForms(other = "Load SAP-1 example"), portuguese = MessageForms(other = "Carregar exemplo SAP-1")),
+    "a11y_main_circuit" to MessageTemplate(english = MessageForms(other = "{name}, main circuit"), portuguese = MessageForms(other = "{name}, circuito principal")),
     "a11y_manage_circuit" to MessageTemplate(english = MessageForms(other = "Manage circuit {name}"), portuguese = MessageForms(other = "Gerenciar circuito {name}")),
-    "a11y_new_circuit" to MessageTemplate(english = MessageForms(other = "Create an empty circuit"), portuguese = MessageForms(other = "Criar circuito vazio")),
+    "a11y_new_circuit" to MessageTemplate(english = MessageForms(other = "Create a new project"), portuguese = MessageForms(other = "Criar um novo projeto")),
     "a11y_open_circuit" to MessageTemplate(english = MessageForms(other = "Open circuit {name}"), portuguese = MessageForms(other = "Abrir circuito {name}")),
     "a11y_open_definition" to MessageTemplate(english = MessageForms(other = "Open definition {name}"), portuguese = MessageForms(other = "Abrir definição {name}")),
     "a11y_open_help" to MessageTemplate(english = MessageForms(other = "Open editor help"), portuguese = MessageForms(other = "Abrir ajuda do editor")),
     "a11y_open_instance" to MessageTemplate(english = MessageForms(other = "Open instance {name}, path {path}"), portuguese = MessageForms(other = "Abrir instância {name}, caminho {path}")),
     "a11y_open_library" to MessageTemplate(english = MessageForms(other = "Open circuits and library"), portuguese = MessageForms(other = "Abrir circuitos e biblioteca")),
+    "a11y_open_main_definition" to MessageTemplate(english = MessageForms(other = "Open definition {name}, main circuit"), portuguese = MessageForms(other = "Abrir definição {name}, circuito principal")),
     "a11y_open_menu" to MessageTemplate(english = MessageForms(other = "Open the menu"), portuguese = MessageForms(other = "Abrir o menu")),
+)
+
+private fun messageCatalogPart1(): Map<String, MessageTemplate> = mapOf(
     "a11y_open_projects" to MessageTemplate(english = MessageForms(other = "Open the project list"), portuguese = MessageForms(other = "Abrir a lista de projetos")),
     "a11y_open_properties" to MessageTemplate(english = MessageForms(other = "Open selection properties"), portuguese = MessageForms(other = "Abrir propriedades da seleção")),
     "a11y_paste_components" to MessageTemplate(english = MessageForms(other = "Paste components"), portuguese = MessageForms(other = "Colar componentes")),
@@ -3357,6 +4416,7 @@ private fun messageCatalogPart0(): Map<String, MessageTemplate> = mapOf(
     "a11y_project_files" to MessageTemplate(english = MessageForms(other = "Open, save, and share files"), portuguese = MessageForms(other = "Abrir, salvar e compartilhar arquivos")),
     "a11y_project_tools" to MessageTemplate(english = MessageForms(other = "Open project tools"), portuguese = MessageForms(other = "Abrir ferramentas do projeto")),
     "a11y_recursive_reference" to MessageTemplate(english = MessageForms(other = "Recursive reference {name}"), portuguese = MessageForms(other = "Referência recursiva {name}")),
+    "a11y_redo_action" to MessageTemplate(english = MessageForms(other = "Redo, {action}"), portuguese = MessageForms(other = "Refazer, {action}")),
     "a11y_reset_simulation" to MessageTemplate(english = MessageForms(other = "Reset simulation"), portuguese = MessageForms(other = "Reiniciar simulação")),
     "a11y_run_command" to MessageTemplate(english = MessageForms(other = "Run command {name}"), portuguese = MessageForms(other = "Executar comando {name}")),
     "a11y_search_all" to MessageTemplate(english = MessageForms(other = "Search project, library, and commands"), portuguese = MessageForms(other = "Buscar no projeto, biblioteca e comandos")),
@@ -3368,18 +4428,20 @@ private fun messageCatalogPart0(): Map<String, MessageTemplate> = mapOf(
     "a11y_sheet_pane" to MessageTemplate(english = MessageForms(other = "Bottom sheet"), portuguese = MessageForms(other = "Painel inferior")),
     "a11y_show_components" to MessageTemplate(english = MessageForms(other = "Show available components"), portuguese = MessageForms(other = "Mostrar componentes disponíveis")),
     "a11y_show_tree" to MessageTemplate(english = MessageForms(other = "Show circuit tree"), portuguese = MessageForms(other = "Mostrar árvore de circuitos")),
-)
-
-private fun messageCatalogPart1(): Map<String, MessageTemplate> = mapOf(
     "a11y_signal" to MessageTemplate(english = MessageForms(other = "Signal {name}: {value}"), portuguese = MessageForms(other = "Sinal {name}: {value}")),
-    "a11y_simulation_event_step" to MessageTemplate(english = MessageForms(other = "Advance one propagation event"), portuguese = MessageForms(other = "Avançar um evento de propagação")),
+    "a11y_signal_reveal" to MessageTemplate(english = MessageForms(other = "Show in the circuit"), portuguese = MessageForms(other = "Mostrar no circuito")),
+    "a11y_simulation_reset_undo" to MessageTemplate(english = MessageForms(other = "Undo simulation reset"), portuguese = MessageForms(other = "Desfazer a reinicialização da simulação")),
     "a11y_simulation_warning" to MessageTemplate(english = MessageForms(other = "Simulation warning: {message}"), portuguese = MessageForms(other = "Aviso da simulação: {message}")),
     "a11y_simulation_warning_count" to MessageTemplate(english = MessageForms(one = "Open {count} simulation warning", other = "Open {count} simulation warnings"), portuguese = MessageForms(one = "Abrir {count} aviso da simulação", other = "Abrir {count} avisos da simulação")),
-    "a11y_step_clock" to MessageTemplate(english = MessageForms(other = "Advance the clock one half-cycle"), portuguese = MessageForms(other = "Avançar clock um meio-ciclo")),
+    "a11y_simulation_warning_show" to MessageTemplate(english = MessageForms(other = "Show in the circuit: {message}"), portuguese = MessageForms(other = "Mostrar no circuito: {message}")),
+    "a11y_state_collapsed" to MessageTemplate(english = MessageForms(other = "Collapsed"), portuguese = MessageForms(other = "Recolhido")),
+    "a11y_state_expanded" to MessageTemplate(english = MessageForms(other = "Expanded"), portuguese = MessageForms(other = "Expandido")),
+    "a11y_switch_circuit" to MessageTemplate(english = MessageForms(other = "Switch circuit"), portuguese = MessageForms(other = "Trocar de circuito")),
     "a11y_toggle_explorer" to MessageTemplate(english = MessageForms(other = "Show or hide the explorer panel"), portuguese = MessageForms(other = "Mostrar ou ocultar o painel do explorador")),
     "a11y_toggle_input" to MessageTemplate(english = MessageForms(other = "Toggle input {name}: {value}"), portuguese = MessageForms(other = "Alternar entrada {name}: {value}")),
     "a11y_toolbar_less" to MessageTemplate(english = MessageForms(other = "Show fewer commands: {name}"), portuguese = MessageForms(other = "Mostrar menos comandos: {name}")),
     "a11y_toolbar_more" to MessageTemplate(english = MessageForms(other = "Show more commands: {name}"), portuguese = MessageForms(other = "Mostrar mais comandos: {name}")),
+    "a11y_undo_action" to MessageTemplate(english = MessageForms(other = "Undo, {action}"), portuguese = MessageForms(other = "Desfazer, {action}")),
     "a11y_unknown_bit_count" to MessageTemplate(english = MessageForms(one = "{count} undefined bit", other = "{count} undefined bits"), portuguese = MessageForms(one = "{count} bit indefinido", other = "{count} bits indefinidos")),
     "a11y_value_error" to MessageTemplate(english = MessageForms(one = "{count} conflicting or erroneous bit.", other = "{count} conflicting or erroneous bits."), portuguese = MessageForms(one = "{count} bit conflitante ou com erro.", other = "{count} bits conflitantes ou com erro.")),
     "a11y_value_high" to MessageTemplate(english = MessageForms(other = "High, 1."), portuguese = MessageForms(other = "Alto, 1.")),
@@ -3400,9 +4462,10 @@ private fun messageCatalogPart1(): Map<String, MessageTemplate> = mapOf(
     "action_clear_history" to MessageTemplate(english = MessageForms(other = "Clear History"), portuguese = MessageForms(other = "Limpar histórico")),
     "action_close" to MessageTemplate(english = MessageForms(other = "Close"), portuguese = MessageForms(other = "Fechar")),
     "action_copy" to MessageTemplate(english = MessageForms(other = "Copy"), portuguese = MessageForms(other = "Copiar")),
+    "action_create" to MessageTemplate(english = MessageForms(other = "Create"), portuguese = MessageForms(other = "Criar")),
     "action_cut" to MessageTemplate(english = MessageForms(other = "Cut"), portuguese = MessageForms(other = "Recortar")),
-    "action_delete" to MessageTemplate(english = MessageForms(other = "Delete"), portuguese = MessageForms(other = "Excluir")),
-    "action_delete_circuit" to MessageTemplate(english = MessageForms(other = "Delete circuit"), portuguese = MessageForms(other = "Excluir circuito")),
+    "action_delete" to MessageTemplate(english = MessageForms(other = "Delete"), portuguese = MessageForms(other = "Apagar")),
+    "action_delete_circuit" to MessageTemplate(english = MessageForms(other = "Delete circuit"), portuguese = MessageForms(other = "Apagar circuito")),
     "action_duplicate" to MessageTemplate(english = MessageForms(other = "Duplicate"), portuguese = MessageForms(other = "Duplicar")),
     "action_edit_external" to MessageTemplate(english = MessageForms(other = "Edit external file"), portuguese = MessageForms(other = "Editar arquivo externo")),
     "action_edit_tool" to MessageTemplate(english = MessageForms(other = "Edit Tool"), portuguese = MessageForms(other = "Ferramenta de edição")),
@@ -3425,29 +4488,32 @@ private fun messageCatalogPart1(): Map<String, MessageTemplate> = mapOf(
     "action_move_down" to MessageTemplate(english = MessageForms(other = "Move down"), portuguese = MessageForms(other = "Mover para baixo")),
     "action_move_up" to MessageTemplate(english = MessageForms(other = "Move up"), portuguese = MessageForms(other = "Mover para cima")),
     "action_new" to MessageTemplate(english = MessageForms(other = "New"), portuguese = MessageForms(other = "Novo")),
-    "action_new_circuit" to MessageTemplate(english = MessageForms(other = "New circuit"), portuguese = MessageForms(other = "Novo circuito")),
     "action_ok" to MessageTemplate(english = MessageForms(other = "OK"), portuguese = MessageForms(other = "OK")),
     "action_open" to MessageTemplate(english = MessageForms(other = "Open"), portuguese = MessageForms(other = "Abrir")),
     "action_paste" to MessageTemplate(english = MessageForms(other = "Paste"), portuguese = MessageForms(other = "Colar")),
     "action_pause" to MessageTemplate(english = MessageForms(other = "Pause"), portuguese = MessageForms(other = "Pausar")),
+    "action_poke_tool" to MessageTemplate(english = MessageForms(other = "Poke Tool"), portuguese = MessageForms(other = "Ferramenta Testar")),
     "action_printer_view" to MessageTemplate(english = MessageForms(other = "Printer view"), portuguese = MessageForms(other = "Visualização de impressão")),
     "action_properties" to MessageTemplate(english = MessageForms(other = "Properties"), portuguese = MessageForms(other = "Propriedades")),
     "action_redo" to MessageTemplate(english = MessageForms(other = "Redo"), portuguese = MessageForms(other = "Refazer")),
     "action_rename" to MessageTemplate(english = MessageForms(other = "Rename"), portuguese = MessageForms(other = "Renomear")),
     "action_rename_circuit" to MessageTemplate(english = MessageForms(other = "Rename circuit"), portuguese = MessageForms(other = "Renomear circuito")),
-    "action_reset" to MessageTemplate(english = MessageForms(other = "Reset"), portuguese = MessageForms(other = "Reset")),
+    "action_reset" to MessageTemplate(english = MessageForms(other = "Reset"), portuguese = MessageForms(other = "Reiniciar")),
     "action_run" to MessageTemplate(english = MessageForms(other = "Run"), portuguese = MessageForms(other = "Executar")),
     "action_save" to MessageTemplate(english = MessageForms(other = "Save"), portuguese = MessageForms(other = "Salvar")),
     "action_save_as" to MessageTemplate(english = MessageForms(other = "Save as"), portuguese = MessageForms(other = "Salvar como")),
     "action_save_file" to MessageTemplate(english = MessageForms(other = "Save to file"), portuguese = MessageForms(other = "Salvar no arquivo")),
+    "action_save_file_picker" to MessageTemplate(english = MessageForms(other = "Save to file…"), portuguese = MessageForms(other = "Salvar no arquivo…")),
     "action_search" to MessageTemplate(english = MessageForms(other = "Search"), portuguese = MessageForms(other = "Buscar")),
     "action_select" to MessageTemplate(english = MessageForms(other = "Select"), portuguese = MessageForms(other = "Selecionar")),
     "action_select_all" to MessageTemplate(english = MessageForms(other = "Select all"), portuguese = MessageForms(other = "Selecionar tudo")),
     "action_set_main" to MessageTemplate(english = MessageForms(other = "Set as main"), portuguese = MessageForms(other = "Definir como principal")),
     "action_share" to MessageTemplate(english = MessageForms(other = "Share"), portuguese = MessageForms(other = "Compartilhar")),
+)
+
+private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "action_share_original_circ" to MessageTemplate(english = MessageForms(other = "Export copy for Logisim 2.7.1"), portuguese = MessageForms(other = "Exportar cópia para o Logisim 2.7.1")),
     "action_show_attributes" to MessageTemplate(english = MessageForms(other = "Show Attributes"), portuguese = MessageForms(other = "Mostrar atributos")),
-    "action_simulate" to MessageTemplate(english = MessageForms(other = "Simulate"), portuguese = MessageForms(other = "Simular")),
     "action_split_wire_here" to MessageTemplate(english = MessageForms(other = "Split wire here"), portuguese = MessageForms(other = "Dividir fio aqui")),
     "action_step" to MessageTemplate(english = MessageForms(other = "Step"), portuguese = MessageForms(other = "Passo")),
     "action_tools" to MessageTemplate(english = MessageForms(other = "Tools"), portuguese = MessageForms(other = "Ferramentas")),
@@ -3458,12 +4524,10 @@ private fun messageCatalogPart1(): Map<String, MessageTemplate> = mapOf(
     "action_zoom_exact" to MessageTemplate(english = MessageForms(other = "Set zoom…"), portuguese = MessageForms(other = "Definir zoom…")),
     "action_zoom_in" to MessageTemplate(english = MessageForms(other = "Zoom in"), portuguese = MessageForms(other = "Ampliar")),
     "action_zoom_out" to MessageTemplate(english = MessageForms(other = "Zoom out"), portuguese = MessageForms(other = "Reduzir")),
-    "active_library_add_builtin" to MessageTemplate(english = MessageForms(other = "Add {name}"), portuguese = MessageForms(other = "Adicionar {name}")),
     "active_library_builtin_title" to MessageTemplate(english = MessageForms(other = "Built-in libraries"), portuguese = MessageForms(other = "Bibliotecas internas")),
     "active_library_dependency" to MessageTemplate(english = MessageForms(other = "Unresolved library dependency {name}. Use a portable project for external circuit files."), portuguese = MessageForms(other = "A dependência de biblioteca {name} não foi resolvida. Use um projeto portátil para arquivos de circuito externos.")),
     "active_library_description" to MessageTemplate(english = MessageForms(other = "Load circuit definitions from a .circ or portable project into this project."), portuguese = MessageForms(other = "Carregue definições de circuitos de um arquivo .circ ou projeto portátil neste projeto.")),
     "active_library_file_type" to MessageTemplate(english = MessageForms(other = "Choose a .circ or .lsebdl file."), portuguese = MessageForms(other = "Escolha um arquivo .circ ou .lsebdl.")),
-    "active_library_hide_builtin" to MessageTemplate(english = MessageForms(other = "Hide available libraries"), portuguese = MessageForms(other = "Ocultar bibliotecas disponíveis")),
     "active_library_in_use" to MessageTemplate(english = MessageForms(other = "Remove references to {name} before unloading the library."), portuguese = MessageForms(other = "Remova as referências a {name} antes de descarregar a biblioteca.")),
     "active_library_load" to MessageTemplate(english = MessageForms(other = "Load library"), portuguese = MessageForms(other = "Carregar biblioteca")),
     "active_library_load_failed" to MessageTemplate(english = MessageForms(other = "Could not load the selected library."), portuguese = MessageForms(other = "Não foi possível carregar a biblioteca selecionada.")),
@@ -3471,12 +4535,8 @@ private fun messageCatalogPart1(): Map<String, MessageTemplate> = mapOf(
     "active_library_manage" to MessageTemplate(english = MessageForms(other = "Manage libraries"), portuguese = MessageForms(other = "Gerenciar bibliotecas")),
     "active_library_recursive_placement" to MessageTemplate(english = MessageForms(other = "This insertion would create a recursive circuit."), portuguese = MessageForms(other = "Esta inserção criaria um circuito recursivo.")),
     "active_library_reload" to MessageTemplate(english = MessageForms(other = "Reload {name}"), portuguese = MessageForms(other = "Recarregar {name}")),
-)
-
-private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "active_library_reload_incompatible" to MessageTemplate(english = MessageForms(other = "The new library removes or changes the interface of {name}, which is in use."), portuguese = MessageForms(other = "A nova biblioteca remove ou altera a interface de {name}, que está em uso.")),
     "active_library_reloaded" to MessageTemplate(english = MessageForms(other = "Reloaded library {name}."), portuguese = MessageForms(other = "Biblioteca {name} recarregada.")),
-    "active_library_show_builtin" to MessageTemplate(english = MessageForms(other = "Add built-in library"), portuguese = MessageForms(other = "Adicionar biblioteca interna")),
     "active_library_unload" to MessageTemplate(english = MessageForms(other = "Unload {name}"), portuguese = MessageForms(other = "Descarregar {name}")),
     "active_library_unloaded" to MessageTemplate(english = MessageForms(other = "Unloaded library {name}."), portuguese = MessageForms(other = "Biblioteca {name} descarregada.")),
     "active_library_use_manager" to MessageTemplate(english = MessageForms(other = "Use Manage libraries to unload the library."), portuguese = MessageForms(other = "Use Gerenciar bibliotecas para descarregar a biblioteca.")),
@@ -3485,7 +4545,7 @@ private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "additional_companion_disabled" to MessageTemplate(english = MessageForms(other = "disabled by the host"), portuguese = MessageForms(other = "desabilitada pelo host")),
     "additional_companion_disconnect" to MessageTemplate(english = MessageForms(other = "Disconnect host"), portuguese = MessageForms(other = "Desconectar host")),
     "additional_companion_operation" to MessageTemplate(english = MessageForms(other = "{operation}: {status}"), portuguese = MessageForms(other = "{operation}: {status}")),
-    "additional_companion_protocol" to MessageTemplate(english = MessageForms(other = "Protocol {version}, input limit {bytes} bytes"), portuguese = MessageForms(other = "Protocolo {version}, limite de entrada de {bytes} bytes")),
+    "additional_companion_protocol_limit" to MessageTemplate(english = MessageForms(other = "Protocol {version}, input limit {size}"), portuguese = MessageForms(other = "Protocolo {version}, limite de entrada de {size}")),
     "additional_companion_title" to MessageTemplate(english = MessageForms(other = "Companion"), portuguese = MessageForms(other = "Companion")),
     "additional_companion_tools_missing" to MessageTemplate(english = MessageForms(other = "required tools are unavailable"), portuguese = MessageForms(other = "ferramentas necessárias indisponíveis")),
     "additional_companion_verified" to MessageTemplate(english = MessageForms(other = "The companion host is verified. External tools run only when you request an operation."), portuguese = MessageForms(other = "O host companion está verificado. As ferramentas externas só executam quando você solicita uma operação.")),
@@ -3494,19 +4554,29 @@ private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "additional_fpga_board_utf8" to MessageTemplate(english = MessageForms(other = "The FPGA board description must use UTF-8 text."), portuguese = MessageForms(other = "A descrição da placa FPGA deve usar texto UTF-8.")),
     "additional_fpga_original_host" to MessageTemplate(english = MessageForms(other = "This FPGA operation remains linked to its original host. Finish it or return to pin mapping before selecting another host for FPGA work."), portuguese = MessageForms(other = "Esta operação FPGA permanece vinculada ao host original. Conclua a operação ou volte ao mapeamento de pinos antes de selecionar outro host para o FPGA.")),
     "additional_legal_title" to MessageTemplate(english = MessageForms(other = "Licenses"), portuguese = MessageForms(other = "Licenças")),
-    "analysis_a11y_input_cell" to MessageTemplate(english = MessageForms(other = "Row {row}, input {input}: {value}"), portuguese = MessageForms(other = "Linha {row}, entrada {input}: {value}")),
-    "analysis_a11y_karnaugh_cell" to MessageTemplate(english = MessageForms(other = "Karnaugh row {row} column {column}: {value}"), portuguese = MessageForms(other = "Karnaugh linha {row} coluna {column}: {value}")),
-    "analysis_a11y_table_cell" to MessageTemplate(english = MessageForms(other = "Row {row}, output {output}: {value}"), portuguese = MessageForms(other = "Linha {row}, saída {output}: {value}")),
+    "analysis_a11y_change_value" to MessageTemplate(english = MessageForms(other = "Change value"), portuguese = MessageForms(other = "Alterar valor")),
+    "analysis_a11y_input_row_cell" to MessageTemplate(english = MessageForms(other = "Row {row}, input {input}"), portuguese = MessageForms(other = "Linha {row}, entrada {input}")),
+    "analysis_a11y_mark_corner" to MessageTemplate(english = MessageForms(other = "Mark block corner"), portuguese = MessageForms(other = "Marcar canto do bloco")),
+    "analysis_a11y_output_cell" to MessageTemplate(english = MessageForms(other = "Row {row}, {assignment}, output {output}"), portuguese = MessageForms(other = "Linha {row}, {assignment}, saída {output}")),
+    "analysis_add_input_after" to MessageTemplate(english = MessageForms(other = "Add input after"), portuguese = MessageForms(other = "Inserir entrada depois")),
+    "analysis_add_input_before" to MessageTemplate(english = MessageForms(other = "Add input before"), portuguese = MessageForms(other = "Inserir entrada antes")),
+    "analysis_add_output_after" to MessageTemplate(english = MessageForms(other = "Add output after"), portuguese = MessageForms(other = "Inserir saída depois")),
+    "analysis_add_output_before" to MessageTemplate(english = MessageForms(other = "Add output before"), portuguese = MessageForms(other = "Inserir saída antes")),
     "analysis_assignment_help" to MessageTemplate(english = MessageForms(other = "One assignment per line: Y := A & B"), portuguese = MessageForms(other = "Uma atribuição por linha: Y := A & B")),
     "analysis_assignment_required" to MessageTemplate(english = MessageForms(other = "Use an assignment such as Y := A & B."), portuguese = MessageForms(other = "Use uma atribuição como Y := A & B.")),
+    "analysis_bad_variable_name" to MessageTemplate(english = MessageForms(other = "“{name}” is not an input variable."), portuguese = MessageForms(other = "“{name}” não é uma variável de entrada.")),
     "analysis_cancelled" to MessageTemplate(english = MessageForms(other = "Analysis cancelled."), portuguese = MessageForms(other = "Análise cancelada.")),
     "analysis_circuit_failed" to MessageTemplate(english = MessageForms(other = "The circuit could not be analyzed: {reason}"), portuguese = MessageForms(other = "O circuito não pôde ser analisado: {reason}")),
     "analysis_clipboard_dimensions" to MessageTemplate(english = MessageForms(other = "The TSV block does not fit the selection."), portuguese = MessageForms(other = "O bloco TSV não cabe na seleção.")),
     "analysis_clipboard_symbols" to MessageTemplate(english = MessageForms(other = "Use 0, 1, or x in every TSV cell. An optional header must match the destination columns."), portuguese = MessageForms(other = "Use 0, 1 ou x em cada célula TSV. Se houver cabeçalho, ele deve corresponder às colunas de destino.")),
     "analysis_column_position" to MessageTemplate(english = MessageForms(other = "Position (1 to {max})"), portuguese = MessageForms(other = "Posição (1 a {max})")),
     "analysis_component_limit" to MessageTemplate(english = MessageForms(one = "The generated circuit exceeds {count} component.", other = "The generated circuit exceeds {count} components."), portuguese = MessageForms(one = "O circuito gerado excede {count} componente.", other = "O circuito gerado excede {count} componentes.")),
+    "analysis_copied_rows" to MessageTemplate(english = MessageForms(one = "Copied {count} row", other = "Copied {count} rows"), portuguese = MessageForms(one = "{count} linha copiada", other = "{count} linhas copiadas")),
+    "analysis_copy_expressions" to MessageTemplate(english = MessageForms(other = "Copy expressions"), portuguese = MessageForms(other = "Copiar expressões")),
     "analysis_copy_tsv" to MessageTemplate(english = MessageForms(other = "Copy TSV"), portuguese = MessageForms(other = "Copiar TSV")),
     "analysis_created" to MessageTemplate(english = MessageForms(other = "Equivalent circuit created. Use Undo to remove it."), portuguese = MessageForms(other = "Circuito equivalente criado. Use Desfazer para removê-lo.")),
+    "analysis_delete_input" to MessageTemplate(english = MessageForms(other = "Delete input"), portuguese = MessageForms(other = "Apagar entrada")),
+    "analysis_delete_output" to MessageTemplate(english = MessageForms(other = "Delete output"), portuguese = MessageForms(other = "Apagar saída")),
     "analysis_destination" to MessageTemplate(english = MessageForms(other = "Circuit destination"), portuguese = MessageForms(other = "Destino do circuito")),
     "analysis_destination_changed" to MessageTemplate(english = MessageForms(other = "The destination project changed or cannot be edited. Close this dialog and generate the circuit again."), portuguese = MessageForms(other = "O projeto de destino mudou ou não pode ser editado. Feche este diálogo e gere o circuito novamente.")),
     "analysis_destination_continue" to MessageTemplate(english = MessageForms(other = "Continue"), portuguese = MessageForms(other = "Continuar")),
@@ -3519,6 +4589,8 @@ private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "analysis_destination_replaced" to MessageTemplate(english = MessageForms(other = "Circuit replaced. Use Undo to restore it."), portuguese = MessageForms(other = "Circuito substituído. Use Desfazer para restaurá-lo.")),
     "analysis_distinct_outputs" to MessageTemplate(english = MessageForms(other = "Use distinct output names."), portuguese = MessageForms(other = "Use nomes de saída distintos.")),
     "analysis_distinct_pins" to MessageTemplate(english = MessageForms(other = "Pins need distinct labels for analysis."), portuguese = MessageForms(other = "Os pinos precisam de rótulos distintos para a análise.")),
+    "analysis_dont_care_name" to MessageTemplate(english = MessageForms(other = "don't care"), portuguese = MessageForms(other = "irrelevante")),
+    "analysis_dont_care_value" to MessageTemplate(english = MessageForms(other = "{name} ({character})"), portuguese = MessageForms(other = "{name} ({character})")),
     "analysis_edit_input_column" to MessageTemplate(english = MessageForms(other = "Edit input {name}"), portuguese = MessageForms(other = "Editar entrada {name}")),
     "analysis_edit_output_column" to MessageTemplate(english = MessageForms(other = "Edit output {name}"), portuguese = MessageForms(other = "Editar saída {name}")),
     "analysis_empty_name" to MessageTemplate(english = MessageForms(other = "Empty name."), portuguese = MessageForms(other = "Nome vazio.")),
@@ -3530,8 +4602,21 @@ private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "analysis_expression_complexity" to MessageTemplate(english = MessageForms(other = "The expression exceeds the complexity limit."), portuguese = MessageForms(other = "A expressão excede o limite de complexidade.")),
     "analysis_expression_length" to MessageTemplate(english = MessageForms(other = "The expression exceeds 16,384 characters."), portuguese = MessageForms(other = "A expressão excede 16.384 caracteres.")),
     "analysis_expressions" to MessageTemplate(english = MessageForms(other = "Expressions"), portuguese = MessageForms(other = "Expressões")),
+    "analysis_expressions_apply" to MessageTemplate(english = MessageForms(other = "Apply to table"), portuguese = MessageForms(other = "Aplicar à tabela")),
+    "analysis_expressions_copied" to MessageTemplate(english = MessageForms(other = "Expressions copied"), portuguese = MessageForms(other = "Expressões copiadas")),
+    "analysis_expressions_merge_help" to MessageTemplate(english = MessageForms(other = "Applying replaces only the outputs defined here and keeps the other outputs and the input order."), portuguese = MessageForms(other = "Aplicar substitui apenas as saídas definidas aqui e mantém as demais saídas e a ordem das entradas.")),
+    "analysis_expressions_paged" to MessageTemplate(english = MessageForms(one = "This table has {count} input and is read in pages. Expressions are available for tables with up to 12 inputs; choose New table to type expressions for a new one.", other = "This table has {count} inputs and is read in pages. Expressions are available for tables with up to 12 inputs; choose New table to type expressions for a new one."), portuguese = MessageForms(one = "Esta tabela tem {count} entrada e é lida em páginas. As expressões estão disponíveis para tabelas com até 12 entradas; escolha Nova tabela para digitar expressões de uma nova.", other = "Esta tabela tem {count} entradas e é lida em páginas. As expressões estão disponíveis para tabelas com até 12 entradas; escolha Nova tabela para digitar expressões de uma nova.")),
+    "analysis_expressions_reset" to MessageTemplate(english = MessageForms(other = "Show the table's expressions"), portuguese = MessageForms(other = "Mostrar as expressões da tabela")),
     "analysis_expressions_table" to MessageTemplate(english = MessageForms(other = "Create table from expressions"), portuguese = MessageForms(other = "Criar tabela das expressões")),
+    "analysis_expressions_too_large" to MessageTemplate(english = MessageForms(other = "Expressions are filled in for tables with up to 8 inputs. Type assignments to replace outputs."), portuguese = MessageForms(other = "As expressões são preenchidas para tabelas com até 8 entradas. Digite atribuições para substituir saídas.")),
+    "analysis_expressions_too_long" to MessageTemplate(english = MessageForms(other = "These expressions are too long to fill in. Type assignments to replace outputs."), portuguese = MessageForms(other = "Estas expressões são longas demais para serem preenchidas. Digite atribuições para substituir saídas.")),
     "analysis_failed" to MessageTemplate(english = MessageForms(other = "Could not analyze the circuit."), portuguese = MessageForms(other = "Não foi possível analisar o circuito.")),
+    "analysis_fill_block" to MessageTemplate(english = MessageForms(other = "Set {value}"), portuguese = MessageForms(other = "Definir {value}")),
+)
+
+private fun messageCatalogPart3(): Map<String, MessageTemplate> = mapOf(
+    "analysis_fill_block_description" to MessageTemplate(english = MessageForms(other = "Set the marked outputs to {value}"), portuguese = MessageForms(other = "Definir as saídas marcadas como {value}")),
+    "analysis_forms_updating" to MessageTemplate(english = MessageForms(other = "Minimizing in the new notation…"), portuguese = MessageForms(other = "Minimizando na nova notação…")),
     "analysis_generate" to MessageTemplate(english = MessageForms(other = "Generate circuit"), portuguese = MessageForms(other = "Gerar circuito")),
     "analysis_generated_mismatch" to MessageTemplate(english = MessageForms(other = "The generated circuit does not match the table."), portuguese = MessageForms(other = "O circuito gerado não corresponde à tabela.")),
     "analysis_generated_name" to MessageTemplate(english = MessageForms(other = "{name} analyzed"), portuguese = MessageForms(other = "{name} analisado")),
@@ -3539,27 +4624,45 @@ private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "analysis_input_bits_limit" to MessageTemplate(english = MessageForms(other = "Input bit limit: {bits}. Row limit: {rows}."), portuguese = MessageForms(other = "Limite de bits de entrada: {bits}. Limite de linhas: {rows}.")),
     "analysis_input_list" to MessageTemplate(english = MessageForms(other = "Inputs separated by commas"), portuguese = MessageForms(other = "Entradas separadas por vírgula")),
     "analysis_input_undefined" to MessageTemplate(english = MessageForms(other = "Input not defined: {name}."), portuguese = MessageForms(other = "Entrada não definida: {name}.")),
+    "analysis_insert_and" to MessageTemplate(english = MessageForms(other = "Insert AND"), portuguese = MessageForms(other = "Inserir E (AND)")),
+    "analysis_insert_close" to MessageTemplate(english = MessageForms(other = "Insert closing parenthesis"), portuguese = MessageForms(other = "Inserir fecha parênteses")),
+    "analysis_insert_not" to MessageTemplate(english = MessageForms(other = "Insert NOT"), portuguese = MessageForms(other = "Inserir NÃO (NOT)")),
+    "analysis_insert_open" to MessageTemplate(english = MessageForms(other = "Insert opening parenthesis"), portuguese = MessageForms(other = "Inserir abre parênteses")),
+    "analysis_insert_or" to MessageTemplate(english = MessageForms(other = "Insert OR"), portuguese = MessageForms(other = "Inserir OU (OR)")),
+    "analysis_insert_value" to MessageTemplate(english = MessageForms(other = "Insert {value}"), portuguese = MessageForms(other = "Inserir {value}")),
+    "analysis_insert_xor" to MessageTemplate(english = MessageForms(other = "Insert XOR"), portuguese = MessageForms(other = "Inserir OU exclusivo (XOR)")),
     "analysis_invalid_bus_index" to MessageTemplate(english = MessageForms(other = "Invalid bus index."), portuguese = MessageForms(other = "Índice de barramento inválido.")),
     "analysis_invalid_symbol" to MessageTemplate(english = MessageForms(other = "Invalid symbol: {symbol}."), portuguese = MessageForms(other = "Símbolo inválido: {symbol}.")),
     "analysis_karnaugh" to MessageTemplate(english = MessageForms(other = "Karnaugh"), portuguese = MessageForms(other = "Karnaugh")),
     "analysis_karnaugh_axes" to MessageTemplate(english = MessageForms(other = "Rows: {rows} · Columns: {columns}"), portuguese = MessageForms(other = "Linhas: {rows} · Colunas: {columns}")),
     "analysis_karnaugh_limit" to MessageTemplate(english = MessageForms(other = "The Karnaugh map is limited to 6 inputs."), portuguese = MessageForms(other = "O mapa de Karnaugh está limitado a 6 entradas.")),
-    "analysis_karnaugh_reduce" to MessageTemplate(english = MessageForms(other = "Reduce the table to at most 6 inputs to view a Karnaugh map."), portuguese = MessageForms(other = "Reduza a tabela para no máximo 6 entradas para ver Karnaugh.")),
+    "analysis_karnaugh_output" to MessageTemplate(english = MessageForms(other = "Output: {name}"), portuguese = MessageForms(other = "Saída: {name}")),
+    "analysis_karnaugh_reduce_delete" to MessageTemplate(english = MessageForms(other = "Karnaugh maps show up to 6 inputs. In the table, tap an input heading and choose Delete input."), portuguese = MessageForms(other = "O mapa de Karnaugh mostra até 6 entradas. Na tabela, toque no cabeçalho de uma entrada e escolha Apagar entrada.")),
     "analysis_kmap_groups" to MessageTemplate(english = MessageForms(other = "Karnaugh map groups: {count}"), portuguese = MessageForms(other = "Grupos do mapa de Karnaugh: {count}")),
     "analysis_kmap_lined" to MessageTemplate(english = MessageForms(other = "Lined"), portuguese = MessageForms(other = "Com linhas")),
     "analysis_kmap_numbered" to MessageTemplate(english = MessageForms(other = "Numbered"), portuguese = MessageForms(other = "Numerado")),
     "analysis_kmap_style" to MessageTemplate(english = MessageForms(other = "Style"), portuguese = MessageForms(other = "Estilo")),
     "analysis_limits_help" to MessageTemplate(english = MessageForms(other = "Circuit and imported tables: up to 20 input bits. Editable tables: up to 12 input bits. Exact minimization and Karnaugh maps: up to 6 inputs."), portuguese = MessageForms(other = "Tabelas de circuitos e importadas: até 20 bits de entrada. Tabelas editáveis: até 12 bits de entrada. Simplificação exata e Karnaugh: até 6 entradas.")),
+    "analysis_limits_info" to MessageTemplate(english = MessageForms(other = "Analysis limits"), portuguese = MessageForms(other = "Limites da análise")),
     "analysis_max_inputs" to MessageTemplate(english = MessageForms(one = "Use up to {count} input.", other = "Use up to {count} inputs."), portuguese = MessageForms(one = "Use até {count} entrada.", other = "Use até {count} entradas.")),
     "analysis_max_outputs" to MessageTemplate(english = MessageForms(one = "Use up to {count} output.", other = "Use up to {count} outputs."), portuguese = MessageForms(one = "Use até {count} saída.", other = "Use até {count} saídas.")),
     "analysis_minimization_limit" to MessageTemplate(english = MessageForms(one = "Exact minimization is limited to {count} input.", other = "Exact minimization is limited to {count} inputs."), portuguese = MessageForms(one = "A simplificação exata está limitada a {count} entrada.", other = "A simplificação exata está limitada a {count} entradas.")),
+    "analysis_minimized_title" to MessageTemplate(english = MessageForms(other = "Minimized expressions"), portuguese = MessageForms(other = "Expressões simplificadas")),
     "analysis_missing_circuit" to MessageTemplate(english = MessageForms(other = "Missing circuit: {name}."), portuguese = MessageForms(other = "Circuito ausente: {name}.")),
     "analysis_missing_close" to MessageTemplate(english = MessageForms(other = "Missing closing parenthesis."), portuguese = MessageForms(other = "Parêntese de fechamento ausente.")),
+    "analysis_more_actions" to MessageTemplate(english = MessageForms(other = "More analysis actions"), portuguese = MessageForms(other = "Mais ações da análise")),
+    "analysis_move_first" to MessageTemplate(english = MessageForms(other = "Move first"), portuguese = MessageForms(other = "Mover para o início")),
+    "analysis_move_last" to MessageTemplate(english = MessageForms(other = "Move last"), portuguese = MessageForms(other = "Mover para o fim")),
+    "analysis_move_left" to MessageTemplate(english = MessageForms(other = "Move left"), portuguese = MessageForms(other = "Mover para a esquerda")),
+    "analysis_move_right" to MessageTemplate(english = MessageForms(other = "Move right"), portuguese = MessageForms(other = "Mover para a direita")),
     "analysis_nand_only" to MessageTemplate(english = MessageForms(other = "Use NAND gates only"), portuguese = MessageForms(other = "Usar apenas portas NAND")),
+    "analysis_new_table" to MessageTemplate(english = MessageForms(other = "New table"), portuguese = MessageForms(other = "Nova tabela")),
     "analysis_operation_limit" to MessageTemplate(english = MessageForms(one = "Analysis exceeded {count} operation. Reduce the table.", other = "Analysis exceeded {count} operations. Reduce the table."), portuguese = MessageForms(one = "A análise excedeu {count} operação. Reduza a tabela.", other = "A análise excedeu {count} operações. Reduza a tabela.")),
     "analysis_output_bits_limit" to MessageTemplate(english = MessageForms(one = "The table is limited to {count} output bit.", other = "The table is limited to {count} output bits."), portuguese = MessageForms(one = "A tabela está limitada a {count} bit de saída.", other = "A tabela está limitada a {count} bits de saída.")),
+    "analysis_output_is_input" to MessageTemplate(english = MessageForms(other = "“{name}” is an input variable and cannot also be an output."), portuguese = MessageForms(other = "“{name}” é uma variável de entrada e não pode ser também uma saída.")),
     "analysis_output_list" to MessageTemplate(english = MessageForms(other = "Outputs separated by commas"), portuguese = MessageForms(other = "Saídas separadas por vírgula")),
     "analysis_output_range" to MessageTemplate(english = MessageForms(other = "Use between 1 and 256 outputs."), portuguese = MessageForms(other = "Use entre 1 e 256 saídas.")),
+    "analysis_output_select" to MessageTemplate(english = MessageForms(other = "Output"), portuguese = MessageForms(other = "Saída")),
     "analysis_page_go" to MessageTemplate(english = MessageForms(other = "Go"), portuguese = MessageForms(other = "Ir")),
     "analysis_page_next" to MessageTemplate(english = MessageForms(other = "Next page"), portuguese = MessageForms(other = "Próxima página")),
     "analysis_page_number" to MessageTemplate(english = MessageForms(other = "Page (1–{total})"), portuguese = MessageForms(other = "Página (1–{total})")),
@@ -3570,29 +4673,35 @@ private fun messageCatalogPart2(): Map<String, MessageTemplate> = mapOf(
     "analysis_pos" to MessageTemplate(english = MessageForms(other = "Product of sums"), portuguese = MessageForms(other = "Produto de somas")),
     "analysis_read_circuit" to MessageTemplate(english = MessageForms(other = "Read circuit"), portuguese = MessageForms(other = "Ler circuito")),
     "analysis_recursive_circuit" to MessageTemplate(english = MessageForms(other = "Recursive circuit cannot be analyzed: {name}."), portuguese = MessageForms(other = "Circuito recursivo não pode ser analisado: {name}.")),
+    "analysis_redo" to MessageTemplate(english = MessageForms(other = "Redo table edit"), portuguese = MessageForms(other = "Refazer edição da tabela")),
+    "analysis_replace_confirm" to MessageTemplate(english = MessageForms(other = "Replace"), portuguese = MessageForms(other = "Substituir")),
+    "analysis_replace_message" to MessageTemplate(english = MessageForms(other = "This table has changes made here. Undo table edit brings them back."), portuguese = MessageForms(other = "Esta tabela tem alterações feitas aqui. Desfazer edição da tabela as recupera.")),
+    "analysis_replace_title" to MessageTemplate(english = MessageForms(other = "Replace edited table?"), portuguese = MessageForms(other = "Substituir a tabela editada?")),
     "analysis_row_outputs_required" to MessageTemplate(english = MessageForms(one = "Each row needs {count} output.", other = "Each row needs {count} outputs."), portuguese = MessageForms(one = "Cada linha precisa de {count} saída.", other = "Cada linha precisa de {count} saídas.")),
     "analysis_rows_required" to MessageTemplate(english = MessageForms(one = "The table needs {count} row.", other = "The table needs {count} rows."), portuguese = MessageForms(one = "A tabela precisa de {count} linha.", other = "A tabela precisa de {count} linhas.")),
     "analysis_select_block" to MessageTemplate(english = MessageForms(other = "Select block"), portuguese = MessageForms(other = "Selecionar bloco")),
     "analysis_select_block_help" to MessageTemplate(english = MessageForms(other = "Tap one cell to start or two corners to select a block. Paste changes output cells only."), portuguese = MessageForms(other = "Toque em uma célula para começar ou em dois cantos para selecionar um bloco. Colar altera apenas as saídas.")),
-)
-
-private fun messageCatalogPart3(): Map<String, MessageTemplate> = mapOf(
     "analysis_simplify" to MessageTemplate(english = MessageForms(other = "Minimize"), portuguese = MessageForms(other = "Simplificar")),
     "analysis_sop" to MessageTemplate(english = MessageForms(other = "Sum of products"), portuguese = MessageForms(other = "Soma de produtos")),
     "analysis_table" to MessageTemplate(english = MessageForms(other = "Table"), portuguese = MessageForms(other = "Tabela")),
     "analysis_table_file_invalid" to MessageTemplate(english = MessageForms(other = "Use a complete Evolution truth table in CSV or TXT with supported variable names and widths."), portuguese = MessageForms(other = "Use uma tabela verdade completa do Evolution em CSV ou TXT, com nomes e larguras de variáveis compatíveis.")),
     "analysis_table_file_invalid_line" to MessageTemplate(english = MessageForms(other = "Line {line}: invalid truth-table columns or values, or conflicting input rows."), portuguese = MessageForms(other = "Linha {line}: colunas ou valores inválidos na tabela verdade, ou linhas de entrada conflitantes.")),
     "analysis_table_help" to MessageTemplate(english = MessageForms(other = "Tap a heading to edit a column. Tap an output cell to cycle through {falseChar}, {trueChar}, and {dontCare}. Inputs are ordered most significant bit first."), portuguese = MessageForms(other = "Toque no cabeçalho para editar uma coluna. Toque numa célula de saída para alternar {falseChar}, {trueChar} e {dontCare}. O bit mais significativo vem primeiro.")),
+    "analysis_table_help_sets" to MessageTemplate(english = MessageForms(other = "Tap a heading to edit a column. Tap an output cell to set it to {value}. Inputs are ordered most significant bit first."), portuguese = MessageForms(other = "Toque no cabeçalho para editar uma coluna. Toque numa célula de saída para defini-la como {value}. O bit mais significativo vem primeiro.")),
     "analysis_table_inputs_limit" to MessageTemplate(english = MessageForms(other = "The table exceeds 20 input bits."), portuguese = MessageForms(other = "A tabela excede 20 bits de entrada.")),
+    "analysis_tap_mode_cycle" to MessageTemplate(english = MessageForms(other = "Cycle"), portuguese = MessageForms(other = "Alternar")),
+    "analysis_tap_mode_value" to MessageTemplate(english = MessageForms(other = "Tap sets: {value}"), portuguese = MessageForms(other = "O toque define: {value}")),
     "analysis_temporal_circuit" to MessageTemplate(english = MessageForms(other = "Combinational analysis does not accept memory, clocks, or timed inputs."), portuguese = MessageForms(other = "A análise combinacional não aceita memória, clocks ou entradas temporais.")),
     "analysis_title" to MessageTemplate(english = MessageForms(other = "Combinational analysis"), portuguese = MessageForms(other = "Análise combinacional")),
     "analysis_undeclared_inputs" to MessageTemplate(english = MessageForms(other = "The expression contains undeclared inputs."), portuguese = MessageForms(other = "A expressão contém entradas não declaradas.")),
     "analysis_undefined_output" to MessageTemplate(english = MessageForms(other = "Output {name} is undefined at row {row}."), portuguese = MessageForms(other = "Saída {name} indefinida na linha {row}.")),
+    "analysis_undo" to MessageTemplate(english = MessageForms(other = "Undo table edit"), portuguese = MessageForms(other = "Desfazer edição da tabela")),
     "analysis_unexpected_symbol" to MessageTemplate(english = MessageForms(other = "Unexpected symbol: {symbol}."), portuguese = MessageForms(other = "Símbolo inesperado: {symbol}.")),
     "analysis_unique_inputs" to MessageTemplate(english = MessageForms(other = "Inputs need unique names."), portuguese = MessageForms(other = "Entradas precisam de nomes únicos.")),
     "analysis_unique_outputs" to MessageTemplate(english = MessageForms(other = "Outputs need unique names."), portuguese = MessageForms(other = "Saídas precisam de nomes únicos.")),
     "analysis_unlisted_variables" to MessageTemplate(english = MessageForms(other = "Some variables are outside the input list."), portuguese = MessageForms(other = "Há variáveis fora da lista de entradas.")),
     "analysis_unterminated_name" to MessageTemplate(english = MessageForms(other = "Unterminated backtick-quoted name."), portuguese = MessageForms(other = "Nome entre crases não terminado.")),
+    "analysis_use_as_expressions" to MessageTemplate(english = MessageForms(other = "Use as expressions"), portuguese = MessageForms(other = "Usar como expressões")),
     "android_action_export" to MessageTemplate(english = MessageForms(other = "export"), portuguese = MessageForms(other = "exportar")),
     "android_action_open" to MessageTemplate(english = MessageForms(other = "open"), portuguese = MessageForms(other = "abrir")),
     "android_action_prepare" to MessageTemplate(english = MessageForms(other = "prepare"), portuguese = MessageForms(other = "preparar")),
@@ -3606,6 +4715,9 @@ private fun messageCatalogPart3(): Map<String, MessageTemplate> = mapOf(
     "android_asset_invalid_payload" to MessageTemplate(english = MessageForms(other = "The export file type or size is invalid."), portuguese = MessageForms(other = "O tipo ou tamanho do arquivo de exportação é inválido.")),
     "android_asset_invalid_type" to MessageTemplate(english = MessageForms(other = "No valid file type was supplied for the picker."), portuguese = MessageForms(other = "Nenhum tipo de arquivo válido foi fornecido ao seletor.")),
     "android_asset_memory_limit" to MessageTemplate(english = MessageForms(other = "The device does not have enough memory for this file. Choose a smaller file."), portuguese = MessageForms(other = "O dispositivo não tem memória suficiente para este arquivo. Escolha um arquivo menor.")),
+)
+
+private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "android_asset_missing" to MessageTemplate(english = MessageForms(other = "The file was moved, removed, or is unavailable in the provider."), portuguese = MessageForms(other = "O arquivo foi movido, removido ou está indisponível no provedor.")),
     "android_asset_picker_busy" to MessageTemplate(english = MessageForms(other = "A file operation is already open in the system picker."), portuguese = MessageForms(other = "Uma operação de arquivo já está aberta no seletor do sistema.")),
     "android_asset_print_failed" to MessageTemplate(english = MessageForms(other = "The PDF could not be prepared for printing."), portuguese = MessageForms(other = "Não foi possível preparar o PDF para impressão.")),
@@ -3662,6 +4774,8 @@ private fun messageCatalogPart3(): Map<String, MessageTemplate> = mapOf(
     "android_preferences_save_failed" to MessageTemplate(english = MessageForms(other = "Could not save editor preferences. Try again."), portuguese = MessageForms(other = "Não foi possível salvar as preferências do editor. Tente novamente.")),
     "android_workspace_loading" to MessageTemplate(english = MessageForms(other = "Opening saved projects…"), portuguese = MessageForms(other = "Abrindo projetos salvos…")),
     "android_workspace_open_failed" to MessageTemplate(english = MessageForms(other = "Could not open the saved project: {reason}."), portuguese = MessageForms(other = "Não foi possível abrir o projeto salvo: {reason}.")),
+    "annotation_alignment_horizontal" to MessageTemplate(english = MessageForms(other = "Horizontal alignment"), portuguese = MessageForms(other = "Alinhamento horizontal")),
+    "annotation_alignment_vertical" to MessageTemplate(english = MessageForms(other = "Vertical alignment"), portuguese = MessageForms(other = "Alinhamento vertical")),
     "annotation_attribution" to MessageTemplate(english = MessageForms(other = "Image credit"), portuguese = MessageForms(other = "Crédito da imagem")),
     "annotation_back" to MessageTemplate(english = MessageForms(other = "Send to back"), portuguese = MessageForms(other = "Enviar ao fundo")),
     "annotation_backward" to MessageTemplate(english = MessageForms(other = "Move backward"), portuguese = MessageForms(other = "Descer")),
@@ -3669,7 +4783,6 @@ private fun messageCatalogPart3(): Map<String, MessageTemplate> = mapOf(
     "annotation_bottom" to MessageTemplate(english = MessageForms(other = "Bottom"), portuguese = MessageForms(other = "Base inferior")),
     "annotation_center" to MessageTemplate(english = MessageForms(other = "Center"), portuguese = MessageForms(other = "Centro")),
     "annotation_choose_image" to MessageTemplate(english = MessageForms(other = "Choose image"), portuguese = MessageForms(other = "Escolher imagem")),
-    "annotation_color" to MessageTemplate(english = MessageForms(other = "Hex color"), portuguese = MessageForms(other = "Cor hexadecimal")),
     "annotation_connection_loss" to MessageTemplate(english = MessageForms(other = "The operation would alter existing connections."), portuguese = MessageForms(other = "A operação alteraria conexões existentes.")),
     "annotation_cover" to MessageTemplate(english = MessageForms(other = "Cover"), portuguese = MessageForms(other = "Preencher")),
     "annotation_distribute" to MessageTemplate(english = MessageForms(other = "Distribute"), portuguese = MessageForms(other = "Distribuir")),
@@ -3677,9 +4790,6 @@ private fun messageCatalogPart3(): Map<String, MessageTemplate> = mapOf(
     "annotation_end" to MessageTemplate(english = MessageForms(other = "End"), portuguese = MessageForms(other = "Fim")),
     "annotation_failed" to MessageTemplate(english = MessageForms(other = "Could not apply the annotation."), portuguese = MessageForms(other = "Não foi possível aplicar a anotação.")),
     "annotation_fit" to MessageTemplate(english = MessageForms(other = "Fit"), portuguese = MessageForms(other = "Conter")),
-)
-
-private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "annotation_font" to MessageTemplate(english = MessageForms(other = "Font, style, and size"), portuguese = MessageForms(other = "Fonte, estilo e tamanho")),
     "annotation_forward" to MessageTemplate(english = MessageForms(other = "Move forward"), portuguese = MessageForms(other = "Subir")),
     "annotation_front" to MessageTemplate(english = MessageForms(other = "Bring to front"), portuguese = MessageForms(other = "Trazer à frente")),
@@ -3698,6 +4808,7 @@ private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "annotation_image_format" to MessageTemplate(english = MessageForms(other = "Unsupported image format: {mime}."), portuguese = MessageForms(other = "Formato de imagem não suportado: {mime}.")),
     "annotation_image_incomplete" to MessageTemplate(english = MessageForms(other = "The image is empty, incomplete, or exceeds 1 MB."), portuguese = MessageForms(other = "A imagem está vazia, incompleta ou excede 1 MB.")),
     "annotation_image_limit" to MessageTemplate(english = MessageForms(other = "The image exceeds the 1 MB limit."), portuguese = MessageForms(other = "A imagem excede o limite de 1 MB.")),
+    "annotation_image_scale" to MessageTemplate(english = MessageForms(other = "Image scaling"), portuguese = MessageForms(other = "Ajuste da imagem")),
     "annotation_image_uri" to MessageTemplate(english = MessageForms(other = "Embedded image, data URI"), portuguese = MessageForms(other = "Imagem incorporada, data URI")),
     "annotation_insert_text" to MessageTemplate(english = MessageForms(other = "Insert text"), portuguese = MessageForms(other = "Inserir texto")),
     "annotation_invalid_color" to MessageTemplate(english = MessageForms(other = "Invalid color."), portuguese = MessageForms(other = "Cor inválida.")),
@@ -3707,6 +4818,9 @@ private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "annotation_invalid_x" to MessageTemplate(english = MessageForms(other = "Invalid X position."), portuguese = MessageForms(other = "Posição X inválida.")),
     "annotation_invalid_y" to MessageTemplate(english = MessageForms(other = "Invalid Y position."), portuguese = MessageForms(other = "Posição Y inválida.")),
     "annotation_jpeg_dimensions" to MessageTemplate(english = MessageForms(other = "Missing JPEG dimensions."), portuguese = MessageForms(other = "Dimensões JPEG ausentes.")),
+)
+
+private fun messageCatalogPart5(): Map<String, MessageTemplate> = mapOf(
     "annotation_jpeg_header" to MessageTemplate(english = MessageForms(other = "Invalid JPEG header."), portuguese = MessageForms(other = "Cabeçalho JPEG inválido.")),
     "annotation_jpeg_incomplete" to MessageTemplate(english = MessageForms(other = "Incomplete JPEG."), portuguese = MessageForms(other = "JPEG incompleto.")),
     "annotation_jpeg_marker" to MessageTemplate(english = MessageForms(other = "Invalid JPEG marker."), portuguese = MessageForms(other = "Marcador JPEG inválido.")),
@@ -3715,6 +4829,8 @@ private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "annotation_organize" to MessageTemplate(english = MessageForms(other = "Organize selection"), portuguese = MessageForms(other = "Organizar seleção")),
     "annotation_picker_unavailable" to MessageTemplate(english = MessageForms(other = "The image picker is unavailable in this window."), portuguese = MessageForms(other = "O seletor de imagem está indisponível nesta janela.")),
     "annotation_png_header" to MessageTemplate(english = MessageForms(other = "Invalid PNG header."), portuguese = MessageForms(other = "Cabeçalho PNG inválido.")),
+    "annotation_position_hint" to MessageTemplate(english = MessageForms(other = "New text and images are placed at X and Y. To place text where you tap, use the Text tool on the canvas."), portuguese = MessageForms(other = "Textos e imagens novos são colocados em X e Y. Para colocar um texto onde você tocar, use a ferramenta Texto no canvas.")),
+    "annotation_position_view_hint" to MessageTemplate(english = MessageForms(other = "X and Y start at the center of the circuit in view. To place text where you tap, use the Text tool on the canvas."), portuguese = MessageForms(other = "X e Y começam no centro do circuito visível. Para colocar um texto onde você tocar, use a ferramenta Texto no canvas.")),
     "annotation_preview" to MessageTemplate(english = MessageForms(other = "Annotation preview"), portuguese = MessageForms(other = "Prévia da anotação")),
     "annotation_saved" to MessageTemplate(english = MessageForms(other = "Annotations updated."), portuguese = MessageForms(other = "Anotações atualizadas.")),
     "annotation_select_three" to MessageTemplate(english = MessageForms(other = "Select at least three components."), portuguese = MessageForms(other = "Selecione ao menos três componentes.")),
@@ -3722,6 +4838,7 @@ private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "annotation_start" to MessageTemplate(english = MessageForms(other = "Start"), portuguese = MessageForms(other = "Início")),
     "annotation_stretch" to MessageTemplate(english = MessageForms(other = "Stretch"), portuguese = MessageForms(other = "Esticar")),
     "annotation_text" to MessageTemplate(english = MessageForms(other = "Text"), portuguese = MessageForms(other = "Texto")),
+    "annotation_text_color" to MessageTemplate(english = MessageForms(other = "Text color"), portuguese = MessageForms(other = "Cor do texto")),
     "annotation_title" to MessageTemplate(english = MessageForms(other = "Text and images"), portuguese = MessageForms(other = "Textos e imagens")),
     "annotation_top" to MessageTemplate(english = MessageForms(other = "Top"), portuguese = MessageForms(other = "Topo")),
     "annotation_ungroup" to MessageTemplate(english = MessageForms(other = "Ungroup"), portuguese = MessageForms(other = "Desagrupar")),
@@ -3731,21 +4848,32 @@ private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "annotation_width" to MessageTemplate(english = MessageForms(other = "Width"), portuguese = MessageForms(other = "Largura")),
     "app_name" to MessageTemplate(english = MessageForms(other = "Logisim Evolution Mobile"), portuguese = MessageForms(other = "Logisim Evolution Mobile")),
     "appearance_add_vertex" to MessageTemplate(english = MessageForms(other = "Add vertex"), portuguese = MessageForms(other = "Adicionar vértice")),
+    "appearance_align_baseline" to MessageTemplate(english = MessageForms(other = "Baseline"), portuguese = MessageForms(other = "Linha de base")),
+    "appearance_align_bottom" to MessageTemplate(english = MessageForms(other = "Bottom"), portuguese = MessageForms(other = "Base")),
+    "appearance_align_center" to MessageTemplate(english = MessageForms(other = "Center"), portuguese = MessageForms(other = "Centro")),
+    "appearance_align_left" to MessageTemplate(english = MessageForms(other = "Left"), portuguese = MessageForms(other = "Esquerda")),
+    "appearance_align_middle" to MessageTemplate(english = MessageForms(other = "Middle"), portuguese = MessageForms(other = "Meio")),
+    "appearance_align_right" to MessageTemplate(english = MessageForms(other = "Right"), portuguese = MessageForms(other = "Direita")),
+    "appearance_align_top" to MessageTemplate(english = MessageForms(other = "Top"), portuguese = MessageForms(other = "Topo")),
     "appearance_all_pins" to MessageTemplate(english = MessageForms(other = "The appearance must represent each circuit pin exactly once."), portuguese = MessageForms(other = "A aparência precisa representar cada pino real uma vez.")),
     "appearance_anchor" to MessageTemplate(english = MessageForms(other = "Anchor"), portuguese = MessageForms(other = "Âncora")),
     "appearance_apply" to MessageTemplate(english = MessageForms(other = "Apply custom appearance"), portuguese = MessageForms(other = "Aplicar aparência personalizada")),
     "appearance_attributes" to MessageTemplate(english = MessageForms(other = "SVG attributes, one key=value per line"), portuguese = MessageForms(other = "Atributos SVG, um chave=valor por linha")),
     "appearance_bold" to MessageTemplate(english = MessageForms(other = "Bold"), portuguese = MessageForms(other = "Negrito")),
     "appearance_classic" to MessageTemplate(english = MessageForms(other = "Use classic appearance"), portuguese = MessageForms(other = "Usar aparência clássica")),
+    "appearance_classic_confirm" to MessageTemplate(english = MessageForms(other = "Using the classic appearance replaces the custom shape. Your unapplied changes will be lost."), portuguese = MessageForms(other = "Usar a aparência clássica substitui a forma personalizada. Suas alterações não aplicadas serão perdidas.")),
     "appearance_connection_loss" to MessageTemplate(english = MessageForms(other = "The appearance would disconnect or short a net in {circuit}."), portuguese = MessageForms(other = "A aparência causaria perda de ligação ou curto em {circuit}.")),
     "appearance_coordinate_limit" to MessageTemplate(english = MessageForms(other = "Coordinate {key} exceeds the limit."), portuguese = MessageForms(other = "Coordenada {key} fora do limite.")),
     "appearance_curve_control" to MessageTemplate(english = MessageForms(other = "Control point"), portuguese = MessageForms(other = "Ponto de controle")),
     "appearance_curve_end" to MessageTemplate(english = MessageForms(other = "End"), portuguese = MessageForms(other = "Fim")),
     "appearance_curve_start" to MessageTemplate(english = MessageForms(other = "Start"), portuguese = MessageForms(other = "Início")),
+    "appearance_discard_title" to MessageTemplate(english = MessageForms(other = "Discard unapplied changes?"), portuguese = MessageForms(other = "Descartar as alterações não aplicadas?")),
     "appearance_duplicate_pin" to MessageTemplate(english = MessageForms(other = "A pin can only have one appearance port."), portuguese = MessageForms(other = "Um pino só pode ter uma porta de aparência.")),
     "appearance_east" to MessageTemplate(english = MessageForms(other = "East"), portuguese = MessageForms(other = "Leste")),
     "appearance_ellipse" to MessageTemplate(english = MessageForms(other = "Ellipse"), portuguese = MessageForms(other = "Elipse")),
+    "appearance_facing" to MessageTemplate(english = MessageForms(other = "Facing"), portuguese = MessageForms(other = "Direção da forma")),
     "appearance_fill_enabled" to MessageTemplate(english = MessageForms(other = "Fill"), portuguese = MessageForms(other = "Preenchimento")),
+    "appearance_halign" to MessageTemplate(english = MessageForms(other = "Horizontal alignment"), portuguese = MessageForms(other = "Alinhamento horizontal")),
     "appearance_help" to MessageTemplate(english = MessageForms(other = "Drag shapes, ports, or the green anchor. Turn on multi-select to edit shapes as a group. Apply the draft to update every instance and its wires in one undo step."), portuguese = MessageForms(other = "Arraste formas, portas ou a âncora verde. Ative a seleção múltipla para editar formas em grupo. Aplique o rascunho para atualizar todas as instâncias e suas conexões em uma etapa de desfazer.")),
     "appearance_image_dimensions" to MessageTemplate(english = MessageForms(other = "Enter whole-number image coordinates and positive width and height."), portuguese = MessageForms(other = "Use coordenadas inteiras e largura e altura positivas para a imagem.")),
     "appearance_incomplete_path" to MessageTemplate(english = MessageForms(other = "Incomplete SVG path."), portuguese = MessageForms(other = "Caminho SVG incompleto.")),
@@ -3766,27 +4894,36 @@ private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "appearance_missing_shape" to MessageTemplate(english = MessageForms(other = "Shape does not exist."), portuguese = MessageForms(other = "Forma inexistente.")),
     "appearance_multi_select" to MessageTemplate(english = MessageForms(other = "Multi-select shapes"), portuguese = MessageForms(other = "Selecionar várias formas")),
     "appearance_north" to MessageTemplate(english = MessageForms(other = "North"), portuguese = MessageForms(other = "Norte")),
+    "appearance_not_applied" to MessageTemplate(english = MessageForms(other = "The appearance was not applied: this document is read-only or another editor took over. Your draft is kept."), portuguese = MessageForms(other = "A aparência não foi aplicada: este documento é somente leitura ou outro editor assumiu. Seu rascunho foi mantido.")),
     "appearance_objects" to MessageTemplate(english = MessageForms(other = "Shapes and text"), portuguese = MessageForms(other = "Formas e textos")),
     "appearance_opaque" to MessageTemplate(english = MessageForms(other = "This appearance contains objects from another version. They are preserved when saving but cannot be edited or previewed here."), portuguese = MessageForms(other = "Esta aparência contém objetos de outra versão. Eles são preservados ao salvar, mas não podem ser editados ou exibidos aqui.")),
+    "appearance_path" to MessageTemplate(english = MessageForms(other = "Path"), portuguese = MessageForms(other = "Caminho")),
     "appearance_pin_direction" to MessageTemplate(english = MessageForms(other = "The port direction does not match the pin."), portuguese = MessageForms(other = "Direção da porta não corresponde ao pino.")),
     "appearance_pin_mismatch" to MessageTemplate(english = MessageForms(other = "The port does not match a circuit pin."), portuguese = MessageForms(other = "A porta não corresponde a um pino real.")),
     "appearance_polygon" to MessageTemplate(english = MessageForms(other = "Polygon"), portuguese = MessageForms(other = "Polígono")),
+    "appearance_polyline" to MessageTemplate(english = MessageForms(other = "Polyline"), portuguese = MessageForms(other = "Poligonal")),
     "appearance_port_collision" to MessageTemplate(english = MessageForms(other = "Appearance ports cannot share a position."), portuguese = MessageForms(other = "As portas da aparência não podem ocupar a mesma posição.")),
+    "appearance_port_input" to MessageTemplate(english = MessageForms(other = "Input pin ({x}, {y})"), portuguese = MessageForms(other = "Pino de entrada ({x}, {y})")),
+    "appearance_port_input_bits" to MessageTemplate(english = MessageForms(other = "Input pin ({x}, {y}) [{width} bits]"), portuguese = MessageForms(other = "Pino de entrada ({x}, {y}) [{width} bits]")),
+    "appearance_port_missing" to MessageTemplate(english = MessageForms(other = "Missing pin"), portuguese = MessageForms(other = "Pino ausente")),
+    "appearance_port_output" to MessageTemplate(english = MessageForms(other = "Output pin ({x}, {y})"), portuguese = MessageForms(other = "Pino de saída ({x}, {y})")),
+    "appearance_port_output_bits" to MessageTemplate(english = MessageForms(other = "Output pin ({x}, {y}) [{width} bits]"), portuguese = MessageForms(other = "Pino de saída ({x}, {y}) [{width} bits]")),
     "appearance_ports" to MessageTemplate(english = MessageForms(other = "Ports linked to circuit pins"), portuguese = MessageForms(other = "Portas vinculadas aos pinos do circuito")),
     "appearance_preview" to MessageTemplate(english = MessageForms(other = "Symbol preview. Shapes, ports, and anchor can be selected and dragged. Coordinates are also available below."), portuguese = MessageForms(other = "Prévia do símbolo. Formas, portas e âncora podem ser selecionadas e arrastadas. As coordenadas também estão disponíveis abaixo.")),
+    "appearance_property_corner_radius" to MessageTemplate(english = MessageForms(other = "Corner radius"), portuguese = MessageForms(other = "Raio do canto")),
     "appearance_property_cx" to MessageTemplate(english = MessageForms(other = "Center X"), portuguese = MessageForms(other = "Centro X")),
     "appearance_property_cy" to MessageTemplate(english = MessageForms(other = "Center Y"), portuguese = MessageForms(other = "Centro Y")),
     "appearance_property_d" to MessageTemplate(english = MessageForms(other = "Path coordinates"), portuguese = MessageForms(other = "Coordenadas do caminho")),
     "appearance_property_fill" to MessageTemplate(english = MessageForms(other = "Fill color"), portuguese = MessageForms(other = "Cor do preenchimento")),
     "appearance_property_fill_opacity" to MessageTemplate(english = MessageForms(other = "Fill opacity (0–1)"), portuguese = MessageForms(other = "Opacidade do preenchimento (0–1)")),
     "appearance_property_font_family" to MessageTemplate(english = MessageForms(other = "Font family"), portuguese = MessageForms(other = "Família da fonte")),
-)
-
-private fun messageCatalogPart5(): Map<String, MessageTemplate> = mapOf(
     "appearance_property_font_size" to MessageTemplate(english = MessageForms(other = "Font size"), portuguese = MessageForms(other = "Tamanho da fonte")),
     "appearance_property_height" to MessageTemplate(english = MessageForms(other = "Height"), portuguese = MessageForms(other = "Altura")),
     "appearance_property_points" to MessageTemplate(english = MessageForms(other = "Points (x,y pairs)"), portuguese = MessageForms(other = "Pontos (pares x,y)")),
     "appearance_property_rx" to MessageTemplate(english = MessageForms(other = "Horizontal radius"), portuguese = MessageForms(other = "Raio horizontal")),
+)
+
+private fun messageCatalogPart6(): Map<String, MessageTemplate> = mapOf(
     "appearance_property_ry" to MessageTemplate(english = MessageForms(other = "Vertical radius"), portuguese = MessageForms(other = "Raio vertical")),
     "appearance_property_stroke" to MessageTemplate(english = MessageForms(other = "Outline color"), portuguese = MessageForms(other = "Cor do contorno")),
     "appearance_property_stroke_opacity" to MessageTemplate(english = MessageForms(other = "Outline opacity (0–1)"), portuguese = MessageForms(other = "Opacidade do contorno (0–1)")),
@@ -3802,16 +4939,23 @@ private fun messageCatalogPart5(): Map<String, MessageTemplate> = mapOf(
     "appearance_rectangle" to MessageTemplate(english = MessageForms(other = "Rectangle"), portuguese = MessageForms(other = "Retângulo")),
     "appearance_remove_object" to MessageTemplate(english = MessageForms(other = "Remove object"), portuguese = MessageForms(other = "Remover objeto")),
     "appearance_remove_vertex" to MessageTemplate(english = MessageForms(other = "Remove vertex {index}"), portuguese = MessageForms(other = "Remover vértice {index}")),
+    "appearance_reset_confirm" to MessageTemplate(english = MessageForms(other = "Resetting the draft replaces your unapplied changes with the classic shape."), portuguese = MessageForms(other = "Redefinir o rascunho substitui suas alterações não aplicadas pela forma clássica.")),
     "appearance_reset_draft" to MessageTemplate(english = MessageForms(other = "Reset draft"), portuguese = MessageForms(other = "Redefinir rascunho")),
     "appearance_saved" to MessageTemplate(english = MessageForms(other = "Symbol appearance updated."), portuguese = MessageForms(other = "Aparência do símbolo atualizada.")),
+    "appearance_shape_name" to MessageTemplate(english = MessageForms(other = "{type} {number}"), portuguese = MessageForms(other = "{type} {number}")),
+    "appearance_shape_other" to MessageTemplate(english = MessageForms(other = "Shape"), portuguese = MessageForms(other = "Forma")),
+    "appearance_shape_text" to MessageTemplate(english = MessageForms(other = "Text “{text}”"), portuguese = MessageForms(other = "Texto “{text}”")),
     "appearance_south" to MessageTemplate(english = MessageForms(other = "South"), portuguese = MessageForms(other = "Sul")),
+    "appearance_step_decrease" to MessageTemplate(english = MessageForms(other = "Decrease {label} by {step}"), portuguese = MessageForms(other = "Diminuir {label} em {step}")),
+    "appearance_step_increase" to MessageTemplate(english = MessageForms(other = "Increase {label} by {step}"), portuguese = MessageForms(other = "Aumentar {label} em {step}")),
     "appearance_stroke_enabled" to MessageTemplate(english = MessageForms(other = "Outline"), portuguese = MessageForms(other = "Contorno")),
     "appearance_svg_color" to MessageTemplate(english = MessageForms(other = "Unsupported SVG color: {color}."), portuguese = MessageForms(other = "Cor SVG não suportada: {color}.")),
     "appearance_title" to MessageTemplate(english = MessageForms(other = "Symbol appearance"), portuguese = MessageForms(other = "Aparência do símbolo")),
+    "appearance_unapplied" to MessageTemplate(english = MessageForms(other = "Unapplied changes from your last edit are kept in this draft."), portuguese = MessageForms(other = "As alterações não aplicadas da última edição continuam neste rascunho.")),
     "appearance_undo_draft" to MessageTemplate(english = MessageForms(other = "Undo draft change"), portuguese = MessageForms(other = "Desfazer alteração do rascunho")),
     "appearance_unique_anchor" to MessageTemplate(english = MessageForms(other = "The appearance needs exactly one anchor."), portuguese = MessageForms(other = "A aparência precisa de uma âncora única.")),
     "appearance_unsupported_path" to MessageTemplate(english = MessageForms(other = "Unsupported SVG path."), portuguese = MessageForms(other = "Caminho SVG não suportado.")),
-    "appearance_update_object" to MessageTemplate(english = MessageForms(other = "Update object"), portuguese = MessageForms(other = "Atualizar objeto")),
+    "appearance_valign" to MessageTemplate(english = MessageForms(other = "Vertical alignment"), portuguese = MessageForms(other = "Alinhamento vertical")),
     "appearance_vertex" to MessageTemplate(english = MessageForms(other = "Vertex {index}"), portuguese = MessageForms(other = "Vértice {index}")),
     "appearance_west" to MessageTemplate(english = MessageForms(other = "West"), portuguese = MessageForms(other = "Oeste")),
     "assembly_viewer_address" to MessageTemplate(english = MessageForms(other = "Current address 0x{address}"), portuguese = MessageForms(other = "Endereço atual 0x{address}")),
@@ -3829,47 +4973,83 @@ private fun messageCatalogPart5(): Map<String, MessageTemplate> = mapOf(
     "attribute_label_2rext" to MessageTemplate(english = MessageForms(other = "External resistor 2"), portuguese = MessageForms(other = "Resistor externo 2")),
     "attribute_label_active" to MessageTemplate(english = MessageForms(other = "Active level"), portuguese = MessageForms(other = "Nível ativo")),
     "attribute_label_addrwidth" to MessageTemplate(english = MessageForms(other = "Address bits"), portuguese = MessageForms(other = "Bits de endereço")),
+    "attribute_label_and" to MessageTemplate(english = MessageForms(other = "Number of AND gates"), portuguese = MessageForms(other = "Número de portas AND")),
+    "attribute_label_appear" to MessageTemplate(english = MessageForms(other = "Appearance"), portuguese = MessageForms(other = "Aparência")),
     "attribute_label_appearance" to MessageTemplate(english = MessageForms(other = "Appearance"), portuguese = MessageForms(other = "Aparência")),
     "attribute_label_asyncread" to MessageTemplate(english = MessageForms(other = "Asynchronous read"), portuguese = MessageForms(other = "Leitura assíncrona")),
+    "attribute_label_attribution" to MessageTemplate(english = MessageForms(other = "Source / author"), portuguese = MessageForms(other = "Origem / autor")),
     "attribute_label_behavior" to MessageTemplate(english = MessageForms(other = "Behavior"), portuguese = MessageForms(other = "Comportamento")),
+    "attribute_label_bg" to MessageTemplate(english = MessageForms(other = "Background"), portuguese = MessageForms(other = "Cor de fundo")),
+    "attribute_label_binvalue" to MessageTemplate(english = MessageForms(other = "Binary data bits"), portuguese = MessageForms(other = "Bits de dados binários")),
+    "attribute_label_bipolar" to MessageTemplate(english = MessageForms(other = "Bipolar"), portuguese = MessageForms(other = "Bipolar")),
+    "attribute_label_bit_n" to MessageTemplate(english = MessageForms(other = "Bit {n}"), portuguese = MessageForms(other = "Bit {n}")),
     "attribute_label_bits" to MessageTemplate(english = MessageForms(other = "Bits"), portuguese = MessageForms(other = "Bits")),
+    "attribute_label_border_color" to MessageTemplate(english = MessageForms(other = "Border color"), portuguese = MessageForms(other = "Cor da borda")),
+    "attribute_label_breakvector" to MessageTemplate(english = MessageForms(other = "Break vector"), portuguese = MessageForms(other = "Vetor de break")),
+    "attribute_label_bufferaddress" to MessageTemplate(english = MessageForms(other = "Pixel buffer address"), portuguese = MessageForms(other = "Endereço do buffer de pixels")),
     "attribute_label_buflen" to MessageTemplate(english = MessageForms(other = "Buffer length"), portuguese = MessageForms(other = "Tamanho do buffer")),
+    "attribute_label_burstsize" to MessageTemplate(english = MessageForms(other = "Burst size"), portuguese = MessageForms(other = "Tamanho do burst")),
     "attribute_label_bus" to MessageTemplate(english = MessageForms(other = "Bus"), portuguese = MessageForms(other = "Barramento")),
     "attribute_label_busside" to MessageTemplate(english = MessageForms(other = "Bus location"), portuguese = MessageForms(other = "Posição do barramento")),
     "attribute_label_byteenables" to MessageTemplate(english = MessageForms(other = "Byte enables"), portuguese = MessageForms(other = "Habilitação por byte")),
+    "attribute_label_c1" to MessageTemplate(english = MessageForms(other = "Capacitor C1 (10 µF to 1000 µF)"), portuguese = MessageForms(other = "Capacitor C1 (10 µF a 1000 µF)")),
+    "attribute_label_capturetype" to MessageTemplate(english = MessageForms(other = "Capture type"), portuguese = MessageForms(other = "Tipo de captura")),
+    "attribute_label_channel" to MessageTemplate(english = MessageForms(other = "Channel"), portuguese = MessageForms(other = "Canal")),
     "attribute_label_clear" to MessageTemplate(english = MessageForms(other = "Clear input"), portuguese = MessageForms(other = "Entrada de limpeza")),
     "attribute_label_clearpin" to MessageTemplate(english = MessageForms(other = "Clear input"), portuguese = MessageForms(other = "Entrada de limpeza")),
     "attribute_label_clock" to MessageTemplate(english = MessageForms(other = "Clock input"), portuguese = MessageForms(other = "Entrada de clock")),
-    "attribute_label_color" to MessageTemplate(english = MessageForms(other = "On color"), portuguese = MessageForms(other = "Cor acesa")),
+    "attribute_label_color" to MessageTemplate(english = MessageForms(other = "Color"), portuguese = MessageForms(other = "Cor")),
+    "attribute_label_color_model" to MessageTemplate(english = MessageForms(other = "Color model"), portuguese = MessageForms(other = "Modelo de cor")),
     "attribute_label_cols" to MessageTemplate(english = MessageForms(other = "Columns"), portuguese = MessageForms(other = "Colunas")),
     "attribute_label_columns" to MessageTemplate(english = MessageForms(other = "Columns"), portuguese = MessageForms(other = "Colunas")),
+    "attribute_label_content" to MessageTemplate(english = MessageForms(other = "Content"), portuguese = MessageForms(other = "Conteúdo")),
     "attribute_label_contents" to MessageTemplate(english = MessageForms(other = "Contents"), portuguese = MessageForms(other = "Conteúdo")),
     "attribute_label_control" to MessageTemplate(english = MessageForms(other = "Control"), portuguese = MessageForms(other = "Controle")),
+    "attribute_label_cursor" to MessageTemplate(english = MessageForms(other = "Cursor"), portuguese = MessageForms(other = "Cursor")),
     "attribute_label_databus" to MessageTemplate(english = MessageForms(other = "Data bus"), portuguese = MessageForms(other = "Barramento de dados")),
     "attribute_label_datawidth" to MessageTemplate(english = MessageForms(other = "Data bits"), portuguese = MessageForms(other = "Bits de dados")),
     "attribute_label_decimalpoint" to MessageTemplate(english = MessageForms(other = "Decimal point"), portuguese = MessageForms(other = "Ponto decimal")),
     "attribute_label_direction" to MessageTemplate(english = MessageForms(other = "Direction"), portuguese = MessageForms(other = "Direção")),
     "attribute_label_disabled" to MessageTemplate(english = MessageForms(other = "Disabled output"), portuguese = MessageForms(other = "Saída desabilitada")),
+    "attribute_label_display_size" to MessageTemplate(english = MessageForms(other = "Display size"), portuguese = MessageForms(other = "Tamanho do display")),
+    "attribute_label_displaymode" to MessageTemplate(english = MessageForms(other = "Initial mode"), portuguese = MessageForms(other = "Modo inicial")),
+    "attribute_label_dmadstbus" to MessageTemplate(english = MessageForms(other = "Destination bus"), portuguese = MessageForms(other = "Barramento de destino")),
+    "attribute_label_dmasrcbus" to MessageTemplate(english = MessageForms(other = "Source bus"), portuguese = MessageForms(other = "Barramento de origem")),
     "attribute_label_dotshape" to MessageTemplate(english = MessageForms(other = "Dot shape"), portuguese = MessageForms(other = "Formato do ponto")),
     "attribute_label_enable" to MessageTemplate(english = MessageForms(other = "Include enable input"), portuguese = MessageForms(other = "Incluir entrada de habilitação")),
     "attribute_label_enabled" to MessageTemplate(english = MessageForms(other = "Enabled"), portuguese = MessageForms(other = "Ativado")),
     "attribute_label_enables" to MessageTemplate(english = MessageForms(other = "Enable inputs"), portuguese = MessageForms(other = "Entradas de habilitação")),
+    "attribute_label_exceptionvector" to MessageTemplate(english = MessageForms(other = "Exception vector"), portuguese = MessageForms(other = "Vetor de exceção")),
     "attribute_label_facing" to MessageTemplate(english = MessageForms(other = "Facing"), portuguese = MessageForms(other = "Direção")),
     "attribute_label_fanout" to MessageTemplate(english = MessageForms(other = "Fan out"), portuguese = MessageForms(other = "Número de saídas")),
+    "attribute_label_filepath" to MessageTemplate(english = MessageForms(other = "Tcl content file"), portuguese = MessageForms(other = "Arquivo de conteúdo Tcl")),
+    "attribute_label_font" to MessageTemplate(english = MessageForms(other = "Font"), portuguese = MessageForms(other = "Fonte")),
+)
+
+private fun messageCatalogPart7(): Map<String, MessageTemplate> = mapOf(
     "attribute_label_fpwidth" to MessageTemplate(english = MessageForms(other = "Floating-point bits"), portuguese = MessageForms(other = "Bits de ponto flutuante")),
     "attribute_label_fpwidthin" to MessageTemplate(english = MessageForms(other = "Input floating-point bits"), portuguese = MessageForms(other = "Bits de ponto flutuante de entrada")),
     "attribute_label_fpwidthout" to MessageTemplate(english = MessageForms(other = "Output floating-point bits"), portuguese = MessageForms(other = "Bits de ponto flutuante de saída")),
+    "attribute_label_freq_measure" to MessageTemplate(english = MessageForms(other = "Frequency unit"), portuguese = MessageForms(other = "Unidade de frequência")),
+    "attribute_label_frontlines" to MessageTemplate(english = MessageForms(other = "Clock edge lines"), portuguese = MessageForms(other = "Linhas nas bordas do clock")),
     "attribute_label_gain" to MessageTemplate(english = MessageForms(other = "Gain"), portuguese = MessageForms(other = "Ganho")),
+    "attribute_label_genirq" to MessageTemplate(english = MessageForms(other = "IRQ enabled"), portuguese = MessageForms(other = "IRQ habilitada")),
     "attribute_label_group" to MessageTemplate(english = MessageForms(other = "Group bits"), portuguese = MessageForms(other = "Bits do grupo")),
+    "attribute_label_halign" to MessageTemplate(english = MessageForms(other = "Horizontal alignment"), portuguese = MessageForms(other = "Alinhamento horizontal")),
     "attribute_label_height" to MessageTemplate(english = MessageForms(other = "Height"), portuguese = MessageForms(other = "Altura")),
     "attribute_label_highduration" to MessageTemplate(english = MessageForms(other = "High duration"), portuguese = MessageForms(other = "Duração em nível alto")),
+    "attribute_label_image" to MessageTemplate(english = MessageForms(other = "Image source"), portuguese = MessageForms(other = "Origem da imagem")),
     "attribute_label_in_width" to MessageTemplate(english = MessageForms(other = "Input bits"), portuguese = MessageForms(other = "Bits de entrada")),
     "attribute_label_incoming" to MessageTemplate(english = MessageForms(other = "Input bits"), portuguese = MessageForms(other = "Bits de entrada")),
     "attribute_label_initial" to MessageTemplate(english = MessageForms(other = "Initial value"), portuguese = MessageForms(other = "Valor inicial")),
     "attribute_label_input" to MessageTemplate(english = MessageForms(other = "Input mode"), portuguese = MessageForms(other = "Modo de entrada")),
     "attribute_label_inputmode" to MessageTemplate(english = MessageForms(other = "Input mode"), portuguese = MessageForms(other = "Modo de entrada")),
     "attribute_label_inputs" to MessageTemplate(english = MessageForms(other = "Number of inputs"), portuguese = MessageForms(other = "Número de entradas")),
+    "attribute_label_inputscaptbit" to MessageTemplate(english = MessageForms(other = "Capture bit-clearing"), portuguese = MessageForms(other = "Limpeza individual de bits da captura")),
+    "attribute_label_inputssynccapt" to MessageTemplate(english = MessageForms(other = "Synchronous capture"), portuguese = MessageForms(other = "Captura síncrona")),
     "attribute_label_inputtype" to MessageTemplate(english = MessageForms(other = "Input type"), portuguese = MessageForms(other = "Tipo de entrada")),
+    "attribute_label_irqtype" to MessageTemplate(english = MessageForms(other = "IRQ type"), portuguese = MessageForms(other = "Tipo de IRQ")),
+    "attribute_label_irqwidth" to MessageTemplate(english = MessageForms(other = "Number of IRQ lines"), portuguese = MessageForms(other = "Número de linhas de IRQ")),
     "attribute_label_keyalabel" to MessageTemplate(english = MessageForms(other = "A key label"), portuguese = MessageForms(other = "Rótulo da tecla A")),
     "attribute_label_keyblabel" to MessageTemplate(english = MessageForms(other = "B key label"), portuguese = MessageForms(other = "Rótulo da tecla B")),
     "attribute_label_keyclabel" to MessageTemplate(english = MessageForms(other = "C key label"), portuguese = MessageForms(other = "Rótulo da tecla C")),
@@ -3881,58 +5061,311 @@ private fun messageCatalogPart5(): Map<String, MessageTemplate> = mapOf(
     "attribute_label_labelfont" to MessageTemplate(english = MessageForms(other = "Label font"), portuguese = MessageForms(other = "Fonte do rótulo")),
     "attribute_label_labelloc" to MessageTemplate(english = MessageForms(other = "Label location"), portuguese = MessageForms(other = "Posição do rótulo")),
     "attribute_label_labelvisible" to MessageTemplate(english = MessageForms(other = "Show label"), portuguese = MessageForms(other = "Mostrar rótulo")),
+    "attribute_label_length" to MessageTemplate(english = MessageForms(other = "Number of stages"), portuguese = MessageForms(other = "Número de estágios")),
+    "attribute_label_license" to MessageTemplate(english = MessageForms(other = "License"), portuguese = MessageForms(other = "Licença")),
     "attribute_label_line" to MessageTemplate(english = MessageForms(other = "Line size"), portuguese = MessageForms(other = "Tamanho de linha")),
     "attribute_label_lowduration" to MessageTemplate(english = MessageForms(other = "Low duration"), portuguese = MessageForms(other = "Duração em nível baixo")),
-)
-
-private fun messageCatalogPart6(): Map<String, MessageTemplate> = mapOf(
     "attribute_label_matrixcols" to MessageTemplate(english = MessageForms(other = "Matrix columns"), portuguese = MessageForms(other = "Colunas da matriz")),
     "attribute_label_matrixrows" to MessageTemplate(english = MessageForms(other = "Matrix rows"), portuguese = MessageForms(other = "Linhas da matriz")),
     "attribute_label_max" to MessageTemplate(english = MessageForms(other = "Maximum value"), portuguese = MessageForms(other = "Valor máximo")),
+    "attribute_label_memsize" to MessageTemplate(english = MessageForms(other = "Byte address width"), portuguese = MessageForms(other = "Largura do endereço de byte")),
     "attribute_label_min" to MessageTemplate(english = MessageForms(other = "Minimum value"), portuguese = MessageForms(other = "Valor mínimo")),
     "attribute_label_misaligned" to MessageTemplate(english = MessageForms(other = "Allow misaligned access"), portuguese = MessageForms(other = "Permitir acesso desalinhado")),
     "attribute_label_mode" to MessageTemplate(english = MessageForms(other = "Mode"), portuguese = MessageForms(other = "Modo")),
     "attribute_label_multiplymode" to MessageTemplate(english = MessageForms(other = "Multiplication mode"), portuguese = MessageForms(other = "Modo de multiplicação")),
+    "attribute_label_negate_n" to MessageTemplate(english = MessageForms(other = "Negate {n}"), portuguese = MessageForms(other = "Negar {n}")),
     "attribute_label_note" to MessageTemplate(english = MessageForms(other = "Note"), portuguese = MessageForms(other = "Nota")),
+    "attribute_label_nstate" to MessageTemplate(english = MessageForms(other = "Number of states"), portuguese = MessageForms(other = "Número de estados")),
     "attribute_label_number" to MessageTemplate(english = MessageForms(other = "Number of switches"), portuguese = MessageForms(other = "Número de chaves")),
     "attribute_label_offcolor" to MessageTemplate(english = MessageForms(other = "Off color"), portuguese = MessageForms(other = "Cor apagada")),
-    "attribute_label_out" to MessageTemplate(english = MessageForms(other = "Output"), portuguese = MessageForms(other = "Saída")),
+    "attribute_label_on_color" to MessageTemplate(english = MessageForms(other = "On color"), portuguese = MessageForms(other = "Cor acesa")),
+    "attribute_label_ongoal" to MessageTemplate(english = MessageForms(other = "Action on overflow"), portuguese = MessageForms(other = "Ação no estouro")),
+    "attribute_label_out" to MessageTemplate(english = MessageForms(other = "Output value"), portuguese = MessageForms(other = "Valor de saída")),
     "attribute_label_out_width" to MessageTemplate(english = MessageForms(other = "Output bits"), portuguese = MessageForms(other = "Bits de saída")),
+    "attribute_label_outputbitsetclear" to MessageTemplate(english = MessageForms(other = "Output bit set/clear"), portuguese = MessageForms(other = "Definir/limpar bits de saída")),
+    "attribute_label_outputresetvalue" to MessageTemplate(english = MessageForms(other = "Output reset value"), portuguese = MessageForms(other = "Valor de saída no reset")),
+    "attribute_label_outputs" to MessageTemplate(english = MessageForms(other = "Number of outputs"), portuguese = MessageForms(other = "Número de saídas")),
+    "attribute_label_parallel" to MessageTemplate(english = MessageForms(other = "Parallel load"), portuguese = MessageForms(other = "Carga paralela")),
     "attribute_label_persist" to MessageTemplate(english = MessageForms(other = "Persistence"), portuguese = MessageForms(other = "Persistência")),
     "attribute_label_phaseoffset" to MessageTemplate(english = MessageForms(other = "Phase offset"), portuguese = MessageForms(other = "Deslocamento de fase")),
-    "attribute_label_porsize" to MessageTemplate(english = MessageForms(other = "Reset delay"), portuguese = MessageForms(other = "Atraso de reset")),
+    "attribute_label_pin_count" to MessageTemplate(english = MessageForms(other = "Number of pins"), portuguese = MessageForms(other = "Número de pinos")),
+    "attribute_label_pixel_width" to MessageTemplate(english = MessageForms(other = "Width"), portuguese = MessageForms(other = "Largura")),
+    "attribute_label_plicbaseaddress" to MessageTemplate(english = MessageForms(other = "PLIC base address"), portuguese = MessageForms(other = "Endereço base do PLIC")),
+    "attribute_label_porhighduration" to MessageTemplate(english = MessageForms(other = "Reset duration (s)"), portuguese = MessageForms(other = "Duração do reset (s)")),
+    "attribute_label_porsize" to MessageTemplate(english = MessageForms(other = "Draw size"), portuguese = MessageForms(other = "Tamanho do desenho")),
+    "attribute_label_port" to MessageTemplate(english = MessageForms(other = "Port"), portuguese = MessageForms(other = "Porta")),
+    "attribute_label_port_type" to MessageTemplate(english = MessageForms(other = "Port type"), portuguese = MessageForms(other = "Tipo de porta")),
     "attribute_label_portio" to MessageTemplate(english = MessageForms(other = "Port I/O"), portuguese = MessageForms(other = "E/S da porta")),
+    "attribute_label_portransition" to MessageTemplate(english = MessageForms(other = "POR transition"), portuguese = MessageForms(other = "Transição do POR")),
     "attribute_label_positions" to MessageTemplate(english = MessageForms(other = "Positions"), portuguese = MessageForms(other = "Posições")),
     "attribute_label_press" to MessageTemplate(english = MessageForms(other = "Pressed value"), portuguese = MessageForms(other = "Valor pressionado")),
     "attribute_label_pull" to MessageTemplate(english = MessageForms(other = "Pull direction"), portuguese = MessageForms(other = "Direção de pull")),
+    "attribute_label_r1" to MessageTemplate(english = MessageForms(other = "Resistor R1 (1 kΩ to 10 MΩ)"), portuguese = MessageForms(other = "Resistor R1 (1 kΩ a 10 MΩ)")),
     "attribute_label_radix" to MessageTemplate(english = MessageForms(other = "Radix"), portuguese = MessageForms(other = "Base numérica")),
     "attribute_label_readbehav" to MessageTemplate(english = MessageForms(other = "Read behavior"), portuguese = MessageForms(other = "Comportamento de leitura")),
+    "attribute_label_readfifosize" to MessageTemplate(english = MessageForms(other = "Read FIFO size"), portuguese = MessageForms(other = "Tamanho do FIFO de leitura")),
+    "attribute_label_readthreshold" to MessageTemplate(english = MessageForms(other = "Read IRQ threshold"), portuguese = MessageForms(other = "Limiar de IRQ de leitura")),
     "attribute_label_release" to MessageTemplate(english = MessageForms(other = "Released value"), portuguese = MessageForms(other = "Valor liberado")),
+    "attribute_label_reset" to MessageTemplate(english = MessageForms(other = "Reset behavior"), portuguese = MessageForms(other = "Comportamento no reset")),
     "attribute_label_resetbehavior" to MessageTemplate(english = MessageForms(other = "Reset behavior"), portuguese = MessageForms(other = "Comportamento no reset")),
+    "attribute_label_resetvector" to MessageTemplate(english = MessageForms(other = "Reset vector"), portuguese = MessageForms(other = "Vetor de reset")),
+    "attribute_label_reversecolor" to MessageTemplate(english = MessageForms(other = "Reverse color"), portuguese = MessageForms(other = "Cor reversa")),
     "attribute_label_rows" to MessageTemplate(english = MessageForms(other = "Rows"), portuguese = MessageForms(other = "Linhas")),
+    "attribute_label_scale" to MessageTemplate(english = MessageForms(other = "Scale"), portuguese = MessageForms(other = "Escala")),
+    "attribute_label_seed" to MessageTemplate(english = MessageForms(other = "Seed"), portuguese = MessageForms(other = "Semente")),
+    "attribute_label_segments" to MessageTemplate(english = MessageForms(other = "Segments"), portuguese = MessageForms(other = "Segmentos")),
     "attribute_label_select" to MessageTemplate(english = MessageForms(other = "Select bits"), portuguese = MessageForms(other = "Bits de seleção")),
+    "attribute_label_select_active_level" to MessageTemplate(english = MessageForms(other = "Select active level"), portuguese = MessageForms(other = "Nível ativo da seleção")),
     "attribute_label_selloc" to MessageTemplate(english = MessageForms(other = "Select location"), portuguese = MessageForms(other = "Posição de seleção")),
     "attribute_label_shift" to MessageTemplate(english = MessageForms(other = "Shift type"), portuguese = MessageForms(other = "Tipo de deslocamento")),
+    "attribute_label_showclock" to MessageTemplate(english = MessageForms(other = "Show clock"), portuguese = MessageForms(other = "Mostrar clock")),
     "attribute_label_showinternalstructure" to MessageTemplate(english = MessageForms(other = "Show internal structure"), portuguese = MessageForms(other = "Mostrar estrutura interna")),
     "attribute_label_size" to MessageTemplate(english = MessageForms(other = "Gate size"), portuguese = MessageForms(other = "Tamanho da porta")),
+    "attribute_label_smooth_level" to MessageTemplate(english = MessageForms(other = "Smooth level"), portuguese = MessageForms(other = "Nível de suavização")),
+    "attribute_label_smooth_width" to MessageTemplate(english = MessageForms(other = "Smooth window width"), portuguese = MessageForms(other = "Largura da janela de suavização")),
+    "attribute_label_socbusidentifier" to MessageTemplate(english = MessageForms(other = "Bus identifier"), portuguese = MessageForms(other = "Identificador do barramento")),
+    "attribute_label_socbusselection" to MessageTemplate(english = MessageForms(other = "Connected bus"), portuguese = MessageForms(other = "Barramento conectado")),
+    "attribute_label_soft1024x768" to MessageTemplate(english = MessageForms(other = "Software mode 1024x768"), portuguese = MessageForms(other = "Modo 1024x768 por software")),
+    "attribute_label_soft160x120" to MessageTemplate(english = MessageForms(other = "Software mode 160x120"), portuguese = MessageForms(other = "Modo 160x120 por software")),
+)
+
+private fun messageCatalogPart8(): Map<String, MessageTemplate> = mapOf(
+    "attribute_label_soft320x240" to MessageTemplate(english = MessageForms(other = "Software mode 320x240"), portuguese = MessageForms(other = "Modo 320x240 por software")),
+    "attribute_label_soft640x480" to MessageTemplate(english = MessageForms(other = "Software mode 640x480"), portuguese = MessageForms(other = "Modo 640x480 por software")),
+    "attribute_label_soft800x600" to MessageTemplate(english = MessageForms(other = "Software mode 800x600"), portuguese = MessageForms(other = "Modo 800x600 por software")),
     "attribute_label_spacing" to MessageTemplate(english = MessageForms(other = "Spacing"), portuguese = MessageForms(other = "Espaçamento")),
+    "attribute_label_startaddress" to MessageTemplate(english = MessageForms(other = "Base address"), portuguese = MessageForms(other = "Endereço base")),
     "attribute_label_state" to MessageTemplate(english = MessageForms(other = "State"), portuguese = MessageForms(other = "Estado")),
+    "attribute_label_statevisible" to MessageTemplate(english = MessageForms(other = "Show state"), portuguese = MessageForms(other = "Mostrar estado")),
     "attribute_label_table" to MessageTemplate(english = MessageForms(other = "Truth table"), portuguese = MessageForms(other = "Tabela verdade")),
+    "attribute_label_telnetmode" to MessageTemplate(english = MessageForms(other = "Use Telnet protocol"), portuguese = MessageForms(other = "Usar protocolo Telnet")),
+    "attribute_label_text" to MessageTemplate(english = MessageForms(other = "Text"), portuguese = MessageForms(other = "Texto")),
+    "attribute_label_timetype" to MessageTemplate(english = MessageForms(other = "Time type"), portuguese = MessageForms(other = "Tipo de tempo")),
+    "attribute_label_tracesize" to MessageTemplate(english = MessageForms(other = "Trace size"), portuguese = MessageForms(other = "Tamanho do trace")),
+    "attribute_label_tracevisible" to MessageTemplate(english = MessageForms(other = "Show traces"), portuguese = MessageForms(other = "Mostrar traces")),
     "attribute_label_trigger" to MessageTemplate(english = MessageForms(other = "Trigger"), portuguese = MessageForms(other = "Acionamento")),
     "attribute_label_tristate" to MessageTemplate(english = MessageForms(other = "Three-state output"), portuguese = MessageForms(other = "Saída de três estados")),
     "attribute_label_type" to MessageTemplate(english = MessageForms(other = "Type"), portuguese = MessageForms(other = "Tipo")),
+    "attribute_label_valign" to MessageTemplate(english = MessageForms(other = "Vertical alignment"), portuguese = MessageForms(other = "Alinhamento vertical")),
     "attribute_label_value" to MessageTemplate(english = MessageForms(other = "Value"), portuguese = MessageForms(other = "Valor")),
     "attribute_label_vccgndports" to MessageTemplate(english = MessageForms(other = "Show power and ground pins"), portuguese = MessageForms(other = "Mostrar pinos de alimentação e terra")),
+    "attribute_label_vol_width" to MessageTemplate(english = MessageForms(other = "Volume bit width"), portuguese = MessageForms(other = "Largura em bits do volume")),
+    "attribute_label_waveform" to MessageTemplate(english = MessageForms(other = "Waveform"), portuguese = MessageForms(other = "Forma de onda")),
     "attribute_label_width" to MessageTemplate(english = MessageForms(other = "Data bits"), portuguese = MessageForms(other = "Bits de dados")),
+    "attribute_label_writefifosize" to MessageTemplate(english = MessageForms(other = "Write FIFO size"), portuguese = MessageForms(other = "Tamanho do FIFO de escrita")),
+    "attribute_label_writethreshold" to MessageTemplate(english = MessageForms(other = "Write IRQ threshold"), portuguese = MessageForms(other = "Limiar de IRQ de escrita")),
     "attribute_label_xor" to MessageTemplate(english = MessageForms(other = "Multiple input behavior"), portuguese = MessageForms(other = "Comportamento com múltiplas entradas")),
     "attribute_name_required" to MessageTemplate(english = MessageForms(other = "The property must have a name."), portuguese = MessageForms(other = "A propriedade precisa de um nome.")),
+    "attribute_option_appear_center" to MessageTemplate(english = MessageForms(other = "Centered"), portuguese = MessageForms(other = "Central")),
+    "attribute_option_appear_left" to MessageTemplate(english = MessageForms(other = "Left-handed"), portuguese = MessageForms(other = "À esquerda")),
+    "attribute_option_appear_legacy" to MessageTemplate(english = MessageForms(other = "Legacy"), portuguese = MessageForms(other = "Legado")),
+    "attribute_option_appear_right" to MessageTemplate(english = MessageForms(other = "Right-handed"), portuguese = MessageForms(other = "À direita")),
+    "attribute_option_appearance_classic" to MessageTemplate(english = MessageForms(other = "Classic Logisim"), portuguese = MessageForms(other = "Logisim clássico")),
+    "attribute_option_appearance_evolution" to MessageTemplate(english = MessageForms(other = "Logisim-HolyCross"), portuguese = MessageForms(other = "Logisim-HolyCross")),
+    "attribute_option_appearance_fpga" to MessageTemplate(english = MessageForms(other = "FPGA"), portuguese = MessageForms(other = "FPGA")),
+    "attribute_option_appearance_logisim_evolution" to MessageTemplate(english = MessageForms(other = "Logisim-evolution"), portuguese = MessageForms(other = "Logisim-evolution")),
+    "attribute_option_appearance_newpins" to MessageTemplate(english = MessageForms(other = "Arrow shapes"), portuguese = MessageForms(other = "Formas de setas")),
+    "attribute_option_behavior_pulldown" to MessageTemplate(english = MessageForms(other = "Pull Down"), portuguese = MessageForms(other = "Pull-down")),
+    "attribute_option_behavior_pullup" to MessageTemplate(english = MessageForms(other = "Pull Up"), portuguese = MessageForms(other = "Pull-up")),
+    "attribute_option_behavior_simple" to MessageTemplate(english = MessageForms(other = "Simple"), portuguese = MessageForms(other = "Simples")),
+    "attribute_option_behavior_tristate" to MessageTemplate(english = MessageForms(other = "Tri-state"), portuguese = MessageForms(other = "Três estados")),
+    "attribute_option_byteenables_byteenables" to MessageTemplate(english = MessageForms(other = "Use byte enables"), portuguese = MessageForms(other = "Usar habilitação por byte")),
+    "attribute_option_byteenables_nobyteenables" to MessageTemplate(english = MessageForms(other = "Whole word read/write only"), portuguese = MessageForms(other = "Somente leitura/escrita de palavra completa")),
+    "attribute_option_capturetype_any" to MessageTemplate(english = MessageForms(other = "Any edge"), portuguese = MessageForms(other = "Qualquer borda")),
+    "attribute_option_capturetype_falling" to MessageTemplate(english = MessageForms(other = "Falling edge"), portuguese = MessageForms(other = "Borda de descida")),
+    "attribute_option_capturetype_rising" to MessageTemplate(english = MessageForms(other = "Rising edge"), portuguese = MessageForms(other = "Borda de subida")),
+    "attribute_option_color_444_rgb_12_bit" to MessageTemplate(english = MessageForms(other = "444 RGB (12 bit)"), portuguese = MessageForms(other = "444 RGB (12 bits)")),
+    "attribute_option_color_555_rgb_15_bit" to MessageTemplate(english = MessageForms(other = "555 RGB (15 bit)"), portuguese = MessageForms(other = "555 RGB (15 bits)")),
+    "attribute_option_color_565_rgb_16_bit" to MessageTemplate(english = MessageForms(other = "565 RGB (16 bit)"), portuguese = MessageForms(other = "565 RGB (16 bits)")),
+    "attribute_option_color_888_rgb_24_bit" to MessageTemplate(english = MessageForms(other = "888 RGB (24 bit)"), portuguese = MessageForms(other = "888 RGB (24 bits)")),
+    "attribute_option_color_8_color_rgb_3_bit" to MessageTemplate(english = MessageForms(other = "8-Color RGB (3 bit)"), portuguese = MessageForms(other = "RGB de 8 cores (3 bits)")),
+    "attribute_option_color_atari_2600_7_bit" to MessageTemplate(english = MessageForms(other = "Atari 2600 (7 bit)"), portuguese = MessageForms(other = "Atari 2600 (7 bits)")),
+    "attribute_option_color_grayscale_4_bit" to MessageTemplate(english = MessageForms(other = "Grayscale (4 bit)"), portuguese = MessageForms(other = "Escala de cinza (4 bits)")),
+    "attribute_option_color_vga256_8_bit" to MessageTemplate(english = MessageForms(other = "VGA256 (8 bit)"), portuguese = MessageForms(other = "VGA256 (8 bits)")),
+    "attribute_option_color_xterm16_4_bit" to MessageTemplate(english = MessageForms(other = "XTerm16 (4 bit)"), portuguese = MessageForms(other = "XTerm16 (4 bits)")),
+    "attribute_option_color_xterm256_8_bit" to MessageTemplate(english = MessageForms(other = "XTerm256 (8 bit)"), portuguese = MessageForms(other = "XTerm256 (8 bits)")),
+    "attribute_option_control_left" to MessageTemplate(english = MessageForms(other = "Left-Handed"), portuguese = MessageForms(other = "À esquerda")),
+    "attribute_option_control_right" to MessageTemplate(english = MessageForms(other = "Right-Handed"), portuguese = MessageForms(other = "À direita")),
+    "attribute_option_cursor_blinking_dot" to MessageTemplate(english = MessageForms(other = "Blinking Dot"), portuguese = MessageForms(other = "Ponto piscante")),
+    "attribute_option_cursor_no_cursor" to MessageTemplate(english = MessageForms(other = "No Cursor"), portuguese = MessageForms(other = "Sem cursor")),
+    "attribute_option_databus_bibus" to MessageTemplate(english = MessageForms(other = "Separate data buses with latched output"), portuguese = MessageForms(other = "Barramentos de dados separados com saída retida")),
+    "attribute_option_databus_bibuscontrolled" to MessageTemplate(english = MessageForms(other = "Separate data buses with controlled output"), portuguese = MessageForms(other = "Barramentos de dados separados com saída controlada")),
+    "attribute_option_databus_bidir" to MessageTemplate(english = MessageForms(other = "One bidirectional data bus"), portuguese = MessageForms(other = "Um barramento de dados bidirecional")),
+    "attribute_option_direction_bidir" to MessageTemplate(english = MessageForms(other = "Bidirectional (tristate) ports"), portuguese = MessageForms(other = "Portas bidirecionais (três estados)")),
+    "attribute_option_direction_inout" to MessageTemplate(english = MessageForms(other = "Both input and output ports"), portuguese = MessageForms(other = "Portas de entrada e saída")),
+    "attribute_option_direction_inputonly" to MessageTemplate(english = MessageForms(other = "Input ports only"), portuguese = MessageForms(other = "Apenas portas de entrada")),
+    "attribute_option_direction_iomultienable" to MessageTemplate(english = MessageForms(other = "I/O (per-bit enable)"), portuguese = MessageForms(other = "E/S (habilitação por bit)")),
+    "attribute_option_direction_iosingleenable" to MessageTemplate(english = MessageForms(other = "I/O (single enable)"), portuguese = MessageForms(other = "E/S (habilitação única)")),
+    "attribute_option_direction_left_to_right" to MessageTemplate(english = MessageForms(other = "Left to right"), portuguese = MessageForms(other = "Da esquerda para a direita")),
+    "attribute_option_direction_onlyinput" to MessageTemplate(english = MessageForms(other = "Inputs only"), portuguese = MessageForms(other = "Somente entradas")),
+    "attribute_option_direction_onlyoutput" to MessageTemplate(english = MessageForms(other = "Outputs only"), portuguese = MessageForms(other = "Somente saídas")),
+    "attribute_option_direction_outputonly" to MessageTemplate(english = MessageForms(other = "Output ports only"), portuguese = MessageForms(other = "Apenas portas de saída")),
+    "attribute_option_direction_right_to_left" to MessageTemplate(english = MessageForms(other = "Right to left"), portuguese = MessageForms(other = "Da direita para a esquerda")),
+    "attribute_option_disabled_0" to MessageTemplate(english = MessageForms(other = "Zero"), portuguese = MessageForms(other = "Zero")),
+    "attribute_option_disabled_z" to MessageTemplate(english = MessageForms(other = "Floating"), portuguese = MessageForms(other = "Flutuante")),
+    "attribute_option_displaymode_1024x768" to MessageTemplate(english = MessageForms(other = "1024x768"), portuguese = MessageForms(other = "1024x768")),
+    "attribute_option_displaymode_160x120" to MessageTemplate(english = MessageForms(other = "160x120"), portuguese = MessageForms(other = "160x120")),
+    "attribute_option_displaymode_320x240" to MessageTemplate(english = MessageForms(other = "320x240"), portuguese = MessageForms(other = "320x240")),
+    "attribute_option_displaymode_640x480" to MessageTemplate(english = MessageForms(other = "640x480"), portuguese = MessageForms(other = "640x480")),
+    "attribute_option_displaymode_800x600" to MessageTemplate(english = MessageForms(other = "800x600"), portuguese = MessageForms(other = "800x600")),
+    "attribute_option_dotshape_circle" to MessageTemplate(english = MessageForms(other = "Circular"), portuguese = MessageForms(other = "Circular")),
+    "attribute_option_dotshape_clustersegment" to MessageTemplate(english = MessageForms(other = "Padded Square"), portuguese = MessageForms(other = "Quadrado com margem")),
+    "attribute_option_dotshape_square" to MessageTemplate(english = MessageForms(other = "Square"), portuguese = MessageForms(other = "Quadrado")),
+    "attribute_option_enables_byte" to MessageTemplate(english = MessageForms(other = "Use byte enables"), portuguese = MessageForms(other = "Usar habilitação por byte")),
+    "attribute_option_enables_line" to MessageTemplate(english = MessageForms(other = "Use line enables"), portuguese = MessageForms(other = "Usar habilitação por linha")),
+    "attribute_option_freq_measure_dhz" to MessageTemplate(english = MessageForms(other = "dHz (0.1Hz)"), portuguese = MessageForms(other = "dHz (0,1 Hz)")),
+    "attribute_option_freq_measure_hz" to MessageTemplate(english = MessageForms(other = "Hz"), portuguese = MessageForms(other = "Hz")),
+    "attribute_option_frontlines_both" to MessageTemplate(english = MessageForms(other = "Both"), portuguese = MessageForms(other = "Ambos")),
+    "attribute_option_frontlines_falling" to MessageTemplate(english = MessageForms(other = "Falling Edge"), portuguese = MessageForms(other = "Borda de descida")),
+    "attribute_option_frontlines_no" to MessageTemplate(english = MessageForms(other = "None"), portuguese = MessageForms(other = "Nenhum")),
+    "attribute_option_frontlines_rising" to MessageTemplate(english = MessageForms(other = "Rising Edge"), portuguese = MessageForms(other = "Borda de subida")),
+    "attribute_option_halign_center" to MessageTemplate(english = MessageForms(other = "Center"), portuguese = MessageForms(other = "Centro")),
+    "attribute_option_halign_left" to MessageTemplate(english = MessageForms(other = "Left"), portuguese = MessageForms(other = "Esquerda")),
+    "attribute_option_halign_right" to MessageTemplate(english = MessageForms(other = "Right"), portuguese = MessageForms(other = "Direita")),
+    "attribute_option_inputmode_bus" to MessageTemplate(english = MessageForms(other = "Bus"), portuguese = MessageForms(other = "Barramento")),
+    "attribute_option_inputmode_separate" to MessageTemplate(english = MessageForms(other = "Separate pins"), portuguese = MessageForms(other = "Pinos separados")),
+    "attribute_option_inputtype_column" to MessageTemplate(english = MessageForms(other = "Columns"), portuguese = MessageForms(other = "Colunas")),
+    "attribute_option_inputtype_row" to MessageTemplate(english = MessageForms(other = "Rows"), portuguese = MessageForms(other = "Linhas")),
+    "attribute_option_inputtype_select" to MessageTemplate(english = MessageForms(other = "Select Rows/Columns"), portuguese = MessageForms(other = "Selecionar linhas/colunas")),
+    "attribute_option_irqtype_edge" to MessageTemplate(english = MessageForms(other = "Edge"), portuguese = MessageForms(other = "Borda")),
+    "attribute_option_irqtype_level" to MessageTemplate(english = MessageForms(other = "Level"), portuguese = MessageForms(other = "Nível")),
+    "attribute_option_labelloc_center" to MessageTemplate(english = MessageForms(other = "Center"), portuguese = MessageForms(other = "Centro")),
+)
+
+private fun messageCatalogPart9(): Map<String, MessageTemplate> = mapOf(
+    "attribute_option_labelloc_east" to MessageTemplate(english = MessageForms(other = "East"), portuguese = MessageForms(other = "Leste")),
+    "attribute_option_labelloc_north" to MessageTemplate(english = MessageForms(other = "North"), portuguese = MessageForms(other = "Norte")),
+    "attribute_option_labelloc_south" to MessageTemplate(english = MessageForms(other = "South"), portuguese = MessageForms(other = "Sul")),
+    "attribute_option_labelloc_west" to MessageTemplate(english = MessageForms(other = "West"), portuguese = MessageForms(other = "Oeste")),
+    "attribute_option_line_dual" to MessageTemplate(english = MessageForms(other = "Dual"), portuguese = MessageForms(other = "Duplo")),
+    "attribute_option_line_octo" to MessageTemplate(english = MessageForms(other = "Octo"), portuguese = MessageForms(other = "Óctuplo")),
+    "attribute_option_line_quad" to MessageTemplate(english = MessageForms(other = "Quad"), portuguese = MessageForms(other = "Quádruplo")),
+    "attribute_option_line_single" to MessageTemplate(english = MessageForms(other = "Single"), portuguese = MessageForms(other = "Individual")),
+    "attribute_option_mode_1in2out" to MessageTemplate(english = MessageForms(other = "1 Input -> 2 Outputs"), portuguese = MessageForms(other = "1 Entrada -> 2 Saídas")),
+    "attribute_option_mode_2in1out" to MessageTemplate(english = MessageForms(other = "2 Inputs -> 1 Output"), portuguese = MessageForms(other = "2 Entradas -> 1 Saída")),
+    "attribute_option_mode_arb" to MessageTemplate(english = MessageForms(other = "Arbitrary base"), portuguese = MessageForms(other = "Base arbitrária")),
+    "attribute_option_mode_astable" to MessageTemplate(english = MessageForms(other = "Astable"), portuguese = MessageForms(other = "Astável")),
+    "attribute_option_mode_ceil" to MessageTemplate(english = MessageForms(other = "Round up"), portuguese = MessageForms(other = "Arredondar para cima")),
+    "attribute_option_mode_exp" to MessageTemplate(english = MessageForms(other = "Exponential"), portuguese = MessageForms(other = "Exponencial")),
+    "attribute_option_mode_expm1" to MessageTemplate(english = MessageForms(other = "Exponential minus one"), portuguese = MessageForms(other = "Exponencial menos um")),
+    "attribute_option_mode_floor" to MessageTemplate(english = MessageForms(other = "Round down"), portuguese = MessageForms(other = "Arredondar para baixo")),
+    "attribute_option_mode_log" to MessageTemplate(english = MessageForms(other = "Natural logarithm"), portuguese = MessageForms(other = "Logaritmo natural")),
+    "attribute_option_mode_log10" to MessageTemplate(english = MessageForms(other = "Logarithm with base 10"), portuguese = MessageForms(other = "Logaritmo na base 10")),
+    "attribute_option_mode_log1p" to MessageTemplate(english = MessageForms(other = "Natural logarithm of (input + 1)"), portuguese = MessageForms(other = "Logaritmo natural de (entrada + 1)")),
+    "attribute_option_mode_logxy" to MessageTemplate(english = MessageForms(other = "Arbitrary base"), portuguese = MessageForms(other = "Base arbitrária")),
+    "attribute_option_mode_monostable" to MessageTemplate(english = MessageForms(other = "Monostable"), portuguese = MessageForms(other = "Monostável")),
+    "attribute_option_mode_pmod_kypd" to MessageTemplate(english = MessageForms(other = "Pmod KYPD (Internal Pull-Up)"), portuguese = MessageForms(other = "Pmod KYPD (pull-up interno)")),
+    "attribute_option_mode_raw" to MessageTemplate(english = MessageForms(other = "Raw Matrix"), portuguese = MessageForms(other = "Matriz bruta")),
+    "attribute_option_mode_rint" to MessageTemplate(english = MessageForms(other = "Round to nearest, ties to even"), portuguese = MessageForms(other = "Arredondar para o mais próximo com prioridade par")),
+    "attribute_option_mode_round" to MessageTemplate(english = MessageForms(other = "Round to nearest"), portuguese = MessageForms(other = "Arredondar para o mais próximo")),
+    "attribute_option_mode_signedunsigned" to MessageTemplate(english = MessageForms(other = "Signed/unsigned"), portuguese = MessageForms(other = "Com sinal / Sem sinal")),
+    "attribute_option_mode_truncate" to MessageTemplate(english = MessageForms(other = "Truncate"), portuguese = MessageForms(other = "Truncar")),
+    "attribute_option_mode_twoscomplement" to MessageTemplate(english = MessageForms(other = "2’s Complement"), portuguese = MessageForms(other = "Complemento de 2")),
+    "attribute_option_mode_unsigned" to MessageTemplate(english = MessageForms(other = "Unsigned"), portuguese = MessageForms(other = "Sem sinal")),
+    "attribute_option_multiplymode_fusedmultiplyadd" to MessageTemplate(english = MessageForms(other = "Fused Multiply and Add"), portuguese = MessageForms(other = "Multiplicação e adição fundidas")),
+    "attribute_option_multiplymode_multiply" to MessageTemplate(english = MessageForms(other = "Multiply"), portuguese = MessageForms(other = "Multiplicação")),
+    "attribute_option_ongoal_continue" to MessageTemplate(english = MessageForms(other = "Continue counting"), portuguese = MessageForms(other = "Continuar contando")),
+    "attribute_option_ongoal_load" to MessageTemplate(english = MessageForms(other = "Load next value"), portuguese = MessageForms(other = "Carregar próximo valor")),
+    "attribute_option_ongoal_stay" to MessageTemplate(english = MessageForms(other = "Stay at value"), portuguese = MessageForms(other = "Permanecer no valor")),
+    "attribute_option_ongoal_wrap" to MessageTemplate(english = MessageForms(other = "Wrap around"), portuguese = MessageForms(other = "Reiniciar contagem")),
+    "attribute_option_out_01" to MessageTemplate(english = MessageForms(other = "0/1"), portuguese = MessageForms(other = "0/1")),
+    "attribute_option_out_0z" to MessageTemplate(english = MessageForms(other = "0/floating"), portuguese = MessageForms(other = "0/flutuante")),
+    "attribute_option_out_z1" to MessageTemplate(english = MessageForms(other = "Floating/1"), portuguese = MessageForms(other = "Flutuante/1")),
+    "attribute_option_porsize_1" to MessageTemplate(english = MessageForms(other = "Medium"), portuguese = MessageForms(other = "Médio")),
+    "attribute_option_porsize_2" to MessageTemplate(english = MessageForms(other = "Narrow"), portuguese = MessageForms(other = "Estreito")),
+    "attribute_option_porsize_3" to MessageTemplate(english = MessageForms(other = "Wide"), portuguese = MessageForms(other = "Largo")),
+    "attribute_option_portransition_1" to MessageTemplate(english = MessageForms(other = "High to Low"), portuguese = MessageForms(other = "De alto para baixo")),
+    "attribute_option_portransition_2" to MessageTemplate(english = MessageForms(other = "Low to High"), portuguese = MessageForms(other = "De baixo para alto")),
+    "attribute_option_press_active" to MessageTemplate(english = MessageForms(other = "Active on press"), portuguese = MessageForms(other = "Ativo ao pressionar")),
+    "attribute_option_press_passive" to MessageTemplate(english = MessageForms(other = "Passive on press"), portuguese = MessageForms(other = "Passivo ao pressionar")),
+    "attribute_option_pull_0" to MessageTemplate(english = MessageForms(other = "Zero"), portuguese = MessageForms(other = "Zero")),
+    "attribute_option_pull_1" to MessageTemplate(english = MessageForms(other = "One"), portuguese = MessageForms(other = "Um")),
+    "attribute_option_pull_x" to MessageTemplate(english = MessageForms(other = "Error"), portuguese = MessageForms(other = "Erro")),
+    "attribute_option_radix_10signed" to MessageTemplate(english = MessageForms(other = "Signed Decimal"), portuguese = MessageForms(other = "Decimal com sinal")),
+    "attribute_option_radix_10unsigned" to MessageTemplate(english = MessageForms(other = "Unsigned Decimal"), portuguese = MessageForms(other = "Decimal sem sinal")),
+    "attribute_option_radix_16" to MessageTemplate(english = MessageForms(other = "Hexadecimal"), portuguese = MessageForms(other = "Hexadecimal")),
+    "attribute_option_radix_2" to MessageTemplate(english = MessageForms(other = "Binary"), portuguese = MessageForms(other = "Binário")),
+    "attribute_option_radix_8" to MessageTemplate(english = MessageForms(other = "Octal"), portuguese = MessageForms(other = "Octal")),
+    "attribute_option_radix_float" to MessageTemplate(english = MessageForms(other = "Float"), portuguese = MessageForms(other = "Ponto flutuante")),
+    "attribute_option_readbehav_raw" to MessageTemplate(english = MessageForms(other = "Read after write"), portuguese = MessageForms(other = "Ler depois de escrever")),
+    "attribute_option_readbehav_war" to MessageTemplate(english = MessageForms(other = "Write after read"), portuguese = MessageForms(other = "Escrever depois de ler")),
+    "attribute_option_reset_asynchronous" to MessageTemplate(english = MessageForms(other = "Asynchronous"), portuguese = MessageForms(other = "Assíncrono")),
+    "attribute_option_reset_synchronous" to MessageTemplate(english = MessageForms(other = "Synchronous"), portuguese = MessageForms(other = "Síncrono")),
+    "attribute_option_resetbehavior_closed" to MessageTemplate(english = MessageForms(other = "All closed"), portuguese = MessageForms(other = "Todas fechadas")),
+    "attribute_option_resetbehavior_last" to MessageTemplate(english = MessageForms(other = "Keep positions (physical switch)"), portuguese = MessageForms(other = "Manter posições (chave física)")),
+    "attribute_option_resetbehavior_open" to MessageTemplate(english = MessageForms(other = "All open"), portuguese = MessageForms(other = "Todas abertas")),
+    "attribute_option_scale_cover" to MessageTemplate(english = MessageForms(other = "Crop / Fill"), portuguese = MessageForms(other = "Cortar / Preencher")),
+    "attribute_option_scale_fit" to MessageTemplate(english = MessageForms(other = "Fit (Aspect Ratio)"), portuguese = MessageForms(other = "Ajustar (proporção)")),
+    "attribute_option_scale_stretch" to MessageTemplate(english = MessageForms(other = "Stretch"), portuguese = MessageForms(other = "Esticar")),
+    "attribute_option_select_high" to MessageTemplate(english = MessageForms(other = "High Level"), portuguese = MessageForms(other = "Nível alto")),
+    "attribute_option_select_low" to MessageTemplate(english = MessageForms(other = "Low Level"), portuguese = MessageForms(other = "Nível baixo")),
+    "attribute_option_selloc_bl" to MessageTemplate(english = MessageForms(other = "Bottom/Left"), portuguese = MessageForms(other = "Abaixo/Esquerda")),
+    "attribute_option_selloc_tr" to MessageTemplate(english = MessageForms(other = "Top/Right"), portuguese = MessageForms(other = "Acima/Direita")),
+    "attribute_option_shift_ar" to MessageTemplate(english = MessageForms(other = "Arithmetic Right"), portuguese = MessageForms(other = "Aritmético para a direita")),
+    "attribute_option_shift_ll" to MessageTemplate(english = MessageForms(other = "Logical Left"), portuguese = MessageForms(other = "Lógico para a esquerda")),
+    "attribute_option_shift_lr" to MessageTemplate(english = MessageForms(other = "Logical Right"), portuguese = MessageForms(other = "Lógico para a direita")),
+    "attribute_option_shift_rl" to MessageTemplate(english = MessageForms(other = "Rotate Left"), portuguese = MessageForms(other = "Com rotação à esquerda")),
+    "attribute_option_shift_rr" to MessageTemplate(english = MessageForms(other = "Rotate Right"), portuguese = MessageForms(other = "Com rotação à direita")),
+    "attribute_option_size_20" to MessageTemplate(english = MessageForms(other = "Narrow"), portuguese = MessageForms(other = "Pequeno")),
+    "attribute_option_size_30" to MessageTemplate(english = MessageForms(other = "Narrow"), portuguese = MessageForms(other = "Pequeno")),
+    "attribute_option_size_30_wide" to MessageTemplate(english = MessageForms(other = "Wide"), portuguese = MessageForms(other = "Grande")),
+    "attribute_option_size_40" to MessageTemplate(english = MessageForms(other = "Wide"), portuguese = MessageForms(other = "Grande")),
+    "attribute_option_size_50" to MessageTemplate(english = MessageForms(other = "Medium"), portuguese = MessageForms(other = "Médio")),
+    "attribute_option_size_70" to MessageTemplate(english = MessageForms(other = "Wide"), portuguese = MessageForms(other = "Grande")),
+    "attribute_option_size_large" to MessageTemplate(english = MessageForms(other = "Large (2x)"), portuguese = MessageForms(other = "Grande (2x)")),
+    "attribute_option_size_normal" to MessageTemplate(english = MessageForms(other = "Normal"), portuguese = MessageForms(other = "Normal")),
+    "attribute_option_timetype_1" to MessageTemplate(english = MessageForms(other = "Epoch milliseconds"), portuguese = MessageForms(other = "Milissegundos Epoch")),
+    "attribute_option_timetype_2" to MessageTemplate(english = MessageForms(other = "Epoch seconds"), portuguese = MessageForms(other = "Segundos Epoch")),
+    "attribute_option_trigger_falling" to MessageTemplate(english = MessageForms(other = "Falling Edge"), portuguese = MessageForms(other = "Borda de descida")),
+    "attribute_option_trigger_high" to MessageTemplate(english = MessageForms(other = "High Level"), portuguese = MessageForms(other = "Nível alto")),
+    "attribute_option_trigger_low" to MessageTemplate(english = MessageForms(other = "Low Level"), portuguese = MessageForms(other = "Nível baixo")),
+    "attribute_option_trigger_rising" to MessageTemplate(english = MessageForms(other = "Rising Edge"), portuguese = MessageForms(other = "Borda de subida")),
+    "attribute_option_type_arc" to MessageTemplate(english = MessageForms(other = "Inverse trigonometry"), portuguese = MessageForms(other = "Trigonometria inversa")),
+    "attribute_option_type_high0" to MessageTemplate(english = MessageForms(other = "Highest-order 0"), portuguese = MessageForms(other = "0 de maior ordem")),
+    "attribute_option_type_high1" to MessageTemplate(english = MessageForms(other = "Highest-order 1"), portuguese = MessageForms(other = "1 de maior ordem")),
+    "attribute_option_type_hyp" to MessageTemplate(english = MessageForms(other = "Hyperbolic trigonometry"), portuguese = MessageForms(other = "Trigonometria hiperbólica")),
+    "attribute_option_type_input" to MessageTemplate(english = MessageForms(other = "Input"), portuguese = MessageForms(other = "Entrada")),
+    "attribute_option_type_low0" to MessageTemplate(english = MessageForms(other = "Lowest-order 0"), portuguese = MessageForms(other = "0 de menor ordem")),
+    "attribute_option_type_low1" to MessageTemplate(english = MessageForms(other = "Lowest-order 1"), portuguese = MessageForms(other = "1 de menor ordem")),
+    "attribute_option_type_n" to MessageTemplate(english = MessageForms(other = "N-Type"), portuguese = MessageForms(other = "Tipo N")),
+    "attribute_option_type_nonvolatile" to MessageTemplate(english = MessageForms(other = "Keep contents on reset"), portuguese = MessageForms(other = "Manter conteúdo no reset")),
+    "attribute_option_type_one" to MessageTemplate(english = MessageForms(other = "One"), portuguese = MessageForms(other = "Um")),
+    "attribute_option_type_output" to MessageTemplate(english = MessageForms(other = "Output"), portuguese = MessageForms(other = "Saída")),
+    "attribute_option_type_p" to MessageTemplate(english = MessageForms(other = "P-Type"), portuguese = MessageForms(other = "Tipo P")),
+    "attribute_option_type_sign" to MessageTemplate(english = MessageForms(other = "Sign"), portuguese = MessageForms(other = "Sinal")),
+)
+
+private fun messageCatalogPart10(): Map<String, MessageTemplate> = mapOf(
+    "attribute_option_type_trig" to MessageTemplate(english = MessageForms(other = "Standard trigonometry"), portuguese = MessageForms(other = "Trigonometria padrão")),
+    "attribute_option_type_volatile" to MessageTemplate(english = MessageForms(other = "Clear contents on reset"), portuguese = MessageForms(other = "Limpar conteúdo no reset")),
+    "attribute_option_type_zero" to MessageTemplate(english = MessageForms(other = "Zero"), portuguese = MessageForms(other = "Zero")),
+    "attribute_option_valign_base" to MessageTemplate(english = MessageForms(other = "Base"), portuguese = MessageForms(other = "Linha de base")),
+    "attribute_option_valign_bottom" to MessageTemplate(english = MessageForms(other = "Bottom"), portuguese = MessageForms(other = "Embaixo")),
+    "attribute_option_valign_center" to MessageTemplate(english = MessageForms(other = "Center"), portuguese = MessageForms(other = "Centro")),
+    "attribute_option_valign_top" to MessageTemplate(english = MessageForms(other = "Top"), portuguese = MessageForms(other = "Em cima")),
+    "attribute_option_waveform_noise" to MessageTemplate(english = MessageForms(other = "White noise"), portuguese = MessageForms(other = "Ruído branco")),
+    "attribute_option_waveform_sawtooth" to MessageTemplate(english = MessageForms(other = "Sawtooth"), portuguese = MessageForms(other = "Dente de serra")),
+    "attribute_option_waveform_sine" to MessageTemplate(english = MessageForms(other = "Sine"), portuguese = MessageForms(other = "Senoidal")),
+    "attribute_option_waveform_square" to MessageTemplate(english = MessageForms(other = "Square"), portuguese = MessageForms(other = "Quadrada")),
+    "attribute_option_waveform_triangle" to MessageTemplate(english = MessageForms(other = "Triangle"), portuguese = MessageForms(other = "Triangular")),
+    "attribute_option_xor_1" to MessageTemplate(english = MessageForms(other = "When one input is on"), portuguese = MessageForms(other = "Quando uma entrada estiver em 1")),
+    "attribute_option_xor_odd" to MessageTemplate(english = MessageForms(other = "When an odd number are on"), portuguese = MessageForms(other = "Quando um número ímpar de entradas estiver em 1")),
     "attribute_raw_invalid" to MessageTemplate(english = MessageForms(other = "Invalid value for {name}: {raw}."), portuguese = MessageForms(other = "Valor inválido para {name}: {raw}.")),
     "attribute_schema_duplicate" to MessageTemplate(english = MessageForms(other = "Duplicate properties in schema."), portuguese = MessageForms(other = "Propriedades duplicadas no esquema.")),
     "attribute_undeclared" to MessageTemplate(english = MessageForms(other = "Property is not declared in schema: {name}."), portuguese = MessageForms(other = "Propriedade não declarada no esquema: {name}.")),
     "attribute_value_invalid" to MessageTemplate(english = MessageForms(other = "Invalid value for {name}."), portuguese = MessageForms(other = "Valor inválido para {name}.")),
+    "byte_size_bytes" to MessageTemplate(english = MessageForms(one = "{count} byte", other = "{count} bytes"), portuguese = MessageForms(one = "{count} byte", other = "{count} bytes")),
+    "byte_size_kib" to MessageTemplate(english = MessageForms(other = "{whole} KiB"), portuguese = MessageForms(other = "{whole} KiB")),
+    "byte_size_kib_fraction" to MessageTemplate(english = MessageForms(other = "{whole}.{fraction} KiB"), portuguese = MessageForms(other = "{whole},{fraction} KiB")),
+    "byte_size_mib" to MessageTemplate(english = MessageForms(other = "{whole} MiB"), portuguese = MessageForms(other = "{whole} MiB")),
+    "byte_size_mib_fraction" to MessageTemplate(english = MessageForms(other = "{whole}.{fraction} MiB"), portuguese = MessageForms(other = "{whole},{fraction} MiB")),
     "canvas_component_tip" to MessageTemplate(english = MessageForms(other = "{component}: {port}"), portuguese = MessageForms(other = "{component}: {port}")),
     "canvas_width_error" to MessageTemplate(english = MessageForms(other = "Incompatible widths"), portuguese = MessageForms(other = "Larguras incompatíveis")),
     "circuit_properties_title" to MessageTemplate(english = MessageForms(other = "Circuit properties"), portuguese = MessageForms(other = "Propriedades do circuito")),
+    "circuit_remove_error_title" to MessageTemplate(english = MessageForms(other = "Cannot remove circuit"), portuguese = MessageForms(other = "Não é possível remover o circuito")),
+    "circuit_remove_last_error" to MessageTemplate(english = MessageForms(other = "A project must contain at least one circuit."), portuguese = MessageForms(other = "Um projeto deve conter pelo menos um circuito.")),
+    "circuit_remove_main_error" to MessageTemplate(english = MessageForms(other = "{name} is the main circuit and cannot be removed. Set another circuit as main first."), portuguese = MessageForms(other = "{name} é o circuito principal e não pode ser removido. Defina outro circuito como principal antes.")),
+    "circuit_remove_used_error" to MessageTemplate(english = MessageForms(other = "Circuit {name} is used in other circuits and therefore cannot be removed."), portuguese = MessageForms(other = "O circuito {name} é usado em outros circuitos e por isso não pode ser removido.")),
     "codec_appearance_anchor_invalid" to MessageTemplate(english = MessageForms(other = "{child_name}: appearance must have exactly one anchor."), portuguese = MessageForms(other = "{child_name}: aparência sem âncora única.")),
     "codec_appearance_pin_missing" to MessageTemplate(english = MessageForms(other = "{child_name}: appearance port has no matching pin: {pinPoint}."), portuguese = MessageForms(other = "{child_name}: porta de aparência não corresponde a um pino: {pinPoint}.")),
     "codec_appearance_pins_invalid" to MessageTemplate(english = MessageForms(other = "{child_name}: appearance must represent every pin exactly once."), portuguese = MessageForms(other = "{child_name}: aparência não representa todos os pinos exatamente uma vez.")),
@@ -3986,9 +5419,6 @@ private fun messageCatalogPart6(): Map<String, MessageTemplate> = mapOf(
     "codec_export_unimplemented" to MessageTemplate(english = MessageForms(other = "Export is not implemented for {component_kind}."), portuguese = MessageForms(other = "Exportação não implementada para {component_kind}.")),
     "codec_external_circuit_missing" to MessageTemplate(english = MessageForms(other = "Circuit is missing from external library: {name}."), portuguese = MessageForms(other = "Circuito ausente em biblioteca externa: {name}.")),
     "codec_external_empty_export" to MessageTemplate(english = MessageForms(other = "Library {sourceId} has no circuits. Remove its references before exporting."), portuguese = MessageForms(other = "A biblioteca {sourceId} ficou sem circuitos. Remova suas referências antes de exportar.")),
-)
-
-private fun messageCatalogPart7(): Map<String, MessageTemplate> = mapOf(
     "codec_external_library_unknown" to MessageTemplate(english = MessageForms(other = "Unknown library during export: {globalId}."), portuguese = MessageForms(other = "Biblioteca desconhecida ao exportar: {globalId}.")),
     "codec_external_main_export" to MessageTemplate(english = MessageForms(other = "Move the main definition to its source project before exporting external libraries."), portuguese = MessageForms(other = "Mova a definição principal para o projeto de origem antes de exportar bibliotecas externas.")),
     "codec_external_names_duplicate" to MessageTemplate(english = MessageForms(other = "Duplicate circuit names in library {sourceId}."), portuguese = MessageForms(other = "Nomes de circuito duplicados na biblioteca {sourceId}.")),
@@ -4006,6 +5436,9 @@ private fun messageCatalogPart7(): Map<String, MessageTemplate> = mapOf(
     "codec_library_check_failed" to MessageTemplate(english = MessageForms(other = "Could not check {reference_path}: {failure_message}."), portuguese = MessageForms(other = "Não foi possível verificar {reference_path}: {failure_message}.")),
     "codec_library_circuit_ambiguous" to MessageTemplate(english = MessageForms(other = "Ambiguous circuit in library {fileId}: {name}."), portuguese = MessageForms(other = "Circuito ambíguo na biblioteca {fileId}: {name}.")),
     "codec_library_circuit_name_required" to MessageTemplate(english = MessageForms(other = "Circuit name is missing in {source_id}."), portuguese = MessageForms(other = "Circuito sem nome em {source_id}.")),
+)
+
+private fun messageCatalogPart11(): Map<String, MessageTemplate> = mapOf(
     "codec_library_circuits_invalid" to MessageTemplate(english = MessageForms(other = "Circuits are empty or duplicated in {source_id}."), portuguese = MessageForms(other = "Circuitos vazios ou duplicados em {source_id}.")),
     "codec_library_content_limit" to MessageTemplate(english = MessageForms(other = "The project exceeds the library content limit."), portuguese = MessageForms(other = "O projeto excede o limite de conteúdo das bibliotecas.")),
     "codec_library_count_limit" to MessageTemplate(english = MessageForms(other = "The project exceeds the library count limit."), portuguese = MessageForms(other = "O projeto excede o limite de bibliotecas.")),
@@ -4089,10 +5522,71 @@ private fun messageCatalogPart7(): Map<String, MessageTemplate> = mapOf(
     "codec_zip_split_unsupported" to MessageTemplate(english = MessageForms(other = "Split ZIP volumes are not supported."), portuguese = MessageForms(other = "ZIP dividido em volumes não é suportado.")),
     "codec_zip_symlink_unsupported" to MessageTemplate(english = MessageForms(other = "Symbolic links are not allowed in bundle."), portuguese = MessageForms(other = "Links simbólicos não são aceitos no pacote.")),
     "codec_zip_truncated" to MessageTemplate(english = MessageForms(other = "Truncated ZIP."), portuguese = MessageForms(other = "ZIP truncado.")),
+    "color_hex_hint" to MessageTemplate(english = MessageForms(other = "Or type #rrggbb, with an optional alpha byte (#rrggbbaa)."), portuguese = MessageForms(other = "Ou digite #rrggbb, com um byte de transparência opcional (#rrggbbaa).")),
+    "color_name_amber" to MessageTemplate(english = MessageForms(other = "Amber"), portuguese = MessageForms(other = "Âmbar")),
+    "color_name_black" to MessageTemplate(english = MessageForms(other = "Black"), portuguese = MessageForms(other = "Preto")),
+    "color_name_blue" to MessageTemplate(english = MessageForms(other = "Blue"), portuguese = MessageForms(other = "Azul")),
+    "color_name_brown" to MessageTemplate(english = MessageForms(other = "Brown"), portuguese = MessageForms(other = "Marrom")),
+    "color_name_cyan" to MessageTemplate(english = MessageForms(other = "Cyan"), portuguese = MessageForms(other = "Ciano")),
+    "color_name_dark_gray" to MessageTemplate(english = MessageForms(other = "Dark gray"), portuguese = MessageForms(other = "Cinza-escuro")),
+    "color_name_dark_green" to MessageTemplate(english = MessageForms(other = "Dark green"), portuguese = MessageForms(other = "Verde-escuro")),
+    "color_name_gray" to MessageTemplate(english = MessageForms(other = "Gray"), portuguese = MessageForms(other = "Cinza")),
+    "color_name_green" to MessageTemplate(english = MessageForms(other = "Green"), portuguese = MessageForms(other = "Verde")),
+    "color_name_indigo" to MessageTemplate(english = MessageForms(other = "Indigo"), portuguese = MessageForms(other = "Índigo")),
+    "color_name_light_gray" to MessageTemplate(english = MessageForms(other = "Light gray"), portuguese = MessageForms(other = "Cinza-claro")),
+    "color_name_magenta" to MessageTemplate(english = MessageForms(other = "Magenta"), portuguese = MessageForms(other = "Magenta")),
+    "color_name_navy" to MessageTemplate(english = MessageForms(other = "Navy blue"), portuguese = MessageForms(other = "Azul-marinho")),
+    "color_name_orange" to MessageTemplate(english = MessageForms(other = "Orange"), portuguese = MessageForms(other = "Laranja")),
+    "color_name_pink" to MessageTemplate(english = MessageForms(other = "Pink"), portuguese = MessageForms(other = "Rosa")),
+    "color_name_purple" to MessageTemplate(english = MessageForms(other = "Purple"), portuguese = MessageForms(other = "Roxo")),
 )
 
-private fun messageCatalogPart8(): Map<String, MessageTemplate> = mapOf(
+private fun messageCatalogPart12(): Map<String, MessageTemplate> = mapOf(
+    "color_name_red" to MessageTemplate(english = MessageForms(other = "Red"), portuguese = MessageForms(other = "Vermelho")),
+    "color_name_teal" to MessageTemplate(english = MessageForms(other = "Teal"), portuguese = MessageForms(other = "Verde-azulado")),
+    "color_name_violet" to MessageTemplate(english = MessageForms(other = "Violet"), portuguese = MessageForms(other = "Violeta")),
+    "color_name_white" to MessageTemplate(english = MessageForms(other = "White"), portuguese = MessageForms(other = "Branco")),
+    "color_name_yellow" to MessageTemplate(english = MessageForms(other = "Yellow"), portuguese = MessageForms(other = "Amarelo")),
+    "color_picker_advanced" to MessageTemplate(english = MessageForms(other = "Advanced"), portuguese = MessageForms(other = "Avançado")),
+    "color_picker_alpha" to MessageTemplate(english = MessageForms(other = "Opacity"), portuguese = MessageForms(other = "Opacidade")),
+    "color_picker_current" to MessageTemplate(english = MessageForms(other = "Current"), portuguese = MessageForms(other = "Atual")),
+    "color_picker_default" to MessageTemplate(english = MessageForms(other = "Default"), portuguese = MessageForms(other = "Padrão")),
+    "color_picker_hue" to MessageTemplate(english = MessageForms(other = "Hue"), portuguese = MessageForms(other = "Matiz")),
+    "color_picker_material" to MessageTemplate(english = MessageForms(other = "More colors"), portuguese = MessageForms(other = "Mais cores")),
+    "color_picker_restore_default" to MessageTemplate(english = MessageForms(other = "Restore default"), portuguese = MessageForms(other = "Restaurar padrão")),
+    "color_picker_saturation" to MessageTemplate(english = MessageForms(other = "Saturation"), portuguese = MessageForms(other = "Saturação")),
+    "color_picker_value" to MessageTemplate(english = MessageForms(other = "Brightness"), portuguese = MessageForms(other = "Brilho")),
+    "color_state_custom" to MessageTemplate(english = MessageForms(other = "Custom"), portuguese = MessageForms(other = "Personalizada")),
+    "color_state_default" to MessageTemplate(english = MessageForms(other = "Default"), portuguese = MessageForms(other = "Padrão")),
+    "color_swatch_description" to MessageTemplate(english = MessageForms(other = "{name}: {hex}"), portuguese = MessageForms(other = "{name}: {hex}")),
     "commands_heading" to MessageTemplate(english = MessageForms(other = "Commands"), portuguese = MessageForms(other = "Comandos")),
+    "companion_operation_fpga_ise_build" to MessageTemplate(english = MessageForms(other = "Build a bitstream with Xilinx ISE"), portuguese = MessageForms(other = "Gerar um bitstream com Xilinx ISE")),
+    "companion_operation_fpga_ise_cpld_build" to MessageTemplate(english = MessageForms(other = "Build a CPLD JEDEC file with Xilinx ISE"), portuguese = MessageForms(other = "Gerar um arquivo JEDEC de CPLD com Xilinx ISE")),
+    "companion_operation_fpga_program" to MessageTemplate(english = MessageForms(other = "Program an FPGA board"), portuguese = MessageForms(other = "Programar uma placa FPGA")),
+    "companion_operation_fpga_quartus_build" to MessageTemplate(english = MessageForms(other = "Build with Intel Quartus"), portuguese = MessageForms(other = "Compilar com Intel Quartus")),
+    "companion_operation_fpga_synthesize" to MessageTemplate(english = MessageForms(other = "Synthesize HDL with Yosys"), portuguese = MessageForms(other = "Sintetizar HDL com Yosys")),
+    "companion_operation_fpga_vivado_build" to MessageTemplate(english = MessageForms(other = "Build a bitstream with Vivado"), portuguese = MessageForms(other = "Gerar um bitstream com Vivado")),
+    "companion_operation_hdl_cancel" to MessageTemplate(english = MessageForms(other = "Stop a VHDL or BLIF simulation"), portuguese = MessageForms(other = "Parar uma simulação VHDL ou BLIF")),
+    "companion_operation_hdl_reset" to MessageTemplate(english = MessageForms(other = "Reset a VHDL or BLIF simulation"), portuguese = MessageForms(other = "Reiniciar uma simulação VHDL ou BLIF")),
+    "companion_operation_hdl_start" to MessageTemplate(english = MessageForms(other = "Start a VHDL or BLIF simulation"), portuguese = MessageForms(other = "Iniciar uma simulação VHDL ou BLIF")),
+    "companion_operation_hdl_step" to MessageTemplate(english = MessageForms(other = "Advance a VHDL or BLIF simulation"), portuguese = MessageForms(other = "Avançar uma simulação VHDL ou BLIF")),
+    "companion_operation_hdl_validate" to MessageTemplate(english = MessageForms(other = "Check a VHDL or BLIF design"), portuguese = MessageForms(other = "Verificar um projeto VHDL ou BLIF")),
+    "companion_operation_jar_live" to MessageTemplate(english = MessageForms(other = "Send live inputs to an Evolution JAR circuit"), portuguese = MessageForms(other = "Enviar entradas ao vivo para um circuito JAR do Evolution")),
+    "companion_operation_jar_run" to MessageTemplate(english = MessageForms(other = "Run a circuit with an Evolution JAR library"), portuguese = MessageForms(other = "Executar um circuito com uma biblioteca JAR do Evolution")),
+    "companion_operation_tcl_run" to MessageTemplate(english = MessageForms(other = "Run a Tcl console script"), portuguese = MessageForms(other = "Executar um script do console Tcl")),
+    "companion_operation_tcl_step" to MessageTemplate(english = MessageForms(other = "Run Tcl component inputs"), portuguese = MessageForms(other = "Executar entradas de componente Tcl")),
+    "companion_operation_tcl_timed_run" to MessageTemplate(english = MessageForms(other = "Run a Tcl console script with timers, isolated"), portuguese = MessageForms(other = "Executar um script do console Tcl com temporizadores, isolado")),
+    "companion_operation_tcl_timed_step" to MessageTemplate(english = MessageForms(other = "Run Tcl component inputs with timers, isolated"), portuguese = MessageForms(other = "Executar entradas de componente Tcl com temporizadores, isolado")),
+    "companion_operation_tcl_tk_live" to MessageTemplate(english = MessageForms(other = "Use a live Tcl/Tk window on a Linux host"), portuguese = MessageForms(other = "Usar uma janela Tcl/Tk ao vivo em um host Linux")),
+    "companion_operation_tcl_tk_run" to MessageTemplate(english = MessageForms(other = "Run a Tcl/Tk window on a Linux host"), portuguese = MessageForms(other = "Executar uma janela Tcl/Tk em um host Linux")),
+    "companion_operation_telnet_poll" to MessageTemplate(english = MessageForms(other = "Read Telnet input"), portuguese = MessageForms(other = "Ler a entrada Telnet")),
+    "companion_operation_telnet_resize" to MessageTemplate(english = MessageForms(other = "Resize the Telnet input buffer"), portuguese = MessageForms(other = "Redimensionar o buffer de entrada Telnet")),
+    "companion_operation_telnet_send" to MessageTemplate(english = MessageForms(other = "Send Telnet output"), portuguese = MessageForms(other = "Enviar saída Telnet")),
+    "companion_operation_telnet_start" to MessageTemplate(english = MessageForms(other = "Start a Telnet listener"), portuguese = MessageForms(other = "Iniciar um receptor Telnet")),
+    "companion_operation_telnet_stop" to MessageTemplate(english = MessageForms(other = "Stop a Telnet listener"), portuguese = MessageForms(other = "Parar um receptor Telnet")),
+    "companion_operation_verify_inputs" to MessageTemplate(english = MessageForms(other = "Verify uploaded files"), portuguese = MessageForms(other = "Verificar arquivos enviados")),
+    "companion_operation_yosys_import" to MessageTemplate(english = MessageForms(other = "Import Verilog or BLIF with Yosys"), portuguese = MessageForms(other = "Importar Verilog ou BLIF com Yosys")),
+    "companion_recent_hosts" to MessageTemplate(english = MessageForms(other = "Recent hosts"), portuguese = MessageForms(other = "Hosts recentes")),
     "companion_ui_address" to MessageTemplate(english = MessageForms(other = "HTTPS address or local loopback"), portuguese = MessageForms(other = "Endereço HTTPS ou loopback local")),
     "companion_ui_capabilities" to MessageTemplate(english = MessageForms(one = "Protocol {version} · input limit {count} byte", other = "Protocol {version} · input limit {count} bytes"), portuguese = MessageForms(one = "Protocolo {version} · limite de entrada {count} byte", other = "Protocolo {version} · limite de entrada {count} bytes")),
     "companion_ui_connection_failed" to MessageTemplate(english = MessageForms(other = "Could not connect to the host: {code}."), portuguese = MessageForms(other = "Não foi possível conectar ao host: {code}.")),
@@ -4148,6 +5642,9 @@ private fun messageCatalogPart8(): Map<String, MessageTemplate> = mapOf(
     "component_fpclassificator" to MessageTemplate(english = MessageForms(other = "Floating-point classifier"), portuguese = MessageForms(other = "Classificador de ponto flutuante")),
     "component_fpcomparator" to MessageTemplate(english = MessageForms(other = "Floating-point comparator"), portuguese = MessageForms(other = "Comparador de ponto flutuante")),
     "component_fpconstant" to MessageTemplate(english = MessageForms(other = "Floating-point constant"), portuguese = MessageForms(other = "Constante de ponto flutuante")),
+)
+
+private fun messageCatalogPart13(): Map<String, MessageTemplate> = mapOf(
     "component_fpdivider" to MessageTemplate(english = MessageForms(other = "Floating-point divider"), portuguese = MessageForms(other = "Divisor de ponto flutuante")),
     "component_fpexponentiator" to MessageTemplate(english = MessageForms(other = "Floating-point exponentiator"), portuguese = MessageForms(other = "Exponenciador de ponto flutuante")),
     "component_fplogarithm" to MessageTemplate(english = MessageForms(other = "Floating-point logarithm"), portuguese = MessageForms(other = "Logaritmo de ponto flutuante")),
@@ -4192,9 +5689,6 @@ private fun messageCatalogPart8(): Map<String, MessageTemplate> = mapOf(
     "component_menu_rotate_left" to MessageTemplate(english = MessageForms(other = "Rotate Left"), portuguese = MessageForms(other = "Girar à esquerda")),
     "component_menu_rotate_right" to MessageTemplate(english = MessageForms(other = "Rotate Right"), portuguese = MessageForms(other = "Girar à direita")),
     "component_menu_soc_assembler" to MessageTemplate(english = MessageForms(other = "Open assembler"), portuguese = MessageForms(other = "Abrir assembler")),
-)
-
-private fun messageCatalogPart9(): Map<String, MessageTemplate> = mapOf(
     "component_menu_soc_elf_loaded" to MessageTemplate(english = MessageForms(other = "Successfully loaded the ELF file into memory. The entry point of the executable has been set to the processor."), portuguese = MessageForms(other = "O arquivo ELF foi carregado na memória. O ponto de entrada do executável foi definido no processador.")),
     "component_menu_soc_export_c" to MessageTemplate(english = MessageForms(other = "Export C-templates"), portuguese = MessageForms(other = "Exportar modelos em C")),
     "component_menu_soc_insert_transaction" to MessageTemplate(english = MessageForms(other = "Insert a bus transaction"), portuguese = MessageForms(other = "Inserir uma transação no barramento")),
@@ -4251,6 +5745,9 @@ private fun messageCatalogPart9(): Map<String, MessageTemplate> = mapOf(
     "component_tcl_console_reds" to MessageTemplate(english = MessageForms(other = "Tcl console (Reds)"), portuguese = MessageForms(other = "Console Tcl (Reds)")),
     "component_tcl_generic" to MessageTemplate(english = MessageForms(other = "Tcl generic component"), portuguese = MessageForms(other = "Componente Tcl genérico")),
     "component_telnet" to MessageTemplate(english = MessageForms(other = "Telnet"), portuguese = MessageForms(other = "Telnet")),
+)
+
+private fun messageCatalogPart14(): Map<String, MessageTemplate> = mapOf(
     "component_text" to MessageTemplate(english = MessageForms(other = "Text"), portuguese = MessageForms(other = "Texto")),
     "component_transistor" to MessageTemplate(english = MessageForms(other = "Transistor"), portuguese = MessageForms(other = "Transistor")),
     "component_transmission_gate" to MessageTemplate(english = MessageForms(other = "Transmission gate"), portuguese = MessageForms(other = "Porta de transmissão")),
@@ -4295,9 +5792,6 @@ private fun messageCatalogPart9(): Map<String, MessageTemplate> = mapOf(
     "component_ttl_74240" to MessageTemplate(english = MessageForms(other = "74240"), portuguese = MessageForms(other = "74240")),
     "component_ttl_74241" to MessageTemplate(english = MessageForms(other = "74241"), portuguese = MessageForms(other = "74241")),
     "component_ttl_74244" to MessageTemplate(english = MessageForms(other = "74244"), portuguese = MessageForms(other = "74244")),
-)
-
-private fun messageCatalogPart10(): Map<String, MessageTemplate> = mapOf(
     "component_ttl_74245" to MessageTemplate(english = MessageForms(other = "74245"), portuguese = MessageForms(other = "74245")),
     "component_ttl_74257" to MessageTemplate(english = MessageForms(other = "74257"), portuguese = MessageForms(other = "74257")),
     "component_ttl_74259" to MessageTemplate(english = MessageForms(other = "74259"), portuguese = MessageForms(other = "74259")),
@@ -4350,7 +5844,13 @@ private fun messageCatalogPart10(): Map<String, MessageTemplate> = mapOf(
     "component_xnor" to MessageTemplate(english = MessageForms(other = "XNOR"), portuguese = MessageForms(other = "XNOR")),
     "component_xor" to MessageTemplate(english = MessageForms(other = "XOR"), portuguese = MessageForms(other = "XOR")),
     "confirm_clear_history" to MessageTemplate(english = MessageForms(other = "Clear the undo and redo history for this project?"), portuguese = MessageForms(other = "Limpar o histórico de desfazer e refazer deste projeto?")),
-    "confirm_delete_circuit" to MessageTemplate(english = MessageForms(other = "Delete {name}? This operation can be undone."), portuguese = MessageForms(other = "Excluir {name}? A operação pode ser desfeita.")),
+    "confirm_delete_circuit" to MessageTemplate(english = MessageForms(other = "Delete {name}? This operation can be undone."), portuguese = MessageForms(other = "Apagar {name}? A operação pode ser desfeita.")),
+    "confirm_discard" to MessageTemplate(english = MessageForms(other = "Discard"), portuguese = MessageForms(other = "Descartar")),
+    "confirm_remove" to MessageTemplate(english = MessageForms(other = "Remove"), portuguese = MessageForms(other = "Remover")),
+    "confirm_restore" to MessageTemplate(english = MessageForms(other = "Restore"), portuguese = MessageForms(other = "Restaurar")),
+)
+
+private fun messageCatalogPart15(): Map<String, MessageTemplate> = mapOf(
     "core_editor_connected_terminal" to MessageTemplate(english = MessageForms(other = "The property would remove a connected terminal."), portuguese = MessageForms(other = "A propriedade removeria um terminal conectado.")),
     "core_editor_group_connections" to MessageTemplate(english = MessageForms(other = "Group editing cannot preserve the connections."), portuguese = MessageForms(other = "A edição em grupo não pode preservar as conexões.")),
     "core_editor_group_ids" to MessageTemplate(english = MessageForms(other = "Group editing must preserve the existing component identities."), portuguese = MessageForms(other = "A edição em grupo deve preservar as identificações existentes.")),
@@ -4398,9 +5898,6 @@ private fun messageCatalogPart10(): Map<String, MessageTemplate> = mapOf(
     "diagnostic_stats_terminals" to MessageTemplate(english = MessageForms(other = "Terminals: {count}"), portuguese = MessageForms(other = "Terminais: {count}")),
     "diagnostic_stats_title" to MessageTemplate(english = MessageForms(other = "Circuit statistics"), portuguese = MessageForms(other = "Estatísticas do circuito")),
     "diagnostic_stats_wires" to MessageTemplate(english = MessageForms(other = "Wire segments: {count}"), portuguese = MessageForms(other = "Segmentos de fio: {count}")),
-)
-
-private fun messageCatalogPart11(): Map<String, MessageTemplate> = mapOf(
     "diagnostic_title" to MessageTemplate(english = MessageForms(other = "Diagnostics and statistics"), portuguese = MessageForms(other = "Diagnósticos e estatísticas")),
     "diagnostic_unconnected_input" to MessageTemplate(english = MessageForms(other = "Input {component}.{terminal} has no wire or junction. Some controls have defaults."), portuguese = MessageForms(other = "A entrada {component}.{terminal} está sem fio ou junção. Alguns controles têm valores padrão.")),
     "diagnostic_unknown_component" to MessageTemplate(english = MessageForms(other = "The component type {type} is not registered."), portuguese = MessageForms(other = "O tipo de componente {type} não está registrado.")),
@@ -4414,10 +5911,12 @@ private fun messageCatalogPart11(): Map<String, MessageTemplate> = mapOf(
     "direction_west" to MessageTemplate(english = MessageForms(other = "West"), portuguese = MessageForms(other = "Oeste")),
     "document_read_only_original" to MessageTemplate(english = MessageForms(other = "The original document could not be displayed. Its complete contents were preserved as read-only. Open a supported file or create a new project to edit."), portuguese = MessageForms(other = "Não foi possível exibir o documento original. Seu conteúdo completo foi preservado somente para leitura. Abra um arquivo compatível ou crie um projeto para editar.")),
     "document_read_only_preserved" to MessageTemplate(english = MessageForms(other = "The original document is read-only. Its complete contents were preserved. Create a new project or open an editable copy to make changes."), portuguese = MessageForms(other = "O documento original está somente para leitura. Seu conteúdo completo foi preservado. Crie um projeto ou abra uma cópia editável para fazer alterações.")),
-    "editor_help_editing" to MessageTemplate(english = MessageForms(other = "4. Choose components in Library to insert. Select Move or Wire to edit, and open Properties to change labels and attributes. Undo and Redo recover edits."), portuguese = MessageForms(other = "4. Escolha componentes na Biblioteca para inserir. Selecione Mover ou Fio para editar e abra Propriedades para alterar rótulo e atributos. Desfazer e Refazer recuperam edições.")),
+    "edit_cant_redo" to MessageTemplate(english = MessageForms(other = "Can't redo"), portuguese = MessageForms(other = "Não é possível refazer")),
+    "edit_cant_undo" to MessageTemplate(english = MessageForms(other = "Can't undo"), portuguese = MessageForms(other = "Não é possível desfazer")),
+    "edit_redo_item" to MessageTemplate(english = MessageForms(other = "Redo {action}"), portuguese = MessageForms(other = "Refazer {action}")),
+    "edit_undo_item" to MessageTemplate(english = MessageForms(other = "Undo {action}"), portuguese = MessageForms(other = "Desfazer {action}")),
     "editor_help_files" to MessageTemplate(english = MessageForms(other = "5. Use .circ to copy or import the complete project XML. After importing, check simulation warnings for incompatible components or connections."), portuguese = MessageForms(other = "5. Use .circ para copiar ou importar o XML completo do projeto. Após importar, confira os avisos da simulação para identificar recursos ou ligações incompatíveis.")),
     "editor_help_library" to MessageTemplate(english = MessageForms(other = "1. Open Library and choose SAP-1 or AND. The Project list lets you navigate the circuits in the file."), portuguese = MessageForms(other = "1. Abra Biblioteca e escolha SAP-1 ou AND. A lista Projeto permite navegar pelos circuitos do arquivo.")),
-    "editor_help_simulation" to MessageTemplate(english = MessageForms(other = "3. In Simulate, tap inputs to change them. Step advances the clock; Run repeats steps until Pause. Reset restarts the simulation."), portuguese = MessageForms(other = "3. Em Simular, toque nas entradas para alterá-las. Passo avança o clock; Executar repete os passos até Pausar. Reset reinicia a simulação.")),
     "editor_help_title" to MessageTemplate(english = MessageForms(other = "Use the editor"), portuguese = MessageForms(other = "Usar o editor")),
     "editor_help_viewport" to MessageTemplate(english = MessageForms(other = "2. Use View → Fit to see the entire circuit. Tap the current percentage to set the zoom. Drag the background to pan, and use two fingers or the + and − buttons to zoom."), portuguese = MessageForms(other = "2. Use Exibir → Enquadrar para ver o circuito inteiro. Toque na porcentagem atual para definir o zoom. Arraste o fundo para navegar e use dois dedos ou os botões + e − para ampliar.")),
     "editor_import_discarded" to MessageTemplate(english = MessageForms(other = "The import was canceled because the current project changed."), portuguese = MessageForms(other = "A importação foi cancelada porque o projeto atual mudou.")),
@@ -4452,6 +5951,9 @@ private fun messageCatalogPart11(): Map<String, MessageTemplate> = mapOf(
     "error_main_circuit_missing" to MessageTemplate(english = MessageForms(other = "Main circuit does not exist: {name}."), portuguese = MessageForms(other = "Circuito principal inexistente: {name}.")),
     "error_main_circuit_removal" to MessageTemplate(english = MessageForms(other = "The main circuit cannot be removed."), portuguese = MessageForms(other = "Não é possível remover o circuito principal.")),
     "error_memory_repetition" to MessageTemplate(english = MessageForms(other = "Invalid repeat count in memory contents."), portuguese = MessageForms(other = "Repetição inválida no conteúdo da memória.")),
+)
+
+private fun messageCatalogPart16(): Map<String, MessageTemplate> = mapOf(
     "error_named_subcircuit_missing" to MessageTemplate(english = MessageForms(other = "Subcircuit is missing: {name}."), portuguese = MessageForms(other = "Subcircuito ausente: {name}.")),
     "error_network_width" to MessageTemplate(english = MessageForms(other = "Incompatible widths on the network at {position}: {widths} bits."), portuguese = MessageForms(other = "Larguras incompatíveis na rede em {position}: {widths} bits.")),
     "error_placement_terminal_conflict" to MessageTemplate(english = MessageForms(other = "An exclusive terminal already occupies this point."), portuguese = MessageForms(other = "Já existe um terminal exclusivo neste ponto.")),
@@ -4491,6 +5993,17 @@ private fun messageCatalogPart11(): Map<String, MessageTemplate> = mapOf(
     "evolution_name_renamed_on_load" to MessageTemplate(english = MessageForms(other = "\"{old}\" was renamed to \"{new}\", as Logisim Evolution does when it opens the file."), portuguese = MessageForms(other = "\"{old}\" passou a \"{new}\", como o Logisim Evolution faz ao abrir o arquivo.")),
     "evolution_name_starts_with_digit" to MessageTemplate(english = MessageForms(other = "Names cannot start with a digit."), portuguese = MessageForms(other = "Nomes não podem começar com dígito.")),
     "evolution_name_vhdl_keyword" to MessageTemplate(english = MessageForms(other = "\"{name}\" is a reserved VHDL word."), portuguese = MessageForms(other = "\"{name}\" é uma palavra reservada do VHDL.")),
+    "extension_capability_companion_jar" to MessageTemplate(english = MessageForms(other = "Companion JAR"), portuguese = MessageForms(other = "JAR no companion")),
+    "extension_capability_companion_jar_description" to MessageTemplate(english = MessageForms(other = "Depends on Java code from a JAR run on a paired companion computer. Declaring it does not authorize running anything."), portuguese = MessageForms(other = "Depende de código Java de um JAR executado em um computador companion pareado. Declarar esta capacidade não autoriza nenhuma execução.")),
+    "extension_capability_companion_tcl" to MessageTemplate(english = MessageForms(other = "Companion Tcl"), portuguese = MessageForms(other = "Tcl no companion")),
+    "extension_capability_companion_tcl_description" to MessageTemplate(english = MessageForms(other = "Depends on Tcl scripts run on a paired companion computer. Declaring it does not authorize running anything."), portuguese = MessageForms(other = "Depende de scripts Tcl executados em um computador companion pareado. Declarar esta capacidade não autoriza nenhuma execução.")),
+    "extension_capability_custom_rendering" to MessageTemplate(english = MessageForms(other = "Custom drawing"), portuguese = MessageForms(other = "Desenho próprio")),
+    "extension_capability_custom_rendering_description" to MessageTemplate(english = MessageForms(other = "Components draw their own shape on the canvas."), portuguese = MessageForms(other = "Os componentes desenham a própria forma na área do circuito.")),
+    "extension_capability_denied" to MessageTemplate(english = MessageForms(other = "This app does not allow this capability, so registration will be refused."), portuguese = MessageForms(other = "Este app não permite esta capacidade, então o registro será recusado.")),
+    "extension_capability_pure_logic" to MessageTemplate(english = MessageForms(other = "Pure logic"), portuguese = MessageForms(other = "Lógica pura")),
+    "extension_capability_pure_logic_description" to MessageTemplate(english = MessageForms(other = "Components compute their outputs from their current inputs only."), portuguese = MessageForms(other = "Os componentes calculam as saídas apenas a partir das entradas atuais.")),
+    "extension_capability_stateful_logic" to MessageTemplate(english = MessageForms(other = "Stateful logic"), portuguese = MessageForms(other = "Lógica com estado")),
+    "extension_capability_stateful_logic_description" to MessageTemplate(english = MessageForms(other = "Components can keep values between simulation steps, such as registers or counters. Each circuit instance keeps its own state."), portuguese = MessageForms(other = "Os componentes podem guardar valores entre passos da simulação, como registradores ou contadores. Cada instância do circuito guarda o próprio estado.")),
     "extensions_accept" to MessageTemplate(english = MessageForms(other = "Accept license and register extension"), portuguese = MessageForms(other = "Aceitar licença e registrar extensão")),
     "extensions_accept_a11y" to MessageTemplate(english = MessageForms(other = "I accept this extension’s license and capabilities"), portuguese = MessageForms(other = "Aceito a licença e as capacidades desta extensão")),
     "extensions_api_heading" to MessageTemplate(english = MessageForms(other = "Extensions compiled into the app • API 1.0"), portuguese = MessageForms(other = "Extensões compiladas no app • API 1.0")),
@@ -4498,12 +6011,9 @@ private fun messageCatalogPart11(): Map<String, MessageTemplate> = mapOf(
     "extensions_bind_action" to MessageTemplate(english = MessageForms(other = "Use this extension for the legacy library"), portuguese = MessageForms(other = "Usar esta extensão para a biblioteca legada")),
     "extensions_bound" to MessageTemplate(english = MessageForms(other = "Legacy library linked: {path}."), portuguese = MessageForms(other = "Biblioteca legada vinculada: {path}.")),
     "extensions_bound_action" to MessageTemplate(english = MessageForms(other = "Legacy library linked in this session"), portuguese = MessageForms(other = "Biblioteca legada vinculada nesta sessão")),
-    "extensions_capabilities" to MessageTemplate(english = MessageForms(other = "Capabilities: {capabilities}"), portuguese = MessageForms(other = "Capacidades: {capabilities}")),
+    "extensions_capabilities_heading" to MessageTemplate(english = MessageForms(other = "Requested capabilities"), portuguese = MessageForms(other = "Capacidades solicitadas")),
     "extensions_components" to MessageTemplate(english = MessageForms(other = "Components: {components}"), portuguese = MessageForms(other = "Componentes: {components}")),
     "extensions_error_api" to MessageTemplate(english = MessageForms(other = "Extension API {major}.{minor} is unavailable."), portuguese = MessageForms(other = "A API de extensão {major}.{minor} está indisponível.")),
-)
-
-private fun messageCatalogPart12(): Map<String, MessageTemplate> = mapOf(
     "extensions_error_approval" to MessageTemplate(english = MessageForms(other = "Extension approval does not match its current manifest."), portuguese = MessageForms(other = "A aprovação da extensão não corresponde ao manifesto atual.")),
     "extensions_error_bind" to MessageTemplate(english = MessageForms(other = "Could not link this legacy library."), portuguese = MessageForms(other = "Não foi possível vincular esta biblioteca legada.")),
     "extensions_error_capabilities" to MessageTemplate(english = MessageForms(other = "Extension requests capabilities not enabled for this host."), portuguese = MessageForms(other = "A extensão pede capacidades não habilitadas neste host.")),
@@ -4523,6 +6033,7 @@ private fun messageCatalogPart12(): Map<String, MessageTemplate> = mapOf(
     "extensions_none_external" to MessageTemplate(english = MessageForms(other = "No incompatible external libraries found."), portuguese = MessageForms(other = "Nenhuma biblioteca externa incompatível encontrada.")),
     "extensions_original_xml" to MessageTemplate(english = MessageForms(other = "Original project XML"), portuguese = MessageForms(other = "XML original do projeto")),
     "extensions_policy" to MessageTemplate(english = MessageForms(other = "Each extension requires license and capability review. Desktop JAR references are preserved; this app does not load Java classes from files."), portuguese = MessageForms(other = "Cada extensão exige revisão de licença e capacidades. JARs do desktop conservam suas referências; este app não carrega classes Java de arquivos.")),
+    "extensions_privileges_note" to MessageTemplate(english = MessageForms(other = "Extensions are code compiled into this app and share its permissions. A capability cannot grant file, network or process access."), portuguese = MessageForms(other = "Extensões são código compilado neste app e compartilham as permissões dele. Uma capacidade não concede acesso a arquivos, rede ou processos.")),
     "extensions_provider" to MessageTemplate(english = MessageForms(other = "{name} {version} • {publisher}"), portuguese = MessageForms(other = "{name} {version} • {publisher}")),
     "extensions_registered" to MessageTemplate(english = MessageForms(other = "Extension registered: {name}."), portuguese = MessageForms(other = "Extensão registrada: {name}.")),
     "extensions_review" to MessageTemplate(english = MessageForms(other = "Review the license, publisher and capabilities before registration."), portuguese = MessageForms(other = "Revise a licença, o editor e as capacidades antes de registrar.")),
@@ -4543,6 +6054,9 @@ private fun messageCatalogPart12(): Map<String, MessageTemplate> = mapOf(
     "external_io_pin" to MessageTemplate(english = MessageForms(other = "Pin {pin}: {value}"), portuguese = MessageForms(other = "Pino {pin}: {value}")),
     "external_io_pin_help" to MessageTemplate(english = MessageForms(other = "Tap a pin to cycle through unknown, 0 and 1. Output-only pins show the circuit value."), portuguese = MessageForms(other = "Toque no pino para alternar entre desconhecido, 0 e 1. Pinos somente de saída mostram o valor do circuito.")),
     "external_io_protocol_error" to MessageTemplate(english = MessageForms(other = "Companion rejected the operation: {code}. {detail}"), portuguese = MessageForms(other = "O companion recusou a operação: {code}. {detail}")),
+)
+
+private fun messageCatalogPart17(): Map<String, MessageTemplate> = mapOf(
     "external_io_reptar_unavailable" to MessageTemplate(english = MessageForms(other = "Reptar Local Bus has no simulation implementation in desktop Logisim or mobile. Its ports and attributes remain preserved."), portuguese = MessageForms(other = "Reptar Local Bus não possui simulação no Logisim desktop nem no mobile. Suas portas e atributos são preservados.")),
     "external_io_root" to MessageTemplate(english = MessageForms(other = "Main circuit"), portuguese = MessageForms(other = "Circuito principal")),
     "external_io_select" to MessageTemplate(english = MessageForms(other = "Select a Port I/O, RGB video, real-time clock, Telnet or Reptar component."), portuguese = MessageForms(other = "Selecione uma porta de E/S, vídeo RGB, relógio de tempo real, Telnet ou Reptar.")),
@@ -4604,14 +6118,16 @@ private fun messageCatalogPart12(): Map<String, MessageTemplate> = mapOf(
     "extra_io_pla_connections_invalid" to MessageTemplate(english = MessageForms(other = "The PLA ROM output matrix has invalid dimensions."), portuguese = MessageForms(other = "A matriz de saídas da PLA ROM tem dimensões inválidas.")),
     "extra_io_pla_contents_exceeded" to MessageTemplate(english = MessageForms(other = "The contents exceed the PLA ROM matrix."), portuguese = MessageForms(other = "O conteúdo excede a matriz da PLA ROM.")),
     "extra_io_pla_dimensions_invalid" to MessageTemplate(english = MessageForms(other = "PLA ROM inputs, terms and outputs must each be between 1 and 32."), portuguese = MessageForms(other = "As entradas, os termos e as saídas da PLA ROM devem estar entre 1 e 32.")),
-)
-
-private fun messageCatalogPart13(): Map<String, MessageTemplate> = mapOf(
+    "extra_io_pla_direct" to MessageTemplate(english = MessageForms(other = "direct"), portuguese = MessageForms(other = "direta")),
+    "extra_io_pla_input_cell" to MessageTemplate(english = MessageForms(other = "Term {term}, input I{input}"), portuguese = MessageForms(other = "Termo {term}, entrada I{input}")),
     "extra_io_pla_literal_edit_invalid" to MessageTemplate(english = MessageForms(other = "The PLA ROM input cell or literal is invalid."), portuguese = MessageForms(other = "A célula de entrada ou o literal da PLA ROM é inválido.")),
     "extra_io_pla_literals_invalid" to MessageTemplate(english = MessageForms(other = "The PLA ROM input matrix has invalid dimensions or literals."), portuguese = MessageForms(other = "A matriz de entradas da PLA ROM tem dimensões ou literais inválidos.")),
+    "extra_io_pla_negated" to MessageTemplate(english = MessageForms(other = "negated"), portuguese = MessageForms(other = "negada")),
+    "extra_io_pla_output_cell" to MessageTemplate(english = MessageForms(other = "Term {term} to output O{output}"), portuguese = MessageForms(other = "Termo {term} para a saída O{output}")),
     "extra_io_pla_repeat_invalid" to MessageTemplate(english = MessageForms(other = "Invalid PLA ROM repetition."), portuguese = MessageForms(other = "Repetição inválida na PLA ROM.")),
     "extra_io_pla_term" to MessageTemplate(english = MessageForms(other = "Term"), portuguese = MessageForms(other = "Termo")),
     "extra_io_pla_title" to MessageTemplate(english = MessageForms(other = "PLA ROM: inputs → AND terms → outputs"), portuguese = MessageForms(other = "PLA ROM: entradas → termos AND → saídas")),
+    "extra_io_pla_unused" to MessageTemplate(english = MessageForms(other = "unused"), portuguese = MessageForms(other = "não usada")),
     "extra_io_pla_value_invalid" to MessageTemplate(english = MessageForms(other = "Invalid value in the PLA ROM matrix."), portuguese = MessageForms(other = "Valor inválido na matriz da PLA ROM.")),
     "extra_io_scope_dimensions_invalid" to MessageTemplate(english = MessageForms(other = "The oscilloscope requires 1–32 inputs and 4–35 states."), portuguese = MessageForms(other = "O osciloscópio requer de 1 a 32 entradas e de 4 a 35 estados.")),
     "extra_io_scope_inputs_invalid" to MessageTemplate(english = MessageForms(other = "The oscilloscope sample must match the number of inputs."), portuguese = MessageForms(other = "A amostra do osciloscópio deve corresponder ao número de entradas.")),
@@ -4628,27 +6144,41 @@ private fun messageCatalogPart13(): Map<String, MessageTemplate> = mapOf(
     "first_launch_theme_description" to MessageTemplate(english = MessageForms(other = "You can change this later in Preferences."), portuguese = MessageForms(other = "Você pode mudar o tema depois nas Preferências.")),
     "first_launch_theme_system" to MessageTemplate(english = MessageForms(other = "System"), portuguese = MessageForms(other = "Sistema")),
     "first_launch_theme_title" to MessageTemplate(english = MessageForms(other = "Choose your theme"), portuguese = MessageForms(other = "Escolha seu tema")),
+    "font_custom_family" to MessageTemplate(english = MessageForms(other = "Custom: {family}"), portuguese = MessageForms(other = "Personalizada: {family}")),
+    "font_family" to MessageTemplate(english = MessageForms(other = "Family"), portuguese = MessageForms(other = "Família")),
+    "font_size" to MessageTemplate(english = MessageForms(other = "Size"), portuguese = MessageForms(other = "Tamanho")),
+    "font_size_decrease" to MessageTemplate(english = MessageForms(other = "Decrease size"), portuguese = MessageForms(other = "Diminuir tamanho")),
+    "font_size_increase" to MessageTemplate(english = MessageForms(other = "Increase size"), portuguese = MessageForms(other = "Aumentar tamanho")),
+    "font_style" to MessageTemplate(english = MessageForms(other = "Style"), portuguese = MessageForms(other = "Estilo")),
+    "font_style_bold" to MessageTemplate(english = MessageForms(other = "Bold"), portuguese = MessageForms(other = "Negrito")),
+    "font_style_bold_italic" to MessageTemplate(english = MessageForms(other = "Bold Italic"), portuguese = MessageForms(other = "Negrito itálico")),
+    "font_style_italic" to MessageTemplate(english = MessageForms(other = "Italic"), portuguese = MessageForms(other = "Itálico")),
+    "font_style_plain" to MessageTemplate(english = MessageForms(other = "Plain"), portuguese = MessageForms(other = "Normal")),
     "fpga_active_high" to MessageTemplate(english = MessageForms(other = "active high"), portuguese = MessageForms(other = "ativo em 1")),
     "fpga_active_low" to MessageTemplate(english = MessageForms(other = "active low"), portuguese = MessageForms(other = "ativo em 0")),
     "fpga_adapter_failed_hdl" to MessageTemplate(english = MessageForms(other = "Fix the HDL export errors before preparing an FPGA project."), portuguese = MessageForms(other = "Corrija os erros de exportação HDL antes de preparar o projeto FPGA.")),
+)
+
+private fun messageCatalogPart18(): Map<String, MessageTemplate> = mapOf(
     "fpga_adapter_invalid_clock" to MessageTemplate(english = MessageForms(other = "A physical clock requires a positive frequency and a scalar input port."), portuguese = MessageForms(other = "Um clock físico precisa de frequência positiva e uma porta de entrada de um bit.")),
     "fpga_archive_invalid_files" to MessageTemplate(english = MessageForms(other = "The FPGA archive needs between 1 and 256 distinct portable file names."), portuguese = MessageForms(other = "O arquivo FPGA precisa de 1 a 256 nomes de arquivo distintos e portáveis.")),
     "fpga_archive_invalid_path" to MessageTemplate(english = MessageForms(other = "Invalid FPGA archive path: {path}."), portuguese = MessageForms(other = "Caminho inválido no arquivo FPGA: {path}.")),
     "fpga_archive_size_limit" to MessageTemplate(english = MessageForms(other = "The FPGA archive exceeds the size limit."), portuguese = MessageForms(other = "O arquivo FPGA excede o limite de tamanho.")),
+    "fpga_blocker_clock_frequency" to MessageTemplate(english = MessageForms(other = "{port}: enter the clock frequency in whole hertz."), portuguese = MessageForms(other = "{port}: informe a frequência do clock em hertz inteiros.")),
+    "fpga_blocker_clock_scale" to MessageTemplate(english = MessageForms(other = "{port}: enter a valid multiplier and divider for the derived clock."), portuguese = MessageForms(other = "{port}: informe um multiplicador e um divisor válidos para o clock derivado.")),
     "fpga_board_catalog" to MessageTemplate(english = MessageForms(other = "FPGA board"), portuguese = MessageForms(other = "Placa FPGA")),
     "fpga_board_catalog_choose" to MessageTemplate(english = MessageForms(other = "Choose a board"), portuguese = MessageForms(other = "Selecione uma placa")),
     "fpga_board_catalog_external" to MessageTemplate(english = MessageForms(other = "{name} (external)"), portuguese = MessageForms(other = "{name} (externa)")),
     "fpga_board_catalog_failed" to MessageTemplate(english = MessageForms(other = "Could not load or save the FPGA board catalog."), portuguese = MessageForms(other = "Não foi possível carregar ou salvar o catálogo de placas FPGA.")),
+    "fpga_board_catalog_loading" to MessageTemplate(english = MessageForms(other = "Loading boards"), portuguese = MessageForms(other = "Carregando placas")),
     "fpga_board_catalog_remove" to MessageTemplate(english = MessageForms(other = "Remove external board"), portuguese = MessageForms(other = "Remover placa externa")),
+    "fpga_board_catalog_removed" to MessageTemplate(english = MessageForms(other = "Board {name} removed"), portuguese = MessageForms(other = "Placa {name} removida")),
     "fpga_board_clock" to MessageTemplate(english = MessageForms(other = "Clock: {pin}, {frequency} Hz"), portuguese = MessageForms(other = "Clock: {pin}, {frequency} Hz")),
-    "fpga_board_map_back" to MessageTemplate(english = MessageForms(other = "Back to board image"), portuguese = MessageForms(other = "Voltar à imagem da placa")),
     "fpga_board_map_close" to MessageTemplate(english = MessageForms(other = "Close"), portuguese = MessageForms(other = "Fechar")),
     "fpga_board_map_open" to MessageTemplate(english = MessageForms(other = "Choose pin on board image"), portuguese = MessageForms(other = "Escolher pino na imagem da placa")),
     "fpga_board_map_pin" to MessageTemplate(english = MessageForms(other = "Pin {index}, {pin}"), portuguese = MessageForms(other = "Pino {index}, {pin}")),
     "fpga_board_map_resource" to MessageTemplate(english = MessageForms(other = "{resource}, pin {pin}"), portuguese = MessageForms(other = "{resource}, pino {pin}")),
     "fpga_board_map_resource_pins" to MessageTemplate(english = MessageForms(one = "{resource}, {count} compatible pin", other = "{resource}, {count} compatible pins"), portuguese = MessageForms(one = "{resource}, {count} pino compatível", other = "{resource}, {count} pinos compatíveis")),
-    "fpga_board_map_resource_title" to MessageTemplate(english = MessageForms(other = "Choose a pin for {resource}"), portuguese = MessageForms(other = "Escolher um pino de {resource}")),
-    "fpga_board_map_title" to MessageTemplate(english = MessageForms(other = "{board} board image for {signal}"), portuguese = MessageForms(other = "Imagem da placa {board} para {signal}")),
     "fpga_board_picture_invalid" to MessageTemplate(english = MessageForms(other = "Invalid FPGA board picture."), portuguese = MessageForms(other = "Imagem da placa FPGA inválida.")),
     "fpga_board_pins" to MessageTemplate(english = MessageForms(one = "{count} declared pin", other = "{count} declared pins"), portuguese = MessageForms(one = "{count} pino declarado", other = "{count} pinos declarados")),
     "fpga_board_xml_label" to MessageTemplate(english = MessageForms(other = "Logisim board definition, XML"), portuguese = MessageForms(other = "Definição de placa Logisim, XML")),
@@ -4657,6 +6187,7 @@ private fun messageCatalogPart13(): Map<String, MessageTemplate> = mapOf(
     "fpga_choose_compatible_pin" to MessageTemplate(english = MessageForms(one = "Choose from {count} compatible pin", other = "Choose from {count} compatible pins"), portuguese = MessageForms(one = "Escolher entre {count} pino compatível", other = "Escolher entre {count} pinos compatíveis")),
     "fpga_circuit_drc_clear" to MessageTemplate(english = MessageForms(other = "No circuit rule violations found."), portuguese = MessageForms(other = "Nenhum problema encontrado nas regras do circuito.")),
     "fpga_circuit_drc_heading" to MessageTemplate(english = MessageForms(other = "Circuit rules"), portuguese = MessageForms(other = "Regras do circuito")),
+    "fpga_clock_custom_pin" to MessageTemplate(english = MessageForms(other = "Clock pin on the FPGA"), portuguese = MessageForms(other = "Pino de clock no FPGA")),
     "fpga_clock_derived" to MessageTemplate(english = MessageForms(other = "Derived clock (Series 7 MMCM)"), portuguese = MessageForms(other = "Clock derivado (MMCM Series 7)")),
     "fpga_clock_derived_frequency" to MessageTemplate(english = MessageForms(other = "Internal clock: approximately {frequency} Hz"), portuguese = MessageForms(other = "Clock interno: aproximadamente {frequency} Hz")),
     "fpga_clock_direct" to MessageTemplate(english = MessageForms(other = "Direct board clock"), portuguese = MessageForms(other = "Clock direto da placa")),
@@ -4678,6 +6209,7 @@ private fun messageCatalogPart13(): Map<String, MessageTemplate> = mapOf(
     "fpga_companion_build" to MessageTemplate(english = MessageForms(other = "Board: {board} · HDL top: {top}"), portuguese = MessageForms(other = "Placa: {board} · Topo HDL: {top}")),
     "fpga_companion_cancel" to MessageTemplate(english = MessageForms(other = "Cancel job on Mac"), portuguese = MessageForms(other = "Cancelar tarefa no Mac")),
     "fpga_companion_contacting" to MessageTemplate(english = MessageForms(other = "Waiting for the Mac…"), portuguese = MessageForms(other = "Aguardando resposta do Mac…")),
+    "fpga_companion_elapsed" to MessageTemplate(english = MessageForms(other = "Elapsed time: {minutes}:{seconds}"), portuguese = MessageForms(other = "Tempo decorrido: {minutes}:{seconds}")),
     "fpga_companion_error_detail" to MessageTemplate(english = MessageForms(other = "{code}: {detail}"), portuguese = MessageForms(other = "{code}: {detail}")),
     "fpga_companion_execute" to MessageTemplate(english = MessageForms(other = "Execute reviewed plan on Mac"), portuguese = MessageForms(other = "Executar plano revisado no Mac")),
     "fpga_companion_expiry" to MessageTemplate(english = MessageForms(other = "Plan confirmation expires after {seconds} seconds. Prepare again if needed."), portuguese = MessageForms(other = "A confirmação do plano expira após {seconds} segundos. Prepare novamente se necessário.")),
@@ -4692,6 +6224,7 @@ private fun messageCatalogPart13(): Map<String, MessageTemplate> = mapOf(
     "fpga_companion_jedec_generated" to MessageTemplate(english = MessageForms(other = "JEDEC generated"), portuguese = MessageForms(other = "JEDEC gerado")),
     "fpga_companion_job" to MessageTemplate(english = MessageForms(other = "Job: {id}"), portuguese = MessageForms(other = "Tarefa: {id}")),
     "fpga_companion_job_status" to MessageTemplate(english = MessageForms(other = "Status: {state}"), portuguese = MessageForms(other = "Estado: {state}")),
+    "fpga_companion_latest_log" to MessageTemplate(english = MessageForms(other = "Latest output: {line}"), portuguese = MessageForms(other = "Última saída: {line}")),
     "fpga_companion_log_entry" to MessageTemplate(english = MessageForms(other = "[{stream}] {detail}"), portuguese = MessageForms(other = "[{stream}] {detail}")),
     "fpga_companion_log_limits" to MessageTemplate(english = MessageForms(other = "Showing the last 40 chunks, with up to 8,192 characters per chunk."), portuguese = MessageForms(other = "Exibindo os últimos 40 blocos, com até 8.192 caracteres por bloco.")),
     "fpga_companion_logs" to MessageTemplate(english = MessageForms(other = "Tool output"), portuguese = MessageForms(other = "Saída das ferramentas")),
@@ -4701,15 +6234,13 @@ private fun messageCatalogPart13(): Map<String, MessageTemplate> = mapOf(
     "fpga_companion_no_programming" to MessageTemplate(english = MessageForms(other = "This flow generates artifacts and does not program the board. Closing this panel pauses status queries; the job continues on the Mac until it finishes or is cancelled."), portuguese = MessageForms(other = "Este fluxo gera artefatos e não programa a placa. Fechar este painel suspende a consulta de estado; a tarefa continua no Mac até terminar ou ser cancelada.")),
     "fpga_companion_operation" to MessageTemplate(english = MessageForms(other = "Operation: {operation}"), portuguese = MessageForms(other = "Operação: {operation}")),
     "fpga_companion_outcome_flag" to MessageTemplate(english = MessageForms(other = "{label}: {value}"), portuguese = MessageForms(other = "{label}: {value}")),
+    "fpga_companion_parameter_row" to MessageTemplate(english = MessageForms(other = "{label}: {value}"), portuguese = MessageForms(other = "{label}: {value}")),
     "fpga_companion_placed_and_routed" to MessageTemplate(english = MessageForms(other = "Placement and routing completed"), portuguese = MessageForms(other = "Posicionamento e roteamento concluídos")),
     "fpga_companion_prepare" to MessageTemplate(english = MessageForms(other = "Prepare plan"), portuguese = MessageForms(other = "Preparar plano")),
     "fpga_companion_prepare_explanation" to MessageTemplate(english = MessageForms(other = "Prepare requests a plan from the companion. Review its parameters and file hashes before executing."), portuguese = MessageForms(other = "Preparar solicita um plano ao companion. Confira os parâmetros e os hashes dos arquivos antes de executar.")),
     "fpga_companion_programmed" to MessageTemplate(english = MessageForms(other = "Board programmed"), portuguese = MessageForms(other = "Placa programada")),
     "fpga_companion_quartus_profile_only" to MessageTemplate(english = MessageForms(other = "Quartus companion builds require a supported device profile."), portuguese = MessageForms(other = "A compilação Quartus pelo companion exige um perfil de dispositivo compatível.")),
     "fpga_companion_retry_status" to MessageTemplate(english = MessageForms(other = "Retry status query"), portuguese = MessageForms(other = "Consultar estado novamente")),
-)
-
-private fun messageCatalogPart14(): Map<String, MessageTemplate> = mapOf(
     "fpga_companion_review" to MessageTemplate(english = MessageForms(other = "Review plan"), portuguese = MessageForms(other = "Revisar plano")),
     "fpga_companion_selected_goal" to MessageTemplate(english = MessageForms(other = "Selected: {goal}"), portuguese = MessageForms(other = "Selecionado: {goal}")),
     "fpga_companion_stale_review" to MessageTemplate(english = MessageForms(other = "The goal or project changed. Prepare a new plan before executing."), portuguese = MessageForms(other = "O objetivo ou projeto mudou. Prepare um novo plano antes de executar.")),
@@ -4718,7 +6249,9 @@ private fun messageCatalogPart14(): Map<String, MessageTemplate> = mapOf(
     "fpga_companion_state_queued" to MessageTemplate(english = MessageForms(other = "Queued"), portuguese = MessageForms(other = "Na fila")),
     "fpga_companion_state_running" to MessageTemplate(english = MessageForms(other = "Running"), portuguese = MessageForms(other = "Em execução")),
     "fpga_companion_state_succeeded" to MessageTemplate(english = MessageForms(other = "Succeeded"), portuguese = MessageForms(other = "Concluída")),
+    "fpga_companion_status_resumed" to MessageTemplate(english = MessageForms(other = "Status updates resumed."), portuguese = MessageForms(other = "As atualizações de status foram retomadas.")),
     "fpga_companion_synthesized" to MessageTemplate(english = MessageForms(other = "Synthesis completed"), portuguese = MessageForms(other = "Síntese concluída")),
+    "fpga_companion_technical_details" to MessageTemplate(english = MessageForms(other = "Technical details"), portuguese = MessageForms(other = "Detalhes técnicos")),
     "fpga_companion_title" to MessageTemplate(english = MessageForms(other = "FPGA on Mac"), portuguese = MessageForms(other = "FPGA no Mac")),
     "fpga_companion_transport_error" to MessageTemplate(english = MessageForms(other = "Mac connection failed: {code}"), portuguese = MessageForms(other = "Falha de conexão com o Mac: {code}")),
     "fpga_companion_unsupported_flow" to MessageTemplate(english = MessageForms(other = "The companion does not support this FPGA build. Export the project to use its toolchain separately."), portuguese = MessageForms(other = "O companion não suporta este build FPGA. Exporte o projeto para usar a ferramenta separadamente.")),
@@ -4727,6 +6260,9 @@ private fun messageCatalogPart14(): Map<String, MessageTemplate> = mapOf(
     "fpga_connection" to MessageTemplate(english = MessageForms(other = "Connection"), portuguese = MessageForms(other = "Ligação")),
     "fpga_constant_one" to MessageTemplate(english = MessageForms(other = "Constant 1"), portuguese = MessageForms(other = "Constante 1")),
     "fpga_constant_zero" to MessageTemplate(english = MessageForms(other = "Constant 0"), portuguese = MessageForms(other = "Constante 0")),
+)
+
+private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "fpga_core_board_information" to MessageTemplate(english = MessageForms(other = "The board must contain exactly one BoardInformation element."), portuguese = MessageForms(other = "A placa precisa de um BoardInformation único.")),
     "fpga_core_board_xml_size" to MessageTemplate(english = MessageForms(other = "The board definition exceeds the 2 MB text limit."), portuguese = MessageForms(other = "A definição da placa excede o limite de 2 MB de texto.")),
     "fpga_core_circuit_input_open" to MessageTemplate(english = MessageForms(other = "Circuit input {component} is unconnected."), portuguese = MessageForms(other = "A entrada {component} do circuito está desconectada.")),
@@ -4810,9 +6346,6 @@ private fun messageCatalogPart14(): Map<String, MessageTemplate> = mapOf(
     "fpga_diagnostic" to MessageTemplate(english = MessageForms(other = "{code}: {detail}"), portuguese = MessageForms(other = "{code}: {detail}")),
     "fpga_direction_inout" to MessageTemplate(english = MessageForms(other = "Bidirectional"), portuguese = MessageForms(other = "Bidirecional")),
     "fpga_direction_input" to MessageTemplate(english = MessageForms(other = "Input"), portuguese = MessageForms(other = "Entrada")),
-)
-
-private fun messageCatalogPart15(): Map<String, MessageTemplate> = mapOf(
     "fpga_direction_output" to MessageTemplate(english = MessageForms(other = "Output"), portuguese = MessageForms(other = "Saída")),
     "fpga_display_clock_required" to MessageTemplate(english = MessageForms(other = "A scanned display needs a valid board clock of at least 1 kHz."), portuguese = MessageForms(other = "Um display multiplexado requer um clock de placa válido de pelo menos 1 kHz.")),
     "fpga_display_pin_conflict" to MessageTemplate(english = MessageForms(other = "Pin {pin} is already in use and cannot also drive the scanned display."), portuguese = MessageForms(other = "O pino {pin} já está em uso e não pode também acionar o display multiplexado.")),
@@ -4820,18 +6353,41 @@ private fun messageCatalogPart15(): Map<String, MessageTemplate> = mapOf(
     "fpga_ecp5_flow" to MessageTemplate(english = MessageForms(other = "ECP5 · Yosys / nextpnr"), portuguese = MessageForms(other = "ECP5 · Yosys / nextpnr")),
     "fpga_editor_active_low" to MessageTemplate(english = MessageForms(other = "Active low"), portuguese = MessageForms(other = "Ativo em nível baixo")),
     "fpga_editor_add_resource" to MessageTemplate(english = MessageForms(other = "Add resource"), portuguese = MessageForms(other = "Adicionar recurso")),
+    "fpga_editor_array_columns" to MessageTemplate(english = MessageForms(other = "Columns"), portuguese = MessageForms(other = "Colunas")),
+    "fpga_editor_array_mode" to MessageTemplate(english = MessageForms(other = "Drive mode"), portuguese = MessageForms(other = "Modo de acionamento")),
+    "fpga_editor_array_rows" to MessageTemplate(english = MessageForms(other = "Rows"), portuguese = MessageForms(other = "Linhas")),
     "fpga_editor_board_name" to MessageTemplate(english = MessageForms(other = "Board name"), portuguese = MessageForms(other = "Nome da placa")),
     "fpga_editor_choose_image" to MessageTemplate(english = MessageForms(other = "Choose board image"), portuguese = MessageForms(other = "Escolher imagem da placa")),
     "fpga_editor_clock" to MessageTemplate(english = MessageForms(other = "Board clock"), portuguese = MessageForms(other = "Clock da placa")),
-    "fpga_editor_clock_frequency" to MessageTemplate(english = MessageForms(other = "Frequency in Hz"), portuguese = MessageForms(other = "Frequência em Hz")),
     "fpga_editor_clock_pin" to MessageTemplate(english = MessageForms(other = "Clock pin"), portuguese = MessageForms(other = "Pino de clock")),
+    "fpga_editor_decoded_bits" to MessageTemplate(english = MessageForms(other = "Address bits"), portuguese = MessageForms(other = "Bits de endereço")),
+    "fpga_editor_default" to MessageTemplate(english = MessageForms(other = "Default"), portuguese = MessageForms(other = "Padrão")),
     "fpga_editor_device" to MessageTemplate(english = MessageForms(other = "FPGA device"), portuguese = MessageForms(other = "Dispositivo FPGA")),
+)
+
+private fun messageCatalogPart20(): Map<String, MessageTemplate> = mapOf(
+    "fpga_editor_digits" to MessageTemplate(english = MessageForms(other = "Digits"), portuguese = MessageForms(other = "Dígitos")),
+    "fpga_editor_discard" to MessageTemplate(english = MessageForms(other = "Discard"), portuguese = MessageForms(other = "Descartar")),
+    "fpga_editor_discard_text" to MessageTemplate(english = MessageForms(other = "The changes to this board have not been saved."), portuguese = MessageForms(other = "As alterações nesta placa não foram salvas.")),
+    "fpga_editor_discard_title" to MessageTemplate(english = MessageForms(other = "Discard board changes?"), portuguese = MessageForms(other = "Descartar as alterações da placa?")),
     "fpga_editor_display_configuration" to MessageTemplate(english = MessageForms(other = "Display configuration (rows, columns, drive mode)"), portuguese = MessageForms(other = "Configuração do visor (linhas, colunas, modo de acionamento)")),
+    "fpga_editor_display_pin_count" to MessageTemplate(english = MessageForms(one = "{resource} needs {count} output pin for its display configuration.", other = "{resource} needs {count} output pins for its display configuration."), portuguese = MessageForms(one = "{resource} requer {count} pino de saída para a configuração do display.", other = "{resource} requer {count} pinos de saída para a configuração do display.")),
+    "fpga_editor_display_pins" to MessageTemplate(english = MessageForms(one = "This display needs {count} output pin.", other = "This display needs {count} output pins."), portuguese = MessageForms(one = "Este display requer {count} pino de saída.", other = "Este display requer {count} pinos de saída.")),
+    "fpga_editor_drag_mode" to MessageTemplate(english = MessageForms(other = "Drag to edit rectangles"), portuguese = MessageForms(other = "Arrastar para editar retângulos")),
     "fpga_editor_drive" to MessageTemplate(english = MessageForms(other = "Drive strength in mA"), portuguese = MessageForms(other = "Corrente de saída em mA")),
+    "fpga_editor_drive_value" to MessageTemplate(english = MessageForms(other = "{drive} mA"), portuguese = MessageForms(other = "{drive} mA")),
     "fpga_editor_edit_board" to MessageTemplate(english = MessageForms(other = "Edit board"), portuguese = MessageForms(other = "Editar placa")),
+    "fpga_editor_exact_position" to MessageTemplate(english = MessageForms(other = "Exact position in pixels"), portuguese = MessageForms(other = "Posição exata em pixels")),
     "fpga_editor_family" to MessageTemplate(english = MessageForms(other = "Family"), portuguese = MessageForms(other = "Família")),
     "fpga_editor_flash_name" to MessageTemplate(english = MessageForms(other = "Flash name"), portuguese = MessageForms(other = "Nome da flash")),
     "fpga_editor_flash_position" to MessageTemplate(english = MessageForms(other = "Flash JTAG position"), portuguese = MessageForms(other = "Posição JTAG da flash")),
+    "fpga_editor_frequency" to MessageTemplate(english = MessageForms(other = "Frequency"), portuguese = MessageForms(other = "Frequência")),
+    "fpga_editor_frequency_hz" to MessageTemplate(english = MessageForms(other = "Stored as {frequency} Hz"), portuguese = MessageForms(other = "Armazenada como {frequency} Hz")),
+    "fpga_editor_frequency_invalid" to MessageTemplate(english = MessageForms(other = "Enter a frequency that is a whole number of hertz."), portuguese = MessageForms(other = "Informe uma frequência que seja um número inteiro de hertz.")),
+    "fpga_editor_frequency_unit" to MessageTemplate(english = MessageForms(other = "Frequency unit"), portuguese = MessageForms(other = "Unidade da frequência")),
+    "fpga_editor_from_file" to MessageTemplate(english = MessageForms(other = "{value} (from file)"), portuguese = MessageForms(other = "{value} (do arquivo)")),
+    "fpga_editor_grow_height" to MessageTemplate(english = MessageForms(other = "Increase height"), portuguese = MessageForms(other = "Aumentar a altura")),
+    "fpga_editor_grow_width" to MessageTemplate(english = MessageForms(other = "Increase width"), portuguese = MessageForms(other = "Aumentar a largura")),
     "fpga_editor_inout_pins" to MessageTemplate(english = MessageForms(other = "Bidirectional pins, separated by commas"), portuguese = MessageForms(other = "Pinos bidirecionais separados por vírgulas")),
     "fpga_editor_input_pins" to MessageTemplate(english = MessageForms(other = "Input pins, separated by commas"), portuguese = MessageForms(other = "Pinos de entrada separados por vírgulas")),
     "fpga_editor_invalid_board_name" to MessageTemplate(english = MessageForms(other = "Start the board name with a letter or underscore. Use letters, digits, dots, hyphens and underscores."), portuguese = MessageForms(other = "Comece o nome da placa com uma letra ou sublinhado. Use letras, números, pontos, hífens e sublinhados.")),
@@ -4840,32 +6396,113 @@ private fun messageCatalogPart15(): Map<String, MessageTemplate> = mapOf(
     "fpga_editor_invalid_resource_type" to MessageTemplate(english = MessageForms(other = "Evolution does not recognize the resource type {type}."), portuguese = MessageForms(other = "O Evolution não reconhece o tipo de recurso {type}.")),
     "fpga_editor_io_standard" to MessageTemplate(english = MessageForms(other = "I/O standard"), portuguese = MessageForms(other = "Padrão de E/S")),
     "fpga_editor_jtag" to MessageTemplate(english = MessageForms(other = "FPGA JTAG position"), portuguese = MessageForms(other = "Posição JTAG do FPGA")),
+    "fpga_editor_keep_editing" to MessageTemplate(english = MessageForms(other = "Keep editing"), portuguese = MessageForms(other = "Continuar editando")),
+    "fpga_editor_keep_first_pins" to MessageTemplate(english = MessageForms(one = "Keep only the first pin ({count})", other = "Keep the first {count} pins"), portuguese = MessageForms(one = "Manter só o primeiro pino ({count})", other = "Manter os primeiros {count} pinos")),
+    "fpga_editor_mode_led_columns" to MessageTemplate(english = MessageForms(other = "LED array column scanning"), portuguese = MessageForms(other = "Matriz de LEDs com varredura por colunas")),
+    "fpga_editor_mode_led_default" to MessageTemplate(english = MessageForms(other = "LED array single pin drive"), portuguese = MessageForms(other = "Matriz de LEDs com um pino por LED")),
+    "fpga_editor_mode_led_rows" to MessageTemplate(english = MessageForms(other = "LED array row scanning"), portuguese = MessageForms(other = "Matriz de LEDs com varredura por linhas")),
+    "fpga_editor_mode_rgb_columns" to MessageTemplate(english = MessageForms(other = "RGB array column scanning"), portuguese = MessageForms(other = "Matriz RGB com varredura por colunas")),
+    "fpga_editor_mode_rgb_default" to MessageTemplate(english = MessageForms(other = "RGB array single pin drive"), portuguese = MessageForms(other = "Matriz RGB com um pino por LED")),
+    "fpga_editor_mode_rgb_rows" to MessageTemplate(english = MessageForms(other = "RGB array row scanning"), portuguese = MessageForms(other = "Matriz RGB com varredura por linhas")),
+    "fpga_editor_mode_seg_decoded" to MessageTemplate(english = MessageForms(other = "7-segment array with external decoder"), portuguese = MessageForms(other = "Displays de 7 segmentos com decodificador externo")),
+    "fpga_editor_mode_seg_high" to MessageTemplate(english = MessageForms(other = "7-segment array with active high segment select"), portuguese = MessageForms(other = "Displays de 7 segmentos com seleção ativa em nível alto")),
+    "fpga_editor_mode_seg_low" to MessageTemplate(english = MessageForms(other = "7-segment array with active low segment select"), portuguese = MessageForms(other = "Displays de 7 segmentos com seleção ativa em nível baixo")),
+    "fpga_editor_move_down" to MessageTemplate(english = MessageForms(other = "Move down"), portuguese = MessageForms(other = "Mover para baixo")),
+    "fpga_editor_move_left" to MessageTemplate(english = MessageForms(other = "Move left"), portuguese = MessageForms(other = "Mover para a esquerda")),
+    "fpga_editor_move_right" to MessageTemplate(english = MessageForms(other = "Move right"), portuguese = MessageForms(other = "Mover para a direita")),
+    "fpga_editor_move_up" to MessageTemplate(english = MessageForms(other = "Move up"), portuguese = MessageForms(other = "Mover para cima")),
     "fpga_editor_new_board" to MessageTemplate(english = MessageForms(other = "New board"), portuguese = MessageForms(other = "Nova placa")),
+    "fpga_editor_new_resource_type" to MessageTemplate(english = MessageForms(other = "Type of the new resource"), portuguese = MessageForms(other = "Tipo do novo recurso")),
+    "fpga_editor_orientation" to MessageTemplate(english = MessageForms(other = "Orientation"), portuguese = MessageForms(other = "Orientação")),
     "fpga_editor_output_pins" to MessageTemplate(english = MessageForms(other = "Output pins, separated by commas"), portuguese = MessageForms(other = "Pinos de saída separados por vírgulas")),
+    "fpga_editor_overlap" to MessageTemplate(english = MessageForms(one = "This rectangle overlaps {resource}.", other = "This rectangle overlaps {resource} and other resources."), portuguese = MessageForms(one = "Este retângulo se sobrepõe a {resource}.", other = "Este retângulo se sobrepõe a {resource} e a outros recursos.")),
     "fpga_editor_package" to MessageTemplate(english = MessageForms(other = "Package"), portuguese = MessageForms(other = "Encapsulamento")),
     "fpga_editor_part" to MessageTemplate(english = MessageForms(other = "Part"), portuguese = MessageForms(other = "Componente")),
     "fpga_editor_picture" to MessageTemplate(english = MessageForms(other = "Board image"), portuguese = MessageForms(other = "Imagem da placa")),
+    "fpga_editor_pin_count" to MessageTemplate(english = MessageForms(other = "Number of pins"), portuguese = MessageForms(other = "Número de pinos")),
+    "fpga_editor_pin_count_mismatch" to MessageTemplate(english = MessageForms(one = "This type uses {count} pin. Edit the list or change the type.", other = "This type uses {count} pins. Edit the list or change the type."), portuguese = MessageForms(one = "Este tipo usa {count} pino. Edite a lista ou mude o tipo.", other = "Este tipo usa {count} pinos. Edite a lista ou mude o tipo.")),
+    "fpga_editor_pin_duplicate" to MessageTemplate(english = MessageForms(other = "Pin {pin} is already used in this resource."), portuguese = MessageForms(other = "O pino {pin} já é usado neste recurso.")),
+    "fpga_editor_pin_invalid" to MessageTemplate(english = MessageForms(other = "Use letters, digits or underscores."), portuguese = MessageForms(other = "Use letras, números ou sublinhados.")),
+    "fpga_editor_pin_n" to MessageTemplate(english = MessageForms(other = "Pin {index}"), portuguese = MessageForms(other = "Pino {index}")),
+    "fpga_editor_pin_required" to MessageTemplate(english = MessageForms(other = "Enter the FPGA pin."), portuguese = MessageForms(other = "Informe o pino do FPGA.")),
+    "fpga_editor_pin_single" to MessageTemplate(english = MessageForms(other = "FPGA pin"), portuguese = MessageForms(other = "Pino do FPGA")),
+    "fpga_editor_pins_not_used" to MessageTemplate(english = MessageForms(other = "This type does not use these pins. They are kept as read from the file."), portuguese = MessageForms(other = "Este tipo não usa estes pinos. Eles são mantidos como lidos do arquivo.")),
+    "fpga_editor_preview_help" to MessageTemplate(english = MessageForms(other = "Tap a resource to select it. Drag on free space to draw a resource, drag the selected one to move it, or drag its corners to resize it."), portuguese = MessageForms(other = "Toque em um recurso para selecioná-lo. Arraste em uma área livre para desenhar um recurso, arraste o selecionado para movê-lo ou arraste seus cantos para redimensioná-lo.")),
+    "fpga_editor_preview_help_select" to MessageTemplate(english = MessageForms(other = "Tap a resource to select it. Swipes scroll the editor; switch on Drag to edit rectangles to draw, move or resize them on the picture."), portuguese = MessageForms(other = "Toque em um recurso para selecioná-lo. Deslizar rola o editor; ative Arrastar para editar retângulos para desenhá-los, movê-los ou redimensioná-los na imagem.")),
+    "fpga_editor_preview_selected" to MessageTemplate(english = MessageForms(other = "Selected: {resource}"), portuguese = MessageForms(other = "Selecionado: {resource}")),
     "fpga_editor_pull" to MessageTemplate(english = MessageForms(other = "Pin pull"), portuguese = MessageForms(other = "Polarização")),
     "fpga_editor_pull_down" to MessageTemplate(english = MessageForms(other = "Pull down"), portuguese = MessageForms(other = "Pull-down")),
     "fpga_editor_pull_float" to MessageTemplate(english = MessageForms(other = "Float"), portuguese = MessageForms(other = "Flutuante")),
     "fpga_editor_pull_up" to MessageTemplate(english = MessageForms(other = "Pull up"), portuguese = MessageForms(other = "Pull-up")),
+    "fpga_editor_rect_changed" to MessageTemplate(english = MessageForms(other = "Rectangle changed"), portuguese = MessageForms(other = "Retângulo alterado")),
+    "fpga_editor_rect_height" to MessageTemplate(english = MessageForms(other = "Height"), portuguese = MessageForms(other = "Altura")),
+    "fpga_editor_rect_numbers" to MessageTemplate(english = MessageForms(other = "Enter whole numbers for x, y, width and height."), portuguese = MessageForms(other = "Informe números inteiros para x, y, largura e altura.")),
+    "fpga_editor_rect_outside" to MessageTemplate(english = MessageForms(other = "The rectangle must fit inside the {width} × {height} board image."), portuguese = MessageForms(other = "O retângulo precisa caber na imagem da placa de {width} × {height}.")),
+    "fpga_editor_rect_readout" to MessageTemplate(english = MessageForms(other = "x {x}, y {y}, width {width}, height {height}"), portuguese = MessageForms(other = "x {x}, y {y}, largura {width}, altura {height}")),
+    "fpga_editor_rect_size" to MessageTemplate(english = MessageForms(other = "Width and height must be greater than zero."), portuguese = MessageForms(other = "A largura e a altura precisam ser maiores que zero.")),
+    "fpga_editor_rect_width" to MessageTemplate(english = MessageForms(other = "Width"), portuguese = MessageForms(other = "Largura")),
+    "fpga_editor_rect_x" to MessageTemplate(english = MessageForms(other = "X"), portuguese = MessageForms(other = "X")),
+    "fpga_editor_rect_y" to MessageTemplate(english = MessageForms(other = "Y"), portuguese = MessageForms(other = "Y")),
     "fpga_editor_rectangle" to MessageTemplate(english = MessageForms(other = "Rectangle (x, y, width, height)"), portuguese = MessageForms(other = "Retângulo (x, y, largura, altura)")),
     "fpga_editor_remove_resource" to MessageTemplate(english = MessageForms(other = "Remove resource"), portuguese = MessageForms(other = "Remover recurso")),
     "fpga_editor_resource_electrical" to MessageTemplate(english = MessageForms(other = "All pins of {resource} must share the same electrical settings."), portuguese = MessageForms(other = "Todos os pinos de {resource} precisam ter as mesmas configurações elétricas.")),
+    "fpga_editor_resource_error" to MessageTemplate(english = MessageForms(other = "{resource}: {detail}"), portuguese = MessageForms(other = "{resource}: {detail}")),
+    "fpga_editor_resource_has_errors" to MessageTemplate(english = MessageForms(other = "{resource} (check fields)"), portuguese = MessageForms(other = "{resource} (confira os campos)")),
     "fpga_editor_resource_label" to MessageTemplate(english = MessageForms(other = "Label"), portuguese = MessageForms(other = "Rótulo")),
+    "fpga_editor_resource_name" to MessageTemplate(english = MessageForms(other = "{index}. {name}"), portuguese = MessageForms(other = "{index}. {name}")),
     "fpga_editor_resource_pins" to MessageTemplate(english = MessageForms(other = "Use unique pin names with letters, digits or underscores in {resource}."), portuguese = MessageForms(other = "Use nomes de pinos únicos, com letras, números ou sublinhados, em {resource}.")),
     "fpga_editor_resource_rectangle" to MessageTemplate(english = MessageForms(other = "The rectangle for {resource} must fit inside the board image."), portuguese = MessageForms(other = "O retângulo de {resource} precisa caber na imagem da placa.")),
+    "fpga_editor_resource_removed" to MessageTemplate(english = MessageForms(other = "Resource removed"), portuguese = MessageForms(other = "Recurso removido")),
     "fpga_editor_resource_type" to MessageTemplate(english = MessageForms(other = "Resource type"), portuguese = MessageForms(other = "Tipo de recurso")),
     "fpga_editor_resources" to MessageTemplate(english = MessageForms(other = "Board resources"), portuguese = MessageForms(other = "Recursos da placa")),
+    "fpga_editor_rgb_blue" to MessageTemplate(english = MessageForms(other = "Blue"), portuguese = MessageForms(other = "Azul")),
+    "fpga_editor_rgb_green" to MessageTemplate(english = MessageForms(other = "Green"), portuguese = MessageForms(other = "Verde")),
+    "fpga_editor_rgb_red" to MessageTemplate(english = MessageForms(other = "Red"), portuguese = MessageForms(other = "Vermelho")),
     "fpga_editor_rotation" to MessageTemplate(english = MessageForms(other = "Rotation in degrees"), portuguese = MessageForms(other = "Rotação em graus")),
+    "fpga_editor_rotation_dip_180" to MessageTemplate(english = MessageForms(other = "Switch 1 right"), portuguese = MessageForms(other = "Chave 1 à direita")),
+    "fpga_editor_rotation_dip_ccw90" to MessageTemplate(english = MessageForms(other = "Switch 1 bottom"), portuguese = MessageForms(other = "Chave 1 embaixo")),
+    "fpga_editor_rotation_dip_cw90" to MessageTemplate(english = MessageForms(other = "Switch 1 top"), portuguese = MessageForms(other = "Chave 1 em cima")),
+    "fpga_editor_rotation_dip_zero" to MessageTemplate(english = MessageForms(other = "Switch 1 left"), portuguese = MessageForms(other = "Chave 1 à esquerda")),
+    "fpga_editor_rotation_led_180" to MessageTemplate(english = MessageForms(other = "Row 0, column 0 at top right"), portuguese = MessageForms(other = "Linha 0, coluna 0 em cima à direita")),
+    "fpga_editor_rotation_led_ccw90" to MessageTemplate(english = MessageForms(other = "Row 0, column 0 at bottom right"), portuguese = MessageForms(other = "Linha 0, coluna 0 embaixo à direita")),
+    "fpga_editor_rotation_led_cw90" to MessageTemplate(english = MessageForms(other = "Row 0, column 0 at top left"), portuguese = MessageForms(other = "Linha 0, coluna 0 em cima à esquerda")),
+)
+
+private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
+    "fpga_editor_rotation_led_zero" to MessageTemplate(english = MessageForms(other = "Row 0, column 0 at bottom left"), portuguese = MessageForms(other = "Linha 0, coluna 0 embaixo à esquerda")),
+    "fpga_editor_rotation_seg_180" to MessageTemplate(english = MessageForms(other = "Segment a bottom"), portuguese = MessageForms(other = "Segmento a embaixo")),
+    "fpga_editor_rotation_seg_ccw90" to MessageTemplate(english = MessageForms(other = "Segment a left"), portuguese = MessageForms(other = "Segmento a à esquerda")),
+    "fpga_editor_rotation_seg_cw90" to MessageTemplate(english = MessageForms(other = "Segment a right"), portuguese = MessageForms(other = "Segmento a à direita")),
+    "fpga_editor_rotation_seg_zero" to MessageTemplate(english = MessageForms(other = "Segment a top"), portuguese = MessageForms(other = "Segmento a em cima")),
+    "fpga_editor_save_blocked" to MessageTemplate(english = MessageForms(one = "Fix {count} problem before saving.", other = "Fix {count} problems before saving."), portuguese = MessageForms(one = "Corrija {count} problema antes de salvar.", other = "Corrija {count} problemas antes de salvar.")),
     "fpga_editor_save_board" to MessageTemplate(english = MessageForms(other = "Save board XML"), portuguese = MessageForms(other = "Salvar XML da placa")),
     "fpga_editor_save_failed" to MessageTemplate(english = MessageForms(other = "Could not save the board XML."), portuguese = MessageForms(other = "Não foi possível salvar o XML da placa.")),
+    "fpga_editor_section_bidirectional" to MessageTemplate(english = MessageForms(other = "Bidirectional pins"), portuguese = MessageForms(other = "Pinos bidirecionais")),
+    "fpga_editor_section_inputs" to MessageTemplate(english = MessageForms(other = "Input pins"), portuguese = MessageForms(other = "Pinos de entrada")),
+    "fpga_editor_section_outputs" to MessageTemplate(english = MessageForms(other = "Output pins"), portuguese = MessageForms(other = "Pinos de saída")),
+    "fpga_editor_segment" to MessageTemplate(english = MessageForms(other = "Segment {segment}"), portuguese = MessageForms(other = "Segmento {segment}")),
+    "fpga_editor_segment_dp" to MessageTemplate(english = MessageForms(other = "Decimal point"), portuguese = MessageForms(other = "Ponto decimal")),
     "fpga_editor_select_resource" to MessageTemplate(english = MessageForms(other = "Select resource"), portuguese = MessageForms(other = "Selecionar recurso")),
+    "fpga_editor_shrink_height" to MessageTemplate(english = MessageForms(other = "Decrease height"), portuguese = MessageForms(other = "Diminuir a altura")),
+    "fpga_editor_shrink_width" to MessageTemplate(english = MessageForms(other = "Decrease width"), portuguese = MessageForms(other = "Diminuir a largura")),
     "fpga_editor_speed" to MessageTemplate(english = MessageForms(other = "Speed grade"), portuguese = MessageForms(other = "Classe de velocidade")),
+    "fpga_editor_switch_n" to MessageTemplate(english = MessageForms(other = "Switch {index}"), portuguese = MessageForms(other = "Chave {index}")),
+    "fpga_editor_undo" to MessageTemplate(english = MessageForms(other = "Undo"), portuguese = MessageForms(other = "Desfazer")),
     "fpga_editor_unused_pull" to MessageTemplate(english = MessageForms(other = "Unused pin pull"), portuguese = MessageForms(other = "Polarização dos pinos não usados")),
     "fpga_editor_usbtmc" to MessageTemplate(english = MessageForms(other = "Download via USBTMC"), portuguese = MessageForms(other = "Transferir via USBTMC")),
+    "fpga_editor_value_not_supported" to MessageTemplate(english = MessageForms(other = "Choose one of the listed values."), portuguese = MessageForms(other = "Escolha um dos valores da lista.")),
     "fpga_editor_vendor" to MessageTemplate(english = MessageForms(other = "Vendor"), portuguese = MessageForms(other = "Fabricante")),
+    "fpga_editor_whole_number" to MessageTemplate(english = MessageForms(other = "Enter a whole number."), portuguese = MessageForms(other = "Informe um número inteiro.")),
     "fpga_export_project" to MessageTemplate(english = MessageForms(other = "Export FPGA project"), portuguese = MessageForms(other = "Exportar projeto FPGA")),
+    "fpga_failure_confirmation_required" to MessageTemplate(english = MessageForms(other = "The Mac asked for a new confirmation. Review the request again."), portuguese = MessageForms(other = "O Mac pediu uma nova confirmação. Revise a solicitação novamente.")),
+    "fpga_failure_details" to MessageTemplate(english = MessageForms(other = "Details"), portuguese = MessageForms(other = "Detalhes")),
+    "fpga_failure_flash_not_allowed" to MessageTemplate(english = MessageForms(other = "The Mac no longer allows flash programming for this board and cable. Refresh the targets and review again."), portuguese = MessageForms(other = "O Mac não permite mais gravar a flash desta placa e cabo. Atualize os alvos e revise novamente.")),
+    "fpga_failure_invalid_artifact" to MessageTemplate(english = MessageForms(other = "The Mac returned files that do not match the reviewed build. Prepare the build again."), portuguese = MessageForms(other = "O Mac retornou arquivos que não correspondem à compilação revisada. Prepare a compilação novamente.")),
+    "fpga_failure_invalid_job" to MessageTemplate(english = MessageForms(other = "The Mac answered about a different job. Refresh and review again."), portuguese = MessageForms(other = "O Mac respondeu sobre outra tarefa. Atualize e revise novamente.")),
+    "fpga_failure_invalid_plan" to MessageTemplate(english = MessageForms(other = "The Mac's plan did not ask for confirmation, so it was not used. Review the request again."), portuguese = MessageForms(other = "O plano do Mac não pediu confirmação e por isso não foi usado. Revise a solicitação novamente.")),
+    "fpga_failure_invalid_response" to MessageTemplate(english = MessageForms(other = "The Mac sent an answer this app cannot read. Check that the companion is up to date."), portuguese = MessageForms(other = "O Mac enviou uma resposta que este app não consegue ler. Verifique se o companion está atualizado.")),
+    "fpga_failure_invalid_result" to MessageTemplate(english = MessageForms(other = "The Mac's result contradicts the reviewed request, so it was not accepted."), portuguese = MessageForms(other = "O resultado do Mac contradiz a solicitação revisada e por isso não foi aceito.")),
+    "fpga_failure_part_mismatch" to MessageTemplate(english = MessageForms(other = "The programming file is for another FPGA part. Choose the matching target and review again."), portuguese = MessageForms(other = "O arquivo de programação é de outro componente FPGA. Escolha o alvo correspondente e revise novamente.")),
     "fpga_filter_pins" to MessageTemplate(english = MessageForms(other = "Filter pin or resource"), portuguese = MessageForms(other = "Filtrar pino ou recurso")),
     "fpga_flow" to MessageTemplate(english = MessageForms(other = "Flow"), portuguese = MessageForms(other = "Fluxo")),
     "fpga_hdl_diagnostics_heading" to MessageTemplate(english = MessageForms(other = "HDL generation"), portuguese = MessageForms(other = "Geração de HDL")),
@@ -4875,9 +6512,17 @@ private fun messageCatalogPart15(): Map<String, MessageTemplate> = mapOf(
     "fpga_import_board_file" to MessageTemplate(english = MessageForms(other = "Import board file"), portuguese = MessageForms(other = "Importar arquivo de placa")),
     "fpga_invalid_display_channel" to MessageTemplate(english = MessageForms(other = "Choose a valid scanned display channel for this output."), portuguese = MessageForms(other = "Escolha um canal válido do display multiplexado para esta saída.")),
     "fpga_ise_flow" to MessageTemplate(english = MessageForms(other = "Xilinx ISE"), portuguese = MessageForms(other = "Xilinx ISE")),
+    "fpga_map_auto_load_failed" to MessageTemplate(english = MessageForms(other = "The saved mapping for {board} could not be loaded."), portuguese = MessageForms(other = "Não foi possível carregar o mapeamento salvo para {board}.")),
+    "fpga_map_auto_loaded" to MessageTemplate(english = MessageForms(other = "Saved mapping loaded."), portuguese = MessageForms(other = "Mapeamento salvo carregado.")),
     "fpga_map_import" to MessageTemplate(english = MessageForms(other = "Import mapping from XML or circuit"), portuguese = MessageForms(other = "Importar mapeamento de XML ou circuito")),
     "fpga_map_invalid" to MessageTemplate(english = MessageForms(other = "Invalid FPGA mapping file."), portuguese = MessageForms(other = "Arquivo de mapeamento FPGA inválido.")),
+    "fpga_map_replace_confirm" to MessageTemplate(english = MessageForms(other = "Replace"), portuguese = MessageForms(other = "Substituir")),
+    "fpga_map_replace_new_bits" to MessageTemplate(english = MessageForms(one = "New mapping: {count} mapped bit", other = "New mapping: {count} mapped bits"), portuguese = MessageForms(one = "Novo mapeamento: {count} bit mapeado", other = "Novo mapeamento: {count} bits mapeados")),
+    "fpga_map_replace_saved_bits" to MessageTemplate(english = MessageForms(one = "Saved mapping: {count} mapped bit", other = "Saved mapping: {count} mapped bits"), portuguese = MessageForms(one = "Mapeamento salvo: {count} bit mapeado", other = "Mapeamento salvo: {count} bits mapeados")),
+    "fpga_map_replace_title" to MessageTemplate(english = MessageForms(other = "Replace the saved mapping for {board}?"), portuguese = MessageForms(other = "Substituir o mapeamento salvo para {board}?")),
+    "fpga_map_replace_unreadable" to MessageTemplate(english = MessageForms(other = "The saved mapping cannot be read. Saving replaces it."), portuguese = MessageForms(other = "O mapeamento salvo não pode ser lido. Salvar irá substituí-lo.")),
     "fpga_map_restore" to MessageTemplate(english = MessageForms(other = "Reopen saved mapping"), portuguese = MessageForms(other = "Reabrir mapeamento salvo")),
+    "fpga_map_revert" to MessageTemplate(english = MessageForms(other = "Revert to saved mapping"), portuguese = MessageForms(other = "Reverter para o mapeamento salvo")),
     "fpga_map_save" to MessageTemplate(english = MessageForms(other = "Save mapping in circuit"), portuguese = MessageForms(other = "Salvar mapeamento no circuito")),
     "fpga_map_save_failed" to MessageTemplate(english = MessageForms(other = "Could not add the mapping to the circuit."), portuguese = MessageForms(other = "Não foi possível incluir o mapeamento no circuito.")),
     "fpga_map_saved" to MessageTemplate(english = MessageForms(other = "Mapping saved in the circuit."), portuguese = MessageForms(other = "Mapeamento salvo no circuito.")),
@@ -4885,24 +6530,81 @@ private fun messageCatalogPart15(): Map<String, MessageTemplate> = mapOf(
     "fpga_map_wrong_circuit" to MessageTemplate(english = MessageForms(other = "The mapping does not contain circuit {circuit}."), portuguese = MessageForms(other = "O mapeamento não contém o circuito {circuit}.")),
     "fpga_map_wrong_pin" to MessageTemplate(english = MessageForms(other = "A mapped pin is incompatible with this board."), portuguese = MessageForms(other = "Um pino mapeado é incompatível com esta placa.")),
     "fpga_map_wrong_signal" to MessageTemplate(english = MessageForms(other = "The mapping signal {signal} is incompatible with this circuit."), portuguese = MessageForms(other = "O sinal {signal} do mapeamento é incompatível com este circuito.")),
+    "fpga_mapping_loading_catalog" to MessageTemplate(english = MessageForms(other = "Loading the board catalog…"), portuguese = MessageForms(other = "Carregando o catálogo de placas…")),
     "fpga_mapping_problems" to MessageTemplate(english = MessageForms(one = "{count} problem prevents project generation.", other = "{count} problems prevent project generation."), portuguese = MessageForms(one = "{count} problema impede a geração.", other = "{count} problemas impedem a geração.")),
+    "fpga_mapping_summary" to MessageTemplate(english = MessageForms(one = "{mapped} of {count} bit mapped", other = "{mapped} of {count} bits mapped"), portuguese = MessageForms(one = "{mapped} de {count} bit mapeado", other = "{mapped} de {count} bits mapeados")),
     "fpga_mapping_valid" to MessageTemplate(english = MessageForms(other = "Mapping is valid. The project can be generated."), portuguese = MessageForms(other = "Mapeamento válido. O projeto pode ser gerado.")),
+    "fpga_more_problems" to MessageTemplate(english = MessageForms(one = "And {count} more problem.", other = "And {count} more problems."), portuguese = MessageForms(one = "E mais {count} problema.", other = "E mais {count} problemas.")),
     "fpga_no_compatible_pin" to MessageTemplate(english = MessageForms(other = "No compatible pin."), portuguese = MessageForms(other = "Nenhum pino compatível.")),
     "fpga_no_hdl" to MessageTemplate(english = MessageForms(other = "No HDL is available for the current circuit. Generate its HDL to map the ports."), portuguese = MessageForms(other = "Nenhum HDL disponível para o circuito atual. Gere o HDL do circuito para mapear as portas.")),
+    "fpga_no_problems" to MessageTemplate(english = MessageForms(other = "No problems."), portuguese = MessageForms(other = "Nenhum problema.")),
     "fpga_open" to MessageTemplate(english = MessageForms(other = "Open"), portuguese = MessageForms(other = "Aberto")),
+    "fpga_operation_ise_build" to MessageTemplate(english = MessageForms(other = "Xilinx ISE build"), portuguese = MessageForms(other = "Compilação no Xilinx ISE")),
+    "fpga_operation_ise_cpld_build" to MessageTemplate(english = MessageForms(other = "Xilinx ISE CPLD build"), portuguese = MessageForms(other = "Compilação de CPLD no Xilinx ISE")),
+    "fpga_operation_program" to MessageTemplate(english = MessageForms(other = "Board programming"), portuguese = MessageForms(other = "Programação da placa")),
+    "fpga_operation_quartus_build" to MessageTemplate(english = MessageForms(other = "Intel Quartus build"), portuguese = MessageForms(other = "Compilação no Intel Quartus")),
+    "fpga_operation_synthesize" to MessageTemplate(english = MessageForms(other = "Open-source synthesis (Yosys/nextpnr)"), portuguese = MessageForms(other = "Síntese de código aberto (Yosys/nextpnr)")),
+    "fpga_parameter_binary_sof" to MessageTemplate(english = MessageForms(other = "Binary SOF file"), portuguese = MessageForms(other = "Arquivo SOF binário")),
+    "fpga_parameter_bitstream" to MessageTemplate(english = MessageForms(other = "Bitstream"), portuguese = MessageForms(other = "Bitstream")),
+    "fpga_parameter_board" to MessageTemplate(english = MessageForms(other = "Board"), portuguese = MessageForms(other = "Placa")),
+    "fpga_parameter_constraint" to MessageTemplate(english = MessageForms(other = "Pin constraints"), portuguese = MessageForms(other = "Restrições de pinos")),
+    "fpga_parameter_family" to MessageTemplate(english = MessageForms(other = "Family"), portuguese = MessageForms(other = "Família")),
+    "fpga_parameter_flash" to MessageTemplate(english = MessageForms(other = "Flash"), portuguese = MessageForms(other = "Flash")),
+    "fpga_parameter_flow" to MessageTemplate(english = MessageForms(other = "Tool flow"), portuguese = MessageForms(other = "Fluxo de ferramentas")),
+    "fpga_parameter_goal" to MessageTemplate(english = MessageForms(other = "Goal"), portuguese = MessageForms(other = "Objetivo")),
+    "fpga_parameter_language" to MessageTemplate(english = MessageForms(other = "Language"), portuguese = MessageForms(other = "Linguagem")),
+    "fpga_parameter_package" to MessageTemplate(english = MessageForms(other = "Package"), portuguese = MessageForms(other = "Encapsulamento")),
+    "fpga_parameter_part" to MessageTemplate(english = MessageForms(other = "Part"), portuguese = MessageForms(other = "Componente")),
+    "fpga_parameter_sources" to MessageTemplate(english = MessageForms(other = "Sources"), portuguese = MessageForms(other = "Fontes")),
+    "fpga_parameter_target" to MessageTemplate(english = MessageForms(other = "Target"), portuguese = MessageForms(other = "Alvo")),
+    "fpga_parameter_top" to MessageTemplate(english = MessageForms(other = "Top level"), portuguese = MessageForms(other = "Nível superior")),
     "fpga_paste_board_xml" to MessageTemplate(english = MessageForms(other = "Paste board XML"), portuguese = MessageForms(other = "Colar XML da placa")),
     "fpga_physical_pin" to MessageTemplate(english = MessageForms(other = "Physical pin"), portuguese = MessageForms(other = "Pino físico")),
     "fpga_physical_signals" to MessageTemplate(english = MessageForms(one = "{count} physical signal", other = "{count} physical signals"), portuguese = MessageForms(one = "{count} sinal físico", other = "{count} sinais físicos")),
-    "fpga_pin_diagnostics_heading" to MessageTemplate(english = MessageForms(other = "Pin mapping diagnostics"), portuguese = MessageForms(other = "Diagnósticos do mapeamento de pinos")),
+    "fpga_pin_change" to MessageTemplate(english = MessageForms(other = "Change"), portuguese = MessageForms(other = "Alterar")),
+    "fpga_pin_clear" to MessageTemplate(english = MessageForms(other = "Clear"), portuguese = MessageForms(other = "Limpar")),
+    "fpga_pin_not_chosen" to MessageTemplate(english = MessageForms(other = "No pin chosen"), portuguese = MessageForms(other = "Nenhum pino escolhido")),
+    "fpga_pin_picker_candidate" to MessageTemplate(english = MessageForms(other = "Selected: {resource} · {pin}"), portuguese = MessageForms(other = "Selecionado: {resource} · {pin}")),
+    "fpga_pin_picker_candidate_used" to MessageTemplate(english = MessageForms(other = "Selected: {resource} · {pin}, already used by another signal"), portuguese = MessageForms(other = "Selecionado: {resource} · {pin}, já usado por outro sinal")),
+    "fpga_pin_picker_choose_pin" to MessageTemplate(english = MessageForms(other = "{resource}: choose one of its pins."), portuguese = MessageForms(other = "{resource}: escolha um dos pinos.")),
+    "fpga_pin_picker_hint" to MessageTemplate(english = MessageForms(other = "Tap a resource on the board or choose a pin from the list."), portuguese = MessageForms(other = "Toque em um recurso da placa ou escolha um pino na lista.")),
+    "fpga_pin_picker_progress" to MessageTemplate(english = MessageForms(one = "{mapped} of {count} bit of {port} mapped", other = "{mapped} of {count} bits of {port} mapped"), portuguese = MessageForms(one = "{mapped} de {count} bit de {port} mapeado", other = "{mapped} de {count} bits de {port} mapeados")),
+)
+
+private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
+    "fpga_pin_picker_replaces" to MessageTemplate(english = MessageForms(one = "This replaces {count} existing binding of {port}.", other = "This replaces {count} existing bindings of {port}."), portuguese = MessageForms(one = "Isto substitui {count} ligação existente de {port}.", other = "Isto substitui {count} ligações existentes de {port}.")),
+    "fpga_pin_picker_start" to MessageTemplate(english = MessageForms(other = "First pin"), portuguese = MessageForms(other = "Primeiro pino")),
+    "fpga_pin_picker_start_value" to MessageTemplate(english = MessageForms(other = "Pin {index}, {pin}"), portuguese = MessageForms(other = "Pino {index}, {pin}")),
+    "fpga_pin_picker_tab_board" to MessageTemplate(english = MessageForms(other = "Board image"), portuguese = MessageForms(other = "Imagem da placa")),
+    "fpga_pin_picker_tab_list" to MessageTemplate(english = MessageForms(other = "Pin list"), portuguese = MessageForms(other = "Lista de pinos")),
+    "fpga_pin_picker_title" to MessageTemplate(english = MessageForms(other = "Pin for {signal} on {board}"), portuguese = MessageForms(other = "Pino de {signal} em {board}")),
+    "fpga_pin_picker_use" to MessageTemplate(english = MessageForms(other = "Use {resource} · {pin}"), portuguese = MessageForms(other = "Usar {resource} · {pin}")),
+    "fpga_pin_picker_use_disabled" to MessageTemplate(english = MessageForms(other = "Choose a pin first"), portuguese = MessageForms(other = "Escolha um pino primeiro")),
+    "fpga_pin_picker_use_port" to MessageTemplate(english = MessageForms(one = "Map the {count} bit of {port} to {resource}", other = "Map all {count} bits of {port} to {resource}"), portuguese = MessageForms(one = "Mapear o {count} bit de {port} em {resource}", other = "Mapear os {count} bits de {port} em {resource}")),
+    "fpga_pin_picker_use_run" to MessageTemplate(english = MessageForms(one = "Map {range} onto {count} pin in board order, {first} to {last}", other = "Map {range} onto {count} pins in board order, {first} to {last}"), portuguese = MessageForms(one = "Mapear {range} em {count} pino na ordem da placa, de {first} a {last}", other = "Mapear {range} em {count} pinos na ordem da placa, de {first} a {last}")),
+    "fpga_pin_picker_zoom_fit" to MessageTemplate(english = MessageForms(other = "Fit"), portuguese = MessageForms(other = "Ajustar")),
+    "fpga_pin_picker_zoom_in" to MessageTemplate(english = MessageForms(other = "Zoom in"), portuguese = MessageForms(other = "Ampliar")),
+    "fpga_pin_picker_zoom_out" to MessageTemplate(english = MessageForms(other = "Zoom out"), portuguese = MessageForms(other = "Reduzir")),
+    "fpga_pin_picker_zoom_value" to MessageTemplate(english = MessageForms(other = "{zoom}×"), portuguese = MessageForms(other = "{zoom}×")),
+    "fpga_pin_summary" to MessageTemplate(english = MessageForms(other = "{pin} · {resource}, pin {index}"), portuguese = MessageForms(other = "{pin} · {resource}, pino {index}")),
+    "fpga_pin_summary_unknown" to MessageTemplate(english = MessageForms(other = "{pin} · not on this board"), portuguese = MessageForms(other = "{pin} · não existe nesta placa")),
+    "fpga_pin_used_elsewhere" to MessageTemplate(english = MessageForms(other = "Used by another signal"), portuguese = MessageForms(other = "Usado por outro sinal")),
+    "fpga_port_choose_pins" to MessageTemplate(english = MessageForms(other = "Choose pins"), portuguese = MessageForms(other = "Escolher pinos")),
+    "fpga_port_collapsed" to MessageTemplate(english = MessageForms(other = "Collapsed"), portuguese = MessageForms(other = "Recolhido")),
+    "fpga_port_expanded" to MessageTemplate(english = MessageForms(other = "Expanded"), portuguese = MessageForms(other = "Expandido")),
+    "fpga_port_map_whole" to MessageTemplate(english = MessageForms(other = "Map whole port"), portuguese = MessageForms(other = "Mapear a porta inteira")),
+    "fpga_port_summary" to MessageTemplate(english = MessageForms(one = "{count} bit · {mapped} mapped", other = "{count} bits · {mapped} mapped"), portuguese = MessageForms(one = "{count} bit · {mapped} mapeado", other = "{count} bits · {mapped} mapeados")),
+    "fpga_port_unmap" to MessageTemplate(english = MessageForms(other = "Unmap port"), portuguese = MessageForms(other = "Desmapear a porta")),
+    "fpga_port_unmapped" to MessageTemplate(english = MessageForms(other = "Unmapped {port}"), portuguese = MessageForms(other = "{port} desmapeada")),
     "fpga_prepare_synthesis" to MessageTemplate(english = MessageForms(other = "Prepare build on companion"), portuguese = MessageForms(other = "Preparar build no companion")),
     "fpga_prepare_vendor_build" to MessageTemplate(english = MessageForms(other = "Prepare bitstream on companion"), portuguese = MessageForms(other = "Preparar bitstream no companion")),
+    "fpga_problems_heading" to MessageTemplate(english = MessageForms(one = "Problems ({count})", other = "Problems ({count})"), portuguese = MessageForms(one = "Problemas ({count})", other = "Problemas ({count})")),
     "fpga_program_chain_position" to MessageTemplate(english = MessageForms(other = "JTAG position: {position} (zero-based)"), portuguese = MessageForms(other = "Posição JTAG: {position} (começa em zero)")),
     "fpga_program_confirm" to MessageTemplate(english = MessageForms(other = "Confirm programming"), portuguese = MessageForms(other = "Confirmar programação")),
     "fpga_program_confirm_flash" to MessageTemplate(english = MessageForms(other = "Confirm flash write"), portuguese = MessageForms(other = "Confirmar gravação na flash")),
     "fpga_program_cpld_confirm" to MessageTemplate(english = MessageForms(other = "Confirm nonvolatile CPLD programming"), portuguese = MessageForms(other = "Confirmar gravação não volátil do CPLD")),
     "fpga_program_cpld_help" to MessageTemplate(english = MessageForms(other = "This file programs the CPLD's nonvolatile memory. The design stays on the device after power is removed. Review the file, board, cable and JTAG position before confirming."), portuguese = MessageForms(other = "Este arquivo grava a memória não volátil do CPLD. O circuito fica gravado após desligar a placa. Confira o arquivo, a placa, o cabo e a posição JTAG antes de confirmar.")),
     "fpga_program_discard" to MessageTemplate(english = MessageForms(other = "Discard review"), portuguese = MessageForms(other = "Descartar revisão")),
-    "fpga_program_failure" to MessageTemplate(english = MessageForms(other = "Programming request failed: {detail}"), portuguese = MessageForms(other = "Falha na solicitação de programação: {detail}")),
     "fpga_program_flash_chain_position" to MessageTemplate(english = MessageForms(other = "Flash JTAG position: {position} (zero-based)"), portuguese = MessageForms(other = "Posição JTAG da flash: {position} (começa em zero)")),
     "fpga_program_flash_device" to MessageTemplate(english = MessageForms(other = "Flash device: {device}"), portuguese = MessageForms(other = "Dispositivo de flash: {device}")),
     "fpga_program_flash_unverified" to MessageTemplate(english = MessageForms(other = "Flash persistence is unverified. Turn the board off and on to verify its behavior."), portuguese = MessageForms(other = "A persistência na flash ainda precisa ser verificada. Desligue e religue a placa para conferir o funcionamento.")),
@@ -4911,30 +6613,56 @@ private fun messageCatalogPart15(): Map<String, MessageTemplate> = mapOf(
     "fpga_program_import" to MessageTemplate(english = MessageForms(other = "Program an existing bitstream"), portuguese = MessageForms(other = "Programar um bitstream existente")),
     "fpga_program_imported_name" to MessageTemplate(english = MessageForms(other = "Selected file: {name}"), portuguese = MessageForms(other = "Arquivo selecionado: {name}")),
     "fpga_program_invalid_import" to MessageTemplate(english = MessageForms(other = "Choose a nonempty .sof file up to 8 MiB or a nonempty .bit, .bin, .fs, .pof or .jed file up to 4 MiB."), portuguese = MessageForms(other = "Escolha um arquivo .sof não vazio de até 8 MiB ou um arquivo .bit, .bin, .fs, .pof ou .jed não vazio de até 4 MiB.")),
+    "fpga_program_large_sof_ram_only" to MessageTemplate(english = MessageForms(other = "A large SOF file can only be loaded into the FPGA's RAM. Choose RAM and review again."), portuguese = MessageForms(other = "Um arquivo SOF grande só pode ser carregado na RAM do FPGA. Escolha RAM e revise novamente.")),
     "fpga_program_mode" to MessageTemplate(english = MessageForms(other = "Programming mode"), portuguese = MessageForms(other = "Modo de programação")),
     "fpga_program_mode_flash" to MessageTemplate(english = MessageForms(other = "Persistent (flash)"), portuguese = MessageForms(other = "Persistente (flash)")),
-)
-
-private fun messageCatalogPart16(): Map<String, MessageTemplate> = mapOf(
     "fpga_program_mode_ram" to MessageTemplate(english = MessageForms(other = "Temporary (RAM)"), portuguese = MessageForms(other = "Temporária (RAM)")),
     "fpga_program_no_targets" to MessageTemplate(english = MessageForms(other = "No available programming targets on this host."), portuguese = MessageForms(other = "Não há destinos de programação disponíveis neste host.")),
+    "fpga_program_polling_note" to MessageTemplate(english = MessageForms(other = "Closing this panel pauses status queries; programming continues on the Mac."), portuguese = MessageForms(other = "Fechar este painel pausa as consultas de status; a programação continua no Mac.")),
     "fpga_program_prepare" to MessageTemplate(english = MessageForms(other = "Review programming request"), portuguese = MessageForms(other = "Revisar solicitação de programação")),
     "fpga_program_reported" to MessageTemplate(english = MessageForms(other = "Programmer reported success: {value}"), portuguese = MessageForms(other = "Programador informou sucesso: {value}")),
     "fpga_program_review" to MessageTemplate(english = MessageForms(other = "Review this request before programming the connected board."), portuguese = MessageForms(other = "Confira esta solicitação antes de programar a placa conectada.")),
     "fpga_program_review_target" to MessageTemplate(english = MessageForms(other = "Board and cable: {target}"), portuguese = MessageForms(other = "Placa e cabo: {target}")),
-    "fpga_program_selected" to MessageTemplate(english = MessageForms(other = "Selected: {target}"), portuguese = MessageForms(other = "Selecionado: {target}")),
     "fpga_program_target_profile" to MessageTemplate(english = MessageForms(other = "Board {board}, cable {cable}, transport {transport}"), portuguese = MessageForms(other = "Placa {board}, cabo {cable}, transporte {transport}")),
     "fpga_program_target_unavailable" to MessageTemplate(english = MessageForms(other = "Unavailable on the companion: {reason}"), portuguese = MessageForms(other = "Indisponível no companion: {reason}")),
+    "fpga_program_target_unavailable_now" to MessageTemplate(english = MessageForms(other = "The selected target is no longer available. Refresh the targets and choose it again."), portuguese = MessageForms(other = "O alvo selecionado não está mais disponível. Atualize os alvos e escolha-o novamente.")),
     "fpga_program_title" to MessageTemplate(english = MessageForms(other = "Program board"), portuguese = MessageForms(other = "Programar placa")),
     "fpga_quartus_export" to MessageTemplate(english = MessageForms(other = "Quartus · build or project export"), portuguese = MessageForms(other = "Quartus · compilar ou exportar projeto")),
     "fpga_read_board" to MessageTemplate(english = MessageForms(other = "Read board definition"), portuguese = MessageForms(other = "Ler definição da placa")),
-    "fpga_refine_pin_filter" to MessageTemplate(english = MessageForms(other = "Refine the filter to see more pins."), portuguese = MessageForms(other = "Refine o filtro para ver mais pinos.")),
+    "fpga_resource_type_button" to MessageTemplate(english = MessageForms(other = "Button"), portuguese = MessageForms(other = "Botão")),
+    "fpga_resource_type_dipswitch" to MessageTemplate(english = MessageForms(other = "DIP switch"), portuguese = MessageForms(other = "Chave DIP")),
+    "fpga_resource_type_led" to MessageTemplate(english = MessageForms(other = "LED"), portuguese = MessageForms(other = "LED")),
+    "fpga_resource_type_ledarray" to MessageTemplate(english = MessageForms(other = "LED array"), portuguese = MessageForms(other = "Matriz de LEDs")),
+    "fpga_resource_type_localbus" to MessageTemplate(english = MessageForms(other = "Local bus"), portuguese = MessageForms(other = "Barramento local")),
+    "fpga_resource_type_pin" to MessageTemplate(english = MessageForms(other = "Pin"), portuguese = MessageForms(other = "Pino")),
+    "fpga_resource_type_portio" to MessageTemplate(english = MessageForms(other = "I/O port"), portuguese = MessageForms(other = "Porta de E/S")),
+    "fpga_resource_type_rgbled" to MessageTemplate(english = MessageForms(other = "RGB LED"), portuguese = MessageForms(other = "LED RGB")),
+    "fpga_resource_type_sevensegment" to MessageTemplate(english = MessageForms(other = "7-segment display"), portuguese = MessageForms(other = "Display de 7 segmentos")),
+    "fpga_resource_type_sevensegmentnodp" to MessageTemplate(english = MessageForms(other = "7-segment display (no DP)"), portuguese = MessageForms(other = "Display de 7 segmentos (sem ponto)")),
+    "fpga_resource_type_sevensegmentscanning" to MessageTemplate(english = MessageForms(other = "Scanning 7-segment display"), portuguese = MessageForms(other = "Display de 7 segmentos multiplexado")),
+    "fpga_scan_blue" to MessageTemplate(english = MessageForms(other = "Blue"), portuguese = MessageForms(other = "Azul")),
     "fpga_scan_channel" to MessageTemplate(english = MessageForms(other = "Logical display channel"), portuguese = MessageForms(other = "Canal lógico do display")),
-    "fpga_scan_channel_range" to MessageTemplate(english = MessageForms(other = "Channels run from 0 to {max}."), portuguese = MessageForms(other = "Os canais vão de 0 a {max}.")),
+    "fpga_scan_color" to MessageTemplate(english = MessageForms(other = "Color"), portuguese = MessageForms(other = "Cor")),
+    "fpga_scan_column" to MessageTemplate(english = MessageForms(other = "Column"), portuguese = MessageForms(other = "Coluna")),
+    "fpga_scan_column_value" to MessageTemplate(english = MessageForms(other = "Column {column}"), portuguese = MessageForms(other = "Coluna {column}")),
+    "fpga_scan_digit" to MessageTemplate(english = MessageForms(other = "Digit"), portuguese = MessageForms(other = "Dígito")),
+    "fpga_scan_digit_value" to MessageTemplate(english = MessageForms(other = "Digit {digit}"), portuguese = MessageForms(other = "Dígito {digit}")),
     "fpga_scan_display" to MessageTemplate(english = MessageForms(other = "Scanned display"), portuguese = MessageForms(other = "Display multiplexado")),
+    "fpga_scan_display_numbered" to MessageTemplate(english = MessageForms(other = "{name} {index}"), portuguese = MessageForms(other = "{name} {index}")),
+    "fpga_scan_green" to MessageTemplate(english = MessageForms(other = "Green"), portuguese = MessageForms(other = "Verde")),
     "fpga_scan_map_bus" to MessageTemplate(english = MessageForms(other = "Map whole output starting here"), portuguese = MessageForms(other = "Mapear toda a saída a partir deste canal")),
+    "fpga_scan_red" to MessageTemplate(english = MessageForms(other = "Red"), portuguese = MessageForms(other = "Vermelho")),
+    "fpga_scan_row" to MessageTemplate(english = MessageForms(other = "Row"), portuguese = MessageForms(other = "Linha")),
+    "fpga_scan_row_value" to MessageTemplate(english = MessageForms(other = "Row {row}"), portuguese = MessageForms(other = "Linha {row}")),
+    "fpga_scan_segment" to MessageTemplate(english = MessageForms(other = "Segment"), portuguese = MessageForms(other = "Segmento")),
+    "fpga_scan_segment_value" to MessageTemplate(english = MessageForms(other = "Segment {segment}"), portuguese = MessageForms(other = "Segmento {segment}")),
+    "fpga_scan_summary" to MessageTemplate(english = MessageForms(other = "{position} (channel {channel})"), portuguese = MessageForms(other = "{position} (canal {channel})")),
+    "fpga_scan_type_led_array" to MessageTemplate(english = MessageForms(other = "LED array"), portuguese = MessageForms(other = "Matriz de LEDs")),
+    "fpga_scan_type_seven_segment" to MessageTemplate(english = MessageForms(other = "Scanning 7-segment display"), portuguese = MessageForms(other = "Display de 7 segmentos multiplexado")),
+    "fpga_scan_unset" to MessageTemplate(english = MessageForms(other = "Choose"), portuguese = MessageForms(other = "Escolher")),
     "fpga_selected_pin" to MessageTemplate(english = MessageForms(other = "Selected pin: {pin}"), portuguese = MessageForms(other = "Pino selecionado: {pin}")),
     "fpga_setup_intro" to MessageTemplate(english = MessageForms(other = "Select or import a board, map its signals, and validate the project before synthesis."), portuguese = MessageForms(other = "Selecione ou importe uma placa, mapeie os sinais e valide o projeto antes da síntese.")),
+    "fpga_show_problems" to MessageTemplate(english = MessageForms(other = "Show problems"), portuguese = MessageForms(other = "Ver problemas")),
     "fpga_signal_clock" to MessageTemplate(english = MessageForms(other = "Clock: {frequency} Hz"), portuguese = MessageForms(other = "Clock: {frequency} Hz")),
     "fpga_synthesis_intro" to MessageTemplate(english = MessageForms(other = "Synthesis produces artifacts. Programming and board verification are separate steps."), portuguese = MessageForms(other = "A síntese gera artefatos. A programação e a verificação na placa são etapas separadas.")),
     "fpga_tick_effective" to MessageTemplate(english = MessageForms(other = "Tick: {frequency} Hz, every {cycles} oscillator cycles"), portuguese = MessageForms(other = "Tick: {frequency} Hz, a cada {cycles} ciclos do oscilador")),
@@ -4942,11 +6670,31 @@ private fun messageCatalogPart16(): Map<String, MessageTemplate> = mapOf(
     "fpga_tick_frequency_invalid" to MessageTemplate(english = MessageForms(other = "Enter a positive tick frequency in hertz."), portuguese = MessageForms(other = "Informe uma frequência de tick positiva em hertz.")),
     "fpga_tick_no_oscillator" to MessageTemplate(english = MessageForms(other = "The board has no oscillator for the Clock tick."), portuguese = MessageForms(other = "A placa não tem oscilador para o tick do Clock.")),
     "fpga_tick_physical_map" to MessageTemplate(english = MessageForms(other = "The saved map connects the Clock to a board pin, so the tick is not used."), portuguese = MessageForms(other = "O mapa salvo liga o Clock a um pino da placa, por isso o tick não é usado.")),
+    "fpga_tick_preset_custom" to MessageTemplate(english = MessageForms(other = "Custom"), portuguese = MessageForms(other = "Personalizada")),
+    "fpga_tick_presets" to MessageTemplate(english = MessageForms(other = "Common tick rates"), portuguese = MessageForms(other = "Frequências comuns")),
+)
+
+private fun messageCatalogPart23(): Map<String, MessageTemplate> = mapOf(
     "fpga_title" to MessageTemplate(english = MessageForms(other = "FPGA"), portuguese = MessageForms(other = "FPGA")),
+    "fpga_transport_ise" to MessageTemplate(english = MessageForms(other = "Xilinx iMPACT"), portuguese = MessageForms(other = "Xilinx iMPACT")),
+    "fpga_transport_ise_cpld" to MessageTemplate(english = MessageForms(other = "Xilinx iMPACT (CPLD)"), portuguese = MessageForms(other = "Xilinx iMPACT (CPLD)")),
+    "fpga_transport_openfpgaloader" to MessageTemplate(english = MessageForms(other = "openFPGALoader"), portuguese = MessageForms(other = "openFPGALoader")),
+    "fpga_transport_quartus" to MessageTemplate(english = MessageForms(other = "Quartus Programmer"), portuguese = MessageForms(other = "Quartus Programmer")),
+    "fpga_transport_quartus_cpld" to MessageTemplate(english = MessageForms(other = "Quartus Programmer (CPLD)"), portuguese = MessageForms(other = "Quartus Programmer (CPLD)")),
+    "fpga_unmap_all" to MessageTemplate(english = MessageForms(other = "Unmap all"), portuguese = MessageForms(other = "Desmapear tudo")),
+    "fpga_unmap_all_confirm" to MessageTemplate(english = MessageForms(other = "Unmap all"), portuguese = MessageForms(other = "Desmapear tudo")),
+    "fpga_unmap_all_text" to MessageTemplate(english = MessageForms(other = "Physical pins, constants and display channels are removed from every signal. The saved map changes only when you save."), portuguese = MessageForms(other = "Pinos físicos, constantes e canais de display são removidos de todos os sinais. O mapeamento salvo só muda quando você salvar.")),
+    "fpga_unmap_all_title" to MessageTemplate(english = MessageForms(one = "Unmap {count} bit?", other = "Unmap all {count} bits?"), portuguese = MessageForms(one = "Desmapear {count} bit?", other = "Desmapear todos os {count} bits?")),
     "fpga_unmapped" to MessageTemplate(english = MessageForms(other = "Unmapped"), portuguese = MessageForms(other = "Sem mapeamento")),
+    "fpga_unmapped_bits" to MessageTemplate(english = MessageForms(one = "{port}: {count} bit unmapped", other = "{port}: {count} bits unmapped"), portuguese = MessageForms(one = "{port}: {count} bit sem mapeamento", other = "{port}: {count} bits sem mapeamento")),
     "fpga_use_clock" to MessageTemplate(english = MessageForms(other = "Use clock {pin}"), portuguese = MessageForms(other = "Usar clock {pin}")),
     "fpga_validate_mapping" to MessageTemplate(english = MessageForms(other = "Validate mapping"), portuguese = MessageForms(other = "Validar mapeamento")),
+    "fpga_vendor_altera" to MessageTemplate(english = MessageForms(other = "Altera/Intel (Quartus)"), portuguese = MessageForms(other = "Altera/Intel (Quartus)")),
+    "fpga_vendor_open_fpga" to MessageTemplate(english = MessageForms(other = "Open FPGA (Yosys/nextpnr)"), portuguese = MessageForms(other = "FPGA aberto (Yosys/nextpnr)")),
     "fpga_vendor_unavailable" to MessageTemplate(english = MessageForms(other = "No project generation flow is available for this board vendor."), portuguese = MessageForms(other = "O fornecedor desta placa não tem fluxo de geração disponível.")),
+    "fpga_vendor_unknown" to MessageTemplate(english = MessageForms(other = "Unknown vendor"), portuguese = MessageForms(other = "Fabricante desconhecido")),
+    "fpga_vendor_vivado" to MessageTemplate(english = MessageForms(other = "Xilinx (Vivado)"), portuguese = MessageForms(other = "Xilinx (Vivado)")),
+    "fpga_vendor_xilinx" to MessageTemplate(english = MessageForms(other = "Xilinx (ISE)"), portuguese = MessageForms(other = "Xilinx (ISE)")),
     "fpga_vivado_export" to MessageTemplate(english = MessageForms(other = "Vivado"), portuguese = MessageForms(other = "Vivado")),
     "gates_pla_row_invalid" to MessageTemplate(english = MessageForms(other = "PLA row {row}: invalid bits or width"), portuguese = MessageForms(other = "Linha {row} da PLA: bits ou largura inválidos")),
     "gates_pla_row_width" to MessageTemplate(english = MessageForms(other = "PLA row {row}: inconsistent width"), portuguese = MessageForms(other = "Linha {row} da PLA: largura inconsistente")),
@@ -4969,6 +6717,7 @@ private fun messageCatalogPart16(): Map<String, MessageTemplate> = mapOf(
     "hdl_diagnostic_undriven_output" to MessageTemplate(english = MessageForms(other = "An output pin contains an undriven bit."), portuguese = MessageForms(other = "Um pino de saída contém um bit sem sinal de origem.")),
     "hdl_diagnostic_unsupported_component" to MessageTemplate(english = MessageForms(other = "This component has no synthesizable HDL implementation."), portuguese = MessageForms(other = "Este componente não tem implementação HDL sintetizável.")),
     "hdl_diagnostic_unsupported_configuration" to MessageTemplate(english = MessageForms(other = "Unsupported HDL configuration: {reason}"), portuguese = MessageForms(other = "Configuração HDL não suportada: {reason}")),
+    "hdl_export_file" to MessageTemplate(english = MessageForms(other = "Generated file"), portuguese = MessageForms(other = "Arquivo gerado")),
     "hdl_fix_errors" to MessageTemplate(english = MessageForms(other = "Fix the reported errors before exporting."), portuguese = MessageForms(other = "Corrija os erros indicados antes de exportar.")),
     "hdl_import_artifact_format" to MessageTemplate(english = MessageForms(other = "Unsupported synthesis artifact format."), portuguese = MessageForms(other = "Formato de artefato de síntese não suportado.")),
     "hdl_import_artifact_invalid" to MessageTemplate(english = MessageForms(other = "Invalid synthesis artifact."), portuguese = MessageForms(other = "Artefato de síntese inválido.")),
@@ -5016,9 +6765,6 @@ private fun messageCatalogPart16(): Map<String, MessageTemplate> = mapOf(
     "hdl_import_module_missing" to MessageTemplate(english = MessageForms(other = "Missing module {module}."), portuguese = MessageForms(other = "Módulo ausente: {module}.")),
     "hdl_import_modules_limit" to MessageTemplate(english = MessageForms(other = "Synthesis result must contain 1 to 512 modules."), portuguese = MessageForms(other = "O resultado da síntese deve conter de 1 a 512 módulos.")),
     "hdl_import_modules_missing" to MessageTemplate(english = MessageForms(other = "Synthesis result has no modules."), portuguese = MessageForms(other = "O resultado da síntese não contém módulos.")),
-)
-
-private fun messageCatalogPart17(): Map<String, MessageTemplate> = mapOf(
     "hdl_import_net_identifier_invalid" to MessageTemplate(english = MessageForms(other = "Invalid HDL net identifier."), portuguese = MessageForms(other = "Identificador de rede HDL inválido.")),
     "hdl_import_net_identifier_nonnegative" to MessageTemplate(english = MessageForms(other = "HDL net identifiers must be nonnegative."), portuguese = MessageForms(other = "Os identificadores de rede HDL devem ser não negativos.")),
     "hdl_import_netlist_invalid" to MessageTemplate(english = MessageForms(other = "Invalid synthesis netlist."), portuguese = MessageForms(other = "Netlist de síntese inválida.")),
@@ -5029,6 +6775,9 @@ private fun messageCatalogPart17(): Map<String, MessageTemplate> = mapOf(
     "hdl_import_request_defines" to MessageTemplate(english = MessageForms(other = "Defines require NAME or NAME=literal."), portuguese = MessageForms(other = "As definições devem usar NOME ou NOME=literal.")),
     "hdl_import_request_files" to MessageTemplate(english = MessageForms(other = "Supply one to 64 uniquely named source and library files."), portuguese = MessageForms(other = "Forneça de 1 a 64 arquivos de fontes e bibliotecas com nomes únicos.")),
     "hdl_import_request_sources" to MessageTemplate(english = MessageForms(other = "Select the source files to synthesize."), portuguese = MessageForms(other = "Selecione os arquivos de fonte para sintetizar.")),
+)
+
+private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "hdl_import_request_top" to MessageTemplate(english = MessageForms(other = "The top module must be an identifier."), portuguese = MessageForms(other = "O módulo principal deve ser um identificador.")),
     "hdl_import_routing_conflict" to MessageTemplate(english = MessageForms(other = "A local terminal stub could not be routed without joining another signal."), portuguese = MessageForms(other = "Não foi possível conectar um terminal local sem uni-lo a outro sinal.")),
     "hdl_import_source_control_characters" to MessageTemplate(english = MessageForms(other = "An HDL source contains unsupported control characters."), portuguese = MessageForms(other = "Uma fonte HDL contém caracteres de controle não suportados.")),
@@ -5119,21 +6868,26 @@ private fun messageCatalogPart17(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_import_cancel" to MessageTemplate(english = MessageForms(other = "Cancel synthesis"), portuguese = MessageForms(other = "Cancelar síntese")),
     "hdl_tools_import_cancel_failed" to MessageTemplate(english = MessageForms(other = "Could not cancel."), portuguese = MessageForms(other = "Não foi possível cancelar.")),
     "hdl_tools_import_cancel_requested" to MessageTemplate(english = MessageForms(other = "Cancellation requested."), portuguese = MessageForms(other = "Cancelamento solicitado.")),
-)
-
-private fun messageCatalogPart18(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_import_cancelled" to MessageTemplate(english = MessageForms(other = "Import canceled."), portuguese = MessageForms(other = "Importação cancelada.")),
     "hdl_tools_import_confirm" to MessageTemplate(english = MessageForms(other = "Confirm execution on the Mac"), portuguese = MessageForms(other = "Confirmar execução no Mac")),
     "hdl_tools_import_connect_companion" to MessageTemplate(english = MessageForms(other = "Connect the companion in the project tools."), portuguese = MessageForms(other = "Conecte o companion nas ferramentas do projeto.")),
     "hdl_tools_import_defines" to MessageTemplate(english = MessageForms(other = "Defines, separated by commas"), portuguese = MessageForms(other = "Defines, separados por vírgula")),
     "hdl_tools_import_description" to MessageTemplate(english = MessageForms(other = "Synthesize on the Mac companion and convert the result into editable circuits. Add source files, includes and memory data using plain filenames."), portuguese = MessageForms(other = "Sintetize no Mac companion e converta o resultado em circuitos editáveis. Adicione fontes, includes e dados de memória com nomes simples.")),
     "hdl_tools_import_diagnostic" to MessageTemplate(english = MessageForms(other = "{code}{location}: {detail}"), portuguese = MessageForms(other = "{code}{location}: {detail}")),
+    "hdl_tools_import_discard_confirm" to MessageTemplate(english = MessageForms(other = "Discard and open"), portuguese = MessageForms(other = "Descartar e abrir")),
+    "hdl_tools_import_discard_message" to MessageTemplate(english = MessageForms(other = "The editor holds text that is not in any staged file. Opening {name} replaces it."), portuguese = MessageForms(other = "O editor tem um texto que não está em nenhum arquivo preparado. Abrir {name} o substitui.")),
+    "hdl_tools_import_discard_title" to MessageTemplate(english = MessageForms(other = "Discard the text in the editor?"), portuguese = MessageForms(other = "Descartar o texto do editor?")),
+    "hdl_tools_import_editing" to MessageTemplate(english = MessageForms(other = "Editing"), portuguese = MessageForms(other = "Em edição")),
+)
+
+private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_import_file_name" to MessageTemplate(english = MessageForms(other = "Relative file path"), portuguese = MessageForms(other = "Caminho relativo do arquivo")),
-    "hdl_tools_import_format" to MessageTemplate(english = MessageForms(other = "Format: {format}"), portuguese = MessageForms(other = "Formato: {format}")),
+    "hdl_tools_import_format_label" to MessageTemplate(english = MessageForms(other = "Format"), portuguese = MessageForms(other = "Formato")),
     "hdl_tools_import_imported_count" to MessageTemplate(english = MessageForms(one = "{count} circuit imported.", other = "{count} circuits imported."), portuguese = MessageForms(one = "{count} circuito importado.", other = "{count} circuitos importados.")),
     "hdl_tools_import_invalid_file" to MessageTemplate(english = MessageForms(other = "The source file is invalid."), portuguese = MessageForms(other = "O arquivo de fonte é inválido.")),
-    "hdl_tools_import_memory_expand" to MessageTemplate(english = MessageForms(other = "Memory: expand all into logic"), portuguese = MessageForms(other = "Memória: expandir tudo em lógica")),
-    "hdl_tools_import_memory_policy" to MessageTemplate(english = MessageForms(other = "Memory: native where compatible"), portuguese = MessageForms(other = "Memória: nativa quando compatível")),
+    "hdl_tools_import_memory_expand_option" to MessageTemplate(english = MessageForms(other = "Expand all into logic"), portuguese = MessageForms(other = "Expandir tudo em lógica")),
+    "hdl_tools_import_memory_label" to MessageTemplate(english = MessageForms(other = "Memory"), portuguese = MessageForms(other = "Memória")),
+    "hdl_tools_import_memory_native_option" to MessageTemplate(english = MessageForms(other = "Native where compatible"), portuguese = MessageForms(other = "Nativa quando compatível")),
     "hdl_tools_import_pick_file" to MessageTemplate(english = MessageForms(other = "Choose source file"), portuguese = MessageForms(other = "Escolher arquivo de fonte")),
     "hdl_tools_import_picker_directory" to MessageTemplate(english = MessageForms(other = "Subdirectory for selected files (optional)"), portuguese = MessageForms(other = "Subdiretório dos arquivos escolhidos (opcional)")),
     "hdl_tools_import_plan" to MessageTemplate(english = MessageForms(other = "Run Yosys on the Mac: {files}"), portuguese = MessageForms(other = "Executar Yosys no Mac: {files}")),
@@ -5145,6 +6899,10 @@ private fun messageCatalogPart18(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_import_provider_error" to MessageTemplate(english = MessageForms(other = "Tool error ({code}): {detail}"), portuguese = MessageForms(other = "Erro da ferramenta ({code}): {detail}")),
     "hdl_tools_import_provider_logs" to MessageTemplate(english = MessageForms(other = "Tool logs"), portuguese = MessageForms(other = "Logs da ferramenta")),
     "hdl_tools_import_remove_file" to MessageTemplate(english = MessageForms(other = "Remove"), portuguese = MessageForms(other = "Remover")),
+    "hdl_tools_import_replace_confirm" to MessageTemplate(english = MessageForms(other = "Replace"), portuguese = MessageForms(other = "Substituir")),
+    "hdl_tools_import_replace_message" to MessageTemplate(english = MessageForms(other = "A staged file already has this name. Its text will be replaced by the source above."), portuguese = MessageForms(other = "Um arquivo preparado já tem este nome. O texto dele será substituído pelo código acima.")),
+    "hdl_tools_import_replace_picked_message" to MessageTemplate(english = MessageForms(other = "A staged file already has this name. Its text will be replaced by the chosen file."), portuguese = MessageForms(other = "Um arquivo preparado já tem este nome. O texto dele será substituído pelo arquivo escolhido.")),
+    "hdl_tools_import_replace_title" to MessageTemplate(english = MessageForms(other = "Replace {name}?"), portuguese = MessageForms(other = "Substituir {name}?")),
     "hdl_tools_import_review_plan" to MessageTemplate(english = MessageForms(other = "Review the files and confirm execution on the Mac."), portuguese = MessageForms(other = "Revise os arquivos e confirme a execução no Mac.")),
     "hdl_tools_import_source" to MessageTemplate(english = MessageForms(other = "Source or library"), portuguese = MessageForms(other = "Fonte ou biblioteca")),
     "hdl_tools_import_source_utf8" to MessageTemplate(english = MessageForms(other = "Choose a source file encoded as UTF-8."), portuguese = MessageForms(other = "Escolha um arquivo de fonte codificado em UTF-8.")),
@@ -5153,14 +6911,14 @@ private fun messageCatalogPart18(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_import_synthesizing" to MessageTemplate(english = MessageForms(other = "Synthesizing…"), portuguese = MessageForms(other = "Sintetizando…")),
     "hdl_tools_import_title" to MessageTemplate(english = MessageForms(other = "Import Verilog / BLIF"), portuguese = MessageForms(other = "Importar Verilog / BLIF")),
     "hdl_tools_import_top" to MessageTemplate(english = MessageForms(other = "Top module (empty: automatic)"), portuguese = MessageForms(other = "Módulo principal (vazio: automático)")),
-    "hdl_tools_import_undefined" to MessageTemplate(english = MessageForms(other = "Undefined constants: {policy}"), portuguese = MessageForms(other = "Constantes indefinidas: {policy}")),
-    "hdl_tools_import_undefined_one" to MessageTemplate(english = MessageForms(other = "replace with 1"), portuguese = MessageForms(other = "substituir por 1")),
-    "hdl_tools_import_undefined_reject" to MessageTemplate(english = MessageForms(other = "reject"), portuguese = MessageForms(other = "rejeitar")),
-    "hdl_tools_import_undefined_zero" to MessageTemplate(english = MessageForms(other = "replace with 0"), portuguese = MessageForms(other = "substituir por 0")),
+    "hdl_tools_import_undefined_label" to MessageTemplate(english = MessageForms(other = "Undefined constants"), portuguese = MessageForms(other = "Constantes indefinidas")),
+    "hdl_tools_import_undefined_one_option" to MessageTemplate(english = MessageForms(other = "Replace with 1"), portuguese = MessageForms(other = "Substituir por 1")),
+    "hdl_tools_import_undefined_reject_option" to MessageTemplate(english = MessageForms(other = "Reject"), portuguese = MessageForms(other = "Rejeitar")),
+    "hdl_tools_import_undefined_zero_option" to MessageTemplate(english = MessageForms(other = "Replace with 0"), portuguese = MessageForms(other = "Substituir por 0")),
     "hdl_tools_sim_advance_label" to MessageTemplate(english = MessageForms(other = "Sample advance, in ns"), portuguese = MessageForms(other = "Avanço da amostra, em ns")),
     "hdl_tools_sim_advance_range" to MessageTemplate(english = MessageForms(other = "The advance must be between 1 and 1,000,000 ns."), portuguese = MessageForms(other = "O avanço precisa estar entre 1 e 1.000.000 ns.")),
     "hdl_tools_sim_apply_source" to MessageTemplate(english = MessageForms(other = "Apply source and parameters"), portuguese = MessageForms(other = "Aplicar fonte e parâmetros")),
-    "hdl_tools_sim_backend_selected" to MessageTemplate(english = MessageForms(other = "{backend} selected"), portuguese = MessageForms(other = "{backend} selecionado")),
+    "hdl_tools_sim_backend_label" to MessageTemplate(english = MessageForms(other = "Source language"), portuguese = MessageForms(other = "Linguagem da fonte")),
     "hdl_tools_sim_bits" to MessageTemplate(english = MessageForms(one = "{count} bit", other = "{count} bits"), portuguese = MessageForms(one = "{count} bit", other = "{count} bits")),
     "hdl_tools_sim_cancel" to MessageTemplate(english = MessageForms(other = "Cancel session"), portuguese = MessageForms(other = "Cancelar sessão")),
     "hdl_tools_sim_component_removed" to MessageTemplate(english = MessageForms(other = "The component was removed."), portuguese = MessageForms(other = "O componente foi removido.")),
@@ -5175,6 +6933,19 @@ private fun messageCatalogPart18(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_sim_engine_reset" to MessageTemplate(english = MessageForms(other = "The simulator was reset. Start a new HDL-IP session."), portuguese = MessageForms(other = "O motor foi reiniciado. Inicie uma nova sessão HDL-IP.")),
     "hdl_tools_sim_engine_session_changed" to MessageTemplate(english = MessageForms(other = "The simulator session changed. Start a new HDL-IP session."), portuguese = MessageForms(other = "A sessão do motor mudou. Inicie uma nova sessão HDL-IP.")),
     "hdl_tools_sim_failed" to MessageTemplate(english = MessageForms(other = "failed"), portuguese = MessageForms(other = "falhou")),
+    "hdl_tools_sim_generic_default" to MessageTemplate(english = MessageForms(other = "Default: {value}"), portuguese = MessageForms(other = "Padrão: {value}")),
+    "hdl_tools_sim_generic_default_option" to MessageTemplate(english = MessageForms(other = "Default ({value})"), portuguese = MessageForms(other = "Padrão ({value})")),
+    "hdl_tools_sim_generic_invalid_integer" to MessageTemplate(english = MessageForms(other = "Enter a whole number."), portuguese = MessageForms(other = "Digite um número inteiro.")),
+    "hdl_tools_sim_generic_invalid_natural" to MessageTemplate(english = MessageForms(other = "Enter a whole number of 0 or more."), portuguese = MessageForms(other = "Digite um número inteiro igual ou maior que 0.")),
+    "hdl_tools_sim_generic_invalid_positive" to MessageTemplate(english = MessageForms(other = "Enter a whole number of 1 or more."), portuguese = MessageForms(other = "Digite um número inteiro igual ou maior que 1.")),
+    "hdl_tools_sim_generic_label" to MessageTemplate(english = MessageForms(other = "{name} ({type})"), portuguese = MessageForms(other = "{name} ({type})")),
+    "hdl_tools_sim_generic_time_range" to MessageTemplate(english = MessageForms(other = "Out of range: Evolution stores a delay of at most 2147483647 fs (about 2.1 us) either way."), portuguese = MessageForms(other = "Fora do intervalo: o Evolution guarda um atraso de no máximo 2147483647 fs (cerca de 2,1 us), positivo ou negativo.")),
+    "hdl_tools_sim_generic_unit" to MessageTemplate(english = MessageForms(other = "Unit"), portuguese = MessageForms(other = "Unidade")),
+    "hdl_tools_sim_generics_as_fields" to MessageTemplate(english = MessageForms(other = "Edit as fields"), portuguese = MessageForms(other = "Editar como campos")),
+    "hdl_tools_sim_generics_as_text" to MessageTemplate(english = MessageForms(other = "Edit as text"), portuguese = MessageForms(other = "Editar como texto")),
+    "hdl_tools_sim_generics_extra" to MessageTemplate(english = MessageForms(other = "Other parameters kept: {names}"), portuguese = MessageForms(other = "Outros parâmetros mantidos: {names}")),
+    "hdl_tools_sim_generics_heading" to MessageTemplate(english = MessageForms(other = "VHDL generics"), portuguese = MessageForms(other = "Genéricos VHDL")),
+    "hdl_tools_sim_generics_help" to MessageTemplate(english = MessageForms(other = "Leave a field empty to use the entity's default."), portuguese = MessageForms(other = "Deixe um campo vazio para usar o padrão da entidade.")),
     "hdl_tools_sim_generics_label" to MessageTemplate(english = MessageForms(other = "VHDL parameters, one NAME=value per line"), portuguese = MessageForms(other = "Parâmetros VHDL, um NOME=valor por linha")),
     "hdl_tools_sim_incompatible_time" to MessageTemplate(english = MessageForms(other = "The simulator and session times do not allow this sample."), portuguese = MessageForms(other = "O tempo do motor e da sessão não permite esta amostra.")),
     "hdl_tools_sim_inout" to MessageTemplate(english = MessageForms(other = "bidirectional"), portuguese = MessageForms(other = "bidirecional")),
@@ -5210,6 +6981,9 @@ private fun messageCatalogPart18(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_sim_sample" to MessageTemplate(english = MessageForms(other = "Sample current signals"), portuguese = MessageForms(other = "Amostrar sinais atuais")),
     "hdl_tools_sim_sample_changed" to MessageTemplate(english = MessageForms(other = "The source, inputs or simulator time changed while the sample was being calculated. Start another session."), portuguese = MessageForms(other = "A fonte, as entradas ou o tempo do motor mudou enquanto a amostra era calculada. Inicie outra sessão.")),
     "hdl_tools_sim_sample_failed" to MessageTemplate(english = MessageForms(other = "The HDL-IP sample failed."), portuguese = MessageForms(other = "A amostra HDL-IP falhou.")),
+)
+
+private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_sim_sample_received" to MessageTemplate(english = MessageForms(other = "Sample received at {time} ns."), portuguese = MessageForms(other = "Amostra recebida em {time} ns.")),
     "hdl_tools_sim_select_component" to MessageTemplate(english = MessageForms(other = "Select an HDL-IP component or insert one using the source below."), portuguese = MessageForms(other = "Selecione um componente HDL-IP ou insira um usando a fonte abaixo.")),
     "hdl_tools_sim_selection_changed" to MessageTemplate(english = MessageForms(other = "The selection or source changed. Start a new session."), portuguese = MessageForms(other = "A seleção ou a fonte mudou. Inicie uma nova sessão.")),
@@ -5222,9 +6996,6 @@ private fun messageCatalogPart18(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_sim_start_rejected" to MessageTemplate(english = MessageForms(other = "The simulator did not accept the session."), portuguese = MessageForms(other = "O motor não aceitou a sessão.")),
     "hdl_tools_sim_started" to MessageTemplate(english = MessageForms(other = "Session started. Sample the current signals to receive the first outputs."), portuguese = MessageForms(other = "Sessão iniciada. Amostre os sinais atuais para receber as primeiras saídas.")),
     "hdl_tools_sim_starting" to MessageTemplate(english = MessageForms(other = "Validating and elaborating on the Mac…"), portuguese = MessageForms(other = "Validando e elaborando no Mac…")),
-)
-
-private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_sim_status" to MessageTemplate(english = MessageForms(other = "Status: {status} · simulator {time} ns · session {sessionTime} ns"), portuguese = MessageForms(other = "Estado: {status} · simulador {time} ns · sessão {sessionTime} ns")),
     "hdl_tools_sim_stopped" to MessageTemplate(english = MessageForms(other = "Session stopped. Outputs are waiting for an explicit new start."), portuguese = MessageForms(other = "Sessão interrompida. As saídas aguardam um novo início explícito.")),
     "hdl_tools_sim_time_limit" to MessageTemplate(english = MessageForms(other = "The session reached its 1 ms limit. Reset the session."), portuguese = MessageForms(other = "O limite de 1 ms da sessão foi atingido. Reinicie a sessão.")),
@@ -5235,7 +7006,6 @@ private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "hdl_tools_sim_wrong_operation" to MessageTemplate(english = MessageForms(other = "The companion replied to a different operation."), portuguese = MessageForms(other = "O companion respondeu a outra operação.")),
     "hdl_top_module" to MessageTemplate(english = MessageForms(other = "Top module: {name}"), portuguese = MessageForms(other = "Módulo principal: {name}")),
     "help_build" to MessageTemplate(english = MessageForms(other = "Version {version}, build {build}"), portuguese = MessageForms(other = "Versão {version}, build {build}")),
-    "help_cancel" to MessageTemplate(english = MessageForms(other = "Cancel"), portuguese = MessageForms(other = "Cancelar")),
     "help_checking_example" to MessageTemplate(english = MessageForms(other = "Testing {name} in a separate simulation…"), portuguese = MessageForms(other = "Testando {name} em uma simulação separada…")),
     "help_compatibility" to MessageTemplate(english = MessageForms(other = "Compatibility"), portuguese = MessageForms(other = "Compatibilidade")),
     "help_confirm_open" to MessageTemplate(english = MessageForms(other = "Open {name}?"), portuguese = MessageForms(other = "Abrir {name}?")),
@@ -5277,7 +7047,7 @@ private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "help_guide_diagnostics_title" to MessageTemplate(english = MessageForms(other = "Find circuit problems"), portuguese = MessageForms(other = "Localizar problemas no circuito")),
     "help_guide_editing_step_1" to MessageTemplate(english = MessageForms(other = "Choose a component in Library, then tap the grid to insert it. Use Select to select a component or a group; use Move to drag the selection."), portuguese = MessageForms(other = "Escolha um componente na Biblioteca e toque na grade para inseri-lo. Use Selecionar para selecionar um componente ou grupo; use Mover para arrastar a seleção.")),
     "help_guide_editing_step_2" to MessageTemplate(english = MessageForms(other = "Open Properties to edit the label and declared attributes. Invalid values do not change the circuit. Review terminals after changing width or direction."), portuguese = MessageForms(other = "Abra Propriedades para editar o rótulo e os atributos declarados. Valores inválidos não alteram o circuito. Revise os terminais após mudar largura ou direção.")),
-    "help_guide_editing_step_3" to MessageTemplate(english = MessageForms(other = "Undo and Redo apply to circuit edits. Copy, Cut, Paste, Duplicate and Delete use the current selection. On a keyboard, use Ctrl or Command with C, X, V, D and Z."), portuguese = MessageForms(other = "Desfazer e Refazer atuam nas edições do circuito. Copiar, Recortar, Colar, Duplicar e Excluir usam a seleção atual. No teclado, use Ctrl ou Command com C, X, V, D e Z.")),
+    "help_guide_editing_step_3" to MessageTemplate(english = MessageForms(other = "Undo and Redo apply to circuit edits. Copy, Cut, Paste, Duplicate and Delete use the current selection. On a keyboard, use Ctrl or Command with C, X, V, D and Z."), portuguese = MessageForms(other = "Desfazer e Refazer atuam nas edições do circuito. Copiar, Recortar, Colar, Duplicar e Apagar usam a seleção atual. No teclado, use Ctrl ou Command com C, X, V, D e Z.")),
     "help_guide_editing_title" to MessageTemplate(english = MessageForms(other = "Edit components"), portuguese = MessageForms(other = "Editar componentes")),
     "help_guide_navigation_step_1" to MessageTemplate(english = MessageForms(other = "The circuit tree lists definitions and instances. Open an instance to inspect its independent simulation state. Select the main circuit to return to the project entry."), portuguese = MessageForms(other = "A árvore de circuitos lista definições e instâncias. Abra uma instância para inspecionar seu estado independente. Selecione o circuito principal para voltar à entrada do projeto.")),
     "help_guide_navigation_step_2" to MessageTemplate(english = MessageForms(other = "Fit frames the circuit; fit selection frames selected components and wires. Pinch with two fingers to zoom and pan. Zoom keeps the point under your gesture fixed."), portuguese = MessageForms(other = "Enquadrar ajusta a vista ao circuito; enquadrar seleção ajusta aos componentes e fios selecionados. Use dois dedos para zoom e deslocamento. O zoom mantém fixo o ponto sob o gesto.")),
@@ -5291,15 +7061,16 @@ private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "help_guide_simulation_step_1" to MessageTemplate(english = MessageForms(other = "Choose Simulate to change input pins. A pin inside an instantiated child circuit is driven by its parent. Use Signals to inspect values; unknown and error bits are not zero."), portuguese = MessageForms(other = "Escolha Simular para alterar pinos de entrada. Um pino dentro de uma instância recebe o sinal do circuito pai. Use Sinais para inspecionar valores; bits desconhecidos e de erro não são zero.")),
     "help_guide_simulation_step_2" to MessageTemplate(english = MessageForms(other = "Run advances clocks continuously. Pause stops automatic execution. Step advances one clock step; Event advances one pending propagation event."), portuguese = MessageForms(other = "Executar avança os clocks continuamente. Pausar interrompe a execução automática. Passo avança um passo do clock; Evento avança um evento pendente de propagação.")),
     "help_guide_simulation_step_3" to MessageTemplate(english = MessageForms(other = "Simulation options control frequency, propagation limit, startup memory and disconnected gate inputs. Clock component properties define high/low durations and phase."), portuguese = MessageForms(other = "As opções de simulação controlam frequência, limite de propagação, memória inicial e entradas de portas desconectadas. As propriedades do Clock definem durações alta/baixa e fase.")),
-    "help_guide_simulation_step_4" to MessageTemplate(english = MessageForms(other = "Reset restarts simulation state. For an imported SAP-1, also pulse its Reset input from 0 to 1 and back to 0 before running. The program produces display 08 after 56 clock steps."), portuguese = MessageForms(other = "Reset reinicia o estado da simulação. No SAP-1 importado, também pulse a entrada Reset de 0 para 1 e de volta para 0 antes de executar. O programa produz 08 no display após 56 passos do clock.")),
+    "help_guide_simulation_step_4" to MessageTemplate(english = MessageForms(other = "Reset restarts simulation state. For an imported SAP-1, also pulse its Reset input from 0 to 1 and back to 0 before running. The program produces display 08 after 56 clock steps."), portuguese = MessageForms(other = "Reiniciar devolve a simulação ao estado inicial. No SAP-1 importado, também pulse a entrada Reset de 0 para 1 e de volta para 0 antes de executar. O programa produz 08 no display após 56 passos do clock.")),
     "help_guide_simulation_title" to MessageTemplate(english = MessageForms(other = "Run and pause simulation"), portuguese = MessageForms(other = "Executar e pausar a simulação")),
     "help_guides" to MessageTemplate(english = MessageForms(other = "Guide"), portuguese = MessageForms(other = "Guia")),
+    "help_issue_link" to MessageTemplate(english = MessageForms(other = "Issue {number}"), portuguese = MessageForms(other = "Issue {number}")),
+    "help_issue_link_description" to MessageTemplate(english = MessageForms(other = "Open issue {number} on GitHub"), portuguese = MessageForms(other = "Abrir a issue {number} no GitHub")),
     "help_known_limits" to MessageTemplate(english = MessageForms(other = "Unknown or unsupported content can prevent import. An import error must preserve the open project. Desktop JAR plugins do not execute on the device. External HDL, Tcl and FPGA tools require an explicitly paired companion and a user action. Physical device and board validation is tracked separately."), portuguese = MessageForms(other = "Conteúdo desconhecido ou não suportado pode impedir a importação. Uma falha de importação deve preservar o projeto aberto. Plugins JAR desktop não executam no aparelho. Ferramentas externas HDL, Tcl e FPGA exigem companion pareado e ação explícita. A validação física de aparelhos e placas tem acompanhamento próprio.")),
     "help_library_count" to MessageTemplate(english = MessageForms(other = "{name}: {count} types"), portuguese = MessageForms(other = "{name}: {count} tipos")),
     "help_link_failed" to MessageTemplate(english = MessageForms(other = "The system could not open the link. Offline help remains available."), portuguese = MessageForms(other = "O sistema não conseguiu abrir o link. A ajuda offline continua disponível.")),
     "help_offline_guide" to MessageTemplate(english = MessageForms(other = "These instructions and examples are available offline. On a phone, Library and Properties open panels above the canvas. Tool tabs scroll horizontally."), portuguese = MessageForms(other = "Estas instruções e exemplos funcionam offline. No telefone, Biblioteca e Propriedades abrem painéis sobre o canvas. As abas de ferramentas rolam na horizontal.")),
     "help_online_guide" to MessageTemplate(english = MessageForms(other = "Read the full guide online"), portuguese = MessageForms(other = "Ler o guia completo online")),
-    "help_open_copy_explanation" to MessageTemplate(english = MessageForms(other = "The example opens as a workspace copy. Your existing project and its external file remain separate. Save important changes before switching projects."), portuguese = MessageForms(other = "O exemplo abre como uma cópia no workspace. Seu projeto atual e o arquivo externo permanecem separados. Salve alterações importantes antes de trocar de projeto.")),
     "help_open_example" to MessageTemplate(english = MessageForms(other = "Open a copy"), portuguese = MessageForms(other = "Abrir uma cópia")),
     "help_open_parity" to MessageTemplate(english = MessageForms(other = "Open the support matrix online"), portuguese = MessageForms(other = "Abrir matriz de suporte online")),
     "help_open_properties" to MessageTemplate(english = MessageForms(other = "Open properties"), portuguese = MessageForms(other = "Abrir propriedades")),
@@ -5313,6 +7084,9 @@ private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "help_reference_mismatch" to MessageTemplate(english = MessageForms(other = "{id}/{action}/{probe}: expected {expected}, got {actual}."), portuguese = MessageForms(other = "{id}/{action}/{probe}: esperado {expected}, obtido {actual}.")),
     "help_reference_negative_ticks" to MessageTemplate(english = MessageForms(other = "Reference action {name} has a negative clock count."), portuguese = MessageForms(other = "A ação de referência {name} tem uma contagem de clock negativa.")),
     "help_reference_probe_missing" to MessageTemplate(english = MessageForms(other = "Missing {width}-bit probe {id}."), portuguese = MessageForms(other = "A sonda {id} de {width} bits não foi encontrada.")),
+)
+
+private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
     "help_reference_unsettled" to MessageTemplate(english = MessageForms(other = "{id}/{action}: simulation did not settle."), portuguese = MessageForms(other = "{id}/{action}: a simulação não estabilizou.")),
     "help_registered_libraries" to MessageTemplate(english = MessageForms(other = "Registered libraries in this build"), portuguese = MessageForms(other = "Bibliotecas registradas nesta versão")),
     "help_registry_scope" to MessageTemplate(english = MessageForms(other = "This build registers {count} component types. Registration alone does not prove parity with every desktop option. The support matrix records the scope, evidence and remaining issues."), portuguese = MessageForms(other = "Esta versão registra {count} tipos de componentes. O registro não comprova paridade com todas as opções desktop. A matriz de suporte registra escopo, evidências e issues pendentes.")),
@@ -5325,9 +7099,6 @@ private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "help_support_editing_description" to MessageTemplate(english = MessageForms(other = "Tools, selection, wiring, properties and symbol appearance have separate acceptance criteria."), portuguese = MessageForms(other = "Ferramentas, seleção, fios, propriedades e aparência de símbolos têm critérios de aceite próprios.")),
     "help_support_editing_title" to MessageTemplate(english = MessageForms(other = "Editing and navigation"), portuguese = MessageForms(other = "Edição e navegação")),
     "help_support_simulation_description" to MessageTemplate(english = MessageForms(other = "Deterministic events, hierarchy, diagnostics, test vectors, analysis and traces are tracked independently. Examples test only their declared input sequences."), portuguese = MessageForms(other = "Eventos determinísticos, hierarquia, diagnósticos, vetores, análise e cronogramas têm acompanhamento independente. Exemplos testam apenas as sequências de entrada declaradas.")),
-)
-
-private fun messageCatalogPart20(): Map<String, MessageTemplate> = mapOf(
     "help_support_simulation_title" to MessageTemplate(english = MessageForms(other = "Simulation and verification"), portuguese = MessageForms(other = "Simulação e verificação")),
     "help_support_validation_description" to MessageTemplate(english = MessageForms(other = "Simulator tests, accessibility readers, large-circuit measurements and signed releases are separate gates. A compiled build does not prove physical hardware behavior."), portuguese = MessageForms(other = "Testes em simuladores, leitores de acessibilidade, medições de circuitos grandes e releases assinados são verificações separadas. Uma compilação não comprova comportamento em hardware físico.")),
     "help_support_validation_title" to MessageTemplate(english = MessageForms(other = "Platforms and releases"), portuguese = MessageForms(other = "Plataformas e releases")),
@@ -5344,31 +7115,88 @@ private fun messageCatalogPart20(): Map<String, MessageTemplate> = mapOf(
     "history_import_project" to MessageTemplate(english = MessageForms(other = "Import project"), portuguese = MessageForms(other = "Importar projeto")),
     "history_move_wire" to MessageTemplate(english = MessageForms(other = "Move wire point"), portuguese = MessageForms(other = "Mover ponto do fio")),
     "history_redo" to MessageTemplate(english = MessageForms(other = "Redo History"), portuguese = MessageForms(other = "Histórico de refazer")),
+    "history_rotate_component" to MessageTemplate(english = MessageForms(other = "Rotate {name}"), portuguese = MessageForms(other = "Rotacionar {name}")),
+    "history_rotate_selection" to MessageTemplate(english = MessageForms(other = "Change Selection Facing"), portuguese = MessageForms(other = "Alterar direção da seleção")),
     "history_split_wire" to MessageTemplate(english = MessageForms(other = "Split wire"), portuguese = MessageForms(other = "Dividir fio")),
     "history_undo" to MessageTemplate(english = MessageForms(other = "Undo History"), portuguese = MessageForms(other = "Histórico de desfazer")),
     "import_report_circuit" to MessageTemplate(english = MessageForms(other = "Circuit: {name}"), portuguese = MessageForms(other = "Circuito: {name}")),
-    "import_report_components" to MessageTemplate(english = MessageForms(other = "Components: {ids}"), portuguese = MessageForms(other = "Componentes: {ids}")),
+    "import_report_component" to MessageTemplate(english = MessageForms(other = "{name} at ({x}, {y})"), portuguese = MessageForms(other = "{name} em ({x}, {y})")),
+    "import_report_component_labeled" to MessageTemplate(english = MessageForms(other = "{label} ({kind}) at ({x}, {y})"), portuguese = MessageForms(other = "{label} ({kind}) em ({x}, {y})")),
+    "import_report_component_missing" to MessageTemplate(english = MessageForms(other = "A component no longer in the circuit"), portuguese = MessageForms(other = "Um componente que não está mais no circuito")),
+    "import_report_details" to MessageTemplate(english = MessageForms(other = "Details"), portuguese = MessageForms(other = "Detalhes")),
+    "import_report_details_a11y" to MessageTemplate(english = MessageForms(other = "Import report details"), portuguese = MessageForms(other = "Detalhes do relatório de importação")),
+    "import_report_more" to MessageTemplate(english = MessageForms(one = "+{count} more", other = "+{count} more"), portuguese = MessageForms(one = "+{count} outro", other = "+{count} outros")),
     "import_report_no_changes" to MessageTemplate(english = MessageForms(other = "No compatibility adjustments were needed. Source metadata was preserved."), portuguese = MessageForms(other = "Nenhum ajuste de compatibilidade foi necessário. Os metadados de origem foram preservados.")),
     "import_report_origin" to MessageTemplate(english = MessageForms(other = "Document: {origin}"), portuguese = MessageForms(other = "Documento: {origin}")),
     "import_report_repeated" to MessageTemplate(english = MessageForms(other = "Applied {count} times."), portuguese = MessageForms(other = "Aplicado {count} vezes.")),
-    "import_report_rule" to MessageTemplate(english = MessageForms(other = "Rule: {code}"), portuguese = MessageForms(other = "Regra: {code}")),
+    "import_report_rule_evolution_circuit_renamed" to MessageTemplate(english = MessageForms(other = "Circuits renamed as Logisim Evolution requires"), portuguese = MessageForms(other = "Circuitos renomeados como o Logisim Evolution exige")),
+    "import_report_rule_evolution_label_renamed" to MessageTemplate(english = MessageForms(other = "Labels renamed as Logisim Evolution requires"), portuguese = MessageForms(other = "Rótulos renomeados como o Logisim Evolution exige")),
+    "import_report_rule_floating_point_library" to MessageTemplate(english = MessageForms(other = "Floating-point components moved to their current library"), portuguese = MessageForms(other = "Componentes de ponto flutuante movidos para a biblioteca atual")),
+    "import_report_rule_legacy_project_converted" to MessageTemplate(english = MessageForms(other = "Converted from an older Logisim format"), portuguese = MessageForms(other = "Convertido de um formato antigo do Logisim")),
+    "import_report_rule_other" to MessageTemplate(english = MessageForms(other = "Compatibility adjustment"), portuguese = MessageForms(other = "Ajuste de compatibilidade")),
+    "import_report_rule_simulation_noise_preserved" to MessageTemplate(english = MessageForms(other = "Random simulation delay kept"), portuguese = MessageForms(other = "Atraso aleatório da simulação mantido")),
+    "import_report_rule_version_defaults" to MessageTemplate(english = MessageForms(other = "Attributes follow the defaults of the version that saved the file"), portuguese = MessageForms(other = "Atributos seguem os padrões da versão que salvou o arquivo")),
+    "import_report_show" to MessageTemplate(english = MessageForms(other = "Show"), portuguese = MessageForms(other = "Mostrar")),
+    "import_report_show_a11y" to MessageTemplate(english = MessageForms(other = "Show these components in {circuit}"), portuguese = MessageForms(other = "Mostrar estes componentes em {circuit}")),
     "import_report_source" to MessageTemplate(english = MessageForms(other = "Source version: {version}. Circuits: {count}."), portuguese = MessageForms(other = "Versão de origem: {version}. Circuitos: {count}.")),
+    "import_report_status" to MessageTemplate(english = MessageForms(one = "Opened with {count} compatibility adjustment.", other = "Opened with {count} compatibility adjustments."), portuguese = MessageForms(one = "Aberto com {count} ajuste de compatibilidade.", other = "Aberto com {count} ajustes de compatibilidade.")),
+    "import_report_status_file" to MessageTemplate(english = MessageForms(one = "File {name} opened with {count} compatibility adjustment.", other = "File {name} opened with {count} compatibility adjustments."), portuguese = MessageForms(one = "Arquivo {name} aberto com {count} ajuste de compatibilidade.", other = "Arquivo {name} aberto com {count} ajustes de compatibilidade.")),
+    "import_report_status_imported" to MessageTemplate(english = MessageForms(one = "Project imported with {count} compatibility adjustment.", other = "Project imported with {count} compatibility adjustments."), portuguese = MessageForms(one = "Projeto importado com {count} ajuste de compatibilidade.", other = "Projeto importado com {count} ajustes de compatibilidade.")),
     "import_report_title" to MessageTemplate(english = MessageForms(other = "Import report"), portuguese = MessageForms(other = "Relatório de importação")),
-    "input_bits" to MessageTemplate(english = MessageForms(other = "{count} bits"), portuguese = MessageForms(other = "{count} bits")),
-    "input_number_format" to MessageTemplate(english = MessageForms(other = "Decimal or hexadecimal 0x"), portuguese = MessageForms(other = "Decimal ou hexadecimal 0x")),
-    "input_value_title" to MessageTemplate(english = MessageForms(other = "Input value"), portuguese = MessageForms(other = "Valor da entrada")),
+    "input_value_dialog_title" to MessageTemplate(english = MessageForms(other = "Value of {label} ({radix}, {width} bits)"), portuguese = MessageForms(other = "Valor de {label} ({radix}, {width} bits)")),
+    "input_value_error_binary" to MessageTemplate(english = MessageForms(other = "Use only the digits 0 and 1."), portuguese = MessageForms(other = "Use apenas os dígitos 0 e 1.")),
+    "input_value_error_binary_unknown" to MessageTemplate(english = MessageForms(other = "Use only 0, 1 and x."), portuguese = MessageForms(other = "Use apenas 0, 1 e x.")),
+    "input_value_error_decimal" to MessageTemplate(english = MessageForms(other = "Enter a whole number."), portuguese = MessageForms(other = "Digite um número inteiro.")),
+    "input_value_error_empty" to MessageTemplate(english = MessageForms(other = "Enter a value."), portuguese = MessageForms(other = "Digite um valor.")),
+    "input_value_error_float" to MessageTemplate(english = MessageForms(other = "Enter a number such as 1.5, inf or nan."), portuguese = MessageForms(other = "Digite um número como 1.5, inf ou nan.")),
+    "input_value_error_hexadecimal" to MessageTemplate(english = MessageForms(other = "Use only the digits 0 to 9 and A to F."), portuguese = MessageForms(other = "Use apenas os dígitos de 0 a 9 e de A a F.")),
+    "input_value_error_octal" to MessageTemplate(english = MessageForms(other = "Use only the digits 0 to 7."), portuguese = MessageForms(other = "Use apenas os dígitos de 0 a 7.")),
+    "input_value_error_range" to MessageTemplate(english = MessageForms(other = "Out of range: enter a value from {min} to {max}."), portuguese = MessageForms(other = "Fora do intervalo: digite um valor de {min} a {max}.")),
+    "input_value_error_unknown_simple" to MessageTemplate(english = MessageForms(other = "Only a tri-state pin accepts x."), portuguese = MessageForms(other = "Apenas um pino tri-state aceita x.")),
+    "input_value_field" to MessageTemplate(english = MessageForms(other = "Value"), portuguese = MessageForms(other = "Valor")),
+    "input_value_float_hint" to MessageTemplate(english = MessageForms(other = "A number, inf or nan"), portuguese = MessageForms(other = "Um número, inf ou nan")),
+    "input_value_float_hint_unknown" to MessageTemplate(english = MessageForms(other = "A number, inf, nan, or x for unknown"), portuguese = MessageForms(other = "Um número, inf, nan ou x para indefinido")),
+    "input_value_range" to MessageTemplate(english = MessageForms(other = "From {min} to {max}"), portuguese = MessageForms(other = "De {min} a {max}")),
+    "input_value_range_unknown" to MessageTemplate(english = MessageForms(other = "From {min} to {max}, or x for unknown"), portuguese = MessageForms(other = "De {min} a {max}, ou x para indefinido")),
+    "input_value_unknown_unsupported" to MessageTemplate(english = MessageForms(other = "The live JAR simulation accepts only defined values."), portuguese = MessageForms(other = "A simulação de JAR ao vivo aceita apenas valores definidos.")),
+    "inspector_boolean_no" to MessageTemplate(english = MessageForms(other = "No"), portuguese = MessageForms(other = "Não")),
+    "inspector_boolean_yes" to MessageTemplate(english = MessageForms(other = "Yes"), portuguese = MessageForms(other = "Sim")),
+    "inspector_choose_value" to MessageTemplate(english = MessageForms(other = "Choose a value"), portuguese = MessageForms(other = "Escolher um valor")),
+    "inspector_clear_for_all" to MessageTemplate(english = MessageForms(one = "Clear for {count} component", other = "Clear for all {count}"), portuguese = MessageForms(one = "Limpar em {count} componente", other = "Limpar em todos os {count}")),
     "inspector_component_count" to MessageTemplate(english = MessageForms(one = "{count} component", other = "{count} components"), portuguese = MessageForms(one = "{count} componente", other = "{count} componentes")),
     "inspector_disabled" to MessageTemplate(english = MessageForms(other = "Disabled"), portuguese = MessageForms(other = "Desativado")),
     "inspector_edit" to MessageTemplate(english = MessageForms(other = "Edit property {name}"), portuguese = MessageForms(other = "Editar propriedade {name}")),
+    "inspector_edit_as_text" to MessageTemplate(english = MessageForms(other = "Edit as text"), portuguese = MessageForms(other = "Editar como texto")),
+    "inspector_edit_as_text_description" to MessageTemplate(english = MessageForms(other = "Edit {name} as text"), portuguese = MessageForms(other = "Editar {name} como texto")),
     "inspector_enabled" to MessageTemplate(english = MessageForms(other = "Enabled"), portuguese = MessageForms(other = "Ativado")),
+    "inspector_hint_capacitance" to MessageTemplate(english = MessageForms(other = "Microfarads. You can type a unit, such as 10uF or 0.1mF."), portuguese = MessageForms(other = "Microfarads. Você pode digitar uma unidade, como 10uF ou 0.1mF.")),
+    "inspector_hint_hex_digits" to MessageTemplate(english = MessageForms(other = "Hexadecimal, with or without 0x, such as 0xff."), portuguese = MessageForms(other = "Hexadecimal, com ou sem 0x, como 0xff.")),
+    "inspector_hint_integer_prefixes" to MessageTemplate(english = MessageForms(other = "Hexadecimal with 0x, binary with 0b, or decimal."), portuguese = MessageForms(other = "Hexadecimal com 0x, binário com 0b, ou decimal.")),
+    "inspector_hint_range" to MessageTemplate(english = MessageForms(other = "A whole number from {min} to {max}."), portuguese = MessageForms(other = "Um número inteiro de {min} a {max}.")),
+    "inspector_hint_resistance" to MessageTemplate(english = MessageForms(other = "Ohms. You can type k or M, such as 4.7k or 1M."), portuguese = MessageForms(other = "Ohms. Você pode digitar k ou M, como 4.7k ou 1M.")),
+    "inspector_label_draft_discarded" to MessageTemplate(english = MessageForms(other = "The typed label “{label}” was not applied."), portuguese = MessageForms(other = "O rótulo digitado “{label}” não foi aplicado.")),
     "inspector_mixed_labels" to MessageTemplate(english = MessageForms(other = "Different labels"), portuguese = MessageForms(other = "Rótulos diferentes")),
     "inspector_mixed_values" to MessageTemplate(english = MessageForms(other = "Different values"), portuguese = MessageForms(other = "Valores diferentes")),
+    "inspector_multi_edit_status" to MessageTemplate(english = MessageForms(one = "Changed {count} component.", other = "Changed {count} components."), portuguese = MessageForms(one = "{count} componente alterado.", other = "{count} componentes alterados.")),
+    "inspector_multi_edit_undo" to MessageTemplate(english = MessageForms(one = "Undo the change to {count} component", other = "Undo the change to {count} components"), portuguese = MessageForms(one = "Desfazer a alteração em {count} componente", other = "Desfazer a alteração em {count} componentes")),
     "inspector_not_editable" to MessageTemplate(english = MessageForms(other = "Property {name} cannot be edited in this selection."), portuguese = MessageForms(other = "A propriedade {name} não pode ser editada nesta seleção.")),
+    "inspector_open_tool" to MessageTemplate(english = MessageForms(other = "Open {tool}"), portuguese = MessageForms(other = "Abrir {tool}")),
+    "inspector_presets" to MessageTemplate(english = MessageForms(other = "Common values"), portuguese = MessageForms(other = "Valores comuns")),
     "inspector_read_only" to MessageTemplate(english = MessageForms(other = "Property {name}, read-only"), portuguese = MessageForms(other = "Propriedade {name}, somente leitura")),
     "inspector_select_hint" to MessageTemplate(english = MessageForms(other = "Select components to edit their properties."), portuguese = MessageForms(other = "Selecione componentes para editar suas propriedades.")),
     "inspector_select_required" to MessageTemplate(english = MessageForms(other = "Select a component."), portuguese = MessageForms(other = "Selecione um componente.")),
+    "inspector_summary_empty" to MessageTemplate(english = MessageForms(other = "Empty"), portuguese = MessageForms(other = "Vazio")),
+    "inspector_summary_image" to MessageTemplate(english = MessageForms(other = "{type} image, {size}"), portuguese = MessageForms(other = "Imagem {type}, {size}")),
+)
+
+private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
+    "inspector_summary_lines" to MessageTemplate(english = MessageForms(one = "{count} line", other = "{count} lines"), portuguese = MessageForms(one = "{count} linha", other = "{count} linhas")),
+    "inspector_summary_matrix" to MessageTemplate(english = MessageForms(other = "{inputs} inputs, {terms} terms, {outputs} outputs"), portuguese = MessageForms(other = "{inputs} entradas, {terms} termos, {outputs} saídas")),
+    "inspector_summary_memory" to MessageTemplate(english = MessageForms(other = "{words} words × {bits} bits"), portuguese = MessageForms(other = "{words} palavras × {bits} bits")),
     "inspector_unknown_kinds" to MessageTemplate(english = MessageForms(other = "Types without definitions: {names}. Attributes are preserved as read-only."), portuguese = MessageForms(other = "Tipos sem definição: {names}. Atributos preservados somente para leitura.")),
+    "inspector_validating" to MessageTemplate(english = MessageForms(other = "Checking the value…"), portuguese = MessageForms(other = "Verificando o valor…")),
     "inspector_value_invalid" to MessageTemplate(english = MessageForms(other = "Invalid value for {name}: {raw}."), portuguese = MessageForms(other = "Valor inválido para {name}: {raw}.")),
+    "inspector_value_invalid_range" to MessageTemplate(english = MessageForms(other = "Invalid value for {name}: {raw}. Enter a whole number from {min} to {max}."), portuguese = MessageForms(other = "Valor inválido para {name}: {raw}. Digite um número inteiro de {min} a {max}.")),
     "inspector_value_invalid_short" to MessageTemplate(english = MessageForms(other = "Invalid value for {name}."), portuguese = MessageForms(other = "Valor inválido para {name}.")),
     "io_a11y_button" to MessageTemplate(english = MessageForms(other = "{label}, {state}"), portuguese = MessageForms(other = "{label}, {state}")),
     "io_a11y_joystick" to MessageTemplate(english = MessageForms(other = "{label}, joystick X {x}, Y {y}"), portuguese = MessageForms(other = "{label}, joystick X {x}, Y {y}")),
@@ -5384,6 +7212,18 @@ private fun messageCatalogPart20(): Map<String, MessageTemplate> = mapOf(
     "io_control_matrix_keypad" to MessageTemplate(english = MessageForms(other = "Matrix keypad"), portuguese = MessageForms(other = "Teclado matricial")),
     "io_end" to MessageTemplate(english = MessageForms(other = "End"), portuguese = MessageForms(other = "Fim")),
     "io_home" to MessageTemplate(english = MessageForms(other = "Home"), portuguese = MessageForms(other = "Início")),
+    "io_joystick_axis_value" to MessageTemplate(english = MessageForms(other = "{axis}: {value}"), portuguese = MessageForms(other = "{axis}: {value}")),
+    "io_joystick_axis_x" to MessageTemplate(english = MessageForms(other = "X position"), portuguese = MessageForms(other = "Posição X")),
+    "io_joystick_axis_y" to MessageTemplate(english = MessageForms(other = "Y position"), portuguese = MessageForms(other = "Posição Y")),
+    "io_joystick_down" to MessageTemplate(english = MessageForms(other = "Down"), portuguese = MessageForms(other = "Baixo")),
+    "io_joystick_down_left" to MessageTemplate(english = MessageForms(other = "Down-left"), portuguese = MessageForms(other = "Baixo e esquerda")),
+    "io_joystick_down_right" to MessageTemplate(english = MessageForms(other = "Down-right"), portuguese = MessageForms(other = "Baixo e direita")),
+    "io_joystick_help" to MessageTemplate(english = MessageForms(other = "Hold a direction to move the stick; it returns to the center when released, like dragging the pad. The sliders set an exact position that stays."), portuguese = MessageForms(other = "Mantenha uma direção pressionada para mover a alavanca; ela volta ao centro ao soltar, como ao arrastar no painel. Os controles deslizantes definem uma posição exata que permanece.")),
+    "io_joystick_left" to MessageTemplate(english = MessageForms(other = "Left"), portuguese = MessageForms(other = "Esquerda")),
+    "io_joystick_right" to MessageTemplate(english = MessageForms(other = "Right"), portuguese = MessageForms(other = "Direita")),
+    "io_joystick_up" to MessageTemplate(english = MessageForms(other = "Up"), portuguese = MessageForms(other = "Cima")),
+    "io_joystick_up_left" to MessageTemplate(english = MessageForms(other = "Up-left"), portuguese = MessageForms(other = "Cima e esquerda")),
+    "io_joystick_up_right" to MessageTemplate(english = MessageForms(other = "Up-right"), portuguese = MessageForms(other = "Cima e direita")),
     "io_keyboard_capacity" to MessageTemplate(english = MessageForms(other = "{label} · {count}/{capacity}"), portuguese = MessageForms(other = "{label} · {count}/{capacity}")),
     "io_state_backspace" to MessageTemplate(english = MessageForms(other = "backspace"), portuguese = MessageForms(other = "retrocesso")),
     "io_state_black" to MessageTemplate(english = MessageForms(other = "off, black"), portuguese = MessageForms(other = "apagado, preto")),
@@ -5428,9 +7268,6 @@ private fun messageCatalogPart20(): Map<String, MessageTemplate> = mapOf(
     "io_state_tty" to MessageTemplate(english = MessageForms(other = "Rows: {rows}; columns: {columns}; cursor row {row}, column {column}. Text: {text}"), portuguese = MessageForms(other = "Linhas: {rows}; colunas: {columns}; cursor na linha {row}, coluna {column}. Texto: {text}")),
     "io_state_tty_full_row" to MessageTemplate(english = MessageForms(other = "Rows: {rows}; columns: {columns}; current row {row} is full. The next printable character starts a new row. Text: {text}"), portuguese = MessageForms(other = "Linhas: {rows}; colunas: {columns}; a linha atual {row} está cheia. O próximo caractere imprimível inicia uma nova linha. Texto: {text}")),
     "io_state_unavailable" to MessageTemplate(english = MessageForms(other = "I/O state is unavailable."), portuguese = MessageForms(other = "O estado de I/O está indisponível.")),
-)
-
-private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
     "io_state_white" to MessageTemplate(english = MessageForms(other = "white"), portuguese = MessageForms(other = "branco")),
     "io_state_yellow" to MessageTemplate(english = MessageForms(other = "yellow"), portuguese = MessageForms(other = "amarelo")),
     "io_switch_off" to MessageTemplate(english = MessageForms(other = "off"), portuguese = MessageForms(other = "desligada")),
@@ -5453,6 +7290,9 @@ private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
     "ios_catalog_create_failed" to MessageTemplate(english = MessageForms(other = "The workspace folder could not be created."), portuguese = MessageForms(other = "Não foi possível criar a pasta de projetos.")),
     "ios_catalog_invalid_name" to MessageTemplate(english = MessageForms(other = "The internal workspace filename is invalid."), portuguese = MessageForms(other = "O nome interno do arquivo de projetos é inválido.")),
     "ios_catalog_lock_failed" to MessageTemplate(english = MessageForms(other = "The workspace could not be locked for an update."), portuguese = MessageForms(other = "Não foi possível bloquear o catálogo para atualização.")),
+)
+
+private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
     "ios_catalog_read_failed" to MessageTemplate(english = MessageForms(other = "The workspace file could not be read."), portuguese = MessageForms(other = "Não foi possível ler o arquivo de projetos.")),
     "ios_catalog_unavailable" to MessageTemplate(english = MessageForms(other = "The application support folder is unavailable."), portuguese = MessageForms(other = "A pasta de suporte do aplicativo não está disponível.")),
     "ios_catalog_write_failed" to MessageTemplate(english = MessageForms(other = "The workspace file could not be saved."), portuguese = MessageForms(other = "Não foi possível salvar o arquivo de projetos.")),
@@ -5492,6 +7332,10 @@ private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
     "jar_live_retired" to MessageTemplate(english = MessageForms(other = "The JAR session ended. Approve a new session to resume."), portuguese = MessageForms(other = "A sessão do JAR foi encerrada. Aprove uma nova sessão para retomar.")),
     "jar_live_waiting" to MessageTemplate(english = MessageForms(other = "Waiting for the approved JAR response."), portuguese = MessageForms(other = "Aguardando a resposta do JAR aprovado.")),
     "jar_tool_approval" to MessageTemplate(english = MessageForms(other = "Review the project and JAR hashes before executing this code on the companion."), portuguese = MessageForms(other = "Confira os hashes do projeto e do JAR antes de executar este código no companion.")),
+    "jar_tool_bit_error" to MessageTemplate(english = MessageForms(other = "Error (E)"), portuguese = MessageForms(other = "Erro (E)")),
+    "jar_tool_bit_option" to MessageTemplate(english = MessageForms(other = "{pin}: {value}"), portuguese = MessageForms(other = "{pin}: {value}")),
+    "jar_tool_bit_unknown" to MessageTemplate(english = MessageForms(other = "Unknown (?)"), portuguese = MessageForms(other = "Desconhecido (?)")),
+    "jar_tool_bits_needed" to MessageTemplate(english = MessageForms(one = "Needs {count} bit ({entered} entered)", other = "Needs {count} bits ({entered} entered)"), portuguese = MessageForms(one = "Precisa de {count} bit ({entered} digitados)", other = "Precisa de {count} bits ({entered} digitados)")),
     "jar_tool_cancel" to MessageTemplate(english = MessageForms(other = "Cancel"), portuguese = MessageForms(other = "Cancelar")),
     "jar_tool_cancelled" to MessageTemplate(english = MessageForms(other = "Execution cancelled."), portuguese = MessageForms(other = "Execução cancelada.")),
     "jar_tool_class" to MessageTemplate(english = MessageForms(other = "Library class: {class}"), portuguese = MessageForms(other = "Classe da biblioteca: {class}")),
@@ -5500,6 +7344,7 @@ private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
     "jar_tool_failed" to MessageTemplate(english = MessageForms(other = "Could not run the JAR project."), portuguese = MessageForms(other = "Não foi possível executar o projeto com o JAR.")),
     "jar_tool_frames" to MessageTemplate(english = MessageForms(other = "Input steps"), portuguese = MessageForms(other = "Etapas de entrada")),
     "jar_tool_frames_help" to MessageTemplate(english = MessageForms(other = "Enter a JSON array with one object per step. Use each labeled input as a key and its logic bits as text."), portuguese = MessageForms(other = "Informe uma lista JSON com um objeto por etapa. Use o rótulo de cada entrada como chave e seus bits lógicos como texto.")),
+    "jar_tool_hex_value" to MessageTemplate(english = MessageForms(other = "{pin} (hex)"), portuguese = MessageForms(other = "{pin} (hex)")),
     "jar_tool_host_denied" to MessageTemplate(english = MessageForms(other = "The paired companion must enable and require approval for jar-run."), portuguese = MessageForms(other = "O companion pareado precisa habilitar jar-run e exigir aprovação.")),
     "jar_tool_input" to MessageTemplate(english = MessageForms(other = "input"), portuguese = MessageForms(other = "entrada")),
     "jar_tool_live_help" to MessageTemplate(english = MessageForms(other = "Change input pins in the editor while the companion runs. This session accepts up to {count} frames, including the initial inputs. Reset or close to stop the session."), portuguese = MessageForms(other = "Altere os pinos de entrada no editor enquanto o companion executa. A sessão aceita até {count} quadros, incluindo as entradas iniciais. Use Reiniciar ou Fechar para encerrar a sessão.")),
@@ -5531,25 +7376,34 @@ private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
     "legal_back_action" to MessageTemplate(english = MessageForms(other = "Back"), portuguese = MessageForms(other = "Voltar")),
     "legal_button" to MessageTemplate(english = MessageForms(other = "Licenses"), portuguese = MessageForms(other = "Licenças")),
     "legal_button_description" to MessageTemplate(english = MessageForms(other = "Licenses, attribution and source code"), portuguese = MessageForms(other = "Licenças, atribuições e código-fonte")),
-)
-
-private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
     "legal_introduction" to MessageTemplate(english = MessageForms(other = "Free software under GPLv3. No warranty. The rights and notices for each component are listed below."), portuguese = MessageForms(other = "Software livre sob GPLv3. Sem garantia. Os direitos e avisos de cada componente estão abaixo.")),
     "legal_source_action" to MessageTemplate(english = MessageForms(other = "Open source code and build instructions"), portuguese = MessageForms(other = "Abrir código-fonte e instruções de compilação")),
     "legal_title" to MessageTemplate(english = MessageForms(other = "Licenses and attribution"), portuguese = MessageForms(other = "Licenças e atribuições")),
     "library_annotations" to MessageTemplate(english = MessageForms(other = "Annotations"), portuguese = MessageForms(other = "Anotações")),
     "library_arithmetic" to MessageTemplate(english = MessageForms(other = "Arithmetic"), portuguese = MessageForms(other = "Aritmética")),
+    "library_bfh" to MessageTemplate(english = MessageForms(other = "BFH mega functions"), portuguese = MessageForms(other = "Megafunções BFH")),
     "library_extra" to MessageTemplate(english = MessageForms(other = "Extra components"), portuguese = MessageForms(other = "Componentes extras")),
+    "library_filter" to MessageTemplate(english = MessageForms(other = "Filter components"), portuguese = MessageForms(other = "Filtrar componentes")),
+    "library_filter_clear" to MessageTemplate(english = MessageForms(other = "Clear the filter"), portuguese = MessageForms(other = "Limpar o filtro")),
+    "library_filter_empty" to MessageTemplate(english = MessageForms(other = "No component matches the filter."), portuguese = MessageForms(other = "Nenhum componente corresponde ao filtro.")),
     "library_float" to MessageTemplate(english = MessageForms(other = "Floating-point arithmetic"), portuguese = MessageForms(other = "Aritmética de ponto flutuante")),
     "library_gates" to MessageTemplate(english = MessageForms(other = "Gates"), portuguese = MessageForms(other = "Portas")),
+    "library_hdl_ip" to MessageTemplate(english = MessageForms(other = "HDL-IP"), portuguese = MessageForms(other = "HDL-IP")),
     "library_io" to MessageTemplate(english = MessageForms(other = "Input/output"), portuguese = MessageForms(other = "Entrada e saída")),
     "library_memory" to MessageTemplate(english = MessageForms(other = "Memory"), portuguese = MessageForms(other = "Memória")),
     "library_plexers" to MessageTemplate(english = MessageForms(other = "Plexers"), portuguese = MessageForms(other = "Seletores")),
+    "library_recent" to MessageTemplate(english = MessageForms(other = "Recently used"), portuguese = MessageForms(other = "Usados recentemente")),
+)
+
+private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
+    "library_soc" to MessageTemplate(english = MessageForms(other = "System on a chip"), portuguese = MessageForms(other = "Sistema em chip")),
+    "library_tcl" to MessageTemplate(english = MessageForms(other = "TCL"), portuguese = MessageForms(other = "TCL")),
     "library_ttl" to MessageTemplate(english = MessageForms(other = "TTL"), portuguese = MessageForms(other = "TTL")),
     "library_wiring" to MessageTemplate(english = MessageForms(other = "Wiring"), portuguese = MessageForms(other = "Fiação")),
     "matrix_place_base_label" to MessageTemplate(english = MessageForms(other = "Base label (optional)"), portuguese = MessageForms(other = "Rótulo base (opcional)")),
     "matrix_place_choose_origin" to MessageTemplate(english = MessageForms(other = "Choose the upper-left position of the matrix."), portuguese = MessageForms(other = "Escolha a posição superior esquerda da matriz.")),
     "matrix_place_columns" to MessageTemplate(english = MessageForms(other = "Columns (1–49)"), portuguese = MessageForms(other = "Colunas (1–49)")),
+    "matrix_place_confirm" to MessageTemplate(english = MessageForms(other = "Place"), portuguese = MessageForms(other = "Inserir")),
     "matrix_place_dx" to MessageTemplate(english = MessageForms(other = "Horizontal spacing (min. {minimum})"), portuguese = MessageForms(other = "Espaçamento horizontal (mín. {minimum})")),
     "matrix_place_dy" to MessageTemplate(english = MessageForms(other = "Vertical spacing (min. {minimum})"), portuguese = MessageForms(other = "Espaçamento vertical (mín. {minimum})")),
     "matrix_place_inserted" to MessageTemplate(english = MessageForms(other = "Inserted {count} components in a matrix."), portuguese = MessageForms(other = "Componentes inseridos na matriz: {count}.")),
@@ -5559,6 +7413,7 @@ private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
     "matrix_place_spacing_hint" to MessageTemplate(english = MessageForms(other = "Use multiples of 10 for spacing."), portuguese = MessageForms(other = "Use múltiplos de 10 no espaçamento.")),
     "matrix_place_title" to MessageTemplate(english = MessageForms(other = "Place matrix"), portuguese = MessageForms(other = "Inserir matriz")),
     "memory_a11y_cell" to MessageTemplate(english = MessageForms(other = "Address {address}, value {value}"), portuguese = MessageForms(other = "Endereço {address}, valor {value}")),
+    "memory_address_hex" to MessageTemplate(english = MessageForms(other = "Address (hex)"), portuguese = MessageForms(other = "Endereço (hex)")),
     "memory_apply" to MessageTemplate(english = MessageForms(other = "Apply"), portuguese = MessageForms(other = "Aplicar")),
     "memory_apply_ram_hint" to MessageTemplate(english = MessageForms(other = "Applying only changes the simulation session. Export an image to keep this data."), portuguese = MessageForms(other = "Aplicar altera somente a sessão de simulação. Exporte uma imagem para guardar esses dados.")),
     "memory_apply_rom_hint" to MessageTemplate(english = MessageForms(other = "Applying changes the document and can be undone."), portuguese = MessageForms(other = "Aplicar altera o documento e permite desfazer.")),
@@ -5568,6 +7423,7 @@ private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
     "memory_change" to MessageTemplate(english = MessageForms(other = "Change"), portuguese = MessageForms(other = "Alterar")),
     "memory_clear_contents" to MessageTemplate(english = MessageForms(other = "Clear contents"), portuguese = MessageForms(other = "Limpar conteúdo")),
     "memory_clear_contents_confirm" to MessageTemplate(english = MessageForms(other = "Set every word to zero? Select Apply to use the cleared image."), portuguese = MessageForms(other = "Zerar todas as palavras? Selecione Aplicar para usar a imagem zerada.")),
+    "memory_clear_selection" to MessageTemplate(english = MessageForms(other = "Clear selection"), portuguese = MessageForms(other = "Limpar seleção")),
     "memory_close" to MessageTemplate(english = MessageForms(other = "Close"), portuguese = MessageForms(other = "Fechar")),
     "memory_codec_address" to MessageTemplate(english = MessageForms(other = "Address outside memory."), portuguese = MessageForms(other = "Endereço fora da memória.")),
     "memory_codec_addressed_line" to MessageTemplate(english = MessageForms(other = "The line must start with a hexadecimal address."), portuguese = MessageForms(other = "A linha deve começar com um endereço hexadecimal.")),
@@ -5608,6 +7464,11 @@ private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
     "memory_copy" to MessageTemplate(english = MessageForms(other = "Copy"), portuguese = MessageForms(other = "Copiar")),
     "memory_copy_selection" to MessageTemplate(english = MessageForms(other = "Copy selection"), portuguese = MessageForms(other = "Copiar seleção")),
     "memory_dimensions" to MessageTemplate(english = MessageForms(other = "{words} words · {bits}"), portuguese = MessageForms(other = "{words} palavras · {bits}")),
+    "memory_discard_changes" to MessageTemplate(english = MessageForms(other = "Discard"), portuguese = MessageForms(other = "Descartar")),
+    "memory_draft_conflict" to MessageTemplate(english = MessageForms(other = "The memory contents changed after these edits were staged. Restore edits writes the words you edited over the current contents."), portuguese = MessageForms(other = "O conteúdo da memória mudou depois que estas edições foram preparadas. Restaurar edições grava as palavras editadas sobre o conteúdo atual.")),
+    "memory_draft_conflict_image" to MessageTemplate(english = MessageForms(other = "The memory contents changed after an image was loaded or the memory was cleared here. Restore edits replaces the current contents with that staged image."), portuguese = MessageForms(other = "O conteúdo da memória mudou depois que uma imagem foi carregada ou a memória foi limpa aqui. Restaurar edições substitui o conteúdo atual por essa imagem preparada.")),
+    "memory_draft_restore" to MessageTemplate(english = MessageForms(other = "Restore edits"), portuguese = MessageForms(other = "Restaurar edições")),
+    "memory_edit_word" to MessageTemplate(english = MessageForms(other = "Edit word"), portuguese = MessageForms(other = "Editar palavra")),
     "memory_error_address" to MessageTemplate(english = MessageForms(other = "Address outside memory: {address}."), portuguese = MessageForms(other = "Endereço fora da memória: {address}.")),
     "memory_error_address_bits" to MessageTemplate(english = MessageForms(other = "The address width must be between 2 and 24 bits."), portuguese = MessageForms(other = "A largura de endereço deve estar entre 2 e 24 bits.")),
     "memory_error_address_range" to MessageTemplate(english = MessageForms(other = "The address must be between 0 and {last}."), portuguese = MessageForms(other = "O endereço deve estar entre 0 e {last}.")),
@@ -5630,42 +7491,81 @@ private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
     "memory_error_value_width" to MessageTemplate(english = MessageForms(one = "The value does not fit in {bits} bit.", other = "The value does not fit in {bits} bits."), portuguese = MessageForms(one = "O valor não cabe em {bits} bit.", other = "O valor não cabe em {bits} bits.")),
     "memory_exchange" to MessageTemplate(english = MessageForms(other = "Import / export"), portuguese = MessageForms(other = "Importar / exportar")),
     "memory_fill" to MessageTemplate(english = MessageForms(other = "Fill"), portuguese = MessageForms(other = "Preencher")),
+    "memory_format_addressed" to MessageTemplate(english = MessageForms(other = "addressed"), portuguese = MessageForms(other = "com endereços")),
     "memory_format_ascii_big" to MessageTemplate(english = MessageForms(other = "ASCII bytes with escapes, big-endian"), portuguese = MessageForms(other = "Bytes ASCII com escapes, big-endian")),
     "memory_format_ascii_little" to MessageTemplate(english = MessageForms(other = "ASCII bytes with escapes, little-endian"), portuguese = MessageForms(other = "Bytes ASCII com escapes, little-endian")),
+    "memory_format_big_endian" to MessageTemplate(english = MessageForms(other = "big-endian"), portuguese = MessageForms(other = "big-endian")),
     "memory_format_binary_big" to MessageTemplate(english = MessageForms(other = "Binary data, big-endian"), portuguese = MessageForms(other = "Dados binários, big-endian")),
-    "memory_format_binary_little" to MessageTemplate(english = MessageForms(other = "Binary data, little-endian"), portuguese = MessageForms(other = "Dados binários, little-endian")),
 )
 
-private fun messageCatalogPart23(): Map<String, MessageTemplate> = mapOf(
+private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
+    "memory_format_binary_little" to MessageTemplate(english = MessageForms(other = "Binary data, little-endian"), portuguese = MessageForms(other = "Dados binários, little-endian")),
+    "memory_format_bytes" to MessageTemplate(english = MessageForms(other = "bytes"), portuguese = MessageForms(other = "bytes")),
+    "memory_format_choose_prompt" to MessageTemplate(english = MessageForms(other = "Select a format to load this file into memory."), portuguese = MessageForms(other = "Selecione um formato para carregar este arquivo na memória.")),
+    "memory_format_choose_title" to MessageTemplate(english = MessageForms(other = "Choose the file format"), portuguese = MessageForms(other = "Escolha o formato do arquivo")),
+    "memory_format_family_ascii" to MessageTemplate(english = MessageForms(other = "ASCII with C-style escapes"), portuguese = MessageForms(other = "ASCII com escapes no estilo C")),
+    "memory_format_family_binary" to MessageTemplate(english = MessageForms(other = "Binary"), portuguese = MessageForms(other = "Binário")),
+    "memory_format_family_hex" to MessageTemplate(english = MessageForms(other = "v3.0 hex"), portuguese = MessageForms(other = "v3.0 hex")),
+    "memory_format_group_byte_order" to MessageTemplate(english = MessageForms(other = "Byte order"), portuguese = MessageForms(other = "Ordem dos bytes")),
+    "memory_format_group_style" to MessageTemplate(english = MessageForms(other = "Style"), portuguese = MessageForms(other = "Estilo")),
+    "memory_format_group_unit" to MessageTemplate(english = MessageForms(other = "Unit"), portuguese = MessageForms(other = "Unidade")),
     "memory_format_hex_bytes_addressed_big" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes addressed big-endian"), portuguese = MessageForms(other = "v3.0 hex bytes addressed big-endian")),
     "memory_format_hex_bytes_addressed_little" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes addressed little-endian"), portuguese = MessageForms(other = "v3.0 hex bytes addressed little-endian")),
     "memory_format_hex_bytes_plain_big" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes plain big-endian"), portuguese = MessageForms(other = "v3.0 hex bytes plain big-endian")),
     "memory_format_hex_bytes_plain_little" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes plain little-endian"), portuguese = MessageForms(other = "v3.0 hex bytes plain little-endian")),
     "memory_format_hex_words_addressed" to MessageTemplate(english = MessageForms(other = "v3.0 hex words addressed"), portuguese = MessageForms(other = "v3.0 hex words addressed")),
     "memory_format_hex_words_plain" to MessageTemplate(english = MessageForms(other = "v3.0 hex words plain"), portuguese = MessageForms(other = "v3.0 hex words plain")),
+    "memory_format_label" to MessageTemplate(english = MessageForms(other = "Format"), portuguese = MessageForms(other = "Formato")),
+    "memory_format_little_endian" to MessageTemplate(english = MessageForms(other = "little-endian"), portuguese = MessageForms(other = "little-endian")),
+    "memory_format_load" to MessageTemplate(english = MessageForms(other = "Load"), portuguese = MessageForms(other = "Carregar")),
+    "memory_format_option_a11y" to MessageTemplate(english = MessageForms(other = "{group}: {option}"), portuguese = MessageForms(other = "{group}: {option}")),
+    "memory_format_plain" to MessageTemplate(english = MessageForms(other = "plain"), portuguese = MessageForms(other = "simples")),
     "memory_format_raw" to MessageTemplate(english = MessageForms(other = "v2.0 raw"), portuguese = MessageForms(other = "v2.0 raw")),
+    "memory_format_words" to MessageTemplate(english = MessageForms(other = "words"), portuguese = MessageForms(other = "palavras")),
     "memory_go" to MessageTemplate(english = MessageForms(other = "Go"), portuguese = MessageForms(other = "Ir")),
+    "memory_go_to_address" to MessageTemplate(english = MessageForms(other = "Go to address"), portuguese = MessageForms(other = "Ir para o endereço")),
     "memory_image_contents" to MessageTemplate(english = MessageForms(other = "Image contents"), portuguese = MessageForms(other = "Conteúdo da imagem")),
     "memory_image_title" to MessageTemplate(english = MessageForms(other = "Memory image"), portuguese = MessageForms(other = "Imagem de memória")),
     "memory_import_text" to MessageTemplate(english = MessageForms(other = "Import text"), portuguese = MessageForms(other = "Importar texto")),
     "memory_next_page" to MessageTemplate(english = MessageForms(other = "Next"), portuguese = MessageForms(other = "Próxima")),
+    "memory_open_auto_hint" to MessageTemplate(english = MessageForms(other = "Open file detects the format from the file header and asks when the file has none."), portuguese = MessageForms(other = "Abrir arquivo detecta o formato pelo cabeçalho e pergunta quando o arquivo não tem cabeçalho.")),
     "memory_open_file" to MessageTemplate(english = MessageForms(other = "Open file"), portuguese = MessageForms(other = "Abrir arquivo")),
-    "memory_paste_values" to MessageTemplate(english = MessageForms(other = "Paste values"), portuguese = MessageForms(other = "Colar valores")),
+    "memory_page_range" to MessageTemplate(english = MessageForms(other = "{first}–{last} / {end}"), portuguese = MessageForms(other = "{first}–{last} / {end}")),
+    "memory_page_range_a11y" to MessageTemplate(english = MessageForms(other = "Addresses {first} to {last} of {end}"), portuguese = MessageForms(other = "Endereços {first} a {last} de {end}")),
+    "memory_paste_at" to MessageTemplate(english = MessageForms(other = "Paste at {address}"), portuguese = MessageForms(other = "Colar em {address}")),
     "memory_previous_page" to MessageTemplate(english = MessageForms(other = "Previous"), portuguese = MessageForms(other = "Anterior")),
+    "memory_radix_bin" to MessageTemplate(english = MessageForms(other = "Bin"), portuguese = MessageForms(other = "Bin")),
+    "memory_radix_binary" to MessageTemplate(english = MessageForms(other = "Binary values"), portuguese = MessageForms(other = "Valores em binário")),
+    "memory_radix_dec" to MessageTemplate(english = MessageForms(other = "Dec"), portuguese = MessageForms(other = "Dec")),
+    "memory_radix_decimal" to MessageTemplate(english = MessageForms(other = "Decimal values"), portuguese = MessageForms(other = "Valores em decimal")),
+    "memory_radix_hex" to MessageTemplate(english = MessageForms(other = "Hex"), portuguese = MessageForms(other = "Hex")),
+    "memory_radix_hexadecimal" to MessageTemplate(english = MessageForms(other = "Hexadecimal values"), portuguese = MessageForms(other = "Valores em hexadecimal")),
+    "memory_radix_label" to MessageTemplate(english = MessageForms(other = "Value base"), portuguese = MessageForms(other = "Base dos valores")),
+    "memory_radix_oct" to MessageTemplate(english = MessageForms(other = "Oct"), portuguese = MessageForms(other = "Oct")),
+    "memory_radix_octal" to MessageTemplate(english = MessageForms(other = "Octal values"), portuguese = MessageForms(other = "Valores em octal")),
     "memory_ram_contents" to MessageTemplate(english = MessageForms(other = "RAM contents"), portuguese = MessageForms(other = "Conteúdo da RAM")),
+    "memory_range_end_hex" to MessageTemplate(english = MessageForms(other = "End (hex)"), portuguese = MessageForms(other = "Fim (hex)")),
     "memory_rom_contents" to MessageTemplate(english = MessageForms(other = "ROM contents"), portuguese = MessageForms(other = "Conteúdo da ROM")),
     "memory_runtime_contents_invalid" to MessageTemplate(english = MessageForms(other = "Invalid RAM contents."), portuguese = MessageForms(other = "Conteúdo de RAM inválido.")),
     "memory_runtime_dual_write_collision" to MessageTemplate(english = MessageForms(other = "Dual-port RAM write collision: port B is applied after port A."), portuguese = MessageForms(other = "Colisão de escrita na RAM de duas portas: a porta B é aplicada depois da porta A.")),
     "memory_runtime_image_width_mismatch" to MessageTemplate(english = MessageForms(other = "The image address and data widths do not match the RAM."), portuguese = MessageForms(other = "A imagem não tem as larguras de endereço e dados da RAM.")),
     "memory_runtime_rom_document_edit" to MessageTemplate(english = MessageForms(other = "Edit ROM contents in the document rather than the simulation state."), portuguese = MessageForms(other = "Edite o conteúdo da ROM no documento, não no estado da simulação.")),
     "memory_save_file" to MessageTemplate(english = MessageForms(other = "Save file"), portuguese = MessageForms(other = "Salvar arquivo")),
+    "memory_select_extend" to MessageTemplate(english = MessageForms(other = "Extend selection here"), portuguese = MessageForms(other = "Estender seleção até aqui")),
     "memory_select_range" to MessageTemplate(english = MessageForms(other = "Select range"), portuguese = MessageForms(other = "Selecionar faixa")),
-    "memory_selection_end" to MessageTemplate(english = MessageForms(other = "End of selection"), portuguese = MessageForms(other = "Final da seleção")),
+    "memory_select_start" to MessageTemplate(english = MessageForms(other = "Start selection here"), portuguese = MessageForms(other = "Iniciar seleção aqui")),
+    "memory_selection_extending" to MessageTemplate(english = MessageForms(other = "Tap a cell to extend the selection."), portuguese = MessageForms(other = "Toque em uma célula para estender a seleção.")),
+    "memory_selection_extending_summary" to MessageTemplate(english = MessageForms(other = "{selection} · {hint}"), portuguese = MessageForms(other = "{selection} · {hint}")),
+    "memory_selection_hint" to MessageTemplate(english = MessageForms(other = "Long-press a cell to start a selection, then tap another cell to extend it."), portuguese = MessageForms(other = "Toque e segure uma célula para iniciar uma seleção e toque em outra para estendê-la.")),
+    "memory_selection_range" to MessageTemplate(english = MessageForms(one = "Selected {first}–{last} ({count} word)", other = "Selected {first}–{last} ({count} words)"), portuguese = MessageForms(one = "Seleção {first}–{last} ({count} palavra)", other = "Seleção {first}–{last} ({count} palavras)")),
     "memory_selection_value" to MessageTemplate(english = MessageForms(other = "Value for selection"), portuguese = MessageForms(other = "Valor para a seleção")),
     "memory_start_address" to MessageTemplate(english = MessageForms(other = "Start address"), portuguese = MessageForms(other = "Endereço inicial")),
+    "memory_tool_choose" to MessageTemplate(english = MessageForms(other = "Choose a ROM or RAM in this circuit:"), portuguese = MessageForms(other = "Escolha uma ROM ou RAM deste circuito:")),
     "memory_tool_dimensions" to MessageTemplate(english = MessageForms(other = "The image does not match the memory address and data widths."), portuguese = MessageForms(other = "A imagem não corresponde às larguras de endereço e dados da memória.")),
-    "memory_tool_edit" to MessageTemplate(english = MessageForms(other = "Edit contents"), portuguese = MessageForms(other = "Editar conteúdo")),
     "memory_tool_invalid" to MessageTemplate(english = MessageForms(other = "Invalid memory contents."), portuguese = MessageForms(other = "Conteúdo de memória inválido.")),
+    "memory_tool_labelled_detail" to MessageTemplate(english = MessageForms(other = "{kind} · {location}"), portuguese = MessageForms(other = "{kind} · {location}")),
+    "memory_tool_location" to MessageTemplate(english = MessageForms(other = "Location ({x}, {y})"), portuguese = MessageForms(other = "Posição ({x}, {y})")),
+    "memory_tool_none" to MessageTemplate(english = MessageForms(other = "This circuit has no ROM or RAM."), portuguese = MessageForms(other = "Este circuito não tem ROM nem RAM.")),
     "memory_tool_not_applied" to MessageTemplate(english = MessageForms(other = "The memory edit was not applied."), portuguese = MessageForms(other = "A edição de memória não foi aplicada.")),
     "memory_tool_not_memory" to MessageTemplate(english = MessageForms(other = "The selected component is not a memory."), portuguese = MessageForms(other = "O componente selecionado não é uma memória.")),
     "memory_tool_ram_updated" to MessageTemplate(english = MessageForms(other = "RAM contents updated in this session."), portuguese = MessageForms(other = "Conteúdo da RAM atualizado na sessão.")),
@@ -5674,35 +7574,41 @@ private fun messageCatalogPart23(): Map<String, MessageTemplate> = mapOf(
     "memory_tool_session_unavailable" to MessageTemplate(english = MessageForms(other = "Memory contents are unavailable in the selected instance."), portuguese = MessageForms(other = "O conteúdo desta memória está indisponível na instância selecionada.")),
     "memory_tool_title" to MessageTemplate(english = MessageForms(other = "Memory editor"), portuguese = MessageForms(other = "Editor de memória")),
     "memory_tool_unavailable" to MessageTemplate(english = MessageForms(other = "The memory contents are unavailable."), portuguese = MessageForms(other = "O conteúdo desta memória está indisponível.")),
+    "memory_unapplied_changes" to MessageTemplate(english = MessageForms(other = "Unapplied changes"), portuguese = MessageForms(other = "Alterações não aplicadas")),
     "memory_value_radix" to MessageTemplate(english = MessageForms(other = "Value in base {base}"), portuguese = MessageForms(other = "Valor em base {base}")),
     "memory_word_bits" to MessageTemplate(english = MessageForms(one = "{count} bit per word", other = "{count} bits per word"), portuguese = MessageForms(one = "{count} bit por palavra", other = "{count} bits por palavra")),
+    "memory_word_next" to MessageTemplate(english = MessageForms(other = "Next word"), portuguese = MessageForms(other = "Próxima palavra")),
+    "memory_word_previous" to MessageTemplate(english = MessageForms(other = "Previous word"), portuguese = MessageForms(other = "Palavra anterior")),
     "menu_back" to MessageTemplate(english = MessageForms(other = "Back to menus"), portuguese = MessageForms(other = "Voltar aos menus")),
     "menu_edit" to MessageTemplate(english = MessageForms(other = "Edit"), portuguese = MessageForms(other = "Editar")),
     "menu_example" to MessageTemplate(english = MessageForms(other = "Open example: {name}"), portuguese = MessageForms(other = "Abrir exemplo: {name}")),
     "menu_file" to MessageTemplate(english = MessageForms(other = "File"), portuguese = MessageForms(other = "Arquivo")),
     "menu_find_action" to MessageTemplate(english = MessageForms(other = "Find Action…"), portuguese = MessageForms(other = "Localizar ação…")),
+    "menu_fpga" to MessageTemplate(english = MessageForms(other = "FPGA"), portuguese = MessageForms(other = "FPGA")),
     "menu_help" to MessageTemplate(english = MessageForms(other = "Help"), portuguese = MessageForms(other = "Ajuda")),
     "menu_import_export_circ" to MessageTemplate(english = MessageForms(other = "Import or export .circ XML…"), portuguese = MessageForms(other = "Importar ou exportar XML .circ…")),
+    "menu_open_example" to MessageTemplate(english = MessageForms(other = "Open example"), portuguese = MessageForms(other = "Abrir exemplo")),
     "menu_pause" to MessageTemplate(english = MessageForms(other = "Pause simulation"), portuguese = MessageForms(other = "Pausar simulação")),
     "menu_preferences" to MessageTemplate(english = MessageForms(other = "Preferences…"), portuguese = MessageForms(other = "Preferências…")),
     "menu_project" to MessageTemplate(english = MessageForms(other = "Project"), portuguese = MessageForms(other = "Projeto")),
     "menu_projects" to MessageTemplate(english = MessageForms(other = "Projects…"), portuguese = MessageForms(other = "Projetos…")),
-    "menu_reset_simulation" to MessageTemplate(english = MessageForms(other = "Reset simulation"), portuguese = MessageForms(other = "Reiniciar simulação")),
     "menu_run" to MessageTemplate(english = MessageForms(other = "Run simulation"), portuguese = MessageForms(other = "Executar simulação")),
     "menu_simulate" to MessageTemplate(english = MessageForms(other = "Simulate"), portuguese = MessageForms(other = "Simular")),
     "menu_simulation_options" to MessageTemplate(english = MessageForms(other = "Simulation options…"), portuguese = MessageForms(other = "Opções de simulação…")),
-    "menu_step_event" to MessageTemplate(english = MessageForms(other = "Step one event"), portuguese = MessageForms(other = "Avançar um evento")),
     "menu_tick_cycle" to MessageTemplate(english = MessageForms(other = "Tick full cycle"), portuguese = MessageForms(other = "Avançar um ciclo de clock")),
-    "menu_tick_frequency" to MessageTemplate(english = MessageForms(other = "Tick frequency: {count} Hz"), portuguese = MessageForms(other = "Frequência de tick: {count} Hz")),
     "menu_tick_once" to MessageTemplate(english = MessageForms(other = "Tick clock once"), portuguese = MessageForms(other = "Alternar o clock uma vez")),
     "menu_view" to MessageTemplate(english = MessageForms(other = "View"), portuguese = MessageForms(other = "Exibir")),
     "menu_warnings" to MessageTemplate(english = MessageForms(other = "Simulation warnings ({count})"), portuguese = MessageForms(other = "Avisos da simulação ({count})")),
+)
+
+private fun messageCatalogPart32(): Map<String, MessageTemplate> = mapOf(
     "mouse_mapping_button" to MessageTemplate(english = MessageForms(other = "Button: {button}"), portuguese = MessageForms(other = "Botão: {button}")),
     "mouse_mapping_default" to MessageTemplate(english = MessageForms(other = "Default behavior"), portuguese = MessageForms(other = "Comportamento padrão")),
     "mouse_mapping_help" to MessageTemplate(english = MessageForms(other = "Choose a mouse button and optional modifier keys, then assign a tool for this project."), portuguese = MessageForms(other = "Escolha um botão do mouse e modificadores opcionais, depois atribua uma ferramenta para este projeto.")),
     "mouse_mapping_menu" to MessageTemplate(english = MessageForms(other = "Context menu"), portuguese = MessageForms(other = "Menu contextual")),
     "mouse_mapping_middle" to MessageTemplate(english = MessageForms(other = "Middle"), portuguese = MessageForms(other = "Central")),
     "mouse_mapping_primary" to MessageTemplate(english = MessageForms(other = "Primary"), portuguese = MessageForms(other = "Principal")),
+    "mouse_mapping_remove" to MessageTemplate(english = MessageForms(other = "Remove mapping"), portuguese = MessageForms(other = "Remover mapeamento")),
     "mouse_mapping_row" to MessageTemplate(english = MessageForms(other = "{gesture} → {tool}"), portuguese = MessageForms(other = "{gesture} → {tool}")),
     "mouse_mapping_secondary" to MessageTemplate(english = MessageForms(other = "Secondary"), portuguese = MessageForms(other = "Secundário")),
     "mouse_mapping_text" to MessageTemplate(english = MessageForms(other = "Text tool"), portuguese = MessageForms(other = "Ferramenta de texto")),
@@ -5716,6 +7622,7 @@ private fun messageCatalogPart23(): Map<String, MessageTemplate> = mapOf(
     "original_circ_export_hex_point_conflict" to MessageTemplate(english = MessageForms(other = "Exporting the Hex Digit Display at ({x}, {y}) in {circuit} to Logisim 2.7.1 would change a connection or the state of the decimal point."), portuguese = MessageForms(other = "Exportar o visor hexadecimal em ({x}, {y}) no circuito {circuit} para o Logisim 2.7.1 alteraria uma conexão ou o estado do ponto decimal.")),
     "original_circ_export_multiplier_incompatible" to MessageTemplate(english = MessageForms(other = "Exporting the 32-bit Multiplier at ({x}, {y}) in {circuit} to Logisim 2.7.1 would change its results. Save a native copy to preserve its behavior."), portuguese = MessageForms(other = "Exportar o multiplicador de 32 bits em ({x}, {y}) no circuito {circuit} para o Logisim 2.7.1 alteraria seus resultados. Salve uma cópia nativa para preservar o comportamento.")),
     "original_circ_export_source_required" to MessageTemplate(english = MessageForms(other = "This export requires a project in the original Logisim format."), portuguese = MessageForms(other = "Esta exportação requer um projeto no formato do Logisim original.")),
+    "paste_preview_confirm" to MessageTemplate(english = MessageForms(other = "Paste here"), portuguese = MessageForms(other = "Colar aqui")),
     "pla_export_button" to MessageTemplate(english = MessageForms(other = "Export"), portuguese = MessageForms(other = "Exportar")),
     "pla_file_no_data" to MessageTemplate(english = MessageForms(other = "PLA file contained no data."), portuguese = MessageForms(other = "O arquivo PLA não continha dados.")),
     "pla_file_open_error" to MessageTemplate(english = MessageForms(other = "Could not open file."), portuguese = MessageForms(other = "Não foi possível abrir o ficheiro.")),
@@ -5733,13 +7640,18 @@ private fun messageCatalogPart23(): Map<String, MessageTemplate> = mapOf(
     "placement_auto_label_hint" to MessageTemplate(english = MessageForms(other = "Leave blank to turn off automatic labels for this tool."), portuguese = MessageForms(other = "Deixe em branco para desativar os rótulos automáticos desta ferramenta.")),
     "placement_auto_label_invalid" to MessageTemplate(english = MessageForms(other = "Start with a letter. Use letters, digits, and single underscores between them."), portuguese = MessageForms(other = "Comece com uma letra. Use letras, algarismos e sublinhados simples entre eles.")),
     "placement_auto_label_start" to MessageTemplate(english = MessageForms(other = "Next label"), portuguese = MessageForms(other = "Próximo rótulo")),
+    "placement_stepper_decrease" to MessageTemplate(english = MessageForms(other = "Decrease {name}"), portuguese = MessageForms(other = "Diminuir {name}")),
+    "placement_stepper_increase" to MessageTemplate(english = MessageForms(other = "Increase {name}"), portuguese = MessageForms(other = "Aumentar {name}")),
+    "placement_tool_attributes" to MessageTemplate(english = MessageForms(other = "Tool attributes"), portuguese = MessageForms(other = "Atributos da ferramenta")),
+    "placement_tool_attributes_hint" to MessageTemplate(english = MessageForms(other = "Every component placed with this tool gets these values."), portuguese = MessageForms(other = "Cada componente inserido com esta ferramenta recebe estes valores.")),
+    "placement_tool_attributes_short" to MessageTemplate(english = MessageForms(other = "Attributes"), portuguese = MessageForms(other = "Atributos")),
+    "placement_tool_attributes_title" to MessageTemplate(english = MessageForms(other = "{name}: attributes before placing"), portuguese = MessageForms(other = "{name}: atributos antes de inserir")),
+    "placement_tool_facing" to MessageTemplate(english = MessageForms(other = "Facing {direction}"), portuguese = MessageForms(other = "Voltado para {direction}")),
+    "placement_tool_strip" to MessageTemplate(english = MessageForms(other = "Options for the next {name}"), portuguese = MessageForms(other = "Opções do próximo {name}")),
     "portable_bundle_export_failed" to MessageTemplate(english = MessageForms(other = "Could not export the portable project."), portuguese = MessageForms(other = "Não foi possível exportar o projeto portável.")),
     "portable_bundle_extra_collision" to MessageTemplate(english = MessageForms(other = "An additional bundle file conflicts with an exported source path. The original file was kept; choose a new project bundle after resolving the conflict."), portuguese = MessageForms(other = "Um arquivo adicional do pacote conflita com um caminho de origem exportado. O arquivo original foi mantido; escolha um novo pacote após resolver o conflito.")),
     "portable_bundle_open_failed" to MessageTemplate(english = MessageForms(other = "Could not open this project bundle."), portuguese = MessageForms(other = "Não foi possível abrir este pacote de projeto.")),
     "portable_bundle_too_large" to MessageTemplate(english = MessageForms(other = "This project bundle exceeds the size limit."), portuguese = MessageForms(other = "Este pacote de projeto excede o limite de tamanho.")),
-)
-
-private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "portable_cancel_directory" to MessageTemplate(english = MessageForms(other = "Cancel folder import"), portuguese = MessageForms(other = "Cancelar importação da pasta")),
     "portable_choose_main" to MessageTemplate(english = MessageForms(other = "Choose the main .circ file in {folder}."), portuguese = MessageForms(other = "Escolha o arquivo .circ principal em {folder}.")),
     "portable_copy_not_opened" to MessageTemplate(english = MessageForms(other = "The workspace copy could not be opened. Your current document was kept."), portuguese = MessageForms(other = "Não foi possível abrir a cópia no workspace. O documento atual foi mantido.")),
@@ -5777,6 +7689,7 @@ private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "preferences_appearance_show_grid" to MessageTemplate(english = MessageForms(other = "Show grid in the appearance editor"), portuguese = MessageForms(other = "Mostrar grade no editor de aparência")),
     "preferences_attribute_halo" to MessageTemplate(english = MessageForms(other = "Show attribute halo"), portuguese = MessageForms(other = "Mostrar halo de atributos")),
     "preferences_binary" to MessageTemplate(english = MessageForms(other = "Binary"), portuguese = MessageForms(other = "Binária")),
+    "preferences_choice_change" to MessageTemplate(english = MessageForms(other = "Change"), portuguese = MessageForms(other = "Alterar")),
     "preferences_choice_description" to MessageTemplate(english = MessageForms(other = "{title}: {value}"), portuguese = MessageForms(other = "{title}: {value}")),
     "preferences_color_canvas" to MessageTemplate(english = MessageForms(other = "Canvas background"), portuguese = MessageForms(other = "Fundo do canvas")),
     "preferences_color_clock_frequency" to MessageTemplate(english = MessageForms(other = "Clock frequency display color"), portuguese = MessageForms(other = "Cor de exibição da frequência do clock")),
@@ -5789,6 +7702,9 @@ private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "preferences_color_fpga_define_move" to MessageTemplate(english = MessageForms(other = "Defined component move color"), portuguese = MessageForms(other = "Cor de movimento do componente definido")),
     "preferences_color_fpga_define_resize" to MessageTemplate(english = MessageForms(other = "Defined component resize color"), portuguese = MessageForms(other = "Cor de redimensionamento do componente definido")),
     "preferences_color_fpga_mapped" to MessageTemplate(english = MessageForms(other = "Mapped component color"), portuguese = MessageForms(other = "Cor do componente mapeado")),
+)
+
+private fun messageCatalogPart33(): Map<String, MessageTemplate> = mapOf(
     "preferences_color_fpga_select" to MessageTemplate(english = MessageForms(other = "Selectable component color"), portuguese = MessageForms(other = "Cor do componente selecionável")),
     "preferences_color_fpga_selectable_mapped" to MessageTemplate(english = MessageForms(other = "Selectable mapped component color"), portuguese = MessageForms(other = "Cor do componente mapeado selecionável")),
     "preferences_color_fpga_selected_mapped" to MessageTemplate(english = MessageForms(other = "Selected mapped component color"), portuguese = MessageForms(other = "Cor do componente mapeado selecionado")),
@@ -5799,7 +7715,6 @@ private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "preferences_color_kmap_cell_text" to MessageTemplate(english = MessageForms(other = "Karnaugh map cell text color"), portuguese = MessageForms(other = "Cor do texto das células do mapa de Karnaugh")),
     "preferences_color_kmap_group" to MessageTemplate(english = MessageForms(other = "Map color {number}"), portuguese = MessageForms(other = "Cor do mapa {number}")),
     "preferences_color_restore" to MessageTemplate(english = MessageForms(other = "Restore this color"), portuguese = MessageForms(other = "Restaurar esta cor")),
-    "preferences_color_role" to MessageTemplate(english = MessageForms(other = "Color to change"), portuguese = MessageForms(other = "Cor a alterar")),
     "preferences_color_signal_bus" to MessageTemplate(english = MessageForms(other = "Bus"), portuguese = MessageForms(other = "Barramento")),
     "preferences_color_signal_error" to MessageTemplate(english = MessageForms(other = "Signal error"), portuguese = MessageForms(other = "Erro de sinal")),
     "preferences_color_signal_floating" to MessageTemplate(english = MessageForms(other = "Floating signal"), portuguese = MessageForms(other = "Sinal flutuante")),
@@ -5817,7 +7732,18 @@ private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "preferences_color_width_error_caption" to MessageTemplate(english = MessageForms(other = "Width error caption color"), portuguese = MessageForms(other = "Cor da legenda de erro de largura")),
     "preferences_color_width_error_highlight" to MessageTemplate(english = MessageForms(other = "Width error highlight color"), portuguese = MessageForms(other = "Cor de destaque de erro de largura")),
     "preferences_colors" to MessageTemplate(english = MessageForms(other = "Canvas colors"), portuguese = MessageForms(other = "Cores do canvas")),
-    "preferences_colors_restore" to MessageTemplate(english = MessageForms(other = "Restore canvas colors"), portuguese = MessageForms(other = "Restaurar cores do canvas")),
+    "preferences_colors_group_analysis" to MessageTemplate(english = MessageForms(other = "Analysis"), portuguese = MessageForms(other = "Análise")),
+    "preferences_colors_group_canvas" to MessageTemplate(english = MessageForms(other = "Canvas"), portuguese = MessageForms(other = "Canvas")),
+    "preferences_colors_group_fpga" to MessageTemplate(english = MessageForms(other = "FPGA"), portuguese = MessageForms(other = "FPGA")),
+    "preferences_colors_group_kmap" to MessageTemplate(english = MessageForms(other = "Karnaugh map group colors"), portuguese = MessageForms(other = "Cores dos grupos do mapa de Karnaugh")),
+    "preferences_colors_group_signals" to MessageTemplate(english = MessageForms(other = "Signals and wires"), portuguese = MessageForms(other = "Sinais e fios")),
+    "preferences_colors_group_text" to MessageTemplate(english = MessageForms(other = "Text"), portuguese = MessageForms(other = "Texto")),
+    "preferences_colors_help" to MessageTemplate(english = MessageForms(other = "Tap a color to change it."), portuguese = MessageForms(other = "Toque em uma cor para alterá-la.")),
+    "preferences_colors_restore_confirm_dark" to MessageTemplate(english = MessageForms(other = "This removes {count} custom colors of the dark theme. The text tool color is shared with the light theme and is kept."), portuguese = MessageForms(other = "Isto remove {count} cores personalizadas do tema escuro. A cor da ferramenta de texto é compartilhada com o tema claro e é mantida.")),
+    "preferences_colors_restore_confirm_light" to MessageTemplate(english = MessageForms(other = "This removes {count} custom colors of the light theme, including the text tool color. The dark theme keeps its colors."), portuguese = MessageForms(other = "Isto remove {count} cores personalizadas do tema claro, incluindo a cor da ferramenta de texto. O tema escuro mantém as suas cores.")),
+    "preferences_colors_restore_confirm_light_plain" to MessageTemplate(english = MessageForms(other = "This removes {count} custom colors of the light theme. The dark theme keeps its colors."), portuguese = MessageForms(other = "Isto remove {count} cores personalizadas do tema claro. O tema escuro mantém as suas cores.")),
+    "preferences_colors_restore_confirm_title" to MessageTemplate(english = MessageForms(other = "Restore all colors of this theme?"), portuguese = MessageForms(other = "Restaurar todas as cores deste tema?")),
+    "preferences_colors_restore_theme" to MessageTemplate(english = MessageForms(other = "Restore all colors (this theme)"), portuguese = MessageForms(other = "Restaurar todas as cores (este tema)")),
     "preferences_colors_theme_dark" to MessageTemplate(english = MessageForms(other = "These colors apply to the dark theme."), portuguese = MessageForms(other = "Estas cores valem para o tema escuro.")),
     "preferences_colors_theme_light" to MessageTemplate(english = MessageForms(other = "These colors apply to the light theme."), portuguese = MessageForms(other = "Estas cores valem para o tema claro.")),
     "preferences_component_tips" to MessageTemplate(english = MessageForms(other = "Show component tips"), portuguese = MessageForms(other = "Mostrar dicas sobre componentes")),
@@ -5827,6 +7753,7 @@ private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "preferences_creation_scope" to MessageTemplate(english = MessageForms(other = "These choices apply to components and circuits created from now on."), portuguese = MessageForms(other = "Estas escolhas valem para componentes e circuitos criados a partir de agora.")),
     "preferences_default_appearance" to MessageTemplate(english = MessageForms(other = "Use the default appearances provided by"), portuguese = MessageForms(other = "Usar as aparências padrão fornecidas por")),
     "preferences_default_frequency" to MessageTemplate(english = MessageForms(other = "Default frequency (Hz)"), portuguese = MessageForms(other = "Frequência padrão (Hz)")),
+    "preferences_default_tick_frequency" to MessageTemplate(english = MessageForms(other = "Default tick frequency"), portuguese = MessageForms(other = "Frequência de tick padrão")),
     "preferences_din40700" to MessageTemplate(english = MessageForms(other = "DIN 40700"), portuguese = MessageForms(other = "DIN 40700")),
     "preferences_dont_care_char" to MessageTemplate(english = MessageForms(other = "Don’t care character"), portuguese = MessageForms(other = "Caractere de indiferente")),
     "preferences_editor_theme" to MessageTemplate(english = MessageForms(other = "Editor theme"), portuguese = MessageForms(other = "Tema do editor de código")),
@@ -5840,11 +7767,7 @@ private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "preferences_fpga_suppress_gated_clock" to MessageTemplate(english = MessageForms(other = "Suppress gated clock warnings in the design rule check report."), portuguese = MessageForms(other = "Suprimir os avisos de clock por lógica no relatório da verificação de regras de projeto.")),
     "preferences_fpga_suppress_open_pins" to MessageTemplate(english = MessageForms(other = "Suppress open input warnings in the design rule check report."), portuguese = MessageForms(other = "Suprimir os avisos de entradas abertas no relatório da verificação de regras de projeto.")),
     "preferences_fpga_title" to MessageTemplate(english = MessageForms(other = "FPGA Commander"), portuguese = MessageForms(other = "Configurações do Comandante FPGA")),
-)
-
-private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
     "preferences_fpga_vhdl_upper_case" to MessageTemplate(english = MessageForms(other = "Use upper case for VHDL keywords"), portuguese = MessageForms(other = "Usar maiúsculas nas palavras-chave VHDL")),
-    "preferences_frequency_hint" to MessageTemplate(english = MessageForms(other = "Use a positive, finite number."), portuguese = MessageForms(other = "Use um número positivo e finito.")),
     "preferences_frequency_invalid" to MessageTemplate(english = MessageForms(other = "The default frequency must be positive and finite."), portuguese = MessageForms(other = "A frequência padrão precisa ser positiva e finita.")),
     "preferences_frequency_scope" to MessageTemplate(english = MessageForms(other = "Does not change the frequency of the open project."), portuguese = MessageForms(other = "Não altera a frequência do projeto aberto.")),
     "preferences_gate_shapes" to MessageTemplate(english = MessageForms(other = "Gate symbols"), portuguese = MessageForms(other = "Símbolos das portas")),
@@ -5871,11 +7794,22 @@ private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
     "preferences_read_failed" to MessageTemplate(english = MessageForms(other = "Could not read preferences: {reason}"), portuguese = MessageForms(other = "Não foi possível ler as preferências: {reason}")),
     "preferences_remove_unused_libraries" to MessageTemplate(english = MessageForms(other = "Remove unused libraries on save"), portuguese = MessageForms(other = "Remover bibliotecas sem uso ao salvar")),
     "preferences_restore_defaults" to MessageTemplate(english = MessageForms(other = "Restore editor defaults"), portuguese = MessageForms(other = "Restaurar padrões do editor")),
+    "preferences_restore_defaults_confirm" to MessageTemplate(english = MessageForms(other = "This resets the language, theme, colors of both themes, toolbar, keyboard shortcuts, FPGA and HDL options, value characters and every other editor preference. It cannot be undone. Project options and templates are not changed. If the saved preferences could not be read, this replaces them."), portuguese = MessageForms(other = "Isto redefine o idioma, o tema, as cores dos dois temas, a barra de ferramentas, os atalhos de teclado, as opções de FPGA e HDL, os caracteres de valor e todas as outras preferências do editor. Não é possível desfazer. As opções do projeto e os modelos não mudam. Se as preferências salvas não puderam ser lidas, elas serão substituídas.")),
+    "preferences_restore_defaults_title" to MessageTemplate(english = MessageForms(other = "Restore editor defaults?"), portuguese = MessageForms(other = "Restaurar padrões do editor?")),
     "preferences_restore_shortcuts" to MessageTemplate(english = MessageForms(other = "Restore shortcut defaults"), portuguese = MessageForms(other = "Restaurar atalhos padrão")),
     "preferences_save_failed" to MessageTemplate(english = MessageForms(other = "Could not save preferences: {reason}"), portuguese = MessageForms(other = "Não foi possível salvar as preferências: {reason}")),
     "preferences_saved_invalid" to MessageTemplate(english = MessageForms(other = "Saved preferences are incomplete or invalid. The original was preserved."), portuguese = MessageForms(other = "As preferências salvas estão incompletas ou inválidas. O original foi preservado.")),
     "preferences_search_double_shift" to MessageTemplate(english = MessageForms(other = "Open Find Action by tapping Shift twice"), portuguese = MessageForms(other = "Abrir Localizar ação ao tocar Shift duas vezes")),
+    "preferences_section_collapsed" to MessageTemplate(english = MessageForms(other = "Collapsed"), portuguese = MessageForms(other = "Recolhido")),
+    "preferences_section_editing" to MessageTemplate(english = MessageForms(other = "Editing"), portuguese = MessageForms(other = "Edição")),
+    "preferences_section_expanded" to MessageTemplate(english = MessageForms(other = "Expanded"), portuguese = MessageForms(other = "Expandido")),
+    "preferences_section_international" to MessageTemplate(english = MessageForms(other = "International"), portuguese = MessageForms(other = "Internacional")),
     "preferences_section_layout" to MessageTemplate(english = MessageForms(other = "Layout"), portuguese = MessageForms(other = "Layout")),
+)
+
+private fun messageCatalogPart34(): Map<String, MessageTemplate> = mapOf(
+    "preferences_section_simulation" to MessageTemplate(english = MessageForms(other = "Simulation"), portuguese = MessageForms(other = "Simulação")),
+    "preferences_section_window" to MessageTemplate(english = MessageForms(other = "Window"), portuguese = MessageForms(other = "Janela")),
     "preferences_shortcut_clear" to MessageTemplate(english = MessageForms(other = "Clear"), portuguese = MessageForms(other = "Limpar")),
     "preferences_shortcut_conflict" to MessageTemplate(english = MessageForms(other = "Already assigned to {action}."), portuguese = MessageForms(other = "Já atribuído a {action}.")),
     "preferences_shortcut_input_help" to MessageTemplate(english = MessageForms(other = "Enter A–Z, 0–9 or F1–F12, or press a shortcut in this field."), portuguese = MessageForms(other = "Digite A–Z, 0–9 ou F1–F12, ou pressione um atalho neste campo.")),
@@ -5912,6 +7846,7 @@ private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
     "preferences_wire_poke_no_second_radix" to MessageTemplate(english = MessageForms(other = "None"), portuguese = MessageForms(other = "Nenhuma")),
     "preferences_wire_poke_primary_radix" to MessageTemplate(english = MessageForms(other = "Wire Poke primary radix"), portuguese = MessageForms(other = "Base principal ao inspecionar fios")),
     "preferences_wire_poke_secondary_radix" to MessageTemplate(english = MessageForms(other = "Wire Poke secondary radix"), portuguese = MessageForms(other = "Base secundária ao inspecionar fios")),
+    "project_add_circuit" to MessageTemplate(english = MessageForms(other = "Add circuit…"), portuguese = MessageForms(other = "Adicionar circuito…")),
     "project_circuit_count" to MessageTemplate(english = MessageForms(one = "Project · {count} circuit", other = "Project · {count} circuits"), portuguese = MessageForms(one = "Projeto · {count} circuito", other = "Projeto · {count} circuitos")),
     "project_component_count" to MessageTemplate(english = MessageForms(one = "{count} component", other = "{count} components"), portuguese = MessageForms(one = "{count} componente", other = "{count} componentes")),
     "project_components_heading" to MessageTemplate(english = MessageForms(other = "Components in project"), portuguese = MessageForms(other = "Componentes no projeto")),
@@ -5920,15 +7855,31 @@ private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
     "project_graph_unavailable" to MessageTemplate(english = MessageForms(other = "The original project could not be read. Open a compatible project to analyze or export its circuits. The complete original XML remains available in Files."), portuguese = MessageForms(other = "Não foi possível interpretar o projeto original. Abra um projeto compatível para analisar ou exportar seus circuitos. O XML original completo continua disponível em Arquivos.")),
     "project_import_failed" to MessageTemplate(english = MessageForms(other = "File not imported"), portuguese = MessageForms(other = "Arquivo não importado")),
     "project_merge_choose" to MessageTemplate(english = MessageForms(other = "Choose project file"), portuguese = MessageForms(other = "Escolher arquivo de projeto")),
+    "project_merge_conflicts" to MessageTemplate(english = MessageForms(other = "Name conflicts (renamed on merge)"), portuguese = MessageForms(other = "Conflitos de nome (renomeados ao mesclar)")),
+    "project_merge_done" to MessageTemplate(english = MessageForms(one = "Merged {count} circuit", other = "Merged {count} circuits"), portuguese = MessageForms(one = "{count} circuito mesclado", other = "{count} circuitos mesclados")),
+    "project_merge_done_renamed" to MessageTemplate(english = MessageForms(one = "Merged {count} circuit; renamed {renames}", other = "Merged {count} circuits; renamed {renames}"), portuguese = MessageForms(one = "{count} circuito mesclado; renomeado: {renames}", other = "{count} circuitos mesclados; renomeados: {renames}")),
     "project_merge_failed" to MessageTemplate(english = MessageForms(other = "Could not merge the selected project."), portuguese = MessageForms(other = "Não foi possível mesclar o projeto selecionado.")),
+    "project_merge_file" to MessageTemplate(english = MessageForms(other = "File: {name}"), portuguese = MessageForms(other = "Arquivo: {name}")),
+    "project_merge_rename" to MessageTemplate(english = MessageForms(other = "{old} → {new}"), portuguese = MessageForms(other = "{old} → {new}")),
     "project_merge_selection" to MessageTemplate(english = MessageForms(other = "Select circuits to copy into the active project. Dependencies are included automatically."), portuguese = MessageForms(other = "Selecione os circuitos para copiar para o projeto ativo. As dependências são incluídas automaticamente.")),
+    "project_merge_summary" to MessageTemplate(english = MessageForms(one = "{count} circuit will be copied (selected: {selected}, dependencies: {dependencies})", other = "{count} circuits will be copied (selected: {selected}, dependencies: {dependencies})"), portuguese = MessageForms(one = "{count} circuito será copiado (selecionados: {selected}, dependências: {dependencies})", other = "{count} circuitos serão copiados (selecionados: {selected}, dependências: {dependencies})")),
     "project_merge_title" to MessageTemplate(english = MessageForms(other = "Merge project"), portuguese = MessageForms(other = "Mesclar projeto")),
+    "project_merge_uses" to MessageTemplate(english = MessageForms(other = "uses: {names}"), portuguese = MessageForms(other = "usa: {names}")),
+    "project_move_circuit_down" to MessageTemplate(english = MessageForms(other = "Move circuit down"), portuguese = MessageForms(other = "Mover circuito para baixo")),
+    "project_move_circuit_up" to MessageTemplate(english = MessageForms(other = "Move circuit up"), portuguese = MessageForms(other = "Mover circuito para cima")),
+    "project_remove_circuit" to MessageTemplate(english = MessageForms(other = "Remove circuit…"), portuguese = MessageForms(other = "Remover circuito…")),
+    "project_set_main_circuit" to MessageTemplate(english = MessageForms(other = "Set as main circuit"), portuguese = MessageForms(other = "Definir como circuito principal")),
     "project_template_choose" to MessageTemplate(english = MessageForms(other = "Choose .circ template"), portuguese = MessageForms(other = "Escolher modelo .circ")),
     "project_template_custom" to MessageTemplate(english = MessageForms(other = "Custom template"), portuguese = MessageForms(other = "Modelo personalizado")),
     "project_template_empty" to MessageTemplate(english = MessageForms(other = "Empty template"), portuguese = MessageForms(other = "Modelo vazio")),
     "project_template_plain" to MessageTemplate(english = MessageForms(other = "Plain template"), portuguese = MessageForms(other = "Modelo padrão")),
     "project_template_read_failed" to MessageTemplate(english = MessageForms(other = "Could not read the project template."), portuguese = MessageForms(other = "Não foi possível ler o modelo de projeto.")),
     "project_template_remove" to MessageTemplate(english = MessageForms(other = "Remove template"), portuguese = MessageForms(other = "Remover modelo")),
+    "project_template_remove_selected" to MessageTemplate(english = MessageForms(other = "New projects will use the plain template again. The app's copy of the installed template is deleted; the file you chose is not changed."), portuguese = MessageForms(other = "Novos projetos voltarão a usar o modelo simples. A cópia do modelo instalado guardada pelo app será excluída; o arquivo escolhido não muda.")),
+    "project_template_remove_selected_named" to MessageTemplate(english = MessageForms(other = "New projects will use the plain template again. The app's copy of “{name}” is deleted; the file you chose is not changed."), portuguese = MessageForms(other = "Novos projetos voltarão a usar o modelo simples. A cópia de “{name}” guardada pelo app será excluída; o arquivo escolhido não muda.")),
+    "project_template_remove_title" to MessageTemplate(english = MessageForms(other = "Remove template?"), portuguese = MessageForms(other = "Remover modelo?")),
+    "project_template_remove_unselected" to MessageTemplate(english = MessageForms(other = "The app's copy of the installed template is deleted; the file you chose is not changed. New projects keep the template selected above."), portuguese = MessageForms(other = "A cópia do modelo instalado guardada pelo app será excluída; o arquivo escolhido não muda. Novos projetos continuam usando o modelo selecionado acima.")),
+    "project_template_remove_unselected_named" to MessageTemplate(english = MessageForms(other = "The app's copy of “{name}” is deleted; the file you chose is not changed. New projects keep the template selected above."), portuguese = MessageForms(other = "A cópia de “{name}” guardada pelo app será excluída; o arquivo escolhido não muda. Novos projetos continuam usando o modelo selecionado acima.")),
     "project_template_save_failed" to MessageTemplate(english = MessageForms(other = "Could not save the project template setting."), portuguese = MessageForms(other = "Não foi possível salvar a configuração do modelo de projeto.")),
     "project_template_size" to MessageTemplate(english = MessageForms(other = "Choose a nonempty .circ file no larger than 16 MB."), portuguese = MessageForms(other = "Escolha um arquivo .circ não vazio de até 16 MB.")),
     "project_template_started" to MessageTemplate(english = MessageForms(other = "New project created from the template."), portuguese = MessageForms(other = "Novo projeto criado a partir do modelo.")),
@@ -5939,19 +7890,27 @@ private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
     "project_toolbar_add_tool" to MessageTemplate(english = MessageForms(other = "Add tool"), portuguese = MessageForms(other = "Adicionar ferramenta")),
     "project_toolbar_empty" to MessageTemplate(english = MessageForms(other = "This project has no custom toolbar."), portuguese = MessageForms(other = "Este projeto não tem uma barra personalizada.")),
     "project_toolbar_find" to MessageTemplate(english = MessageForms(other = "Find a tool"), portuguese = MessageForms(other = "Buscar ferramenta")),
+    "project_toolbar_group_circuits" to MessageTemplate(english = MessageForms(other = "Project circuits"), portuguese = MessageForms(other = "Circuitos do projeto")),
+    "project_toolbar_group_tools" to MessageTemplate(english = MessageForms(other = "Tools"), portuguese = MessageForms(other = "Ferramentas")),
+    "project_toolbar_insert_separator_after" to MessageTemplate(english = MessageForms(other = "Insert separator after"), portuguese = MessageForms(other = "Inserir separador depois")),
+    "project_toolbar_insert_tool_after" to MessageTemplate(english = MessageForms(other = "Insert tool after"), portuguese = MessageForms(other = "Inserir ferramenta depois")),
+    "project_toolbar_inserting_after" to MessageTemplate(english = MessageForms(other = "Choose a tool to insert after {name}."), portuguese = MessageForms(other = "Escolha uma ferramenta para inserir depois de {name}.")),
+    "project_toolbar_more" to MessageTemplate(english = MessageForms(other = "More actions for {name}"), portuguese = MessageForms(other = "Mais ações para {name}")),
+    "project_toolbar_move_bottom" to MessageTemplate(english = MessageForms(other = "Move to bottom"), portuguese = MessageForms(other = "Mover para o fim")),
     "project_toolbar_move_down" to MessageTemplate(english = MessageForms(other = "Move {name} down"), portuguese = MessageForms(other = "Mover {name} para baixo")),
+    "project_toolbar_move_top" to MessageTemplate(english = MessageForms(other = "Move to top"), portuguese = MessageForms(other = "Mover para o início")),
     "project_toolbar_move_up" to MessageTemplate(english = MessageForms(other = "Move {name} up"), portuguese = MessageForms(other = "Mover {name} para cima")),
     "project_toolbar_remove" to MessageTemplate(english = MessageForms(other = "Remove {name}"), portuguese = MessageForms(other = "Remover {name}")),
     "project_toolbar_separator" to MessageTemplate(english = MessageForms(other = "Separator"), portuguese = MessageForms(other = "Separador")),
-)
-
-private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "project_toolbar_title" to MessageTemplate(english = MessageForms(other = "Project toolbar"), portuguese = MessageForms(other = "Barra do projeto")),
     "project_toolbar_unavailable" to MessageTemplate(english = MessageForms(other = "{name} (unavailable)"), portuguese = MessageForms(other = "{name} (indisponível)")),
     "project_tools_title" to MessageTemplate(english = MessageForms(other = "Project tools"), portuguese = MessageForms(other = "Ferramentas do projeto")),
     "project_wire_count" to MessageTemplate(english = MessageForms(one = "{count} wire", other = "{count} wires"), portuguese = MessageForms(one = "{count} fio", other = "{count} fios")),
     "project_xml_help" to MessageTemplate(english = MessageForms(other = "Copy the XML to save the project, or paste a .circ file to import all circuits."), portuguese = MessageForms(other = "Copie o XML para guardar o projeto ou cole um arquivo .circ para importar todos os circuitos.")),
     "project_xml_label" to MessageTemplate(english = MessageForms(other = "Project XML"), portuguese = MessageForms(other = "XML do projeto")),
+)
+
+private fun messageCatalogPart35(): Map<String, MessageTemplate> = mapOf(
     "project_xml_title" to MessageTemplate(english = MessageForms(other = "Project .circ"), portuguese = MessageForms(other = "Projeto .circ")),
     "property_bits" to MessageTemplate(english = MessageForms(other = "Bits"), portuguese = MessageForms(other = "Bits")),
     "property_circuit" to MessageTemplate(english = MessageForms(other = "Circuit"), portuguese = MessageForms(other = "Circuito")),
@@ -5981,7 +7940,14 @@ private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "search_running" to MessageTemplate(english = MessageForms(other = "Searching…"), portuguese = MessageForms(other = "Buscando…")),
     "search_sap1_command" to MessageTemplate(english = MessageForms(other = "Load SAP-1"), portuguese = MessageForms(other = "Carregar SAP-1")),
     "search_tick_command" to MessageTemplate(english = MessageForms(other = "Advance clock"), portuguese = MessageForms(other = "Avançar clock")),
+    "selection_add_short" to MessageTemplate(english = MessageForms(other = "Add"), portuguese = MessageForms(other = "Adicionar")),
+    "selection_add_toggle" to MessageTemplate(english = MessageForms(other = "Add to selection"), portuguese = MessageForms(other = "Adicionar à seleção")),
+    "selection_adding_chip" to MessageTemplate(english = MessageForms(other = "Adding to selection"), portuguese = MessageForms(other = "Adicionando à seleção")),
+    "selection_adding_stop" to MessageTemplate(english = MessageForms(other = "Stop adding to selection"), portuguese = MessageForms(other = "Parar de adicionar à seleção")),
     "selection_heading" to MessageTemplate(english = MessageForms(other = "Selection: {name}"), portuguese = MessageForms(other = "Seleção: {name}")),
+    "sequential_poke_current" to MessageTemplate(english = MessageForms(other = "Current value: {value}"), portuguese = MessageForms(other = "Valor atual: {value}")),
+    "sequential_poke_title" to MessageTemplate(english = MessageForms(other = "Value of {name}"), portuguese = MessageForms(other = "Valor de {name}")),
+    "sequential_poke_title_stage" to MessageTemplate(english = MessageForms(other = "Value of {name}, stage {stage}"), portuguese = MessageForms(other = "Valor de {name}, estágio {stage}")),
     "shared_vhdl_create" to MessageTemplate(english = MessageForms(other = "Save as shared VHDL and insert"), portuguese = MessageForms(other = "Salvar como VHDL compartilhado e inserir")),
     "shared_vhdl_edit" to MessageTemplate(english = MessageForms(other = "Edits apply to every instance of {name}."), portuguese = MessageForms(other = "As edições afetam todas as instâncias de {name}.")),
     "shared_vhdl_entity_name" to MessageTemplate(english = MessageForms(other = "Keep the VHDL entity name {name} to preserve its references."), portuguese = MessageForms(other = "Mantenha o nome {name} na entidade VHDL para preservar suas referências.")),
@@ -5990,6 +7956,10 @@ private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "shared_vhdl_missing" to MessageTemplate(english = MessageForms(other = "Shared VHDL definition {name} is missing."), portuguese = MessageForms(other = "A definição VHDL compartilhada {name} está ausente.")),
     "shared_vhdl_name_conflict" to MessageTemplate(english = MessageForms(other = "A VHDL definition and another project tool have the same name."), portuguese = MessageForms(other = "Uma definição VHDL e outra ferramenta do projeto têm o mesmo nome.")),
     "shared_vhdl_saved" to MessageTemplate(english = MessageForms(other = "Saved the shared VHDL definition and its references."), portuguese = MessageForms(other = "A definição VHDL compartilhada e suas referências foram salvas.")),
+    "sheet_discard_text" to MessageTemplate(english = MessageForms(other = "Closing this panel discards the changes you have not applied."), portuguese = MessageForms(other = "Fechar este painel descarta as alterações que você não aplicou.")),
+    "sheet_discard_title" to MessageTemplate(english = MessageForms(other = "Discard unapplied changes?"), portuguese = MessageForms(other = "Descartar as alterações não aplicadas?")),
+    "sheet_keep_editing" to MessageTemplate(english = MessageForms(other = "Keep editing"), portuguese = MessageForms(other = "Continuar editando")),
+    "sheet_properties_of" to MessageTemplate(english = MessageForms(other = "Properties: {name}"), portuguese = MessageForms(other = "Propriedades: {name}")),
     "shortcut_add_tool_rotate" to MessageTemplate(english = MessageForms(other = "Rotate when adding a component"), portuguese = MessageForms(other = "Girar ao adicionar um componente")),
     "shortcut_auto_label_hide" to MessageTemplate(english = MessageForms(other = "Reset label visibility"), portuguese = MessageForms(other = "Ocultar o rótulo")),
     "shortcut_auto_label_self_numbered_stop" to MessageTemplate(english = MessageForms(other = "End self numbered function"), portuguese = MessageForms(other = "Encerrar a numeração automática")),
@@ -6007,10 +7977,15 @@ private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "shortcut_proj_move_up" to MessageTemplate(english = MessageForms(other = "Move circuit up"), portuguese = MessageForms(other = "Mover circuito para cima")),
     "shortcut_tool_select" to MessageTemplate(english = MessageForms(other = "Select toolbar tool {number}"), portuguese = MessageForms(other = "Selecionar a ferramenta {number} da barra")),
     "shortcut_window_close" to MessageTemplate(english = MessageForms(other = "Close the window"), portuguese = MessageForms(other = "Fechar a janela")),
+    "signals_empty" to MessageTemplate(english = MessageForms(other = "No pins, probes or displays in this circuit"), portuguese = MessageForms(other = "Nenhum pino, ponta de prova ou mostrador neste circuito")),
     "signals_heading" to MessageTemplate(english = MessageForms(other = "Signals"), portuguese = MessageForms(other = "Sinais")),
     "simulation_automatic_ticks" to MessageTemplate(english = MessageForms(other = "Automatic ticks"), portuguese = MessageForms(other = "Ticks automáticos")),
+    "simulation_control_auto_tick" to MessageTemplate(english = MessageForms(other = "Auto-tick"), portuguese = MessageForms(other = "Tick automático")),
+    "simulation_control_step_event" to MessageTemplate(english = MessageForms(other = "Step event"), portuguese = MessageForms(other = "Avançar um evento")),
+    "simulation_control_tick_full" to MessageTemplate(english = MessageForms(other = "Tick full cycle"), portuguese = MessageForms(other = "Avançar ciclo completo")),
+    "simulation_control_tick_half" to MessageTemplate(english = MessageForms(other = "Tick half cycle"), portuguese = MessageForms(other = "Avançar meio ciclo")),
+    "simulation_controls_title" to MessageTemplate(english = MessageForms(other = "Simulation controls"), portuguese = MessageForms(other = "Controles de simulação")),
     "simulation_event_step" to MessageTemplate(english = MessageForms(other = "Event"), portuguese = MessageForms(other = "Evento")),
-    "simulation_frequency" to MessageTemplate(english = MessageForms(other = "{count} Hz"), portuguese = MessageForms(other = "{count} Hz")),
     "simulation_insert_mode" to MessageTemplate(english = MessageForms(other = "Insert {name}"), portuguese = MessageForms(other = "Inserir {name}")),
     "simulation_measured_tick_rate" to MessageTemplate(english = MessageForms(other = "Measured: {count} ticks/s"), portuguese = MessageForms(other = "Medido: {count} ticks/s")),
     "simulation_options_apply" to MessageTemplate(english = MessageForms(other = "Apply"), portuguese = MessageForms(other = "Aplicar")),
@@ -6022,10 +7997,8 @@ private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "simulation_options_error_positive_limit" to MessageTemplate(english = MessageForms(other = "The propagation limit must be a positive integer."), portuguese = MessageForms(other = "O limite de propagação deve ser um inteiro positivo.")),
     "simulation_options_error_value" to MessageTemplate(english = MessageForms(other = "Invalid {name}: {value}"), portuguese = MessageForms(other = "Valor inválido para {name}: {value}")),
     "simulation_options_error_xml_opening" to MessageTemplate(english = MessageForms(other = "Unterminated XML opening tag."), portuguese = MessageForms(other = "Tag XML de abertura não terminada.")),
-    "simulation_options_frequency" to MessageTemplate(english = MessageForms(other = "Clock frequency (Hz)"), portuguese = MessageForms(other = "Frequência do clock (Hz)")),
     "simulation_options_import_invalid" to MessageTemplate(english = MessageForms(other = "This project contains invalid simulation options. Restore the defaults to review and replace them, or cancel to keep the project unchanged."), portuguese = MessageForms(other = "Este projeto contém opções de simulação inválidas. Restaure os padrões para revisar e substituir as opções ou cancele para manter o projeto como está.")),
     "simulation_options_memory_unknown" to MessageTemplate(english = MessageForms(other = "Start memory with unknown values"), portuguese = MessageForms(other = "Iniciar memória com valores desconhecidos")),
-    "simulation_options_positive_frequency" to MessageTemplate(english = MessageForms(other = "Enter a finite number greater than zero."), portuguese = MessageForms(other = "Informe um número finito maior que zero.")),
     "simulation_options_positive_integer" to MessageTemplate(english = MessageForms(other = "Enter a positive whole number."), portuguese = MessageForms(other = "Informe um número inteiro positivo.")),
     "simulation_options_propagation_limit" to MessageTemplate(english = MessageForms(other = "Propagation limit"), portuguese = MessageForms(other = "Limite de propagação")),
     "simulation_options_restore_defaults" to MessageTemplate(english = MessageForms(other = "Restore defaults"), portuguese = MessageForms(other = "Restaurar padrões")),
@@ -6034,10 +8007,21 @@ private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "simulation_options_undefined_ignore" to MessageTemplate(english = MessageForms(other = "Ignore unconnected inputs"), portuguese = MessageForms(other = "Ignorar entradas não conectadas")),
     "simulation_options_undefined_inputs" to MessageTemplate(english = MessageForms(other = "Unconnected gate inputs"), portuguese = MessageForms(other = "Entradas de portas não conectadas")),
     "simulation_output_value" to MessageTemplate(english = MessageForms(other = "{name}: {value}"), portuguese = MessageForms(other = "{name}: {value}")),
+    "simulation_paused_outside_main" to MessageTemplate(english = MessageForms(other = "Simulation paused: {circuit} is not part of the running circuit."), portuguese = MessageForms(other = "Simulação pausada: {circuit} não faz parte do circuito em execução.")),
+    "simulation_reset_undone" to MessageTemplate(english = MessageForms(other = "Simulation restored to before the reset."), portuguese = MessageForms(other = "Simulação restaurada ao estado anterior à reinicialização.")),
     "simulation_signal_value" to MessageTemplate(english = MessageForms(other = "{name} = {value}"), portuguese = MessageForms(other = "{name} = {value}")),
     "simulation_steps" to MessageTemplate(english = MessageForms(other = "Steps {count}"), portuguese = MessageForms(other = "Passos {count}")),
+)
+
+private fun messageCatalogPart36(): Map<String, MessageTemplate> = mapOf(
+    "simulation_tick_frequency" to MessageTemplate(english = MessageForms(other = "Tick frequency"), portuguese = MessageForms(other = "Frequência de tick")),
+    "simulation_tick_frequency_custom" to MessageTemplate(english = MessageForms(other = "{value} (custom)"), portuguese = MessageForms(other = "{value} (personalizada)")),
+    "simulation_tick_frequency_value" to MessageTemplate(english = MessageForms(other = "Tick frequency, {value}"), portuguese = MessageForms(other = "Frequência de tick, {value}")),
+    "simulation_ticks" to MessageTemplate(english = MessageForms(other = "Ticks {count}"), portuguese = MessageForms(other = "Ticks {count}")),
     "simulation_unsettled" to MessageTemplate(english = MessageForms(other = "The simulation did not settle. Check the feedback connections."), portuguese = MessageForms(other = "A simulação não estabilizou. Revise as ligações de realimentação.")),
     "simulation_warning_count" to MessageTemplate(english = MessageForms(one = "View {count}", other = "View {count}"), portuguese = MessageForms(one = "Ver {count}", other = "Ver {count}")),
+    "simulation_warning_show" to MessageTemplate(english = MessageForms(other = "Show"), portuguese = MessageForms(other = "Mostrar")),
+    "simulation_warning_source_gone" to MessageTemplate(english = MessageForms(other = "These components are no longer in the circuit."), portuguese = MessageForms(other = "Esses componentes não estão mais no circuito.")),
     "simulation_warnings_explanation" to MessageTemplate(english = MessageForms(other = "The project remains open. These warnings can affect simulation results."), portuguese = MessageForms(other = "O projeto continua aberto. Estes avisos podem afetar os resultados da simulação.")),
     "simulation_warnings_title" to MessageTemplate(english = MessageForms(other = "Simulation warnings"), portuguese = MessageForms(other = "Avisos da simulação")),
     "soc_access_byte" to MessageTemplate(english = MessageForms(other = "Byte (8 bits)"), portuguese = MessageForms(other = "Byte (8 bits)")),
@@ -6046,9 +8030,6 @@ private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "soc_address_invalid" to MessageTemplate(english = MessageForms(other = "Invalid address."), portuguese = MessageForms(other = "Endereço inválido.")),
     "soc_asm_address" to MessageTemplate(english = MessageForms(other = "Expected an offset and base register, for example 0(sp). Found {value}."), portuguese = MessageForms(other = "Informe um deslocamento e registrador base, como 0(sp). Encontrado: {value}.")),
     "soc_asm_address_wrap" to MessageTemplate(english = MessageForms(other = "The program exceeds the CPU address space."), portuguese = MessageForms(other = "O programa excede o espaço de endereços da CPU.")),
-)
-
-private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
     "soc_asm_alignment" to MessageTemplate(english = MessageForms(other = "The load address must be a multiple of four."), portuguese = MessageForms(other = "O endereço de carga deve ser múltiplo de quatro.")),
     "soc_asm_duplicate_label" to MessageTemplate(english = MessageForms(other = "Duplicate label: {value}."), portuguese = MessageForms(other = "Rótulo duplicado: {value}.")),
     "soc_asm_empty" to MessageTemplate(english = MessageForms(other = "Enter at least one instruction or word."), portuguese = MessageForms(other = "Digite ao menos uma instrução ou palavra.")),
@@ -6086,12 +8067,16 @@ private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
     "soc_bus_error_register_not_found" to MessageTemplate(english = MessageForms(other = "This register is not available in this configuration."), portuguese = MessageForms(other = "Este registrador não está disponível nesta configuração.")),
     "soc_bus_error_unsupported_access" to MessageTemplate(english = MessageForms(other = "This access width is not supported."), portuguese = MessageForms(other = "Esta largura de acesso não tem suporte.")),
     "soc_bus_error_write_only" to MessageTemplate(english = MessageForms(other = "This register is write-only."), portuguese = MessageForms(other = "Este registrador é somente gravação.")),
+    "soc_bus_manual_result" to MessageTemplate(english = MessageForms(other = "#{sequence} {operation} {address} → {result}"), portuguese = MessageForms(other = "#{sequence} {operation} {address} → {result}")),
+    "soc_bus_no_trace" to MessageTemplate(english = MessageForms(other = "Request {number} sent. This component has no bus trace, so the reply cannot be shown here."), portuguese = MessageForms(other = "Pedido {number} enviado. Este componente não tem rastreamento de barramento, então a resposta não pode ser mostrada aqui.")),
+    "soc_bus_not_connected" to MessageTemplate(english = MessageForms(other = "Not connected to a bus"), portuguese = MessageForms(other = "Não conectado a um barramento")),
+    "soc_bus_option_unlabeled" to MessageTemplate(english = MessageForms(other = "{name}@{x},{y}"), portuguese = MessageForms(other = "{name}@{x},{y}")),
     "soc_bus_trace" to MessageTemplate(english = MessageForms(other = "Bus trace"), portuguese = MessageForms(other = "Trace do barramento")),
     "soc_bus_trace_compare" to MessageTemplate(english = MessageForms(other = "Compare bus traces"), portuguese = MessageForms(other = "Comparar traços dos barramentos")),
     "soc_bus_trace_empty" to MessageTemplate(english = MessageForms(other = "No transactions yet."), portuguese = MessageForms(other = "Ainda não há transações.")),
-    "soc_bus_trace_local_path" to MessageTemplate(english = MessageForms(other = "{name} ({path}, local view)"), portuguese = MessageForms(other = "{name} ({path}, visão local)")),
+    "soc_bus_trace_local_view" to MessageTemplate(english = MessageForms(other = "{name} (local view)"), portuguese = MessageForms(other = "{name} (visão local)")),
     "soc_bus_trace_no_access" to MessageTemplate(english = MessageForms(other = "No access ({bits} bits)"), portuguese = MessageForms(other = "Sem acesso ({bits} bits)")),
-    "soc_bus_trace_path" to MessageTemplate(english = MessageForms(other = "{name} ({path})"), portuguese = MessageForms(other = "{name} ({path})")),
+    "soc_bus_trace_path_numbered" to MessageTemplate(english = MessageForms(other = "{name} #{number}"), portuguese = MessageForms(other = "{name} nº {number}")),
     "soc_bus_trace_read" to MessageTemplate(english = MessageForms(other = "Read {bits} bits"), portuguese = MessageForms(other = "Leitura de {bits} bits")),
     "soc_bus_trace_read_write" to MessageTemplate(english = MessageForms(other = "Read and write {bits} bits"), portuguese = MessageForms(other = "Leitura e escrita de {bits} bits")),
     "soc_bus_trace_request" to MessageTemplate(english = MessageForms(other = "#{sequence} {initiator}: {operation} 0x{address}"), portuguese = MessageForms(other = "#{sequence} {initiator}: {operation} 0x{address}")),
@@ -6105,6 +8090,7 @@ private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
     "soc_bus_transaction_error" to MessageTemplate(english = MessageForms(other = "Bus transaction: {error}"), portuguese = MessageForms(other = "Transação de barramento: {error}")),
     "soc_clear_trace" to MessageTemplate(english = MessageForms(other = "Clear trace"), portuguese = MessageForms(other = "Limpar trace")),
     "soc_clock_help" to MessageTemplate(english = MessageForms(other = "Run follows the circuit clock. Step executes one instruction and keeps the processor stopped."), portuguese = MessageForms(other = "Executar acompanha o clock do circuito. Passo executa uma instrução e mantém o processador parado.")),
+    "soc_component_chip_position" to MessageTemplate(english = MessageForms(other = "{label} ({x}, {y})"), portuguese = MessageForms(other = "{label} ({x}, {y})")),
     "soc_component_identity" to MessageTemplate(english = MessageForms(other = "{label} · {id}"), portuguese = MessageForms(other = "{label} · {id}")),
     "soc_control" to MessageTemplate(english = MessageForms(other = "Control"), portuguese = MessageForms(other = "Controle")),
     "soc_control_unsupported" to MessageTemplate(english = MessageForms(other = "Control register ctl{register} is read-only or unsupported."), portuguese = MessageForms(other = "O registrador de controle ctl{register} é somente leitura ou não tem suporte.")),
@@ -6128,6 +8114,9 @@ private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
     "soc_elf_hex" to MessageTemplate(english = MessageForms(other = "ELF bytes in hexadecimal"), portuguese = MessageForms(other = "Bytes do ELF em hexadecimal")),
     "soc_elf_hex_invalid" to MessageTemplate(english = MessageForms(other = "Enter valid hexadecimal ELF bytes."), portuguese = MessageForms(other = "Informe bytes hexadecimais válidos do ELF.")),
     "soc_elf_limit" to MessageTemplate(english = MessageForms(other = "ELF load exceeds the 64 MiB limit."), portuguese = MessageForms(other = "A carga ELF excede o limite de 64 MiB.")),
+)
+
+private fun messageCatalogPart37(): Map<String, MessageTemplate> = mapOf(
     "soc_elf_memory_load" to MessageTemplate(english = MessageForms(other = "ELF memory load: {error}"), portuguese = MessageForms(other = "Carga do ELF na memória: {error}")),
     "soc_elf_no_headers" to MessageTemplate(english = MessageForms(other = "ELF has no valid program headers."), portuguese = MessageForms(other = "O ELF não possui cabeçalhos de programa válidos.")),
     "soc_elf_no_segments" to MessageTemplate(english = MessageForms(other = "ELF has no loadable segments."), portuguese = MessageForms(other = "O ELF não possui segmentos carregáveis.")),
@@ -6143,16 +8132,15 @@ private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
     "soc_hex_address" to MessageTemplate(english = MessageForms(other = "Hexadecimal address"), portuguese = MessageForms(other = "Endereço hexadecimal")),
     "soc_hex_data" to MessageTemplate(english = MessageForms(other = "Hexadecimal data"), portuguese = MessageForms(other = "Dados hexadecimais")),
     "soc_hex_value" to MessageTemplate(english = MessageForms(other = "Hexadecimal value"), portuguese = MessageForms(other = "Valor hexadecimal")),
+    "soc_hex_value_invalid" to MessageTemplate(english = MessageForms(other = "Enter up to 8 hexadecimal digits."), portuguese = MessageForms(other = "Informe até 8 dígitos hexadecimais.")),
     "soc_instance_unavailable" to MessageTemplate(english = MessageForms(other = "The selected instance is not running."), portuguese = MessageForms(other = "A instância selecionada não está em execução.")),
     "soc_instruction_entry" to MessageTemplate(english = MessageForms(other = "{pc}  {instruction}  {assembly}"), portuguese = MessageForms(other = "{pc}  {instruction}  {assembly}")),
     "soc_instruction_fetch" to MessageTemplate(english = MessageForms(other = "Instruction fetch: {error}"), portuguese = MessageForms(other = "Busca de instrução: {error}")),
     "soc_instruction_trace" to MessageTemplate(english = MessageForms(other = "Instruction trace"), portuguese = MessageForms(other = "Trace de instruções")),
     "soc_load_elf" to MessageTemplate(english = MessageForms(other = "Load ELF"), portuguese = MessageForms(other = "Carregar ELF")),
     "soc_memory_address_range" to MessageTemplate(english = MessageForms(other = "Memory at {address} with {bytes} bytes exceeds the 32-bit address space."), portuguese = MessageForms(other = "A memória em {address} com {bytes} bytes ultrapassa o espaço de endereçamento de 32 bits.")),
-)
-
-private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "soc_memory_entry" to MessageTemplate(english = MessageForms(other = "{address}  {value}"), portuguese = MessageForms(other = "{address}  {value}")),
+    "soc_memory_map_device_of" to MessageTemplate(english = MessageForms(other = "{device} of {component}"), portuguese = MessageForms(other = "{device} de {component}")),
     "soc_memory_map_hide" to MessageTemplate(english = MessageForms(other = "Hide memory map"), portuguese = MessageForms(other = "Ocultar mapa de memória")),
     "soc_memory_map_plic" to MessageTemplate(english = MessageForms(other = "RISC-V interrupt controller (PLIC)"), portuguese = MessageForms(other = "Controlador de interrupções RISC-V (PLIC)")),
     "soc_memory_map_show" to MessageTemplate(english = MessageForms(other = "Show memory map"), portuguese = MessageForms(other = "Mostrar mapa de memória")),
@@ -6175,7 +8163,7 @@ private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "soc_program_show" to MessageTemplate(english = MessageForms(other = "Show loaded program"), portuguese = MessageForms(other = "Mostrar programa carregado")),
     "soc_read" to MessageTemplate(english = MessageForms(other = "Read"), portuguese = MessageForms(other = "Ler")),
     "soc_refresh_vga" to MessageTemplate(english = MessageForms(other = "Refresh VGA frame from memory"), portuguese = MessageForms(other = "Atualizar quadro VGA da memória")),
-    "soc_register_index" to MessageTemplate(english = MessageForms(other = "Register 0–31"), portuguese = MessageForms(other = "Registrador 0–31")),
+    "soc_register_choice" to MessageTemplate(english = MessageForms(other = "Register"), portuguese = MessageForms(other = "Registrador")),
     "soc_register_invalid" to MessageTemplate(english = MessageForms(other = "Enter a register from 0 to 31 and a 32-bit value."), portuguese = MessageForms(other = "Informe um registrador 0–31 e valor de 32 bits.")),
     "soc_register_value" to MessageTemplate(english = MessageForms(other = "{register} {value}"), portuguese = MessageForms(other = "{register} {value}")),
     "soc_registers" to MessageTemplate(english = MessageForms(other = "Registers"), portuguese = MessageForms(other = "Registradores")),
@@ -6190,9 +8178,12 @@ private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "soc_tool_title" to MessageTemplate(english = MessageForms(other = "SoC / CPUs"), portuguese = MessageForms(other = "SoC / CPUs")),
     "soc_uart_state" to MessageTemplate(english = MessageForms(other = "RX {rx}/{rxCapacity} · TX {tx}/{txCapacity} · IRQ {irq}"), portuguese = MessageForms(other = "RX {rx}/{rxCapacity} · TX {tx}/{txCapacity} · IRQ {irq}")),
     "soc_write" to MessageTemplate(english = MessageForms(other = "Write"), portuguese = MessageForms(other = "Gravar")),
+    "splitter_bit_none" to MessageTemplate(english = MessageForms(other = "None"), portuguese = MessageForms(other = "Nenhum")),
+    "splitter_bit_output" to MessageTemplate(english = MessageForms(other = "Output {n}"), portuguese = MessageForms(other = "Saída {n}")),
+    "status_additive_touch" to MessageTemplate(english = MessageForms(other = "Two fingers pan and zoom. Tap to add or drop an item; drag to add an area."), portuguese = MessageForms(other = "Dois dedos: mover e zoom. Toque para somar ou tirar; arraste para somar uma área.")),
     "status_and_loaded" to MessageTemplate(english = MessageForms(other = "AND example loaded. Toggle A and B to observe Y."), portuguese = MessageForms(other = "Exemplo AND carregado. Alterne A e B para observar Y.")),
     "status_circuit_created" to MessageTemplate(english = MessageForms(other = "Circuit {name} created."), portuguese = MessageForms(other = "Circuito {name} criado.")),
-    "status_circuit_deleted" to MessageTemplate(english = MessageForms(other = "Circuit {name} deleted."), portuguese = MessageForms(other = "Circuito {name} excluído.")),
+    "status_circuit_deleted" to MessageTemplate(english = MessageForms(other = "Circuit {name} deleted."), portuguese = MessageForms(other = "Circuito {name} apagado.")),
     "status_circuit_order" to MessageTemplate(english = MessageForms(other = "Circuit order updated."), portuguese = MessageForms(other = "Ordem dos circuitos atualizada.")),
     "status_circuit_renamed" to MessageTemplate(english = MessageForms(other = "Circuit renamed to {name}."), portuguese = MessageForms(other = "Circuito renomeado para {name}.")),
     "status_circuit_selected" to MessageTemplate(english = MessageForms(other = "Circuit {name}."), portuguese = MessageForms(other = "Circuito {name}.")),
@@ -6206,7 +8197,7 @@ private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "status_components_selected" to MessageTemplate(english = MessageForms(one = "{count} component selected.", other = "{count} components selected."), portuguese = MessageForms(one = "{count} componente selecionado.", other = "{count} componentes selecionados.")),
     "status_connection_cancelled" to MessageTemplate(english = MessageForms(other = "Connection cancelled."), portuguese = MessageForms(other = "Ligação cancelada.")),
     "status_copy_hint" to MessageTemplate(english = MessageForms(other = "Select components or wires to copy."), portuguese = MessageForms(other = "Selecione componentes ou fios para copiar.")),
-    "status_edit_tool" to MessageTemplate(english = MessageForms(other = "Click to select. Drag from a terminal or wire to draw a wire."), portuguese = MessageForms(other = "Toque para selecionar. Arraste de um terminal ou fio para criar um fio.")),
+    "status_edit_tool_touch" to MessageTemplate(english = MessageForms(other = "Two fingers pan and zoom. Tap to select; drag from a terminal to draw a wire."), portuguese = MessageForms(other = "Dois dedos: mover e zoom. Toque para selecionar; arraste um terminal para ligar.")),
     "status_empty_circuit" to MessageTemplate(english = MessageForms(other = "Empty circuit. Choose a component in Library."), portuguese = MessageForms(other = "Circuito vazio. Escolha um componente na biblioteca.")),
     "status_example_loaded" to MessageTemplate(english = MessageForms(other = "Example opened as a new workspace copy."), portuguese = MessageForms(other = "Exemplo aberto como uma nova cópia na área de trabalho.")),
     "status_file_opened" to MessageTemplate(english = MessageForms(other = "File {name} opened."), portuguese = MessageForms(other = "Arquivo {name} aberto.")),
@@ -6215,17 +8206,25 @@ private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "status_input_value" to MessageTemplate(english = MessageForms(other = "{name} = {value}"), portuguese = MessageForms(other = "{name} = {value}")),
     "status_instance_selected" to MessageTemplate(english = MessageForms(other = "Instance {path} · {name}."), portuguese = MessageForms(other = "Instância {path} · {name}.")),
     "status_interact" to MessageTemplate(english = MessageForms(other = "Tap an input to toggle between 0 and 1."), portuguese = MessageForms(other = "Toque numa entrada para alternar entre 0 e 1.")),
+    "status_io_controls_instance" to MessageTemplate(english = MessageForms(other = "The controls of {name} work in the main circuit or in an instance view. Open this circuit from one of its instances to use them."), portuguese = MessageForms(other = "Os controles de {name} funcionam no circuito principal ou na visão de uma instância. Abra este circuito por uma de suas instâncias para usá-los.")),
+    "status_line_collapse" to MessageTemplate(english = MessageForms(other = "Shorten the message"), portuguese = MessageForms(other = "Encurtar a mensagem")),
+    "status_line_collapsed" to MessageTemplate(english = MessageForms(other = "Shortened"), portuguese = MessageForms(other = "Resumida")),
+    "status_line_expand" to MessageTemplate(english = MessageForms(other = "Show the whole message"), portuguese = MessageForms(other = "Mostrar a mensagem inteira")),
+    "status_line_expanded" to MessageTemplate(english = MessageForms(other = "Expanded"), portuguese = MessageForms(other = "Expandida")),
     "status_main_circuit" to MessageTemplate(english = MessageForms(other = "{name} is the main circuit."), portuguese = MessageForms(other = "{name} é o circuito principal.")),
     "status_move" to MessageTemplate(english = MessageForms(other = "Drag a component. Drag the background to pan."), portuguese = MessageForms(other = "Arraste um componente. Arraste o fundo para mover a vista.")),
     "status_move_cancelled" to MessageTemplate(english = MessageForms(other = "The move was cancelled to preserve connections."), portuguese = MessageForms(other = "O movimento foi cancelado para preservar as conexões.")),
     "status_operation_cancelled" to MessageTemplate(english = MessageForms(other = "Operation cancelled."), portuguese = MessageForms(other = "Operação cancelada.")),
     "status_paste_subcircuit_mismatch" to MessageTemplate(english = MessageForms(other = "Cannot paste. The destination project needs the same definition of subcircuit {name}."), portuguese = MessageForms(other = "Não foi possível colar. O projeto de destino precisa da mesma definição do subcircuito {name}.")),
     "status_place" to MessageTemplate(english = MessageForms(other = "Tap the grid to insert {name}."), portuguese = MessageForms(other = "Toque na grade para inserir {name}.")),
+)
+
+private fun messageCatalogPart38(): Map<String, MessageTemplate> = mapOf(
     "status_project_imported" to MessageTemplate(english = MessageForms(one = "Project imported with {count} circuit.", other = "Project imported with {count} circuits."), portuguese = MessageForms(one = "Projeto importado com {count} circuito.", other = "Projeto importado com {count} circuitos.")),
     "status_property_updated" to MessageTemplate(english = MessageForms(other = "Property updated."), portuguese = MessageForms(other = "Propriedade atualizada.")),
     "status_sap1_loaded" to MessageTemplate(english = MessageForms(other = "SAP-1 initialized. Advance the clock to execute the program."), portuguese = MessageForms(other = "SAP-1 inicializado. Avance o clock para executar o programa.")),
-    "status_select" to MessageTemplate(english = MessageForms(other = "Drag the background to select an area. Use Shift to add to the selection."), portuguese = MessageForms(other = "Arraste o fundo para selecionar uma área. Use Shift para adicionar à seleção.")),
     "status_select_destination" to MessageTemplate(english = MessageForms(other = "Now tap the destination."), portuguese = MessageForms(other = "Agora toque no destino.")),
+    "status_select_touch" to MessageTemplate(english = MessageForms(other = "Two fingers pan and zoom. Tap or drag to select; Add selects several."), portuguese = MessageForms(other = "Dois dedos: mover e zoom. Toque ou arraste para selecionar; Adicionar soma.")),
     "status_selection_counts" to MessageTemplate(english = MessageForms(other = "{components} and {wires} selected."), portuguese = MessageForms(other = "{components} e {wires} selecionados.")),
     "status_selection_moved" to MessageTemplate(english = MessageForms(other = "Selection moved."), portuguese = MessageForms(other = "Seleção movida.")),
     "status_selection_removed" to MessageTemplate(english = MessageForms(other = "Selection removed."), portuguese = MessageForms(other = "Seleção removida.")),
@@ -6234,11 +8233,11 @@ private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "status_storage_recovered" to MessageTemplate(english = MessageForms(other = "The last valid project revision was recovered."), portuguese = MessageForms(other = "A última revisão válida do projeto foi recuperada.")),
     "status_subcircuit_input" to MessageTemplate(english = MessageForms(other = "This subcircuit input is controlled by its instance in the main circuit."), portuguese = MessageForms(other = "A entrada deste subcircuito é controlada pela instância no circuito principal.")),
     "status_subcircuit_interface_locked" to MessageTemplate(english = MessageForms(other = "Instances already use this subcircuit's pins. Editing its interface is not available yet."), portuguese = MessageForms(other = "Os pinos deste subcircuito já são usados por instâncias. A edição da interface ainda não está disponível.")),
-    "status_wire" to MessageTemplate(english = MessageForms(other = "Tap a terminal, wire, or grid point, then the destination."), portuguese = MessageForms(other = "Toque num terminal, fio ou ponto da grade e depois no destino.")),
     "status_wire_connected" to MessageTemplate(english = MessageForms(other = "Wire connected."), portuguese = MessageForms(other = "Fio conectado.")),
     "status_wire_corner_moved" to MessageTemplate(english = MessageForms(other = "Wire routing updated."), portuguese = MessageForms(other = "Roteamento do fio atualizado.")),
     "status_wire_selected" to MessageTemplate(english = MessageForms(other = "Wire selected."), portuguese = MessageForms(other = "Fio selecionado.")),
     "status_wire_split" to MessageTemplate(english = MessageForms(other = "Wire split. Select Move to drag the new routing handle."), portuguese = MessageForms(other = "Fio dividido. Selecione Mover para arrastar a nova alça.")),
+    "status_wire_touch" to MessageTemplate(english = MessageForms(other = "Two fingers pan and zoom. Tap a terminal, wire, or grid point, then the destination."), portuguese = MessageForms(other = "Dois dedos: mover e zoom. Toque num terminal, fio ou ponto e depois no destino.")),
     "subcircuit_debug_banner" to MessageTemplate(english = MessageForms(other = "Debug copy"), portuguese = MessageForms(other = "Cópia para depuração")),
     "subcircuit_debug_confirmation" to MessageTemplate(english = MessageForms(other = "The parent circuit drives this input. Create an isolated copy of the current state and change the input there?"), portuguese = MessageForms(other = "O circuito pai controla esta entrada. Criar uma cópia isolada do estado atual e alterar a entrada nela?")),
     "subcircuit_debug_create" to MessageTemplate(english = MessageForms(other = "Create debug copy"), portuguese = MessageForms(other = "Criar cópia para depuração")),
@@ -6252,9 +8251,6 @@ private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "tcl_auto_ticks_on_start" to MessageTemplate(english = MessageForms(other = "Allow up to {count} automatic ticks when starting this Tcl session."), portuguese = MessageForms(other = "Permitir até {count} ticks automáticos ao iniciar esta sessão Tcl.")),
     "tcl_cancel" to MessageTemplate(english = MessageForms(other = "Cancel"), portuguese = MessageForms(other = "Cancelar")),
     "tcl_client_error_clock_required" to MessageTemplate(english = MessageForms(other = "Tcl components require the one-bit input sysclk_i."), portuguese = MessageForms(other = "Componentes Tcl exigem a entrada sysclk_i de um bit.")),
-)
-
-private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
     "tcl_client_error_executor_failed" to MessageTemplate(english = MessageForms(other = "The Tcl executor failed."), portuguese = MessageForms(other = "O executor Tcl falhou.")),
     "tcl_client_error_frame_count" to MessageTemplate(english = MessageForms(other = "Tcl replay requires 1 to {limit} input frames; received {count}."), portuguese = MessageForms(other = "A reprodução Tcl exige de 1 a {limit} quadros de entrada; recebidos {count}.")),
     "tcl_client_error_frame_interface" to MessageTemplate(english = MessageForms(other = "Tcl input frames must match the declared component interface."), portuguese = MessageForms(other = "Os frames de entrada Tcl devem corresponder à interface declarada do componente.")),
@@ -6277,7 +8273,7 @@ private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
     "tcl_client_error_step_object" to MessageTemplate(english = MessageForms(other = "Expected a Tcl step object."), portuguese = MessageForms(other = "Esperado um objeto de passo Tcl.")),
     "tcl_client_error_total_size" to MessageTemplate(english = MessageForms(other = "Combined Tcl sources exceed 1 MiB."), portuguese = MessageForms(other = "As fontes Tcl combinadas excedem 1 MiB.")),
     "tcl_component_heading" to MessageTemplate(english = MessageForms(other = "Circuit component"), portuguese = MessageForms(other = "Componente do circuito")),
-    "tcl_component_path" to MessageTemplate(english = MessageForms(other = "{id} • preserved filePath: {path}"), portuguese = MessageForms(other = "{id} • filePath preservado: {path}")),
+    "tcl_component_original_file" to MessageTemplate(english = MessageForms(other = "Original file: {path}"), portuguese = MessageForms(other = "Arquivo original: {path}")),
     "tcl_component_start" to MessageTemplate(english = MessageForms(other = "Approve sources and start component"), portuguese = MessageForms(other = "Aprovar fontes e iniciar componente")),
     "tcl_component_state" to MessageTemplate(english = MessageForms(other = "State: {phase} • {frames} frames"), portuguese = MessageForms(other = "Estado: {phase} • {frames} quadros")),
     "tcl_component_stop" to MessageTemplate(english = MessageForms(other = "Stop component"), portuguese = MessageForms(other = "Parar componente")),
@@ -6324,18 +8320,41 @@ private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
     "tcl_tk_live_title" to MessageTemplate(english = MessageForms(other = "Interact with private Tk…"), portuguese = MessageForms(other = "Interagir com Tk privado…")),
     "tcl_tk_preview_consent" to MessageTemplate(english = MessageForms(other = "Send {file} to {host}. Tcl runs for up to 5 seconds on a private Linux display and returns a still image of that display. It cannot access the host screen, files or network."), portuguese = MessageForms(other = "Enviar {file} a {host}. O Tcl roda por até 5 segundos em uma tela privada no Linux e devolve uma imagem estática dessa tela. Ele não tem acesso à tela, aos arquivos ou à rede do host.")),
     "tcl_tk_preview_description" to MessageTemplate(english = MessageForms(other = "Still image of the private Tk display"), portuguese = MessageForms(other = "Imagem estática da tela privada do Tk")),
+)
+
+private fun messageCatalogPart39(): Map<String, MessageTemplate> = mapOf(
     "tcl_tk_preview_invalid" to MessageTemplate(english = MessageForms(other = "The companion returned an invalid Tk preview."), portuguese = MessageForms(other = "O companion devolveu uma prévia Tk inválida.")),
     "tcl_tk_preview_title" to MessageTemplate(english = MessageForms(other = "Run Tk and capture preview…"), portuguese = MessageForms(other = "Executar Tk e capturar prévia…")),
     "tcl_tk_send_key" to MessageTemplate(english = MessageForms(other = "Send key"), portuguese = MessageForms(other = "Enviar tecla")),
     "tcl_tk_send_return" to MessageTemplate(english = MessageForms(other = "Send Enter"), portuguese = MessageForms(other = "Enviar Enter")),
+    "time_days_ago" to MessageTemplate(english = MessageForms(one = "{count} day ago", other = "{count} days ago"), portuguese = MessageForms(one = "há {count} dia", other = "há {count} dias")),
+    "time_hours_ago" to MessageTemplate(english = MessageForms(one = "{count} hour ago", other = "{count} hours ago"), portuguese = MessageForms(one = "há {count} hora", other = "há {count} horas")),
+    "time_just_now" to MessageTemplate(english = MessageForms(other = "just now"), portuguese = MessageForms(other = "agora mesmo")),
+    "time_minutes_ago" to MessageTemplate(english = MessageForms(one = "{count} minute ago", other = "{count} minutes ago"), portuguese = MessageForms(one = "há {count} minuto", other = "há {count} minutos")),
+    "time_months_ago" to MessageTemplate(english = MessageForms(one = "{count} month ago", other = "{count} months ago"), portuguese = MessageForms(one = "há {count} mês", other = "há {count} meses")),
+    "time_years_ago" to MessageTemplate(english = MessageForms(one = "{count} year ago", other = "{count} years ago"), portuguese = MessageForms(one = "há {count} ano", other = "há {count} anos")),
+    "tool_sheet_notice_dismiss" to MessageTemplate(english = MessageForms(other = "Dismiss notice"), portuguese = MessageForms(other = "Dispensar aviso")),
     "toolbar_tools_title" to MessageTemplate(english = MessageForms(other = "Tools"), portuguese = MessageForms(other = "Ferramentas")),
+    "touch_help_editing" to MessageTemplate(english = MessageForms(other = "4. Choose a component in Library, then tap the circuit to insert it. With the Edit Tool, Select or Move, tap a component to select it: the bar at the bottom of the circuit rotates, duplicates, copies or deletes the selection, and Add selects several items. Long-press a component for its menu, and open Properties to change its label and attributes. Undo and Redo recover edits."), portuguese = MessageForms(other = "4. Escolha um componente na Biblioteca e toque no circuito para inseri-lo. Com a Ferramenta de edição, Selecionar ou Mover, toque num componente para selecioná-lo: a barra na parte inferior do circuito gira, duplica, copia ou apaga a seleção, e Adicionar seleciona vários itens. Toque e segure um componente para abrir o menu dele e abra Propriedades para alterar o rótulo e os atributos. Desfazer e Refazer recuperam edições.")),
+    "touch_help_library" to MessageTemplate(english = MessageForms(other = "1. Use File → Open example to load SAP-1 or AND. The Library button (Explorer on wide screens) shows three tabs: Circuits, with the circuits in the file; Library, with the components to insert; and Search, for circuits, components and commands."), portuguese = MessageForms(other = "1. Use Arquivo → Abrir exemplo para carregar SAP-1 ou AND. O botão Biblioteca (Explorador em telas largas) mostra três abas: Circuitos, com os circuitos do arquivo; Biblioteca, com os componentes para inserir; e Buscar, para circuitos, componentes e comandos.")),
+    "touch_help_simulation" to MessageTemplate(english = MessageForms(other = "3. With the Poke Tool, tap inputs to change them. Step advances the clock; Run repeats steps until Pause. Reset restarts the simulation."), portuguese = MessageForms(other = "3. Com a Ferramenta Testar, toque nas entradas para alterá-las. Passo avança o clock; Executar repete os passos até Pausar. Reiniciar devolve a simulação ao estado inicial.")),
+    "touch_help_viewport" to MessageTemplate(english = MessageForms(other = "2. Pinch with two fingers to zoom and drag with two fingers to pan; with the Poke Tool one finger also pans. Tap the zoom percentage for Fit, 100% and a slider that zooms as it moves; View → Fit also shows the entire circuit."), portuguese = MessageForms(other = "2. Faça pinça com dois dedos para ampliar e arraste com dois dedos para deslocar; com a Ferramenta Testar, um dedo também desloca. Toque na porcentagem do zoom para Enquadrar, 100% e um controle deslizante que amplia enquanto se move; Exibir → Enquadrar também mostra o circuito inteiro.")),
+    "trace_action_cursor_a_at_b" to MessageTemplate(english = MessageForms(other = "Set cursor A at cursor B"), portuguese = MessageForms(other = "Pôr o cursor A no cursor B")),
+    "trace_action_cursor_b_at_a" to MessageTemplate(english = MessageForms(other = "Set cursor B at cursor A"), portuguese = MessageForms(other = "Pôr o cursor B no cursor A")),
     "trace_add_ram_cell" to MessageTemplate(english = MessageForms(other = "Add RAM cell"), portuguese = MessageForms(other = "Adicionar célula de RAM")),
+    "trace_add_ram_cells" to MessageTemplate(english = MessageForms(other = "Add cells"), portuguese = MessageForms(other = "Adicionar células")),
     "trace_all_time" to MessageTemplate(english = MessageForms(other = "Whole period"), portuguese = MessageForms(other = "Todo o período")),
     "trace_clear" to MessageTemplate(english = MessageForms(other = "Clear"), portuguese = MessageForms(other = "Limpar")),
+    "trace_clear_confirm_text" to MessageTemplate(english = MessageForms(one = "{count} captured sample will be discarded. This cannot be undone.", other = "{count} captured samples will be discarded. This cannot be undone."), portuguese = MessageForms(one = "{count} amostra capturada será descartada. Não é possível desfazer.", other = "{count} amostras capturadas serão descartadas. Não é possível desfazer.")),
+    "trace_clear_confirm_title" to MessageTemplate(english = MessageForms(other = "Clear the recording?"), portuguese = MessageForms(other = "Limpar a gravação?")),
     "trace_close" to MessageTemplate(english = MessageForms(other = "Close"), portuguese = MessageForms(other = "Fechar")),
     "trace_copied" to MessageTemplate(english = MessageForms(other = "Trace CSV copied."), portuguese = MessageForms(other = "CSV do registro copiado.")),
     "trace_copy" to MessageTemplate(english = MessageForms(other = "Copy"), portuguese = MessageForms(other = "Copiar")),
     "trace_cursor_a" to MessageTemplate(english = MessageForms(other = "Timeline cursor A"), portuguese = MessageForms(other = "Cursor A do cronograma")),
+    "trace_cursor_b" to MessageTemplate(english = MessageForms(other = "Timeline cursor B"), portuguese = MessageForms(other = "Cursor B do cronograma")),
+    "trace_cursor_target" to MessageTemplate(english = MessageForms(other = "Cursor to place"), portuguese = MessageForms(other = "Cursor a posicionar")),
+    "trace_cursor_target_a" to MessageTemplate(english = MessageForms(other = "Cursor A"), portuguese = MessageForms(other = "Cursor A")),
+    "trace_cursor_target_b" to MessageTemplate(english = MessageForms(other = "Cursor B"), portuguese = MessageForms(other = "Cursor B")),
     "trace_cursors" to MessageTemplate(english = MessageForms(other = "Cursor A: {first} · Cursor B: {second} · distance: {distance}"), portuguese = MessageForms(other = "Cursor A: {first} · Cursor B: {second} · diferença: {distance}")),
     "trace_done" to MessageTemplate(english = MessageForms(other = "Done"), portuguese = MessageForms(other = "Concluir")),
     "trace_duplicate_signal" to MessageTemplate(english = MessageForms(other = "The same signal was selected twice."), portuguese = MessageForms(other = "O mesmo sinal foi selecionado duas vezes.")),
@@ -6345,6 +8364,8 @@ private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
     "trace_export_wave_drom" to MessageTemplate(english = MessageForms(other = "Export WaveDrom"), portuguese = MessageForms(other = "Exportar WaveDrom")),
     "trace_file_append" to MessageTemplate(english = MessageForms(other = "Append to existing file"), portuguese = MessageForms(other = "Acrescentar ao arquivo existente")),
     "trace_file_clock_reset" to MessageTemplate(english = MessageForms(other = "The simulation clock restarted. File recording stopped."), portuguese = MessageForms(other = "O relógio da simulação reiniciou. A gravação do arquivo foi encerrada.")),
+    "trace_file_format" to MessageTemplate(english = MessageForms(other = "File format"), portuguese = MessageForms(other = "Formato do arquivo")),
+    "trace_file_format_timestamped" to MessageTemplate(english = MessageForms(other = "Timestamped (every sample)"), portuguese = MessageForms(other = "Com tempo (todas as amostras)")),
     "trace_file_header" to MessageTemplate(english = MessageForms(other = "Include header"), portuguese = MessageForms(other = "Incluir cabeçalho")),
     "trace_file_logisim_2_7_1" to MessageTemplate(english = MessageForms(other = "Logisim 2.7.1 format (changes only)"), portuguese = MessageForms(other = "Formato Logisim 2.7.1 (só alterações)")),
     "trace_file_pause" to MessageTemplate(english = MessageForms(other = "Pause file recording"), portuguese = MessageForms(other = "Pausar gravação do arquivo")),
@@ -6355,9 +8376,6 @@ private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
     "trace_file_recording" to MessageTemplate(english = MessageForms(other = "Recording {name}"), portuguese = MessageForms(other = "Gravando {name}")),
     "trace_file_resume" to MessageTemplate(english = MessageForms(other = "Resume file recording"), portuguese = MessageForms(other = "Retomar gravação do arquivo")),
     "trace_file_signals_changed" to MessageTemplate(english = MessageForms(other = "The signal selection changed. File recording stopped."), portuguese = MessageForms(other = "A seleção de sinais mudou. A gravação do arquivo foi encerrada.")),
-)
-
-private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
     "trace_file_start" to MessageTemplate(english = MessageForms(other = "Record TSV file"), portuguese = MessageForms(other = "Gravar arquivo TSV")),
     "trace_file_stop" to MessageTemplate(english = MessageForms(other = "Stop file recording"), portuguese = MessageForms(other = "Encerrar gravação do arquivo")),
     "trace_file_stopping" to MessageTemplate(english = MessageForms(other = "Finishing {name}"), portuguese = MessageForms(other = "Finalizando {name}")),
@@ -6379,26 +8397,43 @@ private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
     "trace_next" to MessageTemplate(english = MessageForms(other = "Next"), portuguese = MessageForms(other = "Seguinte")),
     "trace_order_signals" to MessageTemplate(english = MessageForms(other = "Order signals"), portuguese = MessageForms(other = "Ordenar sinais")),
     "trace_pause" to MessageTemplate(english = MessageForms(other = "Pause capture"), portuguese = MessageForms(other = "Pausar captura")),
+    "trace_picker_empty" to MessageTemplate(english = MessageForms(other = "No signals to list. Turn on Show all components to list every component."), portuguese = MessageForms(other = "Nenhum sinal para listar. Ative Mostrar todos os componentes para listar todos.")),
     "trace_previous" to MessageTemplate(english = MessageForms(other = "Previous"), portuguese = MessageForms(other = "Anterior")),
     "trace_project_signals" to MessageTemplate(english = MessageForms(other = "Project signals"), portuguese = MessageForms(other = "Sinais do projeto")),
-    "trace_ram_address" to MessageTemplate(english = MessageForms(other = "Cell address"), portuguese = MessageForms(other = "Endereço da célula")),
-    "trace_ram_address_range" to MessageTemplate(english = MessageForms(other = "Enter an address from 0 to {last}, in decimal or with a 0x prefix for hexadecimal."), portuguese = MessageForms(other = "Digite um endereço de 0 a {last}, em decimal ou com o prefixo 0x para hexadecimal.")),
+    "trace_ram_cells" to MessageTemplate(english = MessageForms(other = "Addresses (hex)"), portuguese = MessageForms(other = "Endereços (hex)")),
+    "trace_ram_cells_adds" to MessageTemplate(english = MessageForms(one = "Adds {count} cell.", other = "Adds {count} cells."), portuguese = MessageForms(one = "Adiciona {count} célula.", other = "Adiciona {count} células.")),
+    "trace_ram_cells_help" to MessageTemplate(english = MessageForms(other = "One address or a range, such as 1F0 or 1F0-1F7, from 0 to {last} in hexadecimal. A 0x prefix is accepted."), portuguese = MessageForms(other = "Um endereço ou intervalo, como 1F0 ou 1F0-1F7, de 0 a {last} em hexadecimal. O prefixo 0x é aceito.")),
+    "trace_ram_cells_invalid" to MessageTemplate(english = MessageForms(other = "Enter hexadecimal addresses such as 1F0, or a range such as 1F0-1F7."), portuguese = MessageForms(other = "Digite endereços hexadecimais como 1F0, ou um intervalo como 1F0-1F7.")),
+    "trace_ram_cells_out_of_range" to MessageTemplate(english = MessageForms(other = "Use addresses from 0 to {last} (hex)."), portuguese = MessageForms(other = "Use endereços de 0 a {last} (hex).")),
+    "trace_ram_cells_skipped" to MessageTemplate(english = MessageForms(one = "{count} cell is skipped: already recorded or over the {limit}-signal limit.", other = "{count} cells are skipped: already recorded or over the {limit}-signal limit."), portuguese = MessageForms(one = "{count} célula é ignorada: já registrada ou acima do limite de {limit} sinais.", other = "{count} células são ignoradas: já registradas ou acima do limite de {limit} sinais.")),
     "trace_recursive_project" to MessageTemplate(english = MessageForms(other = "A recursive project cannot be recorded."), portuguese = MessageForms(other = "Não é possível registrar um projeto recursivo.")),
     "trace_resume" to MessageTemplate(english = MessageForms(other = "Resume capture"), portuguese = MessageForms(other = "Retomar captura")),
     "trace_select_help" to MessageTemplate(english = MessageForms(other = "Select components to record their values and instance paths."), portuguese = MessageForms(other = "Selecione componentes para registrar valores e caminhos de instância.")),
     "trace_select_signals" to MessageTemplate(english = MessageForms(other = "Select signals"), portuguese = MessageForms(other = "Selecionar sinais")),
     "trace_selector_limit" to MessageTemplate(english = MessageForms(other = "The project exceeds the signal selector limit."), portuguese = MessageForms(other = "O projeto excede o limite de sinais do seletor.")),
+    "trace_show_all_components" to MessageTemplate(english = MessageForms(other = "Show all components"), portuguese = MessageForms(other = "Mostrar todos os componentes")),
     "trace_signal_a11y" to MessageTemplate(english = MessageForms(other = "Signal {signal}, instance {instance}"), portuguese = MessageForms(other = "Sinal {signal}, instância {instance}")),
     "trace_signal_limit" to MessageTemplate(english = MessageForms(other = "Select at most {limit} signals."), portuguese = MessageForms(other = "Selecione no máximo {limit} sinais.")),
+    "trace_signal_numbered" to MessageTemplate(english = MessageForms(other = "{signal} #{number}"), portuguese = MessageForms(other = "{signal} nº {number}")),
     "trace_summary" to MessageTemplate(english = MessageForms(other = "{retained}/{capacity} samples · {dropped} discarded · {unit}"), portuguese = MessageForms(other = "{retained}/{capacity} amostras · {dropped} descartadas · {unit}")),
     "trace_table" to MessageTemplate(english = MessageForms(other = "Table"), portuguese = MessageForms(other = "Tabela")),
+    "trace_table_cell_a11y" to MessageTemplate(english = MessageForms(other = "{signal} {value}"), portuguese = MessageForms(other = "{signal} {value}")),
+    "trace_table_cell_separator" to MessageTemplate(english = MessageForms(other = ", "), portuguese = MessageForms(other = ", ")),
+    "trace_table_row_a11y" to MessageTemplate(english = MessageForms(other = "Time {time} ({unit}): {values}"), portuguese = MessageForms(other = "Tempo {time} ({unit}): {values}")),
     "trace_time" to MessageTemplate(english = MessageForms(other = "Time"), portuguese = MessageForms(other = "Tempo")),
     "trace_time_backwards" to MessageTemplate(english = MessageForms(other = "Reset the trace before moving back in time."), portuguese = MessageForms(other = "Reinicie o traço antes de voltar no tempo.")),
     "trace_timeline" to MessageTemplate(english = MessageForms(other = "Timeline"), portuguese = MessageForms(other = "Cronograma")),
+)
+
+private fun messageCatalogPart40(): Map<String, MessageTemplate> = mapOf(
     "trace_title" to MessageTemplate(english = MessageForms(other = "Signal recording"), portuguese = MessageForms(other = "Registro de sinais")),
     "trace_unnamed_signal" to MessageTemplate(english = MessageForms(other = "{type} ({x},{y})"), portuguese = MessageForms(other = "{type} ({x},{y})")),
     "trace_wave_drom_copied" to MessageTemplate(english = MessageForms(other = "WaveDrom JSON copied."), portuguese = MessageForms(other = "JSON do WaveDrom copiado.")),
+    "trace_waveforms" to MessageTemplate(english = MessageForms(other = "Waveforms"), portuguese = MessageForms(other = "Formas de onda")),
+    "trace_waveforms_state" to MessageTemplate(english = MessageForms(other = "{start} to {end} {unit}. Cursor A: {first}. Cursor B: {second}."), portuguese = MessageForms(other = "{start} a {end} {unit}. Cursor A: {first}. Cursor B: {second}.")),
     "trace_window" to MessageTemplate(english = MessageForms(other = "{start} to {end} {unit}. Tap for cursor A; hold for cursor B."), portuguese = MessageForms(other = "{start} a {end} {unit}. Toque para cursor A; pressione para cursor B.")),
+    "trace_window_gestures_a" to MessageTemplate(english = MessageForms(other = "{start} to {end} {unit}. Tap a waveform to place cursor A; hold for cursor B. Pinch to zoom, drag sideways to pan."), portuguese = MessageForms(other = "{start} a {end} {unit}. Toque numa forma de onda para posicionar o cursor A; pressione para o cursor B. Faça pinça para ampliar e arraste para os lados para deslocar.")),
+    "trace_window_gestures_b" to MessageTemplate(english = MessageForms(other = "{start} to {end} {unit}. Tap or hold a waveform to place cursor B. Pinch to zoom, drag sideways to pan."), portuguese = MessageForms(other = "{start} a {end} {unit}. Toque ou pressione uma forma de onda para posicionar o cursor B. Faça pinça para ampliar e arraste para os lados para deslocar.")),
     "trace_zoom_in" to MessageTemplate(english = MessageForms(other = "Zoom in time"), portuguese = MessageForms(other = "Ampliar tempo")),
     "trace_zoom_out" to MessageTemplate(english = MessageForms(other = "Zoom out time"), portuguese = MessageForms(other = "Reduzir tempo")),
     "untitled" to MessageTemplate(english = MessageForms(other = "Untitled"), portuguese = MessageForms(other = "Sem título")),
@@ -6413,6 +8448,8 @@ private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
     "vector_binding_width" to MessageTemplate(english = MessageForms(other = "{column} uses {actual} bits in the circuit and {expected} in the vector."), portuguese = MessageForms(other = "{column} usa {actual} bits no circuito e {expected} no vetor.")),
     "vector_cancel" to MessageTemplate(english = MessageForms(other = "Cancel"), portuguese = MessageForms(other = "Cancelar")),
     "vector_cancelled" to MessageTemplate(english = MessageForms(other = "Cancelled"), portuguese = MessageForms(other = "Cancelado")),
+    "vector_check" to MessageTemplate(english = MessageForms(other = "Check"), portuguese = MessageForms(other = "Verificar")),
+    "vector_circuit" to MessageTemplate(english = MessageForms(other = "Circuit under test"), portuguese = MessageForms(other = "Circuito em teste")),
     "vector_completed" to MessageTemplate(english = MessageForms(other = "Completed"), portuguese = MessageForms(other = "Concluído")),
     "vector_copied" to MessageTemplate(english = MessageForms(other = "Test copied."), portuguese = MessageForms(other = "Teste copiado.")),
     "vector_difference" to MessageTemplate(english = MessageForms(other = "{column}: expected {expected}, observed {observed}"), portuguese = MessageForms(other = "{column}: esperado {expected}, observado {observed}")),
@@ -6431,22 +8468,28 @@ private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
     "vector_fail" to MessageTemplate(english = MessageForms(other = "FAIL"), portuguese = MessageForms(other = "FAIL")),
     "vector_file" to MessageTemplate(english = MessageForms(other = "Vector file contents"), portuguese = MessageForms(other = "Conteúdo do arquivo de vetores")),
     "vector_file_a11y" to MessageTemplate(english = MessageForms(other = "Test vector file"), portuguese = MessageForms(other = "Arquivo de test vectors")),
+    "vector_file_open_failed" to MessageTemplate(english = MessageForms(other = "The vector file could not be opened."), portuguese = MessageForms(other = "Não foi possível abrir o arquivo de vetores.")),
+    "vector_file_opened" to MessageTemplate(english = MessageForms(other = "Vector file {name} opened."), portuguese = MessageForms(other = "Arquivo de vetores {name} aberto.")),
+    "vector_file_utf8" to MessageTemplate(english = MessageForms(other = "Choose a test vector file encoded as UTF-8 text."), portuguese = MessageForms(other = "Escolha um arquivo de vetores em texto UTF-8.")),
     "vector_help" to MessageTemplate(english = MessageForms(other = "Use pin names and widths, <set>/<seq>, <DC>, and <float>. Clock columns are observed; sequences advance the clock automatically."), portuguese = MessageForms(other = "Use nomes e larguras dos pinos, <set>/<seq>, <DC> e <float>. Clocks são observados; sequências avançam o clock automaticamente.")),
     "vector_incompatible_width" to MessageTemplate(english = MessageForms(other = "Incompatible width in {name}."), portuguese = MessageForms(other = "Largura incompatível em {name}.")),
     "vector_input_dc_internal" to MessageTemplate(english = MessageForms(other = "Input don’t-care was rejected during binding."), portuguese = MessageForms(other = "A entrada indiferente foi rejeitada na vinculação.")),
     "vector_input_value" to MessageTemplate(english = MessageForms(other = "Line {line}: input {column} needs an explicit value or <float>."), portuguese = MessageForms(other = "Linha {line}: a entrada {column} precisa de um valor explícito ou <float>.")),
     "vector_invalid" to MessageTemplate(english = MessageForms(other = "The test vector could not be loaded."), portuguese = MessageForms(other = "Não foi possível carregar o vetor de teste.")),
     "vector_invalid_escape" to MessageTemplate(english = MessageForms(other = "Invalid escape in a quoted pin name: {escape}."), portuguese = MessageForms(other = "Escape inválido em um nome de pino entre aspas: {escape}.")),
-    "vector_load" to MessageTemplate(english = MessageForms(other = "Load"), portuguese = MessageForms(other = "Carregar")),
     "vector_metadata_pair" to MessageTemplate(english = MessageForms(other = "<set> and <seq> must both be zero or both be positive."), portuguese = MessageForms(other = "<set> e <seq> devem ser ambos zero ou ambos positivos.")),
     "vector_missing_circuit" to MessageTemplate(english = MessageForms(other = "Circuit not found: {circuit}."), portuguese = MessageForms(other = "Circuito inexistente: {circuit}.")),
     "vector_need_pin" to MessageTemplate(english = MessageForms(other = "The header must contain at least one pin."), portuguese = MessageForms(other = "O cabeçalho precisa conter ao menos um pino.")),
+    "vector_open_file" to MessageTemplate(english = MessageForms(other = "Open vector file…"), portuguese = MessageForms(other = "Abrir arquivo de vetores…")),
     "vector_overflow" to MessageTemplate(english = MessageForms(other = "The value {token} exceeds 64 bits in {name}."), portuguese = MessageForms(other = "O valor {token} excede 64 bits em {name}.")),
     "vector_pass" to MessageTemplate(english = MessageForms(other = "PASS"), portuguese = MessageForms(other = "PASS")),
     "vector_pause" to MessageTemplate(english = MessageForms(other = "Pause"), portuguese = MessageForms(other = "Pausar")),
     "vector_paused" to MessageTemplate(english = MessageForms(other = "Paused"), portuguese = MessageForms(other = "Pausado")),
     "vector_quoted_data" to MessageTemplate(english = MessageForms(other = "Quotes are only allowed around pin names in the header."), portuguese = MessageForms(other = "Aspas só são permitidas nos nomes dos pinos do cabeçalho.")),
     "vector_ready" to MessageTemplate(english = MessageForms(other = "Ready"), portuguese = MessageForms(other = "Pronto")),
+    "vector_replace_confirm" to MessageTemplate(english = MessageForms(other = "Replace"), portuguese = MessageForms(other = "Substituir")),
+    "vector_replace_text" to MessageTemplate(english = MessageForms(other = "Opening a file replaces the vectors in the editor. Your changes to them are not saved in a file."), portuguese = MessageForms(other = "Abrir um arquivo substitui os vetores do editor. Suas alterações não estão salvas em um arquivo.")),
+    "vector_replace_title" to MessageTemplate(english = MessageForms(other = "Replace typed vectors?"), portuguese = MessageForms(other = "Substituir os vetores digitados?")),
     "vector_reset" to MessageTemplate(english = MessageForms(other = "Restart"), portuguese = MessageForms(other = "Reiniciar")),
     "vector_row_limit" to MessageTemplate(english = MessageForms(other = "The row limit cannot be negative."), portuguese = MessageForms(other = "O limite de linhas não pode ser negativo.")),
     "vector_row_pins" to MessageTemplate(english = MessageForms(other = "The row does not contain all pins."), portuguese = MessageForms(other = "A linha não contém todos os pinos.")),
@@ -6458,9 +8501,6 @@ private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
     "vector_seq_order" to MessageTemplate(english = MessageForms(other = "Steps in set {set} must be strictly increasing."), portuguese = MessageForms(other = "As etapas do conjunto {set} devem estar em ordem estritamente crescente.")),
     "vector_set_order" to MessageTemplate(english = MessageForms(other = "Sets must appear in increasing order."), portuguese = MessageForms(other = "Os conjuntos devem aparecer em ordem crescente.")),
     "vector_step" to MessageTemplate(english = MessageForms(other = "Step"), portuguese = MessageForms(other = "Passo")),
-)
-
-private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
     "vector_summary" to MessageTemplate(english = MessageForms(other = "{completed}/{total} rows · {passed} passed · {failed} failed · {status}"), portuguese = MessageForms(other = "{completed}/{total} linhas · {passed} aprovadas · {failed} falharam · {status}")),
     "vector_title" to MessageTemplate(english = MessageForms(other = "Test vectors"), portuguese = MessageForms(other = "Vetores de teste")),
     "vector_unbound_column" to MessageTemplate(english = MessageForms(other = "Column {column} has no matching pin or clock in {circuit}."), portuguese = MessageForms(other = "A coluna {column} não corresponde a um pino ou clock em {circuit}.")),
@@ -6486,11 +8526,15 @@ private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
     "visual_export_filename" to MessageTemplate(english = MessageForms(other = "File name"), portuguese = MessageForms(other = "Nome do arquivo")),
     "visual_export_heading" to MessageTemplate(english = MessageForms(other = "Export circuit drawing"), portuguese = MessageForms(other = "Exportar desenho do circuito")),
     "visual_export_help" to MessageTemplate(english = MessageForms(other = "Save the complete circuit or the selected objects. Margins use circuit units; scale controls image resolution."), portuguese = MessageForms(other = "Salve o circuito inteiro ou os objetos selecionados. As margens usam unidades do circuito; a escala controla a resolução da imagem.")),
+)
+
+private fun messageCatalogPart41(): Map<String, MessageTemplate> = mapOf(
     "visual_export_image_encoding_failed" to MessageTemplate(english = MessageForms(other = "Could not encode the image."), portuguese = MessageForms(other = "Não foi possível codificar a imagem.")),
     "visual_export_invalid_filename" to MessageTemplate(english = MessageForms(other = "Enter a file name without folder separators or control characters."), portuguese = MessageForms(other = "Informe um nome de arquivo sem separadores de pasta ou caracteres de controle.")),
     "visual_export_invalid_margin" to MessageTemplate(english = MessageForms(other = "Enter a margin of zero or greater."), portuguese = MessageForms(other = "Informe uma margem igual ou maior que zero.")),
     "visual_export_invalid_scale" to MessageTemplate(english = MessageForms(other = "Enter a scale greater than zero."), portuguese = MessageForms(other = "Informe uma escala maior que zero.")),
     "visual_export_margin" to MessageTemplate(english = MessageForms(other = "Margin"), portuguese = MessageForms(other = "Margem")),
+    "visual_export_output_size" to MessageTemplate(english = MessageForms(other = "Output: {width} × {height} px"), portuguese = MessageForms(other = "Saída: {width} × {height} px")),
     "visual_export_pdf_header" to MessageTemplate(english = MessageForms(other = "Page header (optional)"), portuguese = MessageForms(other = "Cabeçalho da página (opcional)")),
     "visual_export_pdf_header_help" to MessageTemplate(english = MessageForms(other = "%n = circuit name, %p = page, %P = page count, %% = percent sign."), portuguese = MessageForms(other = "%n = nome do circuito, %p = página, %P = total de páginas, %% = sinal de porcentagem.")),
     "visual_export_pdf_help" to MessageTemplate(english = MessageForms(other = "Each circuit gets its own A4 page. Printing opens the system print interface."), portuguese = MessageForms(other = "Cada circuito ocupa uma página A4. A impressão abre a interface de impressão do sistema.")),
@@ -6505,6 +8549,9 @@ private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
     "visual_export_save" to MessageTemplate(english = MessageForms(other = "Save drawing"), portuguese = MessageForms(other = "Salvar desenho")),
     "visual_export_saved" to MessageTemplate(english = MessageForms(other = "Drawing saved."), portuguese = MessageForms(other = "Desenho salvo.")),
     "visual_export_scale" to MessageTemplate(english = MessageForms(other = "Scale"), portuguese = MessageForms(other = "Escala")),
+    "visual_export_scale_help" to MessageTemplate(english = MessageForms(other = "A factor: 1 is 100%, 2 is 200%."), portuguese = MessageForms(other = "Um fator: 1 é 100%, 2 é 200%.")),
+    "visual_export_scale_slider" to MessageTemplate(english = MessageForms(other = "Image scale"), portuguese = MessageForms(other = "Escala da imagem")),
+    "visual_export_scale_value" to MessageTemplate(english = MessageForms(other = "{percent}%"), portuguese = MessageForms(other = "{percent}%")),
     "visual_export_select_objects" to MessageTemplate(english = MessageForms(other = "Select objects in the circuit to export a selection."), portuguese = MessageForms(other = "Selecione objetos no circuito para exportar uma seleção.")),
     "visual_export_selection" to MessageTemplate(english = MessageForms(other = "Selected objects only"), portuguese = MessageForms(other = "Somente objetos selecionados")),
     "visual_export_share" to MessageTemplate(english = MessageForms(other = "Share drawing"), portuguese = MessageForms(other = "Compartilhar desenho")),
@@ -6513,25 +8560,46 @@ private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
     "visual_export_title" to MessageTemplate(english = MessageForms(other = "Export drawing"), portuguese = MessageForms(other = "Exportar desenho")),
     "visual_export_transparent" to MessageTemplate(english = MessageForms(other = "Transparent background"), portuguese = MessageForms(other = "Fundo transparente")),
     "visual_export_unknown_error" to MessageTemplate(english = MessageForms(other = "Unknown export error"), portuguese = MessageForms(other = "Erro de exportação desconhecido")),
-    "workspace_a11y_show_trash" to MessageTemplate(english = MessageForms(other = "Show projects in trash"), portuguese = MessageForms(other = "Mostrar projetos na lixeira")),
+    "workspace_a11y_close_tab" to MessageTemplate(english = MessageForms(other = "Close tab {name}"), portuguese = MessageForms(other = "Fechar aba {name}")),
     "workspace_attachment_access" to MessageTemplate(english = MessageForms(other = "Could not access workspace attachment {name} ({key}): {reason}"), portuguese = MessageForms(other = "Não foi possível acessar o anexo {name} ({key}) do projeto: {reason}")),
     "workspace_attachment_corrupt" to MessageTemplate(english = MessageForms(other = "Workspace attachment {name} is corrupt or does not match its saved metadata."), portuguese = MessageForms(other = "O anexo {name} do projeto está corrompido ou não corresponde aos metadados salvos.")),
     "workspace_attachment_invalid" to MessageTemplate(english = MessageForms(other = "Workspace attachment {key} has invalid metadata: {name}."), portuguese = MessageForms(other = "O anexo {key} do projeto tem metadados inválidos: {name}.")),
     "workspace_attachment_limit" to MessageTemplate(english = MessageForms(other = "Workspace attachments must contain at most 32 entries and 64 MiB in total."), portuguese = MessageForms(other = "Os anexos do projeto devem conter no máximo 32 entradas e 64 MiB no total.")),
     "workspace_attachment_missing" to MessageTemplate(english = MessageForms(other = "Workspace attachment {name} is missing."), portuguese = MessageForms(other = "O anexo {name} do projeto está ausente.")),
+    "workspace_banner_reload" to MessageTemplate(english = MessageForms(other = "Reload"), portuguese = MessageForms(other = "Recarregar")),
+    "workspace_banner_retry" to MessageTemplate(english = MessageForms(other = "Retry"), portuguese = MessageForms(other = "Tentar de novo")),
+    "workspace_banner_save_copy" to MessageTemplate(english = MessageForms(other = "Save a copy"), portuguese = MessageForms(other = "Salvar uma cópia")),
     "workspace_catalog_recovered" to MessageTemplate(english = MessageForms(other = "The previous catalog was recovered. The original files were preserved."), portuguese = MessageForms(other = "O catálogo anterior foi recuperado. Os arquivos originais foram preservados.")),
+    "workspace_close_changed_explanation" to MessageTemplate(english = MessageForms(other = "Your edits are already saved in the app. Keep them, or revert the project to the version you opened."), portuguese = MessageForms(other = "Suas alterações já estão salvas no app. Mantenha-as ou volte o projeto à versão que você abriu.")),
+    "workspace_close_dont_save_to_file" to MessageTemplate(english = MessageForms(other = "Don’t save to file"), portuguese = MessageForms(other = "Não salvar no arquivo")),
+    "workspace_close_keep_changes" to MessageTemplate(english = MessageForms(other = "Keep changes"), portuguese = MessageForms(other = "Manter alterações")),
+    "workspace_close_linked_explanation" to MessageTemplate(english = MessageForms(other = "Your edits are saved in the app but not yet in {file}."), portuguese = MessageForms(other = "Suas alterações estão salvas no app, mas ainda não em {file}.")),
+    "workspace_close_linked_unconfirmed_explanation" to MessageTemplate(english = MessageForms(other = "The app has the latest version of this project, but this window cannot confirm that {file} has it too."), portuguese = MessageForms(other = "O app tem a versão mais recente deste projeto, mas esta janela não consegue confirmar se {file} também tem.")),
     "workspace_close_named_session" to MessageTemplate(english = MessageForms(other = "Close {name}?"), portuguese = MessageForms(other = "Fechar {name}?")),
+    "workspace_close_revert_to_opened" to MessageTemplate(english = MessageForms(other = "Revert to version opened {elapsed}"), portuguese = MessageForms(other = "Voltar à versão aberta {elapsed}")),
+    "workspace_close_save_to_file" to MessageTemplate(english = MessageForms(other = "Save to {file}"), portuguese = MessageForms(other = "Salvar em {file}")),
     "workspace_close_session" to MessageTemplate(english = MessageForms(other = "Close session"), portuguese = MessageForms(other = "Fechar sessão")),
-    "workspace_close_session_confirmation" to MessageTemplate(english = MessageForms(other = "Save this project or discard changes made since it was opened or last saved."), portuguese = MessageForms(other = "Salve este projeto ou descarte as alterações feitas desde a abertura ou o último salvamento.")),
+    "workspace_close_unsaved_explanation" to MessageTemplate(english = MessageForms(other = "Your latest edits could not be saved yet, so they exist only in this tab."), portuguese = MessageForms(other = "Ainda não foi possível salvar suas últimas alterações, então elas existem só nesta aba.")),
     "workspace_conflict_changed" to MessageTemplate(english = MessageForms(other = "Another window changed the project. Your local edits were preserved."), portuguese = MessageForms(other = "O projeto mudou em outra janela. Sua edição local foi preservada.")),
     "workspace_conflict_removed" to MessageTemplate(english = MessageForms(other = "Another window deleted the project. Your local edits were preserved."), portuguese = MessageForms(other = "O projeto foi removido em outra janela. Sua edição local foi preservada.")),
     "workspace_conflict_revision" to MessageTemplate(english = MessageForms(other = "The project revision changed."), portuguese = MessageForms(other = "A revisão do projeto mudou.")),
     "workspace_conflict_saved" to MessageTemplate(english = MessageForms(other = "Another window saved a revision. Reload or save your edits as a copy."), portuguese = MessageForms(other = "Outra janela salvou uma revisão. Recarregue ou salve sua edição como cópia.")),
     "workspace_copy_name" to MessageTemplate(english = MessageForms(other = "{name} (copy)"), portuguese = MessageForms(other = "{name} (cópia)")),
     "workspace_copy_not_opened" to MessageTemplate(english = MessageForms(other = "The workspace copy could not be opened."), portuguese = MessageForms(other = "Não foi possível abrir a cópia no workspace.")),
-    "workspace_discard_pending" to MessageTemplate(english = MessageForms(other = "Discard"), portuguese = MessageForms(other = "Descartar")),
+    "workspace_create" to MessageTemplate(english = MessageForms(other = "Create"), portuguese = MessageForms(other = "Criar")),
+    "workspace_currently_open" to MessageTemplate(english = MessageForms(other = "Currently open"), portuguese = MessageForms(other = "Aberto agora")),
+    "workspace_delete_permanently" to MessageTemplate(english = MessageForms(other = "Delete permanently"), portuguese = MessageForms(other = "Apagar permanentemente")),
+    "workspace_delete_permanently_explanation" to MessageTemplate(english = MessageForms(other = "The project and all its saved versions will be erased from this device. This can't be undone."), portuguese = MessageForms(other = "O projeto e todas as versões salvas dele serão apagados deste dispositivo. Não é possível desfazer.")),
+    "workspace_delete_permanently_title" to MessageTemplate(english = MessageForms(other = "Delete “{name}” permanently?"), portuguese = MessageForms(other = "Apagar “{name}” permanentemente?")),
+    "workspace_deleted_permanently" to MessageTemplate(english = MessageForms(other = "“{name}” was deleted permanently"), portuguese = MessageForms(other = "“{name}” foi excluído permanentemente")),
+    "workspace_dismiss_notice" to MessageTemplate(english = MessageForms(other = "Dismiss notice"), portuguese = MessageForms(other = "Dispensar aviso")),
     "workspace_document_unavailable" to MessageTemplate(english = MessageForms(other = "This project cannot be opened with the available components or format support. Its original XML is preserved read-only. Restore its provider or create a new project to continue."), portuguese = MessageForms(other = "Este projeto não pode ser aberto com os componentes ou formatos disponíveis. O XML original foi preservado somente para leitura. Restaure seu provedor ou crie um novo projeto para continuar.")),
+    "workspace_edited" to MessageTemplate(english = MessageForms(other = "Edited {time}"), portuguese = MessageForms(other = "Editado {time}")),
+    "workspace_edited_with_id" to MessageTemplate(english = MessageForms(other = "Edited {time} · {id}"), portuguese = MessageForms(other = "Editado {time} · {id}")),
     "workspace_empty" to MessageTemplate(english = MessageForms(other = "No saved projects."), portuguese = MessageForms(other = "Nenhum projeto salvo.")),
+    "workspace_empty_trash" to MessageTemplate(english = MessageForms(other = "Empty trash"), portuguese = MessageForms(other = "Esvaziar lixeira")),
+    "workspace_empty_trash_explanation" to MessageTemplate(english = MessageForms(one = "{count} project and all its saved versions will be erased from this device. This can't be undone.", other = "{count} projects and all their saved versions will be erased from this device. This can't be undone."), portuguese = MessageForms(one = "{count} projeto e todas as versões salvas dele serão apagados deste dispositivo. Não é possível desfazer.", other = "{count} projetos e todas as versões salvas deles serão apagados deste dispositivo. Não é possível desfazer.")),
+    "workspace_empty_trash_title" to MessageTemplate(english = MessageForms(other = "Empty the trash?"), portuguese = MessageForms(other = "Esvaziar a lixeira?")),
     "workspace_error_access" to MessageTemplate(english = MessageForms(other = "Could not access the catalog: {reason}. The previous files were preserved."), portuguese = MessageForms(other = "Não foi possível acessar o catálogo: {reason}. Os arquivos anteriores foram preservados.")),
     "workspace_error_catalog_limit" to MessageTemplate(english = MessageForms(other = "The catalog exceeds the project limit."), portuguese = MessageForms(other = "O catálogo excede o limite de projetos.")),
     "workspace_error_document" to MessageTemplate(english = MessageForms(other = "The document is invalid; the previous revision was preserved."), portuguese = MessageForms(other = "O documento é inválido; a revisão anterior foi preservada.")),
@@ -6549,46 +8617,74 @@ private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
     "workspace_error_view_limit" to MessageTemplate(english = MessageForms(other = "The window state exceeds the item limit."), portuguese = MessageForms(other = "O estado da janela excede o limite de itens.")),
     "workspace_external_link_mismatch" to MessageTemplate(english = MessageForms(other = "This file is no longer linked to the active project. Reopen it before saving."), portuguese = MessageForms(other = "Este arquivo não está mais vinculado ao projeto ativo. Abra-o novamente antes de salvar.")),
     "workspace_external_link_unreadable" to MessageTemplate(english = MessageForms(other = "The saved file association could not be read. Reopen the file to link it again."), portuguese = MessageForms(other = "Não foi possível ler o vínculo com o arquivo. Abra o arquivo novamente para vinculá-lo.")),
+    "workspace_imported_project" to MessageTemplate(english = MessageForms(other = "Imported project"), portuguese = MessageForms(other = "Projeto importado")),
     "workspace_migrated" to MessageTemplate(english = MessageForms(other = "The previous project was copied into the catalog."), portuguese = MessageForms(other = "O projeto anterior foi copiado para o catálogo.")),
+    "workspace_more_actions_named" to MessageTemplate(english = MessageForms(other = "More actions for {name}"), portuguese = MessageForms(other = "Mais ações para {name}")),
     "workspace_move_to_trash" to MessageTemplate(english = MessageForms(other = "Move to trash"), portuguese = MessageForms(other = "Mover para lixeira")),
+    "workspace_moved_to_trash" to MessageTemplate(english = MessageForms(other = "“{name}” moved to trash"), portuguese = MessageForms(other = "“{name}” foi movido para a lixeira")),
     "workspace_name" to MessageTemplate(english = MessageForms(other = "Name"), portuguese = MessageForms(other = "Nome")),
     "workspace_new_project" to MessageTemplate(english = MessageForms(other = "New project"), portuguese = MessageForms(other = "Novo projeto")),
+    "workspace_no_project_explanation" to MessageTemplate(english = MessageForms(other = "Start a new project, open a .circ file, or continue one from Projects or Open recent."), portuguese = MessageForms(other = "Comece um projeto novo, abra um arquivo .circ ou continue um em Projetos ou Abrir recentes.")),
+    "workspace_no_project_title" to MessageTemplate(english = MessageForms(other = "No project open"), portuguese = MessageForms(other = "Nenhum projeto aberto")),
     "workspace_no_recent_files" to MessageTemplate(english = MessageForms(other = "No recent files."), portuguese = MessageForms(other = "Nenhum arquivo recente.")),
+    "workspace_not_saved" to MessageTemplate(english = MessageForms(other = "Not saved"), portuguese = MessageForms(other = "Não salvo")),
+    "workspace_not_saved_to_file" to MessageTemplate(english = MessageForms(other = "Not saved to {file}"), portuguese = MessageForms(other = "Não salvo em {file}")),
+)
+
+private fun messageCatalogPart42(): Map<String, MessageTemplate> = mapOf(
+    "workspace_not_saved_to_its_file" to MessageTemplate(english = MessageForms(other = "Not saved to file"), portuguese = MessageForms(other = "Não salvo no arquivo")),
+    "workspace_open_named" to MessageTemplate(english = MessageForms(other = "Open {name}"), portuguese = MessageForms(other = "Abrir {name}")),
     "workspace_open_original" to MessageTemplate(english = MessageForms(other = "Open original"), portuguese = MessageForms(other = "Abrir original")),
-    "workspace_open_project" to MessageTemplate(english = MessageForms(other = "Open project"), portuguese = MessageForms(other = "Projeto aberto")),
     "workspace_open_recent" to MessageTemplate(english = MessageForms(other = "Open recent"), portuguese = MessageForms(other = "Abrir recentes")),
+    "workspace_opened_hours_ago" to MessageTemplate(english = MessageForms(one = "{count} hour ago", other = "{count} hours ago"), portuguese = MessageForms(one = "há {count} hora", other = "há {count} horas")),
+    "workspace_opened_just_now" to MessageTemplate(english = MessageForms(other = "just now"), portuguese = MessageForms(other = "agora há pouco")),
+    "workspace_opened_minutes_ago" to MessageTemplate(english = MessageForms(one = "{count} minute ago", other = "{count} minutes ago"), portuguese = MessageForms(one = "há {count} minuto", other = "há {count} minutos")),
     "workspace_projects" to MessageTemplate(english = MessageForms(other = "Projects"), portuguese = MessageForms(other = "Projetos")),
     "workspace_read_only" to MessageTemplate(english = MessageForms(other = "The catalog could not be read. The files were preserved and saving is blocked."), portuguese = MessageForms(other = "O catálogo não pôde ser lido. Os arquivos foram preservados e a gravação está bloqueada.")),
     "workspace_read_only_original" to MessageTemplate(english = MessageForms(other = "Original preserved · read-only"), portuguese = MessageForms(other = "Original preservado · somente leitura")),
     "workspace_recent_copy" to MessageTemplate(english = MessageForms(other = "Workspace copy"), portuguese = MessageForms(other = "Cópia no workspace")),
-)
-
-private fun messageCatalogPart32(): Map<String, MessageTemplate> = mapOf(
     "workspace_recent_original" to MessageTemplate(english = MessageForms(other = "Original from file provider"), portuguese = MessageForms(other = "Original do provedor de arquivos")),
     "workspace_recovered_project" to MessageTemplate(english = MessageForms(other = "Recovered project"), portuguese = MessageForms(other = "Projeto recuperado")),
-    "workspace_reload_saved" to MessageTemplate(english = MessageForms(other = "Reload saved project"), portuguese = MessageForms(other = "Recarregar projeto salvo")),
+    "workspace_remove_recent" to MessageTemplate(english = MessageForms(other = "Remove {name} from recent"), portuguese = MessageForms(other = "Remover {name} dos recentes")),
     "workspace_rename_project" to MessageTemplate(english = MessageForms(other = "Rename project"), portuguese = MessageForms(other = "Renomear projeto")),
     "workspace_restore" to MessageTemplate(english = MessageForms(other = "Restore"), portuguese = MessageForms(other = "Restaurar")),
     "workspace_retry_open" to MessageTemplate(english = MessageForms(other = "Try opening again"), portuguese = MessageForms(other = "Tentar abrir novamente")),
-    "workspace_retry_save" to MessageTemplate(english = MessageForms(other = "Retry saving"), portuguese = MessageForms(other = "Tentar salvar novamente")),
-    "workspace_revision" to MessageTemplate(english = MessageForms(other = "Revision {revision} · {id}"), portuguese = MessageForms(other = "Revisão {revision} · {id}")),
+    "workspace_reverted" to MessageTemplate(english = MessageForms(other = "“{name}” reverted to the version you opened"), portuguese = MessageForms(other = "“{name}” voltou à versão que você abriu")),
     "workspace_revision_recovered" to MessageTemplate(english = MessageForms(other = "Revision {recovered} was recovered; revision {latest} cannot be read."), portuguese = MessageForms(other = "A revisão {recovered} foi recuperada; a revisão {latest} está ilegível.")),
-    "workspace_save_local_copy" to MessageTemplate(english = MessageForms(other = "Save a local copy"), portuguese = MessageForms(other = "Salvar uma cópia local")),
+    "workspace_save_failed" to MessageTemplate(english = MessageForms(other = "Your latest edits could not be saved."), portuguese = MessageForms(other = "Não foi possível salvar suas últimas alterações.")),
+    "workspace_saved_elsewhere" to MessageTemplate(english = MessageForms(other = "Saved elsewhere"), portuguese = MessageForms(other = "Salvo em outro lugar")),
     "workspace_saved_revision" to MessageTemplate(english = MessageForms(other = "Saved · revision {revision}"), portuguese = MessageForms(other = "Salvo · revisão {revision}")),
+    "workspace_saved_status" to MessageTemplate(english = MessageForms(other = "Saved"), portuguese = MessageForms(other = "Salvo")),
+    "workspace_saved_to_file" to MessageTemplate(english = MessageForms(other = "Saved to {file}"), portuguese = MessageForms(other = "Salvo em {file}")),
+    "workspace_saved_to_its_file" to MessageTemplate(english = MessageForms(other = "Saved to file"), portuguese = MessageForms(other = "Salvo no arquivo")),
     "workspace_saving" to MessageTemplate(english = MessageForms(other = "Saving…"), portuguese = MessageForms(other = "Salvando…")),
     "workspace_show_trash" to MessageTemplate(english = MessageForms(other = "Show trash"), portuguese = MessageForms(other = "Mostrar lixeira")),
     "workspace_source_not_committed" to MessageTemplate(english = MessageForms(other = "Save the current project before exporting its source archive."), portuguese = MessageForms(other = "Salve o projeto atual antes de exportar seu arquivo de origem.")),
     "workspace_source_not_current" to MessageTemplate(english = MessageForms(other = "The source is no longer available for the active document."), portuguese = MessageForms(other = "A origem não está mais disponível para o documento ativo.")),
+    "workspace_tab_changed" to MessageTemplate(english = MessageForms(other = "Edited since opened"), portuguese = MessageForms(other = "Editado desde a abertura")),
+    "workspace_tab_created" to MessageTemplate(english = MessageForms(other = "created {time}"), portuguese = MessageForms(other = "criado {time}")),
+    "workspace_tab_disambiguated" to MessageTemplate(english = MessageForms(other = "{name} · {detail}"), portuguese = MessageForms(other = "{name} · {detail}")),
     "workspace_title" to MessageTemplate(english = MessageForms(other = "Project storage"), portuguese = MessageForms(other = "Armazenamento do projeto")),
+    "workspace_trash_emptied" to MessageTemplate(english = MessageForms(one = "{count} project deleted permanently", other = "{count} projects deleted permanently"), portuguese = MessageForms(one = "{count} projeto excluído permanentemente", other = "{count} projetos excluídos permanentemente")),
     "workspace_trash_empty" to MessageTemplate(english = MessageForms(other = "The trash is empty."), portuguese = MessageForms(other = "A lixeira está vazia.")),
+    "workspace_undo" to MessageTemplate(english = MessageForms(other = "Undo"), portuguese = MessageForms(other = "Desfazer")),
+    "workspace_undo_failed" to MessageTemplate(english = MessageForms(other = "Couldn’t undo"), portuguese = MessageForms(other = "Não foi possível desfazer")),
     "workspace_unsaved_changes" to MessageTemplate(english = MessageForms(other = "Unsaved changes"), portuguese = MessageForms(other = "Alterações não salvas")),
     "workspace_unsaved_draft" to MessageTemplate(english = MessageForms(other = "Unsaved draft"), portuguese = MessageForms(other = "Rascunho não salvo")),
+    "workspace_untitled_project" to MessageTemplate(english = MessageForms(other = "Untitled"), portuguese = MessageForms(other = "Sem título")),
     "workspace_view_identity_recovered" to MessageTemplate(english = MessageForms(other = "Some saved selections and views could not be restored safely and were reset. The project was preserved."), portuguese = MessageForms(other = "Algumas seleções e vistas salvas não puderam ser restauradas com segurança e foram redefinidas. O projeto foi preservado.")),
     "xml_edit" to MessageTemplate(english = MessageForms(other = "Edit XML"), portuguese = MessageForms(other = "Editar XML")),
+    "xml_import_copy_hint" to MessageTemplate(english = MessageForms(other = "Import opens the XML as a new project copy."), portuguese = MessageForms(other = "Importar abre o XML como uma nova cópia do projeto.")),
+    "xml_import_unchanged" to MessageTemplate(english = MessageForms(other = "Edit or paste XML to import it. Copy keeps this export."), portuguese = MessageForms(other = "Edite ou cole um XML para importá-lo. Copiar guarda esta exportação.")),
     "xml_large_help" to MessageTemplate(english = MessageForms(other = "Copy exports the complete project. Paste replaces the complete import text; large projects can also be edited through the native file actions."), portuguese = MessageForms(other = "Copiar exporta o projeto completo. Colar substitui o texto completo para importação; projetos grandes também podem ser editados pelas ações nativas de arquivo.")),
+    "xml_paste_empty" to MessageTemplate(english = MessageForms(other = "The clipboard has no text to paste."), portuguese = MessageForms(other = "A área de transferência não tem texto para colar.")),
     "xml_preview_size" to MessageTemplate(english = MessageForms(other = "Complete XML: {count} characters. The preview below is shortened."), portuguese = MessageForms(other = "XML completo: {count} caracteres. A prévia abaixo é reduzida.")),
+    "xml_undo_paste" to MessageTemplate(english = MessageForms(other = "Undo paste"), portuguese = MessageForms(other = "Desfazer colagem")),
+    "zoom_custom" to MessageTemplate(english = MessageForms(other = "Custom…"), portuguese = MessageForms(other = "Personalizado…")),
     "zoom_percent" to MessageTemplate(english = MessageForms(other = "Zoom (%)"), portuguese = MessageForms(other = "Zoom (%)")),
     "zoom_percent_range" to MessageTemplate(english = MessageForms(other = "Enter a percentage from {min}% to {max}%."), portuguese = MessageForms(other = "Digite uma porcentagem de {min}% a {max}%.")),
+    "zoom_preset_percent" to MessageTemplate(english = MessageForms(other = "{percent}%"), portuguese = MessageForms(other = "{percent}%")),
+    "zoom_reset" to MessageTemplate(english = MessageForms(other = "100% (reset)"), portuguese = MessageForms(other = "100% (redefinir)")),
     "zoom_slider" to MessageTemplate(english = MessageForms(other = "Zoom slider"), portuguese = MessageForms(other = "Controle deslizante de zoom")),
     "zoom_title" to MessageTemplate(english = MessageForms(other = "Set zoom"), portuguese = MessageForms(other = "Definir zoom")),
 )
