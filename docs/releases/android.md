@@ -29,7 +29,7 @@ The Gradle debug build works without signing credentials. Verified distributions
 
 ## Review the store listing
 
-The [Android listing draft](android-listing-draft.json) contains English and Portuguese copy for `thalesmms.logisim.mobile`, version `0.2.0`, build `2`. Education is the proposed category and English the proposed default language. The channel, account, public contact, privacy URL, target audience, pricing, rating, and Data safety declaration still need decisions. Account and test track setup are separate from this preparation.
+The [Android listing draft](android-listing-draft.json) contains English and Portuguese copy for `thalesmms.logisim.mobile`, version `0.2.0`, build `4`. Education is the proposed category and English the proposed default language. The channel, account, public contact, target audience, pricing, rating, and Data safety declaration still need decisions. Account and test track setup are separate from this preparation.
 
 ```sh
 python3 -m tools.validate_android_listing

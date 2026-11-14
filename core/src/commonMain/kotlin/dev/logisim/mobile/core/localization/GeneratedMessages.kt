@@ -1981,6 +1981,7 @@ object Messages {
     const val HelpOpenParity = "help_open_parity"
     const val HelpOpenProperties = "help_open_properties"
     const val HelpOpenRelatedTool = "help_open_related_tool"
+    const val HelpPrivacyPolicy = "help_privacy_policy"
     const val HelpProjectChanged = "help_project_changed"
     const val HelpReferenceImportFailed = "help_reference_import_failed"
     const val HelpReferenceInputCount = "help_reference_input_count"
@@ -5303,6 +5304,7 @@ private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "help_open_parity" to MessageTemplate(english = MessageForms(other = "Open the support matrix online"), portuguese = MessageForms(other = "Abrir matriz de suporte online")),
     "help_open_properties" to MessageTemplate(english = MessageForms(other = "Open properties"), portuguese = MessageForms(other = "Abrir propriedades")),
     "help_open_related_tool" to MessageTemplate(english = MessageForms(other = "Open related tool"), portuguese = MessageForms(other = "Abrir ferramenta relacionada")),
+    "help_privacy_policy" to MessageTemplate(english = MessageForms(other = "Privacy policy"), portuguese = MessageForms(other = "Política de privacidade")),
     "help_project_changed" to MessageTemplate(english = MessageForms(other = "The project changed while the example was loading. Open the example again when ready."), portuguese = MessageForms(other = "O projeto mudou enquanto o exemplo era carregado. Abra o exemplo novamente quando estiver pronto.")),
     "help_reference_import_failed" to MessageTemplate(english = MessageForms(other = "Could not load example {id}: {details}"), portuguese = MessageForms(other = "Não foi possível carregar o exemplo {id}: {details}")),
     "help_reference_input_count" to MessageTemplate(english = MessageForms(other = "Expected one input '{label}', found {count}."), portuguese = MessageForms(other = "Era esperada uma entrada '{label}', mas foram encontradas {count}.")),
@@ -5323,10 +5325,10 @@ private fun messageCatalogPart19(): Map<String, MessageTemplate> = mapOf(
     "help_support_editing_description" to MessageTemplate(english = MessageForms(other = "Tools, selection, wiring, properties and symbol appearance have separate acceptance criteria."), portuguese = MessageForms(other = "Ferramentas, seleção, fios, propriedades e aparência de símbolos têm critérios de aceite próprios.")),
     "help_support_editing_title" to MessageTemplate(english = MessageForms(other = "Editing and navigation"), portuguese = MessageForms(other = "Edição e navegação")),
     "help_support_simulation_description" to MessageTemplate(english = MessageForms(other = "Deterministic events, hierarchy, diagnostics, test vectors, analysis and traces are tracked independently. Examples test only their declared input sequences."), portuguese = MessageForms(other = "Eventos determinísticos, hierarquia, diagnósticos, vetores, análise e cronogramas têm acompanhamento independente. Exemplos testam apenas as sequências de entrada declaradas.")),
-    "help_support_simulation_title" to MessageTemplate(english = MessageForms(other = "Simulation and verification"), portuguese = MessageForms(other = "Simulação e verificação")),
 )
 
 private fun messageCatalogPart20(): Map<String, MessageTemplate> = mapOf(
+    "help_support_simulation_title" to MessageTemplate(english = MessageForms(other = "Simulation and verification"), portuguese = MessageForms(other = "Simulação e verificação")),
     "help_support_validation_description" to MessageTemplate(english = MessageForms(other = "Simulator tests, accessibility readers, large-circuit measurements and signed releases are separate gates. A compiled build does not prove physical hardware behavior."), portuguese = MessageForms(other = "Testes em simuladores, leitores de acessibilidade, medições de circuitos grandes e releases assinados são verificações separadas. Uma compilação não comprova comportamento em hardware físico.")),
     "help_support_validation_title" to MessageTemplate(english = MessageForms(other = "Platforms and releases"), portuguese = MessageForms(other = "Plataformas e releases")),
     "help_title" to MessageTemplate(english = MessageForms(other = "Help and examples"), portuguese = MessageForms(other = "Ajuda e exemplos")),
@@ -5426,10 +5428,10 @@ private fun messageCatalogPart20(): Map<String, MessageTemplate> = mapOf(
     "io_state_tty" to MessageTemplate(english = MessageForms(other = "Rows: {rows}; columns: {columns}; cursor row {row}, column {column}. Text: {text}"), portuguese = MessageForms(other = "Linhas: {rows}; colunas: {columns}; cursor na linha {row}, coluna {column}. Texto: {text}")),
     "io_state_tty_full_row" to MessageTemplate(english = MessageForms(other = "Rows: {rows}; columns: {columns}; current row {row} is full. The next printable character starts a new row. Text: {text}"), portuguese = MessageForms(other = "Linhas: {rows}; colunas: {columns}; a linha atual {row} está cheia. O próximo caractere imprimível inicia uma nova linha. Texto: {text}")),
     "io_state_unavailable" to MessageTemplate(english = MessageForms(other = "I/O state is unavailable."), portuguese = MessageForms(other = "O estado de I/O está indisponível.")),
-    "io_state_white" to MessageTemplate(english = MessageForms(other = "white"), portuguese = MessageForms(other = "branco")),
 )
 
 private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
+    "io_state_white" to MessageTemplate(english = MessageForms(other = "white"), portuguese = MessageForms(other = "branco")),
     "io_state_yellow" to MessageTemplate(english = MessageForms(other = "yellow"), portuguese = MessageForms(other = "amarelo")),
     "io_switch_off" to MessageTemplate(english = MessageForms(other = "off"), portuguese = MessageForms(other = "desligada")),
     "io_switch_on" to MessageTemplate(english = MessageForms(other = "on"), portuguese = MessageForms(other = "ligada")),
@@ -5529,10 +5531,10 @@ private fun messageCatalogPart21(): Map<String, MessageTemplate> = mapOf(
     "legal_back_action" to MessageTemplate(english = MessageForms(other = "Back"), portuguese = MessageForms(other = "Voltar")),
     "legal_button" to MessageTemplate(english = MessageForms(other = "Licenses"), portuguese = MessageForms(other = "Licenças")),
     "legal_button_description" to MessageTemplate(english = MessageForms(other = "Licenses, attribution and source code"), portuguese = MessageForms(other = "Licenças, atribuições e código-fonte")),
-    "legal_introduction" to MessageTemplate(english = MessageForms(other = "Free software under GPLv3. No warranty. The rights and notices for each component are listed below."), portuguese = MessageForms(other = "Software livre sob GPLv3. Sem garantia. Os direitos e avisos de cada componente estão abaixo.")),
 )
 
 private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
+    "legal_introduction" to MessageTemplate(english = MessageForms(other = "Free software under GPLv3. No warranty. The rights and notices for each component are listed below."), portuguese = MessageForms(other = "Software livre sob GPLv3. Sem garantia. Os direitos e avisos de cada componente estão abaixo.")),
     "legal_source_action" to MessageTemplate(english = MessageForms(other = "Open source code and build instructions"), portuguese = MessageForms(other = "Abrir código-fonte e instruções de compilação")),
     "legal_title" to MessageTemplate(english = MessageForms(other = "Licenses and attribution"), portuguese = MessageForms(other = "Licenças e atribuições")),
     "library_annotations" to MessageTemplate(english = MessageForms(other = "Annotations"), portuguese = MessageForms(other = "Anotações")),
@@ -5632,10 +5634,10 @@ private fun messageCatalogPart22(): Map<String, MessageTemplate> = mapOf(
     "memory_format_ascii_little" to MessageTemplate(english = MessageForms(other = "ASCII bytes with escapes, little-endian"), portuguese = MessageForms(other = "Bytes ASCII com escapes, little-endian")),
     "memory_format_binary_big" to MessageTemplate(english = MessageForms(other = "Binary data, big-endian"), portuguese = MessageForms(other = "Dados binários, big-endian")),
     "memory_format_binary_little" to MessageTemplate(english = MessageForms(other = "Binary data, little-endian"), portuguese = MessageForms(other = "Dados binários, little-endian")),
-    "memory_format_hex_bytes_addressed_big" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes addressed big-endian"), portuguese = MessageForms(other = "v3.0 hex bytes addressed big-endian")),
 )
 
 private fun messageCatalogPart23(): Map<String, MessageTemplate> = mapOf(
+    "memory_format_hex_bytes_addressed_big" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes addressed big-endian"), portuguese = MessageForms(other = "v3.0 hex bytes addressed big-endian")),
     "memory_format_hex_bytes_addressed_little" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes addressed little-endian"), portuguese = MessageForms(other = "v3.0 hex bytes addressed little-endian")),
     "memory_format_hex_bytes_plain_big" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes plain big-endian"), portuguese = MessageForms(other = "v3.0 hex bytes plain big-endian")),
     "memory_format_hex_bytes_plain_little" to MessageTemplate(english = MessageForms(other = "v3.0 hex bytes plain little-endian"), portuguese = MessageForms(other = "v3.0 hex bytes plain little-endian")),
@@ -5735,10 +5737,10 @@ private fun messageCatalogPart23(): Map<String, MessageTemplate> = mapOf(
     "portable_bundle_extra_collision" to MessageTemplate(english = MessageForms(other = "An additional bundle file conflicts with an exported source path. The original file was kept; choose a new project bundle after resolving the conflict."), portuguese = MessageForms(other = "Um arquivo adicional do pacote conflita com um caminho de origem exportado. O arquivo original foi mantido; escolha um novo pacote após resolver o conflito.")),
     "portable_bundle_open_failed" to MessageTemplate(english = MessageForms(other = "Could not open this project bundle."), portuguese = MessageForms(other = "Não foi possível abrir este pacote de projeto.")),
     "portable_bundle_too_large" to MessageTemplate(english = MessageForms(other = "This project bundle exceeds the size limit."), portuguese = MessageForms(other = "Este pacote de projeto excede o limite de tamanho.")),
-    "portable_cancel_directory" to MessageTemplate(english = MessageForms(other = "Cancel folder import"), portuguese = MessageForms(other = "Cancelar importação da pasta")),
 )
 
 private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
+    "portable_cancel_directory" to MessageTemplate(english = MessageForms(other = "Cancel folder import"), portuguese = MessageForms(other = "Cancelar importação da pasta")),
     "portable_choose_main" to MessageTemplate(english = MessageForms(other = "Choose the main .circ file in {folder}."), portuguese = MessageForms(other = "Escolha o arquivo .circ principal em {folder}.")),
     "portable_copy_not_opened" to MessageTemplate(english = MessageForms(other = "The workspace copy could not be opened. Your current document was kept."), portuguese = MessageForms(other = "Não foi possível abrir a cópia no workspace. O documento atual foi mantido.")),
     "portable_description" to MessageTemplate(english = MessageForms(other = "Open a bundle or a project inside a folder you select. The editor creates a new workspace copy with its source files."), portuguese = MessageForms(other = "Abra um pacote ou um projeto dentro de uma pasta escolhida. O editor cria uma nova cópia no workspace com seus arquivos de origem.")),
@@ -5838,10 +5840,10 @@ private fun messageCatalogPart24(): Map<String, MessageTemplate> = mapOf(
     "preferences_fpga_suppress_gated_clock" to MessageTemplate(english = MessageForms(other = "Suppress gated clock warnings in the design rule check report."), portuguese = MessageForms(other = "Suprimir os avisos de clock por lógica no relatório da verificação de regras de projeto.")),
     "preferences_fpga_suppress_open_pins" to MessageTemplate(english = MessageForms(other = "Suppress open input warnings in the design rule check report."), portuguese = MessageForms(other = "Suprimir os avisos de entradas abertas no relatório da verificação de regras de projeto.")),
     "preferences_fpga_title" to MessageTemplate(english = MessageForms(other = "FPGA Commander"), portuguese = MessageForms(other = "Configurações do Comandante FPGA")),
-    "preferences_fpga_vhdl_upper_case" to MessageTemplate(english = MessageForms(other = "Use upper case for VHDL keywords"), portuguese = MessageForms(other = "Usar maiúsculas nas palavras-chave VHDL")),
 )
 
 private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
+    "preferences_fpga_vhdl_upper_case" to MessageTemplate(english = MessageForms(other = "Use upper case for VHDL keywords"), portuguese = MessageForms(other = "Usar maiúsculas nas palavras-chave VHDL")),
     "preferences_frequency_hint" to MessageTemplate(english = MessageForms(other = "Use a positive, finite number."), portuguese = MessageForms(other = "Use um número positivo e finito.")),
     "preferences_frequency_invalid" to MessageTemplate(english = MessageForms(other = "The default frequency must be positive and finite."), portuguese = MessageForms(other = "A frequência padrão precisa ser positiva e finita.")),
     "preferences_frequency_scope" to MessageTemplate(english = MessageForms(other = "Does not change the frequency of the open project."), portuguese = MessageForms(other = "Não altera a frequência do projeto aberto.")),
@@ -5941,10 +5943,10 @@ private fun messageCatalogPart25(): Map<String, MessageTemplate> = mapOf(
     "project_toolbar_move_up" to MessageTemplate(english = MessageForms(other = "Move {name} up"), portuguese = MessageForms(other = "Mover {name} para cima")),
     "project_toolbar_remove" to MessageTemplate(english = MessageForms(other = "Remove {name}"), portuguese = MessageForms(other = "Remover {name}")),
     "project_toolbar_separator" to MessageTemplate(english = MessageForms(other = "Separator"), portuguese = MessageForms(other = "Separador")),
-    "project_toolbar_title" to MessageTemplate(english = MessageForms(other = "Project toolbar"), portuguese = MessageForms(other = "Barra do projeto")),
 )
 
 private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
+    "project_toolbar_title" to MessageTemplate(english = MessageForms(other = "Project toolbar"), portuguese = MessageForms(other = "Barra do projeto")),
     "project_toolbar_unavailable" to MessageTemplate(english = MessageForms(other = "{name} (unavailable)"), portuguese = MessageForms(other = "{name} (indisponível)")),
     "project_tools_title" to MessageTemplate(english = MessageForms(other = "Project tools"), portuguese = MessageForms(other = "Ferramentas do projeto")),
     "project_wire_count" to MessageTemplate(english = MessageForms(one = "{count} wire", other = "{count} wires"), portuguese = MessageForms(one = "{count} fio", other = "{count} fios")),
@@ -6044,10 +6046,10 @@ private fun messageCatalogPart26(): Map<String, MessageTemplate> = mapOf(
     "soc_address_invalid" to MessageTemplate(english = MessageForms(other = "Invalid address."), portuguese = MessageForms(other = "Endereço inválido.")),
     "soc_asm_address" to MessageTemplate(english = MessageForms(other = "Expected an offset and base register, for example 0(sp). Found {value}."), portuguese = MessageForms(other = "Informe um deslocamento e registrador base, como 0(sp). Encontrado: {value}.")),
     "soc_asm_address_wrap" to MessageTemplate(english = MessageForms(other = "The program exceeds the CPU address space."), portuguese = MessageForms(other = "O programa excede o espaço de endereços da CPU.")),
-    "soc_asm_alignment" to MessageTemplate(english = MessageForms(other = "The load address must be a multiple of four."), portuguese = MessageForms(other = "O endereço de carga deve ser múltiplo de quatro.")),
 )
 
 private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
+    "soc_asm_alignment" to MessageTemplate(english = MessageForms(other = "The load address must be a multiple of four."), portuguese = MessageForms(other = "O endereço de carga deve ser múltiplo de quatro.")),
     "soc_asm_duplicate_label" to MessageTemplate(english = MessageForms(other = "Duplicate label: {value}."), portuguese = MessageForms(other = "Rótulo duplicado: {value}.")),
     "soc_asm_empty" to MessageTemplate(english = MessageForms(other = "Enter at least one instruction or word."), portuguese = MessageForms(other = "Digite ao menos uma instrução ou palavra.")),
     "soc_asm_example" to MessageTemplate(english = MessageForms(other = "addi x5, x0, 7"), portuguese = MessageForms(other = "addi x5, x0, 7")),
@@ -6147,10 +6149,10 @@ private fun messageCatalogPart27(): Map<String, MessageTemplate> = mapOf(
     "soc_instruction_trace" to MessageTemplate(english = MessageForms(other = "Instruction trace"), portuguese = MessageForms(other = "Trace de instruções")),
     "soc_load_elf" to MessageTemplate(english = MessageForms(other = "Load ELF"), portuguese = MessageForms(other = "Carregar ELF")),
     "soc_memory_address_range" to MessageTemplate(english = MessageForms(other = "Memory at {address} with {bytes} bytes exceeds the 32-bit address space."), portuguese = MessageForms(other = "A memória em {address} com {bytes} bytes ultrapassa o espaço de endereçamento de 32 bits.")),
-    "soc_memory_entry" to MessageTemplate(english = MessageForms(other = "{address}  {value}"), portuguese = MessageForms(other = "{address}  {value}")),
 )
 
 private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
+    "soc_memory_entry" to MessageTemplate(english = MessageForms(other = "{address}  {value}"), portuguese = MessageForms(other = "{address}  {value}")),
     "soc_memory_map_hide" to MessageTemplate(english = MessageForms(other = "Hide memory map"), portuguese = MessageForms(other = "Ocultar mapa de memória")),
     "soc_memory_map_plic" to MessageTemplate(english = MessageForms(other = "RISC-V interrupt controller (PLIC)"), portuguese = MessageForms(other = "Controlador de interrupções RISC-V (PLIC)")),
     "soc_memory_map_show" to MessageTemplate(english = MessageForms(other = "Show memory map"), portuguese = MessageForms(other = "Mostrar mapa de memória")),
@@ -6250,10 +6252,10 @@ private fun messageCatalogPart28(): Map<String, MessageTemplate> = mapOf(
     "tcl_auto_ticks_on_start" to MessageTemplate(english = MessageForms(other = "Allow up to {count} automatic ticks when starting this Tcl session."), portuguese = MessageForms(other = "Permitir até {count} ticks automáticos ao iniciar esta sessão Tcl.")),
     "tcl_cancel" to MessageTemplate(english = MessageForms(other = "Cancel"), portuguese = MessageForms(other = "Cancelar")),
     "tcl_client_error_clock_required" to MessageTemplate(english = MessageForms(other = "Tcl components require the one-bit input sysclk_i."), portuguese = MessageForms(other = "Componentes Tcl exigem a entrada sysclk_i de um bit.")),
-    "tcl_client_error_executor_failed" to MessageTemplate(english = MessageForms(other = "The Tcl executor failed."), portuguese = MessageForms(other = "O executor Tcl falhou.")),
 )
 
 private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
+    "tcl_client_error_executor_failed" to MessageTemplate(english = MessageForms(other = "The Tcl executor failed."), portuguese = MessageForms(other = "O executor Tcl falhou.")),
     "tcl_client_error_frame_count" to MessageTemplate(english = MessageForms(other = "Tcl replay requires 1 to {limit} input frames; received {count}."), portuguese = MessageForms(other = "A reprodução Tcl exige de 1 a {limit} quadros de entrada; recebidos {count}.")),
     "tcl_client_error_frame_interface" to MessageTemplate(english = MessageForms(other = "Tcl input frames must match the declared component interface."), portuguese = MessageForms(other = "Os frames de entrada Tcl devem corresponder à interface declarada do componente.")),
     "tcl_client_error_host_grant" to MessageTemplate(english = MessageForms(other = "The selected companion does not permit {operation} or cannot find tclsh."), portuguese = MessageForms(other = "O companion selecionado não permite {operation} ou não encontra tclsh.")),
@@ -6353,10 +6355,10 @@ private fun messageCatalogPart29(): Map<String, MessageTemplate> = mapOf(
     "trace_file_recording" to MessageTemplate(english = MessageForms(other = "Recording {name}"), portuguese = MessageForms(other = "Gravando {name}")),
     "trace_file_resume" to MessageTemplate(english = MessageForms(other = "Resume file recording"), portuguese = MessageForms(other = "Retomar gravação do arquivo")),
     "trace_file_signals_changed" to MessageTemplate(english = MessageForms(other = "The signal selection changed. File recording stopped."), portuguese = MessageForms(other = "A seleção de sinais mudou. A gravação do arquivo foi encerrada.")),
-    "trace_file_start" to MessageTemplate(english = MessageForms(other = "Record TSV file"), portuguese = MessageForms(other = "Gravar arquivo TSV")),
 )
 
 private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
+    "trace_file_start" to MessageTemplate(english = MessageForms(other = "Record TSV file"), portuguese = MessageForms(other = "Gravar arquivo TSV")),
     "trace_file_stop" to MessageTemplate(english = MessageForms(other = "Stop file recording"), portuguese = MessageForms(other = "Encerrar gravação do arquivo")),
     "trace_file_stopping" to MessageTemplate(english = MessageForms(other = "Finishing {name}"), portuguese = MessageForms(other = "Finalizando {name}")),
     "trace_file_unavailable" to MessageTemplate(english = MessageForms(other = "File recording is unavailable in this environment."), portuguese = MessageForms(other = "A gravação em arquivo está indisponível neste ambiente.")),
@@ -6456,10 +6458,10 @@ private fun messageCatalogPart30(): Map<String, MessageTemplate> = mapOf(
     "vector_seq_order" to MessageTemplate(english = MessageForms(other = "Steps in set {set} must be strictly increasing."), portuguese = MessageForms(other = "As etapas do conjunto {set} devem estar em ordem estritamente crescente.")),
     "vector_set_order" to MessageTemplate(english = MessageForms(other = "Sets must appear in increasing order."), portuguese = MessageForms(other = "Os conjuntos devem aparecer em ordem crescente.")),
     "vector_step" to MessageTemplate(english = MessageForms(other = "Step"), portuguese = MessageForms(other = "Passo")),
-    "vector_summary" to MessageTemplate(english = MessageForms(other = "{completed}/{total} rows · {passed} passed · {failed} failed · {status}"), portuguese = MessageForms(other = "{completed}/{total} linhas · {passed} aprovadas · {failed} falharam · {status}")),
 )
 
 private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
+    "vector_summary" to MessageTemplate(english = MessageForms(other = "{completed}/{total} rows · {passed} passed · {failed} failed · {status}"), portuguese = MessageForms(other = "{completed}/{total} linhas · {passed} aprovadas · {failed} falharam · {status}")),
     "vector_title" to MessageTemplate(english = MessageForms(other = "Test vectors"), portuguese = MessageForms(other = "Vetores de teste")),
     "vector_unbound_column" to MessageTemplate(english = MessageForms(other = "Column {column} has no matching pin or clock in {circuit}."), portuguese = MessageForms(other = "A coluna {column} não corresponde a um pino ou clock em {circuit}.")),
     "vector_unterminated_quote" to MessageTemplate(english = MessageForms(other = "The quoted pin name is not closed."), portuguese = MessageForms(other = "O nome de pino entre aspas não foi fechado.")),
@@ -6559,10 +6561,10 @@ private fun messageCatalogPart31(): Map<String, MessageTemplate> = mapOf(
     "workspace_read_only" to MessageTemplate(english = MessageForms(other = "The catalog could not be read. The files were preserved and saving is blocked."), portuguese = MessageForms(other = "O catálogo não pôde ser lido. Os arquivos foram preservados e a gravação está bloqueada.")),
     "workspace_read_only_original" to MessageTemplate(english = MessageForms(other = "Original preserved · read-only"), portuguese = MessageForms(other = "Original preservado · somente leitura")),
     "workspace_recent_copy" to MessageTemplate(english = MessageForms(other = "Workspace copy"), portuguese = MessageForms(other = "Cópia no workspace")),
-    "workspace_recent_original" to MessageTemplate(english = MessageForms(other = "Original from file provider"), portuguese = MessageForms(other = "Original do provedor de arquivos")),
 )
 
 private fun messageCatalogPart32(): Map<String, MessageTemplate> = mapOf(
+    "workspace_recent_original" to MessageTemplate(english = MessageForms(other = "Original from file provider"), portuguese = MessageForms(other = "Original do provedor de arquivos")),
     "workspace_recovered_project" to MessageTemplate(english = MessageForms(other = "Recovered project"), portuguese = MessageForms(other = "Projeto recuperado")),
     "workspace_reload_saved" to MessageTemplate(english = MessageForms(other = "Reload saved project"), portuguese = MessageForms(other = "Recarregar projeto salvo")),
     "workspace_rename_project" to MessageTemplate(english = MessageForms(other = "Rename project"), portuguese = MessageForms(other = "Renomear projeto")),

@@ -13,7 +13,7 @@ class AndroidListingTest(unittest.TestCase):
     def test_current_draft_has_valid_text_and_explicit_unresolved_destinations(self):
         pending = validate_listing(self.listing, ROOT)
         self.assertIn("ownerDecisions.channel", pending)
-        self.assertIn("ownerDecisions.privacyPolicyUrl", pending)
+        self.assertNotIn("ownerDecisions.privacyPolicyUrl", pending)
         self.assertIn("privacyReview", pending)
         self.assertIn("licenseReview", pending)
 

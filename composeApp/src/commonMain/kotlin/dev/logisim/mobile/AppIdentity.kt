@@ -4,10 +4,10 @@ package dev.logisim.mobile
 object AppIdentity {
     const val name: String = "Logisim Evolution Mobile"
     const val version: String = "0.2.0"
-    const val build: Int = 3
+    const val build: Int = 4
     const val androidId: String = "thalesmms.logisim.mobile"
     const val appleId: String = "thalesmms.logisim.mobile"
     const val repository: String = "https://github.com/ThalesMMS/Logisim-Mobile"
     const val upstream: String = "https://github.com/logisim-evolution/logisim-evolution"
-    val sourceReleaseUrl: String? = "https://github.com/ThalesMMS/Logisim-Mobile/tree/ios-0.2.0-3"
+    val sourceReleaseUrl: String? = "https://github.com/ThalesMMS/Logisim-Mobile/tree/android-0.2.0-4"
 }

@@ -96,6 +96,11 @@ private fun HelpExamplesPanel(
             when (page) {
                 HelpPage.GUIDES -> {
                     item { Text(strings("help_offline_guide"), Modifier.padding(horizontal = 12.dp)) }
+                    item {
+                        TextButton(onClick = { openUrl("https://thalesmms.github.io/apps/logisim-evolution-mobile/privacy/") }) {
+                            Text(strings("help_privacy_policy"))
+                        }
+                    }
                     items(HelpContent.guides, key = { it.id }) { guide ->
                         Column(Modifier.padding(horizontal = 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text(strings(guide.title), style = MaterialTheme.typography.titleMedium)
