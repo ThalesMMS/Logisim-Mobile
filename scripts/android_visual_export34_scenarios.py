@@ -66,7 +66,7 @@ def editor_activity(ui):
 
 
 def open_tool(s):
-    s.click_key("a11y_project_tools", description=True)
+    s.click_key("a11y_project_files", description=True)
     s.click_key("visual_export_title", reveal=True)
     s.wait_key("visual_export_heading")
 

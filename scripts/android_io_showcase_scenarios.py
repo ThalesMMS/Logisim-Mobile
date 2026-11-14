@@ -12,11 +12,22 @@ import re
 from datetime import datetime, timezone
 import time
 
-from io_showcase_contract import (IoShowcaseOracle, load_io_contract, assert_probe_description, pointer_screen_point)
+from io_showcase_contract import (IoShowcaseOracle, load_io_contract, assert_probe_description, pointer_screen_point,
+                                  activation_key)
 from android_keyboard_controls import click_keyboard_control
 
 ROOT = Path(__file__).resolve().parents[1]
 IO_CASE_NAMES = ("signals", "dip-last", "pointer-controls", "keyboard-tty", "dimensions")
+
+
+# The Matrix Keypad's "size" is shown as Evolution's "Display size" and edited from a menu of its options.
+INSPECTOR_LABEL_KEYS = {"size": "attribute_label_display_size"}
+INSPECTOR_CHOICES = {"size"}
+
+
+def option_key(name, value):
+    """Message key of an option value's display name, as core attributeOptionKey."""
+    return "attribute_option_" + name.lower() + "_" + re.sub(r"[^a-z0-9]+", "_", value.lower()).strip("_")
 
 
 def normalize_io_cases(values=None):
@@ -79,7 +90,7 @@ def run_io_showcase(scenarios, selected_cases=None):
             self.oracle = IoShowcaseOracle(self.fixture_xml, self.targets, self.contract)
             self.s.incoming(self.s.fixture(self.fixture_xml))
             self.s.wait_editor()
-            self.ui.tap(self.s.simulation_action("a11y_simulation_event_step"))
+            self.ui.tap(self.s.simulation_action("simulation_control_step_event"))
             self.s.wait_editor()
             self.assert_outputs(self.contract["baselineOutputs"])
             xml, _ = self.export("io-baseline")
@@ -95,7 +106,7 @@ def run_io_showcase(scenarios, selected_cases=None):
 
         def activate(self, label):
             self.open_explorer(); self.search(label)
-            self.click("a11y_explorer_activate", name=label, scroll=True)
+            self.click(activation_key(self.fixture_xml, label), name=label, scroll=True)
             self.close_explorer()
 
         def properties(self, label):
@@ -120,7 +131,14 @@ def run_io_showcase(scenarios, selected_cases=None):
         def edit_property(self, label, name, value, *, reject=False):
             self.properties(label)
             self.click("inspector_edit", description=True, scroll=True,
-                       name=self.s.catalog["attribute_label_" + name.lower()])
+                       name=self.s.catalog[INSPECTOR_LABEL_KEYS.get(name, "attribute_label_" + name.lower())])
+            if name in INSPECTOR_CHOICES:
+                # Option attributes open a menu of their values and apply the one chosen; there is no text or Apply.
+                assert not reject, "An option menu cannot offer an invalid value"
+                self.click(option_key(name, value))
+                self.oracle.expect({label: {name: value}})
+                self.close_properties()
+                return
             field = self.field()
             self.ui.input_text(field, value)
             self.hide_keyboard()
@@ -175,10 +193,10 @@ def run_io_showcase(scenarios, selected_cases=None):
             self.open_explorer(); self.search(label)
             self.click("a11y_explorer_select", description=True, name=label, scroll=True)
             self.close_explorer()
-            # A file without <toolbar> has no tools, as in Evolution (#344); the editor is already in Poke.
+            # A file without <toolbar> has no project tools (#344), only Mobile's base tools; the editor opens in Poke.
             # The held-pointer probes below fail if it is not.
             if b"<toolbar" in self.fixture_xml:
-                self.click("action_simulate", toolbar=True)
+                self.click("action_poke_tool", toolbar=True)
             self.click("a11y_fit_selection", description=True, toolbar=True)
             self.s.wait_editor()
 
@@ -214,12 +232,16 @@ def run_io_showcase(scenarios, selected_cases=None):
             self.momentary(case["keypad"])
             joystick = case["joystick"]
             self.properties(joystick["label"])
-            self.ui.click(text="→")
+            # The arrow buttons recenter on release like the pad (X5); the X slider holds an exact deflection.
+            slider = self.reveal("io_joystick_axis_x", description=True)
+            left, top, right, bottom = _bounds(slider)
+            middle = (top + bottom) // 2
+            self.ui.adb("shell", "input", "swipe", str((left + right) // 2), str(middle), str(right - 2), str(middle), "600")
             self.wait_node("io_a11y_joystick", description=True, label=joystick["label"], x=14, y=0)
             self.close_properties()
             self.assert_outputs(joystick["right"])
             self.properties(joystick["label"])
-            self.click("io_center")
+            self.click("io_center", description=True, scroll=True)
             self.wait_node("io_a11y_joystick", description=True, label=joystick["label"], x=0, y=0)
             self.close_properties()
             self.assert_outputs(joystick["centered"])
@@ -254,7 +276,7 @@ def run_io_showcase(scenarios, selected_cases=None):
 
         def step_char(self):
             for _ in range(self.contract["keyboard"]["halfCyclesPerCharacter"]):
-                self.ui.tap(self.s.simulation_action("a11y_step_clock"))
+                self.ui.tap(self.s.simulation_action("simulation_control_tick_half"))
                 self.s.wait_editor()
 
         def text(self):

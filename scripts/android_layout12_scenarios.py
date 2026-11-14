@@ -161,7 +161,7 @@ class Layout12(_Editing):
 
     def press(self, key, *, description=False, scroll=False, toolbar=False, **arguments):
         # Reveal first, then locate again from the retained pre-action tree.
-        if key in {"action_undo", "action_redo", "a11y_project_tools"}:
+        if key in {"action_undo", "action_redo", "a11y_project_tools", "a11y_fpga_tools"}:
             toolbar = "top"
         self.reveal(key, description=description, toolbar=toolbar, **arguments) if scroll or toolbar else self.wait_node(
             key, description=description, **arguments)

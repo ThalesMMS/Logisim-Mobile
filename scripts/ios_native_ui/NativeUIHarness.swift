@@ -58,6 +58,38 @@ class NativeUIHarness: XCTestCase {
         return values
     }
 
+    /// Every plural form of a counted message in the catalog, with [arguments] filled in and `{count}` kept.
+    func countedTemplates(_ key: String, arguments: [String: String] = [:]) throws -> [String] {
+        let entry = try XCTUnwrap(catalog[key], "Missing canonical localization key: \(key)")
+        let forms = entry.filter { $0.key != "description" }.flatMap { _, value -> [String] in
+            if let text = value as? String { return [text] }
+            return (value as? [String: Any])?.values.compactMap { $0 as? String } ?? []
+        }
+        XCTAssertFalse(forms.isEmpty, "Expected localized forms: \(key)")
+        return forms.map { form in arguments.reduce(form) { $0.replacingOccurrences(of: "{\($1.key)}", with: $1.value) } }
+    }
+
+    /// The status line once [filename] opens: "File NAME opened.", or, when its adjustments only recorded how it was
+    /// read and the import report stayed closed, "File NAME opened with N compatibility adjustments." (C145).
+    func fileOpenedStatus(_ filename: String, within container: XCUIElement? = nil) throws -> XCUIElement {
+        let exact = try values("status_file_opened").map { $0.replacingOccurrences(of: "{name}", with: filename) }
+        let counted = try countedTemplates("import_report_status_file", arguments: ["name": filename]).map { template in
+            template.components(separatedBy: "{count}").map(NSRegularExpression.escapedPattern(for:)).joined(separator: "[0-9]+")
+        }
+        let predicates = exact.map { NSPredicate(format: "label == %@ OR label BEGINSWITH %@", $0, $0 + ", ") } +
+            counted.map { NSPredicate(format: "label MATCHES %@", "(?s)" + $0 + "(, .*)?") }
+        return (container ?? nativeQueryRoot).descendants(matching: .any)
+            .matching(NSCompoundPredicate(orPredicateWithSubpredicates: predicates)).firstMatch
+    }
+
+    /// Opens the import report that an informational open left closed, from Details beside its status (C145).
+    func showImportReportFromStatus() throws {
+        let details = identified("import-report-status-details")
+        XCTAssertTrue(details.waitForExistence(timeout: 10), "The adjustments status must offer Details")
+        details.tap()
+        XCTAssertTrue(identified("editor-import-report").waitForExistence(timeout: 10), "Details must open the import report")
+    }
+
     func closeImportReportIfPresented() throws {
         let report = identified("editor-import-report")
         guard report.exists else { return }
@@ -291,6 +323,26 @@ class NativeUIHarness: XCTestCase {
             }
             if let element = found() { return element }
         }
+        // Docked, the I/O controls take at most a quarter of the inspector and scroll within it (C15): drag the
+        // controls' own band at its trailing edge, past the keys, in short steps.
+        let controls = identified("inspector-io-panel")
+        if controls.exists {
+            let band = controls.frame.intersection(panel)
+            func bandPoint(_ y: CGFloat) -> XCUICoordinate {
+                origin.withOffset(CGVector(dx: band.maxX - 12 - app.frame.minX, dy: y - app.frame.minY))
+            }
+            if band.height > 56 {
+                for forward in [true, false] {
+                    for _ in 0..<8 {
+                        if let element = found() { return element }
+                        let lower = band.maxY - 8, upper = lower - 40
+                        bandPoint(forward ? lower : upper).press(forDuration: 0.05, thenDragTo: bandPoint(forward ? upper : lower),
+                                                                 withVelocity: .slow, thenHoldForDuration: 0.1)
+                    }
+                }
+                if let element = found() { return element }
+            }
+        }
         XCTFail("No reachable control for \(labels) in the docked inspector")
         throw HarnessFailure.missingControl
     }
@@ -401,21 +453,102 @@ class NativeUIHarness: XCTestCase {
         return nil
     }
 
-    /// Close an open menu by tapping the status line, which has no action of its own.
+    /// Compose names a text field by its caption only while the caption is inside its scroll viewport. These fields
+    /// keep a test tag, which still identifies them when the Insert dialog's list cuts their caption (A1).
+    static let fieldIdentifiers = ["a11y_explorer_insert_kind": "a11y-insert-kind",
+                                   "a11y_explorer_insert_x": "a11y-insert-x", "a11y_explorer_insert_y": "a11y-insert-y"]
+
+    /// Drag a dialog's list until [field] lies above the software keyboard and the dialog's buttons, as a finger
+    /// does. The Insert dialog is one list that keeps clear of the keyboard (A1), so with the keyboard up X and Y can
+    /// start below its fold.
+    func scrollAboveKeyboard(_ field: XCUIElement, buttonsHeight: CGFloat = 72) {
+        for _ in 0..<6 {
+            // The keyboard element covers only its keys; its host view (with the suggestion bar) starts higher.
+            var keyboardTop = app.frame.maxY
+            let keyboard = app.keyboards.firstMatch
+            if keyboard.exists && keyboard.frame.minY < app.frame.maxY - 1 {
+                keyboardTop = keyboard.frame.minY
+                for id in ["inputView", "SystemInputAssistantView"] {
+                    let host = app.descendants(matching: .any).matching(identifier: id).firstMatch
+                    if host.exists && host.frame.height > 0 && host.frame.minY < keyboardTop { keyboardTop = host.frame.minY }
+                }
+            }
+            let bottom = keyboardTop - buttonsHeight, top = app.frame.minY + 120
+            let frame = field.frame
+            if frame.minY >= top && frame.maxY <= bottom { return }
+            let origin = app.coordinate(withNormalizedOffset: .zero)
+            let start = origin.withOffset(CGVector(dx: app.frame.midX, dy: (top + bottom) / 2))
+            let distance = frame.maxY > bottom ? -min(frame.maxY - bottom + 24, (bottom - top) / 2)
+                                               : min(top - frame.minY + 24, (bottom - top) / 2)
+            // Hold at the end so the list does not fling: a tap during a fling only stops it.
+            start.press(forDuration: 0.05, thenDragTo: start.withOffset(CGVector(dx: 0, dy: distance)),
+                        withVelocity: .slow, thenHoldForDuration: 0.3)
+            waitForStableFrame(field)
+        }
+        XCTFail("\(field.identifier) could not be scrolled above the keyboard: \(field.frame)")
+    }
+
+    /// Reveal a control in one header menu, `menu-title-<id>` (for example "view" for Fit selection), opening it from
+    /// the menu bar or from the compact menu, without scanning the toolbars and every other menu first.
+    func revealInHeaderMenu(_ labels: [String], menu id: String, prefix: Bool = false) throws -> XCUIElement {
+        dismissMenus()
+        let title = identified("menu-title-\(id)")
+        let compact = identified("editor-project-toolbar-overflow")
+        let drilled = !title.exists && compact.exists
+        if drilled {
+            compact.tap()
+            XCTAssertTrue(quickWait(identified("editor-project-toolbar-menu"), timeout: 3), "The compact menu must open")
+        }
+        XCTAssertTrue(quickWait(title, timeout: 3), "The \(id) menu title must be reachable")
+        title.tap()
+        // In the compact menu the title drills down: the submenu replaces it.
+        if drilled { harnessWait("opened submenu \(id)") { !title.exists } }
+        if let popup = openMenu(), let found = try findInRegion(labels, region: popup, prefix: prefix) { return found }
+        XCTFail("No reachable control for \(labels) in the \(id) menu")
+        throw HarnessFailure.missingControl
+    }
+
+    /// Close an open menu by tapping the status line outside the menu. A notice cut to its line is itself a button
+    /// that opens to its whole text (C28), and the tap that dismisses a non-focusable menu can reach it, growing the
+    /// bottom bar; the line is then put back as it was, so later steps measure the same layout.
     func dismissMenus() {
         let open = app.descendants(matching: .any).matching(Self.menuPopups).firstMatch
         guard open.exists else { return }
         // Element-relative coordinates follow the interface orientation. A long menu reaches the status
         // line and its last item would take the tap (#367), so tap the line beyond the menu's end.
         let status = identified("editor-status")
+        let expandedBefore = statusExpanded(status)
         let line = status.frame, menu = open.frame
         var dx: CGFloat = 0.9
         if menu.intersects(line) && line.width > 0 {
-            dx = (menu.maxX + 16 - line.minX) / line.width
-            XCTAssertLessThan(dx, 1, "The status line must extend beyond the open menu")
+            // The line shares its row with the tick counter and zoom on a phone, so a centred menu can cover its
+            // right end; then tap the part of the line left of the menu.
+            let right = menu.maxX + 16, left = menu.minX - 16
+            if right < line.maxX {
+                dx = (right - line.minX) / line.width
+            } else {
+                XCTAssertGreaterThan(left, line.minX, "The status line must extend beyond the open menu")
+                dx = ((line.minX + left) / 2 - line.minX) / line.width
+            }
         }
         status.coordinate(withNormalizedOffset: CGVector(dx: dx, dy: 0.5)).tap()
         harnessWait("closed editor menu") { !open.exists }
+        // Let a toggled notice lay out before reading its state.
+        RunLoop.current.run(until: Date().addingTimeInterval(0.3))
+        guard status.exists, statusExpanded(status) != expandedBefore else { return }
+        attach("expandedBefore=\(expandedBefore), value=\(String(describing: status.value)), frame=\(status.frame)",
+               name: "status-line-toggled-by-menu-dismissal")
+        status.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        harnessWait("status line restored after closing the menu") { self.statusExpanded(status) == expandedBefore }
+    }
+
+    /// Whether the status line shows a notice opened to its whole text: its state reads "Expanded", or it is taller
+    /// than the 48 pt row a collapsed line keeps.
+    func statusExpanded(_ status: XCUIElement) -> Bool {
+        guard status.exists else { return false }
+        let expanded = (try? values("status_line_expanded")) ?? []
+        if let value = status.value as? String, expanded.contains(value) { return true }
+        return status.frame.height > 52
     }
 
     /// Open the File menu, which replaced the project files dialog.

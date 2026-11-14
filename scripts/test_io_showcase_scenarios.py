@@ -9,7 +9,7 @@ from copy import deepcopy
 import xml.etree.ElementTree as ET
 from android_io_showcase_scenarios import keyboard_buffer_value, hold_pointer_with_probes
 from io_showcase_contract import (load_io_contract, assert_io_document, component_attributes,
-    IoShowcaseOracle, assert_probe_description, pointer_screen_point, main as postflight_main)
+    IoShowcaseOracle, assert_probe_description, pointer_screen_point, activation_key, main as postflight_main)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -30,6 +30,24 @@ class IoShowcaseScenarioTest(unittest.TestCase):
             self.assertEqual("output", attrs["type"])
             self.assertEqual("2", attrs["radix"])
             self.assertEqual(len(bits), int(attrs["width"]))
+
+    def test_display_sources_use_the_explorer_action_named_for_their_width(self):
+        catalog = {}
+        for path in (ROOT / "localization" / "messages").glob("*.json"):
+            catalog.update(json.loads(path.read_text()))
+        keys = {}
+        for change in self.contract["displayTransitions"]:
+            source = change["source"]
+            _, attrs = component_attributes(self.xml, source)
+            keys[source] = activation_key(self.xml, source)
+            expected = "a11y_explorer_activate" if attrs.get("width", "1") == "1" else "a11y_input_toggle_low_bit"
+            self.assertEqual(expected, keys[source], source)
+            self.assertIn(keys[source], catalog)
+        self.assertEqual("a11y_input_toggle_low_bit", keys["IN_BAR_VALUE"])
+        self.assertEqual("a11y_explorer_activate", keys["IN_LED_LEVEL"])
+        self.assertEqual("Toggle bit 0 of {name}", catalog["a11y_input_toggle_low_bit"]["en"])
+        with self.assertRaises(AssertionError):
+            activation_key(self.xml, "IO_KEYBOARD")
 
     def test_fixture_defaults_match_keyboard_and_dimension_contract(self):
         _, keyboard = component_attributes(self.xml, "IO_KEYBOARD")

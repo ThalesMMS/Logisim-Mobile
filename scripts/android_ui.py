@@ -689,6 +689,7 @@ class AndroidUi:
 
         def scan(current, identifier):
             """Search one menu viewport, scrolling it in both directions."""
+            swiped = False
             for reverse in (False, True):
                 previous = None
                 edge = None
@@ -700,7 +701,17 @@ class AndroidUi:
                     node = target(current, menu)
                     if node is not None and self.visible_node(current, node, within=menu):
                         if not clipped(menu, node):
-                            return node, current
+                            if not swiped:
+                                return node, current
+                            # After a swipe the list can still be flinging, and a tap on it then only stops it
+                            # (layout12's long File menu): return the item once a second frame shows it still.
+                            following = fresh()
+                            again = self.tagged(following, identifier)
+                            still = target(following, again) if again is not None else None
+                            if still is not None and still.get("bounds") == node.get("bounds"):
+                                return still, following
+                            current, swiped = following, True
+                            continue
                         # Scroll it inside the viewport; an item that no longer moves is whole.
                         edge = node
                         _, top, _, bottom = self._bounds(menu)
@@ -727,6 +738,7 @@ class AndroidUi:
                     self._run(("shell", "input", "swipe", str((left + right) // 2), str(round(start)),
                                str((left + right) // 2), str(round(end)), "250"), timeout=remaining())
                     current = fresh()
+                    swiped = True
             return None, current
 
         def wait_for(predicate):

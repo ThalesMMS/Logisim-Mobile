@@ -47,7 +47,8 @@ def support():
 def fixture_xml(title: str, *, tools: bool = False) -> bytes:
     root = ET.fromstring(FIXTURE.read_bytes())
     if tools:
-        # A file without <toolbar> has no tools, as in Evolution (#344); the peer flow switches Poke and Edit.
+        # A file without <toolbar> has no project tools, as in Evolution (#344); Mobile injects its base tools in
+        # the UI only, never into the file. The peer flow switches the project's own Poke and Edit tools.
         index = list(root).index(root.find("main"))
         root.insert(index, ET.Element("lib", {"desc": "#Base", "name": "2"}))
         toolbar = ET.Element("toolbar")
@@ -122,7 +123,8 @@ def prepare(output: Path, bundle_id: str, run_id: str, documents: Path, *,
     ET.SubElement(mouse_mappings, "tool", {"lib": "6", "map": "Button3", "name": "Poke Tool"})
     pin_tool = ET.SubElement(mouse_mappings, "tool", {"lib": "0", "map": "Button1", "name": "Pin"})
     ET.SubElement(pin_tool, "a", {"name": "width", "val": "8"})
-    # A file without <toolbar> tools offers no Wire tool (#344); the mappings must override a selected tool.
+    # A file without <toolbar> has no project tools (#344); Mobile's base tools are injected in the UI only.
+    # This fixture adds the project's own Wiring Tool, which the mappings must override once selected.
     ET.SubElement(mouse.find("toolbar"), "tool", {"lib": "6", "name": "Wiring Tool"})
     mouse_circuit.find("comp[@name='Pin'][@loc='(100,100)']").set("logisim-mobile-id", f"mouse-in-{run_id}")
     mouse_circuit.find("comp[@name='Pin'][@loc='(300,100)']").set("logisim-mobile-id", f"mouse-out-{run_id}")

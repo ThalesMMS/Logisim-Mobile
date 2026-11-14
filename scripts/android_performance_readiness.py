@@ -51,9 +51,10 @@ class ReadinessText:
     circuit: str = IMPORTED_CIRCUIT
 
     @classmethod
-    def from_catalog(cls, catalog, locale, *, renamed=True):
+    def from_catalog(cls, catalog, locale, *, renamed=True, counter_key="simulation_ticks"):
         """Select one explicit locale from the caller's existing message catalog. ``renamed=False`` describes
-        builds before #321, which kept the source name ``gates-16``."""
+        builds before #321, which kept the source name ``gates-16``; ``counter_key="simulation_steps"`` builds
+        before the simulation controls named their counter "Ticks N"."""
         def text(key):
             value = catalog[key][locale]
             require(isinstance(value, str) and value, f"missing localized text: {key}/{locale}")
@@ -62,7 +63,7 @@ class ReadinessText:
         return cls(text("import_report_title"), text("import_report_source").format(version="3.8.0", count=1),
                    text("import_report_origin"), text("import_report_circuit").format(name=circuit),
                    text("action_close"), text("a11y_canvas").split("{outputs}", 1)[0].strip(),
-                   text("action_run"), text("action_pause"), text("simulation_steps"),
+                   text("action_run"), text("action_pause"), text(counter_key),
                    frozenset(value for key in ("action_failed_title", "action_understood")
                              for value in catalog[key].values()),
                    text("evolution_name_renamed_on_load").format(old=SOURCE_CIRCUIT, new=IMPORTED_CIRCUIT) if renamed else None,
@@ -124,7 +125,11 @@ def _one(nodes, predicate, label):
 
 
 def qualify_import_report(ui_xml, *, fixture_name, text, package):
-    """Recognize only the expected fixture's report. Do not dismiss or wait for it."""
+    """Recognize only the expected fixture's report. Do not dismiss or wait for it.
+
+    Since C145 only behavior-changing adjustments open the report by itself; independent-16 qualifies because its
+    circuit and pin names are renamed on open (#321). A fixture with version defaults alone would open the editor
+    with an adjustments status instead, and this check would rightly find no report."""
     require(re.fullmatch(r"e2e-[0-9a-f]{32}\.circ", fixture_name), "expected an exact provider fixture UUID filename")
     nodes = _screen(ui_xml, text, package)
     report = _one(nodes, lambda node: node.get("resource-id") == "editor-import-report", "import report")

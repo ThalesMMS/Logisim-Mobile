@@ -182,8 +182,8 @@ final class PortableProjectEndToEndTests: NativeUIHarness {
 
     private func openPortableTool() throws {
         if identified("editor-tool-sheet").exists { try tapKey("action_close") }
-        try tapKey("a11y_project_tools", toolbar: "editor-project-toolbar")
-        try reveal(values("portable_title"), verticalRegion: "editor-tool-menu").tap()
+        try tapKey("a11y_project_files", toolbar: "editor-project-toolbar")
+        try reveal(values("portable_title"), verticalRegion: "editor-file-menu").tap()
         try require(matching(try values("portable_open_bundle")).firstMatch.waitForExistence(timeout: 10),
                     "The mounted Portable projects panel did not appear")
         record("portable-panel-opened")
@@ -250,10 +250,15 @@ final class PortableProjectEndToEndTests: NativeUIHarness {
         throw PortableHarnessError("The actual canvas never showed independent outputs 8 and 3: \(observed)")
     }
 
+    /// A copy with no write association offers "Save to file…", which opens Save As (C140), and never the plain
+    /// "Save to file" that writes back to a linked native document.
     private func assertNoEditableReference() throws {
-        try tapKey("a11y_project_files", toolbar: "editor-project-toolbar")
-        let save = try reveal(values("action_save_file"))
-        try require(!save.isEnabled, "A portable import copy inherited an editable native file reference")
+        try openEditorFileMenu()
+        let picker = try reveal(values("action_save_file_picker"), verticalRegion: "editor-file-menu")
+        try require(picker.isEnabled, "Save to file… must stay available to save the portable import copy as a new file")
+        // Compose on iOS flattens menu items beside the menu node; search the window for the linked label.
+        let linked = matching(try values("action_save_file")).allElementsBoundByIndex.filter { $0.exists && $0.frame.width > 0 }
+        try require(linked.isEmpty, "A portable import copy inherited an editable native file reference")
         dismissMenus()
     }
 

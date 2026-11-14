@@ -16,7 +16,8 @@ final class HdlEndToEndTests: NativeUIHarness {
         try tapKey("workspace_new_project")
         let title = "HDL-UI-" + (try string("run_id")) + "-" + name
         try replace(canonicalField("workspace_name"), with: title)
-        try tapKey("action_save")
+        // The New project dialog confirms with Create (Rename confirms a rename).
+        try tapKey("workspace_create")
         XCTAssertTrue(matching([title]).firstMatch.waitForExistence(timeout: 30),
                       "Each scenario must use its own new workspace, preserving the previous project")
     }
@@ -63,12 +64,11 @@ final class HdlEndToEndTests: NativeUIHarness {
                 "module \(top)(input [1:0] a,b, output [1:0] y);\n  assign y = a ^ b;\nendmodule\n"
             try openTool("hdl_tools_import_title")
             if blif {
-                // The control cycles through the formats and repaints after each tap, so read it before tapping again.
-                let blifFormat = matching(try rendered("hdl_tools_import_format", ["format": "BLIF"])).firstMatch
-                for _ in 0..<4 where !blifFormat.waitForExistence(timeout: 2) {
-                    try reveal(try prefixValues("hdl_tools_import_format"), verticalRegion: "hdl-import-scroll", prefix: true).tap()
-                }
-                XCTAssertTrue(blifFormat.waitForExistence(timeout: 5), "The format control must reach BLIF")
+                // Every format is a visible single choice, so BLIF is selected directly.
+                try tapAction("hdl_tools_import_format_label", tag: "hdl-import-format-BLIF", region: "hdl-import-scroll")
+                let selected = XCTNSPredicateExpectation(predicate: NSPredicate(format: "selected == true"),
+                                                         object: identified("hdl-import-format-BLIF"))
+                XCTAssertEqual(XCTWaiter.wait(for: [selected], timeout: 5), .completed, "The format choice must select BLIF")
             }
             try addImportFile(name: top + (blif ? ".blif" : ".v"), source: source, top: top)
             try prepareAndConfirmImport()
@@ -180,7 +180,8 @@ final class HdlEndToEndTests: NativeUIHarness {
     }
 
     private func openTool(_ key: String) throws {
-        try tapKey("a11y_project_tools", toolbar: "editor-project-toolbar")
+        // The HDL and companion tools sit in Evolution's FPGA menu, which keeps the tools menu tag.
+        try tapKey("a11y_fpga_tools", toolbar: "editor-project-toolbar")
         try reveal(values(key), verticalRegion: "editor-tool-menu").tap()
     }
 
@@ -293,7 +294,9 @@ final class HdlEndToEndTests: NativeUIHarness {
 
     /// With the keyboard up in landscape, Apply must still be reachable by scrolling the sheet.
     private func checkImportApplyReachableWithKeyboard() throws {
-        // Defines is on screen once the job finished; focusing it edits nothing.
+        // The choice rows and the result line under Prepare can leave Defines above the viewport once the job
+        // finished, so it is revealed before the tap; focusing it edits nothing.
+        _ = try reveal(try values("hdl_tools_import_defines"), verticalRegion: "hdl-import-scroll")
         let field = try canonicalField("hdl_tools_import_defines")
         field.tap()
         _ = try visibleToolKeyboardAction()

@@ -36,7 +36,7 @@ final class UnicodeLabelsEndToEndTests: NativeUIHarness {
 
         XCUIDevice.shared.system.open(url)
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: 20))
-        let opened = matching(try localized("status_file_opened", ["name": filename])).firstMatch
+        let opened = try fileOpenedStatus(filename)
         let report = identified("editor-import-report")
         let admitted = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in opened.exists || report.exists }, object: app)
         XCTAssertEqual(XCTWaiter.wait(for: [admitted], timeout: 20), .completed, "\(filename) must open from the system")

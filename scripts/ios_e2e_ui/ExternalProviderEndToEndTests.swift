@@ -193,9 +193,10 @@ final class ExternalProviderEndToEndTests: NativeUIHarness {
 
     private func assertSaveEnabled(_ enabled: Bool) throws {
         try openFileMenu()
-        let save = try fileSaveButton()
-        waitFor("Save File enabled=\(enabled)") { save.exists && save.isEnabled == enabled }
-        XCTAssertEqual(save.isEnabled, enabled, "Copy and Edit external must retain distinct write associations")
+        // A copy keeps no write association: its Save reads "Save to file…" and opens Save As (C140).
+        let save = try fileSaveButton(key: enabled ? "action_save_file" : "action_save_file_picker")
+        waitFor("Save File linked=\(enabled)") { save.exists && save.isEnabled }
+        XCTAssertTrue(save.isEnabled, "Copy and Edit external must retain distinct write associations")
         dismissMenus()
     }
 
@@ -213,8 +214,8 @@ final class ExternalProviderEndToEndTests: NativeUIHarness {
         XCTAssertEqual(try Data(contentsOf: fixtureURL), expected)
     }
 
-    private func fileSaveButton() throws -> XCUIElement {
-        let names = try values("action_save_file")
+    private func fileSaveButton(key: String = "action_save_file") throws -> XCUIElement {
+        let names = try values(key)
         func candidates() -> [XCUIElement] {
             app.buttons.allElementsBoundByIndex.filter { button in
                 guard button.exists, names.contains(where: { self.nativeLabel(button.label, matches: $0) }) else { return false }
@@ -284,7 +285,7 @@ final class ExternalProviderEndToEndTests: NativeUIHarness {
     /// Wide windows keep the inspector inline in the sidebar. Select the input on the canvas with the
     /// Edit tool so the selection cannot poke it, then edit only inside that inspector's frame.
     private func editInputLabelInline(from old: String, to new: String, inspector: XCUIElement) throws {
-        let simulate = try reveal(values("action_simulate"), toolbar: "editor-command-toolbar")
+        let simulate = try reveal(values("action_poke_tool"), toolbar: "editor-command-toolbar")
         let restoreSimulate = simulate.isSelected
         try reveal(values("action_edit_tool"), toolbar: "editor-command-toolbar").tap()
         func components(_ label: String) -> [XCUIElement] {
@@ -323,7 +324,7 @@ final class ExternalProviderEndToEndTests: NativeUIHarness {
         XCTAssertEqual(applies.count, 1, "Use the one Apply button of the inline inspector")
         try XCTUnwrap(applies.first).tap()
         waitFor("The canvas shows the applied label \(new)") { components(new).count == 1 && components(old).isEmpty }
-        if restoreSimulate { try reveal(values("action_simulate"), toolbar: "editor-command-toolbar").tap() }
+        if restoreSimulate { try reveal(values("action_poke_tool"), toolbar: "editor-command-toolbar").tap() }
         record("after-inline-label-edit-" + new)
     }
 

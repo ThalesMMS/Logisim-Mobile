@@ -47,6 +47,50 @@ final class InspectorEndToEndTests: NativeUIHarness {
                        "The taller layout must move Signals inline and dismiss its sheet")
     }
 
+    /// The reported flaw: a label direction was retyped as text ("north" -> "west"). It is now chosen from a menu
+    /// of Evolution's display names, the current value is marked, and the choice is applied at once.
+    func testLabelLocationIsChosenFromAMenu() throws {
+        orient(.portrait)
+        // The open project's first input pin (the AND example's A, or any project's unlabelled Input).
+        let inputs = app.descendants(matching: .any).matching(NSPredicate(format:
+            "identifier BEGINSWITH 'canvas-component:' AND (label == 'A' OR label BEGINSWITH 'Input' OR label BEGINSWITH 'Entrada')"))
+        let pin = inputs.firstMatch
+        XCTAssertTrue(pin.waitForExistence(timeout: 10), "The project must show an input pin")
+        // The Edit tool, wherever the current toolbar layout shows it.
+        try XCTUnwrap(visibleMatch(values("action_edit_tool")), "The Edit tool must be visible").tap()
+        pin.tap()
+        try tapKey("a11y_open_properties", toolbar: "editor-command-toolbar")
+        let row = identified("inspector-row-labelloc")
+        for _ in 0..<4 where !row.isHittable { identified("editor-inspector-sheet").swipeUp() }
+        XCTAssertTrue(row.waitForExistence(timeout: 5) && row.isHittable, "The Label location row must be reachable")
+        screenshot("labelloc-1-inspector")
+        attach(row.debugDescription, name: "labelloc-row-accessibility")
+        let shownBefore = row.value as? String
+        row.tap()
+        let locations = ["center", "north", "south", "east", "west"]
+        let options = locations.map { identified("inspector-option-labelloc-\($0)") }
+        XCTAssertTrue(options[1].waitForExistence(timeout: 5), "The menu must offer the label locations")
+        XCTAssertTrue(options.allSatisfy { $0.exists }, "Center, North, South, East and West must all be offered")
+        let marked = locations.indices.filter { options[$0].isSelected }
+        XCTAssertEqual(marked.count, 1, "Exactly the current location must be marked")
+        let current = locations[try XCTUnwrap(marked.first)]
+        let target = current == "north" ? "west" : "north"
+        screenshot("labelloc-2-menu")
+        attach("current=\(current) target=\(target)", name: "labelloc-choice")
+        identified("inspector-option-labelloc-\(target)").tap()
+        let applied = XCTNSPredicateExpectation(predicate: NSPredicate { [unowned self] _, _ in
+            !self.identified("inspector-option-labelloc-center").exists
+        }, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [applied], timeout: 5), .completed, "Choosing must close the menu")
+        let after = identified("inspector-row-labelloc")
+        XCTAssertNotEqual(after.value as? String, shownBefore, "The row must show the chosen location")
+        screenshot("labelloc-3-chosen")
+        attach(after.debugDescription, name: "labelloc-row-after")
+        try dismissInspector()
+        XCTAssertTrue(try observedProjectXML(attachmentName: "labelloc-chosen.circ").contains("<a name=\"labelloc\" val=\"\(target)\"/>"),
+                      "The file must store the serialized value \(target)")
+    }
+
     func testInvalidWidthPreservesProjectAndValidWidthIsOneUndoAction() throws {
         orient(.portrait)
         let fixture = try loadInput()
@@ -63,7 +107,9 @@ final class InspectorEndToEndTests: NativeUIHarness {
 
         try openWidth(label: label)
         try replaceNumeric(using: .oneToInvalidZero)
-        let invalid = try labels("inspector_value_invalid", arguments: ["name": "width", "raw": "0"])
+        // The message names the attribute as the table shows it ("Data bits") and its range (W3-01).
+        let invalid = try labels("inspector_value_invalid_range", arguments: ["raw": "0", "min": "1", "max": "64"],
+                                 nestedKey: "attribute_label_width")
         XCTAssertTrue(matching(invalid).firstMatch.waitForExistence(timeout: 5),
                       "The invalid field must identify width and the entered value")
         let blockedApply = try propertyApply()
@@ -200,15 +246,13 @@ final class InspectorEndToEndTests: NativeUIHarness {
     }
 
     private func waitForImportedFixture(filename: String) throws {
-        let opened = try labels("status_file_opened", arguments: ["name": filename])
+        let opened = try fileOpenedStatus(filename, within: app)
         let origins = try labels("import_report_origin", arguments: ["origin": filename])
         let report = identified("editor-import-report")
         func exactOrigin() -> Bool {
             report.descendants(matching: .staticText).matching(NSPredicate(format: "label IN %@", origins)).firstMatch.exists
         }
-        func exactOpenedStatus() -> Bool {
-            app.descendants(matching: .any).matching(NSPredicate(format: "label IN %@", opened)).firstMatch.exists
-        }
+        func exactOpenedStatus() -> Bool { opened.exists }
         let deadline = Date().addingTimeInterval(20)
         while true {
             let ready = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in

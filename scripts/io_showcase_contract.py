@@ -38,6 +38,14 @@ def component_attributes(xml, label):
     return found[0].get("name"), {a.get("name"): a.get("val") for a in found[0].findall("a")}
 
 
+def activation_key(xml, label):
+    """The Explorer action that toggles the input pin labelled [label]: a multi-bit pin names bit 0 (X0)."""
+    name, attributes = component_attributes(xml, label)
+    if name != "Pin":
+        raise AssertionError(f"{label} is a {name}, not an input pin")
+    return "a11y_input_toggle_low_bit" if int(attributes.get("width", "1")) > 1 else "a11y_explorer_activate"
+
+
 def _point(text):
     match = re.fullmatch(r"\(\s*(-?\d+),\s*(-?\d+)\s*\)", text or "")
     if match is None:

@@ -327,7 +327,7 @@ class _Portable:
 
     def open_tool(self):
         self.close_tool()
-        self.s.click_key("a11y_project_tools", description=True)
+        self.s.click_key("a11y_project_files", description=True)
         self.s.click_key("portable_title", reveal=True)
         self.s.wait_key("portable_open_bundle")
 

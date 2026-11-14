@@ -57,6 +57,16 @@ def signal_row(root, package, titles, connection_labels):
     raise AssertionError("The signal heading has no associated Connection control")
 
 
+def diagnostic_nodes(root, package, code, visible=lambda root, node: True):
+    """Visible nodes reporting [code]: a mapping problem row tagged fpga-diagnostic-<code>[-<port>...], or a companion
+    job error, which also carries that tag and reads "<code>: <detail>"."""
+    tag = "fpga-diagnostic-" + code
+    return [node for node in root.iter("node") if node.get("package") == package
+            and (node.get("resource-id", "") == tag or node.get("resource-id", "").startswith(tag + "-")
+                 or node.get("text", "").startswith(code + ":"))
+            and visible(root, node)]
+
+
 def reviewed_parameters(root, package):
     found = []
     for node in root.iter("node"):
@@ -231,9 +241,7 @@ class FpgaScenarios:
 
     def diagnostic(self, code):
         def locate(root):
-            found = [node for node in root.iter("node") if node.get("package") == self.ui.package
-                     and node.get("text", "").startswith(code + ":") and self.ui.visible_node(root, node)]
-            return root if found else None
+            return root if diagnostic_nodes(root, self.ui.package, code, self.ui.visible_node) else None
         return self.seek(locate, code + " diagnostic")
 
     def await_reveal(self, predicate, description, *, timeout=30):
@@ -259,7 +267,8 @@ class FpgaScenarios:
         raise AssertionError(f"Timed out waiting for {description}: {last}")
 
     def open_tool(self, key):
-        self.e.click("a11y_project_tools", description=True)
+        # Evolution's FPGA menu holds the FPGA, HDL and companion tools; it keeps the tools menu tag.
+        self.e.click("a11y_fpga_tools", description=True)
         self.e.click(key, scroll=True)
 
     def close_tool(self):
@@ -288,7 +297,7 @@ class FpgaScenarios:
         self.e.hide_keyboard()
         self.e.click("companion_ui_verify", scroll=True)
         self.e.reveal("additional_companion_verified")
-        self.e.reveal("additional_companion_operation", operation="fpga-synthesize",
+        self.e.reveal("additional_companion_operation", operation=self.s.catalog["companion_operation_fpga_synthesize"],
                       status=self.s.catalog["additional_companion_available"])
         self.ui.capture("fpga-host-verified")
         self.close_tool()
@@ -343,15 +352,15 @@ class FpgaScenarios:
             self.e.click("fpga_import_board_file", scroll=True)
             self.s.choose_downloads()
             self.s.choose_native_file(remote.rsplit("/", 1)[1])
-            # FpgaBoardCodec maps XML OPENFPGA to the OPEN_FPGA enum shown by FpgaPanel.
-            identity = "OPEN_FPGA · ice40 · hx1k · tq144"
+            # FpgaBoardCodec maps XML OPENFPGA to OPEN_FPGA; FpgaPanel names that vendor by its tool chain.
+            identities = {vendor + " · ice40 · hx1k · tq144" for vendor in self.e.values("fpga_vendor_open_fpga")}
             moved = [False]
             def imported(root):
                 scope, tag = self.e.scope(root)
                 if tag != "editor-tool-sheet":
                     return None
                 names = [item for item in self.visible_text(root, {board.tag}) if item in scope.iter("node")]
-                devices = [item for item in self.visible_text(root, {identity}) if item in scope.iter("node")]
+                devices = [item for item in self.visible_text(root, identities) if item in scope.iter("node")]
                 assert len(names) <= 1 and len(devices) <= 1, "Ambiguous imported FPGA board identity"
                 if names and not devices and not moved[0]:
                     # The device line can sit just below the fold under the board's name.
@@ -412,19 +421,44 @@ class FpgaScenarios:
             action = self.e.action_node(root, found[0])
             return action if self.ui.visible_node(root, action) else None
         self.ui.tap(self.row(port, direction, connection))
+        # Physical pin opens the pin picker; nothing is bound until a pin is confirmed there.
         self.global_click(self.e.values("fpga_physical_pin"))
-        self.edit_pin(port, direction, pin)
+        self.choose_pin(pin)
 
     def edit_pin(self, port, direction, pin):
-        def field(root, scope):
-            found = [node for node in scope.iter("node") if node.get("class", "").endswith("EditText")]
-            assert len(found) <= 1, f"Ambiguous physical pin editor in {port}"
-            return found[0] if found and self.ui.visible_node(root, found[0]) else None
-        self.ui.input_text(self.row(port, direction, field), pin)
+        def change(root, scope):
+            values = self.e.values("fpga_pin_change")
+            found = [node for node in scope.iter("node") if node.get("text") in values]
+            assert len(found) <= 1, f"Ambiguous pin Change action in {port}"
+            if not found:
+                return None
+            action = self.e.action_node(root, found[0])
+            return action if self.ui.visible_node(root, action) else None
+        self.ui.tap(self.row(port, direction, change))
+        self.choose_pin(pin)
+
+    def choose_pin(self, pin):
+        """Pick a declared board pin in the full-screen picker: filter its list, select the pin, confirm it."""
+        def picker(root):
+            return root if self.ui.tagged(root, "fpga-pin-picker") is not None else None
+        root = self.e.wait(picker, "the FPGA pin picker", timeout=30)
+        # Boards with a picture open on it; the list tab holds every compatible pin.
+        tabs = self.visible_text(root, self.e.values("fpga_pin_picker_tab_list"))
+        if tabs:
+            self.ui.tap(self.e.action_node(root, tabs[0]))
+            root = self.ui.screen()
+        self.ui.input_text(labelled_editor(root, self.ui.package, self.e.values("fpga_filter_pins")), pin)
         self.e.hide_keyboard()
+        self.global_click(self.e.values("fpga_board_map_pin", pin=pin, index=0))
+        def confirm(root):
+            use = self.ui.tagged(root, "fpga-pin-picker-use")
+            return use if use is not None and use.get("enabled") == "true" else None
+        self.ui.tap(self.e.wait(confirm, "the pin picker's Use action", timeout=30))
+        self.e.wait(lambda root: root if self.ui.tagged(root, "fpga-pin-picker") is None else None,
+                    "the FPGA pin picker to close", timeout=30)
 
     def validate(self, *, valid):
-        self.e.click("fpga_validate_mapping", scroll=True)
+        # The status and the Export and Prepare actions stay below the mapping list; problems update live.
         if valid:
             self.e.reveal("fpga_mapping_valid")
         for key in ("fpga_export_project", "fpga_prepare_synthesis"):
@@ -491,8 +525,15 @@ class FpgaScenarios:
         self.ui.tap(self.seek(goal_button, "FPGA build goal"))
         self.e.click("fpga_companion_prepare", scroll=True)
         self.await_reveal(lambda root: self.e.nodes(root, "fpga_companion_review") or None, "reviewed FPGA plan")
+        # The review lists labelled parameters; the exact JSON the Mac runs with sits behind Technical details.
+        self.e.click("fpga_companion_technical_details", scroll=True)
+        def exact(root):
+            try:
+                return reviewed_parameters(root, self.ui.package)
+            except AssertionError:
+                return None
+        parameters = self.seek(exact, "the reviewed FPGA parameters")
         root = self.ui.screen()
-        parameters = reviewed_parameters(root, self.ui.package)
         assert_review(parameters, goal)
         self.ui.capture("fpga-reviewed-" + goal, root)
         previous_jobs = {job["jobId"] for job in self.host.audit()["jobs"]}

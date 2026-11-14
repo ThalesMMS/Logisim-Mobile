@@ -126,6 +126,27 @@ let bilingual = try DocumentWindowAnchor(filename: filename, openedLabels: [open
                                           originLabels: [origin, "Origem: \(filename)"])
 expect("exact localized label", bilingual.matches(label: "Origem: \(filename)"))
 
+// C145: an informational open names the file with how many adjustments it made, and the report stays closed.
+let adjusted = "File \(filename) opened with {count} compatibility adjustments."
+let counted = try DocumentWindowAnchor(filename: filename, openedLabels: [opened], originLabels: [origin],
+                                        countedOpenedLabels: [adjusted, "Arquivo \(filename) aberto com {count} ajustes de compatibilidade."])
+expect("counted opened label", counted.matches(label: "File \(filename) opened with 4 compatibility adjustments."))
+expect("counted localized label", counted.matches(label: "Arquivo \(filename) aberto com 132 ajustes de compatibilidade."))
+expect("exact labels still match", counted.matches(label: opened) && counted.matches(label: origin))
+for bad in ["File \(filename) opened with  compatibility adjustments.", "File \(filename) opened with x compatibility adjustments.",
+            "File \(filename) opened with 4 compatibility adjustments. extra", "File another.circ opened with 4 compatibility adjustments.",
+            "File \(filename) opened with -4 compatibility adjustments.", adjusted] {
+    expect("reject noncounted label \(bad)", !counted.matches(label: bad))
+}
+expect("counted label binds its Window", DocumentWindowRules.uniqueIndex(anchor: counted,
+    observations: [unrelated, window(["File \(filename) opened with 4 compatibility adjustments."])]) == 1)
+expect("counted status is not an origin", DocumentWindowRules.uniqueIndex(anchor: counted,
+    observations: [window(["File \(filename) opened with 4 compatibility adjustments."])], requiringOrigin: true) == nil)
+expect("counted label needs one count", (try? DocumentWindowAnchor(filename: filename, openedLabels: [opened], originLabels: [origin],
+    countedOpenedLabels: ["File \(filename) opened."])) == nil)
+expect("counted label must name the file", (try? DocumentWindowAnchor(filename: filename, openedLabels: [opened], originLabels: [origin],
+    countedOpenedLabels: ["Opened with {count} compatibility adjustments."])) == nil)
+
 print("\(checks - failures)/\(checks) Foundation window checks passed")
 if failures > 0 { exit(1) }
 '''

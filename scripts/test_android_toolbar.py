@@ -161,6 +161,16 @@ class ToolbarTests(unittest.TestCase):
         self.assertEqual([("shell", "input", "swipe", "200", "420", "200", "180", "250")],
                          [call for call, _ in ui.calls])
 
+    def test_menu_scroll_returns_an_action_only_once_the_menu_stops_moving(self):
+        # layout12: a tap on a list that is still flinging only stops it, so the item is read where it comes to rest.
+        clipped_action = MENU_ACTION.replace("[60,120][300,165]", "[60,510][300,555]")
+        moving = hierarchy(menu(MENU_ACTION.replace("[60,120][300,165]", "[60,200][300,245]")))
+        ui = FakeUi(self.output, [moving, hierarchy(menu(MENU_ACTION))])
+        node = ui.toolbar_action((PROJECT,), matches=self.matches, root=hierarchy(toolbar(ACTION) + menu(clipped_action)))
+        self.assertEqual("[60,120][300,165]", node.get("bounds"))
+        self.assertEqual([("shell", "input", "swipe", "200", "420", "200", "180", "250")],
+                         [call for call, _ in ui.calls])
+
     def test_menu_scroll_searches_both_directions(self):
         empty = hierarchy(menu('<node package="dev.logisim.mobile.e2e" text="Other" bounds="[60,120][300,165]"/>'))
         ui = FakeUi(self.output, [empty, hierarchy(menu(MENU_ACTION))])

@@ -61,6 +61,8 @@ final class EditorEndToEndTests: NativeUIHarness {
 
         try openExplorer()
         try click("a11y_explorer_insert", region: "a11y-circuit-list")
+        // X and Y appear once Custom coordinates is chosen (the other positions need no typed coordinates).
+        try click("a11y_insert_custom")
         let query = try editableField("a11y_explorer_insert_kind")
         XCTAssertTrue(query.waitForExistence(timeout: 5))
         query.tap()
@@ -273,7 +275,7 @@ final class EditorEndToEndTests: NativeUIHarness {
                     let activateLabels = try labels("a11y_explorer_activate", arguments: ["name": label])
                     _ = try reveal(activateLabels, verticalRegion: "a11y-circuit-list")
                     XCTAssertTrue(app.buttons.allElementsBoundByIndex.contains { b in activateLabels.contains { nativeLabel(b.label, matches: $0) } },
-                                  "Activate \(label) must expose the button trait")
+                                  "Toggle \(label) must expose the button trait")
                 }
                 attach("label=\(row.label), identifier=\(row.identifier), value=\(value), type=\(row.elementType.rawValue), selected=\(row.isSelected)",
                        name: "a11y-row-\(label)")
@@ -360,10 +362,10 @@ final class EditorEndToEndTests: NativeUIHarness {
             // iPhone has one scene; openInDocumentWindow's nonce-filename anchor is for iPad windows.
             XCUIDevice.shared.system.open(destination)
             XCTAssertTrue(app.wait(for: .runningForeground, timeout: 20))
-            let opened = try labels("status_file_opened", arguments: ["name": filename])
+            let opened = try fileOpenedStatus(filename)
             let origin = try labels("import_report_origin", arguments: ["origin": filename])
             waitUntil("The app reports that it opened \(filename)") {
-                self.matching(opened).firstMatch.exists || self.matching(origin).firstMatch.exists
+                opened.exists || self.matching(origin).firstMatch.exists
             }
             screenshot("a11y-and-reopened-status")
             try closeImportReportIfPresented()
@@ -478,7 +480,8 @@ final class EditorEndToEndTests: NativeUIHarness {
         let filename = source.lastPathComponent
         let anchor = try DocumentWindowAnchor(filename: filename,
             openedLabels: try labels("status_file_opened", arguments: ["name": filename]),
-            originLabels: try labels("import_report_origin", arguments: ["origin": filename]))
+            originLabels: try labels("import_report_origin", arguments: ["origin": filename]),
+            countedOpenedLabels: try countedTemplates("import_report_status_file", arguments: ["name": filename]))
         var resolved: DocumentWindowScope?
         var ambiguous = false
         let admitted = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
@@ -520,7 +523,7 @@ final class EditorEndToEndTests: NativeUIHarness {
         let count = try integer(sap, "manualHalfCycles")
         let interval = try integer(sap, "assertCounterEvery")
         for halfCycle in 1...count {
-            try click("a11y_step_clock", toolbar: "editor-simulation-toolbar")
+            try click("simulation_control_tick_half", toolbar: "editor-simulation-toolbar")
             if halfCycle % interval == 0 { try expectSimulationSteps(halfCycle) }
         }
         XCTAssertEqual(try simulationSteps(), 56)
@@ -656,7 +659,7 @@ final class EditorEndToEndTests: NativeUIHarness {
             XCTAssertEqual(field.value as? String, try string(step, "label"), "The inspector must edit the requested component")
             try replaceEditorText(field, with: string(step, "value"))
             finishKeyboardEntry()
-            try click("action_apply")
+            try applyLabelIfPending()
             try dismissInspector()
         case "assertDocument": try assertDocument(checkpoint: string(step, "checkpoint"))
         case "undo": try click("action_undo", toolbar: "editor-project-toolbar")
@@ -746,6 +749,16 @@ final class EditorEndToEndTests: NativeUIHarness {
         element.tap()
     }
 
+    /// The keyboard's Done key applies a typed label, like Enter in Evolution's attribute table, and the label's
+    /// Apply then stays disabled until the text differs again; tap Apply only while the label is still pending.
+    private func applyLabelIfPending() throws {
+        let element = try reveal(try labels("action_apply"), toolbar: nil, verticalRegion: nil)
+        let enabled = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: element)
+        let pending = XCTWaiter.wait(for: [enabled], timeout: 2) == .completed
+        if pending { element.tap() }
+        attach("applyTappedAfterDone=\(pending)", name: "label-apply-pending")
+    }
+
     private func closeSimulationMenuIfPresented() throws {
         for tag in ["editor-simulation-toolbar-menu", "editor-command-toolbar-menu"] {
             let menu = identified(tag)
@@ -762,8 +775,11 @@ final class EditorEndToEndTests: NativeUIHarness {
         // New and the built-in examples live in the File menu.
         try click(key, toolbar: "editor-project-toolbar")
         if key == "a11y_load_sap1" {
-            // Workspace loading can present a migration report after the tap returns.
-            quickWait(identified("editor-import-report"), timeout: 10)
+            // Workspace loading presents a behavior-changing migration report after the tap returns; SAP-1's
+            // version defaults instead leave it closed behind the status Details action (C145).
+            let report = identified("editor-import-report")
+            let details = identified("import-report-status-details")
+            waitUntil("SAP-1 opened") { report.exists || details.exists }
         }
         try closeImportReportIfPresented()
     }
@@ -987,11 +1003,13 @@ final class EditorEndToEndTests: NativeUIHarness {
 
     private func editableField(_ key: String, within region: CGRect? = nil) throws -> XCUIElement {
         let names = Set(try values(key))
+        // X and Y lose their caption while the Insert dialog's list cuts it; their tag still names them.
+        let identifier = Self.fieldIdentifiers[key]
         let container = nativeQueryRoot
         func matchingFields() -> [XCUIElement] {
             let fields = container.textViews.allElementsBoundByIndex + container.textFields.allElementsBoundByIndex
             return fields.filter {
-                guard $0.exists, names.contains($0.label) else { return false }
+                guard $0.exists, names.contains($0.label) || (identifier != nil && $0.identifier == identifier) else { return false }
                 guard let region else { return true }
                 let frame = $0.frame
                 return region.contains(CGPoint(x: frame.midX, y: frame.midY))
@@ -1039,9 +1057,15 @@ final class EditorEndToEndTests: NativeUIHarness {
     private func insert(kind: String, x: Int, y: Int, label: String) throws {
         try openExplorer()
         try click("a11y_explorer_insert", region: "a11y-circuit-list")
+        try click("a11y_insert_custom")
         let entries = [("a11y_explorer_insert_kind", kind.uppercased()),
                        ("a11y_explorer_insert_x", String(x)), ("a11y_explorer_insert_y", String(y))]
-        for (key, value) in entries { try replaceEditorText(editableField(key), with: value) }
+        for (key, value) in entries {
+            let field = try editableField(key)
+            // The dialog keeps clear of the keyboard and scrolls (A1): bring the field into view as a finger does.
+            scrollAboveKeyboard(field)
+            try replaceEditorText(field, with: value)
+        }
         finishKeyboardEntry()
         let insertionLabels = try values("a11y_explorer_insert_kind")
         let insertionPredicate = NSPredicate(format: "label IN %@", insertionLabels)
@@ -1062,7 +1086,7 @@ final class EditorEndToEndTests: NativeUIHarness {
         inspectorPresentation = inspectorSheet.exists ? .sheet : .inline(inspectorInline.frame)
         try replaceEditorText(editableField("property_label"), with: label)
         finishKeyboardEntry()
-        try click("action_apply")
+        try applyLabelIfPending()
         try dismissInspector()
     }
 
@@ -1122,8 +1146,8 @@ final class EditorEndToEndTests: NativeUIHarness {
         try click("a11y_explorer_edit", arguments: ["name": label], region: "a11y-circuit-list")
         try waitForInspector(of: label)
         try click("inspector_edit", nested: ["name": localizedValues("attribute_label_facing")])
+        // The Facing menu applies the chosen direction; it has no Apply button.
         try click("direction_" + direction)
-        try click("action_apply")
         try dismissInspector()
     }
 
@@ -1193,7 +1217,9 @@ final class EditorEndToEndTests: NativeUIHarness {
             }
             if captionsByID.count >= count { break }
         }
-        XCTAssertEqual(captionsByID.count, count, "Paste must expose distinct component identities with complete label, location and ID captions")
+        XCTAssertEqual(captionsByID.count, count, "Paste must expose distinct component identities with label and location captions")
+        XCTAssertEqual(Set(captionsByID.values).count, captionsByID.count,
+                       "Each pasted copy must have a caption that tells it apart: its location, or its ID when copies share one")
         attach(captionsByID.sorted { $0.key < $1.key }.map { "\($0.key): \($0.value)" }.joined(separator: "\n"),
                name: "distinct-\(label)-native-identities")
         try closeExplorer()
@@ -1229,7 +1255,7 @@ final class EditorEndToEndTests: NativeUIHarness {
     }
 
     private func simulationSteps() throws -> Int {
-        let patterns = try values("simulation_steps").map { template -> NSRegularExpression in
+        let patterns = try values("simulation_ticks").map { template -> NSRegularExpression in
             let escaped = NSRegularExpression.escapedPattern(for: template)
                 .replacingOccurrences(of: NSRegularExpression.escapedPattern(for: "{count}"), with: "([0-9]+)")
             return try NSRegularExpression(pattern: "^" + escaped + "$")
@@ -1310,8 +1336,10 @@ private enum NativeComponentCaption {
         guard identifier.hasPrefix(prefix), caption.hasPrefix(label + " (") else { return nil }
         let id = String(identifier.dropFirst(prefix.count))
         guard !id.isEmpty else { return nil }
-        let pattern = "^" + NSRegularExpression.escapedPattern(for: label) + " \\((-?[0-9]+), (-?[0-9]+)\\), "
-            + NSRegularExpression.escapedPattern(for: id) + "$"
+        // The explorer names a duplicate label by its location; it appends the internal id only when two copies
+        // with the same name share one location, so the identity comes from the row's identifier.
+        let pattern = "^" + NSRegularExpression.escapedPattern(for: label) + " \\((-?[0-9]+), (-?[0-9]+)\\)(?:, "
+            + NSRegularExpression.escapedPattern(for: id) + ")?$"
         guard let expression = try? NSRegularExpression(pattern: pattern) else { return nil }
         let range = NSRange(caption.startIndex..<caption.endIndex, in: caption)
         guard expression.firstMatch(in: caption, range: range)?.range == range else { return nil }

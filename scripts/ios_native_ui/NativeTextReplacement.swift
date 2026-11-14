@@ -23,7 +23,13 @@ public enum NativeTextReplacementIdentity {
 
 private func nativeTextReplacementLabelMatches(_ label: String, original: String,
                                                identity: NativeTextReplacementIdentity?) -> Bool {
-    guard let identity else { return label == original }
+    // Compose on iOS appends a field's supporting or error text to its label after a comma, so emptying a validated
+    // field ("Scale, A factor: 1 is 100%, 2 is 200%." -> "Scale, Enter a scale greater than zero.") keeps the
+    // same caption before that comma.
+    guard let identity else {
+        func caption(_ text: String) -> String { text.components(separatedBy: ", ").first ?? text }
+        return label == original || (!caption(original).isEmpty && caption(label) == caption(original))
+    }
     return !label.isEmpty && identity.matches(label)
 }
 

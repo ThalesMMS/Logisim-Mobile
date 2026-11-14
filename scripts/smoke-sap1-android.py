@@ -89,7 +89,8 @@ def run_to_eight():
     tap(node(screen(), description="Alternar entrada Reset: 0"))
     tap(node(screen(), description="Alternar entrada Reset: 1"))
     root = screen()
-    counter = "Passos 0"
+    # The bottom bar's counter, simulation_ticks: "Ticks {count}" in Portuguese too.
+    counter = "Ticks 0"
     for attempt in range(4):
         run_button = node(root, text="▶ Executar")
         tap(run_button)
@@ -100,7 +101,7 @@ def run_to_eight():
         tap(run_button)
         root = screen()
         counter = next((n.get("text") for n in root.iter("node")
-                        if n.get("text", "").startswith("Passos ")), "Passos 0")
+                        if re.fullmatch(r"Ticks \d+", n.get("text", ""))), "Ticks 0")
         if int(counter.split()[-1]) >= 56:
             break
     assert int(counter.split()[-1]) >= 56, f"Insufficient half-cycles: {counter}"
@@ -122,7 +123,9 @@ def check_landscape():
         assert display_digits(root) == ["0000", "1000"], "Rotation changed simulation state"
         percentages = [int(n.get("text")[:-1]) for n in root.iter("node")
                        if re.fullmatch(r"\d+%", n.get("text", ""))]
-        assert percentages and max(percentages) > 4, f"Unusable fitted zoom: {percentages}"
+        # The label counts dp per circuit unit, as Evolution's 100% (C48): the former 4% of pixels is 1.5% on the
+        # emulator's 2.625x screen, so anything above 1% is the same usable zoom.
+        assert percentages and max(percentages) > 1, f"Unusable fitted zoom: {percentages}"
         compact = any(n.get("content-desc", "").startswith("Abrir circuitos e biblioteca")
                       for n in root.iter("node"))
         if compact:

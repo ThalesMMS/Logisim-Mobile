@@ -129,7 +129,9 @@ class _Inspector:
         self.ui.capture("inspector-invalid-focused", root)
         self.editing.hide_keyboard()
 
-        errors = self.editing.values("inspector_value_invalid", name="width", raw="0")
+        # The message names the attribute as the table shows it ("Data bits") and its range (W3-01).
+        errors = self.editing.values("inspector_value_invalid_range", name=self.s.catalog["attribute_label_width"],
+                                     raw="0", min="1", max="64")
 
         def rejected(root):
             scope, _, apply, _ = self.dialog(root, "0")

@@ -22,12 +22,36 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECT_TOOLBARS = ("editor-project-toolbar", "editor-command-toolbar")
 SIMULATION_TOOLBARS = ("editor-simulation-toolbar", "editor-command-toolbar")
 COMMAND_TOOLBARS = ("editor-command-toolbar",)
-PROJECT_ACTIONS = {"a11y_project_files", "a11y_import_export_project", "a11y_project_tools",
+# Undo and Redo name the action they apply after a comma ("Undo, Add AND gate"), as Compose iOS merges details.
+DETAILED_NAMES = {"action_undo", "action_redo"}
+PROJECT_ACTIONS = {"a11y_project_files", "a11y_import_export_project", "a11y_project_tools", "a11y_fpga_tools",
                    "action_undo", "action_redo", "a11y_open_help"}
-SIMULATION_ACTIONS = {"a11y_step_clock", "a11y_reset_simulation", "a11y_change_frequency", "a11y_simulation_event_step"}
+SIMULATION_ACTIONS = {"simulation_control_tick_half", "a11y_reset_simulation", "simulation_control_tick_full",
+                      "simulation_control_step_event"}
 COMMAND_ACTIONS = {"a11y_open_library", "a11y_fit_circuit", "a11y_fit_selection", "a11y_open_properties",
                    "a11y_select_all", "a11y_copy_selection", "a11y_cut_selection", "a11y_duplicate_selection",
                    "a11y_delete_selection", "a11y_paste_components"}
+
+
+def named(actual, values, key):
+    """Whether a control's name is one of the key's values, or, for Undo and Redo, one followed by its action."""
+    if actual is None:
+        return False
+    return actual in values or (key in DETAILED_NAMES and any(actual.startswith(value + ", ") for value in values))
+
+
+def file_opened_patterns(catalog, name):
+    """Status texts once the file NAME opens, in every catalog language: "Opened NAME", or, when its adjustments only
+    recorded how it was read and the import report stayed closed (C145), "Opened NAME with N compatibility
+    adjustments" in any plural form."""
+    templates = []
+    for key in ("status_file_opened", "import_report_status_file"):
+        for language, value in catalog[key].items():
+            if language != "description":
+                templates += list(value.values()) if isinstance(value, dict) else [value]
+    return [re.compile("".join(re.escape(name) if part == "{name}" else r"\d+" if part == "{count}" else re.escape(part)
+                               for part in re.split(r"(\{name\}|\{count\})", template)))
+            for template in templates]
 
 
 def file_hash(path):
@@ -237,6 +261,22 @@ class Scenarios:
                 time.sleep(0.2)
         raise AssertionError(f"The {key} control did not appear within {timeout}s")
 
+    def wait_file_opened(self, name, *, timeout=30):
+        """Wait for the status line to say NAME opened, closing an import report that a behavior-changing adjustment
+        opened first. An informational one leaves the report closed and names its adjustments in that status."""
+        patterns = file_opened_patterns(self.catalog, name)
+        deadline = time.monotonic() + timeout
+        while time.monotonic() < deadline:
+            root = self.ui.screen(timeout=max(0.1, deadline - time.monotonic()))
+            if self.acknowledge_import_report(root, timeout=max(0.1, deadline - time.monotonic())):
+                continue
+            found = [node for node in root.iter("node")
+                     if any(pattern.fullmatch(node.get("text") or "") for pattern in patterns)]
+            if found:
+                return found[0]
+            time.sleep(0.2)
+        raise AssertionError(f"The opened-file status for {name} did not appear within {timeout}s")
+
     def wait_editor(self, *, timeout=30, complete_first_launch=False):
         """Observe editor readiness without opening an overflow as a side effect."""
         deadline = time.monotonic() + timeout
@@ -280,7 +320,7 @@ class Scenarios:
     def toolbar_action(self, key, toolbars, *, root=None, timeout=30, description=True, **arguments):
         values = self.key_values(key, **arguments)
         attribute = "content-desc" if description else "text"
-        return self.ui.toolbar_action(toolbars, matches=lambda node: node.get(attribute) in values,
+        return self.ui.toolbar_action(toolbars, matches=lambda node: named(node.get(attribute), values, key),
                                       root=root, timeout=timeout)
 
     def project_action(self, key, *, timeout=30):
@@ -346,7 +386,7 @@ class Scenarios:
         values = self.key_values(key, **arguments)
         attribute = "content-desc" if description else "text"
         found = [node for node in root.iter("node") if any(
-            node.get(attribute, "").startswith(value) if prefix else node.get(attribute) == value
+            node.get(attribute, "").startswith(value) if prefix else named(node.get(attribute), {value}, key)
             for value in values)]
         if len(found) != 1:
             raise AssertionError(f"Expected one visible {key} control, found {len(found)}")
@@ -471,7 +511,8 @@ class Scenarios:
             self.ui.capture(f"simulation-toolbar-not-ready-{self.unready_simulation_count}", root)
             return False
         anchor = None
-        for key in ("a11y_step_clock", "a11y_reset_simulation", "a11y_change_frequency", "a11y_simulation_event_step"):
+        for key in ("simulation_control_tick_half", "a11y_reset_simulation", "simulation_control_tick_full",
+                    "simulation_control_step_event"):
             try:
                 anchor = self.find_key(key, root=root, description=True)
                 break
@@ -542,7 +583,7 @@ class Scenarios:
     def matching_nodes(self, key, root, *, description=True):
         values = self.key_values(key)
         attribute = "content-desc" if description else "text"
-        return [node for node in root.iter("node") if node.get(attribute) in values]
+        return [node for node in root.iter("node") if named(node.get(attribute), values, key)]
 
     def ensure_signal_panel(self):
         """The signal panel stays folded until its status bar toggle opens it."""
@@ -616,15 +657,23 @@ class Scenarios:
         supplied = root is not None
         root = self.ui.screen() if root is None else root
         patterns = [re.escape(value).replace(re.escape("{count}"), r"(\d+)") + r"(?: · .*)?"
-                    for value in self.catalog["simulation_steps"].values()]
+                    for value in self.catalog["simulation_ticks"].values()]
+        def count(node):
+            # A header without room for the word shows the count alone and
+            # keeps "Ticks N" as its description.
+            for value in (node.get("text", ""), node.get("content-desc", "")):
+                for pattern in patterns:
+                    match = re.fullmatch(pattern, value)
+                    if match:
+                        return int(match.group(1))
+            return None
         def counters(current):
             # Whole-toolbar layouts keep the counter in their leading slot;
             # opening an overflow menu must never turn a menu caption into it.
             scope = self.ui.tagged(current, "editor-simulation-toolbar")
             scope = current if scope is None else scope
-            return [int(match.group(1)) for node in scope.iter("node") for pattern in patterns
-                    if self.ui.visible_node(current, node)
-                    and (match := re.fullmatch(pattern, node.get("text", "")))]
+            return [value for node in scope.iter("node")
+                    if self.ui.visible_node(current, node) and (value := count(node)) is not None]
         values = counters(root)
         if not values and not supplied:
             for _ in range(4):
@@ -668,7 +717,7 @@ class Scenarios:
         self.click_key("a11y_toggle_input", description=True, name="Reset", value="1")
         self.wait_simulation_steps(0)
         for count in range(1, 57):
-            self.click_key("a11y_step_clock", description=True)
+            self.click_key("simulation_control_tick_half", description=True)
             if count % 8 == 0:
                 self.wait_simulation_steps(count)
                 print(f"SAP-1 manual half-cycles: {count}/56", flush=True)
@@ -814,7 +863,7 @@ class Scenarios:
             self.wait_key("action_understood")
         else:
             # Loading a multi-circuit fixture and closing its import report can exceed the default wait.
-            opened = self.wait_key("status_file_opened", name=name, timeout=90)
+            opened = self.wait_file_opened(name, timeout=90)
             (self.ui.output / f"incoming-open-{self.incoming_launch_count}.json").write_text(json.dumps({
                 "action": action, "uri": uri, "expectedName": name, "observedStatus": opened.get("text"),
             }, indent=2) + "\n")
@@ -839,9 +888,11 @@ class Scenarios:
     def seed_catalog(self):
         self.library_click("a11y_new_circuit")
         self.wait_editor()
-        # The header joins this status to the document name with a " · " separator.
-        patterns = [r"(?:.* · |\s*· )?" + re.escape(text).replace(re.escape("{revision}"), r"\d+")
-                    for text in self.catalog["workspace_saved_revision"].values()]
+        # The header joins this status to the project name with a " · " separator. It says "Saved" without the
+        # storage revision; builds before W2-07 said "Saved · revision N", which is still accepted.
+        patterns = [r"(?:.* · |\s*· )?" + re.escape(text) for text in self.catalog["workspace_saved_status"].values()]
+        patterns += [r"(?:.* · |\s*· )?" + re.escape(text).replace(re.escape("{revision}"), r"\d+")
+                     for text in self.catalog["workspace_saved_revision"].values()]
         deadline = time.monotonic() + 30
         while time.monotonic() < deadline:
             root = self.ui.screen(timeout=max(0.1, deadline - time.monotonic()))
@@ -1201,7 +1252,7 @@ class Scenarios:
             self.click_key("action_import_copy")
             self.choose_downloads()
             self.choose_native_file(name)
-            self.wait_key("status_file_opened", name=name)
+            self.wait_file_opened(name)
             _, imported = self.export_xml("local-import")
             self.assert_sap1(imported)
             assert imported.get("e2e-import-token") == token, "SAF did not install its newly marked project"

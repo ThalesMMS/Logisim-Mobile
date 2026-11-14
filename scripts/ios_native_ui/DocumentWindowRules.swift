@@ -6,12 +6,34 @@ enum DocumentWindowAnchorError: Error {
     case invalidLabels
 }
 
+/// A localized label with one `{count}` left in it, matched exactly except for that decimal count, as in
+/// "File NAME opened with 3 compatibility adjustments." (C145).
+struct CountedLabel {
+    let prefix: String
+    let suffix: String
+
+    init?(template: String) {
+        let parts = template.components(separatedBy: "{count}")
+        guard parts.count == 2 else { return nil }
+        prefix = parts[0]
+        suffix = parts[1]
+    }
+
+    func matches(_ label: String) -> Bool {
+        guard label.count > prefix.count + suffix.count, label.hasPrefix(prefix), label.hasSuffix(suffix) else { return false }
+        let count = label.dropFirst(prefix.count).dropLast(suffix.count)
+        return count.allSatisfy { ("0"..."9").contains($0) }
+    }
+}
+
 struct DocumentWindowAnchor {
     let filename: String
     let originLabels: [String]
     private let labels: Set<String>
+    private let countedLabels: [CountedLabel]
 
-    init(filename: String, openedLabels: [String], originLabels: [String]) throws {
+    /// [countedOpenedLabels] are the opened-with-adjustments status forms, each naming [filename] with one `{count}`.
+    init(filename: String, openedLabels: [String], originLabels: [String], countedOpenedLabels: [String] = []) throws {
         let basename = (filename as NSString).lastPathComponent
         let uuidPattern = #"(?<![A-Za-z0-9])[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}(?![A-Za-z0-9])"#
         let stem = (filename as NSString).deletingPathExtension
@@ -25,12 +47,17 @@ struct DocumentWindowAnchor {
               expected.allSatisfy({ !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && $0.contains(filename) }) else {
             throw DocumentWindowAnchorError.invalidLabels
         }
+        let counted = countedOpenedLabels.compactMap(CountedLabel.init(template:))
+        guard counted.count == countedOpenedLabels.count, countedOpenedLabels.allSatisfy({ $0.contains(filename) }) else {
+            throw DocumentWindowAnchorError.invalidLabels
+        }
         self.filename = filename
         self.originLabels = originLabels
         labels = Set(expected)
+        countedLabels = counted
     }
 
-    func matches(label: String) -> Bool { labels.contains(label) }
+    func matches(label: String) -> Bool { labels.contains(label) || countedLabels.contains { $0.matches(label) } }
     func matchesOrigin(label: String) -> Bool { originLabels.contains(label) }
 }
 

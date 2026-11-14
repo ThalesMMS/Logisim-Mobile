@@ -263,17 +263,18 @@ final class ProviderAuthenticationEndToEndTests: NativeUIHarness {
     }
 
     private func waitForOpenedFixture() throws {
-        let opened = try localized("status_file_opened", arguments: ["name": run.fileName])
+        // "File NAME opened.", or with its compatibility adjustments when the report stayed closed (C145).
+        let opened = try fileOpenedStatus(run.fileName)
         try waitUntil("The requested provider file must complete importing", timeout: 30) {
             let report = self.identified("editor-import-report")
             if report.exists {
                 let requested = report.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS %@", self.run.fileName))
                 return requested.firstMatch.exists
             }
-            return self.matching(opened).firstMatch.exists
+            return opened.exists
         }
         try closeImportReportIfPresented()
-        try waitForMessage("status_file_opened", arguments: ["name": run.fileName])
+        try waitUntil("Present the opened-file status for \(run.fileName)") { opened.exists }
     }
 
     private func expectContextualFailure() throws {

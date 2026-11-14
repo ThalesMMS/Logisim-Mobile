@@ -19,6 +19,8 @@ public final class DocumentClipboardReaderActivity extends Activity {
     }
     Button button = new Button(this);
     button.setText(marker == null ? "Read copied XML" : "Prepare XML copy");
+    // UiAutomator reports the label as drawn; keep it the literal text the harness selects (API 36 all caps).
+    button.setAllCaps(false);
     button.setOnClickListener(view -> {
       ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
       if (marker != null) {

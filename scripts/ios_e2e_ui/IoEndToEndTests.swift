@@ -119,7 +119,11 @@ final class IoEndToEndTests: NativeUIHarness {
         let joystick: Object = try item(pointer, "joystick")
         let label: String = try item(joystick, "label")
         try properties(label)
-        try revealInInspector(["→"]).tap()
+        // The arrow buttons recenter on release like the pad (X5); the X slider holds an exact deflection.
+        let axis = try revealInInspector(values("io_joystick_axis_x"))
+        // The thumb stops short of the track's ends (0.99 reads 13), so drag past the end to clamp at +14.
+        axis.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            .press(forDuration: 0.05, thenDragTo: axis.coordinate(withNormalizedOffset: CGVector(dx: 1.2, dy: 0.5)))
         _ = try revealInInspector(labels("io_a11y_joystick", arguments: ["label": label, "x": "14", "y": "0"]))
         try closeProperties()
         try assertOutputs(item(joystick, "right"))
@@ -158,12 +162,12 @@ final class IoEndToEndTests: NativeUIHarness {
         let fixtureHash = SHA256.hash(data: fixture).map { String(format: "%02x", $0) }.joined()
         let fixtureDocument = try assertHeldFixtureDocument(String(decoding: fixture, as: UTF8.self))
         try openXml(fixture, name: "io-canvas-held-output")
-        try tapKey("a11y_simulation_event_step", toolbar: "editor-simulation-toolbar")
+        try tapKey("simulation_control_step_event", toolbar: "editor-simulation-toolbar")
         try closeToolbarMenu()
         try assertOutputs(["OUT_HELD": "0", "REF_LOW": "0", "REF_HIGH": "1"])
-        // A file without <toolbar> has no tools, as in Evolution (#344); the editor is already in Poke.
+        // A file without <toolbar> has no project tools (#344), only Mobile's base tools; the editor opens in Poke.
         if String(decoding: fixture, as: UTF8.self).contains("<toolbar") {
-            try tapKey("action_simulate", toolbar: "editor-command-toolbar")
+            try tapKey("action_poke_tool", toolbar: "editor-command-toolbar")
             try closeToolbarMenu()
         }
         try tapKey("a11y_fit_circuit", toolbar: "editor-command-toolbar")
@@ -485,7 +489,7 @@ final class IoEndToEndTests: NativeUIHarness {
         expectedAttributes = [:]
         orient(.portrait)
         try openXml(Data(contentsOf: fixtureUrl()), name: "io-showcase")
-        try tapKey("a11y_simulation_event_step", toolbar: "editor-simulation-toolbar")
+        try tapKey("simulation_control_step_event", toolbar: "editor-simulation-toolbar")
         try closeToolbarMenu()
         try assertOutputs(item(contract, "baselineOutputs"))
         try checkpoint("io-fixture-opened")
@@ -518,20 +522,32 @@ final class IoEndToEndTests: NativeUIHarness {
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: 20))
         let expected = try labels("status_file_opened", arguments: ["name": path.lastPathComponent])
         let origins = try labels("import_report_origin", arguments: ["origin": path.lastPathComponent])
-        let anchor = try DocumentWindowAnchor(filename: path.lastPathComponent, openedLabels: expected, originLabels: origins)
+        let anchor = try DocumentWindowAnchor(filename: path.lastPathComponent, openedLabels: expected, originLabels: origins,
+            countedOpenedLabels: try countedTemplates("import_report_status_file", arguments: ["name": path.lastPathComponent]))
+        // C145: an informational open names the file in its status and leaves the report closed.
+        let adjustedStatus = try fileOpenedStatus(path.lastPathComponent, within: app)
+        let statusDetails = app.descendants(matching: .any).matching(identifier: "import-report-status-details").firstMatch
+        let anyReport = app.descendants(matching: .any).matching(identifier: "editor-import-report").firstMatch
         var requiringOrigin = filesCopySetup != nil
         let deadline = Date().addingTimeInterval(20)
         while true {
             var resolved: DocumentWindowScope?
             var ambiguous = false
+            var closedReport = false
             let presented = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
                 do { resolved = try DocumentWindowScope.resolve(in: self.app, anchor: anchor, requiringOrigin: requiringOrigin) }
                 catch { ambiguous = true; return true }
-                return resolved != nil
+                closedReport = resolved == nil && requiringOrigin && !anyReport.exists && statusDetails.exists && adjustedStatus.exists
+                return resolved != nil || closedReport
             }, object: app)
             let remaining = deadline.timeIntervalSinceNow
-            guard remaining > 0, XCTWaiter.wait(for: [presented], timeout: remaining) == .completed,
-                  !ambiguous, let scope = resolved else {
+            let waited = remaining > 0 ? XCTWaiter.wait(for: [presented], timeout: remaining) : .timedOut
+            if waited == .completed, !ambiguous, resolved == nil, closedReport {
+                // Origin-only admission reads the origin from the report, so open it from Details beside the status.
+                try showImportReportFromStatus()
+                continue
+            }
+            guard waited == .completed, !ambiguous, let scope = resolved else {
                 screenshot("io-window-admission-failed")
                 attach(app.debugDescription, name: "io-window-admission-failed-tree")
                 XCTFail("The exact current file nonce must identify one live public window")
@@ -558,7 +574,7 @@ final class IoEndToEndTests: NativeUIHarness {
                 requiringOrigin = false
                 continue
             }
-            XCTAssertTrue(matching(expected).firstMatch.exists)
+            XCTAssertTrue(try fileOpenedStatus(path.lastPathComponent).exists)
             try scope.requireLive(in: self, expectedFilename: path.lastPathComponent, stage: "io-file-opened")
             break
         }
@@ -604,7 +620,12 @@ final class IoEndToEndTests: NativeUIHarness {
 
     private func activate(_ label: String) throws {
         try openExplorer(label)
-        try click("a11y_explorer_activate", arguments: ["name": label], region: "a11y-circuit-list")
+        // A 1-bit pin is toggled whole; a multi-bit pin's action names the bit it toggles (X0).
+        let names = try labels("a11y_explorer_activate", arguments: ["name": label]) +
+            labels("a11y_input_toggle_low_bit", arguments: ["name": label])
+        let element = try reveal(names, verticalRegion: "a11y-circuit-list")
+        XCTAssertTrue(element.isEnabled, "The toggle action of \(label) must be enabled")
+        element.tap()
         try closeExplorerSheet()
     }
 
@@ -648,9 +669,23 @@ final class IoEndToEndTests: NativeUIHarness {
         try closeProperties()
     }
 
+    /// The Matrix Keypad's "size" is shown as Evolution's "Display size" and edited from a menu of its options.
+    private static let inspectorLabelKeys = ["size": "attribute_label_display_size"]
+    private static let inspectorChoices: Set<String> = ["size"]
+
     private func editProperty(_ label: String, name: String, value: String, reject: Bool = false) throws {
         try properties(label)
-        try clickInInspector("inspector_edit", nested: ["name": translations("attribute_label_" + name.lowercased())])
+        try clickInInspector("inspector_edit", nested: ["name": translations(Self.inspectorLabelKeys[name] ?? "attribute_label_" + name.lowercased())])
+        if Self.inspectorChoices.contains(name) {
+            // Option attributes open a menu of their values and apply the one chosen; there is no text or Apply.
+            XCTAssertFalse(reject, "An option menu cannot offer an invalid value")
+            let sanitized = value.lowercased().replacingOccurrences(of: "[^a-z0-9]+", with: "_", options: .regularExpression)
+                .trimmingCharacters(in: CharacterSet(charactersIn: "_"))
+            try click("attribute_option_" + name.lowercased() + "_" + sanitized)
+            expectedAttributes[label, default: [:]][name] = value
+            try closeProperties()
+            return
+        }
         let labels = Set(try values("property_label"))
         let fields = (nativeQueryRoot.textFields.allElementsBoundByIndex + nativeQueryRoot.textViews.allElementsBoundByIndex).filter {
             $0.exists && $0.isHittable && !labels.contains($0.label) && !$0.label.hasPrefix("IO_KEYBOARD · ")
@@ -748,7 +783,7 @@ final class IoEndToEndTests: NativeUIHarness {
         let keyboard: Object = try item(contract, "keyboard")
         let count: Int = try item(keyboard, "halfCyclesPerCharacter")
         for _ in 0..<count {
-            try tapKey("a11y_step_clock", toolbar: "editor-simulation-toolbar")
+            try tapKey("simulation_control_tick_half", toolbar: "editor-simulation-toolbar")
             try closeToolbarMenu()
         }
     }
@@ -778,7 +813,9 @@ final class IoEndToEndTests: NativeUIHarness {
         try openExplorer(label)
         try click("a11y_explorer_select", arguments: ["name": label], region: "a11y-circuit-list")
         try closeExplorerSheet()
-        try tapKey("a11y_fit_selection", toolbar: "editor-command-toolbar")
+        // Fit selection is in the View menu (and the zoom popover), no longer in the command toolbar: open that menu
+        // directly instead of scanning the toolbars and every menu.
+        try revealInHeaderMenu(values("a11y_fit_selection"), menu: "view").tap()
         try closeToolbarMenu()
         func candidates() -> [XCUIElement] {
             nativeQueryRoot.buttons.matching(NSPredicate(format: "label == %@ OR label BEGINSWITH %@", label, label + ", ")).allElementsBoundByIndex.filter {

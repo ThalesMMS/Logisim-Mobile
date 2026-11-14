@@ -70,6 +70,7 @@ final class FocusEndToEndTests: NativeUIHarness {
 
     private func originalKeyboardReplace(_ field: XCUIElement, with value: String) throws {
         XCTAssertTrue(field.waitForExistence(timeout: 5))
+        scrollAboveKeyboard(field)
         field.tap()
         recordFields(field, phase: "original-replace-after-tap")
         field.typeKey("a", modifierFlags: .command)
@@ -131,8 +132,12 @@ final class FocusEndToEndTests: NativeUIHarness {
         query.tap()
         query.typeText("INPUT")
         try assertInsertValues(query: "INPUT", phase: "first-query")
-        try field("a11y_explorer_insert_x").tap()
+        // The dialog keeps clear of the keyboard and scrolls (A1): X and Y are dragged into view before each tap.
+        let x = try field("a11y_explorer_insert_x")
+        scrollAboveKeyboard(x)
+        x.tap()
         let y = try field("a11y_explorer_insert_y")
+        scrollAboveKeyboard(y)
         y.tap()
         record(y, phase: "first-insert-last-focus-y")
         try assertInsertValues(query: "INPUT", phase: "first-y-focus")
@@ -154,12 +159,17 @@ final class FocusEndToEndTests: NativeUIHarness {
         try openExplorer()
         try reveal(values("a11y_explorer_insert"), verticalRegion: "a11y-circuit-list").tap()
         _ = try field("a11y_explorer_insert_kind")
+        // X and Y appear once Custom coordinates is chosen (the other positions need no typed coordinates).
+        try reveal(values("a11y_insert_custom")).tap()
+        _ = try field("a11y_explorer_insert_x")
     }
 
     private func field(_ key: String) throws -> XCUIElement {
         let names = Set(try values(key))
+        // X and Y lose their caption while the dialog's list cuts it; their tag still names them.
+        let identifier = Self.fieldIdentifiers[key]
         func candidates() -> [XCUIElement] {
-            editableControls.filter { names.contains($0.label) }
+            editableControls.filter { names.contains($0.label) || (identifier != nil && $0.identifier == identifier) }
         }
         waitFor("One presented editable control for \(key)") { candidates().count == 1 }
         let fields = candidates()
@@ -169,7 +179,8 @@ final class FocusEndToEndTests: NativeUIHarness {
 
     private func hasField(_ key: String) -> Bool {
         guard let names = try? values(key) else { return false }
-        return editableControls.contains { names.contains($0.label) }
+        let identifier = Self.fieldIdentifiers[key]
+        return editableControls.contains { names.contains($0.label) || (identifier != nil && $0.identifier == identifier) }
     }
 
     private var editableControls: [XCUIElement] {

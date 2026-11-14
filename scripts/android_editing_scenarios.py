@@ -85,7 +85,10 @@ class _Editing:
         values = self.values(key, **arguments)
         attribute = "content-desc" if description else "text"
         actual = node.get(attribute, "")
-        return any(actual.startswith(value) if prefix else actual == value for value in values)
+        # Undo and Redo name the action they apply after a comma ("Undo, Add AND gate").
+        detailed = description and key in ("action_undo", "action_redo")
+        return any(actual.startswith(value) if prefix else actual == value or detailed and actual.startswith(value + ", ")
+                   for value in values)
 
     def scope(self, root, key=None):
         # Modal controls own navigation even when the dump also contains the
@@ -214,7 +217,7 @@ class _Editing:
         if toolbar:
             keys = [("action_undo", True), ("action_redo", True), ("a11y_import_export_project", True),
                     ("a11y_project_files", True), ("a11y_project_tools", True), ("a11y_open_help", True)] if toolbar == "top" else [
-                    ("action_simulate", False), ("action_select", False), ("action_move", False),
+                    ("action_poke_tool", False), ("action_select", False), ("action_move", False),
                     ("action_wire", False), ("a11y_fit_circuit", True), ("a11y_select_all", True),
                     ("a11y_copy_selection", True), ("a11y_paste_components", True)]
             anchors = [node for key, description in keys for node in self.nodes(root, key, description=description)]
@@ -226,7 +229,17 @@ class _Editing:
             return left, y - 10, right, y + 10
         scope, tag = self.scope(root, key)
         if tag == "a11y-circuit-list":
-            assert self.ui.visible_node(root, scope), "The circuit list viewport is not wholly visible"
+            # A status line that appears under the Explorer (a pending connection) moves the sheet for a moment;
+            # re-read it for a bounded time before requiring the whole list viewport.
+            deadline = time.monotonic() + 3
+            while not self.ui.visible_node(root, scope) and time.monotonic() < deadline:
+                time.sleep(0.3)
+                root = self.ui.screen()
+                scope, tag = self.scope(root, key)
+                if tag != "a11y-circuit-list":
+                    break
+            assert tag == "a11y-circuit-list" and self.ui.visible_node(root, scope), \
+                "The circuit list viewport is not wholly visible"
             return _bounds(scope)
         inline = self.ui.tagged(root, "editor-inspector-inline") if scope is root and key == "inspector_edit" else None
         if inline is not None:
@@ -315,7 +328,7 @@ class _Editing:
         raise AssertionError(f"Could not reveal {key} with {arguments}")
 
     def click(self, key, *, description=False, toolbar=False, scroll=False, **arguments):
-        if key in {"action_undo", "action_redo", "a11y_project_tools"}:
+        if key in {"action_undo", "action_redo", "a11y_project_tools", "a11y_fpga_tools"}:
             toolbar = "top"
         node = self.reveal(key, description=description, toolbar=toolbar, **arguments) if toolbar or scroll else \
             self.wait_node(key, description=description, **arguments)
@@ -463,6 +476,8 @@ class _Editing:
         self.open_explorer()
         self.click("a11y_explorer_insert", scroll=True)
         self.wait_node("a11y_explorer_insert_kind")
+        # X and Y appear once Custom coordinates is chosen; the other positions need no typed coordinates.
+        self.click("a11y_insert_custom", scroll=True)
         # The dialog defines query, X, and Y fields in this order.
         for index, value in ((0, kind.upper()), (1, str(x)), (2, str(y))):
             self.ui.input_text(self.field(index, 3), value)
@@ -481,8 +496,8 @@ class _Editing:
         self.click("action_apply")
         if kind == "output":
             self.click("inspector_edit", description=True, scroll=True, name=self.s.catalog["attribute_label_facing"])
+            # The Facing menu applies the chosen direction; it has no Apply button.
             self.click("direction_west")
-            self.click("action_apply")
         self.close_inspector(label, facing="direction_west" if kind == "output" else None)
 
     def assert_document(self, name, checkpoint="wired"):
@@ -502,7 +517,6 @@ class _Editing:
         self.click("a11y_explorer_edit", name="E2E_NOT", scroll=True)
         self.click("inspector_edit", description=True, scroll=True, name=self.s.catalog["attribute_label_facing"])
         self.click("direction_north")
-        self.click("action_apply")
         self.close_inspector("E2E_NOT", facing="direction_north")
         self.assert_document("editing-property-north", "north")
         self.click("action_undo", description=True)
@@ -695,7 +709,7 @@ def run_legacy_original(scenarios):
                 scenarios.click_key("action_import_copy")
                 scenarios.choose_downloads()
                 scenarios.choose_native_file(Path(saved_file).name)
-                scenarios.wait_key("status_file_opened", name=Path(saved_file).name)
+                scenarios.wait_file_opened(Path(saved_file).name)
             else:
                 raise AssertionError(f"Unsupported legacy action: {action}")
             observations.append(step)

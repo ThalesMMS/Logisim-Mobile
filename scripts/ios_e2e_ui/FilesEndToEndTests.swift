@@ -226,15 +226,13 @@ final class FilesEndToEndTests: NativeUIHarness {
     }
 
     private func waitForMissingFixtureOrigin(filename: String) throws {
-        let opened = try values("status_file_opened").map { $0.replacingOccurrences(of: "{name}", with: filename) }
+        let opened = try fileOpenedStatus(filename, within: app)
         let origins = try values("import_report_origin").map { $0.replacingOccurrences(of: "{origin}", with: filename) }
         let report = identified("editor-import-report")
         func exactOrigin() -> Bool {
             report.descendants(matching: .staticText).matching(NSPredicate(format: "label IN %@", origins)).firstMatch.exists
         }
-        func exactOpenedStatus() -> Bool {
-            app.descendants(matching: .any).matching(NSPredicate(format: "label IN %@", opened)).firstMatch.exists
-        }
+        func exactOpenedStatus() -> Bool { opened.exists }
         let deadline = Date().addingTimeInterval(20)
         while true {
             let ready = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in

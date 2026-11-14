@@ -10,7 +10,7 @@ from unittest.mock import patch
 import xml.etree.ElementTree as ET
 import zipfile
 
-from android_fpga_scenarios import FpgaScenarios, assert_project_archive, assert_review, job_identifier, labelled_editor, reviewed_parameters, signal_row, verify_native_audit
+from android_fpga_scenarios import FpgaScenarios, assert_project_archive, assert_review, diagnostic_nodes, job_identifier, labelled_editor, reviewed_parameters, signal_row, verify_native_audit
 
 PACKAGE = "thalesmms.logisim.mobile.e2e"
 
@@ -88,6 +88,41 @@ class SelectorsTest(unittest.TestCase):
                             PACKAGE, {"Board XML"})
 
 
+
+def tagged(text, tag):
+    element = ET.Element("node", {"package": PACKAGE, "text": text, "class": "android.widget.TextView", "resource-id": tag})
+    return ET.tostring(element, encoding="unicode")
+
+
+class DiagnosticTest(unittest.TestCase):
+    @staticmethod
+    def flow(root):
+        flow = FpgaScenarios.__new__(FpgaScenarios)
+        flow.ui = SimpleNamespace(package=PACKAGE, visible_node=lambda root, item: True)
+        flow.seek = lambda predicate, description, **kwargs: predicate(root)
+        return flow
+
+    def test_a_mapping_problem_row_is_found_by_its_tag_without_a_code_prefix(self):
+        root = tree(tagged("p_led: 4 bits unmapped", "fpga-diagnostic-unmapped-port-p_led") +
+                    tagged("Pin U16 is used twice", "fpga-diagnostic-pin-already-used-p_y-0"))
+        self.assertIs(root, self.flow(root).diagnostic("unmapped-port"))
+        self.assertIs(root, self.flow(root).diagnostic("pin-already-used"))
+        self.assertEqual([], diagnostic_nodes(tree(node("Unmapped port p_led")), PACKAGE, "unmapped-port"),
+                         "An untagged row is matched only by its leading code")
+
+    def test_a_companion_job_error_is_found_by_its_tag_or_its_code_text(self):
+        tagged_error = tree(tagged("fpga-stage-failed: nextpnr could not place the design", "fpga-diagnostic-fpga-stage-failed"))
+        self.assertIs(tagged_error, self.flow(tagged_error).diagnostic("fpga-stage-failed"))
+        untagged = tree(node("fpga-stage-failed: nextpnr could not place the design"))
+        self.assertIs(untagged, self.flow(untagged).diagnostic("fpga-stage-failed"))
+
+    def test_another_code_or_package_is_not_a_match(self):
+        root = tree(tagged("fpga-tool-missing: yosys", "fpga-diagnostic-fpga-tool-missing"))
+        self.assertIsNone(self.flow(root).diagnostic("fpga-stage-failed"))
+        other = ET.fromstring('<hierarchy><node package="other" text="fpga-stage-failed: x"/></hierarchy>')
+        self.assertEqual([], diagnostic_nodes(other, PACKAGE, "fpga-stage-failed"))
+
+
 class ArchiveTest(unittest.TestCase):
     @staticmethod
     def archive(changes=None):
@@ -123,7 +158,8 @@ class PairingFlowTest(unittest.TestCase):
                                   input_text=unittest.mock.Mock(), capture=unittest.mock.Mock())
         flow.e = SimpleNamespace(scope=lambda root: (root, "editor-tool-sheet"), values=lambda key: labels[key],
                                  hide_keyboard=unittest.mock.Mock(), click=unittest.mock.Mock(), reveal=unittest.mock.Mock())
-        flow.s = SimpleNamespace(catalog={"additional_companion_available": {"en": "available", "pt": "disponível"}})
+        flow.s = SimpleNamespace(catalog={"additional_companion_available": {"en": "available", "pt": "disponível"},
+                                          "companion_operation_fpga_synthesize": {"en": "Synthesize HDL with Yosys", "pt": "Sintetizar HDL com Yosys"}})
         flow.host = SimpleNamespace(endpoint="http://127.0.0.1:54321", token="a" * 64)
         flow.open_tool = unittest.mock.Mock()
         flow.close_tool = unittest.mock.Mock()
@@ -157,7 +193,7 @@ class PairingFlowTest(unittest.TestCase):
         flow.pair()
         self.assertEqual("additional_companion_verified", flow.e.reveal.call_args_list[0].args[0])
         self.assertEqual("additional_companion_operation", flow.e.reveal.call_args_list[1].args[0])
-        self.assertEqual("fpga-synthesize", flow.e.reveal.call_args_list[1].kwargs["operation"])
+        self.assertEqual(flow.s.catalog["companion_operation_fpga_synthesize"], flow.e.reveal.call_args_list[1].kwargs["operation"])
         self.assertEqual(flow.s.catalog["additional_companion_available"], flow.e.reveal.call_args_list[1].kwargs["status"])
 
 
@@ -189,7 +225,7 @@ class BoardFileImportTest(unittest.TestCase):
             self.assertTrue(name.startswith("logisim-fpga-board-FPGA_E2E_HX1K_"))
             board = ET.fromstring(next(iter(uploaded.values())))
             observed = "old-board" if stale_board else board.tag
-            state.root = tree(node(observed) + node("OPEN_FPGA · ice40 · hx1k · tq144"))
+            state.root = tree(node(observed) + node("Open FPGA (Yosys/nextpnr) · ice40 · hx1k · tq144"))
         def wait(predicate, description, timeout):
             self.assertEqual(30, timeout)
             result = predicate(state.root)
@@ -200,8 +236,10 @@ class BoardFileImportTest(unittest.TestCase):
                                   input_text=unittest.mock.Mock(side_effect=AssertionError("Board setup must use its complete native file")))
         flow.s = SimpleNamespace(incoming=unittest.mock.Mock(), fixture=lambda value: "content://fixture/circuit",
                                  choose_downloads=unittest.mock.Mock(), choose_native_file=unittest.mock.Mock(side_effect=choose))
+        vendors = {"fpga_vendor_open_fpga": {"Open FPGA (Yosys/nextpnr)", "FPGA aberto (Yosys/nextpnr)"}}
         flow.e = SimpleNamespace(export=lambda name: (b"unchanged-circuit", None), nodes=lambda root, key: [],
-                                 click=unittest.mock.Mock(), scope=lambda root: (root, "editor-tool-sheet"), wait=wait)
+                                 click=unittest.mock.Mock(), scope=lambda root: (root, "editor-tool-sheet"), wait=wait,
+                                 values=lambda key, **arguments: vendors[key])
         flow.open_tool = unittest.mock.Mock()
         return flow, uploaded
 

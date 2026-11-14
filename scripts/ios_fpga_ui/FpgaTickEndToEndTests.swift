@@ -23,9 +23,10 @@ final class FpgaTickEndToEndTests: NativeUIHarness {
         try waitRendered("fpga_tick_effective", ["frequency": "10000000", "cycles": "10"])
         screenshot("fpga-tick-saved-frequency")
 
-        try tapPanel("fpga_map_restore")
+        // The stored map loads with the panel; scroll to the mapping actions below clk_out without tapping them.
+        _ = try sheetReveal(values("fpga_map_revert"))
         let bound = app.descendants(matching: .any).matching(NSPredicate(format: "value == %@", "U16")).firstMatch
-        XCTAssertTrue(bound.waitForExistence(timeout: 10), "Reopen binds clk_out to U16")
+        XCTAssertTrue(bound.waitForExistence(timeout: 10), "The saved map binds clk_out to U16 when the panel opens")
         try replaceTick(field, with: "12500000")
         try waitRendered("fpga_tick_effective", ["frequency": "12500000", "cycles": "8"])
         try tapPanel("fpga_map_save")
@@ -50,9 +51,9 @@ final class FpgaTickEndToEndTests: NativeUIHarness {
         XCTAssertEqual(try tickField().value as? String, "12500000", "The frequency survives a relaunch")
         try waitRendered("fpga_tick_effective", ["frequency": "12500000", "cycles": "8"])
         screenshot("fpga-tick-after-relaunch")
-        try tapPanel("fpga_map_restore")
+        _ = try sheetReveal(values("fpga_map_revert"))
         XCTAssertTrue(app.descendants(matching: .any).matching(NSPredicate(format: "value == %@", "U16"))
-            .firstMatch.waitForExistence(timeout: 10))
+            .firstMatch.waitForExistence(timeout: 10), "The saved map is loaded again after a relaunch")
         try tapPanel("fpga_export_project")
         // The system save picker belongs to the app process on iPadOS; confirm its primary action.
         let saveButtons = ["Save", "Move", "Done"]
@@ -94,13 +95,18 @@ final class FpgaTickEndToEndTests: NativeUIHarness {
         field.tap()
         try replacePresentedText(field, with: xml)
         try tapKey("action_import_xml")
-        // The import report appears after loading; close it before using the editor.
-        _ = identified("editor-import-report").waitForExistence(timeout: 10)
+        // A behavior-changing import opens its report; version defaults alone leave it behind the status
+        // Details action (C145). Close a report before using the editor.
+        let report = identified("editor-import-report")
+        let details = identified("import-report-status-details")
+        let loaded = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in report.exists || details.exists }, object: app)
+        _ = XCTWaiter.wait(for: [loaded], timeout: 10)
         try closeImportReportIfPresented()
     }
 
     private func openFpgaWithBoard(_ board: String) throws {
-        try tapKey("a11y_project_tools", toolbar: "editor-project-toolbar")
+        // The FPGA tool sits in Evolution's FPGA menu, which keeps the tools menu tag.
+        try tapKey("a11y_fpga_tools", toolbar: "editor-project-toolbar")
         try reveal(values("fpga_title"), verticalRegion: "editor-tool-menu").tap()
         let prefixes = try values("fpga_board_catalog").map { $0 + ":" }
         let choice = matching(prefixes, prefix: true).firstMatch

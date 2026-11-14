@@ -100,7 +100,7 @@ class Device:
         raise AssertionError(f"Missing control {selector}")
 
     def tool(self, description):
-        """A project without <toolbar> has no tools, as in Evolution (#344); the editor stays in Poke, which also selects."""
+        """A project without <toolbar> gets Mobile's base tools (#344); the editor opens in Poke, which also selects."""
         found = self.find(desc=description)
         if found:
             self.tap(found[0])
@@ -327,7 +327,7 @@ def colors_311(device):
     # Wire Poke: tap the P-Q net halfway between P and the junction; its whole bundle takes the stroke colour.
     (px, py), (qx, _) = device.center(device.one(rid="canvas-component:p")), device.center(device.one(rid="canvas-component:q"))
     scale = (qx - px) / 140  # P's body centre is at x=90, Q's at x=230
-    device.tool("Simulate")
+    device.tool("Poke Tool")
     device.tap(xy=(int(px + 40 * scale), py))
     device.capture("311-wire-poke-stroke", tap=[int(px + 40 * scale), py])
     device.back()
@@ -339,20 +339,15 @@ def colors_311(device):
     assert after.get("valueChar.unknown") == "?", after
     device.capture("311-unknown-char-preference", unknownChar=after.get("valueChar.unknown"))
     device.back()
-    # Width error colour: Canvas colors → role → hex value → Apply.
+    # Width error colour: Canvas colors lists every role with its swatch; its row opens the colour picker, whose
+    # advanced hex field takes the value; Apply stores it and closes the picker.
     device.open_preferences()
     device.tap(device.scroll_to(text="Canvas colors"))
-    device.tap(device.one(desc="Color to change: Canvas background"))
-    for _ in range(12):
-        found = device.find(text="Width error color")
-        if found:
-            device.tap(found[0])
-            break
-        device.sh("shell", "input", "swipe", "540", "1700", "540", "900", "500")
-        time.sleep(0.6)
-    else:
-        raise AssertionError("Width error color is not listed")
-    field = [n for n in device.dump().iter("node") if n.get("class", "").endswith("EditText")][0]
+    row = device.scroll_to(rid="preferences-color-widthError")
+    assert row.get("content-desc", "").startswith("Width error color: #"), row.get("content-desc")
+    device.tap(row)
+    device.one(rid="color-picker-hex")
+    field = device.scroll_to(rid="color-picker-hex")
     device.tap(field)
     device.sh("shell", "input", "keyevent", "KEYCODE_MOVE_END")
     for _ in range(8):
@@ -360,10 +355,9 @@ def colors_311(device):
     device.sh("shell", "input", "text", shlex.quote(WIDTH_ERROR_RGB))
     time.sleep(0.6)
     device.capture("311-color-dialog-width-error")
-    device.tap(text="Apply")
+    device.tap(rid="color-picker-apply")
     saved = device.preferences()
     assert saved.get("color.widthError") == WIDTH_ERROR_RGB, saved
-    device.tap(text="Close")
     device.back()
     device.capture("311-changed-before-restart", probes=probes(device.dump()), widthError=saved.get("color.widthError"))
     # Restart: a new process must load the saved character and colour.
@@ -379,8 +373,11 @@ def colors_311(device):
     # Restore defaults so the analysis steps use Evolution's colours, then check the restored width colour on screen.
     device.open_preferences()
     device.tap(device.scroll_to(text="Canvas colors"))
-    device.tap(text="Restore canvas colors")
-    device.tap(text="Close")
+    device.tap(device.scroll_to(rid="preferences-colors-restore"))
+    # Restoring more than one custom colour asks first; a single one is restored at once.
+    confirm = device.find(rid="confirm-dialog-confirm")
+    if confirm:
+        device.tap(confirm[0])
     device.tap(device.scroll_to(rid="preferences-unknown-char"))
     device.tap(text="U")
     device.back()

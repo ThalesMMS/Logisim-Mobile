@@ -31,14 +31,18 @@ class AndroidPerformanceReadinessTest(unittest.TestCase):
         cls.catalog = {}
         for path in sorted((ROOT / "localization/messages").glob("*.json")):
             cls.catalog.update(json.loads(path.read_bytes()))
-        # The archived attempt predates #321, so it shows the source names.
-        cls.text = ReadinessText.from_catalog(cls.catalog, "en", renamed=False)
-        cls.imported_text = ReadinessText.from_catalog(cls.catalog, "en")
+        # The archived attempt predates #321, so it shows the source names, and its counter still read "Steps N".
+        cls.text = ReadinessText.from_catalog(cls.catalog, "en", renamed=False, counter_key="simulation_steps")
+        cls.imported_text = ReadinessText.from_catalog(cls.catalog, "en", counter_key="simulation_steps")
 
     @classmethod
     def tearDownClass(cls):
         if ARCHIVE.read_bytes() != cls.archive_bytes:
             raise AssertionError("offline checks modified the failed-attempt archive")
+
+    def test_current_builds_read_the_ticks_counter(self):
+        self.assertEqual("Ticks {count}", ReadinessText.from_catalog(self.catalog, "en").steps_template)
+        self.assertEqual("Steps {count}", self.text.steps_template)
 
     def test_expected_report_uses_exact_archived_fixture_uuid(self):
         result = qualify_import_report(self.report, fixture_name=self.attempt["fixture_name"], text=self.text, package=PACKAGE)

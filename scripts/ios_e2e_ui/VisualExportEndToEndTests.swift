@@ -27,10 +27,8 @@ final class VisualExportEndToEndTests: NativeUIHarness {
         let report = identified("editor-import-report")
         let reportForFixture = report.descendants(matching: .any).matching(
             NSPredicate(format: "label CONTAINS %@", fixture.lastPathComponent))
-        let imported = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
-            report.exists && reportForFixture.firstMatch.exists
-        }, object: app)
-        XCTAssertEqual(XCTWaiter.wait(for: [imported], timeout: 20), .completed)
+        try openFixtureReport(report, reportForFixture, fixture.lastPathComponent)
+        XCTAssertTrue(reportForFixture.firstMatch.exists)
         try closeImportReportIfPresented()
         _ = try observedProjectXML(attachmentName: "visual-census-before.circ")
         try openExport()
@@ -54,6 +52,19 @@ final class VisualExportEndToEndTests: NativeUIHarness {
         screenshot("visual-export-panel-after-readonly-census")
     }
 
+    /// Waits for the fixture to open. Its version defaults leave the import report closed and the status names the
+    /// file with its adjustments (C145), so Details opens the report; a report that opened by itself is used as is.
+    private func openFixtureReport(_ report: XCUIElement, _ reportForFixture: XCUIElementQuery, _ filename: String) throws {
+        let opened = try fileOpenedStatus(filename)
+        let admitted = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            (report.exists && reportForFixture.firstMatch.exists) || opened.exists
+        }, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [admitted], timeout: 20), .completed, "\(filename) must open from the system")
+        if !report.exists { try showImportReportFromStatus() }
+        XCTAssertTrue(reportForFixture.firstMatch.waitForExistence(timeout: 10))
+        screenshot("visual-export-import-report")
+    }
+
     func testEditorExportsPixelsAndCancelsNativeDelivery() throws {
         let fixtures = try XCTUnwrap(run["fixtures"] as? [String: String])
         let titles = try XCTUnwrap(run["titles"] as? [String: String])
@@ -69,11 +80,8 @@ final class VisualExportEndToEndTests: NativeUIHarness {
         let report = identified("editor-import-report")
         let reportForFixture = report.descendants(matching: .any).matching(
             NSPredicate(format: "label CONTAINS %@", fixture.lastPathComponent))
-        let ready = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
-            report.exists && reportForFixture.firstMatch.exists
-        }, object: app)
-        XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 20), .completed,
-                       "The import report must identify the requested unique fixture file")
+        try openFixtureReport(report, reportForFixture, fixture.lastPathComponent)
+        XCTAssertTrue(reportForFixture.firstMatch.exists, "The import report must identify the requested unique fixture file")
         try closeImportReportIfPresented()
         XCTAssertTrue(matching([title]).firstMatch.waitForExistence(timeout: 20), "Fixture circuit must be visible")
         let before = try observedProjectXML(attachmentName: "visual-export-before.circ")
@@ -129,8 +137,8 @@ final class VisualExportEndToEndTests: NativeUIHarness {
     }
 
     private func openExport() throws {
-        try tapKey("a11y_project_tools", toolbar: "editor-project-toolbar")
-        try reveal(values("visual_export_title"), verticalRegion: "editor-tool-menu").tap()
+        try tapKey("a11y_project_files", toolbar: "editor-project-toolbar")
+        try reveal(values("visual_export_title"), verticalRegion: "editor-file-menu").tap()
         XCTAssertTrue(identified("editor-tool-sheet").waitForExistence(timeout: 5))
         XCTAssertTrue(matching(try values("visual_export_heading")).firstMatch.waitForExistence(timeout: 5))
     }
@@ -205,8 +213,9 @@ final class VisualExportEndToEndTests: NativeUIHarness {
               close.elementType == .button, isExportElementPresented(close) else {
             try failExportScope("The export panel must remain presented")
         }
+        // The sheet title is a heading, which Compose on iOS exposes as Other rather than StaticText.
         let titles = matching(try values("visual_export_title")).allElementsBoundByIndex.filter {
-            $0.elementType == .staticText && isExportElementPresented($0)
+            [.staticText, .other].contains($0.elementType) && isExportElementPresented($0)
         }
         guard titles.count == 1 else { try failExportScope("Expected one presented Export drawing title") }
     }

@@ -22,7 +22,7 @@ CATALOG = {
     "a11y_explorer_select": {"en": "Select {name}", "pt": "Selecionar {name}"},
     "a11y_library": {"en": "Component library", "pt": "Biblioteca de componentes"},
     "a11y_fit_circuit": {"en": "Fit circuit", "pt": "Enquadrar circuito"},
-    "action_simulate": {"en": "Simulate", "pt": "Simular"},
+    "action_poke_tool": {"en": "Poke Tool", "pt": "Ferramenta Testar"},
     "action_select": {"en": "Select", "pt": "Selecionar"},
     "action_move": {"en": "Move", "pt": "Mover"},
     "action_wire": {"en": "Wire", "pt": "Fio"},
@@ -64,7 +64,7 @@ EXPLORER = '''<hierarchy><node package="dev.logisim.mobile.e2e" bounds="[0,0][60
 </node></hierarchy>'''
 
 LEGACY_TOOLBAR = '''<hierarchy><node package="dev.logisim.mobile.e2e" bounds="[0,0][400,800]">
-  <node package="dev.logisim.mobile.e2e" text="Simulate" clickable="true" bounds="[0,50][100,100]"/>
+  <node package="dev.logisim.mobile.e2e" text="Poke Tool" clickable="true" bounds="[0,50][100,100]"/>
   <node package="dev.logisim.mobile.e2e" resource-id="editor-canvas" bounds="[0,100][400,800]"/>
 </node></hierarchy>'''
 
@@ -393,6 +393,10 @@ class EditingSelectorTests(unittest.TestCase):
         self.assertTrue(matches(routed))
         self.assertFalse(matches(ET.fromstring('<node content-desc="Redo something else"/>')))
         self.assertFalse(matches(ET.fromstring('<node text="Redo"/>')))
+        # Redo names the action it redoes after a comma (C30); other names that merely start with Redo stay apart.
+        self.assertTrue(matches(ET.fromstring('<node content-desc="Redo, Add AND gate"/>')))
+        self.assertTrue(matches(ET.fromstring('<node content-desc="Refazer, Inserir Porta E"/>')))
+        self.assertFalse(matches(ET.fromstring('<node content-desc="Redo History"/>')))
         self.assertEqual([], ui.commands)
 
     def test_command_action_uses_only_the_command_toolbar(self):
@@ -641,7 +645,7 @@ class LegacyOriginalScenarioTests(unittest.TestCase):
             ui = SimpleNamespace(package=PACKAGE, output=Path(directory))
             scenarios = SimpleNamespace(ui=ui, fixture=Mock(side_effect=lambda content: content), library_click=Mock(),
                 incoming=Mock(), run=lambda name, action: action(), picker_export=Mock(return_value="/sdcard/Download/native-saved.circ"),
-                click_key=Mock(), choose_downloads=Mock(), choose_native_file=Mock(), wait_key=Mock())
+                click_key=Mock(), choose_downloads=Mock(), choose_native_file=Mock(), wait_file_opened=Mock())
             editing = Mock()
             exports = [empty if step["action"] == "reopenExport" else saved for step in steps
                        if step["action"] in ("saveExport", "assertDocument", "reopenExport")]
@@ -664,7 +668,7 @@ class LegacyOriginalScenarioTests(unittest.TestCase):
         validator(ET.fromstring(saved))
         scenarios.library_click.assert_called_once_with("a11y_new_circuit")
         scenarios.choose_native_file.assert_called_once_with("native-saved.circ")
-        scenarios.wait_key.assert_called_once_with("status_file_opened", name="native-saved.circ")
+        scenarios.wait_file_opened.assert_called_once_with("native-saved.circ")
 
     def test_reopen_rejects_the_previous_project_if_clear_did_not_apply(self):
         previous = b'<project><main name="main"/><circuit name="main"><comp name="NOT Gate" loc="(200,100)"/></circuit></project>'

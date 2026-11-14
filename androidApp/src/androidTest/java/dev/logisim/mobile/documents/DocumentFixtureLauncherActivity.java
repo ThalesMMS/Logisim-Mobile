@@ -25,6 +25,8 @@ public final class DocumentFixtureLauncherActivity extends Activity {
     boolean share = "share".equals(getIntent().getStringExtra("action"));
     Button button = new Button(this);
     button.setText(share ? "Share fixture" : "Open fixture");
+    // UiAutomator reports the label as drawn; keep it the literal text the harness selects (API 36 all caps).
+    button.setAllCaps(false);
     button.setOnClickListener(view -> {
       Uri uri = sourceUri;
       Intent open;

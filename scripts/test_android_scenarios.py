@@ -105,7 +105,7 @@ SIMULATION_NOT_READY = """<hierarchy rotation="0">
 SIMULATION_READY = """<hierarchy rotation="0">
   <node class="android.widget.FrameLayout" bounds="[0,0][420,800]">
     <node bounds="[0,100][420,160]">
-      <node text="Step" content-desc="Advance the clock one half-cycle" clickable="true"
+      <node text="Step" content-desc="Tick half cycle" clickable="true"
             enabled="true" bounds="[180,100][260,160]"/>
     </node>
     <node resource-id="editor-canvas" bounds="[0,180][420,750]"/>
@@ -115,7 +115,7 @@ SIMULATION_READY = """<hierarchy rotation="0">
 SIMULATION_OVERFLOW = """<hierarchy rotation="0">
   <node package="thalesmms.logisim.mobile.e2e" bounds="[0,0][420,800]">
     <node package="thalesmms.logisim.mobile.e2e" resource-id="editor-simulation-toolbar" bounds="[0,100][420,160]">
-      <node package="thalesmms.logisim.mobile.e2e" text="Steps 56 · Insert OR" bounds="[10,110][260,150]"/>
+      <node package="thalesmms.logisim.mobile.e2e" text="Ticks 56 · Insert OR" bounds="[10,110][260,150]"/>
       <node package="thalesmms.logisim.mobile.e2e" resource-id="editor-simulation-toolbar-overflow"
             text="More" clickable="true" enabled="true" bounds="[360,100][420,160]"/>
     </node>
@@ -316,7 +316,7 @@ class ImportReportBoundaryTests(unittest.TestCase):
         ui = QueuedAndroidUi([first, second])
         scenarios = RUNNER.Scenarios(ui)
         with patch.object(RUNNER.time, "sleep") as sleep:
-            scenarios.click_key("a11y_step_clock", description=True)
+            scenarios.click_key("simulation_control_tick_half", description=True)
         self.assertEqual([("capture", "simulation-toolbar-not-ready-1"), ("tap", "Step")], ui.events)
         self.assertIs(first, ui.captures[0][1])
         self.assertEqual([second.find("node/node/node")], ui.taps)
@@ -327,9 +327,9 @@ class ImportReportBoundaryTests(unittest.TestCase):
 
     def test_step_in_overflow_is_found_inside_the_current_simulation_menu(self):
         menu = RUN_MENU.replace('text="▶ Run" content-desc="▶ Run"',
-                                'text="Step" content-desc="Advance the clock one half-cycle"')
+                                'text="Step" content-desc="Tick half cycle"')
         ui = OverflowAndroidUi([ET.fromstring(SIMULATION_OVERFLOW), ET.fromstring(menu)])
-        RUNNER.Scenarios(ui).click_key("a11y_step_clock", description=True)
+        RUNNER.Scenarios(ui).click_key("simulation_control_tick_half", description=True)
         self.assertEqual([("tap", "More"), ("tap", "Step")], ui.events)
         self.assertEqual(2, len(ui.screen_requests))
 
@@ -351,6 +351,12 @@ class ImportReportBoundaryTests(unittest.TestCase):
         self.assertEqual(56, self.scenarios.simulation_steps(root))
         self.assertEqual([], self.ui.events)
 
+    def test_counter_showing_the_count_alone_is_read_from_its_description(self):
+        root = ET.fromstring(SIMULATION_OVERFLOW.replace('text="Ticks 56 · Insert OR"',
+                                                         'text="8888888" content-desc="Ticks 8888888"'))
+        self.assertEqual(8888888, self.scenarios.simulation_steps(root))
+        self.assertEqual([], self.ui.events)
+
     def test_editor_readiness_does_not_open_hidden_project_actions(self):
         root = ET.fromstring(SIMULATION_OVERFLOW)
         ui = QueuedAndroidUi([root])
@@ -367,6 +373,42 @@ class ImportReportBoundaryTests(unittest.TestCase):
         self.assertEqual([("tap", "Sistema"), ("tap", "Continuar"),
                           ("capture", "import-report-1"), ("tap", "Fechar")], ui.events)
         self.assertEqual([], ui.roots)
+
+    def test_fresh_setup_reaches_the_editor_when_no_report_opens(self):
+        # C145: the first project's adjustments are informational, so no report stands between setup and the editor.
+        chooser = ET.fromstring(THEME_CHOOSER)
+        editor = ET.fromstring(SIMULATION_OVERFLOW)
+        ui = QueuedAndroidUi([chooser, chooser, chooser, editor])
+        with patch.object(RUNNER.time, "sleep"):
+            self.assertIs(editor, RUNNER.Scenarios(ui).wait_editor(complete_first_launch=True))
+        self.assertEqual([("tap", "Sistema"), ("tap", "Continuar")], ui.events)
+
+    def test_opened_file_status_accepts_informational_adjustments(self):
+        name = "e2e-" + "c" * 32 + ".circ"
+        def status(text):
+            return ET.fromstring(f'<hierarchy rotation="0"><node bounds="[0,0][420,800]">'
+                                 f'<node text="{text}" bounds="[10,760][300,790]"/></node></hierarchy>')
+        for text in (f"Arquivo {name} aberto.", f"Arquivo {name} aberto com 3 ajustes de compatibilidade.",
+                     f"File {name} opened with 1 compatibility adjustment."):
+            with self.subTest(text=text):
+                ui = QueuedAndroidUi([status(text)])
+                self.assertEqual(text, RUNNER.Scenarios(ui).wait_file_opened(name).get("text"))
+                self.assertEqual([], ui.events)
+        other = "e2e-" + "d" * 32 + ".circ"
+        patterns = RUNNER.file_opened_patterns(RUNNER.Scenarios(FakeAndroidUi()).catalog, name)
+        for text in (f"Arquivo {other} aberto com 3 ajustes de compatibilidade.", f"Arquivo {name} aberto com x ajustes de compatibilidade.",
+                     f"Aberto com 3 ajustes de compatibilidade."):
+            self.assertFalse(any(pattern.fullmatch(text) for pattern in patterns), text)
+
+    def test_opened_file_status_waits_behind_a_behavior_changing_report(self):
+        name = "e2e-" + "e" * 32 + ".circ"
+        report = ET.fromstring(REPORT_PT)
+        opened = ET.fromstring(f'<hierarchy rotation="0"><node bounds="[0,0][420,800]">'
+                               f'<node text="Arquivo {name} aberto." bounds="[10,760][300,790]"/></node></hierarchy>')
+        ui = QueuedAndroidUi([report, report, opened])
+        with patch.object(RUNNER.time, "sleep"):
+            RUNNER.Scenarios(ui).wait_file_opened(name)
+        self.assertEqual([("capture", "import-report-1"), ("tap", "Fechar")], ui.events)
 
     def test_editor_wait_outside_fresh_setup_does_not_confirm_the_theme(self):
         editor = ET.fromstring(SIMULATION_OVERFLOW)
@@ -450,7 +492,7 @@ class SimulationCounterAcknowledgementTests(unittest.TestCase):
     def counter(value):
         return ET.fromstring(f'''<hierarchy><node package="thalesmms.logisim.mobile.e2e" bounds="[0,0][420,800]">
           <node package="thalesmms.logisim.mobile.e2e" resource-id="editor-simulation-toolbar" bounds="[0,100][420,180]">
-            <node package="thalesmms.logisim.mobile.e2e" text="Passos {value}" bounds="[10,110][140,160]"/>
+            <node package="thalesmms.logisim.mobile.e2e" text="Ticks {value}" bounds="[10,110][140,160]"/>
           </node></node></hierarchy>''')
 
     def scenario(self, counts):

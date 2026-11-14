@@ -173,30 +173,30 @@ final class DisplayPreferencesEndToEndTests: NativeUIHarness {
         try choose("preferences-unknown-char", optionLabel: "?")
         record("unknown-char-question-mark")
 
-        try openColorDialog()
-        let role = matching(try values("preferences_color_role").map { $0 + ": " }, prefix: true).firstMatch
-        role.tap()
-        let widthError = app.buttons.matching(NSPredicate(format: "label == %@", "Width error color")).firstMatch
-        for _ in 0..<12 where !(widthError.exists && widthError.isHittable) {
-            app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.8))
-                .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.3)))
-        }
-        XCTAssertTrue(widthError.isHittable, "Width error color must be listed")
-        // Compose exposes the outlined field as a text view labelled with its hint.
-        let field = app.descendants(matching: .any).matching(NSPredicate(format: "elementType IN %@ AND label IN %@",
-            [XCUIElement.ElementType.textField.rawValue, XCUIElement.ElementType.textView.rawValue], try values("preferences_color_value"))).firstMatch
-        // A tap during the fling of the long menu only stops it.
+        // Each colour role is a row with its swatch; the row opens the colour picker, whose advanced hex field takes the value.
+        try openColorList()
+        let widthError = identified("preferences-color-widthError")
+        try scrollUntilHittable(widthError)
+        attach(widthError.label, name: "width-error-row")
+        // The picker's hex field sits below the sliders; Compose on iOS names the outlined field with its floating
+        // label only once that label is laid out on screen, so find it by tag and check its name after scrolling.
+        let field = identified("color-picker-hex")
+        // A tap during the fling of the long list only stops it.
         for _ in 0..<3 where !field.exists {
             if widthError.exists && widthError.isHittable { widthError.tap() }
             _ = field.waitForExistence(timeout: 2)
         }
-        XCTAssertTrue(field.waitForExistence(timeout: 5), "The RGB field must be shown")
+        XCTAssertTrue(field.waitForExistence(timeout: 5), "The picker's hex field must be shown")
+        try scrollUntilHittable(field)
+        XCTAssertTrue([XCUIElement.ElementType.textField, .textView].contains(field.elementType), "The hex field must be editable text")
+        let valueLabels = try values("preferences_color_value")
+        XCTAssertTrue(valueLabels.contains { nativeLabel(field.label, matches: $0) }, "The hex field must be named: \(field.label)")
         attach("\(field.value ?? "")", name: "width-error-default-value")
         field.tap()
         field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 10) + "#0000FF")
         record("color-dialog-width-error")
-        try tapLabel("action_apply")
-        try tapLabel("action_close")
+        // Apply stores the colour and closes the picker.
+        identified("color-picker-apply").tap()
         closeSheet()
         record("changed-before-restart")
 
@@ -208,9 +208,13 @@ final class DisplayPreferencesEndToEndTests: NativeUIHarness {
         XCTAssertEqual(widthMessage(), "Incompatible widths (2)")
         record("after-restart")
 
-        try openColorDialog()
-        try tapLabel("preferences_colors_restore")
-        try tapLabel("action_close")
+        try openColorList()
+        let restoreAll = identified("preferences-colors-restore")
+        try scrollUntilHittable(restoreAll)
+        restoreAll.tap()
+        // Restoring more than one custom colour asks first; a single one is restored at once.
+        let confirm = identified("confirm-dialog-confirm")
+        if confirm.waitForExistence(timeout: 2) { confirm.tap() }
         closeSheet()
         try choose("preferences-unknown-char", optionLabel: "U")
         record("restored-defaults")
@@ -236,18 +240,18 @@ final class DisplayPreferencesEndToEndTests: NativeUIHarness {
         identified("editor-tool-close").tap()
     }
 
-    /// Preferences → Canvas colors; the sheet may still be settling, so repeat the tap until the dialog shows.
-    private func openColorDialog() throws {
+    /// Preferences → Canvas colors expands the colour rows; the sheet may still be settling, so repeat the tap until they show.
+    private func openColorList() throws {
         try openPreferences()
-        let colors = app.buttons.matching(NSPredicate(format: "label IN %@", try values("preferences_colors"))).firstMatch
+        let colors = identified("preferences-colors")
         try scrollUntilHittable(colors)
-        let role = matching(try values("preferences_color_role").map { $0 + ": " }, prefix: true).firstMatch
-        for _ in 0..<4 where !role.exists {
+        let first = identified("preferences-color-canvas")
+        for _ in 0..<4 where !first.exists {
             if colors.exists && colors.isHittable { colors.tap() }
-            _ = role.waitForExistence(timeout: 4)
+            _ = first.waitForExistence(timeout: 4)
         }
-        if !role.exists { record("color-dialog-missing") }
-        XCTAssertTrue(role.exists, "The colour dialog must open")
+        if !first.exists { record("color-list-missing") }
+        XCTAssertTrue(first.exists, "The colour rows must open")
     }
 
     // MARK: #312 and #310

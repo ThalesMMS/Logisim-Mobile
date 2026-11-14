@@ -5,7 +5,7 @@
 - `FpgaTickEndToEndTests/testTickFrequencyIsShownSavedAndRestored`:
   1. Imports `fpga-tick.circ` through the project XML dialog and selects BASYS3 in Project → FPGA.
   2. Checks that the panel lists no Clock port and starts from the saved 10 MHz.
-  3. Reopens the saved map, changes the tick to 12.5 MHz and saves the map in the circuit. The project XML must then contain `downloadFrequency` `1.25E7` and no Clock entry.
+  3. Checks that the saved map is loaded when the panel opens (no button tap), changes the tick to 12.5 MHz and saves the map in the circuit. The project XML must then contain `downloadFrequency` `1.25E7` and no Clock entry.
   4. Relaunches the app, checks the restored frequency and exports the FPGA project through the system save picker.
 - `FpgaTickEndToEndTests/testMapsThatBindTheClockKeepThePhysicalInput`: a map that binds the Clock to W5 shows the notice and keeps `p_source_clock`.
 - `ShortcutRemapEndToEndTests/testRemapPersistConflictAndRestoreWithHardwareKeys` sends hardware-keyboard chords with `typeKey`:

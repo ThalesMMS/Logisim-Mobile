@@ -190,7 +190,8 @@ class MixedInputScenarios(private val instrumentation: Instrumentation) {
     }
 
     private fun projectMouseMappings() {
-        // Any mode but Poke proves the mapping; a project without <toolbar> has only Move (#344).
+        // Any mode but Poke proves the mapping. A project without <toolbar> has no project tools (#344); touch gets
+        // Mobile's base tools (Poke, Edit, Select, Wire, Text) and Move in the command toolbar instead.
         mode(Messages.ActionMove)
         val original = export("mappings-before")
         val high = outputStates("a11y_value_high")
@@ -356,7 +357,7 @@ class MixedInputScenarios(private val instrumentation: Instrumentation) {
     }
 
     private fun awaitClockSteps(count: Int) {
-        val labels = AppLanguage.entries.map { message(Messages.SimulationSteps, "count" to count).resolve(it) }.toSet()
+        val labels = AppLanguage.entries.map { message(Messages.SimulationTicks, "count" to count).resolve(it) }.toSet()
         waitFor("clock steps = $count") {
             nodes(root("focus:clock-steps")).any { it.text?.toString()?.substringBefore(" · ") in labels }
         }
@@ -410,7 +411,8 @@ class MixedInputScenarios(private val instrumentation: Instrumentation) {
     }
 
     private fun focusLossReleasesTheHeldButton() {
-        // The fixture has no <toolbar>, so no tools (#344); the editor opens in Poke, and the held button proves it.
+        // The fixture has no <toolbar>, so only Mobile's base tools (#344); the editor opens in Poke, and the held
+        // button proves it.
         val low = outputStates("a11y_value_low")
         val high = outputStates("a11y_value_high")
         waitFor("button output starts low") { outputState() in low }
