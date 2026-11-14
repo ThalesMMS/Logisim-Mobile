@@ -2,6 +2,7 @@ package dev.logisim.mobile
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class EditorToolbarLayoutTest {
     @Test
@@ -113,6 +114,57 @@ class EditorToolbarLayoutTest {
         assertEquals(0, toolbarVisibleActionCount(emptyList(), 320, 48, 4))
         assertEquals(0, toolbarVisibleActionCount(listOf(64, 64), 48, 48, 4))
         assertEquals(0, toolbarVisibleActionCount(listOf(64, 64), 0, 48, 4))
+    }
+
+    /** A phone's bottom bar: 2 dp padding each side, the frequency chip as wide as the JVM host measures it (69 dp at 100%). */
+    private fun phoneBar(width: Int, fontScale: Float = 1f) =
+        simulationBarControls(width - 4f, SimulationBarMetrics(frequency = 24f + 45f * fontScale))
+
+    @Test
+    fun runTickAndResetStayOnEveryPhoneSimulationBar() {
+        for (width in listOf(320, 360, 390)) for (fontScale in listOf(1f, 1.3f, 2f)) {
+            val shown = phoneBar(width, fontScale)
+            assertTrue(shown.size >= 3 && shown.containsAll(listOf(SimulationControl.RUN, SimulationControl.TICK_HALF,
+                SimulationControl.RESET)), "$width dp at ${fontScale * 100}%: $shown")
+        }
+        // 390 dp holds every control; narrower bars move the rest into the overflow menu.
+        assertEquals(SimulationControl.entries, phoneBar(390))
+        assertEquals(listOf(SimulationControl.RUN, SimulationControl.TICK_HALF, SimulationControl.TICK_FULL,
+            SimulationControl.FREQUENCY, SimulationControl.RESET), phoneBar(360))
+        assertEquals(listOf(SimulationControl.RUN, SimulationControl.TICK_HALF, SimulationControl.FREQUENCY, SimulationControl.RESET),
+            phoneBar(320))
+        // #239, 320 dp at 200%: the glyph buttons keep their size, the wider chip goes to the overflow menu.
+        assertEquals(listOf(SimulationControl.RUN, SimulationControl.EVENT, SimulationControl.TICK_HALF, SimulationControl.TICK_FULL,
+            SimulationControl.RESET), phoneBar(320, 2f))
+    }
+
+    @Test
+    fun simulationControlsFollowEvolutionsHeaderOrder() {
+        // UnifiedHeaderBar's simPill: play, step, tick half, tick full, frequency; then Mobile's auto-tick and Reset.
+        assertEquals(listOf(SimulationControl.RUN, SimulationControl.EVENT, SimulationControl.TICK_HALF, SimulationControl.TICK_FULL,
+            SimulationControl.FREQUENCY, SimulationControl.AUTO_TICK, SimulationControl.RESET), SimulationControl.entries)
+        assertEquals(SimulationControl.entries.toSet(), simulationControlPriority.toSet())
+    }
+
+    @Test
+    fun aWideBarShowsEveryControlAndATooNarrowOneKeepsTheRequiredOnes() {
+        val metrics = SimulationBarMetrics(frequency = 69f)
+        assertEquals(SimulationControl.entries, simulationBarControls(Float.POSITIVE_INFINITY, metrics))
+        assertEquals(SimulationControl.entries, simulationBarControls(590f, metrics))
+        assertEquals(listOf(SimulationControl.RUN, SimulationControl.TICK_HALF, SimulationControl.RESET), simulationBarControls(120f, metrics))
+    }
+
+    // The floor a header gives its simulation bar: Run, Tick half cycle, the divider, Reset and the overflow button at
+    // 48 dp, with 2 dp gaps and the bar's 2 dp padding on each side.
+    @Test
+    fun theNarrowestSimulationBarKeepsItsButtonsWhole() {
+        val metrics = SimulationBarMetrics(frequency = 138f)
+        assertEquals(3 * 48f + 9f + 48f + 4 * 2f, simulationBarMinimumWidth(metrics))
+        assertEquals(213f, SimulationControlBarMinWidth.value)
+        assertEquals(listOf(SimulationControl.RUN, SimulationControl.TICK_HALF, SimulationControl.RESET),
+            simulationBarControls(simulationBarMinimumWidth(metrics), metrics))
+        // The frequency chip, which grows with the font, is not a required control and never moves the floor.
+        assertEquals(simulationBarMinimumWidth(metrics), simulationBarMinimumWidth(metrics.copy(frequency = 69f)))
     }
 
     @Test

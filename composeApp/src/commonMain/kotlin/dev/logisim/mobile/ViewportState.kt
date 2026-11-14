@@ -11,16 +11,25 @@ import dev.logisim.mobile.core.bounds
 import kotlin.math.max
 import kotlin.math.min
 
+/**
+ * The zoom ceiling and the largest zoom Fit chooses, in pixels per circuit unit for each dp of the screen. Zoom counts
+ * density-independent pixels, as Evolution's 100% is one logical pixel per unit, so a dense screen reaches the same
+ * 1200% (and 400% for Fit) as any other. [CircuitViewport.scale] itself stays in pixels.
+ */
+internal const val MaxZoomPerDp = 12f
+internal const val FitZoomPerDp = 4f
+
 internal data class CircuitViewport(val scale: Float = 1f, val pan: Offset = Offset.Zero) {
     fun world(screen: Offset): Offset = (screen - pan) / scale
 
-    fun zoomed(factor: Float, anchor: Offset): CircuitViewport {
+    /** [maxScale] is the ceiling in pixels: [MaxZoomPerDp] times the screen density. */
+    fun zoomed(factor: Float, anchor: Offset, maxScale: Float = MaxZoomPerDp): CircuitViewport {
         if (!factor.isFinite() || factor <= 0f) return this
-        return zoomedTo(scale * factor, anchor)
+        return zoomedTo(scale * factor, anchor, maxScale)
     }
 
-    fun zoomedTo(target: Float, anchor: Offset): CircuitViewport {
-        val next = target.coerceIn(1e-9f, 12f)
+    fun zoomedTo(target: Float, anchor: Offset, maxScale: Float = MaxZoomPerDp): CircuitViewport {
+        val next = target.coerceIn(1e-9f, maxScale)
         return CircuitViewport(next, anchor + (pan - anchor) * (next / scale))
     }
 
@@ -43,10 +52,11 @@ internal data class CanvasViewportState(
         bottomInset: Float,
         registry: ComponentRegistry = ComponentCatalog.registry,
         contentBounds: VisualBounds? = null,
+        maxFitScale: Float = FitZoomPerDp,
     ): CanvasViewportState {
         if (newSize.width <= 0 || newSize.height <= 0) return this
         if (newSize == size && initialized) return this
-        val nextView = if (!initialized || fitted) fittedViewport(document, newSize, inset, bottomInset, view, registry, contentBounds)
+        val nextView = if (!initialized || fitted) fittedViewport(document, newSize, inset, bottomInset, view, registry, contentBounds, maxFitScale)
             else if (size == IntSize.Zero) view else view.resized(size, newSize)
         return copy(view = nextView, size = newSize, initialized = true)
     }
@@ -60,11 +70,12 @@ internal data class CanvasViewportState(
         selectionOnly: Boolean = false,
         registry: ComponentRegistry = ComponentCatalog.registry,
         contentBounds: VisualBounds? = null,
+        maxFitScale: Float = FitZoomPerDp,
     ): CanvasViewportState {
         if (size.width <= 0 || size.height <= 0) return this
         val target = viewportFitDocument(document, selectedIds, selectedWires, selectionOnly)
         return copy(
-            view = fittedViewport(target, size, inset, bottomInset, view, registry, contentBounds),
+            view = fittedViewport(target, size, inset, bottomInset, view, registry, contentBounds, maxFitScale),
             initialized = true,
             fitted = !selectionOnly,
         )
@@ -102,6 +113,8 @@ internal fun fittedViewport(
     previous: CircuitViewport = CircuitViewport(),
     registry: ComponentRegistry = ComponentCatalog.registry,
     contentBounds: VisualBounds? = null,
+    /** The largest zoom Fit chooses, in pixels: [FitZoomPerDp] times the screen density. */
+    maxScale: Float = FitZoomPerDp,
 ): CircuitViewport {
     val bounds = contentBounds ?: viewportGeometryBounds(document, registry)
     val minX = bounds.left.toFloat()
@@ -115,7 +128,7 @@ internal fun fittedViewport(
     val minimumExtent = max(32f, inset)
     if (availableWidth < minimumExtent || fullHeight < minimumExtent) return previous
     fun fitRectangle(availableHeight: Float, fitWidth: Float = availableWidth): CircuitViewport {
-        val scale = min(fitWidth / width, availableHeight / height).coerceAtMost(4f)
+        val scale = min(fitWidth / width, availableHeight / height).coerceAtMost(maxScale)
         return CircuitViewport(scale, Offset(
             inset + (fitWidth - width * scale) / 2f - minX * scale,
             inset + (availableHeight - height * scale) / 2f - minY * scale,

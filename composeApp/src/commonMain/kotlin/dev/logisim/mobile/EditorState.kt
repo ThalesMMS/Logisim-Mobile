@@ -8,15 +8,22 @@ import dev.logisim.mobile.core.localization.AppLanguage
 import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.LocalizedArgumentException
 import dev.logisim.mobile.core.localization.Messages
+import dev.logisim.mobile.core.localization.localizedAttributeName
 import dev.logisim.mobile.core.localization.localizedDescription
 import dev.logisim.mobile.core.localization.localizedLabel
 import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.core.localization.requireLocalized
 import kotlin.math.abs
+import kotlin.math.roundToInt
 import kotlin.time.TimeSource
 import kotlin.time.TimeMark
 
 internal enum class EditorMode { INTERACT, EDIT, SELECT, MOVE, WIRE, PLACE, TEXT }
+
+/** The selecting tools: a finger can select there, and Add to selection stays on. */
+internal val AdditiveSelectionModes = setOf(EditorMode.EDIT, EditorMode.SELECT, EditorMode.MOVE)
+/** The hints of the selecting tools, which describe a background drag that Add to selection changes. */
+private val AdditiveHintKeys = setOf(Messages.StatusEditToolTouch, Messages.StatusSelectTouch, Messages.StatusMove)
 
 internal enum class EditorHistoryDirection { UNDO, REDO }
 
@@ -26,14 +33,19 @@ internal data class PendingPaste(
     val fragment: CircuitFragment,
     val offset: GridPoint = GridPoint(20, 20),
     val historyLabel: LocalizedText = message(Messages.ActionPaste),
+    /** The fragment point that follows the pointer: the centre of its bounds, on the 10-unit grid. */
+    val anchor: GridPoint = fragment.components.firstOrNull()?.position ?: fragment.wires.first().from,
 ) {
-    fun at(point: GridPoint): PendingPaste {
-        val anchor = fragment.components.firstOrNull()?.position ?: fragment.wires.first().from
-        return copy(offset = GridPoint(point.x - anchor.x, point.y - anchor.y))
-    }
+    fun at(point: GridPoint): PendingPaste = copy(offset = GridPoint(point.x - anchor.x, point.y - anchor.y))
 }
 
-private const val ExamplePresetKey = "logisim-mobile-example"
+/** The centre of [bounds], rounded to the 10-unit grid so a block moved by it stays on the grid. */
+internal fun pasteAnchor(bounds: ComponentBounds): GridPoint {
+    fun snap(value: Int) = (value + 5).floorDiv(10) * 10
+    return GridPoint(snap((bounds.left + bounds.right) / 2), snap((bounds.top + bounds.bottom) / 2))
+}
+
+internal const val ExamplePresetKey = "logisim-mobile-example"
 
 internal class EditorState(
     initialXml: String?,
@@ -89,6 +101,8 @@ internal class EditorState(
     private val past = ArrayDeque<HistoryEntry>()
     private val future = ArrayDeque<HistoryEntry>()
     private var nextHistoryId = 0L
+    /** Counts [setTickFrequency] changes; a snapshot older than the last one gets the current rate on restore. */
+    private var tickFrequencyEpoch = 0L
     private val clipboardOwner = Any()
     var pendingPaste by mutableStateOf<PendingPaste?>(null)
         private set
@@ -106,12 +120,21 @@ internal class EditorState(
     var onSimulationRequested: ((SimulationRunSnapshot, SimulationStep) -> SimulationRequestResult)? = null
     private var runClock: TimeMark? = null
     var onWorkspaceProjectReplaced: (EditorProjectReplacement) -> Unit = {}
-    var openWorkspaceSession: ((String, String, EditorImportReport?) -> Boolean)? = null
+    /** Opens a new workspace session: its display name (not the circuit name), its XML and its import report. */
+    var openWorkspaceSession: ((LocalizedText, String, EditorImportReport?) -> Boolean)? = null
     var automaticTicksEnabled = true
     private var viewports by mutableStateOf<Map<String, CanvasViewportState>>(emptyMap())
 
-    var project by mutableStateOf(initialProject)
-        private set
+    private val circuitLifetimes = CircuitLifetimes(initialProject)
+    private val projectState = mutableStateOf(initialProject)
+    var project: CircuitProject
+        get() = projectState.value
+        private set(value) {
+            circuitLifetimes.observe(value)
+            projectState.value = value
+        }
+    /** Survives renaming circuit [id], but not deleting it and creating another circuit under the same id. */
+    fun circuitLifetime(id: String): Long = circuitLifetimes[id]
     var activeCircuitName by mutableStateOf(initialProject.mainCircuitName)
         private set
     var activeInstancePath by mutableStateOf<List<String>>(emptyList())
@@ -125,6 +148,8 @@ internal class EditorState(
     private var debugCopy by mutableStateOf<DebugInstanceSimulation?>(null)
     private var pendingDebugInput by mutableStateOf<Pair<String, LogicVector?>?>(null)
     private var pendingDebugPokeBit = 0
+    /** Whether the poke awaiting the debugging copy toggles exactly its bit (the accessible Toggle bit, X0). */
+    private var pendingDebugPokeAsBit = false
     val isDebuggingInstance: Boolean get() = debugCopy != null
     val debugCopyIdentity: Any? get() = debugCopy
     val canConfirmDebugCopy: Boolean get() = pendingDebugInput != null
@@ -132,13 +157,24 @@ internal class EditorState(
         private set
     var mode by mutableStateOf(EditorMode.INTERACT)
         private set
+    /**
+     * Touch's sticky Shift: while on, a finger's tap adds or drops an item and a marquee adds to the selection,
+     * as Shift does in Evolution's SelectTool. Only the selecting tools keep it; other tools and documents reset it.
+     */
+    var additiveSelection by mutableStateOf(false)
+        private set
     var keepConnectionsWhenMoving by mutableStateOf(true)
     var printerView by mutableStateOf(false)
         private set
     var placementMatrixEnabled by mutableStateOf(false)
         private set
     private var matrixPlacement by mutableStateOf<PendingMatrixPlacement?>(null)
-    val pendingMatrixPlacement: PendingMatrixPlacement? get() = matrixPlacement?.takeIf { it.document === document }
+    /**
+     * The document [matrixPlacement] belongs to: the one it was started on, or the same circuit once [setTickFrequency]
+     * replaced it with only its simulationFrequency changed. Any other document change drops the placement.
+     */
+    private var matrixPlacementDocument by mutableStateOf<CircuitDocument?>(null)
+    val pendingMatrixPlacement: PendingMatrixPlacement? get() = matrixPlacement?.takeIf { matrixPlacementDocument === document }
 
     var placingTemplate by mutableStateOf<CircuitComponent?>(null)
         private set
@@ -195,7 +231,10 @@ internal class EditorState(
         val compatible = view.compatibleWith(project)
         val circuit = project.circuits.firstOrNull { it.id == compatible.activeCircuitId } ?: project.mainCircuit
         val path = compatible.activeInstancePath.takeIf { instanceCircuit(it)?.id == circuit.id }.orEmpty()
+        // Restoring the view is not news: the adjustments an open just made stay in the status line (C145).
+        val adjustments = statusText.takeIf { importReportStatusShown }
         navigate(CircuitNavigationTarget(circuit.id, circuit.name, path))
+        adjustments?.let { statusText = it }
         selectedIds = compatible.selectedComponentIds
         selectedId = selectedIds.lastOrNull()
         selectedWires = compatible.selectedWires
@@ -212,6 +251,14 @@ internal class EditorState(
 
     fun updateViewport(value: CanvasViewportState) { viewports = viewports + (navigationKey to value) }
 
+    /** The grid point at the centre of the canvas in view, or null before the canvas is measured (C39). */
+    val visibleCenter: GridPoint? get() {
+        val view = viewport
+        if (!view.initialized || view.size.width <= 0 || view.size.height <= 0) return null
+        val centre = view.view.world(androidx.compose.ui.geometry.Offset(view.size.width / 2f, view.size.height / 2f))
+        return GridPoint((centre.x / 10f).roundToInt() * 10, (centre.y / 10f).roundToInt() * 10)
+    }
+
     fun zoomBy(factor: Float) {
         if (factor.isFinite() && factor > 0f) zoomTo(viewport.view.scale * factor)
     }
@@ -220,10 +267,25 @@ internal class EditorState(
     fun zoomTo(scale: Float) {
         val current = viewport
         val center = androidx.compose.ui.geometry.Offset(current.size.width / 2f, current.size.height / 2f)
-        updateViewport(current.copy(view = current.view.zoomedTo(scale, center), fitted = false, initialized = true))
+        updateViewport(current.copy(view = current.view.zoomedTo(scale, center, MaxZoomPerDp * canvasDensity),
+            fitted = false, initialized = true))
     }
-    var statusText by mutableStateOf(message(Messages.StatusInitial))
+
+    /** Pixels per dp of the canvas, which the editor reports: zoom percentages and the zoom ceiling count dp. */
+    var canvasDensity by mutableStateOf(1f)
+    /** The zoom as Evolution shows it: 100% is one dp per circuit unit, whatever the screen density. */
+    val zoomPercent: Float get() = zoomPercentOf(viewport.view.scale, canvasDensity)
+    fun zoomToPercent(percent: Float) = zoomTo(percent / 100f * canvasDensity)
+    /** The hint of the tool in use; the editor opens in the Poke tool. */
+    var statusText by mutableStateOf(modeStatus(mode))
         private set
+    /**
+     * What the status line shows: [statusText], except that while Add to selection is on the selecting tools' hints
+     * give way to the additive one. In Move a background drag then draws a marquee instead of panning.
+     */
+    val displayedStatusText: LocalizedText get() =
+        if (additiveSelection && mode in AdditiveSelectionModes && statusText.key in AdditiveHintKeys) message(Messages.StatusAdditiveTouch)
+        else statusText
     val status: String get() = statusText.resolve(AppLanguage.PORTUGUESE)
     var importErrorText by mutableStateOf(
         (initialImport as? CircProjectImportResult.Failure)?.let { LocalizedText.join(it.notices) }
@@ -234,12 +296,49 @@ internal class EditorState(
 
     var importReport by mutableStateOf(initialImportReport ?: (initialImport as? CircProjectImportResult.Success)?.let { EditorImportReport.from(it) })
         private set
-    var importReportVisible by mutableStateOf(initialImportReport?.showOnOpen ?:
-        ((initialImport as? CircProjectImportResult.Success)?.migrations?.isNotEmpty() == true))
+    var importReportVisible by mutableStateOf(importReport?.showOnOpen == true)
         private set
     val importError: String? get() = importErrorText?.resolve(AppLanguage.PORTUGUESE)
     fun showImportReport() { importReportVisible = importReport != null }
-    fun dismissImportReport() { importReportVisible = false; importReport = importReport?.copy(showOnOpen = false) }
+    fun dismissImportReport() { importReportVisible = false; importReport = importReport?.consumed() }
+
+    /** The status line still says how many adjustments the open made, so it offers Details beside it (C145). */
+    val importReportStatusShown: Boolean get() =
+        importReport != null && !importReportVisible && statusText.key in ImportReportStatusKeys
+
+    /**
+     * The adjustments of a report that did not open by itself, for the status line; null when there is nothing to say.
+     * A [name] must be the report's own origin, so an older report never speaks for a file opened since.
+     */
+    private fun importAdjustmentsStatus(name: LocalizedText? = null, imported: Boolean = false): LocalizedText? =
+        importReport?.takeIf { it.announceOnOpen && !importReportVisible && (name == null || it.origin == name) }
+            ?.let { importReportStatus(it, name, imported) }
+
+    /**
+     * The adjustments were already announced in this window before it was recreated (C145): the status line does not
+     * say them again, and Details leaves with them. The report stays in the File menu.
+     */
+    fun forgetImportAnnouncement() {
+        val report = importReport?.takeIf { it.announceOnOpen } ?: return
+        importReport = report.copy(announceOnOpen = false)
+        if (statusText.key in ImportReportStatusKeys) statusText = when (statusText.key) {
+            // A pasted Project XML says it was imported, as reportOpened does without adjustments.
+            ImportReportImportedStatusKey -> LocalizedText(Messages.StatusProjectImported, quantity = project.circuits.size.toLong())
+            else -> report.origin?.takeIf { statusText.key == ImportReportFileStatusKey }
+                ?.let { message(Messages.StatusFileOpened, "name" to it) } ?: modeStatus(mode)
+        }
+    }
+
+    /**
+     * "Opened NAME", or with how many compatibility adjustments when the report did not open by itself. A workspace
+     * session opened from text pasted in the Project XML dialog names no file: it says the project was imported (C145).
+     */
+    fun reportOpened(name: LocalizedText) {
+        val pasted = !name.namesAFile
+        statusText = importAdjustmentsStatus(name, imported = pasted)
+            ?: if (pasted) LocalizedText(Messages.StatusProjectImported, quantity = project.circuits.size.toLong())
+            else message(Messages.StatusFileOpened, "name" to name)
+    }
 
     val selected: CircuitComponent? get() = document.components.firstOrNull { it.id == selectedId }
     val canPaste: Boolean get() = clipboard.entry != null && pendingPaste == null
@@ -248,6 +347,7 @@ internal class EditorState(
         checkInitialization()
         if (jarController == null) restoreExampleStartup()
         checkInitialization()
+        importAdjustmentsStatus()?.let { statusText = it }
         if (!documentWritable) statusText = message("document_read_only_preserved")
         checkInitialization = {}
     }
@@ -269,22 +369,32 @@ internal class EditorState(
         if (newMode != EditorMode.PLACE) projectPlacementTool = null
         pendingWire = null
         pendingPaste = null
-        statusText = when (newMode) {
-            EditorMode.INTERACT -> message(Messages.StatusInteract)
-            EditorMode.EDIT -> message(Messages.StatusEditTool)
-            EditorMode.SELECT -> message(Messages.StatusSelect)
-            EditorMode.MOVE -> message(Messages.StatusMove)
-            EditorMode.WIRE -> message(Messages.StatusWire)
-            EditorMode.PLACE -> message(Messages.StatusPlace, "name" to placingKind.localizedLabel())
-            EditorMode.TEXT -> message(Messages.MouseMappingText)
-        }
+        if (newMode !in AdditiveSelectionModes) additiveSelection = false
+        statusText = modeStatus(newMode)
+    }
+
+    /** The status hint of [mode]; touch hints name the two-finger pan and zoom and Add to selection. */
+    private fun modeStatus(mode: EditorMode): LocalizedText = when (mode) {
+        EditorMode.INTERACT -> message(Messages.StatusInteract)
+        EditorMode.EDIT -> message(Messages.StatusEditToolTouch)
+        EditorMode.SELECT -> message(Messages.StatusSelectTouch)
+        EditorMode.MOVE -> message(Messages.StatusMove)
+        EditorMode.WIRE -> message(Messages.StatusWireTouch)
+        EditorMode.PLACE -> message(Messages.StatusPlace, "name" to placingKind.localizedLabel())
+        EditorMode.TEXT -> message(Messages.MouseMappingText)
+    }
+
+    fun toggleAdditiveSelection() {
+        additiveSelection = !additiveSelection && mode in AdditiveSelectionModes && interactionsEnabled
     }
 
     fun place(kind: ComponentKind) {
         if (!ensureDocumentWritable()) return
         projectPlacementTool = null
-        placingTemplate = null
+        // Like an Evolution AddTool, the library tool keeps the attributes chosen for it in this session.
+        placingTemplate = placementTools[PlacementToolScope(documentSessionId, kind)]
         placingKind = kind
+        libraryPlacement = true
         changeMode(EditorMode.PLACE)
     }
 
@@ -293,8 +403,62 @@ internal class EditorState(
         projectPlacementTool = template.takeIf { projectTool }
         placingTemplate = template
         placingKind = template.kind
+        libraryPlacement = false
         changeMode(EditorMode.PLACE)
     }
+
+    private data class PlacementToolScope(val session: Long, val kind: ComponentKind)
+    /**
+     * The tool attributes chosen before placing a library component, per kind, for this project session only: they
+     * are never written to the file's `<lib><tool>` section (C34; a documented difference from Evolution).
+     */
+    private var placementTools by mutableStateOf(emptyMap<PlacementToolScope, CircuitComponent>())
+    private var libraryPlacement = false
+
+    /** The component the Place tool adds: its template, or a new one with the creation defaults. */
+    private fun placementBase(): CircuitComponent? = placingTemplate ?: runCatching {
+        componentRegistry.createNew(placingKind, "placement-tool", GridPoint(0, 0), creationDefaults)
+    }.getOrNull()
+
+    private fun choosePlacingTemplate(updated: CircuitComponent) {
+        placingTemplate = updated
+        if (libraryPlacement && projectPlacementTool == null) {
+            placementTools = placementTools.filterKeys { it.session == documentSessionId } +
+                (PlacementToolScope(documentSessionId, placingKind) to updated)
+        }
+    }
+
+    /**
+     * Sets attributes of the Place tool before placing, as Evolution's attribute table does for a selected AddTool
+     * (AttrTableToolModel): the placement preview and every component placed next carry them, exactly as if they had
+     * been set on each component after placing. Returns false, with the reason in the status line, when refused.
+     */
+    fun updatePlacingTemplate(updates: Map<String, String>): Boolean {
+        if (mode != EditorMode.PLACE || pendingPaste != null || !ensureDocumentWritable()) return false
+        val base = placementBase() ?: return false
+        if (updates.all { (name, value) -> base.attributes[name] == value }) return true
+        val updated = if (base.kind == ComponentKind.SUBCIRCUIT) base.copy(attributes = base.attributes + updates)
+        else try { componentRegistry.reconfigure(base, updates) } catch (error: IllegalArgumentException) {
+            statusText = error.localizedDescription(message(Messages.ErrorPropertyValue))
+            return false
+        }
+        choosePlacingTemplate(updated)
+        return true
+    }
+
+    /** The Place tool turned a quarter clockwise (AddTool's rotate key), or false when it has no facing. */
+    fun rotatePlacingTemplate(): Boolean {
+        if (mode != EditorMode.PLACE || pendingPaste != null || !ensureDocumentWritable()) return false
+        val updated = placementBase()?.rotatedForPlacement() ?: return false
+        choosePlacingTemplate(updated)
+        return true
+    }
+
+    /** Whether the Place tool's component has a facing to choose (a subcircuit always does). */
+    val placementHasFacing: Boolean get() = placingKind == ComponentKind.SUBCIRCUIT ||
+        componentRegistry.definition(placingKind)?.let { definition ->
+            definition.supportsRotation && definition.schema.keys.any { it.name == "facing" }
+        } == true
 
     fun handleToolFacing(direction: Direction): Boolean {
         if (pendingPaste != null) return false
@@ -310,26 +474,52 @@ internal class EditorState(
                 return true
             }
             EditorMode.PLACE -> {
-                if (projectPlacementTool == null) return false
-                if (ensureDocumentWritable()) placingTemplate = placingTemplate?.withToolFacing(direction)
+                // AddTool.keyPressed: an arrow key sets the facing of any tool that has one.
+                if (!placementHasFacing) return false
+                if (ensureDocumentWritable()) placementBase()?.withToolFacing(direction)?.let(::choosePlacingTemplate)
                 return true
             }
             else -> return false
         }
     }
 
-    /** Menu Tool Rotate Left/Right (MenuTool.MenuComponent): a quarter turn of one component's facing. */
+    /**
+     * Menu Tool Rotate Left/Right (MenuTool.MenuComponent): a quarter turn of one component's facing, named
+     * like Evolution's rotateComponentAction.
+     */
     fun rotateComponent(id: String, left: Boolean): Boolean {
         if (!ensureDocumentWritable()) return false
         val component = document.components.firstOrNull { it.id == id } ?: return false
         if (!ComponentMenu.hasFacing(component, componentRegistry)) return false
-        val effective = if (component.kind == ComponentKind.SUBCIRCUIT) null
-            else runCatching { componentRegistry.attributes(component).string("facing") }.getOrNull()
-        val current = Direction.parse(effective ?: component.facing) ?: Direction.EAST
-        val facing = ComponentMenu.rotated(current, left).serialized
-        val updated = if (component.kind == ComponentKind.SUBCIRCUIT) component.copy(attributes = component.attributes + ("facing" to facing))
-            else componentRegistry.reconfigure(component, mapOf("facing" to facing))
-        return change(message("history_edit_properties")) { editor.updateComponents(mapOf(id to updated)) }
+        return change(rotationLabel(component)) { editor.updateComponents(mapOf(id to component.quarterTurn(left))) }
+    }
+
+    /** Whether [rotateSelected] can turn anything: some selected component has a facing. */
+    val canRotateSelection: Boolean get() = selectedComponents().any { ComponentMenu.hasFacing(it, componentRegistry) }
+
+    /**
+     * EditTool.attemptRotate for touch: a quarter turn of every selected component with a facing, wires and
+     * components without one unchanged, as one undoable step (selectionRefaceAction, or Rotate {name} for one).
+     */
+    fun rotateSelected(left: Boolean): Boolean {
+        if (!ensureDocumentWritable() || pendingPaste != null) return false
+        val turning = selectedComponents().filter { ComponentMenu.hasFacing(it, componentRegistry) }
+        if (turning.isEmpty()) return false
+        val label = turning.singleOrNull()?.let(::rotationLabel) ?: message(Messages.HistoryRotateSelection)
+        return change(label) { editor.updateComponents(turning.associate { it.id to it.quarterTurn(left) }) }
+    }
+
+    private fun rotationLabel(component: CircuitComponent): LocalizedText = message(Messages.HistoryRotateComponent,
+        "name" to (component.circuitName?.let(LocalizedText::literal) ?: component.kind.localizedLabel()))
+
+    /** The effective facing (registry attributes, or the raw ones of a subcircuit) turned a quarter. */
+    private fun CircuitComponent.quarterTurn(left: Boolean): CircuitComponent {
+        val effective = if (kind == ComponentKind.SUBCIRCUIT) null
+            else runCatching { componentRegistry.attributes(this).string("facing") }.getOrNull()
+        val current = Direction.parse(effective ?: facing) ?: Direction.EAST
+        val turned = ComponentMenu.rotated(current, left).serialized
+        return if (kind == ComponentKind.SUBCIRCUIT) copy(attributes = attributes + ("facing" to turned))
+            else componentRegistry.reconfigure(this, mapOf("facing" to turned))
     }
 
     /** Splitter Distribute Ascending/Descending (Splitter.redistribute): no change when already distributed. */
@@ -383,12 +573,10 @@ internal class EditorState(
         when (mode) {
             EditorMode.PLACE -> {
                 if (placementMatrixEnabled && matrixPlacement != null) return false
-                val template = placingTemplate ?: runCatching {
-                    componentRegistry.create(placingKind, "placement-tool", GridPoint(0, 0))
-                }.getOrNull() ?: return false
+                val template = placementBase() ?: return false
                 val updated = (if (command == EditorShortcut.ADD_TOOL_ROTATE) template.rotatedForPlacement()
                     else template.withToolShortcut(command)) ?: return false
-                if (ensureDocumentWritable() && updated != template) placingTemplate = updated
+                if (ensureDocumentWritable() && updated != template) choosePlacingTemplate(updated)
                 return true
             }
             EditorMode.EDIT, EditorMode.SELECT, EditorMode.MOVE -> {
@@ -493,13 +681,9 @@ internal class EditorState(
             statusText = message(Messages.MatrixPlaceInvalid)
             return false
         }
-        val label = baseLabel.trim()
-        if (label.isNotEmpty()) {
-            val unavailable = PlacementLabels.unavailable(document, componentRegistry, placement.template.kind)
-            if (!PlacementLabels.isValid(label) || copies.any { it.label.lowercase() in unavailable }) {
-                statusText = message(Messages.MatrixPlaceInvalidLabel)
-                return false
-            }
+        matrixLabelProblem(document, componentRegistry, placement.template.kind, baseLabel, columns, rows)?.let {
+            statusText = it
+            return false
         }
         var ids = emptySet<String>()
         if (!change(message(Messages.MatrixPlaceTitle)) {
@@ -537,6 +721,7 @@ internal class EditorState(
     fun activateTextTool(prototype: CircuitComponent) {
         if (!ensureDocumentWritable()) return
         placingTemplate = prototype
+        libraryPlacement = false
         changeMode(EditorMode.TEXT)
     }
 
@@ -544,7 +729,7 @@ internal class EditorState(
         if (!interactionsEnabled || !ensureDocumentWritable()) return null
         return when (target) {
             is TextToolTarget.Existing -> document.components.firstOrNull { it.id == target.id }
-                ?.let { TextToolEdit(document, it, isNew = false) }
+                ?.let { TextToolEdit(document, it, isNew = false, labelRules = textToolLabelRules(it)) }
             is TextToolTarget.Empty -> {
                 val prototype = mappedPrototype ?: placingTemplate?.takeIf { mode == EditorMode.TEXT } ?: return null
                 // TextTool starts from TEXT_TOOL_COLOR unless the tool itself carries a color.
@@ -555,19 +740,32 @@ internal class EditorState(
                 val withFont = if (colored.kind == ComponentKind.TEXT && "font" !in colored.attributes)
                     colored.copy(attributes = colored.attributes + ("font" to font),
                         implicitAttributes = colored.implicitAttributes + ("font" to font)) else colored
-                TextToolEdit(document, withFont.copy(position = target.point), isNew = true)
+                TextToolEdit(document, withFont.copy(position = target.point), isNew = true,
+                    labelRules = textToolLabelRules(withFont))
             }
         }
     }
 
-    fun applyTextToolEdit(edit: TextToolEdit, value: String) {
-        if (document !== edit.document || !interactionsEnabled || !ensureDocumentWritable()) return
+    /** The name rules the Text tool checks a label of [component] against: Evolution's, unless the project is original Logisim. */
+    private fun textToolLabelRules(component: CircuitComponent): TextToolLabelRules? =
+        if (component.kind == AnnotationLibrary.Text || !project.followsEvolutionNames()) null
+        else TextToolLabelRules(component.circuitName ?: componentRegistry.definition(component.kind)?.fileName)
+
+    /**
+     * Why Evolution would refuse [value] as the label the Text tool edits (InstanceComponent's SyntaxChecker), or null:
+     * a Text annotation's text, an unchanged label and original Logisim projects are never checked (C41).
+     */
+    fun textToolProblem(edit: TextToolEdit, value: String): LocalizedText? = edit.problem(value)
+
+    /** Applies the Text tool's [value]; returns why it was refused (the dialog then stays open), or null. */
+    fun applyTextToolEdit(edit: TextToolEdit, value: String): LocalizedText? {
+        if (document !== edit.document || !interactionsEnabled || !ensureDocumentWritable()) return null
         val component = edit.component
         if (component.kind == ComponentKind.TEXT) {
             // Evolution's TextTool.editingStopped never adds an empty new Text, and for a cleared existing Text it
             // commits CircuitMutation.add of the same component: the previous text stays (d58a61e0, #346).
-            if (value.isEmpty()) return
-            if (value == edit.initialText && !edit.isNew) return
+            if (value.isEmpty()) return null
+            if (value == edit.initialText && !edit.isNew) return null
             val updated = componentRegistry.reconfigure(component, mapOf("text" to value))
             if (edit.isNew) {
                 insertMappedComponent(updated, component.position)
@@ -575,11 +773,12 @@ internal class EditorState(
                 selectComponent(component.id)
             }
         } else if (value != edit.initialText) {
-            labelProblem(value, component)?.let { statusText = it; return }
+            textToolProblem(edit, value)?.let { statusText = it; return it }
             if (change(message("history_edit_label")) { editor.updateComponents(mapOf(component.id to component.copy(label = value))) }) {
                 selectComponent(component.id)
             }
         }
+        return null
     }
 
     fun tap(point: GridPoint) = tap(point, mode)
@@ -604,6 +803,7 @@ internal class EditorState(
                     val prototype = template ?: componentRegistry.createNew(placingKind, "matrix", GridPoint(0, 0), creationDefaults)
                     val bounds = prototype.layout(componentRegistry).bounds
                     matrixPlacement = PendingMatrixPlacement(document, prototype, point, bounds, label ?: prototype.label)
+                    matrixPlacementDocument = document
                     return
                 }
                 var id: String? = null
@@ -825,6 +1025,17 @@ internal class EditorState(
         finishPlacement(id, prototype.kind, if (applyAfterPlacement) afterPlacement else EditorAfterPlacement.KEEP_TOOL)
     }
 
+    /**
+     * A placement drag released off the canvas adds nothing. As AddTool.mouseReleased in SHOW_ADD_NO, determineNext
+     * still applies "Edit tool after adding": the selection is dropped and, when [switchTool], the Edit tool is
+     * chosen. A mapped button other than the primary one does not switch, as Canvas restores its tempTool.
+     */
+    fun releasePlacementOffCanvas(switchTool: Boolean = true) {
+        if (afterPlacement != EditorAfterPlacement.EDIT) return
+        if (switchTool) changeMode(EditorMode.EDIT)
+        clearSelection()
+    }
+
     private fun finishPlacement(id: String?, kind: ComponentKind, next: EditorAfterPlacement) {
         if (next == EditorAfterPlacement.EDIT) changeMode(EditorMode.EDIT)
         selectComponent(id)
@@ -843,6 +1054,20 @@ internal class EditorState(
             val pressed = sendComponentEvent(id, IoInputEvent.Press(true))
             val released = sendComponentEvent(id, IoInputEvent.Press(false))
             return pressed && released
+        }
+        // Toggle on a Clock does what the Poke tool's tap does (X0): ClockPoker in a 2.7.1 project, a tick otherwise.
+        if (component.kind == ComponentKind.CLOCK) {
+            if (project.isOriginalLogisim) {
+                // ClockPoker reaches the clock's state only in the main circuit or an instance view; elsewhere the
+                // status line says why nothing happened, as Open controls does.
+                if (activeInstancePath.isEmpty() && activeCircuitName != project.mainCircuitName) {
+                    statusText = message("status_io_controls_instance", "name" to component.displayText())
+                    return false
+                }
+                return sendComponentEvent(id, ClockPoke)
+            }
+            tick()
+            return true
         }
         if (component.kind !in setOf(ComponentKind.INPUT, ComponentKind.BUTTON)) return false
         if (activeCircuitName != project.mainCircuitName &&
@@ -891,14 +1116,65 @@ internal class EditorState(
      * Poke tool on an input Pin at [bit], as Evolution's PinPoker.handleBitPress: toggles the bit (radix 2) or
      * advances the hexadecimal/octal digit starting at [bit]; tri-state pins cycle U → 0 → 1 → U.
      */
-    fun pokePin(id: String, bit: Int) {
-        if (jarController != null) { sendJarInput(id); return }
-        if (!ensureDocumentWritable()) return
+    fun pokePin(id: String, bit: Int) { pokePin(id, bit, asBit = false) }
+
+    /**
+     * The accessible Toggle bit action (X0): toggles [bit] of an input pin whatever its display radix (a tri-state
+     * pin cycles it U → 0 → 1). Returns false, with the reason in the status line where there is one, when nothing
+     * changed: [id] is not an input pin with that bit, the editor is locked or read-only, or the circuit is shown
+     * outside an instance. In an instance view it returns true once the debugging copy is asked for, and the
+     * confirmation toggles the same bit.
+     */
+    fun toggleInputBit(id: String, bit: Int): Boolean {
+        val component = document.components.firstOrNull { it.id == id && it.kind == ComponentKind.INPUT } ?: return false
+        if (bit !in 0 until component.width) return false
+        val before = statusText
+        val applied = pokePin(id, bit, asBit = true)
+        // A refusal without a reason of its own (a locked editor) is still reported, never silent.
+        if (!applied && statusText === before) statusText = message("a11y_explorer_operation_failed")
+        return applied
+    }
+
+    /**
+     * Whether the inspector shows the I/O controls of [id] (a DIP switch, joystick, keyboard or keypad), for the
+     * accessible Open controls action (X0): it shows them, as IoInputPanel, in a writable document's main circuit or
+     * instance view. When it does not, the status line says why and nothing opens.
+     */
+    fun requestIoControls(id: String): Boolean {
+        val component = document.components.firstOrNull { it.id == id && IoLibrary.isInteractive(it.kind) } ?: return false
+        val before = statusText
+        if (!ensureDocumentWritable()) {
+            if (statusText === before) statusText = message("a11y_explorer_operation_failed")
+            return false
+        }
+        if (activeInstancePath.isNotEmpty() || activeCircuitName == project.mainCircuitName) return true
+        statusText = message("status_io_controls_instance", "name" to component.displayText())
+        return false
+    }
+
+    /**
+     * Whether the value dialog of input [id] may open (the accessible Set value action, X0); when it may not, the
+     * status line says why, as a poke there would.
+     */
+    fun requestInputValueEdit(id: String): Boolean {
+        if (canEditInputValue(id)) return true
+        if (document.components.none { it.id == id && it.kind == ComponentKind.INPUT }) return false
+        val before = statusText
+        if (ensureDocumentWritable()) statusText = message(Messages.StatusSubcircuitInput)
+        if (statusText === before) statusText = message("a11y_explorer_operation_failed")
+        return false
+    }
+
+    /** Pokes [bit] as a tap does, or toggles exactly that bit when [asBit]; returns whether the input changed or awaits confirmation. */
+    private fun pokePin(id: String, bit: Int, asBit: Boolean): Boolean {
+        if (jarController != null) return if (asBit) sendJarBit(id, bit) else sendJarInput(id)
+        if (!ensureDocumentWritable()) return false
         val component = document.components.firstOrNull {
             it.id == id && it.kind in setOf(ComponentKind.INPUT, ComponentKind.BUTTON)
-        } ?: return
+        } ?: return false
+        dismissResetUndo()
         val tristate = PinPoke.behavior(component.attributes) == "tristate"
-        val radix = component.attributes["radix"] ?: "2"
+        val radix = if (asBit) "2" else component.attributes["radix"] ?: "2"
         fun next(current: LogicVector?): LogicVector {
             val intended = current?.takeIf { it.width == component.width }
                 ?: if (tristate) LogicVector.unknown(component.width) else LogicVector.low(component.width)
@@ -909,14 +1185,15 @@ internal class EditorState(
             if (copy == null) {
                 pendingDebugInput = id to null
                 pendingDebugPokeBit = bit
-                return
+                pendingDebugPokeAsBit = asBit
+                return true
             }
             changeInstanceInput(id, next(copy.drives[id] ?: simulation.vectorValues[id]))
-            return
+            return true
         }
         if (activeCircuitName != project.mainCircuitName) {
             statusText = message(Messages.StatusSubcircuitInput)
-            return
+            return false
         }
         val current = vectorDrives[id] ?: drives[id]?.let { LogicVector.fromBits(listOf(it)) } ?: projectSimulation.vectorValues[id]
         val value = next(current)
@@ -930,23 +1207,83 @@ internal class EditorState(
         settleProject()
         statusText = message(Messages.StatusInputValue, "name" to component.displayText(),
             "value" to if (component.width == 1) value.bit(0).symbol() else value.display)
+        return true
+    }
+
+    /**
+     * Toggles [bit] of a pin in the live JAR simulation, which takes a whole value: the current value with that bit
+     * flipped. A value with unknown bits cannot be sent, as for the pin's value dialog.
+     */
+    private fun sendJarBit(id: String, bit: Int): Boolean {
+        val component = document.components.firstOrNull { it.id == id && it.kind == ComponentKind.INPUT } ?: return false
+        val current = projectSimulation.vectorValues[id]?.takeIf { it.width == component.width } ?: LogicVector.low(component.width)
+        val number = PinPoke.poke(current, bit.coerceIn(0, component.width - 1), "2", tristate = false).toULongOrNull()
+        if (number == null) { statusText = message("input_value_unknown_unsupported"); return false }
+        return sendJarInput(id, number)
     }
 
     fun setInputValue(id: String, value: ULong) {
         if (jarController != null) { sendJarInput(id, value); return }
+        val component = document.components.firstOrNull {
+            it.id == id && it.kind in setOf(ComponentKind.INPUT, ComponentKind.BUTTON)
+        } ?: return
+        setInputValue(id, LogicVector.of(component.width, value))
+    }
+
+    /**
+     * Drives input [id] with [value], as Evolution's Pin editors set PinState.intendedValue: unknown bits reach the
+     * circuit only from a tri-state pin's editor. Only the simulation's drives change; the document does not. The live
+     * JAR simulation takes defined values only, so an unknown value there is refused with a notice.
+     */
+    fun setInputValue(id: String, value: LogicVector) {
+        if (jarController != null) {
+            val number = value.toULongOrNull()
+            if (number == null) statusText = message("input_value_unknown_unsupported") else sendJarInput(id, number)
+            return
+        }
         if (!ensureDocumentWritable()) return
         val component = document.components.firstOrNull {
             it.id == id && it.kind in setOf(ComponentKind.INPUT, ComponentKind.BUTTON)
         } ?: return
-        val vector = LogicVector.of(component.width, value)
+        val vector = if (value.width == component.width) value else value.resize(component.width)
+        dismissResetUndo()
         if (activeInstancePath.isNotEmpty() && component.kind == ComponentKind.INPUT) {
             changeInstanceInput(id, vector)
             return
         }
         if (activeCircuitName != project.mainCircuitName) return
+        drives = drives - id
         vectorDrives = vectorDrives + (id to vector)
         settleProject()
         statusText = message(Messages.StatusInputValue, "name" to component.displayText(), "value" to vector.display)
+    }
+
+    /**
+     * Evolution's Simulator.setTickFrequency: the rate changes while the simulation keeps running, with no undo entry
+     * and without clearing the selection or a subcircuit debug copy. SimulationProjectOptions.applyTo writes the value,
+     * as Simulation options does, so the options and the main circuit's simulationFrequency serialize unchanged, and
+     * the revision bump saves the document. Undo and redo keep the newest rate (see [restore]).
+     *
+     * The main circuit's document is replaced, so a pending matrix placement follows it to the new document. Drafts
+     * that tool panels key on the document identity, such as the annotation fields, start again from the circuit.
+     */
+    fun setTickFrequency(hz: Double): Boolean {
+        if (!hz.isFinite() || hz <= 0) return false
+        if (!ensureDocumentWritable()) return false
+        val options = runCatching { SimulationProjectOptions.read(project) }.getOrNull() ?: return false
+        if (options.tickFrequencyHz == hz) return true
+        val next = options.copy(tickFrequencyHz = hz).applyTo(project)
+        tickFrequencyEpoch++
+        project = next
+        // The main circuit carries simulationFrequency; an editor left on the old document would write it back.
+        val active = next.circuits.firstOrNull { it.id == document.id }
+        if (active != null && active != document) {
+            if (matrixPlacementDocument === document) matrixPlacementDocument = active
+            document = active
+            editor = CircuitEditor(active, componentRegistry)
+        }
+        revision++
+        return true
     }
 
     private fun changeInstanceInput(id: String, value: LogicVector) {
@@ -964,6 +1301,7 @@ internal class EditorState(
     fun confirmDebugCopy() {
         val (id, value) = pendingDebugInput ?: return
         val bit = pendingDebugPokeBit
+        val asBit = pendingDebugPokeAsBit
         cancelDebugCopy()
         if (!ensureDocumentWritable() || activeInstancePath.isEmpty()) return
         val copy = DebugInstanceSimulation.from(project, projectSimulation, document, activeInstancePath) ?: return
@@ -971,7 +1309,7 @@ internal class EditorState(
         runClock = null
         debugCopy = copy
         showActiveSimulation()
-        if (value == null) pokePin(id, bit) else changeInstanceInput(id, value)
+        if (value == null) pokePin(id, bit, asBit) else changeInstanceInput(id, value)
     }
 
     fun cancelDebugCopy() { pendingDebugInput = null }
@@ -1055,8 +1393,30 @@ internal class EditorState(
         if (!ensureDocumentWritable() || !canPaste) return
         val fragment = clipboardFragment() ?: return
         pendingWire = null
-        pendingPaste = PendingPaste(fragment)
+        pendingPaste = pastePreview(fragment, message(Messages.ActionPaste))
         statusText = message(Messages.StatusSelectDestination)
+    }
+
+    /**
+     * The preview of [fragment], anchored at the centre of its bounds. It starts 20 units from the original, as
+     * before, unless that centre would be outside the visible canvas: then it starts centred in the view (C45).
+     */
+    private fun pastePreview(fragment: CircuitFragment, label: LocalizedText): PendingPaste {
+        val bounds = (fragment.components.mapNotNull { runCatching { it.bounds(componentRegistry) }.getOrNull() } +
+            fragment.wires.map { ComponentBounds(minOf(it.from.x, it.to.x), minOf(it.from.y, it.to.y),
+                maxOf(it.from.x, it.to.x), maxOf(it.from.y, it.to.y)) })
+            .reduceOrNull { a, b -> ComponentBounds(minOf(a.left, b.left), minOf(a.top, b.top), maxOf(a.right, b.right), maxOf(a.bottom, b.bottom)) }
+        val anchor = bounds?.let(::pasteAnchor) ?: return PendingPaste(fragment, historyLabel = label)
+        val preview = PendingPaste(fragment, historyLabel = label, anchor = anchor)
+        val view = viewport
+        if (!view.initialized || view.size.width <= 0 || view.size.height <= 0) return preview
+        val topLeft = view.view.world(androidx.compose.ui.geometry.Offset.Zero)
+        val bottomRight = view.view.world(androidx.compose.ui.geometry.Offset(view.size.width.toFloat(), view.size.height.toFloat()))
+        val shown = anchor.x + preview.offset.x
+        val shownY = anchor.y + preview.offset.y
+        if (shown >= topLeft.x && shown <= bottomRight.x && shownY >= topLeft.y && shownY <= bottomRight.y) return preview
+        val centre = view.view.world(androidx.compose.ui.geometry.Offset(view.size.width / 2f, view.size.height / 2f))
+        return preview.at(GridPoint(((centre.x / 10f).roundToInt()) * 10, ((centre.y / 10f).roundToInt()) * 10))
     }
 
     fun movePastePreview(point: GridPoint) {
@@ -1124,14 +1484,27 @@ internal class EditorState(
             return
         }
         pendingWire = null
-        pendingPaste = PendingPaste(fragment, historyLabel = message(Messages.ActionDuplicate))
+        pendingPaste = pastePreview(fragment, message(Messages.ActionDuplicate))
         statusText = message(Messages.StatusSelectDestination)
     }
 
+    /** Applies an inspector edit that was typed but not applied yet (a label) before [navigate] leaves the circuit. */
+    internal var commitPendingEdit: (() -> Unit)? = null
+
+    /**
+     * How many times Undo or Redo restored a snapshot. A label typed in the inspector before then is not in the history,
+     * as in Evolution, so it is dropped instead of being applied after the undo (which would also clear Redo).
+     */
+    internal var historyTravels: Long = 0L
+        private set
+
     /** Applies [value] to the selected labels unless Evolution's editor would refuse it (#321); returns whether it did. */
-    fun updateSelectedLabel(value: String): Boolean {
+    fun updateSelectedLabel(value: String): Boolean = updateLabels(selectedIds, value)
+
+    /** Applies [value] to the labels of the components [ids] of the active circuit, as [updateSelectedLabel] does. */
+    fun updateLabels(ids: Set<String>, value: String): Boolean {
         if (!ensureDocumentWritable()) return false
-        val selected = selectedComponents().filter { it.label != value }
+        val selected = document.components.filter { it.id in ids && it.label != value }
         if (selected.isEmpty()) return true
         selected.firstNotNullOfOrNull { labelProblem(value, it) }?.let { statusText = it; return false }
         return change(message("history_edit_label")) { editor.updateComponents(selected.associate { it.id to it.copy(label = value) }) }
@@ -1152,10 +1525,13 @@ internal class EditorState(
         val selected = selectedComponents()
         if (selected.isEmpty()) return
         try {
-            for (name in updates.keys) require(selected.all { component ->
+            for (name in updates.keys) requireLocalized(selected.all { component ->
                 componentRegistry.definition(component.kind)?.schema?.keys?.any { it.name == name } == true
-            }) { "A propriedade $name não pode ser editada nesta seleção." }
-            val replacements = selected.associate { it.id to componentRegistry.reconfigure(it, updates) }
+            }) { message(Messages.InspectorNotEditable, "name" to shownAttributeName(selected, name)) }
+            // Attaching to a bus saved without an identifier gives it one Evolution reads, in this same edit (C13).
+            val attachment = SocComponents.attach(updates, document.components, selected.mapTo(mutableSetOf()) { it.id })
+            val replacements = selected.associate { it.id to componentRegistry.reconfigure(it, attachment.updatesFor(it.id)) } +
+                document.components.filter { it.id in attachment.others }.associate { it.id to componentRegistry.reconfigure(it, attachment.others.getValue(it.id)) }
             val shared = if ("content" in updates) selected.mapNotNull(project::sharedVhdlDefinition).distinctBy { it.name }
                 else emptyList()
             if (shared.isEmpty()) {
@@ -1179,6 +1555,12 @@ internal class EditorState(
         }
     }
 
+    /** [name] as the inspector shows it for [components] ("Color model" for an RGB Video), as validate() names it. */
+    private fun shownAttributeName(components: List<CircuitComponent>, name: String): LocalizedText =
+        components.firstNotNullOfOrNull { component ->
+            componentRegistry.definition(component.kind)?.schema?.keys?.firstOrNull { it.name == name }
+        }?.displayName() ?: localizedAttributeName(name)
+
     fun undo() = travelHistory(EditorHistoryDirection.UNDO)
 
     fun redo() = travelHistory(EditorHistoryDirection.REDO)
@@ -1201,6 +1583,7 @@ internal class EditorState(
         repeat(minOf(steps, source.size)) {
             val entry = source.removeLast()
             destination.addLast(entry.copy(snapshot = snapshot()))
+            historyTravels++
             restore(entry.snapshot)
         }
     }
@@ -1229,7 +1612,10 @@ internal class EditorState(
     fun isCurrentRunSnapshot(snapshot: SimulationRunSnapshot): Boolean =
         documentWritable && snapshot.project === (debugCopy?.project ?: project) && snapshot.revision == revision.toLong()
 
-    fun setSimulationRunning(running: Boolean) { runClock = if (running) TimeSource.Monotonic.markNow() else null }
+    fun setSimulationRunning(running: Boolean) {
+        runClock = if (running) TimeSource.Monotonic.markNow() else null
+        if (running) dismissResetUndo()
+    }
 
     fun publishRun(snapshot: SimulationRunSnapshot, result: SimulationState) {
         if (!isCurrentRunSnapshot(snapshot)) return
@@ -1374,6 +1760,7 @@ internal class EditorState(
         }
         val prefix = debugCopy?.let { it.path + "/" }
         if (prefix != null && events.keys.any { !it.startsWith(prefix) }) return false
+        dismissResetUndo()
         val scopedEvents = if (prefix == null) events else events.mapKeys { (key, _) -> key.removePrefix(prefix) }
         val requested = captureRunSnapshot().copy(events = scopedEvents.mapValues { it.value.toList() })
         onSimulationRequested?.let { return it(requested, SimulationStep.SETTLE) == SimulationRequestResult.ACCEPTED }
@@ -1385,6 +1772,7 @@ internal class EditorState(
 
     fun tick(fullCycle: Boolean = false) {
         if (!ensureDocumentWritable()) return
+        dismissResetUndo()
         val step = if (fullCycle) SimulationStep.TICK_CYCLE else SimulationStep.TICK
         if (isDebuggingInstance) {
             advanceDebugCopy(step)
@@ -1401,6 +1789,9 @@ internal class EditorState(
     private fun resetSimulation(purpose: SimulationRequestPurpose) {
         if (jarController != null) { stopJarSimulation(); return }
         if (!ensureDocumentWritable()) return
+        // Reset clears poked inputs and session-only memory, which no file holds, so the command can be undone (C69).
+        resetUndo = if (purpose == SimulationRequestPurpose.COMMAND) ResetUndo(documentIdentity, revision, ResetUndoSaved(project,
+            debugCopy, projectSimulation, drives, vectorDrives, debugCopy?.drives, debugCopy?.state)) else null
         onSimulationInvalidated()
         runClock = null
         debugCopy?.let { copy ->
@@ -1411,7 +1802,11 @@ internal class EditorState(
         }
         drives = startupResetIds.associateWith { LogicValue.LOW }
         vectorDrives = startupVectorDrives
-        onSimulationRequested?.let { it(captureRunSnapshot().copy(purpose = purpose), SimulationStep.RESET); return }
+        onSimulationRequested?.let {
+            if (purpose == SimulationRequestPurpose.COMMAND) statusText = message(Messages.StatusSimulationReset)
+            it(captureRunSnapshot().copy(purpose = purpose), SimulationStep.RESET)
+            return
+        }
         projectSimulation = simulator.settle(project, projectSimulation, inputs = drives, vectorInputs = vectorDrives, reset = true, options = SimulationProjectOptions.read(project).asMap())
         if (startupResetIds.isNotEmpty()) {
             val resetHigh = drives + startupResetIds.associateWith { LogicValue.HIGH }
@@ -1420,6 +1815,66 @@ internal class EditorState(
         }
         showActiveSimulation()
         statusText = message(Messages.StatusSimulationReset)
+    }
+
+    /** The simulation a Reset replaced: the live state, the poked inputs and a subcircuit debug copy's own. */
+    private class ResetUndoSaved(
+        val project: CircuitProject, val debugCopy: DebugInstanceSimulation?,
+        val simulation: SimulationState, val drives: Map<String, LogicValue>, val vectorDrives: Map<String, LogicVector>,
+        val debugDrives: Map<String, LogicVector>?, val debugState: SimulationState?,
+    )
+    /** A Reset that can be undone, with what it replaced until something overtakes it. */
+    private class ResetUndo(val identity: Long, val revision: Int, var saved: ResetUndoSaved?)
+    private var resetUndo by mutableStateOf<ResetUndo?>(null)
+
+    /**
+     * What the Reset replaced, while nothing has overtaken it. Once an edit, another document or a navigation has, it can
+     * never be undone, so the replaced simulation and its memory contents are let go at once rather than kept until
+     * the next tick, input or reset.
+     */
+    private fun ResetUndo.current(): ResetUndoSaved? {
+        val kept = saved ?: return null
+        if (identity == documentIdentity && revision == this@EditorState.revision && kept.project === project &&
+            kept.debugCopy === debugCopy) return kept
+        saved = null
+        return null
+    }
+
+    /** Whether a Reset still holds the simulation it replaced. */
+    internal val holdsResetUndo: Boolean get() = resetUndo?.saved != null
+
+    /**
+     * The last Reset while it can still be undone: until the next run, tick, input change, edit, navigation or
+     * another document. The UI keys its Undo action on it.
+     */
+    val undoableReset: Any? get() = resetUndo?.takeIf { it.current() != null && documentWritable && interactionsEnabled }
+
+    fun dismissResetUndo() { resetUndo = null }
+
+    /**
+     * Restores the simulation a Reset replaced (C69): the state with its memory contents, the poked inputs and, in a
+     * subcircuit debug copy, the copy's state and inputs. A reset still computing is cancelled first. Only the session
+     * changes; the document does not.
+     */
+    fun undoReset(): Boolean {
+        val pending = resetUndo ?: return false
+        resetUndo = null
+        val undo = pending.current() ?: return false
+        if (!documentWritable || !interactionsEnabled) return false
+        onSimulationInvalidated()
+        runClock = null
+        val copy = debugCopy
+        if (copy != null) {
+            copy.drives = undo.debugDrives ?: copy.drives
+            copy.state = undo.debugState ?: copy.state
+        } else {
+            projectSimulation = undo.simulation
+            drives = undo.drives
+            vectorDrives = undo.vectorDrives
+        }
+        showActiveSimulation()
+        statusText = message(Messages.SimulationResetUndone)
+        return true
     }
 
     fun selectCircuit(name: String) {
@@ -1437,6 +1892,9 @@ internal class EditorState(
     }
 
     fun navigate(target: CircuitNavigationTarget) {
+        // A label typed in the inspector reaches its components before the editor leaves their circuit (C9); the
+        // target is looked up after it, so it holds that edit when it is the same circuit.
+        commitPendingEdit?.invoke()
         val circuit = project.circuits.firstOrNull { it.id == target.circuitId } ?: return
         if (target.instancePath.isNotEmpty() && instanceCircuit(target.instancePath)?.id != circuit.id) {
             statusText = message(Messages.ErrorCircuitPath)
@@ -1445,7 +1903,9 @@ internal class EditorState(
         dismissWirePoke()
         dismissKeyboardPoke()
         pendingPaste = null
+        dismissResetUndo()
         clearDebugCopy()
+        additiveSelection = false
         selections[navigationKey] = selectedIds to selectedWires
         activeCircuitName = circuit.name
         activeInstancePath = target.instancePath
@@ -1567,6 +2027,26 @@ internal class EditorState(
         false
     }
 
+    /**
+     * Selects the components [ids] of the shown circuit and frames them: a simulation warning's Show (C67). Returns
+     * false, saying so in the status line, when none of them is in the circuit any more.
+     */
+    fun showComponents(ids: Collection<String>): Boolean {
+        val present = document.components.map { it.id }.filter { it in ids }
+        if (present.isEmpty()) {
+            statusText = message("simulation_warning_source_gone")
+            return false
+        }
+        dismissKeyboardPoke()
+        dismissWirePoke()
+        selectedIds = present.toSet()
+        selectedId = present.last()
+        selectedWires = emptySet()
+        statusText = LocalizedText(Messages.StatusComponentsSelected, quantity = present.size.toLong())
+        fitSelected()
+        return true
+    }
+
     fun fitViewport() { fitSelection = false; viewportReset++ }
     fun fitSelected() {
         if (selectedIds.isEmpty() && selectedWires.isEmpty()) return
@@ -1583,7 +2063,7 @@ internal class EditorState(
         if (!interactionsEnabled) return
         val next = session.project.copy(metadata = session.project.metadata + (ExamplePresetKey to session.example.id))
         openWorkspaceSession?.let { open ->
-            open(next.mainCircuitName, CircCodec.writeProject(next, componentRegistry), null)
+            open(exampleProjectName(session.example.id), CircCodec.writeProject(next, componentRegistry), null)
             return
         }
         replace(next, historyLabel = message("status_example_loaded"))
@@ -1596,6 +2076,9 @@ internal class EditorState(
         showActiveSimulation()
         statusText = message("status_example_loaded")
     }
+
+    private fun exampleProjectName(id: String): LocalizedText =
+        HelpContent.examples.firstOrNull { it.id == id }?.title ?: message("workspace_untitled_project")
 
     private fun examplePulseIds(example: CircuitExample, inputs: Map<String, LogicVector>): Set<String> {
         val pulsedLabels = example.startup.flatMap { action -> action.inputs.filterValues { it == "1" }.keys }.toSet()
@@ -1627,7 +2110,7 @@ internal class EditorState(
         if (!interactionsEnabled) return
         val next = defaultProject(DemoCircuits.andGate())
         openWorkspaceSession?.let { open ->
-            open(next.mainCircuitName, CircCodec.writeProject(next, componentRegistry), null)
+            open(exampleProjectName("and"), CircCodec.writeProject(next, componentRegistry), null)
             return
         }
         replace(next, historyLabel = message(Messages.StatusAndLoaded))
@@ -1636,6 +2119,13 @@ internal class EditorState(
 
     fun loadSap1() {
         if (!interactionsEnabled) return
+        val open = openWorkspaceSession
+        if (open != null && jarController == null) {
+            (CircCodec.readProject(Sap1Example.xml, componentRegistry) as? CircProjectImportResult.Success)?.let { result ->
+                open(exampleProjectName("sap1"), CircCodec.writeProject(result.project, componentRegistry), EditorImportReport.from(result))
+                return
+            }
+        }
         if (importXml(Sap1Example.xml) && openWorkspaceSession == null) {
             startupResetIds = project.mainCircuit.components.filter {
                 it.kind == ComponentKind.INPUT && it.label == "Reset"
@@ -1652,7 +2142,8 @@ internal class EditorState(
         val next = template ?: defaultProject(CircuitDocument(name = circuitName.trim().ifEmpty { DEFAULT_NEW_CIRCUIT_NAME },
             attributes = creationDefaults.circuitAttributes()))
         openWorkspaceSession?.let { open ->
-            open(next.mainCircuitName, CircCodec.writeProject(next, componentRegistry), null)
+            // Evolution names a new project "Untitled"; its main circuit keeps the localized circuit name.
+            open(message("workspace_untitled_project"), CircCodec.writeProject(next, componentRegistry), null)
             return
         }
         replace(next)
@@ -1701,10 +2192,15 @@ internal class EditorState(
             is CircProjectImportResult.Success -> {
                 val report = EditorImportReport.from(result, origin)
                 openWorkspaceSession?.let { open ->
-                    return open(result.project.mainCircuitName, CircCodec.writeProject(result.project, componentRegistry), report)
+                    // A file keeps its name; text pasted in the project XML dialog is an imported project.
+                    val name = origin?.takeIf { it.namesAFile } ?: message("workspace_imported_project")
+                    return open(name, CircCodec.writeProject(result.project, componentRegistry), report)
                 }
                 replace(result.project, report, message("history_import_project"))
-                statusText = LocalizedText(Messages.StatusProjectImported, quantity = project.circuits.size.toLong())
+                // Text pasted in the Project XML dialog is an imported project, not a file that was opened (C145).
+                val pasted = origin != null && !origin.namesAFile
+                statusText = importAdjustmentsStatus(origin, imported = pasted)
+                    ?: LocalizedText(Messages.StatusProjectImported, quantity = project.circuits.size.toLong())
                 importErrorText = null
                 true
             }
@@ -1817,6 +2313,7 @@ internal class EditorState(
         document = editor.document
         projectSimulation = SimulationState()
         clearSelection()
+        additiveSelection = false
         pendingWire = null
         updateHistoryAvailability()
         viewportReset++
@@ -1897,7 +2394,20 @@ internal class EditorState(
     }
 
     private fun snapshot() = Snapshot(project, activeCircuitName, startupResetIds, documentSessionId, activeInstancePath,
-        startupVectorDrives, rejectedDocumentXml, importReport, graphAvailable, savedIoInteractions)
+        startupVectorDrives, rejectedDocumentXml, importReport, graphAvailable, savedIoInteractions, tickFrequencyEpoch)
+
+    /**
+     * Evolution does not undo a tick frequency change, so restoring a snapshot taken before the latest
+     * [setTickFrequency] keeps the current rate instead of silently reverting it. A rate set through Simulation
+     * options after that change is part of the snapshot and stays undoable.
+     */
+    private fun preserveTickFrequency(target: Snapshot): Snapshot {
+        if (target.tickFrequencyEpoch >= tickFrequencyEpoch) return target
+        val current = runCatching { SimulationProjectOptions.read(project).tickFrequencyHz }.getOrNull() ?: return target
+        val options = runCatching { SimulationProjectOptions.read(target.project) }.getOrNull() ?: return target
+        if (options.tickFrequencyHz == current) return target
+        return target.copy(project = options.copy(tickFrequencyHz = current).applyTo(target.project))
+    }
 
     private fun restore(snapshot: Snapshot) {
         pendingPaste = null
@@ -1907,7 +2417,7 @@ internal class EditorState(
         val previousIdentity = documentIdentity
         val replaced = documentSessionId != snapshot.documentSessionId
         val restored = if (!replaced && documentWritable && snapshot.rejectedDocumentXml == null)
-            preserveNewerSavedIoInteractions(snapshot) else snapshot
+            preserveTickFrequency(preserveNewerSavedIoInteractions(snapshot)) else snapshot
         if (replaced) onProjectReplaced()
         documentSessionId = snapshot.documentSessionId
         rejectedDocumentXml = snapshot.rejectedDocumentXml
@@ -1926,7 +2436,7 @@ internal class EditorState(
         val inputIds = inputIds(project.mainCircuit)
         drives = drives.filterKeys { it in inputIds }
         vectorDrives = vectorDrives.filterKeys { it in inputIds }
-        if (replaced) projectSimulation = SimulationState()
+        if (replaced) { projectSimulation = SimulationState(); additiveSelection = false }
         clearSelection()
         pendingWire = null
         revision++
@@ -1973,6 +2483,7 @@ internal class EditorState(
         val importReport: EditorImportReport?,
         val graphAvailable: Boolean,
         val savedIoInteractions: Map<SavedIoTarget, SavedIoInteraction>,
+        val tickFrequencyEpoch: Long,
     )
 }
 

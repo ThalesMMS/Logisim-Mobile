@@ -47,7 +47,8 @@ private fun menuActionShortcut(
         "edit:placement-auto-label" -> EditorShortcut.PLACEMENT_AUTO_LABEL
         "edit:select-all" -> EditorShortcut.SELECT_ALL
         "view:fit-selection" -> EditorShortcut.FIT_SELECTION
-        "project:project-tool-visual-export" -> EditorShortcut.FILE_EXPORT
+        // Export drawing sits in File, as Evolution's Export Image (editorToolMenu).
+        "file:project-tool-visual-export" -> EditorShortcut.FILE_EXPORT
         else -> null
     }
     if (editorShortcut != null) return effectiveEditorShortcut(editorShortcut, overrides)

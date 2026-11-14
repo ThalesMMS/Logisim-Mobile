@@ -25,6 +25,7 @@ import androidx.compose.material3.SheetValue
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -68,14 +69,22 @@ internal fun EditorModalSheet(
     sheetGesturesEnabled: Boolean = true,
     showDragHandle: Boolean = sheetGesturesEnabled,
     inspector: Boolean = false,
+    /**
+     * The pane title assistive technology announces when the sheet opens, such as "Library" or the tool's name, so
+     * each sheet is told apart. Every editor sheet passes one; the generic "Bottom sheet" is only a fallback.
+     */
+    title: String? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
-    val state = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    // Panels with unapplied drafts register here; a swipe, Back or the scrim then asks before closing (X3).
+    val guard = remember { EditorSheetDismissGuard() }
+    val state = rememberModalBottomSheetState(skipPartiallyExpanded = true,
+        confirmValueChange = { it != SheetValue.Hidden || guard.allowsDismissal() })
     val scaffold = rememberBottomSheetScaffoldState(bottomSheetState = state)
     val scope = rememberCoroutineScope()
     val onDismiss by rememberUpdatedState(onDismissRequest)
     val closeLabel = localizedString("a11y_sheet_close")
-    val pane = localizedString("a11y_sheet_pane")
+    val pane = title ?: localizedString("a11y_sheet_pane")
     val scrimColor = BottomSheetDefaults.ScrimColor
     val scrimAlpha by animateFloatAsState(if (state.targetValue == SheetValue.Hidden) 0f else 1f)
     var dismissalDelivered by remember { mutableStateOf(false) }
@@ -88,6 +97,7 @@ internal fun EditorModalSheet(
     }
 
     fun dismiss() {
+        if (!guard.allowsDismissal()) return
         if (state.currentValue == SheetValue.Hidden) finishDismissal()
         else scope.launch {
             state.hide()
@@ -95,6 +105,7 @@ internal fun EditorModalSheet(
         }
     }
     val dismissSheet by rememberUpdatedState(::dismiss)
+    guard.dismiss = ::dismiss
 
     LaunchedEffect(state) {
         snapshotFlow { state.hasExpandedState }.first { it }
@@ -142,7 +153,8 @@ internal fun EditorModalSheet(
                     val keyboardOpen = WindowInsets.ime.getBottom(density) > 0
                     val largeFont = density.fontScale > 1.3f
                     if (showDragHandle && !(shortWindow && (keyboardOpen || largeFont))) EditorSheetDragHandle(inspector, ::dismiss)
-                    content()
+                    CompositionLocalProvider(LocalEditorSheetDismissGuard provides guard) { content() }
+                    EditorSheetDiscardDialog(guard)
                 }
             },
         ) {

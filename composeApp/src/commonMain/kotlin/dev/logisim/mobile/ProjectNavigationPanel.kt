@@ -17,7 +17,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -27,22 +26,20 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.logisim.mobile.core.CircuitProject
-import dev.logisim.mobile.core.EvolutionNames
-import dev.logisim.mobile.core.followsEvolutionNames
 
 @Composable
 fun ProjectNavigationPanel(
@@ -63,24 +60,30 @@ fun ProjectNavigationPanel(
     var nameDialog by remember { mutableStateOf<String?>(null) }
     var deleteDialog by remember { mutableStateOf<String?>(null) }
     Column(modifier) {
-        Row(Modifier.fillMaxWidth().padding(start = 12.dp), horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically) {
-            Text(strings(Messages.ActionCircuits), fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = ChromeColors.Muted)
-            TextButton(onClick = { nameDialog = "" }, modifier = Modifier.heightIn(min = 48.dp)) {
-                Text("+ " + strings(Messages.ActionNew), fontSize = 13.sp)
+        // A narrow panel or a large font puts Add circuit… on its own line instead of wrapping it word by word.
+        @OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+        androidx.compose.foundation.layout.FlowRow(Modifier.fillMaxWidth().padding(start = 12.dp),
+            horizontalArrangement = Arrangement.SpaceBetween, itemVerticalAlignment = Alignment.CenterVertically) {
+            Text(strings(Messages.ActionCircuits), fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = ChromeColors.Muted,
+                modifier = Modifier.semantics { heading() })
+            // Evolution's Add Circuit…: it adds a circuit to this project, unlike File > New.
+            TextButton(onClick = { nameDialog = "" }, modifier = Modifier.heightIn(min = 48.dp).testTag("circuits-add")) {
+                Text(strings("project_add_circuit"), fontSize = 13.sp)
             }
         }
         LazyColumn(Modifier.weight(1f).fillMaxWidth()) {
             items(rows, key = { it.key }) { row ->
                 val recursive = row.kind == ProjectNavigationKind.RECURSIVE_REFERENCE
                 val active = row.target == activeTarget
+                // The active circuit: the selected tint and a leading accent bar, which reaches 3:1 in both themes.
                 Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
-                    .background(if (active) ChromeColors.Selected else Color.Transparent)
+                    .leadingSelectionCue(active)
                     .clickable(enabled = !recursive, role = Role.Button) { onNavigate(row.target) }
                     .semantics {
                         if (!recursive) selected = active
                         contentDescription = when (row.kind) {
-                            ProjectNavigationKind.CIRCUIT -> strings(Messages.A11yOpenDefinition, "name" to row.label)
+                            // The ★ is drawn only; the main circuit says so in its description (C29).
+                            ProjectNavigationKind.CIRCUIT -> strings(if (row.isMain) "a11y_open_main_definition" else Messages.A11yOpenDefinition, "name" to row.label)
                             ProjectNavigationKind.INSTANCE -> strings(Messages.A11yOpenInstance, "name" to row.label, "path" to row.breadcrumb.joinToString(" / "))
                             ProjectNavigationKind.RECURSIVE_REFERENCE -> strings(Messages.A11yRecursiveReference, "name" to row.label)
                         }
@@ -104,7 +107,6 @@ fun ProjectNavigationPanel(
                             }
                             DropdownMenu(expanded = openMenu == row.target.circuitId, onDismissRequest = { openMenu = null }) {
                                 val circuitIndex = project.circuits.indexOfFirst { it.id == row.target.circuitId }
-                                val referenced = project.circuits.any { circuit -> circuit.components.any { it.circuitName == row.target.circuitName } }
                                 DropdownMenuItem(text = { Text(strings(Messages.ActionRename)) }, onClick = { openMenu = null; nameDialog = row.target.circuitId })
                                 DropdownMenuItem(text = { Text(strings(Messages.ActionMoveUp)) }, enabled = circuitIndex > 0,
                                     onClick = { openMenu = null; onMove(row.target.circuitId, -1) })
@@ -116,7 +118,9 @@ fun ProjectNavigationPanel(
                                     DropdownMenuItem(text = { Text(strings(Messages.ActionExportCircuit)) },
                                         onClick = { openMenu = null; onExport(row.target.circuitName) })
                                 }
-                                DropdownMenuItem(text = { Text(strings(Messages.ActionDelete)) }, enabled = !row.isMain && !referenced,
+                                // Enabled for the main and used circuits too: the dialog explains why they stay.
+                                DropdownMenuItem(text = { Text(strings(Messages.ActionDelete)) },
+                                    modifier = Modifier.testTag("circuit-delete-${row.target.circuitId}"),
                                     onClick = { openMenu = null; deleteDialog = row.target.circuitId })
                             }
                         }
@@ -125,32 +129,6 @@ fun ProjectNavigationPanel(
             }
         }
     }
-    nameDialog?.let { id ->
-        val initial = project.circuits.firstOrNull { it.id == id }?.name.orEmpty()
-        var name by remember(id) { mutableStateOf(initial) }
-        val normalizedName = name.trim()
-        val duplicate = project.circuits.any { it.id != id && it.name == normalizedName }
-        // Evolution's CircuitAttributes refuses these names (#321); an unchanged name stays acceptable.
-        val problem = if (normalizedName == initial || !project.followsEvolutionNames()) null
-            else EvolutionNames.circuitNameProblem(normalizedName, project.circuits.firstOrNull { it.id == id })
-        AppAlertDialog(onDismissRequest = { nameDialog = null }, title = { Text(if (id.isEmpty()) strings(Messages.ActionNewCircuit) else strings(Messages.ActionRenameCircuit)) },
-            text = {
-                OutlinedTextField(name, { name = it }, label = { Text(strings(Messages.WorkspaceName)) }, singleLine = true,
-                    isError = duplicate || problem != null, supportingText = {
-                        if (duplicate) Text(strings(Messages.ErrorCircuitNameExists)) else problem?.let { Text(strings(it)) }
-                    })
-            },
-            confirmButton = { TextButton(enabled = normalizedName.isNotEmpty() && !duplicate && problem == null, onClick = {
-                if (id.isEmpty()) onCreate(normalizedName) else onRename(id, normalizedName)
-                nameDialog = null
-            }) { Text(strings(Messages.ActionSave)) } },
-            dismissButton = { TextButton(onClick = { nameDialog = null }) { Text(strings(Messages.ActionCancel)) } })
-    }
-    deleteDialog?.let { id ->
-        val name = project.circuits.firstOrNull { it.id == id }?.name.orEmpty()
-        AppAlertDialog(onDismissRequest = { deleteDialog = null }, title = { Text(strings(Messages.ActionDeleteCircuit)) },
-            text = { Text(strings(Messages.ConfirmDeleteCircuit, "name" to name)) },
-            confirmButton = { TextButton(onClick = { onDelete(id); deleteDialog = null }) { Text(strings(Messages.ActionDelete)) } },
-            dismissButton = { TextButton(onClick = { deleteDialog = null }) { Text(strings(Messages.ActionCancel)) } })
-    }
+    nameDialog?.let { id -> CircuitNameDialog(project, id, onCreate, onRename) { nameDialog = null } }
+    deleteDialog?.let { id -> CircuitRemoveDialog(project, id, onDelete) { deleteDialog = null } }
 }

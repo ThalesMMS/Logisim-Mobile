@@ -36,7 +36,8 @@ import dev.logisim.mobile.localization.rememberLocalizer
 import kotlin.math.round
 import kotlin.math.roundToInt
 
-private val exactZoomRange = 5f..1000f
+/** The percentages Set zoom accepts: down to 5% and up to the 1200% ceiling that pinching reaches ([MaxZoomPerDp]). */
+private val exactZoomRange = ZoomMinPercent..ZoomMaxPercent
 private val zoomDecimal = Regex("[0-9]+([.,][0-9]+)?")
 
 internal fun parseZoomPercent(text: String): Float? {
@@ -47,6 +48,7 @@ internal fun parseZoomPercent(text: String): Float? {
     }?.toFloat()
 }
 
+/** [scale] and the value [onApply] receives count dp per circuit unit: 1 is 100%, on any screen density. */
 @Composable
 internal fun EditorZoomDialog(scale: Float, onApply: (Float) -> Unit, onDismiss: () -> Unit) {
     val strings = rememberLocalizer()
@@ -98,14 +100,14 @@ internal fun EditorZoomDialog(scale: Float, onApply: (Float) -> Unit, onDismiss:
                             } else false
                         },
                 )
+                // The same logarithmic track as the zoom popover, so 50%, 100% and 200% are as easy to reach as 1000%.
                 Slider(
-                    value = percent ?: currentPercent.toFloat().coerceIn(exactZoomRange),
+                    value = zoomSliderPosition(percent ?: currentPercent.toFloat()),
                     onValueChange = {
-                        val value = it.roundToInt().toString()
+                        val value = zoomSliderPercent(it).roundToInt().toString()
                         draft = TextFieldValue(value, TextRange(0, value.length))
                         error = false
                     },
-                    valueRange = exactZoomRange,
                     modifier = Modifier.fillMaxWidth().semantics { contentDescription = sliderLabel }.testTag("editor-zoom-slider"),
                 )
             }

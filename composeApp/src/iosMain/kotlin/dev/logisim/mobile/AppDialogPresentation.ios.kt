@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.union
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -31,6 +32,7 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import kotlin.math.min
+import kotlin.math.roundToInt
 
 private class DialogContentBounds {
     var content: Rect? = null
@@ -49,7 +51,10 @@ internal actual fun Modifier.appDialogViewport(onDismissRequest: () -> Unit, pro
     val left = insets.getLeft(density, direction).coerceIn(0, window.width)
     val right = insets.getRight(density, direction).coerceIn(0, window.width - left)
     val top = insets.getTop(density).coerceIn(0, window.height)
-    val bottom = insets.getBottom(density).coerceIn(0, window.height - top)
+    // UIKit's keyboard frame too: the dialog scene does not always see Compose's IME insets (A1).
+    val keyboardOverlap by rememberIosKeyboardOverlap()
+    val keyboard = if (properties.useSoftwareKeyboardInset) (keyboardOverlap * density.density).roundToInt() else 0
+    val bottom = maxOf(insets.getBottom(density), keyboard).coerceIn(0, window.height - top)
     val safeWidth = window.width - left - right
     val safeHeight = window.height - top - bottom
     val preferredWidth = with(density) {

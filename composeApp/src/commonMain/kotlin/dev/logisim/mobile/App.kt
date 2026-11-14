@@ -36,6 +36,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -62,6 +63,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.zIndex
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
@@ -69,11 +71,16 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
@@ -123,6 +130,27 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import dev.logisim.mobile.core.ProjectMouseMappings
 import dev.logisim.mobile.core.SimulationProjectOptions
+import dev.logisim.mobile.core.InputValueCodec
+import dev.logisim.mobile.core.InputValueKeyboard
+import dev.logisim.mobile.core.InputValueParse
+import dev.logisim.mobile.core.LogicVector
+import dev.logisim.mobile.core.PinPoke
+import dev.logisim.mobile.core.TickFrequencies
+import dev.logisim.mobile.core.formatTickFrequency
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.input.key.KeyEventType
+import androidx.compose.ui.input.key.key
+import androidx.compose.ui.input.key.onPreviewKeyEvent
+import androidx.compose.ui.input.key.type
+import androidx.compose.ui.text.TextRange
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.TextFieldValue
 
 private val appCircuitClipboard = CircuitClipboard()
 
@@ -133,6 +161,10 @@ class EditorWorkspaceHeader(
     val busy: Boolean = false,
     val onOpenProjects: (() -> Unit)? = null,
     val onOpenRecent: (() -> Unit)? = null,
+    /** The stored project's own name for Save As and Share, or null for a draft that has none yet. */
+    val fileName: String? = null,
+    /** [status] shortened for a narrow header ("Not saved to file" for "Not saved to Adder.circ"); read in full. */
+    val compactStatus: String? = null,
 ) {
     internal var session: WorkspaceEditorSessionBinding? = null
 }
@@ -233,9 +265,7 @@ private fun EditorApp(
             initialReadOnly = initialReadOnly, clipboard = appCircuitClipboard).also { prepared ->
                 workspaceSession?.let {
                     prepared.importViewState(it.view)
-                    initialImportReport?.origin?.let { origin ->
-                        prepared.reportStatus(message(Messages.StatusFileOpened, "name" to origin))
-                    }
+                    initialImportReport?.origin?.let(prepared::reportOpened)
                 }
                 if (importReportDismissals != null && importReportKey != null) importReportDismissals.restore(importReportKey, prepared)
             }
@@ -263,6 +293,13 @@ private fun EditorApp(
                 importReportDismissals.visibilityChanged(importReportKey, hasReport, visible)
             }
         }
+        // Announced once per window: kept under the next key too, when a draft becomes a project (C145).
+        val announced = remember(state) { mutableStateOf(false) }
+        LaunchedEffect(state, importReportDismissals, importReportKey) {
+            snapshotFlow { announced.value || state.importReportStatusShown }.collect { shown ->
+                if (shown) { announced.value = true; importReportDismissals.announced(importReportKey) }
+            }
+        }
     }
     var extensionCatalog by remember(baseRegistry) { mutableStateOf(initialExtensionCatalog ?: MobileExtensionCatalog(baseRegistry)) }
     val catalogChanged by rememberUpdatedState(onExtensionCatalogChanged)
@@ -279,14 +316,24 @@ private fun EditorApp(
     }
     val scope = rememberCoroutineScope()
     val currentLocalizer by rememberUpdatedState(strings)
+    var activeTool by remember { mutableStateOf<String?>(null) }
+    // C74: a result reported while a tool sheet is open is also shown in the sheet, which hides the status line.
+    var toolSheetNotice by remember { mutableStateOf<ToolSheetNotice?>(null) }
+    val reportToolNotice: (LocalizedText) -> Unit = remember(state) { var serial = 0L; { text ->
+        state.reportStatus(text)
+        activeTool?.let { toolSheetNotice = ToolSheetNotice(it, text, ++serial) }
+    } }
+    LaunchedEffect(activeTool) { if (toolSheetNotice?.toolId != activeTool) toolSheetNotice = null }
     val effectiveMemoryFiles = remember(memoryFiles, assets, scope) {
-        memoryFiles ?: assets?.let { NativeMemoryImageActions(it, scope, onNotice = state::reportStatus,
+        memoryFiles ?: assets?.let { NativeMemoryImageActions(it, scope, onNotice = reportToolNotice,
             onFailure = state::reportError, resolveNotice = { notice -> currentLocalizer(notice) }) }
     }
     var xmlDialog by remember { mutableStateOf(false) }
     var xmlText by remember { mutableStateOf("") }
     var historyDirection by remember(state) { mutableStateOf<EditorHistoryDirection?>(null) }
     var librarySheet by remember { mutableStateOf(false) }
+    // The explorer's tab, scroll position, groups and recent components outlive the sheet (C18).
+    val libraryExplorer = rememberLibraryExplorerState()
     // The toolbar button that opened the current sheet. Closing the sheet returns TalkBack there (#322).
     var sheetOpenerTag by remember { mutableStateOf<String?>(null) }
     val accessibilityFocusReturn = rememberAccessibilityFocusReturn()
@@ -300,15 +347,24 @@ private fun EditorApp(
     var mergeProject by remember { mutableStateOf(false) }
     var inspectorSheet by remember { mutableStateOf(false) }
     var helpDialog by remember { mutableStateOf(false) }
+    var legalDialog by remember { mutableStateOf(false) }
+    // The circuit name and removal dialogs of the header picker and the Project menu ("" names a new circuit).
+    var circuitNameDialog by remember(state.documentIdentity) { mutableStateOf<String?>(null) }
+    var removeCircuitDialog by remember(state.documentIdentity) { mutableStateOf<String?>(null) }
+    val menuExampleOpener = remember(state) { HelpExampleOpener() }
     var zoomDialog by remember(state, state.activeTarget) { mutableStateOf(false) }
+    var zoomMenu by remember(state, state.activeTarget) { mutableStateOf(false) }
+    val canvasDensity = LocalDensity.current.density
+    SideEffect { state.canvasDensity = canvasDensity }
     var clearHistoryDialog by remember(state, state.documentIdentity) { mutableStateOf(false) }
     var explorerVisible by remember { mutableStateOf(true) }
     var signalsVisible by remember { mutableStateOf(false) }
     var signalSheet by remember { mutableStateOf(false) }
     val signalScroll = rememberScrollState()
-    var signalInput by remember(state.documentIdentity, state.activeTarget) { mutableStateOf<Pair<String, String>?>(null) }
-    val editSignalInput: (String, String) -> Unit = { id, value -> signalInput = id to value }
+    var signalInput by remember(state.documentIdentity, state.activeTarget) { mutableStateOf<String?>(null) }
+    val editSignalInput: (String) -> Unit = { id -> signalInput = id }
     var textToolEdit by remember(state.documentIdentity, state.activeTarget) { mutableStateOf<TextToolEdit?>(null) }
+    var placementAttributes by remember(state.documentIdentity) { mutableStateOf(false) }
     var memoryEdit by remember(state.documentIdentity, state.activeTarget, state.mode) { mutableStateOf<CanvasMemoryEdit?>(null) }
     val sequentialPokeEnabled = state.documentWritable && state.interactionsEnabled && !state.printerView
     var sequentialHexTarget by remember(state, state.documentIdentity, state.activeTarget, state.mode, sequentialPokeEnabled) {
@@ -324,7 +380,6 @@ private fun EditorApp(
     var diagnosticsDialog by remember { mutableStateOf(false) }
     var preferencesSheet by remember { mutableStateOf(false) }
     var simulationOptions by remember { mutableStateOf(false) }
-    var activeTool by remember { mutableStateOf<String?>(null) }
     val latestPreferences by rememberUpdatedState(preferences)
     val latestPreferencesChange by rememberUpdatedState(onPreferencesChange)
     val latestPreferencesRestore by rememberUpdatedState(onRestorePreferences)
@@ -337,14 +392,14 @@ private fun EditorApp(
         }
     }
     val additionalTools = rememberAdditionalEditorTools(registry, assets, documents,
-        onNotice = state::reportStatus, onFailure = state::reportError,
+        onNotice = reportToolNotice, onFailure = state::reportError,
         highContrastSignals = preferences.highContrastSignals, signalRadix = preferences.signalRadix.xmlValue(),
         gateShape = preferences.gateShape, portableProjects = portableProjects, directories = directories, boardCatalog = boardCatalog,
-        fpgaOptions = preferences.fpga, hdlType = preferences.hdlType)
+        fpgaOptions = preferences.fpga, hdlType = preferences.hdlType, editorScope = state)
     val toolbarTool = remember(registry, state) { projectToolbarEditorTool(registry, state) }
     val editorTools = rememberBuiltInEditorTools(registry, documents, extensions,
         additionalDefaults = additionalTools + extensionTool + toolbarTool, preferencesTool = preferencesTool,
-        memoryFiles = effectiveMemoryFiles, onNotice = state::reportStatus, onFailure = state::reportError, assets = assets)
+        memoryFiles = effectiveMemoryFiles, onNotice = reportToolNotice, onFailure = state::reportError, assets = assets)
     LaunchedEffect(state.project, state.rootSimulation, editorTools) {
         editorTools.forEach { it.onSimulation?.invoke(state.project, state.rootSimulation) }
     }
@@ -357,7 +412,7 @@ private fun EditorApp(
                 state.publishRun(snapshot, result)
                 currentTools.forEach { it.onSimulation?.invoke(snapshot.project, result) }
             },
-            onFailure = { state.reportError(it.localizedDescription(message(Messages.CoreSimulationFailed))) },
+            onFailure = { state.reportError(simulationFailureText(it)) },
             advanceWithObservations = { snapshot, step ->
                 val job = currentCoroutineContext()[Job]
                 advanceSimulation(snapshot, step, state.componentRegistry,
@@ -377,9 +432,24 @@ private fun EditorApp(
     DisposableEffect(runController) { onDispose { runController.close() } }
     val runStatus by runController.status.collectAsState()
     val running = runStatus.phase == SimulationRunPhase.RUNNING
-    val ticksPerSecond = runStatus.frequencyHz
+    // The project's rate; the run controller follows it (configureFrequency below).
+    val projectFrequency = remember(state.project) {
+        runCatching { SimulationProjectOptions.read(state.project).tickFrequencyHz }.getOrNull()
+    } ?: runStatus.frequencyHz
+    /**
+     * Simulate > Tick frequency and the frequency chip, as Evolution's Simulator.setTickFrequency: no undo entry and
+     * the simulation keeps running. The controller restarts at the new rate before the project changes, so a step
+     * still computing on the old revision exits on its ticket instead of pausing the run, and an input change still in
+     * flight runs again on the new revision before a run waiting for it resumes.
+     */
+    fun chooseTickFrequency(hz: Double) {
+        val previous = projectFrequency
+        val changes = state.documentWritable && state.interactionsEnabled && hz != previous
+        if (changes) runController.configureFrequency(hz, restartRunning = true)
+        if (!state.setTickFrequency(hz) && changes) runController.configureFrequency(previous)
+    }
     val automaticTicksAction = EditorToolbarAction(
-        "automatic-ticks", strings(Messages.SimulationAutomaticTicks),
+        "automatic-ticks", strings("simulation_control_auto_tick"),
         enabled = state.documentWritable && state.interactionsEnabled, selected = runStatus.automaticTicks,
     ) { toggleAutomaticTicks() }
     val lifecycle = LocalLifecycleOwner.current.lifecycle
@@ -410,7 +480,7 @@ private fun EditorApp(
             setInteractionEnabled = { enabled ->
                 if (!enabled) stopJar()
                 state.setInteractionEnabled(enabled)
-            })
+            }, reportOpened = state::reportOpened)
         runController.setActive(lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && sessionControl?.activationAllowed != false)
         val observer = LifecycleEventObserver { _, event ->
             when (event) {
@@ -437,7 +507,8 @@ private fun EditorApp(
         if (state.revision > 0 && state.documentWritable) onDocumentChanged(state.exportXml())
     }
     LaunchedEffect(state.project) { runController.configureFrequency(SimulationProjectOptions.read(state.project).tickFrequencyHz) }
-    LaunchedEffect(state.activeCircuitName, state.activeInstancePath) { runController.pauseContinuousExecution() }
+    // An instance of the running circuit keeps running; another circuit pauses and says why (C58).
+    LaunchedEffect(state.activeCircuitName, state.activeInstancePath) { pauseOutsideRunningCircuit(state, runController) }
     val debugCopyIdentity = state.debugCopyIdentity
     val sendComponentEvent: (String, dev.logisim.mobile.core.ComponentEvent) -> Boolean =
         remember(state, state.document.id, state.activeInstancePath, state.documentIdentity, debugCopyIdentity) {
@@ -461,8 +532,10 @@ private fun EditorApp(
             if (state.documentIdentity != it.identity || state.revision != it.revision) guidedLibraryOpen = null
         }
     }
+    val latestWorkspaceHeader by rememberUpdatedState(workspaceHeader)
     val documentSession = remember(state, documents, importLoader, directories, portableProjects) {
-        documents?.let { actions -> EditorDocuments(state, actions) { content, current, completed ->
+        documents?.let { actions -> EditorDocuments(state, actions, projectName = { latestWorkspaceHeader?.fileName },
+            defaultName = { currentLocalizer(Messages.FileDefaultName) }, importDocument = { content, current, completed ->
             runController.pause()
             guidedLibraryOpen = null
             val origin = LocalizedText.literal(content.reference.name)
@@ -477,7 +550,7 @@ private fun EditorApp(
                         }
                     },
                     onComplete = completed)) completed(false)
-        } }
+        }) }
     }
     DisposableEffect(documentSession) {
         documentSession?.attach()
@@ -532,7 +605,8 @@ private fun EditorApp(
         }
     }
     val accessibilityContext = state.accessibilityContext()
-    val inspectorSession = rememberPropertyInspectorSession(state)
+    val multiEditUndo = remember(state) { MultiEditUndoNotice() }
+    val inspectorSession = rememberPropertyInspectorSession(state, multiEditUndo)
     val currentInspectorSession by rememberUpdatedState(inspectorSession)
     val keyboardSession = rememberKeyboardInspectorSession(state)
     val currentKeyboardSession by rememberUpdatedState(keyboardSession)
@@ -543,6 +617,7 @@ private fun EditorApp(
         { if (state.documentIdentity == toolIdentity) state.applyProject(it) },
         { if (state.documentIdentity == toolIdentity) state.applyDocument(it) }, state::selectCircuit, { state.selectComponent(it) }, state::reportStatus,
         projectSimulation = state.rootSimulation, documentIdentity = state.documentIdentity, selectedWires = state.selectedWires,
+        circuitLifetime = state::circuitLifetime,
         activeInstancePath = accessibilityContext.instancePath,
         commitProject = { next, completed ->
             if (state.documentIdentity != toolIdentity || state.project != toolProject ||
@@ -580,7 +655,8 @@ private fun EditorApp(
         openTool = { id ->
             val tool = editorTools.firstOrNull { it.id == id }
             if (tool != null && (!tool.requiresProjectGraph || state.projectAccess.graphAvailable)) {
-                runController.pause(); activeTool = id; true
+                if (tool.pausesSimulation) runController.pause()
+                activeTool = id; true
             } else {
                 if (tool?.requiresProjectGraph == true) state.reportStatus(message("project_graph_unavailable"))
                 false
@@ -591,8 +667,25 @@ private fun EditorApp(
         removeSelection = state::removeSelected,
         openProperties = { activeTool = null; inspectorSheet = true },
         activateComponent = state::activateComponent, insertComponent = state::insertComponent,
-        showNotice = state::reportStatus, extensionDocumentXml = state::exportExtensionSourceXml,
-        printerView = state.printerView, closeTool = { activeTool = null }).also { context ->
+        showNotice = reportToolNotice, extensionDocumentXml = state::exportExtensionSourceXml,
+        printerView = state.printerView, closeTool = { activeTool = null },
+        startSimulation = {
+            val current = state.documentIdentity == toolIdentity && state.debugCopyIdentity === debugCopyIdentity
+            current && state.documentWritable && state.interactionsEnabled && runController.start().also {
+                if (it) state.changeMode(EditorMode.INTERACT)
+            }
+        },
+        pauseSimulation = runController::pause,
+        simulationControlsEnabled = state.documentWritable && state.interactionsEnabled,
+        stepClock = { fullCycle ->
+            if (state.documentIdentity == toolIdentity && state.debugCopyIdentity === debugCopyIdentity) {
+                runController.pauseContinuousExecution()
+                state.tick(fullCycle)
+            }
+        },
+        editInputValue = { id -> state.requestInputValueEdit(id).also { if (it) editSignalInput(id) } },
+        toggleInputBit = state::toggleInputBit, canOpenIoControls = state::requestIoControls,
+        creationDefaults = state.creationDefaults, visibleCenter = state::visibleCenter).also { context ->
         if (jarController == null) context.startJarEditor = { launch ->
             val job = checkNotNull(currentCoroutineContext()[Job])
             val revision = state.revision
@@ -705,7 +798,7 @@ private fun EditorApp(
         scheme = preferences.shortcutScheme,
         overrides = preferences.shortcutOverrides,
         enabled = {
-            !zoomDialog && state.interactionsEnabled && inspectorSession.focus.focusedPresentation == null &&
+            !zoomDialog && !zoomMenu && state.interactionsEnabled && inspectorSession.focus.focusedPresentation == null &&
                 keyboardSession?.focus?.focusedPresentation == null
         },
         onDoubleShift = if (preferences.searchDoubleShift) ({ openFindAction(); true }) else null,
@@ -784,6 +877,7 @@ private fun EditorApp(
                 }
                 val compact = maxHeight < 420.dp
                 val narrow = maxWidth < 600.dp
+                val windowWidth = maxWidth
                 val shortLandscape = maxHeight < 480.dp && maxWidth > maxHeight
                 val toolbarPlacement = preferences.toolbarPlacement.effectivePlacement(sidebarShown, hasProjectToolbar = true, shortLandscape)
                 val simulationPlacement = simulationControlsPlacement(toolbarPlacement, narrow, preferences.showHeaderBar)
@@ -802,6 +896,12 @@ private fun EditorApp(
 
                 val toolActions = projectToolbarActions(state, strings(Messages.ActionMove), componentIconColor)
                 toolbarShortcuts.actions = toolActions
+                // The Edit menu's Text item uses the project's own Text Tool, with its attributes, when the toolbar has one.
+                val projectText = remember(state.project.extraXml, state.project.libraries, state.project.sourceVersion,
+                    state.project.circuits, registry) { projectTextTool(projectToolbarEntries(state.project, registry)) }
+                val textToolPrototype = remember(projectText, state.project.libraries, state.project.sourceVersion, state.project.circuits, registry) {
+                    projectText?.prototype ?: mobileTextToolPrototype(state.project, registry)
+                }
 
                 val runAction = EditorToolbarAction("run", strings(if (running) Messages.ActionPause else Messages.ActionRun),
                     enabled = writable,
@@ -809,24 +909,30 @@ private fun EditorApp(
                     state.changeMode(EditorMode.INTERACT)
                     if (running) runController.pause() else runController.start()
                 }
-                val eventAction = EditorToolbarAction("event", strings(Messages.SimulationEventStep), strings(Messages.A11ySimulationEventStep),
+                // One name per action for the bar (tooltip), the Simulate menu and TalkBack.
+                val eventAction = EditorToolbarAction("event", strings("simulation_control_step_event"),
                     enabled = writable, icon = EditorIcon.STEP) { runController.step(SimulationStep.EVENT) }
-                val tickAction = EditorToolbarAction("step", strings(Messages.ActionStep), strings(Messages.A11yStepClock),
+                val tickAction = EditorToolbarAction("step", strings("simulation_control_tick_half"),
                     enabled = writable, icon = EditorIcon.TICK) { stepClock() }
+                val tickFullAction = EditorToolbarAction("tick-cycle", strings("simulation_control_tick_full"),
+                    enabled = writable, icon = EditorIcon.TICK_FULL) { stepClock(fullCycle = true) }
                 val autoTickAction = automaticTicksAction.copy(icon = EditorIcon.AUTO_TICK)
-                val resetAction = EditorToolbarAction("reset", strings(Messages.ActionReset), strings(Messages.A11yResetSimulation),
+                val resetAction = EditorToolbarAction("reset", strings(Messages.A11yResetSimulation),
                     enabled = writable || jarController != null, icon = EditorIcon.RESET) { runController.pause(); state.resetSimulation() }
-                val frequencyAction = EditorToolbarAction("frequency", strings(Messages.SimulationFrequency, "count" to formatHertz(ticksPerSecond)),
-                    strings(Messages.A11yChangeFrequency)) {
-                    state.applyProject(SimulationProjectOptions.read(state.project).copy(
-                        tickFrequencyHz = when (ticksPerSecond) { 1.0 -> 4.0; 4.0 -> 16.0; else -> 1.0 }).applyTo(state.project))
-                }
-                val stepsText = strings(Messages.SimulationSteps, "count" to state.simulation.ticks)
-                val stepsLabel: @Composable () -> Unit = {
-                    Text(stepsText, fontSize = 11.sp, color = ChromeColors.Muted, maxLines = 1,
-                        modifier = Modifier.padding(horizontal = 6.dp))
-                }
-                val simulationActions = listOf(runAction, eventAction, tickAction, autoTickAction, resetAction, frequencyAction)
+                val tickCount = state.simulation.ticks
+                val ticksText = strings("simulation_ticks", "count" to tickCount)
+                // The toolbar and the phone bottom bar give the counter all the width it needs; only the header
+                // shortens it to the count (TicksCounter), so the other bars keep a plain text that no tick re-measures.
+                val stepsLabel: @Composable () -> Unit = { TicksText(ticksText) }
+                val simulationControls = SimulationControls(
+                    title = strings("simulation_controls_title"),
+                    run = runAction, event = eventAction, tickHalf = tickAction, tickFull = tickFullAction,
+                    autoTick = autoTickAction, reset = resetAction,
+                    frequency = TickFrequencyControl(projectFrequency, writable, runStatus.measuredTicksPerSecond, ::chooseTickFrequency),
+                    menuExtras = listOf(EditorToolbarAction("simulation-options", strings("menu_simulation_options")) {
+                        runController.pause(); simulationOptions = true
+                    }),
+                )
 
                 val explorerAction = if (wide) EditorToolbarAction("explorer", strings("action_explorer"), strings("a11y_toggle_explorer"),
                     selected = explorerVisible, icon = EditorIcon.SIDEBAR) { explorerVisible = !explorerVisible }
@@ -837,17 +943,29 @@ private fun EditorApp(
                 }
                 val propertiesAction = EditorToolbarAction("properties", strings(Messages.ActionProperties), strings(Messages.A11yOpenProperties),
                     icon = EditorIcon.PROPERTIES) { inspectorSheet = true; sheetOpenerTag = "tool-properties" }
+                // A short window opens Signals as a sheet, which would be empty without pins, probes or displays (C68).
                 val signalsAction = EditorToolbarAction("signals", strings(Messages.SignalsHeading),
+                    enabled = !compact || signalStripComponents(state.document.components).isNotEmpty(),
                     selected = if (compact) null else signalsVisible, icon = EditorIcon.SIGNALS) {
                     if (compact) { signalSheet = true; sheetOpenerTag = "tool-signals" } else signalsVisible = !signalsVisible
                 }
-                val undoAction = EditorToolbarAction("undo", strings(Messages.ActionUndo), strings(Messages.ActionUndo),
+                // Evolution's Edit menu and header tooltips name the action Undo and Redo apply (MenuEdit, UnifiedHeaderBar).
+                val history = editorHistoryLabels(strings, state.undoHistory.firstOrNull()?.label, state.redoHistory.firstOrNull()?.label)
+                val undoAction = EditorToolbarAction("undo", history.undoLabel, history.undoDescription,
                     state.canUndo && state.interactionsEnabled,
                     icon = EditorIcon.UNDO, onClick = state::undo)
-                val redoAction = EditorToolbarAction("redo", strings(Messages.ActionRedo), strings(Messages.ActionRedo),
+                val redoAction = EditorToolbarAction("redo", history.redoLabel, history.redoDescription,
                     state.canRedo && state.interactionsEnabled,
                     icon = EditorIcon.REDO, onClick = state::redo)
 
+                // Each project tool sits in the menu Evolution gives it (editorToolMenu), with the same item id everywhere.
+                fun toolsIn(menu: String) = editorTools.filter { it.id != "legal-notices" && editorToolMenu(it.id) == menu }.map { tool ->
+                    EditorToolbarAction(if (tool.id == ASSEMBLY_VIEWER_ID) tool.id else "project-tool-${tool.id}", strings(tool.titleText),
+                        enabled = !tool.requiresProjectGraph || toolContext.projectExports.available) {
+                        if (tool.pausesSimulation) runController.pause()
+                        activeTool = tool.id
+                    }
+                }
                 val menus = buildList {
                     add(EditorMenu("file", strings("menu_file"), description = strings(Messages.A11yProjectFiles), itemsTag = "editor-file-menu", items = buildList {
                         add(EditorToolbarAction("new", strings(Messages.ActionNew), strings(Messages.A11yNewCircuit),
@@ -867,7 +985,9 @@ private fun EditorApp(
                                     runController.pause(); open()
                                 })
                             }
-                            add(EditorToolbarAction("save", strings(Messages.ActionSaveFile), enabled = session.canSave) { runController.pause(); session.save() })
+                            // Evolution's doSave: with no file to save in place, Save asks for one, as Ctrl+S does.
+                            add(EditorToolbarAction("save", strings(if (session.canSave) Messages.ActionSaveFile else "action_save_file_picker"),
+                                enabled = state.documentWritable) { runController.pause(); session.saveOrSaveAs() })
                             add(EditorToolbarAction("save-as", strings(Messages.ActionSaveAs)) { runController.pause(); session.saveAs() })
                             add(EditorToolbarAction("share", strings(Messages.ActionShare)) { runController.pause(); session.share() })
                             if (session.canShareOriginalCopy) add(EditorToolbarAction("share-original", strings(Messages.ActionShareOriginalCirc)) {
@@ -882,13 +1002,13 @@ private fun EditorApp(
                         add(EditorToolbarAction("xml", strings("menu_import_export_circ"), strings(Messages.A11yImportExportProject)) {
                             runController.pause(); xmlText = state.exportXml(); xmlDialog = true
                         })
-                        add(separator("file-examples"))
-                        add(EditorToolbarAction("example-sap1", strings("menu_example", "name" to "SAP-1"), strings(Messages.A11yLoadSap1),
-                            enabled = state.interactionsEnabled) {
-                            dev.logisim.mobile.core.CircuitExamples.find("sap1")?.let { runController.pause(); exampleLoader.open(it) }
-                        })
-                        add(EditorToolbarAction("example-and", strings("menu_example", "name" to strings(Messages.ComponentAnd)), strings(Messages.A11yLoadAnd)) {
-                            dev.logisim.mobile.core.CircuitExamples.find("and")?.let { runController.pause(); exampleLoader.open(it) }
+                        // MenuFile's Export Image and Print, and the portable project bundles.
+                        toolsIn("file").takeIf { it.isNotEmpty() }?.let { add(separator("file-export")); addAll(it) }
+                        addAll(exampleMenuActions(strings, state.interactionsEnabled) { example ->
+                            scope.launch {
+                                menuExampleOpener.openReporting(example, registry, { state.project },
+                                    accept = { toolContext.openExample(it) }, notice = state::reportStatus)
+                            }
                         })
                         add(separator("file-settings"))
                         if (state.importReport != null) add(EditorToolbarAction("import-report", strings("import_report_title"), onClick = state::showImportReport))
@@ -923,13 +1043,28 @@ private fun EditorApp(
                             canEditSelection && writable, onClick = state::duplicateSelected))
                         add(EditorToolbarAction("delete", strings(Messages.ActionDelete), strings(Messages.A11yDeleteSelection),
                             canEditSelection && writable, onClick = state::removeSelected))
+                        val canTurn = canEditSelection && writable && state.canRotateSelection
+                        add(EditorToolbarAction("rotate-left", strings(Messages.ComponentMenuRotateLeft), enabled = canTurn,
+                            icon = EditorIcon.ROTATE_LEFT) { state.rotateSelected(left = true) })
+                        add(EditorToolbarAction("rotate-right", strings(Messages.ComponentMenuRotateRight), enabled = canTurn,
+                            icon = EditorIcon.ROTATE_RIGHT) { state.rotateSelected(left = false) })
                         add(separator("edit-selection"))
                         add(EditorToolbarAction("select-all", strings(Messages.ActionSelectAll), strings(Messages.A11ySelectAll), onClick = state::selectAll))
+                        if (state.mode in AdditiveSelectionModes) {
+                            add(EditorToolbarAction("additive-selection", strings(Messages.SelectionAddToggle),
+                                enabled = state.interactionsEnabled, selected = state.additiveSelection,
+                                onClick = state::toggleAdditiveSelection))
+                        }
+                        // The tools, whatever the project's toolbar holds: a touch screen has no tool keys.
                         add(separator("edit-modes"))
+                        mobileBaseToolAction(state, MobileBaseTool.POKE, strings, null, "mode-poke")?.let(::add)
+                        mobileBaseToolAction(state, MobileBaseTool.EDIT, strings, null, "mode-edit")?.let(::add)
                         add(EditorToolbarAction("select", strings(Messages.ActionSelect), selected = state.mode == EditorMode.SELECT,
                             icon = EditorIcon.MARQUEE) { state.changeMode(EditorMode.SELECT) })
                         add(EditorToolbarAction("move", strings(Messages.ActionMove), selected = state.mode == EditorMode.MOVE,
                             icon = EditorIcon.MOVE) { state.changeMode(EditorMode.MOVE) })
+                        mobileBaseToolAction(state, MobileBaseTool.WIRE, strings, null, "mode-wire")?.let(::add)
+                        mobileBaseToolAction(state, MobileBaseTool.TEXT, strings, textToolPrototype, "mode-text")?.let(::add)
                         if (state.mode == EditorMode.MOVE || state.mode == EditorMode.SELECT || state.mode == EditorMode.EDIT) {
                             add(EditorToolbarAction("keep-move-connections", strings(Messages.ActionKeepMoveConnections),
                                 enabled = state.documentWritable && state.interactionsEnabled,
@@ -943,9 +1078,11 @@ private fun EditorApp(
                                 onClick = state::togglePlacementMatrix))
                         }
                         if (!sidebarShown) add(propertiesAction)
-                        if (toolbarPlacement == EditorToolbarPlacement.HIDDEN) {
+                        // A hidden toolbar folds the project's own tools in here, less the modes the tool group above lists.
+                        val projectTools = hiddenToolbarMenuActions(toolActions, projectText?.actionId)
+                        if (toolbarPlacement == EditorToolbarPlacement.HIDDEN && projectTools.isNotEmpty()) {
                             add(separator("edit-tools"))
-                            addAll(toolActions)
+                            addAll(projectTools)
                         }
                     }))
                     add(EditorMenu("view", strings("menu_view"), buildList {
@@ -962,53 +1099,56 @@ private fun EditorApp(
                             strings(if (state.printerView) "a11y_live_view" else "a11y_printer_view"),
                             selected = state.printerView, onClick = state::togglePrinterView))
                     }))
-                    val projectMenuTools = editorTools.filter {
-                        it.id != "preferences" && it.id != "legal-notices" && it.id != ASSEMBLY_VIEWER_ID
-                    }
+                    val projectMenuTools = toolsIn("project")
                     add(EditorMenu("project", strings("menu_project"), description = strings(Messages.A11yProjectTools), itemsTag = "editor-tool-menu", items = buildList {
+                        addAll(circuitCommandActions(state, strings, writable, onAdd = { circuitNameDialog = "" },
+                            onRemove = { removeCircuitDialog = it }))
+                        add(separator("project-libraries"))
                         add(EditorToolbarAction("manage-libraries", strings("active_library_manage")) { runController.pause(); activeLibraries = true })
                         if (projectMenuTools.isNotEmpty()) add(separator("project-tools"))
-                        projectMenuTools.forEach { tool ->
-                            add(EditorToolbarAction("project-tool-${tool.id}", strings(tool.titleText),
-                                enabled = !tool.requiresProjectGraph || toolContext.projectExports.available) {
-                                runController.pause(); activeTool = tool.id
-                            })
-                        }
+                        addAll(projectMenuTools)
                     }))
                     add(EditorMenu("simulate", strings("menu_simulate"), buildList {
                         add(runAction.copy(label = strings(if (running) "menu_pause" else "menu_run")))
-                        add(eventAction.copy(label = strings("menu_step_event")))
-                        add(tickAction.copy(label = strings("menu_tick_once")))
-                        add(EditorToolbarAction("tick-cycle", strings("menu_tick_cycle"), enabled = writable, icon = EditorIcon.TICK) {
-                            stepClock(fullCycle = true)
-                        })
+                        add(eventAction)
+                        add(tickAction)
+                        add(tickFullAction)
                         add(autoTickAction)
-                        add(resetAction.copy(label = strings("menu_reset_simulation")))
-                        add(separator("simulate-frequency"))
-                        listOf(1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0).let { if (ticksPerSecond in it) it else (it + ticksPerSecond).sorted() }
-                            .forEach { hertz ->
-                                add(EditorToolbarAction("frequency-$hertz", strings("menu_tick_frequency", "count" to formatHertz(hertz)),
-                                    selected = ticksPerSecond == hertz) {
-                                    state.applyProject(SimulationProjectOptions.read(state.project).copy(tickFrequencyHz = hertz).applyTo(state.project))
-                                })
-                            }
+                        add(separator("simulate-reset"))
+                        add(resetAction)
+                        // MenuSimulate's Tick Frequency radio items under one heading, as plain rates.
+                        add(EditorToolbarAction("simulate-frequency", strings("simulation_tick_frequency"), separator = true, onClick = {}))
+                        TickFrequencies.choicesWith(projectFrequency).forEach { choice ->
+                            val rate = formatTickFrequency(choice.hz)
+                            add(EditorToolbarAction("frequency-${choice.hz}",
+                                if (choice.custom) strings("simulation_tick_frequency_custom", "value" to rate) else rate,
+                                strings("simulation_tick_frequency_value", "value" to rate),
+                                enabled = writable, selected = TickFrequencies.same(choice.hz, projectFrequency)) {
+                                chooseTickFrequency(choice.hz)
+                            })
+                        }
                         add(separator("simulate-options"))
                         add(EditorToolbarAction("simulation-options", strings("menu_simulation_options"), strings(Messages.SimulationOptionsTitle)) {
                             runController.pause(); simulationOptions = true
                         })
-                        editorTools.firstOrNull { it.id == ASSEMBLY_VIEWER_ID }?.let { tool ->
-                            add(EditorToolbarAction(tool.id, strings(tool.titleText)) { activeTool = tool.id })
-                        }
+                        // MenuSimulate's Logging, Test Vector and Assembly Viewer, with the other run-time tools.
+                        toolsIn("simulate").takeIf { it.isNotEmpty() }?.let { add(separator("simulate-tools")); addAll(it) }
                         if (state.simulation.notices.isNotEmpty()) add(EditorToolbarAction("diagnostics",
                             strings("menu_warnings", "count" to state.simulation.notices.distinct().size), strings(Messages.SimulationWarningsTitle)) {
                             diagnosticsDialog = true
                         })
                     }))
+                    // Evolution's FPGA menu, with the HDL, companion and Tcl tools; it shares the tools menu tag with Project.
+                    toolsIn("fpga").takeIf { it.isNotEmpty() }?.let { tools ->
+                        add(EditorMenu("fpga", strings("menu_fpga"), tools, description = strings("a11y_fpga_tools"), itemsTag = "editor-tool-menu"))
+                    }
                     add(EditorMenu("help", strings("menu_help"), buildList {
                         add(EditorToolbarAction("find-action", strings(Messages.MenuFindAction), onClick = openFindAction))
+                        addAll(toolsIn("help"))
                         add(EditorToolbarAction("help", strings(Messages.EditorHelpTitle), strings(Messages.A11yOpenHelp)) { helpDialog = true })
+                        // Licenses opens its dialog directly, not a sheet holding one more button.
                         editorTools.firstOrNull { it.id == "legal-notices" }?.let { tool ->
-                            add(EditorToolbarAction("legal-notices", strings(tool.titleText)) { activeTool = tool.id })
+                            add(EditorToolbarAction("legal-notices", strings(tool.titleText)) { legalDialog = true })
                         }
                     }))
                 }
@@ -1019,17 +1159,27 @@ private fun EditorApp(
                         title = state.document.name,
                         project = workspaceHeader?.projectName,
                         saveState = workspaceHeader?.status,
+                        compactSaveState = workspaceHeader?.compactStatus,
                         busy = workspaceHeader?.busy == true,
-                        onTitleClick = workspaceHeader?.onOpenProjects,
-                        menus = menus, menuBar = menuBar,
+                        circuitPicker = { expanded, dismiss ->
+                            HeaderCircuitPicker(expanded, dismiss, state.project, state.activeTarget, onNavigate = state::navigate,
+                                onAddCircuit = if (writable) ({ circuitNameDialog = "" }) else null,
+                                onOpenProjects = workspaceHeader?.onOpenProjects, projectsEnabled = workspaceHeader?.busy != true)
+                        },
+                        menus = menus,
+                        menuBar = menuBar && headerFitsMenuBar(windowWidth, chromeMenuBarWidth(menus), trailingButtons = 2,
+                            trailingDividers = if (simulationPlacement == SimulationControlsPlacement.HEADER) 1 else 0,
+                            simulationInHeader = simulationPlacement == SimulationControlsPlacement.HEADER,
+                            counterMin = ticksLabelWidth(TicksLabelReserveCount.toString())),
                         leading = explorerAction,
                         singleLine = shortLandscape,
-                        simulationLabel = if (simulationPlacement == SimulationControlsPlacement.HEADER) stepsLabel else null,
+                        // Half the header at most, as in the toolbar, so the title keeps room of its own.
+                        simulation = if (simulationPlacement == SimulationControlsPlacement.HEADER) ({
+                            HeaderSimulationControls({ TicksCounter(ticksText, tickCount) }, simulationControls, maxBarWidth = windowWidth / 2,
+                                counterReserve = ticksLabelWidth(strings("simulation_ticks", "count" to TicksLabelReserveCount)))
+                        }) else null,
                         trailing = buildList {
-                            if (simulationPlacement == SimulationControlsPlacement.HEADER) {
-                                addAll(simulationActions)
-                                add(separator("header-history"))
-                            }
+                            if (simulationPlacement == SimulationControlsPlacement.HEADER) add(separator("header-history"))
                             add(undoAction)
                             add(redoAction)
                         },
@@ -1048,8 +1198,14 @@ private fun EditorApp(
                             placement = toolbarPlacement, dividerColor = ChromeColors.Divider,
                             modifier = Modifier.weight(1f).fillMaxWidth(),
                             sidebar = if (sidebarShown) ({
+                                // The docked inspector takes up to 60% of the sidebar's height, at least the 300 dp it
+                                // had, so a large I/O panel leaves room for the attribute table (C15). Without I/O
+                                // controls it stops where the library would keep less than its filter, Manage
+                                // libraries and two categories (C15 follow-up).
+                                BoxWithConstraints(Modifier.fillMaxSize()) {
+                                val inspectorMax = dockedInspectorMaxHeight(maxHeight, state.selected?.kind.hasDockedIoControls())
                                 Column(Modifier.fillMaxSize().background(ChromeColors.Panel)) {
-                                    LibraryPanel(state, searchActions, Modifier.weight(1f).fillMaxWidth(),
+                                    LibraryPanel(state, searchActions, libraryExplorer, Modifier.weight(1f).fillMaxWidth(),
                                         onManageLibraries = { runController.pause(); activeLibraries = true },
                                         onExportCircuit = exportCircuit,
                                         onChoose = { runController.pause() }, componentIconColor = componentIconColor)
@@ -1059,7 +1215,9 @@ private fun EditorApp(
                                     PropertyInspector(state, runStatus, runController::isEventPending, inspectorSession,
                                         InspectorPresentation.INLINE, { inspectorSession.applyLabel(state, currentInspectorSession) },
                                         keyboardSession, { currentKeyboardSession }, { currentInspectorSession },
-                                        Modifier.fillMaxWidth().heightIn(max = 300.dp).testTag("editor-inspector-inline"))
+                                        Modifier.fillMaxWidth().heightIn(max = inspectorMax).testTag("editor-inspector-inline"),
+                                        onOpenTool = { id -> inspectorSession.commitLabelDraft(); toolContext.openTool(id) })
+                                }
                                 }
                             }) else null,
                             toolbar = {
@@ -1069,7 +1227,8 @@ private fun EditorApp(
                                         Row(Modifier.testTag("editor-simulation-toolbar"), horizontalArrangement = Arrangement.spacedBy(2.dp),
                                             verticalAlignment = Alignment.CenterVertically) {
                                             stepsLabel()
-                                            simulationActions.forEach { ChromeButton(it) }
+                                            // Half the toolbar at most, so the tools keep room of their own.
+                                            SimulationControlBar(simulationControls, Modifier.widthIn(max = windowWidth / 2), barTag = null)
                                         }
                                     })
                                     !sidebarShown -> ({ ChromeButton(propertiesAction) })
@@ -1082,7 +1241,7 @@ private fun EditorApp(
                             },
                         ) {
                             Column(Modifier.fillMaxSize().background(ChromeColors.Surface)) {
-                                if (!compact) SimulationDiagnostics(state.simulation.notices)
+                                if (!compact) SimulationDiagnostics(state.simulation.notices, state.simulation.noticeSources) { state.showComponents(it) }
                                 CircuitCanvas(
                                     document = state.document, simulation = state.simulation, registry = registry,
                                     projectStates = toolContext.projectSimulation.circuitStates,
@@ -1137,8 +1296,7 @@ private fun EditorApp(
                                     onRemoveWire = { state.removeWire(it) }, canEditCircuit = state.documentWritable,
                                     onPokePin = { id, bit ->
                                         if (bit != null) state.pokePin(id, bit)
-                                        else if (state.canEditInputValue(id)) editSignalInput(id,
-                                            state.simulation.vectorValues[id]?.toULongOrNull()?.toString() ?: "0")
+                                        else if (state.canEditInputValue(id)) editSignalInput(id)
                                     },
                                     onDismissKeyboardPoke = state::dismissKeyboardPoke,
                                     pokedKeyboardId = state::pokedKeyboardId,
@@ -1152,9 +1310,32 @@ private fun EditorApp(
                                         ProjectMouseMappings.read(state.project, registry)
                                     },
                                     onMappedTap = state::tap, onMappedPlacement = state::insertMappedComponent,
+                                    onPlacementReleasedOffCanvas = state::releasePlacementOffCanvas,
                                     pendingPaste = state.pendingPaste, onMovePastePreview = state::movePastePreview,
                                     onConfirmPaste = state::confirmPaste,
                                     showZoomControls = false,
+                                    additiveSelection = state.additiveSelection,
+                                    // The selection bar and the Add chip float over the canvas, so showing them never
+                                    // resizes it and the circuit stays where the finger left it.
+                                    overlay = {
+                                        if (state.additiveSelection) AdditiveSelectionChip(strings(Messages.SelectionAddingChip),
+                                            strings(Messages.SelectionAddingStop), state::toggleAdditiveSelection,
+                                            Modifier.align(Alignment.TopEnd).padding(8.dp))
+                                        // Facing and attributes of the next component, set before placing (C34).
+                                        if (state.mode == EditorMode.PLACE && state.pendingPaste == null && state.documentWritable &&
+                                            state.interactionsEnabled) PlacementToolStrip(state, { placementAttributes = true },
+                                            Modifier.align(Alignment.BottomCenter).padding(horizontal = SelectionBarMargin, vertical = 6.dp))
+                                        // Above the bottom bar on phones and at the canvas bottom on wide layouts, where a
+                                        // toolbar slot would push tools into its overflow. Properties joins it only when
+                                        // neither the docked inspector nor the toolbar offers it.
+                                        if (state.showsSelectionBar) EditorSelectionBar(
+                                            selectionBarActions(state, strings, onProperties =
+                                                if (sidebarShown || toolbarPlacement != EditorToolbarPlacement.HIDDEN) null else ({
+                                                    inspectorSheet = true; sheetOpenerTag = "selection-properties"
+                                                })),
+                                            Modifier.align(Alignment.BottomCenter).padding(horizontal = SelectionBarMargin, vertical = 6.dp),
+                                        )
+                                    },
                                 )
                                 if (!compact && signalsVisible) {
                                     HorizontalDivider(color = ChromeColors.Divider)
@@ -1164,66 +1345,87 @@ private fun EditorApp(
                         }
                     }
                     HorizontalDivider(color = ChromeColors.Divider)
-                    val statusText = if (state.simulation.oscillating) strings(Messages.SimulationUnsettled) else strings(state.statusText)
-                    val zoomPercent = (state.viewport.view.scale * 100).roundToInt()
+                    val shownStatus = state.displayedStatusText
+                    val statusText = if (state.simulation.oscillating) strings(Messages.SimulationUnsettled) else strings(shownStatus)
                     val bottomSimulation = simulationPlacement == SimulationControlsPlacement.BOTTOM_BAR
-                    Row(Modifier.fillMaxWidth().background(ChromeColors.Bar)
-                        .padding(start = 10.dp, end = if (bottomSimulation) 10.dp else 4.dp)
-                        .heightIn(min = when {
-                            !preferences.showHeaderBar -> ChromeBarHeight
-                            bottomSimulation -> 0.dp
-                            else -> 34.dp
-                        }),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                        if (!preferences.showHeaderBar) ChromeCompactMenu(menus, strings("a11y_open_menu"), strings("menu_back"))
-                        EditorStatusText(statusText, state.statusText.key != Messages.StatusClockStep,
-                            Modifier.weight(1f).padding(vertical = if (bottomSimulation) 3.dp else 0.dp))
-                        if (!bottomSimulation) {
-                            if (wide) Text(strings.plural(Messages.ProjectComponentCount, state.document.components.size.toLong()) + " · " +
+                    // On phones the status line and the simulation bar form one bottom bar: the tick counter, Signals
+                    // and the zoom sit in the status line, so the controls below never move as the count grows.
+                    Column(Modifier.fillMaxWidth().background(ChromeColors.Bar)
+                        .then(if (bottomSimulation) Modifier.testTag("editor-simulation-toolbar") else Modifier)) {
+                        Row(Modifier.fillMaxWidth()
+                            .padding(start = 10.dp, end = 4.dp)
+                            .heightIn(min = if (!preferences.showHeaderBar) ChromeBarHeight else 34.dp),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                            if (!preferences.showHeaderBar) ChromeCompactMenu(menus, strings("a11y_open_menu"), strings("menu_back"))
+                            // The Add chip already announces the additive mode; its hint is not read again. Behind an open
+                            // tool sheet the sheet's own notice announces the tool's result instead (C74).
+                            EditorStatusText(statusText, shownStatus.key != Messages.StatusClockStep &&
+                                shownStatus.key != Messages.StatusAdditiveTouch && activeTool == null, Modifier.weight(1f),
+                                maxLines = statusLines(if (bottomSimulation) 3 else 2))
+                            SimulationResetUndoAction(state)
+                            // Under the open inspector sheet the Undo is shown in the sheet; its timeout here starts
+                            // once the sheet has closed (C7).
+                            if (sidebarShown || !inspectorSheet) MultiEditUndoAction(state, multiEditUndo)
+                            ImportReportStatusAction(state)
+                            if (bottomSimulation) stepsLabel()
+                            else if (wide) Text(strings.plural(Messages.ProjectComponentCount, state.document.components.size.toLong()) + " · " +
                                 strings.plural(Messages.ProjectWireCount, state.document.wires.size.toLong()),
                                 fontSize = 11.sp, color = ChromeColors.Muted, maxLines = 1)
+                            // A short window has no room for the warnings banner; its count opens the same dialog (C67).
+                            if (compact) SimulationWarningsIndicator(state.simulation.notices) { diagnosticsDialog = true }
                             ChromeButton(signalsAction, size = 32.dp)
-                            EditorZoomControls(zoomPercent, state) { zoomDialog = true }
+                            EditorZoomControls(state, hasSelection, stepButtons = !narrow, expanded = zoomMenu,
+                                onExpandedChange = { zoomMenu = it }, onCustom = { zoomDialog = true })
                         }
-                    }
-                    if (bottomSimulation) {
-                        ChromeToolbar(simulationActions, "editor-simulation-toolbar", strings(Messages.SimulationOptionsTitle),
-                            Modifier.background(ChromeColors.Bar), trailing = {
-                                stepsLabel()
-                                ChromeButton(signalsAction)
-                                EditorZoomControls(zoomPercent, state, stepButtons = !narrow) { zoomDialog = true }
-                            })
+                        if (bottomSimulation) SimulationControlBar(simulationControls, Modifier.fillMaxWidth(), barTag = null)
                     }
                 }
                 if (!sidebarShown && inspectorSheet) {
                     val dismissInspector = {
+                        // A label typed in the sheet is applied when it closes, not discarded (C155).
+                        inspectorSession.commitLabelDraft()
                         inspectorSession.focus.dismissPresentation(InspectorPresentation.SHEET)
                         keyboardSession?.focus?.dismissPresentation(InspectorPresentation.SHEET)
                         inspectorSheet = false
                         returnFocusToSheetOpener()
                     }
+                    val inspected = state.document.components.filter { it.id in state.selectedIds }
                     EditorModalSheet(onDismissRequest = dismissInspector,
                         modifier = Modifier.exportEditorTestTags().testTag("editor-inspector-sheet"),
-                        containerColor = ChromeColors.Paper, inspector = true) {
+                        containerColor = ChromeColors.Paper, inspector = true,
+                        title = when (inspected.size) {
+                            0 -> strings(Messages.ActionProperties)
+                            1 -> strings("sheet_properties_of", "name" to inspected.single().kind.localizedLabel())
+                            else -> strings("sheet_properties_of", "name" to LocalizedText(Messages.InspectorComponentCount,
+                                quantity = inspected.size.toLong()))
+                        }) {
                         PropertyInspector(state, runStatus, runController::isEventPending, inspectorSession,
                             InspectorPresentation.SHEET, { inspectorSession.applyLabel(state, currentInspectorSession) },
                             keyboardSession, { currentKeyboardSession }, { currentInspectorSession },
-                            Modifier.fillMaxWidth().heightIn(max = 580.dp).imePadding())
+                            Modifier.fillMaxWidth().heightIn(max = 580.dp).imePadding(),
+                            onOpenTool = { id ->
+                                // The tool replaces the sheet: a label typed there is applied first, as when it closes (C155).
+                                inspectorSession.commitLabelDraft()
+                                toolContext.openTool(id).also { if (it) inspectorSheet = false }
+                            })
+                        MultiEditUndoBanner(state, multiEditUndo)
                     }
                 }
                 if (compact && signalSheet) {
                     EditorModalSheet(onDismissRequest = { signalSheet = false; returnFocusToSheetOpener() },
-                        modifier = Modifier.testTag("editor-signal-sheet").exportEditorTestTags(), containerColor = ChromeColors.Paper) {
-                        SignalPanel(state, preferences.signalRadix, signalScroll, editSignalInput)
+                        modifier = Modifier.testTag("editor-signal-sheet").exportEditorTestTags(), containerColor = ChromeColors.Paper,
+                        title = strings(Messages.SignalsHeading)) {
+                        SignalPanel(state, preferences.signalRadix, signalScroll, editSignalInput, wrap = true)
                     }
                 }
                 if (librarySheet) {
                     val dismissLibrary = { librarySheet = false; findActions = false; returnFocusToSheetOpener() }
                     EditorModalSheet(onDismissRequest = dismissLibrary,
-                        modifier = Modifier.exportEditorTestTags().testTag("editor-library-sheet"), containerColor = ChromeColors.Paper) {
+                        modifier = Modifier.exportEditorTestTags().testTag("editor-library-sheet"), containerColor = ChromeColors.Paper,
+                        title = strings(if (findActions) Messages.MenuFindAction else Messages.ActionLibrary)) {
                         key(findActions) {
-                            LibraryPanel(state, searchActions, Modifier.fillMaxWidth().heightIn(max = 620.dp).imePadding(),
-                                findActions = findActions,
+                            LibraryPanel(state, searchActions, libraryExplorer, Modifier.fillMaxWidth().heightIn(max = 620.dp).imePadding(),
+                                findActions = findActions, shareScroll = !sidebarShown,
                                 componentIconColor = componentIconColor,
                                 onExportCircuit = exportCircuit,
                                 onManageLibraries = {
@@ -1262,11 +1464,13 @@ private fun EditorApp(
         }
         if (activeLibraries) ActiveProjectLibrariesDialog(state, assets) { activeLibraries = false }
         if (mergeProject && assets != null) ProjectMergeDialog(state, assets) { mergeProject = false }
-        if (zoomDialog) EditorZoomDialog(state.viewport.view.scale, state::zoomTo) { zoomDialog = false }
+        if (zoomDialog) EditorZoomDialog(state.zoomPercent / 100f, { state.zoomToPercent(it * 100f) }) { zoomDialog = false }
         if (state.documentWritable) key(inspectorSession) {
-            PropertyInspectorDialog(inspectorSession, assets) { edit -> inspectorSession.applyValue(state, currentInspectorSession, edit) }
+            PropertyInspectorDialog(inspectorSession, assets, onClear = { edit -> inspectorSession.clearValue(state, currentInspectorSession, edit) }) { edit ->
+                inspectorSession.applyValue(state, currentInspectorSession, edit)
+            }
         }
-        signalInput?.let { (id, value) -> SignalInputDialog(state, id, value) { signalInput = null } }
+        signalInput?.let { id -> SignalInputDialog(state, id) { signalInput = null } }
         memoryClearId?.let { id ->
             AppAlertDialog(onDismissRequest = { memoryClearId = null },
                 title = { Text(strings(Messages.MemoryClearContents)) },
@@ -1294,6 +1498,9 @@ private fun EditorApp(
         if (autoLabelDialog && state.canAutoLabelPlacement) {
             PlacementAutoLabelDialog(state.placementAutoLabel.orEmpty(), state::setPlacementAutoLabel) { autoLabelDialog = false }
         }
+        if (placementAttributes && state.mode == EditorMode.PLACE) {
+            PlacementToolAttributesSheet(state) { placementAttributes = false }
+        }
         textToolEdit?.let { edit ->
             TextToolDialog(edit, onApply = { state.applyTextToolEdit(edit, it) }, onDismiss = { textToolEdit = null })
         }
@@ -1302,6 +1509,7 @@ private fun EditorApp(
             val value = output?.toULongOrNull()?.toString(16)?.padStart((target.width + 3) / 4, '0') ?: output?.display.orEmpty()
             SequentialHexEditor(
                 target = target,
+                component = state.document.components.firstOrNull { it.id == target.componentId },
                 currentValue = value,
                 onDigits = { digits -> target.digitEvent(digits)?.let { sendComponentEvent(target.componentId, it) } },
                 onDismiss = { sequentialHexTarget = null },
@@ -1337,7 +1545,7 @@ private fun EditorApp(
             )
         }
         state.pendingMatrixPlacement?.let { placement ->
-            MatrixPlacementDialog(placement, state.statusText, state::cancelMatrixPlacement) { columns, rows, dx, dy, label ->
+            MatrixPlacementDialog(placement, state.statusText, state::cancelMatrixPlacement, state.componentRegistry) { columns, rows, dx, dy, label ->
                 state.confirmMatrixPlacement(placement, columns, rows, dx, dy, label)
             }
         }
@@ -1348,13 +1556,11 @@ private fun EditorApp(
                 confirmButton = { TextButton(onClick = state::confirmDebugCopy) { Text(strings("subcircuit_debug_create")) } },
                 dismissButton = { TextButton(onClick = state::cancelDebugCopy) { Text(strings(Messages.ActionCancel)) } })
         }
-        if (diagnosticsDialog) {
-            AppAlertDialog(modifier = Modifier.exportEditorTestTags(), onDismissRequest = { diagnosticsDialog = false }, title = { Text(strings(Messages.SimulationWarningsTitle)) },
-                text = { Text(state.simulation.notices.distinct().joinToString("\n") { strings(it) }, modifier = Modifier.verticalScroll(rememberScrollState())) },
-                confirmButton = { TextButton(onClick = { diagnosticsDialog = false }) { Text(strings(Messages.ActionClose)) } })
-        }
+        if (diagnosticsDialog) SimulationWarningsDialog(state.simulation.notices, state.simulation.noticeSources,
+            onShow = { ids -> state.showComponents(ids).also { if (it) diagnosticsDialog = false } }) { diagnosticsDialog = false }
         if (preferencesSheet) {
-            EditorModalSheet(onDismissRequest = { preferencesSheet = false }, modifier = Modifier.exportEditorTestTags(), containerColor = ChromeColors.Paper) {
+            EditorModalSheet(onDismissRequest = { preferencesSheet = false }, modifier = Modifier.exportEditorTestTags(), containerColor = ChromeColors.Paper,
+                title = strings(Messages.PreferencesTitle)) {
                 EditorPreferencesPanel(preferences, onPreferencesChange, onRestorePreferences,
                     modifier = Modifier.fillMaxWidth().heightIn(max = 640.dp).imePadding(),
                     onOpenProjectOptions = { preferencesSheet = false; simulationOptions = true },
@@ -1367,15 +1573,17 @@ private fun EditorApp(
                 confirmButton = { TextButton(onClick = onDismissPreferenceNotice) { Text(strings(Messages.ActionClose)) } })
         }
         if (simulationOptions) {
-            EditorModalSheet(onDismissRequest = { simulationOptions = false }, modifier = Modifier.exportEditorTestTags(), containerColor = ChromeColors.Paper) {
+            EditorModalSheet(onDismissRequest = { simulationOptions = false }, modifier = Modifier.exportEditorTestTags(), containerColor = ChromeColors.Paper,
+                title = strings(Messages.SimulationOptionsTitle)) {
                 SimulationOptionsPanel(state.project, onApply = { state.applyProject(it); simulationOptions = false },
+                    onApplyMouseMappings = state::applyProject,
                     onDismiss = { simulationOptions = false }, modifier = Modifier.fillMaxWidth().heightIn(max = 600.dp).imePadding(),
                     mouseMappingRegistry = registry)
             }
         }
         if (xmlDialog) {
             XmlDialog(xmlText, onTextChange = { xmlText = it; importLoader.cancel() },
-                loading = importLoader.loading,
+                loading = importLoader.loading, workspaceCopy = workspaceSession != null,
                 onDismiss = { importLoader.cancel(); xmlDialog = false }, onImport = {
                     runController.pause()
                     val sourceXml = xmlText
@@ -1383,13 +1591,20 @@ private fun EditorApp(
                         onComplete = { accepted -> if (accepted) xmlDialog = false })
                 })
         }
+        if (legalDialog) LegalNoticesDialog { legalDialog = false }
+        circuitNameDialog?.let { id ->
+            CircuitNameDialog(state.project, id, onCreate = { state.createCircuit(it) }, onRename = { circuit, name ->
+                state.renameCircuit(circuit, name)
+            }) { circuitNameDialog = null }
+        }
+        removeCircuitDialog?.let { id -> CircuitRemoveDialog(state.project, id, onRemove = { state.removeCircuit(it) }) { removeCircuitDialog = null } }
         if (helpDialog) {
             AppAlertDialog(modifier = Modifier.exportEditorTestTags(), onDismissRequest = { helpDialog = false }, title = { Text(strings(Messages.EditorHelpTitle)) },
                 text = { Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text(strings(Messages.EditorHelpLibrary))
-                    Text(strings(Messages.EditorHelpViewport))
-                    Text(strings(Messages.EditorHelpSimulation))
-                    Text(strings(Messages.EditorHelpEditing))
+                    Text(strings(Messages.TouchHelpLibrary))
+                    Text(strings(Messages.TouchHelpViewport))
+                    Text(strings(Messages.TouchHelpSimulation))
+                    Text(strings(Messages.TouchHelpEditing))
                     Text(strings(Messages.EditorHelpFiles))
                 } },
                 confirmButton = { TextButton(onClick = { helpDialog = false }) { Text(strings(Messages.ActionClose)) } })
@@ -1399,7 +1614,7 @@ private fun EditorApp(
             val sheetModifier = if (keyboardVisible) Modifier.editorDialogBounds() else Modifier
             val swipeToDismiss = tool.id != "appearance"
             EditorModalSheet(onDismissRequest = { activeTool = null }, modifier = sheetModifier.exportEditorTestTags().testTag("editor-tool-sheet"),
-                sheetGesturesEnabled = swipeToDismiss, showDragHandle = swipeToDismiss && !keyboardVisible) {
+                sheetGesturesEnabled = swipeToDismiss, showDragHandle = swipeToDismiss && !keyboardVisible, title = strings(tool.titleText)) {
                 val focusManager = LocalFocusManager.current
                 val keyboardController = LocalSoftwareKeyboardController.current
                 BoxWithConstraints(Modifier.fillMaxWidth().heightIn(max = 700.dp)) {
@@ -1408,6 +1623,8 @@ private fun EditorApp(
                     // rows grow with the font, so the threshold does too (#239, 200%).
                     val compactSearch = tool.id == "accessibility" && keyboardVisible &&
                         maxHeight < 120.dp * LocalDensity.current.fontScale.coerceAtLeast(1f)
+                    val sheetGuard = LocalEditorSheetDismissGuard.current
+                    val inlineNotices = remember(tool.id) { ToolSheetInlineNotices() }
                     val dismiss: @Composable () -> Unit = {
                         TextButton(modifier = Modifier
                             .then(if (compactSearch) Modifier.widthIn(max = maxWidth / 2) else Modifier)
@@ -1416,7 +1633,7 @@ private fun EditorApp(
                             if (keyboardVisible) {
                                 focusManager.clearFocus(force = true)
                                 keyboardController?.hide()
-                            } else activeTool = null
+                            } else if (sheetGuard?.allowsDismissal() != false) activeTool = null
                         }) {
                             Text(strings(if (keyboardVisible) Messages.ActionHideKeyboard else Messages.ActionClose),
                                 maxLines = if (compactSearch) 1 else Int.MAX_VALUE, overflow = TextOverflow.Ellipsis)
@@ -1426,12 +1643,15 @@ private fun EditorApp(
                         Column(Modifier.weight(1f).padding(vertical = if (compactSearch) 0.dp else 12.dp)) {
                             if (!compactSearch) {
                                 Row(Modifier.fillMaxWidth().zIndex(1f), verticalAlignment = Alignment.CenterVertically) {
-                                    Text(strings(tool.titleText), modifier = Modifier.weight(1f), fontWeight = FontWeight.Bold,
+                                    Text(strings(tool.titleText), modifier = Modifier.weight(1f).semantics { heading() }, fontWeight = FontWeight.Bold,
                                         maxLines = 1, overflow = TextOverflow.Ellipsis)
                                     dismiss()
                                 }
                             }
-                            CompositionLocalProvider(LocalCompactExplorerKeyboard provides compactSearch) {
+                            val sheetNotice = toolSheetNotice?.takeIf { it.toolId == tool.id }
+                            ToolSheetNoticeBanner(sheetNotice, inlineNotices) { toolSheetNotice = null }
+                            CompositionLocalProvider(LocalCompactExplorerKeyboard provides compactSearch,
+                                LocalToolSheetInlineNotices provides inlineNotices, LocalToolSheetNotice provides sheetNotice) {
                                 if (tool.requiresProjectGraph) key(tool.id, toolContext.documentIdentity) {
                                     if (!toolContext.projectExports.available) Text(strings("project_graph_unavailable"))
                                     else tool.content(toolContext)
@@ -1453,7 +1673,15 @@ private fun EditorApp(
                 }
             }
         }
-        if (state.importReportVisible) state.importReport?.let { ImportReportDialog(it, state::dismissImportReport) }
+        if (state.importReportVisible) state.importReport?.let { report ->
+            // Show selects a group's components in its circuit and frames them.
+            ImportReportDialog(report, state::dismissImportReport, state.project) { circuit, ids ->
+                state.dismissImportReport()
+                state.selectCircuit(circuit)
+                ids.forEachIndexed { index, id -> state.select(id, additive = index > 0) }
+                state.fitSelected()
+            }
+        }
         state.importErrorText?.let { notice ->
             val message = strings(notice)
             AppAlertDialog(modifier = Modifier.exportEditorTestTags(), onDismissRequest = state::dismissImportError,
@@ -1499,112 +1727,10 @@ private fun EditorApp(
 }}
 
 @Composable
-private fun LibraryPanel(
-    state: EditorState,
-    searchActions: List<EditorSearchAction>,
-    modifier: Modifier = Modifier,
-    findActions: Boolean = false,
-    onManageLibraries: () -> Unit,
-    onExportCircuit: ((String) -> Unit)?,
-    onChoose: () -> Unit = {},
-    componentIconColor: Int? = null,
-) {
-    val strings = rememberLocalizer()
-    var section by remember { mutableStateOf(if (findActions) "search" else "project") }
-    val componentGroups = remember(state.componentRegistry, state.project.libraries) {
-        registryComponentGroups(state.componentRegistry, state.project)
-    }
-    Column(modifier.background(ChromeColors.Panel).semantics { contentDescription = strings(Messages.A11yLibrary) }) {
-        Row(Modifier.fillMaxWidth().background(ChromeColors.Heading)) {
-            ExplorerTab(strings(Messages.ActionCircuits), strings(Messages.A11yShowTree), section == "project") { section = "project" }
-            ExplorerTab(strings(Messages.ActionLibrary), strings(Messages.A11yShowComponents), section == "library") { section = "library" }
-            ExplorerTab(strings(Messages.ActionSearch), strings(Messages.A11ySearchAll), section == "search") { section = "search" }
-        }
-        HorizontalDivider(color = ChromeColors.Divider)
-        when (section) {
-            "project" -> ProjectNavigationPanel(state.project, state.activeTarget,
-                onNavigate = { state.navigate(it); onChoose() },
-                onCreate = { state.createCircuit(it) }, onRename = { id, name -> state.renameCircuit(id, name) },
-                onMove = { id, direction -> state.moveCircuit(id, direction) }, onDelete = { state.removeCircuit(it) },
-                onSetMain = { state.setMainCircuit(it) }, modifier = Modifier.weight(1f).fillMaxWidth(),
-                onExport = onExportCircuit)
-            "search" -> {
-                val libraryEntries = remember(strings.language, componentGroups) {
-                    componentGroups.flatMap { (library, kinds) -> kinds.map {
-                        SearchLibraryEntry(it, it.localizedLabel().resolve(strings.language), strings(library))
-                    } }
-                }
-                val commands = searchActions.map { it.command }
-                val project = state.project
-                var searchIndex by remember { mutableStateOf<ProjectSearchIndex?>(null) }
-                LaunchedEffect(project, libraryEntries, commands, strings.language) {
-                    searchIndex = withContext(Dispatchers.Default) { ProjectSearchIndex.build(project, libraryEntries, commands, strings.language) }
-                }
-                searchIndex?.let { index ->
-                    ProjectSearchPanel(index, onNavigate = { state.navigate(it); onChoose() },
-                        onInsert = { state.place(it); onChoose() }, onCommand = { command ->
-                            searchActions.firstOrNull { it.command.id == command && it.action.enabled }?.let {
-                                onChoose()
-                                it.action.onClick()
-                            }
-                        },
-                        modifier = Modifier.weight(1f).fillMaxWidth(),
-                        initialScope = if (findActions) ProjectSearchScope.COMMANDS else ProjectSearchScope.ALL,
-                        requestFocus = findActions,
-                    )
-                } ?: Text(strings(Messages.SearchPreparing), modifier = Modifier.weight(1f).padding(12.dp))
-            }
-            else -> Column(Modifier.weight(1f).verticalScroll(rememberScrollState())) {
-                TextButton(onClick = onManageLibraries, modifier = Modifier.fillMaxWidth().heightIn(min = 40.dp),
-                    contentPadding = PaddingValues(horizontal = 14.dp)) {
-                    Text(strings("active_library_manage") + "…", fontSize = 13.sp, color = ChromeColors.Accent,
-                        modifier = Modifier.fillMaxWidth())
-                }
-                componentGroups.forEach { (group, kinds) ->
-                    PanelHeading(strings(group))
-                    kinds.forEach { kind -> LibraryRow(kind, kind.localizedLabel().resolve(strings.language),
-                        state.mode == EditorMode.PLACE && state.placingKind == kind, strings(Messages.A11yInsertComponent, "name" to kind.localizedLabel()),
-                        componentIconColor) {
-                        state.place(kind); onChoose()
-                    } }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun androidx.compose.foundation.layout.RowScope.ExplorerTab(label: String, description: String, selected: Boolean, onClick: () -> Unit) {
-    Column(Modifier.weight(1f).heightIn(min = 40.dp).background(if (selected) ChromeColors.Panel else Color.Transparent)
-        .clickable(role = androidx.compose.ui.semantics.Role.Tab, onClick = onClick)
-        .semantics { contentDescription = description; this.selected = selected },
-        horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-        Text(label, fontSize = 13.sp, fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal,
-            color = if (selected) ChromeColors.Ink else ChromeColors.Muted, maxLines = 1, overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.padding(horizontal = 4.dp, vertical = 10.dp))
-        Box(Modifier.fillMaxWidth(0.6f).height(2.dp).background(if (selected) ChromeColors.Accent else Color.Transparent))
-    }
-}
-
-@Composable
-private fun LibraryRow(kind: ComponentKind, label: String, selected: Boolean, description: String, iconColor: Int?, onClick: () -> Unit) {
-    Row(Modifier.fillMaxWidth().heightIn(min = 40.dp)
-        .background(if (selected) ChromeColors.Selected else Color.Transparent).clickable(onClick = onClick)
-        .padding(start = 14.dp, end = 8.dp).semantics { contentDescription = description },
-        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-        Box(Modifier.size(24.dp), contentAlignment = Alignment.Center) {
-            val icon = kind.editorIcon()
-            if (icon != null) EditorIconGlyph(icon, Modifier.size(20.dp), tint = iconColor.editorColorOr(ChromeColors.Ink))
-            else Text(kind.shortSymbol(), color = iconColor.editorColorOr(Color(0xFF167624)), fontSize = 10.sp, fontWeight = FontWeight.Bold, maxLines = 1)
-        }
-        Text(label, fontSize = 13.sp, maxLines = 2, overflow = TextOverflow.Ellipsis, color = ChromeColors.Ink)
-    }
-}
-
-@Composable
 private fun PanelHeading(title: String) {
+    // A heading, so TalkBack's heading navigation moves between the library's groups and past the inspector title.
     Text(title, fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = ChromeColors.Ink, maxLines = 1,
-        overflow = TextOverflow.Ellipsis, modifier = Modifier.fillMaxWidth()
+        overflow = TextOverflow.Ellipsis, modifier = Modifier.fillMaxWidth().semantics { heading() }
         .background(ChromeColors.Heading).padding(horizontal = 10.dp, vertical = 6.dp))
 }
 
@@ -1615,52 +1741,64 @@ private fun EditorHeader(
     project: String?,
     saveState: String?,
     busy: Boolean,
-    onTitleClick: (() -> Unit)?,
+    /** The circuit picker the title opens, as Evolution's header circuit button: expanded, then its dismissal. */
+    circuitPicker: @Composable (Boolean, () -> Unit) -> Unit,
     menus: List<EditorMenu>,
+    compactSaveState: String? = null,
     menuBar: Boolean,
     leading: EditorToolbarAction,
     trailing: List<EditorToolbarAction>,
     singleLine: Boolean = false,
-    simulationLabel: (@Composable () -> Unit)? = null,
+    /** The tick counter and simulation controls, which share with the title what the menus and undo/redo leave. */
+    simulation: (@Composable () -> Unit)? = null,
 ) {
     val strings = rememberLocalizer()
+    var picker by remember { mutableStateOf(false) }
     Column(Modifier.fillMaxWidth().background(ChromeColors.Bar)) {
         Row(Modifier.fillMaxWidth().heightIn(min = ChromeBarHeight).testTag("editor-project-toolbar").padding(horizontal = 4.dp),
             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(2.dp)) {
             ChromeButton(leading)
             if (menuBar) ChromeMenuBar(menus) else ChromeCompactMenu(menus, strings("a11y_open_menu"), strings("menu_back"))
-            Row(Modifier.weight(1f).padding(horizontal = 8.dp)
-                .then(if (onTitleClick != null) Modifier.clickable(role = androidx.compose.ui.semantics.Role.Button,
-                    onClickLabel = strings("a11y_open_projects"), onClick = onTitleClick) else Modifier),
-                verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                // Line heights follow each text's own size: the inherited body line height
-                // doubled the header at large font scales and left a short window no canvas.
-                val titleText = @Composable { modifier: Modifier ->
-                    Text(title, fontSize = 14.sp, lineHeight = 1.25.em, fontWeight = FontWeight.SemiBold, color = ChromeColors.Ink,
-                        maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = modifier)
-                }
-                // The project name and its save state stay separate texts for assistive technology.
-                val details = @Composable { scope: RowScope ->
-                    if (!project.isNullOrBlank()) Text(project, fontSize = 11.sp, lineHeight = 1.25.em, color = ChromeColors.Muted,
-                        maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = with(scope) { Modifier.weight(1f, fill = false) })
-                    if (!saveState.isNullOrBlank()) Text((if (project.isNullOrBlank()) "" else " · ") + saveState,
-                        fontSize = 11.sp, lineHeight = 1.25.em, color = ChromeColors.Muted, maxLines = 1)
-                }
-                if (singleLine) {
-                    // A short landscape window keeps the header to one row of controls.
-                    Row(Modifier.weight(1f, fill = false), verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        titleText(Modifier.weight(1f, fill = false))
-                        if (!project.isNullOrBlank() || !saveState.isNullOrBlank()) Row(Modifier.weight(1f, fill = false),
-                            verticalAlignment = Alignment.CenterVertically) { details(this) }
+            // The menus and undo/redo are measured first and keep the edges; the simulation controls take the width
+            // they need from the rest, and the title what is left.
+            Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                // The whole title, padding included, is the circuit picker's 48 dp target; the simulation group leaves
+                // it that and, unless a whole count needs it, the chevron's room (HeaderTitleMinWidth). Projects… in the
+                // picker returns to the project list.
+                Box(Modifier.weight(1f)) {
+                Row(Modifier.fillMaxWidth().heightIn(min = ChromeTouchTarget).testTag("editor-header-title")
+                    .clickable(role = androidx.compose.ui.semantics.Role.Button,
+                        onClickLabel = strings("a11y_switch_circuit")) { picker = true }
+                    .padding(horizontal = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    // Line heights follow each text's own size: the inherited body line height
+                    // doubled the header at large font scales and left a short window no canvas.
+                    val titleText = @Composable { modifier: Modifier -> HeaderTitleText(title, modifier) }
+                    // The project name and its save state stay separate texts for assistive technology.
+                    val details = @Composable { scope: RowScope ->
+                        if (!project.isNullOrBlank()) Text(project, fontSize = 11.sp, lineHeight = 1.25.em, color = ChromeColors.Muted,
+                            maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = with(scope) { Modifier.weight(1f, fill = false) })
+                        if (!saveState.isNullOrBlank()) Text((if (project.isNullOrBlank()) "" else " · ") + saveState,
+                            fontSize = 11.sp, lineHeight = 1.25.em, color = ChromeColors.Muted, maxLines = 1)
                     }
-                } else Column(Modifier.weight(1f, fill = false)) {
-                    titleText(Modifier)
-                    if (!project.isNullOrBlank() || !saveState.isNullOrBlank()) Row { details(this) }
+                    if (singleLine) {
+                        // A short landscape window keeps the header to one row of controls.
+                        Row(Modifier.weight(1f, fill = false), verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                            titleText(Modifier.weight(1f, fill = false))
+                            if (!project.isNullOrBlank() || !saveState.isNullOrBlank()) Row(Modifier.weight(1f, fill = false),
+                                verticalAlignment = Alignment.CenterVertically) { details(this) }
+                        }
+                    } else Column(Modifier.weight(1f, fill = false)) {
+                        titleText(Modifier)
+                        if (!project.isNullOrBlank() || !saveState.isNullOrBlank()) HeaderDetails(project, saveState, compactSaveState)
+                    }
+                    if (busy) CircularProgressIndicator(Modifier.size(14.dp), strokeWidth = 2.dp)
                 }
-                if (busy) CircularProgressIndicator(Modifier.size(14.dp), strokeWidth = 2.dp)
+                circuitPicker(picker) { picker = false }
+                }
+                simulation?.invoke()
             }
-            simulationLabel?.invoke()
             trailing.forEach { action ->
                 if (action.separator) Box(Modifier.padding(horizontal = 4.dp).width(1.dp).height(24.dp).background(ChromeColors.Divider))
                 else ChromeButton(action)
@@ -1670,22 +1808,170 @@ private fun EditorHeader(
     }
 }
 
+/**
+ * The project name and its save state, on one line when both fit. Otherwise the state moves to a second line, so a
+ * long state ("Not saved to Adder.circ") never squeezes the name out. A state too wide even for its own line shows as
+ * [compactSaveState] ("Not saved to file"), still read in full by assistive technology. They stay separate texts.
+ */
 @Composable
-private fun EditorStatusText(text: String, announce: Boolean, modifier: Modifier = Modifier) {
-    Text(text, fontSize = 11.sp, lineHeight = 1.25.em, color = ChromeColors.Ink, maxLines = 1, overflow = TextOverflow.Ellipsis,
-        modifier = modifier.testTag("editor-status").semantics { if (announce) liveRegion = LiveRegionMode.Polite })
-}
-
-@Composable
-private fun EditorZoomControls(percent: Int, state: EditorState, stepButtons: Boolean = true, onSetZoom: () -> Unit) {
-    val strings = rememberLocalizer()
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        if (stepButtons) ChromeButton(EditorToolbarAction("zoom-out", "−", strings(Messages.A11yZoomOut), icon = EditorIcon.ZOOM_OUT) { state.zoomBy(1f / 1.25f) }, size = 32.dp)
-        ChromeButton(EditorToolbarAction("zoom-exact", "$percent%",
-            strings(Messages.A11yZoomExact, "percent" to percent), onClick = onSetZoom), size = 32.dp)
-        if (stepButtons) ChromeButton(EditorToolbarAction("zoom-in", "+", strings(Messages.A11yZoomIn), icon = EditorIcon.ZOOM_IN) { state.zoomBy(1.25f) }, size = 32.dp)
+private fun HeaderDetails(project: String?, saveState: String?, compactSaveState: String?) = BoxWithConstraints {
+    val measurer = rememberTextMeasurer()
+    val style = LocalTextStyle.current.merge(TicksLabelStyle)
+    val available = constraints.maxWidth
+    val compact = saveState != null && compactSaveState != null && constraints.hasBoundedWidth &&
+        remember(saveState, style, measurer) { measurer.measure(saveState, style, maxLines = 1).size.width } > available
+    val text = @Composable { value: String, modifier: Modifier ->
+        Text(value, style = TicksLabelStyle, color = ChromeColors.Muted, maxLines = 1,
+            overflow = TextOverflow.Ellipsis, modifier = modifier)
+    }
+    val both = !project.isNullOrBlank() && !saveState.isNullOrBlank()
+    Layout(modifier = Modifier.testTag("editor-header-details"), content = {
+        if (!project.isNullOrBlank()) text(project, Modifier.testTag("editor-header-project"))
+        if (both) text(" · ", Modifier.clearAndSetSemantics {})
+        if (!saveState.isNullOrBlank()) {
+            if (compact) text(compactSaveState!!, Modifier.testTag("editor-header-save-state").semantics { contentDescription = saveState })
+            else text(saveState, Modifier.testTag("editor-header-save-state"))
+        }
+    }) { measurables, constraints ->
+        val placeables = measurables.map { it.measure(constraints.copy(minWidth = 0, minHeight = 0)) }
+        val oneLine = !both || placeables.sumOf { it.width } <= constraints.maxWidth
+        if (oneLine) {
+            layout(placeables.sumOf { it.width }.coerceAtLeast(constraints.minWidth), placeables.maxOf { it.height }) {
+                var x = 0
+                placeables.forEach { it.placeRelative(x, 0); x += it.width }
+            }
+        } else {
+            val (name, _, state) = placeables
+            layout(maxOf(name.width, state.width).coerceAtLeast(constraints.minWidth), name.height + state.height) {
+                name.placeRelative(0, 0)
+                state.placeRelative(0, name.height)
+            }
+        }
     }
 }
+
+private val TicksLabelStyle = TextStyle(fontSize = 11.sp, lineHeight = 1.25.em)
+private val TicksLabelPadding = 6.dp
+/** The count the header keeps room for beside its simulation bar: seven digits. */
+private const val TicksLabelReserveCount = 8_888_888L
+
+/** The width of the tick counter showing [text], in the current font. */
+@Composable
+private fun ticksLabelWidth(text: String): Dp {
+    val measurer = rememberTextMeasurer()
+    val density = LocalDensity.current
+    val style = LocalTextStyle.current.merge(TicksLabelStyle)
+    return remember(text, measurer, density, style) {
+        with(density) { measurer.measure(text, style, maxLines = 1).size.width.toDp() } + TicksLabelPadding * 2
+    }
+}
+
+/** The tick counter of the toolbar and the phone bottom bar, which leave it the width it needs. */
+@Composable
+private fun TicksText(text: String) {
+    Text(text, fontSize = TicksLabelStyle.fontSize, lineHeight = TicksLabelStyle.lineHeight, color = ChromeColors.Muted,
+        maxLines = 1, overflow = TextOverflow.Ellipsis,
+        modifier = Modifier.padding(horizontal = TicksLabelPadding).testTag("editor-simulation-ticks"))
+}
+
+/**
+ * The header's tick counter, [text]. Where its parent leaves less room than that needs, it shows the [count] alone, which
+ * assistive technology still reads as [text]; only a count wider than that room is ellipsized.
+ */
+@Composable
+private fun TicksCounter(text: String, count: Long) {
+    val whole = ticksLabelWidth(text)
+    BoxWithConstraints {
+        val compact = maxWidth < whole
+        Text(if (compact) count.toString() else text, fontSize = TicksLabelStyle.fontSize, lineHeight = TicksLabelStyle.lineHeight,
+            color = ChromeColors.Muted, maxLines = 1, overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.padding(horizontal = TicksLabelPadding).testTag("editor-simulation-ticks")
+                .then(if (compact) Modifier.semantics { contentDescription = text } else Modifier))
+    }
+}
+
+/**
+ * The header's simulation group: the tick counter, then the simulation bar, in a width that the menus and undo/redo
+ * fix. The bar is measured first: never narrower than Run, Tick, Reset and its overflow need at 48 dp
+ * ([SimulationControlBarMinWidth]), and above that at most [maxBarWidth] and never into the [counterReserve] the
+ * counter needs for seven digits or the [titleReserve] the title keeps. Its width therefore depends on the window and
+ * font only, and a growing count never moves a control into the overflow. The counter takes what the bar and the
+ * title's 48 dp target leave, shortened to the count alone where that is less than it needs. One tagged node holds both, as
+ * in the toolbar and the phone bottom bar.
+ */
+@Composable
+private fun HeaderSimulationControls(
+    counter: @Composable () -> Unit,
+    controls: SimulationControls,
+    maxBarWidth: Dp,
+    counterReserve: Dp,
+    titleReserve: Dp = HeaderTitleMinWidth,
+) {
+    Layout(
+        content = {
+            counter()
+            SimulationControlBar(controls, barTag = null)
+        },
+        modifier = Modifier.testTag("editor-simulation-toolbar"),
+    ) { measurables, constraints ->
+        val loose = constraints.copy(minWidth = 0, minHeight = 0)
+        val width = loose.maxWidth
+        val title = titleReserve.roundToPx()
+        val preferred = minOf(maxBarWidth.roundToPx(), width - counterReserve.roundToPx() - title)
+        val barMax = preferred.coerceAtLeast(simulationControlBarMinWidthPx(this)).coerceAtMost(width)
+        val bar = measurables[1].measure(loose.copy(maxWidth = barMax))
+        // The bar never grows into the picker chevron's part of the reserve, but a whole count may: at the bar's floor
+        // the title keeps its 48 dp target and drops the chevron (HeaderTitleText).
+        val target = minOf(title, ChromeTouchTarget.roundToPx())
+        val label = measurables[0].measure(loose.copy(maxWidth = (width - bar.width - target).coerceAtLeast(0)))
+        val height = maxOf(bar.height, label.height)
+        layout(label.width + bar.width, height) {
+            label.placeRelative(0, (height - label.height) / 2)
+            bar.placeRelative(label.width, (height - bar.height) / 2)
+        }
+    }
+}
+
+private val StatusFontSize = 11.sp
+private const val StatusLineHeight = 1.25f
+
+/**
+ * How many status lines, up to [limit], fit the 48 dp the row's buttons already take, so a wrapped hint never makes
+ * the bars taller and the circuit smaller: three at the default font, one at 200 %.
+ */
+@Composable
+private fun statusLines(limit: Int): Int {
+    val line = with(LocalDensity.current) { (StatusFontSize * StatusLineHeight).toDp() }
+    return (ChromeTouchTarget / line).toInt().coerceIn(1, limit)
+}
+
+/**
+ * The status line. [maxLines] is 3 on the phone bottom bar, where it shares a row with the counter, Signals and the
+ * zoom ([statusLines]).
+ */
+@Composable
+private fun EditorStatusText(text: String, announce: Boolean, modifier: Modifier = Modifier, maxLines: Int = 1) {
+    // A notice cut to its lines opens to its whole text on a tap and closes on the next, or when another arrives.
+    var expanded by remember(text) { mutableStateOf(false) }
+    var cut by remember(text) { mutableStateOf(false) }
+    val strings = rememberLocalizer()
+    val openable = cut || expanded
+    Text(text, fontSize = StatusFontSize, lineHeight = StatusLineHeight.em, color = ChromeColors.Ink,
+        maxLines = if (expanded) Int.MAX_VALUE else maxLines, overflow = TextOverflow.Ellipsis,
+        onTextLayout = { if (!expanded) cut = it.hasVisualOverflow },
+        modifier = modifier
+            .then(if (expanded) Modifier.heightIn(max = StatusExpandedMaxHeight).verticalScroll(rememberScrollState()) else Modifier)
+            .then(if (openable) Modifier.clickable(role = androidx.compose.ui.semantics.Role.Button,
+                onClickLabel = strings(if (expanded) "status_line_collapse" else "status_line_expand")) { expanded = !expanded }
+                .heightIn(min = ChromeTouchTarget).wrapContentHeight() else Modifier)
+            .testTag("editor-status").semantics {
+                if (announce) liveRegion = LiveRegionMode.Polite
+                if (openable) stateDescription = strings(if (expanded) "status_line_expanded" else "status_line_collapsed")
+            })
+}
+
+/** An opened status notice grows the bar up to this height, then scrolls. */
+private val StatusExpandedMaxHeight = 180.dp
 
 internal fun formatHertz(value: Double): String =
     if (value == kotlin.math.floor(value) && value < 1e9) value.toLong().toString() else value.toString()
@@ -1702,6 +1988,8 @@ private fun PropertyInspector(
     currentKeyboardSession: () -> KeyboardInspectorSession?,
     currentPropertySession: () -> PropertyInspectorSession,
     modifier: Modifier = Modifier,
+    /** Opens an editor tool by id (a large value's dedicated editor); false when it is unavailable. */
+    onOpenTool: (String) -> Boolean = { false },
 ) {
     if (!state.documentWritable) { Text(rememberLocalizer()("document_read_only_preserved"), modifier = modifier.padding(12.dp)); return }
     val circuit = state.document.id
@@ -1711,14 +1999,20 @@ private fun PropertyInspector(
     val send: (String, dev.logisim.mobile.core.ComponentEvent) -> Boolean = { id, event ->
         state.debugCopyIdentity === debugCopyIdentity && state.sendComponentEvent(id, event, path, circuit, identity)
     }
-    Column(modifier.background(ChromeColors.Surface)) {
+    BoxWithConstraints(modifier.background(ChromeColors.Surface)) {
+    // Docked beside the library, the I/O controls take at most a quarter of the inspector (they scroll within it),
+    // so a Matrix Keypad or a Joystick leaves room for the label and the attribute table (C15).
+    val ioMax = if (presentation == InspectorPresentation.INLINE && constraints.hasBoundedHeight) {
+        minOf(260.dp, maxOf(96.dp, maxHeight / 4))
+    } else 260.dp
+    Column {
         state.selected?.takeIf { dev.logisim.mobile.core.IoLibrary.isInteractive(it.kind) &&
             (state.activeInstancePath.isNotEmpty() || state.activeCircuitName == state.project.mainCircuitName) }?.let { component ->
             key(identity, circuit, path, component.id) {
                 IoInputPanel(component, state.simulation.componentStates[component.id], { send(component.id, it) },
                     simulationStatus, isEventPending, presentation, keyboardSession, currentKeyboardSession,
                     { currentPropertySession().focus },
-                    Modifier.fillMaxWidth().heightIn(max = 260.dp))
+                    Modifier.fillMaxWidth().heightIn(max = ioMax).testTag("inspector-io-panel"))
             }
         }
         state.selected?.let { component ->
@@ -1737,84 +2031,69 @@ private fun PropertyInspector(
             onOpenField = { field ->
                 if (session.isCurrent(state, currentPropertySession())) session.open(field, keyboardSession?.focus)
             },
+            onChooseOption = { field, value -> session.applyOption(state, currentPropertySession(), field, value) },
             modifier = Modifier.fillMaxWidth().weight(1f, fill = false),
+            onOpenEditor = { toolId -> session.isCurrent(state, currentPropertySession()) && onOpenTool(toolId) },
+            onClearLabels = { session.clearLabels(state, currentPropertySession()) },
         )
     }
-}
-
-@Composable
-private fun SimulationDiagnostics(diagnostics: List<LocalizedText>) {
-    val strings = rememberLocalizer()
-    val messages = diagnostics.distinct().map { strings(it) }
-    if (messages.isEmpty()) return
-    var expanded by remember { mutableStateOf(false) }
-    Row(Modifier.fillMaxWidth().background(ChromeColors.Warning).padding(start = 8.dp),
-        verticalAlignment = Alignment.CenterVertically) {
-        Text(messages.first(), fontSize = 12.sp, maxLines = 2, overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.weight(1f).semantics { contentDescription = strings(Messages.A11ySimulationWarning, "message" to messages.first()) })
-        SmallAction(strings.plural(Messages.SimulationWarningCount, messages.size.toLong()), strings.plural(Messages.A11ySimulationWarningCount, messages.size.toLong())) { expanded = true }
-    }
-    if (expanded) {
-        AppAlertDialog(modifier = Modifier.exportEditorTestTags(), onDismissRequest = { expanded = false }, title = { Text(strings(Messages.SimulationWarningsTitle)) },
-            text = { Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text(strings(Messages.SimulationWarningsExplanation))
-                messages.forEach { Text(it) }
-            } },
-            confirmButton = { TextButton(onClick = { expanded = false }) { Text(strings(Messages.ActionClose)) } })
     }
 }
 
+/**
+ * Evolution's Pin.EditDecimal and Pin.EditFloat for a multi-bit input: the current value in the pin's radix, selected
+ * and focused so typing replaces it, the range or the error under the field, and Done applies. It drives the
+ * simulation only; the document does not change.
+ */
 @Composable
-private fun SignalPanel(state: EditorState, radix: EditorSignalRadix, scroll: ScrollState, onEditInput: (String, String) -> Unit) {
-    val strings = rememberLocalizer()
-    val components = state.document.components.filter {
-        it.kind == ComponentKind.INPUT || it.kind == ComponentKind.OUTPUT ||
-            it.kind.name in setOf("BUTTON", "PROBE", "HEX_DISPLAY", "LED", "REGISTER", "COUNTER")
-    }.sortedBy { if (it.kind == ComponentKind.INPUT || it.kind == ComponentKind.BUTTON) 0 else 1 }
-    if (components.isEmpty()) return
-    Row(Modifier.fillMaxWidth().testTag("editor-signal-panel").background(ChromeColors.Paper).horizontalScroll(scroll).padding(horizontal = 6.dp),
-        horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-        Text(strings(Messages.SignalsHeading), fontSize = 11.sp, color = ChromeColors.Muted)
-        components.forEach { component ->
-            val bit = state.simulation.componentValues[component.id] ?: LogicValue.UNKNOWN
-            val characters = currentValueCharacters()
-            val value = state.simulation.vectorValues[component.id]?.let { formatEditorSignal(it, radix, characters) }
-                ?: bit.display(characters)
-            val label = component.label.ifBlank { component.kind.localizedLabel().resolve(strings.language) }
-            if (component.kind == ComponentKind.BUTTON || component.kind == ComponentKind.INPUT &&
-                (state.activeInstancePath.isNotEmpty() || state.activeCircuitName == state.project.mainCircuitName)) {
-                OutlinedButton(onClick = {
-                    if (component.width == 1) state.activateComponent(component.id)
-                    else onEditInput(component.id, state.simulation.vectorValues[component.id]?.toULongOrNull()?.toString() ?: "0")
-                }, shape = RoundedCornerShape(1.dp),
-                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
-                    modifier = Modifier.heightIn(min = 48.dp).semantics { contentDescription = strings(Messages.A11yToggleInput, "name" to label, "value" to value) }) {
-                    Text("$label $value", Modifier.clearAndSetSemantics {}, fontSize = 12.sp)
-                }
-            } else {
-                Text(strings(Messages.SimulationSignalValue, "name" to label, "value" to value), color = if (bit == LogicValue.HIGH) { if (LocalEditorDarkTheme.current) Color(0xFF66CC66) else Color(0xFF008000) } else ChromeColors.Ink,
-                    fontWeight = FontWeight.Bold, fontSize = 12.sp,
-                    modifier = Modifier.background(ChromeColors.Surface).border(1.dp, ChromeColors.Divider).padding(10.dp)
-                        .semantics { contentDescription = strings(Messages.A11ySignal, "name" to label, "value" to value) })
-            }
-        }
-    }
-}
-
-@Composable
-private fun SignalInputDialog(state: EditorState, id: String, initialValue: String, onDismiss: () -> Unit) {
+private fun SignalInputDialog(state: EditorState, id: String, onDismiss: () -> Unit) {
     val strings = rememberLocalizer()
     val component = state.document.components.firstOrNull { it.id == id }
-    var text by remember(id) { mutableStateOf(initialValue) }
-    val parsed = if (text.startsWith("0x", ignoreCase = true)) text.drop(2).toULongOrNull(16) else text.toULongOrNull()
-    val valid = parsed != null && component != null && (component.width == 64 || parsed < (1uL shl component.width))
-    AppAlertDialog(modifier = Modifier.exportEditorTestTags(), onDismissRequest = onDismiss, title = { Text(strings(Messages.InputValueTitle)) },
-        text = { OutlinedTextField(text, { text = it }, label = { Text(strings(Messages.InputNumberFormat)) },
-            supportingText = { Text(strings(Messages.InputBits, "count" to (component?.width ?: 1))) }, isError = !valid, singleLine = true) },
-        confirmButton = { TextButton(enabled = valid, onClick = {
-            parsed?.let { state.setInputValue(id, it) }
-            onDismiss()
-        }) { Text(strings(Messages.ActionApply)) } },
+    if (component == null) {
+        LaunchedEffect(id) { onDismiss() }
+        return
+    }
+    val radix = state.componentRegistry.attributes(component).string("radix") ?: "2"
+    val tristate = PinPoke.behavior(component.attributes) == "tristate"
+    val codec = remember(component.width, radix, tristate) { InputValueCodec(component.width, radix, tristate) }
+    val focus = remember(id) { FocusRequester() }
+    var field by remember(id, codec) {
+        val current = state.simulation.vectorValues[id] ?: LogicVector.low(component.width)
+        val text = codec.format(current)
+        mutableStateOf(TextFieldValue(text, TextRange(0, text.length)))
+    }
+    val parsed = codec.parse(field.text)
+    val value = (parsed as? InputValueParse.Value)?.vector
+    fun apply() {
+        if (value == null) return
+        state.setInputValue(id, value)
+        onDismiss()
+    }
+    val label = component.label.ifBlank { strings(component.kind.localizedLabel()) }
+    val keyboard = codec.keyboard
+    AppAlertDialog(modifier = Modifier.exportEditorTestTags().testTag("input-value-dialog"), onDismissRequest = onDismiss,
+        title = { Text(strings("input_value_dialog_title", "label" to label, "radix" to strings(codec.radixName), "width" to component.width)) },
+        text = {
+            OutlinedTextField(field, { field = it }, label = { Text(strings("input_value_field")) }, singleLine = true,
+                isError = parsed is InputValueParse.Invalid,
+                supportingText = { Text(strings((parsed as? InputValueParse.Invalid)?.error ?: codec.hint)) },
+                // Signed and float values need '-', hexadecimal its letters and a tri-state pin x: a text keyboard.
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = if (keyboard == InputValueKeyboard.NUMBER) KeyboardType.Number else KeyboardType.Ascii,
+                    capitalization = if (keyboard == InputValueKeyboard.HEXADECIMAL) KeyboardCapitalization.Characters else KeyboardCapitalization.None,
+                    autoCorrectEnabled = false, imeAction = ImeAction.Done),
+                keyboardActions = KeyboardActions(onDone = { apply() }),
+                modifier = Modifier.fillMaxWidth().focusRequester(focus).testTag("input-value-field").onPreviewKeyEvent { event ->
+                    if (event.key == Key.Enter || event.key == Key.NumPadEnter) {
+                        if (event.type == KeyEventType.KeyUp) apply()
+                        true
+                    } else false
+                })
+            LaunchedEffect(id) { focus.requestFocus() }
+        },
+        confirmButton = { TextButton(enabled = value != null, onClick = ::apply, modifier = Modifier.testTag("input-value-apply")) {
+            Text(strings(Messages.ActionApply))
+        } },
         dismissButton = { TextButton(onClick = onDismiss) { Text(strings(Messages.ActionCancel)) } })
 }
 
@@ -1828,10 +2107,18 @@ private fun SmallAction(label: String, description: String, enabled: Boolean = t
 
 @Suppress("DEPRECATION")
 @Composable
-private fun XmlDialog(text: String, onTextChange: (String) -> Unit, onDismiss: () -> Unit, onImport: () -> Unit, loading: Boolean = false) {
+private fun XmlDialog(text: String, onTextChange: (String) -> Unit, onDismiss: () -> Unit, onImport: () -> Unit, loading: Boolean = false,
+                      workspaceCopy: Boolean = false) {
     val strings = rememberLocalizer()
     val clipboard = LocalClipboardManager.current
     var editing by remember { mutableStateOf(false) }
+    // The export the dialog opened with: importing it unchanged would only duplicate the project, so Import waits
+    // for an edit or a paste and Copy leads until then.
+    val original = remember { text }
+    val changed = text != original
+    // Paste replaces the whole text; one step back restores what it replaced.
+    var beforePaste by remember { mutableStateOf<String?>(null) }
+    var pasteEmpty by remember { mutableStateOf(false) }
     // Beyond the platform's narrow default width, so Import XML and Close share one row; on a
     // 568 x 320 dp window at 200% two rows left the scrolling body 12 dp (#239).
     AppAlertDialog(modifier = Modifier.padding(horizontal = 16.dp).editorDialogBounds().exportEditorTestTags(),
@@ -1842,47 +2129,47 @@ private fun XmlDialog(text: String, onTextChange: (String) -> Unit, onDismiss: (
                 Text(strings(Messages.ProjectXmlHelp),
                     style = MaterialTheme.typography.bodySmall)
                 if (editing && text.length <= 16_384) {
-                    OutlinedTextField(value = text, onValueChange = onTextChange, label = { Text(strings(Messages.ProjectXmlLabel)) },
-                        minLines = 6, maxLines = 10, modifier = Modifier.fillMaxWidth(), textStyle = MaterialTheme.typography.bodySmall)
+                    OutlinedTextField(value = text, onValueChange = { beforePaste = null; onTextChange(it) }, label = { Text(strings(Messages.ProjectXmlLabel)) },
+                        minLines = 6, maxLines = 10, modifier = Modifier.fillMaxWidth().testTag("editor-xml-field"), textStyle = MaterialTheme.typography.bodySmall)
                 } else {
                     Text(strings("xml_preview_size", "count" to text.length), style = MaterialTheme.typography.bodySmall)
                     Text(text.take(1_200), maxLines = 8, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.bodySmall)
-                    if (text.length <= 16_384) TextButton(onClick = { editing = true }) { Text(strings("xml_edit")) }
+                    if (text.length <= 16_384) TextButton(onClick = { editing = true }, modifier = Modifier.testTag("editor-xml-edit")) { Text(strings("xml_edit")) }
                     else Text(strings("xml_large_help"), style = MaterialTheme.typography.bodySmall)
                 }
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    OutlinedButton(onClick = { clipboard.setText(AnnotatedString(text)) }) { Text(strings(Messages.ActionCopy)) }
-                    OutlinedButton(onClick = { clipboard.getText()?.text?.let(onTextChange); editing = false }) { Text(strings(Messages.ActionPaste)) }
+                androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    val copy: () -> Unit = { clipboard.setText(AnnotatedString(text)) }
+                    if (changed) OutlinedButton(onClick = copy, modifier = Modifier.testTag("editor-xml-copy")) { Text(strings(Messages.ActionCopy)) }
+                    else Button(onClick = copy, modifier = Modifier.testTag("editor-xml-copy")) { Text(strings(Messages.ActionCopy)) }
+                    OutlinedButton(modifier = Modifier.testTag("editor-xml-paste"), onClick = {
+                        val pasted = clipboard.getText()?.text
+                        pasteEmpty = pasted.isNullOrEmpty()
+                        if (!pasted.isNullOrEmpty()) {
+                            beforePaste = text
+                            onTextChange(pasted)
+                            editing = false
+                        }
+                    }) { Text(strings(Messages.ActionPaste)) }
+                    beforePaste?.let { previous ->
+                        TextButton(modifier = Modifier.heightIn(min = 48.dp).testTag("editor-xml-undo-paste"), onClick = {
+                            beforePaste = null
+                            onTextChange(previous)
+                        }) { Text(strings("xml_undo_paste")) }
+                    }
+                }
+                if (pasteEmpty) Text(strings("xml_paste_empty"), style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
+                (if (!changed) "xml_import_unchanged" else if (workspaceCopy) "xml_import_copy_hint" else null)?.let { hint ->
+                    Text(strings(hint), style = MaterialTheme.typography.bodySmall, modifier = Modifier.testTag("editor-xml-import-hint"))
                 }
             }
         },
-        confirmButton = { Button(onClick = onImport, enabled = !loading) {
-            Text(strings(if (loading) "editor_loading_project" else Messages.ActionImportXml))
-        } },
+        confirmButton = {
+            val label: @Composable () -> Unit = { Text(strings(if (loading) "editor_loading_project" else Messages.ActionImportXml)) }
+            if (changed) Button(onClick = onImport, enabled = !loading, modifier = Modifier.testTag("editor-xml-import")) { label() }
+            else TextButton(onClick = onImport, enabled = false, modifier = Modifier.testTag("editor-xml-import")) { label() }
+        },
         dismissButton = { TextButton(onClick = onDismiss) { Text(strings(Messages.ActionClose)) } })
-}
-
-internal fun ComponentKind.shortSymbol(): String = when (this) {
-    ComponentKind.INPUT -> "01"
-    ComponentKind.OUTPUT -> "Y"
-    ComponentKind.CLOCK -> "CLK"
-    ComponentKind.D_FLIP_FLOP -> "D"
-    ComponentKind.AND, ComponentKind.NAND -> "&"
-    ComponentKind.OR, ComponentKind.NOR -> "≥1"
-    ComponentKind.XOR, ComponentKind.XNOR -> "=1"
-    ComponentKind.NOT -> "¬"
-    ComponentKind.BUFFER -> "▷"
-    else -> when (name) {
-        "REGISTER" -> "REG"
-        "COUNTER" -> "+1"
-        "ROM", "RAM" -> name
-        "ADDER" -> "+"
-        "SUBTRACTOR" -> "−"
-        "SPLITTER" -> "⊣"
-        "TUNNEL" -> "◀"
-        "HEX_DISPLAY" -> "8"
-        else -> name.take(3)
-    }
 }
 
 internal fun ComponentKind.supportsRotation(): Boolean = this !in setOf(
@@ -1909,3 +2196,20 @@ private fun keyboardInsetHeight(): Dp {
     val withoutKeyboard = WindowInsets.systemBars.union(WindowInsets.displayCutout).getBottom(density)
     return with(density) { (withKeyboard - withoutKeyboard).coerceAtLeast(0).toDp() }
 }
+
+/** What the docked sidebar keeps above the inspector: its tabs, the filter, Manage libraries, two categories, the heading. */
+internal val DockedLibraryMinHeight = 310.dp
+
+/**
+ * The most the docked inspector takes of a sidebar [height]: up to 60%, at least the 300 dp it had, so a large I/O
+ * panel leaves room for the attribute table (C15). Without [ioControls] it also leaves the library
+ * [DockedLibraryMinHeight], never going below 240 dp.
+ */
+internal fun dockedInspectorMaxHeight(height: Dp, ioControls: Boolean): Dp {
+    val shared = maxOf(minOf(300.dp, height * 0.75f), height * 0.6f)
+    return if (ioControls) shared else minOf(shared, maxOf(240.dp, height - DockedLibraryMinHeight))
+}
+
+/** Whether the docked inspector shows I/O controls above the attribute table for a component of this kind. */
+internal fun ComponentKind?.hasDockedIoControls(): Boolean =
+    this != null && (dev.logisim.mobile.core.IoLibrary.isInteractive(this) || this in dev.logisim.mobile.core.ExtraIoKinds.all)

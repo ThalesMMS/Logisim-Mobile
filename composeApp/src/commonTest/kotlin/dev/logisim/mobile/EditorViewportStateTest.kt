@@ -22,7 +22,7 @@ class EditorViewportStateTest {
         val project = state.project
         val history = state.undoHistory
 
-        for ((input, expectedScale) in listOf("137%" to 1.37f, "137,5" to 1.375f, "100" to 1f, "5" to 0.05f, "1000" to 10f)) {
+        for ((input, expectedScale) in listOf("137%" to 1.37f, "137,5" to 1.375f, "100" to 1f, "5" to 0.05f, "1000" to 10f, "1200" to 12f)) {
             state.zoomTo(checkNotNull(parseZoomPercent(input)) / 100f)
 
             val view = state.viewport.view
@@ -37,7 +37,7 @@ class EditorViewportStateTest {
 
     @Test
     fun invalidZoomInputCannotSetTheViewport() {
-        for (input in listOf("", "0", "4.99%", "1000.00001%", "137%%", "NaN", "Infinity")) {
+        for (input in listOf("", "0", "4.99%", "1200.00001%", "137%%", "NaN", "Infinity")) {
             assertNull(parseZoomPercent(input), input)
         }
     }

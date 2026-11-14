@@ -50,6 +50,8 @@ internal data class EditorToolbarAction(
     val separator: Boolean = false,
     val icon: EditorIcon? = null,
     val iconColor: Int? = null,
+    /** What TalkBack says about the control's state, such as an expander's Expanded or Collapsed. */
+    val stateDescription: String? = null,
     val onClick: () -> Unit,
 )
 

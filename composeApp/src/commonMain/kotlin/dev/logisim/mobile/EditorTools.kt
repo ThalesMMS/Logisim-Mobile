@@ -7,6 +7,7 @@ import dev.logisim.mobile.core.CircuitExample
 import dev.logisim.mobile.core.CircuitProject
 import dev.logisim.mobile.core.ComponentKind
 import dev.logisim.mobile.core.ComponentEvent
+import dev.logisim.mobile.core.CreationDefaults
 import dev.logisim.mobile.core.GridPoint
 import dev.logisim.mobile.core.SimulationState
 import dev.logisim.mobile.core.WireSegment
@@ -22,6 +23,8 @@ data class EditorTool(
     val runtime: @Composable (EditorToolContext) -> Unit = {},
     val requiresProjectGraph: Boolean = false,
     val onSimulationObservation: ((CircuitProject, SimulationState) -> Unit)? = null,
+    /** Opening the tool pauses a running simulation; tools that watch it run, such as Signal recording, do not. */
+    val pausesSimulation: Boolean = true,
     val content: @Composable (EditorToolContext) -> Unit,
 )
 
@@ -75,6 +78,30 @@ data class EditorToolContext(
     val printerView: Boolean = false,
     val closeTool: () -> Unit = {},
     val cancelComponentEvent: (ComponentEvent) -> Unit = {},
+    /**
+     * The editor's Run, Pause and clock Tick (a half or a full cycle), as the simulation toolbar does them, for tools
+     * that drive the simulation they show (C57).
+     */
+    val startSimulation: () -> Boolean = { false },
+    /** Whether Run and Tick can act, as the toolbar enables them: a writable document that accepts interaction. */
+    val simulationControlsEnabled: Boolean = true,
+    val pauseSimulation: () -> Unit = {},
+    val stepClock: (fullCycle: Boolean) -> Unit = { fullCycle -> if (!fullCycle) tickSimulation() },
+    /** Opens the value dialog of an input pin, for the Explorer's Set value action (X0); false when it cannot open. */
+    val editInputValue: ((String) -> Boolean)? = null,
+    /** Toggles one bit of an input pin, for the Explorer's Toggle bit action (X0). */
+    val toggleInputBit: ((String, Int) -> Boolean)? = null,
+    /** Whether the inspector shows the I/O controls of a component, for Open controls (X0); false says why. */
+    val canOpenIoControls: ((String) -> Boolean)? = null,
+    /** The creation defaults a new component takes, for the Explorer's Insert suggestions (X1). */
+    val creationDefaults: CreationDefaults = CreationDefaults(),
+    /** A token per circuit id that survives renames but not deleting a circuit and reusing its id. */
+    val circuitLifetime: (String) -> Long = { 0L },
+    /**
+     * The grid point at the centre of the canvas in view, where new annotations start; null before it is measured (C39).
+     * A function, read when a panel needs it, so panning does not recompose the editor and every tool.
+     */
+    val visibleCenter: () -> GridPoint? = { null },
 ) {
     internal var startJarEditor: (suspend (JarEditorLaunch) -> Unit)? = null
 }

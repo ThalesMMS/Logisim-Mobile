@@ -9,6 +9,7 @@ import dev.logisim.mobile.core.CircuitStatistics
 import dev.logisim.mobile.core.ComponentKind
 import dev.logisim.mobile.core.DiagnosticCode
 import dev.logisim.mobile.core.GridPoint
+import dev.logisim.mobile.core.SimulationState
 import dev.logisim.mobile.core.WireSegment
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -49,6 +50,24 @@ class DiagnosticNavigationTest {
         assertEquals(count + 1, CircuitStatistics.measure(state.project).definitionComponentCount)
         state.undo()
         assertEquals(count, CircuitStatistics.measure(state.project).definitionComponentCount)
+    }
+
+    @Test
+    fun goingToAnOriginNavigatesAndClosesTheSheetThatCoversTheCanvas() {
+        val child = CircuitDocument("child", components = listOf(
+            CircuitComponent("source", ComponentKind.INPUT, GridPoint(0, 0), attributes = mapOf("width" to "8")),
+            CircuitComponent("sink", ComponentKind.OUTPUT, GridPoint(100, 0), attributes = mapOf("width" to "4"))),
+            wires = listOf(WireSegment(GridPoint(0, 0), GridPoint(100, 0))))
+        val project = CircuitProject(listOf(child))
+        val diagnostic = CircuitDiagnosticAnalyzer.analyze(project, EditorState(CircCodec.writeProject(project)).rootSimulation)
+            .diagnostics.first { it.code == DiagnosticCode.WIDTH_MISMATCH }
+        val events = mutableListOf<String>()
+        var location: EditorLocation? = null
+        val context = EditorToolContext(project, child, SimulationState(), emptyList(), {}, {}, {}, {}, {},
+            navigate = { location = it; events += "navigate" }, closeTool = { events += "close" })
+        diagnosticNavigation(context)(diagnostic.target)
+        assertEquals(listOf("navigate", "close"), events)
+        assertEquals(diagnostic.target.editorLocation(), location)
     }
 
     @Test

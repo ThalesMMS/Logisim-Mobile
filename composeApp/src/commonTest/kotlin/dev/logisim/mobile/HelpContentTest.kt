@@ -6,16 +6,51 @@ import dev.logisim.mobile.core.ComponentCatalog
 import dev.logisim.mobile.core.ComponentRegistry
 import dev.logisim.mobile.core.localization.AppLanguage
 import dev.logisim.mobile.core.localization.LocalizedArgumentException
+import dev.logisim.mobile.core.localization.Messages
+import dev.logisim.mobile.core.localization.message
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertIs
 import kotlin.test.assertTrue
 
 class HelpContentTest {
+    /** Help > Use the editor names the controls the touch editor shows, in each language, and the Poke tool by its name. */
+    @Test
+    fun editorHelpNamesTheMenusTabsAndToolsThatExist() {
+        val references = mapOf(
+            Messages.TouchHelpLibrary to listOf(Messages.MenuFile, Messages.ActionCircuits, Messages.ActionLibrary,
+                Messages.ActionSearch, "action_explorer"),
+            Messages.TouchHelpViewport to listOf(Messages.MenuView, Messages.ActionFit, Messages.ActionPokeTool),
+            Messages.TouchHelpSimulation to listOf(Messages.ActionPokeTool, Messages.ActionStep, Messages.ActionRun,
+                Messages.ActionPause, Messages.ActionReset),
+            Messages.TouchHelpEditing to listOf(Messages.ActionLibrary, Messages.ActionEditTool, Messages.ActionSelect,
+                Messages.ActionMove, Messages.SelectionAddShort, Messages.ActionProperties, Messages.ActionUndo, Messages.ActionRedo),
+        )
+        for (language in listOf(AppLanguage.ENGLISH, AppLanguage.PORTUGUESE)) {
+            for ((help, names) in references) {
+                val text = message(help).resolve(language)
+                for (name in names) {
+                    val title = message(name).resolve(language)
+                    assertTrue(text.contains(title), "$help (${language.tag}) should name $name: $title")
+                }
+            }
+            val library = message(Messages.TouchHelpLibrary).resolve(language)
+            // The examples are under File, not in Library.
+            assertTrue(library.contains(message(Messages.MenuExample, "name" to "").resolve(language).substringBefore(":")), library)
+            assertFalse(Regex("(Library|Biblioteca)[^.]*SAP-1").containsMatchIn(library), library)
+            // Pinch or the zoom percentage: the + and − buttons are hidden on phones.
+            assertFalse(message(Messages.TouchHelpViewport).resolve(language).contains("+"))
+            assertTrue(message(Messages.TouchHelpEditing).resolve(language).let { it.contains("Long-press") || it.contains("Toque e segure") })
+        }
+        assertEquals("Poke Tool", message(Messages.ActionPokeTool).resolve(AppLanguage.ENGLISH))
+        assertEquals("Ferramenta Testar", message(Messages.ActionPokeTool).resolve(AppLanguage.PORTUGUESE))
+    }
+
     @Test
     fun everyHelpExampleOpensAndTheSap1ReferenceReachesEight() {
         assertEquals(CircuitExamples.all.map { it.id }.toSet(), HelpContent.examples.map { it.id }.toSet())

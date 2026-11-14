@@ -42,7 +42,7 @@
   },
   "action_delete": {
     "en": "Delete",
-    "pt": "Excluir"
+    "pt": "Apagar"
   },
   "action_paste": {
     "en": "Paste",
@@ -75,10 +75,6 @@
   "action_import_xml": {
     "en": "Import XML",
     "pt": "Importar XML"
-  },
-  "action_simulate": {
-    "en": "Simulate",
-    "pt": "Simular"
   },
   "action_move": {
     "en": "Move",
@@ -114,7 +110,7 @@
   },
   "action_reset": {
     "en": "Reset",
-    "pt": "Reset"
+    "pt": "Reiniciar"
   },
   "action_library": {
     "en": "Library",
@@ -422,23 +418,15 @@
   },
   "a11y_delete_selection": {
     "en": "Delete selection",
-    "pt": "Excluir seleção"
+    "pt": "Apagar seleção"
   },
   "a11y_paste_components": {
     "en": "Paste components",
     "pt": "Colar componentes"
   },
-  "a11y_step_clock": {
-    "en": "Advance the clock one half-cycle",
-    "pt": "Avançar clock um meio-ciclo"
-  },
   "a11y_reset_simulation": {
     "en": "Reset simulation",
     "pt": "Reiniciar simulação"
-  },
-  "a11y_change_frequency": {
-    "en": "Change step frequency",
-    "pt": "Alterar frequência dos passos"
   },
   "a11y_library": {
     "en": "Component and circuit library",
@@ -469,8 +457,8 @@
     "pt": "Carregar exemplo AND"
   },
   "a11y_new_circuit": {
-    "en": "Create an empty circuit",
-    "pt": "Criar circuito vazio"
+    "en": "Create a new project",
+    "pt": "Criar um novo projeto"
   },
   "a11y_direction": {
     "en": "Direction {name}",
@@ -592,10 +580,6 @@
     "en": "Steps {count}",
     "pt": "Passos {count}"
   },
-  "simulation_frequency": {
-    "en": "{count} Hz",
-    "pt": "{count} Hz"
-  },
   "simulation_measured_tick_rate": {
     "en": "Measured: {count} ticks/s",
     "pt": "Medido: {count} ticks/s"
@@ -627,18 +611,6 @@
   "signals_heading": {
     "en": "Signals",
     "pt": "Sinais"
-  },
-  "input_value_title": {
-    "en": "Input value",
-    "pt": "Valor da entrada"
-  },
-  "input_number_format": {
-    "en": "Decimal or hexadecimal 0x",
-    "pt": "Decimal ou hexadecimal 0x"
-  },
-  "input_bits": {
-    "en": "{count} bits",
-    "pt": "{count} bits"
   },
   "project_xml_title": {
     "en": "Project .circ",
@@ -672,14 +644,6 @@
     "en": "2. Use View → Fit to see the entire circuit. Tap the current percentage to set the zoom. Drag the background to pan, and use two fingers or the + and − buttons to zoom.",
     "pt": "2. Use Exibir → Enquadrar para ver o circuito inteiro. Toque na porcentagem atual para definir o zoom. Arraste o fundo para navegar e use dois dedos ou os botões + e − para ampliar."
   },
-  "editor_help_simulation": {
-    "en": "3. In Simulate, tap inputs to change them. Step advances the clock; Run repeats steps until Pause. Reset restarts the simulation.",
-    "pt": "3. Em Simular, toque nas entradas para alterá-las. Passo avança o clock; Executar repete os passos até Pausar. Reset reinicia a simulação."
-  },
-  "editor_help_editing": {
-    "en": "4. Choose components in Library to insert. Select Move or Wire to edit, and open Properties to change labels and attributes. Undo and Redo recover edits.",
-    "pt": "4. Escolha componentes na Biblioteca para inserir. Selecione Mover ou Fio para editar e abra Propriedades para alterar rótulo e atributos. Desfazer e Refazer recuperam edições."
-  },
   "editor_help_files": {
     "en": "5. Use .circ to copy or import the complete project XML. After importing, check simulation warnings for incompatible components or connections.",
     "pt": "5. Use .circ para copiar ou importar o XML completo do projeto. Após importar, confira os avisos da simulação para identificar recursos ou ligações incompatíveis."
@@ -695,10 +659,6 @@
   "status_move": {
     "en": "Drag a component. Drag the background to pan.",
     "pt": "Arraste um componente. Arraste o fundo para mover a vista."
-  },
-  "status_wire": {
-    "en": "Tap a terminal, wire, or grid point, then the destination.",
-    "pt": "Toque num terminal, fio ou ponto da grade e depois no destino."
   },
   "status_place": {
     "en": "Tap the grid to insert {name}.",
