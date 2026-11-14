@@ -59,7 +59,8 @@ class ImportedSimulationInitializationTest {
                     assertEquals(frequency, run.status.value.frequencyHz)
                 }
                 val current = state.activeCircuitName to state.activeInstancePath
-                if (syncNavigation && current != navigation) run.pauseContinuousExecution()
+                // The production navigation effect: only a circuit outside the running one pauses (C58).
+                if (syncNavigation && current != navigation) pauseOutsideRunningCircuit(state, run)
                 navigation = current
             }
             val source = sequenceOf(File("examples/io-showcase.circ"), File("../examples/io-showcase.circ"))

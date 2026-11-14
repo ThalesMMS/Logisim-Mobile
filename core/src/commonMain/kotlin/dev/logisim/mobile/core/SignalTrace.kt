@@ -23,8 +23,26 @@ data class TraceSignal(
     val ramAddressBits: Int? = null,
     val radix: TraceRadix = TraceRadix.BINARY,
     val legacyInstancePath: String = reference.instancePath.replace('/', '.'),
+    /**
+     * The subcircuit instances above the signal, by label (or circuit name and location), as Evolution's chronogram
+     * names them; null in the main circuit. [reference] keeps the ids, which are identity, not display text.
+     */
+    val instanceText: LocalizedText? = null,
+    /** [instanceText] with every instance's location, such as "Sub1 (300,100)". */
+    val locatedInstanceText: LocalizedText? = instanceText,
+    /** [labelText] with the component's location, such as "A (100,100)"; an unlabeled component already has one. */
+    val locatedLabelText: LocalizedText = labelText,
 ) {
     init { requireLocalized(width in 1..64) { message(Messages.TraceInvalidWidth) } }
+
+    /** The name shown and spoken for the signal: its instance path and label, such as "Sub1 / A". */
+    val displayText: LocalizedText
+        get() = instanceText?.let { LocalizedText.join(listOf(it, labelText), separator = TraceSignals.PATH_SEPARATOR) } ?: labelText
+
+    /** The display name with each part's location, which tells apart signals whose labels are the same. */
+    val locatedText: LocalizedText
+        get() = locatedInstanceText?.let { LocalizedText.join(listOf(it, locatedLabelText), separator = TraceSignals.PATH_SEPARATOR) }
+            ?: locatedLabelText
 }
 
 enum class TraceRadix {
@@ -267,6 +285,9 @@ class TraceRecorder(
 }
 
 object TraceSignals {
+    /** Between the instances and the label of a signal's display name. */
+    const val PATH_SEPARATOR = " / "
+
     /** Builds one address on demand so even a large RAM stays a single entry in the picker. */
     fun ramCell(signal: TraceSignal, address: Long): TraceSignal? {
         val addressBits = signal.ramAddressBits ?: return null
@@ -276,13 +297,20 @@ object TraceSignals {
             reference = signal.reference.copy(ramAddress = address),
             label = signal.label + suffix,
             labelText = LocalizedText.join(listOf(signal.labelText, LocalizedText.literal(suffix)), separator = ""),
+            locatedLabelText = LocalizedText.join(listOf(signal.locatedLabelText, LocalizedText.literal(suffix)), separator = ""),
             ramAddressBits = null,
         )
     }
 
     fun fromProject(project: CircuitProject, registry: ComponentRegistry = ComponentCatalog.registry): List<TraceSignal> {
         val result = mutableListOf<TraceSignal>()
-        fun visit(circuit: CircuitDocument, path: String, legacyPath: String, parents: Set<String>) {
+        fun located(name: Any, component: CircuitComponent) =
+            message(Messages.TraceUnnamedSignal, "type" to name, "x" to component.position.x, "y" to component.position.y)
+        fun joined(parts: List<LocalizedText>) = parts.takeIf { it.isNotEmpty() }?.let { LocalizedText.join(it, separator = PATH_SEPARATOR) }
+        fun visit(circuit: CircuitDocument, path: String, legacyPath: String, parents: Set<String>, instances: List<LocalizedText>,
+                  locatedInstances: List<LocalizedText>) {
+            val instanceText = joined(instances)
+            val locatedInstanceText = joined(locatedInstances)
             requireLocalized(circuit.id !in parents) { message(Messages.TraceRecursiveProject) }
             for (component in circuit.components) {
                 val inputs = component.inputPorts(registry)
@@ -291,15 +319,19 @@ object TraceSignals {
                     requireLocalized(result.size < 10_000) { message(Messages.TraceSelectorLimit) }
                     val observedPort = outputs.firstOrNull() ?: inputs.first()
                     val observedWidth = component.portWidths(registry)[observedPort] ?: component.width
+                    val labelText = if (component.label.isBlank()) located(component.kind.localizedLabel(), component)
+                        else LocalizedText.literal(component.label)
                     result += TraceSignal(TraceSignalReference(path, component.id),
                         component.label.ifBlank { "${component.kind.name} (${component.position.x},${component.position.y})" }, observedWidth,
-                        if (component.label.isBlank()) message(Messages.TraceUnnamedSignal, "type" to component.kind.localizedLabel(),
-                            "x" to component.position.x, "y" to component.position.y) else LocalizedText.literal(component.label),
+                        labelText,
                         ramAddressBits = when (component.kind) {
                             ComponentKind.RAM, MemoryComponents.DualRam -> MemoryComponents.configuration(component).addressBits
                             else -> null
                         },
                         legacyInstancePath = legacyPath,
+                        instanceText = instanceText,
+                        locatedInstanceText = locatedInstanceText,
+                        locatedLabelText = if (component.label.isBlank()) labelText else located(component.label, component),
                     )
                 }
                 if (component.kind == ComponentKind.SUBCIRCUIT) {
@@ -311,11 +343,13 @@ object TraceSignals {
                         // Logisim 2.7.1 appends a dot after every ancestor and before every ancestor after the first.
                         if (legacyPath.isEmpty()) description else "$legacyPath..$description",
                         parents + circuit.id,
+                        instances + if (component.label.isNotBlank()) LocalizedText.literal(component.label) else located(child.name, component),
+                        locatedInstances + located(component.label.ifBlank { child.name }, component),
                     )
                 }
             }
         }
-        visit(project.mainCircuit, "", "", emptySet())
+        visit(project.mainCircuit, "", "", emptySet(), emptyList(), emptyList())
         return result
     }
 }

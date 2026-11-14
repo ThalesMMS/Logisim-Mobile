@@ -1,5 +1,10 @@
 package dev.logisim.mobile
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.Modifier
 import dev.logisim.mobile.core.localization.Messages
 import dev.logisim.mobile.localization.rememberLocalizer
 import dev.logisim.mobile.core.localization.message
@@ -43,7 +48,9 @@ fun traceEditorTool(
         if ((recorder.lastTime ?: 0) > simulation.propagationTime) recorder.clear()
         recorder.capture(simulation, propagationComplete = propagationComplete)
     }
-    return EditorTool("trace", "Signal recording", titleText = message(Messages.TraceTitle), requiresProjectGraph = true, runtime = { context ->
+    // Opening the trace keeps a run going, so the waveforms follow it (C57).
+    return EditorTool("trace", "Signal recording", titleText = message(Messages.TraceTitle), requiresProjectGraph = true,
+        pausesSimulation = false, runtime = { context ->
         DisposableEffect(recording, context.documentIdentity) {
             recording.bindDocument(context.documentIdentity)
             onDispose { recording.stop() }
@@ -57,7 +64,9 @@ fun traceEditorTool(
                     it.reference.instancePath == context.simulation.instancePath &&
                         context.selectedComponents.any { component -> component.id == it.reference.componentId }
                 })
-                recorder.capture(context.projectSimulation, context.projectSimulation.propagationTime)
+                // The hook may already hold a newer state than this composition's; never record an older one after it.
+                val shown = context.projectSimulation
+                if (shown.propagationTime >= (recorder.lastTime ?: 0)) recorder.capture(shown, shown.propagationTime)
                 initializedSelection = true
             }
         }
@@ -68,6 +77,11 @@ fun traceEditorTool(
             exported = it
         }, registry = activeRegistry,
             selectionEnabled = recording.state == TraceFileRecordingState.STOPPED,
+            // onSimulation below records every published state in order, so the panel only shows them.
+            hostCaptures = true,
+            simulationControls = TraceSimulationControls(running = context.isSimulationRunning,
+                enabled = context.simulationControlsEnabled && context.isForeground && context.isCurrentEditorContext(),
+                onRun = { context.startSimulation() }, onPause = context.pauseSimulation, onTick = context.stepClock),
             fileControls = { canRecord -> TraceFileControls(context, canRecord, recording, files, onFailure) },
             onExportWaveDrom = { text ->
                 context.exportProjectGraph {
@@ -91,10 +105,18 @@ fun traceEditorTool(
         exported?.let { text ->
             @Suppress("DEPRECATION")
             val clipboard = LocalClipboardManager.current
+            // The dialog covers the sheet: Copy's result is shown in it, as the Memory editor's Save file (C74).
+            val sheetNotice = LocalToolSheetNotice.current
+            var copiedAfter by remember(text) { mutableStateOf<Long?>(null) }
             AppAlertDialog(onDismissRequest = { exported = null }, title = { Text(localize(if (exportedAsWaveDrom) Messages.TraceExportWaveDrom else Messages.TraceExportTitle)) },
-                text = { OutlinedTextField(text, onValueChange = {}, readOnly = true, minLines = 5, maxLines = 12) },
+                text = { Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(text, onValueChange = {}, readOnly = true, minLines = 5, maxLines = 12)
+                    AccessibleEditorNotice(sheetNotice?.takeIf { notice -> copiedAfter?.let { notice.serial > it } == true }?.text,
+                        Modifier.testTag("trace-copy-notice"))
+                } },
                 confirmButton = {
                     TextButton(onClick = {
+                        copiedAfter = sheetNotice?.serial ?: 0L
                         context.exportProjectGraph {
                             clipboard.setText(AnnotatedString(text))
                             context.showNotice(message(if (exportedAsWaveDrom) Messages.TraceWaveDromCopied else Messages.TraceCopied))

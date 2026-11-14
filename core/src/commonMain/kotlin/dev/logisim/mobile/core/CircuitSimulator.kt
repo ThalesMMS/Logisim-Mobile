@@ -43,7 +43,21 @@ data class SimulationState(
     val notices: List<LocalizedText> = diagnostics.map(LocalizedText::literal),
     val outputGenerations: Map<String, String> = emptyMap(),
     internal val propagationNoiseCountdown: Long = 0,
+    /**
+     * The components of this circuit (instance) that [notices] are about, for notices that have them: the terminals
+     * of a net with mismatched widths, an unsupported or missing subcircuit component, a component's own report.
+     * Navigation data only; it never changes a value (C67).
+     */
+    val noticeSources: Map<LocalizedText, SimulationNoticeSource> = emptyMap(),
 )
+
+/** The components a simulation notice is about, in the circuit whose [SimulationState] reports it (C67). */
+data class SimulationNoticeSource(val componentIds: List<String>)
+
+private fun MutableMap<LocalizedText, MutableList<String>>.recordNoticeComponents(notice: LocalizedText, componentIds: Collection<String>) {
+    val ids = getOrPut(notice) { mutableListOf() }
+    componentIds.forEach { if (it !in ids) ids += it }
+}
 
 /** Schedules output events using component delays and independent per-instance state. */
 class CircuitSimulator internal constructor(
@@ -143,29 +157,39 @@ class CircuitSimulator internal constructor(
         requireLocalized(elapsedTimeMillis >= 0) { LocalizedText("core_simulation_elapsed_nonnegative", fallback = "O tempo decorrido não pode ser negativo.") }
         val instances = mutableListOf<Instance>()
         val notices = linkedSetOf<LocalizedText>()
-        fun elaborate(document: CircuitDocument, path: String, ancestry: List<String>): Instance {
+        // The components each elaboration notice is about, by the circuit that holds them. A notice raised inside a
+        // subcircuit is about that subcircuit's component in every circuit above it, which is where it can be shown.
+        val elaborationSources = mutableMapOf<String, MutableMap<LocalizedText, MutableList<String>>>()
+        fun located(document: CircuitDocument, notice: LocalizedText, component: CircuitComponent, found: MutableSet<LocalizedText>) {
+            notices += notice
+            found += notice
+            elaborationSources.getOrPut(document.name) { mutableMapOf() }.recordNoticeComponents(notice, listOf(component.id))
+        }
+        fun elaborate(document: CircuitDocument, path: String, ancestry: List<String>, found: MutableSet<LocalizedText>): Instance {
             val old = if (path.isEmpty()) previous else previous.circuitStates[path] ?: SimulationState()
             val instance = Instance(path, document, CircuitNetworks(document, registry), old, registry, options, reset)
             instances += instance
             for (component in document.components) {
                 if (component.kind in unsupportedKinds && registry.definition(component.kind)?.behavior == null) {
-                    notices += message(Messages.CoreSimulationUnsupportedComponent,
-                        "kind" to component.kind.name, "id" to component.id, "circuit" to document.name)
+                    located(document, message(Messages.CoreSimulationUnsupportedComponent,
+                        "kind" to component.kind.name, "id" to component.id, "circuit" to document.name), component, found)
                 }
                 if (component.kind != ComponentKind.SUBCIRCUIT) continue
                 val child = project.circuits.firstOrNull { it.name == component.circuitName }
                 if (child == null || child.name in ancestry) {
-                    notices += if (child == null) message(Messages.ErrorNamedSubcircuitMissing, "name" to component.circuitName)
-                        else message(Messages.ErrorRecursiveCircuit, "name" to child.name)
+                    located(document, if (child == null) message(Messages.ErrorNamedSubcircuitMissing, "name" to component.circuitName)
+                        else message(Messages.ErrorRecursiveCircuit, "name" to child.name), component, found)
                     continue
                 }
                 val childPath = if (path.isEmpty()) component.id else "$path/${component.id}"
-                instance.children += Child(component, elaborate(child, childPath, ancestry + child.name),
+                val inside = linkedSetOf<LocalizedText>()
+                instance.children += Child(component, elaborate(child, childPath, ancestry + child.name, inside),
                     project.subcircuitPortBindings(component))
+                inside.forEach { located(document, it, component, found) }
             }
             return instance
         }
-        val root = elaborate(project.mainCircuit, "", listOf(project.mainCircuit.name))
+        val root = elaborate(project.mainCircuit, "", listOf(project.mainCircuit.name), linkedSetOf())
         val byPath = instances.associateBy { it.path }
         val supplied = inputs.mapValues { LogicVector.fromBit(it.value) } + vectorInputs
         instances.forEach { it.initialize(if (it === root) supplied else emptyMap(), tick) }
@@ -252,9 +276,15 @@ class CircuitSimulator internal constructor(
         var lastObserved: Long? = null
         fun snapshot(): SimulationState {
             pending.removeAll(::staleGeneration)
-            val states = instances.associate { instance -> instance.path to instance.snapshot(ticks, oscillating,
-                (notices + instance.networks.notices + instance.componentDiagnostics.values.flatten()).distinct(),
-                elapsedTimeMillis, time) }
+            val states = instances.associate { instance ->
+                val shown = (notices + instance.networks.notices + instance.componentDiagnostics.values.flatten()).distinct()
+                val sources = mutableMapOf<LocalizedText, MutableList<String>>()
+                elaborationSources[instance.document.name]?.forEach { (notice, ids) -> sources.recordNoticeComponents(notice, ids) }
+                instance.networks.noticeComponents.forEach { (notice, ids) -> sources.recordNoticeComponents(notice, ids) }
+                instance.componentDiagnostics.forEach { (id, reported) -> reported.forEach { sources.recordNoticeComponents(it, listOf(id)) } }
+                instance.path to instance.snapshot(ticks, oscillating, shown, elapsedTimeMillis, time,
+                    sources.filterKeys { it in shown }.mapValues { SimulationNoticeSource(it.value.toList()) })
+            }
             val wakeup = states.values.mapNotNull { it.nextWakeupMillis }.minOrNull()
             return states.getValue("").copy(circuitStates = states.filterKeys { it.isNotEmpty() },
                 pendingEvents = pending.sortedBy { it.time }, nextWakeupMillis = wakeup,
@@ -619,7 +649,8 @@ class CircuitSimulator internal constructor(
             }, rejectWeak = excludeInoutOf != null)
         }
 
-        fun snapshot(ticks: Long, oscillating: Boolean, notices: List<LocalizedText>, elapsed: Long, time: Long): SimulationState {
+        fun snapshot(ticks: Long, oscillating: Boolean, notices: List<LocalizedText>, elapsed: Long, time: Long,
+                     sources: Map<LocalizedText, SimulationNoticeSource> = emptyMap()): SimulationState {
             val componentValues = document.components.associate { component ->
                 val layout = layouts.getValue(component.id)
                 val passive = !hasBehavior(component) && layout.outputs.all { it.direction == PortDirection.INOUT }
@@ -635,7 +666,7 @@ class CircuitSimulator internal constructor(
                 instancePath = path, diagnostics = notices.map { it.resolve(AppLanguage.PORTUGUESE) }, notices = notices, componentStates = states.toMap(),
                 componentOutputs = namedOutputs(), elapsedTimeMillis = elapsed,
                 nextWakeupMillis = wakeups.values.filterNotNull().minOrNull(), propagationTime = time,
-                outputGenerations = outputGenerations.toMap())
+                outputGenerations = outputGenerations.toMap(), noticeSources = sources)
         }
     }
 

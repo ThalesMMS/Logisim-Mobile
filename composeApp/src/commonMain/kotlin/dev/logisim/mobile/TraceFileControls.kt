@@ -1,9 +1,13 @@
 package dev.logisim.mobile
 
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material3.Checkbox
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -26,13 +30,11 @@ internal fun TraceFileControls(context: EditorToolContext, canRecord: Boolean, r
     var selecting by remember { mutableStateOf(false) }
     var selectionFailure by remember { mutableStateOf<LocalizedText?>(null) }
     val stopped = recording.state == TraceFileRecordingState.STOPPED
-    Row(Modifier.horizontalScroll(rememberScrollState())) {
+    Row(Modifier.horizontalScroll(rememberScrollState()), verticalAlignment = Alignment.CenterVertically) {
         if (stopped) {
-            Checkbox(header, { header = it }, enabled = !selecting)
-            Text(localize("trace_file_header"))
+            LabeledCheckbox(localize("trace_file_header"), header, enabled = !selecting, modifier = Modifier.wrapContentWidth()) { header = it }
             if (files?.supportsAppend == true) {
-                Checkbox(append, { append = it }, enabled = !selecting)
-                Text(localize("trace_file_append"))
+                LabeledCheckbox(localize("trace_file_append"), append, enabled = !selecting, modifier = Modifier.wrapContentWidth()) { append = it }
             }
             TextButton(enabled = files != null && canRecord && !selecting,
                 onClick = { context.exportProjectGraph {
@@ -66,15 +68,15 @@ internal fun TraceFileControls(context: EditorToolContext, canRecord: Boolean, r
         }
     }
     if (stopped && files != null) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(
-                checked = format == TraceFileFormat.LOGISIM_2_7_1,
-                onCheckedChange = { format = if (it) TraceFileFormat.LOGISIM_2_7_1 else TraceFileFormat.TIMESTAMPED },
-                enabled = !selecting,
-            )
-            Text(localize("trace_file_logisim_2_7_1"))
+        // Two file formats are a single choice, so they are radio buttons rather than a checkbox (#70).
+        Column(Modifier.fillMaxWidth().selectableGroup()) {
+            Text(localize("trace_file_format"), style = MaterialTheme.typography.labelLarge)
+            for ((option, key) in listOf(TraceFileFormat.TIMESTAMPED to "trace_file_format_timestamped",
+                TraceFileFormat.LOGISIM_2_7_1 to "trace_file_logisim_2_7_1")) {
+                RadioOption(localize(key), format == option, enabled = !selecting) { format = option }
+            }
         }
     }
-    (selectionFailure ?: recording.failure)?.let { Text(localize(it)) }
+    AccessibleEditorNotice(selectionFailure ?: recording.failure, isError = true)
     if (files == null) Text(localize("trace_file_unavailable"))
 }

@@ -31,6 +31,8 @@ class CircuitNetworks(private val document: CircuitDocument, private val registr
     private val widthlessRoots: Set<Int>
     private val connected: Set<GridPoint>
     val notices: List<LocalizedText>
+    /** The components whose terminals meet on the net each notice is about (C67). */
+    val noticeComponents: Map<LocalizedText, List<String>>
     val diagnostics: List<String> get() = notices.map { it.resolve(AppLanguage.PORTUGUESE) }
 
     init {
@@ -47,15 +49,18 @@ class CircuitNetworks(private val document: CircuitDocument, private val registr
         rootAtPoint = points.associateWith { physical.root(pointIndex.getValue(it)) }
         val terminalWidths = terminals.groupBy { rootAtPoint.getValue(it.point) }
         val errors = mutableListOf<LocalizedText>()
+        val errorComponents = mutableMapOf<LocalizedText, List<String>>()
         invalidRoots = terminalWidths.filter { (_, terminals) ->
             terminals.map { it.width }.filter { it > 0 }.distinct().size > 1
         }.keys
         for (root in invalidRoots) {
             val terminals = terminalWidths.getValue(root)
-            errors += message(Messages.ErrorNetworkWidth,
+            val error = message(Messages.ErrorNetworkWidth,
                 // Evolution's Location.toString: "(x,y)".
                 "position" to terminals.first().point.let { "(${it.x},${it.y})" },
                 "widths" to terminals.map { it.width }.filter { it > 0 }.distinct().sorted().joinToString(" / "))
+            errors += error
+            errorComponents[error] = terminals.map { it.componentId }.distinct()
         }
         widthlessRoots = rootAtPoint.values.filterTo(mutableSetOf()) { root -> terminalWidths[root].orEmpty().none { it.width > 0 } }
         widths = rootAtPoint.values.distinct().associateWith { root ->
@@ -84,6 +89,7 @@ class CircuitNetworks(private val document: CircuitDocument, private val registr
                 terminalCounts.getOrElse(point) { 0 } > 1
         }.toSet()
         notices = errors
+        noticeComponents = errorComponents
     }
 
     fun isConnected(point: GridPoint): Boolean = point in connected

@@ -5,6 +5,10 @@ import dev.logisim.mobile.core.ComponentEvent
 import dev.logisim.mobile.core.LogicValue
 import dev.logisim.mobile.core.LogicVector
 import dev.logisim.mobile.core.SimulationState
+import dev.logisim.mobile.core.localization.LocalizedText
+import dev.logisim.mobile.core.localization.Messages
+import dev.logisim.mobile.core.localization.LocalizedFailure
+import dev.logisim.mobile.core.localization.message
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -36,7 +40,8 @@ data class SimulationRunStatus(
     val frequencyHz: Double = 4.0,
     val completedSteps: Long = 0,
     val lastStep: SimulationStep? = null,
-    val failure: String? = null,
+    /** Why the run stopped, in the catalog's languages: the failure's own message, or a generic one. */
+    val failure: LocalizedText? = null,
     val pendingSteps: Int = 0,
     val latestManualRequest: Long = 0,
     val automaticTicks: Boolean = true,
@@ -88,6 +93,7 @@ class SimulationRunController(
         val transform: (SimulationRunSnapshot) -> SimulationRunSnapshot,
         val releasesInput: Boolean,
         val events: List<ComponentEvent>,
+        val initialization: Initialization? = null,
         var cancelled: Boolean = false,
     )
     private val manualJobs = linkedMapOf<Job, ManualCommand>()
@@ -220,7 +226,7 @@ class SimulationRunController(
         val ticket = generation
         val previous = manualTail
         val commandId = ++manualTailId
-        val command = ManualCommand(step, transform, releasesInput, events.toList())
+        val command = ManualCommand(step, transform, releasesInput, events.toList(), initialization)
         mutableStatus.value = mutableStatus.value.copy(
             phase = if (active) SimulationRunPhase.STEPPING else SimulationRunPhase.INACTIVE, failure = null,
             pendingSteps = mutableStatus.value.pendingSteps + 1,
@@ -262,14 +268,27 @@ class SimulationRunController(
         if (restart) start()
     }
 
-    fun configureFrequency(frequencyHz: Double): Boolean {
+    /**
+     * Sets the automatic tick rate; a running loop with automatic ticks restarts at the new rate. Pass [restartRunning]
+     * when the caller is about to replace the project for this change (EditorState.setTickFrequency): any running loop
+     * then restarts first, so a step still computing exits on its ticket instead of pausing on the stale revision.
+     * Queued or computing commands, such as an input change made while running, start again in the new generation:
+     * they capture the replaced project, and a run waiting for them resumes after the last one.
+     */
+    fun configureFrequency(frequencyHz: Double, restartRunning: Boolean = false): Boolean {
         require(frequencyHz.isFinite() && frequencyHz > 0) { "A frequência precisa ser positiva e finita." }
         if (closed) return false
         if (frequencyHz == mutableStatus.value.frequencyHz) return true
-        val restart = mutableStatus.value.phase == SimulationRunPhase.RUNNING && mutableStatus.value.automaticTicks
+        val restart = mutableStatus.value.phase == SimulationRunPhase.RUNNING &&
+            (mutableStatus.value.automaticTicks || restartRunning)
+        val requeued = if (restartRunning && active && mutableStatus.value.pendingSteps > 0)
+            manualJobs.values.filter { !it.cancelled } else emptyList()
         if (restart) pause()
+        // stopWork keeps resumeAfterStimulus, so the last requeued command resumes a run it interrupted.
+        else if (requeued.isNotEmpty()) stopWork()
         mutableStatus.value = mutableStatus.value.copy(frequencyHz = frequencyHz)
         if (restart) start()
+        requeued.forEach { enqueue(it.step, it.releasesInput, it.initialization, it.events, it.transform) }
         return true
     }
 
@@ -381,7 +400,7 @@ class SimulationRunController(
         stopWork()
         mutableStatus.value = mutableStatus.value.copy(
             phase = if (active) SimulationRunPhase.PAUSED else SimulationRunPhase.INACTIVE,
-            failure = error.message ?: error::class.simpleName ?: "Falha na simulação.",
+            failure = simulationFailureText(error),
         )
         onFailure(error)
     }
@@ -393,3 +412,10 @@ class SimulationRunController(
         }
     }
 }
+
+/**
+ * What a failed run reports: a localized failure's own text, otherwise the catalog's "Simulation failed." in the app
+ * language. An exception's raw message is never shown; it is neither translated nor written for users (C161).
+ */
+internal fun simulationFailureText(error: Throwable): LocalizedText =
+    (error as? LocalizedFailure)?.text ?: message(Messages.CoreSimulationFailed)

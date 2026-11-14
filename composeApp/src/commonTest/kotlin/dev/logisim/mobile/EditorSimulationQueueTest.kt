@@ -1,11 +1,22 @@
 package dev.logisim.mobile
 
 import dev.logisim.mobile.core.*
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.yield
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertSame
 import kotlin.test.assertTrue
 
 class EditorSimulationQueueTest {
@@ -77,6 +88,72 @@ class EditorSimulationQueueTest {
         assertEquals(3L, state.rootSimulation.ticks)
         assertEquals(LogicValue.HIGH, state.rootSimulation.componentValues[output])
         controller.close()
+    }
+
+    @Test
+    fun choosingATickFrequencyWhileATickComputesKeepsTheEditorRunning() = runBlocking {
+        val state = EditorState(null)
+        val gate = CompletableDeferred<Unit>()
+        val permits = Channel<Unit>(Channel.UNLIMITED)
+        val waits = mutableListOf<Long>()
+        val scope = CoroutineScope(SupervisorJob() + Dispatchers.Unconfined)
+        val controller = SimulationRunController(scope, state::captureRunSnapshot,
+            advance = { snapshot, step ->
+                if (step == SimulationStep.TICK && snapshot.previous.ticks == 0L) withContext(NonCancellable) { gate.await() }
+                advanceSimulation(snapshot, step).state
+            },
+            isCurrent = state::isCurrentRunSnapshot, publish = state::publishRun,
+            workerDispatcher = Dispatchers.Unconfined, waitForNext = { waits += it; permits.receive() })
+        try {
+            controller.configureFrequency(SimulationProjectOptions.read(state.project).tickFrequencyHz)
+            assertTrue(controller.start())
+            permits.send(Unit)
+            yield()
+            // The App's chooser: restart the loop at the new rate, then change the project.
+            controller.configureFrequency(8.0, restartRunning = true)
+            assertTrue(state.setTickFrequency(8.0))
+            gate.complete(Unit)
+            yield()
+            assertEquals(SimulationRunPhase.RUNNING, controller.status.value.phase)
+            assertEquals(8.0, controller.status.value.frequencyHz)
+            assertEquals(125L, waits.last())
+            permits.send(Unit)
+            yield()
+            assertEquals(1L, state.rootSimulation.ticks)
+            assertEquals(SimulationRunPhase.RUNNING, controller.status.value.phase)
+            assertFalse(state.canUndo)
+        } finally {
+            gate.complete(Unit)
+            controller.close()
+            scope.cancel()
+        }
+    }
+
+    @Test
+    fun aTickFrequencyChangeKeepsTheSubcircuitDebugCopy() {
+        val child = CircuitDocument("child", listOf(CircuitComponent("input", ComponentKind.INPUT, GridPoint(20, 40))))
+        val parentInput = CircuitComponent("drive", ComponentKind.INPUT, GridPoint(20, 40))
+        val main = CircuitDocument("main", listOf(parentInput,
+            CircuitComponent("childInstance", ComponentKind.SUBCIRCUIT, GridPoint(100, 40), circuitName = child.name)))
+        val project = AppearanceEdits.apply(CircuitProject(listOf(main, child)), child.name, SymbolAppearance.classic(child))
+        val instance = project.mainCircuit.components.single { it.kind == ComponentKind.SUBCIRCUIT }
+        val connection = WireSegment(parentInput.position, instance.inputPorts().single())
+        val state = EditorState(CircCodec.writeProject(project.withCircuit(project.mainCircuit.copy(wires = listOf(connection)))))
+        val loaded = state.project.circuit("child")!!
+        val pin = loaded.components.single { it.kind == ComponentKind.INPUT }
+        state.navigate(CircuitNavigationTarget(loaded.id, loaded.name, listOf(state.document.components.single { it.kind == ComponentKind.SUBCIRCUIT }.id)))
+        state.tap(pin.position, EditorMode.INTERACT)
+        state.confirmDebugCopy()
+        assertTrue(state.isDebuggingInstance)
+        val copy = state.debugCopyIdentity
+        state.select(pin.id)
+
+        assertTrue(state.setTickFrequency(8.0))
+
+        assertTrue(state.isDebuggingInstance)
+        assertSame(copy, state.debugCopyIdentity)
+        assertEquals(setOf(pin.id), state.selectedIds)
+        assertEquals(8.0, SimulationProjectOptions.read(state.project).tickFrequencyHz)
     }
 
     @Test

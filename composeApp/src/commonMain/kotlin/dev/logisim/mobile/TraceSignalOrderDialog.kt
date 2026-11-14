@@ -25,6 +25,7 @@ import dev.logisim.mobile.localization.rememberLocalizer
 internal fun TraceSignalOrderDialog(
     signals: List<TraceSignal>,
     enabled: Boolean,
+    nameOf: (TraceSignal) -> TraceSignalName,
     onClose: () -> Unit,
     onMove: (TraceSignalReference, Int) -> Unit,
 ) {
@@ -35,13 +36,13 @@ internal fun TraceSignalOrderDialog(
         text = {
             LazyColumn(Modifier.heightIn(max = 420.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 itemsIndexed(signals, key = { _, signal -> signal.reference.key }) { index, signal ->
-                    val label = localize(signal.labelText)
-                    val key = signal.reference.key
-                    val moveUp = localize(Messages.TraceMoveSignalUp, "signal" to label, "reference" to key)
-                    val moveDown = localize(Messages.TraceMoveSignalDown, "signal" to label, "reference" to key)
+                    // The name and instance path, not the internal key, tell same-named signals apart (C64, C160).
+                    val name = nameOf(signal)
+                    val moveUp = localize(Messages.TraceMoveSignalUp, "signal" to name.label, "reference" to name.instance)
+                    val moveDown = localize(Messages.TraceMoveSignalDown, "signal" to name.label, "reference" to name.instance)
                     Column {
-                        Text("${index + 1}. $label")
-                        Text(key, fontSize = 10.sp)
+                        Text("${index + 1}. ${name.label}")
+                        Text(name.instance, fontSize = 10.sp)
                         FlowRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                             TextButton(onClick = { onMove(signal.reference, -1) }, enabled = enabled && index > 0,
                                 modifier = Modifier.semantics { contentDescription = moveUp }) {

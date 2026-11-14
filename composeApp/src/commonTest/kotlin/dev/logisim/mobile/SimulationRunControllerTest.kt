@@ -12,6 +12,7 @@ import dev.logisim.mobile.core.LogicValue
 import dev.logisim.mobile.core.IoInputEvent
 import dev.logisim.mobile.core.SimulationState
 import dev.logisim.mobile.core.TclComponentEvent
+import dev.logisim.mobile.core.localization.AppLanguage
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -401,15 +402,141 @@ class SimulationRunControllerTest {
     }
 
     @Test
+    fun runningWithAutomaticTicksStaysRunningAtTheChosenRate() = runBlocking<Unit> {
+        val harness = Harness()
+        try {
+            assertTrue(harness.controller.start())
+            assertTrue(harness.controller.configureFrequency(8.0, restartRunning = true))
+            assertEquals(SimulationRunPhase.RUNNING, harness.controller.status.value.phase)
+            assertEquals(8.0, harness.controller.status.value.frequencyHz)
+            assertEquals(listOf(250L, 125L), harness.waits)
+            harness.permits.send(Unit)
+            yield()
+            assertEquals(1L, harness.state.ticks)
+        } finally { harness.close() }
+    }
+
+    @Test
+    fun aFrequencyChangeThatReplacesTheProjectKeepsRunningThroughAnInFlightTick() = runBlocking<Unit> {
+        val gate = CompletableDeferred<Unit>()
+        val simulator = CircuitSimulator()
+        val harness = Harness { snapshot, step ->
+            if (step == SimulationStep.TICK && snapshot.previous.ticks == 0L) withContext(NonCancellable) { gate.await() }
+            simulator.settle(snapshot.project, snapshot.previous, tick = step == SimulationStep.TICK)
+        }
+        try {
+            assertTrue(harness.controller.start())
+            harness.permits.send(Unit)
+            yield()
+            // The first tick is computing. EditorState.setTickFrequency then bumps the revision, after the App has
+            // restarted the loop, so the stale tick exits on its ticket instead of pausing the run.
+            assertTrue(harness.controller.configureFrequency(8.0, restartRunning = true))
+            harness.revision++
+            gate.complete(Unit)
+            yield()
+            assertEquals(SimulationRunPhase.RUNNING, harness.controller.status.value.phase)
+            assertEquals(8.0, harness.controller.status.value.frequencyHz)
+            assertTrue(harness.published.isEmpty())
+            assertEquals(listOf(250L, 125L), harness.waits)
+            harness.permits.send(Unit)
+            yield()
+            assertEquals(1L, harness.state.ticks)
+            assertEquals(SimulationRunPhase.RUNNING, harness.controller.status.value.phase)
+        } finally { gate.complete(Unit); harness.close() }
+    }
+
+    @Test
+    fun withoutAutomaticTicksAProjectReplacingFrequencyChangeStillKeepsTheRun() = runBlocking<Unit> {
+        val gate = CompletableDeferred<Unit>()
+        val harness = Harness { snapshot, _ ->
+            withContext(NonCancellable) { gate.await() }
+            snapshot.previous.copy(nextWakeupMillis = 40L)
+        }
+        try {
+            harness.state = harness.state.copy(nextWakeupMillis = 40L)
+            harness.controller.setAutomaticTicks(false)
+            assertTrue(harness.controller.start())
+            harness.permits.send(Unit)
+            yield()
+            assertTrue(harness.controller.configureFrequency(2.0, restartRunning = true))
+            harness.revision++
+            gate.complete(Unit)
+            yield()
+            assertEquals(SimulationRunPhase.RUNNING, harness.controller.status.value.phase)
+            assertEquals(listOf(40L, 40L), harness.waits)
+            assertTrue(harness.published.isEmpty())
+        } finally { gate.complete(Unit); harness.close() }
+    }
+
+    @Test
+    fun aProjectReplacingFrequencyChangeResumesTheRunAfterAnInputChangeInFlight() = runBlocking<Unit> {
+        val project = assertIs<CircProjectImportResult.Success>(CircCodec.readProject("""<project source="5.1.0-dev">
+            <lib name="0" desc="#I/O"/><lib name="1" desc="#Wiring"/><main name="Held"/><circuit name="Held">
+            <comp lib="0" name="Button" loc="(100,100)"><a name="label" val="BTN"/><a name="press" val="active"/></comp>
+            <comp lib="1" name="Pin" loc="(180,100)"><a name="label" val="OUT"/><a name="type" val="output"/><a name="facing" val="west"/><a name="width" val="1"/></comp>
+            <wire from="(100,100)" to="(180,100)"/></circuit></project>""")).project
+        val button = project.mainCircuit.components.single { it.label == "BTN" }.id
+        val output = project.mainCircuit.components.single { it.label == "OUT" }.id
+        val release = CompletableDeferred<Unit>()
+        val harness = Harness(projectOverride = project) { snapshot, step ->
+            if (snapshot.events.values.flatten().contains(IoInputEvent.Press(false))) release.await()
+            advanceSimulation(snapshot, step).state
+        }
+        try {
+            harness.controller.submitStimulus(emptyMap(), emptyMap(), mapOf(button to listOf(IoInputEvent.Press(true))))!!.join()
+            assertTrue(harness.controller.start())
+            // A poke while running: the run waits for this input change, then resumes.
+            assertNotNull(harness.controller.submitStimulus(emptyMap(), emptyMap(), mapOf(button to listOf(IoInputEvent.Press(false)))))
+            assertEquals(SimulationRunPhase.STEPPING, harness.controller.status.value.phase)
+            // App.chooseTickFrequency, then EditorState.setTickFrequency replacing the project. The editor dispatcher
+            // runs the requeued command after that change; the unconfined harness starts it at once, so the revision
+            // moves first here.
+            harness.revision++
+            assertTrue(harness.controller.configureFrequency(2.0, restartRunning = true))
+            release.complete(Unit)
+            yield()
+            // The input change is published on the new revision and the run goes on at the new rate.
+            assertEquals("0", harness.state.vectorValues[output]?.display)
+            assertEquals(SimulationRunPhase.RUNNING, harness.controller.status.value.phase)
+            assertEquals(2.0, harness.controller.status.value.frequencyHz)
+            assertEquals(listOf(250L, 500L), harness.waits)
+        } finally { release.complete(Unit); harness.close() }
+    }
+
+    @Test
     fun simulationFailureStopsExecutionAndReportsOnce() = runBlocking<Unit> {
         val harness = Harness { _, _ -> throw IllegalStateException("fixture failure") }
         try {
             harness.controller.step(SimulationStep.TICK)!!.join()
             assertEquals(listOf<String?>("fixture failure"), harness.failures)
-            assertEquals("fixture failure", harness.controller.status.value.failure)
+            // C161: the status names the failure from the catalog, never the exception's own (untranslated) text.
+            assertEquals("Simulation failed.", harness.controller.status.value.failure?.resolve(AppLanguage.ENGLISH))
+            assertEquals("Falha na simulação.", harness.controller.status.value.failure?.resolve(AppLanguage.PORTUGUESE))
             assertEquals(SimulationRunPhase.PAUSED, harness.controller.status.value.phase)
             assertTrue(harness.published.isEmpty())
         } finally { harness.close() }
+    }
+
+    /** C161: a failure without its own message reads the catalog's text in the app language, not hardcoded Portuguese. */
+    @Test
+    fun anUnexplainedFailureIsReportedInTheAppLanguage() = runBlocking<Unit> {
+        val harness = Harness { _, _ -> throw IllegalStateException() }
+        try {
+            harness.controller.step(SimulationStep.TICK)!!.join()
+            val failure = assertNotNull(harness.controller.status.value.failure)
+            assertEquals("Simulation failed.", failure.resolve(AppLanguage.ENGLISH))
+            assertEquals("Falha na simulação.", failure.resolve(AppLanguage.PORTUGUESE))
+        } finally { harness.close() }
+    }
+
+    /** C161: the editor's failure dialog uses the same text: catalog-backed, or a localized failure's own text. */
+    @Test
+    fun failureTextIsCatalogBackedOrLocalized() {
+        val raw = simulationFailureText(IllegalArgumentException("index 7 out of bounds"))
+        assertEquals("Simulation failed.", raw.resolve(AppLanguage.ENGLISH))
+        assertEquals("Falha na simulação.", raw.resolve(AppLanguage.PORTUGUESE))
+        val localized = dev.logisim.mobile.core.localization.message("annotation_invalid_x")
+        assertEquals(localized, simulationFailureText(dev.logisim.mobile.core.localization.LocalizedArgumentException(localized)))
     }
 
     @Test
