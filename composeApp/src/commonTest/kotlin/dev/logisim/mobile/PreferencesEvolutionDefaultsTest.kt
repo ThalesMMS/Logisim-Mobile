@@ -12,6 +12,7 @@ import dev.logisim.mobile.core.GridPoint
 import dev.logisim.mobile.core.HdlLanguage
 import dev.logisim.mobile.core.LogicVector
 import dev.logisim.mobile.core.SimulationProjectOptions
+import dev.logisim.mobile.core.TickFrequencies
 import dev.logisim.mobile.core.WireSegment
 import dev.logisim.mobile.core.WorkspaceCatalogStorage
 import dev.logisim.mobile.core.layout
@@ -141,6 +142,17 @@ class PreferencesEvolutionDefaultsTest {
         assertEquals(emptyMap(), state.project.libraries)
         assertEquals("logisim_evolution", state.project.mainCircuit.attributes["appearance"])
         assertEquals(1.0, SimulationProjectOptions.read(state.project).tickFrequencyHz)
+    }
+
+    @Test
+    fun theDefaultTickFrequencyIsChosenFromEvolutionsSimulateMenuList() {
+        // Frame.java stores the chosen MenuSimulate.SUPPORTED_TICK_FREQUENCIES value as TICK_FREQUENCY's default.
+        assertTrue(EditorPreferences.DEFAULT_TICK_FREQUENCY_HZ in TickFrequencies.choices)
+        assertTrue(TickFrequencies.choices.all { it in TickFrequencies.supported })
+        val editor = EditorState(null, defaultTickFrequencyHz = 8.0)
+        editor.newDocument()
+        assertEquals(8.0, SimulationProjectOptions.read(editor.project).tickFrequencyHz)
+        assertTrue("""<a name="simulationFrequency" val="8.0"/>""" in editor.exportXml())
     }
 
     private class MemoryStorage : WorkspaceCatalogStorage {

@@ -15,14 +15,18 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.relocation.BringIntoViewRequester
 import androidx.compose.foundation.relocation.bringIntoViewRequester
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -48,10 +52,12 @@ import androidx.compose.ui.input.key.type
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
 import dev.logisim.mobile.core.CircuitComponent
 import dev.logisim.mobile.core.ComponentState
@@ -92,7 +98,8 @@ internal fun IoInputPanel(
         IoKinds.MatrixKeypad -> message(Messages.IoControlMatrixKeypad)
         else -> component.kind.localizedLabel()
     }) }
-    Column(modifier.padding(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    // The panel is height-limited in the inspector; a taller control (the joystick's pad and sliders) scrolls.
+    Column(modifier.verticalScroll(rememberScrollState()).padding(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         when (component.kind) {
             IoKinds.Button -> MomentaryControl(label, (state as? IoButtonState)?.pressed == true,
                 { onEvent(IoInputEvent.Press(it)) })
@@ -111,6 +118,7 @@ internal fun IoInputPanel(
             }
             IoKinds.Joystick -> {
                 val value = state as? IoJoystickState ?: IoJoystickState()
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Box(Modifier.size(132.dp).border(1.dp, ChromeColors.Muted).semantics {
                     contentDescription = strings(Messages.IoA11yJoystick, "label" to label, "x" to value.x, "y" to value.y)
                 }.pointerInput(component.id) {
@@ -145,20 +153,24 @@ internal fun IoInputPanel(
                         drawCircle(Color.Red, 10f, end)
                     }
                 }
-                FlowRow(
-                    horizontalArrangement = Arrangement.spacedBy(4.dp),
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
-                    maxItemsInEachRow = 3,
-                ) {
-                    listOf("←" to (-14 to 0), "↑" to (0 to -14), "↓" to (0 to 14), "→" to (14 to 0),
-                        strings(Messages.IoCenter) to (0 to 0)).forEach { (text, position) ->
-                        OutlinedButton(
-                            onClick = { onEvent(IoInputEvent.MoveJoystick(position.first, position.second)) },
-                            modifier = Modifier.sizeIn(minWidth = 48.dp, minHeight = 48.dp),
-                            contentPadding = PaddingValues(horizontal = 8.dp),
-                        ) { Text(text) }
+                // A 3 × 3 pad with the diagonals. Like the pad and Evolution's joystick poker, a button holds its
+                // direction while pressed and recenters on release (X5).
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    JOYSTICK_DIRECTIONS.chunked(3).forEach { row ->
+                        Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                            row.forEach { direction ->
+                                JoystickDirectionButton(direction, strings(direction.label), onEvent)
+                            }
+                        }
                     }
                 }
+                }
+                // Exact positions that stay, for intermediate values and for TalkBack (adjustable X and Y).
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    JoystickAxisSlider(strings("io_joystick_axis_x"), value.x, Modifier.weight(1f)) { onEvent(IoInputEvent.MoveJoystick(it, value.y)) }
+                    JoystickAxisSlider(strings("io_joystick_axis_y"), value.y, Modifier.weight(1f)) { onEvent(IoInputEvent.MoveJoystick(value.x, it)) }
+                }
+                Text(strings("io_joystick_help"), style = MaterialTheme.typography.bodySmall)
             }
             IoKinds.Keyboard -> {
                 val keyboard = state as? IoKeyboardState ?: IoKeyboardState()
@@ -272,6 +284,65 @@ private fun MomentaryControl(label: String, pressed: Boolean, setPressed: (Boole
                 try { tryAwaitRelease() } finally { updateHold(pointer = false) }
             })
         }.padding(horizontal = 12.dp), contentAlignment = Alignment.Center) { Text(label, color = ChromeColors.Ink) }
+}
+
+/** A joystick pad button: its deflection (Evolution's ±14) and its localized name. */
+internal class JoystickDirection(val x: Int, val y: Int, val glyph: String, val label: String)
+
+internal val JOYSTICK_DIRECTIONS = listOf(
+    JoystickDirection(-14, -14, "↖", "io_joystick_up_left"), JoystickDirection(0, -14, "↑", "io_joystick_up"),
+    JoystickDirection(14, -14, "↗", "io_joystick_up_right"), JoystickDirection(-14, 0, "←", "io_joystick_left"),
+    JoystickDirection(0, 0, "●", Messages.IoCenter), JoystickDirection(14, 0, "→", "io_joystick_right"),
+    JoystickDirection(-14, 14, "↙", "io_joystick_down_left"), JoystickDirection(0, 14, "↓", "io_joystick_down"),
+    JoystickDirection(14, 14, "↘", "io_joystick_down_right"),
+)
+
+/**
+ * Pressing moves the stick and releasing recenters it, like dragging the pad. TalkBack's double tap cannot hold, so
+ * its click sets the direction until another one or Center; the X and Y sliders set exact values.
+ */
+@Composable
+private fun JoystickDirectionButton(direction: JoystickDirection, label: String, onEvent: (IoInputEvent) -> Unit) {
+    val dispatch by rememberUpdatedState(onEvent)
+    var pressed by remember { mutableStateOf(false) }
+    Box(Modifier.size(56.dp).background(if (pressed) ChromeColors.Selected else ChromeColors.Heading)
+        .border(1.dp, ChromeColors.Muted)
+        .semantics {
+            role = Role.Button
+            contentDescription = label
+            onClick {
+                dispatch(IoInputEvent.MoveJoystick(direction.x, direction.y))
+                true
+            }
+        }
+        .pointerInput(direction) {
+            detectTapGestures(onPress = {
+                pressed = true
+                dispatch(IoInputEvent.MoveJoystick(direction.x, direction.y))
+                try { tryAwaitRelease() } finally {
+                    pressed = false
+                    dispatch(IoInputEvent.Cancel)
+                }
+            })
+        }, contentAlignment = Alignment.Center) {
+        Text(direction.glyph, color = ChromeColors.Ink, style = MaterialTheme.typography.titleLarge)
+    }
+}
+
+/** One joystick axis, -14..14 in whole steps; its value is spoken and shown. */
+@Composable
+private fun JoystickAxisSlider(label: String, value: Int, modifier: Modifier = Modifier, onValue: (Int) -> Unit) {
+    val strings = rememberLocalizer()
+    Column(modifier) {
+        // The slider announces the axis and its value; the label is not read a second time.
+        Text(strings("io_joystick_axis_value", "axis" to label, "value" to value), style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.clearAndSetSemantics { })
+        Slider(value.toFloat(), { next -> next.roundToInt().coerceIn(-14, 14).takeIf { it != value }?.let(onValue) },
+            valueRange = -14f..14f, steps = 27, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).semantics {
+                contentDescription = label
+                stateDescription = value.toString()
+            })
+    }
 }
 
 internal fun keypadLabels(component: CircuitComponent): List<String> {

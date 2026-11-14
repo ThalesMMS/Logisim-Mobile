@@ -1,5 +1,13 @@
 package dev.logisim.mobile
 
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.semantics.selected
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -13,14 +21,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -36,11 +41,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import dev.logisim.mobile.core.TickFrequencies
+import dev.logisim.mobile.core.formatTickFrequency
 import dev.logisim.mobile.core.localization.Messages
 import dev.logisim.mobile.localization.rememberLocalizer
 
@@ -62,9 +69,12 @@ fun EditorPreferencesPanel(
 ) {
     val strings = rememberLocalizer()
     Column(modifier.verticalScroll(rememberScrollState()).padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(strings(Messages.PreferencesTitle), fontWeight = FontWeight.Bold)
+        Text(strings(Messages.PreferencesTitle), fontWeight = FontWeight.Bold, modifier = Modifier.semantics { heading() })
         Text(strings(Messages.PreferencesHelp),
             style = MaterialTheme.typography.bodySmall)
+        // Grouped like Evolution's PreferencesFrame tabs (International, Window, Simulation, Layout, FPGA), each a heading
+        // TalkBack can jump between (C106). The order only changes where a row appears; no preference key changes.
+        PreferenceSection(strings("preferences_section_international"), divider = false)
         PreferenceChoice(strings(Messages.PreferencesLanguage), preferences.locale, EditorLocale.available.map { locale ->
             val label = when (locale) {
                 EditorLocale.SYSTEM -> strings(Messages.PreferencesSystemLanguage)
@@ -74,6 +84,13 @@ fun EditorPreferencesPanel(
             }
             locale to label
         }) { onChange(preferences.copy(locale = it)) }
+        if (capabilities.gateShape) {
+            PreferenceChoice(strings(Messages.PreferencesGateShapes), preferences.gateShape, listOf(
+                EditorGateShape.ANSI to strings(Messages.PreferencesAnsi), EditorGateShape.IEC to strings(Messages.PreferencesIec),
+                EditorGateShape.DIN40700 to strings(Messages.PreferencesDin40700),
+            )) { onChange(preferences.copy(gateShape = it)) }
+        }
+        PreferenceSection(strings("preferences_section_window"))
         val dark = LocalEditorDarkTheme.current
         PreferenceChoice(strings(Messages.PreferencesTheme), preferences.themeMode, listOf(
             EditorThemeMode.SYSTEM to strings(Messages.PreferencesThemeSystem),
@@ -89,44 +106,6 @@ fun EditorPreferencesPanel(
         PreferenceToggle(strings(Messages.PreferencesShowTickRate), preferences.showTickRate) {
             onChange(preferences.copy(showTickRate = it))
         }
-        PreferenceToggle(strings(Messages.PreferencesSnapGrid), preferences.snapToGrid) { onChange(preferences.copy(snapToGrid = it)) }
-        PreferenceToggle(strings(Messages.PreferencesShowPlacementPreview), preferences.showPlacementPreview) {
-            onChange(preferences.copy(showPlacementPreview = it))
-        }
-        PreferenceChoice(strings(Messages.PreferencesAfterPlacement), preferences.afterPlacement, listOf(
-            EditorAfterPlacement.EDIT to strings(Messages.PreferencesAfterPlacementEdit),
-            EditorAfterPlacement.KEEP_TOOL to strings(Messages.PreferencesAfterPlacementKeepTool),
-        )) { onChange(preferences.copy(afterPlacement = it)) }
-        PreferenceToggle(strings(Messages.PreferencesHighContrast), preferences.highContrastSignals) { onChange(preferences.copy(highContrastSignals = it)) }
-        CanvasColorPreferences(preferences, onChange, dark)
-        PreferenceChoice(strings(Messages.PreferencesSignalRadix), preferences.signalRadix, listOf(
-            EditorSignalRadix.BINARY to strings(Messages.PreferencesBinary), EditorSignalRadix.HEXADECIMAL to strings(Messages.PreferencesHexadecimal),
-            EditorSignalRadix.UNSIGNED_DECIMAL to strings(Messages.PreferencesUnsignedDecimal), EditorSignalRadix.SIGNED_DECIMAL to strings(Messages.PreferencesSignedDecimal),
-        )) { onChange(preferences.copy(signalRadix = it)) }
-        ValueCharacterPreferences(preferences, onChange)
-        val wireRadixChoices = WirePokeRadix.entries.map { it to strings(it.label) }
-        PreferenceChoice(strings(Messages.PreferencesWirePokePrimaryRadix), preferences.wirePokePrimaryRadix,
-            wireRadixChoices) { onChange(preferences.copy(wirePokePrimaryRadix = it)) }
-        PreferenceChoice(strings(Messages.PreferencesWirePokeSecondaryRadix), preferences.wirePokeSecondaryRadix,
-            listOf(null to strings(Messages.PreferencesWirePokeNoSecondRadix)) + wireRadixChoices) {
-            onChange(preferences.copy(wirePokeSecondaryRadix = it))
-        }
-        if (capabilities.gateShape) {
-            PreferenceChoice(strings(Messages.PreferencesGateShapes), preferences.gateShape, listOf(
-                EditorGateShape.ANSI to strings(Messages.PreferencesAnsi), EditorGateShape.IEC to strings(Messages.PreferencesIec),
-                EditorGateShape.DIN40700 to strings(Messages.PreferencesDin40700),
-            )) { onChange(preferences.copy(gateShape = it)) }
-        }
-        if (capabilities.shortcutScheme) {
-            PreferenceChoice(strings(Messages.PreferencesShortcutKey), preferences.shortcutScheme, listOf(
-                EditorShortcutScheme.PLATFORM to strings(Messages.PreferencesPlatformShortcut), EditorShortcutScheme.CONTROL to strings(Messages.PreferencesControlKey),
-            )) { onChange(preferences.copy(shortcutScheme = it)) }
-            PreferenceToggle(strings(Messages.PreferencesSearchDoubleShift), preferences.searchDoubleShift,
-                "preferences-search-double-shift") {
-                onChange(preferences.copy(searchDoubleShift = it))
-            }
-            EditorShortcutPreferences(preferences, onChange)
-        }
         PreferenceToggle(strings(Messages.PreferencesShowHeaderBar), preferences.showHeaderBar) {
             onChange(preferences.copy(showHeaderBar = it))
         }
@@ -139,8 +118,41 @@ fun EditorPreferencesPanel(
             EditorToolbarPlacement.HIDDEN to strings(Messages.PreferencesToolbarHidden),
         )) { onChange(preferences.copy(toolbarPlacement = it)) }
         Text(strings(Messages.PreferencesToolbarCompact), style = MaterialTheme.typography.bodySmall)
-        HorizontalDivider()
-        Text(strings(Messages.PreferencesSectionLayout), fontWeight = FontWeight.Bold, fontSize = 13.sp)
+        CanvasColorPreferences(preferences, onChange, dark)
+        PreferenceSection(strings("preferences_section_editing"))
+        PreferenceToggle(strings(Messages.PreferencesSnapGrid), preferences.snapToGrid) { onChange(preferences.copy(snapToGrid = it)) }
+        PreferenceToggle(strings(Messages.PreferencesShowPlacementPreview), preferences.showPlacementPreview) {
+            onChange(preferences.copy(showPlacementPreview = it))
+        }
+        PreferenceChoice(strings(Messages.PreferencesAfterPlacement), preferences.afterPlacement, listOf(
+            EditorAfterPlacement.EDIT to strings(Messages.PreferencesAfterPlacementEdit),
+            EditorAfterPlacement.KEEP_TOOL to strings(Messages.PreferencesAfterPlacementKeepTool),
+        )) { onChange(preferences.copy(afterPlacement = it)) }
+        if (capabilities.shortcutScheme) {
+            PreferenceChoice(strings(Messages.PreferencesShortcutKey), preferences.shortcutScheme, listOf(
+                EditorShortcutScheme.PLATFORM to strings(Messages.PreferencesPlatformShortcut), EditorShortcutScheme.CONTROL to strings(Messages.PreferencesControlKey),
+            )) { onChange(preferences.copy(shortcutScheme = it)) }
+            PreferenceToggle(strings(Messages.PreferencesSearchDoubleShift), preferences.searchDoubleShift,
+                "preferences-search-double-shift") {
+                onChange(preferences.copy(searchDoubleShift = it))
+            }
+            EditorShortcutPreferences(preferences, onChange)
+        }
+        PreferenceSection(strings("preferences_section_simulation"))
+        PreferenceChoice(strings(Messages.PreferencesSignalRadix), preferences.signalRadix, listOf(
+            EditorSignalRadix.BINARY to strings(Messages.PreferencesBinary), EditorSignalRadix.HEXADECIMAL to strings(Messages.PreferencesHexadecimal),
+            EditorSignalRadix.UNSIGNED_DECIMAL to strings(Messages.PreferencesUnsignedDecimal), EditorSignalRadix.SIGNED_DECIMAL to strings(Messages.PreferencesSignedDecimal),
+        )) { onChange(preferences.copy(signalRadix = it)) }
+        val wireRadixChoices = WirePokeRadix.entries.map { it to strings(it.label) }
+        PreferenceChoice(strings(Messages.PreferencesWirePokePrimaryRadix), preferences.wirePokePrimaryRadix,
+            wireRadixChoices, tag = "preferences-wire-poke-primary") { onChange(preferences.copy(wirePokePrimaryRadix = it)) }
+        PreferenceChoice(strings(Messages.PreferencesWirePokeSecondaryRadix), preferences.wirePokeSecondaryRadix,
+            listOf(null to strings(Messages.PreferencesWirePokeNoSecondRadix)) + wireRadixChoices, tag = "preferences-wire-poke-secondary") {
+            onChange(preferences.copy(wirePokeSecondaryRadix = it))
+        }
+        PreferenceToggle(strings(Messages.PreferencesHighContrast), preferences.highContrastSignals) { onChange(preferences.copy(highContrastSignals = it)) }
+        ValueCharacterPreferences(preferences, onChange)
+        PreferenceSection(strings(Messages.PreferencesSectionLayout))
         PreferenceToggle(strings(Messages.PreferencesAttributeHalo), preferences.attributeHalo, "preferences-attribute-halo") {
             onChange(preferences.copy(attributeHalo = it))
         }
@@ -175,9 +187,8 @@ fun EditorPreferencesPanel(
         PreferenceToggle(strings(Messages.PreferencesRemoveUnusedLibraries), preferences.removeUnusedLibraries, "preferences-remove-unused-libraries") {
             onChange(preferences.copy(removeUnusedLibraries = it))
         }
-        HorizontalDivider()
         // Evolution Preferences → FPGA: HDL generation and DRC report options.
-        Text(strings("preferences_fpga_title"), fontWeight = FontWeight.Bold, fontSize = 13.sp)
+        PreferenceSection(strings("preferences_fpga_title"))
         PreferenceChoice(strings("preferences_fpga_hdl_type"), preferences.hdlType, listOf(
             EditorHdlType.VHDL to "VHDL", EditorHdlType.VERILOG to "Verilog", EditorHdlType.NONE to strings("preferences_fpga_hdl_none"),
         ), tag = "preferences-fpga-hdl-type") { onChange(preferences.copy(hdlType = it)) }
@@ -190,24 +201,64 @@ fun EditorPreferencesPanel(
         PreferenceToggle(strings("preferences_fpga_suppress_open_pins"), preferences.fpga.suppressOpenPinWarnings, "preferences-fpga-suppress-open-pins") {
             onChange(preferences.copy(fpga = preferences.fpga.copy(suppressOpenPinWarnings = it)))
         }
-        HorizontalDivider()
-        Text(strings(Messages.PreferencesNewProjects), fontWeight = FontWeight.Bold, fontSize = 13.sp)
+        PreferenceSection(strings(Messages.PreferencesNewProjects))
         if (projectTemplates != null && templatePicker != null) ProjectTemplateSettings(projectTemplates, templatePicker)
-        var frequencyText by remember(preferences.defaultTickFrequencyHz) { mutableStateOf(preferences.defaultTickFrequencyHz.toString()) }
-        val frequency = frequencyText.replace(',', '.').toDoubleOrNull()?.takeIf { it.isFinite() && it > 0 }
-        OutlinedTextField(frequencyText, { frequencyText = it }, singleLine = true,
-            label = { Text(strings(Messages.PreferencesDefaultFrequency)) }, isError = frequency == null,
-            supportingText = { Text(if (frequency == null) strings(Messages.PreferencesFrequencyHint) else strings(Messages.PreferencesFrequencyScope)) },
-            modifier = Modifier.fillMaxWidth(),
-            trailingIcon = {
-                TextButton(enabled = frequency != null, onClick = { frequency?.let { onChange(preferences.copy(defaultTickFrequencyHz = it)) } }) { Text(strings(Messages.ActionApply)) }
-            })
+        // Evolution's TICK_FREQUENCY default comes from the Simulate menu's list; it applies on selection like the
+        // other preferences. A stored rate outside the list (a hand-edited 3 Hz) stays listed, selected, as custom.
+        val defaultFrequency = preferences.defaultTickFrequencyHz
+        PreferenceChoice(strings("preferences_default_tick_frequency"),
+            TickFrequencies.choicesWith(defaultFrequency).firstOrNull { TickFrequencies.same(it.hz, defaultFrequency) }?.hz ?: defaultFrequency,
+            TickFrequencies.choicesWith(defaultFrequency).map { choice ->
+                val rate = formatTickFrequency(choice.hz)
+                choice.hz to if (choice.custom) strings("simulation_tick_frequency_custom", "value" to rate) else rate
+            }, tag = "preferences-default-frequency") { onChange(preferences.copy(defaultTickFrequencyHz = it)) }
+        Text(strings(Messages.PreferencesFrequencyScope), style = MaterialTheme.typography.bodySmall)
         onOpenProjectOptions?.let { open ->
             TextButton(onClick = open, modifier = Modifier.heightIn(min = 48.dp)) { Text(strings(Messages.PreferencesProjectOptions)) }
         }
         HorizontalDivider()
-        TextButton(onClick = onRestoreDefaults, modifier = Modifier.heightIn(min = 48.dp)) { Text(strings(Messages.PreferencesRestoreDefaults)) }
+        // It resets every editor preference and cannot be undone, so it asks first. It is also the recovery when the
+        // stored preferences could not be read, which the message covers; confirming always calls onRestoreDefaults.
+        var confirmRestore by remember { mutableStateOf(false) }
+        TextButton(onClick = { confirmRestore = true }, modifier = Modifier.heightIn(min = 48.dp).testTag("preferences-restore-defaults")) {
+            Text(strings(Messages.PreferencesRestoreDefaults))
+        }
+        if (confirmRestore) ConfirmActionDialog(
+            title = strings("preferences_restore_defaults_title"),
+            text = strings("preferences_restore_defaults_confirm"),
+            confirmLabel = strings("confirm_restore"),
+            onConfirm = onRestoreDefaults,
+            onDismiss = { confirmRestore = false },
+        )
     }
+}
+
+/** A confirmation for an action that cannot be undone: a destructive confirm and Cancel. */
+@Composable
+internal fun ConfirmActionDialog(title: String, text: String, confirmLabel: String, onConfirm: () -> Unit, onDismiss: () -> Unit) {
+    val strings = rememberLocalizer()
+    AppAlertDialog(
+        onDismissRequest = onDismiss,
+        modifier = Modifier.exportEditorTestTags().testTag("confirm-dialog"),
+        title = { Text(title) },
+        text = { Text(text, modifier = Modifier.verticalScroll(rememberScrollState())) },
+        confirmButton = {
+            TextButton(onClick = { onDismiss(); onConfirm() }, modifier = Modifier.heightIn(min = 48.dp).testTag("confirm-dialog-confirm"),
+                colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.error)) { Text(confirmLabel) }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss, modifier = Modifier.heightIn(min = 48.dp).testTag("confirm-dialog-cancel")) {
+                Text(strings(Messages.ActionCancel))
+            }
+        },
+    )
+}
+
+/** A preference group's title, after a divider: a heading, so TalkBack moves between groups by heading. */
+@Composable
+private fun PreferenceSection(title: String, divider: Boolean = true) {
+    if (divider) HorizontalDivider()
+    Text(title, fontWeight = FontWeight.Bold, fontSize = 13.sp, modifier = Modifier.semantics { heading() })
 }
 
 @Composable
@@ -224,97 +275,205 @@ private fun PreferenceToggle(title: String, checked: Boolean, tag: String? = nul
 private fun <T> PreferenceChoice(title: String, current: T, choices: List<Pair<T, String>>, tag: String? = null, onChange: (T) -> Unit) {
     val strings = rememberLocalizer()
     var expanded by remember { mutableStateOf(false) }
+    val currentIndex = choices.indexOfFirst { it.first == current }
+    val currentLabel = choices.getOrNull(currentIndex)?.second.orEmpty()
+    val menuScroll = rememberScrollState()
+    val itemHeight = with(LocalDensity.current) { 48.dp.roundToPx() }
+    // Like PrefOptionList's combo box: a drop-down list whose open menu shows the current value checked and in view.
+    LaunchedEffect(expanded) { if (expanded && currentIndex > 2) menuScroll.scrollTo((currentIndex - 2) * itemHeight) }
     Column {
-        Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clickable { expanded = true }
+        Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
+            .clickable(role = Role.DropdownList, onClickLabel = strings("preferences_choice_change")) { expanded = true }
             .then(if (tag == null) Modifier else Modifier.testTag(tag))
-            .semantics { contentDescription = strings(Messages.PreferencesChoiceDescription, "title" to title, "value" to choices.firstOrNull { it.first == current }?.second.orEmpty()) },
+            // The "Title: value" description is what the end-to-end harnesses read. It already holds the value, so no
+            // state description repeats it: TalkBack says "Theme: Dark, drop-down list" once.
+            .semantics(mergeDescendants = true) {
+                contentDescription = strings(Messages.PreferencesChoiceDescription, "title" to title, "value" to currentLabel)
+            },
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically) {
             Text(title, modifier = Modifier.weight(1f))
-            Text(choices.firstOrNull { it.first == current }?.second.orEmpty(), color = MaterialTheme.colorScheme.primary)
+            Text(currentLabel, color = MaterialTheme.colorScheme.primary)
+            DropDownArrow(MaterialTheme.colorScheme.primary)
         }
-        DropdownMenu(expanded, onDismissRequest = { expanded = false }) {
-            choices.forEach { (value, label) -> DropdownMenuItem(text = { Text(label) }, onClick = { expanded = false; onChange(value) }) }
+        DropdownMenu(expanded, onDismissRequest = { expanded = false }, scrollState = menuScroll) {
+            choices.forEachIndexed { index, (value, label) ->
+                val chosen = value == current
+                DropdownMenuItem(text = { Text(label) }, onClick = { expanded = false; if (!chosen) onChange(value) },
+                    leadingIcon = { SelectedMark(chosen) },
+                    modifier = Modifier.semantics { selected = chosen }
+                        .then(if (tag == null) Modifier else Modifier.testTag("$tag-option-$index")))
+            }
         }
     }
+}
+
+/** Preferences → Canvas colors: the roles grouped as in Evolution's Window, Simulation, FPGA and analysis options. */
+internal object CanvasColorChoice {
+    val groups: List<Pair<String, List<EditorColor>>> = listOf(
+        "preferences_colors_group_canvas" to listOf(EditorColor.CANVAS, EditorColor.GRID_BACKGROUND, EditorColor.GRID_DOT,
+            EditorColor.GRID_ZOOMED_DOT, EditorColor.COMPONENT, EditorColor.COMPONENT_SECONDARY, EditorColor.COMPONENT_GHOST,
+            EditorColor.COMPONENT_ICON),
+        "preferences_colors_group_signals" to listOf(EditorColor.SIGNAL_HIGH, EditorColor.SIGNAL_LOW, EditorColor.SIGNAL_UNKNOWN,
+            EditorColor.SIGNAL_ERROR, EditorColor.SIGNAL_FLOATING, EditorColor.SIGNAL_BUS, EditorColor.STROKE, EditorColor.WIDTH_ERROR,
+            EditorColor.WIDTH_ERROR_CAPTION, EditorColor.WIDTH_ERROR_HIGHLIGHT, EditorColor.WIDTH_ERROR_BACKGROUND,
+            EditorColor.CLOCK_FREQUENCY),
+        "preferences_colors_group_fpga" to listOf(EditorColor.FPGA_DEFINE, EditorColor.FPGA_DEFINE_HIGHLIGHT, EditorColor.FPGA_DEFINE_RESIZE,
+            EditorColor.FPGA_DEFINE_MOVE, EditorColor.FPGA_MAPPED, EditorColor.FPGA_SELECTED_MAPPED, EditorColor.FPGA_SELECTABLE_MAPPED,
+            EditorColor.FPGA_SELECT),
+        "preferences_colors_group_text" to listOf(EditorColor.TEXT_TOOL),
+        "preferences_colors_group_analysis" to listOf(EditorColor.KMAP_CELL_TEXT, EditorColor.TABLE_CURSOR, EditorColor.TABLE_HIGHLIGHT,
+            EditorColor.TABLE_SELECTION),
+    )
+
+    /** The stored colors of [role]: TEXT_TOOL_COLOR is one light-reference preference shared by both themes (#340). */
+    private fun roleColors(preferences: EditorPreferences, dark: Boolean, role: EditorColor) =
+        if (role == EditorColor.TEXT_TOOL) preferences.colors else preferences.customColors(dark)
+
+    fun stored(preferences: EditorPreferences, dark: Boolean, role: EditorColor): Int? = roleColors(preferences, dark, role)[role]
+
+    fun customized(preferences: EditorPreferences, dark: Boolean, role: EditorColor): Boolean = role in roleColors(preferences, dark, role)
+
+    /** The built-in color of the theme: Evolution's DARK_* value in the dark theme, else the light default. */
+    fun defaultRgb(preferences: EditorPreferences, dark: Boolean, role: EditorColor): Int =
+        DarkEditorColors[role]?.takeIf { dark } ?: (role.defaultColor(preferences.highContrastSignals).toArgb() and 0xFFFFFF)
+
+    private fun display(dark: Boolean, role: EditorColor, rgb: Int) =
+        if (role == EditorColor.TEXT_TOOL && dark) ThemeTextColor.invertRgb(rgb) else rgb
+
+    /** The color the theme shows; the dark theme shows TEXT_TOOL luma-inverted. */
+    fun shown(preferences: EditorPreferences, dark: Boolean, role: EditorColor): Int =
+        display(dark, role, stored(preferences, dark, role) ?: defaultRgb(preferences, dark, role))
+
+    fun shownDefault(preferences: EditorPreferences, dark: Boolean, role: EditorColor): Int =
+        display(dark, role, defaultRgb(preferences, dark, role))
+
+    /**
+     * Stores a [picked] color as shown. For the dark TEXT_TOOL, TextColorChooser keeps the stored RGB when the shown one
+     * is unchanged and otherwise stores the inversion of the pick. Picking the color a default role already shows (the
+     * Current swatch, or Apply without a change) stores nothing, so the role keeps following its default.
+     */
+    fun pick(preferences: EditorPreferences, dark: Boolean, role: EditorColor, picked: Int): EditorPreferences {
+        if (!customized(preferences, dark, role) && picked == shown(preferences, dark, role)) return preferences
+        val value = if (role == EditorColor.TEXT_TOOL && dark) {
+            if (picked == shown(preferences, dark, role)) stored(preferences, dark, role) ?: defaultRgb(preferences, dark, role)
+            else ThemeTextColor.invertRgb(picked)
+        } else picked
+        return preferences.withRoleColor(dark, role, value)
+    }
+
+    fun restore(preferences: EditorPreferences, dark: Boolean, role: EditorColor): EditorPreferences = preferences.withRoleColor(dark, role, null)
 }
 
 @Composable
 private fun CanvasColorPreferences(preferences: EditorPreferences, onChange: (EditorPreferences) -> Unit, dark: Boolean) {
     val strings = rememberLocalizer()
     var open by remember { mutableStateOf(false) }
-    TextButton(onClick = { open = true }, modifier = Modifier.heightIn(min = 48.dp)) {
+    val sectionState = strings(if (open) "preferences_section_expanded" else "preferences_section_collapsed")
+    TextButton(onClick = { open = !open }, modifier = Modifier.heightIn(min = 48.dp).testTag("preferences-colors")
+        .semantics { stateDescription = sectionState }) {
         Text(strings(Messages.PreferencesColors))
+        EditorIconGlyph(if (open) EditorIcon.COLLAPSE else EditorIcon.EXPAND, Modifier.padding(start = 6.dp).size(16.dp),
+            tint = MaterialTheme.colorScheme.primary)
     }
     if (!open) return
 
-    var role by remember { mutableStateOf(EditorColor.CANVAS) }
-    // Like ThemeColorPreference, the dialog edits the colors of the theme in use.
+    // Like ThemeColorPreference, the rows edit the colors of the theme in use.
     val custom = preferences.customColors(dark)
-    // TEXT_TOOL_COLOR is one light-reference preference; the dark theme shows and takes its luma inversion (#340).
-    val textTool = role == EditorColor.TEXT_TOOL
-    val roleColors = if (textTool) preferences.colors else custom
-    val stored = roleColors[role]
-    val default = DarkEditorColors[role]?.takeIf { dark }?.editorColorOr(Color.Black) ?: role.defaultColor(preferences.highContrastSignals)
-    val current = when {
-        textTool -> (stored ?: (default.toArgb() and 0xFFFFFF)).let { if (dark) ThemeTextColor.invertRgb(it) else it }
-        else -> stored ?: (default.toArgb() and 0xFFFFFF)
+    var editing by remember { mutableStateOf<EditorColor?>(null) }
+    var confirmRestoreAll by remember { mutableStateOf(false) }
+    Column(Modifier.fillMaxWidth().testTag("preferences-colors-list"), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Text(strings(if (dark) Messages.PreferencesColorsThemeDark else Messages.PreferencesColorsThemeLight) + " " +
+            strings("preferences_colors_help"), style = MaterialTheme.typography.bodySmall)
+        for ((group, roles) in CanvasColorChoice.groups) {
+            Text(strings(group), fontWeight = FontWeight.Bold, fontSize = 13.sp, modifier = Modifier.padding(top = 8.dp).semantics { heading() })
+            for (role in roles) CanvasColorRow(role.label(strings), role, CanvasColorChoice.shown(preferences, dark, role),
+                CanvasColorChoice.customized(preferences, dark, role), onEdit = { editing = role },
+                onRestore = { onChange(CanvasColorChoice.restore(preferences, dark, role)) })
+        }
+        Text(strings("preferences_colors_group_kmap"), style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 4.dp))
+        KmapColorGrid(preferences, dark) { editing = it }
+        TextButton(
+            onClick = { if (custom.size > 1) confirmRestoreAll = true else onChange(preferences.withCustomColors(dark, emptyMap())) },
+            enabled = custom.isNotEmpty(),
+            modifier = Modifier.heightIn(min = 48.dp).testTag("preferences-colors-restore"),
+        ) { Text(strings("preferences_colors_restore_theme")) }
     }
-    var input by remember(role, current) { mutableStateOf(editorColorHex(current)) }
-    val rgb = parseEditorColor(input)
-    AlertDialog(
-        onDismissRequest = { open = false },
-        title = { Text(strings(Messages.PreferencesColors)) },
-        text = {
-            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(strings(if (dark) Messages.PreferencesColorsThemeDark else Messages.PreferencesColorsThemeLight),
-                    style = MaterialTheme.typography.bodySmall)
-                PreferenceChoice(
-                    strings(Messages.PreferencesColorRole),
-                    role,
-                    EditorColor.entries.map { it to it.label(strings) },
-                    onChange = { role = it },
-                )
-                OutlinedTextField(
-                    value = input,
-                    onValueChange = { input = it },
-                    singleLine = true,
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Ascii),
-                    label = { Text(strings(Messages.PreferencesColorValue)) },
-                    isError = rgb == null,
-                    supportingText = if (rgb == null) { { Text(strings(Messages.PreferencesColorInvalid)) } } else null,
-                    leadingIcon = {
-                        Box(Modifier.size(24.dp)
-                            .background(rgb?.let { Color(0xFF000000.toInt() or it) } ?: default)
-                            .border(1.dp, MaterialTheme.colorScheme.outline))
-                    },
-                    modifier = Modifier.fillMaxWidth(),
-                )
-                TextButton(
-                    onClick = { onChange(preferences.withRoleColor(dark, role, null)) },
-                    enabled = role in roleColors,
-                    modifier = Modifier.heightIn(min = 48.dp),
-                ) { Text(strings(Messages.PreferencesColorRestore)) }
-                TextButton(
-                    onClick = { onChange(preferences.withCustomColors(dark, emptyMap())) },
-                    enabled = custom.isNotEmpty(),
-                    modifier = Modifier.heightIn(min = 48.dp),
-                ) { Text(strings(Messages.PreferencesColorsRestore)) }
-            }
-        },
-        confirmButton = {
-            TextButton(enabled = rgb != null, onClick = {
-                rgb?.let { shown ->
-                    val value = if (textTool && dark) {
-                        // TextColorChooser keeps the stored RGB when the shown one is unchanged.
-                        if (shown == current) stored ?: (default.toArgb() and 0xFFFFFF) else ThemeTextColor.invertRgb(shown)
-                    } else shown
-                    onChange(preferences.withRoleColor(dark, role, value))
-                }
-            }) { Text(strings(Messages.ActionApply)) }
-        },
-        dismissButton = { TextButton(onClick = { open = false }) { Text(strings(Messages.ActionClose)) } },
+    if (confirmRestoreAll) ConfirmActionDialog(
+        title = strings("preferences_colors_restore_confirm_title"),
+        // The light theme's map also holds TEXT_TOOL_COLOR, which both themes share; the dark theme's does not. The light
+        // text names it only when it is one of the colors being restored.
+        text = strings(when {
+            dark -> "preferences_colors_restore_confirm_dark"
+            EditorColor.TEXT_TOOL in custom -> "preferences_colors_restore_confirm_light"
+            else -> "preferences_colors_restore_confirm_light_plain"
+        }, "count" to custom.size),
+        confirmLabel = strings("confirm_restore"),
+        onConfirm = { onChange(preferences.withCustomColors(dark, emptyMap())) },
+        onDismiss = { confirmRestoreAll = false },
     )
+    editing?.let { role ->
+        ColorPickerDialog(
+            title = role.label(strings),
+            initial = ColorPickerModel(CanvasColorChoice.shown(preferences, dark, role)),
+            default = ColorPickerModel(CanvasColorChoice.shownDefault(preferences, dark, role)),
+            alphaEnabled = false,
+            // The Current swatch or an unchanged Apply on a default role is not a change.
+            onPick = { picked -> CanvasColorChoice.pick(preferences, dark, role, picked.rgb).takeIf { it != preferences }?.let(onChange) },
+            onDismiss = { editing = null },
+            onRestoreDefault = { onChange(CanvasColorChoice.restore(preferences, dark, role)) },
+        )
+    }
+}
+
+@Composable
+private fun CanvasColorRow(label: String, role: EditorColor, rgb: Int, customized: Boolean, onEdit: () -> Unit, onRestore: () -> Unit) {
+    val strings = rememberLocalizer()
+    val color = ColorPickerModel(rgb)
+    Row(Modifier.fillMaxWidth().heightIn(min = 48.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(Modifier.weight(1f).heightIn(min = 48.dp)
+            .clickable(role = Role.Button, onClickLabel = strings("preferences_choice_change"), onClick = onEdit)
+            .semantics(mergeDescendants = true) {
+                contentDescription = strings("color_swatch_description", "name" to label, "hex" to color.hex)
+                stateDescription = strings(if (customized) "color_state_custom" else "color_state_default")
+            }.testTag("preferences-color-${role.key}"),
+            verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            ColorSample(color, 40.dp)
+            Text(label, modifier = Modifier.weight(1f))
+        }
+        if (customized) Box(Modifier.size(48.dp).clickable(role = Role.Button, onClick = onRestore)
+            .semantics { contentDescription = strings(Messages.PreferencesColorRestore) + ": " + label }
+            .testTag("preferences-color-restore-${role.key}"), contentAlignment = Alignment.Center) {
+            EditorIconGlyph(EditorIcon.UNDO, Modifier.size(20.dp), tint = MaterialTheme.colorScheme.primary)
+        }
+    }
+}
+
+/** CoverColor's 16 K-map group colors as a compact grid: 8 columns where they fit, else 4. */
+@Composable
+private fun KmapColorGrid(preferences: EditorPreferences, dark: Boolean, onEdit: (EditorColor) -> Unit) {
+    val strings = rememberLocalizer()
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val columns = if (maxWidth >= 48.dp * 8) 8 else 4
+        Column {
+            EditorColor.kmapGroups.chunked(columns).forEach { row ->
+                Row {
+                    row.forEach { role ->
+                        val color = ColorPickerModel(CanvasColorChoice.shown(preferences, dark, role))
+                        val customized = CanvasColorChoice.customized(preferences, dark, role)
+                        val label = role.label(strings)
+                        Box(Modifier.size(48.dp).clickable(role = Role.Button, onClickLabel = strings("preferences_choice_change")) { onEdit(role) }
+                            .semantics {
+                                contentDescription = strings("color_swatch_description", "name" to label, "hex" to color.hex)
+                                stateDescription = strings(if (customized) "color_state_custom" else "color_state_default")
+                            }.testTag("preferences-color-${role.key}"), contentAlignment = Alignment.Center) {
+                            ColorSample(color, 40.dp, if (customized) Modifier.border(2.dp, MaterialTheme.colorScheme.primary, RoundedCornerShape(4.dp)) else Modifier)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 private fun EditorColor.label(strings: dev.logisim.mobile.localization.Localizer): String =
@@ -331,7 +490,9 @@ private fun ValueCharacterPreferences(preferences: EditorPreferences, onChange: 
             onChange(preferences.copy(valueCharacters = update(it)))
         }
     }
-    Text(strings("preferences_value_characters_title"), fontWeight = FontWeight.Bold, fontSize = 13.sp)
+    // A label inside Simulation, not a section of its own: the rows after it are SimOptions' symbol choosers only.
+    Text(strings("preferences_value_characters_title"), style = MaterialTheme.typography.labelLarge,
+        color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(top = 4.dp))
     row("preferences_true_char", "preferences-true-char", dev.logisim.mobile.core.ValueCharacters.TRUE_CHOICES, current.trueChar) {
         current.copy(trueChar = it)
     }

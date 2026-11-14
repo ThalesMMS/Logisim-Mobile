@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.text.KeyboardOptions
@@ -17,6 +18,7 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -31,7 +33,11 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFontFamilyResolver
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
@@ -51,6 +57,10 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.math.log2
+import kotlin.math.pow
+import kotlin.math.roundToInt
+import kotlin.math.roundToLong
 
 /**
  * Bounds and drawing include the same objects in world coordinates, without editor handles.
@@ -152,6 +162,23 @@ fun VisualExportPanel(
         pdfCircuits != null -> printable.any { it.id in pdfCircuits }
         else -> selection == null || selection.isNotEmpty()
     }
+    // Checked as typed (C104): the scale and margin, and the image size they give before anything is rendered.
+    val scaleValue = exportNumber(scale)?.takeIf { it > 0.0 }
+    val marginValue = exportNumber(margin)?.takeIf { it >= 0.0 }
+    val showsSize = !batch && format != VisualExportFormat.PDF
+    val drawingBounds = remember(exportSource, context.document, context.selectedWires, selection, showsSize) {
+        if (showsSize) runCatching { exportSource.bounds(context, selection) }.getOrNull() else null
+    }
+    val outputSize = if (scaleValue != null && marginValue != null) drawingBounds?.let { VisualExport.pixelSize(it, scaleValue, marginValue) } else null
+    val raster = format == VisualExportFormat.PNG || format == VisualExportFormat.JPEG || format == VisualExportFormat.GIF
+    val sizeProblem = outputSize?.let { size ->
+        when {
+            !size.fitsInt -> "visual_export_dimensions_large"
+            raster && !size.fitsRaster() -> "visual_export_pixel_limit"
+            else -> null
+        }
+    }
+    val inputsValid = scaleValue != null && (marginValue != null || format == VisualExportFormat.PDF) && sizeProblem == null
 
     fun complete(result: AssetActionResult, action: VisualExportAction, batch: Boolean = false) {
         busy = false
@@ -265,9 +292,43 @@ fun VisualExportPanel(
             }
         }
         if (!batch) OutlinedTextField(filename, { filename = it }, enabled = !busy, label = { Text(t("visual_export_filename")) }, singleLine = true, modifier = Modifier.fillMaxWidth())
+        // Evolution's ExportImage scale slider: 2^(k/6) from 12.5% to 800%, with the percentage beside it.
+        val percent = scaleValue?.let { message("visual_export_scale_value", "percent" to exportPercent(it)).resolve(language) }
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            val sliderLabel = t("visual_export_scale_slider")
+            Slider(value = (scaleValue?.let(::exportStepForScale) ?: 0).toFloat(), enabled = !busy,
+                onValueChange = { scale = formatExportScale(exportScaleForStep(it.roundToInt())) },
+                valueRange = EXPORT_SCALE_STEPS.first.toFloat()..EXPORT_SCALE_STEPS.last.toFloat(),
+                steps = EXPORT_SCALE_STEPS.last - EXPORT_SCALE_STEPS.first - 1,
+                modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("visual-export-scale-slider").semantics {
+                    contentDescription = sliderLabel
+                    percent?.let { stateDescription = it }
+                })
+            Text(percent.orEmpty(), modifier = Modifier.widthIn(min = 56.dp).testTag("visual-export-scale-percent"),
+                style = MaterialTheme.typography.titleMedium)
+        }
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            EXPORT_SCALE_PRESETS.forEach { preset ->
+                val value = preset / 100.0
+                FilterChip(selected = scaleValue == value, enabled = !busy, onClick = { scale = formatExportScale(value) },
+                    label = { Text(message("visual_export_scale_value", "percent" to preset).resolve(language)) },
+                    modifier = Modifier.heightIn(min = 48.dp).testTag("visual-export-scale-preset-$preset"))
+            }
+        }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            OutlinedTextField(scale, { scale = it }, enabled = !busy, label = { Text(t("visual_export_scale")) }, singleLine = true, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.weight(1f))
-            if (format != VisualExportFormat.PDF) OutlinedTextField(margin, { margin = it }, enabled = !busy, label = { Text(t("visual_export_margin")) }, singleLine = true, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.weight(1f))
+            OutlinedTextField(scale, { scale = it }, enabled = !busy, label = { Text(t("visual_export_scale")) }, singleLine = true,
+                isError = scaleValue == null, supportingText = { Text(t(if (scaleValue == null) "visual_export_invalid_scale" else "visual_export_scale_help")) },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal), modifier = Modifier.weight(1f))
+            if (format != VisualExportFormat.PDF) OutlinedTextField(margin, { margin = it }, enabled = !busy, label = { Text(t("visual_export_margin")) }, singleLine = true,
+                isError = marginValue == null, supportingText = if (marginValue == null) { { Text(t("visual_export_invalid_margin")) } } else null,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number), modifier = Modifier.weight(1f))
+        }
+        outputSize?.let { size ->
+            Text(message("visual_export_output_size", "width" to size.width.toLong(), "height" to size.height.toLong()).resolve(language),
+                modifier = Modifier.testTag("visual-export-pixel-size"), style = MaterialTheme.typography.bodyMedium)
+        }
+        sizeProblem?.let { problem ->
+            Text(t(problem), color = MaterialTheme.colorScheme.error, modifier = Modifier.testTag("visual-export-pixel-limit"))
         }
         if (!batch && pdfCircuits == null) {
             val canSelectObjects = !busy && (availableSelection.isNotEmpty() || selectionOnly)
@@ -293,10 +354,12 @@ fun VisualExportPanel(
             }
         }
         if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-        status?.let { Text(it.resolve(language), color = if (failed) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface) }
-        Button(onClick = { export(VisualExportAction.SAVE) }, enabled = !busy && selectionAvailable && delivery.supports(VisualExportAction.SAVE), modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(t(if (batch) "visual_export_batch_save" else "visual_export_save")) }
-        if (!batch) TextButton(onClick = { export(VisualExportAction.SHARE) }, enabled = !busy && selectionAvailable && delivery.supports(VisualExportAction.SHARE), modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(t("visual_export_share")) }
-        if (!batch) TextButton(onClick = { export(VisualExportAction.PRINT) }, enabled = !busy && selectionAvailable && format == VisualExportFormat.PDF && delivery.supports(VisualExportAction.PRINT), modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(t("visual_export_print")) }
+        // Registered with the tool sheet, so its banner does not repeat the result shown here (C74).
+        AccessibleEditorNotice(status, Modifier.testTag("visual-export-status"), isError = failed)
+        val ready = !busy && selectionAvailable && inputsValid
+        Button(onClick = { export(VisualExportAction.SAVE) }, enabled = ready && delivery.supports(VisualExportAction.SAVE), modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("visual-export-save")) { Text(t(if (batch) "visual_export_batch_save" else "visual_export_save")) }
+        if (!batch) TextButton(onClick = { export(VisualExportAction.SHARE) }, enabled = ready && delivery.supports(VisualExportAction.SHARE), modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("visual-export-share")) { Text(t("visual_export_share")) }
+        if (!batch) TextButton(onClick = { export(VisualExportAction.PRINT) }, enabled = ready && format == VisualExportFormat.PDF && delivery.supports(VisualExportAction.PRINT), modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(t("visual_export_print")) }
     }
 }
 
@@ -340,6 +403,28 @@ internal suspend fun buildVisualExportAsset(
     }
     DocumentAsset(outputName, format.mimeType, bytes)
 }
+
+/** The steps of Evolution's ExportImage scale slider (SLIDER_DIVISIONS = 6): 2^(k/6) for k in -18..18, 12.5%–800%. */
+internal val EXPORT_SCALE_STEPS = -18..18
+internal val EXPORT_SCALE_PRESETS = listOf(25, 50, 100, 200, 400)
+
+internal fun exportScaleForStep(step: Int): Double = 2.0.pow(step.coerceIn(EXPORT_SCALE_STEPS) / 6.0)
+
+/** The slider step nearest to [scale]; scales beyond 12.5%–800% sit at the ends. */
+internal fun exportStepForScale(scale: Double): Int = (6 * log2(scale)).roundToInt().coerceIn(EXPORT_SCALE_STEPS)
+
+internal fun exportPercent(scale: Double): Long = (scale * 100).roundToLong()
+
+/** A scale as the exact field shows it: at most four decimals and no trailing zeros ("2", "0.25", "1.1225"). */
+internal fun formatExportScale(scale: Double): String {
+    val tenThousandths = (scale * 10_000).roundToLong()
+    val whole = tenThousandths / 10_000
+    val fraction = (tenThousandths % 10_000).toString().padStart(4, '0').trimEnd('0')
+    return if (fraction.isEmpty()) whole.toString() else "$whole.$fraction"
+}
+
+/** A typed scale or margin; a decimal comma is accepted, as on Portuguese keyboards. */
+internal fun exportNumber(text: String): Double? = text.trim().replace(',', '.').toDoubleOrNull()?.takeIf(Double::isFinite)
 
 internal fun visualExportFilename(input: String, format: VisualExportFormat): String {
     val name = input.trim()

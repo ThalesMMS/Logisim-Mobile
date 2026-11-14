@@ -283,6 +283,19 @@ class EditorPreferencesTest {
         assertEquals("U000000E", formatEditorSignal(mixed, EditorSignalRadix.UNSIGNED_DECIMAL))
     }
 
+    @Test
+    fun everyOfferedDefaultFrequencyRoundTripsAndAnUnusualStoredOneSurvives() {
+        val storage = TestPreferencesStorage(null)
+        for (hz in dev.logisim.mobile.core.TickFrequencies.choices + 3.0) {
+            assertEquals(PreferencesSaveResult.Success, EditorPreferencesRepository(storage).save(EditorPreferences(defaultTickFrequencyHz = hz)))
+            assertEquals(hz, EditorPreferencesRepository(storage).load().preferences.defaultTickFrequencyHz)
+        }
+        // The stored Double is unchanged: a hand-edited 3 Hz loads as 3.0 and the choice lists it as a custom entry.
+        assertTrue("defaultTickFrequencyHz=3.0" in storage.contents.orEmpty())
+        assertEquals(3.0, EditorPreferencesCodec.read(header + "defaultTickFrequencyHz=3\n").preferences.defaultTickFrequencyHz)
+        assertEquals(listOf(3.0), dev.logisim.mobile.core.TickFrequencies.choicesWith(3.0).filter { it.custom }.map { it.hz })
+    }
+
     private class TestPreferencesStorage(var contents: String?) : PreferencesStorage {
         var writes = 0
         var failWrites = false

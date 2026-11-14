@@ -126,6 +126,9 @@ internal fun ProjectTemplateSettings(store: ProjectTemplateStore, assets: Docume
     var type by remember(store) { mutableStateOf(ProjectTemplateType.PLAIN) }
     var busy by remember(store) { mutableStateOf(true) }
     var notice by remember(store) { mutableStateOf<LocalizedText?>(null) }
+    // The name of the file installed in this session; the store keeps only its own copy of the XML.
+    var installedName by remember(store) { mutableStateOf<String?>(null) }
+    var confirmRemove by remember(store) { mutableStateOf(false) }
     suspend fun update(failure: LocalizedText, action: () -> Unit) {
         busy = true
         notice = null
@@ -166,6 +169,7 @@ internal fun ProjectTemplateSettings(store: ProjectTemplateStore, assets: Docume
                 when (result) {
                     is AssetOpenResult.Opened -> scope.launch {
                         update(message(Messages.ProjectTemplateSaveFailed)) { store.install(result.asset.bytes) }
+                        if (notice == null) installedName = result.asset.name.takeIf(String::isNotBlank)
                     }
                     is AssetOpenResult.Failure -> { notice = result.notice; busy = false }
                     AssetOpenResult.Cancelled -> busy = false
@@ -178,11 +182,30 @@ internal fun ProjectTemplateSettings(store: ProjectTemplateStore, assets: Docume
     }, enabled = !busy, modifier = Modifier.heightIn(min = 48.dp)) {
         Text(strings(Messages.ProjectTemplateChoose))
     }
-    if (installed) TextButton(onClick = {
-        busy = true
-        scope.launch { update(message(Messages.ProjectTemplateSaveFailed)) { store.remove() } }
-    }, enabled = !busy, modifier = Modifier.heightIn(min = 48.dp)) {
+    // Removing deletes the app's only copy of the template, so it asks first and names it.
+    if (installed) TextButton(onClick = { confirmRemove = true }, enabled = !busy,
+        modifier = Modifier.heightIn(min = 48.dp).testTag("project-template-remove")) {
         Text(strings(Messages.ProjectTemplateRemove))
     }
+    // ProjectTemplateStore.remove() returns to the plain template only when the custom one is selected; the file name is
+    // known only for a template installed in this session.
+    if (confirmRemove) ConfirmActionDialog(
+        title = strings("project_template_remove_title"),
+        text = strings(when {
+            type == ProjectTemplateType.CUSTOM && installedName != null -> "project_template_remove_selected_named"
+            type == ProjectTemplateType.CUSTOM -> "project_template_remove_selected"
+            installedName != null -> "project_template_remove_unselected_named"
+            else -> "project_template_remove_unselected"
+        }, "name" to installedName.orEmpty()),
+        confirmLabel = strings("confirm_remove"),
+        onConfirm = {
+            busy = true
+            scope.launch {
+                update(message(Messages.ProjectTemplateSaveFailed)) { store.remove() }
+                if (!installed) installedName = null
+            }
+        },
+        onDismiss = { confirmRemove = false },
+    )
     notice?.let { Text(strings(it), color = MaterialTheme.colorScheme.error) }
 }
