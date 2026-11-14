@@ -16,6 +16,58 @@ data class MemorySelection(val first: Long, val last: Long) {
     operator fun contains(address: Long): Boolean = address in first..last
 }
 
+/**
+ * Addresses as sorted, disjoint, non-adjacent ranges, so a Fill of thousands of words is one entry. The editor keeps
+ * the words its edits wrote here, also those written with the value they already held.
+ */
+class MemoryAddressRanges private constructor(val ranges: List<LongRange>) {
+    constructor() : this(emptyList())
+
+    val isEmpty: Boolean get() = ranges.isEmpty()
+
+    operator fun contains(address: Long): Boolean {
+        var low = 0
+        var high = ranges.lastIndex
+        while (low <= high) {
+            val middle = (low + high) ushr 1
+            val range = ranges[middle]
+            when {
+                address < range.first -> high = middle - 1
+                address > range.last -> low = middle + 1
+                else -> return true
+            }
+        }
+        return false
+    }
+
+    /** These ranges and [added], merging any that overlap or touch. */
+    operator fun plus(added: LongRange): MemoryAddressRanges {
+        if (added.isEmpty()) return this
+        var first = added.first
+        var last = added.last
+        val result = ArrayList<LongRange>(ranges.size + 1)
+        var placed = false
+        for (range in ranges) {
+            when {
+                range.last < first - 1 -> result += range
+                range.first > last + 1 -> {
+                    if (!placed) { result += first..last; placed = true }
+                    result += range
+                }
+                else -> { first = minOf(first, range.first); last = maxOf(last, range.last) }
+            }
+        }
+        if (!placed) result += first..last
+        return MemoryAddressRanges(result)
+    }
+
+    fun addresses(): Sequence<Long> = ranges.asSequence().flatMap { it.asSequence() }
+
+    override fun equals(other: Any?): Boolean = other is MemoryAddressRanges && ranges == other.ranges
+    override fun hashCode(): Int = ranges.hashCode()
+    override fun toString(): String = "MemoryAddressRanges($ranges)"
+}
+
 data class MemoryCell(
     val address: Long,
     val addressText: String,
@@ -40,6 +92,8 @@ data class MemoryEditorModel(
     val selection: MemorySelection? = null,
     val addressRadix: MemoryRadix = MemoryRadix.HEXADECIMAL,
     val valueRadix: MemoryRadix = MemoryRadix.HEXADECIMAL,
+    /** Every word a word edit, Fill, replace or Paste wrote, whether or not its value changed. */
+    val written: MemoryAddressRanges = MemoryAddressRanges(),
 ) {
     init {
         requireLocalized(pageSize in 1..256) { message(Messages.MemoryErrorPageSize) }
@@ -47,8 +101,12 @@ data class MemoryEditorModel(
         requireLocalized(selection == null || selection.last < image.capacity) { message(Messages.MemoryErrorSelectionRange) }
     }
 
-    fun cells(): List<MemoryCell> = (firstAddress until minOf(image.capacity, firstAddress + pageSize)).map { address ->
-        MemoryCell(address, format(address.toULong(), image.addressBits, addressRadix), image[address],
+    fun cells(): List<MemoryCell> = (firstAddress until minOf(image.capacity, firstAddress + pageSize)).map(::cell)
+
+    /** The cell at [address] as the grid shows it, on this page or another. */
+    fun cell(address: Long): MemoryCell {
+        requireLocalized(address in 0 until image.capacity) { message(Messages.MemoryErrorAddressRange, "last" to (image.capacity - 1)) }
+        return MemoryCell(address, format(address.toULong(), image.addressBits, addressRadix), image[address],
             format(image[address], image.dataBits, valueRadix), selection?.contains(address) == true)
     }
 
@@ -70,14 +128,15 @@ data class MemoryEditorModel(
 
     fun editCell(addressText: String, valueText: String): MemoryEditResult = edit {
         val address = parseAddress(addressText)
-        copy(image = image.withCells(mapOf(address to parseValue(valueText))), selection = MemorySelection(address, address))
+        copy(image = image.withCells(mapOf(address to parseValue(valueText))), selection = MemorySelection(address, address),
+            written = written + (address..address))
     }
 
     fun fillSelection(valueText: String): MemoryEditResult = edit {
         val range = selection ?: throw LocalizedArgumentException(message(Messages.MemoryErrorSelectFirst))
         requireLocalized(range.size <= MAX_EDIT_CELLS) { message(Messages.MemoryErrorEditLimit, "count" to MAX_EDIT_CELLS).copy(quantity = MAX_EDIT_CELLS.toLong()) }
         val value = parseValue(valueText)
-        copy(image = image.withCells((range.first..range.last).associateWith { value }))
+        copy(image = image.withCells((range.first..range.last).associateWith { value }), written = written + (range.first..range.last))
     }
 
     fun replaceSelection(valueTexts: List<String>): MemoryEditResult = edit {
@@ -86,10 +145,18 @@ data class MemoryEditorModel(
         write(range.first, valueTexts)
     }
 
-    fun paste(addressText: String, text: String): MemoryEditResult = edit {
+    fun paste(addressText: String, text: String): MemoryEditResult = edit { pasteAt(parseAddress(addressText), text) }
+
+    /** Pastes at a cell chosen in the grid (the selection's first word), not at a typed address. */
+    fun paste(at: Long, text: String): MemoryEditResult = edit {
+        requireLocalized(at in 0 until image.capacity) { message(Messages.MemoryErrorAddressRange, "last" to (image.capacity - 1)) }
+        pasteAt(at, text)
+    }
+
+    private fun pasteAt(first: Long, text: String): MemoryEditorModel {
         val values = text.split(Regex("[\\s,;]+")).filter { it.isNotBlank() }
         requireLocalized(values.isNotEmpty()) { message(Messages.MemoryErrorPasteEmpty) }
-        write(parseAddress(addressText), values)
+        return write(first, values)
     }
 
     fun clearContents(): MemoryEditorModel = copy(image = image.cleared())
@@ -112,7 +179,7 @@ data class MemoryEditorModel(
         requireLocalized(valueTexts.size.toLong() <= image.capacity - first) { message(Messages.MemoryErrorRangeOverflow) }
         val values = valueTexts.map(::parseValue)
         return copy(image = image.withCells(values.mapIndexed { offset, value -> first + offset to value }.toMap()),
-            selection = MemorySelection(first, first + values.lastIndex))
+            selection = MemorySelection(first, first + values.lastIndex), written = written + (first..first + values.lastIndex))
     }
 
     private fun parseAddress(text: String): Long {
@@ -155,4 +222,23 @@ data class MemoryEditorModel(
             return value.toString(radix.base).padStart(width, '0')
         }
     }
+}
+
+/**
+ * Writes the words that [edited] changes relative to [base], and every [written] word, over [current]. Edits staged
+ * against [base] and restored after the memory changed elsewhere (a running RAM, Load image) then keep every other
+ * word as it is now, while a word the user wrote with the value it already had (a Fill over it) is written again.
+ */
+fun rebaseMemoryEdits(
+    base: MemoryImage,
+    edited: MemoryImage,
+    current: MemoryImage,
+    written: MemoryAddressRanges = MemoryAddressRanges(),
+): MemoryImage {
+    requireLocalized(listOf(edited, current).all { it.addressBits == base.addressBits && it.dataBits == base.dataBits }) {
+        message(Messages.MemoryErrorImageDimensions)
+    }
+    val changed = (base.nonZeroWords.keys + edited.nonZeroWords.keys).filter { base[it] != edited[it] }
+    val rewritten = written.addresses().takeWhile { it < base.capacity }
+    return current.withCells((changed.asSequence() + rewritten).associateWith { edited[it] })
 }
