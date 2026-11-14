@@ -4,6 +4,16 @@ import dev.logisim.mobile.core.ArgbImage
 import dev.logisim.mobile.core.ComponentMenuItem
 import dev.logisim.mobile.core.EmbeddedImage
 import dev.logisim.mobile.core.ImageMenu
+import dev.logisim.mobile.core.MemoryImage
+import dev.logisim.mobile.core.MemoryImageCodec
+import dev.logisim.mobile.core.MemoryImageFormat
+import dev.logisim.mobile.core.MemoryImageImportResult
+import dev.logisim.mobile.core.localization.LocalizedText
+import dev.logisim.mobile.core.localization.localizedDescription
+import dev.logisim.mobile.core.localization.message
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import java.io.File
 import java.util.Base64
 import kotlin.test.Test
@@ -81,6 +91,54 @@ class ComponentMenuActionsHostTest {
         assertNull(roomy.applyImageMenu(ComponentMenuItem.IMAGE_OPTIMIZE, before.id))
         assertEquals(before, roomy.image())
         assertEquals("The image is already optimized for its current frame size (48x32).", roomy.statusText.resolve())
+    }
+
+    /**
+     * Load image… on a ROM (MemMenu.doLoad -> HexFile.open, which auto-detects the format). App.kt's MEMORY_LOAD
+     * passes HEX_WORDS_ADDRESSED and applies a Success through applyMemoryEditorImage; this mirrors that path with a
+     * Logisim 2.7.1 "v2.0 raw" program file, which used to fail with "The header does not match the selected format."
+     */
+    @Test
+    fun memoryLoadDetectsTheHeaderOfAV2RawProgram() {
+        val state = EditorState("""<?xml version="1.0" encoding="UTF-8"?>
+<project source="2.7.1" version="1.0">
+  <lib desc="#Memory" name="4"/>
+  <main name="main"/>
+  <circuit name="main">
+    <comp lib="4" loc="(200,100)" name="ROM"><a name="addrWidth" val="4"/><a name="dataWidth" val="8"/></comp>
+  </circuit>
+</project>""")
+        val rom = state.document.components.single()
+        val notices = mutableListOf<LocalizedText>()
+        val assets = object : DocumentAssetActions {
+            override fun open(mimeTypes: List<String>, maximumBytes: Int, onResult: (AssetOpenResult) -> Unit) =
+                onResult(AssetOpenResult.Opened(DocumentAsset("program.hex", "text/plain", "v2.0 raw\n0a ff\n".encodeToByteArray())))
+            override fun create(asset: DocumentAsset, onResult: (AssetActionResult) -> Unit) = error("create")
+            override fun share(asset: DocumentAsset, onResult: (AssetActionResult) -> Unit) = error("share")
+            override fun printPdf(asset: DocumentAsset, onResult: (AssetActionResult) -> Unit) = error("print")
+        }
+        val files = NativeMemoryImageActions(assets, CoroutineScope(SupervisorJob() + Dispatchers.Unconfined),
+            onFailure = { notices += it }, workerDispatcher = Dispatchers.Unconfined)
+        val context = EditorToolContext(state.project, state.document, state.simulation, listOf(rom),
+            { state.applyProject(it) }, { state.applyDocument(it) }, state::selectCircuit, { state.selectComponent(it) },
+            state::reportStatus, documentIdentity = state.documentIdentity,
+            sendComponentEvent = { id, event -> state.sendComponentEvent(id, event) }, showNotice = state::reportStatus)
+        var format: MemoryImageFormat? = null
+        files.importImage(rom, MemoryImageFormat.HEX_WORDS_ADDRESSED) { result ->
+            when (result) {
+                is MemoryImageImportResult.Success -> runCatching {
+                    format = result.format
+                    if (!applyMemoryEditorImage(context, rom.id, result.image, importedImage = result)) notices += message("memory_tool_not_applied")
+                }.onFailure { notices += it.localizedDescription(message("memory_tool_invalid")) }
+                is MemoryImageImportResult.Failure -> notices += LocalizedText.join(result.diagnostics.map { it.notice })
+                null -> Unit
+            }
+        }
+        println("MEMORY_LOAD v2.0 raw: format=$format notices=${notices.map { it.resolve() }}")
+        assertEquals(emptyList<String>(), notices.map { it.resolve() })
+        assertEquals(MemoryImageFormat.RAW, format)
+        assertEquals(MemoryImageCodec.encodeCirc(MemoryImage(4, 8, mapOf(0L to 0x0auL, 1L to 0xffuL))),
+            state.document.components.single().attributes["contents"])
     }
 
     @Test

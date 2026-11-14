@@ -24,6 +24,13 @@ fun editorCircuitAccessibilityActions(context: EditorToolContext): CircuitAccess
     },
     connect = { from, to -> context.isCurrentEditorContext() && context.connect(from, to) },
     insertComponent = { kind, point -> context.isCurrentEditorContext() && context.insertComponent(kind, point) },
+    editInputValue = context.editInputValue?.let { edit -> { id -> context.isCurrentEditorContext() && edit(id) } },
+    toggleInputBit = context.toggleInputBit?.let { toggle -> { id, bit -> context.isCurrentEditorContext() && toggle(id, bit) } },
+    openControls = context.canOpenIoControls?.let { can ->
+        { id ->
+            (context.isCurrentEditorContext() && can(id)).also { if (it) { context.selectComponent(id); context.openProperties() } }
+        }
+    },
 )
 
 fun circuitAccessibilityEditorTool(registry: ComponentRegistry): EditorTool = EditorTool(
@@ -40,5 +47,6 @@ fun circuitAccessibilityEditorTool(registry: ComponentRegistry): EditorTool = Ed
         selectedWireIndices = context.document.wires.withIndex().filter { it.value in context.selectedWires }.mapTo(mutableSetOf()) { it.index },
         actions = editorCircuitAccessibilityActions(context),
         availableDefinitions = registry.definitions.filter { ProjectBuiltinLibraries.includes(context.project, it.library) },
+        creationDefaults = context.creationDefaults,
     )
 }

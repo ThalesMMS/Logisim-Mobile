@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -14,7 +13,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -150,9 +148,8 @@ private fun ExternalTelnetPanel(component: CircuitComponent, state: TelnetState,
         }
     }
     val active = entry.status != null
-    Row(Modifier.fillMaxWidth()) {
-        Checkbox(entry.allowLan, onCheckedChange = { entry.allowLan = it }, enabled = !active && !entry.startAttempted && !entry.busy)
-        Text(text("external_io_telnet_lan"), modifier = Modifier.padding(top = 12.dp))
+    LabeledCheckbox(text("external_io_telnet_lan"), entry.allowLan, enabled = !active && !entry.startAttempted && !entry.busy) {
+        entry.allowLan = it
     }
     Text(text("external_io_telnet_lan_help"), style = MaterialTheme.typography.bodySmall)
     Text(text("external_io_telnet_status", "state" to text(externalTelnetStateKey(if (entry.paused)

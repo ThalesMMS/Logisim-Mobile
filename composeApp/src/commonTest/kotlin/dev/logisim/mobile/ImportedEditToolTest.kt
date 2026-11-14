@@ -10,6 +10,7 @@ import dev.logisim.mobile.core.ProjectMouseMappings
 import dev.logisim.mobile.core.ProjectToolbar
 import dev.logisim.mobile.core.ProjectToolbarBinding
 import dev.logisim.mobile.core.WireSegment
+import dev.logisim.mobile.core.bounds
 import dev.logisim.mobile.core.orthogonalWireRoute
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -51,6 +52,43 @@ class ImportedEditToolTest {
         assertEquals(GridPoint(130, 100), wireStart(state, middle, alt = true))
         assertNull(wireStart(state, Offset(100f, 100f), alt = true))
         assertEquals(GridPoint(130, 140), wireStart(state, Offset(130f, 140f), alt = true))
+
+        // A finger keeps the selected wire's interior a move and Alt's inversion; only terminals reach farther.
+        assertNull(wireStart(state, middle, terminal = fingerTerminal))
+        assertEquals(GridPoint(130, 100), wireStart(state, middle, alt = true, terminal = fingerTerminal))
+        assertNull(wireStart(state, Offset(130f, 112f), terminal = fingerTerminal))
+    }
+
+    @Test
+    fun aFingerReachesAPinsPortFromBesideItButStillDragsTheSmallPinsBody() {
+        val state = EditorState(projectXml)
+        val pin = state.document.components.first()
+        val body = pin.bounds(state.componentRegistry)
+        assertEquals(100, body.right)
+        val beside = Offset(112f, 100f)
+        assertNull(wireStart(state, beside))
+        assertEquals(GridPoint(100, 100), wireStart(state, beside, terminal = fingerTerminal))
+        // A 20x20 pin: a press in its body 12 units from the port moves it; 5 units from the port wires, as before.
+        assertNull(wireStart(state, Offset(88f, 100f), terminal = fingerTerminal))
+        assertEquals(GridPoint(100, 100), wireStart(state, Offset(95f, 100f), terminal = fingerTerminal))
+        assertEquals(GridPoint(100, 100), wireStart(state, Offset(95f, 100f)))
+        // The release reaches the other pin's port from 12 units beside it, which the mouse does not.
+        val release = Offset(172f, 100f)
+        assertEquals(GridPoint(160, 100), state.document.editToolConnectionPoint(release, canvasPoint(release, true), 8f,
+            state.componentRegistry, fingerTerminal))
+        assertNull(state.document.editToolConnectionPoint(release, canvasPoint(release, true), 8f, state.componentRegistry))
+    }
+
+    @Test
+    fun aFingerBelowAPinsBodyButNotPastItsPortEdgeStillDragsThePin() {
+        val state = EditorState(projectXml)
+        val body = state.document.components.first().bounds(state.componentRegistry)
+        assertEquals(110, body.bottom)
+        // Below the right half, outside the body and 16 units from the port: a halo drag that moves the pin.
+        assertNull(wireStart(state, Offset(95f, 115f), terminal = fingerTerminal))
+        assertNull(wireStart(state, Offset(99f, 112f), terminal = fingerTerminal))
+        // Past the edge the port sits on, the finger reaches it from as far.
+        assertEquals(GridPoint(100, 100), wireStart(state, Offset(106f, 112f), terminal = fingerTerminal))
     }
 
     @Test
@@ -89,8 +127,11 @@ class ImportedEditToolTest {
         state.tap(GridPoint(220, 150))
         assertEquals("north", state.document.components.last().facing)
 
+        // AddTool.keyPressed: the arrows also turn a library tool (C34), not only an imported toolbar tool.
         state.place(ComponentKind.INPUT)
-        assertFalse(state.handleToolFacing(Direction.WEST))
+        assertTrue(state.handleToolFacing(Direction.WEST))
+        assertEquals("west", state.placingTemplate?.facing)
+        assertEquals(null, state.projectPlacementTool)
         state.changeMode(EditorMode.MOVE)
         assertFalse(state.handleToolFacing(Direction.WEST))
     }
@@ -161,10 +202,14 @@ class ImportedEditToolTest {
         assertTrue(state.document.wires.isEmpty())
     }
 
-    private fun wireStart(state: EditorState, point: Offset, alt: Boolean = false): GridPoint? =
-        state.document.editToolWireStart(point, 8f, state.componentRegistry, true, state.selectedWires, alt)
+    /** The mouse radius is 8 units; [terminal] is the touch radius for ports and wire ends. */
+    private fun wireStart(state: EditorState, point: Offset, alt: Boolean = false, terminal: Float = 8f): GridPoint? =
+        state.document.editToolWireStart(point, 8f, state.componentRegistry, true, state.selectedWires, alt, terminal)
 
     companion object {
+        /** 17 dp at a phone's fit zoom (0.85 dp per unit), in circuit units. */
+        private const val fingerTerminal = 20f
+
         private const val projectXml = """
             <project source="2.7.1" version="1.0">
               <lib name="0" desc="#Wiring"/><lib name="6" desc="#Base"/>

@@ -311,7 +311,8 @@ class CircuitAccessibilityModelTest {
     fun insertionCoordinatesAreValidatedBeforeEditing() {
         assertEquals(GridPoint(-100, 20), accessibleInsertionPoint("-100", "20"))
         assertNull(accessibleInsertionPoint("abc", "20"))
-        assertNull(accessibleInsertionPoint("21", "20"))
+        // Off-grid coordinates snap to the nearest grid point instead of being refused (X1).
+        assertEquals(GridPoint(20, 20), accessibleInsertionPoint("21", "20"))
         assertNull(accessibleInsertionPoint("2147483648", "0"))
     }
 

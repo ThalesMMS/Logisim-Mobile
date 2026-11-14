@@ -36,7 +36,8 @@ class CircuitClipboardTest {
         target.confirmPaste()
 
         assertEquals(listOf("IN", "OUT"), target.document.components.map { it.label })
-        assertEquals(listOf(WireSegment(GridPoint(300, 200), GridPoint(400, 200))), target.document.wires)
+        // The block's centre (150, 100) follows the preview point (C45).
+        assertEquals(listOf(WireSegment(GridPoint(250, 200), GridPoint(350, 200))), target.document.wires)
         assertEquals(sourceBefore, source.project)
         target.undo()
         assertEquals(targetBefore, target.project)

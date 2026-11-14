@@ -3,6 +3,10 @@ package dev.logisim.mobile
 import androidx.compose.ui.geometry.Offset
 import dev.logisim.mobile.core.CircuitComponent
 import dev.logisim.mobile.core.ComponentKind
+import dev.logisim.mobile.core.ExternalIoComponents
+import dev.logisim.mobile.core.FlipFlopPoked
+import dev.logisim.mobile.core.GridPoint
+import dev.logisim.mobile.core.PortIoTogglePin
 import dev.logisim.mobile.core.layout
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -11,6 +15,72 @@ import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class SequentialPokeTest {
+    @Test
+    fun aFingertipReachesTheFlipFlopToggleWhileTheMouseKeepsEvolutionsCircle() {
+        val editor = EditorState(project("""
+            <circuit name="main">
+              <comp lib="1" loc="(160,160)" name="D Flip-Flop"/>
+            </circuit>
+        """))
+        val flop = editor.document.components.single()
+        val bounds = flop.layout(editor.componentRegistry).bounds
+        val center = Offset((bounds.left + bounds.right) / 2f, (bounds.top + bounds.bottom) / 2f)
+        val near = center + Offset(12f, 0f)
+        assertNull(flop.sequentialPokeTarget(near, editor.componentRegistry))
+        assertNull(flop.sequentialPokeTarget(near, editor.componentRegistry, tolerance = 0f))
+        val target = assertNotNull(flop.sequentialPokeTarget(near, editor.componentRegistry, tolerance = 16f))
+        assertEquals(FlipFlopPoked, target.toggle)
+        // The highlighted target and the start/end comparison keep the drawn 16-unit circle.
+        assertEquals(flop.sequentialPokeTarget(center, editor.componentRegistry), target)
+        assertNull(flop.sequentialPokeTarget(center + Offset(12f, 0f), editor.componentRegistry, tolerance = 10f))
+        // The reach stops at half the body, so a tap on the body's edge or beside it selects instead.
+        val half = minOf(bounds.right - bounds.left, bounds.bottom - bounds.top) / 2f
+        assertNull(flop.sequentialPokeTarget(center + Offset(half + 1f, 0f), editor.componentRegistry, tolerance = 40f))
+    }
+
+    @Test
+    fun aFingertipReachesTheNearestShiftRegisterStage() {
+        val editor = EditorState(project("""
+            <circuit name="main">
+              <comp lib="1" loc="(160,240)" name="Shift Register">
+                <a name="length" val="3"/><a name="width" val="4"/>
+              </comp>
+            </circuit>
+        """))
+        val shift = editor.document.components.single()
+        val registry = editor.componentRegistry
+        val body = shift.layout(registry).bounds
+        val stages = shift.shiftPokeTargets(registry)
+        val box = stages[1].bounds
+        val below = Offset(box.center.x + 3f, box.bottom + 3f)
+        assertTrue(below.y < body.bottom)
+        assertNull(shift.sequentialPokeTarget(below, registry))
+        assertEquals(1, shift.sequentialPokeTarget(below, registry, tolerance = 20f)?.stage)
+        assertEquals(stages[1], shift.sequentialPokeTarget(below, registry, tolerance = 20f))
+        // Just past a box's edge the next stage is the nearer one; off the body nothing is poked.
+        assertEquals(2, shift.sequentialPokeTarget(Offset(box.right + 1f, box.center.y), registry, tolerance = 20f)?.stage)
+        assertNull(shift.sequentialPokeTarget(Offset(box.center.x, body.bottom + 4f), registry, tolerance = 20f))
+    }
+
+    @Test
+    fun aFingertipReachesTheNearestPortIoPinWithinTwoUnits() {
+        val port = CircuitComponent("port", ExternalIoComponents.PortIo, GridPoint(100, 200),
+            attributes = mapOf("facing" to "east", "number" to "8"))
+        // Pin 0 covers (107..112, 225..230), pin 1 the row below from 235, pin 2 the column right from 117.
+        assertNull(externalIoEventAt(port, GridPoint(114, 227)))
+        assertEquals(PortIoTogglePin(0), externalIoEventAt(port, GridPoint(114, 227), tolerance = 20))
+        assertEquals(PortIoTogglePin(2), externalIoEventAt(port, GridPoint(115, 227), tolerance = 20))
+        assertNull(externalIoEventAt(port, GridPoint(110, 233)))
+        assertEquals(PortIoTogglePin(1), externalIoEventAt(port, GridPoint(110, 233), tolerance = 20))
+        assertEquals(PortIoTogglePin(0), externalIoEventAt(port, GridPoint(110, 232), tolerance = 20))
+        assertNull(externalIoEventAt(port, GridPoint(110, 222), tolerance = 20))
+        assertEquals(PortIoTogglePin(0), externalIoEventAt(port, GridPoint(110, 228), tolerance = 20))
+        // A one-pin port has no second row to reach.
+        val single = port.copy(attributes = mapOf("facing" to "east", "number" to "1"))
+        assertEquals(PortIoTogglePin(0), externalIoEventAt(single, GridPoint(110, 232), tolerance = 20))
+        assertNull(externalIoEventAt(single, GridPoint(110, 233), tolerance = 20))
+    }
+
     @Test
     fun originalSymbolsUpdateTheirOutputsWithoutPulsingTheClockOrChangingTheFile() {
         val editor = EditorState(project("""

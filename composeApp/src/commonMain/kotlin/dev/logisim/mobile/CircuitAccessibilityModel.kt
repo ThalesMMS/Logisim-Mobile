@@ -9,6 +9,7 @@ import dev.logisim.mobile.core.ComponentLayout
 import dev.logisim.mobile.core.ComponentRegistry
 import dev.logisim.mobile.core.ComponentTerminal
 import dev.logisim.mobile.core.GridPoint
+import dev.logisim.mobile.core.IoLibrary
 import dev.logisim.mobile.core.LogicValue
 import dev.logisim.mobile.core.LogicVector
 import dev.logisim.mobile.core.PortDirection
@@ -55,12 +56,62 @@ data class AccessibleComponent(
     val kindName: String,
     val bounds: ComponentBounds,
     val ports: List<AccessiblePort>,
+    /** Another component has the same name at the same point, so only the internal id can tell them apart. */
+    val stacked: Boolean = false,
 ) {
     val key: String get() = "component:${component.id}"
-    val isInteractiveInput: Boolean get() = component.kind in setOf(ComponentKind.INPUT, ComponentKind.BUTTON)
+    /** What the component's one-step action does for assistive technology, or null when it has none (X0). */
+    val activation: AccessibleActivation? get() = when {
+        component.kind == ComponentKind.INPUT -> if (component.width > 1) AccessibleActivation.TOGGLE_LOW_BIT else AccessibleActivation.TOGGLE
+        component.kind == ComponentKind.CLOCK -> AccessibleActivation.TOGGLE
+        component.kind == ComponentKind.BUTTON -> AccessibleActivation.PRESS
+        IoLibrary.isInteractive(component.kind) -> AccessibleActivation.OPEN_CONTROLS
+        else -> null
+    }
+    /** An input the action drives directly (a pin, clock or button), rather than through its inspector controls. */
+    val isInteractiveInput: Boolean get() = activation.let { it != null && it != AccessibleActivation.OPEN_CONTROLS }
+    /**
+     * A multi-bit input pin: besides its low-bit toggle (a tap without a position), assistive technology sets its
+     * whole value or toggles a chosen bit (X0).
+     */
+    val offersValueEntry: Boolean get() = component.kind == ComponentKind.INPUT && component.width > 1
     val kindText: LocalizedText get() = LocalizedText("component_${component.kind.name.lowercase()}", fallback = kindName)
-    val nameText: LocalizedText get() = if (component.label.isNotBlank() || component.sharedLabel.isNotBlank()) LocalizedText.literal(name)
-        else message("a11y_explorer_unnamed_component", "kind" to kindText, "x" to component.position.x, "y" to component.position.y, "id" to component.id)
+    val nameText: LocalizedText get() = when {
+        component.label.isNotBlank() || component.sharedLabel.isNotBlank() -> LocalizedText.literal(name)
+        stacked -> message("a11y_explorer_unnamed_component", "kind" to kindText, "x" to component.position.x, "y" to component.position.y, "id" to component.id)
+        else -> message("a11y_explorer_unnamed_component_at", "kind" to kindText, "x" to component.position.x, "y" to component.position.y)
+    }
+}
+
+/**
+ * The one-step action the Explorer and the canvas overlay offer for an input (X0), named for what it does: a 1-bit
+ * pin or a clock toggles, a multi-bit pin toggles bit 0 (as a tap without a position), a Button is pressed and
+ * released, and a DIP switch, joystick, keyboard or keypad opens the inspector that holds its controls.
+ */
+enum class AccessibleActivation { TOGGLE, TOGGLE_LOW_BIT, PRESS, OPEN_CONTROLS }
+
+/** The action's label for [name]. */
+fun AccessibleActivation.label(name: LocalizedText): LocalizedText = message(when (this) {
+    AccessibleActivation.TOGGLE -> "a11y_explorer_activate"
+    AccessibleActivation.TOGGLE_LOW_BIT -> "a11y_input_toggle_low_bit"
+    AccessibleActivation.PRESS -> "a11y_button_press"
+    AccessibleActivation.OPEN_CONTROLS -> "a11y_io_open_controls"
+}, "name" to name)
+
+/**
+ * Runs [component]'s action and returns whether it applied. [AccessibleActivation.TOGGLE_LOW_BIT] toggles bit 0
+ * whatever the pin's radix (a tap on a hex or octal pin would advance its low digit instead);
+ * [AccessibleActivation.OPEN_CONTROLS] opens the inspector where the editor shows the controls, and is refused, with
+ * the reason in the status line, where it does not; the others are the editor's activation.
+ */
+fun CircuitAccessibilityActions.activate(component: AccessibleComponent): Boolean {
+    val id = component.component.id
+    return when (component.activation) {
+        null -> false
+        AccessibleActivation.TOGGLE_LOW_BIT -> toggleInputBit?.invoke(id, 0) ?: activateComponent(id)
+        AccessibleActivation.OPEN_CONTROLS -> openControls?.invoke(id) ?: run { openProperties(id); true }
+        else -> activateComponent(id)
+    }
 }
 
 /** Connectivity is physical, including named tunnels. Splitter terminals retain their distinct branches. */
@@ -124,14 +175,25 @@ class CircuitAccessibilityGraph(
             port.id to port.copy(connectedPorts = OtherPortsView(portsByNet.getValue(net), indexInNet.getValue(port.id)),
                 wireIndices = wiresByNet[net].orEmpty())
         }
+        fun kindName(component: CircuitComponent) = registry.definition(component.kind)?.fileName ?: component.kind.name
+        fun displayLabel(component: CircuitComponent) = component.label.ifBlank { component.sharedLabel }.ifBlank { kindName(component) }
+        fun located(component: CircuitComponent) = component.label.isBlank() || component.label in duplicateLabels
+        // The position tells apart duplicate labels and unlabeled components; the internal id is added only for
+        // components with the same name stacked on one point.
+        val stackedNames = document.components.filter(::located)
+            .groupingBy { Triple(displayLabel(it), it.position.x, it.position.y) }.eachCount().filterValues { it > 1 }.keys
         components = document.components.sortedWith(compareBy<CircuitComponent> { it.position.y }.thenBy { it.position.x }.thenBy { it.id })
             .map { component ->
-                val kind = registry.definition(component.kind)?.fileName ?: component.kind.name
-                val label = component.label.ifBlank { component.sharedLabel }.ifBlank { kind }
-                val name = if (component.label.isBlank() || component.label in duplicateLabels)
-                    "$label (${component.position.x}, ${component.position.y}), ${component.id}" else label
+                val kind = kindName(component)
+                val label = displayLabel(component)
+                val stacked = located(component) && Triple(label, component.position.x, component.position.y) in stackedNames
+                val name = when {
+                    !located(component) -> label
+                    stacked -> "$label (${component.position.x}, ${component.position.y}), ${component.id}"
+                    else -> "$label (${component.position.x}, ${component.position.y})"
+                }
                 AccessibleComponent(component, name, kind, layouts.getValue(component.id).bounds,
-                    layouts.getValue(component.id).ports.map { ports.getValue(AccessiblePortId(component.id, it.name)) })
+                    layouts.getValue(component.id).ports.map { ports.getValue(AccessiblePortId(component.id, it.name)) }, stacked)
             }
         componentsById = components.associateBy { it.component.id }
     }

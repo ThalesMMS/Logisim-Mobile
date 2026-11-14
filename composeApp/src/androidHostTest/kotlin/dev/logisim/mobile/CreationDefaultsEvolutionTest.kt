@@ -61,18 +61,24 @@ class CreationDefaultsEvolutionTest {
         }
     }
 
-    /** #344: the toolbar the editor shows for each saved project is the one Evolution loads from it; the empty template has none. */
+    /**
+     * #344: the project toolbar the editor shows for each saved project is the one Evolution loads from it; the empty
+     * template has none. Touch then gets Mobile's base tools (Poke, Edit, Select, Wire, Text) beside it, which the
+     * project never saves.
+     */
     @Test
     fun displayedToolbarsMatchTheToolbarsEvolutionLoaded() {
         val oracle = File(directory, "evolution-load.tsv").readLines().map { it.split('\t') }
         for (profile in PROFILES) {
             val evolution = oracle.filter { it[0] == "evolution" && it[1] == profile && it[2] == "toolbar" }.map { it[4] }
-            val state = EditorState(File(directory, "mobile-$profile.circ").readText())
-            val shown = projectToolbarEntries(state.project, state.componentRegistry).map { (item, _) ->
-                if (item.isSeparator) "separator" else item.name
-            }
+            val xml = File(directory, "mobile-$profile.circ").readText()
+            val state = EditorState(xml)
+            val entries = projectToolbarEntries(state.project, state.componentRegistry)
+            val shown = entries.map { (item, _) -> if (item.isSeparator) "separator" else item.name }
             assertEquals(evolution, shown, profile)
             assertEquals(profile == "empty", shown.isEmpty(), profile)
+            assertEquals(if (profile == "empty") MobileBaseTool.entries else emptyList(), mobileBaseTools(entries), profile)
+            assertEquals(state.exportXml().contains("<toolbar"), xml.contains("<toolbar"), profile)
         }
     }
 

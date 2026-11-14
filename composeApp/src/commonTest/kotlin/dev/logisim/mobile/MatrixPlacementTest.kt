@@ -11,7 +11,9 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertIs
 import kotlin.test.assertNotNull
+import kotlin.test.assertNotSame
 import kotlin.test.assertNull
+import kotlin.test.assertSame
 import kotlin.test.assertTrue
 
 class MatrixPlacementTest {
@@ -83,6 +85,31 @@ class MatrixPlacementTest {
         state.tap(GridPoint(400, 500))
         assertNull(state.pendingMatrixPlacement)
         assertEquals(2, state.document.components.size)
+    }
+
+    @Test
+    fun aTickFrequencyChangeKeepsThePendingMatrixPlacement() {
+        val state = emptyEditor()
+        state.place(ComponentKind.NOT)
+        state.togglePlacementMatrix()
+        state.tap(GridPoint(100, 200))
+        val placement = assertNotNull(state.pendingMatrixPlacement)
+        val document = state.document
+        // Simulate > Tick frequency while the matrix dialog waits: the main circuit's document is replaced.
+        assertTrue(state.setTickFrequency(8.0))
+        assertNotSame(document, state.document)
+        assertSame(placement, state.pendingMatrixPlacement)
+        assertTrue(state.placementMatrixEnabled)
+        assertTrue(state.confirmMatrixPlacement(placement, 2, 1, 50, 70, "INV"))
+        assertEquals(listOf("INV_X0_Y0", "INV_X1_Y0"), state.document.components.map { it.label })
+        assertTrue("""<a name="simulationFrequency" val="8.0"/>""" in state.exportXml())
+        // Any other change of the document still drops a pending placement.
+        state.place(ComponentKind.NOT)
+        state.togglePlacementMatrix()
+        state.tap(GridPoint(300, 200))
+        assertNotNull(state.pendingMatrixPlacement)
+        state.undo()
+        assertNull(state.pendingMatrixPlacement)
     }
 
     @Test

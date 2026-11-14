@@ -19,6 +19,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
+import androidx.compose.ui.text.input.KeyboardType
 import dev.logisim.mobile.core.CircuitComponent
 import dev.logisim.mobile.core.ComponentEvent
 import dev.logisim.mobile.core.ComponentKind
@@ -28,8 +30,14 @@ import dev.logisim.mobile.core.SequentialHexEntered
 import dev.logisim.mobile.core.SequentialLibrary
 import dev.logisim.mobile.core.ShiftRegisterStagePoked
 import dev.logisim.mobile.core.layout
+import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.Messages
+import dev.logisim.mobile.core.localization.localizedLabel
+import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.localization.rememberLocalizer
+import kotlin.math.abs
+import kotlin.math.max
+import kotlin.math.min
 
 internal val flipFlopKinds = setOf(
     ComponentKind.D_FLIP_FLOP, SequentialLibrary.TFlipFlop, SequentialLibrary.JKFlipFlop, SequentialLibrary.SRFlipFlop,
@@ -64,17 +72,55 @@ internal fun CircuitComponent.shiftPokeTargets(registry: ComponentRegistry): Lis
     }
 }
 
-internal fun CircuitComponent.sequentialPokeTarget(point: Offset, registry: ComponentRegistry): SequentialPokeTarget? {
-    if (kind == SequentialLibrary.ShiftRegister) return shiftPokeTargets(registry).firstOrNull { it.bounds.contains(point) }
+/**
+ * The poke target under [point]. [tolerance] (world units, 0 for the mouse) lets a fingertip reach it: the flip-flop
+ * toggle grows from Evolution's 8-unit circle up to half the body, and a shift-register tap anywhere on the body
+ * row reaches the nearest stage. The returned bounds stay the drawn target.
+ */
+internal fun CircuitComponent.sequentialPokeTarget(
+    point: Offset, registry: ComponentRegistry, tolerance: Float = 0f,
+): SequentialPokeTarget? {
+    if (kind == SequentialLibrary.ShiftRegister) return shiftPokeTarget(point, registry, tolerance)
     if (kind !in flipFlopKinds && kind != ComponentKind.REGISTER && kind != ComponentKind.COUNTER) return null
     val layout = layout(registry)
     val bounds = layout.bounds.let { Rect(it.left.toFloat(), it.top.toFloat(), it.right.toFloat(), it.bottom.toFloat()) }
     if (kind in flipFlopKinds) {
-        if ((point - bounds.center).getDistanceSquared() >= 64f) return null
+        // AbstractFlipFlop.Poker.isInside: d² < 8² around the toggle point.
+        val radius = max(8f, min(tolerance, bounds.minDimension / 2f))
+        if ((point - bounds.center).getDistanceSquared() >= radius * radius) return null
         return SequentialPokeTarget(id, Rect(bounds.center - Offset(8f, 8f), bounds.center + Offset(8f, 8f)), toggle = FlipFlopPoked)
     }
     if (!bounds.contains(point)) return null
     return SequentialPokeTarget(id, bounds, width = layout.outputs.first { it.name == "q" }.width)
+}
+
+private fun CircuitComponent.shiftPokeTarget(point: Offset, registry: ComponentRegistry, tolerance: Float): SequentialPokeTarget? {
+    val targets = shiftPokeTargets(registry)
+    if (tolerance <= 0f) return targets.firstOrNull { it.bounds.contains(point) }
+    // Stages sit 10 units apart: grow each box by at most half that sideways, and by the tolerance vertically
+    // within the register's body; the nearest box wins.
+    val body = layout(registry).bounds.let { Rect(it.left.toFloat(), it.top.toFloat(), it.right.toFloat(), it.bottom.toFloat()) }
+    val sideways = min(tolerance, 5f)
+    return targets.filter { target ->
+        val reach = Rect(target.bounds.left - sideways, target.bounds.top - tolerance,
+            target.bounds.right + sideways, target.bounds.bottom + tolerance)
+        reach.contains(point) && body.inflate(0.5f).contains(point)
+    }.minWithOrNull(compareBy<SequentialPokeTarget> { target ->
+        val dx = max(max(target.bounds.left - point.x, 0f), point.x - target.bounds.right)
+        val dy = max(max(target.bounds.top - point.y, 0f), point.y - target.bounds.bottom)
+        dx * dx + dy * dy
+    }.thenBy { abs(point.x - it.bounds.center.x) })
+}
+
+/**
+ * The poke dialog's title: the register's label, or its kind when unlabelled, and the shift-register stage it edits
+ * (C49; Evolution edits the poked value in place, so the dialog says what it edits).
+ */
+internal fun sequentialPokeTitle(component: CircuitComponent?, target: SequentialPokeTarget): LocalizedText {
+    val name = component?.label?.takeIf { it.isNotBlank() }?.let(LocalizedText::literal)
+        ?: component?.kind?.localizedLabel() ?: LocalizedText.literal(target.componentId)
+    return target.stage?.let { message("sequential_poke_title_stage", "name" to name, "stage" to it) }
+        ?: message("sequential_poke_title", "name" to name)
 }
 
 @Composable
@@ -83,6 +129,7 @@ internal fun SequentialHexEditor(
     currentValue: String,
     onDigits: (List<Int>) -> Unit,
     onDismiss: () -> Unit,
+    component: CircuitComponent? = null,
 ) {
     val strings = rememberLocalizer()
     val focus = remember(target) { FocusRequester() }
@@ -90,6 +137,7 @@ internal fun SequentialHexEditor(
     AppAlertDialog(
         onDismissRequest = onDismiss,
         modifier = Modifier.exportEditorTestTags(),
+        title = { Text(strings(sequentialPokeTitle(component, target)), Modifier.testTag("sequential-poke-title")) },
         text = {
             OutlinedTextField(
                 value = draft,
@@ -101,9 +149,12 @@ internal fun SequentialHexEditor(
                     if (digits.isNotEmpty()) onDigits(digits)
                 },
                 label = { Text(strings(Messages.MemoryValueRadix, "base" to 16)) },
-                supportingText = { Text(currentValue) },
+                // Each digit applies at once; the line under the field shows the register's live value.
+                supportingText = { Text(strings("sequential_poke_current", "value" to currentValue)) },
                 singleLine = true,
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+                // Hexadecimal digits: letters without suggestions or autocorrection, shown in capitals.
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Ascii, autoCorrectEnabled = false,
+                    capitalization = KeyboardCapitalization.Characters, imeAction = ImeAction.Done),
                 keyboardActions = KeyboardActions(onDone = { onDismiss() }),
                 modifier = Modifier.fillMaxWidth().focusRequester(focus).testTag("sequential-poke-hex"),
             )

@@ -48,7 +48,9 @@ import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntRect
 import androidx.compose.ui.unit.dp
+import dev.logisim.mobile.core.CircuitComponent
 import dev.logisim.mobile.core.ComponentBounds
+import dev.logisim.mobile.core.ComponentMenuItem
 import dev.logisim.mobile.core.SimulationState
 import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.core.localization.LocalizedText
@@ -77,6 +79,8 @@ fun CircuitSemanticOverlay(
     modifier: Modifier = Modifier,
     visibleComponentIds: Set<String>? = null,
     maximumNodes: Int = 250,
+    /** The long-press menu items of a component, offered as custom actions through [CircuitAccessibilityActions.componentMenu]. */
+    componentMenu: (CircuitComponent) -> List<Pair<ComponentMenuItem, LocalizedText>> = { emptyList() },
 ) {
     require(maximumNodes > 0)
     val language = LocalAppLanguage.current
@@ -96,6 +100,7 @@ fun CircuitSemanticOverlay(
     val startingPort = connection.start
     var focusedKey by remember { mutableStateOf<String?>(null) }
     var terminalChooser by remember(graph) { mutableStateOf<String?>(null) }
+    var bitChooser by remember(graph) { mutableStateOf<String?>(null) }
     fun cancelConnection() {
         connection = AccessibleConnectionSession()
         onNotice(message("a11y_explorer_connection_cancelled"))
@@ -153,9 +158,27 @@ fun CircuitSemanticOverlay(
                             add(CustomAccessibilityAction(message("a11y_explorer_remove", "name" to name).resolve(language)) {
                                 actions.removeComponent(component.component.id)
                             })
-                            if (component.isInteractiveInput) add(CustomAccessibilityAction(message("a11y_explorer_activate", "name" to name).resolve(language)) {
-                                actions.activateComponent(component.component.id)
-                            })
+                            component.activation?.let { activation ->
+                                add(CustomAccessibilityAction(activation.label(name).resolve(language)) { actions.activate(component) })
+                            }
+                            if (component.offersValueEntry) {
+                                actions.editInputValue?.let { edit ->
+                                    // False when the dialog cannot open; the editor's status line says why.
+                                    add(CustomAccessibilityAction(message("a11y_input_set_value", "name" to name).resolve(language)) {
+                                        edit(component.component.id)
+                                    })
+                                }
+                                if (actions.toggleInputBit != null) add(CustomAccessibilityAction(
+                                    message("a11y_input_toggle_bit", "name" to name).resolve(language)) {
+                                    bitChooser = component.component.id; true
+                                })
+                            }
+                            // The Menu Tool items of the long-press menu: rotate, view, memory, distribute, image (C42).
+                            actions.componentMenu?.let { choose ->
+                                for ((item, label) in componentMenu(component.component)) {
+                                    add(CustomAccessibilityAction(label.resolve(language)) { choose(item, component.component.id); true })
+                                }
+                            }
                             val availablePorts = inlinePorts.filter { it.id != startingPort }
                             if (needsCanvasTerminalChooser(availablePorts.size, size)) {
                                 add(CustomAccessibilityAction(message("a11y_explorer_ports", "name" to name).resolve(language)) {
@@ -216,6 +239,11 @@ fun CircuitSemanticOverlay(
                     }.focusable())
             }
         }
+    }
+    bitChooser?.let(graph::component)?.let { component ->
+        InputBitChooserDialog(component.nameText, component.component.width, readings.vectorValues[component.component.id],
+            onToggle = { bit -> actions.toggleInputBit?.invoke(component.component.id, bit); bitChooser = null },
+            onDismiss = { bitChooser = null })
     }
     terminalChooser?.let(graph::component)?.let { component ->
         val firstTerminal = remember(component.key) { FocusRequester() }

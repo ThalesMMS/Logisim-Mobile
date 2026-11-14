@@ -54,6 +54,9 @@ class CanvasPokeAndMenuTest {
     private class Recorder {
         val pokes = mutableListOf<Pair<String, Int?>>()
         val menu = mutableListOf<Pair<ComponentMenuItem, String>>()
+        val taps = mutableListOf<GridPoint>()
+        val textTaps = mutableListOf<TextToolTarget>()
+        val areas = mutableListOf<Pair<GridPoint, GridPoint>>()
     }
 
     private fun ComposeUiTest.canvas(recorder: Recorder, mode: EditorMode, document: CircuitDocument = this@CanvasPokeAndMenuTest.document,
@@ -62,12 +65,14 @@ class CanvasPokeAndMenuTest {
         setContent {
             CompositionLocalProvider(LocalAppLanguage provides AppLanguage.ENGLISH) {
                 CircuitCanvas(document, simulation, null, null, null, { _, _ -> }, {}, mode,
-                    Modifier.fillMaxSize().testTag("canvas"), onCanvasTap = {}, viewportState = viewport,
-                    onViewportChange = { viewport = it }, onSelectArea = { _, _, _ -> }, onSelectComponent = { _, _ -> },
+                    Modifier.fillMaxSize().testTag("canvas"), onCanvasTap = { recorder.taps += it }, viewportState = viewport,
+                    onViewportChange = { viewport = it }, onSelectArea = { from, to, _ -> recorder.areas += from to to },
+                    onSelectComponent = { _, _ -> },
                     onSelectWire = { _, _ -> }, onMoveSelection = { _, _ -> }, keepConnectionsWhenMoving = true,
                     onCommand = {}, onTogglePlacementMatrix = {}, wirePokePrimaryRadix = WirePokeRadix.BINARY,
                     wirePokeSecondaryRadix = null, onViewSubcircuit = {}, registry = registry, showZoomControls = false,
                     onPokePin = { id, bit -> recorder.pokes += id to bit },
+                    onTextToolTap = { target, _ -> recorder.textTaps += target },
                     onComponentMenu = { item, id -> recorder.menu += item to id })
             }
         }
@@ -87,6 +92,47 @@ class CanvasPokeAndMenuTest {
         onNodeWithTag("canvas").performTouchInput { click(viewport().screen(87f, 100f)) }
         waitForIdle()
         assertEquals(listOf<Pair<String, Int?>>("h8" to 0, "h8" to 4), recorder.pokes)
+    }
+
+    /** A grid point between the pin's body and the RAM's: no component or wire there. */
+    private val empty: GridPoint get() {
+        val body = ram.bounds(registry)
+        return GridPoint((100 + body.left) / 20 * 10, (110 + body.top) / 20 * 10)
+    }
+
+    // Evolution places, starts a wire or edits text however long the button is held; only Menu Tool opens popups.
+    @Test
+    fun aSlowTapInThePlaceToolPlacesOnceWithoutAMenu() = runComposeUiTest {
+        val recorder = Recorder()
+        val viewport = canvas(recorder, EditorMode.PLACE)
+        onNodeWithTag("canvas").performTouchInput { longClick(viewport().screen(empty.x.toFloat(), empty.y.toFloat())) }
+        waitForIdle()
+        assertEquals(listOf(empty), recorder.taps)
+        assertEquals(emptyList(), recorder.areas)
+        assertEquals(0, onAllNodesWithTag("canvas-context-menu").fetchSemanticsNodes().size)
+    }
+
+    @Test
+    fun aSlowTapOnAPinInTheWireToolStartsTheWireWithoutAMenu() = runComposeUiTest {
+        val recorder = Recorder()
+        val viewport = canvas(recorder, EditorMode.WIRE)
+        val body = hex.bounds(registry)
+        onNodeWithTag("canvas").performTouchInput {
+            longClick(viewport().screen((body.left + body.right) / 2f, (body.top + body.bottom) / 2f))
+        }
+        waitForIdle()
+        assertEquals(listOf(GridPoint(100, 100)), recorder.taps)
+        assertEquals(0, onAllNodesWithTag("canvas-context-menu").fetchSemanticsNodes().size)
+    }
+
+    @Test
+    fun aSlowTapInTheTextToolOpensTheTextTool() = runComposeUiTest {
+        val recorder = Recorder()
+        val viewport = canvas(recorder, EditorMode.TEXT)
+        onNodeWithTag("canvas").performTouchInput { longClick(viewport().screen(empty.x.toFloat(), empty.y.toFloat())) }
+        waitForIdle()
+        assertEquals(listOf<TextToolTarget>(TextToolTarget.Empty(empty)), recorder.textTaps)
+        assertEquals(0, onAllNodesWithTag("canvas-context-menu").fetchSemanticsNodes().size)
     }
 
     @Test

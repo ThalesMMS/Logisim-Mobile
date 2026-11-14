@@ -17,6 +17,7 @@ import androidx.compose.foundation.gestures.calculatePan
 import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -51,6 +52,7 @@ import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.input.key.Key
@@ -65,6 +67,7 @@ import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.onPreviewKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.input.key.utf16CodePoint
+import androidx.compose.ui.input.pointer.PointerEvent
 import androidx.compose.ui.input.pointer.PointerEventType
 import androidx.compose.ui.input.pointer.PointerType
 import androidx.compose.ui.input.pointer.isAltPressed as pointerAltPressed
@@ -75,6 +78,12 @@ import androidx.compose.ui.input.pointer.isPrimaryPressed
 import androidx.compose.ui.input.pointer.isSecondaryPressed
 import androidx.compose.ui.input.pointer.isTertiaryPressed
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInWindow
+import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalWindowInfo
@@ -194,6 +203,8 @@ internal fun CircuitCanvas(
     mouseBindings: Map<ProjectMouseGesture, ProjectMouseBinding> = emptyMap(),
     onMappedTap: (GridPoint, EditorMode) -> Unit = { _, _ -> },
     onMappedPlacement: (CircuitComponent, GridPoint, Boolean) -> Unit = { _, _, _ -> },
+    /** A placement drag released off the canvas added nothing; true when the after-placement tool switch applies. */
+    onPlacementReleasedOffCanvas: (Boolean) -> Unit = {},
     showZoomControls: Boolean = true,
     onDrawEditToolWire: (GridPoint, GridPoint, Boolean) -> Unit = { _, _, _ -> },
     pendingPaste: PendingPaste? = null,
@@ -225,6 +236,10 @@ internal fun CircuitCanvas(
     componentTips: Boolean = true,
     pinDotDiameter: Int = EditorPinAppearance.DOT_SMALL.diameter,
     valueCharacters: ValueCharacters = ValueCharacters.Default,
+    /** Touch's sticky Shift ([EditorState.additiveSelection]); keyboard modifiers still work for a mouse. */
+    additiveSelection: Boolean = false,
+    /** Controls floating over the circuit (selection bar, Add chip), above the canvas's own overlays. */
+    overlay: @Composable BoxScope.() -> Unit = {},
 ) {
     val strings = rememberLocalizer()
     var viewportSize by remember { mutableStateOf(IntSize.Zero) }
@@ -268,6 +283,8 @@ internal fun CircuitCanvas(
     }
     var wireCornerPreview by remember { mutableStateOf<Pair<GridPoint, GridPoint>?>(null) }
     var editWirePreview by remember { mutableStateOf<WireDragPreview?>(null) }
+    // Where a wire drawn from the current press attaches, shown before the drag starts.
+    var editWireAnchor by remember { mutableStateOf<GridPoint?>(null) }
     var activeGesture by remember { mutableStateOf<CanvasGestureMachine?>(null) }
     var activeIoPointer by remember { mutableStateOf<ActiveIoPointer?>(null) }
     val currentComponentEventSender by rememberUpdatedState(onComponentEvent)
@@ -276,6 +293,7 @@ internal fun CircuitCanvas(
     val currentMouseBindings by rememberUpdatedState(mouseBindings)
     val currentMappedTap by rememberUpdatedState(onMappedTap)
     val currentMappedPlacement by rememberUpdatedState(onMappedPlacement)
+    val currentPlacementReleasedOffCanvas by rememberUpdatedState(onPlacementReleasedOffCanvas)
     val currentPlacementPrototype by rememberUpdatedState(placementPrototype)
     val currentDrawEditToolWire by rememberUpdatedState(onDrawEditToolWire)
     val currentTextToolTap by rememberUpdatedState(onTextToolTap)
@@ -285,6 +303,16 @@ internal fun CircuitCanvas(
     val currentKeyboardPoke by rememberUpdatedState(onKeyboardPoke)
     val currentPokePin by rememberUpdatedState(onPokePin)
     val dismissKeyboardPoke by rememberUpdatedState(onDismissKeyboardPoke)
+    // The long-press tick at the threshold (View.performLongClick with HapticFeedbackConstants.LONG_PRESS).
+    val currentHaptics by rememberUpdatedState(LocalHapticFeedback.current)
+    val currentComponentMenu by rememberUpdatedState(onComponentMenu)
+    val currentViewSubcircuit by rememberUpdatedState(onViewSubcircuit)
+    val currentCanEdit by rememberUpdatedState(canEditCircuit)
+    // The previous tap on a component, for SelectTool's double click on a label (C46).
+    val lastComponentTap = remember(accessibilityContext) { CanvasTapRecord() }
+    // Controls floating over the canvas: a placement released over them adds nothing (R06-2).
+    val overlayRegions = remember { CanvasOverlayRegions() }
+    var canvasWindowOrigin by remember { mutableStateOf(Offset.Zero) }
     val memoryComponents = remember(document.components, registry) {
         document.components.mapNotNull { component ->
             memoryDisplayGrid(component, registry)?.let { component.id to (component to it) }
@@ -305,6 +333,8 @@ internal fun CircuitCanvas(
     var hadFocus by remember { mutableStateOf(false) }
     val currentSelection by rememberUpdatedState(selectedIds)
     val currentWires by rememberUpdatedState(selectedWires)
+    // Read per press, so turning it on or off does not restart the gesture handler.
+    val currentAdditiveSelection by rememberUpdatedState(additiveSelection)
     val wireHandles = remember(document, selectedWires, registry) { wireHandlePoints(document, selectedWires, registry) }
     val currentWireHandles by rememberUpdatedState(wireHandles)
     val measurer = rememberTextMeasurer()
@@ -378,11 +408,12 @@ internal fun CircuitCanvas(
         val target = viewportFitDocument(document, selectedIds, selectedWires, selectionOnly)
         val contentBounds = if (target === document) drawingBounds
             else circuitDrawingBounds(target, measurer, imageDecoder, registry, childCircuit, gateShape)
-        updateViewport(latestViewport.fit(document, inset, controlsHeight, selectedIds, selectedWires, selectionOnly, registry, contentBounds))
+        updateViewport(latestViewport.fit(document, inset, controlsHeight, selectedIds, selectedWires, selectionOnly, registry,
+            contentBounds, FitZoomPerDp * density))
     }
 
     fun zoom(factor: Float, anchor: Offset = Offset(viewportSize.width / 2f, viewportSize.height / 2f)) {
-        changeView(latestViewport.view.zoomed(factor, anchor))
+        changeView(latestViewport.view.zoomed(factor, anchor, MaxZoomPerDp * density))
     }
 
     fun releaseIoPointer() {
@@ -397,6 +428,7 @@ internal fun CircuitCanvas(
         selectionBox = null
         wireCornerPreview = null
         editWirePreview = null
+        editWireAnchor = null
         placementHover = null
         placementPress = null
     }
@@ -423,7 +455,8 @@ internal fun CircuitCanvas(
     }
 
     LaunchedEffect(viewportSize, viewportState.initialized, viewportState.size, registry, drawingBounds) {
-        updateViewport(latestViewport.resized(document, viewportSize, inset, controlsHeight, registry, drawingBounds))
+        updateViewport(latestViewport.resized(document, viewportSize, inset, controlsHeight, registry, drawingBounds,
+            FitZoomPerDp * density))
     }
     LaunchedEffect(viewportReset, viewportState.initialized, viewportState.size) {
         if (viewportState.initialized && handledFitRequest != viewportReset) {
@@ -520,6 +553,7 @@ internal fun CircuitCanvas(
     }
 
     Box(modifier.clipToBounds().background(background).onSizeChanged { viewportSize = it }
+        .onGloballyPositioned { canvasWindowOrigin = it.positionInWindow() }
         .onPreviewKeyEvent(::handleKeyboardPokeKey)) {
         Canvas(
             Modifier.fillMaxSize()
@@ -583,26 +617,52 @@ internal fun CircuitCanvas(
                         val startWorld = latestViewport.view.world(start)
                         if (placingPaste && !mousePan && !secondary) movePastePreview(canvasPoint(startWorld, snapToGrid))
                         val gestureMode = mappedEditorMode(binding, mode)
-                        val pressedPrototype = if (showPlacementPreview && !placingPaste && !printerView && !secondary &&
-                            !mousePan && gestureMode == EditorMode.PLACE) {
+                        // AddTool places on release however the press moved; the ghost only follows it when shown.
+                        val placing = gestureMode == EditorMode.PLACE && !placingPaste && !printerView && !secondary && !mousePan
+                        val pressedPrototype = if (showPlacementPreview && placing) {
                             (binding as? ProjectMouseAction.Place)?.prototype ?: currentPlacementPrototype
                         } else null
                         placementHover = null
                         placementPress = pressedPrototype?.let { it to start }
-                        // Modifiers selecting an explicit mapping do not also add to the selection.
+                        // Modifiers selecting an explicit mapping do not also add to the selection. A finger or pen
+                        // adds while Add to selection is on, in the selecting tools only: in Poke an additive drag
+                        // would draw a marquee instead of panning.
                         val additive = binding == null &&
-                            (modifiers.pointerShiftPressed || modifiers.pointerCtrlPressed || modifiers.pointerMetaPressed)
-                        val tolerance = (if (first.type == PointerType.Touch) 22f else 8f) * density / latestViewport.view.scale
-                        val editWireTolerance = min(tolerance, 8f)
-                        fun editWireEnd(position: Offset): GridPoint {
-                            val world = latestViewport.view.world(position)
-                            val snapped = canvasPoint(world, snapToGrid)
-                            return document.editToolConnectionPoint(world, snapped, editWireTolerance, registry) ?: snapped
+                            (modifiers.pointerShiftPressed || modifiers.pointerCtrlPressed || modifiers.pointerMetaPressed ||
+                                (!mouse && currentAdditiveSelection && gestureMode in AdditiveSelectionModes))
+                        val tolerances = canvasPointerTolerance(first.type, density, latestViewport.view.scale)
+                        val tolerance = tolerances.hit
+                        // The view this gesture last set (auto-pan, pan, pinch). latestViewport shows it only after
+                        // the next recomposition, so a preview or a drop computed before that uses this one instead.
+                        var gestureView: CircuitViewport? = null
+                        var gestureViewBase: CanvasViewportState? = null
+                        fun currentView(): CircuitViewport {
+                            val written = gestureView
+                            if (written != null && latestViewport === gestureViewBase) return written
+                            gestureView = null
+                            return latestViewport.view
                         }
+                        fun setView(next: CircuitViewport) {
+                            gestureView = next
+                            gestureViewBase = latestViewport
+                            changeView(next)
+                        }
+                        // [from], the drag's start, is no end candidate, and the finger reaches a port beyond the
+                        // precise radius only nearer than it: a short stub keeps its grid point.
+                        fun editWireEnd(position: Offset, from: GridPoint? = null): GridPoint {
+                            val world = currentView().world(position)
+                            val snapped = canvasPoint(world, snapToGrid)
+                            return document.editToolConnectionPoint(world, snapped, tolerances.wire, registry,
+                                tolerances.terminal, from = from) ?: snapped
+                        }
+                        // AddTool.mouseExited: off the canvas the ghost hides and a release adds nothing.
+                        fun onCanvas(position: Offset): Boolean =
+                            position.x >= 0f && position.y >= 0f && position.x < size.width && position.y < size.height &&
+                                !overlayRegions.contains(canvasWindowOrigin + position)
                         val editWireStart = if (!placingPaste && !secondary && !mousePan) {
                             when (gestureMode) {
-                                EditorMode.EDIT -> document.editToolWireStart(startWorld, editWireTolerance, registry,
-                                    snapToGrid, currentWires, modifiers.pointerAltPressed)
+                                EditorMode.EDIT -> document.editToolWireStart(startWorld, tolerances.wire, registry,
+                                    snapToGrid, currentWires, modifiers.pointerAltPressed, tolerances.editStart)
                                 EditorMode.WIRE -> editWireEnd(start)
                                 else -> null
                             }
@@ -613,14 +673,18 @@ internal fun CircuitCanvas(
                             else corner?.let { CanvasHit.WireCorner(it) } ?: document.hit(startWorld, tolerance, registry)
                         val ioComponent = (hit as? CanvasHit.Component)?.id?.let { id ->
                             document.components.firstOrNull { it.id == id }
-                        }?.takeIf { gestureMode == EditorMode.INTERACT && !additive && !secondary && !mousePan && it.kind in pointerIoKinds }
-                        val ioAction = ioComponent?.let { IoInteractions.press(it, canvasPoint(startWorld, snapToGrid = false)) }
+                        }?.takeIf { gestureMode == EditorMode.INTERACT && !additive && !secondary && !mousePan && it.kind in PointerIoKinds }
+                        // Touch and stylus pokes reach the nearest switch, key or pin from a fingertip away.
+                        val pokeReach = ceil(tolerances.poke).toInt()
+                        val ioAction = ioComponent?.let { IoInteractions.press(it, canvasPoint(startWorld, snapToGrid = false), pokeReach) }
                         val ioSender = currentComponentEventSender
-                        val action = if (mousePan) CanvasDragAction.PAN else canvasDragAction(gestureMode, hit, additive, editWireStart)
+                        val action = if (mousePan) CanvasDragAction.PAN
+                            else canvasDragAction(gestureMode, hit, additive, editWireStart, placing)
                         val machine = CanvasGestureMachine(start, action)
                         val wireDirection = if (action == CanvasDragAction.DRAW_WIRE)
                             WireDragDirection(canvasPoint(startWorld, snapToGrid)) else null
                         activeGesture = machine
+                        editWireAnchor = if (action == CanvasDragAction.DRAW_WIRE) editWireStart else null
                         val movingIds = when (hit) {
                             is CanvasHit.Component -> if (hit.id in currentSelection) currentSelection
                                 else if (additive) currentSelection + hit.id else setOf(hit.id)
@@ -643,8 +707,93 @@ internal fun CircuitCanvas(
                                 CanvasHit.Empty -> onSelectArea(canvasPoint(startWorld, snapToGrid), canvasPoint(startWorld, snapToGrid), additive)
                             }
                         }
+                        fun tapAt(point: GridPoint) = when (binding) {
+                            is ProjectMouseAction.Place -> currentMappedPlacement(binding.prototype, point, buttons.isPrimaryPressed)
+                            is ProjectMouseAction.Edit -> currentMappedTap(point, gestureMode)
+                            is ProjectMouseAction.Text -> Unit
+                            null -> onCanvasTap(point)
+                        }
                         var lastTime = first.uptimeMillis
                         var movingSelected = false
+                        // A secondary press opens Evolution's MenuTool popup in every tool, a touch long press in the
+                        // selecting tools. Place, Wire and Text take a slow tap as a tap, as Evolution a held button;
+                        // in Wire, a slow tap inside a body with no terminal in reach (where a tap would start a
+                        // wire inside the body) opens the component's menu instead.
+                        fun wireToolBodyMenu(): Boolean = gestureMode == EditorMode.WIRE && hit is CanvasHit.Component &&
+                            document.components.firstOrNull { it.id == hit.id }?.bounds(registry)
+                                ?.strictlyContains(startWorld) == true &&
+                            document.wireToolTerminal(startWorld, tolerance, registry) == null
+                        // A finger or pen held still opens the menu at the timeout, before it lifts (Android's
+                        // performLongClick); a held Button, Joystick or keypad key is a real press ([PokeHeldKinds],
+                        // whose menu is in the selection bar), and a mouse keeps its button.
+                        val longPressMenu = first.type != PointerType.Mouse && !secondary && !mousePan && !placingPaste &&
+                            ioAction?.release == null && (gestureMode !in CanvasTapOnlyModes || wireToolBodyMenu())
+                        fun openMenu(position: Offset) {
+                            selectHit(toggleExisting = false)
+                            val splitPoint = (hit as? CanvasHit.Wire)?.segment?.let {
+                                wireSplitPoint(it, currentView().world(position), snapToGrid)
+                            }
+                            // Evolution's MenuTool: the selection menu when the pressed component is part of a
+                            // larger selection, the component (or wire) menu otherwise, and no menu on empty canvas.
+                            val pressedComponent = (hit as? CanvasHit.Component)?.id
+                            val pressedWire = (hit as? CanvasHit.Wire)?.segment
+                            val selectionMenu = (pressedComponent != null && pressedComponent in currentSelection ||
+                                pressedWire != null && pressedWire in currentWires) && currentSelection.size + currentWires.size > 1
+                            if (pressedComponent != null || pressedWire != null) {
+                                contextMenu = CanvasContextMenu(position, pressedComponent, splitPoint,
+                                    currentView().world(position), pressedWire, selectionMenu)
+                            }
+                        }
+                        // What a drag at [position] shows; edge auto-pan calls it again as the view moves under a
+                        // still finger, so every preview is derived from the start in world units.
+                        fun dragTo(position: Offset) {
+                            val view = currentView()
+                            if (placingPaste && !mousePan) {
+                                movePastePreview(canvasPoint(view.world(position), snapToGrid))
+                                return
+                            }
+                            when (action) {
+                                // AddTool.mouseDragged: the ghost follows the pointer and the view stays.
+                                CanvasDragAction.PLACE -> placementPress = pressedPrototype
+                                    ?.takeIf { onCanvas(position) }?.let { it to position }
+                                CanvasDragAction.PAN -> Unit
+                                CanvasDragAction.SELECT_AREA -> selectionBox = (view.pan + startWorld * view.scale) to position
+                                CanvasDragAction.MOVE_SELECTION -> {
+                                    if (!movingSelected) { selectHit(toggleExisting = false); movingSelected = true }
+                                    val delta = view.world(position) - startWorld
+                                    dragPreview = SelectionDragPreview(movingIds, movingWires, canvasPoint(delta, snapToGrid))
+                                }
+                                CanvasDragAction.MOVE_WIRE_CORNER -> if (hit is CanvasHit.WireCorner) {
+                                    wireCornerPreview = hit.point to movedWireHandle(hit.point, startWorld,
+                                        view.world(position), snapToGrid)
+                                }
+                                CanvasDragAction.DRAW_WIRE -> editWireStart?.let { from ->
+                                    editWirePreview = WireDragPreview(from, editWireEnd(position, from),
+                                        wireDirection?.verticalFirst == true)
+                                }
+                            }
+                        }
+                        // Canvas.autoPanDelta: a drag held within 32 dp of an edge scrolls the view, faster deeper in
+                        // the margin. One finger only, never for a pan, a pinch or an I/O press.
+                        val autoPans = !mousePan && !secondary && ioAction == null &&
+                            (placingPaste || action != CanvasDragAction.PAN)
+                        fun autoPan(position: Offset): Offset {
+                            if (!autoPans || machine.phase != CanvasGesturePhase.DRAGGING) return Offset.Zero
+                            // A placement dragged off the canvas or over a floating control is being cancelled
+                            // (AddTool's SHOW_ADD_NO): the view stays put while the finger rests there.
+                            if (action == CanvasDragAction.PLACE && !placingPaste && !onCanvas(position)) return Offset.Zero
+                            if (showZoomControls && position.x > size.width - CanvasZoomControlsWidthDp * density &&
+                                position.y > size.height - controlsHeight) return Offset.Zero
+                            return canvasAutoPanDelta(position, size.width.toFloat(), size.height.toFloat(), density)
+                        }
+                        // An event read while waiting for the long-press timeout, handled by the next pass.
+                        var pendingCanvasEvent: PointerEvent? = null
+                        // Auto-pan ticks on elapsed time, one step per CanvasAutoPanFrameMillis whether or not events
+                        // arrive: a resting finger's ACTION_MOVE jitter, or a finger moving inside the margin, must
+                        // not hold the scroll back. [panClock] is the gesture's uptime, from the events' uptimes and
+                        // the waits that timed out; [panTickedAt] is the last tick while in the margin.
+                        var panClock = first.uptimeMillis
+                        var panTickedAt: Long? = null
                         try {
                             if (ioAction != null && ioComponent != null) {
                                 onSelectComponent(ioComponent.id, false)
@@ -654,13 +803,56 @@ internal fun CircuitCanvas(
                                 }
                             }
                             while (true) {
-                                val event = awaitPointerEvent().forCanvasGesture(first) ?: continue
+                                // Only a press on a component or wire has a menu; elsewhere a held finger can still pan or select.
+                                if (longPressMenu && machine.phase == CanvasGesturePhase.PRESSED &&
+                                    (hit is CanvasHit.Component || hit is CanvasHit.Wire)) {
+                                    val remaining = viewConfiguration.longPressTimeoutMillis - (lastTime - first.uptimeMillis)
+                                    val held = if (remaining <= 0) null else withTimeoutOrNull(remaining) { awaitPointerEvent() }
+                                    if (held == null) {
+                                        currentHaptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                                        openMenu(machine.position)
+                                        // The rest of the gesture belongs to the menu: lifting or moving the finger
+                                        // neither moves nor pans, and the lift does not choose an item.
+                                        machine.cancel()
+                                        editWireAnchor = null
+                                        placementPress = null
+                                        while (true) {
+                                            val rest = awaitPointerEvent()
+                                            rest.changes.forEach { it.consume() }
+                                            if (rest.changes.none { it.pressed }) break
+                                        }
+                                        return@awaitEachGesture
+                                    }
+                                    pendingCanvasEvent = held
+                                }
+                                val dragPan = autoPan(machine.position)
+                                if (dragPan == Offset.Zero) panTickedAt = null
+                                else {
+                                    val since = panTickedAt ?: panClock
+                                    val steps = (panClock - since) / CanvasAutoPanFrameMillis
+                                    // A stalled loop (the app paused, say) catches up at most a few steps, never a jump.
+                                    panTickedAt = if (steps > CanvasAutoPanMaxSteps) panClock else since + steps * CanvasAutoPanFrameMillis
+                                    if (steps > 0) {
+                                        // Scroll on and keep the preview under the finger, in the view just set.
+                                        val view = currentView()
+                                        setView(view.copy(pan = view.pan + dragPan * min(steps, CanvasAutoPanMaxSteps).toFloat()))
+                                        dragTo(machine.position)
+                                    }
+                                }
+                                val raw = pendingCanvasEvent ?: panTickedAt?.let { tick ->
+                                    val wait = (tick + CanvasAutoPanFrameMillis - panClock).coerceAtLeast(1L)
+                                    withTimeoutOrNull(wait) { awaitPointerEvent() }.also { if (it == null) panClock += wait }
+                                } ?: if (panTickedAt == null) awaitPointerEvent() else null
+                                pendingCanvasEvent = null
+                                if (raw == null) continue
+                                raw.changes.maxOfOrNull { it.uptimeMillis }?.let { if (it > panClock) panClock = it }
+                                val event = raw.forCanvasGesture(first) ?: continue
                                 val change = event.changes.firstOrNull { it.id == first.id }
                                 val pressed = event.changes.count { it.pressed }
                                 if (change != null) lastTime = change.uptimeMillis
                                 val phase = machine.move(event, first.id, viewConfiguration.touchSlop)
                                 if (change != null && (phase == CanvasGesturePhase.PRESSED || phase == CanvasGesturePhase.DRAGGING)) {
-                                    wireDirection?.update(canvasPoint(latestViewport.view.world(change.position), snapToGrid))
+                                    wireDirection?.update(canvasPoint(currentView().world(change.position), snapToGrid))
                                 }
                                 when (phase) {
                                     CanvasGesturePhase.TRANSFORMING -> {
@@ -669,42 +861,28 @@ internal fun CircuitCanvas(
                                         selectionBox = null
                                         wireCornerPreview = null
                                         editWirePreview = null
+                                        editWireAnchor = null
                                         placementPress = null
                                         if (pressed >= 2) {
                                             val center = event.calculateCentroid(useCurrent = false)
-                                            val zoomed = latestViewport.view.zoomed(event.calculateZoom(), center)
-                                            changeView(zoomed.copy(pan = zoomed.pan + event.calculatePan()))
+                                            val zoomed = currentView().zoomed(event.calculateZoom(), center, MaxZoomPerDp * density)
+                                            setView(zoomed.copy(pan = zoomed.pan + event.calculatePan()))
                                         }
                                         event.changes.forEach { it.consume() }
                                     }
                                     CanvasGesturePhase.DRAGGING -> if (change != null && change.pressed && !secondary) {
-                                        placementPress = null
-                                        if (placingPaste && !mousePan) {
-                                            movePastePreview(canvasPoint(latestViewport.view.world(change.position), snapToGrid))
-                                        } else if (ioAction != null && ioComponent != null) {
+                                        if (action != CanvasDragAction.PLACE) placementPress = null
+                                        editWireAnchor = null
+                                        if (!placingPaste && ioAction != null && ioComponent != null) {
                                             val interaction = activeIoPointer
                                             if (interaction != null) IoInteractions.drag(ioComponent,
-                                                canvasPoint(latestViewport.view.world(change.position), snapToGrid = false))?.let {
+                                                canvasPoint(currentView().world(change.position), snapToGrid = false))?.let {
                                                 interaction.send(ioComponent.id, it)
                                             }
-                                        } else when (action) {
-                                            CanvasDragAction.PAN -> changeView(latestViewport.view.copy(
-                                                pan = latestViewport.view.pan + change.position - change.previousPosition))
-                                            CanvasDragAction.SELECT_AREA -> selectionBox = start to change.position
-                                            CanvasDragAction.MOVE_SELECTION -> {
-                                                if (!movingSelected) { selectHit(toggleExisting = false); movingSelected = true }
-                                                val delta = latestViewport.view.world(change.position) - startWorld
-                                                dragPreview = SelectionDragPreview(movingIds, movingWires, canvasPoint(delta, snapToGrid))
-                                            }
-                                            CanvasDragAction.MOVE_WIRE_CORNER -> if (hit is CanvasHit.WireCorner) {
-                                                wireCornerPreview = hit.point to movedWireHandle(hit.point, startWorld,
-                                                    latestViewport.view.world(change.position), snapToGrid)
-                                            }
-                                            CanvasDragAction.DRAW_WIRE -> editWireStart?.let { from ->
-                                                editWirePreview = WireDragPreview(from, editWireEnd(change.position),
-                                                    wireDirection?.verticalFirst == true)
-                                            }
-                                        }
+                                        } else if (action == CanvasDragAction.PAN && (!placingPaste || mousePan)) {
+                                            val view = currentView()
+                                            setView(view.copy(pan = view.pan + change.position - change.previousPosition))
+                                        } else dragTo(change.position)
                                         change.consume()
                                     }
                                     CanvasGesturePhase.PRESSED -> if (change != null && change.pressed && pressedPrototype != null) {
@@ -718,47 +896,52 @@ internal fun CircuitCanvas(
                             releaseIoPointer()
                             if (mousePan) return@awaitEachGesture
                             if (placingPaste) {
+                                // A finger's drag only moves the preview (C45): Paste here commits it, and a tap
+                                // pastes at once. A mouse keeps Evolution's click to paste.
                                 if (completion != null) {
                                     if (secondary) onCommand(CanvasCommand.CANCEL)
-                                    else onCanvasTap(canvasPoint(latestViewport.view.world(machine.position), snapToGrid))
+                                    else if (completion is CanvasGestureCompletion.Tap || mouse) {
+                                        onCanvasTap(canvasPoint(currentView().world(machine.position), snapToGrid))
+                                    }
                                 }
                                 return@awaitEachGesture
                             }
-                            if (completion != null && (secondary || (completion is CanvasGestureCompletion.Tap &&
-                                    first.type != PointerType.Mouse &&
-                                    ioAction?.release == null &&
-                                    lastTime - first.uptimeMillis >= viewConfiguration.longPressTimeoutMillis))) {
-                                selectHit(toggleExisting = false)
-                                val splitPoint = (hit as? CanvasHit.Wire)?.segment?.let {
-                                    wireSplitPoint(it, latestViewport.view.world(machine.position), snapToGrid)
-                                }
-                                // Evolution's MenuTool: the selection menu when the pressed component is part of a
-                                // larger selection, the component (or wire) menu otherwise, and no menu on empty canvas.
-                                val pressedComponent = (hit as? CanvasHit.Component)?.id
-                                val pressedWire = (hit as? CanvasHit.Wire)?.segment
-                                val selectionMenu = (pressedComponent != null && pressedComponent in currentSelection ||
-                                    pressedWire != null && pressedWire in currentWires) && currentSelection.size + currentWires.size > 1
-                                if (pressedComponent != null || pressedWire != null) {
-                                    contextMenu = CanvasContextMenu(machine.position, pressedComponent, splitPoint,
-                                        latestViewport.view.world(machine.position), pressedWire, selectionMenu)
-                                }
+                            // The release-time long press remains for a press whose events kept arriving.
+                            val touchLongPress = completion is CanvasGestureCompletion.Tap && longPressMenu &&
+                                lastTime - first.uptimeMillis >= viewConfiguration.longPressTimeoutMillis
+                            if (completion != null && (secondary || touchLongPress)) {
+                                openMenu(machine.position)
                             } else if (ioAction != null && ioComponent != null && completion != null) {
                                 if (ioAction.release == null && completion is CanvasGestureCompletion.Tap) {
                                     ioSender(ioComponent.id, ioAction.press)
                                 }
                             } else when (completion) {
                                 is CanvasGestureCompletion.Tap -> {
-                                    val world = latestViewport.view.world(completion.position)
+                                    val world = currentView().world(completion.position)
                                     if (gestureMode == EditorMode.TEXT) {
-                                        measurer.textToolTarget(document, world, registry)?.let { target ->
+                                        // A finger reaches a label beside it; the mouse keeps Evolution's exact hit.
+                                        measurer.textToolTarget(document, world, registry, min(tolerances.poke, CanvasTextToolReach))?.let { target ->
                                             currentTextToolTap(target, (binding as? ProjectMouseAction.Text)?.prototype)
                                         }
                                         return@awaitEachGesture
                                     }
                                     val component = (hit as? CanvasHit.Component)?.let { target -> document.components.firstOrNull { it.id == target.id } }
+                                    // SelectTool.mouseReleased: a second click on one labelled component edits its label.
+                                    if (component != null && !additive && binding == null && currentCanEdit &&
+                                        gestureMode in DoubleTapLabelModes && component.hasLabelAttribute(registry)) {
+                                        val previous = lastComponentTap.take()
+                                        if (previous != null && previous.id == component.id &&
+                                            first.uptimeMillis - previous.time <= viewConfiguration.doubleTapTimeoutMillis &&
+                                            (completion.position - previous.position).getDistance() <= viewConfiguration.touchSlop * 2) {
+                                            currentTextToolTap(TextToolTarget.Existing(component.id), null)
+                                            return@awaitEachGesture
+                                        }
+                                        lastComponentTap.record(component.id, lastTime, completion.position)
+                                    } else lastComponentTap.take()
                                     val sequentialTarget = if (gestureMode == EditorMode.INTERACT && !additive &&
                                         !printerView && currentSequentialHexEdit != null && component != null) {
-                                        component.sequentialPokeTarget(world, registry)?.takeIf { it == component.sequentialPokeTarget(startWorld, registry) }
+                                        component.sequentialPokeTarget(world, registry, tolerances.poke)
+                                            ?.takeIf { it == component.sequentialPokeTarget(startWorld, registry, tolerances.poke) }
                                     } else null
                                     if (sequentialTarget != null) {
                                         val toggle = sequentialTarget.toggle
@@ -767,7 +950,7 @@ internal fun CircuitCanvas(
                                         return@awaitEachGesture
                                     }
                                     val externalEvent = if (gestureMode == EditorMode.INTERACT && !additive && component != null)
-                                        externalIoEventAt(component, GridPoint(world.x.roundToInt(), world.y.roundToInt())) else null
+                                        externalIoEventAt(component, GridPoint(world.x.roundToInt(), world.y.roundToInt()), pokeReach) else null
                                     val memoryGrid = if (gestureMode == EditorMode.INTERACT && !additive &&
                                         !printerView && currentMemoryEdit != null && component != null)
                                         currentMemoryGrids[component.id] else null
@@ -809,19 +992,11 @@ internal fun CircuitCanvas(
                                     } else if (hit is CanvasHit.WireCorner || ioComponent != null ||
                                         gestureMode == EditorMode.SELECT || gestureMode == EditorMode.EDIT ||
                                         ((gestureMode == EditorMode.MOVE || gestureMode == EditorMode.INTERACT) && additive)) selectHit()
-                                    else {
-                                        val point = document.touchPoint(world, gestureMode, tolerance, registry, snapToGrid)
-                                        when (binding) {
-                                            is ProjectMouseAction.Place -> currentMappedPlacement(binding.prototype, point, buttons.isPrimaryPressed)
-                                            is ProjectMouseAction.Edit -> currentMappedTap(point, gestureMode)
-                                            is ProjectMouseAction.Text -> Unit
-                                            null -> onCanvasTap(point)
-                                        }
-                                    }
+                                    else tapAt(document.touchPoint(world, gestureMode, hit, tolerance, registry, snapToGrid))
                                 }
                                 is CanvasGestureCompletion.Drag -> when (completion.action) {
                                     CanvasDragAction.SELECT_AREA -> onSelectArea(canvasPoint(startWorld, snapToGrid),
-                                        canvasPoint(latestViewport.view.world(completion.to), snapToGrid), additive)
+                                        canvasPoint(currentView().world(completion.to), snapToGrid), additive)
                                     CanvasDragAction.MOVE_SELECTION -> dragPreview?.let {
                                         val invert = binding == null && currentEvent.keyboardModifiers.pointerShiftPressed
                                         currentMoveSelection(it.delta, currentKeepConnections xor invert)
@@ -830,8 +1005,16 @@ internal fun CircuitCanvas(
                                         if (from != to) onMoveWireCorner(from, to)
                                     }
                                     CanvasDragAction.DRAW_WIRE -> editWireStart?.let { from ->
-                                        currentDrawEditToolWire(from, editWireEnd(completion.to),
+                                        currentDrawEditToolWire(from, editWireEnd(completion.to, from),
                                             wireDirection?.verticalFirst == true)
+                                    }
+                                    // AddTool.mouseReleased: the component goes where the ghost was released, if on
+                                    // the canvas (SHOW_ADD); released off it (SHOW_ADD_NO), nothing is added, but
+                                    // determineNext still applies the after-placement tool switch.
+                                    CanvasDragAction.PLACE -> if (onCanvas(completion.to)) {
+                                        tapAt(canvasPoint(currentView().world(completion.to), snapToGrid))
+                                    } else {
+                                        currentPlacementReleasedOffCanvas(binding !is ProjectMouseAction.Place || buttons.isPrimaryPressed)
                                     }
                                     CanvasDragAction.PAN -> Unit
                                 }
@@ -847,6 +1030,7 @@ internal fun CircuitCanvas(
                             selectionBox = null
                             wireCornerPreview = null
                             editWirePreview = null
+                            editWireAnchor = null
                             placementPress = null
                         }
                     }
@@ -894,7 +1078,9 @@ internal fun CircuitCanvas(
                             drawLine(CanvasAccent, segment.from.offset(), segment.to.offset(), width)
                         }
                     }
+                    drawWireSnapRing(to)
                 }
+                editWireAnchor?.let { drawWireSnapRing(it) }
                 if (pastePreview != null && pendingPaste != null) {
                     withTransform({ translate(pendingPaste.offset.x.toFloat(), pendingPaste.offset.y.toFloat()) }) {
                         drawCircuitDrawing(pastePreview, pasteSimulation, measurer, imageDecoder, registry, childCircuit,
@@ -943,6 +1129,21 @@ internal fun CircuitCanvas(
             }
         }
         if (accessibilityActions != null && accessibilityGraph != null && !placingPaste) {
+            // TalkBack reaches the long-press menu through the same handler as the visual menu (C42), and a
+            // multi-bit input's value and bits through the pin value dialog and the poke of one bit (X0).
+            val overlayActions = remember(accessibilityActions) {
+                accessibilityActions.copy(
+                    componentMenu = accessibilityActions.componentMenu ?: { item, id ->
+                        if (item == ComponentMenuItem.VIEW_SUBCIRCUIT) currentViewSubcircuit(id) else currentComponentMenu(item, id)
+                    },
+                    editInputValue = accessibilityActions.editInputValue ?: { id ->
+                        currentPokePin?.let { poke -> poke(id, null); true } ?: false
+                    },
+                    toggleInputBit = accessibilityActions.toggleInputBit ?: { id, bit ->
+                        currentPokePin?.let { poke -> poke(id, bit); true } ?: false
+                    },
+                )
+            }
             CircuitSemanticOverlay(
                 graph = accessibilityGraph,
                 simulation = simulation,
@@ -950,9 +1151,13 @@ internal fun CircuitCanvas(
                 viewport = CircuitAccessibilityViewport(view.scale, view.pan.x, view.pan.y,
                     viewportSize.width, viewportSize.height),
                 selectedComponents = selectedIds,
-                actions = accessibilityActions,
+                actions = overlayActions,
                 onNotice = onAccessibilityNotice,
                 modifier = Modifier.onKeyEvent(::handleCanvasKey),
+                componentMenu = { component ->
+                    val child = component.circuitName?.takeIf { component.kind == ComponentKind.SUBCIRCUIT }?.let(childCircuit)
+                    canvasAccessibleMenu(component, registry, canEditCircuit, simulation.componentStates[component.id], child?.name)
+                },
             )
         }
         sequentialHexTarget?.let { target ->
@@ -977,6 +1182,18 @@ internal fun CircuitCanvas(
                     modifier = Modifier.background(canvasBackground.copy(alpha = 0.85f))
                         .padding(horizontal = 5.dp, vertical = 2.dp).testTag("editor-width-error"),
                     color = activeColors.themeColor(EditorColor.WIDTH_ERROR), fontSize = 12.sp, fontWeight = FontWeight.Bold)
+            }
+            // Paste here commits the preview a finger dragged into place (C45), under the canvas warnings.
+            if (placingPaste) {
+                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    FilledTonalButton(onClick = onConfirmPaste, modifier = Modifier.heightIn(min = 48.dp).testTag("paste-confirm")) {
+                        Text(strings("paste_preview_confirm"))
+                    }
+                    FilledTonalButton(onClick = { onCommand(CanvasCommand.CANCEL) },
+                        modifier = Modifier.heightIn(min = 48.dp).testTag("paste-cancel")) {
+                        Text(strings(Messages.ActionCancel))
+                    }
+                }
             }
             if (!printerView && !placingPaste && measuredTicksPerSecond != null) {
                 val roundedRate = round(measuredTicksPerSecond * 100) / 100
@@ -1050,28 +1267,17 @@ internal fun CircuitCanvas(
                 }
             }
         }
-        if (placingPaste) {
-            Row(
-                Modifier.align(Alignment.TopStart).padding(12.dp),
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
-            ) {
-                FilledTonalButton(onClick = onConfirmPaste, modifier = Modifier.testTag("paste-confirm")) {
-                    Text(strings(Messages.ActionApply))
-                }
-                FilledTonalButton(onClick = { onCommand(CanvasCommand.CANCEL) }, modifier = Modifier.testTag("paste-cancel")) {
-                    Text(strings(Messages.ActionCancel))
-                }
-            }
-        }
         if (showZoomControls) Row(
             Modifier.align(Alignment.BottomEnd).padding(12.dp),
             horizontalArrangement = Arrangement.spacedBy(6.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             CanvasButton("−", strings(Messages.A11yZoomOut), 48) { zoom(1f / 1.25f) }
-            CanvasButton("${(view.scale * 100).roundToInt()}%", strings(Messages.A11yFit), 72) { fit() }
+            CanvasButton(strings("zoom_preset_percent", "percent" to zoomPercentOf(view.scale, density).roundToInt()),
+                strings(Messages.A11yFit), 72) { fit() }
             CanvasButton("+", strings(Messages.A11yZoomIn), 48) { zoom(1.25f) }
         }
+        CompositionLocalProvider(LocalCanvasOverlayRegions provides overlayRegions) { overlay() }
     }
 }
 
@@ -1087,51 +1293,84 @@ private fun CanvasButton(text: String, description: String, width: Int, onClick:
     ) { Text(text, fontSize = 12.sp) }
 }
 
-private fun CircuitDocument.nearestComponent(point: Offset, tolerance: Float, registry: ComponentRegistry): CircuitComponent? =
-    components.asReversed().map { component ->
-        val bounds = component.bounds(registry)
-        val dx = max(max(bounds.left - point.x, 0f), point.x - bounds.right)
-        val dy = max(max(bounds.top - point.y, 0f), point.y - bounds.bottom)
-        component to (dx * dx + dy * dy)
-    }.filter { it.second <= tolerance * tolerance }.minByOrNull { it.second }?.first
-
 private data class CanvasContextMenu(
     val position: Offset, val componentId: String?, val splitPoint: GridPoint?, val world: Offset? = null,
     val wire: WireSegment? = null, val selectionMenu: Boolean = false,
 )
 
 @Composable
-private fun componentMenuLabel(item: ComponentMenuItem, child: String?): String {
-    val strings = rememberLocalizer()
-    return when (item) {
-        ComponentMenuItem.ROTATE_LEFT -> strings(Messages.ComponentMenuRotateLeft)
-        ComponentMenuItem.ROTATE_RIGHT -> strings(Messages.ComponentMenuRotateRight)
-        ComponentMenuItem.DELETE -> strings(Messages.ComponentMenuDelete)
-        ComponentMenuItem.SHOW_ATTRIBUTES -> strings(Messages.ActionShowAttributes)
-        ComponentMenuItem.VIEW_SUBCIRCUIT -> strings(Messages.ActionViewSubcircuit, "name" to child.orEmpty())
-        ComponentMenuItem.MEMORY_EDIT -> strings(Messages.ComponentMenuMemoryEdit)
-        ComponentMenuItem.MEMORY_CLEAR -> strings(Messages.ComponentMenuMemoryClear)
-        ComponentMenuItem.MEMORY_LOAD -> strings(Messages.ComponentMenuMemoryLoad)
-        ComponentMenuItem.MEMORY_SAVE -> strings(Messages.ComponentMenuMemorySave)
-        ComponentMenuItem.PLA_EDIT -> strings(Messages.ComponentMenuPlaEdit)
-        ComponentMenuItem.PLA_ROM_EDIT -> strings(Messages.ComponentMenuMemoryEdit)
-        ComponentMenuItem.PLA_ROM_CLEAR -> strings(Messages.ComponentMenuMemoryClear)
-        ComponentMenuItem.SOC_ASSEMBLER -> strings(Messages.ComponentMenuSocAssembler)
-        ComponentMenuItem.SOC_READ_ELF -> strings(Messages.ComponentMenuSocReadElf)
-        ComponentMenuItem.SOC_SHOW_PROGRAM -> strings(Messages.ComponentMenuSocShowProgram)
-        ComponentMenuItem.SOC_MEMORY_MAP -> strings(Messages.ComponentMenuSocMemoryMap)
-        ComponentMenuItem.SOC_INSERT_TRANSACTION -> strings(Messages.ComponentMenuSocInsertTransaction)
-        ComponentMenuItem.SOC_EXPORT_C -> strings(Messages.ComponentMenuSocExportC)
-        ComponentMenuItem.IMAGE_RESET_SIZE -> strings(Messages.ComponentMenuImageResetSize)
-        ComponentMenuItem.IMAGE_OPTIMIZE -> strings(Messages.ComponentMenuImageOptimize)
-        ComponentMenuItem.IMAGE_MAKE_TRANSPARENT -> strings(Messages.ComponentMenuImageMakeTransparent)
-        ComponentMenuItem.SPLITTER_DISTRIBUTE_ASCENDING -> strings(Messages.ComponentMenuDistributeAscending)
-        ComponentMenuItem.SPLITTER_DISTRIBUTE_DESCENDING -> strings(Messages.ComponentMenuDistributeDescending)
-        ComponentMenuItem.DELETE_SELECTION -> strings(Messages.ComponentMenuDeleteSelection)
-        ComponentMenuItem.CUT_SELECTION -> strings(Messages.ComponentMenuCutSelection)
-        ComponentMenuItem.COPY_SELECTION -> strings(Messages.ComponentMenuCopySelection)
-    }
+private fun componentMenuLabel(item: ComponentMenuItem, child: String?): String = rememberLocalizer()(componentMenuMessage(item, child))
+
+/** The label of a Menu Tool item, shared by the visual long-press menu and its TalkBack actions. */
+internal fun componentMenuMessage(item: ComponentMenuItem, child: String?): LocalizedText = when (item) {
+    ComponentMenuItem.ROTATE_LEFT -> message(Messages.ComponentMenuRotateLeft)
+    ComponentMenuItem.ROTATE_RIGHT -> message(Messages.ComponentMenuRotateRight)
+    ComponentMenuItem.DELETE -> message(Messages.ComponentMenuDelete)
+    ComponentMenuItem.SHOW_ATTRIBUTES -> message(Messages.ActionShowAttributes)
+    ComponentMenuItem.VIEW_SUBCIRCUIT -> message(Messages.ActionViewSubcircuit, "name" to child.orEmpty())
+    ComponentMenuItem.MEMORY_EDIT -> message(Messages.ComponentMenuMemoryEdit)
+    ComponentMenuItem.MEMORY_CLEAR -> message(Messages.ComponentMenuMemoryClear)
+    ComponentMenuItem.MEMORY_LOAD -> message(Messages.ComponentMenuMemoryLoad)
+    ComponentMenuItem.MEMORY_SAVE -> message(Messages.ComponentMenuMemorySave)
+    ComponentMenuItem.PLA_EDIT -> message(Messages.ComponentMenuPlaEdit)
+    ComponentMenuItem.PLA_ROM_EDIT -> message(Messages.ComponentMenuMemoryEdit)
+    ComponentMenuItem.PLA_ROM_CLEAR -> message(Messages.ComponentMenuMemoryClear)
+    ComponentMenuItem.SOC_ASSEMBLER -> message(Messages.ComponentMenuSocAssembler)
+    ComponentMenuItem.SOC_READ_ELF -> message(Messages.ComponentMenuSocReadElf)
+    ComponentMenuItem.SOC_SHOW_PROGRAM -> message(Messages.ComponentMenuSocShowProgram)
+    ComponentMenuItem.SOC_MEMORY_MAP -> message(Messages.ComponentMenuSocMemoryMap)
+    ComponentMenuItem.SOC_INSERT_TRANSACTION -> message(Messages.ComponentMenuSocInsertTransaction)
+    ComponentMenuItem.SOC_EXPORT_C -> message(Messages.ComponentMenuSocExportC)
+    ComponentMenuItem.IMAGE_RESET_SIZE -> message(Messages.ComponentMenuImageResetSize)
+    ComponentMenuItem.IMAGE_OPTIMIZE -> message(Messages.ComponentMenuImageOptimize)
+    ComponentMenuItem.IMAGE_MAKE_TRANSPARENT -> message(Messages.ComponentMenuImageMakeTransparent)
+    ComponentMenuItem.SPLITTER_DISTRIBUTE_ASCENDING -> message(Messages.ComponentMenuDistributeAscending)
+    ComponentMenuItem.SPLITTER_DISTRIBUTE_DESCENDING -> message(Messages.ComponentMenuDistributeDescending)
+    ComponentMenuItem.DELETE_SELECTION -> message(Messages.ComponentMenuDeleteSelection)
+    ComponentMenuItem.CUT_SELECTION -> message(Messages.ComponentMenuCutSelection)
+    ComponentMenuItem.COPY_SELECTION -> message(Messages.ComponentMenuCopySelection)
 }
+
+/**
+ * The long-press menu items a TalkBack user reaches as custom actions on a component's canvas node (C42): the enabled
+ * entries of [ComponentMenu.component], less Delete and Show Attributes (the node's Remove and Edit properties), and
+ * View only when the subcircuit [child] exists. A read-only document ([canEdit] false) offers only the items that
+ * change nothing: viewing a subcircuit or program and saving or exporting contents, never rotating, clearing,
+ * loading, distributing or editing.
+ */
+internal fun canvasAccessibleMenu(
+    component: CircuitComponent, registry: ComponentRegistry, canEdit: Boolean, state: dev.logisim.mobile.core.ComponentState?, child: String?,
+): List<Pair<ComponentMenuItem, LocalizedText>> =
+    ComponentMenu.component(component, registry, canEdit, state)
+        .filter { it.enabled && it.item != ComponentMenuItem.DELETE && it.item != ComponentMenuItem.SHOW_ATTRIBUTES &&
+            (it.item != ComponentMenuItem.VIEW_SUBCIRCUIT || child != null) && (canEdit || it.item in ReadOnlyMenuItems) }
+        .map { it.item to componentMenuMessage(it.item, child) }
+
+/** Menu Tool items that leave the document and the simulation as they are, offered on a read-only canvas too. */
+private val ReadOnlyMenuItems = setOf(
+    ComponentMenuItem.VIEW_SUBCIRCUIT, ComponentMenuItem.MEMORY_SAVE, ComponentMenuItem.SOC_SHOW_PROGRAM,
+    ComponentMenuItem.SOC_MEMORY_MAP, ComponentMenuItem.SOC_EXPORT_C,
+)
+
+/** SelectTool's double click edits a label in the selecting tools. */
+private val DoubleTapLabelModes = setOf(EditorMode.EDIT, EditorMode.SELECT, EditorMode.MOVE)
+
+/** How far, in world units, a finger's Text tool tap reaches a label or body beside it. */
+private const val CanvasTextToolReach = 12f
+
+private fun CircuitComponent.hasLabelAttribute(registry: ComponentRegistry): Boolean =
+    kind == ComponentKind.SUBCIRCUIT || registry.definition(kind)?.schema?.keys?.any { it.name == "label" } == true
+
+/** The previous tap on a component: its id, release time and position. */
+private class CanvasTapRecord {
+    private var record: Triple<String, Long, Offset>? = null
+    fun record(id: String, time: Long, position: Offset) { record = Triple(id, time, position) }
+    fun take(): Tap? = record?.let { Tap(it.first, it.second, it.third) }.also { record = null }
+    class Tap(val id: String, val time: Long, val position: Offset)
+}
+
+/** The approximate width of the zoom controls at the canvas's bottom end, which never auto-pan. */
+private const val CanvasZoomControlsWidthDp = 192f
 
 private const val CanvasTipDelayMillis = 750L
 
@@ -1143,28 +1382,40 @@ private data class ActiveIoPointer(
     val send: (String, ComponentEvent) -> Boolean,
 )
 
-private val pointerIoKinds = setOf(IoKinds.Button, IoKinds.DipSwitch, IoKinds.Joystick, IoKinds.MatrixKeypad)
+/** The I/O kinds the Poke tool drives with the pointer on the canvas; [PokeHeldKinds] are those held down. */
+internal val PointerIoKinds = setOf(IoKinds.Button, IoKinds.DipSwitch, IoKinds.Joystick, IoKinds.MatrixKeypad)
 
-private fun CircuitDocument.hit(point: Offset, tolerance: Float, registry: ComponentRegistry): CanvasHit {
-    nearestComponent(point, tolerance, registry)?.let { return CanvasHit.Component(it.id) }
-    val nearest = wires.map { wire ->
-        val closest = if (wire.from.x == wire.to.x) Offset(wire.from.x.toFloat(),
-            point.y.coerceIn(min(wire.from.y, wire.to.y).toFloat(), max(wire.from.y, wire.to.y).toFloat()))
-        else Offset(point.x.coerceIn(min(wire.from.x, wire.to.x).toFloat(), max(wire.from.x, wire.to.x).toFloat()), wire.from.y.toFloat())
-        wire to (closest - point).getDistance()
-    }.filter { it.second <= tolerance }.minByOrNull { it.second }
-    return nearest?.let { CanvasHit.Wire(it.first) } ?: CanvasHit.Empty
+/**
+ * Place, Wire and Text act on a slow touch tap as on a quick one (Wire opens the menu only deep inside a body);
+ * the other tools open the menu.
+ */
+private val CanvasTapOnlyModes = setOf(EditorMode.PLACE, EditorMode.WIRE, EditorMode.TEXT)
+
+/** The Wire tool's pendingWire marker, at the point a dragged wire attaches to. */
+private fun DrawScope.drawWireSnapRing(point: GridPoint) {
+    drawCircle(CanvasAccent.copy(alpha = 0.16f), 13f, point.offset())
+    drawCircle(CanvasAccent, 9f, point.offset(), style = Stroke(2f))
 }
 
-private fun CircuitDocument.touchPoint(point: Offset, mode: EditorMode, tolerance: Float, registry: ComponentRegistry, snapToGrid: Boolean): GridPoint {
+/** The port or wire end nearest [point] within [tolerance], where a Wire tool tap starts or ends. */
+private fun CircuitDocument.wireToolTerminal(point: Offset, tolerance: Float, registry: ComponentRegistry): GridPoint? =
+    (components.flatMap { it.inputPorts(registry) + it.outputPorts(registry) } + wires.flatMap { listOf(it.from, it.to) })
+        .minByOrNull { (it.offset() - point).getDistance() }?.takeIf { (it.offset() - point).getDistance() <= tolerance }
+
+/** The point a tap acts on: for Poke and Move, the centre of the component [hit] resolved, or the wire's point. */
+private fun CircuitDocument.touchPoint(
+    point: Offset, mode: EditorMode, hit: CanvasHit, tolerance: Float, registry: ComponentRegistry, snapToGrid: Boolean,
+): GridPoint {
     if (mode == EditorMode.WIRE) {
-        val terminal = (components.flatMap { it.inputPorts(registry) + it.outputPorts(registry) } +
-            wires.flatMap { listOf(it.from, it.to) }).minByOrNull { (it.offset() - point).getDistance() }
-        if (terminal != null && (terminal.offset() - point).getDistance() <= tolerance) return terminal
+        wireToolTerminal(point, tolerance, registry)?.let { return it }
     } else if (mode == EditorMode.INTERACT || mode == EditorMode.MOVE) {
-        nearestComponent(point, tolerance, registry)?.let { component ->
-            val bounds = component.bounds(registry)
-            return GridPoint((bounds.left + bounds.right) / 2, (bounds.top + bounds.bottom) / 2)
+        when (hit) {
+            is CanvasHit.Component -> components.firstOrNull { it.id == hit.id }?.let { component ->
+                val bounds = component.bounds(registry)
+                return GridPoint((bounds.left + bounds.right) / 2, (bounds.top + bounds.bottom) / 2)
+            }
+            is CanvasHit.Wire -> return projectOntoWire(hit.segment, canvasPoint(point, snapToGrid))
+            else -> Unit
         }
     }
     return canvasPoint(point, snapToGrid)
