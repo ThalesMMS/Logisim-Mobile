@@ -11,6 +11,7 @@ plugins {
 // host and iOS; on the JVM, Compose's Skia implementation is registered by the host tests themselves.
 tasks.matching { it.name == "jvmTest" }.configureEach {
     (this as Test).filter.includeTestsMatching("dev.logisim.mobile.*HostTest")
+    providers.gradleProperty("uiScreenshots").orNull?.let { systemProperty("ui.screenshots", it) }
 }
 
 tasks.withType<KotlinNativeSimulatorTest>().configureEach {
@@ -52,7 +53,12 @@ kotlin {
             implementation("androidx.activity:activity-compose:1.13.0")
         }
         commonTest.dependencies { implementation(kotlin("test")) }
-        jvmTest.dependencies { implementation(compose.desktop.currentOs) }
+        jvmTest.dependencies {
+            implementation(compose.desktop.currentOs)
+            // Compose UI tests and screenshots of the shared editor on the Skia host (UI/UX sweep evidence).
+            implementation("org.jetbrains.compose.ui:ui-test:1.13.0-beta02")
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.11.0")
+        }
         iosTest.dependencies { implementation("org.jetbrains.compose.ui:ui-test:1.13.0-beta02") }
     }
 }
