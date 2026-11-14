@@ -1,7 +1,21 @@
 package dev.logisim.mobile.core
 
 object ProjectCircuitMerge {
-    fun copySelected(destination: CircuitProject, source: CircuitProject, selected: Set<String>): CircuitProject {
+    /**
+     * What a merge copies: [included] in toolbox order (each circuit after the ones it instantiates), the
+     * [dependencies] that were not selected but come along, and the [renames] of names the destination already uses.
+     */
+    data class Plan(val included: List<String>, val dependencies: Set<String>, val renames: Map<String, String>)
+
+    /** The circuits [circuit] instantiates directly, in the order they appear. */
+    fun uses(source: CircuitProject, circuit: String): List<String> {
+        val names = source.circuits.mapTo(mutableSetOf()) { it.name }
+        return source.circuit(circuit)?.components.orEmpty()
+            .mapNotNull { component -> component.circuitName.takeIf { component.kind == ComponentKind.SUBCIRCUIT } }
+            .filter { it in names && it != circuit }.distinct()
+    }
+
+    fun plan(destination: CircuitProject, source: CircuitProject, selected: Set<String>): Plan {
         val byName = source.circuits.associateBy { it.name }
         require(selected.isNotEmpty() && selected.all(byName::containsKey))
         // Evolution's LogisimFileActions.addCircWithDeps: each selected circuit, in file order, after the
@@ -21,8 +35,17 @@ object ProjectCircuitMerge {
             included += name
         }
         for (circuit in source.circuits) if (circuit.name in selected) include(circuit.name)
-        val circuits = included.map(byName::getValue)
-        val names = mergedKeys(destination.circuits.map { it.name }, circuits.map { it.name })
+        val names = mergedKeys(destination.circuits.map { it.name }, included.toList())
+        return Plan(included.toList(), included - selected, names.filter { (old, new) -> old != new })
+    }
+
+    fun copySelected(destination: CircuitProject, source: CircuitProject, selected: Set<String>): CircuitProject =
+        apply(destination, source, plan(destination, source, selected))
+
+    fun apply(destination: CircuitProject, source: CircuitProject, plan: Plan): CircuitProject {
+        val byName = source.circuits.associateBy { it.name }
+        val circuits = plan.included.map(byName::getValue)
+        val names = circuits.associate { it.name to (plan.renames[it.name] ?: it.name) }
         val ids = mergedKeys(destination.circuits.map { it.id }, circuits.map { it.id })
         return destination.copy(circuits = destination.circuits + circuits.map { circuit ->
             circuit.copy(

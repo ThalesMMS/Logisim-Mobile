@@ -10,6 +10,8 @@ internal interface WorkspaceDocumentCoordinator {
     fun externalSaved(scope: WorkspaceEditorScope, reference: DocumentReference, text: String,
                       previousReference: DocumentReference?, onCommitted: () -> Unit)
     fun confirmedExternal(xml: String)
+    /** The window has no editor and nothing else runs, so a file can open in it now (see [CatalogDocumentActions]). */
+    fun acceptsWindowOpen(): Boolean = true
     fun nativeWriteStarted() {}
     fun nativeWriteFinished() {}
 }

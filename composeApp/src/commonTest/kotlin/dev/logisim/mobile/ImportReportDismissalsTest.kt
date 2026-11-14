@@ -9,7 +9,9 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class ImportReportDismissalsTest {
-    private val legacyXml = """<project source="2.7.1" version="1.0"><lib name="0" desc="#Wiring"/><main name="main"/><circuit name="main"><comp lib="0" name="Pin" loc="(0,0)"><a name="output" val="false"/></comp></circuit></project>"""
+    // Converted from a pre-2.6.3 format, so its report opens by itself (C145).
+    private val legacyXml = """<project source="2.0.3" version="1.0"><lib name="0" desc="#Base"/><main name="main"/><circuit name="main"><comp lib="0" name="Pin" loc="(0,0)"/></circuit></project>"""
+    private val versionDefaultsXml = """<project source="2.7.1" version="1.0"><lib name="0" desc="#Wiring"/><main name="main"/><circuit name="main"><comp lib="0" name="Pin" loc="(0,0)"><a name="output" val="false"/></comp></circuit></project>"""
     private val key = ImportReportDismissals.key(WorkspaceProjectId("p1"), legacyXml)
 
     /** Mirrors activity recreation: the list goes through the saved-state Saver, the editor is rebuilt from XML. */
@@ -54,7 +56,7 @@ class ImportReportDismissalsTest {
     fun aReportThatDoesNotOpenByItselfStaysOpenWhenItWasOpen() {
         val dismissals = ImportReportDismissals()
         // A rebuilt editor whose report does not open on its own (no pending migrations), but is in the menu.
-        val report = assertNotNull(EditorState(legacyXml).importReport).copy(showOnOpen = false)
+        val report = assertNotNull(EditorState(legacyXml).importReport).consumed()
         val edited = EditorState(legacyXml, initialImportReport = report)
         assertFalse(edited.importReportVisible)
         edited.showImportReport()
@@ -63,6 +65,20 @@ class ImportReportDismissalsTest {
         assertFalse(recreated.importReportVisible)
         assertTrue(recreate(dismissals).restore(key, recreated))
         assertTrue(recreated.importReportVisible)
+    }
+
+    // C145: a report that only announced itself in the status line was never open, so recreation leaves it closed.
+    @Test
+    fun anInformationalReportStaysClosedAfterRecreation() {
+        val dismissals = ImportReportDismissals()
+        val editor = EditorState(versionDefaultsXml)
+        assertFalse(editor.importReportVisible)
+        assertTrue(editor.importReportStatusShown)
+        dismissals.visibilityChanged(key, hasReport = true, visible = editor.importReportVisible)
+        val recreated = EditorState(versionDefaultsXml)
+        assertFalse(recreate(dismissals).restore(key, recreated))
+        assertFalse(recreated.importReportVisible)
+        assertNotNull(recreated.importReport, "still in the File menu")
     }
 
     @Test

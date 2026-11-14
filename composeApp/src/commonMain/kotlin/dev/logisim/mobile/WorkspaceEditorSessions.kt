@@ -35,5 +35,6 @@ internal class WorkspaceEditorSessionBinding(
     val editor: EditorState?,
     val view: WorkspaceViewState,
     val retain: (EditorState) -> Unit,
-    val open: (String, String, EditorImportReport?) -> Boolean,
+    /** Opens a new session from its display name (resolved in the app language), XML and import report. */
+    val open: (dev.logisim.mobile.core.localization.LocalizedText, String, EditorImportReport?) -> Boolean,
 )

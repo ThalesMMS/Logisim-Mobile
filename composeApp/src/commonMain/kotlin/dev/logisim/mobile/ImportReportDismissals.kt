@@ -11,11 +11,18 @@ import dev.logisim.mobile.core.WorkspaceProjectId
  * and would show it again. This list travels in the saved instance state instead (#325).
  */
 class ImportReportDismissals(initial: Collection<String> = emptyList()) {
-    // "closed:<key>" or "open:<key>"; projects never shown carry no entry.
+    // "closed:<key>" or "open:<key>"; projects never shown carry no entry. "announced:<key>" records that the status
+    // line already said how many adjustments the open made (C145).
     private val entries = mutableStateListOf<String>().apply { addAll(initial.distinct()) }
 
     fun isDismissed(key: String): Boolean = "closed:$key" in entries
     fun isOpen(key: String): Boolean = "open:$key" in entries
+    fun isAnnounced(key: String): Boolean = "announced:$key" in entries
+
+    /** The adjustments of [key] were announced; a recreated editor does not announce them again. */
+    internal fun announced(key: String) {
+        if (!isAnnounced(key)) entries += "announced:$key"
+    }
 
     /** A closed report stays closed after recreation; a report still on screen stays on screen. */
     internal fun visibilityChanged(key: String, hasReport: Boolean, visible: Boolean) {
@@ -28,10 +35,13 @@ class ImportReportDismissals(initial: Collection<String> = emptyList()) {
      * without migrations, which does not open by itself, so an open report is reopened explicitly.
      * Returns whether it changed the visibility.
      */
-    internal fun restore(key: String, state: EditorState): Boolean = when {
-        isDismissed(key) && state.importReportVisible -> { state.dismissImportReport(); true }
-        isOpen(key) && !state.importReportVisible && state.importReport != null -> { state.showImportReport(); true }
-        else -> false
+    internal fun restore(key: String, state: EditorState): Boolean {
+        if (isAnnounced(key)) state.forgetImportAnnouncement()
+        return when {
+            isDismissed(key) && state.importReportVisible -> { state.dismissImportReport(); true }
+            isOpen(key) && !state.importReportVisible && state.importReport != null -> { state.showImportReport(); true }
+            else -> false
+        }
     }
 
     fun snapshot(): List<String> = entries.toList()

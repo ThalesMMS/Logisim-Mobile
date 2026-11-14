@@ -167,7 +167,8 @@ class EditorDocumentsTest {
         session.shareOriginalCopy()
 
         val (name, xml) = assertNotNull(actions.shared)
-        assertEquals("main-2.7.1.circ", name)
+        // The linked file names the copy (C141), as Evolution preselects the current file.
+        assertEquals("project-2.7.1.circ", name)
         val exported = assertIs<CircProjectImportResult.Success>(CircCodec.readProject(xml))
         assertTrue(exported.project.mainCircuit.wires.any { it.contains(GridPoint(310, 300)) })
         assertEquals(nativeXml, state.exportXml())

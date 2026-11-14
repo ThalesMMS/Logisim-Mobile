@@ -37,6 +37,12 @@ class AndroidCatalogStorage(directory: File) : WorkspaceCatalogStorage {
         catch (error: Exception) { destination.failWrite(stream); throw error }
     }
 
+    override val supportsDelete: Boolean get() = true
+    override fun delete(name: String) {
+        // AtomicFile removes the file and any backup or partial write it left.
+        AtomicFile(file(name)).delete()
+    }
+
     private fun ensureDirectory() = checkLocalized(directory.isDirectory || directory.mkdirs()) { message(Messages.ErrorStorageDirectory) }
     private fun file(name: String): File {
         requireLocalized(name.matches(Regex("[A-Za-z0-9._-]+")) && name !in setOf(".", "..")) { message(Messages.ErrorStorageFilename) }

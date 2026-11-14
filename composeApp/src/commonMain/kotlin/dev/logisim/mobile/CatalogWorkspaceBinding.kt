@@ -18,10 +18,12 @@ import dev.logisim.mobile.core.WorkspaceProjectId
 import dev.logisim.mobile.core.WorkspaceSession
 import dev.logisim.mobile.core.WorkspaceSessionState
 import dev.logisim.mobile.core.WorkspaceViewState
+import dev.logisim.mobile.core.uniqueProjectName
 import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.Messages
 import dev.logisim.mobile.core.localization.localizedDescription
 import dev.logisim.mobile.core.localization.message
+import kotlin.time.Clock
 
 data class CatalogWorkspaceState(
     val catalog: WorkspaceCatalogResult,
@@ -34,7 +36,37 @@ data class CatalogWorkspaceState(
     val editorImportReport: EditorImportReport? = null,
     val editorClosed: Boolean = false,
     val recentFiles: List<WorkspaceRecentFile> = emptyList(),
+    /** Open sessions whose project XML differs from the version they were opened with (view-only changes excluded). */
+    val changedSessions: Set<WorkspaceProjectId> = emptySet(),
+    /** When each open session was opened: the version a close-and-revert restores. */
+    val sessionOpenedAt: Map<WorkspaceProjectId, Long> = emptyMap(),
+    /** The name of the external file each open session is linked to, for "Save to {file}" on close. */
+    val sessionFiles: Map<WorkspaceProjectId, String> = emptyMap(),
+    /** The last write of the open project failed; it stays set until a write succeeds. */
+    val saveFailed: Boolean = false,
+    /**
+     * Open sessions linked to a file that this window has not seen match the project: mounted from the catalog
+     * (after a relaunch, a reload or a reopen) rather than opened from or saved to the file. Closing one offers
+     * "Save to {file}" even when nothing changed since the tab opened.
+     */
+    val unconfirmedFiles: Set<WorkspaceProjectId> = emptySet(),
+    /** The closed project whose close-and-revert can still be undone. */
+    val revertUndo: WorkspaceProjectId? = null,
+    /**
+     * Open sessions linked to a file that does not hold their current content, as far as any window recorded: edited
+     * since the file was last read or written, or never seen to match it. Evolution marks such a project dirty.
+     */
+    val externalDirty: Set<WorkspaceProjectId> = emptySet(),
+    /**
+     * An already open linked file that was opened again and brought its project forward: the editor says "File NAME
+     * opened", as a fresh open does, so assistive technology hears where the file went. Another mount clears it; the
+     * host says each [WorkspaceReopenedFile.serial] once.
+     */
+    val reopenedFile: WorkspaceReopenedFile? = null,
 )
+
+/** The [serial]th reopen of a linked file in this window, which brought [projectId] forward under [name]. */
+data class WorkspaceReopenedFile(val serial: Long, val projectId: WorkspaceProjectId, val name: LocalizedText)
 
 internal data class WorkspaceEditorScope(
     val mount: Long,
@@ -61,6 +93,7 @@ class CatalogWorkspaceBinding(
     private val editorWritable: () -> Boolean? = { null },
     nativeDocuments: DocumentActions? = null,
     private val externalWorkspaceConfirmed: (String) -> Unit = {},
+    private val clock: () -> Long = { Clock.System.now().toEpochMilliseconds() },
     private val onStateChanged: (CatalogWorkspaceState) -> Unit = {},
 ) {
     private var catalog = repository.list(includeDeleted = true)
@@ -71,6 +104,8 @@ class CatalogWorkspaceBinding(
     private var currentIdentity = 0L
     private val identityProjects = mutableMapOf<Long, WorkspaceProjectId>()
     private val importReports = mutableMapOf<WorkspaceProjectId, EditorImportReport>()
+    private var reopenedFile: WorkspaceReopenedFile? = null
+    private var reopenSerial = 0L
     private val validatedLinks = mutableSetOf<WorkspaceProjectId>()
     private var draftXml: String? = null
     private var draftReference: DocumentReference? = null
@@ -80,9 +115,38 @@ class CatalogWorkspaceBinding(
     private var initialized = false
     private var editorClosed = false
     // Autosave preserves crash recovery. This is the explicit save point for each open tab.
-    private data class SessionCheckpoint(val xml: String, val view: WorkspaceViewState, val revision: Long)
+    // [baseline] is the editor's own export of [xml] when the tab first attached: a file written by another tool
+    // reads back in the editor's canonical form, and that first autosave is not a change the user made.
+    private data class SessionCheckpoint(val xml: String, val view: WorkspaceViewState, val revision: Long,
+                                         val openedAtMillis: Long, val baseline: String? = null) {
+        fun unchanged(current: String) = current == xml || current == baseline
+    }
     private val sessionCheckpoints = mutableMapOf<WorkspaceProjectId, SessionCheckpoint>()
+    private var awaitingBaseline: WorkspaceProjectId? = null
+    // The last XML seen for each open session, so a close can tell untouched tabs without reading storage.
+    private val sessionXml = mutableMapOf<WorkspaceProjectId, String>()
+    private val sessionFiles = mutableMapOf<WorkspaceProjectId, String>()
+    // Sessions whose checkpoint this window has seen in their linked file: opened from it, or saved to it.
+    private val confirmedFiles = mutableSetOf<WorkspaceProjectId>()
+    // Each tab's last comparison, so reading the state compares whole projects again only after either side changed.
+    private class ChangeCheck(val checkpoint: SessionCheckpoint, val xml: String, val changed: Boolean)
+    private val changeChecks = mutableMapOf<WorkspaceProjectId, ChangeCheck>()
+    // What each linked session's file was last known to hold (read from storage on mount and on resume), and the
+    // last stamp computed for its current XML, so building the state hashes a project again only after it changed.
+    private val externalSyncs = mutableMapOf<WorkspaceProjectId, String?>()
+    private class StampCheck(val xml: String, val stamp: String)
+    private val stampChecks = mutableMapOf<WorkspaceProjectId, StampCheck>()
+    // The last trashed tab's session, so undoing that trash brings the tab back with the version it opened with.
+    private data class TrashedSession(val checkpoint: SessionCheckpoint, val xml: String?, val file: String?, val confirmed: Boolean)
+    private val trashedSessions = mutableMapOf<WorkspaceProjectId, TrashedSession>()
+    // A close-and-revert keeps what it replaced until the next revert or reopen, so the user can undo it.
+    private data class RevertedSession(val id: WorkspaceProjectId, val revision: Long, val xml: String, val view: WorkspaceViewState)
+    private var lastRevert: RevertedSession? = null
+    private var saveFailed = false
+    // Counts every change to [notices], so a mount keeps the notices raised while it was prepared (see mountDocument).
+    private var noticeChanges = 0L
     private var notices = emptyList<LocalizedText>()
+        set(value) { field = value; noticeChanges++ }
     private var recentFiles = emptyList<WorkspaceRecentFile>()
     private val session = WorkspaceSession(repository, pauseSimulation) { publish() }
     private val documentBinding = nativeDocuments?.let { native -> CatalogDocumentActions(native,
@@ -100,19 +164,57 @@ class CatalogWorkspaceBinding(
         }) }
     val documents: DocumentActions? get() = documentBinding
     val state: CatalogWorkspaceState get() = CatalogWorkspaceState(catalog.copy(activeProjectId = projectId), session.state, mount,
-        draftXml ?: mountedXml, projectId, notices + catalog.notices,
-        readOnly = draftReadOnly || editorReadOnly || (projectId != null && session.state.readOnly),
+        draftXml ?: mountedXml, projectId, (notices + catalog.notices).distinct(),
+        readOnly = readOnly,
         editorImportReport = if (projectId == null) draftImportReport else projectId?.let { importReports[it] },
         editorClosed = editorClosed,
-        recentFiles = recentFiles.filter { file -> file !is WorkspaceRecentFile.Copy ||
-            catalog.projects.any { it.id == file.projectId && !it.deleted } })
+        // A copy is listed under its project's current name, so a rename shows here too.
+        recentFiles = recentFiles.mapNotNull { file ->
+            if (file !is WorkspaceRecentFile.Copy) file
+            else catalog.projects.firstOrNull { it.id == file.projectId && !it.deleted }?.let { file.copy(name = it.name) }
+        },
+        changedSessions = changedSessions(),
+        sessionOpenedAt = sessionCheckpoints.mapValues { it.value.openedAtMillis },
+        sessionFiles = sessionFiles.filterKeys { it in sessionCheckpoints },
+        saveFailed = saveFailed && !editorClosed,
+        unconfirmedFiles = sessionFiles.keys.filterTo(mutableSetOf()) { it in sessionCheckpoints && it !in confirmedFiles },
+        revertUndo = lastRevert?.id?.takeIf { it != projectId },
+        externalDirty = externalDirty(),
+        reopenedFile = reopenedFile?.takeIf { it.projectId == projectId })
 
-    fun start(legacyXml: String? = null, legacyReference: DocumentReference? = null) {
+    private fun sessionCurrentXml(id: WorkspaceProjectId): String? =
+        if (id == projectId && session.state.document?.info?.id == id) session.state.xml else sessionXml[id]
+
+    private fun externalDirty(): Set<WorkspaceProjectId> = sessionFiles.keys.filterTo(mutableSetOf()) { id ->
+        if (id !in sessionCheckpoints) return@filterTo false
+        val current = sessionCurrentXml(id) ?: return@filterTo true
+        val stamp = stampChecks[id]?.takeIf { it.xml === current }?.stamp
+            ?: workspaceContentStamp(current).also { stampChecks[id] = StampCheck(current, it) }
+        externalSyncs[id] != stamp
+    }
+
+    // The binding checks this on every edit; building the whole state for it would compare every open tab's XML.
+    private val readOnly: Boolean get() = draftReadOnly || editorReadOnly || (projectId != null && session.state.readOnly)
+
+    private fun changedSessions(): Set<WorkspaceProjectId> = sessionCheckpoints.mapNotNullTo(mutableSetOf()) { (id, checkpoint) ->
+        val current = sessionCurrentXml(id) ?: return@mapNotNullTo null
+        val check = changeChecks[id]?.takeIf { it.checkpoint === checkpoint && it.xml === current }
+            ?: ChangeCheck(checkpoint, current, !checkpoint.unchanged(current)).also { changeChecks[id] = it }
+        id.takeIf { check.changed }
+    }
+
+    /**
+     * [defaultName] names the project a fresh install starts with (the localized AND example title), and
+     * [recoveredName] a project migrated from the single-document storage; null keeps the earlier defaults.
+     */
+    fun start(legacyXml: String? = null, legacyReference: DocumentReference? = null,
+              defaultName: String? = null, recoveredName: String? = null) {
         if (initialized) return
         initialized = true
         val before = repository.list(includeDeleted = true)
-        val loaded = repository.load(legacyXml)
+        val loaded = if (recoveredName == null) repository.load(legacyXml) else repository.load(legacyXml, recoveredName)
         notices = loaded.notices
+        val mark = noticeChanges
         loadRecentFiles()
         refresh()
         val restoredWindow = runCatching { links.windowProject(windowId) }.onFailure(::report).getOrNull()
@@ -121,11 +223,14 @@ class CatalogWorkspaceBinding(
         if (target != null && session.open(target)) {
             val document = session.state.document!!
             if (before.projects.isEmpty() && !before.readOnly && legacyXml == document.xml && legacyReference != null) {
-                associate(document, legacyReference, document.xml)
+                // The legacy checkpoint may hold edits that never reached the file: link it, but vouch for nothing.
+                associate(document, legacyReference, document.xml, fromFile = false)
             }
-            mountDocument(document)
-        } else if (target == null && legacyXml == null && loaded.notices.isEmpty() && !catalog.readOnly && session.create(projectName(defaultXml()), defaultXml())) {
-            mountDocument(session.state.document!!)
+            mountDocument(document, mark)
+            keepStartupNotices(loaded.notices)
+        } else if (target == null && legacyXml == null && loaded.notices.isEmpty() && !catalog.readOnly &&
+            session.create(defaultName ?: projectName(defaultXml()), defaultXml())) {
+            mountDocument(session.state.document!!, mark)
         } else {
             draftXml = legacyXml ?: defaultXml()
             draftReadOnly = true
@@ -138,11 +243,27 @@ class CatalogWorkspaceBinding(
     fun editorAttached(editorMount: Long, importReport: EditorImportReport? = null) {
         if (editorMount == mount) {
             attachedMount = editorMount
+            projectId?.takeIf { it == awaitingBaseline }?.let { id ->
+                awaitingBaseline = null
+                val baseline = exportXml()
+                sessionCheckpoints[id]?.let { checkpoint ->
+                    if (baseline == null) return@let
+                    sessionCheckpoints[id] = checkpoint.copy(baseline = baseline)
+                    // The file was just read as the checkpoint; the editor's canonical form of it is the same content.
+                    if (baseline != checkpoint.xml && externalSyncs[id] == workspaceContentStamp(checkpoint.xml)) {
+                        runCatching { links.read(id) }.getOrNull()?.let { link ->
+                            val synced = workspaceContentStamp(baseline)
+                            runCatching { links.writeSync(id, WorkspaceExternalSync(link.reference.id, synced)) }
+                                .onSuccess { externalSyncs[id] = synced }.onFailure(::report)
+                        }
+                    }
+                }
+            }
             checkEditorWritable()
-            if (state.readOnly) documentBinding?.activate(null)
+            if (readOnly) documentBinding?.activate(null)
             val id = projectId
-            if (id != null && importReport != null && !state.readOnly) {
-                val consumed = importReport.copy(showOnOpen = false)
+            if (id != null && importReport != null && !readOnly) {
+                val consumed = importReport.consumed()
                 if (importReports[id] != consumed) { importReports[id] = consumed; publish() }
             }
             documentBinding?.editorAttached()
@@ -150,7 +271,7 @@ class CatalogWorkspaceBinding(
     }
 
     fun documentChanged(editorMount: Long, xml: String) {
-        if (editorMount != mount || !checkEditorWritable() || state.readOnly) return
+        if (editorMount != mount || !checkEditorWritable() || readOnly) return
         if (projectId == null) { draftXml = xml; mountedXml = xml; publish(); return }
         session.edit(xml, exportView() ?: session.state.viewState)
         flushSession()
@@ -158,13 +279,13 @@ class CatalogWorkspaceBinding(
     }
 
     fun viewChanged(editorMount: Long, view: WorkspaceViewState) {
-        if (editorMount != mount || projectId == null || !checkEditorWritable() || state.readOnly) return
+        if (editorMount != mount || projectId == null || !checkEditorWritable() || readOnly) return
         session.edit(session.state.xml ?: return, view)
     }
 
     fun projectReplaced(editorMount: Long, event: EditorProjectReplacement, externalReference: DocumentReference? = null) {
         if (editorMount != mount) return
-        val previousReadOnly = state.readOnly
+        val previousReadOnly = readOnly
         editorReadOnly = editorWritable() == false
         draftReadOnly = false
         currentIdentity = event.identity
@@ -180,9 +301,10 @@ class CatalogWorkspaceBinding(
             if (!editorReadOnly) session.edit(event.xml, exportView() ?: WorkspaceViewState())
             val result = session.flush()
             if (result is WorkspaceMutationResult.Success) {
+                saveFailed = false
                 projectId = result.document.info.id
                 identityProjects[event.identity] = result.document.info.id
-                event.importReport?.let { importReports[result.document.info.id] = it.copy(showOnOpen = false) }
+                event.importReport?.let { importReports[result.document.info.id] = it.consumed() }
                 draftImportReport = null
                 draftXml = null
                 draftReference = null
@@ -201,10 +323,11 @@ class CatalogWorkspaceBinding(
             }
         }
         // The editor already accepted B. Never feed B's later autosave into A's session.
+        saveFailed = true
         projectId = null
         draftXml = event.xml
         draftReference = pending
-        draftImportReport = event.importReport?.copy(showOnOpen = false) ?: known?.let { importReports[it] }
+        draftImportReport = event.importReport?.consumed() ?: known?.let { importReports[it] }
         mountedXml = event.xml
         documentBinding?.activate(null)
         refresh()
@@ -212,10 +335,11 @@ class CatalogWorkspaceBinding(
     }
 
     fun flush(): Boolean {
-        if (!checkEditorWritable() || state.readOnly) return true
+        if (!checkEditorWritable() || readOnly) return true
         if (projectId == null) {
             val draft = draftXml ?: return true
-            if (!session.create(projectName(draft), draft)) { publish(); return false }
+            if (!session.create(projectName(draft), draft)) { saveFailed = true; publish(); return false }
+            saveFailed = false
             val document = session.state.document!!
             projectId = document.info.id
             rememberCheckpoint(document)
@@ -223,7 +347,8 @@ class CatalogWorkspaceBinding(
             draftImportReport?.let { importReports[document.info.id] = it }
             draftImportReport = null
             draftReference?.let {
-                associate(document, it, draft)
+                // The draft may have been edited since the replacement failed, so it is not what the file holds.
+                associate(document, it, draft, fromFile = false)
                 rememberRecent(document.info.id, it)
             }
             draftReference = null; draftXml = null; mountedXml = document.xml
@@ -239,7 +364,7 @@ class CatalogWorkspaceBinding(
     }
 
     internal fun commitEditorChange(xml: String): Boolean {
-        if (projectId == null || state.readOnly || !flush()) return false
+        if (projectId == null || readOnly || !flush()) return false
         val revision = session.state.document?.info?.revision
         val result = session.commitEdit(xml)
         if (result is WorkspaceMutationResult.Success) {
@@ -269,49 +394,101 @@ class CatalogWorkspaceBinding(
         }
         val oldXml = session.state.xml
         val oldReadOnly = session.state.readOnly
+        val mark = noticeChanges
         loadRecentFiles()
+        sessionFiles.keys.forEach { loadSync(it) }
         session.foregroundChanged(true)
-        if (projectId != null && (session.state.xml != oldXml || session.state.readOnly != oldReadOnly) && !session.state.dirty) session.state.document?.let(::mountDocument)
+        if (projectId != null && (session.state.xml != oldXml || session.state.readOnly != oldReadOnly) && !session.state.dirty) {
+            session.state.document?.let { mountDocument(it, mark) }
+        }
         refresh(); publish()
     }
 
     fun openProject(id: WorkspaceProjectId): Boolean {
         if (projectId == id) return true
         if (!flush()) return false
+        val mark = noticeChanges
         if (!session.open(id)) { publish(); return false }
-        recentFiles.filterIsInstance<WorkspaceRecentFile.Copy>().firstOrNull { it.projectId == id }?.let { rememberRecent(it) }
-        mountDocument(session.state.document!!)
+        val document = session.state.document!!
+        recentFiles.filterIsInstance<WorkspaceRecentFile.Copy>().firstOrNull { it.projectId == id }
+            ?.let { rememberRecent(it.copy(name = document.info.name)) }
+        mountDocument(document, mark)
         return true
     }
 
-    /** Without a template, the new main circuit takes [circuitAttributes], as Evolution's Circuit and CircuitAttributes do. */
+    /**
+     * Without a template, the new main circuit takes [circuitAttributes], as Evolution's Circuit and CircuitAttributes do.
+     * [uniqueName] numbers [name] ("Untitled 2") when another project already uses it.
+     */
     fun createProject(
         name: String,
         templateXml: String? = null,
         circuitName: String = DEFAULT_NEW_CIRCUIT_NAME,
         circuitAttributes: Map<String, String> = emptyMap(),
-    ): Boolean = openPreparedCopy(name, templateXml ?: defaultXml(CircuitDocument(
-        name = circuitName.trim().ifEmpty { DEFAULT_NEW_CIRCUIT_NAME }, attributes = circuitAttributes)))
+        uniqueName: Boolean = false,
+    ): Boolean = openNewSession(name, templateXml ?: defaultXml(CircuitDocument(
+        name = circuitName.trim().ifEmpty { DEFAULT_NEW_CIRCUIT_NAME }, attributes = circuitAttributes)), uniqueName = uniqueName)
 
     fun openPreparedCopy(name: String, xml: String, attachments: Map<String, WorkspaceAttachment> = emptyMap()): Boolean =
         openNewSession(name, xml, attachments = attachments)
 
+    /**
+     * A file opened in place that a project is already linked to, unchanged since that project last read or wrote it,
+     * reopens that project (with any edits made since) instead of creating another copy, as Evolution brings an
+     * already open file's window forward.
+     */
     internal fun openNewSession(
         name: String,
         xml: String,
         report: EditorImportReport? = null,
         reference: DocumentReference? = null,
         attachments: Map<String, WorkspaceAttachment> = emptyMap(),
+        uniqueName: Boolean = false,
     ): Boolean {
         if (!flush()) return false
-        if (!session.create(name, xml, attachments)) { publish(); return false }
+        val mark = noticeChanges
+        linkedProjectFor(reference, xml)?.let { existing -> return reopenLinked(existing, checkNotNull(reference), report, mark) }
+        val projectName = if (uniqueName) uniqueProjectName(name, repository.list().projects.map { it.name }) else name
+        if (!session.create(projectName, xml, attachments)) { publish(); return false }
         val document = checkNotNull(session.state.document)
         report?.let { importReports[document.info.id] = it }
         reference?.let {
             associate(document, it, xml)
             rememberRecent(document.info.id, it)
         }
-        mountDocument(document)
+        mountDocument(document, mark)
+        return true
+    }
+
+    private fun linkedProjectFor(reference: DocumentReference?, xml: String): WorkspaceProjectId? {
+        if (reference == null || reference.mode != DocumentOpenMode.EDIT_IN_PLACE || !reference.writable) return null
+        val incoming = workspaceContentStamp(xml)
+        val candidates = runCatching { links.linkedProjects(reference.id) }.onFailure(::report).getOrNull().orEmpty()
+        val live = repository.list().projects.map { it.id }.toSet()
+        return candidates.filter { it in live }.firstOrNull { id ->
+            val stored = (repository.open(id) as? WorkspaceOpenResult.Success)?.document ?: return@firstOrNull false
+            val link = runCatching { links.read(id) }.getOrNull() ?: return@firstOrNull false
+            val sync = runCatching { links.readSync(id) }.getOrNull()?.takeIf { it.referenceId == link.reference.id }
+            !stored.readOnly && link.workspaceStamp == workspaceContentStamp(stored.xml) &&
+                (sync?.workspaceStamp == incoming || workspaceContentStamp(stored.xml) == incoming)
+        }
+    }
+
+    private fun reopenLinked(id: WorkspaceProjectId, reference: DocumentReference, report: EditorImportReport?, mark: Long): Boolean {
+        if (projectId != id) {
+            if (!session.open(id)) { publish(); return false }
+        }
+        val document = checkNotNull(session.state.document)
+        runCatching {
+            links.read(id)?.let { link -> if (link.reference != reference) links.write(link.copy(reference = reference)) }
+        }.onFailure(::report)
+        // The report keeps the file just opened as its origin, as the opened status names it.
+        val origin = report?.origin ?: LocalizedText.literal(reference.name)
+        (importReports[id] ?: report)?.let { importReports[id] = it.copy(origin = origin) }
+        rememberRecent(id, reference)
+        val reopened = WorkspaceReopenedFile(++reopenSerial, id, origin)
+        if (projectId == id) { validateLink(document); documentBinding?.activate(document); reopenedFile = reopened; refresh(); publish() }
+        else { mountDocument(document, mark); reopenedFile = reopened; publish() }
         return true
     }
 
@@ -341,12 +518,19 @@ class CatalogWorkspaceBinding(
         if (!save && !discardSessionEdits(expected)) return false
         if (next != null) {
             if (!session.open(next, discardPending = !save)) { publish(); return false }
-            sessionCheckpoints.remove(expected)
-            mountDocument(checkNotNull(session.state.document))
+            forgetSession(expected)
+            mountDocument(checkNotNull(session.state.document), noticeChanges)
             return true
         }
         if (!session.close(discardPending = !save)) { publish(); return false }
-        sessionCheckpoints.remove(expected)
+        forgetSession(expected)
+        detachEditor()
+        refresh(); publish()
+        return true
+    }
+
+    /** Leaves the window without an editor, as after closing its last tab; it never mounts a draft to autosave. */
+    private fun detachEditor() {
         projectId = null
         draftXml = null
         mountedXml = null
@@ -355,6 +539,7 @@ class CatalogWorkspaceBinding(
         draftReadOnly = false
         editorReadOnly = false
         editorClosed = true
+        saveFailed = false
         identityProjects.clear()
         currentIdentity = 0
         mount++
@@ -362,14 +547,22 @@ class CatalogWorkspaceBinding(
         documentBinding?.editorDetached()
         documentBinding?.activate(null)
         rememberWindow(null)
-        refresh(); publish()
-        return true
+    }
+
+    private fun forgetSession(id: WorkspaceProjectId) {
+        sessionCheckpoints.remove(id)
+        sessionXml.remove(id)
+        sessionFiles.remove(id)
+        confirmedFiles.remove(id)
+        changeChecks.remove(id)
+        externalSyncs.remove(id)
+        stampChecks.remove(id)
     }
 
     internal fun closeInactiveSession(id: WorkspaceProjectId, save: Boolean, originalXml: String? = null): Boolean {
         if (id == projectId || id !in sessionCheckpoints || !matchesSavedOriginal(id, originalXml)) return false
         if (!save && !discardSessionEdits(id)) return false
-        sessionCheckpoints.remove(id)
+        forgetSession(id)
         refresh(); publish()
         return true
     }
@@ -389,17 +582,47 @@ class CatalogWorkspaceBinding(
     private fun discardSessionEdits(id: WorkspaceProjectId): Boolean {
         val checkpoint = sessionCheckpoints[id] ?: return true
         val current = openForSessionClose(id) ?: return false
-        if (current.xml == checkpoint.xml) return true
-        if (current.info.revision != checkpoint.revision || (id == projectId && state.session.conflict != null)) {
+        // The open tab may hold edits that never reached storage (a failed autosave); they are what the undo must put back.
+        val unsaved = session.state.takeIf { id == projectId && it.document?.info?.id == id && it.dirty }
+            ?.xml?.takeUnless { checkpoint.unchanged(it) }
+        val view = if (unsaved != null) session.state.viewState else current.viewState
+        if (checkpoint.unchanged(current.xml)) {
+            // Storage already holds the version the tab opened with: nothing to write, but the dropped buffer can be undone.
+            if (unsaved != null) lastRevert = RevertedSession(id, current.info.revision, unsaved, view)
+            return true
+        }
+        if (current.info.revision != checkpoint.revision || (id == projectId && session.state.conflict != null)) {
             return sessionCloseFailure(message(Messages.WorkspaceConflictSaved))
         }
+        val replaced = unsaved ?: current.xml
         return when (val result = repository.save(id, checkpoint.revision, checkpoint.xml, checkpoint.view)) {
-            is WorkspaceMutationResult.Success -> { confirm(result, checkpoint.revision); true }
+            is WorkspaceMutationResult.Success -> {
+                confirm(result, checkpoint.revision)
+                lastRevert = RevertedSession(id, result.document.info.revision, replaced, view)
+                true
+            }
             is WorkspaceMutationResult.Conflict -> sessionCloseFailure(message(Messages.WorkspaceConflictSaved))
             is WorkspaceMutationResult.Failure -> sessionCloseFailure(result.notice)
             WorkspaceMutationResult.Missing -> sessionCloseFailure(message(Messages.WorkspaceErrorUnavailable))
         }
     }
+
+    /** Puts back what the last close-and-revert of [id] replaced, unless the project was reopened since. */
+    fun undoRevert(id: WorkspaceProjectId): Boolean {
+        val reverted = lastRevert?.takeIf { it.id == id && id != projectId } ?: return false
+        val result = repository.save(id, reverted.revision, reverted.xml, reverted.view)
+        // A failed write can be tried again; once another revision or a removal replaced the revert, it cannot.
+        if (result !is WorkspaceMutationResult.Failure) lastRevert = null
+        return when (result) {
+            is WorkspaceMutationResult.Success -> { notices = documentNotices(); refresh(); publish(); true }
+            is WorkspaceMutationResult.Conflict -> sessionCloseFailure(message(Messages.WorkspaceConflictSaved))
+            is WorkspaceMutationResult.Failure -> sessionCloseFailure(result.notice)
+            WorkspaceMutationResult.Missing -> sessionCloseFailure(message(Messages.WorkspaceErrorUnavailable))
+        }
+    }
+
+    /** A file that could not be opened says why, in the Projects sheet; the window is left as it was. */
+    internal fun reportNotice(notice: LocalizedText): Boolean = sessionCloseFailure(notice)
 
     internal fun sessionCloseFailure(notice: LocalizedText): Boolean {
         notices = listOf(notice)
@@ -418,34 +641,96 @@ class CatalogWorkspaceBinding(
         }
     }
 
-    fun duplicateProject(id: WorkspaceProjectId, expectedRevision: Long) = mutateProject(id, expectedRevision) { revision ->
-        repository.duplicate(id, revision)
+    /** [name] is the copy's name in the app language ("{name} (copy)"), numbered when already used. */
+    fun duplicateProject(id: WorkspaceProjectId, expectedRevision: Long, name: String? = null) = mutateProject(id, expectedRevision) { revision ->
+        repository.duplicate(id, revision, name?.let { uniqueProjectName(it, repository.list().projects.map { project -> project.name }) })
     }
 
     fun renameProject(id: WorkspaceProjectId, expectedRevision: Long, name: String) = mutateProject(id, expectedRevision) { revision ->
         repository.rename(id, revision, name)
     }
 
-    fun deleteProject(id: WorkspaceProjectId, expectedRevision: Long) = mutateProject(id, expectedRevision) { revision ->
-        repository.delete(id, revision)
+    /** Trashing the open project mounts [next] (its neighbouring tab) or leaves the window without an editor. */
+    fun deleteProject(id: WorkspaceProjectId, expectedRevision: Long, next: WorkspaceProjectId? = null) =
+        mutateProject(id, expectedRevision, next) { revision -> repository.delete(id, revision) }
+
+    /**
+     * [reopenSession] is the Undo of a tab's trash: the session comes back with the version it opened with (its tab, in
+     * the host). Restoring from the trash list starts afresh, and the kept session is dropped.
+     */
+    fun restoreProject(id: WorkspaceProjectId, expectedRevision: Long, reopenSession: Boolean = false) =
+        mutateProject(id, expectedRevision, restoring = true, reopenSession = reopenSession) { revision ->
+            repository.restore(id, revision)
+        }
+
+    /** Deletes a trashed project and every saved version of it; this cannot be undone. */
+    fun purgeProject(id: WorkspaceProjectId, expectedRevision: Long): Boolean {
+        val result = repository.purge(id, expectedRevision)
+        if (result is WorkspaceMutationResult.Success) forgetPurged(id)
+        notices = when (result) {
+            is WorkspaceMutationResult.Success -> documentNotices()
+            is WorkspaceMutationResult.Conflict -> listOf(message(Messages.WorkspaceConflictSaved))
+            is WorkspaceMutationResult.Failure -> listOf(result.notice)
+            WorkspaceMutationResult.Missing -> listOf(message(Messages.WorkspaceErrorUnavailable))
+        }
+        refresh(); publish()
+        return result is WorkspaceMutationResult.Success
     }
 
-    fun restoreProject(id: WorkspaceProjectId, expectedRevision: Long) = mutateProject(id, expectedRevision) { revision ->
-        repository.restore(id, revision)
+    /** Deletes every project in the trash; returns how many were deleted (all of them, or the call fails). */
+    fun emptyTrash(): Int? {
+        refresh()
+        val trashed = catalog.projects.filter { it.deleted }
+        var deleted = 0
+        for (project in trashed) {
+            when (val result = repository.purge(project.id, project.revision)) {
+                is WorkspaceMutationResult.Success -> { forgetPurged(project.id); deleted++ }
+                else -> {
+                    notices = listOf((result as? WorkspaceMutationResult.Failure)?.notice ?: message(Messages.WorkspaceConflictSaved))
+                    refresh(); publish()
+                    return null
+                }
+            }
+        }
+        notices = documentNotices()
+        refresh(); publish()
+        return deleted
+    }
+
+    private fun forgetPurged(id: WorkspaceProjectId) {
+        trashedSessions.remove(id)
+        importReports.remove(id)
+        if (lastRevert?.id == id) lastRevert = null
+        runCatching { links.forget(id) }.onFailure(::report)
+        loadRecentFiles()
+    }
+
+    fun removeRecent(file: WorkspaceRecentFile): Boolean {
+        val stored = recentFiles.firstOrNull { it.sameEntry(file) } ?: return false
+        val removed = runCatching { links.removeRecent(stored) }.onSuccess { recentFiles = it }.onFailure(::report).isSuccess
+        publish()
+        return removed
+    }
+
+    private fun WorkspaceRecentFile.sameEntry(other: WorkspaceRecentFile) = when (this) {
+        is WorkspaceRecentFile.Original -> other is WorkspaceRecentFile.Original && other.reference.id == reference.id
+        is WorkspaceRecentFile.Copy -> other is WorkspaceRecentFile.Copy && other.projectId == projectId
     }
 
     fun reloadStored(): Boolean {
         if (!session.reloadStored()) { publish(); return false }
         val document = checkNotNull(session.state.document)
-        sessionCheckpoints.remove(document.info.id)
-        mountDocument(document)
+        forgetSession(document.info.id)
+        mountDocument(document, noticeChanges)
         return true
     }
 
-    fun saveLocalAsCopy(name: String): Boolean {
-        if (!checkEditorWritable() || state.readOnly) {
+    /** [requestedName] is numbered ("… (copy) 2") when another project already uses it. */
+    fun saveLocalAsCopy(requestedName: String): Boolean {
+        if (!checkEditorWritable() || readOnly) {
             notices = listOf(message("workspace_document_unavailable")); publish(); return false
         }
+        val name = uniqueProjectName(requestedName, repository.list().projects.map { it.name })
         captureEditor()
         val saved = if (projectId == null) {
             // A replacement can arrive after A's save fails. Preserve A's pending buffer before
@@ -462,8 +747,9 @@ class CatalogWorkspaceBinding(
             importReports[session.state.document!!.info.id] = it
         }
         val document = session.state.document!!
+        val mark = noticeChanges
         rememberRecent(WorkspaceRecentFile.Copy(document.info.id, document.info.name))
-        mountDocument(document)
+        mountDocument(document, mark)
         return true
     }
 
@@ -486,13 +772,22 @@ class CatalogWorkspaceBinding(
         val current = (repository.open(id) as? WorkspaceOpenResult.Success)?.document ?: return
         if (current.readOnly) return
         sessionCheckpoints[id]?.let { checkpoint ->
-            sessionCheckpoints[id] = checkpoint.copy(xml = text, view = current.viewState)
+            // The file now holds [text]: an undo back to the opened version is a change from it, so the baseline goes.
+            sessionCheckpoints[id] = checkpoint.copy(xml = text, view = current.viewState, baseline = null)
         }
         val stamp = if (current.info.revision > scope.revision) workspaceContentStamp(current.xml) else workspaceContentStamp(text)
+        // The project content the file now holds: the stored revision it was written from, unless edits followed it.
+        val synced = if (text == current.xml || current.info.revision <= scope.revision) workspaceContentStamp(current.xml)
+            else workspaceContentStamp(text)
         if (reference.mode == DocumentOpenMode.EDIT_IN_PLACE && reference.writable) {
             runCatching {
                 links.write(WorkspaceExternalDocument(id, reference, stamp))
+                links.writeSync(id, WorkspaceExternalSync(reference.id, synced))
+                externalSyncs[id] = synced
                 validatedLinks += id
+                sessionFiles[id] = reference.name
+                // The checkpoint above is now the file's contents.
+                if (id in sessionCheckpoints) confirmedFiles += id
                 val previous = previousReference?.let { WorkspaceRecentFile.Original(it) }
                     ?: WorkspaceRecentFile.Copy(id, current.info.name)
                 rememberRecent(WorkspaceRecentFile.Original(reference), replaces = previous)
@@ -511,21 +806,30 @@ class CatalogWorkspaceBinding(
         publish()
     }
 
-    private fun mutateProject(id: WorkspaceProjectId, revision: Long, action: (Long) -> WorkspaceMutationResult) {
+    private fun mutateProject(
+        id: WorkspaceProjectId, revision: Long, next: WorkspaceProjectId? = null, restoring: Boolean = false,
+        reopenSession: Boolean = false, action: (Long) -> WorkspaceMutationResult,
+    ): Boolean {
         val active = projectId == id
-        if (active && !flush()) return
+        if (active && !flush()) return false
         val expected = if (active) session.state.document?.info?.revision ?: revision else revision
-        when (val result = action(expected)) {
+        val result = action(expected)
+        when (result) {
             is WorkspaceMutationResult.Success -> {
+                // An earlier failure no longer applies; a warning about the open document does, unless it was trashed.
+                notices = if (active && result.document.info.deleted) emptyList() else documentNotices()
                 if (result.document.info.id != id) importReports[id]?.let { importReports[result.document.info.id] = it }
-                else if (result.document.info.deleted) sessionCheckpoints.remove(id)
-                else recordCheckpointWrite(result.document, expected)
+                else if (result.document.info.deleted) { trashSession(id, expected, result.document.info.revision); importReports.remove(id) }
+                else {
+                    if (restoring && reopenSession && id !in sessionCheckpoints) restoreTrashedSession(id)
+                    else if (restoring) trashedSessions.remove(id)
+                    recordCheckpointWrite(result.document, expected)
+                }
                 if (active && result.document.info.deleted) {
-                    session.close(); projectId = null; draftXml = defaultXml(); mountedXml = draftXml
-                    draftReadOnly = false; editorReadOnly = false; draftImportReport = null
-                    identityProjects.clear(); currentIdentity = 0; mount++; attachedMount = null
-                    documentBinding?.editorDetached()
-                    documentBinding?.activate(null); rememberWindow(null)
+                    // Never mount a writable demo here: its first autosave would create a project nobody asked for.
+                    val target = next?.takeIf { it != id }
+                    if (target != null && session.open(target, discardPending = true)) mountDocument(checkNotNull(session.state.document), noticeChanges)
+                    else { session.close(discardPending = true); detachEditor() }
                 } else if (active) session.open(id)
             }
             is WorkspaceMutationResult.Conflict -> notices = listOf(message(Messages.WorkspaceConflictSaved))
@@ -533,7 +837,29 @@ class CatalogWorkspaceBinding(
             WorkspaceMutationResult.Missing -> notices = listOf(message(Messages.WorkspaceErrorUnavailable))
         }
         refresh(); publish()
+        return result is WorkspaceMutationResult.Success
     }
+
+    private fun trashSession(id: WorkspaceProjectId, expectedRevision: Long, trashedRevision: Long) {
+        // Only the latest trash can be undone (the host offers one Undo), so older stashed sessions go.
+        trashedSessions.clear()
+        sessionCheckpoints[id]?.let { checkpoint ->
+            val tracked = if (checkpoint.revision == expectedRevision) checkpoint.copy(revision = trashedRevision) else checkpoint
+            trashedSessions[id] = TrashedSession(tracked, sessionXml[id], sessionFiles[id], id in confirmedFiles)
+        }
+        forgetSession(id)
+    }
+
+    private fun restoreTrashedSession(id: WorkspaceProjectId) {
+        val trashed = trashedSessions.remove(id) ?: return
+        sessionCheckpoints[id] = trashed.checkpoint
+        trashed.xml?.let { sessionXml[id] = it }
+        trashed.file?.let { sessionFiles[id] = it; loadSync(id) }
+        if (trashed.confirmed) confirmedFiles += id
+    }
+
+    /** The notices that describe the open document itself, which outlast changes to other projects. */
+    private fun documentNotices(): List<LocalizedText> = notices.filter { it.key in DOCUMENT_NOTICES }
 
     private fun checkEditorWritable(): Boolean {
         if (attachedMount != mount || editorWritable() != false) return true
@@ -548,13 +874,20 @@ class CatalogWorkspaceBinding(
     }
 
     private fun captureEditor() {
-        if (projectId == null || attachedMount != mount || !checkEditorWritable() || state.readOnly) return
+        if (projectId == null || attachedMount != mount || !checkEditorWritable() || readOnly) return
         session.edit(exportXml() ?: session.state.xml ?: return, exportView() ?: session.state.viewState)
     }
 
     private fun flushSession(): WorkspaceMutationResult? {
         val revision = session.state.document?.info?.revision
-        return session.flush().also { confirm(it, revision) }
+        return session.flush().also {
+            when (it) {
+                is WorkspaceMutationResult.Success -> saveFailed = false
+                is WorkspaceMutationResult.Failure, WorkspaceMutationResult.Missing -> saveFailed = true
+                else -> Unit
+            }
+            confirm(it, revision)
+        }
     }
 
     private fun recordCheckpointWrite(document: WorkspaceDocument, expectedRevision: Long) {
@@ -569,7 +902,7 @@ class CatalogWorkspaceBinding(
         if (result !is WorkspaceMutationResult.Success) return
         val document = result.document
         expectedRevision?.let { recordCheckpointWrite(document, it) }
-        if (document.readOnly || state.readOnly || document.info.id !in validatedLinks) return
+        if (document.readOnly || readOnly || document.info.id !in validatedLinks) return
         runCatching {
             links.read(document.info.id)?.let { link ->
                 links.write(link.copy(workspaceStamp = workspaceContentStamp(document.xml)))
@@ -578,15 +911,34 @@ class CatalogWorkspaceBinding(
         }.onFailure(::report)
     }
 
-    private fun rememberCheckpoint(document: WorkspaceDocument) {
-        sessionCheckpoints.getOrPut(document.info.id) {
-            SessionCheckpoint(document.xml, document.viewState, document.info.revision)
-        }
+    /** True when this opens the tab, rather than returning to it. */
+    private fun rememberCheckpoint(document: WorkspaceDocument): Boolean {
+        if (document.info.id in sessionCheckpoints) return false
+        sessionCheckpoints[document.info.id] = SessionCheckpoint(document.xml, document.viewState, document.info.revision, clock())
+        return true
     }
 
-    private fun mountDocument(document: WorkspaceDocument) {
+    /** Migration and recovery notices from loading the catalog outlive the first mount. */
+    private fun keepStartupNotices(startup: List<LocalizedText>) {
+        if (startup.isEmpty()) return
+        notices = (startup + notices).distinct()
+        publish()
+    }
+
+    /**
+     * [since] is [noticeChanges] when the caller began preparing this mount. A notice about the previous editor no
+     * longer applies, but one raised since then (a failed link or recent-files write for this document) stays;
+     * validateLink re-reports a link mismatch below.
+     */
+    private fun mountDocument(document: WorkspaceDocument, since: Long) {
+        reopenedFile = null
+        if (noticeChanges == since) notices = emptyList()
         editorClosed = false
-        rememberCheckpoint(document)
+        saveFailed = false
+        if (lastRevert?.id == document.info.id) lastRevert = null
+        // A trashed tab's kept session only serves its Undo; opening the project again starts a new session.
+        trashedSessions.remove(document.info.id)
+        awaitingBaseline = document.info.id.takeIf { rememberCheckpoint(document) }
         projectId = document.info.id; draftXml = null; draftReference = null; draftImportReport = null
         draftReadOnly = false; editorReadOnly = false
         mountedXml = document.xml; currentIdentity = 0; mount++; attachedMount = null
@@ -598,15 +950,38 @@ class CatalogWorkspaceBinding(
         refresh(); publish()
     }
 
-    private fun associate(document: WorkspaceDocument, reference: DocumentReference, xml: String) {
+    /**
+     * Links [document] to the file [reference]. [fromFile] says [xml] is what the file was just read as; only then does
+     * the tab count as matching its file. A legacy checkpoint or an edited draft is linked without that claim.
+     */
+    private fun associate(document: WorkspaceDocument, reference: DocumentReference, xml: String, fromFile: Boolean = true) {
         if (reference.mode != DocumentOpenMode.EDIT_IN_PLACE || !reference.writable) return
         runCatching {
-            links.write(WorkspaceExternalDocument(document.info.id, reference, workspaceContentStamp(xml)))
+            val stamp = workspaceContentStamp(xml)
+            links.write(WorkspaceExternalDocument(document.info.id, reference, stamp))
+            val synced = stamp.takeIf { fromFile }
+            links.writeSync(document.info.id, WorkspaceExternalSync(reference.id, synced))
+            externalSyncs[document.info.id] = synced
             validatedLinks += document.info.id
+            sessionFiles[document.info.id] = reference.name
+            // The tab opens with the file's own contents (its checkpoint, made now or just before).
+            if (fromFile && (sessionCheckpoints[document.info.id]?.xml ?: document.xml) == xml) confirmedFiles += document.info.id
         }.onFailure(::report)
     }
+
+    /** Reads what [id]'s file was last known to hold; another window may have saved it since this one looked. */
+    private fun loadSync(id: WorkspaceProjectId, link: WorkspaceExternalDocument? = runCatching { links.read(id) }.getOrNull()) {
+        externalSyncs[id] = link?.let { current ->
+            runCatching { links.readSync(id) }.getOrNull()?.takeIf { it.referenceId == current.reference.id }?.workspaceStamp
+        }
+    }
+
     private fun validateLink(document: WorkspaceDocument) {
         val link = runCatching { links.read(document.info.id) }.onFailure(::report).getOrNull()
+        if (link != null && link.reference.mode == DocumentOpenMode.EDIT_IN_PLACE && link.reference.writable) {
+            sessionFiles[document.info.id] = link.reference.name
+            loadSync(document.info.id, link)
+        } else sessionFiles.remove(document.info.id)
         if (link?.workspaceStamp == workspaceContentStamp(document.xml)) validatedLinks += document.info.id
         else {
             validatedLinks -= document.info.id
@@ -630,10 +1005,19 @@ class CatalogWorkspaceBinding(
     }
     private fun rememberWindow(id: WorkspaceProjectId?) { runCatching { links.selectWindowProject(windowId, id) }.onFailure(::report) }
     private fun refresh() { catalog = repository.list(includeDeleted = true) }
-    private fun publish() { onStateChanged(state) }
+    private fun publish() {
+        val id = projectId
+        val current = session.state
+        if (id != null && id in sessionCheckpoints && current.document?.info?.id == id) current.xml?.let { sessionXml[id] = it }
+        onStateChanged(state)
+    }
     private fun projectName(xml: String): String = (CircCodec.readProject(xml) as? CircProjectImportResult.Success)
         ?.project?.mainCircuitName ?: "main"
     private fun defaultXml(circuit: CircuitDocument = DemoCircuits.andGate()) = CircCodec.writeProject(
         ProjectBuiltinLibraries.withDefaults(CircuitProject(listOf(circuit)), ComponentCatalog.registry),
     )
+
+    private companion object {
+        val DOCUMENT_NOTICES = setOf(Messages.WorkspaceDocumentUnavailable, Messages.WorkspaceReadOnly, "workspace_external_link_mismatch")
+    }
 }

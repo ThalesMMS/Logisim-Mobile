@@ -60,7 +60,40 @@ internal class CatalogDocumentActions(
     override fun setOpenHandler(handler: ((DocumentOpenResult) -> Unit)?) {
         editorReady = false
         this.handler = handler
+        native.setOpenHandler(if (handler == null && windowHandler == null) null else ::opened)
+    }
+
+    // The workspace window's own handler while it has no editor (its last tab closed): a file opened from another app
+    // or the picker opens a new session at once instead of waiting in the queue for the next editor.
+    private var windowHandler: ((DocumentOpenResult) -> Unit)? = null
+
+    fun setWindowHandler(handler: ((DocumentOpenResult) -> Unit)?) {
+        windowHandler = handler
+        if (this.handler != null) return
         native.setOpenHandler(if (handler == null) null else ::opened)
+        workspaceIdle()
+    }
+
+    /**
+     * The workspace finished its queued work. A file that arrived meanwhile (returning from the picker resumes the
+     * window, which keeps it busy until that is done) goes to the window now, one at a time: opening one makes the
+     * workspace busy again, and whatever is left waits for the next idle moment or for the editor that file mounts.
+     */
+    fun workspaceIdle() {
+        while (handler == null && windowHandler != null && pendingOpens.isNotEmpty() && workspace.acceptsWindowOpen()) {
+            val (result, requested) = pendingOpens.removeFirst()
+            deliverToWindow(result, requested)
+        }
+    }
+
+    /** A file the window could not open after all waits for the next idle moment, or for the next editor. */
+    fun requeue(result: DocumentOpenResult) { pendingOpens.addLast(result to null) }
+
+    private fun deliverToWindow(result: DocumentOpenResult, requested: WorkspaceEditorScope?) {
+        val window = windowHandler ?: return
+        if (!workspace.acceptsWindowOpen()) { pendingOpens.addLast(result to requested); return }
+        // A picker request made by an editor that has gone since then is not this window's.
+        window(if (requested != null && !workspace.matches(requested)) DocumentOpenResult.Cancelled else result)
     }
 
     fun editorDetached() { editorReady = false }
@@ -160,6 +193,11 @@ internal class CatalogDocumentActions(
     private fun opened(result: DocumentOpenResult) {
         val requested = requestedOpen
         requestedOpen = null
+        if (handler == null && windowHandler != null) {
+            // In order behind files still waiting; at once when the window is idle.
+            if (pendingOpens.isEmpty()) deliverToWindow(result, requested) else pendingOpens.addLast(result to requested)
+            return
+        }
         // iOS can deliver a queued OS-open synchronously from setOpenHandler, before App's
         // remaining effects install the workspace replacement listener.
         if (!editorReady || handler == null) {

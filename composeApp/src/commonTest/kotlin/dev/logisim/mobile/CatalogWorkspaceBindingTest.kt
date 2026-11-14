@@ -9,11 +9,15 @@ import dev.logisim.mobile.core.WorkspaceCatalogStorage
 import dev.logisim.mobile.core.WorkspaceMutationResult
 import dev.logisim.mobile.core.WorkspaceOpenResult
 import dev.logisim.mobile.core.WorkspaceProjectId
+import dev.logisim.mobile.core.WorkspaceViewState
+import dev.logisim.mobile.core.localization.AppLanguage
+import dev.logisim.mobile.core.localization.LocalizedText
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertIs
 import kotlin.test.assertNotEquals
+import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertSame
 import kotlin.test.assertTrue
@@ -82,7 +86,8 @@ class CatalogWorkspaceBindingTest {
         fun open(id: WorkspaceProjectId) { assertTrue(binding.openProject(id)); mount() }
     }
     private var serial = 0
-    private val historicalProject = """<project source="2.7.1"><lib name="0" desc="#Wiring"/><main name="old"/><circuit name="old"><comp lib="0" name="Pin" loc="(0,0)"><a name="output" val="false"/></comp></circuit></project>"""
+    // A pre-2.6.3 file is converted, which opens its report by itself (C145); version defaults alone would not.
+    private val historicalProject = """<project source="2.0.3" version="1.0"><lib name="0" desc="#Base"/><main name="old"/><circuit name="old"><comp lib="0" name="Pin" loc="(0,0)"/></circuit></project>"""
     private fun repository(store: Store) = WorkspaceCatalogRepository(store,
         validate = { CircCodec.readProject(it) is CircProjectImportResult.Success }, clock = { 123L }, idFactory = { "project-${++serial}" })
     private fun xml(name: String) = "<project><main name=\"$name\"/><circuit name=\"$name\"/></project>"
@@ -214,7 +219,8 @@ class CatalogWorkspaceBindingTest {
 
         val resumed = Window(repo, StoredWorkspaceDocumentLinks(store))
         val originalEntry = WorkspaceRecentFile.Original(original)
-        val copyEntry = WorkspaceRecentFile.Copy(copyProject, "A.circ")
+        // A copy is listed under its project's current name, so a rename in Projects shows here too (C147).
+        val copyEntry = WorkspaceRecentFile.Copy(copyProject, repo.list().projects.single { it.id == copyProject }.name)
         assertEquals(listOf(WorkspaceRecentFile.Original(secondOriginal), copyEntry, originalEntry), resumed.binding.state.recentFiles)
 
         resumed.binding.documents!!.reopen(originalEntry.reference)
@@ -287,7 +293,7 @@ class CatalogWorkspaceBindingTest {
         assertTrue(window.editor.importXml(historicalProject, dev.logisim.mobile.core.localization.LocalizedText.literal("old-project.circ")))
         window.changed()
         val b = window.binding.state.editorProjectId!!
-        val expected = window.editor.importReport!!.copy(showOnOpen = false)
+        val expected = window.editor.importReport!!.consumed()
         assertTrue(expected.migrations.isNotEmpty())
         assertEquals(expected, window.binding.state.editorImportReport)
         assertTrue(window.editor.importReportVisible)
@@ -576,5 +582,350 @@ class CatalogWorkspaceBindingTest {
         window.open(recoveredA)
         assertEquals(reportA, window.editor.importReport)
         assertFalse(window.editor.importReportVisible)
+    }
+
+    private fun WorkspaceCatalogRepository.revision(id: WorkspaceProjectId) =
+        assertIs<WorkspaceOpenResult.Success>(open(id)).document.info.revision
+    private fun WorkspaceCatalogRepository.liveNames() = list().projects.filterNot { it.deleted }.map { it.name }.toSet()
+
+    @Test fun closingOrTrashingATabHandsTheEditorToTheNextTabThenThePreviousOne() {
+        val a = WorkspaceProjectId("a"); val b = WorkspaceProjectId("b"); val c = WorkspaceProjectId("c")
+        assertEquals(c, workspaceNeighborSession(listOf(a, b, c), b))
+        assertEquals(b, workspaceNeighborSession(listOf(a, b, c), c))
+        assertEquals(b, workspaceNeighborSession(listOf(a, b, c), a))
+        assertNull(workspaceNeighborSession(listOf(a), a))
+    }
+
+    @Test fun deletingActiveProjectMountsNeighborSession() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("C", xml("C"))); window.mount()
+        val c = window.binding.state.editorProjectId!!
+        window.open(b)
+
+        assertTrue(window.binding.deleteProject(b, repo.revision(b), next = c))
+        assertEquals(c, window.binding.state.editorProjectId)
+        assertFalse(window.binding.state.editorClosed)
+        window.mount()
+        assertEquals("C", window.editor.project.mainCircuitName)
+        assertTrue(window.binding.flush())
+        window.binding.foregroundChanged(false)
+        assertEquals(setOf(a, c), repo.list().projects.filterNot { it.deleted }.map { it.id }.toSet())
+        assertTrue(repo.list(includeDeleted = true).projects.single { it.id == b }.deleted)
+        assertFalse(b in window.binding.state.changedSessions || b in window.binding.state.sessionOpenedAt)
+    }
+
+    @Test fun deletingOnlySessionDetachesEditor() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        val oldMount = window.binding.state.editorMount
+        assertTrue(window.binding.deleteProject(a, repo.revision(a)))
+        assertTrue(window.binding.state.editorClosed)
+        assertNull(window.binding.state.editorProjectId)
+        assertNull(window.binding.state.editorXml)
+
+        // The autosave paths that used to save the hard-coded AND demo as a new project.
+        window.binding.viewChanged(window.binding.state.editorMount, dev.logisim.mobile.core.WorkspaceViewState())
+        window.binding.documentChanged(oldMount, xml("stale"))
+        assertTrue(window.binding.flush())
+        window.binding.foregroundChanged(false)
+        window.binding.foregroundChanged(true)
+        assertTrue(repo.liveNames().isEmpty())
+        val demo = dev.logisim.mobile.core.DemoCircuits.andGate().name
+        assertTrue(repo.list(includeDeleted = true).projects.none { it.name == demo })
+        assertEquals(listOf(a), repo.list(includeDeleted = true).projects.map { it.id })
+        assertTrue(window.binding.state.editorClosed)
+
+        // Undo: restore, then reopen.
+        assertTrue(window.binding.restoreProject(a, repo.list(includeDeleted = true).projects.single().revision))
+        assertTrue(window.binding.openProject(a))
+        assertEquals(a, window.binding.state.editorProjectId)
+        assertFalse(window.binding.state.editorClosed)
+    }
+
+    @Test fun untouchedSessionsReportNoChanges() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        // The editor's first autosave rewrites hand-written XML in its own form; that is not an edit.
+        window.changed()
+        assertNotEquals(xml("B"), repo.open(window.binding.state.editorProjectId!!).xml())
+        window.binding.viewChanged(window.binding.state.editorMount, dev.logisim.mobile.core.WorkspaceViewState(
+            viewports = mapOf("B" to dev.logisim.mobile.core.WorkspaceViewport(2f, 10f, 20f))))
+        assertTrue(window.binding.flush())
+        assertEquals(emptySet(), window.binding.state.changedSessions)
+        window.open(a)
+        assertEquals(emptySet(), window.binding.state.changedSessions)
+        assertEquals(2, window.binding.state.sessionOpenedAt.size)
+    }
+
+    @Test fun editedSessionReportsChanges() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        window.editor.place(ComponentKind.NOT)
+        window.editor.tap(GridPoint(30, 40))
+        window.changed()
+        assertEquals(setOf(b), window.binding.state.changedSessions)
+        window.open(a)
+        assertEquals(setOf(b), window.binding.state.changedSessions, "An inactive tab keeps its changed state")
+        assertTrue(window.binding.closeInactiveSession(b, save = true))
+        assertEquals(emptySet(), window.binding.state.changedSessions)
+        assertTrue(repo.open(b).xml().contains("NOT Gate"), "Keep changes keeps the autosaved edit")
+    }
+
+    @Test fun revertThenUndoRestoresXml() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        val original = repo.open(b).xml()
+        window.editor.place(ComponentKind.NOT)
+        window.editor.tap(GridPoint(30, 40))
+        window.changed()
+        val edited = repo.open(b).xml()
+        window.open(a)
+
+        assertTrue(window.binding.closeInactiveSession(b, save = false))
+        assertEquals(original, repo.open(b).xml())
+        assertTrue(window.binding.undoRevert(b))
+        assertEquals(edited, repo.open(b).xml())
+        assertFalse(window.binding.undoRevert(b), "An undo applies once")
+        assertEquals(a, window.binding.state.editorProjectId)
+    }
+
+    @Test fun successfulRenameClearsConflictNotice() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val b = repo.create("B", xml("B")).id()
+        val stale = repo.revision(b)
+        assertIs<WorkspaceMutationResult.Success>(repo.rename(b, stale, "B from another window"))
+        assertFalse(window.binding.renameProject(b, stale, "Mine"))
+        assertEquals(listOf(dev.logisim.mobile.core.localization.Messages.WorkspaceConflictSaved), window.binding.state.notices.map { it.key })
+        // A rejected name replaces the conflict notice with its own reason.
+        assertFalse(window.binding.renameProject(b, repo.revision(b), "Bad\u0007name"))
+        assertEquals(1, window.binding.state.notices.size)
+        assertNotEquals(dev.logisim.mobile.core.localization.Messages.WorkspaceConflictSaved, window.binding.state.notices.single().key)
+        assertFalse(validWorkspaceProjectName("Bad\u0007name"), "The dialog refuses it before the catalog does")
+        assertFalse(validWorkspaceProjectName("  "))
+        assertFalse(validWorkspaceProjectName("x".repeat(201)))
+        assertTrue(validWorkspaceProjectName(" ${"x".repeat(200)} "))
+        assertTrue(window.binding.renameProject(b, repo.revision(b), "Mine"))
+        assertEquals(emptyList(), window.binding.state.notices)
+        assertEquals("Mine", repo.list().projects.single { it.id == b }.name)
+    }
+
+    @Test fun revertingAfterAFailedAutosaveKeepsTheUnsavedEditForUndo() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        val opened = repo.open(b).xml()
+        store.failCatalog = true
+        window.editor.place(ComponentKind.NOT)
+        window.editor.tap(GridPoint(30, 40))
+        window.changed()
+        val edited = window.editor.exportXml()
+        assertTrue(window.binding.state.saveFailed)
+        assertEquals(opened, repo.open(b).xml(), "The edit exists only in the open tab")
+
+        // Nothing is written (storage still holds the opened version), but the edit is kept for Undo.
+        assertTrue(window.binding.closeEditorSession(b, a, save = false))
+        assertEquals(a, window.binding.state.editorProjectId)
+        assertEquals(b, window.binding.state.revertUndo)
+        assertFalse(window.binding.undoRevert(b), "The store still fails")
+        assertEquals(b, window.binding.state.revertUndo, "A failed write leaves the undo available")
+        store.failCatalog = false
+        assertTrue(window.binding.undoRevert(b), "A refused Undo can be tried again")
+        assertEquals(edited, repo.open(b).xml())
+        assertNull(window.binding.state.revertUndo)
+    }
+
+    @Test fun reopeningARevertedProjectDropsItsUndo() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        window.editor.place(ComponentKind.NOT)
+        window.editor.tap(GridPoint(30, 40))
+        window.changed()
+        assertTrue(window.binding.closeEditorSession(b, a, save = false))
+        assertEquals(b, window.binding.state.revertUndo)
+        window.mount()
+        window.open(b)
+        window.open(a)
+        assertNull(window.binding.state.revertUndo, "Reopened, the project starts from what storage holds")
+        assertFalse(window.binding.undoRevert(b))
+        assertFalse(repo.open(b).xml().contains("NOT Gate"))
+    }
+
+    @Test fun aRevertThatReplacedNothingOffersNoUndo() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        // Only the view changed (the close dialog can open for its pending write).
+        window.binding.viewChanged(window.binding.state.editorMount, dev.logisim.mobile.core.WorkspaceViewState(
+            viewports = mapOf("B" to dev.logisim.mobile.core.WorkspaceViewport(2f, 10f, 20f))))
+        assertTrue(window.binding.closeEditorSession(b, a, save = false))
+        assertNull(window.binding.state.revertUndo)
+        assertFalse(window.binding.undoRevert(b))
+    }
+
+    @Test fun onlyAWindowThatOpenedOrSavedALinkedFileVouchesForIt() {
+        val store = Store(); val repo = repository(store); val links = StoredWorkspaceDocumentLinks(store)
+        val window = Window(repo, links, legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"), reference = reference("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        window.changed()
+        assertEquals("B.circ", window.binding.state.sessionFiles[b])
+        assertEquals(emptySet(), window.binding.state.unconfirmedFiles, "Opened from the file, the tab is what the file holds")
+        assertEquals(emptySet(), window.binding.state.changedSessions)
+        window.editor.place(ComponentKind.NOT)
+        window.editor.tap(GridPoint(30, 40))
+        window.changed()
+        assertEquals(setOf(b), window.binding.state.changedSessions)
+
+        // The app ends before the edit reaches the file; the next launch mounts the catalog's version.
+        val restored = Window(repo, links)
+        assertEquals(b, restored.binding.state.editorProjectId)
+        assertEquals("B.circ", restored.binding.state.sessionFiles[b])
+        assertEquals(emptySet(), restored.binding.state.changedSessions, "Nothing changed since this tab was mounted")
+        assertEquals(setOf(b), restored.binding.state.unconfirmedFiles, "But nothing showed that the file has the edit")
+        restored.documents.save()
+        restored.native.write!!(DocumentWriteResult.Saved(reference("B").copy(revision = "saved-B")))
+        assertEquals(emptySet(), restored.binding.state.unconfirmedFiles, "Saving to the file confirms it")
+
+        // Closed without writing the file and reopened from the catalog: unconfirmed again.
+        assertTrue(window.binding.closeEditorSession(b, a, save = true))
+        window.mount()
+        window.open(b)
+        assertEquals(setOf(b), window.binding.state.unconfirmedFiles)
+    }
+
+    // A2: reopening an already open, unchanged linked file brings its project forward and says so, as a fresh open
+    // does ("File B.circ opened"), with the file as the report's origin, whether the project is active or not.
+    @Test fun reopeningAnOpenLinkedFileAnnouncesItWithTheFileOpenedStatus() {
+        val store = Store(); val repo = repository(store); val links = StoredWorkspaceDocumentLinks(store)
+        val window = Window(repo, links, legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        val origin = LocalizedText.literal("B.circ")
+        val report = EditorImportReport("5.1.0", 1, emptyList(), origin)
+        assertTrue(window.binding.openNewSession("B", xml("B"), report = report, reference = reference("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        assertNull(window.binding.state.reopenedFile, "A first open is announced by its new editor")
+        // Saved to its file, as the E2E export does: the file holds what the project holds.
+        window.changed()
+        window.documents.save()
+        val (_, fileText) = assertNotNull(window.native.lastSaved)
+        window.native.write!!(DocumentWriteResult.Saved(reference("B")))
+        val projects = repo.list().projects.size
+
+        // Reopened while active: no new project, the same mount, and an announcement for the live editor.
+        val mount = window.binding.state.editorMount
+        assertTrue(window.binding.openNewSession("B", fileText, report = report, reference = reference("B")))
+        assertEquals(projects, repo.list().projects.size)
+        assertEquals(b, window.binding.state.editorProjectId)
+        assertEquals(mount, window.binding.state.editorMount)
+        val active = assertNotNull(window.binding.state.reopenedFile)
+        assertEquals(b to origin, active.projectId to active.name)
+        val control = EditorSessionControl()
+        assertTrue(control.reportOpened(active.name), "Held until the editor attaches")
+        var announced: LocalizedText? = null
+        control.attach(pause = {}, setActive = {}, exportView = { WorkspaceViewState() }, importView = {},
+            reportOpened = { announced = it })
+        assertEquals(origin, announced)
+        window.editor.reportOpened(active.name)
+        assertEquals("status_file_opened", window.editor.statusText.key)
+        assertTrue(window.editor.statusText.resolve(AppLanguage.ENGLISH).contains("B.circ"))
+
+        // Reopened from another tab: the project comes forward, its report keeps the file as origin.
+        window.open(a)
+        assertNull(window.binding.state.reopenedFile, "Another mount ends the announcement")
+        assertTrue(window.binding.openNewSession("B", fileText, report = report, reference = reference("B"))); window.mount()
+        assertEquals(projects, repo.list().projects.size)
+        assertEquals(b, window.binding.state.editorProjectId)
+        val inactive = assertNotNull(window.binding.state.reopenedFile)
+        assertTrue(inactive.serial > active.serial)
+        assertEquals(origin, inactive.name)
+        assertEquals(origin, window.binding.state.editorImportReport?.origin)
+    }
+
+    @Test fun aLinkFailureWhileOpeningAFileInPlaceStaysVisible() {
+        val store = Store(); val repo = repository(store)
+        val stored = StoredWorkspaceDocumentLinks(store)
+        var failRecent = false
+        val links = object : WorkspaceDocumentLinks by stored {
+            override fun recordRecent(file: WorkspaceRecentFile, replaces: WorkspaceRecentFile?): List<WorkspaceRecentFile> {
+                check(!failRecent) { "recent files unavailable" }
+                return stored.recordRecent(file, replaces)
+            }
+        }
+        val window = Window(repo, links, legacyXml = xml("A"))
+        failRecent = true
+        assertTrue(window.binding.openNewSession("B", xml("B"), reference = reference("B")))
+        assertTrue(dev.logisim.mobile.core.localization.LocalizedText.literal("recent files unavailable") in window.binding.state.notices,
+            "The mount does not hide the failure it followed")
+    }
+
+    @Test fun changingAnotherProjectKeepsTheOpenDocumentsLinkWarning() {
+        val store = Store(); val repo = repository(store); val links = StoredWorkspaceDocumentLinks(store)
+        val id = repo.create("A", xml("A")).id()
+        links.write(WorkspaceExternalDocument(id, reference("A"), workspaceContentStamp(xml("not A"))))
+        val window = Window(repo, links)
+        assertEquals(id, window.binding.state.editorProjectId)
+        val mismatch = "workspace_external_link_mismatch"
+        assertTrue(window.binding.state.notices.any { it.key == mismatch })
+        val other = repo.create("Other", xml("Other")).id()
+        assertTrue(window.binding.renameProject(other, repo.revision(other), "Renamed"))
+        assertTrue(window.binding.duplicateProject(other, repo.revision(other)))
+        assertTrue(window.binding.deleteProject(other, repo.revision(other)))
+        assertTrue(window.binding.state.notices.any { it.key == mismatch }, "Still about the open document")
+    }
+
+    @Test fun undoingTheTrashOfAnInactiveTabBringsItsSessionBack() {
+        val store = Store(); val repo = repository(store)
+        val window = Window(repo, StoredWorkspaceDocumentLinks(store), legacyXml = xml("A"))
+        val a = window.binding.state.editorProjectId!!
+        assertTrue(window.binding.openNewSession("B", xml("B"))); window.mount()
+        val b = window.binding.state.editorProjectId!!
+        val original = repo.open(b).xml()
+        window.editor.place(ComponentKind.NOT)
+        window.editor.tap(GridPoint(30, 40))
+        window.changed()
+        window.open(a)
+        val openedAt = window.binding.state.sessionOpenedAt.getValue(b)
+
+        assertTrue(window.binding.deleteProject(b, repo.revision(b)))
+        assertFalse(b in window.binding.state.sessionOpenedAt)
+        val trashed = repo.list(includeDeleted = true).projects.single { it.id == b }.revision
+        assertTrue(window.binding.restoreProject(b, trashed, reopenSession = true))
+        assertEquals(openedAt, window.binding.state.sessionOpenedAt[b], "The tab comes back with the version it opened with")
+        assertEquals(setOf(b), window.binding.state.changedSessions)
+        assertTrue(window.binding.closeInactiveSession(b, save = false), "Revert still knows the restored revision")
+        assertEquals(original, repo.open(b).xml())
+    }
+
+    @Test fun readOnlyNoticeAppearsOnce() {
+        val store = Store()
+        store.files[WorkspaceCatalogRepository.CATALOG_FILE] = "not a catalog"
+        val window = Window(repository(store), StoredWorkspaceDocumentLinks(store))
+        assertTrue(window.binding.state.catalog.readOnly)
+        val readOnly = dev.logisim.mobile.core.localization.Messages.WorkspaceReadOnly
+        assertEquals(1, window.binding.state.notices.count { it.key == readOnly })
+        assertEquals(1, workspaceNotices(window.binding.state).count { it.text.key == readOnly })
+        assertEquals(WorkspaceNoticeSeverity.WARNING, workspaceNotices(window.binding.state).single { it.text.key == readOnly }.severity)
     }
 }

@@ -45,6 +45,9 @@ class FileWorkspaceCatalogStorage(directory: File) : WorkspaceCatalogStorage {
         } finally { Files.deleteIfExists(temporary) }
     }
 
+    override val supportsDelete: Boolean get() = true
+    override fun delete(name: String) { Files.deleteIfExists(file(name).toPath()) }
+
     private fun ensureDirectory() = check(directory.isDirectory || directory.mkdirs()) { "Não foi possível criar a pasta do catálogo." }
     private fun file(name: String): File {
         require(name.matches(Regex("[A-Za-z0-9._-]+")) && name !in setOf(".", "..")) { "Nome de arquivo interno inválido." }

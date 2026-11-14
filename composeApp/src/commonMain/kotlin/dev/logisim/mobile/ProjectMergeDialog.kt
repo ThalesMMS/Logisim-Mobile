@@ -3,7 +3,12 @@ package dev.logisim.mobile
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
@@ -34,6 +39,10 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/** "1 circuit will be copied (selected: 1, dependencies: 0)": plural on the total the merge copies. */
+internal fun projectMergeSummary(total: Int, dependencies: Int): LocalizedText = LocalizedText("project_merge_summary",
+    arguments = mapOf("selected" to (total - dependencies).toString(), "dependencies" to dependencies.toString()), quantity = total.toLong())
+
 @Composable
 internal fun ProjectMergeDialog(state: EditorState, assets: DocumentAssetActions, onClose: () -> Unit) {
     val strings = rememberLocalizer()
@@ -44,7 +53,12 @@ internal fun ProjectMergeDialog(state: EditorState, assets: DocumentAssetActions
     var busy by remember { mutableStateOf(false) }
     var notice by remember { mutableStateOf<LocalizedText?>(null) }
     var source by remember { mutableStateOf<CircuitProject?>(null) }
+    var sourceName by remember { mutableStateOf<String?>(null) }
     var selected by remember { mutableStateOf(emptySet<String>()) }
+    // What the merge will copy and rename, as Evolution's merge dialog summarizes it before the merge.
+    val plan = remember(source, selected) {
+        source?.takeIf { selected.isNotEmpty() }?.let { runCatching { ProjectCircuitMerge.plan(state.project, it, selected) }.getOrNull() }
+    }
 
     fun canMergeIntoCurrentProject() = state.documentWritable && state.interactionsEnabled &&
         state.documentIdentity == identity && state.revision == revision && state.componentRegistry === registry
@@ -70,6 +84,7 @@ internal fun ProjectMergeDialog(state: EditorState, assets: DocumentAssetActions
                             is CircProjectImportResult.Failure -> notice = LocalizedText.join(imported.notices)
                             is CircProjectImportResult.Success -> {
                                 source = imported.project
+                                sourceName = result.asset.name
                                 selected = imported.project.circuits.mapTo(mutableSetOf()) { it.name }
                             }
                         }
@@ -92,17 +107,37 @@ internal fun ProjectMergeDialog(state: EditorState, assets: DocumentAssetActions
                 verticalArrangement = Arrangement.spacedBy(4.dp),
             ) {
                 Text(strings("project_merge_selection"))
-                TextButton(enabled = !busy, onClick = ::openSource) { Text(strings("project_merge_choose")) }
-                for (circuit in source?.circuits.orEmpty()) {
+                TextButton(enabled = !busy, onClick = ::openSource, modifier = Modifier.heightIn(min = 48.dp)) {
+                    Text(strings("project_merge_choose"))
+                }
+                sourceName?.let { Text(strings("project_merge_file", "name" to it), style = MaterialTheme.typography.bodySmall) }
+                val project = source
+                for (circuit in project?.circuits.orEmpty()) {
                     val checked = circuit.name in selected
+                    val uses = ProjectCircuitMerge.uses(checkNotNull(project), circuit.name)
+                    // The whole row toggles, at least 48 dp tall; TalkBack reads one checkbox with what the circuit uses.
                     Row(
-                        Modifier.toggleable(checked, enabled = !busy, role = Role.Checkbox) {
-                            selected = if (it) selected + circuit.name else selected - circuit.name
-                        },
+                        Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("project-merge-circuit")
+                            .toggleable(checked, enabled = !busy, role = Role.Checkbox) {
+                                selected = if (it) selected + circuit.name else selected - circuit.name
+                            },
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        Checkbox(checked, onCheckedChange = null, enabled = !busy)
-                        Text(circuit.name)
+                        Checkbox(checked, onCheckedChange = null, enabled = !busy, modifier = Modifier.padding(end = 8.dp))
+                        Column {
+                            Text(circuit.name)
+                            if (uses.isNotEmpty()) Text(strings("project_merge_uses", "names" to uses.joinToString(", ")),
+                                style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        }
+                    }
+                }
+                plan?.let { plan ->
+                    Text(strings(projectMergeSummary(plan.included.size, plan.dependencies.size)), style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.padding(top = 8.dp))
+                    if (plan.renames.isNotEmpty()) {
+                        Text(strings("project_merge_conflicts"), style = MaterialTheme.typography.titleSmall,
+                            modifier = Modifier.padding(top = 4.dp).semantics { heading() })
+                        for ((old, new) in plan.renames) Text(strings("project_merge_rename", "old" to old, "new" to new))
                     }
                 }
                 if (busy) LinearProgressIndicator()
@@ -117,7 +152,13 @@ internal fun ProjectMergeDialog(state: EditorState, assets: DocumentAssetActions
                     if (!canMergeIntoCurrentProject()) {
                         notice = message("portable_request_obsolete")
                     } else if (imported != null) {
-                        state.applyProject(ProjectCircuitMerge.copySelected(state.project, imported, selected))
+                        val merged = ProjectCircuitMerge.plan(state.project, imported, selected)
+                        state.applyProject(ProjectCircuitMerge.apply(state.project, imported, merged))
+                        // Say what arrived and under which names, since renamed circuits are not what the user picked.
+                        val count = merged.included.size.toLong()
+                        state.reportStatus(if (merged.renames.isEmpty()) LocalizedText("project_merge_done", quantity = count)
+                            else LocalizedText("project_merge_done_renamed", quantity = count, localizedArguments = mapOf("renames" to
+                                LocalizedText.join(merged.renames.map { (old, new) -> message("project_merge_rename", "old" to old, "new" to new) }, ", "))))
                         onClose()
                     }
                 },

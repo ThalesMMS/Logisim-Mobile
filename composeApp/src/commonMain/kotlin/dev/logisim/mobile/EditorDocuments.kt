@@ -13,6 +13,10 @@ import dev.logisim.mobile.core.localization.systemAppLanguage
 internal class EditorDocuments(
     private val state: EditorState,
     private val actions: DocumentActions,
+    /** The stored project's own name, which Save As and Share prefer to the main circuit's (null outside a workspace). */
+    private val projectName: () -> String? = { null },
+    /** The localized "circuit" used when nothing else names the file. */
+    private val defaultName: () -> String = { message(Messages.FileDefaultName).resolve(systemAppLanguage()) },
     private val importDocument: (DocumentContent, isCurrent: () -> Boolean, onComplete: (Boolean) -> Unit) -> Unit = { content, current, complete ->
         complete(current() && actions.commitOpen(content.reference) {
             state.importXml(content.text, LocalizedText.literal(content.reference.name))
@@ -39,7 +43,7 @@ internal class EditorDocuments(
                 is DocumentOpenResult.Opened -> importDocument(result.content, { generation == attachmentGeneration }) { accepted ->
                     if (accepted && generation == attachmentGeneration && state.interactionsEnabled) {
                         retain(result.content.reference.takeIf { it.mode == DocumentOpenMode.EDIT_IN_PLACE })
-                        state.reportStatus(result.notice ?: message(Messages.StatusFileOpened, "name" to result.content.reference.name))
+                        result.notice?.let(state::reportStatus) ?: state.reportOpened(LocalizedText.literal(result.content.reference.name))
                     }
                 }
                 is DocumentOpenResult.Failure -> state.reportError(result.notice)
@@ -67,6 +71,8 @@ internal class EditorDocuments(
             actions.save(current, state.saveXml()) { written(it, identity) }
         }
     }
+    /** File > Save and Ctrl+S, as Evolution's ProjectActions.doSave: in place when a file is linked, otherwise Save As. */
+    fun saveOrSaveAs() = if (canSave) save() else saveAs()
     fun share() = shareXml(suggestedName(), state.saveXml())
 
     fun shareOriginalCopy() {
@@ -112,6 +118,14 @@ internal class EditorDocuments(
         referenceRevision++
     }
 
-    private fun suggestedName() = state.project.mainCircuitName
-        .replace(Regex("[\\/:*?\"<>|]"), "_").ifBlank { message(Messages.FileDefaultName).resolve(systemAppLanguage()) } + ".circ"
+    /**
+     * The file name Save As and Share propose, as Evolution preselects the current file: the linked file's name, then
+     * the stored project's, then the main circuit's, then the localized default.
+     */
+    internal fun suggestedName(): String {
+        val base = listOf(reference?.name?.removeSuffix(".circ"), projectName(), state.project.mainCircuitName)
+            .map { it?.replace(Regex("[\\/:*?\"<>|]"), "_")?.trim().orEmpty() }
+            .firstOrNull { it.isNotEmpty() } ?: defaultName()
+        return "$base.circ"
+    }
 }

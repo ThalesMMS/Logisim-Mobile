@@ -27,6 +27,8 @@ class IosCatalogStorage(
     private val directory: String = applicationWorkspaceDirectory(),
 ) : WorkspaceCatalogStorage {
     override fun <T> withExclusiveAccess(action: () -> T): T {
+        // flock on a second descriptor blocks even in the same thread; a nested call already holds the lock.
+        if (directory in HeldCatalogLocks.directories) return action()
         prepareDirectory()
         val descriptor = open("$directory/catalog.lock", O_CREAT or O_RDWR, 384)
         checkLocalized(descriptor >= 0) { iosNotice("catalog_lock_failed") }
@@ -34,7 +36,12 @@ class IosCatalogStorage(
             while (flock(descriptor, LOCK_EX) != 0) {
                 checkLocalized(errno == EINTR) { iosNotice("catalog_lock_failed") }
             }
-            return action()
+            HeldCatalogLocks.directories += directory
+            try {
+                return action()
+            } finally {
+                HeldCatalogLocks.directories -= directory
+            }
         } finally {
             flock(descriptor, LOCK_UN)
             close(descriptor)
@@ -62,6 +69,13 @@ class IosCatalogStorage(
         }
     }
 
+    override val supportsDelete: Boolean get() = true
+    override fun delete(name: String) {
+        val path = path(name)
+        if (!NSFileManager.defaultManager.fileExistsAtPath(path)) return
+        checkLocalized(NSFileManager.defaultManager.removeItemAtPath(path, null)) { iosNotice("catalog_write_failed") }
+    }
+
     private fun prepareDirectory() {
         checkLocalized(NSFileManager.defaultManager.createDirectoryAtPath(directory, true, null, null)) {
             iosNotice("catalog_create_failed")
@@ -80,4 +94,9 @@ private fun applicationWorkspaceDirectory(): String {
     val root = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, true)
         .firstOrNull() as? String ?: iosError("catalog_unavailable")
     return "$root/LogisimMobile/workspace"
+}
+
+@kotlin.native.concurrent.ThreadLocal
+private object HeldCatalogLocks {
+    val directories = mutableSetOf<String>()
 }

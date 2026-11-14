@@ -4,6 +4,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import dev.logisim.mobile.core.WorkspaceViewState
+import dev.logisim.mobile.core.localization.LocalizedText
 
 data class EditorProjectReplacement(
     val previousXml: String,
@@ -26,6 +27,7 @@ class EditorSessionControl {
     private var lastIdentity: Long? = null
     private var lastWritable: Boolean? = null
     private var lastImportReport: EditorImportReport? = null
+    private var pendingOpened: LocalizedText? = null
 
     val activationAllowed: Boolean get() = active
     val documentIdentity: Long? get() = binding?.identity?.invoke() ?: lastIdentity
@@ -56,6 +58,16 @@ class EditorSessionControl {
         binding?.importView?.invoke(view)
     }
 
+    /**
+     * Says "File [name] opened" in the editor, now or when it attaches: a reopened linked file brings an editor
+     * forward that is already open, so no new editor announces it. Returns true when the line was shown or is held.
+     */
+    fun reportOpened(name: LocalizedText): Boolean {
+        val current = binding
+        if (current == null) pendingOpened = name else current.reportOpened(name)
+        return true
+    }
+
     internal fun attach(
         pause: () -> Unit,
         setActive: (Boolean) -> Unit,
@@ -66,12 +78,16 @@ class EditorSessionControl {
         documentWritable: () -> Boolean = { true },
         exportImportReport: () -> EditorImportReport? = { null },
         setInteractionEnabled: (Boolean) -> Unit = {},
+        reportOpened: (LocalizedText) -> Unit = {},
     ) {
-        binding = Binding(pause, setActive, exportView, importView, identity, exportXml, documentWritable, exportImportReport, setInteractionEnabled)
+        binding = Binding(pause, setActive, exportView, importView, identity, exportXml, documentWritable, exportImportReport,
+            setInteractionEnabled, reportOpened)
         setActive(active)
         setInteractionEnabled(interactionsEnabled)
         pendingView?.let(importView)
         pendingView = null
+        pendingOpened?.let(reportOpened)
+        pendingOpened = null
         isAttached = true
     }
     internal fun detach() {
@@ -96,5 +112,6 @@ class EditorSessionControl {
         val documentWritable: () -> Boolean,
         val exportImportReport: () -> EditorImportReport?,
         val setInteractionEnabled: (Boolean) -> Unit,
+        val reportOpened: (LocalizedText) -> Unit,
     )
 }

@@ -1,6 +1,7 @@
 package dev.logisim.mobile
 
 import dev.logisim.mobile.core.*
+import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.Messages
 import dev.logisim.mobile.core.localization.message
 import kotlinx.coroutines.selects.select
@@ -87,6 +88,7 @@ class CatalogWorkspaceRuntime(
             override val state get() = stateValue.workspace ?: emptyState
             override fun scope(): WorkspaceEditorScope = currentScope()
             override fun matches(scope: WorkspaceEditorScope) = matchesCurrent(scope)
+            override fun acceptsWindowOpen() = this@CatalogWorkspaceRuntime.acceptsWindowOpen()
             override fun activeLink() = cachedLink?.takeIf { it.projectId == state.editorProjectId }
             override fun activeDocumentStamp() = cachedDocumentStamp
             override fun confirmedExternal(xml: String) = onExternalWorkspaceSaved(xml)
@@ -138,10 +140,12 @@ class CatalogWorkspaceRuntime(
         }.invokeOnCompletion { workerJob.cancel() }
     }
 
-    fun start(legacyXml: String? = null, legacyReference: DocumentReference? = null) {
+    /** [defaultName] and [recoveredName] are project names in the app language (see [CatalogWorkspaceBinding.start]). */
+    fun start(legacyXml: String? = null, legacyReference: DocumentReference? = null,
+              defaultName: String? = null, recoveredName: String? = null) {
         if (started || closed) return
         started = true
-        enqueue(Kind.START, null, null) { it.start(legacyXml, legacyReference); true }
+        enqueue(Kind.START, null, null) { it.start(legacyXml, legacyReference, defaultName, recoveredName); true }
     }
 
     fun updateExtensionRegistry(registry: ComponentRegistry) {
@@ -210,21 +214,64 @@ class CatalogWorkspaceRuntime(
 
     fun openProject(id: WorkspaceProjectId, completed: (Boolean) -> Unit = {}) = transition(completed) { it.openProject(id) }
 
+    /**
+     * [projectName] is the generated display name in the app language ("Untitled", an example's title); a file keeps
+     * its own name. Either is numbered when another project already uses it.
+     */
     internal fun openEditorSession(projectName: String, xml: String, report: EditorImportReport?): Boolean {
         if (closed || stateValue.busy || closingSession != null || stateValue.workspace == null || !control.isAttached) return false
         val reference = nativeBinding?.pendingReference
         val name = reference?.name?.removeSuffix(".circ")?.takeIf { it.isNotBlank() } ?: projectName
-        transition { it.openNewSession(name, xml, report, reference) }
+        transition { it.openNewSession(name, xml, report, reference, uniqueName = true) }
         return true
     }
 
+    /**
+     * Opens a file while the window has no editor (its last tab was closed): parsed here on the worker, then opened as
+     * a new session at once, so a file opened from another app or the picker does not wait for an unrelated project.
+     */
+    fun openWithoutEditor(opened: DocumentOpenResult.Opened, completed: (Boolean) -> Unit = {}) {
+        val content = opened.content
+        if (closed) { completed(false); return }
+        // Not now after all (other work started, or an editor came back): the file waits instead of being dropped.
+        if (!acceptsWindowOpen()) { nativeBinding?.requeue(opened); return }
+        transition(completed) { model ->
+            when (val result = CircCodec.readProject(content.text, validationRegistry)) {
+                is CircProjectImportResult.Success -> model.openNewSession(
+                    content.reference.name.removeSuffix(".circ").ifBlank { content.reference.name },
+                    CircCodec.writeProject(result.project, validationRegistry),
+                    EditorImportReport.from(result, LocalizedText.literal(content.reference.name)),
+                    content.reference, uniqueName = true)
+                is CircProjectImportResult.Failure -> model.reportNotice(LocalizedText.join(result.notices))
+            }
+        }
+    }
+
+    /** Opens a bundled example as a new project named [name] (its title in the app language). */
+    fun openExample(example: CircuitExample, name: String, completed: (Boolean) -> Unit = {}) = transition(completed) { model ->
+        when (val result = CircCodec.readProject(example.xml, validationRegistry)) {
+            is CircProjectImportResult.Success -> model.openNewSession(name, CircCodec.writeProject(
+                result.project.copy(metadata = result.project.metadata + (ExamplePresetKey to example.id)), validationRegistry),
+                uniqueName = true)
+            is CircProjectImportResult.Failure -> model.reportNotice(LocalizedText.join(result.notices))
+        }
+    }
+
+    /** While the window has no editor, files opened from other apps or the picker go to [handler]; null removes it. */
+    fun setWindowOpenHandler(handler: ((DocumentOpenResult) -> Unit)?) { nativeBinding?.setWindowHandler(handler) }
+
+    /**
+     * Closes a tab. [save] keeps the catalog edits (false reverts them to the version the tab opened with);
+     * [writeOriginal] also writes a linked file through its provider ("Don't save to file" keeps the catalog only).
+     */
     internal fun closeEditorSession(
-        id: WorkspaceProjectId, next: WorkspaceProjectId?, save: Boolean, completed: (Boolean) -> Unit,
+        id: WorkspaceProjectId, next: WorkspaceProjectId?, save: Boolean, writeOriginal: Boolean = save,
+        completed: (Boolean) -> Unit,
     ) {
         val workspace = stateValue.workspace
         if (closed || stateValue.busy || closingSession != null || workspace == null) { completed(false); return }
         val documents = nativeBinding
-        if (!save || documents == null || !documents.supportsEditInPlace) {
+        if (!save || !writeOriginal || documents == null || !documents.supportsEditInPlace) {
             finishSessionClose(id, next, save, null, completed)
             return
         }
@@ -298,8 +345,11 @@ class CatalogWorkspaceRuntime(
         name: String,
         circuitName: String = DEFAULT_NEW_CIRCUIT_NAME,
         circuitAttributes: Map<String, String> = emptyMap(),
+        uniqueName: Boolean = false,
         completed: (Boolean) -> Unit = {},
-    ) = transition(completed) { it.createProject(name, projectTemplates?.templateXml(circuitName, circuitAttributes), circuitName, circuitAttributes) }
+    ) = transition(completed) {
+        it.createProject(name, projectTemplates?.templateXml(circuitName, circuitAttributes), circuitName, circuitAttributes, uniqueName)
+    }
     fun openPreparedCopy(name: String, xml: String, completed: (Boolean) -> Unit = {}) =
         transition(completed) { it.openPreparedCopy(name, xml) }
     fun openPreparedCopy(name: String, xml: String, attachments: Map<String, WorkspaceAttachment>,
@@ -365,10 +415,51 @@ class CatalogWorkspaceRuntime(
 
     fun reloadStored() = transition { it.reloadStored() }
     fun saveLocalAsCopy(name: String) = transition { it.saveLocalAsCopy(name) }
-    fun duplicateProject(id: WorkspaceProjectId, revision: Long) = transition { it.duplicateProject(id, revision); true }
-    fun renameProject(id: WorkspaceProjectId, revision: Long, name: String) = transition { it.renameProject(id, revision, name); true }
-    fun deleteProject(id: WorkspaceProjectId, revision: Long) = transition { it.deleteProject(id, revision); true }
-    fun restoreProject(id: WorkspaceProjectId, revision: Long) = transition { it.restoreProject(id, revision); true }
+
+    // Catalog metadata that leaves the editor mounted neither pauses the simulation nor blocks the editor.
+    fun duplicateProject(id: WorkspaceProjectId, revision: Long, name: String? = null, completed: (Boolean) -> Unit = {}) =
+        metadata(completed) { it.duplicateProject(id, revision, name) }
+
+    /** Deletes a trashed project permanently; the caller has confirmed that this cannot be undone. */
+    fun purgeProject(id: WorkspaceProjectId, revision: Long, completed: (Boolean) -> Unit = {}) =
+        metadata(completed) { it.purgeProject(id, revision) }
+
+    /** Deletes every trashed project permanently; [completed] receives how many, or null if one failed. */
+    fun emptyTrash(completed: (Int?) -> Unit = {}) {
+        var count: Int? = null
+        metadata(completed = { success -> completed(if (success) count else null) }) { model ->
+            count = model.emptyTrash()
+            count != null
+        }
+    }
+
+    fun removeRecent(file: WorkspaceRecentFile, completed: (Boolean) -> Unit = {}) = metadata(completed) { it.removeRecent(file) }
+
+    /** Renaming the open project reopens its session, so it waits for the editor like a switch. */
+    fun renameProject(id: WorkspaceProjectId, revision: Long, name: String, completed: (Boolean) -> Unit = {}) =
+        if (id == stateValue.workspace?.editorProjectId) transition(completed) { it.renameProject(id, revision, name) }
+        else metadata(completed) { it.renameProject(id, revision, name) }
+
+    /** Trashing the open project remounts the editor on [next] (or none); any other project is metadata only. */
+    fun deleteProject(id: WorkspaceProjectId, revision: Long, next: WorkspaceProjectId? = null, completed: (Boolean) -> Unit = {}) =
+        if (id == stateValue.workspace?.editorProjectId) transition(completed) { it.deleteProject(id, revision, next) }
+        else metadata(completed) { it.deleteProject(id, revision) }
+
+    /** [reopenSession] is the Undo of a tab's trash, which brings its session back; a restore from the list does not. */
+    fun restoreProject(id: WorkspaceProjectId, revision: Long, reopenSession: Boolean = false, completed: (Boolean) -> Unit = {}) =
+        metadata(completed) { it.restoreProject(id, revision, reopenSession) }
+
+    /** Puts back the edits a close-and-revert of [id] replaced. */
+    fun undoRevert(id: WorkspaceProjectId, completed: (Boolean) -> Unit = {}) = metadata(completed) { it.undoRevert(id) }
+
+    private fun metadata(completed: (Boolean) -> Unit, action: (CatalogWorkspaceBinding) -> Boolean) {
+        val workspace = stateValue.workspace
+        if (closed || stateValue.busy || closingSession != null || workspace == null) { completed(false); return }
+        // The open editor's latest buffer goes along, so a flush of the open project saves what is on screen.
+        val snapshot = capture(workspace.editorMount)
+        enqueue(Kind.METADATA, workspace.editorMount.takeIf { snapshot != null }, snapshot, durable = true,
+            completed = completed, action = action)
+    }
 
     internal fun commitEditorChange(mount: Long, identity: Long, xml: String, completed: (Boolean) -> Unit) {
         if (!sourceIsCurrent(mount, identity) || stateValue.workspace?.editorProjectId == null || control.documentWritable != true) {
@@ -456,6 +547,9 @@ class CatalogWorkspaceRuntime(
             workspace.session.document?.info?.revision ?: 0)
     }
 
+    private fun acceptsWindowOpen(): Boolean = !closed && !stateValue.busy && closingSession == null &&
+        stateValue.workspace?.editorClosed == true
+
     private fun matchesCurrent(scope: WorkspaceEditorScope): Boolean {
         val current = currentScope()
         return !closed && !stateValue.busy && scope.mount == current.mount && scope.identity == current.identity &&
@@ -503,6 +597,8 @@ class CatalogWorkspaceRuntime(
             publish()
         }
         work.completed(reply.success)
+        // A file that arrived while the editorless window was busy opens now.
+        if (acceptsWindowOpen()) nativeBinding?.workspaceIdle()
     }
 
     private fun publish() { if (!closed) onStateChanged(stateValue) }

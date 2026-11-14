@@ -16,6 +16,13 @@ import kotlin.jvm.JvmInline
 interface WorkspaceCatalogStorage : WorkspaceStorage {
     fun <T> withExclusiveAccess(action: () -> T): T
     fun listNames(): List<String>
+
+    /**
+     * Removes [name] if it exists. Only an explicit permanent deletion uses it ([WorkspaceCatalogRepository.purge]);
+     * a store that cannot delete ([supportsDelete] false) refuses, and the project stays in the trash.
+     */
+    fun delete(name: String): Unit = throw UnsupportedOperationException("delete")
+    val supportsDelete: Boolean get() = false
 }
 
 @JvmInline
@@ -177,6 +184,41 @@ class WorkspaceCatalogRepository(
             current.xml, current.viewState, preserveUnsupported = current.readOnly, attachmentReferences = current.attachments)
     }
 
+    /**
+     * Permanently deletes a project from the trash: the catalog forgets it first (its backup too), then every saved
+     * revision is removed, and so is each attachment blob no remaining revision of any project references. It cannot
+     * be undone. Success carries the project's last revision as it was before the deletion.
+     */
+    fun purge(id: WorkspaceProjectId, expectedRevision: Long): WorkspaceMutationResult = mutation {
+        val loaded = readCatalog()
+        if (loaded.readOnly) return@mutation WorkspaceMutationResult.Failure(READ_ONLY)
+        if (!storage.supportsDelete) return@mutation WorkspaceMutationResult.Failure(message(Messages.ErrorStorageGeneric))
+        val info = loaded.catalog.projects.firstOrNull { it.id == id } ?: return@mutation WorkspaceMutationResult.Missing
+        val document = (readDocument(info, loaded.notices) as? WorkspaceOpenResult.Success)?.document ?: WorkspaceDocument(info, "")
+        if (info.revision != expectedRevision || !info.deleted) return@mutation WorkspaceMutationResult.Conflict(document)
+        val own = storage.listNames().filter { payloadOf(it) == id.value }
+        val attachments = attachmentNames(own)
+        val remaining = loaded.catalog.copy(projects = loaded.catalog.projects.filterNot { it.id == id },
+            activeId = loaded.catalog.activeId.takeIf { it != id })
+        commitCatalog(loaded, remaining)
+        // The backup still listed the project; replace it too, so a recovery from it cannot point at deleted revisions.
+        commitCatalog(readCatalog(), remaining)
+        own.forEach(storage::delete)
+        if (attachments.isNotEmpty()) {
+            val referenced = attachmentNames(storage.listNames().filter { payloadOf(it) != null })
+            (attachments - referenced).forEach(storage::delete)
+        }
+        WorkspaceMutationResult.Success(document)
+    }
+
+    /** The project ID of a revision payload name, or null for any other stored name. */
+    private fun payloadOf(name: String): String? = PAYLOAD.matchEntire(name)?.groupValues?.get(1)
+
+    private fun attachmentNames(payloads: List<String>): Set<String> = payloads.flatMapTo(mutableSetOf()) { name ->
+        storage.read(name)?.let(WorkspaceCatalogFormat::readDocument)?.attachments?.values.orEmpty()
+            .map(WorkspaceAttachmentBlobs::storageName)
+    }
+
     fun selectActive(id: WorkspaceProjectId?): WorkspaceCatalogResult = lockedCatalog {
         val loaded = readCatalog()
         if (loaded.readOnly) return@lockedCatalog loaded.result()
@@ -224,9 +266,11 @@ class WorkspaceCatalogRepository(
         var nextRevision = info.revision + 1
         while (nextRevision > 0 && storage.read(payloadName(id, nextRevision)) != null) nextRevision++
         checkLocalized(nextRevision > 0) { message(Messages.ErrorStorageRevisionLimit) }
+        // "Edited" is about the project, not where it was panned or what was selected: a view-only save keeps the time.
+        val viewOnly = changed.xml == current.xml && changed.info == current.info && changed.attachments == current.attachments
         val next = changed.copy(info = changed.info.copy(revision = nextRevision, previousRevision = info.revision,
             history = (listOf(info.revision) + info.history).distinct(),
-            updatedAtMillis = clock()), contentRevision = nextRevision, notices = emptyList())
+            updatedAtMillis = if (viewOnly) info.updatedAtMillis else clock()), contentRevision = nextRevision, notices = emptyList())
         writePayload(next)
         commitCatalog(loaded, loaded.catalog.copy(projects = loaded.catalog.projects.map { if (it.id == id) next.info else it },
             activeId = if (next.info.deleted && loaded.catalog.activeId == id) null else loaded.catalog.activeId))
@@ -343,6 +387,8 @@ class WorkspaceCatalogRepository(
         const val CATALOG_FILE = "catalog.workspace"
         const val BACKUP_FILE = "catalog.previous"
         private val READ_ONLY = message(Messages.WorkspaceReadOnly)
+        // IDs may contain '-', so the revision is the last group of digits.
+        private val PAYLOAD = Regex("project-([A-Za-z0-9_-]{1,80})-([0-9]+)\\.workspace")
         private fun payloadName(id: WorkspaceProjectId, revision: Long) = "project-${id.value}-$revision.workspace"
     }
 }

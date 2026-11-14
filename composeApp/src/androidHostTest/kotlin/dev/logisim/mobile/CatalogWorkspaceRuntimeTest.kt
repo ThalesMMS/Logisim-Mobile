@@ -622,4 +622,119 @@ class CatalogWorkspaceRuntimeTest {
             } finally { restored.close(); restored.awaitClosed() }
         } finally { runtime.close(); native.finish(DocumentWriteResult.Cancelled); runtime.awaitClosed(); disk.remove() }
     }
+
+    private fun CatalogWorkspaceRuntime.project(id: WorkspaceProjectId) = state.workspace!!.catalog.projects.single { it.id == id }
+
+    @Test fun aFailedAutosaveStaysNotSavedUntilAWriteSucceeds() = runBlocking<Unit> {
+        val disk = Disk(Thread.currentThread().id); val control = EditorSessionControl()
+        val runtime = CatalogWorkspaceRuntime(disk, "failed-save", control, deliveryContext = coroutineContext)
+        val window = Window(runtime, control)
+        try {
+            runtime.start(xml("A")); window.attach()
+            runtime.flush(); runtime.awaitPersistence()
+            disk.failNextCatalog = true
+            window.xml = xml("A-edited")
+            runtime.documentChanged(runtime.state.workspace!!.editorMount, window.xml)
+            runtime.awaitPersistence()
+            val failed = runtime.state.workspace!!
+            assertEquals(WorkspaceSaveStatus.FAILED, failed.session.saveStatus)
+            assertTrue(failed.saveFailed)
+            assertEquals(WorkspaceSaveIndicator.FAILED, workspaceSaveIndicator(failed, runtime.state))
+            assertNotNull(workspaceBannerNotice(failed, WorkspaceSaveIndicator.FAILED))
+            // The banner's Retry.
+            runtime.flush(); runtime.awaitPersistence()
+            assertEquals(WorkspaceSaveIndicator.SAVED, workspaceSaveIndicator(runtime.state.workspace!!, runtime.state))
+            assertEquals(xml("A-edited"), runtime.state.workspace!!.session.document!!.xml)
+        } finally { runtime.close(); runtime.awaitClosed(); disk.remove() }
+    }
+
+    @Test fun renameInactiveDoesNotPause() = runBlocking<Unit> {
+        val disk = Disk(Thread.currentThread().id); val control = EditorSessionControl()
+        val runtime = CatalogWorkspaceRuntime(disk, "rename-inactive", control, deliveryContext = coroutineContext)
+        val window = Window(runtime, control)
+        try {
+            runtime.start(xml("A")); window.attach()
+            val a = runtime.state.workspace!!.editorProjectId!!
+            var created: Boolean? = null
+            runtime.createProject("B") { created = it }
+            until { created != null }; assertTrue(created!!); window.attach()
+            val b = runtime.state.workspace!!.editorProjectId!!
+            window.open(a)
+            val mount = runtime.state.workspace!!.editorMount
+            val pauses = window.pauses
+            assertTrue(window.active)
+            var renamed: Boolean? = null
+            runtime.renameProject(b, runtime.project(b).revision, "Renamed") { renamed = it }
+            assertFalse(runtime.state.busy, "Renaming another project never blocks the editor")
+            until { renamed != null }; assertTrue(renamed!!)
+            assertEquals("Renamed", runtime.project(b).name)
+            assertEquals(0, window.pauses - pauses)
+            assertTrue(window.active && window.enabled)
+            assertEquals(mount, runtime.state.workspace!!.editorMount)
+            assertEquals(a, runtime.state.workspace!!.editorProjectId)
+
+            var restored: Boolean? = null
+            var deleted: Boolean? = null
+            runtime.deleteProject(b, runtime.project(b).revision) { deleted = it }
+            until { deleted != null }; assertTrue(deleted!!)
+            runtime.restoreProject(b, runtime.project(b).revision) { restored = it }
+            until { restored != null }; assertTrue(restored!!)
+            assertFalse(runtime.project(b).deleted)
+            assertEquals(0, window.pauses - pauses)
+            assertTrue(window.active && window.enabled)
+        } finally { runtime.close(); runtime.awaitClosed(); disk.remove() }
+    }
+
+    @Test fun duplicateDoesNotPause() = runBlocking<Unit> {
+        val disk = Disk(Thread.currentThread().id); val control = EditorSessionControl()
+        val runtime = CatalogWorkspaceRuntime(disk, "duplicate", control, deliveryContext = coroutineContext)
+        val window = Window(runtime, control)
+        try {
+            runtime.start(xml("A")); window.attach()
+            val a = runtime.state.workspace!!.editorProjectId!!
+            val mount = runtime.state.workspace!!.editorMount
+            // The copy takes what is on screen, including an edit the worker has not seen yet.
+            window.xml = xml("A-on-screen")
+            val pauses = window.pauses
+            var duplicated: Boolean? = null
+            runtime.duplicateProject(a, runtime.project(a).revision) { duplicated = it }
+            assertFalse(runtime.state.busy)
+            until { duplicated != null }; assertTrue(duplicated!!)
+            assertEquals(0, window.pauses - pauses)
+            assertTrue(window.active && window.enabled)
+            assertEquals(mount, runtime.state.workspace!!.editorMount)
+            assertEquals(a, runtime.state.workspace!!.editorProjectId)
+            val copy = runtime.state.workspace!!.catalog.projects.single { it.id != a }
+            window.open(copy.id)
+            assertEquals(xml("A-on-screen"), window.xml)
+        } finally { runtime.close(); runtime.awaitClosed(); disk.remove() }
+    }
+
+    @Test fun viewChangedAfterDeleteCreatesNoProject() = runBlocking<Unit> {
+        val disk = Disk(Thread.currentThread().id); val control = EditorSessionControl()
+        val runtime = CatalogWorkspaceRuntime(disk, "delete-open", control, deliveryContext = coroutineContext)
+        val window = Window(runtime, control)
+        try {
+            runtime.start(xml("A")); window.attach()
+            val a = runtime.state.workspace!!.editorProjectId!!
+            val oldMount = runtime.state.workspace!!.editorMount
+            var deleted: Boolean? = null
+            runtime.deleteProject(a, runtime.project(a).revision) { deleted = it }
+            until { deleted != null }; assertTrue(deleted!!)
+            val closed = runtime.state.workspace!!
+            assertTrue(closed.editorClosed)
+            assertNull(closed.editorProjectId)
+            assertFalse(runtime.state.busy)
+            runtime.viewChanged(oldMount, WorkspaceViewState())
+            runtime.viewChanged(closed.editorMount, WorkspaceViewState())
+            runtime.flush()
+            runtime.foregroundChanged(false)
+            runtime.awaitPersistence()
+            runtime.foregroundChanged(true)
+            runtime.awaitPersistence()
+            assertEquals(listOf(a), runtime.state.workspace!!.catalog.projects.map { it.id })
+            assertTrue(runtime.project(a).deleted)
+            assertTrue(runtime.state.workspace!!.editorClosed)
+        } finally { runtime.close(); runtime.awaitClosed(); disk.remove() }
+    }
 }
