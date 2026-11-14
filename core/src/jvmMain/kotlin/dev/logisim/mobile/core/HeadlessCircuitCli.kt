@@ -121,7 +121,7 @@ object HeadlessCircuitCli {
                 startup.version -> {
                     val identity = HeadlessCircuitCli::class.java.`package`
                     val version = identity.implementationVersion ?: throw HeadlessStartupError("Application version is missing from the JVM JAR manifest.")
-                    stdout.println("${identity.implementationTitle ?: "Logisim Mobile"} $version")
+                    stdout.println("${identity.implementationTitle ?: "Logisim Evolution Mobile"} $version")
                     return 0
                 }
                 startup.showSettings -> { settings.print(stdout); return 0 }

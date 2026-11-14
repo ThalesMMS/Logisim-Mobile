@@ -1,6 +1,6 @@
 # App identity
 
-The product is **Logisim Mobile**, an independent Kotlin Multiplatform port derived from Logisim Evolution. It has no affiliation with the upstream project or promise of upstream support. The name reflects the origin of the file format and user experience. The icon is original artwork from this repository.
+The product is **Logisim Evolution Mobile**, an independent Kotlin Multiplatform port derived from Logisim Evolution. It has no affiliation with the upstream project or promise of upstream support. The name reflects the origin of the file format and user experience. The icon is original artwork from this repository.
 
 Both apps use the permanent identifier `thalesmms.logisim.mobile`, as chosen by the maintainer. The internal Kotlin namespace remains `dev.logisim.mobile` and is distinct from the installed app identifier. Android declares the fully qualified Activity class name to preserve this separation.
 

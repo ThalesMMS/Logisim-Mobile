@@ -1,4 +1,4 @@
-# Use Logisim Mobile
+# Use Logisim Evolution Mobile
 
 Open **Tools → Help and examples** to read the guides and browse examples offline. The **Compatibility** tab explains the port's limits and points to the [parity matrix](parity.md). The matrix links each feature to its tracking issues and available evidence.
 

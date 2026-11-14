@@ -13,6 +13,12 @@ ROOT = Path(__file__).resolve().parents[2]
 class AppIdentityTest(unittest.TestCase):
     def test_published_identity_matches_both_hosts(self):
         identity = read_identity(ROOT / "app.properties")
+        self.assertEqual("Logisim Evolution Mobile", identity.name)
+        catalog = json.loads((ROOT / "localization/messages/editor.json").read_text())
+        self.assertEqual({"en": identity.name, "pt": identity.name}, catalog["app_name"])
+        for translation in (ROOT / "localization/translations").glob("*.json"):
+            with self.subTest(locale=translation.stem):
+                self.assertEqual(identity.name, json.loads(translation.read_text())["app_name"])
         self.assertEqual("thalesmms.logisim.mobile", identity.android_id)
         self.assertEqual("thalesmms.logisim.mobile", identity.apple_id)
         config = (ROOT / "iosApp/Config/Identity.xcconfig").read_text()

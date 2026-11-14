@@ -9,8 +9,8 @@ class LegalNoticeContentTest {
     fun noticesIncludeProjectRightsAndOriginalExampleAttribution() {
         val notices = LegalNoticeContent.notices.associate { it.title to it.text }
         assertEquals(LegalNoticeContent.notices.size, notices.size)
-        assertTrue(notices.getValue("Logisim Mobile").contains("GNU GENERAL PUBLIC LICENSE"))
-        assertTrue(notices.getValue("Logisim Mobile").contains("Version 3, 29 June 2007"))
+        assertTrue(notices.getValue(AppIdentity.name).contains("GNU GENERAL PUBLIC LICENSE"))
+        assertTrue(notices.getValue(AppIdentity.name).contains("Version 3, 29 June 2007"))
         assertTrue(notices.getValue("SAP-1 example").contains("Copyright (c) 2024 Thales"))
         assertTrue(notices.getValue("SAP-1 example").contains("MIT License"))
     }

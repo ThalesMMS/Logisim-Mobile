@@ -1,6 +1,6 @@
-# Logisim Mobile
+# Logisim Evolution Mobile
 
-Logisim Mobile is a port of Logisim Evolution to Android and iOS built with Kotlin Multiplatform and Compose Multiplatform. The shared Kotlin engine imports and runs the [SAP-1 project](examples/SAP-1.md), whose program calculates `2 + 3 + 4 - 1 = 8`. Compatibility is limited to the subset documented in the [parity matrix](docs/parity.md).
+Logisim Evolution Mobile is a port of Logisim Evolution to Android and iOS built with Kotlin Multiplatform and Compose Multiplatform. The shared Kotlin engine imports and runs the [SAP-1 project](examples/SAP-1.md), whose program calculates `2 + 3 + 4 - 1 = 8`. Compatibility is limited to the subset documented in the [parity matrix](docs/parity.md).
 
 ![Logisim Mobile's iPad interface showing a digital circuit in the editor](docs/images/logisim-mobile-ipad.jpg)
 

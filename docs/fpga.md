@@ -14,7 +14,7 @@ The importer preserves the original XML, including its board image data. It read
 
 The FPGA wrapper uses the board oscillator to advance one scan position per millisecond. It generates row or column addresses for LED arrays and either decoded digit addresses or one-hot digit selects for seven-segment displays. Segment and LED data use the board's activity level, and one-hot digit select polarity follows the drive mode. The wrapper reserves the display pins and rejects conflicting physical mappings. An imported Evolution output pin mapped to an RGB pixel drives all three color channels and retains the pixel mapping on save. Independent color assignments made in Mobile are saved in Mobile metadata.
 
-Use **New board** to create a definition or **Edit board** to change the selected board. Pick a PNG or JPEG for the board image, enter the FPGA and clock details, then add or select a resource. Resource positions and dimensions are in board-image pixels. Enter the physical pins in order for each direction. **Save board XML** validates the definition and opens the system file picker. The saved file can be imported by both Logisim Mobile and Logisim Evolution.
+Use **New board** to create a definition or **Edit board** to change the selected board. Pick a PNG or JPEG for the board image, enter the FPGA and clock details, then add or select a resource. Resource positions and dimensions are in board-image pixels. Enter the physical pins in order for each direction. **Save board XML** validates the definition and opens the system file picker. The saved file can be imported by both Logisim Evolution Mobile and Logisim Evolution.
 
 ## Supported and verified paths
 

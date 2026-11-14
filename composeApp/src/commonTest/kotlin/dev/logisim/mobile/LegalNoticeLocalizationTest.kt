@@ -19,7 +19,7 @@ class LegalNoticeLocalizationTest {
         assertEquals("Open source code and build instructions", strings(Messages.LegalSourceAction))
         assertEquals("Close", strings(Messages.ActionClose))
         assertEquals("Back", strings(Messages.LegalBackAction))
-        assertTrue(LegalNoticeContent.notices.single { it.title == "Logisim Mobile" }.text
+        assertTrue(LegalNoticeContent.notices.single { it.title == AppIdentity.name }.text
             .contains("Version 3, 29 June 2007"))
     }
 
@@ -34,7 +34,7 @@ class LegalNoticeLocalizationTest {
         assertEquals("Abrir código-fonte e instruções de compilação", strings(Messages.LegalSourceAction))
         assertEquals("Fechar", strings(Messages.ActionClose))
         assertEquals("Voltar", strings(Messages.LegalBackAction))
-        assertTrue(LegalNoticeContent.notices.single { it.title == "Logisim Mobile" }.text
+        assertTrue(LegalNoticeContent.notices.single { it.title == AppIdentity.name }.text
             .contains("Version 3, 29 June 2007"))
     }
 }

@@ -1,8 +1,8 @@
 # iOS privacy policy draft
 
-Draft dated 4 November 2026 for Logisim Mobile, bundle `thalesmms.logisim.mobile`. This document is not a published policy. The release owner must confirm the final application, companion configuration, contact address, and public policy URL before submission.
+Draft dated 4 November 2026 for Logisim Evolution Mobile, bundle `thalesmms.logisim.mobile`. This document is not a published policy. The release owner must confirm the final application, companion configuration, contact address, and public policy URL before submission.
 
-Logisim Mobile stores circuit projects, editor preferences, and references to documents on the device. Projects contain the content the user creates or imports. Files selected through Apple's document picker can remain with the selected file provider. The provider and the device's backup settings control copies outside the application's storage.
+Logisim Evolution Mobile stores circuit projects, editor preferences, and references to documents on the device. Projects contain the content the user creates or imports. Files selected through Apple's document picker can remain with the selected file provider. The provider and the device's backup settings control copies outside the application's storage.
 
 The editor and built-in examples do not require an account. A user can choose a companion host for desktop tool actions. After explicit authorization, those actions send their selected inputs and parameters to that host and receive results. The companion's operator and retention settings control copies on that host. Do not send private project content to a host you do not trust.
 

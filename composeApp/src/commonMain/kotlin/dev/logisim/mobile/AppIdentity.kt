@@ -2,7 +2,7 @@
 package dev.logisim.mobile
 
 object AppIdentity {
-    const val name: String = "Logisim Mobile"
+    const val name: String = "Logisim Evolution Mobile"
     const val version: String = "0.2.0"
     const val build: Int = 3
     const val androidId: String = "thalesmms.logisim.mobile"

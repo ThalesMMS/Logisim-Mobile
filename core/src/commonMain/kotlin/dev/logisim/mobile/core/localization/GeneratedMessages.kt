@@ -3728,7 +3728,7 @@ private fun messageCatalogPart4(): Map<String, MessageTemplate> = mapOf(
     "annotation_update_text" to MessageTemplate(english = MessageForms(other = "Update text"), portuguese = MessageForms(other = "Atualizar texto")),
     "annotation_vertical" to MessageTemplate(english = MessageForms(other = "Vertical"), portuguese = MessageForms(other = "Vertical")),
     "annotation_width" to MessageTemplate(english = MessageForms(other = "Width"), portuguese = MessageForms(other = "Largura")),
-    "app_name" to MessageTemplate(english = MessageForms(other = "Logisim"), portuguese = MessageForms(other = "Logisim")),
+    "app_name" to MessageTemplate(english = MessageForms(other = "Logisim Evolution Mobile"), portuguese = MessageForms(other = "Logisim Evolution Mobile")),
     "appearance_add_vertex" to MessageTemplate(english = MessageForms(other = "Add vertex"), portuguese = MessageForms(other = "Adicionar vértice")),
     "appearance_all_pins" to MessageTemplate(english = MessageForms(other = "The appearance must represent each circuit pin exactly once."), portuguese = MessageForms(other = "A aparência precisa representar cada pino real uma vez.")),
     "appearance_anchor" to MessageTemplate(english = MessageForms(other = "Anchor"), portuguese = MessageForms(other = "Âncora")),

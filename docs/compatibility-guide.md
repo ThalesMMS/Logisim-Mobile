@@ -1,6 +1,6 @@
 # Check compatibility
 
-Logisim Mobile shares the `.circ` format and some behavior with Logisim Evolution. Check the [parity matrix](parity.md) before relying on a library, option, or integration. Each row links the feature to tracking issues and to the corresponding sources and tests.
+Logisim Evolution Mobile shares the `.circ` format and some behavior with Logisim Evolution. Check the [parity matrix](parity.md) before relying on a library, option, or integration. Each row links the feature to tracking issues and to the corresponding sources and tests.
 
 The [validation record](validation.md) distinguishes execution, compilation, and tests for each platform. A catalog definition allows you to create or import that component type. Individual attribute combinations and desktop projects require their own verification.
 
