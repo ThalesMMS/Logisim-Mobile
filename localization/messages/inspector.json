@@ -72,8 +72,8 @@
     "pt": "Entrada de clock"
   },
   "attribute_label_color": {
-    "en": "On color",
-    "pt": "Cor acesa"
+    "en": "Color",
+    "pt": "Cor"
   },
   "attribute_label_cols": {
     "en": "Columns",
@@ -284,8 +284,8 @@
     "pt": "Cor apagada"
   },
   "attribute_label_out": {
-    "en": "Output",
-    "pt": "Saída"
+    "en": "Output value",
+    "pt": "Valor de saída"
   },
   "attribute_label_out_width": {
     "en": "Output bits",
@@ -300,8 +300,8 @@
     "pt": "Deslocamento de fase"
   },
   "attribute_label_porsize": {
-    "en": "Reset delay",
-    "pt": "Atraso de reset"
+    "en": "Draw size",
+    "pt": "Tamanho do desenho"
   },
   "attribute_label_portio": {
     "en": "Port I/O",
@@ -476,5 +476,34 @@
   "inspector_value_invalid_short": {
     "en": "Invalid value for {name}.",
     "pt": "Valor inválido para {name}."
+  },
+  "inspector_choose_value": {
+    "en": "Choose a value",
+    "pt": "Escolher um valor",
+    "description": "TalkBack action of an inspector row that opens the menu of the attribute's values."
+  },
+  "attribute_label_negate_n": {
+    "en": "Negate {n}",
+    "pt": "Negar {n}",
+    "description": "Inspector name of a gate's negate attribute; {n} is the 1-based input number, as Evolution's gateNegateAttr."
+  },
+  "attribute_label_bit_n": {
+    "en": "Bit {n}",
+    "pt": "Bit {n}",
+    "description": "Inspector name of a splitter bit attribute; {n} is the 0-based bit, as Evolution's splitterBitAttr."
+  },
+  "splitter_bit_none": {
+    "en": "None",
+    "pt": "Nenhum",
+    "description": "Splitter bit option: the bit reaches no output (Evolution splitterBitNone)."
+  },
+  "splitter_bit_output": {
+    "en": "Output {n}",
+    "pt": "Saída {n}",
+    "description": "Splitter bit option: the output branch the bit goes to (Evolution splitterBitEndOption)."
+  },
+  "inspector_hint_integer_prefixes": {
+    "en": "Hexadecimal with 0x, binary with 0b, or decimal.",
+    "pt": "Hexadecimal com 0x, binário com 0b, ou decimal."
   }
 }

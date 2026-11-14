@@ -28,7 +28,7 @@ object IoAttributes {
     val Switches = AttributeKey.int("number", 8, 1..32)
     val Reset = AttributeKey.choice("resetbehavior", "open", setOf("open", "closed", "last"))
     val Positions = AttributeKey("positions", 0uL,
-        { it.removePrefix("0x").removePrefix("0X").toULongOrNull(16) }, { it.toString(16) })
+        { it.removePrefix("0x").removePrefix("0X").toULongOrNull(16) }, { it.toString(16) }).entered(AttributeEntry.HEX_DIGITS)
     val JoystickBits = AttributeKey.int("bits", 4, 2..5)
     val BufferLength = AttributeKey.int("buflen", 32, 1..256)
     val Trigger = AttributeKey.choice("trigger", "rising", setOf("rising", "falling"))
@@ -38,7 +38,7 @@ object IoAttributes {
     val BusSide = AttributeKey.direction("busside", Direction.WEST)
     val MatrixColumns = AttributeKey.int("matrixcols", 5, 1..64)
     val MatrixRows = AttributeKey.int("matrixrows", 7, 1..64)
-    val BarColumns = AttributeKey.int("matrixcols", 8, 1..64)
+    val BarColumns = AttributeKey.int("matrixcols", 8, 1..64).labeled("attribute_label_segments")
     val BarRows = AttributeKey.int("matrixrows", 1, 1..1)
     val BarHeight = AttributeKey.int("height", 3, 1..8)
     val MatrixInput = AttributeKey.choice("inputtype", "column", setOf("column", "row", "select"))
@@ -50,7 +50,7 @@ object IoAttributes {
     val TtyRows = AttributeKey.int("rows", 8, 1..48)
     val TtyColumns = AttributeKey.int("cols", 32, 1..120)
     val KeypadMode = AttributeKey.choice("mode", "raw", setOf("raw", "pmod_kypd"))
-    val KeypadSize = AttributeKey.choice("size", "normal", setOf("normal", "large"))
+    val KeypadSize = AttributeKey.choice("size", "normal", setOf("normal", "large")).labeled("attribute_label_display_size")
     val KeyA = AttributeKey.text("keyALabel", "A")
     val KeyB = AttributeKey.text("keyBLabel", "B")
     val KeyC = AttributeKey.text("keyCLabel", "C")
@@ -58,12 +58,12 @@ object IoAttributes {
     val KeyStar = AttributeKey.text("keyStarLabel", "*")
     val KeyHash = AttributeKey.text("keyHashLabel", "#")
     val Label = AttributeKey.text("label")
-    val LabelLocation = AttributeKey.choice("labelloc", "east", setOf("east", "west", "north", "south", "center"))
+    val LabelLocation = AttributeKey.choice("labelloc", "east", setOf("center", "north", "south", "east", "west"))
     val LabelFont = AttributeKey.text("labelfont", "SansSerif bold 16")
     val LabelVisible = AttributeKey.boolean("labelvisible", true)
     val LabelColor = colorKey("labelcolor", 0xff000000u)
-    val OnColor = colorKey("color", 0xfff00000u)
-    val MatrixOnColor = colorKey("color", 0xff00ff00u)
+    val OnColor = colorKey("color", 0xfff00000u).labeled("attribute_label_on_color")
+    val MatrixOnColor = colorKey("color", 0xff00ff00u).labeled("attribute_label_on_color")
     val OffColor = colorKey("offcolor", 0xffdcdcdcu)
     val LedOffColor = colorKey("offcolor", 0xff404040u)
     val MatrixOffColor = colorKey("offcolor", 0xff808080u)
@@ -122,7 +122,7 @@ object IoLibrary {
             else -> "east"
         }
         val schema = AttributeSchema(keys + listOf(IoAttributes.Label,
-            AttributeKey.choice("labelloc", labelLocation, setOf("east", "west", "north", "south", "center")),
+            AttributeKey.choice("labelloc", labelLocation, setOf("center", "north", "south", "east", "west")),
             IoAttributes.LabelFont, AttributeKey.boolean("labelvisible", kind !in setOf(IoKinds.HexDigit, IoKinds.SevenSegment)), IoAttributes.LabelColor))
         return ComponentDefinition(kind, fileName, "#I/O", schema.defaults, schema,
             { component, attributes -> IoGeometry.layout(component, attributes) }, IoBehavior(kind), rotates,

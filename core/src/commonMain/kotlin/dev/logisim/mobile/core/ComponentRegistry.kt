@@ -1,5 +1,7 @@
 package dev.logisim.mobile.core
 
+import dev.logisim.mobile.core.localization.LocalizedText
+
 /** A resolved terminal uses absolute circuit coordinates. Its name survives attribute edits. */
 data class ComponentTerminal(
     val name: String,
@@ -49,12 +51,33 @@ data class ComponentDefinition(
     val copyAttributes: (ComponentCopyContext) -> Map<String, String> = { it.copied.attributes },
     val reconfigureAttributes: (CircuitComponent, Map<String, String>) -> Map<String, String> =
         { component, updates -> component.attributes + updates },
+    /**
+     * How an attribute editor presents [name] for a component, like Evolution's attribute sets that list only
+     * the attributes that apply (a gate's negations up to its inputs, a splitter's bits up to its width). Null
+     * hides the attribute from editors; it stays in the schema and the file.
+     */
+    val presentAttribute: (CircuitComponent, String) -> AttributePresentation? = { _, _ -> AttributePresentation() },
+    /**
+     * The attributes of a component placed beside the circuit's other components, like Evolution's attribute sets
+     * that give each new SoC bus its own identifier. Null keeps the attributes as they are.
+     */
+    val placedAttributes: ((CircuitComponent, List<CircuitComponent>) -> Map<String, String>)? = null,
 ) {
     init {
         require(fileName.isNotBlank() && library.isNotBlank()) { "A identidade de arquivo precisa de nome e biblioteca." }
         schema.parse(defaultAttributes)
     }
 }
+
+/**
+ * An editor's view of one attribute: [value] replaces the stored or default value shown (a splitter bit's
+ * effective branch), and [options] lists accepted values that depend on other attributes.
+ */
+data class AttributePresentation(
+    val value: String? = null,
+    val options: List<String>? = null,
+    val optionLabels: Map<String, LocalizedText> = emptyMap(),
+)
 
 /** Registries are immutable so independent projects and tests cannot change each other's catalog. */
 class ComponentRegistry(definitions: List<ComponentDefinition>) {

@@ -59,6 +59,7 @@ object MemoryComponents {
         },
         behavior = MemoryBehavior,
         supportsRotation = false,
+        presentAttribute = { component, name -> if (attributeApplies(kind, component.attributes, name)) AttributePresentation() else null },
         defaultsForVersion = { version ->
             if (!CircFormatProfile.parse(version).originalLogisim) emptyMap()
             else when (kind) {
@@ -69,6 +70,27 @@ object MemoryComponents {
         },
         isCombinational = kind == ComponentKind.ROM,
     )
+
+    /**
+     * The attributes Evolution lists for each memory: RomAttributes' fixed list, and RamAttributes.updateAttributes,
+     * which shows byte-enable options or line options depending on the enables mode. Hidden values stay stored.
+     */
+    internal fun attributeApplies(kind: ComponentKind, attributes: Map<String, String>, name: String): Boolean {
+        val ramOnly = setOf("enables", "databus", "trigger", "asyncread", "readbehav", "byteenables", "clearpin", "type")
+        if (kind == ComponentKind.ROM) return name !in ramOnly
+        val value = { key: AttributeKey<*> -> attributes[key.name] ?: schema.defaults.getValue(key.name) }
+        val byteEnables = value(Enables) == "byte"
+        val edgeTriggered = value(Trigger) in setOf("rising", "falling")
+        val asynchronous = value(AsyncRead) == "true"
+        val wide = (value(DataBits).toIntOrNull() ?: 8) > 8
+        return when (name) {
+            "line", "misaligned" -> !byteEnables
+            "asyncread" -> byteEnables && edgeTriggered
+            "readbehav" -> byteEnables && edgeTriggered && !asynchronous
+            "byteenables" -> byteEnables && edgeTriggered && wide
+            else -> true
+        }
+    }
 
     private object MemoryBehavior : ComponentBehavior {
         override fun initialState(component: CircuitComponent, attributes: AttributeValues): ComponentState {

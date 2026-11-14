@@ -1,0 +1,40 @@
+{
+  "inspector_clear_for_all": {
+    "en": {
+      "one": "Clear for {count} component",
+      "other": "Clear for all {count}"
+    },
+    "pt": {
+      "one": "Limpar em {count} componente",
+      "other": "Limpar em todos os {count}"
+    },
+    "description": "The explicit action that empties a value (a label, ROM contents...) that differs across the selected components; applying the untouched empty field changes nothing (C7)."
+  },
+  "inspector_multi_edit_status": {
+    "en": {
+      "one": "Changed {count} component.",
+      "other": "Changed {count} components."
+    },
+    "pt": {
+      "one": "{count} componente alterado.",
+      "other": "{count} componentes alterados."
+    },
+    "description": "The status line after one inspector edit changed several selected components; Undo is shown beside it (C7)."
+  },
+  "inspector_multi_edit_undo": {
+    "en": {
+      "one": "Undo the change to {count} component",
+      "other": "Undo the change to {count} components"
+    },
+    "pt": {
+      "one": "Desfazer a alteração em {count} componente",
+      "other": "Desfazer a alteração em {count} componentes"
+    },
+    "description": "What TalkBack reads for the Undo button beside the status line after an edit of several components (C7)."
+  },
+  "inspector_label_draft_discarded": {
+    "en": "The typed label “{label}” was not applied.",
+    "pt": "O rótulo digitado “{label}” não foi aplicado.",
+    "description": "Status line when a label typed in the inspector could not be applied because the editor left its circuit or document before it was committed, or because Undo or Redo ran first (a label not yet committed is not in the history) (C9, C155); {label} is the typed text."
+  }
+}

@@ -95,7 +95,7 @@ object AnnotationLibrary {
         if (raw.isNotEmpty()) EmbeddedImage.fromDataUri(raw)
         raw
     }, { it })
-    private val widthKey = AttributeKey.int("width", 64, 1..4096)
+    private val widthKey = AttributeKey.int("width", 64, 1..4096).labeled("attribute_label_pixel_width")
     private val heightKey = AttributeKey.int("height", 64, 1..4096)
     private val scaleKey = AttributeKey.choice("scale", "fit", setOf("fit", "stretch", "cover"))
 

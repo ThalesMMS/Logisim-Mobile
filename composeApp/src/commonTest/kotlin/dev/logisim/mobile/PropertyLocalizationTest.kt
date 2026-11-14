@@ -17,8 +17,9 @@ class PropertyLocalizationTest {
         assertEquals("Norte", direction.localizedValue().resolve(AppLanguage.PORTUGUESE))
         assertEquals("north", direction.value)
         val enabled = PropertyEditorField("enabled", PropertyInputKind.BOOLEAN, "true")
-        assertEquals("Enabled", enabled.localizedValue().resolve(AppLanguage.ENGLISH))
-        assertEquals("Ativado", enabled.localizedValue().resolve(AppLanguage.PORTUGUESE))
+        // Evolution's booleanTrueOption: Yes, Sim.
+        assertEquals("Yes", enabled.localizedValue().resolve(AppLanguage.ENGLISH))
+        assertEquals("Sim", enabled.localizedValue().resolve(AppLanguage.PORTUGUESE))
         assertEquals("true", enabled.value)
     }
 
@@ -30,9 +31,16 @@ class PropertyLocalizationTest {
         val input = "{name} → שלום " + "long ".repeat(40)
         val invalid = assertIs<PropertyEditResult.Invalid>(PropertyEditorModel.validate(registry,
             listOf(CircuitComponent("a", kind, GridPoint(0, 0))), "width", input))
-        assertEquals(Messages.InspectorValueInvalid, invalid.notice.key)
-        assertEquals("Invalid value for width: $input.", invalid.notice.resolve(AppLanguage.ENGLISH))
-        assertEquals("Valor inválido para width: $input.", invalid.notice.resolve(AppLanguage.PORTUGUESE))
+        // The message names the attribute as the table shows it and says which values it accepts.
+        assertEquals("inspector_value_invalid_range", invalid.notice.key)
+        assertEquals("Invalid value for Data bits: $input. Enter a whole number from 1 to 64.", invalid.notice.resolve(AppLanguage.ENGLISH))
+        assertEquals("Valor inválido para Bits de dados: $input. Digite um número inteiro de 1 a 64.", invalid.notice.resolve(AppLanguage.PORTUGUESE))
+        val unbounded = ComponentRegistry(listOf(ComponentDefinition(kind, "Test", "#Test",
+            schema = AttributeSchema(listOf(AttributeKey.text("width", "8") { it.length < 3 })))))
+        val plain = assertIs<PropertyEditResult.Invalid>(PropertyEditorModel.validate(unbounded,
+            listOf(CircuitComponent("a", kind, GridPoint(0, 0))), "width", "1234"))
+        assertEquals(Messages.InspectorValueInvalid, plain.notice.key)
+        assertEquals("Invalid value for Data bits: 1234.", plain.notice.resolve(AppLanguage.ENGLISH))
     }
 
     @Test

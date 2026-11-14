@@ -1,11 +1,16 @@
 package dev.logisim.mobile.core
 
+import dev.logisim.mobile.core.localization.LocalizedText
+
 import kotlin.math.max
 
 internal const val ORIGINAL_TRANSISTOR_ATTRIBUTE = "logisim-mobile-original-transistor"
 object ClockPoke : ComponentEvent
 
 /** File identities and runtime definitions for the desktop Wiring library. */
+/** The value Evolution writes for a splitter bit that reaches no output. */
+const val SPLITTER_BIT_NONE = "none"
+
 object WiringLibrary {
     val PullResistor = ComponentKind("PULL_RESISTOR")
     val PowerOnReset = ComponentKind("POWER_ON_RESET")
@@ -17,9 +22,9 @@ object WiringLibrary {
     private val facing = CommonAttributes.Facing
     private val label = CommonAttributes.Label
     private val font = AttributeKey.text("labelfont", "SansSerif bold 16")
-    private val labelLocation = AttributeKey.choice("labelloc", "west", setOf("north", "south", "east", "west", "center"))
+    private val labelLocation = AttributeKey.choice("labelloc", "west", setOf("center", "north", "south", "east", "west"))
     private val appearance = AttributeKey.choice("appearance", "classic", setOf("classic", "NewPins"))
-    private val radix = AttributeKey.choice("radix", "2", setOf("2", "8", "16", "10signed", "10unsigned", "float"))
+    private val radix = AttributeKey.choice("radix", "2", setOf("2", "8", "10signed", "10unsigned", "16", "float"))
     private val pinType = AttributeKey.choice("type", "input", setOf("input", "output"))
     private val pinBehavior = AttributeKey.choice("behavior", "simple", setOf("simple", "tristate", "pullup", "pulldown"))
     private val initial = AttributeKey("initial", 0uL, ::parseHexLong, { "0x${it.toString(16)}" })
@@ -112,7 +117,7 @@ object WiringLibrary {
                     context.attributes[outputWidth], context.attributes[extensionType], context.input("extend", 1))))
             }, combinational = true),
         definition(ComponentKind.SPLITTER, "Splitter", listOf(facing, incoming, fanout, spacing, splitterAppearance) + bitEnds,
-            layout = ::splitterLayout),
+            layout = ::splitterLayout, presentAttribute = ::presentSplitterAttribute),
     )
 
     fun reconfigure(component: CircuitComponent, updates: Map<String, String>): CircuitComponent {
@@ -167,12 +172,28 @@ object WiringLibrary {
         matches: (Map<String, String>) -> Boolean = { true },
         pullDrivers: ((CircuitComponent, AttributeValues) -> Map<String, LogicVector>)? = null,
         combinational: Boolean = true,
+        presentAttribute: (CircuitComponent, String) -> AttributePresentation? = { _, _ -> AttributePresentation() },
     ): ComponentDefinition {
         val schema = AttributeSchema(keys)
         val defaults = schema.defaults.filterNot { (name, _) -> name.startsWith("bit") } + extraDefaults
         return ComponentDefinition(kind, fileName, "#Wiring", defaults, schema,
             layout, behavior, supportsRotation, matches, pullDrivers, isCombinational = combinational,
-            reconfigureAttributes = ::reconfigureAttributes)
+            reconfigureAttributes = ::reconfigureAttributes, presentAttribute = presentAttribute)
+    }
+
+    /**
+     * Evolution's SplitterAttributes: Bit 0..incoming-1, each a choice of None or an output branch, showing the
+     * effective branch of a bit the file leaves at its default distribution. Writes stay "none" or the index.
+     */
+    private fun presentSplitterAttribute(component: CircuitComponent, name: String): AttributePresentation? {
+        val bit = name.removePrefix("bit").takeIf { name.startsWith("bit") }?.toIntOrNull() ?: return AttributePresentation()
+        val ends = component.splitterBitEnds()
+        if (bit >= ends.size) return null
+        val fanout = component.attributeInt("fanout", 2).coerceIn(1, 64)
+        val branches = (0 until fanout).map(Int::toString)
+        return AttributePresentation(ends[bit]?.toString() ?: SPLITTER_BIT_NONE, listOf(SPLITTER_BIT_NONE) + branches,
+            mapOf(SPLITTER_BIT_NONE to LocalizedText("splitter_bit_none", fallback = "None")) +
+                branches.associateWith { LocalizedText("splitter_bit_output", mapOf("n" to it), fallback = it) })
     }
 
     private fun behavior(evaluate: (ComponentEvaluationContext) -> ComponentEvaluation) = object : ComponentBehavior {

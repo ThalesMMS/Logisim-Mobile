@@ -2,6 +2,21 @@ package dev.logisim.mobile.core
 
 import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.core.localization.requireLocalized
+import kotlin.random.Random
+import kotlin.time.Clock
+
+/**
+ * Updates that attach SoC components to buses, and those the same edit makes to other components of the circuit.
+ * [own] holds, per selected component, its other bus references that move with a bus given an identifier.
+ */
+data class SocBusAttachment(
+    val updates: Map<String, String>,
+    val others: Map<String, Map<String, String>> = emptyMap(),
+    val own: Map<String, Map<String, String>> = emptyMap(),
+) {
+    /** What the edit changes in the selected component [id]: [updates] and its own references that move. */
+    fun updatesFor(id: String): Map<String, String> = own[id].orEmpty() + updates
+}
 
 /** Metadata and geometry for the desktop SoC library. Execution is coordinated per circuit instance. */
 object SocComponents {
@@ -34,7 +49,7 @@ object SocComponents {
     val SoftModes = listOf("160x120", "320x240", "640x480", "800x600", "1024x768").mapIndexed { i, size -> AttributeKey.boolean("soft$size", i < 3) }
     val BurstSize = AttributeKey("BurstSize", 16, { raw -> raw.toIntOrNull()?.let { requested ->
         listOf(1, 2, 4, 8, 16, 32, 64, 128, 256).firstOrNull { it >= requested } ?: 256
-    } }, Int::toString) { it in 1..256 && it and (it - 1) == 0 }
+    } }, Int::toString) { it in 1..256 && it and (it - 1) == 0 }.offering(listOf(1, 2, 4, 8, 16, 32, 64, 128, 256))
     val SourceBus = AttributeKey.text("DmaSrcBus")
     val DestinationBus = AttributeKey.text("DmaDstBus")
     val WriteFifoSize = fifo("WriteFifoSize")
@@ -53,6 +68,65 @@ object SocComponents {
         { "0x" + it.toString(16) })
     private fun fifo(name: String) = AttributeKey(name, 64, String::toIntOrNull, Int::toString) {
         it in 8..32768 && it and (it - 1) == 0
+    }.offering((3..15).map { 1 shl it })
+
+    /** The attributes naming the SoC bus a component is attached to; editors offer the circuit's buses. */
+    val busReferences: Set<String> = setOf(BusSelection.name, SourceBus.name, DestinationBus.name)
+
+    /** The identifier other SoC components store to attach to [bus]: its SocBusIdentifier, or its id when blank. */
+    fun busId(bus: CircuitComponent): String = attributes(bus)[BusIdentifier].ifBlank { bus.id }
+
+    /**
+     * A new bus identifier in Evolution's format: SocBusAttributes writes `0x`, the creation time in milliseconds as
+     * sixteen hexadecimal digits, and a hexadecimal suffix. Evolution reads only this identifier, never a mobile id.
+     */
+    fun newBusIdentifier(
+        used: Set<String>,
+        millis: Long = Clock.System.now().toEpochMilliseconds(),
+        random: Random = Random.Default,
+    ): String {
+        val time = "0x" + millis.toULong().toString(16).uppercase().padStart(16, '0')
+        while (true) {
+            val candidate = time + random.nextInt().toUInt().toString(16)
+            if (candidate !in used) return candidate
+        }
+    }
+
+    /** A placed bus keeps its identifier only when no other bus of the circuit has it, as Evolution's new attribute sets. */
+    private fun placedBus(bus: CircuitComponent, existing: List<CircuitComponent>): Map<String, String> {
+        val used = existing.filter { it.kind == BUS && it.id != bus.id }.mapTo(mutableSetOf()) { runCatching { busId(it) }.getOrDefault(it.id) }
+        val own = bus.attributes[BusIdentifier.name].orEmpty()
+        return if (own.isNotBlank() && own !in used) bus.attributes else bus.attributes + (BusIdentifier.name to newBusIdentifier(used))
+    }
+
+    /**
+     * [updates] for the [selected] components of [circuit], attaching them to buses by identifiers Evolution reads.
+     * Choosing a bus saved without an identifier (by an earlier version of the port, which attached components by the
+     * bus's mobile id) gives that bus one; [SocBusAttachment.others] then also moves the circuit's other components
+     * attached by the old id, and [SocBusAttachment.own] the selected components' other references to it (a DMA's
+     * control and source bus when its destination is chosen), so the whole change is one edit.
+     */
+    fun attach(updates: Map<String, String>, circuit: List<CircuitComponent>, selected: Set<String>,
+               newIdentifier: (Set<String>) -> String = { newBusIdentifier(it) }): SocBusAttachment {
+        val blank = circuit.filter { bus ->
+            bus.kind == BUS && bus.attributes[BusIdentifier.name].isNullOrBlank() &&
+                updates.any { (name, value) -> name in busReferences && value == bus.id }
+        }
+        if (blank.isEmpty()) return SocBusAttachment(updates)
+        val used = circuit.filter { it.kind == BUS }.mapTo(mutableSetOf()) { runCatching { busId(it) }.getOrDefault(it.id) }
+        val renamed = blank.associate { bus -> bus.id to newIdentifier(used).also { used += it } }
+        val others = mutableMapOf<String, Map<String, String>>()
+        val own = mutableMapOf<String, Map<String, String>>()
+        for (component in circuit) {
+            val target = if (component.id in selected) own else others
+            val moved = mutableMapOf<String, String>()
+            renamed[component.id]?.let { moved[BusIdentifier.name] = it }
+            if (component.kind in kinds) for (name in busReferences) renamed[component.attributes[name]]?.let { moved[name] = it }
+            // What the edit sets itself wins over a reference that moves.
+            if (target === own) moved.keys.removeAll(updates.keys)
+            if (moved.isNotEmpty()) target[component.id] = moved
+        }
+        return SocBusAttachment(updates.mapValues { (name, value) -> if (name in busReferences) renamed[value] ?: value else value }, others, own)
     }
     private fun schema(vararg keys: AttributeKey<*>) = AttributeSchema(listOf(CommonAttributes.Label) + keys)
     fun attributes(component: CircuitComponent): AttributeValues = definition(component.kind).schema.parse(component.attributes)
@@ -98,7 +172,11 @@ object SocComponents {
     )
     private fun descriptor(kind: ComponentKind, name: String, schema: AttributeSchema,
         geometry: (CircuitComponent, AttributeValues) -> ComponentLayout) = ComponentDefinition(
-        kind, name, "#Soc", schema.defaults, schema, geometry, behavior = SocComponentBehavior, supportsRotation = false, copyAttributes = ::copiedAttributes)
+        kind, name, "#Soc", schema.defaults, schema, geometry, behavior = SocComponentBehavior, supportsRotation = false, copyAttributes = ::copiedAttributes,
+        // Evolution keeps a bus's identifier hidden: editing it would silently detach every component attached to it.
+        // It stays in the file.
+        presentAttribute = { _, attribute -> if (attribute == BusIdentifier.name) null else AttributePresentation() },
+        placedAttributes = if (kind == BUS) ::placedBus else null)
     private fun port(c: CircuitComponent, name: String, x: Int, y: Int, direction: PortDirection = PortDirection.INPUT, width: Int = 1) =
         ComponentTerminal(name, GridPoint(c.position.x + x, c.position.y + y), direction, width)
     private fun layout(c: CircuitComponent, width: Int, height: Int, ports: List<ComponentTerminal> = emptyList()) =

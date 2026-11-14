@@ -27,7 +27,7 @@ object ExtraIoAttributes {
     val Facing = AttributeKey.direction()
     val Width = AttributeKey.int("width", 1, 1..64)
     val Label = AttributeKey.text("label")
-    val LabelLocation = AttributeKey.choice("labelloc", "north", setOf("north", "south", "east", "west", "center"))
+    val LabelLocation = AttributeKey.choice("labelloc", "north", setOf("center", "north", "south", "east", "west"))
     val LabelFont = AttributeKey.text("labelfont", "SansSerif bold 16")
     val LabelColor = color("labelcolor", "#000000")
     val LabelVisible = AttributeKey.boolean("labelvisible", true)
@@ -38,26 +38,26 @@ object ExtraIoAttributes {
     val Radix = AttributeKey.choice("radix", "2", setOf("2", "8", "10signed", "10unsigned", "16", "float"))
     val SwitchMode = AttributeKey.choice("mode", "1in2out", setOf("1in2out", "2in1out"))
     val Bipolar = AttributeKey.boolean("bipolar", false)
-    val OnColor = color("color", "#f00000")
+    val OnColor = color("color", "#f00000").labeled("attribute_label_on_color")
     val OffColor = color("offcolor", "#404040")
     val ReverseColor = color("reversecolor", "#00f000")
     val Inputs = AttributeKey.int("inputs", 4, 1..32)
     val ProductTerms = AttributeKey.int("and", 4, 1..32)
     val Outputs = AttributeKey.int("outputs", 4, 1..32)
     val Contents = AttributeKey.text("Contents")
-    val Select = AttributeKey.choice("Select", "low", setOf("low", "high"))
+    val Select = AttributeKey.choice("Select", "low", setOf("low", "high")).labeled("attribute_label_select_active_level")
     val ScopeInputs = AttributeKey.int("inputs", 3, 1..32)
     val ScopeStates = AttributeKey.int("nState", 10, 4..35)
     val ScopeEdges = AttributeKey.choice("frontlines", "rising", setOf("no", "rising", "falling", "both"))
     val ScopeClock = AttributeKey.boolean("showclock", true)
-    val ScopeColor = color("color", "#00d0d0")
+    val ScopeColor = color("color", "#00d0d0").labeled("attribute_label_border_color")
     val TimerMode = AttributeKey.choice("mode", "astable", setOf("astable", "monostable"))
     val Resistance = AttributeKey("r1", 71660, { parseNe555Quantity(it, resistance = true) }, Int::toString) {
         it in 1000..10_000_000
-    }
+    }.entered(AttributeEntry.RESISTANCE, presets = listOf(1000, 10_000, 71_660, 100_000, 1_000_000, 10_000_000)) // NE555.R1_PRESETS
     val Capacitance = AttributeKey("c1", 10, { parseNe555Quantity(it, resistance = false) }, Int::toString) {
         it in 10..1000
-    }
+    }.entered(AttributeEntry.CAPACITANCE, presets = listOf(10, 100, 1000)) // NE555.C1_PRESETS
     val VolumeWidth = AttributeKey.int("vol_width", 7, 1..64)
     val FrequencyUnit = AttributeKey.choice("freq_measure", "Hz", setOf("Hz", "dHz"))
     val Waveform = AttributeKey.choice("waveform", "Sine", BuzzerWaveform.entries.map { it.name }.toSet())
@@ -177,7 +177,7 @@ object ExtraIoComponents {
             }),
         definition(ExtraIoKinds.TwoPinLed, "TWOPINLED", "#Input/Output-Extra",
             listOf(AttributeKey.direction(default = Direction.WEST), a.OnColor, a.OffColor, a.Bipolar, a.ReverseColor) +
-                labels.filterNot { it.name == "labelloc" } + AttributeKey.choice("labelloc", "east", setOf("north", "south", "east", "west", "center")), true,
+                labels.filterNot { it.name == "labelloc" } + AttributeKey.choice("labelloc", "east", setOf("center", "north", "south", "east", "west")), true,
             layout = { component, attrs ->
                 val anode = when (attrs[a.Facing]) { Direction.WEST -> -10 to 0; Direction.EAST -> 10 to 0; Direction.NORTH -> 0 to 10; Direction.SOUTH -> 0 to -10 }
                 shape(component, ComponentBounds(-10, -10, 10, 10), listOf(

@@ -1,0 +1,52 @@
+{
+  "inspector_boolean_yes": {
+    "en": "Yes",
+    "pt": "Sim",
+    "description": "The true value of a boolean attribute in the inspector, as Evolution's booleanTrueOption (C2)."
+  },
+  "inspector_boolean_no": {
+    "en": "No",
+    "pt": "Não",
+    "description": "The false value of a boolean attribute in the inspector, as Evolution's booleanFalseOption (C2)."
+  },
+  "inspector_value_invalid_range": {
+    "en": "Invalid value for {name}: {raw}. Enter a whole number from {min} to {max}.",
+    "pt": "Valor inválido para {name}: {raw}. Digite um número inteiro de {min} a {max}.",
+    "description": "An inspector value outside a numeric attribute's range; {name} is the attribute's display name (C6, C150)."
+  },
+  "inspector_hint_range": {
+    "en": "A whole number from {min} to {max}.",
+    "pt": "Um número inteiro de {min} a {max}.",
+    "description": "Under a numeric inspector field: the values the attribute accepts (C6)."
+  },
+  "inspector_hint_resistance": {
+    "en": "Ohms. You can type k or M, such as 4.7k or 1M.",
+    "pt": "Ohms. Você pode digitar k ou M, como 4.7k ou 1M.",
+    "description": "Under the NE555 resistance field: the SI prefixes it accepts (C5)."
+  },
+  "inspector_hint_capacitance": {
+    "en": "Microfarads. You can type a unit, such as 10uF or 0.1mF.",
+    "pt": "Microfarads. Você pode digitar uma unidade, como 10uF ou 0.1mF.",
+    "description": "Under the NE555 capacitance field: the units it accepts (C5)."
+  },
+  "inspector_hint_hex_digits": {
+    "en": "Hexadecimal, with or without 0x, such as 0xff.",
+    "pt": "Hexadecimal, com ou sem 0x, como 0xff.",
+    "description": "Under a field stored as bare hexadecimal digits, such as DIP switch positions (C5)."
+  },
+  "inspector_presets": {
+    "en": "Common values",
+    "pt": "Valores comuns",
+    "description": "Heading at the start of the row of preset chips under a numeric inspector field, such as common bit widths; it wraps to two short lines beside the chips (C6)."
+  },
+  "soc_bus_not_connected": {
+    "en": "Not connected to a bus",
+    "pt": "Não conectado a um barramento",
+    "description": "The SoC bus choice of a SoC component attached to no bus, as Evolution's SocBusNotConnected (C13)."
+  },
+  "soc_bus_option_unlabeled": {
+    "en": "{name}@{x},{y}",
+    "pt": "{name}@{x},{y}",
+    "description": "An unlabeled SoC bus in a bus choice: its component name and location, as Evolution's getSocBusDisplayString (C13)."
+  }
+}

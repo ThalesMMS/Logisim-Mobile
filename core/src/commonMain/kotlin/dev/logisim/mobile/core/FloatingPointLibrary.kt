@@ -26,15 +26,16 @@ import kotlin.math.tanh
 
 /** The eighteen registered desktop FPArithmetic components and their serialized identities. */
 object FloatingPointLibrary {
+    // Evolution's FPArithmetic width attribute is a combo box of the IEEE 754 widths.
     private val fpWidth = AttributeKey("fpwidth", 32, String::toIntOrNull, Int::toString) {
         it in FloatingPointNumbers.widths
-    }
+    }.offering(FloatingPointNumbers.widths.sorted())
     private val fpWidthIn = AttributeKey("fpwidthin", 32, String::toIntOrNull, Int::toString) {
         it in FloatingPointNumbers.widths
-    }
+    }.offering(FloatingPointNumbers.widths.sorted())
     private val fpWidthOut = AttributeKey("fpwidthout", 32, String::toIntOrNull, Int::toString) {
         it in FloatingPointNumbers.widths
-    }
+    }.offering(FloatingPointNumbers.widths.sorted())
     private val intWidth = AttributeKey.int("width", 8, 1..64)
     private val constant = AttributeKey("value", 0.0, FloatingPointNumbers::parse, Double::toString)
     private val multiplyMode = AttributeKey.choice("multiplyMode", "multiply", setOf("multiply", "fusedMultiplyAdd"))

@@ -34,14 +34,14 @@ object ExternalIoComponents {
     val Telnet = ComponentKind("TELNET")
     val ReptarLocalBus = ComponentKind("REPTAR_LOCAL_BUS")
 
-    internal val Number = AttributeKey.int("number", 8, 1..64)
+    internal val Number = AttributeKey.int("number", 8, 1..64).labeled("attribute_label_pin_count")
     internal val PortMode = AttributeKey.choice("direction", "IOSingleEnable",
-        setOf("onlyinput", "onlyOutput", "IOSingleEnable", "IOMultiEnable"))
-    internal val VideoWidth = AttributeKey.int("width", 128, 2..4096)
+        setOf("onlyinput", "onlyOutput", "IOSingleEnable", "IOMultiEnable")).labeled("attribute_label_port_type")
+    internal val VideoWidth = AttributeKey.int("width", 128, 2..4096).labeled("attribute_label_pixel_width")
     internal val VideoHeight = AttributeKey.int("height", 128, 2..4096)
     internal val VideoScale = AttributeKey.int("scale", 2, 1..8)
     internal val VideoColor = AttributeKey.choice("color", "888 RGB (24 bit)",
-        VideoColorFormat.entries.map { it.fileValue }.toSet())
+        VideoColorFormat.entries.map { it.fileValue }.toSet()).labeled("attribute_label_color_model")
     internal val VideoReset = AttributeKey.choice("reset", "Asynchronous",
         setOf("Asynchronous", "Synchronous"))
     internal val VideoCursor = AttributeKey.choice("cursor", "Blinking Dot",

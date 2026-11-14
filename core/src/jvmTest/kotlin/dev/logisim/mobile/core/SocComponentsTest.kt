@@ -193,4 +193,20 @@ class SocComponentsTest {
             assertFailsWith<IllegalArgumentException> { component(kind, "irqWidth" to "-1") }
         }
     }
+
+    @Test fun attachingALegacyBusMovesEveryReferenceToIt() {
+        // A DMA saved by an earlier port version: control and source on bus b7 by its mobile id; the user picks b7 as
+        // the destination. Its own other references move with the new identifier, as do other components'.
+        val bus = CircuitComponent("b7", SocComponents.BUS, GridPoint(20, 20))
+        val dma = CircuitComponent("d1", SocComponents.DMA, GridPoint(20, 600),
+            attributes = mapOf("SocBusSelection" to "b7", "DmaSrcBus" to "b7"))
+        val pio = CircuitComponent("p1", SocComponents.PIO, GridPoint(600, 600), attributes = mapOf("SocBusSelection" to "b7"))
+        val attachment = SocComponents.attach(mapOf("DmaDstBus" to "b7"), listOf(bus, dma, pio), setOf("d1")) { "0xNEW" }
+        assertEquals(mapOf("DmaDstBus" to "0xNEW"), attachment.updates)
+        assertEquals(mapOf("DmaDstBus" to "0xNEW", "SocBusSelection" to "0xNEW", "DmaSrcBus" to "0xNEW"), attachment.updatesFor("d1"))
+        assertEquals(mapOf("b7" to mapOf("SocBusIdentifier" to "0xNEW"), "p1" to mapOf("SocBusSelection" to "0xNEW")), attachment.others)
+        // What the edit sets itself is not overridden by a reference that moves.
+        val detach = SocComponents.attach(mapOf("DmaDstBus" to "b7", "DmaSrcBus" to ""), listOf(bus, dma), setOf("d1")) { "0xNEW" }
+        assertEquals(mapOf("DmaDstBus" to "0xNEW", "DmaSrcBus" to "", "SocBusSelection" to "0xNEW"), detach.updatesFor("d1"))
+    }
 }

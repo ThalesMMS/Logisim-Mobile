@@ -32,7 +32,12 @@ class CircuitEditor(initial: CircuitDocument = CircuitDocument(), private val re
         return addPlacedComponent(template.copy(id = id, position = position))
     }
 
-    private fun addPlacedComponent(component: CircuitComponent): String {
+    /** [component] as placed beside [existing], with the attributes its definition gives a new component. */
+    private fun placed(component: CircuitComponent, existing: List<CircuitComponent>): CircuitComponent =
+        registry.definition(component.kind)?.placedAttributes?.let { component.copy(attributes = it(component, existing)) } ?: component
+
+    private fun addPlacedComponent(template: CircuitComponent): String {
+        val component = placed(template, document.components)
         val exclusive = exclusivePlacementPoints(component).toSet()
         requireLocalized(exclusive.isEmpty() || document.components.none { existing ->
             exclusivePlacementPoints(existing).any { it in exclusive }
@@ -55,9 +60,10 @@ class CircuitEditor(initial: CircuitDocument = CircuitDocument(), private val re
         if (templates.isEmpty()) return emptySet()
         val used = document.components.mapTo(mutableSetOf()) { it.id }
         var next = 1
-        val copies = templates.map { template ->
+        val copies = mutableListOf<CircuitComponent>()
+        for (template in templates) {
             while ("c$next" in used) next++
-            template.copy(id = "c${next++}").also { it.layout(registry) }
+            copies += placed(template.copy(id = "c${next++}"), document.components + copies).also { it.layout(registry) }
         }
         update(document.copy(components = document.components + copies))
         return copies.mapTo(mutableSetOf()) { it.id }

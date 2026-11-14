@@ -13,8 +13,10 @@ object GatesLibrary {
     private val width = CommonAttributes.Width
     private val facing = CommonAttributes.Facing
     private val inputs = AttributeKey.int("inputs", 2, 2..64)
-    private val size = AttributeKey("size", 50, String::toIntOrNull, Int::toString) { it in setOf(30, 50, 70) }
-    private val unarySize = AttributeKey("size", 30, String::toIntOrNull, Int::toString) { it in setOf(20, 30) }
+    private val size = AttributeKey.intChoice("size", 50, listOf(30, 50, 70))
+    private val unarySize = AttributeKey.intChoice("size", 30, listOf(20, 30),
+        // Evolution calls 30 Wide on unary gates and Narrow on gates with inputs (std.gateSizeWideOpt).
+        mapOf("30" to "attribute_option_size_30_wide"))
     private val output = AttributeKey.choice("out", "01", setOf("01", "0Z", "Z1"))
     private val xor = AttributeKey.choice("xor", "1", setOf("1", "odd"))
     private val control = AttributeKey.choice("control", "right", setOf("left", "right"))
@@ -23,7 +25,7 @@ object GatesLibrary {
     private val table = AttributeKey.text("table")
     private val label = CommonAttributes.Label
     private val font = AttributeKey.text("labelfont", "SansSerif bold 16")
-    private val labelLocation = AttributeKey.choice("labelloc", "north", setOf("north", "south", "east", "west", "center"))
+    private val labelLocation = AttributeKey.choice("labelloc", "north", setOf("center", "north", "south", "east", "west"))
     private val negations = List(64) { AttributeKey.boolean("negate$it", false) }
 
     fun definitions(): List<ComponentDefinition> = listOf(
@@ -75,6 +77,11 @@ object GatesLibrary {
         val schema = AttributeSchema(listOf(facing, width, size, inputs, output, label, font) +
             (if (isXor) listOf(xor) else emptyList()) + negations)
         return ComponentDefinition(kind, fileName, "#Gates", defaultAttributes = mapOf("inputs" to "2"), schema = schema,
+            // Evolution's GateAttributes lists Negate 1..inputs only.
+            presentAttribute = { component, name ->
+                val index = name.removePrefix("negate").takeIf { name.startsWith("negate") }?.toIntOrNull()
+                if (index != null && index >= (component.attributes["inputs"]?.toIntOrNull() ?: 2)) null else AttributePresentation()
+            },
             layout = { component, attributes -> gateLayout(component, attributes, operation) },
             behavior = object : ComponentBehavior {
                 override fun evaluate(context: ComponentEvaluationContext): ComponentEvaluation {

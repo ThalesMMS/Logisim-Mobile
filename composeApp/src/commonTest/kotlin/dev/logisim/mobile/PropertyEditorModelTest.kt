@@ -33,8 +33,10 @@ class PropertyEditorModelTest {
     fun fieldsUseDeclaredTypesAndDefaults() {
         val fields = PropertyEditorModel.fields(registry, listOf(component()))
         assertEquals(listOf("width", "enabled", "facing", "gain", "note"), fields.map { it.name })
-        assertEquals(listOf(PropertyInputKind.INTEGER, PropertyInputKind.BOOLEAN, PropertyInputKind.DIRECTION,
+        // A range of at most 32 values is a choice, as Evolution's integer-range combo box (C6).
+        assertEquals(listOf(PropertyInputKind.CHOICE, PropertyInputKind.BOOLEAN, PropertyInputKind.DIRECTION,
             PropertyInputKind.DECIMAL, PropertyInputKind.TEXT), fields.map { it.kind })
+        assertEquals((1..16).map(Int::toString), fields.first().options.map { it.value })
         assertEquals(listOf("8", "true", "north", "0.5", "hello"), fields.map { it.value })
     }
 
@@ -58,8 +60,10 @@ class PropertyEditorModelTest {
     fun invalidValuesReportTheSpecificProperty() {
         val result = assertIs<PropertyEditResult.Invalid>(
             PropertyEditorModel.validate(registry, listOf(component()), "width", "17"))
-        assertTrue(result.message.contains("width"))
+        // The message names the attribute as the table shows it, with the accepted range (C150, C6).
+        assertTrue(result.message.contains("Bits de dados"))
         assertTrue(result.message.contains("17"))
+        assertTrue(result.message.contains("1 a 16"))
     }
 
     @Test
