@@ -45,6 +45,19 @@ class FpgaBoardCatalogStore(private val storage: WorkspaceCatalogStorage? = null
         catalog.copy(external = catalog.external - id, selected = catalog.selected?.takeUnless { it == id }).withValidSelection(builtIn)
     }
 
+    /**
+     * Undoes [remove]: puts [entry] back under [id] at its former [index] in the catalog and selects [previousSelected]
+     * again when it still exists. Written atomically like every other change.
+     */
+    internal fun restore(id: String, entry: FpgaExternalBoard, previousSelected: String?, index: Int = Int.MAX_VALUE): FpgaBoardCatalog =
+        update { catalog ->
+            val entries = catalog.external.entries.filter { it.key != id }.map { it.key to it.value }.toMutableList()
+            entries.add(index.coerceIn(0, entries.size), id to entry)
+            val external = linkedMapOf(*entries.toTypedArray())
+            val selected = previousSelected?.takeIf { it in external || it.startsWith(BUILTIN_PREFIX) } ?: catalog.selected
+            catalog.copy(external = external, selected = selected)
+        }
+
     private fun FpgaBoardCatalog.withValidSelection(builtIn: List<String>): FpgaBoardCatalog {
         val valid = selected?.let { id -> id in external || id.removePrefix(BUILTIN_PREFIX).let { it != id && it in builtIn } } == true
         return if (valid || builtIn.isEmpty()) this else copy(selected = BUILTIN_PREFIX + builtIn.first())

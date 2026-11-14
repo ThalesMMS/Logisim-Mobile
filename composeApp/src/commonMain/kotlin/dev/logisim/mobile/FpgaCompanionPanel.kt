@@ -5,16 +5,19 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -22,7 +25,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -31,7 +38,11 @@ import dev.logisim.mobile.core.CompanionClient
 import dev.logisim.mobile.core.CompanionJob
 import dev.logisim.mobile.core.CompanionJobRequest
 import dev.logisim.mobile.core.CompanionJobState
+import dev.logisim.mobile.core.CompanionJson
+import dev.logisim.mobile.core.CompanionJsonArray
 import dev.logisim.mobile.core.CompanionJsonBoolean
+import dev.logisim.mobile.core.CompanionJsonNull
+import dev.logisim.mobile.core.CompanionJsonNumber
 import dev.logisim.mobile.core.CompanionJsonCodec
 import dev.logisim.mobile.core.CompanionJsonObject
 import dev.logisim.mobile.core.CompanionJsonString
@@ -52,6 +63,8 @@ import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.localization.Localizer
 import dev.logisim.mobile.localization.rememberLocalizer
 import kotlin.random.Random
+import kotlin.time.TimeMark
+import kotlin.time.TimeSource
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -76,8 +89,20 @@ class FpgaCompanionSession {
     internal var artifacts by mutableStateOf<List<CompanionArtifact>>(emptyList())
     internal var busy by mutableStateOf(false)
     internal var notice by mutableStateOf<LocalizedText?>(null)
+    /** The protocol code and host detail behind [notice], kept for support. */
+    internal var noticeDetail by mutableStateOf<String?>(null)
     internal var pollFailed by mutableStateOf(false)
     internal var pollRevision by mutableStateOf(0)
+    /** When the current job was submitted, for its elapsed time. */
+    internal var submittedAt by mutableStateOf<TimeMark?>(null)
+    /** Status queries stopped while the panel was closed with an active job. */
+    internal var pollingPaused = false
+
+    internal fun fail(failure: Exception) {
+        val reported = fpgaFailureNotice(failure)
+        notice = reported.text
+        noticeDetail = reported.detail
+    }
     internal val active: Boolean get() = job?.state?.terminal == false
     internal val retainsClient: Boolean get() = busy || active || program.locked || importedBitstream != null
 
@@ -185,16 +210,29 @@ fun FpgaCompanionPanel(
         if (session.busy) return
         session.busy = true
         session.notice = null
+        session.noticeDetail = null
         scope.launch {
             try {
                 action()
             } catch (cancelled: CancellationException) {
                 throw cancelled
             } catch (failure: Exception) {
-                session.notice = fpgaCompanionFailure(failure)
+                session.fail(failure)
             } finally {
                 session.busy = false
             }
+        }
+    }
+    // Closing the panel stops status queries; reopening it with the job still active says they resumed.
+    val resumed = remember(session) { session.pollingPaused.also { session.pollingPaused = false } }
+    DisposableEffect(session) { onDispose { if (session.active) session.pollingPaused = true } }
+    var showTechnical by remember(reviewed) { mutableStateOf(false) }
+    var showDetail by remember(session.notice) { mutableStateOf(false) }
+    var now by remember { mutableStateOf(TimeSource.Monotonic.markNow()) }
+    LaunchedEffect(session.active) {
+        while (session.active) {
+            now = TimeSource.Monotonic.markNow()
+            delay(1_000)
         }
     }
 
@@ -208,7 +246,7 @@ fun FpgaCompanionPanel(
             } catch (cancelled: CancellationException) {
                 throw cancelled
             } catch (failure: Exception) {
-                session.notice = fpgaCompanionFailure(failure)
+                session.fail(failure)
                 session.pollFailed = true
                 break
             }
@@ -225,15 +263,17 @@ fun FpgaCompanionPanel(
                 }
                 Text(text("fpga_companion_build", "board" to plan.board.name, "top" to plan.topLevelName))
                 Text(text("fpga_companion_prepare_explanation"))
-                for (goal in plan.flow.companionBuildGoals()) {
-                    OutlinedButton(onClick = { session.selectGoal(goal) }, enabled = !session.busy && !session.active && !session.program.locked,
-                        modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
-                        val label = text(when {
-                            goal == FpgaBuildGoal.SYNTHESIS -> "fpga_companion_goal_synthesis"
-                            jedecBuild -> "fpga_companion_goal_jedec"
-                            else -> "fpga_companion_goal_bitstream"
-                        })
-                        Text(if (selectedGoal == goal) text("fpga_companion_selected_goal", "goal" to label) else label)
+                // Build goals are one choice: radio rows with a visible selected container.
+                Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    for (goal in plan.flow.companionBuildGoals()) {
+                        FpgaRadioOption(selectedGoal == goal, enabled = !session.busy && !session.active && !session.program.locked,
+                            onClick = { session.selectGoal(goal) }) {
+                            Text(text(when {
+                                goal == FpgaBuildGoal.SYNTHESIS -> "fpga_companion_goal_synthesis"
+                                jedecBuild -> "fpga_companion_goal_jedec"
+                                else -> "fpga_companion_goal_bitstream"
+                            }))
+                        }
                     }
                 }
                 Button(onClick = { perform { session.prepare(plan, client) } }, enabled = !session.busy && !session.active && !session.program.locked,
@@ -241,8 +281,13 @@ fun FpgaCompanionPanel(
                     Text(text("fpga_companion_prepare"))
                 }
                 if (session.active) Text(text("fpga_companion_active_job"))
-                session.notice?.let { Text(text(it), color = MaterialTheme.colorScheme.error) }
-                if (session.busy) Text(text("fpga_companion_contacting"))
+                session.notice?.let { notice ->
+                    FpgaFailureText(notice, session.noticeDetail, showDetail, text) { showDetail = !showDetail }
+                }
+                if (session.busy) {
+                    LinearProgressIndicator(Modifier.fillMaxWidth())
+                    Text(text("fpga_companion_contacting"), modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
+                }
             }
         }
         if (reviewed != null) {
@@ -250,8 +295,19 @@ fun FpgaCompanionPanel(
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     HorizontalDivider()
                     Text(text("fpga_companion_review"), style = MaterialTheme.typography.titleMedium)
-                    Text(text("fpga_companion_operation", "operation" to reviewed.operation))
-                    SelectionContainer { Text(CompanionJsonCodec.write(reviewed.parameters), fontFamily = FontFamily.Monospace) }
+                    Text(text("fpga_companion_operation", "operation" to FpgaLabels.operation(reviewed.operation)))
+                    // What the Mac will run with, as labelled rows; the exact JSON stays one tap away.
+                    reviewed.parameters.fields.forEach { (name, value) ->
+                        Text(text("fpga_companion_parameter_row", "label" to FpgaLabels.parameter(name), "value" to parameterValue(value, text)))
+                    }
+                    TextButton(onClick = { showTechnical = !showTechnical }, modifier = Modifier.heightIn(min = 48.dp)
+                        .semantics { stateDescription = text(if (showTechnical) "fpga_port_expanded" else "fpga_port_collapsed") }) {
+                        Text(text("fpga_companion_technical_details"))
+                    }
+                    if (showTechnical) SelectionContainer {
+                        Text(CompanionJsonCodec.write(reviewed.parameters), fontFamily = FontFamily.Monospace,
+                            style = MaterialTheme.typography.bodySmall)
+                    }
                     Text(text("fpga_companion_expiry", "seconds" to reviewed.expiresInSeconds))
                     if (!reviewMatches) Text(text("fpga_companion_stale_review"), color = MaterialTheme.colorScheme.error)
                 }
@@ -272,6 +328,7 @@ fun FpgaCompanionPanel(
                             session.outcome = null
                             session.artifacts = emptyList()
                             session.program.clear()
+                            session.submittedAt = TimeSource.Monotonic.markNow()
                             session.receive(submitted, client = client)
                             session.submittedRequestId = session.requestId
                         }
@@ -286,9 +343,23 @@ fun FpgaCompanionPanel(
                     HorizontalDivider()
                     Text(text("fpga_companion_job", "id" to currentJob.jobId), style = MaterialTheme.typography.titleSmall)
                     Text(text("fpga_companion_job_status", "state" to companionJobState(currentJob.state, text)))
+                    if (!currentJob.state.terminal) {
+                        LinearProgressIndicator(Modifier.fillMaxWidth())
+                        session.submittedAt?.let { start ->
+                            val seconds = now.let { start.elapsedNow().inWholeSeconds.coerceAtLeast(0) }
+                            Text(text("fpga_companion_elapsed", "minutes" to seconds / 60, "seconds" to (seconds % 60).toString().padStart(2, '0')))
+                        }
+                        currentJob.logs.lastOrNull()?.text?.lineSequence()?.lastOrNull { it.isNotBlank() }?.let { line ->
+                            Text(text("fpga_companion_latest_log", "line" to line.takeLast(200)), style = MaterialTheme.typography.bodySmall,
+                                fontFamily = FontFamily.Monospace, maxLines = 2)
+                        }
+                        if (resumed) Text(text("fpga_companion_status_resumed"), color = MaterialTheme.colorScheme.primary)
+                        Text(text("fpga_companion_no_programming"), style = MaterialTheme.typography.bodySmall)
+                    }
                     currentJob.error?.let { error ->
+                        // Tagged with its code, like the mapping problem rows, so support and E2E runs can find it.
                         Text(text("fpga_companion_error_detail", "code" to error.code, "detail" to error.message),
-                            color = MaterialTheme.colorScheme.error)
+                            color = MaterialTheme.colorScheme.error, modifier = Modifier.testTag("fpga-diagnostic-${error.code}"))
                     }
                     if (!currentJob.state.terminal) OutlinedButton(enabled = !session.busy, onClick = {
                         perform { session.receive(client.cancel(currentJob.jobId), currentJob.jobId, client) }
@@ -346,17 +417,27 @@ private fun FpgaOutcomeFlag(key: String, value: Boolean, text: Localizer) {
     Text(text("fpga_companion_outcome_flag", "label" to text(key), "value" to text(if (value) "fpga_companion_yes" else "fpga_companion_no")))
 }
 
-private fun companionJobState(state: CompanionJobState, text: Localizer): String = text(when (state) {
-    CompanionJobState.QUEUED -> "fpga_companion_state_queued"
-    CompanionJobState.RUNNING -> "fpga_companion_state_running"
-    CompanionJobState.SUCCEEDED -> "fpga_companion_state_succeeded"
-    CompanionJobState.FAILED -> "fpga_companion_state_failed"
-    CompanionJobState.CANCELLED -> "fpga_companion_state_cancelled"
-})
+/** A JSON parameter value as text: strings and numbers as written, booleans in words, lists joined. */
+private fun parameterValue(value: CompanionJson, text: Localizer): String = when (value) {
+    is CompanionJsonString -> value.value
+    is CompanionJsonBoolean -> text(if (value.value) "fpga_companion_yes" else "fpga_companion_no")
+    is CompanionJsonNumber -> value.value
+    is CompanionJsonArray -> value.values.joinToString(", ") { parameterValue(it, text) }
+    CompanionJsonNull -> "\u2014"
+    is CompanionJsonObject -> CompanionJsonCodec.write(value)
+}
 
-private fun fpgaCompanionFailure(failure: Exception): LocalizedText = when (failure) {
-    is LocalizedArgumentException -> failure.text
-    is CompanionProtocolException -> message("fpga_companion_error_detail", "code" to failure.code, "detail" to failure.message)
-    is CompanionTransportException -> message("fpga_companion_transport_error", "code" to failure.code)
-    else -> message("fpga_companion_action_error", "detail" to (failure.message ?: failure::class.simpleName.orEmpty()))
+/** A failure's localized explanation, with its protocol code and host detail behind a Details toggle. */
+@Composable
+internal fun FpgaFailureText(notice: LocalizedText, detail: String?, expanded: Boolean, text: Localizer, onToggle: () -> Unit) {
+    Column(Modifier.semantics { liveRegion = LiveRegionMode.Polite }) {
+        Text(text(notice), color = MaterialTheme.colorScheme.error)
+        if (detail != null) {
+            TextButton(onClick = onToggle, modifier = Modifier.heightIn(min = 48.dp)
+                .semantics { stateDescription = text(if (expanded) "fpga_port_expanded" else "fpga_port_collapsed") }) {
+                Text(text("fpga_failure_details"))
+            }
+            if (expanded) SelectionContainer { Text(detail, style = MaterialTheme.typography.bodySmall) }
+        }
+    }
 }

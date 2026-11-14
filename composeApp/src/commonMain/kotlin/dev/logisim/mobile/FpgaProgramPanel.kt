@@ -1,13 +1,20 @@
 package dev.logisim.mobile
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import dev.logisim.mobile.core.*
+import dev.logisim.mobile.core.localization.LocalizedArgumentException
 import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.localization.Localizer
@@ -16,6 +23,8 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.random.Random
+import kotlin.time.TimeMark
+import kotlin.time.TimeSource
 
 internal const val FPGA_BITSTREAM_MAX_BYTES = 4 * 1024 * 1024
 private val bitstreamExtensions = setOf("bit", "bin", "fs", "sof", "pof", "jed")
@@ -76,8 +85,14 @@ internal class FpgaProgramSession {
     var outcome by mutableStateOf<FpgaProgramOutcome?>(null)
     var busy by mutableStateOf(false)
     var notice by mutableStateOf<LocalizedText?>(null)
+    /** The protocol code and host detail behind [notice], kept for support. */
+    var noticeDetail by mutableStateOf<String?>(null)
     var pollFailed by mutableStateOf(false)
+    /** Status queries stopped while the panel was closed with an active job. */
+    var pollingPaused = false
     var pollRevision by mutableIntStateOf(0)
+    /** When the current job was submitted, for its elapsed time. */
+    var submittedAt by mutableStateOf<TimeMark?>(null)
     val active get() = job?.state?.terminal == false
     val locked get() = busy || active || submitAttempted && review != null
     fun selectable(value: String, fileName: String? = null) = value in targets && profiles[value]?.unavailableReason == null &&
@@ -106,8 +121,16 @@ internal class FpgaProgramSession {
         submitAttempted = false
         reviewedHash = null
         job = null
+        submittedAt = null
         outcome = null
         notice = null
+        noticeDetail = null
+    }
+
+    fun fail(failure: Exception) {
+        val reported = fpgaFailureNotice(failure)
+        notice = reported.text
+        noticeDetail = reported.detail
     }
 
     fun selectTarget(value: String) {
@@ -147,9 +170,11 @@ internal class FpgaProgramSession {
         refresh(client)
         if (selectedFlash && selectedTarget !in flashTargets)
             throw CompanionProtocolException("fpga-flash-not-allowed", "The host no longer approves flash for this board and cable.")
-        require(selectable(selectedTarget, artifact) && artifact.size > 0)
+        // The target can disappear or change between choosing it and this review: say so instead of "Failed requirement".
+        if (!selectable(selectedTarget, artifact) || artifact.size <= 0)
+            throw LocalizedArgumentException(message("fpga_program_target_unavailable_now"))
         val largeSof = if (artifact.size > FPGA_BITSTREAM_MAX_BYTES) {
-            require(!selectedFlash)
+            if (selectedFlash) throw LocalizedArgumentException(message("fpga_program_large_sof_ram_only"))
             LargeSofRequest(artifact, selectedTarget, profiles.getValue(selectedTarget))
         } else null
         val next = if (largeSof == null) {
@@ -186,6 +211,7 @@ internal class FpgaProgramSession {
             }
             throw failure
         }
+        submittedAt = TimeSource.Monotonic.markNow()
         receive(submitted)
         review = null
         submitAttempted = false
@@ -244,10 +270,23 @@ internal fun FpgaProgramPanel(client: CompanionClient, artifact: CompanionArtifa
         if (session.busy) return
         session.busy = true
         session.notice = null
+        session.noticeDetail = null
         scope.launch {
             try { action() } catch (cancelled: CancellationException) { throw cancelled }
-            catch (failure: Exception) { session.notice = message("fpga_program_failure", "detail" to (failure.message ?: failure::class.simpleName.orEmpty())) }
+            catch (failure: Exception) { session.fail(failure) }
             finally { session.busy = false }
+        }
+    }
+    // Closing the panel stops status queries; reopening it with the job still active says they resumed.
+    val resumed = remember(session) { session.pollingPaused.also { session.pollingPaused = false } }
+    DisposableEffect(session) { onDispose { if (session.active) session.pollingPaused = true } }
+    var showDetail by remember(session.notice) { mutableStateOf(false) }
+    // Ticks the elapsed time once a second while the job runs.
+    var now by remember { mutableStateOf(TimeSource.Monotonic.markNow()) }
+    LaunchedEffect(session.active) {
+        while (session.active) {
+            now = TimeSource.Monotonic.markNow()
+            delay(1_000)
         }
     }
     LaunchedEffect(client) { perform { session.refresh(client) } }
@@ -263,7 +302,7 @@ internal fun FpgaProgramPanel(client: CompanionClient, artifact: CompanionArtifa
             try { session.synchronize(client, id) }
             catch (cancelled: CancellationException) { throw cancelled }
             catch (failure: Exception) {
-                session.notice = message("fpga_program_failure", "detail" to (failure.message ?: ""))
+                session.fail(failure)
                 session.pollFailed = true
                 break
             }
@@ -273,19 +312,24 @@ internal fun FpgaProgramPanel(client: CompanionClient, artifact: CompanionArtifa
         HorizontalDivider()
         Text(text("fpga_program_title"), style = MaterialTheme.typography.titleMedium)
         Text(text(if (cpld) "fpga_program_cpld_help" else "fpga_program_help"))
+        if (session.busy) {
+            LinearProgressIndicator(Modifier.fillMaxWidth())
+            Text(text("fpga_companion_contacting"), modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
+        }
         SelectionContainer { Text(text("fpga_companion_input_digest", "name" to artifact.name, "size" to artifact.size, "sha256" to artifact.sha256)) }
         if (targets.isEmpty() || largeSof && targets.none { session.selectable(it, artifact) }) Text(text("fpga_program_no_targets"))
-        targets.forEach { target ->
-            val profile = session.profiles[target]
-            OutlinedButton(onClick = { session.selectTarget(target) }, enabled = !session.locked && session.selectable(target, artifact),
-                modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
-                Column {
-                    Text(if (session.target == target) text("fpga_program_selected", "target" to target) else target)
+        // One target is programmed: radio rows, each read as one item with its identity.
+        Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            targets.forEach { target ->
+                val profile = session.profiles[target]
+                FpgaRadioOption(session.target == target, enabled = !session.locked && session.selectable(target, artifact),
+                    onClick = { session.selectTarget(target) }) {
+                    Text(target)
                     if (profile != null) FpgaTargetIdentity(profile, text)
                 }
-            }
-            profile?.unavailableReason?.let { reason ->
-                Text(text("fpga_program_target_unavailable", "reason" to reason), color = MaterialTheme.colorScheme.error)
+                profile?.unavailableReason?.let { reason ->
+                    Text(text("fpga_program_target_unavailable", "reason" to reason), color = MaterialTheme.colorScheme.error)
+                }
             }
         }
         if (!cpld && session.selectable(session.target, artifact)) {
@@ -337,8 +381,25 @@ internal fun FpgaProgramPanel(client: CompanionClient, artifact: CompanionArtifa
         }
         job?.let { current ->
             Text(text("fpga_companion_job", "id" to current.jobId))
-            Text(current.state.wireName)
-            current.error?.let { Text(text("fpga_companion_error_detail", "code" to it.code, "detail" to it.message), color = MaterialTheme.colorScheme.error) }
+            Text(text("fpga_companion_job_status", "state" to companionJobState(current.state, text)))
+            if (!current.state.terminal) {
+                LinearProgressIndicator(Modifier.fillMaxWidth())
+                session.submittedAt?.let { start ->
+                    val seconds = now.let { start.elapsedNow().inWholeSeconds.coerceAtLeast(0) }
+                    Text(text("fpga_companion_elapsed", "minutes" to seconds / 60, "seconds" to (seconds % 60).toString().padStart(2, '0')),
+                        modifier = Modifier.testTag("fpga-program-elapsed"))
+                }
+                current.logs.lastOrNull()?.text?.lineSequence()?.lastOrNull { it.isNotBlank() }?.let { line ->
+                    Text(text("fpga_companion_latest_log", "line" to line.takeLast(200)), style = MaterialTheme.typography.bodySmall,
+                        fontFamily = FontFamily.Monospace, maxLines = 2, modifier = Modifier.testTag("fpga-program-latest-log"))
+                }
+                if (resumed) Text(text("fpga_companion_status_resumed"), color = MaterialTheme.colorScheme.primary)
+                Text(text("fpga_program_polling_note"), style = MaterialTheme.typography.bodySmall)
+            }
+            current.error?.let {
+                Text(text("fpga_companion_error_detail", "code" to it.code, "detail" to it.message), color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.testTag("fpga-diagnostic-${it.code}"))
+            }
             if (!current.state.terminal) OutlinedButton(onClick = { perform { session.cancel(client, current.jobId) } }, enabled = !session.busy) { Text(text("fpga_companion_cancel")) }
             if (session.pollFailed) OutlinedButton(onClick = { session.pollRevision++ }, enabled = !session.busy) { Text(text("fpga_companion_retry_status")) }
             current.logs.takeLast(40).forEach { SelectionContainer { Text(text("fpga_companion_log_entry", "stream" to it.stream, "detail" to it.text.takeLast(8192))) } }
@@ -347,7 +408,9 @@ internal fun FpgaProgramPanel(client: CompanionClient, artifact: CompanionArtifa
             Text(text("fpga_program_reported", "value" to text(if (it.programmerReportedSuccess) "fpga_companion_yes" else "fpga_companion_no")))
             Text(text(if (it.flash) "fpga_program_flash_unverified" else "fpga_program_hardware_unverified"))
         }
-        session.notice?.let { Text(text(it), color = MaterialTheme.colorScheme.error) }
+        session.notice?.let { notice ->
+            FpgaFailureText(notice, session.noticeDetail, showDetail, text) { showDetail = !showDetail }
+        }
     }
 }
 
@@ -355,7 +418,7 @@ internal fun FpgaProgramPanel(client: CompanionClient, artifact: CompanionArtifa
 private fun FpgaTargetIdentity(profile: CompanionProgramTargetProfile, text: Localizer) {
     val board = profile.part?.let { "${profile.board} ($it)" } ?: profile.board
     Text(text("fpga_program_target_profile", "board" to board, "cable" to profile.cable,
-        "transport" to profile.transport))
+        "transport" to FpgaLabels.transport(profile.transport)))
     profile.chainPosition?.let { Text(text("fpga_program_chain_position", "position" to it)) }
     profile.sofPart?.let { Text("${text("fpga_editor_part")} $it") }
 }

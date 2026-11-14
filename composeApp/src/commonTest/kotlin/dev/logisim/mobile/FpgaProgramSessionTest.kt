@@ -329,6 +329,29 @@ class FpgaProgramSessionTest {
         }
     }
 
+    @Test fun aTargetThatDisappearsAfterRefreshGivesALocalizedNotice() = runBlocking {
+        val host = FakeHost(true, emptyList())
+        val session = FpgaProgramSession()
+        session.selectTarget("bench")
+        val failure = assertFailsWith<dev.logisim.mobile.core.localization.LocalizedArgumentException> { session.prepare(host.client, artifact()) }
+        assertEquals("fpga_program_target_unavailable_now", failure.text.key)
+        assertFalse("Failed requirement" in failure.text.resolve(dev.logisim.mobile.core.localization.AppLanguage.PORTUGUESE))
+        session.fail(failure)
+        assertEquals("fpga_program_target_unavailable_now", session.notice?.key)
+        // A withdrawn flash approval reads as guidance, not the host's English sentence.
+        val flash = FakeHost(true, listOf("bench"), profiles = flashProfile, flashTargets = listOf("bench"))
+        val flashing = FpgaProgramSession()
+        flashing.refresh(flash.client)
+        flashing.selectTarget("bench")
+        flashing.selectFlash(true)
+        flash.flashTargets = emptyList()
+        val withdrawn = assertFailsWith<CompanionProtocolException> { flashing.prepare(flash.client, artifact()) }
+        flashing.fail(withdrawn)
+        assertEquals("fpga_failure_flash_not_allowed", flashing.notice?.key)
+        assertEquals("fpga-flash-not-allowed: ${withdrawn.message}", flashing.noticeDetail)
+        assertFalse("host" in flashing.notice!!.resolve(dev.logisim.mobile.core.localization.AppLanguage.PORTUGUESE))
+    }
+
     private fun artifact() = CompanionArtifact.read(CompanionJsonCodec.parseObject(
         """{"name":"design.bin","size":3,"sha256":"ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad","base64":"YWJj"}"""))
 

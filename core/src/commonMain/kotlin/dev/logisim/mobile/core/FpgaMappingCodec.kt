@@ -27,6 +27,15 @@ class FpgaMappingCodec(
 ) {
     private val keys = fpgaMappingKeys(circuit, hdlPorts.associate { it.name to it.sourceComponentId } + skippedPorts)
 
+    /**
+     * Whether the circuit stores a boardmap for [board]. Unlike [loadSaved], which fails both for a missing and for an
+     * unreadable map, this only looks for the element and changes nothing.
+     */
+    fun hasSaved(board: FpgaBoardDefinition): Boolean = circuit.extraXml.any { xml ->
+        val element = try { CircXmlParser(xml).parse() } catch (_: IllegalArgumentException) { return@any false }
+        element.name == "boardmap" && element.attributes["boardname"] == board.name
+    }
+
     fun loadSaved(board: FpgaBoardDefinition, flow: FpgaFlow): FpgaMappingResult = attempt {
         read(fpgaMappingRoot(circuit, board, null), board, flow)
     }

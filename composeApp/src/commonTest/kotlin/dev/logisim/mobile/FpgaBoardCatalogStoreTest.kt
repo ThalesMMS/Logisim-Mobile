@@ -37,6 +37,30 @@ class FpgaBoardCatalogStoreTest {
     }
 
     @Test
+    fun removeThenRestoreGivesTheIdenticalCatalogFileAndSelection() {
+        val storage = Storage()
+        val catalog = FpgaBoardCatalogStore(storage)
+        val ids = listOf("Alpha", "Beta", "Gamma").map { name ->
+            val xml = """<$name><BoardInformation><FPGAInformation Vendor="OPENFPGA" Family="ice40" Part="HX1K" Package="TQ144" Speedgrade="1"/></BoardInformation><IOComponents><LED FPGAPinName="22"/></IOComponents></$name>"""
+            checkNotNull(catalog.add(assertIs<FpgaBoardImportResult.Success>(FpgaBoardCodec.read(xml)).board).selected)
+        }
+        catalog.select(ids[1])
+        val before = storage.read("fpga-board-catalog.json")
+        val loaded = catalog.load()
+        val entry = loaded.external.getValue(ids[1])
+        val index = loaded.external.keys.indexOf(ids[1])
+
+        val removed = catalog.remove(ids[1], listOf("BASYS3"))
+        assertEquals("builtin:BASYS3", removed.selected)
+        assertEquals(listOf(ids[0], ids[2]), removed.external.keys.toList())
+
+        val restored = catalog.restore(ids[1], entry, loaded.selected, index)
+        assertEquals(ids[1], restored.selected)
+        assertEquals(before, storage.read("fpga-board-catalog.json"))
+        assertEquals(loaded, FpgaBoardCatalogStore(storage).load())
+    }
+
+    @Test
     fun failedWritesLeaveTheSavedSelectionIntact() {
         val storage = Storage()
         val catalog = FpgaBoardCatalogStore(storage)

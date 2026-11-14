@@ -1,5 +1,11 @@
 package dev.logisim.mobile.core
 
+import dev.logisim.mobile.core.localization.LocalizedText
+import dev.logisim.mobile.core.localization.message
+
+/** A logical display channel as the user picks it: digit and segment, or row, column and color plane. */
+data class FpgaScanPosition(val row: Int, val column: Int, val plane: Int = 0)
+
 /** A board display's logical channels are independent of its multiplexed package pins. */
 class FpgaScanDisplay internal constructor(
     val resource: FpgaBoardResource,
@@ -10,12 +16,43 @@ class FpgaScanDisplay internal constructor(
 ) {
     internal enum class Mode { LED_ROWS, LED_COLUMNS, RGB_ROWS, RGB_COLUMNS, SEG_DECODED, SEG_LOW, SEG_HIGH }
 
-    private val isSevenSegment get() = mode in setOf(Mode.SEG_DECODED, Mode.SEG_LOW, Mode.SEG_HIGH)
+    /** Rows are digits and columns are the segments a to g and dp. */
+    val isSevenSegment: Boolean get() = mode in setOf(Mode.SEG_DECODED, Mode.SEG_LOW, Mode.SEG_HIGH)
     private val byRow get() = mode == Mode.LED_ROWS || mode == Mode.RGB_ROWS
     private val colors get() = if (mode == Mode.RGB_ROWS || mode == Mode.RGB_COLUMNS) 3 else 1
 
-    internal val isRgb get() = colors == 3
+    val isRgb: Boolean get() = colors == 3
+    /** Color planes a logical channel can address: red, green and blue for RGB arrays. */
+    val planes: Int get() = colors
     val channelCount: Int get() = rows * columns * colors
+
+    /** The linear channel the scan driver reads for a digit or row, a segment or column, and a color plane. */
+    fun channelOf(row: Int, column: Int, plane: Int = 0): Int = plane * rows * columns + row * columns + column
+
+    /** The inverse of [channelOf]. */
+    fun coordinatesOf(channel: Int): FpgaScanPosition {
+        val layer = rows * columns
+        return FpgaScanPosition((channel % layer) / columns, channel % columns, channel / layer)
+    }
+
+    /** "Digit 3" for a seven-segment display, "Row 3" for an array; numbered from 1. */
+    fun rowLabel(row: Int): LocalizedText =
+        if (isSevenSegment) message("fpga_scan_digit_value", "digit" to row + 1) else message("fpga_scan_row_value", "row" to row + 1)
+
+    /** "Segment c" for a seven-segment display, "Column 3" for an array. */
+    fun columnLabel(column: Int): LocalizedText =
+        if (isSevenSegment) message("fpga_scan_segment_value", "segment" to SEGMENTS.getOrElse(column) { column.toString() })
+        else message("fpga_scan_column_value", "column" to column + 1)
+
+    fun planeLabel(plane: Int): LocalizedText = message(PLANES.getOrElse(plane) { PLANES.first() })
+
+    /** "Digit 3 · Segment c (channel 18)"; a pixel binding drives all planes, so it names no color. */
+    fun channelLabel(channel: Int, rgbPixel: Boolean = false): LocalizedText {
+        val position = coordinatesOf(channel)
+        val parts = listOfNotNull(rowLabel(position.row), columnLabel(position.column),
+            planeLabel(position.plane).takeIf { isRgb && !rgbPixel })
+        return message("fpga_scan_summary", "position" to LocalizedText.join(parts, " · "), "channel" to channel)
+    }
 
     /** A plain Evolution output pin drives all three planes at its mapped RGB pixel. */
     fun channelLimit(rgbPixel: Boolean): Int = when {
@@ -64,7 +101,30 @@ internal sealed interface ScanOutput {
 }
 
 /** Interpret Evolution's XML metadata without changing how raw physical pins are imported. */
-fun FpgaBoardResource.scannedDisplay(): FpgaScanDisplay? {
+fun FpgaBoardResource.scannedDisplay(): FpgaScanDisplay? = scanLayout()?.takeIf { display ->
+    pins.size == display.pinCount && pins.withIndex().all { (index, pin) -> pin.index == index && pin.direction == FpgaPinDirection.OUTPUT }
+}
+
+/**
+ * Output pins an LED array or a scanning seven-segment display needs for its [configuration] ("rows,columns,Mode"), as
+ * Evolution's settings dialog counts them, or null when the configuration is not one Mobile can drive.
+ */
+fun fpgaDisplayPinCount(type: String, configuration: String): Int? {
+    val ledArray = type.equals("LedArray", ignoreCase = true)
+    val fields = configuration.split(',').map(String::trim)
+    if (ledArray && fields.size == 3 && fields[2] in setOf("LedDefault", "RgbDefault")) {
+        val rows = fields[0].toIntOrNull()?.takeIf { it in 1..128 } ?: return null
+        val columns = fields[1].toIntOrNull()?.takeIf { it in 1..128 } ?: return null
+        return rows * columns * if (fields[2] == "RgbDefault") 3 else 1
+    }
+    val key = if (ledArray) "LedArrayInfo" else "ScanningSevenSegInfo"
+    return FpgaBoardResource("", type, "", null, emptyList(), mapOf(key to configuration)).scanLayout()?.pinCount
+}
+
+private val SEGMENTS = listOf("a", "b", "c", "d", "e", "f", "g", "dp")
+private val PLANES = listOf("fpga_scan_red", "fpga_scan_green", "fpga_scan_blue")
+
+private fun FpgaBoardResource.scanLayout(): FpgaScanDisplay? {
     val configuration = when {
         type.equals("LedArray", ignoreCase = true) -> attributes["LedArrayInfo"]
         type.equals("SevenSegmentScanning", ignoreCase = true) -> attributes["ScanningSevenSegInfo"]
@@ -89,9 +149,7 @@ fun FpgaBoardResource.scannedDisplay(): FpgaScanDisplay? {
     if (!isSevenSegment && columns !in 1..64) return null
     if (mode == FpgaScanDisplay.Mode.SEG_DECODED && columns !in 0..16) return null
     val display = FpgaScanDisplay(this, mode, rows, if (isSevenSegment) 8 else columns, columns)
-    return display.takeIf {
-        it.channelCount <= 8192 && pins.size == it.pinCount && pins.withIndex().all { (index, pin) -> pin.index == index && pin.direction == FpgaPinDirection.OUTPUT }
-    }
+    return display.takeIf { it.channelCount <= 8192 }
 }
 
 internal class FpgaScanHdl(

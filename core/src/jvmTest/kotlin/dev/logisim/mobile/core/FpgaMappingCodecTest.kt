@@ -2,6 +2,7 @@ package dev.logisim.mobile.core
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertIs
 import kotlin.test.assertTrue
 
@@ -151,6 +152,29 @@ class FpgaMappingCodecTest {
         val collision = mapping.bindings + (FpgaSignalBit("p_unused") to FpgaPinBinding.Display(matrix.id, 239))
         val rejected = assertIs<FpgaPlanResult.Failure>(FpgaProjectGenerator.generate(design, gecko, collision, flow))
         assertTrue(rejected.diagnostics.any { it.code == "duplicate-display-channel" })
+    }
+
+    @Test fun aMissingMapIsToldApartFromAnUnreadableOneAndAnUnchangedMapIsNotRewritten() {
+        val blank = mappingCodec(import(fixture("")))
+        assertFalse(blank.hasSaved(board))
+        assertIs<FpgaMappingResult.Failure>(blank.loadSaved(board, flow))
+
+        val broken = mappingCodec(import(fixture(mappingXml.replace("649_295_0", "1_1_0"))))
+        assertTrue(broken.hasSaved(board))
+        assertIs<FpgaMappingResult.Failure>(broken.loadSaved(board, flow))
+
+        val stored = import(fixture(mappingXml))
+        val codec = mappingCodec(stored)
+        assertTrue(codec.hasSaved(board))
+        assertFalse(codec.hasSaved(board.copy(name = "OTHER")))
+        // Save writes Mobile's form of the map; saving it again unchanged gives the same bytes.
+        val loaded = assertIs<FpgaMappingResult.Loaded>(codec.loadSaved(board, flow)).mapping
+        val saved = import(CircCodec.writeProject(stored.withCircuit(assertIs<FpgaMappingResult.Saved>(codec.save(board, flow, loaded)).document)))
+        val reloaded = assertIs<FpgaMappingResult.Loaded>(mappingCodec(saved).loadSaved(board, flow)).mapping
+        assertEquals(loaded, reloaded)
+        val again = assertIs<FpgaMappingResult.Saved>(mappingCodec(saved).save(board, flow, reloaded))
+        assertEquals(saved.mainCircuit.extraXml, again.document.extraXml)
+        assertEquals(CircCodec.writeProject(saved), CircCodec.writeProject(saved.withCircuit(again.document)))
     }
 
     @Test fun derivedClockSettingsRoundTripWithoutChangingTheOscillator() {
