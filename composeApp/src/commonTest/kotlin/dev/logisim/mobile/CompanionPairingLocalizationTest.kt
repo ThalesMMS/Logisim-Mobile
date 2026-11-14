@@ -53,6 +53,12 @@ class CompanionPairingLocalizationTest {
     }
 
     @Test
+    fun recentHostsHaveALocalizedHeading() {
+        assertEquals("Recent hosts", Localizer(AppLanguage.ENGLISH)("companion_recent_hosts"))
+        assertEquals("Hosts recentes", Localizer(AppLanguage.PORTUGUESE)("companion_recent_hosts"))
+    }
+
+    @Test
     fun creatingTheToolKeepsATypedTitleAndDoesNotInvokePairingCallbacks() {
         var connected = 0
         var disconnected = 0

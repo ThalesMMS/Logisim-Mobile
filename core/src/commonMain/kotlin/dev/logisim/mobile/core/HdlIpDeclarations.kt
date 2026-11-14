@@ -26,6 +26,7 @@ object HdlIpDeclarations {
         val generics = mutableMapOf<String, String>()
         val integerValues = mutableMapOf<String, Int>()
         val timeGenerics = mutableSetOf<String>()
+        val declarations = mutableListOf<HdlGenericDeclaration>()
         val normalizedOverrides = overrides.entries.associate { it.key.lowercase() to it.value }
         if (normalizedOverrides.size != overrides.size) error("duplicate-generic", message(Messages.HdlIpGenericCaseDuplicate))
         val genericBlock = block(declaration, "generic", diagnostics)
@@ -35,6 +36,8 @@ object HdlIpDeclarations {
             for (genericName in match.groupValues[1].split(',').map { it.trim() }) {
                 if (generics.keys.any { it.equals(genericName, true) }) { error("duplicate-generic", message(Messages.HdlIpDuplicateGeneric, "name" to genericName)); continue }
                 val kind = match.groupValues[2].lowercase()
+                declarations += HdlGenericDeclaration(genericName,
+                    if (kind.startsWith("std_logic_vector")) "std_logic_vector" else kind, match.groupValues[3].trim())
                 val raw = normalizedOverrides[genericName.lowercase()] ?: match.groupValues[3].trim()
                 // Evolution's VhdlParser gives a numeric generic without a value 0, or 1 for positive.
                 if (raw.isEmpty() && kind !in numericGenericTypes) { error("missing-generic", message(Messages.HdlIpMissingGeneric, "name" to genericName)); continue }
@@ -83,7 +86,7 @@ object HdlIpDeclarations {
             }
         }
         if (ports.size > 128) error("too-many-ports", message(Messages.HdlIpPortLimit))
-        return HdlIpDesign(HdlIpBackend.VHDL, source, name, ports.take(128), generics, diagnostics, timeGenerics)
+        return HdlIpDesign(HdlIpBackend.VHDL, source, name, ports.take(128), generics, diagnostics, timeGenerics, declarations)
     }
 
     internal fun blifAccepted(source: String): Boolean =

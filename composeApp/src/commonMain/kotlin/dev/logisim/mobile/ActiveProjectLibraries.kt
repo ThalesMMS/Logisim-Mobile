@@ -2,9 +2,14 @@ package dev.logisim.mobile
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -14,8 +19,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import dev.logisim.mobile.core.CircBundleCodec
 import dev.logisim.mobile.core.CircCodec
@@ -36,19 +45,10 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-internal fun libraryLabel(library: String): String = when (library) {
-    "#Wiring" -> Messages.LibraryWiring
-    "#Gates" -> Messages.LibraryGates
-    "#Arithmetic" -> Messages.LibraryArithmetic
-    "#Memory" -> Messages.LibraryMemory
-    "#I/O" -> Messages.LibraryIo
-    "#Base" -> Messages.LibraryAnnotations
-    else -> library.removePrefix("#")
-}
-
+/** The project's components by library descriptor (`#Gates`); [ProjectBuiltinLibraries.displayName] names each group. */
 internal fun registryComponentGroups(registry: ComponentRegistry, project: CircuitProject): List<Pair<String, List<ComponentKind>>> =
     registry.definitions.filter { ProjectBuiltinLibraries.includes(project, it.library) }
-        .groupBy { it.library }.map { (library, definitions) -> libraryLabel(library) to definitions.map { it.kind } }
+        .groupBy { it.library }.map { (library, definitions) -> library to definitions.map { it.kind } }
 
 internal fun readActiveProjectLibrary(asset: DocumentAsset, registry: ComponentRegistry): CircProjectImportResult = try {
     val imported = when {
@@ -84,9 +84,7 @@ internal fun ActiveProjectLibrariesDialog(
     val scope = rememberCoroutineScope()
     var busy by remember { mutableStateOf(false) }
     var notice by remember { mutableStateOf<LocalizedText?>(null) }
-    var choosingBuiltin by remember { mutableStateOf(false) }
     val builtins = remember(state.componentRegistry) { ProjectBuiltinLibraries.available(state.componentRegistry) }
-    val (loadedBuiltins, unloadedBuiltins) = builtins.partition { ProjectBuiltinLibraries.includes(state.project, it) }
 
     fun load(reloadId: String? = null) {
         if (assets == null || busy || !state.documentWritable) return
@@ -135,29 +133,21 @@ internal fun ActiveProjectLibrariesDialog(
                 verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 notice?.let { Text(strings(it)) }
                 if (busy) LinearProgressIndicator()
-                Text(strings("active_library_builtin_title"))
-                TextButton(
-                    onClick = { choosingBuiltin = !choosingBuiltin },
-                    enabled = state.documentWritable && !busy && unloadedBuiltins.isNotEmpty(),
-                    modifier = Modifier.testTag("active-library-show-available"),
-                ) { Text(strings(if (choosingBuiltin) "active_library_hide_builtin" else "active_library_show_builtin")) }
-                if (choosingBuiltin) for (library in unloadedBuiltins) {
-                    val name = message(libraryLabel(library))
-                    TextButton(onClick = {
-                        state.setBuiltinLibrary(library, loaded = true, name)
-                        notice = state.statusText
-                        if (unloadedBuiltins.size == 1) choosingBuiltin = false
-                    }, enabled = state.documentWritable && !busy, modifier = Modifier.testTag("active-library-add-${library.removePrefix("#")}")) {
-                        Text(strings(message("active_library_add_builtin", "name" to name)))
-                    }
-                }
-                for (library in loadedBuiltins) {
-                    val name = message(libraryLabel(library))
-                    TextButton(onClick = {
-                        state.setBuiltinLibrary(library, loaded = false, name)
-                        notice = state.statusText
-                    }, enabled = state.documentWritable && !busy, modifier = Modifier.testTag("active-library-remove-${library.removePrefix("#")}")) {
-                        Text(strings(message("active_library_unload", "name" to name)))
+                Text(strings("active_library_builtin_title"), modifier = Modifier.semantics { heading() })
+                // Every built-in library is one checkbox, checked while the project declares it (X8).
+                for (library in builtins) {
+                    val loaded = ProjectBuiltinLibraries.includes(state.project, library)
+                    val name = ProjectBuiltinLibraries.displayName(library)
+                    val enabled = state.documentWritable && !busy
+                    Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
+                        .toggleable(value = loaded, enabled = enabled, role = Role.Checkbox) { checked ->
+                            state.setBuiltinLibrary(library, loaded = checked, name)
+                            notice = state.statusText
+                        }
+                        .testTag("active-library-${if (loaded) "remove" else "add"}-${library.removePrefix("#")}"),
+                        verticalAlignment = Alignment.CenterVertically) {
+                        Checkbox(checked = loaded, onCheckedChange = null, enabled = enabled)
+                        Text(strings(name), modifier = Modifier.padding(start = 12.dp))
                     }
                 }
                 Text(strings("active_library_description"))

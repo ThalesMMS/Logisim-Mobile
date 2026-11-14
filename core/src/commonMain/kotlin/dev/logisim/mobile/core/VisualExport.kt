@@ -30,17 +30,29 @@ data class VisualExportFrame(
     val clip: VisualBounds?,
 )
 
+/** The output size of an export in pixels, before it is checked against the Int and raster limits. */
+data class VisualPixelSize(val width: Double, val height: Double) {
+    val pixels: Double get() = width * height
+    val fitsInt: Boolean get() = width <= Int.MAX_VALUE && height <= Int.MAX_VALUE
+    fun fitsRaster(maxPixels: Long = VisualExportOptions().maxPixels): Boolean = fitsInt && pixels <= maxPixels
+}
+
 object VisualExport {
+    /** The image size [frame] gives drawing bounds at [scale] with [margin] circuit units around them. */
+    fun pixelSize(circuitBounds: VisualBounds, scale: Double, margin: Double): VisualPixelSize {
+        val bounds = circuitBounds.expanded(margin)
+        return VisualPixelSize(ceil(maxOf(1.0, bounds.width * scale)), ceil(maxOf(1.0, bounds.height * scale)))
+    }
+
     fun frame(scene: VisualScene, options: VisualExportOptions = VisualExportOptions(), raster: Boolean = false): VisualExportFrame {
         val selected = options.selection?.let { ids -> scene.items.filter { it.id in ids } } ?: scene.items
         requireLocalized(selected.isNotEmpty()) { message("visual_export_empty") }
         val circuitBounds = options.clip ?: selected.map { it.bounds }.reduce(VisualBounds::union)
         val bounds = circuitBounds.expanded(options.margin)
-        val width = ceil(maxOf(1.0, bounds.width * options.scale))
-        val height = ceil(maxOf(1.0, bounds.height * options.scale))
-        requireLocalized(width <= Int.MAX_VALUE && height <= Int.MAX_VALUE) { message("visual_export_dimensions_large") }
-        if (raster) requireLocalized(width * height <= options.maxPixels) { message("visual_export_pixel_limit") }
-        return VisualExportFrame(selected, circuitBounds, bounds, width.toInt(), height.toInt(), options.scale, options.background, options.clip)
+        val size = pixelSize(circuitBounds, options.scale, options.margin)
+        requireLocalized(size.fitsInt) { message("visual_export_dimensions_large") }
+        if (raster) requireLocalized(size.pixels <= options.maxPixels) { message("visual_export_pixel_limit") }
+        return VisualExportFrame(selected, circuitBounds, bounds, size.width.toInt(), size.height.toInt(), options.scale, options.background, options.clip)
     }
 
     fun svg(scene: VisualScene, options: VisualExportOptions = VisualExportOptions()): ByteArray = svgText(frame(scene, options)).encodeToByteArray()

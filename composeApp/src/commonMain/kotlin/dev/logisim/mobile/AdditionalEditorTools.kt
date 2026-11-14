@@ -94,6 +94,8 @@ fun rememberAdditionalEditorTools(
     boardCatalog: FpgaBoardCatalogStore? = null,
     fpgaOptions: FpgaGenerationOptions = FpgaGenerationOptions(),
     hdlType: EditorHdlType = EditorHdlType.VHDL,
+    /** The editor the tools serve (its EditorState); a new one starts with no appearance draft. */
+    editorScope: Any? = null,
 ): List<EditorTool> {
     val notice by rememberUpdatedState(onNotice)
     val failure by rememberUpdatedState(onFailure)
@@ -104,8 +106,12 @@ fun rememberAdditionalEditorTools(
     val visualExportTool = remember(registry, assets, highContrastSignals, signalRadix, gateShape) {
         circuitVisualExportEditorTool(registry, assets, CircuitDrawingStyle(highContrastSignals, signalRadix, gateShape))
     }
-    val stable = remember(registry, assets, documents, connection, visualExportTool) {
-        createAdditionalStaticEditorTools(assets, connection, { notice(it) }, visualExportTool)
+    // The appearance draft and clipboard outlive rebuilding the tools below, which a drawing preference change causes.
+    // They belong to one editor: its document identities restart with a new EditorState, so a draft of that circuit id
+    // must not be offered to the next one (R04-3).
+    val appearanceDrafts = remember(editorScope) { AppearanceDraftHolder() }
+    val stable = remember(registry, assets, documents, connection, visualExportTool, appearanceDrafts) {
+        createAdditionalStaticEditorTools(assets, connection, { notice(it) }, visualExportTool, appearanceDrafts)
     }
     val fpgaCatalog = remember(boardCatalog) { boardCatalog ?: FpgaBoardCatalogStore() }
     val currentFpgaOptions by rememberUpdatedState(fpgaOptions)
@@ -215,6 +221,7 @@ internal fun createAdditionalStaticEditorTools(
     connection: AdditionalEditorToolsConnection,
     onNotice: (LocalizedText) -> Unit,
     visualExportTool: EditorTool,
+    appearanceDrafts: AppearanceDraftHolder = AppearanceDraftHolder(),
 ): List<EditorTool> = buildList {
     add(EditorTool("legal-notices", "Licenses", titleText = message("additional_legal_title")) { LegalNoticesButton() })
     add(EditorTool("companion-pairing", "Companion", titleText = message("additional_companion_title")) {
@@ -228,8 +235,8 @@ internal fun createAdditionalStaticEditorTools(
             Column(Modifier.verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text(strings("additional_companion_verified"))
                 connection.capabilities?.let { capabilities ->
-                    Text(strings("additional_companion_protocol", "version" to capabilities.protocolVersion,
-                        "bytes" to capabilities.limits.inputBytes))
+                    Text(strings("additional_companion_protocol_limit", "version" to capabilities.protocolVersion,
+                        "size" to byteSizeText(capabilities.limits.inputBytes)))
                     for (operation in capabilities.operations) {
                         val status = when {
                             !operation.allowed -> "additional_companion_disabled"
@@ -237,7 +244,8 @@ internal fun createAdditionalStaticEditorTools(
                             operation.requiresConfirmation -> "additional_companion_confirmation_required"
                             else -> "additional_companion_available"
                         }
-                        Text(strings("additional_companion_operation", "operation" to operation.name, "status" to message(status)))
+                        // The operation's name, not its protocol id ("quartus.synthesize").
+                        Text(strings("additional_companion_operation", "operation" to companionOperationLabel(operation), "status" to message(status)))
                     }
                 }
                 Button(onClick = connection::disconnect, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
@@ -250,7 +258,7 @@ internal fun createAdditionalStaticEditorTools(
     if (assets != null) add(assemblyViewerEditorTool(assets))
     val imagePicker = assets?.annotationImagePicker()
     add(annotationEditorTool(imagePicker))
-    add(appearanceEditorTool(imagePicker))
+    add(appearanceEditorTool(imagePicker, appearanceDrafts))
     add(visualExportTool)
 }
 

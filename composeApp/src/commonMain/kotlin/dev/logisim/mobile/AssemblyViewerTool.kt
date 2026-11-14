@@ -42,7 +42,7 @@ internal const val ASSEMBLY_VIEWER_ID = "assembly-viewer"
 
 internal fun assemblyViewerEditorTool(assets: DocumentAssetActions): EditorTool {
     val session = AssemblyViewerSession()
-    return EditorTool(ASSEMBLY_VIEWER_ID, "Assembly Viewer", titleText = message("assembly_viewer_title")) { context ->
+    return EditorTool(ASSEMBLY_VIEWER_ID, "Assembly Viewer", titleText = message("assembly_viewer_title"), pausesSimulation = false) { context ->
         AssemblyViewer(context, assets, session)
     }
 }
@@ -142,9 +142,9 @@ private fun AssemblyViewer(context: EditorToolContext, assets: DocumentAssetActi
                 Text(
                     line,
                     modifier = Modifier.fillMaxWidth()
-                        .then(if (active) Modifier.background(MaterialTheme.colorScheme.secondaryContainer)
-                            .semantics { selected = true } else Modifier)
-                        .padding(horizontal = 6.dp, vertical = 2.dp),
+                        // The PC line: the selected tint and a leading accent bar (3:1), not a tint alone.
+                        .then(if (active) Modifier.leadingSelectionCue(true).semantics { selected = true } else Modifier)
+                        .padding(horizontal = 8.dp, vertical = 2.dp),
                     color = if (active) MaterialTheme.colorScheme.onSecondaryContainer else MaterialTheme.colorScheme.onSurface,
                     fontFamily = FontFamily.Monospace,
                     fontWeight = if (active) FontWeight.Bold else FontWeight.Normal,

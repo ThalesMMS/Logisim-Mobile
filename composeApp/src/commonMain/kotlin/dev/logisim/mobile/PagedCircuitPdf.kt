@@ -1,19 +1,13 @@
 package dev.logisim.mobile
 
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.selection.toggleable
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
@@ -87,16 +81,8 @@ internal fun PagedCircuitPdfControls(
 }
 
 @Composable
-private fun PdfCheckbox(title: String, checked: Boolean, enabled: Boolean, onChange: (Boolean) -> Unit) {
-    Row(
-        Modifier.fillMaxWidth().heightIn(min = 48.dp)
-            .toggleable(checked, enabled = enabled, role = Role.Checkbox, onValueChange = onChange),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Checkbox(checked, null, enabled = enabled)
-        Text(title)
-    }
-}
+private fun PdfCheckbox(title: String, checked: Boolean, enabled: Boolean, onChange: (Boolean) -> Unit) =
+    LabeledCheckbox(title, checked, enabled, onChange = onChange)
 
 /** Project order is the page order. Empty circuits have no page. */
 internal fun printableCircuits(context: EditorToolContext): List<CircuitDocument> = context.project.printableCircuits()

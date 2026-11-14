@@ -18,9 +18,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import dev.logisim.mobile.core.*
@@ -57,32 +62,84 @@ fun hdlImportTool(
     var busy by remember { mutableStateOf(false) }
     var picking by remember { mutableStateOf(false) }
     val idle = !busy && !picking
-    var notice by remember { mutableStateOf<LocalizedText?>(null) }
+    // File errors appear under the file buttons; prepare, synthesis and apply results under the action buttons (#85).
+    var fileNotice by remember { mutableStateOf<ToolNotice?>(null) }
+    var notice by remember { mutableStateOf<ToolNotice?>(null) }
     var logs by remember { mutableStateOf("") }
     var planned by remember { mutableStateOf<Pair<HdlImportOptions, CompanionPlan>?>(null) }
     var completed by remember { mutableStateOf<Pair<HdlImportOptions, CompanionJob>?>(null) }
     var jobId by remember { mutableStateOf<String?>(null) }
     var jobClient by remember { mutableStateOf<CompanionClient?>(null) }
 
-    fun changed() { planned = null; completed = null; notice = null }
+    // The staged file loaded back into the editor: Add updates it without asking, and its row is marked.
+    var editing by remember { mutableStateOf<String?>(null) }
+    // A staged file another text would replace (from the editor or the picker), and a staged file that would replace
+    // unsaved editor text: each waits for a confirmation.
+    var replacing by remember { mutableStateOf<Pair<HdlInputFile, Boolean>?>(null) }
+    var opening by remember { mutableStateOf<HdlInputFile?>(null) }
+
+    fun changed() { planned = null; completed = null; notice = null; fileNotice = null }
     fun stage(file: HdlInputFile) {
         files = files.filterNot { it.name == file.name } + file
         changed()
+    }
+    /** Staged from the editor: the editor is cleared and the name moves on, so the next Add does not replace it. */
+    fun stageFromEditor(file: HdlInputFile) {
+        stage(file)
+        source = ""
+        editing = null
+        fileName = nextHdlImportName(file.name, files.map { it.name })
+    }
+    /** Staged from the picker: the editor keeps its text, which no longer matches a file it was loaded from. */
+    fun stagePicked(file: HdlInputFile) {
+        stage(file)
+        if (editing == file.name) editing = null
+    }
+    /** [file] in the editor, marked as the one Add updates. */
+    fun load(file: HdlInputFile) {
+        fileName = file.name
+        source = file.text
+        editing = file.name
+        changed()
+    }
+
+    replacing?.let { (file, fromEditor) ->
+        AppAlertDialog(
+            onDismissRequest = { replacing = null },
+            title = { Text(loc("hdl_tools_import_replace_title", "name" to file.name)) },
+            text = { Text(loc(if (fromEditor) "hdl_tools_import_replace_message" else "hdl_tools_import_replace_picked_message")) },
+            confirmButton = {
+                TextButton(onClick = { replacing = null; if (fromEditor) stageFromEditor(file) else stagePicked(file) },
+                    modifier = Modifier.testTag("hdl-import-replace-confirm")) {
+                    Text(loc("hdl_tools_import_replace_confirm"))
+                }
+            },
+            dismissButton = { TextButton(onClick = { replacing = null }) { Text(loc(Messages.ActionCancel)) } },
+        )
+    }
+    opening?.let { file ->
+        AppAlertDialog(
+            onDismissRequest = { opening = null },
+            title = { Text(loc("hdl_tools_import_discard_title")) },
+            text = { Text(loc("hdl_tools_import_discard_message", "name" to file.name)) },
+            confirmButton = {
+                TextButton(onClick = { opening = null; load(file) }, modifier = Modifier.testTag("hdl-import-discard-confirm")) {
+                    Text(loc("hdl_tools_import_discard_confirm"))
+                }
+            },
+            dismissButton = { TextButton(onClick = { opening = null }) { Text(loc(Messages.ActionCancel)) } },
+        )
     }
 
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).testTag("hdl-import-scroll"),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(loc(Messages.HdlToolsImportDescription))
-        TextButton(enabled = idle, onClick = {
-            format = HdlSourceFormat.entries[(format.ordinal + 1) % HdlSourceFormat.entries.size]; changed()
-        }) { Text(loc(Messages.HdlToolsImportFormat, "format" to when (format) {
-            HdlSourceFormat.VERILOG -> "Verilog"
-            HdlSourceFormat.SYSTEM_VERILOG -> "SystemVerilog"
-            HdlSourceFormat.BLIF -> "BLIF"
-        })) }
+        // Every option is visible and selectable, instead of a button that cycles through hidden values (#80).
+        ChoiceRow(loc("hdl_tools_import_format_label"), HdlSourceFormat.entries, format, enabled = idle,
+            optionLabel = { hdlSourceFormatName(it) }, optionTag = { "hdl-import-format-${it.name}" }) { format = it; changed() }
         if (assets != null) OutlinedTextField(pickerDirectory, { pickerDirectory = it },
             label = { Text(loc(Messages.HdlToolsImportPickerDirectory)) }, enabled = idle, singleLine = true,
-            modifier = Modifier.fillMaxWidth().testTag("hdl-import-picker-directory"))
+            keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth().testTag("hdl-import-picker-directory"))
         if (assets != null) Button(enabled = idle, onClick = {
             picking = true
             try {
@@ -94,66 +151,89 @@ fun hdlImportTool(
                                 val asset = result.asset
                                 val path = pickerDirectory.trim().takeIf { it.isNotEmpty() }
                                     ?.let { "$it/${asset.name}" } ?: asset.name
-                                stage(HdlInputFile(path, asset.bytes.decodeToString(throwOnInvalidSequence = true)))
+                                val file = HdlInputFile(path, asset.bytes.decodeToString(throwOnInvalidSequence = true))
+                                // A staged file with this name and other text is replaced only after a confirmation.
+                                val staged = files.firstOrNull { it.name == file.name }
+                                if (staged != null && staged.text != file.text) replacing = file to false else stagePicked(file)
                             } catch (_: CharacterCodingException) {
-                                notice = message(Messages.HdlToolsImportSourceUtf8)
+                                fileNotice = message(Messages.HdlToolsImportSourceUtf8).asError()
                             } catch (error: IllegalArgumentException) {
-                                notice = error.localizedDescription(message(Messages.HdlToolsImportInvalidFile))
+                                fileNotice = error.localizedDescription(message(Messages.HdlToolsImportInvalidFile)).asError()
                             }
                         }
-                        is AssetOpenResult.Failure -> notice = result.notice
+                        is AssetOpenResult.Failure -> fileNotice = result.notice.asError()
                         AssetOpenResult.Cancelled -> Unit
                     }
                 }
             } catch (error: Exception) {
                 picking = false
-                notice = error.localizedDescription(message(Messages.HdlToolsImportInvalidFile))
+                fileNotice = error.localizedDescription(message(Messages.HdlToolsImportInvalidFile)).asError()
             }
         }) { Text(loc(Messages.HdlToolsImportPickFile)) }
-        OutlinedTextField(fileName, { fileName = it; changed() }, label = { Text(loc(Messages.HdlToolsImportFileName)) }, enabled = idle,
-            singleLine = true, modifier = Modifier.fillMaxWidth().testTag("hdl-import-file-name"))
+        OutlinedTextField(fileName, {
+            fileName = it
+            // Another name no longer edits the loaded file, so its marker goes and Add asks before replacing.
+            if (editing != null && it.trim() != editing) editing = null
+            changed()
+        }, label = { Text(loc(Messages.HdlToolsImportFileName)) }, enabled = idle,
+            singleLine = true, keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth().testTag("hdl-import-file-name"))
         val hdlStyle = rememberHdlEditorStyle()
         OutlinedTextField(source, { source = it; changed() }, label = { Text(loc(Messages.HdlToolsImportSource)) }, enabled = idle,
-            minLines = 5, maxLines = 12, modifier = Modifier.fillMaxWidth().testTag("hdl-import-source"), visualTransformation = hdlStyle.transformation, colors = hdlStyle.colors(), textStyle = androidx.compose.ui.text.TextStyle(fontFamily = FontFamily.Monospace))
+            minLines = 5, maxLines = 12, keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth().testTag("hdl-import-source"), visualTransformation = hdlStyle.transformation, colors = hdlStyle.colors(), textStyle = androidx.compose.ui.text.TextStyle(fontFamily = FontFamily.Monospace))
         Button(modifier = Modifier.testTag("hdl-import-add-file"), enabled = idle && source.isNotBlank(), onClick = {
             try {
-                stage(HdlInputFile(fileName.trim(), source))
-                source = ""
+                val file = HdlInputFile(fileName.trim(), source)
+                val staged = files.firstOrNull { it.name == file.name }
+                // Another file's text under the same name is replaced only after a confirmation.
+                if (staged != null && staged.text != file.text && editing != file.name) replacing = file to true
+                else stageFromEditor(file)
             } catch (error: IllegalArgumentException) {
-                notice = error.localizedDescription(message(Messages.HdlToolsImportInvalidFile))
+                fileNotice = error.localizedDescription(message(Messages.HdlToolsImportInvalidFile)).asError()
             }
         }) { Text(loc(Messages.HdlToolsImportAddFile)) }
-        for (file in files) Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            TextButton(modifier = Modifier.weight(1f), enabled = idle,
-                onClick = { fileName = file.name; source = file.text; changed() }) {
-                Text(file.name, maxLines = 2, overflow = TextOverflow.Ellipsis)
+        ToolNoticeText(fileNotice, Modifier.testTag("hdl-import-file-notice"))
+        for (file in files) Row(Modifier.fillMaxWidth().testTag("hdl-import-staged-${file.name}"),
+            horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+            val open = editing == file.name
+            TextButton(modifier = Modifier.weight(1f).semantics {
+                if (open) stateDescription = loc("hdl_tools_import_editing")
+            }, enabled = idle, onClick = {
+                // Text in the editor that no staged file holds is not thrown away without asking.
+                val unsaved = source.isNotBlank() && files.none { it.name == fileName.trim() && it.text == source }
+                if (unsaved && source != file.text) opening = file else load(file)
+            }) {
+                Text(file.name, maxLines = 2, overflow = TextOverflow.Ellipsis,
+                    fontWeight = if (open) FontWeight.Bold else null)
+                if (open) Text(" · " + loc("hdl_tools_import_editing"), maxLines = 1, modifier = Modifier.clearAndSetSemantics {})
             }
-            TextButton(enabled = idle, onClick = { files = files - file; changed() }) { Text(loc(Messages.HdlToolsImportRemoveFile)) }
+            TextButton(enabled = idle, onClick = {
+                files = files - file
+                if (editing == file.name) editing = null
+                changed()
+            }) { Text(loc(Messages.HdlToolsImportRemoveFile)) }
         }
         OutlinedTextField(top, { top = it; changed() }, label = { Text(loc(Messages.HdlToolsImportTop)) },
-            enabled = idle, singleLine = true, modifier = Modifier.fillMaxWidth())
+            enabled = idle, singleLine = true, keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth())
         OutlinedTextField(defines, { defines = it; changed() }, label = { Text(loc(Messages.HdlToolsImportDefines)) },
-            enabled = idle, singleLine = true, modifier = Modifier.fillMaxWidth())
-        TextButton(enabled = idle, onClick = {
-            undefined = HdlUndefinedPolicy.entries[(undefined.ordinal + 1) % HdlUndefinedPolicy.entries.size]; changed()
-        }) { Text(loc(Messages.HdlToolsImportUndefined, "policy" to message(when (undefined) {
-            HdlUndefinedPolicy.REJECT -> Messages.HdlToolsImportUndefinedReject
-            HdlUndefinedPolicy.ZERO -> Messages.HdlToolsImportUndefinedZero
-            HdlUndefinedPolicy.ONE -> Messages.HdlToolsImportUndefinedOne
-        }))) }
-        val memoryPolicyLabel = if (format == HdlSourceFormat.BLIF || memoryPolicy == HdlMemoryPolicy.EXPAND) {
-            loc("hdl_tools_import_memory_expand")
-        } else loc(Messages.HdlToolsImportMemoryPolicy)
-        TextButton(
+            enabled = idle, singleLine = true, keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth())
+        ChoiceRow(loc("hdl_tools_import_undefined_label"), HdlUndefinedPolicy.entries, undefined, enabled = idle,
+            // Option labels have their own keys, so translators control the capitalization (#80).
+            optionLabel = { policy -> loc(when (policy) {
+                HdlUndefinedPolicy.REJECT -> "hdl_tools_import_undefined_reject_option"
+                HdlUndefinedPolicy.ZERO -> "hdl_tools_import_undefined_zero_option"
+                HdlUndefinedPolicy.ONE -> "hdl_tools_import_undefined_one_option"
+            }) },
+            optionTag = { "hdl-import-undefined-${it.name}" }) { undefined = it; changed() }
+        // BLIF has no memories to keep native, so the choice shows "expand" and is disabled, as before.
+        ChoiceRow(loc("hdl_tools_import_memory_label"), HdlMemoryPolicy.entries,
+            if (format == HdlSourceFormat.BLIF) HdlMemoryPolicy.EXPAND else memoryPolicy,
             enabled = idle && format != HdlSourceFormat.BLIF,
-            onClick = {
-                memoryPolicy = if (memoryPolicy == HdlMemoryPolicy.NATIVE) HdlMemoryPolicy.EXPAND else HdlMemoryPolicy.NATIVE
-                changed()
-            },
-        ) { Text(memoryPolicyLabel) }
+            optionLabel = { policy -> loc(if (policy == HdlMemoryPolicy.NATIVE) "hdl_tools_import_memory_native_option"
+                else "hdl_tools_import_memory_expand_option") },
+            optionTag = { "hdl-import-memory-${it.name}" }) { memoryPolicy = it; changed() }
         Button(modifier = Modifier.testTag("hdl-import-prepare"), enabled = idle && files.isNotEmpty(), onClick = {
             val client = companion()
-            if (client == null) notice = message(Messages.HdlToolsImportConnectCompanion) else scope.launch {
+            if (client == null) notice = message(Messages.HdlToolsImportConnectCompanion).asError() else scope.launch {
                 busy = true; planned = null; completed = null; logs = ""
                 try {
                     val roots = files.filter { when (format) {
@@ -164,13 +244,14 @@ fun hdlImportTool(
                         defines.split(',').map { it.trim() }.filter { it.isNotEmpty() }, undefined, memoryPolicy)
                     val request = options.request()
                     planned = options to client.plan(request); jobClient = client
-                    notice = message(Messages.HdlToolsImportReviewPlan)
+                    notice = message(Messages.HdlToolsImportReviewPlan).asResult()
                 } catch (error: Exception) {
                     if (error is CancellationException) throw error
-                    notice = error.localizedDescription(message(Messages.HdlToolsImportPrepareFailed))
+                    notice = error.localizedDescription(message(Messages.HdlToolsImportPrepareFailed)).asError()
                 } finally { busy = false }
             }
         }) { Text(loc(if (busy && jobId == null) Messages.HdlToolsImportPreparing else Messages.HdlToolsImportPrepare)) }
+        ToolNoticeText(notice, Modifier.testTag("hdl-import-notice"), selectable = true)
         planned?.let { (options, plan) ->
             HorizontalDivider()
             val inputPaths = plan.parameters.fields["inputPaths"] as? CompanionJsonObject
@@ -182,19 +263,19 @@ fun hdlImportTool(
                 val client = jobClient ?: return@Button
                 val approval = plan.confirm()
                 scope.launch {
-                    busy = true; planned = null; notice = message(Messages.HdlToolsImportSynthesizing)
+                    busy = true; planned = null; notice = message(Messages.HdlToolsImportSynthesizing).asProgress()
                     try {
                         val job = awaitHdlJob(client, options.request(), approval) { update ->
                             jobId = update.jobId; logs = update.logs.joinToString("\n") { it.text }.takeLast(16_384)
                         }
                         if (job.state == CompanionJobState.SUCCEEDED) {
-                            completed = options to job; notice = message(Messages.HdlToolsImportSynthesisComplete)
+                            completed = options to job; notice = message(Messages.HdlToolsImportSynthesisComplete).asResult()
                         } else notice = job.error?.let {
-                            message(Messages.HdlToolsImportProviderError, "code" to it.code, "detail" to LocalizedText.literal(it.message))
-                        } ?: message(Messages.HdlToolsImportCancelled)
+                            message(Messages.HdlToolsImportProviderError, "code" to it.code, "detail" to LocalizedText.literal(it.message)).asError()
+                        } ?: message(Messages.HdlToolsImportCancelled).asResult()
                     } catch (error: Exception) {
                         if (error is CancellationException) throw error
-                        notice = error.localizedDescription(message(Messages.HdlToolsImportSynthesisFailed))
+                        notice = error.localizedDescription(message(Messages.HdlToolsImportSynthesisFailed)).asError()
                     } finally { busy = false; jobId = null }
                 }
             }) { Text(loc(Messages.HdlToolsImportConfirm)) }
@@ -202,9 +283,9 @@ fun hdlImportTool(
         if (busy && jobId != null) TextButton(modifier = Modifier.testTag("hdl-import-cancel"), onClick = {
             val id = jobId ?: return@TextButton
             val client = jobClient ?: return@TextButton
-            scope.launch { try { client.cancel(id); notice = message(Messages.HdlToolsImportCancelRequested) } catch (error: Exception) {
+            scope.launch { try { client.cancel(id); notice = message(Messages.HdlToolsImportCancelRequested).asProgress() } catch (error: Exception) {
                 if (error is CancellationException) throw error
-                notice = error.localizedDescription(message(Messages.HdlToolsImportCancelFailed))
+                notice = error.localizedDescription(message(Messages.HdlToolsImportCancelFailed)).asError()
             } }
         }) { Text(loc(Messages.HdlToolsImportCancel)) }
         completed?.let { (options, job) -> Button(modifier = Modifier.testTag("hdl-import-apply"), enabled = idle, onClick = {
@@ -216,18 +297,17 @@ fun hdlImportTool(
                         is HdlImportResult.Success -> if (latestContext.project == current) {
                             latestContext.applyProject(result.project); latestContext.selectCircuit(result.project.mainCircuit.id)
                             val imported = LocalizedText(Messages.HdlToolsImportImportedCount, quantity = result.importedCircuits.size.toLong())
-                            notice = imported; latestContext.showNotice(imported); completed = null
-                        } else notice = message(Messages.HdlToolsImportProjectChanged)
+                            notice = imported.asResult(); latestContext.showNotice(imported); completed = null
+                        } else notice = message(Messages.HdlToolsImportProjectChanged).asError()
                         is HdlImportResult.Failure -> notice = LocalizedText.join(result.diagnostics.map {
                             message(Messages.HdlToolsImportDiagnostic, "code" to it.code,
                                 "location" to it.module?.let { module -> " [$module${it.cell?.let { cell -> "/$cell" }.orEmpty()}]" }.orEmpty(),
                                 "detail" to it.notice)
-                        })
+                        }).asError()
                     }
                 } finally { busy = false }
             }
         }) { Text(loc(Messages.HdlToolsImportApply)) } }
-        notice?.let { SelectionContainer { Text(loc(it)) } }
         if (logs.isNotBlank()) {
             Text(loc(Messages.HdlToolsImportProviderLogs))
             SelectionContainer { Text(logs, fontFamily = FontFamily.Monospace) }
@@ -249,4 +329,23 @@ internal suspend fun awaitHdlJob(
         onUpdate(job)
     }
     return job
+}
+
+/**
+ * The name the editor proposes after Add: the same path and extension with the next free number (design.v →
+ * design2.v → design3.v), so the root-file filter (.v, .sv, .blif) still recognizes it.
+ */
+internal fun nextHdlImportName(name: String, used: Collection<String>): String {
+    val slash = name.lastIndexOf('/')
+    val dot = name.lastIndexOf('.').takeIf { it > slash + 1 } ?: name.length
+    val stem = name.substring(0, dot)
+    val extension = name.substring(dot)
+    val base = stem.substring(0, slash + 1) + stem.substring(slash + 1).trimEnd { it.isDigit() }.ifEmpty { stem.substring(slash + 1) }
+    return generateSequence(2) { it + 1 }.map { "$base$it$extension" }.first { it !in used }
+}
+
+internal fun hdlSourceFormatName(format: HdlSourceFormat): String = when (format) {
+    HdlSourceFormat.VERILOG -> "Verilog"
+    HdlSourceFormat.SYSTEM_VERILOG -> "SystemVerilog"
+    HdlSourceFormat.BLIF -> "BLIF"
 }

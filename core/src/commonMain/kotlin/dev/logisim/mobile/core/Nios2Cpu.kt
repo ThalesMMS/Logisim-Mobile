@@ -109,15 +109,10 @@ object Nios2Cpu {
         val b = state.register(rb)
         var nextPc = pc + 4u
         var mnemonic: String? = null
-        var arguments = ""
         var result: UInt? = null
         var destination = rb
         var error: String? = null
         var notice: LocalizedText? = null
-        fun rOperands() { arguments = "${registerNames[rc]},${registerNames[ra]},${registerNames[rb]}" }
-        fun iOperands(signed: Boolean = false) {
-            arguments = "${registerNames[rb]},${registerNames[ra]},${if (signed) signedImmediate else imm16}"
-        }
         fun interrupt() {
             state = state.copy(estatus = state.status, status = state.status and 1u.inv())
             nextPc = exceptionVector
@@ -127,7 +122,6 @@ object Nios2Cpu {
                 mnemonic = if (opcode == 0) "call" else "jmpi"
                 if (opcode == 0) write(31, nextPc)
                 nextPc = (instruction shr 6) shl 2
-                arguments = nextPc.toString()
             }
             0x06, 0x0E, 0x2E, 0x16, 0x36, 0x26, 0x1E -> {
                 val take = when (opcode) {
@@ -139,20 +133,17 @@ object Nios2Cpu {
                     0x26 -> { mnemonic = "beq"; a == b }
                     else -> { mnemonic = "bne"; a != b }
                 }
-                val offset = signedImmediate + 4
-                arguments = (if (opcode == 0x06) "" else "${registerNames[ra]},${registerNames[rb]},") +
-                    "pc${if (offset >= 0) "+" else ""}$offset"
                 if (take) nextPc += signedImmediate.toUInt()
             }
-            0x04 -> { mnemonic = if (ra == 0) "movi" else "addi"; result = a + signedImmediate.toUInt(); iOperands(true) }
-            0x0C -> { mnemonic = "andi"; result = a and imm16.toUInt(); iOperands() }
-            0x14 -> { mnemonic = if (ra == 0) "movui" else "ori"; result = a or imm16.toUInt(); iOperands() }
-            0x1C -> { mnemonic = "xori"; result = a xor imm16.toUInt(); iOperands() }
+            0x04 -> { mnemonic = if (ra == 0) "movi" else "addi"; result = a + signedImmediate.toUInt() }
+            0x0C -> { mnemonic = "andi"; result = a and imm16.toUInt() }
+            0x14 -> { mnemonic = if (ra == 0) "movui" else "ori"; result = a or imm16.toUInt() }
+            0x1C -> { mnemonic = "xori"; result = a xor imm16.toUInt() }
             // Desktop MULI falls through to the high-product path; fixtures preserve that behavior.
-            0x24 -> { mnemonic = "muli"; result = ((a.toInt().toLong() * signedImmediate) shr 32).toUInt(); iOperands(true) }
-            0x2C -> { mnemonic = "andhi"; result = a and (imm16.toUInt() shl 16); iOperands() }
-            0x34 -> { mnemonic = if (ra == 0) "movhi" else "orhi"; result = a or (imm16.toUInt() shl 16); iOperands() }
-            0x3C -> { mnemonic = "xorhi"; result = a xor (imm16.toUInt() shl 16); iOperands() }
+            0x24 -> { mnemonic = "muli"; result = ((a.toInt().toLong() * signedImmediate) shr 32).toUInt() }
+            0x2C -> { mnemonic = "andhi"; result = a and (imm16.toUInt() shl 16) }
+            0x34 -> { mnemonic = if (ra == 0) "movhi" else "orhi"; result = a or (imm16.toUInt() shl 16) }
+            0x3C -> { mnemonic = "xorhi"; result = a xor (imm16.toUInt() shl 16) }
             0x20, 0x18, 0x08, 0x28, 0x10, 0x30 -> {
                 val condition = when (opcode) {
                     0x20 -> { mnemonic = "cmpeqi"; a == signedImmediate.toUInt() }
@@ -163,18 +154,16 @@ object Nios2Cpu {
                     else -> { mnemonic = "cmpltui"; a < imm16.toUInt() }
                 }
                 result = if (condition) 1u else 0u
-                iOperands(opcode != 0x28 && opcode != 0x30)
             }
             0x17, 0x0F, 0x0B, 0x07, 0x03, 0x37, 0x2F, 0x2B, 0x27, 0x23,
             0x15, 0x0D, 0x05, 0x35, 0x2D, 0x25 -> {
-                mnemonic = loadStoreNames.getValue(opcode)
+                mnemonic = Nios2Disassembler.loadStoreNames.getValue(opcode)
                 val size = when (opcode and 0x1F) {
                     0x07, 0x03, 0x05 -> SocAccessSize.BYTE
                     0x0F, 0x0B, 0x0D -> SocAccessSize.HALF_WORD
                     else -> SocAccessSize.WORD
                 }
                 val address = a + signedImmediate.toUInt()
-                arguments = "${registerNames[rb]},$signedImmediate(${registerNames[ra]})"
                 if (opcode and 7 == 5) {
                     val value = when (size) { SocAccessSize.BYTE -> b and 255u; SocAccessSize.HALF_WORD -> b and 65535u; SocAccessSize.WORD -> b }
                     val reply = memory.write(address, value, size)
@@ -198,16 +187,12 @@ object Nios2Cpu {
                 val request = Nios2CustomRequest(a, b, customBits and 255, ra, rb, rc,
                     customBits and 0x400 != 0, customBits and 0x200 != 0, customBits and 0x100 != 0)
                 state = state.copy(pendingCustom = request)
-                arguments = "${request.n},${if (request.writeRC) "c" else "r"}$rc," +
-                    "${if (request.readRA) "c" else "r"}$ra,${if (request.readRB) "c" else "r"}$rb"
             }
             0x13, 0x1B, 0x33, 0x3B -> if (rb == 0) {
                 mnemonic = when (opcode) { 0x13 -> "initda"; 0x1B -> "flushda"; 0x33 -> "initd"; else -> "flushd" }
-                arguments = "$signedImmediate(${registerNames[ra]})"
             }
             0x3A -> {
                 destination = rc
-                rOperands()
                 if (imm5 == 0) when (opx) {
                     0x0E -> { mnemonic = "and"; result = a and b }
                     0x16 -> { mnemonic = "or"; result = a or b }
@@ -234,38 +219,35 @@ object Nios2Cpu {
                     0x13 -> { mnemonic = "sll"; result = a shl (b and 31u).toInt() }
                     0x3B -> { mnemonic = "sra"; result = (a.toInt() shr (b and 31u).toInt()).toUInt() }
                     0x1B -> { mnemonic = "srl"; result = a shr (b and 31u).toInt() }
-                    0x1D -> if (rc == 31 && rb == 0) { mnemonic = "callr"; write(31, nextPc); nextPc = a; arguments = registerNames[ra] }
-                    0x05 -> if (ra == 31 && rb == 0 && rc == 0) { mnemonic = "ret"; nextPc = state.register(31); arguments = "" }
-                    0x0D -> if (rb == 0 && rc == 0) { mnemonic = "jmp"; nextPc = a; arguments = registerNames[ra] }
-                    0x01 -> if (ra == 29 && rb == 30 && rc == 0) { mnemonic = "eret"; state = state.copy(status = state.estatus); nextPc = state.register(29); arguments = "" }
-                    0x09 -> if (ra == 30 && rb == 0 && rc == 30) { mnemonic = "bret"; state = state.copy(status = state.bstatus); nextPc = state.register(30); arguments = "" }
+                    0x1D -> if (rc == 31 && rb == 0) { mnemonic = "callr"; write(31, nextPc); nextPc = a }
+                    0x05 -> if (ra == 31 && rb == 0 && rc == 0) { mnemonic = "ret"; nextPc = state.register(31) }
+                    0x0D -> if (rb == 0 && rc == 0) { mnemonic = "jmp"; nextPc = a }
+                    0x01 -> if (ra == 29 && rb == 30 && rc == 0) { mnemonic = "eret"; state = state.copy(status = state.estatus); nextPc = state.register(29) }
+                    0x09 -> if (ra == 30 && rb == 0 && rc == 30) { mnemonic = "bret"; state = state.copy(status = state.bstatus); nextPc = state.register(30) }
                     0x04, 0x0C, 0x29 -> if (rb == 0 && rc == 0) {
                         mnemonic = when (opx) { 0x04 -> "flushp"; 0x0C -> "flushi"; else -> "initi" }
-                        arguments = if (opx == 0x04) "" else registerNames[ra]
                     }
-                    0x36 -> if (ra == 0 && rb == 0 && rc == 0) { mnemonic = "sync"; arguments = "" }
+                    0x36 -> if (ra == 0 && rb == 0 && rc == 0) mnemonic = "sync"
                 }
                 when (opx) {
                     0x02, 0x12, 0x3A, 0x1A -> if (rb == 0) {
                         mnemonic = when (opx) { 0x02 -> "roli"; 0x12 -> "slli"; 0x3A -> "srai"; else -> "srli" }
-                        arguments = "${registerNames[rc]},${registerNames[ra]},$imm5"
                         result = when (opx) { 0x02 -> rotateLeft(a, imm5); 0x12 -> a shl imm5; 0x3A -> (a.toInt() shr imm5).toUInt(); else -> a shr imm5 }
                     }
                     0x2D -> if (ra == 0 && rb == 0 && rc == 29) {
-                        mnemonic = "trap"; arguments = if (imm5 == 0) "" else imm5.toString()
+                        mnemonic = "trap"
                         write(29, nextPc); interrupt()
                     }
                     0x34 -> if (ra == 0 && rb == 0 && rc == 30) {
-                        mnemonic = "break"; arguments = if (imm5 == 0) "" else imm5.toString()
+                        mnemonic = "break"
                         state = state.copy(bstatus = state.status, status = state.status and 1u.inv())
                         write(30, nextPc); nextPc = breakVector
                     }
                     0x26 -> if (ra == 0 && rb == 0) {
                         mnemonic = "rdctl"; result = state.controlRegister(imm5)
-                        arguments = "${registerNames[rc]},ctl$imm5"
                     }
                     0x2E -> if (rb == 0 && rc == 0) {
-                        mnemonic = "wrctl"; arguments = "ctl$imm5,${registerNames[ra]}"
+                        mnemonic = "wrctl"
                         state = when (imm5) {
                             0 -> state.copy(status = (a and 1u) or 0x00800000u)
                             1 -> state.copy(estatus = a)
@@ -275,19 +257,14 @@ object Nios2Cpu {
                         }
                     }
                 }
-                if (mnemonic == "add") when {
-                    ra == 0 && rb == 0 && rc == 0 -> { mnemonic = "nop"; arguments = "" }
-                    rb == 0 -> { mnemonic = "mov"; arguments = "${registerNames[rc]},${registerNames[ra]}" }
-                }
             }
         }
         if (mnemonic == null) return failed(state, pc, instruction, "invalid", "Invalid Nios II instruction.", true, message("soc_nios_invalid"))
-        val assembly = if (arguments.isEmpty()) mnemonic else mnemonic.padEnd(10) + arguments
+        // The listing formats words with the same decoder, so the trace and the program listing cannot differ.
+        val assembly = Nios2Disassembler.format(instruction) ?: mnemonic
         if (error != null) return failed(state, pc, instruction, assembly, error, false, notice ?: LocalizedText.literal(error))
         if (result != null) write(destination, result)
-        if (mnemonic in setOf("movi", "movui", "movhi")) arguments = "${registerNames[rb]},${if (mnemonic == "movi") signedImmediate else imm16}"
-        val finalAssembly = if (arguments.isEmpty()) mnemonic else mnemonic.padEnd(10) + arguments
-        val trace = SocInstructionTrace(pc, instruction, finalAssembly, writes)
+        val trace = SocInstructionTrace(pc, instruction, assembly, writes)
         state = state.copy(pc = nextPc, instructions = state.instructions + 1,
             trace = (listOf(trace) + state.trace).take(TRACE_LIMIT))
         return Nios2StepResult(state, trace)
@@ -303,8 +280,4 @@ object Nios2Cpu {
         return Nios2StepResult(state.copy(pc = if (advance) pc + 4u else pc,
             stopped = true, trace = (listOf(trace) + state.trace).take(TRACE_LIMIT)), trace, error, notice)
     }
-
-    private val loadStoreNames = mapOf(0x17 to "ldw", 0x0F to "ldh", 0x0B to "ldhu", 0x07 to "ldb", 0x03 to "ldbu",
-        0x37 to "ldwio", 0x2F to "ldhio", 0x2B to "ldhuio", 0x27 to "ldbio", 0x23 to "ldbuio",
-        0x15 to "stw", 0x0D to "sth", 0x05 to "stb", 0x35 to "stwio", 0x2D to "sthio", 0x25 to "stbio")
 }

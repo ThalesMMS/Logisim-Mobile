@@ -90,15 +90,12 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
             Text(loc(Messages.HdlToolsSimDescription))
             if (selected == null) {
                 Text(loc(Messages.HdlToolsSimSelectComponent))
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    for (choice in HdlIpBackend.entries) TextButton(enabled = !busy, onClick = {
-                        if (backend != choice) {
-                            if (session == null) invalidate()
-                            backend = choice
-                            source = hdlExample(choice)
-                            generics = ""
-                        }
-                    }) { Text(if (choice == backend) loc(Messages.HdlToolsSimBackendSelected, "backend" to choice.name) else choice.name) }
+                ChoiceRow(loc("hdl_tools_sim_backend_label"), HdlIpBackend.entries, backend, enabled = !busy,
+                    optionLabel = { it.name }, optionTag = { "hdl-sim-backend-${it.name}" }) { choice ->
+                    if (session == null) invalidate()
+                    backend = choice
+                    source = hdlExample(choice)
+                    generics = ""
                 }
             } else {
                 Text("${selected.label.ifBlank { design?.topLevel.orEmpty().ifBlank { loc(selected.kind.localizedLabel()) } }} · ${design?.backend?.name.orEmpty()}")
@@ -117,18 +114,34 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
             val hdlStyle = rememberHdlEditorStyle()
             OutlinedTextField(source, {
                 if (source != it) {
-                    if (session?.target == selectedKey || session == null) invalidate(message(Messages.HdlToolsSimSourceChanged))
+                    // Shown while typing but neither announced nor scrolled to, so the caret and the IME stay put (#85).
+                    if (session?.target == selectedKey || session == null) invalidate(message(Messages.HdlToolsSimSourceChanged), NoticeAnchor.SOURCE, NoticeKind.PROGRESS)
                     source = it
                 }
             }, label = { Text(loc(Messages.HdlToolsSimSourceLabel)) }, enabled = !busy, minLines = 6, maxLines = 14,
-                modifier = Modifier.fillMaxWidth().testTag("hdl-sim-source"), visualTransformation = hdlStyle.transformation, colors = hdlStyle.colors(), textStyle = TextStyle(fontFamily = FontFamily.Monospace))
-            OutlinedTextField(generics, {
-                if (generics != it) {
-                    if (session?.target == selectedKey || session == null) invalidate(message(Messages.HdlToolsSimParametersChanged))
-                    generics = it
+                keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth().testTag("hdl-sim-source"), visualTransformation = hdlStyle.transformation, colors = hdlStyle.colors(), textStyle = TextStyle(fontFamily = FontFamily.Monospace))
+            fun changeGenerics(text: String) {
+                if (generics != text) {
+                    if (session?.target == selectedKey || session == null) invalidate(message(Messages.HdlToolsSimParametersChanged), NoticeAnchor.SOURCE, NoticeKind.PROGRESS)
+                    generics = text
                 }
-            }, label = { Text(loc(Messages.HdlToolsSimGenericsLabel)) }, enabled = !busy,
-                minLines = 1, maxLines = 5, modifier = Modifier.fillMaxWidth().testTag("hdl-sim-generics"), textStyle = TextStyle(fontFamily = FontFamily.Monospace))
+            }
+            // BLIF has no generics (Evolution ignores them), so its parameters are not shown at all. A VHDL entity
+            // gets one field per declared generic; the NAME=value text stays for what the fields cannot show.
+            val blif = if (selected != null) selected.kind == HdlIpLibrary.BLIF else backend == HdlIpBackend.BLIF
+            val declared = remember(source, blif) { if (blif) null else HdlIpDeclarations.vhdl(source) }
+            val declarations = declared?.genericDeclarations.orEmpty()
+            val unparsed = declared?.diagnostics.orEmpty().any { it.code == "unsupported-generic" || it.code == "unterminated-declaration" }
+            var genericsAsText by remember(selectedKey) { mutableStateOf(false) }
+            if (!blif && declarations.isNotEmpty() && !unparsed && !genericsAsText) {
+                HdlGenericFields(declarations, generics, enabled = !busy, onText = ::changeGenerics) { genericsAsText = true }
+            } else if (!blif && (declarations.isNotEmpty() || unparsed || generics.isNotBlank())) {
+                OutlinedTextField(generics, ::changeGenerics, label = { Text(loc(Messages.HdlToolsSimGenericsLabel)) }, enabled = !busy,
+                    minLines = 1, maxLines = 5, keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth().testTag("hdl-sim-generics"), textStyle = TextStyle(fontFamily = FontFamily.Monospace))
+                if (declarations.isNotEmpty() && !unparsed) TextButton(enabled = !busy, onClick = { genericsAsText = false }) {
+                    Text(loc("hdl_tools_sim_generics_as_fields"))
+                }
+            }
             val dirty = selected == null || source != currentSource ||
                 runCatching { hdlGenericAttributes(generics) }.getOrNull() !=
                 runCatching { hdlGenericAttributes(hdlGenericText(selected)) }.getOrNull()
@@ -163,9 +176,12 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                         ctx.applyDocument(ctx.document.copy(components = ctx.document.components + added))
                         ctx.selectComponent(added.id)
                     }
-                    notice = if (shared == null) message(Messages.HdlToolsSimSourceSaved) else message("shared_vhdl_saved")
-                    notice?.let(ctx.showNotice)
-                } catch (error: IllegalArgumentException) { notice = error.localizedDescription(message(Messages.HdlToolsSimEditFailed)) }
+                    val saved = if (shared == null) message(Messages.HdlToolsSimSourceSaved) else message("shared_vhdl_saved")
+                    report(saved, anchor = NoticeAnchor.SOURCE)
+                    ctx.showNotice(saved)
+                } catch (error: IllegalArgumentException) {
+                    report(error.localizedDescription(message(Messages.HdlToolsSimEditFailed)), NoticeKind.ERROR, NoticeAnchor.SOURCE)
+                }
             }) { Text(if (selected == null) loc(Messages.HdlToolsSimInsert) else loc(Messages.HdlToolsSimApplySource)) }
             if (selected == null && backend == HdlIpBackend.VHDL) {
                 TextButton(enabled = !busy && context.projectExports.access.writable && source.isNotBlank(), onClick = {
@@ -175,10 +191,11 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                         invalidate()
                         insertSharedVhdl(ctx, project, definition, hdlGenericAttributes(generics))
                     } catch (error: IllegalArgumentException) {
-                        notice = error.localizedDescription(message(Messages.HdlToolsSimEditFailed))
+                        report(error.localizedDescription(message(Messages.HdlToolsSimEditFailed)), NoticeKind.ERROR, NoticeAnchor.SOURCE)
                     }
                 }) { Text(loc("shared_vhdl_create")) }
             }
+            HdlRuntimeNotice(NoticeAnchor.SOURCE)
 
             design?.let { parsed ->
                 for (diagnostic in parsed.diagnostics) Text(loc(Messages.HdlToolsSimDiagnostic, "code" to diagnostic.code, "detail" to diagnostic.notice))
@@ -225,7 +242,7 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                             val plan = client.plan(request)
                             if (current(generation)) {
                                 planned = HdlToolPlan(target, parsed, client, request, plan)
-                                notice = message(Messages.HdlToolsSimReviewStart)
+                                report(message(Messages.HdlToolsSimReviewStart))
                             }
                         } catch (error: Exception) {
                             if (error is CancellationException) throw error
@@ -244,7 +261,7 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                     val approval = prepared.plan.confirm()
                     planned = null
                     busy = true
-                    notice = message(Messages.HdlToolsSimStarting)
+                    report(message(Messages.HdlToolsSimStarting), NoticeKind.PROGRESS)
                     work.launch {
                         var opened: HdlToolSession? = null
                         try {
@@ -264,7 +281,7 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                                 pending = null
                                 session = binding
                                 requireLocalized(send(binding.target, CompanionHdlStarted(binding.id, binding.epoch))) { message(Messages.HdlToolsSimStartRejected) }
-                                notice = message(Messages.HdlToolsSimStarted)
+                                report(message(Messages.HdlToolsSimStarted))
                             }
                         } catch (error: Exception) {
                             if (error is CancellationException) throw error
@@ -276,10 +293,10 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
             }
 
             OutlinedTextField(advance, { advance = it }, label = { Text(loc(Messages.HdlToolsSimAdvanceLabel)) }, enabled = !busy,
-                singleLine = true, modifier = Modifier.fillMaxWidth().testTag("hdl-sim-advance"))
+                singleLine = true, keyboardOptions = FieldKeyboards.Number, modifier = Modifier.fillMaxWidth().testTag("hdl-sim-advance"))
             Button(modifier = Modifier.testTag("hdl-sim-step"), enabled = !busy && session?.target == selectedKey && selectedKey != null && !dirty, onClick = {
                 val interval = advance.trim().toLongOrNull()
-                if (interval == null || interval !in 1..1_000_000) notice = message(Messages.HdlToolsSimAdvanceRange)
+                if (interval == null || interval !in 1..1_000_000) report(message(Messages.HdlToolsSimAdvanceRange), NoticeKind.ERROR)
                 else sample(interval)
             }) { Text(loc(Messages.HdlToolsSimSample)) }
 
@@ -291,7 +308,7 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                     pending = HdlPendingTarget(binding.target, binding.client, setOf(binding.epoch, binding.epoch + 1), resetting = true)
                     send(binding.target, CompanionHdlStopped(binding.id, binding.epoch))
                     busy = true
-                    notice = message(Messages.HdlToolsSimResetting)
+                    report(message(Messages.HdlToolsSimResetting), NoticeKind.PROGRESS)
                     work.launch {
                         try {
                             val result = execute(binding.client, hdlSessionRequest(binding.id, reset = true), generation)
@@ -309,7 +326,7 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                                 pending = null
                                 session = reset
                                 requireLocalized(send(reset.target, CompanionHdlStarted(reset.id, reset.epoch))) { message(Messages.HdlToolsSimResetRejected) }
-                                notice = message(Messages.HdlToolsSimResetComplete)
+                                report(message(Messages.HdlToolsSimResetComplete))
                             } else cancelRemote(binding)
                         } catch (error: Exception) {
                             if (error is CancellationException) throw error
@@ -321,6 +338,9 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                     invalidate(message(Messages.HdlToolsSimStopped))
                 }) { Text(loc(Messages.HdlToolsSimCancel)) }
             }
+            // Session results sit right under Sample / Reset instead of at the end of the panel (#85).
+            if (busy) Text(loc(Messages.HdlToolsSimWaiting))
+            HdlRuntimeNotice(NoticeAnchor.SESSION)
             if (selected != null && design?.isExecutable == true) {
                 val inputValues = engineState?.sampleInputs.orEmpty()
                 val inout = design.ports.filter { it.direction == PortDirection.INOUT }.map { it.name }.toSet()
@@ -336,8 +356,6 @@ private fun HdlToolRuntime.Panel(context: EditorToolContext, companion: () -> Co
                         fontFamily = FontFamily.Monospace)
                 }
             }
-            if (busy) Text(loc(Messages.HdlToolsSimWaiting))
-            notice?.let { SelectionContainer { Text(loc(it)) } }
             if (logs.isNotBlank()) {
                 Text(loc(Messages.HdlToolsSimLogs))
                 SelectionContainer { Text(logs, fontFamily = FontFamily.Monospace) }
@@ -391,6 +409,9 @@ internal data class HdlToolSession(
     val sampledRevision: Long? = null,
     val sentRevision: Long = 0,
 )
+/** Source edits report under the source buttons; session work under Sample / Reset. */
+internal enum class NoticeAnchor { SOURCE, SESSION }
+
 internal data class HdlPendingTarget(
     val target: HdlToolTarget, val client: CompanionClient, val allowedEpochs: Set<Long>, val resetting: Boolean = false,
 )
@@ -401,6 +422,19 @@ internal class HdlToolRuntime(dispatcher: CoroutineDispatcher = Dispatchers.Main
     val work = HdlSessionWork(dispatcher)
     lateinit var latestContext: () -> EditorToolContext
     var notice by mutableStateOf<LocalizedText?>(null)
+    var noticeKind by mutableStateOf(NoticeKind.RESULT)
+    var noticeAnchor by mutableStateOf(NoticeAnchor.SESSION)
+
+    fun report(text: LocalizedText?, kind: NoticeKind = NoticeKind.RESULT, anchor: NoticeAnchor = NoticeAnchor.SESSION) {
+        notice = text
+        noticeKind = kind
+        noticeAnchor = anchor
+    }
+
+    /** Both anchors stay composed and only the current one shows the notice, so moving it still reveals it. */
+    @Composable
+    fun HdlRuntimeNotice(anchor: NoticeAnchor) = ToolNoticeText(notice?.takeIf { noticeAnchor == anchor }?.let { ToolNotice(it, noticeKind) },
+        Modifier.testTag("hdl-sim-notice"), selectable = true)
     var logs by mutableStateOf("")
     var busy by mutableStateOf(false)
     var planned by mutableStateOf<HdlToolPlan?>(null)
@@ -418,14 +452,14 @@ internal class HdlToolRuntime(dispatcher: CoroutineDispatcher = Dispatchers.Main
         work.launch { runCatching { awaitHdlJob(binding.client, hdlSessionRequest(binding.id, reset = false)) } }
     }
 
-    fun invalidate(reason: LocalizedText? = null) {
+    fun invalidate(reason: LocalizedText? = null, anchor: NoticeAnchor = NoticeAnchor.SESSION, kind: NoticeKind = NoticeKind.RESULT) {
         val previous = session
         work.invalidate()
         session = null
         pending = null
         planned = null
         busy = false
-        notice = reason
+        report(reason, kind, anchor)
         previous?.let {
             send(it.target, CompanionHdlStopped(it.id, it.epoch))
             cancelRemote(it)
@@ -441,7 +475,7 @@ internal class HdlToolRuntime(dispatcher: CoroutineDispatcher = Dispatchers.Main
         session = null
         pending = null
         planned = null
-        notice = reason
+        report(reason, NoticeKind.ERROR)
     }
 
     suspend fun execute(client: CompanionClient, request: CompanionJobRequest, generation: Long,
@@ -500,7 +534,7 @@ internal class HdlToolRuntime(dispatcher: CoroutineDispatcher = Dispatchers.Main
         val base = maxOf(context.projectSimulation.propagationTime, binding.timeNs)
         if (base > 1_000_000 - interval) {
             val reason = message(Messages.HdlToolsSimTimeLimit)
-            if (automatic) fail(binding.target, reason, binding, state.sequence) else notice = reason
+            if (automatic) fail(binding.target, reason, binding, state.sequence) else report(reason, NoticeKind.ERROR)
             return
         }
         val targetTime = base + interval
@@ -511,7 +545,7 @@ internal class HdlToolRuntime(dispatcher: CoroutineDispatcher = Dispatchers.Main
         val outputs = ports.filter { it.direction != PortDirection.INPUT }.associate { it.name to it.width }
         val generation = work.generation
         busy = true
-        notice = message(Messages.HdlToolsSimWaitingSample, "time" to targetTime)
+        report(message(Messages.HdlToolsSimWaitingSample, "time" to targetTime), NoticeKind.PROGRESS)
         work.launch {
             try {
                 val result = execute(binding.client, hdlStepRequest(binding.id, event.inputs, targetTime - binding.timeNs, inout), generation)
@@ -541,7 +575,9 @@ internal class HdlToolRuntime(dispatcher: CoroutineDispatcher = Dispatchers.Main
                 if (applied?.sessionId == binding.id && applied.epoch == binding.epoch &&
                     applied.inputRevision == event.inputRevision && applied.sequence == sequence && applied.timeNs == targetTime) {
                     session = session?.copy(sampledRevision = event.inputRevision)
-                    notice = message(Messages.HdlToolsSimSampleReceived, "time" to targetTime)
+                    // Automatic samples follow every input change; only a requested sample is announced.
+                    report(message(Messages.HdlToolsSimSampleReceived, "time" to targetTime),
+                        if (automatic) NoticeKind.PROGRESS else NoticeKind.RESULT)
                 } else if (applied == null) {
                     val latest = latestContext()
                     val latestState = binding.target.state(latest)
@@ -614,7 +650,7 @@ internal class HdlSessionWork(dispatcher: CoroutineDispatcher) {
 private fun isHdlIpComponent(component: CircuitComponent) = component.kind == HdlIpLibrary.VHDL || component.kind == HdlIpLibrary.BLIF
 private fun hdlSourceDigest(source: String) = CompanionInput.fromBytes("source.hdl", source.encodeToByteArray()).sha256
 private fun hdlVectorText(vector: LogicVector) = (vector.width - 1 downTo 0).joinToString("") { vector.bit(it).display }
-private fun hdlGenericAttributes(text: String): Map<String, String> {
+internal fun hdlGenericAttributes(text: String): Map<String, String> {
     val result = linkedMapOf<String, String>()
     for (line in text.lineSequence().filter { it.isNotBlank() }) {
         val name = line.substringBefore('=').trim()

@@ -23,6 +23,12 @@ data class HdlIpDiagnostic(val code: String, val notice: LocalizedText) {
     val message: String get() = notice.resolve(AppLanguage.ENGLISH)
 }
 
+/**
+ * A generic as the entity declares it, before any override: its name with the declared case, its type (integer,
+ * natural, positive, boolean, time, std_logic or std_logic_vector) and its default text, empty when it has none.
+ */
+data class HdlGenericDeclaration(val name: String, val kind: String, val declaredDefault: String)
+
 data class HdlIpDesign(
     val backend: HdlIpBackend,
     val source: String,
@@ -32,6 +38,8 @@ data class HdlIpDesign(
     val diagnostics: List<HdlIpDiagnostic> = emptyList(),
     /** VHDL generics of type time; their [parameters] value is in femtoseconds, as in Evolution. */
     val timeParameters: Set<String> = emptySet(),
+    /** The supported generic declarations in source order, as Evolution's VhdlEntityAttributes lists one per generic. */
+    val genericDeclarations: List<HdlGenericDeclaration> = emptyList(),
 ) {
     /** The VHDL actual of each generic, with the fs unit Evolution's generator writes for time generics. */
     val vhdlGenericActuals: Map<String, String> get() =

@@ -32,18 +32,24 @@ internal fun SocMemoryMapPanel(context: EditorToolContext, busComponent: Circuit
         val rows = remember(components, states, busComponent) {
             SocRuntimeScope(components, states).memoryMap(busComponent)
         }
+        // Devices are named as the component chips name them (label or kind, position only when two read the same);
+        // the internal id never shows, as in Evolution.
+        val names = socComponentNames(components.filter { it.kind in SocComponents.kinds }) {
+            strings("component_${it.kind.name.lowercase()}")
+        }
         Column(Modifier.fillMaxWidth().testTag("soc-memory-map")) {
             Text(strings("soc_memory_map_title"), style = MaterialTheme.typography.titleMedium)
             for (row in rows) {
                 HorizontalDivider()
                 Text("${row.startAddress.mapAddress()} – ${row.endAddress.mapAddress()}", fontFamily = FontFamily.Monospace)
                 val device = row.device
-                val name = when {
+                Text(when {
                     device == null -> strings("soc_memory_map_unmapped")
-                    device.component.kind == SocComponents.RV32 -> strings("soc_memory_map_plic")
-                    else -> device.component.label.ifBlank { strings("component_${device.component.kind.name.lowercase()}") }
-                }
-                Text(if (device == null) name else strings("soc_component_identity", "label" to name, "id" to device.id))
+                    // The processor's interrupt controller: named after its processor, as the chips name it.
+                    device.component.kind == SocComponents.RV32 -> strings("soc_memory_map_device_of",
+                        "device" to strings("soc_memory_map_plic"), "component" to (names[device.component.id]?.let { strings(it) } ?: ""))
+                    else -> names[device.component.id]?.let { strings(it) } ?: strings("component_${device.component.kind.name.lowercase()}")
+                })
             }
         }
     }

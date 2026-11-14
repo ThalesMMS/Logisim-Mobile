@@ -26,6 +26,20 @@ class HdlIpTest {
             inputs = mapOf("a" to a, "b" to LogicVector.low(4), "clock" to LogicVector.low(1)),
             connectedInputs = setOf("a", "b", "clock"), state = state, events = events, eventTime = eventTime))
 
+    /** W2-06 C89: each declared generic keeps its declared name, type and default, whatever the override. */
+    @Test fun listsGenericDeclarationsWithTheirDefaults() {
+        val declared = HdlIpLibrary.parse(component(attributes = mapOf("generic.width" to "8"))).genericDeclarations
+        assertEquals(listOf(HdlGenericDeclaration("WIDTH", "positive", "4"), HdlGenericDeclaration("ACTIVE", "boolean", "true")), declared)
+        val typed = HdlIpDeclarations.vhdl("""
+            entity T is
+              generic (N : natural; DELAY : time := 10 ns; LEVEL : std_logic := '1'; MASK : std_logic_vector(3 downto 0) := "0101");
+              port (a : in std_logic);
+            end T;
+        """.trimIndent()).genericDeclarations
+        assertEquals(listOf(HdlGenericDeclaration("N", "natural", ""), HdlGenericDeclaration("DELAY", "time", "10 ns"),
+            HdlGenericDeclaration("LEVEL", "std_logic", "'1'"), HdlGenericDeclaration("MASK", "std_logic_vector", "\"0101\"")), typed)
+    }
+
     @Test fun readsGenericWidthsPreservesSourceAndMatchesDesktopGeometry() {
         val component = component(attributes = mapOf("generic.WIDTH" to "8", "label" to "preserved", "future" to "untouched"))
         val design = HdlIpLibrary.parse(component)

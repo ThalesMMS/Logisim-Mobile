@@ -47,7 +47,7 @@ internal fun createBuiltInEditorTools(
 ): List<EditorTool> = listOf(
     analysisEditorTool(registry, assets = assets),
     trace,
-    testVectorEditorTool(registry),
+    testVectorEditorTool(registry, assets),
     memoryEditorTool(registry, memoryFiles),
     circuitAccessibilityEditorTool(registry),
     diagnosticsEditorTool(registry),

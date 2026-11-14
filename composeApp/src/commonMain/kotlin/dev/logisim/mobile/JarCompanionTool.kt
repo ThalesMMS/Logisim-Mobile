@@ -4,12 +4,17 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Checkbox
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SegmentedButton
+import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -22,6 +27,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import dev.logisim.mobile.core.CompanionArtifact
 import dev.logisim.mobile.core.CompanionClient
@@ -41,7 +49,6 @@ import dev.logisim.mobile.core.LogicVector
 import dev.logisim.mobile.core.jarLiveRequest
 import dev.logisim.mobile.core.readJarCircuitInputs
 import dev.logisim.mobile.core.readJarInstanceTrace
-import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.localizedDescription
 import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.localization.rememberLocalizer
@@ -87,6 +94,65 @@ internal fun jarCompanionTool(assets: DocumentAssetActions, companion: () -> Com
         }
     }
 
+/** Hexadecimal digits a pin of [width] bits takes. */
+internal fun jarHexDigits(width: Int): Int = (width + 3) / 4
+
+/**
+ * The bit string (most significant bit first, as the frames carry it) of a hexadecimal value for a pin of [width]
+ * bits, zero-extended; null when the text is empty, holds a character that is not a hex digit, or needs more bits.
+ */
+internal fun jarHexToBits(hex: String, width: Int): String? {
+    if (hex.isEmpty() || width < 1 || hex.length > jarHexDigits(width)) return null
+    val bits = StringBuilder()
+    for (digit in hex) {
+        val value = digit.digitToIntOrNull(16) ?: return null
+        bits.append(value.toString(2).padStart(4, '0'))
+    }
+    val extra = bits.length - width
+    return when {
+        extra <= 0 -> bits.toString().padStart(width, '0')
+        bits.substring(0, extra).any { it != '0' } -> null
+        else -> bits.substring(extra)
+    }
+}
+
+/** The hexadecimal form (upper case, every digit of the width) of complete 0/1 bits, or "" when there is none. */
+internal fun jarBitsToHex(bits: String, width: Int): String {
+    if (bits.length != width || bits.any { it != '0' && it != '1' }) return ""
+    val padded = bits.padStart(jarHexDigits(width) * 4, '0')
+    return padded.chunked(4).joinToString("") { it.toInt(2).toString(16).uppercase() }
+}
+
+/**
+ * The value of a 1-bit JAR input as a single choice of 0, 1, ? (unknown) and E (error); the frame text is the same
+ * one character the bit field produced. The row keeps the pin's `jar-input-N` tag, each option `jar-input-N-<value>`.
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun JarBitChoice(label: String, value: String, enabled: Boolean, tag: String, modifier: Modifier, onSelect: (String) -> Unit) {
+    val strings = rememberLocalizer()
+    val options = listOf("0", "1", "?", "E")
+    Column(modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Text(label, style = MaterialTheme.typography.labelLarge)
+        SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().testTag(tag)) {
+            options.forEachIndexed { position, option ->
+                val meaning = when (option) {
+                    "?" -> strings("jar_tool_bit_unknown")
+                    "E" -> strings("jar_tool_bit_error")
+                    else -> option
+                }
+                // Each segment names its pin ("en: 0"), so explore-by-touch tells several 1-bit pins apart.
+                val description = strings("jar_tool_bit_option", "pin" to label, "value" to meaning)
+                SegmentedButton(selected = value == option, onClick = { if (value != option) onSelect(option) },
+                    shape = SegmentedButtonDefaults.itemShape(position, options.size), enabled = enabled,
+                    modifier = Modifier.heightIn(min = 48.dp).testTag("$tag-$option").semantics { contentDescription = description }) {
+                    Text(option, maxLines = 1, modifier = Modifier.clearAndSetSemantics {}) // read through the description
+                }
+            }
+        }
+    }
+}
+
 @Composable
 private fun JarCompanionPanel(
     assets: DocumentAssetActions,
@@ -116,7 +182,7 @@ private fun JarCompanionPanel(
     var review by remember { mutableStateOf<Pair<CompanionJobRequest, CompanionPlan>?>(null) }
     var liveReview by remember { mutableStateOf<JarLiveReview?>(null) }
     var running by remember { mutableStateOf<Job?>(null) }
-    var status by remember { mutableStateOf<LocalizedText?>(null) }
+    var status by remember { mutableStateOf<ToolNotice?>(null) }
     var result by remember { mutableStateOf<JarExecutionResult?>(null) }
 
     fun perform(action: suspend () -> Unit) {
@@ -126,12 +192,12 @@ private fun JarCompanionPanel(
                 action()
             } catch (cancelled: CancellationException) {
                 if (!isActive || cancelled !is TimeoutCancellationException) {
-                    status = message("jar_tool_cancelled")
+                    status = message("jar_tool_cancelled").asResult()
                     throw cancelled
                 }
-                status = message("jar_tool_failed")
+                status = message("jar_tool_failed").asError()
             } catch (error: Exception) {
-                status = error.localizedDescription(message("jar_tool_failed"))
+                status = error.localizedDescription(message("jar_tool_failed")).asError()
             } finally {
                 running = null
             }
@@ -155,8 +221,8 @@ private fun JarCompanionPanel(
                         jar = opened.asset
                         invalidateReview()
                         status = null
-                    } else status = message("jar_tool_pick_error")
-                    is AssetOpenResult.Failure -> status = opened.notice
+                    } else status = message("jar_tool_pick_error").asError()
+                    is AssetOpenResult.Failure -> status = opened.notice.asError()
                     AssetOpenResult.Cancelled -> Unit
                 }
             }
@@ -174,18 +240,49 @@ private fun JarCompanionPanel(
                 frames = it
                 invalidateReview()
             }, modifier = Modifier.fillMaxWidth().testTag("jar-json-steps"), enabled = running == null,
-                minLines = 3, maxLines = 8, label = { Text(strings("jar_tool_frames")) })
+                minLines = 3, maxLines = 8, label = { Text(strings("jar_tool_frames")) }, keyboardOptions = FieldKeyboards.Code)
         } else {
             Text(strings("jar_tool_controls_help"))
             inputs.orEmpty().forEachIndexed { index, pin ->
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    OutlinedTextField(values.getValue(pin.label), { bits ->
-                        if (bits.length <= pin.width && bits.all { it in "01?E" }) {
-                            values = values + (pin.label to bits)
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                    val bits = values.getValue(pin.label)
+                    if (pin.width == 1) {
+                        // A 1-bit pin is poked, not typed: its four values are one tap away, as the Poke tool toggles it.
+                        JarBitChoice(pin.label, bits, enabled = running == null, tag = "jar-input-$index",
+                            modifier = Modifier.weight(1f)) { bit ->
+                            values = values + (pin.label to bit)
                             invalidateReview()
                         }
-                    }, modifier = Modifier.weight(1f).testTag("jar-input-$index"), enabled = running == null,
-                        singleLine = true, label = { Text(pin.label) })
+                    } else {
+                        // A multi-bit value is typed in hexadecimal (four digits for 16 bits) and expands to its bits;
+                        // the bit field stays for ? and E. The hex text follows bits changed elsewhere, and is empty
+                        // when they have no hexadecimal form.
+                        var hex by remember(pin.label, pin.width) { mutableStateOf(jarBitsToHex(bits, pin.width) to bits) }
+                        if (hex.second != bits) hex = jarBitsToHex(bits, pin.width) to bits
+                        OutlinedTextField(hex.first, { typed ->
+                            val digits = typed.uppercase()
+                            if (digits.isEmpty()) hex = "" to bits
+                            else jarHexToBits(digits, pin.width)?.let { expanded ->
+                                hex = digits to expanded
+                                values = values + (pin.label to expanded)
+                                invalidateReview()
+                            }
+                        }, modifier = Modifier.weight(0.42f).testTag("jar-input-$index-hex"), enabled = running == null,
+                            singleLine = true, label = { Text(strings("jar_tool_hex_value", "pin" to pin.label), maxLines = 1) },
+                            keyboardOptions = FieldKeyboards.Hex)
+                        // A short value says which pin is incomplete and why Record step is disabled.
+                        val incomplete = bits.length != pin.width
+                        OutlinedTextField(bits, { typed ->
+                            if (typed.length <= pin.width && typed.all { it in "01?E" }) {
+                                values = values + (pin.label to typed)
+                                invalidateReview()
+                            }
+                        }, modifier = Modifier.weight(0.58f).testTag("jar-input-$index"), enabled = running == null,
+                            singleLine = true, label = { Text(pin.label) }, keyboardOptions = FieldKeyboards.Code,
+                            isError = incomplete, supportingText = if (incomplete) {
+                                { Text(strings.plural("jar_tool_bits_needed", pin.width.toLong(), "entered" to bits.length)) }
+                            } else null)
+                    }
                     if (pin.width == 1) {
                         TextButton(
                             modifier = Modifier.testTag("jar-pulse-$index"),
@@ -213,12 +310,11 @@ private fun JarCompanionPanel(
                 }) { Text(strings("jar_tool_clear_steps")) }
             }
         }
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(checked = traceInstances, onCheckedChange = {
-                traceInstances = it
-                invalidateReview()
-            }, enabled = running == null, modifier = Modifier.testTag("jar-trace-instances"))
-            Text(strings("jar_tool_trace_instances"))
+        // The tag is on the toggleable row: the inner checkbox has no click action of its own.
+        LabeledCheckbox(strings("jar_tool_trace_instances"), traceInstances, enabled = running == null,
+            modifier = Modifier.fillMaxWidth().testTag("jar-trace-instances")) {
+            traceInstances = it
+            invalidateReview()
         }
         val canReview = if (advanced) frames.isNotBlank() else steps.isNotEmpty()
         Button(modifier = Modifier.testTag("jar-review"), enabled = jar != null && canReview && running == null, onClick = {
@@ -364,7 +460,7 @@ private fun JarCompanionPanel(
         if (running != null) {
             Button(modifier = Modifier.testTag("jar-cancel"), onClick = { running?.cancel() }) { Text(strings("jar_tool_cancel")) }
         }
-        status?.let { Text(strings(it)) }
+        ToolNoticeText(status, Modifier.testTag("jar-status"))
         result?.let { reply ->
             Text(strings("jar_tool_results", "library" to reply.library, "circuit" to reply.circuit))
             Text(reply.ports.joinToString("\n"))
@@ -385,7 +481,7 @@ private fun JarCompanionPanel(
                 if (context.isCurrentEditorContext()) {
                     val project = reply.project
                     assets.create(DocumentAsset(project.name, "application/octet-stream", project.bytes)) { result ->
-                        if (result is AssetActionResult.Failure) status = result.notice
+                        if (result is AssetActionResult.Failure) status = result.notice.asError()
                     }
                 }
             }) { Text(strings("jar_tool_save")) }

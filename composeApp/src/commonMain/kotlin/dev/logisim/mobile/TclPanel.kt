@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -27,7 +25,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.testTag
@@ -48,7 +45,6 @@ import dev.logisim.mobile.core.TclSubmissionState
 import dev.logisim.mobile.core.TclTkFrame
 import dev.logisim.mobile.core.TclTkInput
 import dev.logisim.mobile.core.validateTclSourceFiles
-import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.Messages
 import dev.logisim.mobile.core.localization.localizedDescription
 import dev.logisim.mobile.core.localization.message
@@ -101,7 +97,10 @@ private fun TclPanel(
     val submissions = remember { TclSubmissionState() }
     var stdout by remember { mutableStateOf("") }
     var stderr by remember { mutableStateOf("") }
-    var notice by remember { mutableStateOf<LocalizedText?>(null) }
+    // Console results sit under the console buttons; attachment and component results under their own buttons (#85).
+    var consoleNotice by remember { mutableStateOf<ToolNotice?>(null) }
+    var attachmentNotice by remember { mutableStateOf<ToolNotice?>(null) }
+    var componentNotice by remember { mutableStateOf<ToolNotice?>(null) }
     var running by remember { mutableStateOf(false) }
     var job by remember { mutableStateOf<Job?>(null) }
     var requestCounter by remember { mutableStateOf(0L) }
@@ -149,7 +148,7 @@ private fun TclPanel(
         liveFrame = null
         windowPreview = null
         if (client != null && requestId != null) scope.launch {
-            runCatching { client.cancel(requestId) }.onFailure { notice = it.localizedDescription(message(Messages.TclErrorCancel)) }
+            runCatching { client.cancel(requestId) }.onFailure { consoleNotice = it.localizedDescription(message(Messages.TclErrorCancel)).asError() }
         }
     }
     DisposableEffect(client, assets, context.documentIdentity, context.document.id, context.simulation.instancePath, component?.id) {
@@ -160,12 +159,14 @@ private fun TclPanel(
             running = false
             liveFrame = null
             inputForFrame = null
-            notice = null
+            consoleNotice = null
+            attachmentNotice = null
+            componentNotice = null
         }
     }
 
     fun consoleSource(): TclSourceFile? = runCatching { TclSourceFile(fileName, script) }.getOrElse {
-        notice = it.localizedDescription(message(Messages.TclErrorSource))
+        consoleNotice = it.localizedDescription(message(Messages.TclErrorSource)).asError()
         null
     }
 
@@ -177,13 +178,14 @@ private fun TclPanel(
         liveFrame = null
         inputForFrame = null
         keyInput = ""
+        consoleNotice = null
         running = true
         job = scope.launch {
             try {
                 val reply = execute(TclConsoleRequest(requestId, source))
                 requireLocalized(reply.sourceSha256 == source.sha256) { message(Messages.TclErrorSourceReply) }
                 if (submissions.complete(requestId, generation)) {
-                    notice = message(Messages.TclConsoleResult, "result" to reply.result)
+                    consoleNotice = message(Messages.TclConsoleResult, "result" to reply.result).asResult()
                     stdout = reply.stdout
                     stderr = reply.stderr
                     windowPreview = reply.windowPreview
@@ -198,7 +200,7 @@ private fun TclPanel(
                 if (submissions.complete(requestId, generation)) {
                     liveFrame = null
                     windowPreview = null
-                    notice = failure.localizedDescription(message(Messages.TclErrorExecution))
+                    consoleNotice = failure.localizedDescription(message(Messages.TclErrorExecution)).asError()
                 }
             } finally { if (submissions.generation == generation) running = false }
         }
@@ -215,7 +217,7 @@ private fun TclPanel(
             catch (failure: Exception) {
                 if (liveFrame === frame) {
                     inputForFrame = null
-                    notice = failure.localizedDescription(message(Messages.TclTkInputUnavailable))
+                    consoleNotice = failure.localizedDescription(message(Messages.TclTkInputUnavailable)).asError()
                 }
             }
         }
@@ -249,8 +251,8 @@ private fun TclPanel(
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).imePadding().padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text(strings(Messages.TclHost, "host" to (client?.hostLabel ?: message(Messages.TclNoCompanion))))
         Text(strings(Messages.TclLimits))
-        OutlinedTextField(fileName, { if (it != fileName) stopIfEditingApprovedSource(); fileName = it }, label = { Text(strings(Messages.TclSourceName)) }, enabled = !running && !pickingSource, singleLine = true, modifier = Modifier.fillMaxWidth())
-        OutlinedTextField(script, { if (it != script) stopIfEditingApprovedSource(); script = it }, label = { Text(strings(Messages.TclSourceLabel)) }, enabled = !running && !pickingSource, minLines = 6, maxLines = 12, modifier = Modifier.fillMaxWidth())
+        OutlinedTextField(fileName, { if (it != fileName) stopIfEditingApprovedSource(); fileName = it }, label = { Text(strings(Messages.TclSourceName)) }, enabled = !running && !pickingSource, singleLine = true, keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth())
+        OutlinedTextField(script, { if (it != script) stopIfEditingApprovedSource(); script = it }, label = { Text(strings(Messages.TclSourceLabel)) }, enabled = !running && !pickingSource, minLines = 6, maxLines = 12, keyboardOptions = FieldKeyboards.Code, modifier = Modifier.fillMaxWidth())
         Text(strings(Messages.TclConsoleHeading))
         Text(strings(Messages.TclConsoleExplanation))
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -266,6 +268,9 @@ private fun TclPanel(
             }
             OutlinedButton(enabled = running, onClick = { cancel() }) { Text(strings(Messages.TclCancel)) }
         }
+        ToolNoticeText(consoleNotice, Modifier.testTag("tcl-console-notice"), selectable = true)
+        if (stdout.isNotEmpty()) OutlinedTextField(stdout, {}, label = { Text(strings(Messages.TclStdout)) }, readOnly = true, maxLines = 10, modifier = Modifier.fillMaxWidth())
+        if (stderr.isNotEmpty()) OutlinedTextField(stderr, {}, label = { Text(strings(Messages.TclStderr)) }, readOnly = true, maxLines = 10, modifier = Modifier.fillMaxWidth())
         windowPreview?.let { preview ->
             val bitmap = remember(preview) { runCatching { decodeEmbeddedAnnotationImage(preview.bytes) }.getOrNull() }
             val frame = liveFrame
@@ -300,7 +305,10 @@ private fun TclPanel(
         HorizontalDivider()
         Text(strings(Messages.TclComponentHeading))
         if (component == null) Text(strings(Messages.TclSelectComponent)) else {
-            Text(strings(Messages.TclComponentPath, "id" to component.id, "path" to component.attributes["filePath"].orEmpty()))
+            // The selected component is the one the panel acts on; its internal id says nothing to the user.
+            component.attributes["filePath"]?.takeIf { it.isNotBlank() }?.let { path ->
+                Text(strings("tcl_component_original_file", "path" to path))
+            }
             val phase = message(when (state?.phase) {
                 TclRuntimePhase.WAITING -> Messages.TclPhaseWaiting
                 TclRuntimePhase.READY -> Messages.TclPhaseReady
@@ -330,20 +338,20 @@ private fun TclPanel(
                                         validateTclSourceFiles(TclSourceFile(fileName, script), added)
                                         stopIfEditingApprovedSource()
                                         includes = added
-                                        notice = null
+                                        attachmentNotice = null
                                     } catch (_: CharacterCodingException) {
-                                        notice = message(Messages.TclAttachmentUtf8)
+                                        attachmentNotice = message(Messages.TclAttachmentUtf8).asError()
                                     } catch (error: IllegalArgumentException) {
-                                        notice = error.localizedDescription(message(Messages.TclErrorSource))
+                                        attachmentNotice = error.localizedDescription(message(Messages.TclErrorSource)).asError()
                                     }
                                 }
-                                is AssetOpenResult.Failure -> notice = result.notice
+                                is AssetOpenResult.Failure -> attachmentNotice = result.notice.asError()
                                 AssetOpenResult.Cancelled -> Unit
                             }
                         }
                     } catch (error: Exception) {
                         pickingSource = false
-                        notice = error.localizedDescription(message(Messages.TclErrorSource))
+                        attachmentNotice = error.localizedDescription(message(Messages.TclErrorSource)).asError()
                     }
                 },
             ) { Text(strings(Messages.TclAttachmentAdd)) }
@@ -354,28 +362,28 @@ private fun TclPanel(
                     onClick = {
                         stopIfEditingApprovedSource()
                         includes = includes - source
-                        notice = null
+                        attachmentNotice = null
                     },
                 ) { Text(strings(Messages.TclAttachmentRemove, "name" to source.name)) }
             }
+            ToolNoticeText(attachmentNotice)
             if (actions == null) Text(strings(Messages.TclNoEvents))
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Checkbox(checked = autoTicksOnStart, onCheckedChange = { autoTicksOnStart = it },
-                    enabled = !running && actions != null && client?.available == true)
-                Text(strings("tcl_auto_ticks_on_start", "count" to TclAutomaticTicks.LIMIT))
-            }
+            LabeledCheckbox(strings("tcl_auto_ticks_on_start", "count" to TclAutomaticTicks.LIMIT), autoTicksOnStart,
+                enabled = !running && actions != null && client?.available == true,
+                modifier = Modifier.fillMaxWidth().testTag("tcl-auto-ticks")) { autoTicksOnStart = it }
             Button(enabled = !running && !pickingSource && actions != null && client?.available == true, onClick = {
                 if (running || pickingSource) return@Button
                 runCatching {
                     val source = TclSourceFile(fileName, script)
                     val newAuthorization = if (autoTicksOnStart) "ticks-$sessionId-${++requestCounter}" else null
                     runtime.approve(context, component, source, includes, newAuthorization)
-                    notice = message(Messages.TclSourceApproved)
-                }.onFailure { notice = it.localizedDescription(message(Messages.TclErrorStart)) }
+                    componentNotice = message(Messages.TclSourceApproved).asResult()
+                }.onFailure { componentNotice = it.localizedDescription(message(Messages.TclErrorStart)).asError() }
             }) { Text(strings(Messages.TclComponentStart)) }
+            ToolNoticeText(componentNotice, Modifier.testTag("tcl-component-notice"))
             OutlinedButton(enabled = actions != null, onClick = {
                 runtime.stop(context, component)
-                notice = null
+                componentNotice = null
             }) { Text(strings(Messages.TclComponentStop)) }
             if (activeAuthorization != null) {
                 OutlinedButton(onClick = { cancelAutomaticTicks() }) { Text(strings("tcl_auto_ticks_cancel")) }
@@ -383,12 +391,9 @@ private fun TclPanel(
             if (state?.requestedTick == true) Button(enabled = actions != null && !pendingAutomaticTick, onClick = {
                 val request = state.tickRequest()
                 if (actions?.sendEvent(component.id, request) != true) {
-                    notice = message(Messages.TclErrorInstanceChanged)
+                    componentNotice = message(Messages.TclErrorInstanceChanged).asError()
                 }
             }) { Text(strings(Messages.TclApplyTick, "count" to state.pendingTickRequests)) }
         }
-        notice?.let { Text(strings(it)) }
-        if (stdout.isNotEmpty()) OutlinedTextField(stdout, {}, label = { Text(strings(Messages.TclStdout)) }, readOnly = true, maxLines = 10, modifier = Modifier.fillMaxWidth())
-        if (stderr.isNotEmpty()) OutlinedTextField(stderr, {}, label = { Text(strings(Messages.TclStderr)) }, readOnly = true, maxLines = 10, modifier = Modifier.fillMaxWidth())
     }
 }

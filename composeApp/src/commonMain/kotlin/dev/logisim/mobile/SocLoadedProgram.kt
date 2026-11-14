@@ -24,6 +24,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
+import dev.logisim.mobile.core.Nios2Cpu
+import dev.logisim.mobile.core.Nios2Disassembler
+import dev.logisim.mobile.core.Rv32Disassembler
 import dev.logisim.mobile.core.SocCpuDebugState
 import dev.logisim.mobile.core.SocSetBreakpointEvent
 import dev.logisim.mobile.localization.rememberLocalizer
@@ -34,6 +37,7 @@ private const val INSTRUCTIONS_PER_PAGE = 16
 internal fun SocLoadedProgram(
     debugger: SocCpuDebugState,
     pc: UInt,
+    nios2: Boolean,
     onBreakpoint: (SocSetBreakpointEvent) -> Unit,
 ) {
     val strings = rememberLocalizer()
@@ -70,6 +74,12 @@ internal fun SocLoadedProgram(
     Text(strings("soc_program_breakpoint_help"), style = MaterialTheme.typography.bodySmall)
 
     val first = page * INSTRUCTIONS_PER_PAGE
+    // BreakpointPanel lists the disassembly: each word of the page is decoded once, as the trace writes it.
+    val assembly = remember(program, page, nios2) {
+        (first until minOf(first + INSTRUCTIONS_PER_PAGE, program.size)).map { index ->
+            socDisassembly(program[index].instruction, nios2).orEmpty()
+        }
+    }
     Column {
         for (index in first until minOf(first + INSTRUCTIONS_PER_PAGE, program.size)) {
             val (address, instruction) = program[index]
@@ -77,19 +87,38 @@ internal fun SocLoadedProgram(
             val current = address == pc
             Row(
                 Modifier.fillMaxWidth()
-                    .background(if (current) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surface)
+                    // The PC row: the selected tint and a leading accent bar (3:1), not a tint alone.
+                    .background(MaterialTheme.colorScheme.surface).leadingSelectionCue(current)
                     .toggleable(marked, role = Role.Checkbox) { onBreakpoint(SocSetBreakpointEvent(address, it)) }
-                    .heightIn(min = 48.dp).padding(horizontal = 8.dp),
+                    .heightIn(min = 48.dp).padding(horizontal = 8.dp, vertical = 4.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 Checkbox(checked = marked, onCheckedChange = null)
-                Text(
-                    strings(if (current) "soc_program_instruction_at_pc" else "soc_program_instruction",
-                        "address" to address.socHex(), "word" to instruction.socHex()),
-                    fontFamily = FontFamily.Monospace,
-                )
+                // Address and word on one line, the instruction under them: a phone needs no sideways scroll.
+                Column {
+                    Text(
+                        strings(if (current) "soc_program_instruction_at_pc" else "soc_program_instruction",
+                            "address" to address.socHex(), "word" to instruction.socHex()),
+                        fontFamily = FontFamily.Monospace,
+                    )
+                    assembly[index - first].takeIf { it.isNotEmpty() }?.let {
+                        Text(it, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                }
             }
         }
     }
+}
+
+/** The trace text of an instruction word, or null for a data word neither processor decodes. */
+internal fun socDisassembly(instruction: UInt, nios2: Boolean): String? =
+    if (nios2) Nios2Disassembler.format(instruction) else Rv32Disassembler.format(instruction)
+
+/** `x5  t0` / `r1  at`: the register number with its ABI name, padded so a grid of them lines up. */
+internal fun socRegisterName(index: Int, nios2: Boolean): String {
+    val number = (if (nios2) "r" else "x") + index
+    val abi = if (nios2) Nios2Cpu.registerNames[index] else Rv32Disassembler.abiNames[index]
+    return if (abi == number) number else "${number.padEnd(3)} $abi"
 }

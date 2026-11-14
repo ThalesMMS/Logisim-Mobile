@@ -1,18 +1,18 @@
 package dev.logisim.mobile
 
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material3.Checkbox
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -26,9 +26,11 @@ import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -43,6 +45,7 @@ import dev.logisim.mobile.core.DiagnosticCategory
 import dev.logisim.mobile.core.DiagnosticReport
 import dev.logisim.mobile.core.DiagnosticSeverity
 import dev.logisim.mobile.core.DiagnosticTarget
+import dev.logisim.mobile.core.ProjectBuiltinLibraries
 import dev.logisim.mobile.core.ProjectStatisticsSnapshot
 import dev.logisim.mobile.core.localization.LocalizedText
 import dev.logisim.mobile.core.localization.Messages
@@ -56,12 +59,30 @@ import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.withContext
 
-fun diagnosticsEditorTool(registry: ComponentRegistry = ComponentCatalog.registry): EditorTool = EditorTool(
-    id = "diagnostics",
-    title = message("diagnostic_title").resolve(systemAppLanguage()),
-    titleText = message("diagnostic_title"),
-) { context ->
-    var includeUnconnected by remember { mutableStateOf(true) }
+/** The filter belongs to the tool, so it survives "Navigate to the origin" closing the sheet and reopening it. */
+internal class DiagnosticFilter {
+    var category by mutableStateOf<DiagnosticCategory?>(null)
+    var includeUnconnected by mutableStateOf(true)
+}
+
+/** The sheet covers the canvas on phones, so navigating to an origin also closes it (as FpgaPanel does). */
+internal fun diagnosticNavigation(context: EditorToolContext): (DiagnosticTarget) -> Unit = { target ->
+    context.navigate(target.editorLocation())
+    context.closeTool()
+}
+
+fun diagnosticsEditorTool(registry: ComponentRegistry = ComponentCatalog.registry): EditorTool {
+    val filter = DiagnosticFilter()
+    return EditorTool(
+        id = "diagnostics",
+        title = message("diagnostic_title").resolve(systemAppLanguage()),
+        titleText = message("diagnostic_title"),
+    ) { context -> DiagnosticsToolContent(context, registry, filter) }
+}
+
+@Composable
+private fun DiagnosticsToolContent(context: EditorToolContext, registry: ComponentRegistry, filter: DiagnosticFilter) {
+    val includeUnconnected = filter.includeUnconnected
     val latestSimulation by rememberUpdatedState(context.projectSimulation)
     val report by produceState<DiagnosticReport?>(null, context.project, registry, includeUnconnected) {
         value = null
@@ -96,13 +117,15 @@ fun diagnosticsEditorTool(registry: ComponentRegistry = ComponentCatalog.registr
         }
     }
     DiagnosticPanel(report, statistics, context.document.id, includeUnconnected,
-        onIncludeUnconnectedChange = { includeUnconnected = it },
-        onNavigate = { target -> context.navigate(target.editorLocation()) }, occurrences = occurrences, registry = registry)
+        onIncludeUnconnectedChange = { filter.includeUnconnected = it },
+        onNavigate = diagnosticNavigation(context), occurrences = occurrences, registry = registry,
+        category = filter.category, onCategoryChange = { filter.category = it })
 }
 
 fun DiagnosticTarget.editorLocation(): EditorLocation =
     EditorLocation(circuitId, instancePath, componentIds, wires)
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun DiagnosticPanel(
     report: DiagnosticReport?,
@@ -114,24 +137,22 @@ fun DiagnosticPanel(
     modifier: Modifier = Modifier,
     occurrences: Result<CircuitComponentStatistics>? = null,
     registry: ComponentRegistry = ComponentCatalog.registry,
+    category: DiagnosticCategory? = null,
+    onCategoryChange: (DiagnosticCategory?) -> Unit = {},
 ) {
-    var category by remember { mutableStateOf<DiagnosticCategory?>(null) }
     var showStatistics by remember { mutableStateOf(true) }
     Column(modifier.fillMaxSize()) {
         Text(localizedString("diagnostic_title"), style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(12.dp))
-        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(includeUnconnected, onIncludeUnconnectedChange)
-            Text(localizedString("diagnostic_include_warnings"), style = MaterialTheme.typography.bodySmall)
-        }
-        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-            TextButton(onClick = { category = null }) {
-                Text(localizedString("diagnostic_all"), fontWeight = if (category == null) FontWeight.Bold else FontWeight.Normal)
-            }
-            DiagnosticCategory.entries.forEach { item ->
-                TextButton(onClick = { category = item }) {
-                    Text(localizedString(item.messageKey()), fontWeight = if (category == item) FontWeight.Bold else FontWeight.Normal)
-                }
+        LabeledCheckbox(localizedString("diagnostic_include_warnings"), includeUnconnected,
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp), onChange = onIncludeUnconnectedChange)
+        // Category filters are chips with selected semantics, not bold text (#153); they wrap instead of scrolling off.
+        FlowRow(Modifier.fillMaxWidth().selectableGroup().padding(horizontal = 12.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            (listOf<DiagnosticCategory?>(null) + DiagnosticCategory.entries).forEach { item ->
+                FilterChip(selected = category == item, onClick = { onCategoryChange(item) },
+                    label = { Text(localizedString(item?.messageKey() ?: "diagnostic_all")) },
+                    modifier = Modifier.semantics { role = Role.RadioButton }.testTag("diagnostic-category-${item?.name?.lowercase() ?: "all"}"))
             }
         }
         HorizontalDivider()
@@ -214,7 +235,7 @@ private fun StatisticsContent(
                 val sourceLibrary = row.library
                 val library = when {
                     sourceLibrary == null -> localizedString("diagnostic_stats_project_library")
-                    row.registeredComponent -> localizedString(statisticsLibraryLabel(sourceLibrary))
+                    row.registeredComponent -> localizedString(ProjectBuiltinLibraries.displayName(sourceLibrary))
                     else -> sourceLibrary
                 }
                 val kind = sourceLibrary?.let { componentKinds[it to row.name] }
@@ -240,14 +261,6 @@ private fun StatisticsContent(
             is CircuitExpansionResult.Invalid -> Text(localizedString("diagnostic_stats_invalid_hierarchy"), color = MaterialTheme.colorScheme.error)
         }
     }
-}
-
-private fun statisticsLibraryLabel(library: String): String = when (library) {
-    "#FPArithmetic" -> Messages.LibraryFloat
-    "#Plexers" -> Messages.LibraryPlexers
-    "#TTL" -> Messages.LibraryTtl
-    "#Input/Output-Extra" -> Messages.LibraryExtra
-    else -> libraryLabel(library)
 }
 
 private fun DiagnosticSeverity.messageKey(): String = when (this) {

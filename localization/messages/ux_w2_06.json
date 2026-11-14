@@ -1,0 +1,348 @@
+{
+  "analysis_tap_mode_value": {
+    "en": "Tap sets: {value}",
+    "pt": "O toque define: {value}"
+  },
+  "analysis_tap_mode_cycle": {
+    "en": "Cycle",
+    "pt": "Alternar"
+  },
+  "analysis_fill_block": {
+    "en": "Set {value}",
+    "pt": "Definir {value}"
+  },
+  "analysis_fill_block_description": {
+    "en": "Set the marked outputs to {value}",
+    "pt": "Definir as saídas marcadas como {value}"
+  },
+  "analysis_dont_care_name": {
+    "en": "don't care",
+    "pt": "irrelevante"
+  },
+  "analysis_a11y_output_cell": {
+    "en": "Row {row}, {assignment}, output {output}",
+    "pt": "Linha {row}, {assignment}, saída {output}"
+  },
+  "analysis_a11y_input_row_cell": {
+    "en": "Row {row}, input {input}",
+    "pt": "Linha {row}, entrada {input}"
+  },
+  "analysis_a11y_change_value": {
+    "en": "Change value",
+    "pt": "Alterar valor"
+  },
+  "analysis_a11y_mark_corner": {
+    "en": "Mark block corner",
+    "pt": "Marcar canto do bloco"
+  },
+  "analysis_forms_updating": {
+    "en": "Minimizing in the new notation…",
+    "pt": "Minimizando na nova notação…"
+  },
+  "analysis_output_is_input": {
+    "en": "“{name}” is an input variable and cannot also be an output.",
+    "pt": "“{name}” é uma variável de entrada e não pode ser também uma saída."
+  },
+  "soc_register_choice": {
+    "en": "Register",
+    "pt": "Registrador"
+  },
+  "soc_component_chip_position": {
+    "en": "{label} ({x}, {y})",
+    "pt": "{label} ({x}, {y})"
+  },
+  "soc_bus_manual_result": {
+    "en": "#{sequence} {operation} {address} → {result}",
+    "pt": "#{sequence} {operation} {address} → {result}"
+  },
+  "soc_bus_no_trace": {
+    "en": "Request {number} sent. This component has no bus trace, so the reply cannot be shown here.",
+    "pt": "Pedido {number} enviado. Este componente não tem rastreamento de barramento, então a resposta não pode ser mostrada aqui."
+  },
+  "extensions_capabilities_heading": {
+    "en": "Requested capabilities",
+    "pt": "Capacidades solicitadas"
+  },
+  "extensions_privileges_note": {
+    "en": "Extensions are code compiled into this app and share its permissions. A capability cannot grant file, network or process access.",
+    "pt": "Extensões são código compilado neste app e compartilham as permissões dele. Uma capacidade não concede acesso a arquivos, rede ou processos."
+  },
+  "extension_capability_denied": {
+    "en": "This app does not allow this capability, so registration will be refused.",
+    "pt": "Este app não permite esta capacidade, então o registro será recusado."
+  },
+  "extension_capability_pure_logic": {
+    "en": "Pure logic",
+    "pt": "Lógica pura"
+  },
+  "extension_capability_pure_logic_description": {
+    "en": "Components compute their outputs from their current inputs only.",
+    "pt": "Os componentes calculam as saídas apenas a partir das entradas atuais."
+  },
+  "extension_capability_stateful_logic": {
+    "en": "Stateful logic",
+    "pt": "Lógica com estado"
+  },
+  "extension_capability_stateful_logic_description": {
+    "en": "Components can keep values between simulation steps, such as registers or counters. Each circuit instance keeps its own state.",
+    "pt": "Os componentes podem guardar valores entre passos da simulação, como registradores ou contadores. Cada instância do circuito guarda o próprio estado."
+  },
+  "extension_capability_custom_rendering": {
+    "en": "Custom drawing",
+    "pt": "Desenho próprio"
+  },
+  "extension_capability_custom_rendering_description": {
+    "en": "Components draw their own shape on the canvas.",
+    "pt": "Os componentes desenham a própria forma na área do circuito."
+  },
+  "extension_capability_companion_tcl": {
+    "en": "Companion Tcl",
+    "pt": "Tcl no companion"
+  },
+  "extension_capability_companion_tcl_description": {
+    "en": "Depends on Tcl scripts run on a paired companion computer. Declaring it does not authorize running anything.",
+    "pt": "Depende de scripts Tcl executados em um computador companion pareado. Declarar esta capacidade não autoriza nenhuma execução."
+  },
+  "extension_capability_companion_jar": {
+    "en": "Companion JAR",
+    "pt": "JAR no companion"
+  },
+  "extension_capability_companion_jar_description": {
+    "en": "Depends on Java code from a JAR run on a paired companion computer. Declaring it does not authorize running anything.",
+    "pt": "Depende de código Java de um JAR executado em um computador companion pareado. Declarar esta capacidade não autoriza nenhuma execução."
+  },
+  "companion_operation_verify_inputs": {
+    "en": "Verify uploaded files",
+    "pt": "Verificar arquivos enviados"
+  },
+  "companion_operation_fpga_synthesize": {
+    "en": "Synthesize HDL with Yosys",
+    "pt": "Sintetizar HDL com Yosys"
+  },
+  "companion_operation_fpga_program": {
+    "en": "Program an FPGA board",
+    "pt": "Programar uma placa FPGA"
+  },
+  "companion_operation_fpga_ise_build": {
+    "en": "Build a bitstream with Xilinx ISE",
+    "pt": "Gerar um bitstream com Xilinx ISE"
+  },
+  "companion_operation_fpga_ise_cpld_build": {
+    "en": "Build a CPLD JEDEC file with Xilinx ISE",
+    "pt": "Gerar um arquivo JEDEC de CPLD com Xilinx ISE"
+  },
+  "companion_operation_fpga_quartus_build": {
+    "en": "Build with Intel Quartus",
+    "pt": "Compilar com Intel Quartus"
+  },
+  "companion_operation_fpga_vivado_build": {
+    "en": "Build a bitstream with Vivado",
+    "pt": "Gerar um bitstream com Vivado"
+  },
+  "companion_operation_yosys_import": {
+    "en": "Import Verilog or BLIF with Yosys",
+    "pt": "Importar Verilog ou BLIF com Yosys"
+  },
+  "companion_operation_hdl_validate": {
+    "en": "Check a VHDL or BLIF design",
+    "pt": "Verificar um projeto VHDL ou BLIF"
+  },
+  "companion_operation_hdl_start": {
+    "en": "Start a VHDL or BLIF simulation",
+    "pt": "Iniciar uma simulação VHDL ou BLIF"
+  },
+  "companion_operation_hdl_step": {
+    "en": "Advance a VHDL or BLIF simulation",
+    "pt": "Avançar uma simulação VHDL ou BLIF"
+  },
+  "companion_operation_hdl_reset": {
+    "en": "Reset a VHDL or BLIF simulation",
+    "pt": "Reiniciar uma simulação VHDL ou BLIF"
+  },
+  "companion_operation_hdl_cancel": {
+    "en": "Stop a VHDL or BLIF simulation",
+    "pt": "Parar uma simulação VHDL ou BLIF"
+  },
+  "companion_operation_tcl_run": {
+    "en": "Run a Tcl console script",
+    "pt": "Executar um script do console Tcl"
+  },
+  "companion_operation_tcl_step": {
+    "en": "Run Tcl component inputs",
+    "pt": "Executar entradas de componente Tcl"
+  },
+  "companion_operation_tcl_timed_run": {
+    "en": "Run a Tcl console script with timers, isolated",
+    "pt": "Executar um script do console Tcl com temporizadores, isolado"
+  },
+  "companion_operation_tcl_timed_step": {
+    "en": "Run Tcl component inputs with timers, isolated",
+    "pt": "Executar entradas de componente Tcl com temporizadores, isolado"
+  },
+  "companion_operation_tcl_tk_run": {
+    "en": "Run a Tcl/Tk window on a Linux host",
+    "pt": "Executar uma janela Tcl/Tk em um host Linux"
+  },
+  "companion_operation_tcl_tk_live": {
+    "en": "Use a live Tcl/Tk window on a Linux host",
+    "pt": "Usar uma janela Tcl/Tk ao vivo em um host Linux"
+  },
+  "companion_operation_jar_run": {
+    "en": "Run a circuit with an Evolution JAR library",
+    "pt": "Executar um circuito com uma biblioteca JAR do Evolution"
+  },
+  "companion_operation_jar_live": {
+    "en": "Send live inputs to an Evolution JAR circuit",
+    "pt": "Enviar entradas ao vivo para um circuito JAR do Evolution"
+  },
+  "companion_operation_telnet_start": {
+    "en": "Start a Telnet listener",
+    "pt": "Iniciar um receptor Telnet"
+  },
+  "companion_operation_telnet_poll": {
+    "en": "Read Telnet input",
+    "pt": "Ler a entrada Telnet"
+  },
+  "companion_operation_telnet_resize": {
+    "en": "Resize the Telnet input buffer",
+    "pt": "Redimensionar o buffer de entrada Telnet"
+  },
+  "companion_operation_telnet_send": {
+    "en": "Send Telnet output",
+    "pt": "Enviar saída Telnet"
+  },
+  "companion_operation_telnet_stop": {
+    "en": "Stop a Telnet listener",
+    "pt": "Parar um receptor Telnet"
+  },
+  "tcl_component_original_file": {
+    "en": "Original file: {path}",
+    "pt": "Arquivo original: {path}"
+  },
+  "hdl_tools_import_replace_title": {
+    "en": "Replace {name}?",
+    "pt": "Substituir {name}?"
+  },
+  "hdl_tools_import_replace_message": {
+    "en": "A staged file already has this name. Its text will be replaced by the source above.",
+    "pt": "Um arquivo preparado já tem este nome. O texto dele será substituído pelo código acima."
+  },
+  "hdl_tools_import_replace_confirm": {
+    "en": "Replace",
+    "pt": "Substituir"
+  },
+  "hdl_tools_import_editing": {
+    "en": "Editing",
+    "pt": "Em edição"
+  },
+  "hdl_tools_sim_generics_heading": {
+    "en": "VHDL generics",
+    "pt": "Genéricos VHDL"
+  },
+  "hdl_tools_sim_generics_help": {
+    "en": "Leave a field empty to use the entity's default.",
+    "pt": "Deixe um campo vazio para usar o padrão da entidade."
+  },
+  "hdl_tools_sim_generic_label": {
+    "en": "{name} ({type})",
+    "pt": "{name} ({type})"
+  },
+  "hdl_tools_sim_generic_default_option": {
+    "en": "Default ({value})",
+    "pt": "Padrão ({value})"
+  },
+  "hdl_tools_sim_generic_default": {
+    "en": "Default: {value}",
+    "pt": "Padrão: {value}"
+  },
+  "hdl_tools_sim_generic_unit": {
+    "en": "Unit",
+    "pt": "Unidade"
+  },
+  "hdl_tools_sim_generic_invalid_integer": {
+    "en": "Enter a whole number.",
+    "pt": "Digite um número inteiro."
+  },
+  "hdl_tools_sim_generic_invalid_natural": {
+    "en": "Enter a whole number of 0 or more.",
+    "pt": "Digite um número inteiro igual ou maior que 0."
+  },
+  "hdl_tools_sim_generic_invalid_positive": {
+    "en": "Enter a whole number of 1 or more.",
+    "pt": "Digite um número inteiro igual ou maior que 1."
+  },
+  "hdl_tools_sim_generics_as_text": {
+    "en": "Edit as text",
+    "pt": "Editar como texto"
+  },
+  "hdl_tools_sim_generics_as_fields": {
+    "en": "Edit as fields",
+    "pt": "Editar como campos"
+  },
+  "hdl_tools_sim_generics_extra": {
+    "en": "Other parameters kept: {names}",
+    "pt": "Outros parâmetros mantidos: {names}"
+  },
+  "jar_tool_bits_needed": {
+    "en": {
+      "one": "Needs {count} bit ({entered} entered)",
+      "other": "Needs {count} bits ({entered} entered)"
+    },
+    "pt": {
+      "one": "Precisa de {count} bit ({entered} digitados)",
+      "other": "Precisa de {count} bits ({entered} digitados)"
+    }
+  },
+  "jar_tool_bit_unknown": {
+    "en": "Unknown (?)",
+    "pt": "Desconhecido (?)"
+  },
+  "jar_tool_bit_error": {
+    "en": "Error (E)",
+    "pt": "Erro (E)"
+  },
+  "jar_tool_bit_option": {
+    "en": "{pin}: {value}",
+    "pt": "{pin}: {value}"
+  },
+  "hdl_tools_sim_generic_time_range": {
+    "en": "Out of range: Evolution stores a delay of at most 2147483647 fs (about 2.1 us) either way.",
+    "pt": "Fora do intervalo: o Evolution guarda um atraso de no máximo 2147483647 fs (cerca de 2,1 us), positivo ou negativo."
+  },
+  "hdl_tools_import_replace_picked_message": {
+    "en": "A staged file already has this name. Its text will be replaced by the chosen file.",
+    "pt": "Um arquivo preparado já tem este nome. O texto dele será substituído pelo arquivo escolhido."
+  },
+  "hdl_tools_import_discard_title": {
+    "en": "Discard the text in the editor?",
+    "pt": "Descartar o texto do editor?"
+  },
+  "hdl_tools_import_discard_message": {
+    "en": "The editor holds text that is not in any staged file. Opening {name} replaces it.",
+    "pt": "O editor tem um texto que não está em nenhum arquivo preparado. Abrir {name} o substitui."
+  },
+  "hdl_tools_import_discard_confirm": {
+    "en": "Discard and open",
+    "pt": "Descartar e abrir"
+  },
+  "analysis_table_help_sets": {
+    "en": "Tap a heading to edit a column. Tap an output cell to set it to {value}. Inputs are ordered most significant bit first.",
+    "pt": "Toque no cabeçalho para editar uma coluna. Toque numa célula de saída para defini-la como {value}. O bit mais significativo vem primeiro."
+  },
+  "analysis_dont_care_value": {
+    "en": "{name} ({character})",
+    "pt": "{name} ({character})"
+  },
+  "soc_memory_map_device_of": {
+    "en": "{device} of {component}",
+    "pt": "{device} de {component}"
+  },
+  "soc_bus_trace_path_numbered": {
+    "en": "{name} #{number}",
+    "pt": "{name} nº {number}"
+  },
+  "soc_bus_trace_local_view": {
+    "en": "{name} (local view)",
+    "pt": "{name} (visão local)"
+  }
+}

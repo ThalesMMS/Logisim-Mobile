@@ -3,12 +3,16 @@ package dev.logisim.mobile
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -21,9 +25,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
@@ -67,10 +74,10 @@ private fun HelpExamplesPanel(
     val scope = rememberCoroutineScope()
     val latestContext by rememberUpdatedState(context)
     var page by remember { mutableStateOf(HelpPage.GUIDES) }
-    var confirmation by remember { mutableStateOf<HelpExample?>(null) }
     var checking by remember { mutableStateOf<String?>(null) }
     val opener = remember { HelpExampleOpener() }
-    var result by remember { mutableStateOf<LocalizedText?>(null) }
+    // Each example keeps its own result, shown under its buttons where the user tapped (#108).
+    var results by remember { mutableStateOf(emptyMap<String, ToolNotice>()) }
 
     fun openUrl(url: String) {
         try { uriHandler.openUri(url) }
@@ -92,7 +99,6 @@ private fun HelpExamplesPanel(
             }
         }
         LazyColumn(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            result?.let { notice -> item { Text(strings(notice), Modifier.padding(12.dp)) } }
             when (page) {
                 HelpPage.GUIDES -> {
                     item { Text(strings("help_offline_guide"), Modifier.padding(horizontal = 12.dp)) }
@@ -123,29 +129,39 @@ private fun HelpExamplesPanel(
                             Text(strings(example.title), style = MaterialTheme.typography.titleMedium)
                             Text(strings(example.description))
                             Text(strings(example.instructions))
-                            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalAlignment = Alignment.CenterVertically) {
+                                // The example opens as its own workspace copy (or an undoable replacement without a
+                                // workspace), so it needs no confirmation; the status line reports the request.
                                 TextButton(onClick = {
-                                    if (checking == null && opener.opening == null) confirmation = example
+                                    if (checking == null && opener.opening == null) scope.launch {
+                                        opener.openReporting(example, registry, { latestContext.project },
+                                            accept = { onOpenExample(latestContext, it) }, notice = { latestContext.showNotice(it) })
+                                    }
                                 }, enabled = checking == null && opener.opening == null) { Text(strings("help_open_example")) }
-                                TextButton(enabled = checking == null && opener.opening == null, onClick = {
+                                TextButton(enabled = checking == null && opener.opening == null, modifier = Modifier.testTag("help-verify-${example.id}"), onClick = {
                                     if (checking != null || opener.opening != null) return@TextButton
                                     val circuit = example.circuit ?: return@TextButton
                                     checking = example.id
-                                    result = message("help_checking_example", "name" to example.title)
+                                    results = results + (example.id to message("help_checking_example", "name" to example.title).asProgress())
                                     scope.launch {
-                                        try {
+                                        val outcome = try {
                                             val checked = withContext(Dispatchers.Default) { HelpContent.verify(circuit, registry) }
-                                            result = if (checked.failures.isEmpty()) message("help_example_verified",
-                                                "name" to example.title, "count" to checked.observations.size)
+                                            if (checked.failures.isEmpty()) message("help_example_verified",
+                                                "name" to example.title, "count" to checked.observations.size).asResult()
                                             else message("help_example_failed", "name" to example.title,
-                                                "details" to LocalizedText.join(checked.notices))
+                                                "details" to LocalizedText.join(checked.notices)).asError()
                                         } catch (error: CancellationException) { throw error }
                                         catch (error: Exception) {
-                                            result = error.localizedDescription(message("help_example_invalid"))
+                                            error.localizedDescription(message("help_example_invalid")).asError()
                                         } finally { checking = null }
+                                        results = results + (example.id to outcome)
+                                        latestContext.showNotice(outcome.text)
                                     }
                                 }) { Text(strings("help_verify_reference")) }
+                                if (checking == example.id) CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
                             }
+                            ToolNoticeText(results[example.id], Modifier.testTag("help-result-${example.id}"))
                             HorizontalDivider()
                         }
                     }
@@ -163,8 +179,15 @@ private fun HelpExamplesPanel(
                         Column(Modifier.padding(horizontal = 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text(strings(area.title), style = MaterialTheme.typography.titleMedium)
                             Text(strings(area.description))
-                            Row(Modifier.horizontalScroll(rememberScrollState())) {
-                                area.issues.forEach { issue -> TextButton(onClick = { openUrl("${HelpContent.repository}/issues/$issue") }) { Text("#$issue") } }
+                            // Each link names the issue it opens ("Issue 8"), not a bare "#8".
+                            FlowRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                                area.issues.forEach { issue ->
+                                    val description = strings("help_issue_link_description", "number" to issue)
+                                    TextButton(onClick = { openUrl("${HelpContent.repository}/issues/$issue") },
+                                        modifier = Modifier.heightIn(min = 48.dp).semantics { contentDescription = description }) {
+                                        Text(strings("help_issue_link", "number" to issue))
+                                    }
+                                }
                             }
                             HorizontalDivider()
                         }
@@ -172,38 +195,37 @@ private fun HelpExamplesPanel(
                     item {
                         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text(strings("help_registered_libraries"), style = MaterialTheme.typography.titleMedium)
-                            registry.definitions.groupingBy { it.library }.eachCount().entries.sortedBy { it.key }.forEach { (library, count) ->
-                                Text(strings("help_library_count", "name" to library, "count" to count))
-                            }
+                            // Evolution's display names ("Gates", "Annotations"), in their alphabetical order.
+                            registry.definitions.groupingBy { it.library }.eachCount().entries
+                                .map { (library, count) -> strings(builtinLibraryName(library)) to count }.sortedBy { it.first }
+                                .forEach { (name, count) -> Text(strings("help_library_count", "name" to name, "count" to count)) }
                         }
                     }
                 }
             }
         }
     }
-    confirmation?.let { example ->
-        AppAlertDialog(
-            onDismissRequest = { confirmation = null },
-            title = { Text(strings("help_confirm_open", "name" to example.title)) },
-            text = { Text(strings("help_open_copy_explanation")) },
-            confirmButton = { TextButton(onClick = {
-                confirmation = null
-                val circuit = example.circuit ?: return@TextButton
-                scope.launch {
-                    when (val opened = opener.open(circuit,
-                        currentProject = { latestContext.project },
-                        prepare = { withContext(Dispatchers.Default) { HelpContent.prepare(it, registry) } },
-                        accept = { onOpenExample(latestContext, it) })) {
-                        HelpExampleOpenResult.Requested -> latestContext.showNotice(message("help_example_requested", "name" to example.title))
-                        HelpExampleOpenResult.ProjectChanged -> latestContext.showNotice(message("help_project_changed"))
-                        HelpExampleOpenResult.HostRejected -> latestContext.showNotice(message("help_example_open_failed"))
-                        HelpExampleOpenResult.Busy -> Unit
-                        is HelpExampleOpenResult.Failed -> latestContext.showNotice(LocalizedText.join(opened.notices))
-                    }
-                }
-            }) { Text(strings("help_open_example")) } },
-            dismissButton = { TextButton(onClick = { confirmation = null }) { Text(strings("help_cancel")) } },
-        )
+}
+
+/**
+ * Opens [example] as the gallery and File > Open example do: the XML is read first, [accept] hands it to the host,
+ * and [notice] reports the request or why it failed.
+ */
+internal suspend fun HelpExampleOpener.openReporting(
+    example: HelpExample,
+    registry: ComponentRegistry,
+    currentProject: () -> CircuitProject,
+    accept: (CircuitExample) -> Boolean,
+    notice: (LocalizedText) -> Unit,
+) {
+    val circuit = example.circuit ?: return
+    when (val opened = this.open(circuit, currentProject = currentProject,
+        prepare = { withContext(Dispatchers.Default) { HelpContent.prepare(it, registry) } }, accept = accept)) {
+        HelpExampleOpenResult.Requested -> notice(message("help_example_requested", "name" to example.title))
+        HelpExampleOpenResult.ProjectChanged -> notice(message("help_project_changed"))
+        HelpExampleOpenResult.HostRejected -> notice(message("help_example_open_failed"))
+        HelpExampleOpenResult.Busy -> Unit
+        is HelpExampleOpenResult.Failed -> notice(LocalizedText.join(opened.notices))
     }
 }
 

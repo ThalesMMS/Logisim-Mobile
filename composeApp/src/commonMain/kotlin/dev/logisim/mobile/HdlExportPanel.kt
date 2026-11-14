@@ -11,7 +11,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -21,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -69,16 +69,15 @@ fun HdlExportPanel(
     val hdlType = access?.preferences?.hdlType ?: localHdlType
     fun choose(type: EditorHdlType) = access?.let { it.onChange(it.preferences.copy(hdlType = type)) } ?: run { localHdlType = type }
     var selectedPath by remember { mutableStateOf<String?>(null) }
+    var copied by remember { mutableStateOf<ToolNotice?>(null) }
     val options = access?.preferences?.fpga ?: FpgaGenerationOptions()
     val clipboard = LocalClipboardManager.current
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            EditorHdlType.entries.forEach { option ->
-                val name = option.language?.name ?: strings("preferences_fpga_hdl_none")
-                OutlinedButton(onClick = { choose(option) }) { Text(if (hdlType == option) "✓ $name" else name) }
-            }
-        }
+        // Display names (VHDL, Verilog, None) with radio semantics; the choice still writes the shared hdlType preference.
+        ChoiceRow(strings("preferences_fpga_hdl_type"), EditorHdlType.entries, hdlType,
+            optionLabel = { option -> if (option == EditorHdlType.NONE) strings("preferences_fpga_hdl_none") else option.key },
+            optionTag = { "hdl-export-language-${it.key.lowercase()}" }) { choose(it); copied = null }
         val language = hdlType.language
         if (language == null) {
             Text(strings("hdl_select_language"))
@@ -99,22 +98,21 @@ fun HdlExportPanel(
             }
             if (result.successful) {
                 Text(strings("hdl_save_dependencies"))
-                Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState())) {
-                    result.files.forEach { source ->
-                        TextButton(onClick = { selectedPath = source.path }) { Text(if (file == source) "✓ ${source.path}" else source.path) }
-                    }
-                }
+                ChoiceDropdown(strings("hdl_export_file"), result.files, file, optionLabel = { it.path },
+                    modifier = Modifier.fillMaxWidth(), tag = "hdl-export-file") { selectedPath = it.path; copied = null }
                 if (file != null) {
                     Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState())) {
                         TextButton(onClick = {
                             context.exportProjectGraph {
                                 clipboard.setText(AnnotatedString(file.content))
                                 context.showNotice(message("hdl_source_copied"))
+                                copied = message("hdl_source_copied").asResult()
                             }
                         }) { Text(strings("hdl_copy")) }
                         onSaveSource?.let { save -> TextButton(onClick = { context.exportProjectGraph { save(file) } }) { Text(strings("hdl_save_file")) } }
                         onShareSource?.let { share -> TextButton(onClick = { context.exportProjectGraph { share(file) } }) { Text(strings("hdl_share_file")) } }
                     }
+                    ToolNoticeText(copied, Modifier.testTag("hdl-export-notice"))
                     SelectionContainer {
                         Text(file.content, fontFamily = FontFamily.Monospace,
                             modifier = Modifier.fillMaxWidth().heightIn(max = 480.dp)

@@ -231,6 +231,45 @@ class Nios2CpuTest {
         assertNull(Nios2Cpu.step(stopped, memory).trace)
     }
 
+    /** W2-06 C79: the listing decodes each word without executing it, and gives the desktop trace text. */
+    @Test fun disassemblerMatchesTheDesktopTraceText() {
+        for (line in nios2DesktopAluFixtures.trim().lines()) {
+            val fields = line.split(' ', limit = 5)
+            assertEquals(fields[4], Nios2Disassembler.format(fields[0].toUInt(16)), line)
+        }
+        for (line in nios2DesktopControlFixtures.trim().lines()) {
+            val fields = line.split(' ', limit = 13)
+            assertEquals(fields[12], Nios2Disassembler.format(fields[0].toUInt(16)), line)
+        }
+        // add r0,r0,r0 is nop, add with rb = 0 is mov, addi from zero is movi: as the trace writes them.
+        assertEquals("nop", Nios2Disassembler.format(r(0x31, 0, 0, 0)))
+        assertEquals("mov       r4,r2", Nios2Disassembler.format(r(0x31, 2, 0, 4)))
+        assertEquals("movi      r5,-7", Nios2Disassembler.format(i(0x04, 0, 5, -7)))
+        assertEquals("ldw       r4,-4(r2)", Nios2Disassembler.format(i(0x17, 2, 4, -4)))
+        assertNull(Nios2Disassembler.format(r(0x31, 2, 3, 4, immediate = 1)), "add with a shift amount is invalid")
+        assertNull(Nios2Disassembler.format(i(0x06, 1, 0, 8)), "br with registers is invalid")
+        assertNull(Nios2Disassembler.format(0x3Fu))
+    }
+
+    /** Every trace entry, including a failed load and a division by zero, is the listing text of its word. */
+    @Test fun traceAndListingShowTheSameText() {
+        val program = listOf(i(0x04, 0, 2, 0x100), r(0x31, 0, 0, 0), r(0x31, 2, 0, 3), i(0x14, 0, 6, 0xFFFF),
+            i(0x34, 0, 7, 0x1234), custom(2, 3, 4, 7, readRA = true), i(0x17, 2, 4, 0), r(0x24, 2, 0, 5))
+        for (start in program.indices) {
+            val memory = TestMemory(program.withIndex().associate { (index, word) -> index.toUInt() * 4u to word })
+            var state = Nios2Cpu.reset(start.toUInt() * 4u)
+            repeat(program.size) {
+                val result = Nios2Cpu.step(state, memory, customResponse = Nios2CustomResponse(true, 0u))
+                state = result.state
+                result.trace?.let { entry ->
+                    if (entry.assembly != "invalid" && entry.assembly != "fetch") {
+                        assertEquals(Nios2Disassembler.format(entry.instruction), entry.assembly, entry.toString())
+                    }
+                }
+            }
+        }
+    }
+
     private fun i(opcode: Int, a: Int, b: Int, immediate: Int): UInt =
         (opcode or ((immediate and 65535) shl 6) or (b shl 22) or (a shl 27)).toUInt()
     private fun r(opx: Int, a: Int, b: Int, c: Int, immediate: Int = 0): UInt =

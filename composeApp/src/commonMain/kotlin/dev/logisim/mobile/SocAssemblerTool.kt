@@ -42,6 +42,7 @@ internal fun SocAssemblerTool(address: UInt, nios2: Boolean, send: (ComponentEve
         placeholder = { Text(if (nios2) "addi r5, zero, 7" else strings("soc_asm_example"), fontFamily = FontFamily.Monospace) },
         minLines = 3,
         maxLines = 8,
+        keyboardOptions = FieldKeyboards.Code,
     )
     OutlinedButton(onClick = {
         val result = if (nios2) Nios2Assembler.assemble(source, address) else Rv32Assembler.assemble(source, address)
