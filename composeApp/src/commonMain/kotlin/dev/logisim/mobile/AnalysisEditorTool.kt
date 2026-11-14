@@ -11,6 +11,8 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -29,18 +31,47 @@ import dev.logisim.mobile.core.localization.message
 import dev.logisim.mobile.core.localization.systemAppLanguage
 import dev.logisim.mobile.localization.rememberLocalizer
 
-/** Installs a verified generated circuit as one undoable project edit. */
+/**
+ * Installs a verified generated circuit as one undoable project edit. The analysis lives in one session per tool,
+ * so dismissing the sheet (swipe, Back, scrim or Close) keeps the table, as Evolution's Analyzer window does.
+ */
 fun analysisEditorTool(
     registry: ComponentRegistry? = null,
     simulatorFactory: (() -> CircuitSimulator)? = null,
     assets: DocumentAssetActions? = null,
-): EditorTool = EditorTool("combinational-analysis",
-    message(Messages.AnalysisTitle).resolve(systemAppLanguage()), titleText = message(Messages.AnalysisTitle), requiresProjectGraph = true) { context ->
+): EditorTool {
+    val session = AnalysisSession()
+    return EditorTool("combinational-analysis",
+        message(Messages.AnalysisTitle).resolve(systemAppLanguage()), titleText = message(Messages.AnalysisTitle), requiresProjectGraph = true,
+        runtime = { context ->
+            // Another document starts a new analysis even while the sheet is closed, releasing an imported spool.
+            LaunchedEffect(session, context.documentIdentity) { session.bind(context.documentIdentity) }
+            DisposableEffect(session) { onDispose { session.close() } }
+        },
+    ) { context ->
+        // Bound in an effect, not while composing: a reset closes an imported table's spool. Until the session is
+        // bound to this document the sheet shows nothing rather than the previous document's analysis.
+        LaunchedEffect(session, context.documentIdentity) { session.bind(context.documentIdentity) }
+        if (session.documentIdentity == context.documentIdentity) AnalysisToolContent(session, context, registry, simulatorFactory, assets)
+    }
+}
+
+@Composable
+private fun AnalysisToolContent(
+    session: AnalysisSession,
+    context: EditorToolContext,
+    registry: ComponentRegistry?,
+    simulatorFactory: (() -> CircuitSimulator)?,
+    assets: DocumentAssetActions?,
+) {
     var destination by remember(context.documentIdentity) { mutableStateOf<GeneratedDestination?>(null) }
-    AnalyzePanel(context.project, context.document.name, onGenerated = generated@{ generated ->
+    AnalyzePanel(session, context.project, context.document.name, onGenerated = generated@{ generated ->
         if (!context.isCurrentEditorContext() || !context.projectExports.available) return@generated
         if (!context.projectExports.access.writable) {
-            context.showNotice(message("document_read_only_preserved"))
+            // Shown in the sheet as well: the editor's status line is behind it.
+            val refusal = message("document_read_only_preserved")
+            session.error = refusal
+            context.showNotice(refusal)
             return@generated
         }
         destination = GeneratedDestination(context.project, generated)
@@ -54,7 +85,7 @@ fun analysisEditorTool(
         },
     )
     destination?.let {
-        AnalysisDestinationDialog(it, context, onDismiss = { destination = null })
+        AnalysisDestinationDialog(it, context, onDismiss = { destination = null }, onSaved = { notice -> session.notice = notice })
     }
 }
 
@@ -65,6 +96,7 @@ private fun AnalysisDestinationDialog(
     destination: GeneratedDestination,
     context: EditorToolContext,
     onDismiss: () -> Unit,
+    onSaved: (LocalizedText) -> Unit = {},
 ) {
     val strings = rememberLocalizer()
     var name by remember(destination) { mutableStateOf(destination.generated.name) }
@@ -88,7 +120,9 @@ private fun AnalysisDestinationDialog(
                 saving = false
                 if (saved) {
                     context.selectCircuit(targetName)
-                    context.showNotice(message(if (replace == null) Messages.AnalysisCreated else Messages.AnalysisDestinationReplaced))
+                    val notice = message(if (replace == null) Messages.AnalysisCreated else Messages.AnalysisDestinationReplaced)
+                    context.showNotice(notice)
+                    onSaved(notice)
                     onDismiss()
                 } else error = failed
             }

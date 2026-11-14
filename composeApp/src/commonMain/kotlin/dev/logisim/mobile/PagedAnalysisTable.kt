@@ -1,15 +1,22 @@
 package dev.logisim.mobile
 
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.testTag
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -56,6 +63,11 @@ internal fun PagedTruthTable.analysisPage(number: Int, cancelled: () -> Boolean)
     return AnalysisTablePage(this, number, firstRow, readRows(firstRow, minOf(RowsPerPage, rowCount - firstRow), cancelled))
 }
 
+/**
+ * A read-only table too large to edit, one page at a time. As in the editable table, the page controls scroll
+ * away with the rows and the column headings stay on top, sharing the rows' horizontal scroll.
+ */
+@OptIn(ExperimentalFoundationApi::class, ExperimentalLayoutApi::class)
 @Composable
 internal fun PagedAnalysisTable(
     page: AnalysisTablePage,
@@ -67,43 +79,54 @@ internal fun PagedAnalysisTable(
     val source = page.source
     var requested by remember(page) { mutableStateOf((page.number + 1).toString()) }
     val destination = requested.toIntOrNull()
-    Column(modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        Text(strings(Messages.AnalysisPagePosition, "first" to page.firstRow + 1,
-            "last" to page.firstRow + page.rows.size, "total" to source.rowCount))
-        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
-            horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-            TextButton(enabled = !busy && page.number > 0, onClick = { onPage(page.number - 1) }) {
-                Text(strings(Messages.AnalysisPagePrevious))
-            }
-            TextButton(enabled = !busy && page.number + 1 < page.pageCount, onClick = { onPage(page.number + 1) }) {
-                Text(strings(Messages.AnalysisPageNext))
-            }
-            OutlinedTextField(requested, { requested = it }, enabled = !busy, singleLine = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                label = { Text(strings(Messages.AnalysisPageNumber, "total" to page.pageCount)) },
-                modifier = Modifier.width(136.dp))
-            TextButton(enabled = !busy && destination != null && destination in 1..page.pageCount,
-                onClick = { destination?.let { onPage(it - 1) } }) { Text(strings(Messages.AnalysisPageGo)) }
-        }
-        val scroll = rememberScrollState()
-        val characters = currentValueCharacters()
-        Row(Modifier.horizontalScroll(scroll)) {
-            (source.inputs + source.outputs).forEach { AnalysisCell(it, header = true) }
-        }
-        key(page.number) {
-            LazyColumn(Modifier.weight(1f).fillMaxWidth(), state = rememberLazyListState()) {
-                items(page.rows.size) { index ->
-                    val row = page.firstRow + index
-                    Row(Modifier.horizontalScroll(scroll)) {
-                        source.inputs.forEachIndexed { column, name ->
-                            val value = (if (source.input(row, column)) TruthCell.ONE else TruthCell.ZERO).display(characters)
-                            AnalysisCell(value, description = strings(Messages.AnalysisA11yInputCell,
-                                "row" to row, "input" to name, "value" to value))
+    val scroll = rememberScrollState()
+    val characters = currentValueCharacters()
+    val headerBackground = MaterialTheme.colorScheme.surfaceContainerLow // the tool sheet's container
+    val widths = rememberAnalysisColumnWidths(source.inputs + source.outputs)
+    key(page.number) {
+        LazyColumn(modifier.testTag("analysis-paged-table"), state = rememberLazyListState()) {
+            item(key = "pager") {
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Text(strings(Messages.AnalysisPagePosition, "first" to page.firstRow + 1,
+                        "last" to page.firstRow + page.rows.size, "total" to source.rowCount))
+                    FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(4.dp),
+                        itemVerticalAlignment = Alignment.CenterVertically) {
+                        TextButton(enabled = !busy && page.number > 0, onClick = { onPage(page.number - 1) }) {
+                            Text(strings(Messages.AnalysisPagePrevious))
                         }
-                        page.rows[index].forEachIndexed { column, cell ->
-                            AnalysisCell(cell.display(characters), description = strings(Messages.AnalysisA11yTableCell,
-                                "row" to row, "output" to source.outputs[column], "value" to cell.display(characters)))
+                        TextButton(enabled = !busy && page.number + 1 < page.pageCount, onClick = { onPage(page.number + 1) }) {
+                            Text(strings(Messages.AnalysisPageNext))
                         }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            OutlinedTextField(requested, { requested = it }, enabled = !busy, singleLine = true,
+                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                                label = { Text(strings(Messages.AnalysisPageNumber, "total" to page.pageCount)) },
+                                modifier = Modifier.width(136.dp))
+                            TextButton(enabled = !busy && destination != null && destination in 1..page.pageCount,
+                                onClick = { destination?.let { onPage(it - 1) } }) { Text(strings(Messages.AnalysisPageGo)) }
+                        }
+                    }
+                }
+            }
+            stickyHeader(key = "header") {
+                Row(Modifier.fillMaxWidth().background(headerBackground).horizontalScroll(scroll)) {
+                    (source.inputs + source.outputs).forEachIndexed { column, name -> AnalysisCell(name, header = true, width = widths[column]) }
+                }
+            }
+            items(page.rows.size) { index ->
+                val row = page.firstRow + index
+                // Rows are numbered from 1, as the page position above counts them, with the input values.
+                val assignment = analysisAssignmentText(source.inputs) { source.input(row, it) }
+                Row(Modifier.horizontalScroll(scroll)) {
+                    source.inputs.forEachIndexed { column, name ->
+                        val value = (if (source.input(row, column)) TruthCell.ONE else TruthCell.ZERO).display(characters)
+                        AnalysisCell(value, width = widths[column], stateDescription = value,
+                            description = strings("analysis_a11y_input_row_cell", "row" to row + 1, "input" to name))
+                    }
+                    page.rows[index].forEachIndexed { column, cell ->
+                        AnalysisCell(cell.display(characters), width = widths[source.inputs.size + column],
+                            stateDescription = cell.display(characters), description = strings("analysis_a11y_output_cell",
+                                "row" to row + 1, "assignment" to assignment, "output" to source.outputs[column]))
                     }
                 }
             }

@@ -42,4 +42,19 @@ class TruthTableColumnEditsTest {
         assertEquals(original.rows, edited.rows)
         assertFailsWith<IllegalArgumentException> { original.withInputColumn(1, "A", destination = 0) }
     }
+
+    @Test
+    fun structuralEditsCommuteWithMoves() {
+        val original = TruthTable(listOf("A", "B", "C"), listOf("Y"), listOf(
+            ZERO, ONE, DONT_CARE, ZERO, ONE, ONE, ZERO, DONT_CARE,
+        ).map { listOf(it) })
+        // Removing B after moving it first equals removing it in place.
+        assertEquals(original.withInputRemoved(1), original.withInputColumn(1, "B", destination = 0).withInputRemoved(0))
+        // Removing B from Y = A & B (with C ignored) keeps A=0 -> 0 and marks A=1 as don't care.
+        val and = TruthTable.fromExpressions(mapOf("Y" to BooleanExpressionParser.parse("A & B")), inputs = listOf("A", "B"))
+        assertEquals(listOf(listOf(ZERO), listOf(DONT_CARE)), and.withInputRemoved(1).rows)
+        // An added input can be moved like any other.
+        val added = original.withInputAdded("D", 3).withInputColumn(3, "D", destination = 0)
+        assertEquals(original.withInputAdded("D", 0), added)
+    }
 }

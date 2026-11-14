@@ -69,6 +69,21 @@ data class TruthTable(
         })
     }
 
+    /**
+     * Every output cell of a marked block set to [value], as TableTabCaret.doKey fills the marked cells when 0, 1 or x
+     * is typed. [columns] are table columns, the inputs first and then the outputs; input columns are not editable and
+     * are left out, so a block that starts on an input changes only the outputs it covers.
+     */
+    fun withBlock(rows: IntRange, columns: IntRange, value: TruthCell): TruthTable {
+        require(!rows.isEmpty() && rows.first >= 0 && rows.last < this.rows.size)
+        require(!columns.isEmpty() && columns.first >= 0 && columns.last < inputs.size + outputs.size)
+        val outputs = maxOf(columns.first, inputs.size) - inputs.size..columns.last - inputs.size
+        if (outputs.isEmpty()) return this
+        return copy(rows = this.rows.mapIndexed { index, values ->
+            if (index in rows) values.mapIndexed { output, old -> if (output in outputs) value else old } else values
+        })
+    }
+
     /** Move an input bit to a new position while retaining each assignment's outputs. */
     fun withInputColumn(column: Int, name: String, destination: Int = column): TruthTable {
         val order = inputs.indices.moveColumn(column, destination)
@@ -88,6 +103,75 @@ data class TruthTable(
         val names = order.map { if (it == column) name else outputs[it] }
         val reorderedRows = if (column == destination) rows else rows.map { values -> order.map { values[it] } }
         return copy(outputs = names, rows = reorderedRows)
+    }
+
+    /**
+     * Insert input [name] at column [index] (TruthTable.addInputForOutput): the rows double, and both rows of each
+     * pair that differs only in the new bit keep the outputs of the row they came from.
+     */
+    fun withInputAdded(name: String, index: Int = inputs.size, limits: AnalysisLimits = AnalysisLimits()): TruthTable {
+        require(index in 0..inputs.size)
+        requireLocalized(name.isNotBlank() && name !in inputs) { message(Messages.AnalysisUniqueInputs) }
+        validateSize(inputs.size + 1, outputs.size, limits)
+        // input() reads column c from bit (inputs.lastIndex - c), so the new column is bit (inputs.size - index).
+        val bit = inputs.size - index
+        val low = (1 shl bit) - 1
+        return TruthTable(inputs.toMutableList().apply { add(index, name) }, outputs, List(rows.size * 2) { row ->
+            rows[((row shr (bit + 1)) shl bit) or (row and low)]
+        })
+    }
+
+    /**
+     * Remove the input at [column] (TruthTable.removeInputForOutput): each pair of rows that differs only in that
+     * bit becomes one row, keeping a cell both rows share and marking a cell they disagree on as don't care.
+     */
+    fun withInputRemoved(column: Int): TruthTable {
+        require(column in inputs.indices)
+        val bit = inputs.lastIndex - column
+        val low = (1 shl bit) - 1
+        return TruthTable(inputs.filterIndexed { index, _ -> index != column }, outputs, List(rows.size / 2) { row ->
+            val zero = ((row shr bit) shl (bit + 1)) or (row and low)
+            val first = rows[zero]
+            val second = rows[zero or (1 shl bit)]
+            if (first == second) first else first.mapIndexed { output, value -> if (value == second[output]) value else TruthCell.DONT_CARE }
+        })
+    }
+
+    /** Insert output [name] at [index]; Evolution fills a new output column with its DEFAULT_ENTRY, don't care. */
+    fun withOutputAdded(
+        name: String,
+        index: Int = outputs.size,
+        limits: AnalysisLimits = AnalysisLimits(),
+        value: TruthCell = TruthCell.DONT_CARE,
+    ): TruthTable {
+        require(index in 0..outputs.size)
+        requireLocalized(name.isNotBlank() && name !in outputs) { message(Messages.AnalysisUniqueOutputs) }
+        validateSize(inputs.size, outputs.size + 1, limits)
+        return copy(outputs = outputs.toMutableList().apply { add(index, name) },
+            rows = rows.map { values -> values.toMutableList().apply { add(index, value) } })
+    }
+
+    /** Remove the output at [column]; a table keeps at least one output. */
+    fun withOutputRemoved(column: Int): TruthTable {
+        require(column in outputs.indices)
+        requireLocalized(outputs.size > 1) { message(Messages.AnalysisOutputRange) }
+        return copy(outputs = outputs.filterIndexed { index, _ -> index != column },
+            rows = rows.map { values -> values.filterIndexed { index, _ -> index != column } })
+    }
+
+    /**
+     * Replace the columns of the outputs [defined] names and append the outputs it adds, keeping every other output
+     * (ExpressionTab edits one output's column at a time). [defined] must use this table's inputs in this order.
+     */
+    fun withOutputsReplaced(defined: TruthTable, limits: AnalysisLimits = AnalysisLimits()): TruthTable {
+        require(defined.inputs == inputs)
+        val added = defined.outputs.filter { it !in outputs }
+        validateSize(inputs.size, outputs.size + added.size, limits)
+        val source = defined.outputs.withIndex().associate { (index, name) -> name to index }
+        val names = outputs + added
+        return TruthTable(inputs, names, rows.indices.map { row ->
+            names.mapIndexed { column, name -> source[name]?.let { defined.rows[row][it] } ?: rows[row][column] }
+        })
     }
 
     companion object {
